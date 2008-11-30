@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.library;
+
 /**
-This is a generated code. Please do not edit or modify it.
+This is a generated code. DO NOT edit or modify it.
  @author MetadataCompiler 
 
 **/ 
@@ -14,14 +15,23 @@ import ecologylab.semantics.metadata.*;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
  import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.xml_inherit;
+import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+ import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.xml.TranslationScope;
+
 
 /**
 	
 **/ 
 
+@xml_inherit
 public class  Search
 extends  Document
 {
+
 
 /**
 	Constructor
@@ -29,7 +39,9 @@ extends  Document
 
 public Search()
 {
+ super();
 }
+
 /**
 	Constructor
 **/ 
@@ -38,11 +50,13 @@ public Search(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+
 /**
 	The search query.
 **/ 
 
 	@xml_tag("query") @xml_nested private MetadataString	query;
+
 /**
 	Lazy Evaluation for query
 **/ 
@@ -57,6 +71,7 @@ this.query	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field query
 **/ 
@@ -64,6 +79,7 @@ return result;
 public String getQuery(){
 return query().getValue();
 }
+
 /**
 	Sets the value of the field query
 **/ 
@@ -72,6 +88,7 @@ public void setQuery( String query )
 {
 this.query().setValue(query);
 }
+
 /**
 	The heavy weight setter method for field query
 **/ 
@@ -80,11 +97,13 @@ public void hwSetQuery( String query )
 {
 this.query().setValue(query);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	The snippet of the returned results.
 **/ 
 
 	@xml_tag("snippet") @xml_nested private MetadataString	snippet;
+
 /**
 	Lazy Evaluation for snippet
 **/ 
@@ -99,6 +118,7 @@ this.snippet	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field snippet
 **/ 
@@ -106,6 +126,7 @@ return result;
 public String getSnippet(){
 return snippet().getValue();
 }
+
 /**
 	Sets the value of the field snippet
 **/ 
@@ -114,6 +135,7 @@ public void setSnippet( String snippet )
 {
 this.snippet().setValue(snippet);
 }
+
 /**
 	The heavy weight setter method for field snippet
 **/ 

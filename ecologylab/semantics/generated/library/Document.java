@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.library;
+
 /**
-This is a generated code. Please do not edit or modify it.
+This is a generated code. DO NOT edit or modify it.
  @author MetadataCompiler 
 
 **/ 
@@ -14,14 +15,23 @@ import ecologylab.semantics.metadata.*;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
  import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.xml_inherit;
+import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+ import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.xml.TranslationScope;
+
 
 /**
 	The Document Class
 **/ 
 
+@xml_inherit
 public class  Document
 extends  Metadata
 {
+
 
 /**
 	Constructor
@@ -29,7 +39,9 @@ extends  Metadata
 
 public Document()
 {
+ super();
 }
+
 /**
 	Constructor
 **/ 
@@ -38,11 +50,13 @@ public Document(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+
 /**
 	The Title of the Document
 **/ 
 
 	@xml_tag("title") @xml_nested private MetadataString	title;
+
 /**
 	Lazy Evaluation for title
 **/ 
@@ -57,6 +71,7 @@ this.title	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field title
 **/ 
@@ -64,6 +79,7 @@ return result;
 public String getTitle(){
 return title().getValue();
 }
+
 /**
 	Sets the value of the field title
 **/ 
@@ -72,6 +88,7 @@ public void setTitle( String title )
 {
 this.title().setValue(title);
 }
+
 /**
 	The heavy weight setter method for field title
 **/ 
@@ -80,11 +97,13 @@ public void hwSetTitle( String title )
 {
 this.title().setValue(title);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("description") @xml_nested private MetadataString	description;
+
 /**
 	Lazy Evaluation for description
 **/ 
@@ -99,6 +118,7 @@ this.description	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field description
 **/ 
@@ -106,6 +126,7 @@ return result;
 public String getDescription(){
 return description().getValue();
 }
+
 /**
 	Sets the value of the field description
 **/ 
@@ -114,6 +135,7 @@ public void setDescription( String description )
 {
 this.description().setValue(description);
 }
+
 /**
 	The heavy weight setter method for field description
 **/ 
@@ -122,11 +144,13 @@ public void hwSetDescription( String description )
 {
 this.description().setValue(description);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("anchor_text") @xml_nested private MetadataStringBuilder	anchorText;
+
 /**
 	Lazy Evaluation for anchorText
 **/ 
@@ -141,6 +165,7 @@ this.anchorText	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field anchorText
 **/ 
@@ -148,6 +173,7 @@ return result;
 public StringBuilder getAnchorText(){
 return anchorText().getValue();
 }
+
 /**
 	Sets the value of the field anchorText
 **/ 
@@ -156,6 +182,7 @@ public void setAnchorText( StringBuilder anchorText )
 {
 this.anchorText().setValue(anchorText);
 }
+
 /**
 	The heavy weight setter method for field anchorText
 **/ 
@@ -164,7 +191,8 @@ public void hwSetAnchorText( StringBuilder anchorText )
 {
 this.anchorText().setValue(anchorText);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	 Appends the value to the field anchorText
 **/ 
 
@@ -172,6 +200,7 @@ public void appendAnchorText( String anchorText )
 {
 this.anchorText().setValue(anchorText);
 }
+
 /**
 	The heavy weight Append method for field anchorText
 **/ 
@@ -180,7 +209,8 @@ public void hwAppendAnchorText( StringBuilder anchorText )
 {
 this.anchorText().setValue(anchorText);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	The heavy weight Append method for field anchorText
 **/ 
 
@@ -188,11 +218,13 @@ public void hwAppendAnchorText( String anchorText )
 {
 this.anchorText().setValue(anchorText);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("anchor_context_string") @xml_nested private MetadataStringBuilder	anchorContextString;
+
 /**
 	Lazy Evaluation for anchorContextString
 **/ 
@@ -207,6 +239,7 @@ this.anchorContextString	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field anchorContextString
 **/ 
@@ -214,6 +247,7 @@ return result;
 public StringBuilder getAnchorContextString(){
 return anchorContextString().getValue();
 }
+
 /**
 	Sets the value of the field anchorContextString
 **/ 
@@ -222,6 +256,7 @@ public void setAnchorContextString( StringBuilder anchorContextString )
 {
 this.anchorContextString().setValue(anchorContextString);
 }
+
 /**
 	The heavy weight setter method for field anchorContextString
 **/ 
@@ -230,7 +265,8 @@ public void hwSetAnchorContextString( StringBuilder anchorContextString )
 {
 this.anchorContextString().setValue(anchorContextString);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	 Appends the value to the field anchorContextString
 **/ 
 
@@ -238,6 +274,7 @@ public void appendAnchorContextString( String anchorContextString )
 {
 this.anchorContextString().setValue(anchorContextString);
 }
+
 /**
 	The heavy weight Append method for field anchorContextString
 **/ 
@@ -246,7 +283,8 @@ public void hwAppendAnchorContextString( StringBuilder anchorContextString )
 {
 this.anchorContextString().setValue(anchorContextString);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	The heavy weight Append method for field anchorContextString
 **/ 
 
@@ -254,11 +292,13 @@ public void hwAppendAnchorContextString( String anchorContextString )
 {
 this.anchorContextString().setValue(anchorContextString);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("context") @xml_nested private MetadataString	context;
+
 /**
 	Lazy Evaluation for context
 **/ 
@@ -273,6 +313,7 @@ this.context	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field context
 **/ 
@@ -280,6 +321,7 @@ return result;
 public String getContext(){
 return context().getValue();
 }
+
 /**
 	Sets the value of the field context
 **/ 
@@ -288,6 +330,7 @@ public void setContext( String context )
 {
 this.context().setValue(context);
 }
+
 /**
 	The heavy weight setter method for field context
 **/ 
@@ -296,11 +339,13 @@ public void hwSetContext( String context )
 {
 this.context().setValue(context);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	The document's actual location.
 **/ 
 
 	@xml_tag("location") @xml_nested private MetadataParsedURL	location;
+
 /**
 	Lazy Evaluation for location
 **/ 
@@ -315,6 +360,7 @@ this.location	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field location
 **/ 
@@ -322,6 +368,7 @@ return result;
 public ParsedURL getLocation(){
 return location().getValue();
 }
+
 /**
 	Sets the value of the field location
 **/ 
@@ -330,6 +377,7 @@ public void setLocation( ParsedURL location )
 {
 this.location().setValue(location);
 }
+
 /**
 	The heavy weight setter method for field location
 **/ 
@@ -338,11 +386,13 @@ public void hwSetLocation( ParsedURL location )
 {
 this.location().setValue(location);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("navlocation") @xml_nested private MetadataParsedURL	navlocation;
+
 /**
 	Lazy Evaluation for navlocation
 **/ 
@@ -357,6 +407,7 @@ this.navlocation	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field navlocation
 **/ 
@@ -364,6 +415,7 @@ return result;
 public ParsedURL getNavlocation(){
 return navlocation().getValue();
 }
+
 /**
 	Sets the value of the field navlocation
 **/ 
@@ -372,6 +424,7 @@ public void setNavlocation( ParsedURL navlocation )
 {
 this.navlocation().setValue(navlocation);
 }
+
 /**
 	The heavy weight setter method for field navlocation
 **/ 
@@ -380,11 +433,13 @@ public void hwSetNavlocation( ParsedURL navlocation )
 {
 this.navlocation().setValue(navlocation);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("generation") @xml_nested private MetadataInteger	generation;
+
 /**
 	Lazy Evaluation for generation
 **/ 
@@ -399,6 +454,7 @@ this.generation	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field generation
 **/ 
@@ -406,6 +462,7 @@ return result;
 public Integer getGeneration(){
 return generation().getValue();
 }
+
 /**
 	Sets the value of the field generation
 **/ 
@@ -414,6 +471,7 @@ public void setGeneration( Integer generation )
 {
 this.generation().setValue(generation);
 }
+
 /**
 	The heavy weight setter method for field generation
 **/ 

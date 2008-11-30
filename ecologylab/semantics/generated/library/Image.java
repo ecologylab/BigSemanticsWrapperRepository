@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.library;
+
 /**
-This is a generated code. Please do not edit or modify it.
+This is a generated code. DO NOT edit or modify it.
  @author MetadataCompiler 
 
 **/ 
@@ -14,14 +15,23 @@ import ecologylab.semantics.metadata.*;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
  import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.xml_inherit;
+import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+ import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.xml.TranslationScope;
+
 
 /**
 	The Image Class
 **/ 
 
+@xml_inherit
 public class  Image
 extends  Media
 {
+
 
 /**
 	Constructor
@@ -29,7 +39,9 @@ extends  Media
 
 public Image()
 {
+ super();
 }
+
 /**
 	Constructor
 **/ 
@@ -38,11 +50,13 @@ public Image(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+
 /**
 	The caption of the image.
 **/ 
 
 	@xml_tag("caption") @xml_nested private MetadataString	caption;
+
 /**
 	Lazy Evaluation for caption
 **/ 
@@ -57,6 +71,7 @@ this.caption	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field caption
 **/ 
@@ -64,6 +79,7 @@ return result;
 public String getCaption(){
 return caption().getValue();
 }
+
 /**
 	Sets the value of the field caption
 **/ 
@@ -72,6 +88,7 @@ public void setCaption( String caption )
 {
 this.caption().setValue(caption);
 }
+
 /**
 	The heavy weight setter method for field caption
 **/ 
@@ -80,11 +97,13 @@ public void hwSetCaption( String caption )
 {
 this.caption().setValue(caption);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	Location of the image.
 **/ 
 
 	@xml_tag("location") @xml_nested private MetadataParsedURL	location;
+
 /**
 	Lazy Evaluation for location
 **/ 
@@ -99,6 +118,7 @@ this.location	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field location
 **/ 
@@ -106,6 +126,7 @@ return result;
 public ParsedURL getLocation(){
 return location().getValue();
 }
+
 /**
 	Sets the value of the field location
 **/ 
@@ -114,6 +135,7 @@ public void setLocation( ParsedURL location )
 {
 this.location().setValue(location);
 }
+
 /**
 	The heavy weight setter method for field location
 **/ 
@@ -122,11 +144,13 @@ public void hwSetLocation( ParsedURL location )
 {
 this.location().setValue(location);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("nav_location") @xml_nested private MetadataParsedURL	navLocation;
+
 /**
 	Lazy Evaluation for navLocation
 **/ 
@@ -141,6 +165,7 @@ this.navLocation	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field navLocation
 **/ 
@@ -148,6 +173,7 @@ return result;
 public ParsedURL getNavLocation(){
 return navLocation().getValue();
 }
+
 /**
 	Sets the value of the field navLocation
 **/ 
@@ -156,6 +182,7 @@ public void setNavLocation( ParsedURL navLocation )
 {
 this.navLocation().setValue(navLocation);
 }
+
 /**
 	The heavy weight setter method for field navLocation
 **/ 
