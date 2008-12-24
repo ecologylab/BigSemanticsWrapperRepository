@@ -7,8 +7,16 @@ import ecologylab.semantics.metadata.*;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
  import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.xml_inherit;
+import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+ import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.xml.TranslationScope;
 
+@xml_inherit
 public class Author extends Metadata{
+
 
 /**
 	Constructor
@@ -16,7 +24,9 @@ public class Author extends Metadata{
 
 public Author()
 {
+ super();
 }
+
 /**
 	Constructor
 **/ 
@@ -25,11 +35,13 @@ public Author(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+
 /**
 	
 **/ 
 
 	@xml_tag("name") @xml_nested private MetadataString	name;
+
 /**
 	Lazy Evaluation for name
 **/ 
@@ -44,6 +56,7 @@ this.name	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field name
 **/ 
@@ -51,6 +64,7 @@ return result;
 public String getName(){
 return name().getValue();
 }
+
 /**
 	Sets the value of the field name
 **/ 
@@ -59,6 +73,7 @@ public void setName( String name )
 {
 this.name().setValue(name);
 }
+
 /**
 	The heavy weight setter method for field name
 **/ 
@@ -67,11 +82,13 @@ public void hwSetName( String name )
 {
 this.name().setValue(name);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("affiliation") @xml_nested private MetadataString	affiliation;
+
 /**
 	Lazy Evaluation for affiliation
 **/ 
@@ -86,6 +103,7 @@ this.affiliation	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field affiliation
 **/ 
@@ -93,6 +111,7 @@ return result;
 public String getAffiliation(){
 return affiliation().getValue();
 }
+
 /**
 	Sets the value of the field affiliation
 **/ 
@@ -101,6 +120,7 @@ public void setAffiliation( String affiliation )
 {
 this.affiliation().setValue(affiliation);
 }
+
 /**
 	The heavy weight setter method for field affiliation
 **/ 
@@ -109,11 +129,13 @@ public void hwSetAffiliation( String affiliation )
 {
 this.affiliation().setValue(affiliation);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("results_page") @xml_nested private MetadataParsedURL	resultsPage;
+
 /**
 	Lazy Evaluation for resultsPage
 **/ 
@@ -128,6 +150,7 @@ this.resultsPage	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field resultsPage
 **/ 
@@ -135,6 +158,7 @@ return result;
 public ParsedURL getResultsPage(){
 return resultsPage().getValue();
 }
+
 /**
 	Sets the value of the field resultsPage
 **/ 
@@ -143,6 +167,7 @@ public void setResultsPage( ParsedURL resultsPage )
 {
 this.resultsPage().setValue(resultsPage);
 }
+
 /**
 	The heavy weight setter method for field resultsPage
 **/ 

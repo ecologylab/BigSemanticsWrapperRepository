@@ -7,8 +7,16 @@ import ecologylab.semantics.metadata.*;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
  import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.xml_inherit;
+import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+ import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.xml.TranslationScope;
 
+@xml_inherit
 public class Reference extends Metadata{
+
 
 /**
 	Constructor
@@ -16,7 +24,9 @@ public class Reference extends Metadata{
 
 public Reference()
 {
+ super();
 }
+
 /**
 	Constructor
 **/ 
@@ -25,11 +35,13 @@ public Reference(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+
 /**
 	
 **/ 
 
 	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
 /**
 	Lazy Evaluation for link
 **/ 
@@ -44,6 +56,7 @@ this.link	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field link
 **/ 
@@ -51,6 +64,7 @@ return result;
 public ParsedURL getLink(){
 return link().getValue();
 }
+
 /**
 	Sets the value of the field link
 **/ 
@@ -59,6 +73,7 @@ public void setLink( ParsedURL link )
 {
 this.link().setValue(link);
 }
+
 /**
 	The heavy weight setter method for field link
 **/ 
@@ -67,11 +82,13 @@ public void hwSetLink( ParsedURL link )
 {
 this.link().setValue(link);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("bib_tex") @xml_nested private MetadataString	bibTex;
+
 /**
 	Lazy Evaluation for bibTex
 **/ 
@@ -86,6 +103,7 @@ this.bibTex	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field bibTex
 **/ 
@@ -93,6 +111,7 @@ return result;
 public String getBibTex(){
 return bibTex().getValue();
 }
+
 /**
 	Sets the value of the field bibTex
 **/ 
@@ -101,6 +120,7 @@ public void setBibTex( String bibTex )
 {
 this.bibTex().setValue(bibTex);
 }
+
 /**
 	The heavy weight setter method for field bibTex
 **/ 

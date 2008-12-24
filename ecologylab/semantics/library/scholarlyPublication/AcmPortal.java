@@ -1,6 +1,7 @@
 package ecologylab.semantics.library.scholarlyPublication;
+
 /**
-This is a generated code. Please do not edit or modify it.
+This is a generated code. DO NOT edit or modify it.
  @author MetadataCompiler 
 
 **/ 
@@ -14,14 +15,23 @@ import ecologylab.semantics.metadata.*;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
  import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.xml_inherit;
+import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+ import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.xml.TranslationScope;
+
 
 /**
 	
 **/ 
 
+@xml_inherit
 public class  AcmPortal
 extends  Pdf
 {
+
 
 /**
 	Constructor
@@ -29,7 +39,9 @@ extends  Pdf
 
 public AcmPortal()
 {
+ super();
 }
+
 /**
 	Constructor
 **/ 
@@ -38,11 +50,13 @@ public AcmPortal(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+
 /**
 	
 **/ 
 
 	@xml_tag("title") @xml_nested private MetadataString	title;
+
 /**
 	Lazy Evaluation for title
 **/ 
@@ -57,6 +71,7 @@ this.title	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field title
 **/ 
@@ -64,6 +79,7 @@ return result;
 public String getTitle(){
 return title().getValue();
 }
+
 /**
 	Sets the value of the field title
 **/ 
@@ -72,6 +88,7 @@ public void setTitle( String title )
 {
 this.title().setValue(title);
 }
+
 /**
 	The heavy weight setter method for field title
 **/ 
@@ -80,11 +97,13 @@ public void hwSetTitle( String title )
 {
 this.title().setValue(title);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	The Linked PDF
 **/ 
 
 	@xml_tag("full_text") @xml_nested private MetadataParsedURL	fullText;
+
 /**
 	Lazy Evaluation for fullText
 **/ 
@@ -99,6 +118,7 @@ this.fullText	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field fullText
 **/ 
@@ -106,6 +126,7 @@ return result;
 public ParsedURL getFullText(){
 return fullText().getValue();
 }
+
 /**
 	Sets the value of the field fullText
 **/ 
@@ -114,6 +135,7 @@ public void setFullText( ParsedURL fullText )
 {
 this.fullText().setValue(fullText);
 }
+
 /**
 	The heavy weight setter method for field fullText
 **/ 
@@ -122,11 +144,13 @@ public void hwSetFullText( ParsedURL fullText )
 {
 this.fullText().setValue(fullText);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	ALT TEXT FOR THE IMAGE
 **/ 
 
 	@xml_tag("alt") @xml_nested private MetadataString	alt;
+
 /**
 	Lazy Evaluation for alt
 **/ 
@@ -141,6 +165,7 @@ this.alt	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field alt
 **/ 
@@ -148,6 +173,7 @@ return result;
 public String getAlt(){
 return alt().getValue();
 }
+
 /**
 	Sets the value of the field alt
 **/ 
@@ -156,6 +182,7 @@ public void setAlt( String alt )
 {
 this.alt().setValue(alt);
 }
+
 /**
 	The heavy weight setter method for field alt
 **/ 
@@ -164,11 +191,13 @@ public void hwSetAlt( String alt )
 {
 this.alt().setValue(alt);
 rebuildCompositeTermVector();
- }/**
+ }
+/**
 	
 **/ 
 
 	@xml_tag("abstract") @xml_nested private MetadataString	abstractField;
+
 /**
 	Lazy Evaluation for abstractField
 **/ 
@@ -183,6 +212,7 @@ this.abstractField	=	 result;
 }
 return result;
 }
+
 /**
 	Gets the value of the field abstractField
 **/ 
@@ -190,6 +220,7 @@ return result;
 public String getAbstractField(){
 return abstractField().getValue();
 }
+
 /**
 	Sets the value of the field abstractField
 **/ 
@@ -198,6 +229,7 @@ public void setAbstractField( String abstractField )
 {
 this.abstractField().setValue(abstractField);
 }
+
 /**
 	The heavy weight setter method for field abstractField
 **/ 
@@ -206,74 +238,105 @@ public void hwSetAbstractField( String abstractField )
 {
 this.abstractField().setValue(abstractField);
 rebuildCompositeTermVector();
- }	@xml_collection HashMapArrayList<String , Author>	authorss;
+ }
+private @xml_nested Source	source;
 /**
-	Lazy Evaluation for authorss
+	Lazy Evaluation for source
 **/ 
 
-HashMapArrayList<String , Author>	authorss()
+Source	source()
 {
-HashMapArrayList<String , Author>	result	=this.authorss;
+Source	result	=this.source;
 if(result == null)
 {
-result = new HashMapArrayList<String , Author>();
-this.authorss	=	 result;
+result = new Source();
+this.source	=	 result;
 }
 return result;
 }
+
 /**
-	Set the value of field authorss
+	Set the value of field source
 **/ 
 
-public void setAuthorss( HashMapArrayList<String , Author> authorss )
+public void setSource( Source source )
 {
-this.authorss = authorss ;
+this.source = source ;
 }
-	@xml_collection HashMapArrayList<ParsedURL , Reference>	referencess;
+	@xml_collection private ArrayList<Author>	authors;
+
 /**
-	Lazy Evaluation for referencess
+	Lazy Evaluation for authors
 **/ 
 
-HashMapArrayList<ParsedURL , Reference>	referencess()
+ArrayList<Author>	authors()
 {
-HashMapArrayList<ParsedURL , Reference>	result	=this.referencess;
+ArrayList<Author>	result	=this.authors;
 if(result == null)
 {
-result = new HashMapArrayList<ParsedURL , Reference>();
-this.referencess	=	 result;
+result = new ArrayList<Author>();
+this.authors	=	 result;
 }
 return result;
 }
+
 /**
-	Set the value of field referencess
+	Set the value of field authors
 **/ 
 
-public void setReferencess( HashMapArrayList<ParsedURL , Reference> referencess )
+public void setAuthors( ArrayList<Author> authors )
 {
-this.referencess = referencess ;
+this.authors = authors ;
 }
-	@xml_collection HashMapArrayList<ParsedURL , Reference>	citationss;
+	@xml_collection private ArrayList<Reference>	references;
+
 /**
-	Lazy Evaluation for citationss
+	Lazy Evaluation for references
 **/ 
 
-HashMapArrayList<ParsedURL , Reference>	citationss()
+ArrayList<Reference>	references()
 {
-HashMapArrayList<ParsedURL , Reference>	result	=this.citationss;
+ArrayList<Reference>	result	=this.references;
 if(result == null)
 {
-result = new HashMapArrayList<ParsedURL , Reference>();
-this.citationss	=	 result;
+result = new ArrayList<Reference>();
+this.references	=	 result;
 }
 return result;
 }
+
 /**
-	Set the value of field citationss
+	Set the value of field references
 **/ 
 
-public void setCitationss( HashMapArrayList<ParsedURL , Reference> citationss )
+public void setReferences( ArrayList<Reference> references )
 {
-this.citationss = citationss ;
+this.references = references ;
+}
+	@xml_collection private ArrayList<Reference>	citations;
+
+/**
+	Lazy Evaluation for citations
+**/ 
+
+ArrayList<Reference>	citations()
+{
+ArrayList<Reference>	result	=this.citations;
+if(result == null)
+{
+result = new ArrayList<Reference>();
+this.citations	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field citations
+**/ 
+
+public void setCitations( ArrayList<Reference> citations )
+{
+this.citations = citations ;
 }
 
 }
