@@ -192,5 +192,52 @@ public void hwSetNavLocation( ParsedURL navLocation )
 this.navLocation().setValue(navLocation);
 rebuildCompositeTermVector();
  }
+/**
+	Relative location of local copy of image.
+**/ 
+
+	@xml_tag("local_location") @xml_nested private MetadataString	localLocation;
+
+/**
+	Lazy Evaluation for localLocation
+**/ 
+
+MetadataString	localLocation()
+{
+MetadataString	result	=this.localLocation;
+if(result == null)
+{
+result = new MetadataString();
+this.localLocation	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field localLocation
+**/ 
+
+public String getLocalLocation(){
+return localLocation().getValue();
+}
+
+/**
+	Sets the value of the field localLocation
+**/ 
+
+public void setLocalLocation( String localLocation )
+{
+this.localLocation().setValue(localLocation);
+}
+
+/**
+	The heavy weight setter method for field localLocation
+**/ 
+
+public void hwSetLocalLocation( String localLocation )
+{
+this.localLocation().setValue(localLocation);
+rebuildCompositeTermVector();
+ }
 }
 
