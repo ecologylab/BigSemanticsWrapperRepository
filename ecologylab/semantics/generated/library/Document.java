@@ -481,5 +481,52 @@ public void hwSetGeneration( Integer generation )
 this.generation().setValue(generation);
 rebuildCompositeTermVector();
  }
+/**
+	For debugging. Type of the structure recognized by information extraction.
+**/ 
+
+	@xml_tag("page_structure") @xml_nested private MetadataString	pageStructure;
+
+/**
+	Lazy Evaluation for pageStructure
+**/ 
+
+MetadataString	pageStructure()
+{
+MetadataString	result	=this.pageStructure;
+if(result == null)
+{
+result = new MetadataString();
+this.pageStructure	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field pageStructure
+**/ 
+
+public String getPageStructure(){
+return pageStructure().getValue();
+}
+
+/**
+	Sets the value of the field pageStructure
+**/ 
+
+public void setPageStructure( String pageStructure )
+{
+this.pageStructure().setValue(pageStructure);
+}
+
+/**
+	The heavy weight setter method for field pageStructure
+**/ 
+
+public void hwSetPageStructure( String pageStructure )
+{
+this.pageStructure().setValue(pageStructure);
+rebuildCompositeTermVector();
+ }
 }
 
