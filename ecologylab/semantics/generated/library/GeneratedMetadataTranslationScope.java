@@ -83,11 +83,11 @@ ScholarlyArticle.class,
 
 Source.class,
 
-Authors.class,
+Author.class,
 
-References.class,
+Reference.class,
 
-Citations.class,
+Reference.class,
 
 AcmPortal.class,
 
