@@ -24,12 +24,12 @@ import ecologylab.xml.TranslationScope;
 
 
 /**
-	
+	The flickr search class
 **/ 
 
 @xml_inherit
-public class  Search
-extends  Document
+public class  FlickrSearch
+extends  Search
 {
 
 
@@ -37,7 +37,7 @@ extends  Document
 	Constructor
 **/ 
 
-public Search()
+public FlickrSearch()
 {
  super();
 }
@@ -46,7 +46,7 @@ public Search()
 	Constructor
 **/ 
 
-public Search(MetaMetadata metaMetadata)
+public FlickrSearch(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
@@ -84,52 +84,5 @@ public ArrayList<Result> getResults(){
 return this.results;
 }
 
-/**
-	The search query
-**/ 
-
-	@xml_tag("query") @xml_nested private MetadataString	query;
-
-/**
-	Lazy Evaluation for query
-**/ 
-
-MetadataString	query()
-{
-MetadataString	result	=this.query;
-if(result == null)
-{
-result = new MetadataString();
-this.query	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field query
-**/ 
-
-public String getQuery(){
-return query().getValue();
-}
-
-/**
-	Sets the value of the field query
-**/ 
-
-public void setQuery( String query )
-{
-this.query().setValue(query);
-}
-
-/**
-	The heavy weight setter method for field query
-**/ 
-
-public void hwSetQuery( String query )
-{
-this.query().setValue(query);
-rebuildCompositeTermVector();
- }
 }
 

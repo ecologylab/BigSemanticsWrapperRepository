@@ -24,12 +24,12 @@ import ecologylab.xml.TranslationScope;
 
 
 /**
-	
+	The google Search class
 **/ 
 
 @xml_inherit
-public class  Search
-extends  Document
+public class  GoogleSearch
+extends  Search
 {
 
 
@@ -37,7 +37,7 @@ extends  Document
 	Constructor
 **/ 
 
-public Search()
+public GoogleSearch()
 {
  super();
 }
@@ -46,7 +46,7 @@ public Search()
 	Constructor
 **/ 
 
-public Search(MetaMetadata metaMetadata)
+public GoogleSearch(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }

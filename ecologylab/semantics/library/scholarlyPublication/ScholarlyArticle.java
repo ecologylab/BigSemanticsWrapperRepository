@@ -28,8 +28,8 @@ import ecologylab.xml.TranslationScope;
 **/ 
 
 @xml_inherit
-public class  AcmPortal
-extends  ScholarlyArticle
+public class  ScholarlyArticle
+extends  Pdf
 {
 
 
@@ -37,7 +37,7 @@ extends  ScholarlyArticle
 	Constructor
 **/ 
 
-public AcmPortal()
+public ScholarlyArticle()
 {
  super();
 }
@@ -46,7 +46,7 @@ public AcmPortal()
 	Constructor
 **/ 
 
-public AcmPortal(MetaMetadata metaMetadata)
+public ScholarlyArticle(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
@@ -239,5 +239,137 @@ public void hwSetAbstractField( String abstractField )
 this.abstractField().setValue(abstractField);
 rebuildCompositeTermVector();
  }
+private @xml_nested Source	source;
+/**
+	Lazy Evaluation for source
+**/ 
+
+Source	source()
+{
+Source	result	=this.source;
+if(result == null)
+{
+result = new Source();
+this.source	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field source
+**/ 
+
+public void setSource( Source source )
+{
+this.source = source ;
+}
+
+/**
+	Get the value of field source
+**/ 
+
+public Source getSource(){
+return this.source;
+}
+	@xml_collection("authors") private ArrayList<Author>	authors;
+
+/**
+	Lazy Evaluation for authors
+**/ 
+
+ArrayList<Author>	authors()
+{
+ArrayList<Author>	result	=this.authors;
+if(result == null)
+{
+result = new ArrayList<Author>();
+this.authors	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field authors
+**/ 
+
+public void setAuthors( ArrayList<Author> authors )
+{
+this.authors = authors ;
+}
+
+/**
+	Get the value of field authors
+**/ 
+
+public ArrayList<Author> getAuthors(){
+return this.authors;
+}
+	@xml_collection("references") private ArrayList<Reference>	references;
+
+/**
+	Lazy Evaluation for references
+**/ 
+
+ArrayList<Reference>	references()
+{
+ArrayList<Reference>	result	=this.references;
+if(result == null)
+{
+result = new ArrayList<Reference>();
+this.references	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field references
+**/ 
+
+public void setReferences( ArrayList<Reference> references )
+{
+this.references = references ;
+}
+
+/**
+	Get the value of field references
+**/ 
+
+public ArrayList<Reference> getReferences(){
+return this.references;
+}
+	@xml_collection("citations") private ArrayList<Reference>	citations;
+
+/**
+	Lazy Evaluation for citations
+**/ 
+
+ArrayList<Reference>	citations()
+{
+ArrayList<Reference>	result	=this.citations;
+if(result == null)
+{
+result = new ArrayList<Reference>();
+this.citations	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field citations
+**/ 
+
+public void setCitations( ArrayList<Reference> citations )
+{
+this.citations = citations ;
+}
+
+/**
+	Get the value of field citations
+**/ 
+
+public ArrayList<Reference> getCitations(){
+return this.citations;
+}
+
 }
 

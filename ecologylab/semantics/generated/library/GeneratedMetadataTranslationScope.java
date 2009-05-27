@@ -45,13 +45,23 @@ Nsdl.class,
 
 Text.class,
 
-Image.class,
-
 DcDocument.class,
 
-Flickr.class,
+Result.class,
 
 Search.class,
+
+Result.class,
+
+GoogleSearch.class,
+
+Result.class,
+
+FlickrSearch.class,
+
+Image.class,
+
+FlickrImage.class,
 
 IcdlImage.class,
 
@@ -68,6 +78,16 @@ Author.class,
 Reference.class,
 
 Reference.class,
+
+ScholarlyArticle.class,
+
+Source.class,
+
+Authors.class,
+
+References.class,
+
+Citations.class,
 
 AcmPortal.class,
 

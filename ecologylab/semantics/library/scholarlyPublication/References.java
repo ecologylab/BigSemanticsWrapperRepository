@@ -15,14 +15,14 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 
 @xml_inherit
-public class Source extends Metadata{
+public class References extends Metadata{
 
 
 /**
 	Constructor
 **/ 
 
-public Source()
+public References()
 {
  super();
 }
@@ -31,7 +31,7 @@ public Source()
 	Constructor
 **/ 
 
-public Source(MetaMetadata metaMetadata)
+public References(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
