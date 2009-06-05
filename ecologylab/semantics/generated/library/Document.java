@@ -528,5 +528,52 @@ public void hwSetPageStructure( String pageStructure )
 this.pageStructure().setValue(pageStructure);
 rebuildCompositeTermVector();
  }
+/**
+	The search query
+**/ 
+
+	@xml_tag("query") @xml_nested private MetadataString	query;
+
+/**
+	Lazy Evaluation for query
+**/ 
+
+MetadataString	query()
+{
+MetadataString	result	=this.query;
+if(result == null)
+{
+result = new MetadataString();
+this.query	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field query
+**/ 
+
+public String getQuery(){
+return query().getValue();
+}
+
+/**
+	Sets the value of the field query
+**/ 
+
+public void setQuery( String query )
+{
+this.query().setValue(query);
+}
+
+/**
+	The heavy weight setter method for field query
+**/ 
+
+public void hwSetQuery( String query )
+{
+this.query().setValue(query);
+rebuildCompositeTermVector();
+ }
 }
 
