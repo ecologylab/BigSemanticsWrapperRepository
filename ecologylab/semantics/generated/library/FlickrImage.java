@@ -21,6 +21,7 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
  import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
+import ecologylab.xml.ElementState.xml_tag;
 
 
 /**
@@ -28,8 +29,9 @@ import ecologylab.xml.TranslationScope;
 **/ 
 
 @xml_inherit
+@xml_tag("flickr_image")
 public class  FlickrImage
-extends  Image
+extends  Document
 {
 
 

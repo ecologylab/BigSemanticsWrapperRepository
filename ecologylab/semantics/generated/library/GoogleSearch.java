@@ -21,6 +21,7 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
  import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
+import ecologylab.xml.ElementState.xml_tag;
 
 
 /**
@@ -28,6 +29,7 @@ import ecologylab.xml.TranslationScope;
 **/ 
 
 @xml_inherit
+@xml_tag("google_search")
 public class  GoogleSearch
 extends  Search
 {
@@ -50,38 +52,38 @@ public GoogleSearch(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("results") private ArrayList<Result>	results;
+	@xml_collection("searchResults") private ArrayList<SearchResult>	searchResults;
 
 /**
-	Lazy Evaluation for results
+	Lazy Evaluation for searchResults
 **/ 
 
-ArrayList<Result>	results()
+ArrayList<SearchResult>	searchResults()
 {
-ArrayList<Result>	result	=this.results;
+ArrayList<SearchResult>	result	=this.searchResults;
 if(result == null)
 {
-result = new ArrayList<Result>();
-this.results	=	 result;
+result = new ArrayList<SearchResult>();
+this.searchResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field results
+	Set the value of field searchResults
 **/ 
 
-public void setResults( ArrayList<Result> results )
+public void setSearchResults( ArrayList<SearchResult> searchResults )
 {
-this.results = results ;
+this.searchResults = searchResults ;
 }
 
 /**
-	Get the value of field results
+	Get the value of field searchResults
 **/ 
 
-public ArrayList<Result> getResults(){
-return this.results;
+public ArrayList<SearchResult> getSearchResults(){
+return this.searchResults;
 }
 
 }

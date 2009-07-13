@@ -21,6 +21,7 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
  import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
+import ecologylab.xml.ElementState.xml_tag;
 
 
 /**
@@ -28,6 +29,7 @@ import ecologylab.xml.TranslationScope;
 **/ 
 
 @xml_inherit
+@xml_tag("document")
 public class  Document
 extends  Metadata
 {
@@ -146,201 +148,6 @@ this.description().setValue(description);
 rebuildCompositeTermVector();
  }
 /**
-	
-**/ 
-
-	@xml_tag("anchor_text") @xml_nested private MetadataStringBuilder	anchorText;
-
-/**
-	Lazy Evaluation for anchorText
-**/ 
-
-MetadataStringBuilder	anchorText()
-{
-MetadataStringBuilder	result	=this.anchorText;
-if(result == null)
-{
-result = new MetadataStringBuilder();
-this.anchorText	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field anchorText
-**/ 
-
-public StringBuilder getAnchorText(){
-return anchorText().getValue();
-}
-
-/**
-	Sets the value of the field anchorText
-**/ 
-
-public void setAnchorText( StringBuilder anchorText )
-{
-this.anchorText().setValue(anchorText);
-}
-
-/**
-	The heavy weight setter method for field anchorText
-**/ 
-
-public void hwSetAnchorText( StringBuilder anchorText )
-{
-this.anchorText().setValue(anchorText);
-rebuildCompositeTermVector();
- }
-/**
-	 Appends the value to the field anchorText
-**/ 
-
-public void appendAnchorText( String anchorText )
-{
-this.anchorText().setValue(anchorText);
-}
-
-/**
-	The heavy weight Append method for field anchorText
-**/ 
-
-public void hwAppendAnchorText( StringBuilder anchorText )
-{
-this.anchorText().setValue(anchorText);
-rebuildCompositeTermVector();
- }
-/**
-	The heavy weight Append method for field anchorText
-**/ 
-
-public void hwAppendAnchorText( String anchorText )
-{
-this.anchorText().setValue(anchorText);
-rebuildCompositeTermVector();
- }
-/**
-	
-**/ 
-
-	@xml_tag("anchor_context_string") @xml_nested private MetadataStringBuilder	anchorContextString;
-
-/**
-	Lazy Evaluation for anchorContextString
-**/ 
-
-MetadataStringBuilder	anchorContextString()
-{
-MetadataStringBuilder	result	=this.anchorContextString;
-if(result == null)
-{
-result = new MetadataStringBuilder();
-this.anchorContextString	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field anchorContextString
-**/ 
-
-public StringBuilder getAnchorContextString(){
-return anchorContextString().getValue();
-}
-
-/**
-	Sets the value of the field anchorContextString
-**/ 
-
-public void setAnchorContextString( StringBuilder anchorContextString )
-{
-this.anchorContextString().setValue(anchorContextString);
-}
-
-/**
-	The heavy weight setter method for field anchorContextString
-**/ 
-
-public void hwSetAnchorContextString( StringBuilder anchorContextString )
-{
-this.anchorContextString().setValue(anchorContextString);
-rebuildCompositeTermVector();
- }
-/**
-	 Appends the value to the field anchorContextString
-**/ 
-
-public void appendAnchorContextString( String anchorContextString )
-{
-this.anchorContextString().setValue(anchorContextString);
-}
-
-/**
-	The heavy weight Append method for field anchorContextString
-**/ 
-
-public void hwAppendAnchorContextString( StringBuilder anchorContextString )
-{
-this.anchorContextString().setValue(anchorContextString);
-rebuildCompositeTermVector();
- }
-/**
-	The heavy weight Append method for field anchorContextString
-**/ 
-
-public void hwAppendAnchorContextString( String anchorContextString )
-{
-this.anchorContextString().setValue(anchorContextString);
-rebuildCompositeTermVector();
- }
-/**
-	
-**/ 
-
-	@xml_tag("context") @xml_nested private MetadataString	context;
-
-/**
-	Lazy Evaluation for context
-**/ 
-
-MetadataString	context()
-{
-MetadataString	result	=this.context;
-if(result == null)
-{
-result = new MetadataString();
-this.context	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field context
-**/ 
-
-public String getContext(){
-return context().getValue();
-}
-
-/**
-	Sets the value of the field context
-**/ 
-
-public void setContext( String context )
-{
-this.context().setValue(context);
-}
-
-/**
-	The heavy weight setter method for field context
-**/ 
-
-public void hwSetContext( String context )
-{
-this.context().setValue(context);
-rebuildCompositeTermVector();
- }
-/**
 	The document's actual location.
 **/ 
 
@@ -385,53 +192,6 @@ this.location().setValue(location);
 public void hwSetLocation( ParsedURL location )
 {
 this.location().setValue(location);
-rebuildCompositeTermVector();
- }
-/**
-	
-**/ 
-
-	@xml_tag("navlocation") @xml_nested private MetadataParsedURL	navlocation;
-
-/**
-	Lazy Evaluation for navlocation
-**/ 
-
-MetadataParsedURL	navlocation()
-{
-MetadataParsedURL	result	=this.navlocation;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.navlocation	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field navlocation
-**/ 
-
-public ParsedURL getNavlocation(){
-return navlocation().getValue();
-}
-
-/**
-	Sets the value of the field navlocation
-**/ 
-
-public void setNavlocation( ParsedURL navlocation )
-{
-this.navlocation().setValue(navlocation);
-}
-
-/**
-	The heavy weight setter method for field navlocation
-**/ 
-
-public void hwSetNavlocation( ParsedURL navlocation )
-{
-this.navlocation().setValue(navlocation);
 rebuildCompositeTermVector();
  }
 /**

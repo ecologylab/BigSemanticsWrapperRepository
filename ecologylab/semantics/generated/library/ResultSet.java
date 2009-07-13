@@ -25,13 +25,13 @@ import ecologylab.xml.ElementState.xml_tag;
 
 
 /**
-	The ICDL class
+	Yahoo Web Search Class
 **/ 
 
 @xml_inherit
-@xml_tag("icdl")
-public class  Icdl
-extends  Document
+@xml_tag("ResultSet")
+public class  ResultSet
+extends  Search
 {
 
 
@@ -39,7 +39,7 @@ extends  Document
 	Constructor
 **/ 
 
-public Icdl()
+public ResultSet()
 {
  super();
 }
@@ -48,57 +48,43 @@ public Icdl()
 	Constructor
 **/ 
 
-public Icdl(MetaMetadata metaMetadata)
+public ResultSet(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+	@xml_collection("Result") private ArrayList<Result>	Result;
 
 /**
-	
+	Lazy Evaluation for Result
 **/ 
 
-	@xml_tag("languages") @xml_nested private MetadataString	languages;
-
-/**
-	Lazy Evaluation for languages
-**/ 
-
-MetadataString	languages()
+ArrayList<Result>	Result()
 {
-MetadataString	result	=this.languages;
+ArrayList<Result>	result	=this.Result;
 if(result == null)
 {
-result = new MetadataString();
-this.languages	=	 result;
+result = new ArrayList<Result>();
+this.Result	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field languages
+	Set the value of field Result
 **/ 
 
-public String getLanguages(){
-return languages().getValue();
+public void setResult( ArrayList<Result> Result )
+{
+this.Result = Result ;
 }
 
 /**
-	Sets the value of the field languages
+	Get the value of field Result
 **/ 
 
-public void setLanguages( String languages )
-{
-this.languages().setValue(languages);
+public ArrayList<Result> getResult(){
+return this.Result;
 }
 
-/**
-	The heavy weight setter method for field languages
-**/ 
-
-public void hwSetLanguages( String languages )
-{
-this.languages().setValue(languages);
-rebuildCompositeTermVector();
- }
 }
 

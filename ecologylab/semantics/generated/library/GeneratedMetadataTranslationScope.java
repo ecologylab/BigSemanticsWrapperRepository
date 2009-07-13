@@ -22,6 +22,7 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
  import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
+import ecologylab.xml.ElementState.xml_tag;
 
 
 /**
@@ -47,17 +48,21 @@ Text.class,
 
 DcDocument.class,
 
-Result.class,
+SearchResult.class,
 
 Search.class,
 
-Result.class,
+SearchResult.class,
 
 GoogleSearch.class,
 
-Result.class,
+SearchResult.class,
 
 FlickrSearch.class,
+
+Result.class,
+
+ResultSet.class,
 
 Image.class,
 
