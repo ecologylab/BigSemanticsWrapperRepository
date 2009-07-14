@@ -68,6 +68,10 @@ Image.class,
 
 FlickrImage.class,
 
+FlickrUserImage.class,
+
+FlickerAllUserImage.class,
+
 IcdlImage.class,
 
 Rss.class,
