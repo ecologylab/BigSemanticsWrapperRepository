@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for author
 **/ 
 
-MetadataString	author()
+public MetadataString	author()
 {
 MetadataString	result	=this.author;
 if(result == null)
@@ -110,7 +110,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for summary
 **/ 
 
-MetadataString	summary()
+public MetadataString	summary()
 {
 MetadataString	result	=this.summary;
 if(result == null)
@@ -157,7 +157,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for keywords
 **/ 
 
-MetadataString	keywords()
+public MetadataString	keywords()
 {
 MetadataString	result	=this.keywords;
 if(result == null)
@@ -204,7 +204,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for subject
 **/ 
 
-MetadataString	subject()
+public MetadataString	subject()
 {
 MetadataString	result	=this.subject;
 if(result == null)
@@ -251,7 +251,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for trapped
 **/ 
 
-MetadataString	trapped()
+public MetadataString	trapped()
 {
 MetadataString	result	=this.trapped;
 if(result == null)
@@ -298,7 +298,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for modified
 **/ 
 
-MetadataString	modified()
+public MetadataString	modified()
 {
 MetadataString	result	=this.modified;
 if(result == null)
@@ -345,7 +345,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for contents
 **/ 
 
-MetadataString	contents()
+public MetadataString	contents()
 {
 MetadataString	result	=this.contents;
 if(result == null)
@@ -392,7 +392,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for creationdate
 **/ 
 
-MetadataString	creationdate()
+public MetadataString	creationdate()
 {
 MetadataString	result	=this.creationdate;
 if(result == null)

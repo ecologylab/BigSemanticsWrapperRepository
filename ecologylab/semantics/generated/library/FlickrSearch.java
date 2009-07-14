@@ -58,7 +58,7 @@ super(metaMetadata);
 	Lazy Evaluation for searchResults
 **/ 
 
-ArrayList<SearchResult>	searchResults()
+public ArrayList<SearchResult>	searchResults()
 {
 ArrayList<SearchResult>	result	=this.searchResults;
 if(result == null)

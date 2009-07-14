@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for text
 **/ 
 
-MetadataString	text()
+public MetadataString	text()
 {
 MetadataString	result	=this.text;
 if(result == null)

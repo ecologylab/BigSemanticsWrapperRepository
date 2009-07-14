@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for contentKeywords
 **/ 
 
-MetadataStringBuilder	contentKeywords()
+public MetadataStringBuilder	contentKeywords()
 {
 MetadataStringBuilder	result	=this.contentKeywords;
 if(result == null)
@@ -137,7 +137,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for anchorKeywords
 **/ 
 
-MetadataStringBuilder	anchorKeywords()
+public MetadataStringBuilder	anchorKeywords()
 {
 MetadataStringBuilder	result	=this.anchorKeywords;
 if(result == null)
@@ -211,7 +211,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for urlKeywords
 **/ 
 
-MetadataStringBuilder	urlKeywords()
+public MetadataStringBuilder	urlKeywords()
 {
 MetadataStringBuilder	result	=this.urlKeywords;
 if(result == null)
@@ -285,7 +285,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for titleKeywords
 **/ 
 
-MetadataStringBuilder	titleKeywords()
+public MetadataStringBuilder	titleKeywords()
 {
 MetadataStringBuilder	result	=this.titleKeywords;
 if(result == null)
@@ -359,7 +359,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for id
 **/ 
 
-MetadataInteger	id()
+public MetadataInteger	id()
 {
 MetadataInteger	result	=this.id;
 if(result == null)

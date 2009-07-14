@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for subject
 **/ 
 
-MetadataString	subject()
+public MetadataString	subject()
 {
 MetadataString	result	=this.subject;
 if(result == null)

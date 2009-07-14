@@ -48,7 +48,7 @@ super(metaMetadata);
 	Lazy Evaluation for imgPurl
 **/ 
 
-MetadataParsedURL	imgPurl()
+public MetadataParsedURL	imgPurl()
 {
 MetadataParsedURL	result	=this.imgPurl;
 if(result == null)
@@ -95,7 +95,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for heading
 **/ 
 
-MetadataString	heading()
+public MetadataString	heading()
 {
 MetadataString	result	=this.heading;
 if(result == null)
@@ -142,7 +142,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for archive
 **/ 
 
-MetadataParsedURL	archive()
+public MetadataParsedURL	archive()
 {
 MetadataParsedURL	result	=this.archive;
 if(result == null)
@@ -189,7 +189,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for tableOfContents
 **/ 
 
-MetadataParsedURL	tableOfContents()
+public MetadataParsedURL	tableOfContents()
 {
 MetadataParsedURL	result	=this.tableOfContents;
 if(result == null)
@@ -236,7 +236,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for pages
 **/ 
 
-MetadataString	pages()
+public MetadataString	pages()
 {
 MetadataString	result	=this.pages;
 if(result == null)
@@ -283,7 +283,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for yearOfPublication
 **/ 
 
-MetadataInteger	yearOfPublication()
+public MetadataInteger	yearOfPublication()
 {
 MetadataInteger	result	=this.yearOfPublication;
 if(result == null)
@@ -330,7 +330,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for isbn
 **/ 
 
-MetadataString	isbn()
+public MetadataString	isbn()
 {
 MetadataString	result	=this.isbn;
 if(result == null)

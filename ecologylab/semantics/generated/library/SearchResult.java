@@ -48,7 +48,7 @@ super(metaMetadata);
 	Lazy Evaluation for heading
 **/ 
 
-MetadataString	heading()
+public MetadataString	heading()
 {
 MetadataString	result	=this.heading;
 if(result == null)
@@ -95,7 +95,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for link
 **/ 
 
-MetadataParsedURL	link()
+public MetadataParsedURL	link()
 {
 MetadataParsedURL	result	=this.link;
 if(result == null)

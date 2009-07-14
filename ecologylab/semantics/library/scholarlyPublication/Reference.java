@@ -48,7 +48,7 @@ super(metaMetadata);
 	Lazy Evaluation for link
 **/ 
 
-MetadataParsedURL	link()
+public MetadataParsedURL	link()
 {
 MetadataParsedURL	result	=this.link;
 if(result == null)
@@ -95,7 +95,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for bibTex
 **/ 
 
-MetadataString	bibTex()
+public MetadataString	bibTex()
 {
 MetadataString	result	=this.bibTex;
 if(result == null)

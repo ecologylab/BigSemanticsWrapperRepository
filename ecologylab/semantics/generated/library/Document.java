@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for title
 **/ 
 
-MetadataString	title()
+public MetadataString	title()
 {
 MetadataString	result	=this.title;
 if(result == null)
@@ -110,7 +110,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for description
 **/ 
 
-MetadataString	description()
+public MetadataString	description()
 {
 MetadataString	result	=this.description;
 if(result == null)
@@ -157,7 +157,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for location
 **/ 
 
-MetadataParsedURL	location()
+public MetadataParsedURL	location()
 {
 MetadataParsedURL	result	=this.location;
 if(result == null)
@@ -204,7 +204,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for generation
 **/ 
 
-MetadataInteger	generation()
+public MetadataInteger	generation()
 {
 MetadataInteger	result	=this.generation;
 if(result == null)
@@ -251,7 +251,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for pageStructure
 **/ 
 
-MetadataString	pageStructure()
+public MetadataString	pageStructure()
 {
 MetadataString	result	=this.pageStructure;
 if(result == null)
@@ -298,7 +298,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for query
 **/ 
 
-MetadataString	query()
+public MetadataString	query()
 {
 MetadataString	result	=this.query;
 if(result == null)

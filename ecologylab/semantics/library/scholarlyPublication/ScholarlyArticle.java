@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for title
 **/ 
 
-MetadataString	title()
+public MetadataString	title()
 {
 MetadataString	result	=this.title;
 if(result == null)
@@ -110,7 +110,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for fullText
 **/ 
 
-MetadataParsedURL	fullText()
+public MetadataParsedURL	fullText()
 {
 MetadataParsedURL	result	=this.fullText;
 if(result == null)
@@ -157,7 +157,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for alt
 **/ 
 
-MetadataString	alt()
+public MetadataString	alt()
 {
 MetadataString	result	=this.alt;
 if(result == null)
@@ -204,7 +204,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for abstractField
 **/ 
 
-MetadataString	abstractField()
+public MetadataString	abstractField()
 {
 MetadataString	result	=this.abstractField;
 if(result == null)
@@ -246,7 +246,7 @@ private @xml_nested Source	source;
 	Lazy Evaluation for source
 **/ 
 
-Source	source()
+public Source	source()
 {
 Source	result	=this.source;
 if(result == null)
@@ -279,7 +279,7 @@ return this.source;
 	Lazy Evaluation for authors
 **/ 
 
-ArrayList<Author>	authors()
+public ArrayList<Author>	authors()
 {
 ArrayList<Author>	result	=this.authors;
 if(result == null)
@@ -312,7 +312,7 @@ return this.authors;
 	Lazy Evaluation for references
 **/ 
 
-ArrayList<Reference>	references()
+public ArrayList<Reference>	references()
 {
 ArrayList<Reference>	result	=this.references;
 if(result == null)
@@ -345,7 +345,7 @@ return this.references;
 	Lazy Evaluation for citations
 **/ 
 
-ArrayList<Reference>	citations()
+public ArrayList<Reference>	citations()
 {
 ArrayList<Reference>	result	=this.citations;
 if(result == null)

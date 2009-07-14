@@ -48,7 +48,7 @@ super(metaMetadata);
 	Lazy Evaluation for name
 **/ 
 
-MetadataString	name()
+public MetadataString	name()
 {
 MetadataString	result	=this.name;
 if(result == null)
@@ -95,7 +95,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for affiliation
 **/ 
 
-MetadataString	affiliation()
+public MetadataString	affiliation()
 {
 MetadataString	result	=this.affiliation;
 if(result == null)
@@ -142,7 +142,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for resultsPage
 **/ 
 
-MetadataParsedURL	resultsPage()
+public MetadataParsedURL	resultsPage()
 {
 MetadataParsedURL	result	=this.resultsPage;
 if(result == null)

@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for caption
 **/ 
 
-MetadataString	caption()
+public MetadataString	caption()
 {
 MetadataString	result	=this.caption;
 if(result == null)
@@ -110,7 +110,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for location
 **/ 
 
-MetadataParsedURL	location()
+public MetadataParsedURL	location()
 {
 MetadataParsedURL	result	=this.location;
 if(result == null)
@@ -157,7 +157,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for navLocation
 **/ 
 
-MetadataParsedURL	navLocation()
+public MetadataParsedURL	navLocation()
 {
 MetadataParsedURL	result	=this.navLocation;
 if(result == null)
@@ -204,7 +204,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for localLocation
 **/ 
 
-MetadataString	localLocation()
+public MetadataString	localLocation()
 {
 MetadataString	result	=this.localLocation;
 if(result == null)

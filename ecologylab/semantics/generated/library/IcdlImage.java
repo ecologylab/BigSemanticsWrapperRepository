@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for languages
 **/ 
 
-MetadataString	languages()
+public MetadataString	languages()
 {
 MetadataString	result	=this.languages;
 if(result == null)

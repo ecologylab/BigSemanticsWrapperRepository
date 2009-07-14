@@ -63,7 +63,7 @@ super(metaMetadata);
 	Lazy Evaluation for context
 **/ 
 
-MetadataString	context()
+public MetadataString	context()
 {
 MetadataString	result	=this.context;
 if(result == null)

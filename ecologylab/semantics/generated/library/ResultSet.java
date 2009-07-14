@@ -58,7 +58,7 @@ super(metaMetadata);
 	Lazy Evaluation for Result
 **/ 
 
-ArrayList<Result>	Result()
+public ArrayList<Result>	Result()
 {
 ArrayList<Result>	result	=this.Result;
 if(result == null)

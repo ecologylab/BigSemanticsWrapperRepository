@@ -48,7 +48,7 @@ super(metaMetadata);
 	Lazy Evaluation for Title
 **/ 
 
-MetadataString	Title()
+public MetadataString	Title()
 {
 MetadataString	result	=this.Title;
 if(result == null)
@@ -95,7 +95,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for Summary
 **/ 
 
-MetadataString	Summary()
+public MetadataString	Summary()
 {
 MetadataString	result	=this.Summary;
 if(result == null)
@@ -142,7 +142,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for Url
 **/ 
 
-MetadataParsedURL	Url()
+public MetadataParsedURL	Url()
 {
 MetadataParsedURL	result	=this.Url;
 if(result == null)
@@ -189,7 +189,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for ClickUrl
 **/ 
 
-MetadataParsedURL	ClickUrl()
+public MetadataParsedURL	ClickUrl()
 {
 MetadataParsedURL	result	=this.ClickUrl;
 if(result == null)
@@ -236,7 +236,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for DisplayUrl
 **/ 
 
-MetadataParsedURL	DisplayUrl()
+public MetadataParsedURL	DisplayUrl()
 {
 MetadataParsedURL	result	=this.DisplayUrl;
 if(result == null)
@@ -283,7 +283,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for ModificationDate
 **/ 
 
-MetadataInteger	ModificationDate()
+public MetadataInteger	ModificationDate()
 {
 MetadataInteger	result	=this.ModificationDate;
 if(result == null)
@@ -330,7 +330,7 @@ rebuildCompositeTermVector();
 	Lazy Evaluation for MimeType
 **/ 
 
-MetadataString	MimeType()
+public MetadataString	MimeType()
 {
 MetadataString	result	=this.MimeType;
 if(result == null)
