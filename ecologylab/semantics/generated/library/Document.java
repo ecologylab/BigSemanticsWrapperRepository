@@ -326,6 +326,19 @@ public void setQuery( String query )
 this.query().setValue(query);
 }
 
+public void setQueryMetadata(MetadataString query)
+{
+	this.query	= query;
+}
+
+public void hwSetQueryMetadata(MetadataString query)
+{
+	if (this.query != null && this.query.getValue() != null && hasTermVector())
+		termVector().remove(this.query.termVector());
+	this.query	= query;
+	rebuildCompositeTermVector();
+}
+
 /**
 	The heavy weight setter method for field query
 **/ 
