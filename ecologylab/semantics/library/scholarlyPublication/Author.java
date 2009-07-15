@@ -86,6 +86,23 @@ this.name().setValue(name);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the name directly
+**/ 
+
+public void setNameMetadata(MetadataString name)
+{	this.name = name;
+}
+/**
+	Heavy Weight Direct setter method for name
+**/ 
+
+public void hwSetNameMetadata(MetadataString name)
+{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
+		 termVector().remove(this.name.termVector());
+	 this.name = name;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -133,6 +150,23 @@ this.affiliation().setValue(affiliation);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the affiliation directly
+**/ 
+
+public void setAffiliationMetadata(MetadataString affiliation)
+{	this.affiliation = affiliation;
+}
+/**
+	Heavy Weight Direct setter method for affiliation
+**/ 
+
+public void hwSetAffiliationMetadata(MetadataString affiliation)
+{	 if(this.affiliation!=null && this.affiliation.getValue()!=null && hasTermVector())
+		 termVector().remove(this.affiliation.termVector());
+	 this.affiliation = affiliation;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -178,4 +212,21 @@ public void hwSetResultsPage( ParsedURL resultsPage )
 {
 this.resultsPage().setValue(resultsPage);
 rebuildCompositeTermVector();
- }}
+ }
+/**
+	 Sets the resultsPage directly
+**/ 
+
+public void setResultsPageMetadata(MetadataParsedURL resultsPage)
+{	this.resultsPage = resultsPage;
+}
+/**
+	Heavy Weight Direct setter method for resultsPage
+**/ 
+
+public void hwSetResultsPageMetadata(MetadataParsedURL resultsPage)
+{	 if(this.resultsPage!=null && this.resultsPage.getValue()!=null && hasTermVector())
+		 termVector().remove(this.resultsPage.termVector());
+	 this.resultsPage = resultsPage;
+	rebuildCompositeTermVector();
+}}

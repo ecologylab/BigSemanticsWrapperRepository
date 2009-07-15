@@ -101,6 +101,23 @@ this.contentKeywords().setValue(contentKeywords);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the contentKeywords directly
+**/ 
+
+public void setContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
+{	this.contentKeywords = contentKeywords;
+}
+/**
+	Heavy Weight Direct setter method for contentKeywords
+**/ 
+
+public void hwSetContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
+{	 if(this.contentKeywords!=null && this.contentKeywords.getValue()!=null && hasTermVector())
+		 termVector().remove(this.contentKeywords.termVector());
+	 this.contentKeywords = contentKeywords;
+	rebuildCompositeTermVector();
+}
+/**
 	 Appends the value to the field contentKeywords
 **/ 
 
@@ -174,6 +191,23 @@ public void hwSetAnchorKeywords( StringBuilder anchorKeywords )
 this.anchorKeywords().setValue(anchorKeywords);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the anchorKeywords directly
+**/ 
+
+public void setAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
+{	this.anchorKeywords = anchorKeywords;
+}
+/**
+	Heavy Weight Direct setter method for anchorKeywords
+**/ 
+
+public void hwSetAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
+{	 if(this.anchorKeywords!=null && this.anchorKeywords.getValue()!=null && hasTermVector())
+		 termVector().remove(this.anchorKeywords.termVector());
+	 this.anchorKeywords = anchorKeywords;
+	rebuildCompositeTermVector();
+}
 /**
 	 Appends the value to the field anchorKeywords
 **/ 
@@ -249,6 +283,23 @@ this.urlKeywords().setValue(urlKeywords);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the urlKeywords directly
+**/ 
+
+public void setUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
+{	this.urlKeywords = urlKeywords;
+}
+/**
+	Heavy Weight Direct setter method for urlKeywords
+**/ 
+
+public void hwSetUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
+{	 if(this.urlKeywords!=null && this.urlKeywords.getValue()!=null && hasTermVector())
+		 termVector().remove(this.urlKeywords.termVector());
+	 this.urlKeywords = urlKeywords;
+	rebuildCompositeTermVector();
+}
+/**
 	 Appends the value to the field urlKeywords
 **/ 
 
@@ -323,6 +374,23 @@ this.titleKeywords().setValue(titleKeywords);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the titleKeywords directly
+**/ 
+
+public void setTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
+{	this.titleKeywords = titleKeywords;
+}
+/**
+	Heavy Weight Direct setter method for titleKeywords
+**/ 
+
+public void hwSetTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
+{	 if(this.titleKeywords!=null && this.titleKeywords.getValue()!=null && hasTermVector())
+		 termVector().remove(this.titleKeywords.termVector());
+	 this.titleKeywords = titleKeywords;
+	rebuildCompositeTermVector();
+}
+/**
 	 Appends the value to the field titleKeywords
 **/ 
 
@@ -396,5 +464,22 @@ public void hwSetId( Integer id )
 this.id().setValue(id);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the id directly
+**/ 
+
+public void setIdMetadata(MetadataInteger id)
+{	this.id = id;
+}
+/**
+	Heavy Weight Direct setter method for id
+**/ 
+
+public void hwSetIdMetadata(MetadataInteger id)
+{	 if(this.id!=null && this.id.getValue()!=null && hasTermVector())
+		 termVector().remove(this.id.termVector());
+	 this.id = id;
+	rebuildCompositeTermVector();
+}
 }
 

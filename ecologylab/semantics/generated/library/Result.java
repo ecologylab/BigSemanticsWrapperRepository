@@ -86,6 +86,23 @@ this.Title().setValue(Title);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the Title directly
+**/ 
+
+public void setTitleMetadata(MetadataString Title)
+{	this.Title = Title;
+}
+/**
+	Heavy Weight Direct setter method for Title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString Title)
+{	 if(this.Title!=null && this.Title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.Title.termVector());
+	 this.Title = Title;
+	rebuildCompositeTermVector();
+}
+/**
 	null
 **/ 
 
@@ -132,6 +149,23 @@ public void hwSetSummary( String Summary )
 this.Summary().setValue(Summary);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the Summary directly
+**/ 
+
+public void setSummaryMetadata(MetadataString Summary)
+{	this.Summary = Summary;
+}
+/**
+	Heavy Weight Direct setter method for Summary
+**/ 
+
+public void hwSetSummaryMetadata(MetadataString Summary)
+{	 if(this.Summary!=null && this.Summary.getValue()!=null && hasTermVector())
+		 termVector().remove(this.Summary.termVector());
+	 this.Summary = Summary;
+	rebuildCompositeTermVector();
+}
 /**
 	null
 **/ 
@@ -180,6 +214,23 @@ this.Url().setValue(Url);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the Url directly
+**/ 
+
+public void setUrlMetadata(MetadataParsedURL Url)
+{	this.Url = Url;
+}
+/**
+	Heavy Weight Direct setter method for Url
+**/ 
+
+public void hwSetUrlMetadata(MetadataParsedURL Url)
+{	 if(this.Url!=null && this.Url.getValue()!=null && hasTermVector())
+		 termVector().remove(this.Url.termVector());
+	 this.Url = Url;
+	rebuildCompositeTermVector();
+}
+/**
 	null
 **/ 
 
@@ -226,6 +277,23 @@ public void hwSetClickUrl( ParsedURL ClickUrl )
 this.ClickUrl().setValue(ClickUrl);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the ClickUrl directly
+**/ 
+
+public void setClickUrlMetadata(MetadataParsedURL ClickUrl)
+{	this.ClickUrl = ClickUrl;
+}
+/**
+	Heavy Weight Direct setter method for ClickUrl
+**/ 
+
+public void hwSetClickUrlMetadata(MetadataParsedURL ClickUrl)
+{	 if(this.ClickUrl!=null && this.ClickUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.ClickUrl.termVector());
+	 this.ClickUrl = ClickUrl;
+	rebuildCompositeTermVector();
+}
 /**
 	null
 **/ 
@@ -274,6 +342,23 @@ this.DisplayUrl().setValue(DisplayUrl);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the DisplayUrl directly
+**/ 
+
+public void setDisplayUrlMetadata(MetadataParsedURL DisplayUrl)
+{	this.DisplayUrl = DisplayUrl;
+}
+/**
+	Heavy Weight Direct setter method for DisplayUrl
+**/ 
+
+public void hwSetDisplayUrlMetadata(MetadataParsedURL DisplayUrl)
+{	 if(this.DisplayUrl!=null && this.DisplayUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.DisplayUrl.termVector());
+	 this.DisplayUrl = DisplayUrl;
+	rebuildCompositeTermVector();
+}
+/**
 	null
 **/ 
 
@@ -321,6 +406,23 @@ this.ModificationDate().setValue(ModificationDate);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the ModificationDate directly
+**/ 
+
+public void setModificationDateMetadata(MetadataInteger ModificationDate)
+{	this.ModificationDate = ModificationDate;
+}
+/**
+	Heavy Weight Direct setter method for ModificationDate
+**/ 
+
+public void hwSetModificationDateMetadata(MetadataInteger ModificationDate)
+{	 if(this.ModificationDate!=null && this.ModificationDate.getValue()!=null && hasTermVector())
+		 termVector().remove(this.ModificationDate.termVector());
+	 this.ModificationDate = ModificationDate;
+	rebuildCompositeTermVector();
+}
+/**
 	null
 **/ 
 
@@ -366,4 +468,21 @@ public void hwSetMimeType( String MimeType )
 {
 this.MimeType().setValue(MimeType);
 rebuildCompositeTermVector();
- }}
+ }
+/**
+	 Sets the MimeType directly
+**/ 
+
+public void setMimeTypeMetadata(MetadataString MimeType)
+{	this.MimeType = MimeType;
+}
+/**
+	Heavy Weight Direct setter method for MimeType
+**/ 
+
+public void hwSetMimeTypeMetadata(MetadataString MimeType)
+{	 if(this.MimeType!=null && this.MimeType.getValue()!=null && hasTermVector())
+		 termVector().remove(this.MimeType.termVector());
+	 this.MimeType = MimeType;
+	rebuildCompositeTermVector();
+}}

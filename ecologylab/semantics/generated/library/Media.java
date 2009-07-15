@@ -100,5 +100,22 @@ public void hwSetContext( String context )
 this.context().setValue(context);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the context directly
+**/ 
+
+public void setContextMetadata(MetadataString context)
+{	this.context = context;
+}
+/**
+	Heavy Weight Direct setter method for context
+**/ 
+
+public void hwSetContextMetadata(MetadataString context)
+{	 if(this.context!=null && this.context.getValue()!=null && hasTermVector())
+		 termVector().remove(this.context.termVector());
+	 this.context = context;
+	rebuildCompositeTermVector();
+}
 }
 

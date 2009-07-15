@@ -100,5 +100,22 @@ public void hwSetText( String text )
 this.text().setValue(text);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the text directly
+**/ 
+
+public void setTextMetadata(MetadataString text)
+{	this.text = text;
+}
+/**
+	Heavy Weight Direct setter method for text
+**/ 
+
+public void hwSetTextMetadata(MetadataString text)
+{	 if(this.text!=null && this.text.getValue()!=null && hasTermVector())
+		 termVector().remove(this.text.termVector());
+	 this.text = text;
+	rebuildCompositeTermVector();
+}
 }
 

@@ -101,6 +101,23 @@ this.title().setValue(title);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -147,6 +164,23 @@ public void hwSetDescription( String description )
 this.description().setValue(description);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the description directly
+**/ 
+
+public void setDescriptionMetadata(MetadataString description)
+{	this.description = description;
+}
+/**
+	Heavy Weight Direct setter method for description
+**/ 
+
+public void hwSetDescriptionMetadata(MetadataString description)
+{	 if(this.description!=null && this.description.getValue()!=null && hasTermVector())
+		 termVector().remove(this.description.termVector());
+	 this.description = description;
+	rebuildCompositeTermVector();
+}
 /**
 	
 **/ 
@@ -195,6 +229,23 @@ this.hrefPurl().setValue(hrefPurl);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the hrefPurl directly
+**/ 
+
+public void setHrefPurlMetadata(MetadataParsedURL hrefPurl)
+{	this.hrefPurl = hrefPurl;
+}
+/**
+	Heavy Weight Direct setter method for hrefPurl
+**/ 
+
+public void hwSetHrefPurlMetadata(MetadataParsedURL hrefPurl)
+{	 if(this.hrefPurl!=null && this.hrefPurl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.hrefPurl.termVector());
+	 this.hrefPurl = hrefPurl;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -241,6 +292,23 @@ public void hwSetWidth( Integer width )
 this.width().setValue(width);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the width directly
+**/ 
+
+public void setWidthMetadata(MetadataInteger width)
+{	this.width = width;
+}
+/**
+	Heavy Weight Direct setter method for width
+**/ 
+
+public void hwSetWidthMetadata(MetadataInteger width)
+{	 if(this.width!=null && this.width.getValue()!=null && hasTermVector())
+		 termVector().remove(this.width.termVector());
+	 this.width = width;
+	rebuildCompositeTermVector();
+}
 /**
 	
 **/ 
@@ -289,6 +357,23 @@ this.height().setValue(height);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the height directly
+**/ 
+
+public void setHeightMetadata(MetadataInteger height)
+{	this.height = height;
+}
+/**
+	Heavy Weight Direct setter method for height
+**/ 
+
+public void hwSetHeightMetadata(MetadataInteger height)
+{	 if(this.height!=null && this.height.getValue()!=null && hasTermVector())
+		 termVector().remove(this.height.termVector());
+	 this.height = height;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -335,5 +420,22 @@ public void hwSetImagePurl( ParsedURL imagePurl )
 this.imagePurl().setValue(imagePurl);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the imagePurl directly
+**/ 
+
+public void setImagePurlMetadata(MetadataParsedURL imagePurl)
+{	this.imagePurl = imagePurl;
+}
+/**
+	Heavy Weight Direct setter method for imagePurl
+**/ 
+
+public void hwSetImagePurlMetadata(MetadataParsedURL imagePurl)
+{	 if(this.imagePurl!=null && this.imagePurl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.imagePurl.termVector());
+	 this.imagePurl = imagePurl;
+	rebuildCompositeTermVector();
+}
 }
 

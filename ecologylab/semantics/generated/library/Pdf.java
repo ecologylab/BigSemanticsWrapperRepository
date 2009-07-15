@@ -101,6 +101,23 @@ this.author().setValue(author);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the author directly
+**/ 
+
+public void setAuthorMetadata(MetadataString author)
+{	this.author = author;
+}
+/**
+	Heavy Weight Direct setter method for author
+**/ 
+
+public void hwSetAuthorMetadata(MetadataString author)
+{	 if(this.author!=null && this.author.getValue()!=null && hasTermVector())
+		 termVector().remove(this.author.termVector());
+	 this.author = author;
+	rebuildCompositeTermVector();
+}
+/**
 	Summary of the pdf document
 **/ 
 
@@ -147,6 +164,23 @@ public void hwSetSummary( String summary )
 this.summary().setValue(summary);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the summary directly
+**/ 
+
+public void setSummaryMetadata(MetadataString summary)
+{	this.summary = summary;
+}
+/**
+	Heavy Weight Direct setter method for summary
+**/ 
+
+public void hwSetSummaryMetadata(MetadataString summary)
+{	 if(this.summary!=null && this.summary.getValue()!=null && hasTermVector())
+		 termVector().remove(this.summary.termVector());
+	 this.summary = summary;
+	rebuildCompositeTermVector();
+}
 /**
 	Key Words of the document
 **/ 
@@ -195,6 +229,23 @@ this.keywords().setValue(keywords);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the keywords directly
+**/ 
+
+public void setKeywordsMetadata(MetadataString keywords)
+{	this.keywords = keywords;
+}
+/**
+	Heavy Weight Direct setter method for keywords
+**/ 
+
+public void hwSetKeywordsMetadata(MetadataString keywords)
+{	 if(this.keywords!=null && this.keywords.getValue()!=null && hasTermVector())
+		 termVector().remove(this.keywords.termVector());
+	 this.keywords = keywords;
+	rebuildCompositeTermVector();
+}
+/**
 	Subject of the document
 **/ 
 
@@ -241,6 +292,23 @@ public void hwSetSubject( String subject )
 this.subject().setValue(subject);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the subject directly
+**/ 
+
+public void setSubjectMetadata(MetadataString subject)
+{	this.subject = subject;
+}
+/**
+	Heavy Weight Direct setter method for subject
+**/ 
+
+public void hwSetSubjectMetadata(MetadataString subject)
+{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
+		 termVector().remove(this.subject.termVector());
+	 this.subject = subject;
+	rebuildCompositeTermVector();
+}
 /**
 	
 **/ 
@@ -289,6 +357,23 @@ this.trapped().setValue(trapped);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the trapped directly
+**/ 
+
+public void setTrappedMetadata(MetadataString trapped)
+{	this.trapped = trapped;
+}
+/**
+	Heavy Weight Direct setter method for trapped
+**/ 
+
+public void hwSetTrappedMetadata(MetadataString trapped)
+{	 if(this.trapped!=null && this.trapped.getValue()!=null && hasTermVector())
+		 termVector().remove(this.trapped.termVector());
+	 this.trapped = trapped;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -335,6 +420,23 @@ public void hwSetModified( String modified )
 this.modified().setValue(modified);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the modified directly
+**/ 
+
+public void setModifiedMetadata(MetadataString modified)
+{	this.modified = modified;
+}
+/**
+	Heavy Weight Direct setter method for modified
+**/ 
+
+public void hwSetModifiedMetadata(MetadataString modified)
+{	 if(this.modified!=null && this.modified.getValue()!=null && hasTermVector())
+		 termVector().remove(this.modified.termVector());
+	 this.modified = modified;
+	rebuildCompositeTermVector();
+}
 /**
 	Contents of the document
 **/ 
@@ -383,6 +485,23 @@ this.contents().setValue(contents);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the contents directly
+**/ 
+
+public void setContentsMetadata(MetadataString contents)
+{	this.contents = contents;
+}
+/**
+	Heavy Weight Direct setter method for contents
+**/ 
+
+public void hwSetContentsMetadata(MetadataString contents)
+{	 if(this.contents!=null && this.contents.getValue()!=null && hasTermVector())
+		 termVector().remove(this.contents.termVector());
+	 this.contents = contents;
+	rebuildCompositeTermVector();
+}
+/**
 	Creation date of the document
 **/ 
 
@@ -429,5 +548,22 @@ public void hwSetCreationdate( String creationdate )
 this.creationdate().setValue(creationdate);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the creationdate directly
+**/ 
+
+public void setCreationdateMetadata(MetadataString creationdate)
+{	this.creationdate = creationdate;
+}
+/**
+	Heavy Weight Direct setter method for creationdate
+**/ 
+
+public void hwSetCreationdateMetadata(MetadataString creationdate)
+{	 if(this.creationdate!=null && this.creationdate.getValue()!=null && hasTermVector())
+		 termVector().remove(this.creationdate.termVector());
+	 this.creationdate = creationdate;
+	rebuildCompositeTermVector();
+}
 }
 

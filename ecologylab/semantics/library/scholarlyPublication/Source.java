@@ -86,6 +86,23 @@ this.imgPurl().setValue(imgPurl);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the imgPurl directly
+**/ 
+
+public void setImgPurlMetadata(MetadataParsedURL imgPurl)
+{	this.imgPurl = imgPurl;
+}
+/**
+	Heavy Weight Direct setter method for imgPurl
+**/ 
+
+public void hwSetImgPurlMetadata(MetadataParsedURL imgPurl)
+{	 if(this.imgPurl!=null && this.imgPurl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.imgPurl.termVector());
+	 this.imgPurl = imgPurl;
+	rebuildCompositeTermVector();
+}
+/**
 	Name where published.
 **/ 
 
@@ -132,6 +149,23 @@ public void hwSetHeading( String heading )
 this.heading().setValue(heading);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the heading directly
+**/ 
+
+public void setHeadingMetadata(MetadataString heading)
+{	this.heading = heading;
+}
+/**
+	Heavy Weight Direct setter method for heading
+**/ 
+
+public void hwSetHeadingMetadata(MetadataString heading)
+{	 if(this.heading!=null && this.heading.getValue()!=null && hasTermVector())
+		 termVector().remove(this.heading.termVector());
+	 this.heading = heading;
+	rebuildCompositeTermVector();
+}
 /**
 	
 **/ 
@@ -180,6 +214,23 @@ this.archive().setValue(archive);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the archive directly
+**/ 
+
+public void setArchiveMetadata(MetadataParsedURL archive)
+{	this.archive = archive;
+}
+/**
+	Heavy Weight Direct setter method for archive
+**/ 
+
+public void hwSetArchiveMetadata(MetadataParsedURL archive)
+{	 if(this.archive!=null && this.archive.getValue()!=null && hasTermVector())
+		 termVector().remove(this.archive.termVector());
+	 this.archive = archive;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -226,6 +277,23 @@ public void hwSetTableOfContents( ParsedURL tableOfContents )
 this.tableOfContents().setValue(tableOfContents);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the tableOfContents directly
+**/ 
+
+public void setTableOfContentsMetadata(MetadataParsedURL tableOfContents)
+{	this.tableOfContents = tableOfContents;
+}
+/**
+	Heavy Weight Direct setter method for tableOfContents
+**/ 
+
+public void hwSetTableOfContentsMetadata(MetadataParsedURL tableOfContents)
+{	 if(this.tableOfContents!=null && this.tableOfContents.getValue()!=null && hasTermVector())
+		 termVector().remove(this.tableOfContents.termVector());
+	 this.tableOfContents = tableOfContents;
+	rebuildCompositeTermVector();
+}
 /**
 	
 **/ 
@@ -274,6 +342,23 @@ this.pages().setValue(pages);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the pages directly
+**/ 
+
+public void setPagesMetadata(MetadataString pages)
+{	this.pages = pages;
+}
+/**
+	Heavy Weight Direct setter method for pages
+**/ 
+
+public void hwSetPagesMetadata(MetadataString pages)
+{	 if(this.pages!=null && this.pages.getValue()!=null && hasTermVector())
+		 termVector().remove(this.pages.termVector());
+	 this.pages = pages;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -321,6 +406,23 @@ this.yearOfPublication().setValue(yearOfPublication);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the yearOfPublication directly
+**/ 
+
+public void setYearOfPublicationMetadata(MetadataInteger yearOfPublication)
+{	this.yearOfPublication = yearOfPublication;
+}
+/**
+	Heavy Weight Direct setter method for yearOfPublication
+**/ 
+
+public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
+{	 if(this.yearOfPublication!=null && this.yearOfPublication.getValue()!=null && hasTermVector())
+		 termVector().remove(this.yearOfPublication.termVector());
+	 this.yearOfPublication = yearOfPublication;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -366,4 +468,21 @@ public void hwSetIsbn( String isbn )
 {
 this.isbn().setValue(isbn);
 rebuildCompositeTermVector();
- }}
+ }
+/**
+	 Sets the isbn directly
+**/ 
+
+public void setIsbnMetadata(MetadataString isbn)
+{	this.isbn = isbn;
+}
+/**
+	Heavy Weight Direct setter method for isbn
+**/ 
+
+public void hwSetIsbnMetadata(MetadataString isbn)
+{	 if(this.isbn!=null && this.isbn.getValue()!=null && hasTermVector())
+		 termVector().remove(this.isbn.termVector());
+	 this.isbn = isbn;
+	rebuildCompositeTermVector();
+}}

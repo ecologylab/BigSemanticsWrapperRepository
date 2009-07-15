@@ -100,5 +100,22 @@ public void hwSetSubject( String subject )
 this.subject().setValue(subject);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the subject directly
+**/ 
+
+public void setSubjectMetadata(MetadataString subject)
+{	this.subject = subject;
+}
+/**
+	Heavy Weight Direct setter method for subject
+**/ 
+
+public void hwSetSubjectMetadata(MetadataString subject)
+{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
+		 termVector().remove(this.subject.termVector());
+	 this.subject = subject;
+	rebuildCompositeTermVector();
+}
 }
 

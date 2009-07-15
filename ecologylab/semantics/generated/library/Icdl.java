@@ -100,5 +100,22 @@ public void hwSetLanguages( String languages )
 this.languages().setValue(languages);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the languages directly
+**/ 
+
+public void setLanguagesMetadata(MetadataString languages)
+{	this.languages = languages;
+}
+/**
+	Heavy Weight Direct setter method for languages
+**/ 
+
+public void hwSetLanguagesMetadata(MetadataString languages)
+{	 if(this.languages!=null && this.languages.getValue()!=null && hasTermVector())
+		 termVector().remove(this.languages.termVector());
+	 this.languages = languages;
+	rebuildCompositeTermVector();
+}
 }
 

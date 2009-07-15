@@ -101,6 +101,23 @@ this.title().setValue(title);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -147,6 +164,23 @@ public void hwSetDescription( String description )
 this.description().setValue(description);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the description directly
+**/ 
+
+public void setDescriptionMetadata(MetadataString description)
+{	this.description = description;
+}
+/**
+	Heavy Weight Direct setter method for description
+**/ 
+
+public void hwSetDescriptionMetadata(MetadataString description)
+{	 if(this.description!=null && this.description.getValue()!=null && hasTermVector())
+		 termVector().remove(this.description.termVector());
+	 this.description = description;
+	rebuildCompositeTermVector();
+}
 /**
 	The document's actual location.
 **/ 
@@ -195,6 +229,23 @@ this.location().setValue(location);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the location directly
+**/ 
+
+public void setLocationMetadata(MetadataParsedURL location)
+{	this.location = location;
+}
+/**
+	Heavy Weight Direct setter method for location
+**/ 
+
+public void hwSetLocationMetadata(MetadataParsedURL location)
+{	 if(this.location!=null && this.location.getValue()!=null && hasTermVector())
+		 termVector().remove(this.location.termVector());
+	 this.location = location;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -241,6 +292,23 @@ public void hwSetGeneration( Integer generation )
 this.generation().setValue(generation);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the generation directly
+**/ 
+
+public void setGenerationMetadata(MetadataInteger generation)
+{	this.generation = generation;
+}
+/**
+	Heavy Weight Direct setter method for generation
+**/ 
+
+public void hwSetGenerationMetadata(MetadataInteger generation)
+{	 if(this.generation!=null && this.generation.getValue()!=null && hasTermVector())
+		 termVector().remove(this.generation.termVector());
+	 this.generation = generation;
+	rebuildCompositeTermVector();
+}
 /**
 	For debugging. Type of the structure recognized by information extraction.
 **/ 
@@ -289,6 +357,23 @@ this.pageStructure().setValue(pageStructure);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the pageStructure directly
+**/ 
+
+public void setPageStructureMetadata(MetadataString pageStructure)
+{	this.pageStructure = pageStructure;
+}
+/**
+	Heavy Weight Direct setter method for pageStructure
+**/ 
+
+public void hwSetPageStructureMetadata(MetadataString pageStructure)
+{	 if(this.pageStructure!=null && this.pageStructure.getValue()!=null && hasTermVector())
+		 termVector().remove(this.pageStructure.termVector());
+	 this.pageStructure = pageStructure;
+	rebuildCompositeTermVector();
+}
+/**
 	The search query
 **/ 
 
@@ -326,19 +411,6 @@ public void setQuery( String query )
 this.query().setValue(query);
 }
 
-public void setQueryMetadata(MetadataString query)
-{
-	this.query	= query;
-}
-
-public void hwSetQueryMetadata(MetadataString query)
-{
-	if (this.query != null && this.query.getValue() != null && hasTermVector())
-		termVector().remove(this.query.termVector());
-	this.query	= query;
-	rebuildCompositeTermVector();
-}
-
 /**
 	The heavy weight setter method for field query
 **/ 
@@ -348,5 +420,22 @@ public void hwSetQuery( String query )
 this.query().setValue(query);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the query directly
+**/ 
+
+public void setQueryMetadata(MetadataString query)
+{	this.query = query;
+}
+/**
+	Heavy Weight Direct setter method for query
+**/ 
+
+public void hwSetQueryMetadata(MetadataString query)
+{	 if(this.query!=null && this.query.getValue()!=null && hasTermVector())
+		 termVector().remove(this.query.termVector());
+	 this.query = query;
+	rebuildCompositeTermVector();
+}
 }
 

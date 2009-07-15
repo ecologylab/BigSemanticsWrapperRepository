@@ -101,6 +101,23 @@ this.title().setValue(title);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}
+/**
 	The Linked PDF
 **/ 
 
@@ -147,6 +164,23 @@ public void hwSetFullText( ParsedURL fullText )
 this.fullText().setValue(fullText);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the fullText directly
+**/ 
+
+public void setFullTextMetadata(MetadataParsedURL fullText)
+{	this.fullText = fullText;
+}
+/**
+	Heavy Weight Direct setter method for fullText
+**/ 
+
+public void hwSetFullTextMetadata(MetadataParsedURL fullText)
+{	 if(this.fullText!=null && this.fullText.getValue()!=null && hasTermVector())
+		 termVector().remove(this.fullText.termVector());
+	 this.fullText = fullText;
+	rebuildCompositeTermVector();
+}
 /**
 	ALT TEXT FOR THE IMAGE
 **/ 
@@ -195,6 +229,23 @@ this.alt().setValue(alt);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the alt directly
+**/ 
+
+public void setAltMetadata(MetadataString alt)
+{	this.alt = alt;
+}
+/**
+	Heavy Weight Direct setter method for alt
+**/ 
+
+public void hwSetAltMetadata(MetadataString alt)
+{	 if(this.alt!=null && this.alt.getValue()!=null && hasTermVector())
+		 termVector().remove(this.alt.termVector());
+	 this.alt = alt;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -241,6 +292,23 @@ public void hwSetAbstractField( String abstractField )
 this.abstractField().setValue(abstractField);
 rebuildCompositeTermVector();
  }
+/**
+	 Sets the abstractField directly
+**/ 
+
+public void setAbstractFieldMetadata(MetadataString abstractField)
+{	this.abstractField = abstractField;
+}
+/**
+	Heavy Weight Direct setter method for abstractField
+**/ 
+
+public void hwSetAbstractFieldMetadata(MetadataString abstractField)
+{	 if(this.abstractField!=null && this.abstractField.getValue()!=null && hasTermVector())
+		 termVector().remove(this.abstractField.termVector());
+	 this.abstractField = abstractField;
+	rebuildCompositeTermVector();
+}
 private @xml_nested Source	source;
 /**
 	Lazy Evaluation for source

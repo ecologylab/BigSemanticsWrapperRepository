@@ -86,6 +86,23 @@ this.link().setValue(link);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the link directly
+**/ 
+
+public void setLinkMetadata(MetadataParsedURL link)
+{	this.link = link;
+}
+/**
+	Heavy Weight Direct setter method for link
+**/ 
+
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
+		 termVector().remove(this.link.termVector());
+	 this.link = link;
+	rebuildCompositeTermVector();
+}
+/**
 	
 **/ 
 
@@ -131,4 +148,21 @@ public void hwSetBibTex( String bibTex )
 {
 this.bibTex().setValue(bibTex);
 rebuildCompositeTermVector();
- }}
+ }
+/**
+	 Sets the bibTex directly
+**/ 
+
+public void setBibTexMetadata(MetadataString bibTex)
+{	this.bibTex = bibTex;
+}
+/**
+	Heavy Weight Direct setter method for bibTex
+**/ 
+
+public void hwSetBibTexMetadata(MetadataString bibTex)
+{	 if(this.bibTex!=null && this.bibTex.getValue()!=null && hasTermVector())
+		 termVector().remove(this.bibTex.termVector());
+	 this.bibTex = bibTex;
+	rebuildCompositeTermVector();
+}}

@@ -86,6 +86,23 @@ this.title().setValue(title);
 rebuildCompositeTermVector();
  }
 /**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}
+/**
 	Actual photo link
 **/ 
 
@@ -131,4 +148,21 @@ public void hwSetLink( ParsedURL link )
 {
 this.link().setValue(link);
 rebuildCompositeTermVector();
- }}
+ }
+/**
+	 Sets the link directly
+**/ 
+
+public void setLinkMetadata(MetadataParsedURL link)
+{	this.link = link;
+}
+/**
+	Heavy Weight Direct setter method for link
+**/ 
+
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
+		 termVector().remove(this.link.termVector());
+	 this.link = link;
+	rebuildCompositeTermVector();
+}}
