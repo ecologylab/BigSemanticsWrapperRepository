@@ -15,7 +15,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
  import ecologylab.semantics.metadata.Document;
-
+import ecologylab.semantics.metadata.Media;
 @xml_inherit
 @xml_tag("author")
 public class Author extends Metadata{
