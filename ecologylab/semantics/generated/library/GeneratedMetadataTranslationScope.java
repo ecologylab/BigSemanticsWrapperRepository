@@ -23,6 +23,7 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
+ import ecologylab.semantics.metadata.Document;
 
 
 /**
@@ -35,7 +36,6 @@ public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslati
 {protected static final Class TRANSLATIONS[]=
 	{
 Document.class,
-
 Media.class,
 
 Dlms.class,

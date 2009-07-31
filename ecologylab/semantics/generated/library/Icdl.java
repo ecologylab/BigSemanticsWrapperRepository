@@ -22,6 +22,7 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
+ import ecologylab.semantics.metadata.Document;
 
 
 /**
