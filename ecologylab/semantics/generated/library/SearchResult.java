@@ -40,7 +40,7 @@ super(metaMetadata);
 }
 
 /**
-	The heading of the search result
+	The heading of search result
 **/ 
 
 	@xml_tag("heading") @xml_nested private MetadataString	heading;
@@ -104,7 +104,71 @@ public void hwSetHeadingMetadata(MetadataString heading)
 	rebuildCompositeTermVector();
 }
 /**
-	The link page for image
+	The snippet of search result
+**/ 
+
+	@xml_tag("snippet") @xml_nested private MetadataString	snippet;
+
+/**
+	Lazy Evaluation for snippet
+**/ 
+
+public MetadataString	snippet()
+{
+MetadataString	result	=this.snippet;
+if(result == null)
+{
+result = new MetadataString();
+this.snippet	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field snippet
+**/ 
+
+public String getSnippet(){
+return snippet().getValue();
+}
+
+/**
+	Sets the value of the field snippet
+**/ 
+
+public void setSnippet( String snippet )
+{
+this.snippet().setValue(snippet);
+}
+
+/**
+	The heavy weight setter method for field snippet
+**/ 
+
+public void hwSetSnippet( String snippet )
+{
+this.snippet().setValue(snippet);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the snippet directly
+**/ 
+
+public void setSnippetMetadata(MetadataString snippet)
+{	this.snippet = snippet;
+}
+/**
+	Heavy Weight Direct setter method for snippet
+**/ 
+
+public void hwSetSnippetMetadata(MetadataString snippet)
+{	 if(this.snippet!=null && this.snippet.getValue()!=null && hasTermVector())
+		 termVector().remove(this.snippet.termVector());
+	 this.snippet = snippet;
+	rebuildCompositeTermVector();
+}
+/**
+	The link of the search result
 **/ 
 
 	@xml_tag("link") @xml_nested private MetadataParsedURL	link;

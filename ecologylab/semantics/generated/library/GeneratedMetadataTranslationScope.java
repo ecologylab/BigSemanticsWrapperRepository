@@ -50,14 +50,6 @@ SearchResult.class,
 
 Search.class,
 
-SearchResult.class,
-
-GoogleSearch.class,
-
-SearchResult.class,
-
-FlickrSearch.class,
-
 Result.class,
 
 ResultSet.class,
@@ -65,6 +57,14 @@ ResultSet.class,
 Image.class,
 
 FlickrImage.class,
+
+WikiReference.class,
+
+WikiReference.class,
+
+Category.class,
+
+WikipediaPage.class,
 
 FlickrUserImage.class,
 
@@ -87,16 +87,6 @@ Reference.class,
 Reference.class,
 
 ScholarlyArticle.class,
-
-Source.class,
-
-Author.class,
-
-Reference.class,
-
-Reference.class,
-
-AcmPortal.class,
 
 
 };
