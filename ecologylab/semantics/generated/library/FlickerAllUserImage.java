@@ -32,7 +32,7 @@ import ecologylab.semantics.metadata.Media;
 @xml_inherit
 @xml_tag("flicker_all_user_image")
 public class  FlickerAllUserImage
-extends  Image
+extends  Document
 {
 
 
