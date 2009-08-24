@@ -82,10 +82,6 @@ Source.class,
 
 Author.class,
 
-Reference.class,
-
-Reference.class,
-
 ScholarlyArticle.class,
 
 

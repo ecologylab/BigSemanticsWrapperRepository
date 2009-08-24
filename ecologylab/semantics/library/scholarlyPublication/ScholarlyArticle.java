@@ -310,6 +310,70 @@ public void hwSetAbstractFieldMetadata(MetadataString abstractField)
 	 this.abstractField = abstractField;
 	rebuildCompositeTermVector();
 }
+/**
+	Link used for citation chaining
+**/ 
+
+	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
+/**
+	Lazy Evaluation for link
+**/ 
+
+public MetadataParsedURL	link()
+{
+MetadataParsedURL	result	=this.link;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.link	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field link
+**/ 
+
+public ParsedURL getLink(){
+return link().getValue();
+}
+
+/**
+	Sets the value of the field link
+**/ 
+
+public void setLink( ParsedURL link )
+{
+this.link().setValue(link);
+}
+
+/**
+	The heavy weight setter method for field link
+**/ 
+
+public void hwSetLink( ParsedURL link )
+{
+this.link().setValue(link);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the link directly
+**/ 
+
+public void setLinkMetadata(MetadataParsedURL link)
+{	this.link = link;
+}
+/**
+	Heavy Weight Direct setter method for link
+**/ 
+
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
+		 termVector().remove(this.link.termVector());
+	 this.link = link;
+	rebuildCompositeTermVector();
+}
 private @xml_nested Source	source;
 /**
 	Lazy Evaluation for source
@@ -375,18 +439,18 @@ this.authors = authors ;
 public ArrayList<Author> getAuthors(){
 return this.authors;
 }
-	@xml_collection("references") private ArrayList<Reference>	references;
+	@xml_collection("references") private ArrayList<ScholarlyArticle>	references;
 
 /**
 	Lazy Evaluation for references
 **/ 
 
-public ArrayList<Reference>	references()
+public ArrayList<ScholarlyArticle>	references()
 {
-ArrayList<Reference>	result	=this.references;
+ArrayList<ScholarlyArticle>	result	=this.references;
 if(result == null)
 {
-result = new ArrayList<Reference>();
+result = new ArrayList<ScholarlyArticle>();
 this.references	=	 result;
 }
 return result;
@@ -396,7 +460,7 @@ return result;
 	Set the value of field references
 **/ 
 
-public void setReferences( ArrayList<Reference> references )
+public void setReferences( ArrayList<ScholarlyArticle> references )
 {
 this.references = references ;
 }
@@ -405,21 +469,21 @@ this.references = references ;
 	Get the value of field references
 **/ 
 
-public ArrayList<Reference> getReferences(){
+public ArrayList<ScholarlyArticle> getReferences(){
 return this.references;
 }
-	@xml_collection("citations") private ArrayList<Reference>	citations;
+	@xml_collection("citations") private ArrayList<ScholarlyArticle>	citations;
 
 /**
 	Lazy Evaluation for citations
 **/ 
 
-public ArrayList<Reference>	citations()
+public ArrayList<ScholarlyArticle>	citations()
 {
-ArrayList<Reference>	result	=this.citations;
+ArrayList<ScholarlyArticle>	result	=this.citations;
 if(result == null)
 {
-result = new ArrayList<Reference>();
+result = new ArrayList<ScholarlyArticle>();
 this.citations	=	 result;
 }
 return result;
@@ -429,7 +493,7 @@ return result;
 	Set the value of field citations
 **/ 
 
-public void setCitations( ArrayList<Reference> citations )
+public void setCitations( ArrayList<ScholarlyArticle> citations )
 {
 this.citations = citations ;
 }
@@ -438,7 +502,7 @@ this.citations = citations ;
 	Get the value of field citations
 **/ 
 
-public ArrayList<Reference> getCitations(){
+public ArrayList<ScholarlyArticle> getCitations(){
 return this.citations;
 }
 
