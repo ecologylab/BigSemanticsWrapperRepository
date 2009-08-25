@@ -119,6 +119,70 @@ public void hwSetTitleMetadata(MetadataString title)
 	rebuildCompositeTermVector();
 }
 /**
+	Link used for citation chaining
+**/ 
+
+	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
+/**
+	Lazy Evaluation for link
+**/ 
+
+public MetadataParsedURL	link()
+{
+MetadataParsedURL	result	=this.link;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.link	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field link
+**/ 
+
+public ParsedURL getLink(){
+return link().getValue();
+}
+
+/**
+	Sets the value of the field link
+**/ 
+
+public void setLink( ParsedURL link )
+{
+this.link().setValue(link);
+}
+
+/**
+	The heavy weight setter method for field link
+**/ 
+
+public void hwSetLink( ParsedURL link )
+{
+this.link().setValue(link);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the link directly
+**/ 
+
+public void setLinkMetadata(MetadataParsedURL link)
+{	this.link = link;
+}
+/**
+	Heavy Weight Direct setter method for link
+**/ 
+
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
+		 termVector().remove(this.link.termVector());
+	 this.link = link;
+	rebuildCompositeTermVector();
+}
+/**
 	The Linked PDF
 **/ 
 
@@ -308,70 +372,6 @@ public void hwSetAbstractFieldMetadata(MetadataString abstractField)
 {	 if(this.abstractField!=null && this.abstractField.getValue()!=null && hasTermVector())
 		 termVector().remove(this.abstractField.termVector());
 	 this.abstractField = abstractField;
-	rebuildCompositeTermVector();
-}
-/**
-	Link used for citation chaining
-**/ 
-
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
-
-/**
-	Lazy Evaluation for link
-**/ 
-
-public MetadataParsedURL	link()
-{
-MetadataParsedURL	result	=this.link;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.link	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field link
-**/ 
-
-public ParsedURL getLink(){
-return link().getValue();
-}
-
-/**
-	Sets the value of the field link
-**/ 
-
-public void setLink( ParsedURL link )
-{
-this.link().setValue(link);
-}
-
-/**
-	The heavy weight setter method for field link
-**/ 
-
-public void hwSetLink( ParsedURL link )
-{
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the link directly
-**/ 
-
-public void setLinkMetadata(MetadataParsedURL link)
-{	this.link = link;
-}
-/**
-	Heavy Weight Direct setter method for link
-**/ 
-
-public void hwSetLinkMetadata(MetadataParsedURL link)
-{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
-		 termVector().remove(this.link.termVector());
-	 this.link = link;
 	rebuildCompositeTermVector();
 }
 private @xml_nested Source	source;

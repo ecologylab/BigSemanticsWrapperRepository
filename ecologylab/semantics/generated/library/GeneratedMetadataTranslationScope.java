@@ -36,7 +36,11 @@ public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslati
 {protected static final Class TRANSLATIONS[]=
 	{
 Document.class,
-	 Media.class,Dlms.class,
+	 Media.class,Pdf.class,
+
+Image.class,
+
+Dlms.class,
 
 Icdl.class,
 
@@ -54,9 +58,17 @@ Result.class,
 
 ResultSet.class,
 
-Image.class,
+FlickrTag.class,
 
 FlickrImage.class,
+
+FlickrSearch.class,
+
+FlickrImage2.class,
+
+FlickrUserImage.class,
+
+FlickrAllUserImage.class,
 
 WikiReference.class,
 
@@ -66,15 +78,9 @@ Category.class,
 
 WikipediaPage.class,
 
-FlickrUserImage.class,
-
-FlickerAllUserImage.class,
-
 IcdlImage.class,
 
 Rss.class,
-
-Pdf.class,
 
 Topic.class,
 

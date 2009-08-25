@@ -26,7 +26,7 @@ import ecologylab.xml.ElementState.xml_tag;
 import ecologylab.semantics.metadata.Media;
 
 /**
-	A Flickr Image result page
+	A Flickr Image
 **/ 
 
 @xml_inherit
@@ -55,71 +55,7 @@ super(metaMetadata);
 }
 
 /**
-	
-**/ 
-
-	@xml_tag("title") @xml_nested private MetadataString	title;
-
-/**
-	Lazy Evaluation for title
-**/ 
-
-public MetadataString	title()
-{
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	
+	Not the title. An optional longer field.
 **/ 
 
 	@xml_tag("description") @xml_nested private MetadataString	description;
@@ -183,199 +119,7 @@ public void hwSetDescriptionMetadata(MetadataString description)
 	rebuildCompositeTermVector();
 }
 /**
-	
-**/ 
-
-	@xml_tag("href_purl") @xml_nested private MetadataParsedURL	hrefPurl;
-
-/**
-	Lazy Evaluation for hrefPurl
-**/ 
-
-public MetadataParsedURL	hrefPurl()
-{
-MetadataParsedURL	result	=this.hrefPurl;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.hrefPurl	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field hrefPurl
-**/ 
-
-public ParsedURL getHrefPurl(){
-return hrefPurl().getValue();
-}
-
-/**
-	Sets the value of the field hrefPurl
-**/ 
-
-public void setHrefPurl( ParsedURL hrefPurl )
-{
-this.hrefPurl().setValue(hrefPurl);
-}
-
-/**
-	The heavy weight setter method for field hrefPurl
-**/ 
-
-public void hwSetHrefPurl( ParsedURL hrefPurl )
-{
-this.hrefPurl().setValue(hrefPurl);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the hrefPurl directly
-**/ 
-
-public void setHrefPurlMetadata(MetadataParsedURL hrefPurl)
-{	this.hrefPurl = hrefPurl;
-}
-/**
-	Heavy Weight Direct setter method for hrefPurl
-**/ 
-
-public void hwSetHrefPurlMetadata(MetadataParsedURL hrefPurl)
-{	 if(this.hrefPurl!=null && this.hrefPurl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.hrefPurl.termVector());
-	 this.hrefPurl = hrefPurl;
-	rebuildCompositeTermVector();
-}
-/**
-	
-**/ 
-
-	@xml_tag("width") @xml_nested private MetadataInteger	width;
-
-/**
-	Lazy Evaluation for width
-**/ 
-
-public MetadataInteger	width()
-{
-MetadataInteger	result	=this.width;
-if(result == null)
-{
-result = new MetadataInteger();
-this.width	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field width
-**/ 
-
-public Integer getWidth(){
-return width().getValue();
-}
-
-/**
-	Sets the value of the field width
-**/ 
-
-public void setWidth( Integer width )
-{
-this.width().setValue(width);
-}
-
-/**
-	The heavy weight setter method for field width
-**/ 
-
-public void hwSetWidth( Integer width )
-{
-this.width().setValue(width);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the width directly
-**/ 
-
-public void setWidthMetadata(MetadataInteger width)
-{	this.width = width;
-}
-/**
-	Heavy Weight Direct setter method for width
-**/ 
-
-public void hwSetWidthMetadata(MetadataInteger width)
-{	 if(this.width!=null && this.width.getValue()!=null && hasTermVector())
-		 termVector().remove(this.width.termVector());
-	 this.width = width;
-	rebuildCompositeTermVector();
-}
-/**
-	
-**/ 
-
-	@xml_tag("height") @xml_nested private MetadataInteger	height;
-
-/**
-	Lazy Evaluation for height
-**/ 
-
-public MetadataInteger	height()
-{
-MetadataInteger	result	=this.height;
-if(result == null)
-{
-result = new MetadataInteger();
-this.height	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field height
-**/ 
-
-public Integer getHeight(){
-return height().getValue();
-}
-
-/**
-	Sets the value of the field height
-**/ 
-
-public void setHeight( Integer height )
-{
-this.height().setValue(height);
-}
-
-/**
-	The heavy weight setter method for field height
-**/ 
-
-public void hwSetHeight( Integer height )
-{
-this.height().setValue(height);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the height directly
-**/ 
-
-public void setHeightMetadata(MetadataInteger height)
-{	this.height = height;
-}
-/**
-	Heavy Weight Direct setter method for height
-**/ 
-
-public void hwSetHeightMetadata(MetadataInteger height)
-{	 if(this.height!=null && this.height.getValue()!=null && hasTermVector())
-		 termVector().remove(this.height.termVector());
-	 this.height = height;
-	rebuildCompositeTermVector();
-}
-/**
-	
+	null
 **/ 
 
 	@xml_tag("image_purl") @xml_nested private MetadataParsedURL	imagePurl;
@@ -437,6 +181,39 @@ public void hwSetImagePurlMetadata(MetadataParsedURL imagePurl)
 		 termVector().remove(this.imagePurl.termVector());
 	 this.imagePurl = imagePurl;
 	rebuildCompositeTermVector();
+}	@xml_collection("tags") private ArrayList<FlickrTag>	tags;
+
+/**
+	Lazy Evaluation for tags
+**/ 
+
+public ArrayList<FlickrTag>	tags()
+{
+ArrayList<FlickrTag>	result	=this.tags;
+if(result == null)
+{
+result = new ArrayList<FlickrTag>();
+this.tags	=	 result;
 }
+return result;
+}
+
+/**
+	Set the value of field tags
+**/ 
+
+public void setTags( ArrayList<FlickrTag> tags )
+{
+this.tags = tags ;
+}
+
+/**
+	Get the value of field tags
+**/ 
+
+public ArrayList<FlickrTag> getTags(){
+return this.tags;
+}
+
 }
 
