@@ -70,11 +70,13 @@ FlickrUserImage.class,
 
 FlickrAllUserImage.class,
 
-WikiReference.class,
+Anchor.class,
 
-WikiReference.class,
+Paragraph.class,
 
 Category.class,
+
+Thumbinner.class,
 
 WikipediaPage.class,
 

@@ -373,71 +373,38 @@ public void hwSetMainImageWidthMetadata(MetadataInteger mainImageWidth)
 		 termVector().remove(this.mainImageWidth.termVector());
 	 this.mainImageWidth = mainImageWidth;
 	rebuildCompositeTermVector();
-}	@xml_collection("InternalLinks") private ArrayList<WikiReference>	InternalLinks;
+}	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
 
 /**
-	Lazy Evaluation for InternalLinks
+	Lazy Evaluation for paragraphs
 **/ 
 
-public ArrayList<WikiReference>	InternalLinks()
+public ArrayList<Paragraph>	paragraphs()
 {
-ArrayList<WikiReference>	result	=this.InternalLinks;
+ArrayList<Paragraph>	result	=this.paragraphs;
 if(result == null)
 {
-result = new ArrayList<WikiReference>();
-this.InternalLinks	=	 result;
+result = new ArrayList<Paragraph>();
+this.paragraphs	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field InternalLinks
+	Set the value of field paragraphs
 **/ 
 
-public void setInternalLinks( ArrayList<WikiReference> InternalLinks )
+public void setParagraphs( ArrayList<Paragraph> paragraphs )
 {
-this.InternalLinks = InternalLinks ;
+this.paragraphs = paragraphs ;
 }
 
 /**
-	Get the value of field InternalLinks
+	Get the value of field paragraphs
 **/ 
 
-public ArrayList<WikiReference> getInternalLinks(){
-return this.InternalLinks;
-}
-	@xml_collection("ExternalLinks") private ArrayList<WikiReference>	ExternalLinks;
-
-/**
-	Lazy Evaluation for ExternalLinks
-**/ 
-
-public ArrayList<WikiReference>	ExternalLinks()
-{
-ArrayList<WikiReference>	result	=this.ExternalLinks;
-if(result == null)
-{
-result = new ArrayList<WikiReference>();
-this.ExternalLinks	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field ExternalLinks
-**/ 
-
-public void setExternalLinks( ArrayList<WikiReference> ExternalLinks )
-{
-this.ExternalLinks = ExternalLinks ;
-}
-
-/**
-	Get the value of field ExternalLinks
-**/ 
-
-public ArrayList<WikiReference> getExternalLinks(){
-return this.ExternalLinks;
+public ArrayList<Paragraph> getParagraphs(){
+return this.paragraphs;
 }
 	@xml_collection("Categories") private ArrayList<Category>	Categories;
 
@@ -471,6 +438,39 @@ this.Categories = Categories ;
 
 public ArrayList<Category> getCategories(){
 return this.Categories;
+}
+	@xml_collection("Thumbinners") private ArrayList<Thumbinner>	Thumbinners;
+
+/**
+	Lazy Evaluation for Thumbinners
+**/ 
+
+public ArrayList<Thumbinner>	Thumbinners()
+{
+ArrayList<Thumbinner>	result	=this.Thumbinners;
+if(result == null)
+{
+result = new ArrayList<Thumbinner>();
+this.Thumbinners	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field Thumbinners
+**/ 
+
+public void setThumbinners( ArrayList<Thumbinner> Thumbinners )
+{
+this.Thumbinners = Thumbinners ;
+}
+
+/**
+	Get the value of field Thumbinners
+**/ 
+
+public ArrayList<Thumbinner> getThumbinners(){
+return this.Thumbinners;
 }
 
 }
