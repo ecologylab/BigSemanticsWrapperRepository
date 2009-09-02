@@ -64,7 +64,7 @@ FlickrImage.class,
 
 FlickrSearch.class,
 
-FlickrImage2.class,
+FlickrImageDetail.class,
 
 FlickrUserImage.class,
 

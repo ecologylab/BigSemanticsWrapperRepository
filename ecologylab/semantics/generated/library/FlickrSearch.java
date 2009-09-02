@@ -32,7 +32,7 @@ import ecologylab.semantics.metadata.Media;
 @xml_inherit
 @xml_tag("flickr_search")
 public class  FlickrSearch
-extends  Document
+extends  Search
 {
 
 
