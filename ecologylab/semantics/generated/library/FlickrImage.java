@@ -32,7 +32,7 @@ import ecologylab.semantics.metadata.Media;
 @xml_inherit
 @xml_tag("flickr_image")
 public class  FlickrImage
-extends  Document
+extends  Image
 {
 
 
@@ -116,70 +116,6 @@ public void hwSetTitleMetadata(MetadataString title)
 {	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
 		 termVector().remove(this.title.termVector());
 	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("location") @xml_nested private MetadataParsedURL	location;
-
-/**
-	Lazy Evaluation for location
-**/ 
-
-public MetadataParsedURL	location()
-{
-MetadataParsedURL	result	=this.location;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.location	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field location
-**/ 
-
-public ParsedURL getLocation(){
-return location().getValue();
-}
-
-/**
-	Sets the value of the field location
-**/ 
-
-public void setLocation( ParsedURL location )
-{
-this.location().setValue(location);
-}
-
-/**
-	The heavy weight setter method for field location
-**/ 
-
-public void hwSetLocation( ParsedURL location )
-{
-this.location().setValue(location);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the location directly
-**/ 
-
-public void setLocationMetadata(MetadataParsedURL location)
-{	this.location = location;
-}
-/**
-	Heavy Weight Direct setter method for location
-**/ 
-
-public void hwSetLocationMetadata(MetadataParsedURL location)
-{	 if(this.location!=null && this.location.getValue()!=null && hasTermVector())
-		 termVector().remove(this.location.termVector());
-	 this.location = location;
 	rebuildCompositeTermVector();
 }
 /**
