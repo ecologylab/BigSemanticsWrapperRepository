@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+
 
  import ecologylab.semantics.library.scalar.*; 
 import ecologylab.semantics.metadata.*;
@@ -14,8 +14,9 @@ import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.Document;
-import ecologylab.semantics.metadata.Media;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Media;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 @xml_inherit
 @xml_tag("wikiReference")
 public class WikiReference extends Metadata{

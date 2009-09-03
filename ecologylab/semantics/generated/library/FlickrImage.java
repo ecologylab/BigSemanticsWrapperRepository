@@ -8,22 +8,38 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
- import ecologylab.semantics.library.scalar.*; 
-import ecologylab.semantics.metadata.*;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
+import ecologylab.semantics.metadata.DebugMetadata;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Media;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.DebugMetadata;
+import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
+import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
   import ecologylab.net.ParsedURL;
  import ecologylab.generic.HashMapArrayList;
- import ecologylab.semantics.generated.library.*;
-import ecologylab.xml.xml_inherit;
+ import ecologylab.xml.xml_inherit;
 import ecologylab.xml.types.element.Mappable;
 import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
  import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.Document;
-import ecologylab.semantics.metadata.Media;
+ import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Media;
+ import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metametadata.MetaMetadataRepository;
+import ecologylab.semantics.generated.library.*;
+
 
 /**
 	A Flickr Image
@@ -58,192 +74,64 @@ super(metaMetadata);
 	null
 **/ 
 
-	@xml_tag("title") @xml_nested private MetadataString	title;
+	@xml_tag("browse_purl") @xml_nested private MetadataParsedURL	browsePurl;
 
 /**
-	Lazy Evaluation for title
+	Lazy Evaluation for browsePurl
 **/ 
 
-public MetadataString	title()
+public MetadataParsedURL	browsePurl()
 {
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	Not the title. An optional longer field, found only on the image detail page (flickr_image_detail).
-**/ 
-
-	@xml_tag("description") @xml_nested private MetadataString	description;
-
-/**
-	Lazy Evaluation for description
-**/ 
-
-public MetadataString	description()
-{
-MetadataString	result	=this.description;
-if(result == null)
-{
-result = new MetadataString();
-this.description	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field description
-**/ 
-
-public String getDescription(){
-return description().getValue();
-}
-
-/**
-	Sets the value of the field description
-**/ 
-
-public void setDescription( String description )
-{
-this.description().setValue(description);
-}
-
-/**
-	The heavy weight setter method for field description
-**/ 
-
-public void hwSetDescription( String description )
-{
-this.description().setValue(description);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the description directly
-**/ 
-
-public void setDescriptionMetadata(MetadataString description)
-{	this.description = description;
-}
-/**
-	Heavy Weight Direct setter method for description
-**/ 
-
-public void hwSetDescriptionMetadata(MetadataString description)
-{	 if(this.description!=null && this.description.getValue()!=null && hasTermVector())
-		 termVector().remove(this.description.termVector());
-	 this.description = description;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("image_purl") @xml_nested private MetadataParsedURL	imagePurl;
-
-/**
-	Lazy Evaluation for imagePurl
-**/ 
-
-public MetadataParsedURL	imagePurl()
-{
-MetadataParsedURL	result	=this.imagePurl;
+MetadataParsedURL	result	=this.browsePurl;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.imagePurl	=	 result;
+this.browsePurl	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field imagePurl
+	Gets the value of the field browsePurl
 **/ 
 
-public ParsedURL getImagePurl(){
-return imagePurl().getValue();
+public ParsedURL getBrowsePurl(){
+return browsePurl().getValue();
 }
 
 /**
-	Sets the value of the field imagePurl
+	Sets the value of the field browsePurl
 **/ 
 
-public void setImagePurl( ParsedURL imagePurl )
+public void setBrowsePurl( ParsedURL browsePurl )
 {
-this.imagePurl().setValue(imagePurl);
+this.browsePurl().setValue(browsePurl);
 }
 
 /**
-	The heavy weight setter method for field imagePurl
+	The heavy weight setter method for field browsePurl
 **/ 
 
-public void hwSetImagePurl( ParsedURL imagePurl )
+public void hwSetBrowsePurl( ParsedURL browsePurl )
 {
-this.imagePurl().setValue(imagePurl);
+this.browsePurl().setValue(browsePurl);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the imagePurl directly
+	 Sets the browsePurl directly
 **/ 
 
-public void setImagePurlMetadata(MetadataParsedURL imagePurl)
-{	this.imagePurl = imagePurl;
+public void setBrowsePurlMetadata(MetadataParsedURL browsePurl)
+{	this.browsePurl = browsePurl;
 }
 /**
-	Heavy Weight Direct setter method for imagePurl
+	Heavy Weight Direct setter method for browsePurl
 **/ 
 
-public void hwSetImagePurlMetadata(MetadataParsedURL imagePurl)
-{	 if(this.imagePurl!=null && this.imagePurl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.imagePurl.termVector());
-	 this.imagePurl = imagePurl;
+public void hwSetBrowsePurlMetadata(MetadataParsedURL browsePurl)
+{	 if(this.browsePurl!=null && this.browsePurl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.browsePurl.termVector());
+	 this.browsePurl = browsePurl;
 	rebuildCompositeTermVector();
 }	@xml_collection("tags") private ArrayList<FlickrTag>	tags;
 
