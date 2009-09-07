@@ -31,8 +31,6 @@ import ecologylab.semantics.metadata.scalar.MetadataInteger;
  import ecologylab.xml.xml_inherit;
 import ecologylab.xml.types.element.Mappable;
 import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
- import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
  import ecologylab.semantics.metadata.builtins.Document;
@@ -40,6 +38,10 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.uva.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
 
 
 /**
