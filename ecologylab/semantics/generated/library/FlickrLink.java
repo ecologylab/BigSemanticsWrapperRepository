@@ -35,15 +35,15 @@ import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 
 @xml_inherit
-@xml_tag("flickrUserImage")
-public class FlickrUserImage extends Metadata{
+@xml_tag("flickr_link")
+public class FlickrLink extends Metadata{
 
 
 /**
 	Constructor
 **/ 
 
-public FlickrUserImage()
+public FlickrLink()
 {
  super();
 }
@@ -52,77 +52,13 @@ public FlickrUserImage()
 	Constructor
 **/ 
 
-public FlickrUserImage(MetaMetadata metaMetadata)
+public FlickrLink(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Title of the image
-**/ 
-
-	@xml_tag("title") @xml_nested private MetadataString	title;
-
-/**
-	Lazy Evaluation for title
-**/ 
-
-public MetadataString	title()
-{
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	Actual photo link
+	flickr_image_detail
 **/ 
 
 	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
@@ -183,5 +119,69 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 {	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
 		 termVector().remove(this.link.termVector());
 	 this.link = link;
+	rebuildCompositeTermVector();
+}
+/**
+	flickr_image_detail
+**/ 
+
+	@xml_tag("title") @xml_nested private MetadataString	title;
+
+/**
+	Lazy Evaluation for title
+**/ 
+
+public MetadataString	title()
+{
+MetadataString	result	=this.title;
+if(result == null)
+{
+result = new MetadataString();
+this.title	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field title
+**/ 
+
+public String getTitle(){
+return title().getValue();
+}
+
+/**
+	Sets the value of the field title
+**/ 
+
+public void setTitle( String title )
+{
+this.title().setValue(title);
+}
+
+/**
+	The heavy weight setter method for field title
+**/ 
+
+public void hwSetTitle( String title )
+{
+this.title().setValue(title);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
 	rebuildCompositeTermVector();
 }}

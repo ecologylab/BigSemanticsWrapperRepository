@@ -44,12 +44,12 @@ import ecologylab.semantics.library.scholarlyPublication.*;
 
 
 /**
-	All flcikr photos of a particular user
+	All flickr photos of a tag
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_all_user_image")
-public class  FlickrAllUserImage
+@xml_tag("flickr_tags")
+public class  FlickrTags
 extends  Document
 {
 
@@ -58,7 +58,7 @@ extends  Document
 	Constructor
 **/ 
 
-public FlickrAllUserImage()
+public FlickrTags()
 {
  super();
 }
@@ -67,42 +67,42 @@ public FlickrAllUserImage()
 	Constructor
 **/ 
 
-public FlickrAllUserImage(MetaMetadata metaMetadata)
+public FlickrTags(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("allUserImage") private ArrayList<FlickrUserImage>	allUserImage;
+	@xml_collection("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
 
 /**
-	Lazy Evaluation for allUserImage
+	Lazy Evaluation for flickrLinkSet
 **/ 
 
-public ArrayList<FlickrUserImage>	allUserImage()
+public ArrayList<FlickrLink>	flickrLinkSet()
 {
-ArrayList<FlickrUserImage>	result	=this.allUserImage;
+ArrayList<FlickrLink>	result	=this.flickrLinkSet;
 if(result == null)
 {
-result = new ArrayList<FlickrUserImage>();
-this.allUserImage	=	 result;
+result = new ArrayList<FlickrLink>();
+this.flickrLinkSet	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field allUserImage
+	Set the value of field flickrLinkSet
 **/ 
 
-public void setAllUserImage( ArrayList<FlickrUserImage> allUserImage )
+public void setFlickrLinkSet( ArrayList<FlickrLink> flickrLinkSet )
 {
-this.allUserImage = allUserImage ;
+this.flickrLinkSet = flickrLinkSet ;
 }
 
 /**
-	Get the value of field allUserImage
+	Get the value of field flickrLinkSet
 **/ 
 
-public ArrayList<FlickrUserImage> getAllUserImage(){
-return this.allUserImage;
+public ArrayList<FlickrLink> getFlickrLinkSet(){
+return this.flickrLinkSet;
 }
 
 }

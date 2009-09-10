@@ -1,6 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-
 /**
 This is a generated code. DO NOT edit or modify it.
  @author MetadataCompiler 
@@ -45,74 +44,66 @@ import ecologylab.semantics.library.scholarlyPublication.*;
 
 
 /**
-	
-This is the tranlation scope class for generated files
-.
+	All flickr photos of a particular user
 **/ 
 
-public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslationSpace
-{protected static final Class TRANSLATIONS[]=
-	{Pdf.class,
-
-Dlms.class,
-
-Icdl.class,
-
-Nsdl.class,
-
-Text.class,
-
-DcDocument.class,
-
-SearchResult.class,
-
-Search.class,
-
-Result.class,
-
-ResultSet.class,
-
-FlickrTag.class,
-
-FlickrImage.class,
-
-FlickrSearch.class,
-
-FlickrImageDetail.class,
-
-FlickrLink.class,
-
-FlickrAuthor.class,
-
-FlickrTags.class,
-
-Anchor.class,
-
-Paragraph.class,
-
-Category.class,
-
-Thumbinner.class,
-
-WikipediaPage.class,
-
-IcdlImage.class,
-
-Rss.class,
-
-Topic.class,
-
-Source.class,
-
-Author.class,
-
-ScholarlyArticle.class,
-
-
-};
- 
-public static TranslationScope get()
+@xml_inherit
+@xml_tag("flickr_author")
+public class  FlickrAuthor
+extends  Document
 {
-return TranslationScope.get("generatedMetadataTranslations", MetaMetadataRepository.builtinMetadataTranslations(), TRANSLATIONS);
+
+
+/**
+	Constructor
+**/ 
+
+public FlickrAuthor()
+{
+ super();
 }
+
+/**
+	Constructor
+**/ 
+
+public FlickrAuthor(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
 }
+	@xml_collection("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
+
+/**
+	Lazy Evaluation for flickrLinkSet
+**/ 
+
+public ArrayList<FlickrLink>	flickrLinkSet()
+{
+ArrayList<FlickrLink>	result	=this.flickrLinkSet;
+if(result == null)
+{
+result = new ArrayList<FlickrLink>();
+this.flickrLinkSet	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field flickrLinkSet
+**/ 
+
+public void setFlickrLinkSet( ArrayList<FlickrLink> flickrLinkSet )
+{
+this.flickrLinkSet = flickrLinkSet ;
+}
+
+/**
+	Get the value of field flickrLinkSet
+**/ 
+
+public ArrayList<FlickrLink> getFlickrLinkSet(){
+return this.flickrLinkSet;
+}
+
+}
+
