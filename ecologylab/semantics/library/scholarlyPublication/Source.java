@@ -1,5 +1,13 @@
 package ecologylab.semantics.library.scholarlyPublication;
 
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
+
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
@@ -33,10 +41,19 @@ import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
+
+
+/**
+	Metadata related to where an article is published.
+**/ 
 
 @xml_inherit
-@xml_tag("null")
-public class Source extends Metadata{
+@xml_tag("source")
+public class  Source
+extends  Document
+{
 
 
 /**
@@ -58,135 +75,7 @@ super(metaMetadata);
 }
 
 /**
-	
-**/ 
-
-	@xml_tag("img_purl") @xml_nested private MetadataParsedURL	imgPurl;
-
-/**
-	Lazy Evaluation for imgPurl
-**/ 
-
-public MetadataParsedURL	imgPurl()
-{
-MetadataParsedURL	result	=this.imgPurl;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.imgPurl	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field imgPurl
-**/ 
-
-public ParsedURL getImgPurl(){
-return imgPurl().getValue();
-}
-
-/**
-	Sets the value of the field imgPurl
-**/ 
-
-public void setImgPurl( ParsedURL imgPurl )
-{
-this.imgPurl().setValue(imgPurl);
-}
-
-/**
-	The heavy weight setter method for field imgPurl
-**/ 
-
-public void hwSetImgPurl( ParsedURL imgPurl )
-{
-this.imgPurl().setValue(imgPurl);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the imgPurl directly
-**/ 
-
-public void setImgPurlMetadata(MetadataParsedURL imgPurl)
-{	this.imgPurl = imgPurl;
-}
-/**
-	Heavy Weight Direct setter method for imgPurl
-**/ 
-
-public void hwSetImgPurlMetadata(MetadataParsedURL imgPurl)
-{	 if(this.imgPurl!=null && this.imgPurl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.imgPurl.termVector());
-	 this.imgPurl = imgPurl;
-	rebuildCompositeTermVector();
-}
-/**
-	Name where published.
-**/ 
-
-	@xml_tag("heading") @xml_nested private MetadataString	heading;
-
-/**
-	Lazy Evaluation for heading
-**/ 
-
-public MetadataString	heading()
-{
-MetadataString	result	=this.heading;
-if(result == null)
-{
-result = new MetadataString();
-this.heading	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field heading
-**/ 
-
-public String getHeading(){
-return heading().getValue();
-}
-
-/**
-	Sets the value of the field heading
-**/ 
-
-public void setHeading( String heading )
-{
-this.heading().setValue(heading);
-}
-
-/**
-	The heavy weight setter method for field heading
-**/ 
-
-public void hwSetHeading( String heading )
-{
-this.heading().setValue(heading);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the heading directly
-**/ 
-
-public void setHeadingMetadata(MetadataString heading)
-{	this.heading = heading;
-}
-/**
-	Heavy Weight Direct setter method for heading
-**/ 
-
-public void hwSetHeadingMetadata(MetadataString heading)
-{	 if(this.heading!=null && this.heading.getValue()!=null && hasTermVector())
-		 termVector().remove(this.heading.termVector());
-	 this.heading = heading;
-	rebuildCompositeTermVector();
-}
-/**
-	
+	Archive of conference or journal.
 **/ 
 
 	@xml_tag("archive") @xml_nested private MetadataParsedURL	archive;
@@ -250,71 +139,7 @@ public void hwSetArchiveMetadata(MetadataParsedURL archive)
 	rebuildCompositeTermVector();
 }
 /**
-	
-**/ 
-
-	@xml_tag("table_of_contents") @xml_nested private MetadataParsedURL	tableOfContents;
-
-/**
-	Lazy Evaluation for tableOfContents
-**/ 
-
-public MetadataParsedURL	tableOfContents()
-{
-MetadataParsedURL	result	=this.tableOfContents;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.tableOfContents	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field tableOfContents
-**/ 
-
-public ParsedURL getTableOfContents(){
-return tableOfContents().getValue();
-}
-
-/**
-	Sets the value of the field tableOfContents
-**/ 
-
-public void setTableOfContents( ParsedURL tableOfContents )
-{
-this.tableOfContents().setValue(tableOfContents);
-}
-
-/**
-	The heavy weight setter method for field tableOfContents
-**/ 
-
-public void hwSetTableOfContents( ParsedURL tableOfContents )
-{
-this.tableOfContents().setValue(tableOfContents);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the tableOfContents directly
-**/ 
-
-public void setTableOfContentsMetadata(MetadataParsedURL tableOfContents)
-{	this.tableOfContents = tableOfContents;
-}
-/**
-	Heavy Weight Direct setter method for tableOfContents
-**/ 
-
-public void hwSetTableOfContentsMetadata(MetadataParsedURL tableOfContents)
-{	 if(this.tableOfContents!=null && this.tableOfContents.getValue()!=null && hasTermVector())
-		 termVector().remove(this.tableOfContents.termVector());
-	 this.tableOfContents = tableOfContents;
-	rebuildCompositeTermVector();
-}
-/**
-	
+	null
 **/ 
 
 	@xml_tag("pages") @xml_nested private MetadataString	pages;
@@ -378,7 +203,7 @@ public void hwSetPagesMetadata(MetadataString pages)
 	rebuildCompositeTermVector();
 }
 /**
-	
+	null
 **/ 
 
 	@xml_tag("year_of_publication") @xml_nested private MetadataInteger	yearOfPublication;
@@ -504,4 +329,6 @@ public void hwSetIsbnMetadata(MetadataString isbn)
 		 termVector().remove(this.isbn.termVector());
 	 this.isbn = isbn;
 	rebuildCompositeTermVector();
-}}
+}
+}
+

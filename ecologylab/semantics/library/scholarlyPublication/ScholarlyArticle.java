@@ -41,10 +41,12 @@ import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
 
 
 /**
-	
+	null
 **/ 
 
 @xml_inherit
@@ -73,259 +75,67 @@ super(metaMetadata);
 }
 
 /**
-	
+	citation.cfm
 **/ 
 
-	@xml_tag("title") @xml_nested private MetadataString	title;
+	@xml_tag("metadata_page") @xml_nested private MetadataParsedURL	metadataPage;
 
 /**
-	Lazy Evaluation for title
+	Lazy Evaluation for metadataPage
 **/ 
 
-public MetadataString	title()
+public MetadataParsedURL	metadataPage()
 {
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	Link used for citation chaining
-**/ 
-
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
-
-/**
-	Lazy Evaluation for link
-**/ 
-
-public MetadataParsedURL	link()
-{
-MetadataParsedURL	result	=this.link;
+MetadataParsedURL	result	=this.metadataPage;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.link	=	 result;
+this.metadataPage	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field link
+	Gets the value of the field metadataPage
 **/ 
 
-public ParsedURL getLink(){
-return link().getValue();
+public ParsedURL getMetadataPage(){
+return metadataPage().getValue();
 }
 
 /**
-	Sets the value of the field link
+	Sets the value of the field metadataPage
 **/ 
 
-public void setLink( ParsedURL link )
+public void setMetadataPage( ParsedURL metadataPage )
 {
-this.link().setValue(link);
+this.metadataPage().setValue(metadataPage);
 }
 
 /**
-	The heavy weight setter method for field link
+	The heavy weight setter method for field metadataPage
 **/ 
 
-public void hwSetLink( ParsedURL link )
+public void hwSetMetadataPage( ParsedURL metadataPage )
 {
-this.link().setValue(link);
+this.metadataPage().setValue(metadataPage);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the link directly
+	 Sets the metadataPage directly
 **/ 
 
-public void setLinkMetadata(MetadataParsedURL link)
-{	this.link = link;
+public void setMetadataPageMetadata(MetadataParsedURL metadataPage)
+{	this.metadataPage = metadataPage;
 }
 /**
-	Heavy Weight Direct setter method for link
+	Heavy Weight Direct setter method for metadataPage
 **/ 
 
-public void hwSetLinkMetadata(MetadataParsedURL link)
-{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
-		 termVector().remove(this.link.termVector());
-	 this.link = link;
-	rebuildCompositeTermVector();
-}
-/**
-	The Linked PDF
-**/ 
-
-	@xml_tag("full_text") @xml_nested private MetadataParsedURL	fullText;
-
-/**
-	Lazy Evaluation for fullText
-**/ 
-
-public MetadataParsedURL	fullText()
-{
-MetadataParsedURL	result	=this.fullText;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.fullText	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field fullText
-**/ 
-
-public ParsedURL getFullText(){
-return fullText().getValue();
-}
-
-/**
-	Sets the value of the field fullText
-**/ 
-
-public void setFullText( ParsedURL fullText )
-{
-this.fullText().setValue(fullText);
-}
-
-/**
-	The heavy weight setter method for field fullText
-**/ 
-
-public void hwSetFullText( ParsedURL fullText )
-{
-this.fullText().setValue(fullText);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the fullText directly
-**/ 
-
-public void setFullTextMetadata(MetadataParsedURL fullText)
-{	this.fullText = fullText;
-}
-/**
-	Heavy Weight Direct setter method for fullText
-**/ 
-
-public void hwSetFullTextMetadata(MetadataParsedURL fullText)
-{	 if(this.fullText!=null && this.fullText.getValue()!=null && hasTermVector())
-		 termVector().remove(this.fullText.termVector());
-	 this.fullText = fullText;
-	rebuildCompositeTermVector();
-}
-/**
-	ALT TEXT FOR THE IMAGE
-**/ 
-
-	@xml_tag("alt") @xml_nested private MetadataString	alt;
-
-/**
-	Lazy Evaluation for alt
-**/ 
-
-public MetadataString	alt()
-{
-MetadataString	result	=this.alt;
-if(result == null)
-{
-result = new MetadataString();
-this.alt	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field alt
-**/ 
-
-public String getAlt(){
-return alt().getValue();
-}
-
-/**
-	Sets the value of the field alt
-**/ 
-
-public void setAlt( String alt )
-{
-this.alt().setValue(alt);
-}
-
-/**
-	The heavy weight setter method for field alt
-**/ 
-
-public void hwSetAlt( String alt )
-{
-this.alt().setValue(alt);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the alt directly
-**/ 
-
-public void setAltMetadata(MetadataString alt)
-{	this.alt = alt;
-}
-/**
-	Heavy Weight Direct setter method for alt
-**/ 
-
-public void hwSetAltMetadata(MetadataString alt)
-{	 if(this.alt!=null && this.alt.getValue()!=null && hasTermVector())
-		 termVector().remove(this.alt.termVector());
-	 this.alt = alt;
+public void hwSetMetadataPageMetadata(MetadataParsedURL metadataPage)
+{	 if(this.metadataPage!=null && this.metadataPage.getValue()!=null && hasTermVector())
+		 termVector().remove(this.metadataPage.termVector());
+	 this.metadataPage = metadataPage;
 	rebuildCompositeTermVector();
 }
 /**

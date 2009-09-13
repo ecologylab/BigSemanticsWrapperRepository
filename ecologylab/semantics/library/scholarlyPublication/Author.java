@@ -1,5 +1,13 @@
 package ecologylab.semantics.library.scholarlyPublication;
 
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
+
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
@@ -33,10 +41,19 @@ import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
+
+
+/**
+	An author of an article or creative work.
+**/ 
 
 @xml_inherit
 @xml_tag("author")
-public class Author extends Metadata{
+public class  Author
+extends  Document
+{
 
 
 /**
@@ -185,67 +202,5 @@ public void hwSetAffiliationMetadata(MetadataString affiliation)
 	 this.affiliation = affiliation;
 	rebuildCompositeTermVector();
 }
-/**
-	
-**/ 
-
-	@xml_tag("results_page") @xml_nested private MetadataParsedURL	resultsPage;
-
-/**
-	Lazy Evaluation for resultsPage
-**/ 
-
-public MetadataParsedURL	resultsPage()
-{
-MetadataParsedURL	result	=this.resultsPage;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.resultsPage	=	 result;
-}
-return result;
 }
 
-/**
-	Gets the value of the field resultsPage
-**/ 
-
-public ParsedURL getResultsPage(){
-return resultsPage().getValue();
-}
-
-/**
-	Sets the value of the field resultsPage
-**/ 
-
-public void setResultsPage( ParsedURL resultsPage )
-{
-this.resultsPage().setValue(resultsPage);
-}
-
-/**
-	The heavy weight setter method for field resultsPage
-**/ 
-
-public void hwSetResultsPage( ParsedURL resultsPage )
-{
-this.resultsPage().setValue(resultsPage);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the resultsPage directly
-**/ 
-
-public void setResultsPageMetadata(MetadataParsedURL resultsPage)
-{	this.resultsPage = resultsPage;
-}
-/**
-	Heavy Weight Direct setter method for resultsPage
-**/ 
-
-public void hwSetResultsPageMetadata(MetadataParsedURL resultsPage)
-{	 if(this.resultsPage!=null && this.resultsPage.getValue()!=null && hasTermVector())
-		 termVector().remove(this.resultsPage.termVector());
-	 this.resultsPage = resultsPage;
-	rebuildCompositeTermVector();
-}}
