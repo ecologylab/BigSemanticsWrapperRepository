@@ -110,6 +110,8 @@ Author.class,
 
 ScholarlyArticle.class,
 
+Imdb.class,
+
 
 };
  
