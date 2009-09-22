@@ -1,12 +1,4 @@
-package ecologylab.semantics.generated.library;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.library.imdb;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -47,23 +39,16 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
-
-/**
-	The flickr search class
-**/ 
-
 @xml_inherit
-@xml_tag("flickr_search")
-public class  FlickrSearch
-extends  Search
-{
+@xml_tag("cast_member")
+public class CastMember extends Metadata{
 
 
 /**
 	Constructor
 **/ 
 
-public FlickrSearch()
+public CastMember()
 {
  super();
 }
@@ -72,43 +57,74 @@ public FlickrSearch()
 	Constructor
 **/ 
 
-public FlickrSearch(MetaMetadata metaMetadata)
+public CastMember(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
+private @xml_tag("actor") @xml_nested PersonDetails	actor;
 /**
-	Lazy Evaluation for flickrResults
+	Lazy Evaluation for actor
 **/ 
 
-public ArrayList<FlickrImage>	flickrResults()
+public PersonDetails	actor()
 {
-ArrayList<FlickrImage>	result	=this.flickrResults;
+PersonDetails	result	=this.actor;
 if(result == null)
 {
-result = new ArrayList<FlickrImage>();
-this.flickrResults	=	 result;
+result = new PersonDetails();
+this.actor	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field flickrResults
+	Set the value of field actor
 **/ 
 
-public void setFlickrResults( ArrayList<FlickrImage> flickrResults )
+public void setActor( PersonDetails actor )
 {
-this.flickrResults = flickrResults ;
+this.actor = actor ;
 }
 
 /**
-	Get the value of field flickrResults
+	Get the value of field actor
 **/ 
 
-public ArrayList<FlickrImage> getFlickrResults(){
-return this.flickrResults;
+public PersonDetails getActor(){
+return this.actor;
 }
 
+private @xml_tag("character") @xml_nested PersonDetails	character;
+/**
+	Lazy Evaluation for character
+**/ 
+
+public PersonDetails	character()
+{
+PersonDetails	result	=this.character;
+if(result == null)
+{
+result = new PersonDetails();
+this.character	=	 result;
+}
+return result;
 }
 
+/**
+	Set the value of field character
+**/ 
+
+public void setCharacter( PersonDetails character )
+{
+this.character = character ;
+}
+
+/**
+	Get the value of field character
+**/ 
+
+public PersonDetails getCharacter(){
+return this.character;
+}
+}

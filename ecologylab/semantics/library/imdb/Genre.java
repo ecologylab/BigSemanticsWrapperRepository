@@ -1,12 +1,4 @@
-package ecologylab.semantics.generated.library;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.library.imdb;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -47,23 +39,16 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
-
-/**
-	The NSDL class
-**/ 
-
 @xml_inherit
-@xml_tag("nsdl")
-public class  Nsdl
-extends  Document
-{
+@xml_tag("genre")
+public class Genre extends Metadata{
 
 
 /**
 	Constructor
 **/ 
 
-public Nsdl()
+public Genre()
 {
  super();
 }
@@ -72,74 +57,136 @@ public Nsdl()
 	Constructor
 **/ 
 
-public Nsdl(MetaMetadata metaMetadata)
+public Genre(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	
+	null
 **/ 
 
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
+	@xml_tag("name") @xml_nested private MetadataString	name;
 
 /**
-	Lazy Evaluation for subject
+	Lazy Evaluation for name
 **/ 
 
-public MetadataString	subject()
+public MetadataString	name()
 {
-MetadataString	result	=this.subject;
+MetadataString	result	=this.name;
 if(result == null)
 {
 result = new MetadataString();
-this.subject	=	 result;
+this.name	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field subject
+	Gets the value of the field name
 **/ 
 
-public String getSubject(){
-return subject().getValue();
+public String getName(){
+return name().getValue();
 }
 
 /**
-	Sets the value of the field subject
+	Sets the value of the field name
 **/ 
 
-public void setSubject( String subject )
+public void setName( String name )
 {
-this.subject().setValue(subject);
+this.name().setValue(name);
 }
 
 /**
-	The heavy weight setter method for field subject
+	The heavy weight setter method for field name
 **/ 
 
-public void hwSetSubject( String subject )
+public void hwSetName( String name )
 {
-this.subject().setValue(subject);
+this.name().setValue(name);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the subject directly
+	 Sets the name directly
 **/ 
 
-public void setSubjectMetadata(MetadataString subject)
-{	this.subject = subject;
+public void setNameMetadata(MetadataString name)
+{	this.name = name;
 }
 /**
-	Heavy Weight Direct setter method for subject
+	Heavy Weight Direct setter method for name
 **/ 
 
-public void hwSetSubjectMetadata(MetadataString subject)
-{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
-		 termVector().remove(this.subject.termVector());
-	 this.subject = subject;
+public void hwSetNameMetadata(MetadataString name)
+{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
+		 termVector().remove(this.name.termVector());
+	 this.name = name;
 	rebuildCompositeTermVector();
 }
+/**
+	null
+**/ 
+
+	@xml_tag("genre_link") @xml_nested private MetadataParsedURL	genreLink;
+
+/**
+	Lazy Evaluation for genreLink
+**/ 
+
+public MetadataParsedURL	genreLink()
+{
+MetadataParsedURL	result	=this.genreLink;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.genreLink	=	 result;
+}
+return result;
 }
 
+/**
+	Gets the value of the field genreLink
+**/ 
+
+public ParsedURL getGenreLink(){
+return genreLink().getValue();
+}
+
+/**
+	Sets the value of the field genreLink
+**/ 
+
+public void setGenreLink( ParsedURL genreLink )
+{
+this.genreLink().setValue(genreLink);
+}
+
+/**
+	The heavy weight setter method for field genreLink
+**/ 
+
+public void hwSetGenreLink( ParsedURL genreLink )
+{
+this.genreLink().setValue(genreLink);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the genreLink directly
+**/ 
+
+public void setGenreLinkMetadata(MetadataParsedURL genreLink)
+{	this.genreLink = genreLink;
+}
+/**
+	Heavy Weight Direct setter method for genreLink
+**/ 
+
+public void hwSetGenreLinkMetadata(MetadataParsedURL genreLink)
+{	 if(this.genreLink!=null && this.genreLink.getValue()!=null && hasTermVector())
+		 termVector().remove(this.genreLink.termVector());
+	 this.genreLink = genreLink;
+	rebuildCompositeTermVector();
+}}

@@ -43,6 +43,9 @@ import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 
 
 /**
@@ -202,7 +205,7 @@ public void hwSetAbstractFieldMetadata(MetadataString abstractField)
 	 this.abstractField = abstractField;
 	rebuildCompositeTermVector();
 }
-private @xml_nested Source	source;
+private @xml_tag("source") @xml_nested Source	source;
 /**
 	Lazy Evaluation for source
 **/ 

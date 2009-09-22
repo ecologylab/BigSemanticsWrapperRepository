@@ -44,6 +44,9 @@ import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 
 
 /**
@@ -110,7 +113,15 @@ Author.class,
 
 ScholarlyArticle.class,
 
-Imdb.class,
+BirthDetail.class,
+
+Genre.class,
+
+CastMember.class,
+
+ImdbTitle.class,
+
+PersonDetails.class,
 
 
 };
