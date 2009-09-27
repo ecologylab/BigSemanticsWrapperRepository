@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -146,12 +147,12 @@ public void hwSetBrowsePurlMetadata(MetadataParsedURL browsePurl)
 	Lazy Evaluation for tags
 **/ 
 
-public ArrayList<FlickrTag>	tags()
+public  ArrayList<FlickrTag>	tags()
 {
-ArrayList<FlickrTag>	result	=this.tags;
+ ArrayList<FlickrTag>	result	=this.tags;
 if(result == null)
 {
-result = new ArrayList<FlickrTag>();
+result = new  ArrayList<FlickrTag>();
 this.tags	=	 result;
 }
 return result;
@@ -161,7 +162,7 @@ return result;
 	Set the value of field tags
 **/ 
 
-public void setTags( ArrayList<FlickrTag> tags )
+public void setTags(  ArrayList<FlickrTag> tags )
 {
 this.tags = tags ;
 }
@@ -170,7 +171,7 @@ this.tags = tags ;
 	Get the value of field tags
 **/ 
 
-public ArrayList<FlickrTag> getTags(){
+public  ArrayList<FlickrTag> getTags(){
 return this.tags;
 }
 

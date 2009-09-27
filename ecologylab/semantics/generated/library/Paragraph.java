@@ -14,6 +14,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -131,12 +132,12 @@ public void hwSetParagraphTextMetadata(MetadataString paragraphText)
 	Lazy Evaluation for anchors
 **/ 
 
-public ArrayList<Anchor>	anchors()
+public  ArrayList<Anchor>	anchors()
 {
-ArrayList<Anchor>	result	=this.anchors;
+ ArrayList<Anchor>	result	=this.anchors;
 if(result == null)
 {
-result = new ArrayList<Anchor>();
+result = new  ArrayList<Anchor>();
 this.anchors	=	 result;
 }
 return result;
@@ -146,7 +147,7 @@ return result;
 	Set the value of field anchors
 **/ 
 
-public void setAnchors( ArrayList<Anchor> anchors )
+public void setAnchors(  ArrayList<Anchor> anchors )
 {
 this.anchors = anchors ;
 }
@@ -155,7 +156,7 @@ this.anchors = anchors ;
 	Get the value of field anchors
 **/ 
 
-public ArrayList<Anchor> getAnchors(){
+public  ArrayList<Anchor> getAnchors(){
 return this.anchors;
 }
 }

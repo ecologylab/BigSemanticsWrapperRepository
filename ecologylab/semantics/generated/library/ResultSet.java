@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -82,12 +83,12 @@ super(metaMetadata);
 	Lazy Evaluation for Result
 **/ 
 
-public ArrayList<Result>	Result()
+public  ArrayList<Result>	Result()
 {
-ArrayList<Result>	result	=this.Result;
+ ArrayList<Result>	result	=this.Result;
 if(result == null)
 {
-result = new ArrayList<Result>();
+result = new  ArrayList<Result>();
 this.Result	=	 result;
 }
 return result;
@@ -97,7 +98,7 @@ return result;
 	Set the value of field Result
 **/ 
 
-public void setResult( ArrayList<Result> Result )
+public void setResult(  ArrayList<Result> Result )
 {
 this.Result = Result ;
 }
@@ -106,7 +107,7 @@ this.Result = Result ;
 	Get the value of field Result
 **/ 
 
-public ArrayList<Result> getResult(){
+public  ArrayList<Result> getResult(){
 return this.Result;
 }
 

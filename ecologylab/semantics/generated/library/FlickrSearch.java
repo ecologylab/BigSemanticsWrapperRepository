@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -82,12 +83,12 @@ super(metaMetadata);
 	Lazy Evaluation for flickrResults
 **/ 
 
-public ArrayList<FlickrImage>	flickrResults()
+public  ArrayList<FlickrImage>	flickrResults()
 {
-ArrayList<FlickrImage>	result	=this.flickrResults;
+ ArrayList<FlickrImage>	result	=this.flickrResults;
 if(result == null)
 {
-result = new ArrayList<FlickrImage>();
+result = new  ArrayList<FlickrImage>();
 this.flickrResults	=	 result;
 }
 return result;
@@ -97,7 +98,7 @@ return result;
 	Set the value of field flickrResults
 **/ 
 
-public void setFlickrResults( ArrayList<FlickrImage> flickrResults )
+public void setFlickrResults(  ArrayList<FlickrImage> flickrResults )
 {
 this.flickrResults = flickrResults ;
 }
@@ -106,7 +107,7 @@ this.flickrResults = flickrResults ;
 	Get the value of field flickrResults
 **/ 
 
-public ArrayList<FlickrImage> getFlickrResults(){
+public  ArrayList<FlickrImage> getFlickrResults(){
 return this.flickrResults;
 }
 

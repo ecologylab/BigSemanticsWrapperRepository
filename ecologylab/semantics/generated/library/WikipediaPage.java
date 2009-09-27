@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -402,12 +403,12 @@ public void hwSetMainImageWidthMetadata(MetadataInteger mainImageWidth)
 	Lazy Evaluation for paragraphs
 **/ 
 
-public ArrayList<Paragraph>	paragraphs()
+public  ArrayList<Paragraph>	paragraphs()
 {
-ArrayList<Paragraph>	result	=this.paragraphs;
+ ArrayList<Paragraph>	result	=this.paragraphs;
 if(result == null)
 {
-result = new ArrayList<Paragraph>();
+result = new  ArrayList<Paragraph>();
 this.paragraphs	=	 result;
 }
 return result;
@@ -417,7 +418,7 @@ return result;
 	Set the value of field paragraphs
 **/ 
 
-public void setParagraphs( ArrayList<Paragraph> paragraphs )
+public void setParagraphs(  ArrayList<Paragraph> paragraphs )
 {
 this.paragraphs = paragraphs ;
 }
@@ -426,7 +427,7 @@ this.paragraphs = paragraphs ;
 	Get the value of field paragraphs
 **/ 
 
-public ArrayList<Paragraph> getParagraphs(){
+public  ArrayList<Paragraph> getParagraphs(){
 return this.paragraphs;
 }
 	@xml_collection("Categories") private ArrayList<Category>	Categories;
@@ -435,12 +436,12 @@ return this.paragraphs;
 	Lazy Evaluation for Categories
 **/ 
 
-public ArrayList<Category>	Categories()
+public  ArrayList<Category>	Categories()
 {
-ArrayList<Category>	result	=this.Categories;
+ ArrayList<Category>	result	=this.Categories;
 if(result == null)
 {
-result = new ArrayList<Category>();
+result = new  ArrayList<Category>();
 this.Categories	=	 result;
 }
 return result;
@@ -450,7 +451,7 @@ return result;
 	Set the value of field Categories
 **/ 
 
-public void setCategories( ArrayList<Category> Categories )
+public void setCategories(  ArrayList<Category> Categories )
 {
 this.Categories = Categories ;
 }
@@ -459,7 +460,7 @@ this.Categories = Categories ;
 	Get the value of field Categories
 **/ 
 
-public ArrayList<Category> getCategories(){
+public  ArrayList<Category> getCategories(){
 return this.Categories;
 }
 	@xml_collection("Thumbinners") private ArrayList<Thumbinner>	Thumbinners;
@@ -468,12 +469,12 @@ return this.Categories;
 	Lazy Evaluation for Thumbinners
 **/ 
 
-public ArrayList<Thumbinner>	Thumbinners()
+public  ArrayList<Thumbinner>	Thumbinners()
 {
-ArrayList<Thumbinner>	result	=this.Thumbinners;
+ ArrayList<Thumbinner>	result	=this.Thumbinners;
 if(result == null)
 {
-result = new ArrayList<Thumbinner>();
+result = new  ArrayList<Thumbinner>();
 this.Thumbinners	=	 result;
 }
 return result;
@@ -483,7 +484,7 @@ return result;
 	Set the value of field Thumbinners
 **/ 
 
-public void setThumbinners( ArrayList<Thumbinner> Thumbinners )
+public void setThumbinners(  ArrayList<Thumbinner> Thumbinners )
 {
 this.Thumbinners = Thumbinners ;
 }
@@ -492,7 +493,7 @@ this.Thumbinners = Thumbinners ;
 	Get the value of field Thumbinners
 **/ 
 
-public ArrayList<Thumbinner> getThumbinners(){
+public  ArrayList<Thumbinner> getThumbinners(){
 return this.Thumbinners;
 }
 
