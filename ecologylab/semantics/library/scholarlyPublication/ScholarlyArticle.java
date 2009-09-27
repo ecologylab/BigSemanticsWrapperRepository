@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -243,12 +244,12 @@ return this.source;
 	Lazy Evaluation for authors
 **/ 
 
-public ArrayList<Author>	authors()
+public  ArrayList<Author>	authors()
 {
-ArrayList<Author>	result	=this.authors;
+ ArrayList<Author>	result	=this.authors;
 if(result == null)
 {
-result = new ArrayList<Author>();
+result = new  ArrayList<Author>();
 this.authors	=	 result;
 }
 return result;
@@ -258,7 +259,7 @@ return result;
 	Set the value of field authors
 **/ 
 
-public void setAuthors( ArrayList<Author> authors )
+public void setAuthors(  ArrayList<Author> authors )
 {
 this.authors = authors ;
 }
@@ -267,21 +268,21 @@ this.authors = authors ;
 	Get the value of field authors
 **/ 
 
-public ArrayList<Author> getAuthors(){
+public  ArrayList<Author> getAuthors(){
 return this.authors;
 }
-	@xml_collection("references") private ArrayList<ScholarlyArticle>	references;
+	@xml_collection("references") private ArrayList<Entity<ScholarlyArticle>>	references;
 
 /**
 	Lazy Evaluation for references
 **/ 
 
-public ArrayList<ScholarlyArticle>	references()
+public  ArrayList<Entity<ScholarlyArticle>>	references()
 {
-ArrayList<ScholarlyArticle>	result	=this.references;
+ ArrayList<Entity<ScholarlyArticle>>	result	=this.references;
 if(result == null)
 {
-result = new ArrayList<ScholarlyArticle>();
+result = new  ArrayList<Entity<ScholarlyArticle>>();
 this.references	=	 result;
 }
 return result;
@@ -291,7 +292,7 @@ return result;
 	Set the value of field references
 **/ 
 
-public void setReferences( ArrayList<ScholarlyArticle> references )
+public void setReferences(  ArrayList<Entity<ScholarlyArticle>> references )
 {
 this.references = references ;
 }
@@ -300,21 +301,21 @@ this.references = references ;
 	Get the value of field references
 **/ 
 
-public ArrayList<ScholarlyArticle> getReferences(){
+public  ArrayList<Entity<ScholarlyArticle>> getReferences(){
 return this.references;
 }
-	@xml_collection("citations") private ArrayList<ScholarlyArticle>	citations;
+	@xml_collection("citations") private ArrayList<Entity<ScholarlyArticle>>	citations;
 
 /**
 	Lazy Evaluation for citations
 **/ 
 
-public ArrayList<ScholarlyArticle>	citations()
+public  ArrayList<Entity<ScholarlyArticle>>	citations()
 {
-ArrayList<ScholarlyArticle>	result	=this.citations;
+ ArrayList<Entity<ScholarlyArticle>>	result	=this.citations;
 if(result == null)
 {
-result = new ArrayList<ScholarlyArticle>();
+result = new  ArrayList<Entity<ScholarlyArticle>>();
 this.citations	=	 result;
 }
 return result;
@@ -324,7 +325,7 @@ return result;
 	Set the value of field citations
 **/ 
 
-public void setCitations( ArrayList<ScholarlyArticle> citations )
+public void setCitations(  ArrayList<Entity<ScholarlyArticle>> citations )
 {
 this.citations = citations ;
 }
@@ -333,7 +334,7 @@ this.citations = citations ;
 	Get the value of field citations
 **/ 
 
-public ArrayList<ScholarlyArticle> getCitations(){
+public  ArrayList<Entity<ScholarlyArticle>> getCitations(){
 return this.citations;
 }
 
