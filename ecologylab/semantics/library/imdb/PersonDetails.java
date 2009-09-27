@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -691,12 +692,12 @@ public void hwSetAlternateNamesMetadata(MetadataString alternateNames)
 	Lazy Evaluation for titlesAsActor
 **/ 
 
-public ArrayList<ImdbTitle>	titlesAsActor()
+public  ArrayList<ImdbTitle>	titlesAsActor()
 {
-ArrayList<ImdbTitle>	result	=this.titlesAsActor;
+ ArrayList<ImdbTitle>	result	=this.titlesAsActor;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesAsActor	=	 result;
 }
 return result;
@@ -706,7 +707,7 @@ return result;
 	Set the value of field titlesAsActor
 **/ 
 
-public void setTitlesAsActor( ArrayList<ImdbTitle> titlesAsActor )
+public void setTitlesAsActor(  ArrayList<ImdbTitle> titlesAsActor )
 {
 this.titlesAsActor = titlesAsActor ;
 }
@@ -715,7 +716,7 @@ this.titlesAsActor = titlesAsActor ;
 	Get the value of field titlesAsActor
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesAsActor(){
+public  ArrayList<ImdbTitle> getTitlesAsActor(){
 return this.titlesAsActor;
 }
 	@xml_collection("titles_as_director") private ArrayList<ImdbTitle>	titlesAsDirector;
@@ -724,12 +725,12 @@ return this.titlesAsActor;
 	Lazy Evaluation for titlesAsDirector
 **/ 
 
-public ArrayList<ImdbTitle>	titlesAsDirector()
+public  ArrayList<ImdbTitle>	titlesAsDirector()
 {
-ArrayList<ImdbTitle>	result	=this.titlesAsDirector;
+ ArrayList<ImdbTitle>	result	=this.titlesAsDirector;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesAsDirector	=	 result;
 }
 return result;
@@ -739,7 +740,7 @@ return result;
 	Set the value of field titlesAsDirector
 **/ 
 
-public void setTitlesAsDirector( ArrayList<ImdbTitle> titlesAsDirector )
+public void setTitlesAsDirector(  ArrayList<ImdbTitle> titlesAsDirector )
 {
 this.titlesAsDirector = titlesAsDirector ;
 }
@@ -748,7 +749,7 @@ this.titlesAsDirector = titlesAsDirector ;
 	Get the value of field titlesAsDirector
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesAsDirector(){
+public  ArrayList<ImdbTitle> getTitlesAsDirector(){
 return this.titlesAsDirector;
 }
 	@xml_collection("titles_for_soundtrack") private ArrayList<ImdbTitle>	titlesForSoundtrack;
@@ -757,12 +758,12 @@ return this.titlesAsDirector;
 	Lazy Evaluation for titlesForSoundtrack
 **/ 
 
-public ArrayList<ImdbTitle>	titlesForSoundtrack()
+public  ArrayList<ImdbTitle>	titlesForSoundtrack()
 {
-ArrayList<ImdbTitle>	result	=this.titlesForSoundtrack;
+ ArrayList<ImdbTitle>	result	=this.titlesForSoundtrack;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesForSoundtrack	=	 result;
 }
 return result;
@@ -772,7 +773,7 @@ return result;
 	Set the value of field titlesForSoundtrack
 **/ 
 
-public void setTitlesForSoundtrack( ArrayList<ImdbTitle> titlesForSoundtrack )
+public void setTitlesForSoundtrack(  ArrayList<ImdbTitle> titlesForSoundtrack )
 {
 this.titlesForSoundtrack = titlesForSoundtrack ;
 }
@@ -781,7 +782,7 @@ this.titlesForSoundtrack = titlesForSoundtrack ;
 	Get the value of field titlesForSoundtrack
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesForSoundtrack(){
+public  ArrayList<ImdbTitle> getTitlesForSoundtrack(){
 return this.titlesForSoundtrack;
 }
 	@xml_collection("titles_as_producer") private ArrayList<ImdbTitle>	titlesAsProducer;
@@ -790,12 +791,12 @@ return this.titlesForSoundtrack;
 	Lazy Evaluation for titlesAsProducer
 **/ 
 
-public ArrayList<ImdbTitle>	titlesAsProducer()
+public  ArrayList<ImdbTitle>	titlesAsProducer()
 {
-ArrayList<ImdbTitle>	result	=this.titlesAsProducer;
+ ArrayList<ImdbTitle>	result	=this.titlesAsProducer;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesAsProducer	=	 result;
 }
 return result;
@@ -805,7 +806,7 @@ return result;
 	Set the value of field titlesAsProducer
 **/ 
 
-public void setTitlesAsProducer( ArrayList<ImdbTitle> titlesAsProducer )
+public void setTitlesAsProducer(  ArrayList<ImdbTitle> titlesAsProducer )
 {
 this.titlesAsProducer = titlesAsProducer ;
 }
@@ -814,7 +815,7 @@ this.titlesAsProducer = titlesAsProducer ;
 	Get the value of field titlesAsProducer
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesAsProducer(){
+public  ArrayList<ImdbTitle> getTitlesAsProducer(){
 return this.titlesAsProducer;
 }
 	@xml_collection("titles_thanked_in") private ArrayList<ImdbTitle>	titlesThankedIn;
@@ -823,12 +824,12 @@ return this.titlesAsProducer;
 	Lazy Evaluation for titlesThankedIn
 **/ 
 
-public ArrayList<ImdbTitle>	titlesThankedIn()
+public  ArrayList<ImdbTitle>	titlesThankedIn()
 {
-ArrayList<ImdbTitle>	result	=this.titlesThankedIn;
+ ArrayList<ImdbTitle>	result	=this.titlesThankedIn;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesThankedIn	=	 result;
 }
 return result;
@@ -838,7 +839,7 @@ return result;
 	Set the value of field titlesThankedIn
 **/ 
 
-public void setTitlesThankedIn( ArrayList<ImdbTitle> titlesThankedIn )
+public void setTitlesThankedIn(  ArrayList<ImdbTitle> titlesThankedIn )
 {
 this.titlesThankedIn = titlesThankedIn ;
 }
@@ -847,7 +848,7 @@ this.titlesThankedIn = titlesThankedIn ;
 	Get the value of field titlesThankedIn
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesThankedIn(){
+public  ArrayList<ImdbTitle> getTitlesThankedIn(){
 return this.titlesThankedIn;
 }
 	@xml_collection("titles_as_self") private ArrayList<ImdbTitle>	titlesAsSelf;
@@ -856,12 +857,12 @@ return this.titlesThankedIn;
 	Lazy Evaluation for titlesAsSelf
 **/ 
 
-public ArrayList<ImdbTitle>	titlesAsSelf()
+public  ArrayList<ImdbTitle>	titlesAsSelf()
 {
-ArrayList<ImdbTitle>	result	=this.titlesAsSelf;
+ ArrayList<ImdbTitle>	result	=this.titlesAsSelf;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesAsSelf	=	 result;
 }
 return result;
@@ -871,7 +872,7 @@ return result;
 	Set the value of field titlesAsSelf
 **/ 
 
-public void setTitlesAsSelf( ArrayList<ImdbTitle> titlesAsSelf )
+public void setTitlesAsSelf(  ArrayList<ImdbTitle> titlesAsSelf )
 {
 this.titlesAsSelf = titlesAsSelf ;
 }
@@ -880,7 +881,7 @@ this.titlesAsSelf = titlesAsSelf ;
 	Get the value of field titlesAsSelf
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesAsSelf(){
+public  ArrayList<ImdbTitle> getTitlesAsSelf(){
 return this.titlesAsSelf;
 }
 	@xml_collection("titles_in_development") private ArrayList<ImdbTitle>	titlesInDevelopment;
@@ -889,12 +890,12 @@ return this.titlesAsSelf;
 	Lazy Evaluation for titlesInDevelopment
 **/ 
 
-public ArrayList<ImdbTitle>	titlesInDevelopment()
+public  ArrayList<ImdbTitle>	titlesInDevelopment()
 {
-ArrayList<ImdbTitle>	result	=this.titlesInDevelopment;
+ ArrayList<ImdbTitle>	result	=this.titlesInDevelopment;
 if(result == null)
 {
-result = new ArrayList<ImdbTitle>();
+result = new  ArrayList<ImdbTitle>();
 this.titlesInDevelopment	=	 result;
 }
 return result;
@@ -904,7 +905,7 @@ return result;
 	Set the value of field titlesInDevelopment
 **/ 
 
-public void setTitlesInDevelopment( ArrayList<ImdbTitle> titlesInDevelopment )
+public void setTitlesInDevelopment(  ArrayList<ImdbTitle> titlesInDevelopment )
 {
 this.titlesInDevelopment = titlesInDevelopment ;
 }
@@ -913,7 +914,7 @@ this.titlesInDevelopment = titlesInDevelopment ;
 	Get the value of field titlesInDevelopment
 **/ 
 
-public ArrayList<ImdbTitle> getTitlesInDevelopment(){
+public  ArrayList<ImdbTitle> getTitlesInDevelopment(){
 return this.titlesInDevelopment;
 }
 

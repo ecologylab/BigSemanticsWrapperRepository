@@ -22,6 +22,7 @@ import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.builtins.Entity;
 
   import java.util.*;
  import ecologylab.semantics.metametadata.MetaMetadata;
@@ -210,12 +211,12 @@ public void hwSetRatingMetadata(MetadataString rating)
 	Lazy Evaluation for directors
 **/ 
 
-public ArrayList<PersonDetails>	directors()
+public  ArrayList<PersonDetails>	directors()
 {
-ArrayList<PersonDetails>	result	=this.directors;
+ ArrayList<PersonDetails>	result	=this.directors;
 if(result == null)
 {
-result = new ArrayList<PersonDetails>();
+result = new  ArrayList<PersonDetails>();
 this.directors	=	 result;
 }
 return result;
@@ -225,7 +226,7 @@ return result;
 	Set the value of field directors
 **/ 
 
-public void setDirectors( ArrayList<PersonDetails> directors )
+public void setDirectors(  ArrayList<PersonDetails> directors )
 {
 this.directors = directors ;
 }
@@ -234,7 +235,7 @@ this.directors = directors ;
 	Get the value of field directors
 **/ 
 
-public ArrayList<PersonDetails> getDirectors(){
+public  ArrayList<PersonDetails> getDirectors(){
 return this.directors;
 }
 	@xml_collection("writers") private ArrayList<PersonDetails>	writers;
@@ -243,12 +244,12 @@ return this.directors;
 	Lazy Evaluation for writers
 **/ 
 
-public ArrayList<PersonDetails>	writers()
+public  ArrayList<PersonDetails>	writers()
 {
-ArrayList<PersonDetails>	result	=this.writers;
+ ArrayList<PersonDetails>	result	=this.writers;
 if(result == null)
 {
-result = new ArrayList<PersonDetails>();
+result = new  ArrayList<PersonDetails>();
 this.writers	=	 result;
 }
 return result;
@@ -258,7 +259,7 @@ return result;
 	Set the value of field writers
 **/ 
 
-public void setWriters( ArrayList<PersonDetails> writers )
+public void setWriters(  ArrayList<PersonDetails> writers )
 {
 this.writers = writers ;
 }
@@ -267,7 +268,7 @@ this.writers = writers ;
 	Get the value of field writers
 **/ 
 
-public ArrayList<PersonDetails> getWriters(){
+public  ArrayList<PersonDetails> getWriters(){
 return this.writers;
 }
 
@@ -340,12 +341,12 @@ public void hwSetReleaseDateMetadata(MetadataString releaseDate)
 	Lazy Evaluation for genres
 **/ 
 
-public ArrayList<Genre>	genres()
+public  ArrayList<Genre>	genres()
 {
-ArrayList<Genre>	result	=this.genres;
+ ArrayList<Genre>	result	=this.genres;
 if(result == null)
 {
-result = new ArrayList<Genre>();
+result = new  ArrayList<Genre>();
 this.genres	=	 result;
 }
 return result;
@@ -355,7 +356,7 @@ return result;
 	Set the value of field genres
 **/ 
 
-public void setGenres( ArrayList<Genre> genres )
+public void setGenres(  ArrayList<Genre> genres )
 {
 this.genres = genres ;
 }
@@ -364,7 +365,7 @@ this.genres = genres ;
 	Get the value of field genres
 **/ 
 
-public ArrayList<Genre> getGenres(){
+public  ArrayList<Genre> getGenres(){
 return this.genres;
 }
 
@@ -501,12 +502,12 @@ public void hwSetTaglineMetadata(MetadataString tagline)
 	Lazy Evaluation for cast
 **/ 
 
-public ArrayList<CastMember>	cast()
+public  ArrayList<CastMember>	cast()
 {
-ArrayList<CastMember>	result	=this.cast;
+ ArrayList<CastMember>	result	=this.cast;
 if(result == null)
 {
-result = new ArrayList<CastMember>();
+result = new  ArrayList<CastMember>();
 this.cast	=	 result;
 }
 return result;
@@ -516,7 +517,7 @@ return result;
 	Set the value of field cast
 **/ 
 
-public void setCast( ArrayList<CastMember> cast )
+public void setCast(  ArrayList<CastMember> cast )
 {
 this.cast = cast ;
 }
@@ -525,7 +526,7 @@ this.cast = cast ;
 	Get the value of field cast
 **/ 
 
-public ArrayList<CastMember> getCast(){
+public  ArrayList<CastMember> getCast(){
 return this.cast;
 }
 	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
@@ -534,12 +535,12 @@ return this.cast;
 	Lazy Evaluation for titlePhotos
 **/ 
 
-public ArrayList<Image>	titlePhotos()
+public  ArrayList<Image>	titlePhotos()
 {
-ArrayList<Image>	result	=this.titlePhotos;
+ ArrayList<Image>	result	=this.titlePhotos;
 if(result == null)
 {
-result = new ArrayList<Image>();
+result = new  ArrayList<Image>();
 this.titlePhotos	=	 result;
 }
 return result;
@@ -549,7 +550,7 @@ return result;
 	Set the value of field titlePhotos
 **/ 
 
-public void setTitlePhotos( ArrayList<Image> titlePhotos )
+public void setTitlePhotos(  ArrayList<Image> titlePhotos )
 {
 this.titlePhotos = titlePhotos ;
 }
@@ -558,7 +559,7 @@ this.titlePhotos = titlePhotos ;
 	Get the value of field titlePhotos
 **/ 
 
-public ArrayList<Image> getTitlePhotos(){
+public  ArrayList<Image> getTitlePhotos(){
 return this.titlePhotos;
 }
 
