@@ -77,7 +77,7 @@ public FlickrTags(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("flickr_link") private ArrayList<FlickrLink>	flickrLinkSet;
+	@xml_collection("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
 
 /**
 	Lazy Evaluation for flickrLinkSet

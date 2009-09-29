@@ -397,7 +397,7 @@ public void hwSetMainImageWidthMetadata(MetadataInteger mainImageWidth)
 		 termVector().remove(this.mainImageWidth.termVector());
 	 this.mainImageWidth = mainImageWidth;
 	rebuildCompositeTermVector();
-}	@xml_collection("paragraph") private ArrayList<Paragraph>	paragraphs;
+}	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
 
 /**
 	Lazy Evaluation for paragraphs
@@ -430,7 +430,7 @@ this.paragraphs = paragraphs ;
 public  ArrayList<Paragraph> getParagraphs(){
 return this.paragraphs;
 }
-	@xml_collection("category") private ArrayList<Category>	Categories;
+	@xml_collection("Categories") private ArrayList<Category>	Categories;
 
 /**
 	Lazy Evaluation for Categories
@@ -463,7 +463,7 @@ this.Categories = Categories ;
 public  ArrayList<Category> getCategories(){
 return this.Categories;
 }
-	@xml_collection("Thumbinner") private ArrayList<Thumbinner>	Thumbinners;
+	@xml_collection("Thumbinners") private ArrayList<Thumbinner>	Thumbinners;
 
 /**
 	Lazy Evaluation for Thumbinners

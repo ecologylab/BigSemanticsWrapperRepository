@@ -77,7 +77,7 @@ public FlickrSearch(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("flickr_image") private ArrayList<FlickrImage>	flickrResults;
+	@xml_collection("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
 /**
 	Lazy Evaluation for flickrResults
