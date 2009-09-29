@@ -126,7 +126,7 @@ public void hwSetParagraphTextMetadata(MetadataString paragraphText)
 		 termVector().remove(this.paragraphText.termVector());
 	 this.paragraphText = paragraphText;
 	rebuildCompositeTermVector();
-}	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
+}	@xml_collection("anchor") private ArrayList<Anchor>	anchors;
 
 /**
 	Lazy Evaluation for anchors

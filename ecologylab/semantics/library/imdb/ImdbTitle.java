@@ -82,70 +82,6 @@ super(metaMetadata);
 	null
 **/ 
 
-	@xml_tag("title") @xml_nested private MetadataString	title;
-
-/**
-	Lazy Evaluation for title
-**/ 
-
-public MetadataString	title()
-{
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
 	@xml_tag("rating") @xml_nested private MetadataString	rating;
 
 /**
@@ -205,7 +141,7 @@ public void hwSetRatingMetadata(MetadataString rating)
 		 termVector().remove(this.rating.termVector());
 	 this.rating = rating;
 	rebuildCompositeTermVector();
-}	@xml_collection("directors") private ArrayList<PersonDetails>	directors;
+}	@xml_collection("person_details") private ArrayList<PersonDetails>	directors;
 
 /**
 	Lazy Evaluation for directors
@@ -238,7 +174,7 @@ this.directors = directors ;
 public  ArrayList<PersonDetails> getDirectors(){
 return this.directors;
 }
-	@xml_collection("writers") private ArrayList<PersonDetails>	writers;
+	@xml_collection("person_details") private ArrayList<PersonDetails>	writers;
 
 /**
 	Lazy Evaluation for writers
@@ -335,7 +271,7 @@ public void hwSetReleaseDateMetadata(MetadataString releaseDate)
 		 termVector().remove(this.releaseDate.termVector());
 	 this.releaseDate = releaseDate;
 	rebuildCompositeTermVector();
-}	@xml_collection("genres") private ArrayList<Genre>	genres;
+}	@xml_collection("genre") private ArrayList<Genre>	genres;
 
 /**
 	Lazy Evaluation for genres
@@ -496,7 +432,7 @@ public void hwSetTaglineMetadata(MetadataString tagline)
 		 termVector().remove(this.tagline.termVector());
 	 this.tagline = tagline;
 	rebuildCompositeTermVector();
-}	@xml_collection("cast") private ArrayList<CastMember>	cast;
+}	@xml_collection("cast_member") private ArrayList<CastMember>	cast;
 
 /**
 	Lazy Evaluation for cast
@@ -529,7 +465,7 @@ this.cast = cast ;
 public  ArrayList<CastMember> getCast(){
 return this.cast;
 }
-	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
+	@xml_collection("image") private ArrayList<Image>	titlePhotos;
 
 /**
 	Lazy Evaluation for titlePhotos

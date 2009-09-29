@@ -77,7 +77,7 @@ public Search(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("searchResults") private ArrayList<SearchResult>	searchResults;
+	@xml_collection("search_result") private ArrayList<SearchResult>	searchResults;
 
 /**
 	Lazy Evaluation for searchResults

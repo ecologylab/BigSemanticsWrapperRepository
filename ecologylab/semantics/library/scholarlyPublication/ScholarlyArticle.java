@@ -238,7 +238,7 @@ this.source = source ;
 public Source getSource(){
 return this.source;
 }
-	@xml_collection("authors") private ArrayList<Author>	authors;
+	@xml_collection("author") private ArrayList<Author>	authors;
 
 /**
 	Lazy Evaluation for authors
@@ -271,7 +271,7 @@ this.authors = authors ;
 public  ArrayList<Author> getAuthors(){
 return this.authors;
 }
-	@xml_collection("references") private ArrayList<Entity<ScholarlyArticle>>	references;
+	@xml_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
 
 /**
 	Lazy Evaluation for references
@@ -304,7 +304,7 @@ this.references = references ;
 public  ArrayList<Entity<ScholarlyArticle>> getReferences(){
 return this.references;
 }
-	@xml_collection("citations") private ArrayList<Entity<ScholarlyArticle>>	citations;
+	@xml_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
 
 /**
 	Lazy Evaluation for citations

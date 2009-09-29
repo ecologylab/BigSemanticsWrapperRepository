@@ -77,7 +77,7 @@ public ResultSet(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("Result") private ArrayList<Result>	Result;
+	@xml_collection("result") private ArrayList<Result>	Result;
 
 /**
 	Lazy Evaluation for Result

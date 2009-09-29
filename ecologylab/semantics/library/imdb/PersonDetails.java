@@ -82,70 +82,6 @@ super(metaMetadata);
 	null
 **/ 
 
-	@xml_tag("title") @xml_nested private MetadataString	title;
-
-/**
-	Lazy Evaluation for title
-**/ 
-
-public MetadataString	title()
-{
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
 	@xml_tag("person_img") @xml_nested private MetadataParsedURL	personImg;
 
 /**
@@ -686,7 +622,7 @@ public void hwSetAlternateNamesMetadata(MetadataString alternateNames)
 		 termVector().remove(this.alternateNames.termVector());
 	 this.alternateNames = alternateNames;
 	rebuildCompositeTermVector();
-}	@xml_collection("titles_as_actor") private ArrayList<ImdbTitle>	titlesAsActor;
+}	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesAsActor;
 
 /**
 	Lazy Evaluation for titlesAsActor
@@ -719,7 +655,7 @@ this.titlesAsActor = titlesAsActor ;
 public  ArrayList<ImdbTitle> getTitlesAsActor(){
 return this.titlesAsActor;
 }
-	@xml_collection("titles_as_director") private ArrayList<ImdbTitle>	titlesAsDirector;
+	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesAsDirector;
 
 /**
 	Lazy Evaluation for titlesAsDirector
@@ -752,7 +688,7 @@ this.titlesAsDirector = titlesAsDirector ;
 public  ArrayList<ImdbTitle> getTitlesAsDirector(){
 return this.titlesAsDirector;
 }
-	@xml_collection("titles_for_soundtrack") private ArrayList<ImdbTitle>	titlesForSoundtrack;
+	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesForSoundtrack;
 
 /**
 	Lazy Evaluation for titlesForSoundtrack
@@ -785,7 +721,7 @@ this.titlesForSoundtrack = titlesForSoundtrack ;
 public  ArrayList<ImdbTitle> getTitlesForSoundtrack(){
 return this.titlesForSoundtrack;
 }
-	@xml_collection("titles_as_producer") private ArrayList<ImdbTitle>	titlesAsProducer;
+	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesAsProducer;
 
 /**
 	Lazy Evaluation for titlesAsProducer
@@ -818,7 +754,7 @@ this.titlesAsProducer = titlesAsProducer ;
 public  ArrayList<ImdbTitle> getTitlesAsProducer(){
 return this.titlesAsProducer;
 }
-	@xml_collection("titles_thanked_in") private ArrayList<ImdbTitle>	titlesThankedIn;
+	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesThankedIn;
 
 /**
 	Lazy Evaluation for titlesThankedIn
@@ -851,7 +787,7 @@ this.titlesThankedIn = titlesThankedIn ;
 public  ArrayList<ImdbTitle> getTitlesThankedIn(){
 return this.titlesThankedIn;
 }
-	@xml_collection("titles_as_self") private ArrayList<ImdbTitle>	titlesAsSelf;
+	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesAsSelf;
 
 /**
 	Lazy Evaluation for titlesAsSelf
@@ -884,7 +820,7 @@ this.titlesAsSelf = titlesAsSelf ;
 public  ArrayList<ImdbTitle> getTitlesAsSelf(){
 return this.titlesAsSelf;
 }
-	@xml_collection("titles_in_development") private ArrayList<ImdbTitle>	titlesInDevelopment;
+	@xml_collection("imdb_title") private ArrayList<ImdbTitle>	titlesInDevelopment;
 
 /**
 	Lazy Evaluation for titlesInDevelopment
