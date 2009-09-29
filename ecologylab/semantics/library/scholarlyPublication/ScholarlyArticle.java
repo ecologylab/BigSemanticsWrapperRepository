@@ -238,7 +238,7 @@ this.source = source ;
 public Source getSource(){
 return this.source;
 }
-	@xml_collection("author") private ArrayList<Author>	authors;
+	@xml_collection("authors") private ArrayList<Author>	authors;
 
 /**
 	Lazy Evaluation for authors

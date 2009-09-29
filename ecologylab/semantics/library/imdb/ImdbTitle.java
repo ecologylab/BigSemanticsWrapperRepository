@@ -141,7 +141,7 @@ public void hwSetRatingMetadata(MetadataString rating)
 		 termVector().remove(this.rating.termVector());
 	 this.rating = rating;
 	rebuildCompositeTermVector();
-}	@xml_collection("person_details") private ArrayList<PersonDetails>	directors;
+}	@xml_collection("directors") private ArrayList<PersonDetails>	directors;
 
 /**
 	Lazy Evaluation for directors
@@ -174,7 +174,7 @@ this.directors = directors ;
 public  ArrayList<PersonDetails> getDirectors(){
 return this.directors;
 }
-	@xml_collection("person_details") private ArrayList<PersonDetails>	writers;
+	@xml_collection("writers") private ArrayList<PersonDetails>	writers;
 
 /**
 	Lazy Evaluation for writers
@@ -271,7 +271,7 @@ public void hwSetReleaseDateMetadata(MetadataString releaseDate)
 		 termVector().remove(this.releaseDate.termVector());
 	 this.releaseDate = releaseDate;
 	rebuildCompositeTermVector();
-}	@xml_collection("genre") private ArrayList<Genre>	genres;
+}	@xml_collection("genres") private ArrayList<Genre>	genres;
 
 /**
 	Lazy Evaluation for genres
@@ -432,7 +432,7 @@ public void hwSetTaglineMetadata(MetadataString tagline)
 		 termVector().remove(this.tagline.termVector());
 	 this.tagline = tagline;
 	rebuildCompositeTermVector();
-}	@xml_collection("cast_member") private ArrayList<CastMember>	cast;
+}	@xml_collection("cast") private ArrayList<CastMember>	cast;
 
 /**
 	Lazy Evaluation for cast
@@ -465,7 +465,7 @@ this.cast = cast ;
 public  ArrayList<CastMember> getCast(){
 return this.cast;
 }
-	@xml_collection("image") private ArrayList<Image>	titlePhotos;
+	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
 
 /**
 	Lazy Evaluation for titlePhotos
