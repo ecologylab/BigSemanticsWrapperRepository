@@ -63,17 +63,17 @@ public CastMember(MetaMetadata metaMetadata)
 super(metaMetadata);
 }
 
-private @xml_tag("actor") @xml_nested PersonDetails	actor;
+private @xml_tag("actor") @xml_nested Entity<PersonDetails>	actor;
 /**
 	Lazy Evaluation for actor
 **/ 
 
-public PersonDetails	actor()
+public Entity<PersonDetails>	actor()
 {
-PersonDetails	result	=this.actor;
+Entity<PersonDetails>	result	=this.actor;
 if(result == null)
 {
-result = new PersonDetails();
+result = new Entity<PersonDetails>();
 this.actor	=	 result;
 }
 return result;
@@ -83,7 +83,7 @@ return result;
 	Set the value of field actor
 **/ 
 
-public void setActor( PersonDetails actor )
+public void setActor( Entity<PersonDetails> actor )
 {
 this.actor = actor ;
 }
@@ -92,21 +92,21 @@ this.actor = actor ;
 	Get the value of field actor
 **/ 
 
-public PersonDetails getActor(){
+public Entity<PersonDetails> getActor(){
 return this.actor;
 }
 
-private @xml_tag("character") @xml_nested PersonDetails	character;
+private @xml_tag("character") @xml_nested Entity<PersonDetails>	character;
 /**
 	Lazy Evaluation for character
 **/ 
 
-public PersonDetails	character()
+public Entity<PersonDetails>	character()
 {
-PersonDetails	result	=this.character;
+Entity<PersonDetails>	result	=this.character;
 if(result == null)
 {
-result = new PersonDetails();
+result = new Entity<PersonDetails>();
 this.character	=	 result;
 }
 return result;
@@ -116,7 +116,7 @@ return result;
 	Set the value of field character
 **/ 
 
-public void setCharacter( PersonDetails character )
+public void setCharacter( Entity<PersonDetails> character )
 {
 this.character = character ;
 }
@@ -125,7 +125,7 @@ this.character = character ;
 	Get the value of field character
 **/ 
 
-public PersonDetails getCharacter(){
+public Entity<PersonDetails> getCharacter(){
 return this.character;
 }
 }
