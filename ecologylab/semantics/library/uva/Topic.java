@@ -24,11 +24,11 @@ import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.builtins.Entity;
 
-  import java.util.*;
- import ecologylab.semantics.metametadata.MetaMetadata;
-  import ecologylab.net.ParsedURL;
- import ecologylab.generic.HashMapArrayList;
- import ecologylab.xml.xml_inherit;
+ import java.util.*;
+import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.net.ParsedURL;
+import ecologylab.generic.HashMapArrayList;
+import ecologylab.xml.xml_inherit;
 import ecologylab.xml.types.element.Mappable;
 import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
 import ecologylab.xml.TranslationScope;
