@@ -30,6 +30,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -41,7 +48,7 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("Thumbinner")
+@xml_tag("thumbinner")
 public class Thumbinner extends Metadata{
 
 
@@ -125,134 +132,6 @@ public void hwSetThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
 {	 if(this.thumbImgSrc!=null && this.thumbImgSrc.getValue()!=null && hasTermVector())
 		 termVector().remove(this.thumbImgSrc.termVector());
 	 this.thumbImgSrc = thumbImgSrc;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("thumb_img_width") @xml_nested private MetadataInteger	thumbImgWidth;
-
-/**
-	Lazy Evaluation for thumbImgWidth
-**/ 
-
-public MetadataInteger	thumbImgWidth()
-{
-MetadataInteger	result	=this.thumbImgWidth;
-if(result == null)
-{
-result = new MetadataInteger();
-this.thumbImgWidth	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field thumbImgWidth
-**/ 
-
-public Integer getThumbImgWidth(){
-return thumbImgWidth().getValue();
-}
-
-/**
-	Sets the value of the field thumbImgWidth
-**/ 
-
-public void setThumbImgWidth( Integer thumbImgWidth )
-{
-this.thumbImgWidth().setValue(thumbImgWidth);
-}
-
-/**
-	The heavy weight setter method for field thumbImgWidth
-**/ 
-
-public void hwSetThumbImgWidth( Integer thumbImgWidth )
-{
-this.thumbImgWidth().setValue(thumbImgWidth);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the thumbImgWidth directly
-**/ 
-
-public void setThumbImgWidthMetadata(MetadataInteger thumbImgWidth)
-{	this.thumbImgWidth = thumbImgWidth;
-}
-/**
-	Heavy Weight Direct setter method for thumbImgWidth
-**/ 
-
-public void hwSetThumbImgWidthMetadata(MetadataInteger thumbImgWidth)
-{	 if(this.thumbImgWidth!=null && this.thumbImgWidth.getValue()!=null && hasTermVector())
-		 termVector().remove(this.thumbImgWidth.termVector());
-	 this.thumbImgWidth = thumbImgWidth;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("thumb_img_height") @xml_nested private MetadataInteger	thumbImgHeight;
-
-/**
-	Lazy Evaluation for thumbImgHeight
-**/ 
-
-public MetadataInteger	thumbImgHeight()
-{
-MetadataInteger	result	=this.thumbImgHeight;
-if(result == null)
-{
-result = new MetadataInteger();
-this.thumbImgHeight	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field thumbImgHeight
-**/ 
-
-public Integer getThumbImgHeight(){
-return thumbImgHeight().getValue();
-}
-
-/**
-	Sets the value of the field thumbImgHeight
-**/ 
-
-public void setThumbImgHeight( Integer thumbImgHeight )
-{
-this.thumbImgHeight().setValue(thumbImgHeight);
-}
-
-/**
-	The heavy weight setter method for field thumbImgHeight
-**/ 
-
-public void hwSetThumbImgHeight( Integer thumbImgHeight )
-{
-this.thumbImgHeight().setValue(thumbImgHeight);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the thumbImgHeight directly
-**/ 
-
-public void setThumbImgHeightMetadata(MetadataInteger thumbImgHeight)
-{	this.thumbImgHeight = thumbImgHeight;
-}
-/**
-	Heavy Weight Direct setter method for thumbImgHeight
-**/ 
-
-public void hwSetThumbImgHeightMetadata(MetadataInteger thumbImgHeight)
-{	 if(this.thumbImgHeight!=null && this.thumbImgHeight.getValue()!=null && hasTermVector())
-		 termVector().remove(this.thumbImgHeight.termVector());
-	 this.thumbImgHeight = thumbImgHeight;
 	rebuildCompositeTermVector();
 }
 /**

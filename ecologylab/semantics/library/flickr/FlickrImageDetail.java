@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.library.flickr;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -38,6 +38,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -50,13 +57,13 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	A Flickr Image
+	A Flickr Image result page
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_image")
-public class  FlickrImage
-extends  Image
+@xml_tag("flickr_image_detail")
+public class  FlickrImageDetail
+extends  Document
 {
 
 
@@ -64,7 +71,7 @@ extends  Image
 	Constructor
 **/ 
 
-public FlickrImage()
+public FlickrImageDetail()
 {
  super();
 }
@@ -73,106 +80,42 @@ public FlickrImage()
 	Constructor
 **/ 
 
-public FlickrImage(MetaMetadata metaMetadata)
+public FlickrImageDetail(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
+private @xml_tag("flickr_image") @xml_nested FlickrImage	flickr_image;
 /**
-	null
+	Lazy Evaluation for flickr_image
 **/ 
 
-	@xml_tag("browse_purl") @xml_nested private MetadataParsedURL	browsePurl;
-
-/**
-	Lazy Evaluation for browsePurl
-**/ 
-
-public MetadataParsedURL	browsePurl()
+public FlickrImage	flickr_image()
 {
-MetadataParsedURL	result	=this.browsePurl;
+FlickrImage	result	=this.flickr_image;
 if(result == null)
 {
-result = new MetadataParsedURL();
-this.browsePurl	=	 result;
+result = new FlickrImage();
+this.flickr_image	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field browsePurl
+	Set the value of field flickr_image
 **/ 
 
-public ParsedURL getBrowsePurl(){
-return browsePurl().getValue();
-}
-
-/**
-	Sets the value of the field browsePurl
-**/ 
-
-public void setBrowsePurl( ParsedURL browsePurl )
+public void setFlickrImage( FlickrImage flickr_image )
 {
-this.browsePurl().setValue(browsePurl);
+this.flickr_image = flickr_image ;
 }
 
 /**
-	The heavy weight setter method for field browsePurl
+	Get the value of field flickr_image
 **/ 
 
-public void hwSetBrowsePurl( ParsedURL browsePurl )
-{
-this.browsePurl().setValue(browsePurl);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the browsePurl directly
-**/ 
-
-public void setBrowsePurlMetadata(MetadataParsedURL browsePurl)
-{	this.browsePurl = browsePurl;
-}
-/**
-	Heavy Weight Direct setter method for browsePurl
-**/ 
-
-public void hwSetBrowsePurlMetadata(MetadataParsedURL browsePurl)
-{	 if(this.browsePurl!=null && this.browsePurl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.browsePurl.termVector());
-	 this.browsePurl = browsePurl;
-	rebuildCompositeTermVector();
-}	@xml_collection("tags") private ArrayList<FlickrTag>	tags;
-
-/**
-	Lazy Evaluation for tags
-**/ 
-
-public  ArrayList<FlickrTag>	tags()
-{
- ArrayList<FlickrTag>	result	=this.tags;
-if(result == null)
-{
-result = new  ArrayList<FlickrTag>();
-this.tags	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field tags
-**/ 
-
-public void setTags(  ArrayList<FlickrTag> tags )
-{
-this.tags = tags ;
-}
-
-/**
-	Get the value of field tags
-**/ 
-
-public  ArrayList<FlickrTag> getTags(){
-return this.tags;
+public FlickrImage getFlickrImage(){
+return this.flickr_image;
 }
 
 }

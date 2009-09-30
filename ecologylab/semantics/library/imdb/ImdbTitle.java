@@ -38,6 +38,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -141,18 +148,18 @@ public void hwSetRatingMetadata(MetadataString rating)
 		 termVector().remove(this.rating.termVector());
 	 this.rating = rating;
 	rebuildCompositeTermVector();
-}	@xml_collection("directors") private ArrayList<PersonDetails>	directors;
+}	@xml_collection("directors") private ArrayList<Entity<PersonDetails>>	directors;
 
 /**
 	Lazy Evaluation for directors
 **/ 
 
-public  ArrayList<PersonDetails>	directors()
+public  ArrayList<Entity<PersonDetails>>	directors()
 {
- ArrayList<PersonDetails>	result	=this.directors;
+ ArrayList<Entity<PersonDetails>>	result	=this.directors;
 if(result == null)
 {
-result = new  ArrayList<PersonDetails>();
+result = new  ArrayList<Entity<PersonDetails>>();
 this.directors	=	 result;
 }
 return result;
@@ -162,7 +169,7 @@ return result;
 	Set the value of field directors
 **/ 
 
-public void setDirectors(  ArrayList<PersonDetails> directors )
+public void setDirectors(  ArrayList<Entity<PersonDetails>> directors )
 {
 this.directors = directors ;
 }
@@ -171,21 +178,21 @@ this.directors = directors ;
 	Get the value of field directors
 **/ 
 
-public  ArrayList<PersonDetails> getDirectors(){
+public  ArrayList<Entity<PersonDetails>> getDirectors(){
 return this.directors;
 }
-	@xml_collection("writers") private ArrayList<PersonDetails>	writers;
+	@xml_collection("writers") private ArrayList<Entity<PersonDetails>>	writers;
 
 /**
 	Lazy Evaluation for writers
 **/ 
 
-public  ArrayList<PersonDetails>	writers()
+public  ArrayList<Entity<PersonDetails>>	writers()
 {
- ArrayList<PersonDetails>	result	=this.writers;
+ ArrayList<Entity<PersonDetails>>	result	=this.writers;
 if(result == null)
 {
-result = new  ArrayList<PersonDetails>();
+result = new  ArrayList<Entity<PersonDetails>>();
 this.writers	=	 result;
 }
 return result;
@@ -195,7 +202,7 @@ return result;
 	Set the value of field writers
 **/ 
 
-public void setWriters(  ArrayList<PersonDetails> writers )
+public void setWriters(  ArrayList<Entity<PersonDetails>> writers )
 {
 this.writers = writers ;
 }
@@ -204,7 +211,7 @@ this.writers = writers ;
 	Get the value of field writers
 **/ 
 
-public  ArrayList<PersonDetails> getWriters(){
+public  ArrayList<Entity<PersonDetails>> getWriters(){
 return this.writers;
 }
 

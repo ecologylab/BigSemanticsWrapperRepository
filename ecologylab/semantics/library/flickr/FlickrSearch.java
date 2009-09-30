@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.library.flickr;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -38,6 +38,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -50,12 +57,12 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	A Flickr Image result page
+	The flickr search class
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_image_detail")
-public class  FlickrImageDetail
+@xml_tag("flickr_search")
+public class  FlickrSearch
 extends  Document
 {
 
@@ -64,7 +71,7 @@ extends  Document
 	Constructor
 **/ 
 
-public FlickrImageDetail()
+public FlickrSearch()
 {
  super();
 }
@@ -73,42 +80,42 @@ public FlickrImageDetail()
 	Constructor
 **/ 
 
-public FlickrImageDetail(MetaMetadata metaMetadata)
+public FlickrSearch(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
+	@xml_collection("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
-private @xml_tag("flickr_image") @xml_nested FlickrImage	flickr_image;
 /**
-	Lazy Evaluation for flickr_image
+	Lazy Evaluation for flickrResults
 **/ 
 
-public FlickrImage	flickr_image()
+public  ArrayList<FlickrImage>	flickrResults()
 {
-FlickrImage	result	=this.flickr_image;
+ ArrayList<FlickrImage>	result	=this.flickrResults;
 if(result == null)
 {
-result = new FlickrImage();
-this.flickr_image	=	 result;
+result = new  ArrayList<FlickrImage>();
+this.flickrResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field flickr_image
+	Set the value of field flickrResults
 **/ 
 
-public void setFlickrImage( FlickrImage flickr_image )
+public void setFlickrResults(  ArrayList<FlickrImage> flickrResults )
 {
-this.flickr_image = flickr_image ;
+this.flickrResults = flickrResults ;
 }
 
 /**
-	Get the value of field flickr_image
+	Get the value of field flickrResults
 **/ 
 
-public FlickrImage getFlickrImage(){
-return this.flickr_image;
+public  ArrayList<FlickrImage> getFlickrResults(){
+return this.flickrResults;
 }
 
 }

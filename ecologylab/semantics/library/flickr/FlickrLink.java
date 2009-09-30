@@ -1,4 +1,12 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.library.flickr;
+
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -30,6 +38,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -40,16 +55,23 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
+
+/**
+	null
+**/ 
+
 @xml_inherit
-@xml_tag("flickr_tag")
-public class FlickrTag extends Metadata{
+@xml_tag("flickr_link")
+public class  FlickrLink
+extends  Metadata
+{
 
 
 /**
 	Constructor
 **/ 
 
-public FlickrTag()
+public FlickrLink()
 {
  super();
 }
@@ -58,136 +80,138 @@ public FlickrTag()
 	Constructor
 **/ 
 
-public FlickrTag(MetaMetadata metaMetadata)
+public FlickrLink(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	null
+	flickr_image_detail
 **/ 
 
-	@xml_tag("tag_name") @xml_nested private MetadataString	tagName;
+	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
 
 /**
-	Lazy Evaluation for tagName
+	Lazy Evaluation for link
 **/ 
 
-public MetadataString	tagName()
+public MetadataParsedURL	link()
 {
-MetadataString	result	=this.tagName;
-if(result == null)
-{
-result = new MetadataString();
-this.tagName	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field tagName
-**/ 
-
-public String getTagName(){
-return tagName().getValue();
-}
-
-/**
-	Sets the value of the field tagName
-**/ 
-
-public void setTagName( String tagName )
-{
-this.tagName().setValue(tagName);
-}
-
-/**
-	The heavy weight setter method for field tagName
-**/ 
-
-public void hwSetTagName( String tagName )
-{
-this.tagName().setValue(tagName);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the tagName directly
-**/ 
-
-public void setTagNameMetadata(MetadataString tagName)
-{	this.tagName = tagName;
-}
-/**
-	Heavy Weight Direct setter method for tagName
-**/ 
-
-public void hwSetTagNameMetadata(MetadataString tagName)
-{	 if(this.tagName!=null && this.tagName.getValue()!=null && hasTermVector())
-		 termVector().remove(this.tagName.termVector());
-	 this.tagName = tagName;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("tag_link") @xml_nested private MetadataParsedURL	tagLink;
-
-/**
-	Lazy Evaluation for tagLink
-**/ 
-
-public MetadataParsedURL	tagLink()
-{
-MetadataParsedURL	result	=this.tagLink;
+MetadataParsedURL	result	=this.link;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.tagLink	=	 result;
+this.link	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field tagLink
+	Gets the value of the field link
 **/ 
 
-public ParsedURL getTagLink(){
-return tagLink().getValue();
+public ParsedURL getLink(){
+return link().getValue();
 }
 
 /**
-	Sets the value of the field tagLink
+	Sets the value of the field link
 **/ 
 
-public void setTagLink( ParsedURL tagLink )
+public void setLink( ParsedURL link )
 {
-this.tagLink().setValue(tagLink);
+this.link().setValue(link);
 }
 
 /**
-	The heavy weight setter method for field tagLink
+	The heavy weight setter method for field link
 **/ 
 
-public void hwSetTagLink( ParsedURL tagLink )
+public void hwSetLink( ParsedURL link )
 {
-this.tagLink().setValue(tagLink);
+this.link().setValue(link);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the tagLink directly
+	 Sets the link directly
 **/ 
 
-public void setTagLinkMetadata(MetadataParsedURL tagLink)
-{	this.tagLink = tagLink;
+public void setLinkMetadata(MetadataParsedURL link)
+{	this.link = link;
 }
 /**
-	Heavy Weight Direct setter method for tagLink
+	Heavy Weight Direct setter method for link
 **/ 
 
-public void hwSetTagLinkMetadata(MetadataParsedURL tagLink)
-{	 if(this.tagLink!=null && this.tagLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.tagLink.termVector());
-	 this.tagLink = tagLink;
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
+		 termVector().remove(this.link.termVector());
+	 this.link = link;
 	rebuildCompositeTermVector();
-}}
+}
+/**
+	flickr_image_detail
+**/ 
+
+	@xml_tag("title") @xml_nested private MetadataString	title;
+
+/**
+	Lazy Evaluation for title
+**/ 
+
+public MetadataString	title()
+{
+MetadataString	result	=this.title;
+if(result == null)
+{
+result = new MetadataString();
+this.title	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field title
+**/ 
+
+public String getTitle(){
+return title().getValue();
+}
+
+/**
+	Sets the value of the field title
+**/ 
+
+public void setTitle( String title )
+{
+this.title().setValue(title);
+}
+
+/**
+	The heavy weight setter method for field title
+**/ 
+
+public void hwSetTitle( String title )
+{
+this.title().setValue(title);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}
+}
+

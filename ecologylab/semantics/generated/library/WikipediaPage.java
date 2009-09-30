@@ -38,6 +38,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -269,134 +276,6 @@ public void hwSetMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
 		 termVector().remove(this.mainImageSrc.termVector());
 	 this.mainImageSrc = mainImageSrc;
 	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("main_image_height") @xml_nested private MetadataInteger	mainImageHeight;
-
-/**
-	Lazy Evaluation for mainImageHeight
-**/ 
-
-public MetadataInteger	mainImageHeight()
-{
-MetadataInteger	result	=this.mainImageHeight;
-if(result == null)
-{
-result = new MetadataInteger();
-this.mainImageHeight	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field mainImageHeight
-**/ 
-
-public Integer getMainImageHeight(){
-return mainImageHeight().getValue();
-}
-
-/**
-	Sets the value of the field mainImageHeight
-**/ 
-
-public void setMainImageHeight( Integer mainImageHeight )
-{
-this.mainImageHeight().setValue(mainImageHeight);
-}
-
-/**
-	The heavy weight setter method for field mainImageHeight
-**/ 
-
-public void hwSetMainImageHeight( Integer mainImageHeight )
-{
-this.mainImageHeight().setValue(mainImageHeight);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the mainImageHeight directly
-**/ 
-
-public void setMainImageHeightMetadata(MetadataInteger mainImageHeight)
-{	this.mainImageHeight = mainImageHeight;
-}
-/**
-	Heavy Weight Direct setter method for mainImageHeight
-**/ 
-
-public void hwSetMainImageHeightMetadata(MetadataInteger mainImageHeight)
-{	 if(this.mainImageHeight!=null && this.mainImageHeight.getValue()!=null && hasTermVector())
-		 termVector().remove(this.mainImageHeight.termVector());
-	 this.mainImageHeight = mainImageHeight;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("main_image_width") @xml_nested private MetadataInteger	mainImageWidth;
-
-/**
-	Lazy Evaluation for mainImageWidth
-**/ 
-
-public MetadataInteger	mainImageWidth()
-{
-MetadataInteger	result	=this.mainImageWidth;
-if(result == null)
-{
-result = new MetadataInteger();
-this.mainImageWidth	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field mainImageWidth
-**/ 
-
-public Integer getMainImageWidth(){
-return mainImageWidth().getValue();
-}
-
-/**
-	Sets the value of the field mainImageWidth
-**/ 
-
-public void setMainImageWidth( Integer mainImageWidth )
-{
-this.mainImageWidth().setValue(mainImageWidth);
-}
-
-/**
-	The heavy weight setter method for field mainImageWidth
-**/ 
-
-public void hwSetMainImageWidth( Integer mainImageWidth )
-{
-this.mainImageWidth().setValue(mainImageWidth);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the mainImageWidth directly
-**/ 
-
-public void setMainImageWidthMetadata(MetadataInteger mainImageWidth)
-{	this.mainImageWidth = mainImageWidth;
-}
-/**
-	Heavy Weight Direct setter method for mainImageWidth
-**/ 
-
-public void hwSetMainImageWidthMetadata(MetadataInteger mainImageWidth)
-{	 if(this.mainImageWidth!=null && this.mainImageWidth.getValue()!=null && hasTermVector())
-		 termVector().remove(this.mainImageWidth.termVector());
-	 this.mainImageWidth = mainImageWidth;
-	rebuildCompositeTermVector();
 }	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
 
 /**
@@ -430,71 +309,71 @@ this.paragraphs = paragraphs ;
 public  ArrayList<Paragraph> getParagraphs(){
 return this.paragraphs;
 }
-	@xml_collection("Categories") private ArrayList<Category>	Categories;
+	@xml_collection("categories") private ArrayList<Category>	categories;
 
 /**
-	Lazy Evaluation for Categories
+	Lazy Evaluation for categories
 **/ 
 
-public  ArrayList<Category>	Categories()
+public  ArrayList<Category>	categories()
 {
- ArrayList<Category>	result	=this.Categories;
+ ArrayList<Category>	result	=this.categories;
 if(result == null)
 {
 result = new  ArrayList<Category>();
-this.Categories	=	 result;
+this.categories	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field Categories
+	Set the value of field categories
 **/ 
 
-public void setCategories(  ArrayList<Category> Categories )
+public void setCategories(  ArrayList<Category> categories )
 {
-this.Categories = Categories ;
+this.categories = categories ;
 }
 
 /**
-	Get the value of field Categories
+	Get the value of field categories
 **/ 
 
 public  ArrayList<Category> getCategories(){
-return this.Categories;
+return this.categories;
 }
-	@xml_collection("Thumbinners") private ArrayList<Thumbinner>	Thumbinners;
+	@xml_collection("thumbinners") private ArrayList<Thumbinner>	thumbinners;
 
 /**
-	Lazy Evaluation for Thumbinners
+	Lazy Evaluation for thumbinners
 **/ 
 
-public  ArrayList<Thumbinner>	Thumbinners()
+public  ArrayList<Thumbinner>	thumbinners()
 {
- ArrayList<Thumbinner>	result	=this.Thumbinners;
+ ArrayList<Thumbinner>	result	=this.thumbinners;
 if(result == null)
 {
 result = new  ArrayList<Thumbinner>();
-this.Thumbinners	=	 result;
+this.thumbinners	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field Thumbinners
+	Set the value of field thumbinners
 **/ 
 
-public void setThumbinners(  ArrayList<Thumbinner> Thumbinners )
+public void setThumbinners(  ArrayList<Thumbinner> thumbinners )
 {
-this.Thumbinners = Thumbinners ;
+this.thumbinners = thumbinners ;
 }
 
 /**
-	Get the value of field Thumbinners
+	Get the value of field thumbinners
 **/ 
 
 public  ArrayList<Thumbinner> getThumbinners(){
-return this.Thumbinners;
+return this.thumbinners;
 }
 
 }

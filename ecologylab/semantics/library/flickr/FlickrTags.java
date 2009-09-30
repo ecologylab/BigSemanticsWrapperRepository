@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.library.flickr;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -38,6 +38,13 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -50,12 +57,12 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	All flickr photos of a particular user
+	All flickr photos of a tag
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_author")
-public class  FlickrAuthor
+@xml_tag("flickr_tags")
+public class  FlickrTags
 extends  Document
 {
 
@@ -64,7 +71,7 @@ extends  Document
 	Constructor
 **/ 
 
-public FlickrAuthor()
+public FlickrTags()
 {
  super();
 }
@@ -73,7 +80,7 @@ public FlickrAuthor()
 	Constructor
 **/ 
 
-public FlickrAuthor(MetaMetadata metaMetadata)
+public FlickrTags(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }

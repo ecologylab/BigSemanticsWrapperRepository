@@ -1,4 +1,12 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.library.flickr;
+
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -47,16 +55,23 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
+
+/**
+	null
+**/ 
+
 @xml_inherit
-@xml_tag("category")
-public class Category extends Metadata{
+@xml_tag("flickr_tag")
+public class  FlickrTag
+extends  Metadata
+{
 
 
 /**
 	Constructor
 **/ 
 
-public Category()
+public FlickrTag()
 {
  super();
 }
@@ -65,7 +80,7 @@ public Category()
 	Constructor
 **/ 
 
-public Category(MetaMetadata metaMetadata)
+public FlickrTag(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
@@ -74,127 +89,129 @@ super(metaMetadata);
 	null
 **/ 
 
-	@xml_tag("name") @xml_nested private MetadataString	name;
+	@xml_tag("tag_name") @xml_nested private MetadataString	tagName;
 
 /**
-	Lazy Evaluation for name
+	Lazy Evaluation for tagName
 **/ 
 
-public MetadataString	name()
+public MetadataString	tagName()
 {
-MetadataString	result	=this.name;
+MetadataString	result	=this.tagName;
 if(result == null)
 {
 result = new MetadataString();
-this.name	=	 result;
+this.tagName	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field name
+	Gets the value of the field tagName
 **/ 
 
-public String getName(){
-return name().getValue();
+public String getTagName(){
+return tagName().getValue();
 }
 
 /**
-	Sets the value of the field name
+	Sets the value of the field tagName
 **/ 
 
-public void setName( String name )
+public void setTagName( String tagName )
 {
-this.name().setValue(name);
+this.tagName().setValue(tagName);
 }
 
 /**
-	The heavy weight setter method for field name
+	The heavy weight setter method for field tagName
 **/ 
 
-public void hwSetName( String name )
+public void hwSetTagName( String tagName )
 {
-this.name().setValue(name);
+this.tagName().setValue(tagName);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the name directly
+	 Sets the tagName directly
 **/ 
 
-public void setNameMetadata(MetadataString name)
-{	this.name = name;
+public void setTagNameMetadata(MetadataString tagName)
+{	this.tagName = tagName;
 }
 /**
-	Heavy Weight Direct setter method for name
+	Heavy Weight Direct setter method for tagName
 **/ 
 
-public void hwSetNameMetadata(MetadataString name)
-{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
-		 termVector().remove(this.name.termVector());
-	 this.name = name;
+public void hwSetTagNameMetadata(MetadataString tagName)
+{	 if(this.tagName!=null && this.tagName.getValue()!=null && hasTermVector())
+		 termVector().remove(this.tagName.termVector());
+	 this.tagName = tagName;
 	rebuildCompositeTermVector();
 }
 /**
 	null
 **/ 
 
-	@xml_tag("cat_link") @xml_nested private MetadataParsedURL	catLink;
+	@xml_tag("tag_link") @xml_nested private MetadataParsedURL	tagLink;
 
 /**
-	Lazy Evaluation for catLink
+	Lazy Evaluation for tagLink
 **/ 
 
-public MetadataParsedURL	catLink()
+public MetadataParsedURL	tagLink()
 {
-MetadataParsedURL	result	=this.catLink;
+MetadataParsedURL	result	=this.tagLink;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.catLink	=	 result;
+this.tagLink	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field catLink
+	Gets the value of the field tagLink
 **/ 
 
-public ParsedURL getCatLink(){
-return catLink().getValue();
+public ParsedURL getTagLink(){
+return tagLink().getValue();
 }
 
 /**
-	Sets the value of the field catLink
+	Sets the value of the field tagLink
 **/ 
 
-public void setCatLink( ParsedURL catLink )
+public void setTagLink( ParsedURL tagLink )
 {
-this.catLink().setValue(catLink);
+this.tagLink().setValue(tagLink);
 }
 
 /**
-	The heavy weight setter method for field catLink
+	The heavy weight setter method for field tagLink
 **/ 
 
-public void hwSetCatLink( ParsedURL catLink )
+public void hwSetTagLink( ParsedURL tagLink )
 {
-this.catLink().setValue(catLink);
+this.tagLink().setValue(tagLink);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the catLink directly
+	 Sets the tagLink directly
 **/ 
 
-public void setCatLinkMetadata(MetadataParsedURL catLink)
-{	this.catLink = catLink;
+public void setTagLinkMetadata(MetadataParsedURL tagLink)
+{	this.tagLink = tagLink;
 }
 /**
-	Heavy Weight Direct setter method for catLink
+	Heavy Weight Direct setter method for tagLink
 **/ 
 
-public void hwSetCatLinkMetadata(MetadataParsedURL catLink)
-{	 if(this.catLink!=null && this.catLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.catLink.termVector());
-	 this.catLink = catLink;
+public void hwSetTagLinkMetadata(MetadataParsedURL tagLink)
+{	 if(this.tagLink!=null && this.tagLink.getValue()!=null && hasTermVector())
+		 termVector().remove(this.tagLink.termVector());
+	 this.tagLink = tagLink;
 	rebuildCompositeTermVector();
-}}
+}
+}
+
