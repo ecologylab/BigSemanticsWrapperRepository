@@ -1,14 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
-
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
@@ -56,88 +47,90 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
+@xml_inherit
+@xml_tag("thumbnail")
+public class Thumbnail extends Metadata{
+
 
 /**
-	
-This is the tranlation scope class for generated files
-.
+	Constructor
 **/ 
 
-public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslationSpace
-{protected static final Class TRANSLATIONS[]=
-	{Pdf.class,
-
-Dlms.class,
-
-Icdl.class,
-
-Nsdl.class,
-
-Text.class,
-
-DcDocument.class,
-
-SearchResult.class,
-
-Search.class,
-
-Thumbnail.class,
-
-Result.class,
-
-ResultSet.class,
-
-FlickrTag.class,
-
-FlickrImage.class,
-
-FlickrSearch.class,
-
-FlickrImageDetail.class,
-
-FlickrLink.class,
-
-FlickrAuthor.class,
-
-FlickrTags.class,
-
-Anchor.class,
-
-Paragraph.class,
-
-Category.class,
-
-Thumbinner.class,
-
-WikipediaPage.class,
-
-IcdlImage.class,
-
-Rss.class,
-
-Topic.class,
-
-Source.class,
-
-Author.class,
-
-ScholarlyArticle.class,
-
-BirthDetail.class,
-
-Genre.class,
-
-CastMember.class,
-
-ImdbTitle.class,
-
-PersonDetails.class,
-
-
-};
- 
-public static TranslationScope get()
+public Thumbnail()
 {
-return TranslationScope.get("generated_metadata_translations", MetaMetadataRepository.builtinMetadataTranslations(), TRANSLATIONS);
+ super();
 }
+
+/**
+	Constructor
+**/ 
+
+public Thumbnail(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
 }
+
+/**
+	null
+**/ 
+
+	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
+
+/**
+	Lazy Evaluation for Url
+**/ 
+
+public MetadataParsedURL	Url()
+{
+MetadataParsedURL	result	=this.Url;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.Url	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field Url
+**/ 
+
+public ParsedURL getUrl(){
+return Url().getValue();
+}
+
+/**
+	Sets the value of the field Url
+**/ 
+
+public void setUrl( ParsedURL Url )
+{
+this.Url().setValue(Url);
+}
+
+/**
+	The heavy weight setter method for field Url
+**/ 
+
+public void hwSetUrl( ParsedURL Url )
+{
+this.Url().setValue(Url);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the Url directly
+**/ 
+
+public void setUrlMetadata(MetadataParsedURL Url)
+{	this.Url = Url;
+}
+/**
+	Heavy Weight Direct setter method for Url
+**/ 
+
+public void hwSetUrlMetadata(MetadataParsedURL Url)
+{	 if(this.Url!=null && this.Url.getValue()!=null && hasTermVector())
+		 termVector().remove(this.Url.termVector());
+	 this.Url = Url;
+	rebuildCompositeTermVector();
+}}

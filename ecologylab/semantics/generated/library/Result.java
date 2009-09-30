@@ -266,64 +266,64 @@ public void hwSetUrlMetadata(MetadataParsedURL Url)
 	null
 **/ 
 
-	@xml_tag("ClickUrl") @xml_nested private MetadataParsedURL	ClickUrl;
+	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	RefererUrl;
 
 /**
-	Lazy Evaluation for ClickUrl
+	Lazy Evaluation for RefererUrl
 **/ 
 
-public MetadataParsedURL	ClickUrl()
+public MetadataParsedURL	RefererUrl()
 {
-MetadataParsedURL	result	=this.ClickUrl;
+MetadataParsedURL	result	=this.RefererUrl;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.ClickUrl	=	 result;
+this.RefererUrl	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field ClickUrl
+	Gets the value of the field RefererUrl
 **/ 
 
-public ParsedURL getClickUrl(){
-return ClickUrl().getValue();
+public ParsedURL getRefererUrl(){
+return RefererUrl().getValue();
 }
 
 /**
-	Sets the value of the field ClickUrl
+	Sets the value of the field RefererUrl
 **/ 
 
-public void setClickUrl( ParsedURL ClickUrl )
+public void setRefererUrl( ParsedURL RefererUrl )
 {
-this.ClickUrl().setValue(ClickUrl);
+this.RefererUrl().setValue(RefererUrl);
 }
 
 /**
-	The heavy weight setter method for field ClickUrl
+	The heavy weight setter method for field RefererUrl
 **/ 
 
-public void hwSetClickUrl( ParsedURL ClickUrl )
+public void hwSetRefererUrl( ParsedURL RefererUrl )
 {
-this.ClickUrl().setValue(ClickUrl);
+this.RefererUrl().setValue(RefererUrl);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the ClickUrl directly
+	 Sets the RefererUrl directly
 **/ 
 
-public void setClickUrlMetadata(MetadataParsedURL ClickUrl)
-{	this.ClickUrl = ClickUrl;
+public void setRefererUrlMetadata(MetadataParsedURL RefererUrl)
+{	this.RefererUrl = RefererUrl;
 }
 /**
-	Heavy Weight Direct setter method for ClickUrl
+	Heavy Weight Direct setter method for RefererUrl
 **/ 
 
-public void hwSetClickUrlMetadata(MetadataParsedURL ClickUrl)
-{	 if(this.ClickUrl!=null && this.ClickUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.ClickUrl.termVector());
-	 this.ClickUrl = ClickUrl;
+public void hwSetRefererUrlMetadata(MetadataParsedURL RefererUrl)
+{	 if(this.RefererUrl!=null && this.RefererUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.RefererUrl.termVector());
+	 this.RefererUrl = RefererUrl;
 	rebuildCompositeTermVector();
 }
 /**
@@ -517,4 +517,37 @@ public void hwSetMimeTypeMetadata(MetadataString MimeType)
 		 termVector().remove(this.MimeType.termVector());
 	 this.MimeType = MimeType;
 	rebuildCompositeTermVector();
-}}
+}	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	Thumbnail;
+
+/**
+	Lazy Evaluation for Thumbnail
+**/ 
+
+public  ArrayList<Thumbnail>	Thumbnail()
+{
+ ArrayList<Thumbnail>	result	=this.Thumbnail;
+if(result == null)
+{
+result = new  ArrayList<Thumbnail>();
+this.Thumbnail	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field Thumbnail
+**/ 
+
+public void setThumbnail(  ArrayList<Thumbnail> Thumbnail )
+{
+this.Thumbnail = Thumbnail ;
+}
+
+/**
+	Get the value of field Thumbnail
+**/ 
+
+public  ArrayList<Thumbnail> getThumbnail(){
+return this.Thumbnail;
+}
+}
