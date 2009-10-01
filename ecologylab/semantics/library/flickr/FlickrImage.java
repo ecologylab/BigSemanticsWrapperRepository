@@ -148,6 +148,39 @@ public void hwSetBrowsePurlMetadata(MetadataParsedURL browsePurl)
 		 termVector().remove(this.browsePurl.termVector());
 	 this.browsePurl = browsePurl;
 	rebuildCompositeTermVector();
+}	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
+
+/**
+	Lazy Evaluation for flickrTags
+**/ 
+
+public  ArrayList<FlickrTag>	flickrTags()
+{
+ ArrayList<FlickrTag>	result	=this.flickrTags;
+if(result == null)
+{
+result = new  ArrayList<FlickrTag>();
+this.flickrTags	=	 result;
 }
+return result;
+}
+
+/**
+	Set the value of field flickrTags
+**/ 
+
+public void setFlickrTags(  ArrayList<FlickrTag> flickrTags )
+{
+this.flickrTags = flickrTags ;
+}
+
+/**
+	Get the value of field flickrTags
+**/ 
+
+public  ArrayList<FlickrTag> getFlickrTags(){
+return this.flickrTags;
+}
+
 }
 
