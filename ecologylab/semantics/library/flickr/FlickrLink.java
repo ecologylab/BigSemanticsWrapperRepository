@@ -92,6 +92,12 @@ super(metaMetadata);
 	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
 
 /**
+	flickr_image_detail
+**/ 
+
+	@xml_tag("title") @xml_nested private MetadataString	title;
+
+/**
 	Lazy Evaluation for link
 **/ 
 
@@ -149,12 +155,6 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 	 this.link = link;
 	rebuildCompositeTermVector();
 }
-/**
-	flickr_image_detail
-**/ 
-
-	@xml_tag("title") @xml_nested private MetadataString	title;
-
 /**
 	Lazy Evaluation for title
 **/ 

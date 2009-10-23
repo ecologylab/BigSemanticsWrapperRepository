@@ -90,6 +90,7 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("browse_purl") @xml_nested private MetadataParsedURL	browsePurl;
+	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
 /**
 	Lazy Evaluation for browsePurl
@@ -148,8 +149,7 @@ public void hwSetBrowsePurlMetadata(MetadataParsedURL browsePurl)
 		 termVector().remove(this.browsePurl.termVector());
 	 this.browsePurl = browsePurl;
 	rebuildCompositeTermVector();
-}	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
-
+}
 /**
 	Lazy Evaluation for flickrTags
 **/ 
