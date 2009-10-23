@@ -77,6 +77,12 @@ super(metaMetadata);
 	@xml_tag("name") @xml_nested private MetadataString	name;
 
 /**
+	null
+**/ 
+
+	@xml_tag("cat_link") @xml_nested private MetadataParsedURL	catLink;
+
+/**
 	Lazy Evaluation for name
 **/ 
 
@@ -134,12 +140,6 @@ public void hwSetNameMetadata(MetadataString name)
 	 this.name = name;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("cat_link") @xml_nested private MetadataParsedURL	catLink;
-
 /**
 	Lazy Evaluation for catLink
 **/ 

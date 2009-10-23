@@ -77,6 +77,43 @@ super(metaMetadata);
 	@xml_tag("Title") @xml_nested private MetadataString	Title;
 
 /**
+	null
+**/ 
+
+	@xml_tag("Summary") @xml_nested private MetadataString	Summary;
+
+/**
+	null
+**/ 
+
+	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
+
+/**
+	null
+**/ 
+
+	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	RefererUrl;
+
+/**
+	null
+**/ 
+
+	@xml_tag("DisplayUrl") @xml_nested private MetadataParsedURL	DisplayUrl;
+
+/**
+	null
+**/ 
+
+	@xml_tag("ModificationDate") @xml_nested private MetadataInteger	ModificationDate;
+
+/**
+	null
+**/ 
+
+	@xml_tag("MimeType") @xml_nested private MetadataString	MimeType;
+	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	Thumbnail;
+
+/**
 	Lazy Evaluation for Title
 **/ 
 
@@ -134,12 +171,6 @@ public void hwSetTitleMetadata(MetadataString Title)
 	 this.Title = Title;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("Summary") @xml_nested private MetadataString	Summary;
-
 /**
 	Lazy Evaluation for Summary
 **/ 
@@ -199,12 +230,6 @@ public void hwSetSummaryMetadata(MetadataString Summary)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
-
-/**
 	Lazy Evaluation for Url
 **/ 
 
@@ -262,12 +287,6 @@ public void hwSetUrlMetadata(MetadataParsedURL Url)
 	 this.Url = Url;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	RefererUrl;
-
 /**
 	Lazy Evaluation for RefererUrl
 **/ 
@@ -327,12 +346,6 @@ public void hwSetRefererUrlMetadata(MetadataParsedURL RefererUrl)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("DisplayUrl") @xml_nested private MetadataParsedURL	DisplayUrl;
-
-/**
 	Lazy Evaluation for DisplayUrl
 **/ 
 
@@ -390,12 +403,6 @@ public void hwSetDisplayUrlMetadata(MetadataParsedURL DisplayUrl)
 	 this.DisplayUrl = DisplayUrl;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("ModificationDate") @xml_nested private MetadataInteger	ModificationDate;
-
 /**
 	Lazy Evaluation for ModificationDate
 **/ 
@@ -455,12 +462,6 @@ public void hwSetModificationDateMetadata(MetadataInteger ModificationDate)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("MimeType") @xml_nested private MetadataString	MimeType;
-
-/**
 	Lazy Evaluation for MimeType
 **/ 
 
@@ -517,8 +518,7 @@ public void hwSetMimeTypeMetadata(MetadataString MimeType)
 		 termVector().remove(this.MimeType.termVector());
 	 this.MimeType = MimeType;
 	rebuildCompositeTermVector();
-}	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	Thumbnail;
-
+}
 /**
 	Lazy Evaluation for Thumbnail
 **/ 

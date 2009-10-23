@@ -77,6 +77,12 @@ super(metaMetadata);
 	@xml_tag("thumb_img_src") @xml_nested private MetadataParsedURL	thumbImgSrc;
 
 /**
+	null
+**/ 
+
+	@xml_tag("thumb_img_caption") @xml_nested private MetadataString	thumbImgCaption;
+
+/**
 	Lazy Evaluation for thumbImgSrc
 **/ 
 
@@ -134,12 +140,6 @@ public void hwSetThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
 	 this.thumbImgSrc = thumbImgSrc;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("thumb_img_caption") @xml_nested private MetadataString	thumbImgCaption;
-
 /**
 	Lazy Evaluation for thumbImgCaption
 **/ 

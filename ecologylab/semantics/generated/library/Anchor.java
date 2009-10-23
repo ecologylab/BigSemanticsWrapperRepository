@@ -77,6 +77,12 @@ super(metaMetadata);
 	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
 
 /**
+	null
+**/ 
+
+	@xml_tag("anchor_text") @xml_nested private MetadataString	anchorText;
+
+/**
 	Lazy Evaluation for link
 **/ 
 
@@ -134,12 +140,6 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 	 this.link = link;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("anchor_text") @xml_nested private MetadataString	anchorText;
-
 /**
 	Lazy Evaluation for anchorText
 **/ 

@@ -92,6 +92,48 @@ super(metaMetadata);
 	@xml_tag("author") @xml_nested private MetadataString	author;
 
 /**
+	Summary of the pdf document
+**/ 
+
+	@xml_tag("summary") @xml_nested private MetadataString	summary;
+
+/**
+	Key Words of the document
+**/ 
+
+	@xml_tag("keywords") @xml_nested private MetadataString	keywords;
+
+/**
+	Subject of the document
+**/ 
+
+	@xml_tag("subject") @xml_nested private MetadataString	subject;
+
+/**
+	
+**/ 
+
+	@xml_tag("trapped") @xml_nested private MetadataString	trapped;
+
+/**
+	
+**/ 
+
+	@xml_tag("modified") @xml_nested private MetadataString	modified;
+
+/**
+	Contents of the document
+**/ 
+
+	@xml_tag("contents") @xml_nested private MetadataString	contents;
+
+/**
+	Creation date of the document
+**/ 
+
+	@xml_tag("creationdate") @xml_nested private MetadataString	creationdate;
+
+/**
 	Lazy Evaluation for author
 **/ 
 
@@ -149,12 +191,6 @@ public void hwSetAuthorMetadata(MetadataString author)
 	 this.author = author;
 	rebuildCompositeTermVector();
 }
-/**
-	Summary of the pdf document
-**/ 
-
-	@xml_tag("summary") @xml_nested private MetadataString	summary;
-
 /**
 	Lazy Evaluation for summary
 **/ 
@@ -214,12 +250,6 @@ public void hwSetSummaryMetadata(MetadataString summary)
 	rebuildCompositeTermVector();
 }
 /**
-	Key Words of the document
-**/ 
-
-	@xml_tag("keywords") @xml_nested private MetadataString	keywords;
-
-/**
 	Lazy Evaluation for keywords
 **/ 
 
@@ -277,12 +307,6 @@ public void hwSetKeywordsMetadata(MetadataString keywords)
 	 this.keywords = keywords;
 	rebuildCompositeTermVector();
 }
-/**
-	Subject of the document
-**/ 
-
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
-
 /**
 	Lazy Evaluation for subject
 **/ 
@@ -342,12 +366,6 @@ public void hwSetSubjectMetadata(MetadataString subject)
 	rebuildCompositeTermVector();
 }
 /**
-	
-**/ 
-
-	@xml_tag("trapped") @xml_nested private MetadataString	trapped;
-
-/**
 	Lazy Evaluation for trapped
 **/ 
 
@@ -405,12 +423,6 @@ public void hwSetTrappedMetadata(MetadataString trapped)
 	 this.trapped = trapped;
 	rebuildCompositeTermVector();
 }
-/**
-	
-**/ 
-
-	@xml_tag("modified") @xml_nested private MetadataString	modified;
-
 /**
 	Lazy Evaluation for modified
 **/ 
@@ -470,12 +482,6 @@ public void hwSetModifiedMetadata(MetadataString modified)
 	rebuildCompositeTermVector();
 }
 /**
-	Contents of the document
-**/ 
-
-	@xml_tag("contents") @xml_nested private MetadataString	contents;
-
-/**
 	Lazy Evaluation for contents
 **/ 
 
@@ -533,12 +539,6 @@ public void hwSetContentsMetadata(MetadataString contents)
 	 this.contents = contents;
 	rebuildCompositeTermVector();
 }
-/**
-	Creation date of the document
-**/ 
-
-	@xml_tag("creationdate") @xml_nested private MetadataString	creationdate;
-
 /**
 	Lazy Evaluation for creationdate
 **/ 

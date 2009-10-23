@@ -92,6 +92,21 @@ super(metaMetadata);
 	@xml_tag("title") @xml_nested private MetadataString	title;
 
 /**
+	null
+**/ 
+
+	@xml_tag("description") @xml_nested private MetadataString	description;
+
+/**
+	null
+**/ 
+
+	@xml_tag("main_image_src") @xml_nested private MetadataParsedURL	mainImageSrc;
+	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
+	@xml_collection("categories") private ArrayList<Category>	categories;
+	@xml_collection("thumbinners") private ArrayList<Thumbinner>	thumbinners;
+
+/**
 	Lazy Evaluation for title
 **/ 
 
@@ -149,12 +164,6 @@ public void hwSetTitleMetadata(MetadataString title)
 	 this.title = title;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("description") @xml_nested private MetadataString	description;
-
 /**
 	Lazy Evaluation for description
 **/ 
@@ -214,12 +223,6 @@ public void hwSetDescriptionMetadata(MetadataString description)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("main_image_src") @xml_nested private MetadataParsedURL	mainImageSrc;
-
-/**
 	Lazy Evaluation for mainImageSrc
 **/ 
 
@@ -276,8 +279,7 @@ public void hwSetMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
 		 termVector().remove(this.mainImageSrc.termVector());
 	 this.mainImageSrc = mainImageSrc;
 	rebuildCompositeTermVector();
-}	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
-
+}
 /**
 	Lazy Evaluation for paragraphs
 **/ 
@@ -309,7 +311,6 @@ this.paragraphs = paragraphs ;
 public  ArrayList<Paragraph> getParagraphs(){
 return this.paragraphs;
 }
-	@xml_collection("categories") private ArrayList<Category>	categories;
 
 /**
 	Lazy Evaluation for categories
@@ -342,7 +343,6 @@ this.categories = categories ;
 public  ArrayList<Category> getCategories(){
 return this.categories;
 }
-	@xml_collection("thumbinners") private ArrayList<Thumbinner>	thumbinners;
 
 /**
 	Lazy Evaluation for thumbinners

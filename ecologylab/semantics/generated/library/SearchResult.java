@@ -77,6 +77,18 @@ super(metaMetadata);
 	@xml_tag("heading") @xml_nested private MetadataString	heading;
 
 /**
+	The snippet of search result
+**/ 
+
+	@xml_tag("snippet") @xml_nested private MetadataString	snippet;
+
+/**
+	The link of the search result
+**/ 
+
+	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
+/**
 	Lazy Evaluation for heading
 **/ 
 
@@ -135,12 +147,6 @@ public void hwSetHeadingMetadata(MetadataString heading)
 	rebuildCompositeTermVector();
 }
 /**
-	The snippet of search result
-**/ 
-
-	@xml_tag("snippet") @xml_nested private MetadataString	snippet;
-
-/**
 	Lazy Evaluation for snippet
 **/ 
 
@@ -198,12 +204,6 @@ public void hwSetSnippetMetadata(MetadataString snippet)
 	 this.snippet = snippet;
 	rebuildCompositeTermVector();
 }
-/**
-	The link of the search result
-**/ 
-
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
-
 /**
 	Lazy Evaluation for link
 **/ 

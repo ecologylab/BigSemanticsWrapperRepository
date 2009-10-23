@@ -85,6 +85,8 @@ Thumbnail.class,
 
 Result.class,
 
+Thumbnail.class,
+
 ResultSet.class,
 
 FlickrTag.class,
@@ -108,6 +110,8 @@ Paragraph.class,
 Category.class,
 
 Thumbinner.class,
+
+Anchor.class,
 
 WikipediaPage.class,
 

@@ -75,6 +75,7 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("paragraph_text") @xml_nested private MetadataString	paragraphText;
+	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
 
 /**
 	Lazy Evaluation for paragraphText
@@ -133,8 +134,7 @@ public void hwSetParagraphTextMetadata(MetadataString paragraphText)
 		 termVector().remove(this.paragraphText.termVector());
 	 this.paragraphText = paragraphText;
 	rebuildCompositeTermVector();
-}	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
-
+}
 /**
 	Lazy Evaluation for anchors
 **/ 
