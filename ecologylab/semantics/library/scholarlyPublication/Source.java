@@ -86,69 +86,17 @@ super(metaMetadata);
 }
 
 /**
+	null
+**/ 
+
+	@xml_tag("year_of_publication") @xml_nested private MetadataInteger	yearOfPublication;
+
+/**
 	Archive of conference or journal.
 **/ 
 
 	@xml_tag("archive") @xml_nested private MetadataParsedURL	archive;
 
-/**
-	Lazy Evaluation for archive
-**/ 
-
-public MetadataParsedURL	archive()
-{
-MetadataParsedURL	result	=this.archive;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.archive	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field archive
-**/ 
-
-public ParsedURL getArchive(){
-return archive().getValue();
-}
-
-/**
-	Sets the value of the field archive
-**/ 
-
-public void setArchive( ParsedURL archive )
-{
-this.archive().setValue(archive);
-}
-
-/**
-	The heavy weight setter method for field archive
-**/ 
-
-public void hwSetArchive( ParsedURL archive )
-{
-this.archive().setValue(archive);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the archive directly
-**/ 
-
-public void setArchiveMetadata(MetadataParsedURL archive)
-{	this.archive = archive;
-}
-/**
-	Heavy Weight Direct setter method for archive
-**/ 
-
-public void hwSetArchiveMetadata(MetadataParsedURL archive)
-{	 if(this.archive!=null && this.archive.getValue()!=null && hasTermVector())
-		 termVector().remove(this.archive.termVector());
-	 this.archive = archive;
-	rebuildCompositeTermVector();
-}
 /**
 	null
 **/ 
@@ -156,68 +104,10 @@ public void hwSetArchiveMetadata(MetadataParsedURL archive)
 	@xml_tag("pages") @xml_nested private MetadataString	pages;
 
 /**
-	Lazy Evaluation for pages
+	
 **/ 
 
-public MetadataString	pages()
-{
-MetadataString	result	=this.pages;
-if(result == null)
-{
-result = new MetadataString();
-this.pages	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field pages
-**/ 
-
-public String getPages(){
-return pages().getValue();
-}
-
-/**
-	Sets the value of the field pages
-**/ 
-
-public void setPages( String pages )
-{
-this.pages().setValue(pages);
-}
-
-/**
-	The heavy weight setter method for field pages
-**/ 
-
-public void hwSetPages( String pages )
-{
-this.pages().setValue(pages);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the pages directly
-**/ 
-
-public void setPagesMetadata(MetadataString pages)
-{	this.pages = pages;
-}
-/**
-	Heavy Weight Direct setter method for pages
-**/ 
-
-public void hwSetPagesMetadata(MetadataString pages)
-{	 if(this.pages!=null && this.pages.getValue()!=null && hasTermVector())
-		 termVector().remove(this.pages.termVector());
-	 this.pages = pages;
-	rebuildCompositeTermVector();
-}
-/**
-	null
-**/ 
-
-	@xml_tag("year_of_publication") @xml_nested private MetadataInteger	yearOfPublication;
+	@xml_tag("isbn") @xml_nested private MetadataString	isbn;
 
 /**
 	Lazy Evaluation for yearOfPublication
@@ -278,11 +168,121 @@ public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
 	rebuildCompositeTermVector();
 }
 /**
-	
+	Lazy Evaluation for archive
 **/ 
 
-	@xml_tag("isbn") @xml_nested private MetadataString	isbn;
+public MetadataParsedURL	archive()
+{
+MetadataParsedURL	result	=this.archive;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.archive	=	 result;
+}
+return result;
+}
 
+/**
+	Gets the value of the field archive
+**/ 
+
+public ParsedURL getArchive(){
+return archive().getValue();
+}
+
+/**
+	Sets the value of the field archive
+**/ 
+
+public void setArchive( ParsedURL archive )
+{
+this.archive().setValue(archive);
+}
+
+/**
+	The heavy weight setter method for field archive
+**/ 
+
+public void hwSetArchive( ParsedURL archive )
+{
+this.archive().setValue(archive);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the archive directly
+**/ 
+
+public void setArchiveMetadata(MetadataParsedURL archive)
+{	this.archive = archive;
+}
+/**
+	Heavy Weight Direct setter method for archive
+**/ 
+
+public void hwSetArchiveMetadata(MetadataParsedURL archive)
+{	 if(this.archive!=null && this.archive.getValue()!=null && hasTermVector())
+		 termVector().remove(this.archive.termVector());
+	 this.archive = archive;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for pages
+**/ 
+
+public MetadataString	pages()
+{
+MetadataString	result	=this.pages;
+if(result == null)
+{
+result = new MetadataString();
+this.pages	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field pages
+**/ 
+
+public String getPages(){
+return pages().getValue();
+}
+
+/**
+	Sets the value of the field pages
+**/ 
+
+public void setPages( String pages )
+{
+this.pages().setValue(pages);
+}
+
+/**
+	The heavy weight setter method for field pages
+**/ 
+
+public void hwSetPages( String pages )
+{
+this.pages().setValue(pages);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the pages directly
+**/ 
+
+public void setPagesMetadata(MetadataString pages)
+{	this.pages = pages;
+}
+/**
+	Heavy Weight Direct setter method for pages
+**/ 
+
+public void hwSetPagesMetadata(MetadataString pages)
+{	 if(this.pages!=null && this.pages.getValue()!=null && hasTermVector())
+		 termVector().remove(this.pages.termVector());
+	 this.pages = pages;
+	rebuildCompositeTermVector();
+}
 /**
 	Lazy Evaluation for isbn
 **/ 

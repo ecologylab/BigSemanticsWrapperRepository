@@ -92,6 +92,12 @@ super(metaMetadata);
 	@xml_tag("name") @xml_nested private MetadataString	name;
 
 /**
+	
+**/ 
+
+	@xml_tag("affiliation") @xml_nested private MetadataString	affiliation;
+
+/**
 	Lazy Evaluation for name
 **/ 
 
@@ -149,12 +155,6 @@ public void hwSetNameMetadata(MetadataString name)
 	 this.name = name;
 	rebuildCompositeTermVector();
 }
-/**
-	
-**/ 
-
-	@xml_tag("affiliation") @xml_nested private MetadataString	affiliation;
-
 /**
 	Lazy Evaluation for affiliation
 **/ 
