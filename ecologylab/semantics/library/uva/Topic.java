@@ -92,6 +92,30 @@ super(metaMetadata);
 	@xml_tag("content_keywords") @xml_nested private MetadataStringBuilder	contentKeywords;
 
 /**
+	
+**/ 
+
+	@xml_tag("anchor_keywords") @xml_nested private MetadataStringBuilder	anchorKeywords;
+
+/**
+	
+**/ 
+
+	@xml_tag("url_keywords") @xml_nested private MetadataStringBuilder	urlKeywords;
+
+/**
+	
+**/ 
+
+	@xml_tag("title_keywords") @xml_nested private MetadataStringBuilder	titleKeywords;
+
+/**
+	
+**/ 
+
+	@xml_tag("id") @xml_nested private MetadataInteger	id;
+
+/**
 	Lazy Evaluation for contentKeywords
 **/ 
 
@@ -176,12 +200,6 @@ public void hwAppendContentKeywords( String contentKeywords )
 this.contentKeywords().setValue(contentKeywords);
 rebuildCompositeTermVector();
  }
-/**
-	
-**/ 
-
-	@xml_tag("anchor_keywords") @xml_nested private MetadataStringBuilder	anchorKeywords;
-
 /**
 	Lazy Evaluation for anchorKeywords
 **/ 
@@ -268,12 +286,6 @@ this.anchorKeywords().setValue(anchorKeywords);
 rebuildCompositeTermVector();
  }
 /**
-	
-**/ 
-
-	@xml_tag("url_keywords") @xml_nested private MetadataStringBuilder	urlKeywords;
-
-/**
 	Lazy Evaluation for urlKeywords
 **/ 
 
@@ -359,12 +371,6 @@ this.urlKeywords().setValue(urlKeywords);
 rebuildCompositeTermVector();
  }
 /**
-	
-**/ 
-
-	@xml_tag("title_keywords") @xml_nested private MetadataStringBuilder	titleKeywords;
-
-/**
 	Lazy Evaluation for titleKeywords
 **/ 
 
@@ -449,12 +455,6 @@ public void hwAppendTitleKeywords( String titleKeywords )
 this.titleKeywords().setValue(titleKeywords);
 rebuildCompositeTermVector();
  }
-/**
-	
-**/ 
-
-	@xml_tag("id") @xml_nested private MetadataInteger	id;
-
 /**
 	Lazy Evaluation for id
 **/ 
