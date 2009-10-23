@@ -71,6 +71,7 @@ super(metaMetadata);
 }
 
 private @xml_tag("actor") @xml_nested Entity<PersonDetails>	actor;
+private @xml_tag("character") @xml_nested Entity<PersonDetails>	character;
 /**
 	Lazy Evaluation for actor
 **/ 
@@ -103,7 +104,6 @@ public Entity<PersonDetails> getActor(){
 return this.actor;
 }
 
-private @xml_tag("character") @xml_nested Entity<PersonDetails>	character;
 /**
 	Lazy Evaluation for character
 **/ 

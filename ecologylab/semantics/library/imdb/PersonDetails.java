@@ -91,6 +91,56 @@ super(metaMetadata);
 
 	@xml_tag("person_img") @xml_nested private MetadataParsedURL	personImg;
 
+private @xml_tag("birth_detail") @xml_nested BirthDetail	birth_detail;
+/**
+	null
+**/ 
+
+	@xml_tag("mini_biography") @xml_nested private MetadataString	miniBiography;
+
+/**
+	null
+**/ 
+
+	@xml_tag("biography_link") @xml_nested private MetadataParsedURL	biographyLink;
+
+/**
+	null
+**/ 
+
+	@xml_tag("trivia") @xml_nested private MetadataString	trivia;
+
+/**
+	null
+**/ 
+
+	@xml_tag("trivia_link") @xml_nested private MetadataParsedURL	triviaLink;
+
+/**
+	null
+**/ 
+
+	@xml_tag("awards") @xml_nested private MetadataString	awards;
+
+/**
+	null
+**/ 
+
+	@xml_tag("awards_link") @xml_nested private MetadataParsedURL	awardsLink;
+
+/**
+	null
+**/ 
+
+	@xml_tag("alternate_names") @xml_nested private MetadataString	alternateNames;
+	@xml_collection("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
+	@xml_collection("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
+	@xml_collection("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
+	@xml_collection("titles_as_producer") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
+	@xml_collection("titles_thanked_in") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
+	@xml_collection("titles_as_self") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
+	@xml_collection("titles_in_development") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
+
 /**
 	Lazy Evaluation for personImg
 **/ 
@@ -149,7 +199,6 @@ public void hwSetPersonImgMetadata(MetadataParsedURL personImg)
 	 this.personImg = personImg;
 	rebuildCompositeTermVector();
 }
-private @xml_tag("birth_detail") @xml_nested BirthDetail	birth_detail;
 /**
 	Lazy Evaluation for birth_detail
 **/ 
@@ -181,12 +230,6 @@ this.birth_detail = birth_detail ;
 public BirthDetail getBirthDetail(){
 return this.birth_detail;
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("mini_biography") @xml_nested private MetadataString	miniBiography;
 
 /**
 	Lazy Evaluation for miniBiography
@@ -247,12 +290,6 @@ public void hwSetMiniBiographyMetadata(MetadataString miniBiography)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("biography_link") @xml_nested private MetadataParsedURL	biographyLink;
-
-/**
 	Lazy Evaluation for biographyLink
 **/ 
 
@@ -310,12 +347,6 @@ public void hwSetBiographyLinkMetadata(MetadataParsedURL biographyLink)
 	 this.biographyLink = biographyLink;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("trivia") @xml_nested private MetadataString	trivia;
-
 /**
 	Lazy Evaluation for trivia
 **/ 
@@ -375,12 +406,6 @@ public void hwSetTriviaMetadata(MetadataString trivia)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("trivia_link") @xml_nested private MetadataParsedURL	triviaLink;
-
-/**
 	Lazy Evaluation for triviaLink
 **/ 
 
@@ -438,12 +463,6 @@ public void hwSetTriviaLinkMetadata(MetadataParsedURL triviaLink)
 	 this.triviaLink = triviaLink;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("awards") @xml_nested private MetadataString	awards;
-
 /**
 	Lazy Evaluation for awards
 **/ 
@@ -503,12 +522,6 @@ public void hwSetAwardsMetadata(MetadataString awards)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("awards_link") @xml_nested private MetadataParsedURL	awardsLink;
-
-/**
 	Lazy Evaluation for awardsLink
 **/ 
 
@@ -567,12 +580,6 @@ public void hwSetAwardsLinkMetadata(MetadataParsedURL awardsLink)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("alternate_names") @xml_nested private MetadataString	alternateNames;
-
-/**
 	Lazy Evaluation for alternateNames
 **/ 
 
@@ -629,8 +636,7 @@ public void hwSetAlternateNamesMetadata(MetadataString alternateNames)
 		 termVector().remove(this.alternateNames.termVector());
 	 this.alternateNames = alternateNames;
 	rebuildCompositeTermVector();
-}	@xml_collection("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
-
+}
 /**
 	Lazy Evaluation for titlesAsActor
 **/ 
@@ -662,7 +668,6 @@ this.titlesAsActor = titlesAsActor ;
 public  ArrayList<Entity<ImdbTitle>> getTitlesAsActor(){
 return this.titlesAsActor;
 }
-	@xml_collection("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 
 /**
 	Lazy Evaluation for titlesAsDirector
@@ -695,7 +700,6 @@ this.titlesAsDirector = titlesAsDirector ;
 public  ArrayList<Entity<ImdbTitle>> getTitlesAsDirector(){
 return this.titlesAsDirector;
 }
-	@xml_collection("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
 
 /**
 	Lazy Evaluation for titlesForSoundtrack
@@ -728,7 +732,6 @@ this.titlesForSoundtrack = titlesForSoundtrack ;
 public  ArrayList<Entity<ImdbTitle>> getTitlesForSoundtrack(){
 return this.titlesForSoundtrack;
 }
-	@xml_collection("titles_as_producer") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
 
 /**
 	Lazy Evaluation for titlesAsProducer
@@ -761,7 +764,6 @@ this.titlesAsProducer = titlesAsProducer ;
 public  ArrayList<Entity<ImdbTitle>> getTitlesAsProducer(){
 return this.titlesAsProducer;
 }
-	@xml_collection("titles_thanked_in") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
 
 /**
 	Lazy Evaluation for titlesThankedIn
@@ -794,7 +796,6 @@ this.titlesThankedIn = titlesThankedIn ;
 public  ArrayList<Entity<ImdbTitle>> getTitlesThankedIn(){
 return this.titlesThankedIn;
 }
-	@xml_collection("titles_as_self") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
 
 /**
 	Lazy Evaluation for titlesAsSelf
@@ -827,7 +828,6 @@ this.titlesAsSelf = titlesAsSelf ;
 public  ArrayList<Entity<ImdbTitle>> getTitlesAsSelf(){
 return this.titlesAsSelf;
 }
-	@xml_collection("titles_in_development") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
 
 /**
 	Lazy Evaluation for titlesInDevelopment

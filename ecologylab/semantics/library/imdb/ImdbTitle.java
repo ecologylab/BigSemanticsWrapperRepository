@@ -90,6 +90,35 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("rating") @xml_nested private MetadataString	rating;
+	@xml_collection("directors") private ArrayList<Entity<PersonDetails>>	directors;
+	@xml_collection("writers") private ArrayList<Entity<PersonDetails>>	writers;
+
+/**
+	null
+**/ 
+
+	@xml_tag("release_date") @xml_nested private MetadataString	releaseDate;
+	@xml_collection("genres") private ArrayList<Genre>	genres;
+
+/**
+	null
+**/ 
+
+	@xml_tag("plot") @xml_nested private MetadataString	plot;
+
+/**
+	null
+**/ 
+
+	@xml_tag("tagline") @xml_nested private MetadataString	tagline;
+	@xml_collection("cast") private ArrayList<CastMember>	cast;
+	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
+
+/**
+	null
+**/ 
+
+	@xml_tag("poster_img") @xml_nested private MetadataParsedURL	posterImg;
 
 /**
 	Lazy Evaluation for rating
@@ -148,8 +177,7 @@ public void hwSetRatingMetadata(MetadataString rating)
 		 termVector().remove(this.rating.termVector());
 	 this.rating = rating;
 	rebuildCompositeTermVector();
-}	@xml_collection("directors") private ArrayList<Entity<PersonDetails>>	directors;
-
+}
 /**
 	Lazy Evaluation for directors
 **/ 
@@ -181,7 +209,6 @@ this.directors = directors ;
 public  ArrayList<Entity<PersonDetails>> getDirectors(){
 return this.directors;
 }
-	@xml_collection("writers") private ArrayList<Entity<PersonDetails>>	writers;
 
 /**
 	Lazy Evaluation for writers
@@ -214,12 +241,6 @@ this.writers = writers ;
 public  ArrayList<Entity<PersonDetails>> getWriters(){
 return this.writers;
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("release_date") @xml_nested private MetadataString	releaseDate;
 
 /**
 	Lazy Evaluation for releaseDate
@@ -278,8 +299,7 @@ public void hwSetReleaseDateMetadata(MetadataString releaseDate)
 		 termVector().remove(this.releaseDate.termVector());
 	 this.releaseDate = releaseDate;
 	rebuildCompositeTermVector();
-}	@xml_collection("genres") private ArrayList<Genre>	genres;
-
+}
 /**
 	Lazy Evaluation for genres
 **/ 
@@ -311,12 +331,6 @@ this.genres = genres ;
 public  ArrayList<Genre> getGenres(){
 return this.genres;
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("plot") @xml_nested private MetadataString	plot;
 
 /**
 	Lazy Evaluation for plot
@@ -377,12 +391,6 @@ public void hwSetPlotMetadata(MetadataString plot)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("tagline") @xml_nested private MetadataString	tagline;
-
-/**
 	Lazy Evaluation for tagline
 **/ 
 
@@ -439,8 +447,7 @@ public void hwSetTaglineMetadata(MetadataString tagline)
 		 termVector().remove(this.tagline.termVector());
 	 this.tagline = tagline;
 	rebuildCompositeTermVector();
-}	@xml_collection("cast") private ArrayList<CastMember>	cast;
-
+}
 /**
 	Lazy Evaluation for cast
 **/ 
@@ -472,7 +479,6 @@ this.cast = cast ;
 public  ArrayList<CastMember> getCast(){
 return this.cast;
 }
-	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
 
 /**
 	Lazy Evaluation for titlePhotos
@@ -505,12 +511,6 @@ this.titlePhotos = titlePhotos ;
 public  ArrayList<Image> getTitlePhotos(){
 return this.titlePhotos;
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("poster_img") @xml_nested private MetadataParsedURL	posterImg;
 
 /**
 	Lazy Evaluation for posterImg

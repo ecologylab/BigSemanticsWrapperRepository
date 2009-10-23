@@ -92,6 +92,36 @@ super(metaMetadata);
 	@xml_tag("day_of_birth") @xml_nested private MetadataString	dayOfBirth;
 
 /**
+	null
+**/ 
+
+	@xml_tag("year_of_birth") @xml_nested private MetadataString	yearOfBirth;
+
+/**
+	null
+**/ 
+
+	@xml_tag("place_of_birth") @xml_nested private MetadataString	placeOfBirth;
+
+/**
+	null
+**/ 
+
+	@xml_tag("day_of_birth_link") @xml_nested private MetadataParsedURL	dayOfBirthLink;
+
+/**
+	null
+**/ 
+
+	@xml_tag("year_of_birth_link") @xml_nested private MetadataParsedURL	yearOfBirthLink;
+
+/**
+	null
+**/ 
+
+	@xml_tag("place_of_birth_link") @xml_nested private MetadataParsedURL	placeOfBirthLink;
+
+/**
 	Lazy Evaluation for dayOfBirth
 **/ 
 
@@ -149,12 +179,6 @@ public void hwSetDayOfBirthMetadata(MetadataString dayOfBirth)
 	 this.dayOfBirth = dayOfBirth;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("year_of_birth") @xml_nested private MetadataString	yearOfBirth;
-
 /**
 	Lazy Evaluation for yearOfBirth
 **/ 
@@ -214,12 +238,6 @@ public void hwSetYearOfBirthMetadata(MetadataString yearOfBirth)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("place_of_birth") @xml_nested private MetadataString	placeOfBirth;
-
-/**
 	Lazy Evaluation for placeOfBirth
 **/ 
 
@@ -277,12 +295,6 @@ public void hwSetPlaceOfBirthMetadata(MetadataString placeOfBirth)
 	 this.placeOfBirth = placeOfBirth;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("day_of_birth_link") @xml_nested private MetadataParsedURL	dayOfBirthLink;
-
 /**
 	Lazy Evaluation for dayOfBirthLink
 **/ 
@@ -342,12 +354,6 @@ public void hwSetDayOfBirthLinkMetadata(MetadataParsedURL dayOfBirthLink)
 	rebuildCompositeTermVector();
 }
 /**
-	null
-**/ 
-
-	@xml_tag("year_of_birth_link") @xml_nested private MetadataParsedURL	yearOfBirthLink;
-
-/**
 	Lazy Evaluation for yearOfBirthLink
 **/ 
 
@@ -405,12 +411,6 @@ public void hwSetYearOfBirthLinkMetadata(MetadataParsedURL yearOfBirthLink)
 	 this.yearOfBirthLink = yearOfBirthLink;
 	rebuildCompositeTermVector();
 }
-/**
-	null
-**/ 
-
-	@xml_tag("place_of_birth_link") @xml_nested private MetadataParsedURL	placeOfBirthLink;
-
 /**
 	Lazy Evaluation for placeOfBirthLink
 **/ 
