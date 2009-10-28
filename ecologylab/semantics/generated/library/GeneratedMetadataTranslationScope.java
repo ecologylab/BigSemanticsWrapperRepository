@@ -137,6 +137,10 @@ ImdbTitle.class,
 
 PersonDetails.class,
 
+GooglePatent.class,
+
+GooglePatentImage.class,
+
 
 };
  
