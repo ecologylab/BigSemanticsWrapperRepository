@@ -58,13 +58,13 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	The flickr search class
+	Used for flickr search results
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_search")
-public class  FlickrSearch
-extends  Document
+@xml_tag("flickr_tags_interesting")
+public class  FlickrTagsInteresting
+extends  Search
 {
 
 
@@ -72,7 +72,7 @@ extends  Document
 	Constructor
 **/ 
 
-public FlickrSearch()
+public FlickrTagsInteresting()
 {
  super();
 }
@@ -81,42 +81,42 @@ public FlickrSearch()
 	Constructor
 **/ 
 
-public FlickrSearch(MetaMetadata metaMetadata)
+public FlickrTagsInteresting(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("flickr_results") private ArrayList<FlickrImage>	flickrResults;
+	@xml_collection("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
 
 /**
-	Lazy Evaluation for flickrResults
+	Lazy Evaluation for flickrLinkSet
 **/ 
 
-public  ArrayList<FlickrImage>	flickrResults()
+public  ArrayList<FlickrLink>	flickrLinkSet()
 {
- ArrayList<FlickrImage>	result	=this.flickrResults;
+ ArrayList<FlickrLink>	result	=this.flickrLinkSet;
 if(result == null)
 {
-result = new  ArrayList<FlickrImage>();
-this.flickrResults	=	 result;
+result = new  ArrayList<FlickrLink>();
+this.flickrLinkSet	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field flickrResults
+	Set the value of field flickrLinkSet
 **/ 
 
-public void setFlickrResults(  ArrayList<FlickrImage> flickrResults )
+public void setFlickrLinkSet(  ArrayList<FlickrLink> flickrLinkSet )
 {
-this.flickrResults = flickrResults ;
+this.flickrLinkSet = flickrLinkSet ;
 }
 
 /**
-	Get the value of field flickrResults
+	Get the value of field flickrLinkSet
 **/ 
 
-public  ArrayList<FlickrImage> getFlickrResults(){
-return this.flickrResults;
+public  ArrayList<FlickrLink> getFlickrLinkSet(){
+return this.flickrLinkSet;
 }
 
 }

@@ -37,6 +37,7 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -93,12 +94,6 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	RefererUrl;
-
-/**
-	null
-**/ 
-
-	@xml_tag("DisplayUrl") @xml_nested private MetadataParsedURL	DisplayUrl;
 
 /**
 	null
@@ -343,64 +338,6 @@ public void hwSetRefererUrlMetadata(MetadataParsedURL RefererUrl)
 {	 if(this.RefererUrl!=null && this.RefererUrl.getValue()!=null && hasTermVector())
 		 termVector().remove(this.RefererUrl.termVector());
 	 this.RefererUrl = RefererUrl;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for DisplayUrl
-**/ 
-
-public MetadataParsedURL	DisplayUrl()
-{
-MetadataParsedURL	result	=this.DisplayUrl;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.DisplayUrl	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field DisplayUrl
-**/ 
-
-public ParsedURL getDisplayUrl(){
-return DisplayUrl().getValue();
-}
-
-/**
-	Sets the value of the field DisplayUrl
-**/ 
-
-public void setDisplayUrl( ParsedURL DisplayUrl )
-{
-this.DisplayUrl().setValue(DisplayUrl);
-}
-
-/**
-	The heavy weight setter method for field DisplayUrl
-**/ 
-
-public void hwSetDisplayUrl( ParsedURL DisplayUrl )
-{
-this.DisplayUrl().setValue(DisplayUrl);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the DisplayUrl directly
-**/ 
-
-public void setDisplayUrlMetadata(MetadataParsedURL DisplayUrl)
-{	this.DisplayUrl = DisplayUrl;
-}
-/**
-	Heavy Weight Direct setter method for DisplayUrl
-**/ 
-
-public void hwSetDisplayUrlMetadata(MetadataParsedURL DisplayUrl)
-{	 if(this.DisplayUrl!=null && this.DisplayUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.DisplayUrl.termVector());
-	 this.DisplayUrl = DisplayUrl;
 	rebuildCompositeTermVector();
 }
 /**

@@ -45,6 +45,7 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -57,7 +58,7 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	All flickr photos of a tag
+	For flickr crawled tags
 **/ 
 
 @xml_inherit

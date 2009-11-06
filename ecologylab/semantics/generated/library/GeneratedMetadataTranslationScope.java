@@ -46,6 +46,7 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
+import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -100,6 +101,8 @@ FlickrImageDetail.class,
 FlickrLink.class,
 
 FlickrAuthor.class,
+
+FlickrTagsInteresting.class,
 
 FlickrTags.class,
 
