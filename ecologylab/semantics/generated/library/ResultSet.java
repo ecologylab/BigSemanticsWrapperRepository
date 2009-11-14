@@ -67,6 +67,7 @@ public class  ResultSet
 extends  Search
 {
 
+	@xml_collection("Result") private ArrayList<Result>	Result;
 
 /**
 	Constructor
@@ -85,7 +86,6 @@ public ResultSet(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("Result") private ArrayList<Result>	Result;
 
 /**
 	Lazy Evaluation for Result

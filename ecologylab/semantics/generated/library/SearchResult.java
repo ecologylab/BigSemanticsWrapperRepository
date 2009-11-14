@@ -54,24 +54,6 @@ public class SearchResult extends Metadata{
 
 
 /**
-	Constructor
-**/ 
-
-public SearchResult()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public SearchResult(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	The heading of search result
 **/ 
 
@@ -88,6 +70,24 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
+/**
+	Constructor
+**/ 
+
+public SearchResult()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public SearchResult(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for heading

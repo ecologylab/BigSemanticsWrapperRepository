@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public Pdf()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public Pdf(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	The author of the pdf document
 **/ 
 
@@ -133,6 +115,24 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("creationdate") @xml_nested private MetadataString	creationdate;
+
+/**
+	Constructor
+**/ 
+
+public Pdf()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public Pdf(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for author

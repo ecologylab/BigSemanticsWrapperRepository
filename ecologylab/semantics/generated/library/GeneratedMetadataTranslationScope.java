@@ -144,6 +144,8 @@ GooglePatent.class,
 
 GooglePatentImage.class,
 
+GoogleSorry.class,
+
 
 };
  

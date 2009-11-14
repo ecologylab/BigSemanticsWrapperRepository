@@ -54,6 +54,12 @@ public class Thumbnail extends Metadata{
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
+
+/**
 	Constructor
 **/ 
 
@@ -70,12 +76,6 @@ public Thumbnail(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
 
 /**
 	Lazy Evaluation for Url

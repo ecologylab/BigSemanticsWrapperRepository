@@ -69,6 +69,12 @@ extends  Document
 
 
 /**
+	
+**/ 
+
+	@xml_tag("subject") @xml_nested private MetadataString	subject;
+
+/**
 	Constructor
 **/ 
 
@@ -85,12 +91,6 @@ public Dlms(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	
-**/ 
-
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
 
 /**
 	Lazy Evaluation for subject

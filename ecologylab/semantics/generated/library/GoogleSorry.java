@@ -58,97 +58,15 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	
+	null
 **/ 
 
 @xml_inherit
-@xml_tag("dc_document")
-public class  DcDocument
+@xml_tag("google_sorry")
+public class  GoogleSorry
 extends  Document
 {
 
 
-/**
-	
-**/ 
-
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
-
-/**
-	Constructor
-**/ 
-
-public DcDocument()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public DcDocument(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
-	Lazy Evaluation for subject
-**/ 
-
-public MetadataString	subject()
-{
-MetadataString	result	=this.subject;
-if(result == null)
-{
-result = new MetadataString();
-this.subject	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field subject
-**/ 
-
-public String getSubject(){
-return subject().getValue();
-}
-
-/**
-	Sets the value of the field subject
-**/ 
-
-public void setSubject( String subject )
-{
-this.subject().setValue(subject);
-}
-
-/**
-	The heavy weight setter method for field subject
-**/ 
-
-public void hwSetSubject( String subject )
-{
-this.subject().setValue(subject);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the subject directly
-**/ 
-
-public void setSubjectMetadata(MetadataString subject)
-{	this.subject = subject;
-}
-/**
-	Heavy Weight Direct setter method for subject
-**/ 
-
-public void hwSetSubjectMetadata(MetadataString subject)
-{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
-		 termVector().remove(this.subject.termVector());
-	 this.subject = subject;
-	rebuildCompositeTermVector();
-}
 }
 

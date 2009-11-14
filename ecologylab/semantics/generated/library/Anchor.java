@@ -54,6 +54,18 @@ public class Anchor extends Metadata{
 
 
 /**
+	
+**/ 
+
+	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
+/**
+	null
+**/ 
+
+	@xml_tag("anchor_text") @xml_nested private MetadataString	anchorText;
+
+/**
 	Constructor
 **/ 
 
@@ -70,18 +82,6 @@ public Anchor(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	
-**/ 
-
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
-
-/**
-	null
-**/ 
-
-	@xml_tag("anchor_text") @xml_nested private MetadataString	anchorText;
 
 /**
 	Lazy Evaluation for link

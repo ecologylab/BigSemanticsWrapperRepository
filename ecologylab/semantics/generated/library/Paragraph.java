@@ -54,6 +54,13 @@ public class Paragraph extends Metadata{
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("paragraph_text") @xml_nested private MetadataString	paragraphText;
+	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
+
+/**
 	Constructor
 **/ 
 
@@ -70,13 +77,6 @@ public Paragraph(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("paragraph_text") @xml_nested private MetadataString	paragraphText;
-	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
 
 /**
 	Lazy Evaluation for paragraphText

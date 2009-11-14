@@ -69,6 +69,19 @@ extends  Document
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("patent_name") @xml_nested private MetadataString	patentName;
+
+/**
+	null
+**/ 
+
+	@xml_tag("inventor") @xml_nested private MetadataString	inventor;
+	@xml_collection("pic_urls") private ArrayList<SearchResult>	picUrls;
+
+/**
 	Constructor
 **/ 
 
@@ -85,19 +98,6 @@ public GooglePatentImage(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("patent_name") @xml_nested private MetadataString	patentName;
-
-/**
-	null
-**/ 
-
-	@xml_tag("inventor") @xml_nested private MetadataString	inventor;
-	@xml_collection("pic_urls") private ArrayList<SearchResult>	picUrls;
 
 /**
 	Lazy Evaluation for patentName

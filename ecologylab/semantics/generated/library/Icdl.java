@@ -69,6 +69,12 @@ extends  Document
 
 
 /**
+	
+**/ 
+
+	@xml_tag("languages") @xml_nested private MetadataString	languages;
+
+/**
 	Constructor
 **/ 
 
@@ -85,12 +91,6 @@ public Icdl(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	
-**/ 
-
-	@xml_tag("languages") @xml_nested private MetadataString	languages;
 
 /**
 	Lazy Evaluation for languages

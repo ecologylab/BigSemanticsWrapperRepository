@@ -67,6 +67,7 @@ public class  Search
 extends  Document
 {
 
+	@xml_collection("searchResults") private ArrayList<SearchResult>	searchResults;
 
 /**
 	Constructor
@@ -85,7 +86,6 @@ public Search(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("searchResults") private ArrayList<SearchResult>	searchResults;
 
 /**
 	Lazy Evaluation for searchResults

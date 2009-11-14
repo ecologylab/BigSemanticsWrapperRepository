@@ -69,6 +69,12 @@ extends  Image
 
 
 /**
+	The language of the library
+**/ 
+
+	@xml_tag("languages") @xml_nested private MetadataString	languages;
+
+/**
 	Constructor
 **/ 
 
@@ -85,12 +91,6 @@ public IcdlImage(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	The language of the library
-**/ 
-
-	@xml_tag("languages") @xml_nested private MetadataString	languages;
 
 /**
 	Lazy Evaluation for languages

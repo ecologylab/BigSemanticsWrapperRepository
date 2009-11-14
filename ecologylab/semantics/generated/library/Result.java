@@ -54,24 +54,6 @@ public class Result extends Metadata{
 
 
 /**
-	Constructor
-**/ 
-
-public Result()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public Result(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	null
 **/ 
 
@@ -107,6 +89,24 @@ super(metaMetadata);
 
 	@xml_tag("MimeType") @xml_nested private MetadataString	MimeType;
 	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	Thumbnail;
+
+/**
+	Constructor
+**/ 
+
+public Result()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public Result(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for Title

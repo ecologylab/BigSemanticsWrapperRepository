@@ -69,6 +69,12 @@ extends  Media
 
 
 /**
+	
+**/ 
+
+	@xml_tag("text") @xml_nested private MetadataString	text;
+
+/**
 	Constructor
 **/ 
 
@@ -85,12 +91,6 @@ public Text(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	
-**/ 
-
-	@xml_tag("text") @xml_nested private MetadataString	text;
 
 /**
 	Lazy Evaluation for text

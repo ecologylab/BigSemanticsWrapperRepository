@@ -54,6 +54,18 @@ public class Thumbinner extends Metadata{
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("thumb_img_src") @xml_nested private MetadataParsedURL	thumbImgSrc;
+
+/**
+	null
+**/ 
+
+	@xml_tag("thumb_img_caption") @xml_nested private MetadataString	thumbImgCaption;
+
+/**
 	Constructor
 **/ 
 
@@ -70,18 +82,6 @@ public Thumbinner(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("thumb_img_src") @xml_nested private MetadataParsedURL	thumbImgSrc;
-
-/**
-	null
-**/ 
-
-	@xml_tag("thumb_img_caption") @xml_nested private MetadataString	thumbImgCaption;
 
 /**
 	Lazy Evaluation for thumbImgSrc

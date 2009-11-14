@@ -69,6 +69,39 @@ extends  Document
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("patent_name") @xml_nested private MetadataString	patentName;
+
+/**
+	null
+**/ 
+
+	@xml_tag("inventor") @xml_nested private MetadataString	inventor;
+
+/**
+	null
+**/ 
+
+	@xml_tag("abstract_field") @xml_nested private MetadataString	abstractField;
+
+/**
+	null
+**/ 
+
+	@xml_tag("claims") @xml_nested private MetadataString	claims;
+
+/**
+	null
+**/ 
+
+	@xml_tag("pic_link") @xml_nested private MetadataParsedURL	picLink;
+	@xml_collection("referenced_bys") private ArrayList<SearchResult>	referencedBys;
+	@xml_collection("citations") private ArrayList<SearchResult>	citations;
+	@xml_collection("pic_links") private ArrayList<SearchResult>	picLinks;
+
+/**
 	Constructor
 **/ 
 
@@ -85,33 +118,6 @@ public GooglePatent(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("patent_name") @xml_nested private MetadataString	patentName;
-
-/**
-	null
-**/ 
-
-	@xml_tag("inventor") @xml_nested private MetadataString	inventor;
-
-/**
-	null
-**/ 
-
-	@xml_tag("pic_link") @xml_nested private MetadataParsedURL	picLink;
-
-/**
-	null
-**/ 
-
-	@xml_tag("pic_thumb") @xml_nested private MetadataParsedURL	picThumb;
-	@xml_collection("referenced_bys") private ArrayList<SearchResult>	referencedBys;
-	@xml_collection("citations") private ArrayList<SearchResult>	citations;
-	@xml_collection("pic_links") private ArrayList<SearchResult>	picLinks;
 
 /**
 	Lazy Evaluation for patentName
@@ -230,6 +236,122 @@ public void hwSetInventorMetadata(MetadataString inventor)
 	rebuildCompositeTermVector();
 }
 /**
+	Lazy Evaluation for abstractField
+**/ 
+
+public MetadataString	abstractField()
+{
+MetadataString	result	=this.abstractField;
+if(result == null)
+{
+result = new MetadataString();
+this.abstractField	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field abstractField
+**/ 
+
+public String getAbstractField(){
+return abstractField().getValue();
+}
+
+/**
+	Sets the value of the field abstractField
+**/ 
+
+public void setAbstractField( String abstractField )
+{
+this.abstractField().setValue(abstractField);
+}
+
+/**
+	The heavy weight setter method for field abstractField
+**/ 
+
+public void hwSetAbstractField( String abstractField )
+{
+this.abstractField().setValue(abstractField);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the abstractField directly
+**/ 
+
+public void setAbstractFieldMetadata(MetadataString abstractField)
+{	this.abstractField = abstractField;
+}
+/**
+	Heavy Weight Direct setter method for abstractField
+**/ 
+
+public void hwSetAbstractFieldMetadata(MetadataString abstractField)
+{	 if(this.abstractField!=null && this.abstractField.getValue()!=null && hasTermVector())
+		 termVector().remove(this.abstractField.termVector());
+	 this.abstractField = abstractField;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for claims
+**/ 
+
+public MetadataString	claims()
+{
+MetadataString	result	=this.claims;
+if(result == null)
+{
+result = new MetadataString();
+this.claims	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field claims
+**/ 
+
+public String getClaims(){
+return claims().getValue();
+}
+
+/**
+	Sets the value of the field claims
+**/ 
+
+public void setClaims( String claims )
+{
+this.claims().setValue(claims);
+}
+
+/**
+	The heavy weight setter method for field claims
+**/ 
+
+public void hwSetClaims( String claims )
+{
+this.claims().setValue(claims);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the claims directly
+**/ 
+
+public void setClaimsMetadata(MetadataString claims)
+{	this.claims = claims;
+}
+/**
+	Heavy Weight Direct setter method for claims
+**/ 
+
+public void hwSetClaimsMetadata(MetadataString claims)
+{	 if(this.claims!=null && this.claims.getValue()!=null && hasTermVector())
+		 termVector().remove(this.claims.termVector());
+	 this.claims = claims;
+	rebuildCompositeTermVector();
+}
+/**
 	Lazy Evaluation for picLink
 **/ 
 
@@ -285,64 +407,6 @@ public void hwSetPicLinkMetadata(MetadataParsedURL picLink)
 {	 if(this.picLink!=null && this.picLink.getValue()!=null && hasTermVector())
 		 termVector().remove(this.picLink.termVector());
 	 this.picLink = picLink;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for picThumb
-**/ 
-
-public MetadataParsedURL	picThumb()
-{
-MetadataParsedURL	result	=this.picThumb;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.picThumb	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field picThumb
-**/ 
-
-public ParsedURL getPicThumb(){
-return picThumb().getValue();
-}
-
-/**
-	Sets the value of the field picThumb
-**/ 
-
-public void setPicThumb( ParsedURL picThumb )
-{
-this.picThumb().setValue(picThumb);
-}
-
-/**
-	The heavy weight setter method for field picThumb
-**/ 
-
-public void hwSetPicThumb( ParsedURL picThumb )
-{
-this.picThumb().setValue(picThumb);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the picThumb directly
-**/ 
-
-public void setPicThumbMetadata(MetadataParsedURL picThumb)
-{	this.picThumb = picThumb;
-}
-/**
-	Heavy Weight Direct setter method for picThumb
-**/ 
-
-public void hwSetPicThumbMetadata(MetadataParsedURL picThumb)
-{	 if(this.picThumb!=null && this.picThumb.getValue()!=null && hasTermVector())
-		 termVector().remove(this.picThumb.termVector());
-	 this.picThumb = picThumb;
 	rebuildCompositeTermVector();
 }
 /**

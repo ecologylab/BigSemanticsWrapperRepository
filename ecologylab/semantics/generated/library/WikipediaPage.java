@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public WikipediaPage()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public WikipediaPage(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	null
 **/ 
 
@@ -106,6 +88,24 @@ super(metaMetadata);
 	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
 	@xml_collection("categories") private ArrayList<Category>	categories;
 	@xml_collection("thumbinners") private ArrayList<Thumbinner>	thumbinners;
+
+/**
+	Constructor
+**/ 
+
+public WikipediaPage()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public WikipediaPage(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for title

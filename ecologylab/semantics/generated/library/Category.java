@@ -54,6 +54,18 @@ public class Category extends Metadata{
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("name") @xml_nested private MetadataString	name;
+
+/**
+	null
+**/ 
+
+	@xml_tag("cat_link") @xml_nested private MetadataParsedURL	catLink;
+
+/**
 	Constructor
 **/ 
 
@@ -70,18 +82,6 @@ public Category(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("name") @xml_nested private MetadataString	name;
-
-/**
-	null
-**/ 
-
-	@xml_tag("cat_link") @xml_nested private MetadataParsedURL	catLink;
 
 /**
 	Lazy Evaluation for name
