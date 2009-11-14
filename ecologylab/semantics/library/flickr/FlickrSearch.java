@@ -67,6 +67,7 @@ public class  FlickrSearch
 extends  Document
 {
 
+	@xml_collection("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
 /**
 	Constructor
@@ -85,7 +86,6 @@ public FlickrSearch(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
 /**
 	Lazy Evaluation for flickrResults

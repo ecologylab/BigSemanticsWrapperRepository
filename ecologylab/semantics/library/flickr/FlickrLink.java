@@ -69,6 +69,18 @@ extends  Metadata
 
 
 /**
+	flickr_image_detail
+**/ 
+
+	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+
+/**
+	flickr_image_detail
+**/ 
+
+	@xml_tag("title") @xml_nested private MetadataString	title;
+
+/**
 	Constructor
 **/ 
 
@@ -85,18 +97,6 @@ public FlickrLink(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	flickr_image_detail
-**/ 
-
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
-
-/**
-	flickr_image_detail
-**/ 
-
-	@xml_tag("title") @xml_nested private MetadataString	title;
 
 /**
 	Lazy Evaluation for link

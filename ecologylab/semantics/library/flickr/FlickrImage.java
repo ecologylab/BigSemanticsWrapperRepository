@@ -69,6 +69,13 @@ extends  Image
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("browse_purl") @xml_nested private MetadataParsedURL	browsePurl;
+	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
+
+/**
 	Constructor
 **/ 
 
@@ -85,13 +92,6 @@ public FlickrImage(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("browse_purl") @xml_nested private MetadataParsedURL	browsePurl;
-	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
 /**
 	Lazy Evaluation for browsePurl

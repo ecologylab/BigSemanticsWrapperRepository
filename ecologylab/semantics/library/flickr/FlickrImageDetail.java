@@ -68,6 +68,7 @@ extends  Document
 {
 
 
+private @xml_tag("flickr_image") @xml_nested FlickrImage	flickr_image;
 /**
 	Constructor
 **/ 
@@ -86,7 +87,6 @@ public FlickrImageDetail(MetaMetadata metaMetadata)
 super(metaMetadata);
 }
 
-private @xml_tag("flickr_image") @xml_nested FlickrImage	flickr_image;
 /**
 	Lazy Evaluation for flickr_image
 **/ 

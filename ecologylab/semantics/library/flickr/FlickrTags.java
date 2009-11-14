@@ -67,6 +67,7 @@ public class  FlickrTags
 extends  Document
 {
 
+	@xml_collection("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
 
 /**
 	Constructor
@@ -85,7 +86,6 @@ public FlickrTags(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-	@xml_collection("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
 
 /**
 	Lazy Evaluation for flickrLinkSet
