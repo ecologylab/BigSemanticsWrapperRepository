@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public ImdbTitle()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public ImdbTitle(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	null
 **/ 
 
@@ -120,6 +102,24 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("poster_img") @xml_nested private MetadataParsedURL	posterImg;
+
+/**
+	Constructor
+**/ 
+
+public ImdbTitle()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public ImdbTitle(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for rating

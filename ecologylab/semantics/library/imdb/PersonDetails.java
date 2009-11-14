@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public PersonDetails()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public PersonDetails(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	null
 **/ 
 
@@ -141,6 +123,24 @@ private @xml_tag("birth_detail") @xml_nested BirthDetail	birth_detail;
 	@xml_collection("titles_thanked_in") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
 	@xml_collection("titles_as_self") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
 	@xml_collection("titles_in_development") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
+
+/**
+	Constructor
+**/ 
+
+public PersonDetails()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public PersonDetails(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for personImg

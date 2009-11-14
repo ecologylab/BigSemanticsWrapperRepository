@@ -53,6 +53,8 @@ import ecologylab.semantics.library.imdb.*;
 public class CastMember extends Metadata{
 
 
+private @xml_tag("actor") @xml_nested Entity<PersonDetails>	actor;
+private @xml_tag("character") @xml_nested Entity<PersonDetails>	character;
 /**
 	Constructor
 **/ 
@@ -71,8 +73,6 @@ public CastMember(MetaMetadata metaMetadata)
 super(metaMetadata);
 }
 
-private @xml_tag("actor") @xml_nested Entity<PersonDetails>	actor;
-private @xml_tag("character") @xml_nested Entity<PersonDetails>	character;
 /**
 	Lazy Evaluation for actor
 **/ 

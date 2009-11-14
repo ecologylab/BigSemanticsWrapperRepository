@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public BirthDetail()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public BirthDetail(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	null
 **/ 
 
@@ -121,6 +103,24 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("place_of_birth_link") @xml_nested private MetadataParsedURL	placeOfBirthLink;
+
+/**
+	Constructor
+**/ 
+
+public BirthDetail()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public BirthDetail(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for dayOfBirth

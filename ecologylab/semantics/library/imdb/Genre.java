@@ -54,6 +54,18 @@ public class Genre extends Metadata{
 
 
 /**
+	null
+**/ 
+
+	@xml_tag("name") @xml_nested private MetadataString	name;
+
+/**
+	null
+**/ 
+
+	@xml_tag("genre_link") @xml_nested private MetadataParsedURL	genreLink;
+
+/**
 	Constructor
 **/ 
 
@@ -70,18 +82,6 @@ public Genre(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	null
-**/ 
-
-	@xml_tag("name") @xml_nested private MetadataString	name;
-
-/**
-	null
-**/ 
-
-	@xml_tag("genre_link") @xml_nested private MetadataParsedURL	genreLink;
 
 /**
 	Lazy Evaluation for name
