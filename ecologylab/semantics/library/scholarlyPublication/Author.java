@@ -69,6 +69,18 @@ extends  Document
 
 
 /**
+	
+**/ 
+
+	@xml_tag("name") @xml_nested private MetadataString	name;
+
+/**
+	
+**/ 
+
+	@xml_tag("affiliation") @xml_nested private MetadataString	affiliation;
+
+/**
 	Constructor
 **/ 
 
@@ -85,18 +97,6 @@ public Author(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	
-**/ 
-
-	@xml_tag("name") @xml_nested private MetadataString	name;
-
-/**
-	
-**/ 
-
-	@xml_tag("affiliation") @xml_nested private MetadataString	affiliation;
 
 /**
 	Lazy Evaluation for name

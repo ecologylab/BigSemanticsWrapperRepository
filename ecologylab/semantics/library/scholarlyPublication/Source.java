@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public Source()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public Source(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	null
 **/ 
 
@@ -109,6 +91,24 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("isbn") @xml_nested private MetadataString	isbn;
+
+/**
+	Constructor
+**/ 
+
+public Source()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public Source(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for yearOfPublication

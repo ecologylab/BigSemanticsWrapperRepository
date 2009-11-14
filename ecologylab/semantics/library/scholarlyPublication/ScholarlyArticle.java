@@ -69,6 +69,22 @@ extends  Pdf
 
 
 /**
+	citation.cfm
+**/ 
+
+	@xml_tag("metadata_page") @xml_nested private MetadataParsedURL	metadataPage;
+
+/**
+	
+**/ 
+
+	@xml_tag("abstract") @xml_nested private MetadataString	abstractField;
+
+private @xml_tag("source") @xml_nested Source	source;	@xml_collection("authors") private ArrayList<Author>	authors;
+	@xml_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
+	@xml_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
+
+/**
 	Constructor
 **/ 
 
@@ -85,22 +101,6 @@ public ScholarlyArticle(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
-
-/**
-	citation.cfm
-**/ 
-
-	@xml_tag("metadata_page") @xml_nested private MetadataParsedURL	metadataPage;
-
-/**
-	
-**/ 
-
-	@xml_tag("abstract") @xml_nested private MetadataString	abstractField;
-
-private @xml_tag("source") @xml_nested Source	source;	@xml_collection("authors") private ArrayList<Author>	authors;
-	@xml_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
-	@xml_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
 
 /**
 	Lazy Evaluation for metadataPage
