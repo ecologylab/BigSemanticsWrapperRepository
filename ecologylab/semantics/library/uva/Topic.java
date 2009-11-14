@@ -69,24 +69,6 @@ extends  Document
 
 
 /**
-	Constructor
-**/ 
-
-public Topic()
-{
- super();
-}
-
-/**
-	Constructor
-**/ 
-
-public Topic(MetaMetadata metaMetadata)
-{
-super(metaMetadata);
-}
-
-/**
 	
 **/ 
 
@@ -115,6 +97,24 @@ super(metaMetadata);
 **/ 
 
 	@xml_tag("id") @xml_nested private MetadataInteger	id;
+
+/**
+	Constructor
+**/ 
+
+public Topic()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public Topic(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
 
 /**
 	Lazy Evaluation for contentKeywords
