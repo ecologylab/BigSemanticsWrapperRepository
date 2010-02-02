@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("paragraph")
+
 public class Paragraph extends Metadata{
 
 
@@ -57,7 +56,7 @@ public class Paragraph extends Metadata{
 	null
 **/ 
 
-	@xml_tag("paragraph_text") @xml_nested private MetadataString	paragraphText;
+	 @xml_nested private MetadataString	paragraphText;
 	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
 
 /**

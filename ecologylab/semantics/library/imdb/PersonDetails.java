@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("person_details")
+
 public class  PersonDetails
 extends  Document
 {
@@ -72,50 +71,50 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("person_img") @xml_nested private MetadataParsedURL	personImg;
+	 @xml_nested private MetadataParsedURL	personImg;
 
-private @xml_tag("birth_detail") @xml_nested BirthDetail	birth_detail;
+private  @xml_nested BirthDetail	birth_detail;
 /**
 	null
 **/ 
 
-	@xml_tag("mini_biography") @xml_nested private MetadataString	miniBiography;
-
-/**
-	null
-**/ 
-
-	@xml_tag("biography_link") @xml_nested private MetadataParsedURL	biographyLink;
+	 @xml_nested private MetadataString	miniBiography;
 
 /**
 	null
 **/ 
 
-	@xml_tag("trivia") @xml_nested private MetadataString	trivia;
+	 @xml_nested private MetadataParsedURL	biographyLink;
 
 /**
 	null
 **/ 
 
-	@xml_tag("trivia_link") @xml_nested private MetadataParsedURL	triviaLink;
+	 @xml_nested private MetadataString	trivia;
 
 /**
 	null
 **/ 
 
-	@xml_tag("awards") @xml_nested private MetadataString	awards;
+	 @xml_nested private MetadataParsedURL	triviaLink;
 
 /**
 	null
 **/ 
 
-	@xml_tag("awards_link") @xml_nested private MetadataParsedURL	awardsLink;
+	 @xml_nested private MetadataString	awards;
 
 /**
 	null
 **/ 
 
-	@xml_tag("alternate_names") @xml_nested private MetadataString	alternateNames;
+	 @xml_nested private MetadataParsedURL	awardsLink;
+
+/**
+	null
+**/ 
+
+	 @xml_nested private MetadataString	alternateNames;
 	@xml_collection("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	@xml_collection("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	@xml_collection("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;

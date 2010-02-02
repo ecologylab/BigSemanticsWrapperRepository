@@ -51,14 +51,13 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	Yahoo Web Search Class
+	Yahoo Web Search Service
 **/ 
 
 @xml_inherit
@@ -67,7 +66,7 @@ public class  ResultSet
 extends  Search
 {
 
-	@xml_collection("Result") private ArrayList<Result>	Result;
+	@xml_collection("Result") private ArrayList<Result>	results;
 
 /**
 	Constructor
@@ -88,35 +87,35 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for Result
+	Lazy Evaluation for results
 **/ 
 
-public  ArrayList<Result>	Result()
+public  ArrayList<Result>	results()
 {
- ArrayList<Result>	result	=this.Result;
+ ArrayList<Result>	result	=this.results;
 if(result == null)
 {
 result = new  ArrayList<Result>();
-this.Result	=	 result;
+this.results	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field Result
+	Set the value of field results
 **/ 
 
-public void setResult(  ArrayList<Result> Result )
+public void setResults(  ArrayList<Result> results )
 {
-this.Result = Result ;
+this.results = results ;
 }
 
 /**
-	Get the value of field Result
+	Get the value of field results
 **/ 
 
-public  ArrayList<Result> getResult(){
-return this.Result;
+public  ArrayList<Result> getResults(){
+return this.results;
 }
 
 }

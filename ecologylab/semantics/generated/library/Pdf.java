@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("pdf")
+
 public class  Pdf
 extends  Document
 {
@@ -72,49 +71,49 @@ extends  Document
 	The author of the pdf document
 **/ 
 
-	@xml_tag("author") @xml_nested private MetadataString	author;
+	 @xml_nested private MetadataString	author;
 
 /**
 	Summary of the pdf document
 **/ 
 
-	@xml_tag("summary") @xml_nested private MetadataString	summary;
+	 @xml_nested private MetadataString	summary;
 
 /**
 	Key Words of the document
 **/ 
 
-	@xml_tag("keywords") @xml_nested private MetadataString	keywords;
+	 @xml_nested private MetadataString	keywords;
 
 /**
 	Subject of the document
 **/ 
 
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
+	 @xml_nested private MetadataString	subject;
 
 /**
-	
+	null
 **/ 
 
-	@xml_tag("trapped") @xml_nested private MetadataString	trapped;
+	 @xml_nested private MetadataString	trapped;
 
 /**
-	
+	null
 **/ 
 
-	@xml_tag("modified") @xml_nested private MetadataString	modified;
+	 @xml_nested private MetadataString	modified;
 
 /**
 	Contents of the document
 **/ 
 
-	@xml_tag("contents") @xml_nested private MetadataString	contents;
+	 @xml_nested private MetadataString	contents;
 
 /**
 	Creation date of the document
 **/ 
 
-	@xml_tag("creationdate") @xml_nested private MetadataString	creationdate;
+	 @xml_nested private MetadataString	creationdate;
 
 /**
 	Constructor

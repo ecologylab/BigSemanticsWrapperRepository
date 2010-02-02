@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("genre")
+
 public class Genre extends Metadata{
 
 
@@ -57,13 +56,13 @@ public class Genre extends Metadata{
 	null
 **/ 
 
-	@xml_tag("name") @xml_nested private MetadataString	name;
+	 @xml_nested private MetadataString	name;
 
 /**
 	null
 **/ 
 
-	@xml_tag("genre_link") @xml_nested private MetadataParsedURL	genreLink;
+	 @xml_nested private MetadataParsedURL	genreLink;
 
 /**
 	Constructor

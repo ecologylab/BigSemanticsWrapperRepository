@@ -1,14 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
-
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
@@ -56,116 +47,26 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
+@xml_inherit
+
+public class AcmProceedingPage extends Metadata{
+
 
 /**
-	
-This is the tranlation scope class for generated files
-.
+	Constructor
 **/ 
 
-public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslationSpace
-{protected static final Class TRANSLATIONS[]=
-	{Pdf.class,
-
-Dlms.class,
-
-Icdl.class,
-
-Nsdl.class,
-
-Text.class,
-
-DcDocument.class,
-
-SearchResult.class,
-
-Search.class,
-
-Thumbnail.class,
-
-Result.class,
-
-Thumbnail.class,
-
-YahooResultSet.class,
-
-FlickrTag.class,
-
-FlickrImage.class,
-
-FlickrSearch.class,
-
-FlickrImageDetail.class,
-
-FlickrLink.class,
-
-FlickrAuthor.class,
-
-FlickrTagsInteresting.class,
-
-FlickrTags.class,
-
-Anchor.class,
-
-Paragraph.class,
-
-Category.class,
-
-Thumbinner.class,
-
-Anchor.class,
-
-WikipediaPage.class,
-
-Item.class,
-
-Channel.class,
-
-Item.class,
-
-Rss.class,
-
-IcdlImage.class,
-
-Topic.class,
-
-Source.class,
-
-Author.class,
-
-ScholarlyArticle.class,
-
-AcmProceedingPage.class,
-
-ScholarlyArticle.class,
-
-AcmProceeding.class,
-
-BirthDetail.class,
-
-Genre.class,
-
-CastMember.class,
-
-ImdbTitle.class,
-
-PersonDetails.class,
-
-GooglePatent.class,
-
-GooglePatentImage.class,
-
-GoogleSorry.class,
-
-Restaurant.class,
-
-WeatherReport.class,
-
-
-};
- 
-public static TranslationScope get()
+public AcmProceedingPage()
 {
-return TranslationScope.get("generated_metadata_translations", MetaMetadataRepository.builtinMetadataTranslations(), TRANSLATIONS);
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public AcmProceedingPage(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
 }
 }

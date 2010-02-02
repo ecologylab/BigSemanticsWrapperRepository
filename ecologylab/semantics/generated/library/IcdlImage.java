@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("icdl_image")
+
 public class  IcdlImage
 extends  Image
 {
@@ -72,7 +71,7 @@ extends  Image
 	The language of the library
 **/ 
 
-	@xml_tag("languages") @xml_nested private MetadataString	languages;
+	 @xml_nested private MetadataString	languages;
 
 /**
 	Constructor

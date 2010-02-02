@@ -51,29 +51,23 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	The RSS Class.
+	The RSS class
 **/ 
 
 @xml_inherit
-@xml_tag("rss")
+
 public class  Rss
 extends  Document
 {
 
 
-/**
-	
-**/ 
-
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
-
+private  @xml_nested Channel	channel;
 /**
 	Constructor
 **/ 
@@ -93,62 +87,36 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for subject
+	Lazy Evaluation for channel
 **/ 
 
-public MetadataString	subject()
+public Channel	channel()
 {
-MetadataString	result	=this.subject;
+Channel	result	=this.channel;
 if(result == null)
 {
-result = new MetadataString();
-this.subject	=	 result;
+result = new Channel();
+this.channel	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field subject
+	Set the value of field channel
 **/ 
 
-public String getSubject(){
-return subject().getValue();
-}
-
-/**
-	Sets the value of the field subject
-**/ 
-
-public void setSubject( String subject )
+public void setChannel( Channel channel )
 {
-this.subject().setValue(subject);
+this.channel = channel ;
 }
 
 /**
-	The heavy weight setter method for field subject
+	Get the value of field channel
 **/ 
 
-public void hwSetSubject( String subject )
-{
-this.subject().setValue(subject);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the subject directly
-**/ 
-
-public void setSubjectMetadata(MetadataString subject)
-{	this.subject = subject;
+public Channel getChannel(){
+return this.channel;
 }
-/**
-	Heavy Weight Direct setter method for subject
-**/ 
 
-public void hwSetSubjectMetadata(MetadataString subject)
-{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
-		 termVector().remove(this.subject.termVector());
-	 this.subject = subject;
-	rebuildCompositeTermVector();
-}
 }
 

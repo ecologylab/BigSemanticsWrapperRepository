@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("scholarly_article")
+
 public class  ScholarlyArticle
 extends  Pdf
 {
@@ -72,7 +71,7 @@ extends  Pdf
 	citation.cfm
 **/ 
 
-	@xml_tag("metadata_page") @xml_nested private MetadataParsedURL	metadataPage;
+	 @xml_nested private MetadataParsedURL	metadataPage;
 
 /**
 	
@@ -80,7 +79,7 @@ extends  Pdf
 
 	@xml_tag("abstract") @xml_nested private MetadataString	abstractField;
 
-private @xml_tag("source") @xml_nested Source	source;	@xml_collection("authors") private ArrayList<Author>	authors;
+private  @xml_nested Source	source;	@xml_collection("authors") private ArrayList<Author>	authors;
 	@xml_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
 	@xml_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
 

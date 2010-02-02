@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("anchor")
+
 public class Anchor extends Metadata{
 
 
@@ -57,13 +56,13 @@ public class Anchor extends Metadata{
 	
 **/ 
 
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+	 @xml_nested private MetadataParsedURL	link;
 
 /**
 	null
 **/ 
 
-	@xml_tag("anchor_text") @xml_nested private MetadataString	anchorText;
+	 @xml_nested private MetadataString	anchorText;
 
 /**
 	Constructor

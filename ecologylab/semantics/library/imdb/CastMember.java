@@ -43,18 +43,17 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("cast_member")
+
 public class CastMember extends Metadata{
 
 
-private @xml_tag("actor") @xml_nested Entity<PersonDetails>	actor;
-private @xml_tag("character") @xml_nested Entity<PersonDetails>	character;
+private  @xml_nested Entity<PersonDetails>	actor;
+private  @xml_nested Entity<PersonDetails>	character;
 /**
 	Constructor
 **/ 

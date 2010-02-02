@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("wikipedia_page")
+
 public class  WikipediaPage
 extends  Document
 {
@@ -72,19 +71,7 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("title") @xml_nested private MetadataString	title;
-
-/**
-	null
-**/ 
-
-	@xml_tag("description") @xml_nested private MetadataString	description;
-
-/**
-	null
-**/ 
-
-	@xml_tag("main_image_src") @xml_nested private MetadataParsedURL	mainImageSrc;
+	 @xml_nested private MetadataParsedURL	mainImageSrc;
 	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
 	@xml_collection("categories") private ArrayList<Category>	categories;
 	@xml_collection("thumbinners") private ArrayList<Thumbinner>	thumbinners;
@@ -107,122 +94,6 @@ public WikipediaPage(MetaMetadata metaMetadata)
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for title
-**/ 
-
-public MetadataString	title()
-{
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for description
-**/ 
-
-public MetadataString	description()
-{
-MetadataString	result	=this.description;
-if(result == null)
-{
-result = new MetadataString();
-this.description	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field description
-**/ 
-
-public String getDescription(){
-return description().getValue();
-}
-
-/**
-	Sets the value of the field description
-**/ 
-
-public void setDescription( String description )
-{
-this.description().setValue(description);
-}
-
-/**
-	The heavy weight setter method for field description
-**/ 
-
-public void hwSetDescription( String description )
-{
-this.description().setValue(description);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the description directly
-**/ 
-
-public void setDescriptionMetadata(MetadataString description)
-{	this.description = description;
-}
-/**
-	Heavy Weight Direct setter method for description
-**/ 
-
-public void hwSetDescriptionMetadata(MetadataString description)
-{	 if(this.description!=null && this.description.getValue()!=null && hasTermVector())
-		 termVector().remove(this.description.termVector());
-	 this.description = description;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for mainImageSrc
 **/ 

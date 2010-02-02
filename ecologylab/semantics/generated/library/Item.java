@@ -1,14 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
-
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
@@ -56,116 +47,154 @@ import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
+@xml_inherit
+
+public class Item extends Metadata{
+
 
 /**
-	
-This is the tranlation scope class for generated files
-.
+	null
 **/ 
 
-public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslationSpace
-{protected static final Class TRANSLATIONS[]=
-	{Pdf.class,
+	 @xml_nested private MetadataString	title;
 
-Dlms.class,
+/**
+	null
+**/ 
 
-Icdl.class,
+	 @xml_nested private MetadataParsedURL	guid;
 
-Nsdl.class,
+/**
+	Constructor
+**/ 
 
-Text.class,
-
-DcDocument.class,
-
-SearchResult.class,
-
-Search.class,
-
-Thumbnail.class,
-
-Result.class,
-
-Thumbnail.class,
-
-YahooResultSet.class,
-
-FlickrTag.class,
-
-FlickrImage.class,
-
-FlickrSearch.class,
-
-FlickrImageDetail.class,
-
-FlickrLink.class,
-
-FlickrAuthor.class,
-
-FlickrTagsInteresting.class,
-
-FlickrTags.class,
-
-Anchor.class,
-
-Paragraph.class,
-
-Category.class,
-
-Thumbinner.class,
-
-Anchor.class,
-
-WikipediaPage.class,
-
-Item.class,
-
-Channel.class,
-
-Item.class,
-
-Rss.class,
-
-IcdlImage.class,
-
-Topic.class,
-
-Source.class,
-
-Author.class,
-
-ScholarlyArticle.class,
-
-AcmProceedingPage.class,
-
-ScholarlyArticle.class,
-
-AcmProceeding.class,
-
-BirthDetail.class,
-
-Genre.class,
-
-CastMember.class,
-
-ImdbTitle.class,
-
-PersonDetails.class,
-
-GooglePatent.class,
-
-GooglePatentImage.class,
-
-GoogleSorry.class,
-
-Restaurant.class,
-
-WeatherReport.class,
-
-
-};
- 
-public static TranslationScope get()
+public Item()
 {
-return TranslationScope.get("generated_metadata_translations", MetaMetadataRepository.builtinMetadataTranslations(), TRANSLATIONS);
+ super();
 }
+
+/**
+	Constructor
+**/ 
+
+public Item(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
 }
+
+/**
+	Lazy Evaluation for title
+**/ 
+
+public MetadataString	title()
+{
+MetadataString	result	=this.title;
+if(result == null)
+{
+result = new MetadataString();
+this.title	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field title
+**/ 
+
+public String getTitle(){
+return title().getValue();
+}
+
+/**
+	Sets the value of the field title
+**/ 
+
+public void setTitle( String title )
+{
+this.title().setValue(title);
+}
+
+/**
+	The heavy weight setter method for field title
+**/ 
+
+public void hwSetTitle( String title )
+{
+this.title().setValue(title);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for guid
+**/ 
+
+public MetadataParsedURL	guid()
+{
+MetadataParsedURL	result	=this.guid;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.guid	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field guid
+**/ 
+
+public ParsedURL getGuid(){
+return guid().getValue();
+}
+
+/**
+	Sets the value of the field guid
+**/ 
+
+public void setGuid( ParsedURL guid )
+{
+this.guid().setValue(guid);
+}
+
+/**
+	The heavy weight setter method for field guid
+**/ 
+
+public void hwSetGuid( ParsedURL guid )
+{
+this.guid().setValue(guid);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the guid directly
+**/ 
+
+public void setGuidMetadata(MetadataParsedURL guid)
+{	this.guid = guid;
+}
+/**
+	Heavy Weight Direct setter method for guid
+**/ 
+
+public void hwSetGuidMetadata(MetadataParsedURL guid)
+{	 if(this.guid!=null && this.guid.getValue()!=null && hasTermVector())
+		 termVector().remove(this.guid.termVector());
+	 this.guid = guid;
+	rebuildCompositeTermVector();
+}}

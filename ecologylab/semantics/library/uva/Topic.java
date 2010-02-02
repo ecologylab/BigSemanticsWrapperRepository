@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("topic")
+
 public class  Topic
 extends  Document
 {
@@ -72,31 +71,31 @@ extends  Document
 	
 **/ 
 
-	@xml_tag("content_keywords") @xml_nested private MetadataStringBuilder	contentKeywords;
+	 @xml_nested private MetadataStringBuilder	contentKeywords;
 
 /**
 	
 **/ 
 
-	@xml_tag("anchor_keywords") @xml_nested private MetadataStringBuilder	anchorKeywords;
+	 @xml_nested private MetadataStringBuilder	anchorKeywords;
 
 /**
 	
 **/ 
 
-	@xml_tag("url_keywords") @xml_nested private MetadataStringBuilder	urlKeywords;
+	 @xml_nested private MetadataStringBuilder	urlKeywords;
 
 /**
 	
 **/ 
 
-	@xml_tag("title_keywords") @xml_nested private MetadataStringBuilder	titleKeywords;
+	 @xml_nested private MetadataStringBuilder	titleKeywords;
 
 /**
 	
 **/ 
 
-	@xml_tag("id") @xml_nested private MetadataInteger	id;
+	 @xml_nested private MetadataInteger	id;
 
 /**
 	Constructor

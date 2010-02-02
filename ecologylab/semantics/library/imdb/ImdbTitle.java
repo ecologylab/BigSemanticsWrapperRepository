@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("imdb_title")
+
 public class  ImdbTitle
 extends  Document
 {
@@ -72,7 +71,13 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("rating") @xml_nested private MetadataString	rating;
+	 @xml_nested private MetadataString	yearReleased;
+
+/**
+	null
+**/ 
+
+	 @xml_nested private MetadataString	rating;
 	@xml_collection("directors") private ArrayList<Entity<PersonDetails>>	directors;
 	@xml_collection("writers") private ArrayList<Entity<PersonDetails>>	writers;
 
@@ -80,20 +85,20 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("release_date") @xml_nested private MetadataString	releaseDate;
+	 @xml_nested private MetadataString	releaseDate;
 	@xml_collection("genres") private ArrayList<Genre>	genres;
 
 /**
 	null
 **/ 
 
-	@xml_tag("plot") @xml_nested private MetadataString	plot;
+	 @xml_nested private MetadataString	plot;
 
 /**
 	null
 **/ 
 
-	@xml_tag("tagline") @xml_nested private MetadataString	tagline;
+	 @xml_nested private MetadataString	tagline;
 	@xml_collection("cast") private ArrayList<CastMember>	cast;
 	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
 
@@ -101,7 +106,7 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("poster_img") @xml_nested private MetadataParsedURL	posterImg;
+	 @xml_nested private MetadataParsedURL	posterImg;
 
 /**
 	Constructor
@@ -121,6 +126,64 @@ public ImdbTitle(MetaMetadata metaMetadata)
 super(metaMetadata);
 }
 
+/**
+	Lazy Evaluation for yearReleased
+**/ 
+
+public MetadataString	yearReleased()
+{
+MetadataString	result	=this.yearReleased;
+if(result == null)
+{
+result = new MetadataString();
+this.yearReleased	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field yearReleased
+**/ 
+
+public String getYearReleased(){
+return yearReleased().getValue();
+}
+
+/**
+	Sets the value of the field yearReleased
+**/ 
+
+public void setYearReleased( String yearReleased )
+{
+this.yearReleased().setValue(yearReleased);
+}
+
+/**
+	The heavy weight setter method for field yearReleased
+**/ 
+
+public void hwSetYearReleased( String yearReleased )
+{
+this.yearReleased().setValue(yearReleased);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the yearReleased directly
+**/ 
+
+public void setYearReleasedMetadata(MetadataString yearReleased)
+{	this.yearReleased = yearReleased;
+}
+/**
+	Heavy Weight Direct setter method for yearReleased
+**/ 
+
+public void hwSetYearReleasedMetadata(MetadataString yearReleased)
+{	 if(this.yearReleased!=null && this.yearReleased.getValue()!=null && hasTermVector())
+		 termVector().remove(this.yearReleased.termVector());
+	 this.yearReleased = yearReleased;
+	rebuildCompositeTermVector();
+}
 /**
 	Lazy Evaluation for rating
 **/ 

@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,17 +61,17 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("nsdl")
+
 public class  Nsdl
 extends  Document
 {
 
 
 /**
-	
+	null
 **/ 
 
-	@xml_tag("subject") @xml_nested private MetadataString	subject;
+	 @xml_nested private MetadataString	subject;
 
 /**
 	Constructor

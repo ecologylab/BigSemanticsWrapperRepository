@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,13 +61,13 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_image_detail")
+
 public class  FlickrImageDetail
 extends  Document
 {
 
 
-private @xml_tag("flickr_image") @xml_nested FlickrImage	flickr_image;
+private  @xml_nested FlickrImage	flickr_image;
 /**
 	Constructor
 **/ 

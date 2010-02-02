@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("flickr_image")
+
 public class  FlickrImage
 extends  Image
 {
@@ -72,7 +71,7 @@ extends  Image
 	null
 **/ 
 
-	@xml_tag("browse_purl") @xml_nested private MetadataParsedURL	browsePurl;
+	 @xml_nested private MetadataParsedURL	browsePurl;
 	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
 /**

@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("source")
+
 public class  Source
 extends  Document
 {
@@ -72,25 +71,25 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("year_of_publication") @xml_nested private MetadataInteger	yearOfPublication;
+	 @xml_nested private MetadataInteger	yearOfPublication;
 
 /**
 	Archive of conference or journal.
 **/ 
 
-	@xml_tag("archive") @xml_nested private MetadataParsedURL	archive;
+	 @xml_nested private MetadataParsedURL	archive;
 
 /**
 	null
 **/ 
 
-	@xml_tag("pages") @xml_nested private MetadataString	pages;
+	 @xml_nested private MetadataString	pages;
 
 /**
 	
 **/ 
 
-	@xml_tag("isbn") @xml_nested private MetadataString	isbn;
+	 @xml_nested private MetadataString	isbn;
 
 /**
 	Constructor

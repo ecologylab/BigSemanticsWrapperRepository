@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("result")
+@xml_tag("Result")
 public class Result extends Metadata{
 
 
@@ -57,38 +56,38 @@ public class Result extends Metadata{
 	null
 **/ 
 
-	@xml_tag("Title") @xml_nested private MetadataString	Title;
+	@xml_tag("Title") @xml_nested private MetadataString	title;
 
 /**
 	null
 **/ 
 
-	@xml_tag("Summary") @xml_nested private MetadataString	Summary;
+	@xml_tag("Summary") @xml_nested private MetadataString	summary;
 
 /**
 	null
 **/ 
 
-	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
+	@xml_tag("Url") @xml_nested private MetadataParsedURL	url;
 
 /**
 	null
 **/ 
 
-	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	RefererUrl;
+	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	refererUrl;
 
 /**
 	null
 **/ 
 
-	@xml_tag("ModificationDate") @xml_nested private MetadataInteger	ModificationDate;
+	@xml_tag("ModificationDate") @xml_nested private MetadataInteger	modificationDate;
 
 /**
 	null
 **/ 
 
-	@xml_tag("MimeType") @xml_nested private MetadataString	MimeType;
-	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	Thumbnail;
+	@xml_tag("MimeType") @xml_nested private MetadataString	mimeType;
+	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	thumbnails;
 
 /**
 	Constructor
@@ -109,382 +108,382 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for Title
+	Lazy Evaluation for title
 **/ 
 
-public MetadataString	Title()
+public MetadataString	title()
 {
-MetadataString	result	=this.Title;
+MetadataString	result	=this.title;
 if(result == null)
 {
 result = new MetadataString();
-this.Title	=	 result;
+this.title	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field Title
+	Gets the value of the field title
 **/ 
 
 public String getTitle(){
-return Title().getValue();
+return title().getValue();
 }
 
 /**
-	Sets the value of the field Title
+	Sets the value of the field title
 **/ 
 
-public void setTitle( String Title )
+public void setTitle( String title )
 {
-this.Title().setValue(Title);
+this.title().setValue(title);
 }
 
 /**
-	The heavy weight setter method for field Title
+	The heavy weight setter method for field title
 **/ 
 
-public void hwSetTitle( String Title )
+public void hwSetTitle( String title )
 {
-this.Title().setValue(Title);
+this.title().setValue(title);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the Title directly
+	 Sets the title directly
 **/ 
 
-public void setTitleMetadata(MetadataString Title)
-{	this.Title = Title;
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
 }
 /**
-	Heavy Weight Direct setter method for Title
+	Heavy Weight Direct setter method for title
 **/ 
 
-public void hwSetTitleMetadata(MetadataString Title)
-{	 if(this.Title!=null && this.Title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.Title.termVector());
-	 this.Title = Title;
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for Summary
+	Lazy Evaluation for summary
 **/ 
 
-public MetadataString	Summary()
+public MetadataString	summary()
 {
-MetadataString	result	=this.Summary;
+MetadataString	result	=this.summary;
 if(result == null)
 {
 result = new MetadataString();
-this.Summary	=	 result;
+this.summary	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field Summary
+	Gets the value of the field summary
 **/ 
 
 public String getSummary(){
-return Summary().getValue();
+return summary().getValue();
 }
 
 /**
-	Sets the value of the field Summary
+	Sets the value of the field summary
 **/ 
 
-public void setSummary( String Summary )
+public void setSummary( String summary )
 {
-this.Summary().setValue(Summary);
+this.summary().setValue(summary);
 }
 
 /**
-	The heavy weight setter method for field Summary
+	The heavy weight setter method for field summary
 **/ 
 
-public void hwSetSummary( String Summary )
+public void hwSetSummary( String summary )
 {
-this.Summary().setValue(Summary);
+this.summary().setValue(summary);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the Summary directly
+	 Sets the summary directly
 **/ 
 
-public void setSummaryMetadata(MetadataString Summary)
-{	this.Summary = Summary;
+public void setSummaryMetadata(MetadataString summary)
+{	this.summary = summary;
 }
 /**
-	Heavy Weight Direct setter method for Summary
+	Heavy Weight Direct setter method for summary
 **/ 
 
-public void hwSetSummaryMetadata(MetadataString Summary)
-{	 if(this.Summary!=null && this.Summary.getValue()!=null && hasTermVector())
-		 termVector().remove(this.Summary.termVector());
-	 this.Summary = Summary;
+public void hwSetSummaryMetadata(MetadataString summary)
+{	 if(this.summary!=null && this.summary.getValue()!=null && hasTermVector())
+		 termVector().remove(this.summary.termVector());
+	 this.summary = summary;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for Url
+	Lazy Evaluation for url
 **/ 
 
-public MetadataParsedURL	Url()
+public MetadataParsedURL	url()
 {
-MetadataParsedURL	result	=this.Url;
+MetadataParsedURL	result	=this.url;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.Url	=	 result;
+this.url	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field Url
+	Gets the value of the field url
 **/ 
 
 public ParsedURL getUrl(){
-return Url().getValue();
+return url().getValue();
 }
 
 /**
-	Sets the value of the field Url
+	Sets the value of the field url
 **/ 
 
-public void setUrl( ParsedURL Url )
+public void setUrl( ParsedURL url )
 {
-this.Url().setValue(Url);
+this.url().setValue(url);
 }
 
 /**
-	The heavy weight setter method for field Url
+	The heavy weight setter method for field url
 **/ 
 
-public void hwSetUrl( ParsedURL Url )
+public void hwSetUrl( ParsedURL url )
 {
-this.Url().setValue(Url);
+this.url().setValue(url);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the Url directly
+	 Sets the url directly
 **/ 
 
-public void setUrlMetadata(MetadataParsedURL Url)
-{	this.Url = Url;
+public void setUrlMetadata(MetadataParsedURL url)
+{	this.url = url;
 }
 /**
-	Heavy Weight Direct setter method for Url
+	Heavy Weight Direct setter method for url
 **/ 
 
-public void hwSetUrlMetadata(MetadataParsedURL Url)
-{	 if(this.Url!=null && this.Url.getValue()!=null && hasTermVector())
-		 termVector().remove(this.Url.termVector());
-	 this.Url = Url;
+public void hwSetUrlMetadata(MetadataParsedURL url)
+{	 if(this.url!=null && this.url.getValue()!=null && hasTermVector())
+		 termVector().remove(this.url.termVector());
+	 this.url = url;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for RefererUrl
+	Lazy Evaluation for refererUrl
 **/ 
 
-public MetadataParsedURL	RefererUrl()
+public MetadataParsedURL	refererUrl()
 {
-MetadataParsedURL	result	=this.RefererUrl;
+MetadataParsedURL	result	=this.refererUrl;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.RefererUrl	=	 result;
+this.refererUrl	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field RefererUrl
+	Gets the value of the field refererUrl
 **/ 
 
 public ParsedURL getRefererUrl(){
-return RefererUrl().getValue();
+return refererUrl().getValue();
 }
 
 /**
-	Sets the value of the field RefererUrl
+	Sets the value of the field refererUrl
 **/ 
 
-public void setRefererUrl( ParsedURL RefererUrl )
+public void setRefererUrl( ParsedURL refererUrl )
 {
-this.RefererUrl().setValue(RefererUrl);
+this.refererUrl().setValue(refererUrl);
 }
 
 /**
-	The heavy weight setter method for field RefererUrl
+	The heavy weight setter method for field refererUrl
 **/ 
 
-public void hwSetRefererUrl( ParsedURL RefererUrl )
+public void hwSetRefererUrl( ParsedURL refererUrl )
 {
-this.RefererUrl().setValue(RefererUrl);
+this.refererUrl().setValue(refererUrl);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the RefererUrl directly
+	 Sets the refererUrl directly
 **/ 
 
-public void setRefererUrlMetadata(MetadataParsedURL RefererUrl)
-{	this.RefererUrl = RefererUrl;
+public void setRefererUrlMetadata(MetadataParsedURL refererUrl)
+{	this.refererUrl = refererUrl;
 }
 /**
-	Heavy Weight Direct setter method for RefererUrl
+	Heavy Weight Direct setter method for refererUrl
 **/ 
 
-public void hwSetRefererUrlMetadata(MetadataParsedURL RefererUrl)
-{	 if(this.RefererUrl!=null && this.RefererUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.RefererUrl.termVector());
-	 this.RefererUrl = RefererUrl;
+public void hwSetRefererUrlMetadata(MetadataParsedURL refererUrl)
+{	 if(this.refererUrl!=null && this.refererUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.refererUrl.termVector());
+	 this.refererUrl = refererUrl;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for ModificationDate
+	Lazy Evaluation for modificationDate
 **/ 
 
-public MetadataInteger	ModificationDate()
+public MetadataInteger	modificationDate()
 {
-MetadataInteger	result	=this.ModificationDate;
+MetadataInteger	result	=this.modificationDate;
 if(result == null)
 {
 result = new MetadataInteger();
-this.ModificationDate	=	 result;
+this.modificationDate	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field ModificationDate
+	Gets the value of the field modificationDate
 **/ 
 
 public Integer getModificationDate(){
-return ModificationDate().getValue();
+return modificationDate().getValue();
 }
 
 /**
-	Sets the value of the field ModificationDate
+	Sets the value of the field modificationDate
 **/ 
 
-public void setModificationDate( Integer ModificationDate )
+public void setModificationDate( Integer modificationDate )
 {
-this.ModificationDate().setValue(ModificationDate);
+this.modificationDate().setValue(modificationDate);
 }
 
 /**
-	The heavy weight setter method for field ModificationDate
+	The heavy weight setter method for field modificationDate
 **/ 
 
-public void hwSetModificationDate( Integer ModificationDate )
+public void hwSetModificationDate( Integer modificationDate )
 {
-this.ModificationDate().setValue(ModificationDate);
+this.modificationDate().setValue(modificationDate);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the ModificationDate directly
+	 Sets the modificationDate directly
 **/ 
 
-public void setModificationDateMetadata(MetadataInteger ModificationDate)
-{	this.ModificationDate = ModificationDate;
+public void setModificationDateMetadata(MetadataInteger modificationDate)
+{	this.modificationDate = modificationDate;
 }
 /**
-	Heavy Weight Direct setter method for ModificationDate
+	Heavy Weight Direct setter method for modificationDate
 **/ 
 
-public void hwSetModificationDateMetadata(MetadataInteger ModificationDate)
-{	 if(this.ModificationDate!=null && this.ModificationDate.getValue()!=null && hasTermVector())
-		 termVector().remove(this.ModificationDate.termVector());
-	 this.ModificationDate = ModificationDate;
+public void hwSetModificationDateMetadata(MetadataInteger modificationDate)
+{	 if(this.modificationDate!=null && this.modificationDate.getValue()!=null && hasTermVector())
+		 termVector().remove(this.modificationDate.termVector());
+	 this.modificationDate = modificationDate;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for MimeType
+	Lazy Evaluation for mimeType
 **/ 
 
-public MetadataString	MimeType()
+public MetadataString	mimeType()
 {
-MetadataString	result	=this.MimeType;
+MetadataString	result	=this.mimeType;
 if(result == null)
 {
 result = new MetadataString();
-this.MimeType	=	 result;
+this.mimeType	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field MimeType
+	Gets the value of the field mimeType
 **/ 
 
 public String getMimeType(){
-return MimeType().getValue();
+return mimeType().getValue();
 }
 
 /**
-	Sets the value of the field MimeType
+	Sets the value of the field mimeType
 **/ 
 
-public void setMimeType( String MimeType )
+public void setMimeType( String mimeType )
 {
-this.MimeType().setValue(MimeType);
+this.mimeType().setValue(mimeType);
 }
 
 /**
-	The heavy weight setter method for field MimeType
+	The heavy weight setter method for field mimeType
 **/ 
 
-public void hwSetMimeType( String MimeType )
+public void hwSetMimeType( String mimeType )
 {
-this.MimeType().setValue(MimeType);
+this.mimeType().setValue(mimeType);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the MimeType directly
+	 Sets the mimeType directly
 **/ 
 
-public void setMimeTypeMetadata(MetadataString MimeType)
-{	this.MimeType = MimeType;
+public void setMimeTypeMetadata(MetadataString mimeType)
+{	this.mimeType = mimeType;
 }
 /**
-	Heavy Weight Direct setter method for MimeType
+	Heavy Weight Direct setter method for mimeType
 **/ 
 
-public void hwSetMimeTypeMetadata(MetadataString MimeType)
-{	 if(this.MimeType!=null && this.MimeType.getValue()!=null && hasTermVector())
-		 termVector().remove(this.MimeType.termVector());
-	 this.MimeType = MimeType;
+public void hwSetMimeTypeMetadata(MetadataString mimeType)
+{	 if(this.mimeType!=null && this.mimeType.getValue()!=null && hasTermVector())
+		 termVector().remove(this.mimeType.termVector());
+	 this.mimeType = mimeType;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for Thumbnail
+	Lazy Evaluation for thumbnails
 **/ 
 
-public  ArrayList<Thumbnail>	Thumbnail()
+public  ArrayList<Thumbnail>	thumbnails()
 {
- ArrayList<Thumbnail>	result	=this.Thumbnail;
+ ArrayList<Thumbnail>	result	=this.thumbnails;
 if(result == null)
 {
 result = new  ArrayList<Thumbnail>();
-this.Thumbnail	=	 result;
+this.thumbnails	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field Thumbnail
+	Set the value of field thumbnails
 **/ 
 
-public void setThumbnail(  ArrayList<Thumbnail> Thumbnail )
+public void setThumbnails(  ArrayList<Thumbnail> thumbnails )
 {
-this.Thumbnail = Thumbnail ;
+this.thumbnails = thumbnails ;
 }
 
 /**
-	Get the value of field Thumbnail
+	Get the value of field thumbnails
 **/ 
 
-public  ArrayList<Thumbnail> getThumbnail(){
-return this.Thumbnail;
+public  ArrayList<Thumbnail> getThumbnails(){
+return this.thumbnails;
 }
 }

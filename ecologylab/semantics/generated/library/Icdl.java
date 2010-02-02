@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,17 +61,17 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("icdl")
+
 public class  Icdl
 extends  Document
 {
 
 
 /**
-	
+	null
 **/ 
 
-	@xml_tag("languages") @xml_nested private MetadataString	languages;
+	 @xml_nested private MetadataString	languages;
 
 /**
 	Constructor

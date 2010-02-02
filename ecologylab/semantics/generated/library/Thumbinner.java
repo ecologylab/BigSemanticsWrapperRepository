@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("thumbinner")
+
 public class Thumbinner extends Metadata{
 
 
@@ -57,13 +56,13 @@ public class Thumbinner extends Metadata{
 	null
 **/ 
 
-	@xml_tag("thumb_img_src") @xml_nested private MetadataParsedURL	thumbImgSrc;
+	 @xml_nested private MetadataParsedURL	thumbImgSrc;
 
 /**
 	null
 **/ 
 
-	@xml_tag("thumb_img_caption") @xml_nested private MetadataString	thumbImgCaption;
+	 @xml_nested private MetadataString	thumbImgCaption;
 
 /**
 	Constructor

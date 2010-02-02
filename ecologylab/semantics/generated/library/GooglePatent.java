@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("google_patent")
+
 public class  GooglePatent
 extends  Document
 {
@@ -72,31 +71,25 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("patent_name") @xml_nested private MetadataString	patentName;
+	 @xml_nested private MetadataString	inventor;
 
 /**
 	null
 **/ 
 
-	@xml_tag("inventor") @xml_nested private MetadataString	inventor;
+	 @xml_nested private MetadataString	abstractField;
 
 /**
 	null
 **/ 
 
-	@xml_tag("abstract_field") @xml_nested private MetadataString	abstractField;
+	 @xml_nested private MetadataString	claims;
 
 /**
 	null
 **/ 
 
-	@xml_tag("claims") @xml_nested private MetadataString	claims;
-
-/**
-	null
-**/ 
-
-	@xml_tag("pic_link") @xml_nested private MetadataParsedURL	picLink;
+	 @xml_nested private MetadataParsedURL	picLink;
 	@xml_collection("referenced_bys") private ArrayList<SearchResult>	referencedBys;
 	@xml_collection("citations") private ArrayList<SearchResult>	citations;
 	@xml_collection("pic_links") private ArrayList<SearchResult>	picLinks;
@@ -119,64 +112,6 @@ public GooglePatent(MetaMetadata metaMetadata)
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for patentName
-**/ 
-
-public MetadataString	patentName()
-{
-MetadataString	result	=this.patentName;
-if(result == null)
-{
-result = new MetadataString();
-this.patentName	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field patentName
-**/ 
-
-public String getPatentName(){
-return patentName().getValue();
-}
-
-/**
-	Sets the value of the field patentName
-**/ 
-
-public void setPatentName( String patentName )
-{
-this.patentName().setValue(patentName);
-}
-
-/**
-	The heavy weight setter method for field patentName
-**/ 
-
-public void hwSetPatentName( String patentName )
-{
-this.patentName().setValue(patentName);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the patentName directly
-**/ 
-
-public void setPatentNameMetadata(MetadataString patentName)
-{	this.patentName = patentName;
-}
-/**
-	Heavy Weight Direct setter method for patentName
-**/ 
-
-public void hwSetPatentNameMetadata(MetadataString patentName)
-{	 if(this.patentName!=null && this.patentName.getValue()!=null && hasTermVector())
-		 termVector().remove(this.patentName.termVector());
-	 this.patentName = patentName;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for inventor
 **/ 

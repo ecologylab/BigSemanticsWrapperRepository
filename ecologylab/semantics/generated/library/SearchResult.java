@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("search_result")
+
 public class SearchResult extends Metadata{
 
 
@@ -57,19 +56,19 @@ public class SearchResult extends Metadata{
 	The heading of search result
 **/ 
 
-	@xml_tag("heading") @xml_nested private MetadataString	heading;
+	 @xml_nested private MetadataString	heading;
 
 /**
 	The snippet of search result
 **/ 
 
-	@xml_tag("snippet") @xml_nested private MetadataString	snippet;
+	 @xml_nested private MetadataString	snippet;
 
 /**
 	The link of the search result
 **/ 
 
-	@xml_tag("link") @xml_nested private MetadataParsedURL	link;
+	 @xml_nested private MetadataParsedURL	link;
 
 /**
 	Constructor

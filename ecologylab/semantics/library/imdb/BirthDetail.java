@@ -51,7 +51,6 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
@@ -62,7 +61,7 @@ import ecologylab.semantics.library.imdb.*;
 **/ 
 
 @xml_inherit
-@xml_tag("birth_detail")
+
 public class  BirthDetail
 extends  Document
 {
@@ -72,37 +71,37 @@ extends  Document
 	null
 **/ 
 
-	@xml_tag("day_of_birth") @xml_nested private MetadataString	dayOfBirth;
+	 @xml_nested private MetadataString	dayOfBirth;
 
 /**
 	null
 **/ 
 
-	@xml_tag("year_of_birth") @xml_nested private MetadataString	yearOfBirth;
+	 @xml_nested private MetadataString	yearOfBirth;
 
 /**
 	null
 **/ 
 
-	@xml_tag("place_of_birth") @xml_nested private MetadataString	placeOfBirth;
+	 @xml_nested private MetadataString	placeOfBirth;
 
 /**
 	null
 **/ 
 
-	@xml_tag("day_of_birth_link") @xml_nested private MetadataParsedURL	dayOfBirthLink;
+	 @xml_nested private MetadataParsedURL	dayOfBirthLink;
 
 /**
 	null
 **/ 
 
-	@xml_tag("year_of_birth_link") @xml_nested private MetadataParsedURL	yearOfBirthLink;
+	 @xml_nested private MetadataParsedURL	yearOfBirthLink;
 
 /**
 	null
 **/ 
 
-	@xml_tag("place_of_birth_link") @xml_nested private MetadataParsedURL	placeOfBirthLink;
+	 @xml_nested private MetadataParsedURL	placeOfBirthLink;
 
 /**
 	Constructor

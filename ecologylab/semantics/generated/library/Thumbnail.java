@@ -43,13 +43,12 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 
 @xml_inherit
-@xml_tag("thumbnail")
+@xml_tag("Thumbnail")
 public class Thumbnail extends Metadata{
 
 
@@ -57,7 +56,7 @@ public class Thumbnail extends Metadata{
 	null
 **/ 
 
-	@xml_tag("Url") @xml_nested private MetadataParsedURL	Url;
+	@xml_tag("Url") @xml_nested private MetadataParsedURL	url;
 
 /**
 	Constructor
@@ -78,60 +77,60 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for Url
+	Lazy Evaluation for url
 **/ 
 
-public MetadataParsedURL	Url()
+public MetadataParsedURL	url()
 {
-MetadataParsedURL	result	=this.Url;
+MetadataParsedURL	result	=this.url;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.Url	=	 result;
+this.url	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field Url
+	Gets the value of the field url
 **/ 
 
 public ParsedURL getUrl(){
-return Url().getValue();
+return url().getValue();
 }
 
 /**
-	Sets the value of the field Url
+	Sets the value of the field url
 **/ 
 
-public void setUrl( ParsedURL Url )
+public void setUrl( ParsedURL url )
 {
-this.Url().setValue(Url);
+this.url().setValue(url);
 }
 
 /**
-	The heavy weight setter method for field Url
+	The heavy weight setter method for field url
 **/ 
 
-public void hwSetUrl( ParsedURL Url )
+public void hwSetUrl( ParsedURL url )
 {
-this.Url().setValue(Url);
+this.url().setValue(url);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the Url directly
+	 Sets the url directly
 **/ 
 
-public void setUrlMetadata(MetadataParsedURL Url)
-{	this.Url = Url;
+public void setUrlMetadata(MetadataParsedURL url)
+{	this.url = url;
 }
 /**
-	Heavy Weight Direct setter method for Url
+	Heavy Weight Direct setter method for url
 **/ 
 
-public void hwSetUrlMetadata(MetadataParsedURL Url)
-{	 if(this.Url!=null && this.Url.getValue()!=null && hasTermVector())
-		 termVector().remove(this.Url.termVector());
-	 this.Url = Url;
+public void hwSetUrlMetadata(MetadataParsedURL url)
+{	 if(this.url!=null && this.url.getValue()!=null && hasTermVector())
+		 termVector().remove(this.url.termVector());
+	 this.url = url;
 	rebuildCompositeTermVector();
 }}
