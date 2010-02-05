@@ -159,6 +159,8 @@ GoogleSorry.class,
 
 Restaurant.class,
 
+Artwork.class,
+
 WeatherReport.class,
 
 
