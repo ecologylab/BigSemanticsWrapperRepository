@@ -161,6 +161,8 @@ Restaurant.class,
 
 Artwork.class,
 
+MmArtwork.class,
+
 WeatherReport.class,
 
 
