@@ -67,5 +67,87 @@ extends  Artwork
 {
 
 
+/**
+	Link the ACM Portal page.
+**/ 
+
+	 @xml_nested private MetadataParsedURL	extendedAbstract;
+
+/**
+	Constructor
+**/ 
+
+public MmArtwork()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public MmArtwork(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
+
+/**
+	Lazy Evaluation for extendedAbstract
+**/ 
+
+public MetadataParsedURL	extendedAbstract()
+{
+MetadataParsedURL	result	=this.extendedAbstract;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.extendedAbstract	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field extendedAbstract
+**/ 
+
+public ParsedURL getExtendedAbstract(){
+return extendedAbstract().getValue();
+}
+
+/**
+	Sets the value of the field extendedAbstract
+**/ 
+
+public void setExtendedAbstract( ParsedURL extendedAbstract )
+{
+this.extendedAbstract().setValue(extendedAbstract);
+}
+
+/**
+	The heavy weight setter method for field extendedAbstract
+**/ 
+
+public void hwSetExtendedAbstract( ParsedURL extendedAbstract )
+{
+this.extendedAbstract().setValue(extendedAbstract);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the extendedAbstract directly
+**/ 
+
+public void setExtendedAbstractMetadata(MetadataParsedURL extendedAbstract)
+{	this.extendedAbstract = extendedAbstract;
+}
+/**
+	Heavy Weight Direct setter method for extendedAbstract
+**/ 
+
+public void hwSetExtendedAbstractMetadata(MetadataParsedURL extendedAbstract)
+{	 if(this.extendedAbstract!=null && this.extendedAbstract.getValue()!=null && hasTermVector())
+		 termVector().remove(this.extendedAbstract.termVector());
+	 this.extendedAbstract = extendedAbstract;
+	rebuildCompositeTermVector();
+}
 }
 

@@ -93,6 +93,12 @@ extends  Document
 	 @xml_nested private MetadataString	year;
 
 /**
+	Website of the work or group responsible.
+**/ 
+
+	 @xml_nested private MetadataParsedURL	website;
+
+/**
 	Constructor
 **/ 
 
@@ -372,6 +378,64 @@ public void hwSetYearMetadata(MetadataString year)
 {	 if(this.year!=null && this.year.getValue()!=null && hasTermVector())
 		 termVector().remove(this.year.termVector());
 	 this.year = year;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for website
+**/ 
+
+public MetadataParsedURL	website()
+{
+MetadataParsedURL	result	=this.website;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.website	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field website
+**/ 
+
+public ParsedURL getWebsite(){
+return website().getValue();
+}
+
+/**
+	Sets the value of the field website
+**/ 
+
+public void setWebsite( ParsedURL website )
+{
+this.website().setValue(website);
+}
+
+/**
+	The heavy weight setter method for field website
+**/ 
+
+public void hwSetWebsite( ParsedURL website )
+{
+this.website().setValue(website);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the website directly
+**/ 
+
+public void setWebsiteMetadata(MetadataParsedURL website)
+{	this.website = website;
+}
+/**
+	Heavy Weight Direct setter method for website
+**/ 
+
+public void hwSetWebsiteMetadata(MetadataParsedURL website)
+{	 if(this.website!=null && this.website.getValue()!=null && hasTermVector())
+		 termVector().remove(this.website.termVector());
+	 this.website = website;
 	rebuildCompositeTermVector();
 }
 }
