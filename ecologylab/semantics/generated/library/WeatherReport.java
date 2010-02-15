@@ -57,7 +57,7 @@ import ecologylab.semantics.library.imdb.*;
 
 
 /**
-	weather report from wunderground.com
+	The definition of weather report class.
 **/ 
 
 @xml_inherit
@@ -68,37 +68,37 @@ extends  Document
 
 
 /**
-	null
+	The name of the city.
 **/ 
 
 	 @xml_nested private MetadataString	city;
 
 /**
-	null
+	The weather condition of the city, like sunny or cloudy.
 **/ 
 
 	 @xml_nested private MetadataString	weather;
 
 /**
-	null
+	The URL of the picture indicating weather condition.
 **/ 
 
 	 @xml_nested private MetadataParsedURL	picUrl;
 
 /**
-	null
+	The temperature.
 **/ 
 
 	 @xml_nested private MetadataString	temperature;
 
 /**
-	null
+	The humidity of the air.
 **/ 
 
 	 @xml_nested private MetadataString	humidity;
 
 /**
-	null
+	The wind speed.
 **/ 
 
 	 @xml_nested private MetadataString	wind;

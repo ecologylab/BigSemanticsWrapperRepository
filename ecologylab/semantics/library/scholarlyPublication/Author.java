@@ -80,6 +80,12 @@ extends  Document
 	 @xml_nested private MetadataString	affiliation;
 
 /**
+	null
+**/ 
+
+	 @xml_nested private MetadataString	city;
+
+/**
 	Constructor
 **/ 
 
@@ -211,6 +217,64 @@ public void hwSetAffiliationMetadata(MetadataString affiliation)
 {	 if(this.affiliation!=null && this.affiliation.getValue()!=null && hasTermVector())
 		 termVector().remove(this.affiliation.termVector());
 	 this.affiliation = affiliation;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for city
+**/ 
+
+public MetadataString	city()
+{
+MetadataString	result	=this.city;
+if(result == null)
+{
+result = new MetadataString();
+this.city	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field city
+**/ 
+
+public String getCity(){
+return city().getValue();
+}
+
+/**
+	Sets the value of the field city
+**/ 
+
+public void setCity( String city )
+{
+this.city().setValue(city);
+}
+
+/**
+	The heavy weight setter method for field city
+**/ 
+
+public void hwSetCity( String city )
+{
+this.city().setValue(city);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the city directly
+**/ 
+
+public void setCityMetadata(MetadataString city)
+{	this.city = city;
+}
+/**
+	Heavy Weight Direct setter method for city
+**/ 
+
+public void hwSetCityMetadata(MetadataString city)
+{	 if(this.city!=null && this.city.getValue()!=null && hasTermVector())
+		 termVector().remove(this.city.termVector());
+	 this.city = city;
 	rebuildCompositeTermVector();
 }
 }

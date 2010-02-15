@@ -63,7 +63,7 @@ import ecologylab.semantics.library.imdb.*;
 @xml_inherit
 
 public class  MmArtwork
-extends  Metadata
+extends  Document
 {
 
 
@@ -71,7 +71,7 @@ extends  Metadata
 	null
 **/ 
 
-	 @xml_nested private MetadataString	title;
+	 @xml_nested private MetadataString	artTitle;
 	@xml_collection("artists") private ArrayList<Author>	artists;
 
 /**
@@ -123,61 +123,61 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for title
+	Lazy Evaluation for artTitle
 **/ 
 
-public MetadataString	title()
+public MetadataString	artTitle()
 {
-MetadataString	result	=this.title;
+MetadataString	result	=this.artTitle;
 if(result == null)
 {
 result = new MetadataString();
-this.title	=	 result;
+this.artTitle	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field title
+	Gets the value of the field artTitle
 **/ 
 
-public String getTitle(){
-return title().getValue();
+public String getArtTitle(){
+return artTitle().getValue();
 }
 
 /**
-	Sets the value of the field title
+	Sets the value of the field artTitle
 **/ 
 
-public void setTitle( String title )
+public void setArtTitle( String artTitle )
 {
-this.title().setValue(title);
+this.artTitle().setValue(artTitle);
 }
 
 /**
-	The heavy weight setter method for field title
+	The heavy weight setter method for field artTitle
 **/ 
 
-public void hwSetTitle( String title )
+public void hwSetArtTitle( String artTitle )
 {
-this.title().setValue(title);
+this.artTitle().setValue(artTitle);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the title directly
+	 Sets the artTitle directly
 **/ 
 
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
+public void setArtTitleMetadata(MetadataString artTitle)
+{	this.artTitle = artTitle;
 }
 /**
-	Heavy Weight Direct setter method for title
+	Heavy Weight Direct setter method for artTitle
 **/ 
 
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
+public void hwSetArtTitleMetadata(MetadataString artTitle)
+{	 if(this.artTitle!=null && this.artTitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.artTitle.termVector());
+	 this.artTitle = artTitle;
 	rebuildCompositeTermVector();
 }
 /**
