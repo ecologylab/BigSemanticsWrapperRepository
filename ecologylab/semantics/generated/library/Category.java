@@ -22,7 +22,7 @@ import ecologylab.net.ParsedURL;
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.xml.xml_inherit;
 import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.library.DefaultMetadataTranslationSpace;
+import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
  import ecologylab.semantics.metadata.builtins.Document;
