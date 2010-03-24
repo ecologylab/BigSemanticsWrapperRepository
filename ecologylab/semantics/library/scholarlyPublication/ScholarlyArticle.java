@@ -38,6 +38,7 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
@@ -46,14 +47,14 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -72,6 +73,12 @@ extends  Pdf
 **/ 
 
 	 @xml_nested private MetadataParsedURL	metadataPage;
+
+/**
+	null
+**/ 
+
+	 @xml_nested private MetadataString	timeStamp;
 
 /**
 	
@@ -157,6 +164,64 @@ public void hwSetMetadataPageMetadata(MetadataParsedURL metadataPage)
 {	 if(this.metadataPage!=null && this.metadataPage.getValue()!=null && hasTermVector())
 		 termVector().remove(this.metadataPage.termVector());
 	 this.metadataPage = metadataPage;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for timeStamp
+**/ 
+
+public MetadataString	timeStamp()
+{
+MetadataString	result	=this.timeStamp;
+if(result == null)
+{
+result = new MetadataString();
+this.timeStamp	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field timeStamp
+**/ 
+
+public String getTimeStamp(){
+return timeStamp().getValue();
+}
+
+/**
+	Sets the value of the field timeStamp
+**/ 
+
+public void setTimeStamp( String timeStamp )
+{
+this.timeStamp().setValue(timeStamp);
+}
+
+/**
+	The heavy weight setter method for field timeStamp
+**/ 
+
+public void hwSetTimeStamp( String timeStamp )
+{
+this.timeStamp().setValue(timeStamp);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the timeStamp directly
+**/ 
+
+public void setTimeStampMetadata(MetadataString timeStamp)
+{	this.timeStamp = timeStamp;
+}
+/**
+	Heavy Weight Direct setter method for timeStamp
+**/ 
+
+public void hwSetTimeStampMetadata(MetadataString timeStamp)
+{	 if(this.timeStamp!=null && this.timeStamp.getValue()!=null && hasTermVector())
+		 termVector().remove(this.timeStamp.termVector());
+	 this.timeStamp = timeStamp;
 	rebuildCompositeTermVector();
 }
 /**

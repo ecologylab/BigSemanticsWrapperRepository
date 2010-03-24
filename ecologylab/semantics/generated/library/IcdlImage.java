@@ -38,6 +38,7 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
@@ -46,14 +47,14 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.generated.library.*;
 
 
 /**

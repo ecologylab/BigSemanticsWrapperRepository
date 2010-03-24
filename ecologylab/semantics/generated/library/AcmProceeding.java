@@ -38,6 +38,7 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
@@ -46,14 +47,14 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -66,8 +67,8 @@ public class  AcmProceeding
 extends  Document
 {
 
-	@xml_collection("proceedings") private ArrayList<AcmProceedingPage>	proceedings;
-	@xml_collection("papers") private ArrayList<ScholarlyArticle>	papers;
+	@xml_collection("proceedings") private ArrayList<SearchResult>	proceedings;
+	@xml_collection("papers") private ArrayList<SearchResult>	papers;
 
 /**
 	Constructor
@@ -91,12 +92,12 @@ super(metaMetadata);
 	Lazy Evaluation for proceedings
 **/ 
 
-public  ArrayList<AcmProceedingPage>	proceedings()
+public  ArrayList<SearchResult>	proceedings()
 {
- ArrayList<AcmProceedingPage>	result	=this.proceedings;
+ ArrayList<SearchResult>	result	=this.proceedings;
 if(result == null)
 {
-result = new  ArrayList<AcmProceedingPage>();
+result = new  ArrayList<SearchResult>();
 this.proceedings	=	 result;
 }
 return result;
@@ -106,7 +107,7 @@ return result;
 	Set the value of field proceedings
 **/ 
 
-public void setProceedings(  ArrayList<AcmProceedingPage> proceedings )
+public void setProceedings(  ArrayList<SearchResult> proceedings )
 {
 this.proceedings = proceedings ;
 }
@@ -115,7 +116,7 @@ this.proceedings = proceedings ;
 	Get the value of field proceedings
 **/ 
 
-public  ArrayList<AcmProceedingPage> getProceedings(){
+public  ArrayList<SearchResult> getProceedings(){
 return this.proceedings;
 }
 
@@ -123,12 +124,12 @@ return this.proceedings;
 	Lazy Evaluation for papers
 **/ 
 
-public  ArrayList<ScholarlyArticle>	papers()
+public  ArrayList<SearchResult>	papers()
 {
- ArrayList<ScholarlyArticle>	result	=this.papers;
+ ArrayList<SearchResult>	result	=this.papers;
 if(result == null)
 {
-result = new  ArrayList<ScholarlyArticle>();
+result = new  ArrayList<SearchResult>();
 this.papers	=	 result;
 }
 return result;
@@ -138,7 +139,7 @@ return result;
 	Set the value of field papers
 **/ 
 
-public void setPapers(  ArrayList<ScholarlyArticle> papers )
+public void setPapers(  ArrayList<SearchResult> papers )
 {
 this.papers = papers ;
 }
@@ -147,7 +148,7 @@ this.papers = papers ;
 	Get the value of field papers
 **/ 
 
-public  ArrayList<ScholarlyArticle> getPapers(){
+public  ArrayList<SearchResult> getPapers(){
 return this.papers;
 }
 

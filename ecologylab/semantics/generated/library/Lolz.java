@@ -1,4 +1,4 @@
-package ecologylab.semantics.library.scholarlyPublication;
+package ecologylab.semantics.generated.library;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -58,39 +58,39 @@ import ecologylab.semantics.generated.library.*;
 
 
 /**
-	An author of an article or creative work.
+	The LOLZ class
 **/ 
 
 @xml_inherit
 
-public class  Author
+public class  Lolz
 extends  Document
 {
 
 
 /**
-	
+	null
 **/ 
 
-	 @xml_nested private MetadataString	name;
-
-/**
-	
-**/ 
-
-	 @xml_nested private MetadataString	affiliation;
+	 @xml_nested private MetadataString	caption;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	city;
+	 @xml_nested private MetadataParsedURL	picture;
+
+/**
+	null
+**/ 
+
+	 @xml_nested private MetadataParsedURL	mightLike;
 
 /**
 	Constructor
 **/ 
 
-public Author()
+public Lolz()
 {
  super();
 }
@@ -99,183 +99,183 @@ public Author()
 	Constructor
 **/ 
 
-public Author(MetaMetadata metaMetadata)
+public Lolz(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for name
+	Lazy Evaluation for caption
 **/ 
 
-public MetadataString	name()
+public MetadataString	caption()
 {
-MetadataString	result	=this.name;
+MetadataString	result	=this.caption;
 if(result == null)
 {
 result = new MetadataString();
-this.name	=	 result;
+this.caption	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field name
+	Gets the value of the field caption
 **/ 
 
-public String getName(){
-return name().getValue();
+public String getCaption(){
+return caption().getValue();
 }
 
 /**
-	Sets the value of the field name
+	Sets the value of the field caption
 **/ 
 
-public void setName( String name )
+public void setCaption( String caption )
 {
-this.name().setValue(name);
+this.caption().setValue(caption);
 }
 
 /**
-	The heavy weight setter method for field name
+	The heavy weight setter method for field caption
 **/ 
 
-public void hwSetName( String name )
+public void hwSetCaption( String caption )
 {
-this.name().setValue(name);
+this.caption().setValue(caption);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the name directly
+	 Sets the caption directly
 **/ 
 
-public void setNameMetadata(MetadataString name)
-{	this.name = name;
+public void setCaptionMetadata(MetadataString caption)
+{	this.caption = caption;
 }
 /**
-	Heavy Weight Direct setter method for name
+	Heavy Weight Direct setter method for caption
 **/ 
 
-public void hwSetNameMetadata(MetadataString name)
-{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
-		 termVector().remove(this.name.termVector());
-	 this.name = name;
+public void hwSetCaptionMetadata(MetadataString caption)
+{	 if(this.caption!=null && this.caption.getValue()!=null && hasTermVector())
+		 termVector().remove(this.caption.termVector());
+	 this.caption = caption;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for affiliation
+	Lazy Evaluation for picture
 **/ 
 
-public MetadataString	affiliation()
+public MetadataParsedURL	picture()
 {
-MetadataString	result	=this.affiliation;
+MetadataParsedURL	result	=this.picture;
 if(result == null)
 {
-result = new MetadataString();
-this.affiliation	=	 result;
+result = new MetadataParsedURL();
+this.picture	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field affiliation
+	Gets the value of the field picture
 **/ 
 
-public String getAffiliation(){
-return affiliation().getValue();
+public ParsedURL getPicture(){
+return picture().getValue();
 }
 
 /**
-	Sets the value of the field affiliation
+	Sets the value of the field picture
 **/ 
 
-public void setAffiliation( String affiliation )
+public void setPicture( ParsedURL picture )
 {
-this.affiliation().setValue(affiliation);
+this.picture().setValue(picture);
 }
 
 /**
-	The heavy weight setter method for field affiliation
+	The heavy weight setter method for field picture
 **/ 
 
-public void hwSetAffiliation( String affiliation )
+public void hwSetPicture( ParsedURL picture )
 {
-this.affiliation().setValue(affiliation);
+this.picture().setValue(picture);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the affiliation directly
+	 Sets the picture directly
 **/ 
 
-public void setAffiliationMetadata(MetadataString affiliation)
-{	this.affiliation = affiliation;
+public void setPictureMetadata(MetadataParsedURL picture)
+{	this.picture = picture;
 }
 /**
-	Heavy Weight Direct setter method for affiliation
+	Heavy Weight Direct setter method for picture
 **/ 
 
-public void hwSetAffiliationMetadata(MetadataString affiliation)
-{	 if(this.affiliation!=null && this.affiliation.getValue()!=null && hasTermVector())
-		 termVector().remove(this.affiliation.termVector());
-	 this.affiliation = affiliation;
+public void hwSetPictureMetadata(MetadataParsedURL picture)
+{	 if(this.picture!=null && this.picture.getValue()!=null && hasTermVector())
+		 termVector().remove(this.picture.termVector());
+	 this.picture = picture;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for city
+	Lazy Evaluation for mightLike
 **/ 
 
-public MetadataString	city()
+public MetadataParsedURL	mightLike()
 {
-MetadataString	result	=this.city;
+MetadataParsedURL	result	=this.mightLike;
 if(result == null)
 {
-result = new MetadataString();
-this.city	=	 result;
+result = new MetadataParsedURL();
+this.mightLike	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field city
+	Gets the value of the field mightLike
 **/ 
 
-public String getCity(){
-return city().getValue();
+public ParsedURL getMightLike(){
+return mightLike().getValue();
 }
 
 /**
-	Sets the value of the field city
+	Sets the value of the field mightLike
 **/ 
 
-public void setCity( String city )
+public void setMightLike( ParsedURL mightLike )
 {
-this.city().setValue(city);
+this.mightLike().setValue(mightLike);
 }
 
 /**
-	The heavy weight setter method for field city
+	The heavy weight setter method for field mightLike
 **/ 
 
-public void hwSetCity( String city )
+public void hwSetMightLike( ParsedURL mightLike )
 {
-this.city().setValue(city);
+this.mightLike().setValue(mightLike);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the city directly
+	 Sets the mightLike directly
 **/ 
 
-public void setCityMetadata(MetadataString city)
-{	this.city = city;
+public void setMightLikeMetadata(MetadataParsedURL mightLike)
+{	this.mightLike = mightLike;
 }
 /**
-	Heavy Weight Direct setter method for city
+	Heavy Weight Direct setter method for mightLike
 **/ 
 
-public void hwSetCityMetadata(MetadataString city)
-{	 if(this.city!=null && this.city.getValue()!=null && hasTermVector())
-		 termVector().remove(this.city.termVector());
-	 this.city = city;
+public void hwSetMightLikeMetadata(MetadataParsedURL mightLike)
+{	 if(this.mightLike!=null && this.mightLike.getValue()!=null && hasTermVector())
+		 termVector().remove(this.mightLike.termVector());
+	 this.mightLike = mightLike;
 	rebuildCompositeTermVector();
 }
 }

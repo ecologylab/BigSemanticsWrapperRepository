@@ -1,6 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-
 /**
 This is a generated code. DO NOT edit or modify it.
  @author MetadataCompiler 
@@ -39,6 +38,7 @@ import ecologylab.semantics.metadata.builtins.Media;
  import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
@@ -47,14 +47,14 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -67,19 +67,79 @@ public class GeneratedMetadataTranslationScope extends  DefaultMetadataTranslati
 {protected static final Class TRANSLATIONS[]=
 	{Pdf.class,
 
-Dlms.class,
-
-Icdl.class,
-
-Nsdl.class,
-
-Text.class,
-
-DcDocument.class,
+SearchResult.class,
 
 SearchResult.class,
 
-Search.class,
+AcmProceeding.class,
+
+MmArtwork.class,
+
+Artwork.class,
+
+FlickrImageDetail.class,
+
+FlickrTag.class,
+
+FlickrImage.class,
+
+FlickrTags.class,
+
+FlickrAuthor.class,
+
+FlickrSearch.class,
+
+FlickrTagsInteresting.class,
+
+FlickrLink.class,
+
+GooglePatent.class,
+
+GoogleSorry.class,
+
+GooglePatentImage.class,
+
+PersonDetails.class,
+
+Genre.class,
+
+CastMember.class,
+
+ImdbTitle.class,
+
+BirthDetail.class,
+
+Lolz.class,
+
+Topic.class,
+
+DcDocument.class,
+
+Icdl.class,
+
+Text.class,
+
+IcdlImage.class,
+
+Dlms.class,
+
+Nsdl.class,
+
+Restaurant.class,
+
+Item.class,
+
+Channel.class,
+
+Item.class,
+
+Rss.class,
+
+ScholarlyArticle.class,
+
+Author.class,
+
+Source.class,
 
 Thumbnail.class,
 
@@ -89,21 +149,11 @@ Thumbnail.class,
 
 YahooResultSet.class,
 
-FlickrTag.class,
+SearchResult.class,
 
-FlickrImage.class,
+Search.class,
 
-FlickrSearch.class,
-
-FlickrImageDetail.class,
-
-FlickrLink.class,
-
-FlickrAuthor.class,
-
-FlickrTagsInteresting.class,
-
-FlickrTags.class,
+WeatherReport.class,
 
 Anchor.class,
 
@@ -116,54 +166,6 @@ Thumbinner.class,
 Anchor.class,
 
 WikipediaPage.class,
-
-Item.class,
-
-Channel.class,
-
-Item.class,
-
-Rss.class,
-
-IcdlImage.class,
-
-Topic.class,
-
-Source.class,
-
-Author.class,
-
-ScholarlyArticle.class,
-
-AcmProceedingPage.class,
-
-ScholarlyArticle.class,
-
-AcmProceeding.class,
-
-BirthDetail.class,
-
-Genre.class,
-
-CastMember.class,
-
-ImdbTitle.class,
-
-PersonDetails.class,
-
-GooglePatent.class,
-
-GooglePatentImage.class,
-
-GoogleSorry.class,
-
-Restaurant.class,
-
-Artwork.class,
-
-MmArtwork.class,
-
-WeatherReport.class,
 
 
 };
