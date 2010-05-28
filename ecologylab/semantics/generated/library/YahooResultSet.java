@@ -67,7 +67,7 @@ public class  YahooResultSet
 extends  Search
 {
 
-	@xml_collection("Result") private ArrayList<Result>	results;
+	@xml_collection("Result") @xml_nowrap private ArrayList<Result>	results;
 
 /**
 	Constructor
