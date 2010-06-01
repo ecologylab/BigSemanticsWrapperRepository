@@ -1,20 +1,20 @@
 package ecologylab.semantics.generated.library;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.DebugMetadata;
+import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.builtins.Media;
+import ecologylab.semantics.metadata.DebugMetadata;
+import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metadata.builtins.Entity;
+import ecologylab.semantics.metadata.Metadata;
 
  import java.util.*;
 import ecologylab.semantics.metametadata.MetaMetadata;
@@ -42,6 +42,8 @@ import ecologylab.semantics.library.flickr.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
+import ecologylab.semantics.library.imdb.*;
 import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
 import ecologylab.semantics.library.scholarlyPublication.*;
@@ -57,13 +59,13 @@ public class Category extends Metadata{
 	null
 **/ 
 
-	 @xml_nested private MetadataString	name;
+	 @xml_leaf private MetadataString	name;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataParsedURL	catLink;
+	 @xml_leaf private MetadataParsedURL	catLink;
 
 /**
 	Constructor

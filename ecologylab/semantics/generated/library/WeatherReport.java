@@ -8,53 +8,12 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
-
- import java.util.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -72,37 +31,43 @@ extends  Document
 	The name of the city.
 **/ 
 
-	 @xml_nested private MetadataString	city;
+	 @xml_leaf private MetadataString	city;
 
 /**
 	The weather condition of the city, like sunny or cloudy.
 **/ 
 
-	 @xml_nested private MetadataString	weather;
+	 @xml_leaf private MetadataString	weather;
 
 /**
 	The URL of the picture indicating weather condition.
 **/ 
 
-	 @xml_nested private MetadataParsedURL	picUrl;
+	 @xml_leaf private MetadataParsedURL	picUrl;
 
 /**
 	The temperature.
 **/ 
 
-	 @xml_nested private MetadataString	temperature;
+	 @xml_leaf private MetadataString	temperature;
 
 /**
 	The humidity of the air.
 **/ 
 
-	 @xml_nested private MetadataString	humidity;
+	 @xml_leaf private MetadataString	humidity;
 
 /**
 	The wind speed.
 **/ 
 
-	 @xml_nested private MetadataString	wind;
+	 @xml_leaf private MetadataString	wind;
+
+/**
+	The dew point.
+**/ 
+
+	 @xml_leaf private MetadataString	dewPoint;
 
 /**
 	Constructor
@@ -468,6 +433,64 @@ public void hwSetWindMetadata(MetadataString wind)
 {	 if(this.wind!=null && this.wind.getValue()!=null && hasTermVector())
 		 termVector().remove(this.wind.termVector());
 	 this.wind = wind;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for dewPoint
+**/ 
+
+public MetadataString	dewPoint()
+{
+MetadataString	result	=this.dewPoint;
+if(result == null)
+{
+result = new MetadataString();
+this.dewPoint	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field dewPoint
+**/ 
+
+public String getDewPoint(){
+return dewPoint().getValue();
+}
+
+/**
+	Sets the value of the field dewPoint
+**/ 
+
+public void setDewPoint( String dewPoint )
+{
+this.dewPoint().setValue(dewPoint);
+}
+
+/**
+	The heavy weight setter method for field dewPoint
+**/ 
+
+public void hwSetDewPoint( String dewPoint )
+{
+this.dewPoint().setValue(dewPoint);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the dewPoint directly
+**/ 
+
+public void setDewPointMetadata(MetadataString dewPoint)
+{	this.dewPoint = dewPoint;
+}
+/**
+	Heavy Weight Direct setter method for dewPoint
+**/ 
+
+public void hwSetDewPointMetadata(MetadataString dewPoint)
+{	 if(this.dewPoint!=null && this.dewPoint.getValue()!=null && hasTermVector())
+		 termVector().remove(this.dewPoint.termVector());
+	 this.dewPoint = dewPoint;
 	rebuildCompositeTermVector();
 }
 }

@@ -8,53 +8,16 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
+import java.util.ArrayList;
 
- import java.util.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Entity;
+import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -72,13 +35,13 @@ extends  Document
 	null
 **/ 
 
-	 @xml_nested private MetadataString	yearReleased;
+	 @xml_leaf private MetadataString	yearReleased;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	rating;
+	 @xml_leaf private MetadataString	rating;
 	@xml_collection("directors") private ArrayList<Entity<PersonDetails>>	directors;
 	@xml_collection("writers") private ArrayList<Entity<PersonDetails>>	writers;
 
@@ -86,20 +49,20 @@ extends  Document
 	null
 **/ 
 
-	 @xml_nested private MetadataString	releaseDate;
+	 @xml_leaf private MetadataString	releaseDate;
 	@xml_collection("genres") private ArrayList<Genre>	genres;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	plot;
+	 @xml_leaf private MetadataString	plot;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	tagline;
+	 @xml_leaf private MetadataString	tagline;
 	@xml_collection("cast") private ArrayList<CastMember>	cast;
 	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
 
@@ -107,7 +70,7 @@ extends  Document
 	null
 **/ 
 
-	 @xml_nested private MetadataParsedURL	posterImg;
+	 @xml_leaf private MetadataParsedURL	posterImg;
 
 /**
 	Constructor

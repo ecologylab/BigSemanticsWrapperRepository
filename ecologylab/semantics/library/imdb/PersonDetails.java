@@ -8,53 +8,15 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
+import java.util.ArrayList;
 
- import java.util.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Entity;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -72,50 +34,50 @@ extends  Document
 	null
 **/ 
 
-	 @xml_nested private MetadataParsedURL	personImg;
+	 @xml_leaf private MetadataParsedURL	personImg;
 
 private  @xml_nested BirthDetail	birth_detail;
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	miniBiography;
+	 @xml_leaf private MetadataString	miniBiography;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataParsedURL	biographyLink;
+	 @xml_leaf private MetadataParsedURL	biographyLink;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	trivia;
+	 @xml_leaf private MetadataString	trivia;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataParsedURL	triviaLink;
+	 @xml_leaf private MetadataParsedURL	triviaLink;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	awards;
+	 @xml_leaf private MetadataString	awards;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataParsedURL	awardsLink;
+	 @xml_leaf private MetadataParsedURL	awardsLink;
 
 /**
 	null
 **/ 
 
-	 @xml_nested private MetadataString	alternateNames;
+	 @xml_leaf private MetadataString	alternateNames;
 	@xml_collection("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	@xml_collection("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	@xml_collection("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;

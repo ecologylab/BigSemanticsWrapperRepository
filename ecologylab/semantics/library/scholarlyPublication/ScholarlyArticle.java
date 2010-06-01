@@ -8,53 +8,15 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
+import java.util.ArrayList;
 
- import java.util.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
+import ecologylab.semantics.generated.library.Pdf;
+import ecologylab.semantics.metadata.builtins.Entity;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -72,23 +34,19 @@ extends  Pdf
 	citation.cfm
 **/ 
 
-	 @xml_nested private MetadataParsedURL	metadataPage;
-
-/**
-	null
-**/ 
-
-	 @xml_nested private MetadataString	timeStamp;
+	 @xml_leaf private MetadataParsedURL	metadataPage;
 
 /**
 	
 **/ 
 
-	@xml_tag("abstract") @xml_nested private MetadataString	abstractField;
+	@xml_tag("abstract") @xml_leaf private MetadataString	abstractField;
 
 private  @xml_nested Source	source;	@xml_collection("authors") private ArrayList<Author>	authors;
 	@xml_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
 	@xml_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
+	@xml_collection("classifications") private ArrayList<Link>	classifications;
+	@xml_collection("key_terms") private ArrayList<Link>	keyTerms;
 
 /**
 	Constructor
@@ -164,64 +122,6 @@ public void hwSetMetadataPageMetadata(MetadataParsedURL metadataPage)
 {	 if(this.metadataPage!=null && this.metadataPage.getValue()!=null && hasTermVector())
 		 termVector().remove(this.metadataPage.termVector());
 	 this.metadataPage = metadataPage;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for timeStamp
-**/ 
-
-public MetadataString	timeStamp()
-{
-MetadataString	result	=this.timeStamp;
-if(result == null)
-{
-result = new MetadataString();
-this.timeStamp	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field timeStamp
-**/ 
-
-public String getTimeStamp(){
-return timeStamp().getValue();
-}
-
-/**
-	Sets the value of the field timeStamp
-**/ 
-
-public void setTimeStamp( String timeStamp )
-{
-this.timeStamp().setValue(timeStamp);
-}
-
-/**
-	The heavy weight setter method for field timeStamp
-**/ 
-
-public void hwSetTimeStamp( String timeStamp )
-{
-this.timeStamp().setValue(timeStamp);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the timeStamp directly
-**/ 
-
-public void setTimeStampMetadata(MetadataString timeStamp)
-{	this.timeStamp = timeStamp;
-}
-/**
-	Heavy Weight Direct setter method for timeStamp
-**/ 
-
-public void hwSetTimeStampMetadata(MetadataString timeStamp)
-{	 if(this.timeStamp!=null && this.timeStamp.getValue()!=null && hasTermVector())
-		 termVector().remove(this.timeStamp.termVector());
-	 this.timeStamp = timeStamp;
 	rebuildCompositeTermVector();
 }
 /**
@@ -408,6 +308,70 @@ this.citations = citations ;
 
 public  ArrayList<Entity<ScholarlyArticle>> getCitations(){
 return this.citations;
+}
+
+/**
+	Lazy Evaluation for classifications
+**/ 
+
+public  ArrayList<Link>	classifications()
+{
+ ArrayList<Link>	result	=this.classifications;
+if(result == null)
+{
+result = new  ArrayList<Link>();
+this.classifications	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field classifications
+**/ 
+
+public void setClassifications(  ArrayList<Link> classifications )
+{
+this.classifications = classifications ;
+}
+
+/**
+	Get the value of field classifications
+**/ 
+
+public  ArrayList<Link> getClassifications(){
+return this.classifications;
+}
+
+/**
+	Lazy Evaluation for keyTerms
+**/ 
+
+public  ArrayList<Link>	keyTerms()
+{
+ ArrayList<Link>	result	=this.keyTerms;
+if(result == null)
+{
+result = new  ArrayList<Link>();
+this.keyTerms	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field keyTerms
+**/ 
+
+public void setKeyTerms(  ArrayList<Link> keyTerms )
+{
+this.keyTerms = keyTerms ;
+}
+
+/**
+	Get the value of field keyTerms
+**/ 
+
+public  ArrayList<Link> getKeyTerms(){
+return this.keyTerms;
 }
 
 }

@@ -8,53 +8,29 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
-
- import java.util.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
-import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
+import ecologylab.semantics.library.flickr.FlickrAuthor;
+import ecologylab.semantics.library.flickr.FlickrImage;
+import ecologylab.semantics.library.flickr.FlickrImageDetail;
+import ecologylab.semantics.library.flickr.FlickrLink;
+import ecologylab.semantics.library.flickr.FlickrSearch;
+import ecologylab.semantics.library.flickr.FlickrTag;
+import ecologylab.semantics.library.flickr.FlickrTags;
+import ecologylab.semantics.library.flickr.FlickrTagsInteresting;
+import ecologylab.semantics.library.imdb.BirthDetail;
+import ecologylab.semantics.library.imdb.CastMember;
+import ecologylab.semantics.library.imdb.Genre;
+import ecologylab.semantics.library.imdb.ImdbChart;
+import ecologylab.semantics.library.imdb.ImdbGenre;
+import ecologylab.semantics.library.imdb.ImdbTitle;
+import ecologylab.semantics.library.imdb.PersonDetails;
+import ecologylab.semantics.library.scholarlyPublication.Author;
+import ecologylab.semantics.library.scholarlyPublication.Link;
+import ecologylab.semantics.library.scholarlyPublication.ScholarlyArticle;
+import ecologylab.semantics.library.scholarlyPublication.Source;
+import ecologylab.semantics.library.uva.Topic;
 import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
+import ecologylab.xml.TranslationScope;
 
 
 /**
@@ -76,6 +52,10 @@ AcmProceeding.class,
 MmArtwork.class,
 
 Artwork.class,
+
+Bookmark.class,
+
+DeliciousHomepage.class,
 
 FlickrImageDetail.class,
 
@@ -107,6 +87,10 @@ CastMember.class,
 
 ImdbTitle.class,
 
+ImdbGenre.class,
+
+ImdbChart.class,
+
 BirthDetail.class,
 
 Lolz.class,
@@ -135,6 +119,10 @@ Item.class,
 
 Rss.class,
 
+Link.class,
+
+Link.class,
+
 ScholarlyArticle.class,
 
 Author.class,
@@ -149,9 +137,11 @@ Thumbnail.class,
 
 YahooResultSet.class,
 
+Search.class,
+
 SearchResult.class,
 
-Search.class,
+Tumblr.class,
 
 WeatherReport.class,
 
@@ -166,6 +156,10 @@ Thumbinner.class,
 Anchor.class,
 
 WikipediaPage.class,
+
+SearchResults.class,
+
+UrbanSpoonGenre.class,
 
 
 };

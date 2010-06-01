@@ -8,53 +8,14 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
+import java.util.ArrayList;
 
- import java.util.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
 
 
 /**
@@ -72,37 +33,37 @@ extends  Document
 	Phone number of the restaurant
 **/ 
 
-	 @xml_nested private MetadataString	phone;
+	 @xml_leaf private MetadataString	phone;
 
 /**
 	A picture from the restaurant
 **/ 
 
-	 @xml_nested private MetadataParsedURL	pic;
+	 @xml_leaf private MetadataParsedURL	pic;
 
 /**
 	Link to the restaurant's website
 **/ 
 
-	 @xml_nested private MetadataParsedURL	link;
+	 @xml_leaf private MetadataParsedURL	link;
 
 /**
 	Rating of the restaurant
 **/ 
 
-	 @xml_nested private MetadataString	rating;
+	 @xml_leaf private MetadataString	rating;
 
 /**
 	Price range of the restaurant
 **/ 
 
-	 @xml_nested private MetadataString	priceRange;
+	 @xml_leaf private MetadataString	priceRange;
 
 /**
 	Map image of the restaurant's location or link to a directions page
 **/ 
 
-	 @xml_nested private MetadataParsedURL	map;
+	 @xml_leaf private MetadataParsedURL	map;
 	@xml_collection("genres") private ArrayList<SearchResult>	genres;
 
 /**

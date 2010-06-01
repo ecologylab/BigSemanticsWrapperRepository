@@ -1,52 +1,15 @@
 package ecologylab.semantics.generated.library;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.DebugMetadata;
-import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
-import ecologylab.semantics.metadata.builtins.Image;
+import java.util.ArrayList;
+
+import ecologylab.net.ParsedURL;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.builtins.Entity;
-
- import java.util.*;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.net.ParsedURL;
-import ecologylab.generic.HashMapArrayList;
 import ecologylab.xml.xml_inherit;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.semantics.metadata.DefaultMetadataTranslationSpace;
-import ecologylab.xml.TranslationScope;
 import ecologylab.xml.ElementState.xml_tag;
- import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Media;
- import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.generated.library.*;
 
 @xml_inherit
 @xml_tag("Result")
@@ -57,37 +20,37 @@ public class Result extends Metadata{
 	null
 **/ 
 
-	@xml_tag("Title") @xml_nested private MetadataString	title;
+	@xml_tag("Title") @xml_leaf private MetadataString	title;
 
 /**
 	null
 **/ 
 
-	@xml_tag("Summary") @xml_nested private MetadataString	summary;
+	@xml_tag("Summary") @xml_leaf private MetadataString	summary;
 
 /**
 	null
 **/ 
 
-	@xml_tag("Url") @xml_nested private MetadataParsedURL	url;
+	@xml_tag("Url") @xml_leaf private MetadataParsedURL	url;
 
 /**
 	null
 **/ 
 
-	@xml_tag("RefererUrl") @xml_nested private MetadataParsedURL	refererUrl;
+	@xml_tag("RefererUrl") @xml_leaf private MetadataParsedURL	refererUrl;
 
 /**
 	null
 **/ 
 
-	@xml_tag("ModificationDate") @xml_nested private MetadataInteger	modificationDate;
+	@xml_tag("ModificationDate") @xml_leaf private MetadataInteger	modificationDate;
 
 /**
 	null
 **/ 
 
-	@xml_tag("MimeType") @xml_nested private MetadataString	mimeType;
+	@xml_tag("MimeType") @xml_leaf private MetadataString	mimeType;
 	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	thumbnails;
 
 /**
