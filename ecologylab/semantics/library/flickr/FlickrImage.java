@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -48,7 +49,7 @@ extends  Image
 **/ 
 
 	 @xml_leaf private MetadataParsedURL	browsePurl;
-	@xml_collection("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
+	@xml_collection("flickr_tag") private ArrayList<FlickrTag>	flickrTags;
 
 /**
 	Constructor

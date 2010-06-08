@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -91,13 +92,13 @@ private  @xml_nested BirthDetail	birth_detail;
 **/ 
 
 	 @xml_leaf private MetadataString	alternateNames;
-	@xml_collection("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
-	@xml_collection("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
-	@xml_collection("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
-	@xml_collection("titles_as_producer") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
-	@xml_collection("titles_thanked_in") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
-	@xml_collection("titles_as_self") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
-	@xml_collection("titles_in_development") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
+	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
 
 /**
 	Constructor

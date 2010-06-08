@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -78,7 +79,7 @@ extends  Document
 **/ 
 
 	 @xml_leaf private MetadataParsedURL	map;
-	@xml_collection("genres") private ArrayList<SearchResult>	genres;
+	@xml_collection("search_result") private ArrayList<SearchResult>	genres;
 
 /**
 	Constructor

@@ -10,6 +10,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -33,7 +34,7 @@ public class Paragraph extends Metadata{
 **/ 
 
 	 @xml_leaf private MetadataString	paragraphText;
-	@xml_collection("anchors") private ArrayList<Anchor>	anchors;
+	@xml_collection("anchor") private ArrayList<Anchor>	anchors;
 
 /**
 	Constructor

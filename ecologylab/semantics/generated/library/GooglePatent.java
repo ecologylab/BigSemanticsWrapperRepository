@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -66,9 +67,9 @@ extends  Document
 **/ 
 
 	 @xml_leaf private MetadataParsedURL	picLink;
-	@xml_collection("referenced_bys") private ArrayList<SearchResult>	referencedBys;
-	@xml_collection("citations") private ArrayList<SearchResult>	citations;
-	@xml_collection("pic_links") private ArrayList<SearchResult>	picLinks;
+	@xml_collection("search_result") private ArrayList<SearchResult>	referencedBys;
+	@xml_collection("search_result") private ArrayList<SearchResult>	citations;
+	@xml_collection("search_result") private ArrayList<SearchResult>	picLinks;
 
 /**
 	Constructor

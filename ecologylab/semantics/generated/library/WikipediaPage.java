@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -48,9 +49,9 @@ extends  Document
 **/ 
 
 	 @xml_leaf private MetadataParsedURL	mainImageSrc;
-	@xml_collection("paragraphs") private ArrayList<Paragraph>	paragraphs;
-	@xml_collection("categories") private ArrayList<Category>	categories;
-	@xml_collection("thumbinners") private ArrayList<Thumbinner>	thumbinners;
+	@xml_collection("paragraph") private ArrayList<Paragraph>	paragraphs;
+	@xml_collection("category") private ArrayList<Category>	categories;
+	@xml_collection("thumbinner") private ArrayList<Thumbinner>	thumbinners;
 
 /**
 	Constructor

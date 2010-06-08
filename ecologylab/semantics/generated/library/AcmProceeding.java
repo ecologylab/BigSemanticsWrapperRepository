@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -42,8 +43,8 @@ public class  AcmProceeding
 extends  Document
 {
 
-	@xml_collection("proceedings") private ArrayList<SearchResult>	proceedings;
-	@xml_collection("papers") private ArrayList<SearchResult>	papers;
+	@xml_collection("search_result") private ArrayList<SearchResult>	proceedings;
+	@xml_collection("search_result") private ArrayList<SearchResult>	papers;
 
 /**
 	Constructor

@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -48,7 +49,7 @@ extends  Document
 **/ 
 
 	 @xml_leaf private MetadataString	artTitle;
-	@xml_collection("artists") private ArrayList<Author>	artists;
+	@xml_collection("author") private ArrayList<Author>	artists;
 
 /**
 	Abstract of the work.

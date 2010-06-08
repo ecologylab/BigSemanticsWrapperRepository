@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -54,15 +55,15 @@ extends  Document
 **/ 
 
 	 @xml_leaf private MetadataString	rating;
-	@xml_collection("directors") private ArrayList<Entity<PersonDetails>>	directors;
-	@xml_collection("writers") private ArrayList<Entity<PersonDetails>>	writers;
+	@xml_collection("person_details") private ArrayList<Entity<PersonDetails>>	directors;
+	@xml_collection("person_details") private ArrayList<Entity<PersonDetails>>	writers;
 
 /**
 	null
 **/ 
 
 	 @xml_leaf private MetadataString	releaseDate;
-	@xml_collection("genres") private ArrayList<Genre>	genres;
+	@xml_collection("genre") private ArrayList<Genre>	genres;
 
 /**
 	null
@@ -75,8 +76,8 @@ extends  Document
 **/ 
 
 	 @xml_leaf private MetadataString	tagline;
-	@xml_collection("cast") private ArrayList<CastMember>	cast;
-	@xml_collection("title_photos") private ArrayList<Image>	titlePhotos;
+	@xml_collection("cast_member") private ArrayList<CastMember>	cast;
+	@xml_collection("image") private ArrayList<Image>	titlePhotos;
 
 /**
 	null

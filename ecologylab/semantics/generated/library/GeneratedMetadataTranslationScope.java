@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -41,10 +42,6 @@ This is the tranlation scope class for generated files
 public class GeneratedMetadataTranslationScope
 {protected static final Class TRANSLATIONS[]=
 	{Pdf.class,
-
-SearchResult.class,
-
-SearchResult.class,
 
 AcmProceeding.class,
 
@@ -155,8 +152,6 @@ Thumbinner.class,
 Anchor.class,
 
 WikipediaPage.class,
-
-SearchResults.class,
 
 UrbanSpoonGenre.class,
 

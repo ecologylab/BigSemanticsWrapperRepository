@@ -10,6 +10,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -24,7 +25,7 @@ import ecologylab.xml.xml_inherit;
 import java.util.*;
 
 @xml_inherit
-@xml_tag("Thumbnail")
+
 public class Thumbnail extends Metadata{
 
 

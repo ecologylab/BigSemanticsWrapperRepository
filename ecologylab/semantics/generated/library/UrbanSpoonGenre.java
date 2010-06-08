@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -42,7 +43,7 @@ public class  UrbanSpoonGenre
 extends  Search
 {
 
-	@xml_collection("top_results") private ArrayList<SearchResult>	topResults;
+	@xml_collection("search_result") private ArrayList<SearchResult>	topResults;
 
 /**
 	Constructor

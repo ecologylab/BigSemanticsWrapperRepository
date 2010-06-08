@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -42,7 +43,7 @@ public class  DeliciousHomepage
 extends  Document
 {
 
-	@xml_collection("bookmarks") private ArrayList<Bookmark>	bookmarks;
+	@xml_collection("bookmark") private ArrayList<Bookmark>	bookmarks;
 
 /**
 	Constructor

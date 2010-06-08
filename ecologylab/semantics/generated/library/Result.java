@@ -10,6 +10,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -24,7 +25,7 @@ import ecologylab.xml.xml_inherit;
 import java.util.*;
 
 @xml_inherit
-@xml_tag("Result")
+
 public class Result extends Metadata{
 
 
@@ -63,7 +64,7 @@ public class Result extends Metadata{
 **/ 
 
 	@xml_tag("MimeType") @xml_leaf private MetadataString	mimeType;
-	@xml_collection("Thumbnail") private ArrayList<Thumbnail>	thumbnails;
+	@xml_collection("Thumbnail") @xml_nowrap private ArrayList<Thumbnail>	thumbnails;
 
 /**
 	Constructor

@@ -18,6 +18,7 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
@@ -55,11 +56,11 @@ extends  Pdf
 
 	@xml_tag("abstract") @xml_leaf private MetadataString	abstractField;
 
-private  @xml_nested Source	source;	@xml_collection("authors") private ArrayList<Author>	authors;
+private  @xml_nested Source	source;	@xml_collection("author") private ArrayList<Author>	authors;
 	@xml_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
 	@xml_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
-	@xml_collection("classifications") private ArrayList<Link>	classifications;
-	@xml_collection("key_terms") private ArrayList<Link>	keyTerms;
+	@xml_collection("link") private ArrayList<Link>	classifications;
+	@xml_collection("link") private ArrayList<Link>	keyTerms;
 
 /**
 	Constructor
