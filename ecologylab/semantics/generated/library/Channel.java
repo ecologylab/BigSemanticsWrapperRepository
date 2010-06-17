@@ -28,7 +28,7 @@ import java.util.*;
 
 public class Channel extends Metadata{
 
-	@xml_collection("item") private ArrayList<Item>	item;
+	@xml_nowrap @xml_collection("item") private ArrayList<Item>	item;
 
 /**
 	Constructor
