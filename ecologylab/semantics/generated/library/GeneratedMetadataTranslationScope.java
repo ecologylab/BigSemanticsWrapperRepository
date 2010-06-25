@@ -141,6 +141,8 @@ Tumblr.class,
 
 WeatherReport.class,
 
+WikipediaPage.class,
+
 Anchor.class,
 
 Paragraph.class,
@@ -151,7 +153,7 @@ Thumbinner.class,
 
 Anchor.class,
 
-WikipediaPage.class,
+WikipediaPageType.class,
 
 UrbanSpoonGenre.class,
 

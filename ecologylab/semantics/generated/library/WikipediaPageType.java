@@ -34,21 +34,15 @@ import java.util.*;
 
 
 /**
-	An article on wikipedia (used in cF)
+	An article on wikipedia
 **/ 
 
 @xml_inherit
 
-public class  WikipediaPage
-extends  WikipediaPageType
+public class  WikipediaPageType
+extends  Document
 {
 
-
-/**
-	null
-**/ 
-
-	 @xml_leaf private MetadataParsedURL	mainImageSrc;
 	@xml_collection("paragraph") private ArrayList<Paragraph>	paragraphs;
 	@xml_collection("category") private ArrayList<Category>	categories;
 	@xml_collection("thumbinner") private ArrayList<Thumbinner>	thumbinners;
@@ -57,7 +51,7 @@ extends  WikipediaPageType
 	Constructor
 **/ 
 
-public WikipediaPage()
+public WikipediaPageType()
 {
  super();
 }
@@ -66,69 +60,11 @@ public WikipediaPage()
 	Constructor
 **/ 
 
-public WikipediaPage(MetaMetadata metaMetadata)
+public WikipediaPageType(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for mainImageSrc
-**/ 
-
-public MetadataParsedURL	mainImageSrc()
-{
-MetadataParsedURL	result	=this.mainImageSrc;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.mainImageSrc	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field mainImageSrc
-**/ 
-
-public ParsedURL getMainImageSrc(){
-return mainImageSrc().getValue();
-}
-
-/**
-	Sets the value of the field mainImageSrc
-**/ 
-
-public void setMainImageSrc( ParsedURL mainImageSrc )
-{
-this.mainImageSrc().setValue(mainImageSrc);
-}
-
-/**
-	The heavy weight setter method for field mainImageSrc
-**/ 
-
-public void hwSetMainImageSrc( ParsedURL mainImageSrc )
-{
-this.mainImageSrc().setValue(mainImageSrc);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the mainImageSrc directly
-**/ 
-
-public void setMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
-{	this.mainImageSrc = mainImageSrc;
-}
-/**
-	Heavy Weight Direct setter method for mainImageSrc
-**/ 
-
-public void hwSetMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
-{	 if(this.mainImageSrc!=null && this.mainImageSrc.getValue()!=null && hasTermVector())
-		 termVector().remove(this.mainImageSrc.termVector());
-	 this.mainImageSrc = mainImageSrc;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for paragraphs
 **/ 

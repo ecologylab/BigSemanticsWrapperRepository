@@ -30,7 +30,7 @@ public class Anchor extends Metadata{
 
 
 /**
-	
+	null
 **/ 
 
 	 @xml_leaf private MetadataParsedURL	link;
