@@ -43,7 +43,7 @@ public class  Search
 extends  Document
 {
 
-	@xml_collection("search_result") @xml_nowrap private ArrayList<SearchResult>	searchResults;
+	@xml_collection("search_result") private ArrayList<SearchResult>	searchResults;
 
 /**
 	Constructor
