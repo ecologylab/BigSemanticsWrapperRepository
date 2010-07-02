@@ -49,6 +49,12 @@ MmArtwork.class,
 
 Artwork.class,
 
+HotTopic.class,
+
+HotSearch.class,
+
+GoogleTrends.class,
+
 Bookmark.class,
 
 DeliciousHomepage.class,
