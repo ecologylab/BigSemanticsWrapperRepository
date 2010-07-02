@@ -40,7 +40,7 @@ import java.util.*;
 @xml_inherit
 @xml_tag("ResultSet")
 public class  YahooResultSet
-extends  Search
+extends  Document
 {
 
 	@xml_collection("Result") @xml_nowrap private ArrayList<Result>	results;

@@ -125,11 +125,7 @@ Author.class,
 
 Source.class,
 
-Thumbnail.class,
-
 Result.class,
-
-Thumbnail.class,
 
 YahooResultSet.class,
 

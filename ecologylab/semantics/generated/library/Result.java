@@ -64,7 +64,6 @@ public class Result extends Metadata{
 **/ 
 
 	@xml_tag("MimeType") @xml_leaf private MetadataString	mimeType;
-	@xml_collection("Thumbnail") @xml_nowrap private ArrayList<Thumbnail>	thumbnails;
 
 /**
 	Constructor
@@ -431,36 +430,4 @@ public void hwSetMimeTypeMetadata(MetadataString mimeType)
 		 termVector().remove(this.mimeType.termVector());
 	 this.mimeType = mimeType;
 	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for thumbnails
-**/ 
-
-public  ArrayList<Thumbnail>	thumbnails()
-{
- ArrayList<Thumbnail>	result	=this.thumbnails;
-if(result == null)
-{
-result = new  ArrayList<Thumbnail>();
-this.thumbnails	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field thumbnails
-**/ 
-
-public void setThumbnails(  ArrayList<Thumbnail> thumbnails )
-{
-this.thumbnails = thumbnails ;
-}
-
-/**
-	Get the value of field thumbnails
-**/ 
-
-public  ArrayList<Thumbnail> getThumbnails(){
-return this.thumbnails;
-}
-}
+}}
