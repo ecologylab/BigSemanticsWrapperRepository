@@ -13,8 +13,8 @@ import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.xml.Hint;
-import ecologylab.xml.simpl_inherit;
+import ecologylab.serialization.Hint;
+import ecologylab.serialization.simpl_inherit;
 
 
 /**

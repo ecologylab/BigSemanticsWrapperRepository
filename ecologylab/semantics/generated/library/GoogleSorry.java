@@ -9,7 +9,7 @@ This is a generated code. DO NOT edit or modify it.
 
 
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.xml.simpl_inherit;
+import ecologylab.serialization.simpl_inherit;
 
 
 /**

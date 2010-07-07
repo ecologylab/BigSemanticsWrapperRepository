@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.xml.simpl_inherit;
+import ecologylab.serialization.simpl_inherit;
 
 @simpl_inherit
 

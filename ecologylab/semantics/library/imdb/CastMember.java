@@ -3,7 +3,7 @@ package ecologylab.semantics.library.imdb;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.xml.simpl_inherit;
+import ecologylab.serialization.simpl_inherit;
 
 @simpl_inherit
 

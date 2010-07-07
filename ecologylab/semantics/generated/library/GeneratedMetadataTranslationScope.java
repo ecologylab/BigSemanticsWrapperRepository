@@ -29,7 +29,7 @@ import ecologylab.semantics.library.scholarlyPublication.ScholarlyArticle;
 import ecologylab.semantics.library.scholarlyPublication.Source;
 import ecologylab.semantics.library.uva.Topic;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
-import ecologylab.xml.TranslationScope;
+import ecologylab.serialization.TranslationScope;
 
 
 /**
