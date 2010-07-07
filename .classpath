@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ecologylabFundamental"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ecologylabInteractive"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ecologylabSemantics"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jtidy"/>
 	<classpathentry kind="output" path=""/>
