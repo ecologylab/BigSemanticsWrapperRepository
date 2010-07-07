@@ -8,36 +8,22 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.generic.HashMapArrayList;
+import java.util.ArrayList;
+
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
-import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.xml.ElementState.xml_tag;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.xml.xml_inherit;
-import java.util.*;
+import ecologylab.xml.Hint;
+import ecologylab.xml.simpl_inherit;
 
 
 /**
 	The restaurant class
 **/ 
 
-@xml_inherit
+@simpl_inherit
 
 public class  Restaurant
 extends  Document
@@ -48,38 +34,38 @@ extends  Document
 	Phone number of the restaurant
 **/ 
 
-	 @xml_leaf private MetadataString	phone;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	phone;
 
 /**
 	A picture from the restaurant
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	pic;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	pic;
 
 /**
 	Link to the restaurant's website
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	link;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
 
 /**
 	Rating of the restaurant
 **/ 
 
-	 @xml_leaf private MetadataString	rating;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	rating;
 
 /**
 	Price range of the restaurant
 **/ 
 
-	 @xml_leaf private MetadataString	priceRange;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	priceRange;
 
 /**
 	Map image of the restaurant's location or link to a directions page
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	map;
-	@xml_collection("search_result") private ArrayList<SearchResult>	genres;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	map;
+	@simpl_collection("search_result") private ArrayList<SearchResult>	genres;
 
 /**
 	Constructor

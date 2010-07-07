@@ -8,66 +8,53 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.generic.HashMapArrayList;
+import java.util.ArrayList;
+
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
-import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
+import ecologylab.semantics.library.scholarlyPublication.Author;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.xml.ElementState.xml_tag;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.xml.xml_inherit;
-import java.util.*;
+import ecologylab.xml.Hint;
+import ecologylab.xml.simpl_inherit;
 
 
 /**
 	Artwork class
 **/ 
 
-@xml_inherit
+@simpl_inherit
 
 public class  Artwork
 extends  Document
 {
 
-	@xml_collection("author") private ArrayList<Author>	artists;
+	@simpl_collection("author") private ArrayList<Author>	artists;
 
 /**
 	Abstract of the work.
 **/ 
 
-	@xml_tag("abstract") @xml_leaf private MetadataString	abstractField;
+	@xml_tag("abstract") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	abstractField;
 
 /**
 	Medium on which the work is done.
 **/ 
 
-	 @xml_leaf private MetadataString	medium;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	medium;
 
 /**
 	Year the work was created.
 **/ 
 
-	 @xml_leaf private MetadataString	year;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	year;
 
 /**
 	Website of the work or group responsible.
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	website;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	website;
 
 /**
 	Constructor

@@ -8,36 +8,20 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
-import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.xml.ElementState.xml_tag;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.xml.xml_inherit;
-import java.util.*;
+import ecologylab.xml.Hint;
+import ecologylab.xml.simpl_inherit;
 
 
 /**
 	The definition of weather report class.
 **/ 
 
-@xml_inherit
+@simpl_inherit
 
 public class  WeatherReport
 extends  Document
@@ -48,43 +32,43 @@ extends  Document
 	The name of the city.
 **/ 
 
-	 @xml_leaf private MetadataString	city;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	city;
 
 /**
 	The weather condition of the city, like sunny or cloudy.
 **/ 
 
-	 @xml_leaf private MetadataString	weather;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	weather;
 
 /**
 	The URL of the picture indicating weather condition.
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	picUrl;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	picUrl;
 
 /**
 	The temperature.
 **/ 
 
-	 @xml_leaf private MetadataString	temperature;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	temperature;
 
 /**
 	The humidity of the air.
 **/ 
 
-	 @xml_leaf private MetadataString	humidity;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	humidity;
 
 /**
 	The wind speed.
 **/ 
 
-	 @xml_leaf private MetadataString	wind;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	wind;
 
 /**
 	The dew point.
 **/ 
 
-	 @xml_leaf private MetadataString	dewPoint;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	dewPoint;
 
 /**
 	Constructor

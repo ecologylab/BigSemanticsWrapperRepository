@@ -8,36 +8,23 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.generic.HashMapArrayList;
+import java.util.ArrayList;
+
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
-import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.xml.ElementState.xml_tag;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.xml.xml_inherit;
-import java.util.*;
+import ecologylab.xml.Hint;
+import ecologylab.xml.simpl_inherit;
 
 
 /**
 	IMDB metadata
 **/ 
 
-@xml_inherit
+@simpl_inherit
 
 public class  PersonDetails
 extends  Document
@@ -48,57 +35,57 @@ extends  Document
 	null
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	personImg;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	personImg;
 
-private  @xml_nested BirthDetail	birth_detail;
+private  @simpl_composite BirthDetail	birth_detail;
 /**
 	null
 **/ 
 
-	 @xml_leaf private MetadataString	miniBiography;
-
-/**
-	null
-**/ 
-
-	 @xml_leaf private MetadataParsedURL	biographyLink;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	miniBiography;
 
 /**
 	null
 **/ 
 
-	 @xml_leaf private MetadataString	trivia;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	biographyLink;
 
 /**
 	null
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	triviaLink;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	trivia;
 
 /**
 	null
 **/ 
 
-	 @xml_leaf private MetadataString	awards;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	triviaLink;
 
 /**
 	null
 **/ 
 
-	 @xml_leaf private MetadataParsedURL	awardsLink;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	awards;
 
 /**
 	null
 **/ 
 
-	 @xml_leaf private MetadataString	alternateNames;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
-	@xml_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	awardsLink;
+
+/**
+	null
+**/ 
+
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	alternateNames;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
+	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
 
 /**
 	Constructor

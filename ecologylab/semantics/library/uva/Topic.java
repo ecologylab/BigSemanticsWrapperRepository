@@ -8,36 +8,19 @@ This is a generated code. DO NOT edit or modify it.
 
 
 
-import ecologylab.generic.HashMapArrayList;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
-import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
-import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.xml.ElementState.xml_tag;
-import ecologylab.xml.TranslationScope;
-import ecologylab.xml.types.element.Mappable;
-import ecologylab.xml.xml_inherit;
-import java.util.*;
+import ecologylab.xml.Hint;
+import ecologylab.xml.simpl_inherit;
 
 
 /**
 	For Collabartion with UVA's Cluster formation project.
 **/ 
 
-@xml_inherit
+@simpl_inherit
 
 public class  Topic
 extends  Document
@@ -48,31 +31,31 @@ extends  Document
 	
 **/ 
 
-	 @xml_leaf private MetadataStringBuilder	contentKeywords;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	contentKeywords;
 
 /**
 	
 **/ 
 
-	 @xml_leaf private MetadataStringBuilder	anchorKeywords;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	anchorKeywords;
 
 /**
 	
 **/ 
 
-	 @xml_leaf private MetadataStringBuilder	urlKeywords;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	urlKeywords;
 
 /**
 	
 **/ 
 
-	 @xml_leaf private MetadataStringBuilder	titleKeywords;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	titleKeywords;
 
 /**
 	
 **/ 
 
-	 @xml_leaf private MetadataInteger	id;
+	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	id;
 
 /**
 	Constructor
