@@ -49,37 +49,37 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	dayOfBirth;
+	 @simpl_scalar private MetadataString	dayOfBirth;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	yearOfBirth;
+	 @simpl_scalar private MetadataString	yearOfBirth;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	placeOfBirth;
+	 @simpl_scalar private MetadataString	placeOfBirth;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	dayOfBirthLink;
+	 @simpl_scalar private MetadataParsedURL	dayOfBirthLink;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	yearOfBirthLink;
+	 @simpl_scalar private MetadataParsedURL	yearOfBirthLink;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	placeOfBirthLink;
+	 @simpl_scalar private MetadataParsedURL	placeOfBirthLink;
 
 /**
 	Constructor

@@ -50,25 +50,25 @@ extends  Document
 	Abstract of the work.
 **/ 
 
-	@xml_tag("abstract") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	abstractField;
+	@xml_tag("abstract") @simpl_scalar private MetadataString	abstractField;
 
 /**
 	Medium on which the work is done.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	medium;
+	 @simpl_scalar private MetadataString	medium;
 
 /**
 	Year the work was created.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	year;
+	 @simpl_scalar private MetadataString	year;
 
 /**
 	Website of the work or group responsible.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	website;
+	 @simpl_scalar private MetadataParsedURL	website;
 
 /**
 	Constructor

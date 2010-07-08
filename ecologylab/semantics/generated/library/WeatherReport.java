@@ -49,43 +49,43 @@ extends  Document
 	The name of the city.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	city;
+	 @simpl_scalar private MetadataString	city;
 
 /**
 	The weather condition of the city, like sunny or cloudy.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	weather;
+	 @simpl_scalar private MetadataString	weather;
 
 /**
 	The URL of the picture indicating weather condition.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	picUrl;
+	 @simpl_scalar private MetadataParsedURL	picUrl;
 
 /**
 	The temperature.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	temperature;
+	 @simpl_scalar private MetadataString	temperature;
 
 /**
 	The humidity of the air.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	humidity;
+	 @simpl_scalar private MetadataString	humidity;
 
 /**
 	The wind speed.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	wind;
+	 @simpl_scalar private MetadataString	wind;
 
 /**
 	The dew point.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	dewPoint;
+	 @simpl_scalar private MetadataString	dewPoint;
 
 /**
 	Constructor

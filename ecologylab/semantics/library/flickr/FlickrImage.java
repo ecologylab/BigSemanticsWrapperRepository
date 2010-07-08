@@ -49,7 +49,7 @@ extends  Image
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	browsePurl;
+	 @simpl_scalar private MetadataParsedURL	browsePurl;
 	@simpl_collection("flickr_tag") private ArrayList<FlickrTag>	flickrTags;
 
 /**

@@ -49,13 +49,13 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	yearReleased;
+	 @simpl_scalar private MetadataString	yearReleased;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	rating;
+	 @simpl_scalar private MetadataString	rating;
 	@simpl_collection("person_details") private ArrayList<Entity<PersonDetails>>	directors;
 	@simpl_collection("person_details") private ArrayList<Entity<PersonDetails>>	writers;
 
@@ -63,20 +63,20 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	releaseDate;
+	 @simpl_scalar private MetadataString	releaseDate;
 	@simpl_collection("genre") private ArrayList<Genre>	genres;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	plot;
+	 @simpl_scalar private MetadataString	plot;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	tagline;
+	 @simpl_scalar private MetadataString	tagline;
 	@simpl_collection("cast_member") private ArrayList<CastMember>	cast;
 	@simpl_collection("image") private ArrayList<Image>	titlePhotos;
 
@@ -84,7 +84,7 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	posterImg;
+	 @simpl_scalar private MetadataParsedURL	posterImg;
 
 /**
 	Constructor

@@ -34,13 +34,13 @@ public class Thumbinner extends Metadata{
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	thumbImgSrc;
+	 @simpl_scalar private MetadataParsedURL	thumbImgSrc;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	thumbImgCaption;
+	 @simpl_scalar private MetadataString	thumbImgCaption;
 
 /**
 	Constructor

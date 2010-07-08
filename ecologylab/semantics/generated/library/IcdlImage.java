@@ -49,7 +49,7 @@ extends  Image
 	The language of the library
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	languages;
+	 @simpl_scalar private MetadataString	languages;
 
 /**
 	Constructor

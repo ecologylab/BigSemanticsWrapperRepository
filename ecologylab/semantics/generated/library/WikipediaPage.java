@@ -49,7 +49,7 @@ extends  WikipediaPageType
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	mainImageSrc;
+	 @simpl_scalar private MetadataParsedURL	mainImageSrc;
 	@simpl_collection("paragraph") private ArrayList<Paragraph>	paragraphs;
 	@simpl_collection("category") private ArrayList<Category>	categories;
 	@simpl_collection("thumbinner") private ArrayList<Thumbinner>	thumbinners;

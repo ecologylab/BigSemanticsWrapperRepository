@@ -49,7 +49,7 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	inventor;
+	 @simpl_scalar private MetadataString	inventor;
 	@simpl_collection("search_result") private ArrayList<SearchResult>	picUrls;
 
 /**

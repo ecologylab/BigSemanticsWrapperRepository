@@ -34,13 +34,13 @@ public class Category extends Metadata{
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	name;
+	 @simpl_scalar private MetadataString	name;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	catLink;
+	 @simpl_scalar private MetadataParsedURL	catLink;
 
 /**
 	Constructor

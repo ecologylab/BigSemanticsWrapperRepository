@@ -49,25 +49,25 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	inventor;
+	 @simpl_scalar private MetadataString	inventor;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	abstractField;
+	 @simpl_scalar private MetadataString	abstractField;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	claims;
+	 @simpl_scalar private MetadataString	claims;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	picLink;
+	 @simpl_scalar private MetadataParsedURL	picLink;
 	@simpl_collection("search_result") private ArrayList<SearchResult>	referencedBys;
 	@simpl_collection("search_result") private ArrayList<SearchResult>	citations;
 	@simpl_collection("search_result") private ArrayList<SearchResult>	picLinks;

@@ -49,31 +49,31 @@ extends  Document
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	contentKeywords;
+	 @simpl_scalar private MetadataStringBuilder	contentKeywords;
 
 /**
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	anchorKeywords;
+	 @simpl_scalar private MetadataStringBuilder	anchorKeywords;
 
 /**
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	urlKeywords;
+	 @simpl_scalar private MetadataStringBuilder	urlKeywords;
 
 /**
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataStringBuilder	titleKeywords;
+	 @simpl_scalar private MetadataStringBuilder	titleKeywords;
 
 /**
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	id;
+	 @simpl_scalar private MetadataInteger	id;
 
 /**
 	Constructor

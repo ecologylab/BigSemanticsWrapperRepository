@@ -49,13 +49,13 @@ extends  Pdf
 	citation.cfm
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	metadataPage;
+	 @simpl_scalar private MetadataParsedURL	metadataPage;
 
 /**
 	
 **/ 
 
-	@xml_tag("abstract") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	abstractField;
+	@xml_tag("abstract") @simpl_scalar private MetadataString	abstractField;
 
 private  @simpl_composite Source	source;	@simpl_collection("author") private ArrayList<Author>	authors;
 	@simpl_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;

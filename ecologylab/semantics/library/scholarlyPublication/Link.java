@@ -34,13 +34,13 @@ public class Link extends Metadata{
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	heading;
+	 @simpl_scalar private MetadataString	heading;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
+	 @simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Constructor

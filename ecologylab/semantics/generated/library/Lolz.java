@@ -49,19 +49,19 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	caption;
+	 @simpl_scalar private MetadataString	caption;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	picture;
+	 @simpl_scalar private MetadataParsedURL	picture;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	mightLike;
+	 @simpl_scalar private MetadataParsedURL	mightLike;
 
 /**
 	Constructor

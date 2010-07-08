@@ -49,13 +49,13 @@ extends  Metadata
 	flickr_image_detail
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
+	 @simpl_scalar private MetadataParsedURL	link;
 
 /**
 	flickr_image_detail
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
+	 @simpl_scalar private MetadataString	title;
 
 /**
 	Constructor

@@ -34,13 +34,13 @@ public class Genre extends Metadata{
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	name;
+	 @simpl_scalar private MetadataString	name;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	genreLink;
+	 @simpl_scalar private MetadataParsedURL	genreLink;
 
 /**
 	Constructor

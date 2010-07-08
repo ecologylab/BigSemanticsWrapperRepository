@@ -49,49 +49,49 @@ extends  Document
 	The author of the pdf document
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	author;
+	 @simpl_scalar private MetadataString	author;
 
 /**
 	Summary of the pdf document
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	summary;
+	 @simpl_scalar private MetadataString	summary;
 
 /**
 	Key Words of the document
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	keywords;
+	 @simpl_scalar private MetadataString	keywords;
 
 /**
 	Subject of the document
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	subject;
+	 @simpl_scalar private MetadataString	subject;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	trapped;
+	 @simpl_scalar private MetadataString	trapped;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	modified;
+	 @simpl_scalar private MetadataString	modified;
 
 /**
 	Contents of the document
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	contents;
+	 @simpl_scalar private MetadataString	contents;
 
 /**
 	Creation date of the document
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	creationdate;
+	 @simpl_scalar private MetadataString	creationdate;
 
 /**
 	Constructor

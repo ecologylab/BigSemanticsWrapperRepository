@@ -49,7 +49,7 @@ extends  Document
 	Phone number of the restaurant
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	post;
+	 @simpl_scalar private MetadataString	post;
 
 /**
 	Constructor

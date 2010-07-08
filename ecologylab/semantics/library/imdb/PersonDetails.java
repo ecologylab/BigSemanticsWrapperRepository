@@ -49,50 +49,50 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	personImg;
+	 @simpl_scalar private MetadataParsedURL	personImg;
 
 private  @simpl_composite BirthDetail	birth_detail;
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	miniBiography;
+	 @simpl_scalar private MetadataString	miniBiography;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	biographyLink;
+	 @simpl_scalar private MetadataParsedURL	biographyLink;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	trivia;
+	 @simpl_scalar private MetadataString	trivia;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	triviaLink;
+	 @simpl_scalar private MetadataParsedURL	triviaLink;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	awards;
+	 @simpl_scalar private MetadataString	awards;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	awardsLink;
+	 @simpl_scalar private MetadataParsedURL	awardsLink;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	alternateNames;
+	 @simpl_scalar private MetadataString	alternateNames;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;

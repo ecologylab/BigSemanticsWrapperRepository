@@ -49,19 +49,19 @@ extends  Document
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	name;
+	 @simpl_scalar private MetadataString	name;
 
 /**
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	affiliation;
+	 @simpl_scalar private MetadataString	affiliation;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	city;
+	 @simpl_scalar private MetadataString	city;
 
 /**
 	Constructor

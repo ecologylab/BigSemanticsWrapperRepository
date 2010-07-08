@@ -49,25 +49,25 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	yearOfPublication;
+	 @simpl_scalar private MetadataInteger	yearOfPublication;
 
 /**
 	Archive of conference or journal.
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	archive;
+	 @simpl_scalar private MetadataParsedURL	archive;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	pages;
+	 @simpl_scalar private MetadataString	pages;
 
 /**
 	
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	isbn;
+	 @simpl_scalar private MetadataString	isbn;
 
 /**
 	Constructor

@@ -49,7 +49,7 @@ extends  Media
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	text;
+	 @simpl_scalar private MetadataString	text;
 
 /**
 	Constructor

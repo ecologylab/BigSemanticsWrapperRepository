@@ -34,19 +34,19 @@ public class Bookmark extends Metadata{
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
+	 @simpl_scalar private MetadataString	title;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
+	 @simpl_scalar private MetadataParsedURL	link;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	pic;
+	 @simpl_scalar private MetadataParsedURL	pic;
 
 /**
 	Constructor

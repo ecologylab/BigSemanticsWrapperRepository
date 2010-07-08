@@ -49,7 +49,7 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	subject;
+	 @simpl_scalar private MetadataString	subject;
 
 /**
 	Constructor

@@ -34,7 +34,7 @@ public class Paragraph extends Metadata{
 	null
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	paragraphText;
+	 @simpl_scalar private MetadataString	paragraphText;
 	@simpl_collection("anchor") private ArrayList<Anchor>	anchors;
 
 /**

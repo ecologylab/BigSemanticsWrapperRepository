@@ -49,19 +49,19 @@ extends  Document
 	The heading of search result
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	heading;
+	 @simpl_scalar private MetadataString	heading;
 
 /**
 	The snippet of search result
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	snippet;
+	 @simpl_scalar private MetadataString	snippet;
 
 /**
 	The link of the search result
 **/ 
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
+	 @simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Constructor
