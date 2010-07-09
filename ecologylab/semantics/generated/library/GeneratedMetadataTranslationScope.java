@@ -159,7 +159,7 @@ UrbanSpoonGenre.class,
 
 /**
  * classes below are added for processing chains of extends declaration 
- * in creating corresponding DB table schema 
+ * ,which are required to create corresponding DB table schema
  */
 MetaMetadata.class,
 
