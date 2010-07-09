@@ -20,6 +20,9 @@ import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.semantics.metametadata.MetaMetadataField;
+import ecologylab.semantics.metametadata.MetaMetadataNestedField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.semantics.model.text.CompositeTermVector;
 import ecologylab.serialization.ElementState.xml_tag;
@@ -154,8 +157,17 @@ WikipediaPageType.class,
 
 UrbanSpoonGenre.class,
 
-//3 classes below are added for creating corresponding db table schema  
+/**
+ * classes below are added for processing chains of extends declaration 
+ * in creating corresponding DB table schema 
+ */
 MetaMetadata.class,
+
+MetaMetadataCompositeField.class,
+
+MetaMetadataNestedField.class,
+
+MetaMetadataField.class, 
 
 MetaMetadataRepository.class,
 
