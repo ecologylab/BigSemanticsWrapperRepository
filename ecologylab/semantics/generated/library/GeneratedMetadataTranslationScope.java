@@ -18,14 +18,10 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadata;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
+import ecologylab.semantics.model.text.CompositeTermVector;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
 import ecologylab.serialization.TranslationScope;
@@ -158,6 +154,12 @@ WikipediaPageType.class,
 
 UrbanSpoonGenre.class,
 
+//3 classes below are added for creating corresponding db table schema  
+MetaMetadata.class,
+
+MetaMetadataRepository.class,
+
+CompositeTermVector.class 
 
 };
  
