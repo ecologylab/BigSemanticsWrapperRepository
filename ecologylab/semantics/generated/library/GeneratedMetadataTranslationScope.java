@@ -18,13 +18,14 @@ import ecologylab.semantics.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.DebugMetadata;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Entity;
+import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metametadata.MetaMetadataField;
-import ecologylab.semantics.metametadata.MetaMetadataNestedField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.model.text.CompositeTermVector;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
 import ecologylab.serialization.TranslationScope;
@@ -61,17 +62,31 @@ FlickrImageDetail.class,
 
 FlickrTag.class,
 
-FlickrImage.class,
+FlickrTwoImage.class,
+
+FlickrTwoSearch.class,
 
 FlickrTags.class,
 
-FlickrAuthor.class,
+FlickrTwoImageDetail.class,
 
 FlickrSearch.class,
 
+FlickrLink.class,
+
 FlickrTagsInteresting.class,
 
-FlickrLink.class,
+FlickrTwoLink.class,
+
+FlickrImage.class,
+
+FlickrAuthor.class,
+
+AuthorPhotos.class,
+
+FlickrTwoTag.class,
+
+RelatedPhoto.class,
 
 GooglePatent.class,
 
@@ -157,21 +172,6 @@ WikipediaPageType.class,
 
 UrbanSpoonGenre.class,
 
-/**
- * classes below are added for processing chains of extends declaration 
- * ,which are required to create corresponding DB table schema
- */
-MetaMetadata.class,
-
-MetaMetadataCompositeField.class,
-
-MetaMetadataNestedField.class,
-
-MetaMetadataField.class, 
-
-MetaMetadataRepository.class,
-
-CompositeTermVector.class 
 
 };
  
