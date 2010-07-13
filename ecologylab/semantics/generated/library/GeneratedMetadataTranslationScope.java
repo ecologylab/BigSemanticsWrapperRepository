@@ -62,31 +62,19 @@ FlickrImageDetail.class,
 
 FlickrTag.class,
 
-FlickrTwoImage.class,
-
-FlickrTwoSearch.class,
-
-FlickrTags.class,
-
-FlickrTwoImageDetail.class,
-
-FlickrSearch.class,
-
-FlickrLink.class,
-
-FlickrTagsInteresting.class,
-
-FlickrTwoLink.class,
+FlickrSearchTwo.class,
 
 FlickrImage.class,
 
+FlickrTags.class,
+
 FlickrAuthor.class,
 
-AuthorPhotos.class,
+FlickrSearch.class,
 
-FlickrTwoTag.class,
+FlickrTagsInteresting.class,
 
-RelatedPhoto.class,
+FlickrLink.class,
 
 GooglePatent.class,
 

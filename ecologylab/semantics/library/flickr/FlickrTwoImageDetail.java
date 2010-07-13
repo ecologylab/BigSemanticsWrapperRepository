@@ -45,7 +45,7 @@ extends  Document
 {
 
 	@simpl_collection("related_photo") private ArrayList<RelatedPhoto>	relatedPhotos;
-	@simpl_collection("flickr_two_image") private ArrayList<FlickrTwoImage>	flickrTwoImage;
+	@simpl_collection("flickr_two_image") private ArrayList<FlickrTwoImage>	flickrTwoImages;
 	@simpl_collection("author_photos") private ArrayList<AuthorPhotos>	authorPhotos;
 	@simpl_collection("flickr_two_tag") private ArrayList<FlickrTwoTag>	flickrTwoTags;
 
@@ -100,35 +100,35 @@ return this.relatedPhotos;
 }
 
 /**
-	Lazy Evaluation for flickrTwoImage
+	Lazy Evaluation for flickrTwoImages
 **/ 
 
-public  ArrayList<FlickrTwoImage>	flickrTwoImage()
+public  ArrayList<FlickrTwoImage>	flickrTwoImages()
 {
- ArrayList<FlickrTwoImage>	result	=this.flickrTwoImage;
+ ArrayList<FlickrTwoImage>	result	=this.flickrTwoImages;
 if(result == null)
 {
 result = new  ArrayList<FlickrTwoImage>();
-this.flickrTwoImage	=	 result;
+this.flickrTwoImages	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field flickrTwoImage
+	Set the value of field flickrTwoImages
 **/ 
 
-public void setFlickrTwoImage(  ArrayList<FlickrTwoImage> flickrTwoImage )
+public void setFlickrTwoImages(  ArrayList<FlickrTwoImage> flickrTwoImages )
 {
-this.flickrTwoImage = flickrTwoImage ;
+this.flickrTwoImages = flickrTwoImages ;
 }
 
 /**
-	Get the value of field flickrTwoImage
+	Get the value of field flickrTwoImages
 **/ 
 
-public  ArrayList<FlickrTwoImage> getFlickrTwoImage(){
-return this.flickrTwoImage;
+public  ArrayList<FlickrTwoImage> getFlickrTwoImages(){
+return this.flickrTwoImages;
 }
 
 /**
