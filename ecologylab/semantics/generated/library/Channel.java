@@ -29,7 +29,7 @@ import java.util.*;
 
 public class Channel extends Metadata{
 
-	@simpl_collection("item") @simpl_nowrap private ArrayList<Item>	item;
+	@simpl_collection("item") @simpl_nowrap private ArrayList<Item>	items;
 
 /**
 	Constructor
@@ -50,34 +50,34 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for item
+	Lazy Evaluation for items
 **/ 
 
-public  ArrayList<Item>	item()
+public  ArrayList<Item>	items()
 {
- ArrayList<Item>	result	=this.item;
+ ArrayList<Item>	result	=this.items;
 if(result == null)
 {
 result = new  ArrayList<Item>();
-this.item	=	 result;
+this.items	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field item
+	Set the value of field items
 **/ 
 
-public void setItem(  ArrayList<Item> item )
+public void setItems(  ArrayList<Item> items )
 {
-this.item = item ;
+this.items = items ;
 }
 
 /**
-	Get the value of field item
+	Get the value of field items
 **/ 
 
-public  ArrayList<Item> getItem(){
-return this.item;
+public  ArrayList<Item> getItems(){
+return this.items;
 }
 }

@@ -35,7 +35,7 @@ import java.util.*;
 
 
 /**
-	The RSS class
+	News feeds.
 **/ 
 
 @simpl_inherit
