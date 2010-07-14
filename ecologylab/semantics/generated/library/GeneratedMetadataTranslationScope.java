@@ -68,13 +68,19 @@ FlickrImage.class,
 
 FlickrTags.class,
 
+FlickrImageDetailTwo.class,
+
 FlickrAuthor.class,
+
+AuthorPhotos.class,
 
 FlickrSearch.class,
 
 FlickrTagsInteresting.class,
 
 FlickrLink.class,
+
+RelatedPhoto.class,
 
 GooglePatent.class,
 

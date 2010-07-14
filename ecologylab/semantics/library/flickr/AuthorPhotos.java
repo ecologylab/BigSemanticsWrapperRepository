@@ -49,13 +49,13 @@ extends  Metadata
 	null
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	authorFlickrTwoPageLink;
+	 @simpl_scalar private MetadataParsedURL	authorFlickrPageLink;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar private MetadataString	authorFlickrTwoPage;
+	 @simpl_scalar private MetadataString	authorFlickrPage;
 
 /**
 	null
@@ -112,119 +112,119 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for authorFlickrTwoPageLink
+	Lazy Evaluation for authorFlickrPageLink
 **/ 
 
-public MetadataParsedURL	authorFlickrTwoPageLink()
+public MetadataParsedURL	authorFlickrPageLink()
 {
-MetadataParsedURL	result	=this.authorFlickrTwoPageLink;
+MetadataParsedURL	result	=this.authorFlickrPageLink;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.authorFlickrTwoPageLink	=	 result;
+this.authorFlickrPageLink	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field authorFlickrTwoPageLink
+	Gets the value of the field authorFlickrPageLink
 **/ 
 
-public ParsedURL getAuthorFlickrTwoPageLink(){
-return authorFlickrTwoPageLink().getValue();
+public ParsedURL getAuthorFlickrPageLink(){
+return authorFlickrPageLink().getValue();
 }
 
 /**
-	Sets the value of the field authorFlickrTwoPageLink
+	Sets the value of the field authorFlickrPageLink
 **/ 
 
-public void setAuthorFlickrTwoPageLink( ParsedURL authorFlickrTwoPageLink )
+public void setAuthorFlickrPageLink( ParsedURL authorFlickrPageLink )
 {
-this.authorFlickrTwoPageLink().setValue(authorFlickrTwoPageLink);
+this.authorFlickrPageLink().setValue(authorFlickrPageLink);
 }
 
 /**
-	The heavy weight setter method for field authorFlickrTwoPageLink
+	The heavy weight setter method for field authorFlickrPageLink
 **/ 
 
-public void hwSetAuthorFlickrTwoPageLink( ParsedURL authorFlickrTwoPageLink )
+public void hwSetAuthorFlickrPageLink( ParsedURL authorFlickrPageLink )
 {
-this.authorFlickrTwoPageLink().setValue(authorFlickrTwoPageLink);
+this.authorFlickrPageLink().setValue(authorFlickrPageLink);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the authorFlickrTwoPageLink directly
+	 Sets the authorFlickrPageLink directly
 **/ 
 
-public void setAuthorFlickrTwoPageLinkMetadata(MetadataParsedURL authorFlickrTwoPageLink)
-{	this.authorFlickrTwoPageLink = authorFlickrTwoPageLink;
+public void setAuthorFlickrPageLinkMetadata(MetadataParsedURL authorFlickrPageLink)
+{	this.authorFlickrPageLink = authorFlickrPageLink;
 }
 /**
-	Heavy Weight Direct setter method for authorFlickrTwoPageLink
+	Heavy Weight Direct setter method for authorFlickrPageLink
 **/ 
 
-public void hwSetAuthorFlickrTwoPageLinkMetadata(MetadataParsedURL authorFlickrTwoPageLink)
-{	 if(this.authorFlickrTwoPageLink!=null && this.authorFlickrTwoPageLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.authorFlickrTwoPageLink.termVector());
-	 this.authorFlickrTwoPageLink = authorFlickrTwoPageLink;
+public void hwSetAuthorFlickrPageLinkMetadata(MetadataParsedURL authorFlickrPageLink)
+{	 if(this.authorFlickrPageLink!=null && this.authorFlickrPageLink.getValue()!=null && hasTermVector())
+		 termVector().remove(this.authorFlickrPageLink.termVector());
+	 this.authorFlickrPageLink = authorFlickrPageLink;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for authorFlickrTwoPage
+	Lazy Evaluation for authorFlickrPage
 **/ 
 
-public MetadataString	authorFlickrTwoPage()
+public MetadataString	authorFlickrPage()
 {
-MetadataString	result	=this.authorFlickrTwoPage;
+MetadataString	result	=this.authorFlickrPage;
 if(result == null)
 {
 result = new MetadataString();
-this.authorFlickrTwoPage	=	 result;
+this.authorFlickrPage	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field authorFlickrTwoPage
+	Gets the value of the field authorFlickrPage
 **/ 
 
-public String getAuthorFlickrTwoPage(){
-return authorFlickrTwoPage().getValue();
+public String getAuthorFlickrPage(){
+return authorFlickrPage().getValue();
 }
 
 /**
-	Sets the value of the field authorFlickrTwoPage
+	Sets the value of the field authorFlickrPage
 **/ 
 
-public void setAuthorFlickrTwoPage( String authorFlickrTwoPage )
+public void setAuthorFlickrPage( String authorFlickrPage )
 {
-this.authorFlickrTwoPage().setValue(authorFlickrTwoPage);
+this.authorFlickrPage().setValue(authorFlickrPage);
 }
 
 /**
-	The heavy weight setter method for field authorFlickrTwoPage
+	The heavy weight setter method for field authorFlickrPage
 **/ 
 
-public void hwSetAuthorFlickrTwoPage( String authorFlickrTwoPage )
+public void hwSetAuthorFlickrPage( String authorFlickrPage )
 {
-this.authorFlickrTwoPage().setValue(authorFlickrTwoPage);
+this.authorFlickrPage().setValue(authorFlickrPage);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the authorFlickrTwoPage directly
+	 Sets the authorFlickrPage directly
 **/ 
 
-public void setAuthorFlickrTwoPageMetadata(MetadataString authorFlickrTwoPage)
-{	this.authorFlickrTwoPage = authorFlickrTwoPage;
+public void setAuthorFlickrPageMetadata(MetadataString authorFlickrPage)
+{	this.authorFlickrPage = authorFlickrPage;
 }
 /**
-	Heavy Weight Direct setter method for authorFlickrTwoPage
+	Heavy Weight Direct setter method for authorFlickrPage
 **/ 
 
-public void hwSetAuthorFlickrTwoPageMetadata(MetadataString authorFlickrTwoPage)
-{	 if(this.authorFlickrTwoPage!=null && this.authorFlickrTwoPage.getValue()!=null && hasTermVector())
-		 termVector().remove(this.authorFlickrTwoPage.termVector());
-	 this.authorFlickrTwoPage = authorFlickrTwoPage;
+public void hwSetAuthorFlickrPageMetadata(MetadataString authorFlickrPage)
+{	 if(this.authorFlickrPage!=null && this.authorFlickrPage.getValue()!=null && hasTermVector())
+		 termVector().remove(this.authorFlickrPage.termVector());
+	 this.authorFlickrPage = authorFlickrPage;
 	rebuildCompositeTermVector();
 }
 /**
