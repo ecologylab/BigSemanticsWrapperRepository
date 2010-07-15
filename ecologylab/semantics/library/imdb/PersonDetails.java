@@ -92,7 +92,7 @@ private  @simpl_composite BirthDetail	birth_detail;
 	null
 **/ 
 
-	 @simpl_scalar private MetadataString	alternateNames;
+	 @simpl_scalar @simpl_filter(regex="Alternate Names:", replace="") private MetadataString	alternateNames;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;

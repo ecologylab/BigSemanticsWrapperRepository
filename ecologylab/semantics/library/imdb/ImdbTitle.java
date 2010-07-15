@@ -70,13 +70,13 @@ extends  Document
 	null
 **/ 
 
-	 @simpl_scalar private MetadataString	plot;
+	 @simpl_scalar @simpl_filter(regex="more|\\|", replace="") private MetadataString	plot;
 
 /**
 	null
 **/ 
 
-	 @simpl_scalar private MetadataString	tagline;
+	 @simpl_scalar @simpl_filter(regex="Tagline:|more", replace="") private MetadataString	tagline;
 	@simpl_collection("cast_member") private ArrayList<CastMember>	cast;
 	@simpl_collection("image") private ArrayList<Image>	titlePhotos;
 
