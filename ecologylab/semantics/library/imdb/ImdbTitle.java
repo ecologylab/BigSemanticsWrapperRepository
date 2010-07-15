@@ -50,8 +50,8 @@ extends  Document
 	@simpl_collection("person_details") private ArrayList<Entity<PersonDetails>>	writers;
 	 @simpl_scalar private MetadataString	releaseDate;
 	@simpl_collection("genre") private ArrayList<Genre>	genres;
-	 @simpl_scalar private MetadataString	plot;
-	 @simpl_scalar private MetadataString	tagline;
+	 @simpl_scalar @simpl_filter(regex="more|\\|", replace="") private MetadataString	plot;
+	 @simpl_scalar @simpl_filter(regex="Tagline:|more", replace="") private MetadataString	tagline;
 	@simpl_collection("cast_member") private ArrayList<CastMember>	cast;
 	@simpl_collection("image") private ArrayList<Image>	titlePhotos;
 	 @simpl_scalar private MetadataParsedURL	posterImg;

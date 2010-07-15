@@ -52,7 +52,7 @@ private  @simpl_composite BirthDetail	birthDetail;	 @simpl_scalar private Metada
 	 @simpl_scalar private MetadataParsedURL	triviaLink;
 	 @simpl_scalar private MetadataString	awards;
 	 @simpl_scalar private MetadataParsedURL	awardsLink;
-	 @simpl_scalar private MetadataString	alternateNames;
+	 @simpl_scalar @simpl_filter(regex="Alternate Names:", replace="") private MetadataString	alternateNames;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
