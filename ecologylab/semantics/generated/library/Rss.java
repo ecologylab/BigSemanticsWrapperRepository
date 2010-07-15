@@ -35,7 +35,7 @@ import java.util.*;
 
 
 /**
-	News feeds.
+	A news feed.
 **/ 
 
 @simpl_inherit

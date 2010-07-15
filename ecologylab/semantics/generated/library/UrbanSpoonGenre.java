@@ -44,6 +44,7 @@ public class  UrbanSpoonGenre
 extends  Search
 {
 
+	@simpl_collection("search_result") private ArrayList<SearchResult>	searchResults;
 	@simpl_collection("search_result") private ArrayList<SearchResult>	topResults;
 
 /**
@@ -62,6 +63,38 @@ public UrbanSpoonGenre()
 public UrbanSpoonGenre(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
+}
+
+/**
+	Lazy Evaluation for searchResults
+**/ 
+
+public  ArrayList<SearchResult>	searchResults()
+{
+ ArrayList<SearchResult>	result	=this.searchResults;
+if(result == null)
+{
+result = new  ArrayList<SearchResult>();
+this.searchResults	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field searchResults
+**/ 
+
+public void setSearchResults(  ArrayList<SearchResult> searchResults )
+{
+this.searchResults = searchResults ;
+}
+
+/**
+	Get the value of field searchResults
+**/ 
+
+public  ArrayList<SearchResult> getSearchResults(){
+return this.searchResults;
 }
 
 /**

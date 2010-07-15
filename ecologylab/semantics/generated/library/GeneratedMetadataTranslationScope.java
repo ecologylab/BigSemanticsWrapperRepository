@@ -122,9 +122,9 @@ Restaurant.class,
 
 Item.class,
 
-Channel.class,
+MediaContent.class,
 
-Item.class,
+YahooMediaRss.class,
 
 Rss.class,
 

@@ -1,5 +1,13 @@
 package ecologylab.semantics.generated.library;
 
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -25,9 +33,16 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	One item in a news feed.
+**/ 
+
 @simpl_inherit
 
-public class Item extends Metadata{
+public class  Item
+extends  YahooMediaRss
+{
 
 	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
 	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
@@ -224,4 +239,6 @@ public void hwSetGuidMetadata(MetadataParsedURL guid)
 		 termVector().remove(this.guid.termVector());
 	 this.guid = guid;
 	rebuildCompositeTermVector();
-}}
+}
+}
+
