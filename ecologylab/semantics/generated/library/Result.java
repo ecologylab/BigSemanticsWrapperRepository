@@ -58,14 +58,9 @@ public class Result extends Metadata{
 	null
 **/ 
 
-	@xml_tag("ModificationDate") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	modificationDate;
-
-/**
-	null
-**/ 
-
 	@xml_tag("MimeType") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	mimeType;
 
+private @xml_tag("Thumbnail") @simpl_composite YahooThumbnail	thumbnail;
 /**
 	Constructor
 **/ 
@@ -317,64 +312,6 @@ public void hwSetRefererUrlMetadata(MetadataParsedURL refererUrl)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for modificationDate
-**/ 
-
-public MetadataInteger	modificationDate()
-{
-MetadataInteger	result	=this.modificationDate;
-if(result == null)
-{
-result = new MetadataInteger();
-this.modificationDate	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field modificationDate
-**/ 
-
-public Integer getModificationDate(){
-return modificationDate().getValue();
-}
-
-/**
-	Sets the value of the field modificationDate
-**/ 
-
-public void setModificationDate( Integer modificationDate )
-{
-this.modificationDate().setValue(modificationDate);
-}
-
-/**
-	The heavy weight setter method for field modificationDate
-**/ 
-
-public void hwSetModificationDate( Integer modificationDate )
-{
-this.modificationDate().setValue(modificationDate);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the modificationDate directly
-**/ 
-
-public void setModificationDateMetadata(MetadataInteger modificationDate)
-{	this.modificationDate = modificationDate;
-}
-/**
-	Heavy Weight Direct setter method for modificationDate
-**/ 
-
-public void hwSetModificationDateMetadata(MetadataInteger modificationDate)
-{	 if(this.modificationDate!=null && this.modificationDate.getValue()!=null && hasTermVector())
-		 termVector().remove(this.modificationDate.termVector());
-	 this.modificationDate = modificationDate;
-	rebuildCompositeTermVector();
-}
-/**
 	Lazy Evaluation for mimeType
 **/ 
 
@@ -431,4 +368,36 @@ public void hwSetMimeTypeMetadata(MetadataString mimeType)
 		 termVector().remove(this.mimeType.termVector());
 	 this.mimeType = mimeType;
 	rebuildCompositeTermVector();
-}}
+}
+/**
+	Lazy Evaluation for thumbnail
+**/ 
+
+public YahooThumbnail	thumbnail()
+{
+YahooThumbnail	result	=this.thumbnail;
+if(result == null)
+{
+result = new YahooThumbnail();
+this.thumbnail	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field thumbnail
+**/ 
+
+public void setThumbnail( YahooThumbnail thumbnail )
+{
+this.thumbnail = thumbnail ;
+}
+
+/**
+	Get the value of field thumbnail
+**/ 
+
+public YahooThumbnail getThumbnail(){
+return this.thumbnail;
+}
+}

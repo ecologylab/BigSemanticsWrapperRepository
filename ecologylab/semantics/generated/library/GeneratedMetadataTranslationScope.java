@@ -146,6 +146,8 @@ Search.class,
 
 SearchResult.class,
 
+YahooThumbnail.class,
+
 Tumblr.class,
 
 WeatherReport.class,
