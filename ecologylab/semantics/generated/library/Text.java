@@ -44,11 +44,6 @@ public class  Text
 extends  Media
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	text;
 
 /**

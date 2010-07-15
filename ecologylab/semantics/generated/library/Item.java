@@ -29,23 +29,8 @@ import java.util.*;
 
 public class Item extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	guid;
 
 /**

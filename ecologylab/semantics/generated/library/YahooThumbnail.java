@@ -33,34 +33,14 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	null
-**/ 
-
 @simpl_inherit
 
 public class  YahooThumbnail
 extends  Metadata
 {
 
-
-/**
-	null
-**/ 
-
 	@xml_tag("Url") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	thumbUrl;
-
-/**
-	null
-**/ 
-
 	@xml_tag("Width") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	width;
-
-/**
-	null
-**/ 
-
 	@xml_tag("Height") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	height;
 
 /**

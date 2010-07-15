@@ -29,17 +29,7 @@ import java.util.*;
 
 public class Thumbinner extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	thumbImgSrc;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	thumbImgCaption;
 
 /**

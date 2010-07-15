@@ -44,11 +44,6 @@ public class  GooglePatentImage
 extends  Document
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	inventor;
 	@simpl_collection("search_result") private ArrayList<SearchResult>	picUrls;
 

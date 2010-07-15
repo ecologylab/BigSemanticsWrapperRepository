@@ -45,7 +45,7 @@ extends  Document
 {
 
 
-private  @simpl_composite FlickrImage	flickr_image;
+private  @simpl_composite FlickrImage	flickrImage;
 /**
 	Constructor
 **/ 
@@ -65,35 +65,35 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for flickr_image
+	Lazy Evaluation for flickrImage
 **/ 
 
-public FlickrImage	flickr_image()
+public FlickrImage	flickrImage()
 {
-FlickrImage	result	=this.flickr_image;
+FlickrImage	result	=this.flickrImage;
 if(result == null)
 {
 result = new FlickrImage();
-this.flickr_image	=	 result;
+this.flickrImage	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field flickr_image
+	Set the value of field flickrImage
 **/ 
 
-public void setFlickrImage( FlickrImage flickr_image )
+public void setFlickrImage( FlickrImage flickrImage )
 {
-this.flickr_image = flickr_image ;
+this.flickrImage = flickrImage ;
 }
 
 /**
-	Get the value of field flickr_image
+	Get the value of field flickrImage
 **/ 
 
 public FlickrImage getFlickrImage(){
-return this.flickr_image;
+return this.flickrImage;
 }
 
 }

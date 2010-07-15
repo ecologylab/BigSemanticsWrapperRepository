@@ -44,11 +44,6 @@ public class  FlickrImage
 extends  Image
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	browsePurl;
 	@simpl_collection("flickr_tag") private ArrayList<FlickrTag>	flickrTags;
 

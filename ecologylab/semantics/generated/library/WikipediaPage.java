@@ -44,11 +44,6 @@ public class  WikipediaPage
 extends  WikipediaPageType
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	mainImageSrc;
 	@simpl_collection("paragraph") private ArrayList<Paragraph>	paragraphs;
 	@simpl_collection("category") private ArrayList<Category>	categories;

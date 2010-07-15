@@ -44,35 +44,10 @@ public class  Topic
 extends  Document
 {
 
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataStringBuilder	contentKeywords;
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataStringBuilder	anchorKeywords;
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataStringBuilder	urlKeywords;
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataStringBuilder	titleKeywords;
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataInteger	id;
 
 /**

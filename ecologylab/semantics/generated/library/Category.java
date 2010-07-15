@@ -29,17 +29,7 @@ import java.util.*;
 
 public class Category extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	name;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	catLink;
 
 /**

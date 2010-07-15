@@ -33,11 +33,6 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	null
-**/ 
-
 @simpl_inherit
 
 public class  ScholarlyArticle
@@ -50,11 +45,6 @@ extends  Pdf
 **/ 
 
 	 @simpl_scalar private MetadataParsedURL	metadataPage;
-
-/**
-	
-**/ 
-
 	@xml_tag("abstract") @simpl_scalar private MetadataString	abstractField;
 
 private  @simpl_composite Source	source;	@simpl_collection("author") private ArrayList<Author>	authors;

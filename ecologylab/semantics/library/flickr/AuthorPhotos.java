@@ -33,64 +33,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	null
-**/ 
-
 @simpl_inherit
 
 public class  AuthorPhotos
 extends  Metadata
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	authorFlickrPageLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	authorFlickrPage;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	photosThatDayLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	photosThatMonthLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	photosThatYearLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	photosThatDay;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	photosThatMonth;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	photosThatYear;
 
 /**

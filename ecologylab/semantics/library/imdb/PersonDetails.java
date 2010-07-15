@@ -44,55 +44,15 @@ public class  PersonDetails
 extends  Document
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	personImg;
 
-private  @simpl_composite BirthDetail	birth_detail;
-/**
-	null
-**/ 
-
-	 @simpl_scalar private MetadataString	miniBiography;
-
-/**
-	null
-**/ 
-
+private  @simpl_composite BirthDetail	birthDetail;	 @simpl_scalar private MetadataString	miniBiography;
 	 @simpl_scalar private MetadataParsedURL	biographyLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	trivia;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	triviaLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	awards;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	awardsLink;
-
-/**
-	null
-**/ 
-
-	 @simpl_scalar @simpl_filter(regex="Alternate Names:", replace="") private MetadataString	alternateNames;
+	 @simpl_scalar private MetadataString	alternateNames;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
@@ -178,35 +138,35 @@ public void hwSetPersonImgMetadata(MetadataParsedURL personImg)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for birth_detail
+	Lazy Evaluation for birthDetail
 **/ 
 
-public BirthDetail	birth_detail()
+public BirthDetail	birthDetail()
 {
-BirthDetail	result	=this.birth_detail;
+BirthDetail	result	=this.birthDetail;
 if(result == null)
 {
 result = new BirthDetail();
-this.birth_detail	=	 result;
+this.birthDetail	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field birth_detail
+	Set the value of field birthDetail
 **/ 
 
-public void setBirthDetail( BirthDetail birth_detail )
+public void setBirthDetail( BirthDetail birthDetail )
 {
-this.birth_detail = birth_detail ;
+this.birthDetail = birthDetail ;
 }
 
 /**
-	Get the value of field birth_detail
+	Get the value of field birthDetail
 **/ 
 
 public BirthDetail getBirthDetail(){
-return this.birth_detail;
+return this.birthDetail;
 }
 
 /**

@@ -29,17 +29,7 @@ import java.util.*;
 
 public class Link extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	heading;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	link;
 
 /**

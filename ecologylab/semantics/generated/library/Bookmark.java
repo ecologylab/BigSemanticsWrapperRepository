@@ -29,23 +29,8 @@ import java.util.*;
 
 public class Bookmark extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	title;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	link;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	pic;
 
 /**

@@ -44,11 +44,6 @@ public class  Icdl
 extends  Document
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	languages;
 
 /**

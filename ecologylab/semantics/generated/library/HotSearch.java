@@ -29,11 +29,6 @@ import java.util.*;
 
 public class HotSearch extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	search;
 
 /**

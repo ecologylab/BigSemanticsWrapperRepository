@@ -29,17 +29,7 @@ import java.util.*;
 
 public class Anchor extends Metadata{
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	link;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	anchorText;
 
 /**

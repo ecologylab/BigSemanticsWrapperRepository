@@ -33,28 +33,13 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	null
-**/ 
-
 @simpl_inherit
 
 public class  FlickrTag
 extends  Metadata
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	tagName;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	tagLink;
 
 /**

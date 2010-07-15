@@ -33,11 +33,6 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	
-**/ 
-
 @simpl_inherit
 
 public class  Search

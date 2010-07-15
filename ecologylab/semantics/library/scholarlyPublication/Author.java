@@ -44,23 +44,8 @@ public class  Author
 extends  Document
 {
 
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataString	name;
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataString	affiliation;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	city;
 
 /**

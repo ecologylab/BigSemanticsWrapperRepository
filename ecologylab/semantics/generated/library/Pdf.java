@@ -68,17 +68,7 @@ extends  Document
 **/ 
 
 	 @simpl_scalar private MetadataString	subject;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	trapped;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	modified;
 
 /**

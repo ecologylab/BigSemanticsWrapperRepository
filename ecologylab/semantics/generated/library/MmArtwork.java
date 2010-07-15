@@ -44,11 +44,6 @@ public class  MmArtwork
 extends  Document
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	artTitle;
 	@simpl_collection("author") private ArrayList<Author>	artists;
 

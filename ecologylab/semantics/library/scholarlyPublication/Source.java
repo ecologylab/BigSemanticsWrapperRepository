@@ -44,11 +44,6 @@ public class  Source
 extends  Document
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataInteger	yearOfPublication;
 
 /**
@@ -56,17 +51,7 @@ extends  Document
 **/ 
 
 	 @simpl_scalar private MetadataParsedURL	archive;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	pages;
-
-/**
-	
-**/ 
-
 	 @simpl_scalar private MetadataString	isbn;
 
 /**

@@ -33,28 +33,13 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	null
-**/ 
-
 @simpl_inherit
 
 public class  RelatedPhoto
 extends  Metadata
 {
 
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataParsedURL	nearbyPhotosLink;
-
-/**
-	null
-**/ 
-
 	 @simpl_scalar private MetadataString	nearbyPhotos;
 
 /**

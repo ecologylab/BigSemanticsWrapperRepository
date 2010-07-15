@@ -29,17 +29,7 @@ import java.util.*;
 
 public class Genre extends Metadata{
 
-
-/**
-	null
-**/ 
-
-	 @simpl_scalar @simpl_filter(regex="more", replace="") private MetadataString	name;
-
-/**
-	null
-**/ 
-
+	 @simpl_scalar private MetadataString	name;
 	 @simpl_scalar private MetadataParsedURL	genreLink;
 
 /**
