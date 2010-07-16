@@ -45,7 +45,7 @@ import java.util.*;
 @simpl_inherit
 
 public class  YahooMediaRss
-extends  Metadata
+extends  Dc
 {
 
 

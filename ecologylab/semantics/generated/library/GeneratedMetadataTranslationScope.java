@@ -122,6 +122,8 @@ ecologylab.semantics.generated.library.misc.Nsdl.class,
 
 ecologylab.semantics.generated.library.Restaurant.class,
 
+ecologylab.semantics.generated.library.rss.Dc.class,
+
 ecologylab.semantics.generated.library.rss.Item.class,
 
 MediaContent.class,
