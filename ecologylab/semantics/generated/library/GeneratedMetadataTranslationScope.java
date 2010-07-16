@@ -11,10 +11,14 @@ This is a generated code. DO NOT edit or modify it.
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
+import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.imdb.*;
+import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.rss.*;
+import ecologylab.semantics.generated.library.scholarlyPublication.*;
+import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
@@ -42,117 +46,115 @@ This is the tranlation scope class for generated files
 
 public class GeneratedMetadataTranslationScope
 {protected static final Class TRANSLATIONS[]=
-	{Pdf.class,
+	{ecologylab.semantics.generated.library.Pdf.class,
 
-AcmProceeding.class,
+ecologylab.semantics.generated.library.scholarlyPublication.AcmProceeding.class,
 
-MmArtwork.class,
+ecologylab.semantics.generated.library.MmArtwork.class,
 
-Artwork.class,
+ecologylab.semantics.generated.library.Artwork.class,
 
 HotSearch.class,
 
-GoogleTrends.class,
+ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
 
 Bookmark.class,
 
-DeliciousHomepage.class,
+ecologylab.semantics.generated.library.DeliciousHomepage.class,
 
-FlickrImageDetail.class,
+ecologylab.semantics.generated.library.flickr.FlickrImageDetail.class,
 
-FlickrTag.class,
+ecologylab.semantics.generated.library.flickr.FlickrTag.class,
 
-FlickrSearchTwo.class,
+ecologylab.semantics.generated.library.flickr.FlickrSearchTwo.class,
 
-FlickrImage.class,
+ecologylab.semantics.generated.library.flickr.FlickrImage.class,
 
-FlickrTags.class,
+ecologylab.semantics.generated.library.flickr.FlickrTags.class,
 
-FlickrImageDetailTwo.class,
+ecologylab.semantics.generated.library.flickr.FlickrImageDetailTwo.class,
 
-FlickrAuthor.class,
+ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
-AuthorPhotos.class,
+ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
-FlickrSearch.class,
+ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
 
-FlickrTagsInteresting.class,
+ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
 
-FlickrLink.class,
+ecologylab.semantics.generated.library.flickr.FlickrLink.class,
 
-RelatedPhoto.class,
+ecologylab.semantics.generated.library.flickr.RelatedPhoto.class,
 
-GooglePatent.class,
+ecologylab.semantics.generated.library.GooglePatent.class,
 
-GoogleSorry.class,
+ecologylab.semantics.generated.library.GoogleSorry.class,
 
-GooglePatentImage.class,
+ecologylab.semantics.generated.library.GooglePatentImage.class,
 
-PersonDetails.class,
+ecologylab.semantics.generated.library.imdb.PersonDetails.class,
 
 Genre.class,
 
 CastMember.class,
 
-ImdbTitle.class,
+ecologylab.semantics.generated.library.imdb.ImdbTitle.class,
 
-ImdbGenre.class,
+ecologylab.semantics.generated.library.imdb.ImdbGenre.class,
 
-ImdbChart.class,
+ecologylab.semantics.generated.library.imdb.ImdbChart.class,
 
-BirthDetail.class,
+ecologylab.semantics.generated.library.imdb.BirthDetail.class,
 
-Lolz.class,
+ecologylab.semantics.generated.library.Lolz.class,
 
-Topic.class,
+ecologylab.semantics.generated.library.misc.DcDocument.class,
 
-DcDocument.class,
+ecologylab.semantics.generated.library.misc.Icdl.class,
 
-Icdl.class,
+ecologylab.semantics.generated.library.misc.Text.class,
 
-Text.class,
+ecologylab.semantics.generated.library.misc.IcdlImage.class,
 
-IcdlImage.class,
+ecologylab.semantics.generated.library.misc.Dlms.class,
 
-Dlms.class,
+ecologylab.semantics.generated.library.misc.Nsdl.class,
 
-Nsdl.class,
+ecologylab.semantics.generated.library.Restaurant.class,
 
-Restaurant.class,
-
-Item.class,
+ecologylab.semantics.generated.library.rss.Item.class,
 
 MediaContent.class,
 
-YahooMediaRss.class,
+ecologylab.semantics.generated.library.rss.YahooMediaRss.class,
 
-Rss.class,
+Channel.class,
 
-Link.class,
+ecologylab.semantics.generated.library.rss.Rss.class,
 
-Link.class,
+Tag.class,
 
-ScholarlyArticle.class,
+ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.class,
 
-Author.class,
+ecologylab.semantics.generated.library.scholarlyPublication.Author.class,
 
-Source.class,
+ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
 
 Result.class,
 
-YahooResultSet.class,
+ecologylab.semantics.generated.library.search.YahooResultSet.class,
 
-Search.class,
+ecologylab.semantics.generated.library.search.Search.class,
 
-SearchResult.class,
+ecologylab.semantics.generated.library.search.SearchResult.class,
 
-YahooThumbnail.class,
+ecologylab.semantics.generated.library.search.YahooThumbnail.class,
 
-Tumblr.class,
+ecologylab.semantics.generated.library.Tumblr.class,
 
-WeatherReport.class,
+ecologylab.semantics.generated.library.WeatherReport.class,
 
-WikipediaPage.class,
+ecologylab.semantics.generated.library.WikipediaPage.class,
 
 Anchor.class,
 
@@ -164,9 +166,19 @@ Thumbinner.class,
 
 Anchor.class,
 
-WikipediaPageType.class,
+ecologylab.semantics.generated.library.WikipediaPageType.class,
 
-UrbanSpoonGenre.class,
+ecologylab.semantics.generated.library.UrbanSpoonGenre.class,
+
+ecologylab.semantics.generated.library.uva.Topic.class,
+
+ecologylab.semantics.generated.library.uva.Model.class,
+
+ecologylab.semantics.generated.library.uva.TopicCluster.class,
+
+ecologylab.semantics.generated.library.uva.DocumentSet.class,
+
+ecologylab.semantics.generated.library.uva.KeywordSet.class,
 
 
 };

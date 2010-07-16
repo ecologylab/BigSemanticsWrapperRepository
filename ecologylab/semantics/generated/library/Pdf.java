@@ -11,10 +11,14 @@ This is a generated code. DO NOT edit or modify it.
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
-import ecologylab.semantics.library.flickr.*;
-import ecologylab.semantics.library.imdb.*;
-import ecologylab.semantics.library.scholarlyPublication.*;
-import ecologylab.semantics.library.uva.*;
+import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.imdb.*;
+import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.rss.*;
+import ecologylab.semantics.generated.library.scholarlyPublication.*;
+import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
@@ -61,7 +65,7 @@ extends  Document
 	Key Words of the document
 **/ 
 
-	 @simpl_scalar private MetadataString	keywords;
+	 @simpl_scalar private MetadataString	pdfKeywordsString;
 
 /**
 	Subject of the document
@@ -218,61 +222,61 @@ public void hwSetSummaryMetadata(MetadataString summary)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for keywords
+	Lazy Evaluation for pdfKeywordsString
 **/ 
 
-public MetadataString	keywords()
+public MetadataString	pdfKeywordsString()
 {
-MetadataString	result	=this.keywords;
+MetadataString	result	=this.pdfKeywordsString;
 if(result == null)
 {
 result = new MetadataString();
-this.keywords	=	 result;
+this.pdfKeywordsString	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field keywords
+	Gets the value of the field pdfKeywordsString
 **/ 
 
-public String getKeywords(){
-return keywords().getValue();
+public String getPdfKeywordsString(){
+return pdfKeywordsString().getValue();
 }
 
 /**
-	Sets the value of the field keywords
+	Sets the value of the field pdfKeywordsString
 **/ 
 
-public void setKeywords( String keywords )
+public void setPdfKeywordsString( String pdfKeywordsString )
 {
-this.keywords().setValue(keywords);
+this.pdfKeywordsString().setValue(pdfKeywordsString);
 }
 
 /**
-	The heavy weight setter method for field keywords
+	The heavy weight setter method for field pdfKeywordsString
 **/ 
 
-public void hwSetKeywords( String keywords )
+public void hwSetPdfKeywordsString( String pdfKeywordsString )
 {
-this.keywords().setValue(keywords);
+this.pdfKeywordsString().setValue(pdfKeywordsString);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the keywords directly
+	 Sets the pdfKeywordsString directly
 **/ 
 
-public void setKeywordsMetadata(MetadataString keywords)
-{	this.keywords = keywords;
+public void setPdfKeywordsStringMetadata(MetadataString pdfKeywordsString)
+{	this.pdfKeywordsString = pdfKeywordsString;
 }
 /**
-	Heavy Weight Direct setter method for keywords
+	Heavy Weight Direct setter method for pdfKeywordsString
 **/ 
 
-public void hwSetKeywordsMetadata(MetadataString keywords)
-{	 if(this.keywords!=null && this.keywords.getValue()!=null && hasTermVector())
-		 termVector().remove(this.keywords.termVector());
-	 this.keywords = keywords;
+public void hwSetPdfKeywordsStringMetadata(MetadataString pdfKeywordsString)
+{	 if(this.pdfKeywordsString!=null && this.pdfKeywordsString.getValue()!=null && hasTermVector())
+		 termVector().remove(this.pdfKeywordsString.termVector());
+	 this.pdfKeywordsString = pdfKeywordsString;
 	rebuildCompositeTermVector();
 }
 /**
