@@ -68,23 +68,33 @@ ecologylab.semantics.generated.library.flickr.FlickrTag.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrSearchTwo.class,
 
-ecologylab.semantics.generated.library.flickr.FlickrImage.class,
-
 ecologylab.semantics.generated.library.flickr.FlickrTags.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrImageDetailTwo.class,
+
+ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
+
+FlickrLink.class,
+
+FlickrLink.class,
+
+ecologylab.semantics.generated.library.flickr.FlickrNearby.class,
+
+ecologylab.semantics.generated.library.flickr.FlickrLink.class,
+
+ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
+
+ecologylab.semantics.generated.library.flickr.FlickrImage.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
 ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
-ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
-
-ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
-
-ecologylab.semantics.generated.library.flickr.FlickrLink.class,
-
 ecologylab.semantics.generated.library.flickr.RelatedPhoto.class,
+
+ImageTitle.class,
+
+ecologylab.semantics.generated.library.GoogleImage.class,
 
 ecologylab.semantics.generated.library.GooglePatent.class,
 
