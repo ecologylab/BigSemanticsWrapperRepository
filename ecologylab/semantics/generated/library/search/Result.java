@@ -37,7 +37,7 @@ public class Result extends Metadata{
 	@xml_tag("Summary") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	summary;
 	@xml_tag("Url") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	url;
 	@xml_tag("RefererUrl") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	refererUrl;
-	@xml_tag("ModificationDate") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataDate	modificationDate;
+	@xml_tag("ModificationDate") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	modificationDate;
 	@xml_tag("MimeType") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	mimeType;
 
 private @xml_tag("Thumbnail") @simpl_composite YahooThumbnail	thumbnail;
@@ -295,12 +295,12 @@ public void hwSetRefererUrlMetadata(MetadataParsedURL refererUrl)
 	Lazy Evaluation for modificationDate
 **/ 
 
-public MetadataDate	modificationDate()
+public MetadataString	modificationDate()
 {
-MetadataDate	result	=this.modificationDate;
+MetadataString	result	=this.modificationDate;
 if(result == null)
 {
-result = new MetadataDate();
+result = new MetadataString();
 this.modificationDate	=	 result;
 }
 return result;
@@ -310,7 +310,7 @@ return result;
 	Gets the value of the field modificationDate
 **/ 
 
-public Date getModificationDate(){
+public String getModificationDate(){
 return modificationDate().getValue();
 }
 
@@ -318,7 +318,7 @@ return modificationDate().getValue();
 	Sets the value of the field modificationDate
 **/ 
 
-public void setModificationDate( Date modificationDate )
+public void setModificationDate( String modificationDate )
 {
 this.modificationDate().setValue(modificationDate);
 }
@@ -327,7 +327,7 @@ this.modificationDate().setValue(modificationDate);
 	The heavy weight setter method for field modificationDate
 **/ 
 
-public void hwSetModificationDate( Date modificationDate )
+public void hwSetModificationDate( String modificationDate )
 {
 this.modificationDate().setValue(modificationDate);
 rebuildCompositeTermVector();
@@ -336,14 +336,14 @@ rebuildCompositeTermVector();
 	 Sets the modificationDate directly
 **/ 
 
-public void setModificationDateMetadata(MetadataDate modificationDate)
+public void setModificationDateMetadata(MetadataString modificationDate)
 {	this.modificationDate = modificationDate;
 }
 /**
 	Heavy Weight Direct setter method for modificationDate
 **/ 
 
-public void hwSetModificationDateMetadata(MetadataDate modificationDate)
+public void hwSetModificationDateMetadata(MetadataString modificationDate)
 {	 if(this.modificationDate!=null && this.modificationDate.getValue()!=null && hasTermVector())
 		 termVector().remove(this.modificationDate.termVector());
 	 this.modificationDate = modificationDate;
