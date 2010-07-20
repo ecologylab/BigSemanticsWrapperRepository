@@ -92,9 +92,13 @@ ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
 ecologylab.semantics.generated.library.flickr.RelatedPhoto.class,
 
-ImageTitle.class,
+ecologylab.semantics.generated.library.GoogleImageSearchPage.class,
 
-ecologylab.semantics.generated.library.GoogleImage.class,
+ImageResult.class,
+
+GoogleImageThumbnail.class,
+
+ecologylab.semantics.generated.library.GoogleImageSearchType.class,
 
 ecologylab.semantics.generated.library.GooglePatent.class,
 
