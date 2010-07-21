@@ -49,7 +49,6 @@ extends  GoogleImageSearchType
 {
 
 	@simpl_collection("image_result") private ArrayList<ImageResult>	imageResults;
-	@simpl_collection("google_image_thumbnail") private ArrayList<GoogleImageThumbnail>	thumbnails;
 
 /**
 	Constructor
@@ -99,38 +98,6 @@ this.imageResults = imageResults ;
 
 public  ArrayList<ImageResult> getImageResults(){
 return this.imageResults;
-}
-
-/**
-	Lazy Evaluation for thumbnails
-**/ 
-
-public  ArrayList<GoogleImageThumbnail>	thumbnails()
-{
- ArrayList<GoogleImageThumbnail>	result	=this.thumbnails;
-if(result == null)
-{
-result = new  ArrayList<GoogleImageThumbnail>();
-this.thumbnails	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field thumbnails
-**/ 
-
-public void setThumbnails(  ArrayList<GoogleImageThumbnail> thumbnails )
-{
-this.thumbnails = thumbnails ;
-}
-
-/**
-	Get the value of field thumbnails
-**/ 
-
-public  ArrayList<GoogleImageThumbnail> getThumbnails(){
-return this.thumbnails;
 }
 
 }

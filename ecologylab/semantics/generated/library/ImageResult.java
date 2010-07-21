@@ -38,7 +38,7 @@ public class ImageResult extends Metadata{
 	image title
 **/ 
 
-	 @simpl_scalar private MetadataString	title;
+	 @simpl_scalar private MetadataString	imgTitle;
 
 /**
 	image summary
@@ -47,22 +47,16 @@ public class ImageResult extends Metadata{
 	 @simpl_scalar private MetadataString	summary;
 
 /**
-	image url
+	raw parsed URL for extracting values 'url', 'referer_url'
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	url;
+	 @simpl_scalar private MetadataString	rawUrl;
 
 /**
-	image ref url
+	mime type should be extracted from this property
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	refererUrl;
-
-/**
-	image mime type
-**/ 
-
-	 @simpl_scalar private MetadataString	mimeType;
+	 @simpl_scalar private MetadataString	rawProperty;
 
 /**
 	Constructor
@@ -83,61 +77,61 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for title
+	Lazy Evaluation for imgTitle
 **/ 
 
-public MetadataString	title()
+public MetadataString	imgTitle()
 {
-MetadataString	result	=this.title;
+MetadataString	result	=this.imgTitle;
 if(result == null)
 {
 result = new MetadataString();
-this.title	=	 result;
+this.imgTitle	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field title
+	Gets the value of the field imgTitle
 **/ 
 
-public String getTitle(){
-return title().getValue();
+public String getImgTitle(){
+return imgTitle().getValue();
 }
 
 /**
-	Sets the value of the field title
+	Sets the value of the field imgTitle
 **/ 
 
-public void setTitle( String title )
+public void setImgTitle( String imgTitle )
 {
-this.title().setValue(title);
+this.imgTitle().setValue(imgTitle);
 }
 
 /**
-	The heavy weight setter method for field title
+	The heavy weight setter method for field imgTitle
 **/ 
 
-public void hwSetTitle( String title )
+public void hwSetImgTitle( String imgTitle )
 {
-this.title().setValue(title);
+this.imgTitle().setValue(imgTitle);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the title directly
+	 Sets the imgTitle directly
 **/ 
 
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
+public void setImgTitleMetadata(MetadataString imgTitle)
+{	this.imgTitle = imgTitle;
 }
 /**
-	Heavy Weight Direct setter method for title
+	Heavy Weight Direct setter method for imgTitle
 **/ 
 
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
+public void hwSetImgTitleMetadata(MetadataString imgTitle)
+{	 if(this.imgTitle!=null && this.imgTitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.imgTitle.termVector());
+	 this.imgTitle = imgTitle;
 	rebuildCompositeTermVector();
 }
 /**
@@ -199,176 +193,118 @@ public void hwSetSummaryMetadata(MetadataString summary)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for url
+	Lazy Evaluation for rawUrl
 **/ 
 
-public MetadataParsedURL	url()
+public MetadataString	rawUrl()
 {
-MetadataParsedURL	result	=this.url;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.url	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field url
-**/ 
-
-public ParsedURL getUrl(){
-return url().getValue();
-}
-
-/**
-	Sets the value of the field url
-**/ 
-
-public void setUrl( ParsedURL url )
-{
-this.url().setValue(url);
-}
-
-/**
-	The heavy weight setter method for field url
-**/ 
-
-public void hwSetUrl( ParsedURL url )
-{
-this.url().setValue(url);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the url directly
-**/ 
-
-public void setUrlMetadata(MetadataParsedURL url)
-{	this.url = url;
-}
-/**
-	Heavy Weight Direct setter method for url
-**/ 
-
-public void hwSetUrlMetadata(MetadataParsedURL url)
-{	 if(this.url!=null && this.url.getValue()!=null && hasTermVector())
-		 termVector().remove(this.url.termVector());
-	 this.url = url;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for refererUrl
-**/ 
-
-public MetadataParsedURL	refererUrl()
-{
-MetadataParsedURL	result	=this.refererUrl;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.refererUrl	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field refererUrl
-**/ 
-
-public ParsedURL getRefererUrl(){
-return refererUrl().getValue();
-}
-
-/**
-	Sets the value of the field refererUrl
-**/ 
-
-public void setRefererUrl( ParsedURL refererUrl )
-{
-this.refererUrl().setValue(refererUrl);
-}
-
-/**
-	The heavy weight setter method for field refererUrl
-**/ 
-
-public void hwSetRefererUrl( ParsedURL refererUrl )
-{
-this.refererUrl().setValue(refererUrl);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the refererUrl directly
-**/ 
-
-public void setRefererUrlMetadata(MetadataParsedURL refererUrl)
-{	this.refererUrl = refererUrl;
-}
-/**
-	Heavy Weight Direct setter method for refererUrl
-**/ 
-
-public void hwSetRefererUrlMetadata(MetadataParsedURL refererUrl)
-{	 if(this.refererUrl!=null && this.refererUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.refererUrl.termVector());
-	 this.refererUrl = refererUrl;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for mimeType
-**/ 
-
-public MetadataString	mimeType()
-{
-MetadataString	result	=this.mimeType;
+MetadataString	result	=this.rawUrl;
 if(result == null)
 {
 result = new MetadataString();
-this.mimeType	=	 result;
+this.rawUrl	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field mimeType
+	Gets the value of the field rawUrl
 **/ 
 
-public String getMimeType(){
-return mimeType().getValue();
+public String getRawUrl(){
+return rawUrl().getValue();
 }
 
 /**
-	Sets the value of the field mimeType
+	Sets the value of the field rawUrl
 **/ 
 
-public void setMimeType( String mimeType )
+public void setRawUrl( String rawUrl )
 {
-this.mimeType().setValue(mimeType);
+this.rawUrl().setValue(rawUrl);
 }
 
 /**
-	The heavy weight setter method for field mimeType
+	The heavy weight setter method for field rawUrl
 **/ 
 
-public void hwSetMimeType( String mimeType )
+public void hwSetRawUrl( String rawUrl )
 {
-this.mimeType().setValue(mimeType);
+this.rawUrl().setValue(rawUrl);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the mimeType directly
+	 Sets the rawUrl directly
 **/ 
 
-public void setMimeTypeMetadata(MetadataString mimeType)
-{	this.mimeType = mimeType;
+public void setRawUrlMetadata(MetadataString rawUrl)
+{	this.rawUrl = rawUrl;
 }
 /**
-	Heavy Weight Direct setter method for mimeType
+	Heavy Weight Direct setter method for rawUrl
 **/ 
 
-public void hwSetMimeTypeMetadata(MetadataString mimeType)
-{	 if(this.mimeType!=null && this.mimeType.getValue()!=null && hasTermVector())
-		 termVector().remove(this.mimeType.termVector());
-	 this.mimeType = mimeType;
+public void hwSetRawUrlMetadata(MetadataString rawUrl)
+{	 if(this.rawUrl!=null && this.rawUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.rawUrl.termVector());
+	 this.rawUrl = rawUrl;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for rawProperty
+**/ 
+
+public MetadataString	rawProperty()
+{
+MetadataString	result	=this.rawProperty;
+if(result == null)
+{
+result = new MetadataString();
+this.rawProperty	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field rawProperty
+**/ 
+
+public String getRawProperty(){
+return rawProperty().getValue();
+}
+
+/**
+	Sets the value of the field rawProperty
+**/ 
+
+public void setRawProperty( String rawProperty )
+{
+this.rawProperty().setValue(rawProperty);
+}
+
+/**
+	The heavy weight setter method for field rawProperty
+**/ 
+
+public void hwSetRawProperty( String rawProperty )
+{
+this.rawProperty().setValue(rawProperty);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the rawProperty directly
+**/ 
+
+public void setRawPropertyMetadata(MetadataString rawProperty)
+{	this.rawProperty = rawProperty;
+}
+/**
+	Heavy Weight Direct setter method for rawProperty
+**/ 
+
+public void hwSetRawPropertyMetadata(MetadataString rawProperty)
+{	 if(this.rawProperty!=null && this.rawProperty.getValue()!=null && hasTermVector())
+		 termVector().remove(this.rawProperty.termVector());
+	 this.rawProperty = rawProperty;
 	rebuildCompositeTermVector();
 }}

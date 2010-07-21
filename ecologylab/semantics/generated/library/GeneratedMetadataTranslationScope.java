@@ -96,8 +96,6 @@ ecologylab.semantics.generated.library.GoogleImageSearchPage.class,
 
 ImageResult.class,
 
-GoogleImageThumbnail.class,
-
 ecologylab.semantics.generated.library.GoogleImageSearchType.class,
 
 ecologylab.semantics.generated.library.GooglePatent.class,
