@@ -15,10 +15,10 @@ import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
@@ -50,6 +50,8 @@ extends  Document
 
 	@xml_tag("dc:creator") @simpl_scalar private MetadataString	dcCreator;
 	@xml_tag("dc:subject") @simpl_scalar private MetadataString	dcSubject;
+	@xml_tag("dc:description") @simpl_scalar private MetadataString	dcDescription;
+	@xml_tag("dc:title") @simpl_scalar private MetadataString	dcTitle;
 	@xml_tag("dc:date") @simpl_scalar private MetadataDate	dcDate;
 
 /**
@@ -184,6 +186,122 @@ public void hwSetDcSubjectMetadata(MetadataString dcSubject)
 {	 if(this.dcSubject!=null && this.dcSubject.getValue()!=null && hasTermVector())
 		 termVector().remove(this.dcSubject.termVector());
 	 this.dcSubject = dcSubject;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for dcDescription
+**/ 
+
+public MetadataString	dcDescription()
+{
+MetadataString	result	=this.dcDescription;
+if(result == null)
+{
+result = new MetadataString();
+this.dcDescription	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field dcDescription
+**/ 
+
+public String getDcDescription(){
+return dcDescription().getValue();
+}
+
+/**
+	Sets the value of the field dcDescription
+**/ 
+
+public void setDcDescription( String dcDescription )
+{
+this.dcDescription().setValue(dcDescription);
+}
+
+/**
+	The heavy weight setter method for field dcDescription
+**/ 
+
+public void hwSetDcDescription( String dcDescription )
+{
+this.dcDescription().setValue(dcDescription);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the dcDescription directly
+**/ 
+
+public void setDcDescriptionMetadata(MetadataString dcDescription)
+{	this.dcDescription = dcDescription;
+}
+/**
+	Heavy Weight Direct setter method for dcDescription
+**/ 
+
+public void hwSetDcDescriptionMetadata(MetadataString dcDescription)
+{	 if(this.dcDescription!=null && this.dcDescription.getValue()!=null && hasTermVector())
+		 termVector().remove(this.dcDescription.termVector());
+	 this.dcDescription = dcDescription;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for dcTitle
+**/ 
+
+public MetadataString	dcTitle()
+{
+MetadataString	result	=this.dcTitle;
+if(result == null)
+{
+result = new MetadataString();
+this.dcTitle	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field dcTitle
+**/ 
+
+public String getDcTitle(){
+return dcTitle().getValue();
+}
+
+/**
+	Sets the value of the field dcTitle
+**/ 
+
+public void setDcTitle( String dcTitle )
+{
+this.dcTitle().setValue(dcTitle);
+}
+
+/**
+	The heavy weight setter method for field dcTitle
+**/ 
+
+public void hwSetDcTitle( String dcTitle )
+{
+this.dcTitle().setValue(dcTitle);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the dcTitle directly
+**/ 
+
+public void setDcTitleMetadata(MetadataString dcTitle)
+{	this.dcTitle = dcTitle;
+}
+/**
+	Heavy Weight Direct setter method for dcTitle
+**/ 
+
+public void hwSetDcTitleMetadata(MetadataString dcTitle)
+{	 if(this.dcTitle!=null && this.dcTitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.dcTitle.termVector());
+	 this.dcTitle = dcTitle;
 	rebuildCompositeTermVector();
 }
 /**

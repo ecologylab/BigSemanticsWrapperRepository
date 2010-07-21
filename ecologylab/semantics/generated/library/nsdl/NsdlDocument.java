@@ -1,12 +1,4 @@
-package ecologylab.semantics.generated.library;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.generated.library.nsdl;
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -37,24 +29,18 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Google image search type
-**/ 
-
 @simpl_inherit
+@xml_tag("document")
+public class NsdlDocument extends Metadata{
 
-public class  GoogleImageSearchType
-extends  Document
-{
 
-	@simpl_collection("image_result") @simpl_nowrap private ArrayList<ImageResult>	imageResults;
-
+private  @simpl_composite Header	header;
+private @xml_tag("fields") @simpl_composite Dc	nsdlDocument;
 /**
 	Constructor
 **/ 
 
-public GoogleImageSearchType()
+public NsdlDocument()
 {
  super();
 }
@@ -63,42 +49,72 @@ public GoogleImageSearchType()
 	Constructor
 **/ 
 
-public GoogleImageSearchType(MetaMetadata metaMetadata)
+public NsdlDocument(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for imageResults
+	Lazy Evaluation for header
 **/ 
 
-public  ArrayList<ImageResult>	imageResults()
+public Header	header()
 {
- ArrayList<ImageResult>	result	=this.imageResults;
+Header	result	=this.header;
 if(result == null)
 {
-result = new  ArrayList<ImageResult>();
-this.imageResults	=	 result;
+result = new Header();
+this.header	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field imageResults
+	Set the value of field header
 **/ 
 
-public void setImageResults(  ArrayList<ImageResult> imageResults )
+public void setHeader( Header header )
 {
-this.imageResults = imageResults ;
+this.header = header ;
 }
 
 /**
-	Get the value of field imageResults
+	Get the value of field header
 **/ 
 
-public  ArrayList<ImageResult> getImageResults(){
-return this.imageResults;
+public Header getHeader(){
+return this.header;
 }
 
+/**
+	Lazy Evaluation for nsdlDocument
+**/ 
+
+public Dc	nsdlDocument()
+{
+Dc	result	=this.nsdlDocument;
+if(result == null)
+{
+result = new Dc();
+this.nsdlDocument	=	 result;
+}
+return result;
 }
 
+/**
+	Set the value of field nsdlDocument
+**/ 
+
+public void setNsdlDocument( Dc nsdlDocument )
+{
+this.nsdlDocument = nsdlDocument ;
+}
+
+/**
+	Get the value of field nsdlDocument
+**/ 
+
+public Dc getNsdlDocument(){
+return this.nsdlDocument;
+}
+}

@@ -1,12 +1,4 @@
-package ecologylab.semantics.generated.library;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.generated.library.nsdl;
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -37,24 +29,17 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Google image search type
-**/ 
-
 @simpl_inherit
+@xml_tag("SearchResults")
+public class SearchResults extends Metadata{
 
-public class  GoogleImageSearchType
-extends  Document
-{
-
-	@simpl_collection("image_result") @simpl_nowrap private ArrayList<ImageResult>	imageResults;
+	@simpl_collection("nsdl_document") private ArrayList<NsdlDocument>	results;
 
 /**
 	Constructor
 **/ 
 
-public GoogleImageSearchType()
+public SearchResults()
 {
  super();
 }
@@ -63,42 +48,40 @@ public GoogleImageSearchType()
 	Constructor
 **/ 
 
-public GoogleImageSearchType(MetaMetadata metaMetadata)
+public SearchResults(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for imageResults
+	Lazy Evaluation for results
 **/ 
 
-public  ArrayList<ImageResult>	imageResults()
+public  ArrayList<NsdlDocument>	results()
 {
- ArrayList<ImageResult>	result	=this.imageResults;
+ ArrayList<NsdlDocument>	result	=this.results;
 if(result == null)
 {
-result = new  ArrayList<ImageResult>();
-this.imageResults	=	 result;
+result = new  ArrayList<NsdlDocument>();
+this.results	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field imageResults
+	Set the value of field results
 **/ 
 
-public void setImageResults(  ArrayList<ImageResult> imageResults )
+public void setResults(  ArrayList<NsdlDocument> results )
 {
-this.imageResults = imageResults ;
+this.results = results ;
 }
 
 /**
-	Get the value of field imageResults
+	Get the value of field results
 **/ 
 
-public  ArrayList<ImageResult> getImageResults(){
-return this.imageResults;
+public  ArrayList<NsdlDocument> getResults(){
+return this.results;
 }
-
 }
-

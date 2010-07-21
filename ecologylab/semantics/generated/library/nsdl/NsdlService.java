@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.nsdl;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -37,24 +37,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Google image search type
-**/ 
-
 @simpl_inherit
-
-public class  GoogleImageSearchType
-extends  Document
+@xml_tag("NSDLSearchService")
+public class  NsdlService
+extends  Metadata
 {
 
-	@simpl_collection("image_result") @simpl_nowrap private ArrayList<ImageResult>	imageResults;
 
+private @xml_tag("SearchResults") @simpl_composite SearchResults	searchResults;
 /**
 	Constructor
 **/ 
 
-public GoogleImageSearchType()
+public NsdlService()
 {
  super();
 }
@@ -63,41 +58,41 @@ public GoogleImageSearchType()
 	Constructor
 **/ 
 
-public GoogleImageSearchType(MetaMetadata metaMetadata)
+public NsdlService(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for imageResults
+	Lazy Evaluation for searchResults
 **/ 
 
-public  ArrayList<ImageResult>	imageResults()
+public SearchResults	searchResults()
 {
- ArrayList<ImageResult>	result	=this.imageResults;
+SearchResults	result	=this.searchResults;
 if(result == null)
 {
-result = new  ArrayList<ImageResult>();
-this.imageResults	=	 result;
+result = new SearchResults();
+this.searchResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field imageResults
+	Set the value of field searchResults
 **/ 
 
-public void setImageResults(  ArrayList<ImageResult> imageResults )
+public void setSearchResults( SearchResults searchResults )
 {
-this.imageResults = imageResults ;
+this.searchResults = searchResults ;
 }
 
 /**
-	Get the value of field imageResults
+	Get the value of field searchResults
 **/ 
 
-public  ArrayList<ImageResult> getImageResults(){
-return this.imageResults;
+public SearchResults getSearchResults(){
+return this.searchResults;
 }
 
 }

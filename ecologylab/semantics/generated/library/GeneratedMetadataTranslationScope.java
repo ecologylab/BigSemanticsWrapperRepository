@@ -15,10 +15,10 @@ import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
@@ -182,17 +182,23 @@ Anchor.class,
 
 ecologylab.semantics.generated.library.WikipediaPageType.class,
 
+Header.class,
+
+NsdlDocument.class,
+
+Header.class,
+
+SearchResults.class,
+
+Header.class,
+
+NsdlDocument.class,
+
+Header.class,
+
+ecologylab.semantics.generated.library.nsdl.NsdlService.class,
+
 ecologylab.semantics.generated.library.UrbanSpoonGenre.class,
-
-ecologylab.semantics.generated.library.uva.Topic.class,
-
-ecologylab.semantics.generated.library.uva.Model.class,
-
-ecologylab.semantics.generated.library.uva.TopicCluster.class,
-
-ecologylab.semantics.generated.library.uva.DocumentSet.class,
-
-ecologylab.semantics.generated.library.uva.KeywordSet.class,
 
 
 };
