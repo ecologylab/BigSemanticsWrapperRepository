@@ -45,7 +45,7 @@ import java.util.*;
 @simpl_inherit
 
 public class  Dc
-extends  Metadata
+extends  Document
 {
 
 	@xml_tag("dc:creator") @simpl_scalar private MetadataString	dcCreator;
