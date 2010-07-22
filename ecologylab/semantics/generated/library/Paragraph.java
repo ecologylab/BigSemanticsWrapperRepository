@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Paragraph extends Metadata{
 
-	 @simpl_scalar private MetadataString	paragraphText;
 	@simpl_collection("anchor") private ArrayList<Anchor>	anchors;
+	 @simpl_scalar private MetadataString	paragraphText;
 
 /**
 	Constructor
@@ -52,9 +52,41 @@ public Paragraph()
 	Constructor
 **/ 
 
-public Paragraph(MetaMetadata metaMetadata)
+public Paragraph(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
+}
+
+/**
+	Lazy Evaluation for anchors
+**/ 
+
+public  ArrayList<Anchor>	anchors()
+{
+ ArrayList<Anchor>	result	=this.anchors;
+if(result == null)
+{
+result = new  ArrayList<Anchor>();
+this.anchors	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field anchors
+**/ 
+
+public void setAnchors(  ArrayList<Anchor> anchors )
+{
+this.anchors = anchors ;
+}
+
+/**
+	Get the value of field anchors
+**/ 
+
+public  ArrayList<Anchor> getAnchors(){
+return this.anchors;
 }
 
 /**
@@ -114,36 +146,4 @@ public void hwSetParagraphTextMetadata(MetadataString paragraphText)
 		 termVector().remove(this.paragraphText.termVector());
 	 this.paragraphText = paragraphText;
 	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for anchors
-**/ 
-
-public  ArrayList<Anchor>	anchors()
-{
- ArrayList<Anchor>	result	=this.anchors;
-if(result == null)
-{
-result = new  ArrayList<Anchor>();
-this.anchors	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field anchors
-**/ 
-
-public void setAnchors(  ArrayList<Anchor> anchors )
-{
-this.anchors = anchors ;
-}
-
-/**
-	Get the value of field anchors
-**/ 
-
-public  ArrayList<Anchor> getAnchors(){
-return this.anchors;
-}
-}
+}}

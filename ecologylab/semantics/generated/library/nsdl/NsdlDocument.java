@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -33,12 +33,12 @@ import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
 @simpl_inherit
-@xml_tag("document")
+
 public class NsdlDocument extends Metadata{
 
 
-private  @simpl_composite Header	header;
 private @xml_tag("fields") @simpl_composite Dc	nsdlDocument;
+private  @simpl_composite Header	header;
 /**
 	Constructor
 **/ 
@@ -52,41 +52,9 @@ public NsdlDocument()
 	Constructor
 **/ 
 
-public NsdlDocument(MetaMetadata metaMetadata)
+public NsdlDocument(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
-}
-
-/**
-	Lazy Evaluation for header
-**/ 
-
-public Header	header()
-{
-Header	result	=this.header;
-if(result == null)
-{
-result = new Header();
-this.header	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field header
-**/ 
-
-public void setHeader( Header header )
-{
-this.header = header ;
-}
-
-/**
-	Get the value of field header
-**/ 
-
-public Header getHeader(){
-return this.header;
 }
 
 /**
@@ -119,5 +87,37 @@ this.nsdlDocument = nsdlDocument ;
 
 public Dc getNsdlDocument(){
 return this.nsdlDocument;
+}
+
+/**
+	Lazy Evaluation for header
+**/ 
+
+public Header	header()
+{
+Header	result	=this.header;
+if(result == null)
+{
+result = new Header();
+this.header	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field header
+**/ 
+
+public void setHeader( Header header )
+{
+this.header = header ;
+}
+
+/**
+	Get the value of field header
+**/ 
+
+public Header getHeader(){
+return this.header;
 }
 }

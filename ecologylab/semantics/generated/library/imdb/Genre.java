@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Genre extends Metadata{
 
-	 @simpl_scalar private MetadataString	name;
 	 @simpl_scalar private MetadataParsedURL	genreLink;
+	 @simpl_scalar private MetadataString	name;
 
 /**
 	Constructor
@@ -52,69 +52,11 @@ public Genre()
 	Constructor
 **/ 
 
-public Genre(MetaMetadata metaMetadata)
+public Genre(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for name
-**/ 
-
-public MetadataString	name()
-{
-MetadataString	result	=this.name;
-if(result == null)
-{
-result = new MetadataString();
-this.name	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field name
-**/ 
-
-public String getName(){
-return name().getValue();
-}
-
-/**
-	Sets the value of the field name
-**/ 
-
-public void setName( String name )
-{
-this.name().setValue(name);
-}
-
-/**
-	The heavy weight setter method for field name
-**/ 
-
-public void hwSetName( String name )
-{
-this.name().setValue(name);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the name directly
-**/ 
-
-public void setNameMetadata(MetadataString name)
-{	this.name = name;
-}
-/**
-	Heavy Weight Direct setter method for name
-**/ 
-
-public void hwSetNameMetadata(MetadataString name)
-{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
-		 termVector().remove(this.name.termVector());
-	 this.name = name;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for genreLink
 **/ 
@@ -171,5 +113,63 @@ public void hwSetGenreLinkMetadata(MetadataParsedURL genreLink)
 {	 if(this.genreLink!=null && this.genreLink.getValue()!=null && hasTermVector())
 		 termVector().remove(this.genreLink.termVector());
 	 this.genreLink = genreLink;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for name
+**/ 
+
+public MetadataString	name()
+{
+MetadataString	result	=this.name;
+if(result == null)
+{
+result = new MetadataString();
+this.name	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field name
+**/ 
+
+public String getName(){
+return name().getValue();
+}
+
+/**
+	Sets the value of the field name
+**/ 
+
+public void setName( String name )
+{
+this.name().setValue(name);
+}
+
+/**
+	The heavy weight setter method for field name
+**/ 
+
+public void hwSetName( String name )
+{
+this.name().setValue(name);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the name directly
+**/ 
+
+public void setNameMetadata(MetadataString name)
+{	this.name = name;
+}
+/**
+	Heavy Weight Direct setter method for name
+**/ 
+
+public void hwSetNameMetadata(MetadataString name)
+{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
+		 termVector().remove(this.name.termVector());
+	 this.name = name;
 	rebuildCompositeTermVector();
 }}

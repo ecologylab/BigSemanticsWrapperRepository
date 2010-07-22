@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -36,12 +36,12 @@ import java.util.*;
 
 public class Outline extends Metadata{
 
-	 @simpl_scalar private MetadataString	text;
-	 @simpl_scalar private MetadataString	title;
-	 @simpl_scalar private MetadataString	type;
-	@xml_tag("xmlUrl") @simpl_scalar private MetadataParsedURL	xmlUrl;
 	@xml_tag("htmlUrl") @simpl_scalar private MetadataParsedURL	htmlUrl;
+	 @simpl_scalar private MetadataString	title;
+	 @simpl_scalar private MetadataString	text;
 	@simpl_collection("outline") @simpl_nowrap private ArrayList<Outline>	outlines;
+	@xml_tag("xmlUrl") @simpl_scalar private MetadataParsedURL	xmlUrl;
+	 @simpl_scalar private MetadataString	type;
 
 /**
 	Constructor
@@ -56,67 +56,67 @@ public Outline()
 	Constructor
 **/ 
 
-public Outline(MetaMetadata metaMetadata)
+public Outline(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for text
+	Lazy Evaluation for htmlUrl
 **/ 
 
-public MetadataString	text()
+public MetadataParsedURL	htmlUrl()
 {
-MetadataString	result	=this.text;
+MetadataParsedURL	result	=this.htmlUrl;
 if(result == null)
 {
-result = new MetadataString();
-this.text	=	 result;
+result = new MetadataParsedURL();
+this.htmlUrl	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field text
+	Gets the value of the field htmlUrl
 **/ 
 
-public String getText(){
-return text().getValue();
+public ParsedURL getHtmlUrl(){
+return htmlUrl().getValue();
 }
 
 /**
-	Sets the value of the field text
+	Sets the value of the field htmlUrl
 **/ 
 
-public void setText( String text )
+public void setHtmlUrl( ParsedURL htmlUrl )
 {
-this.text().setValue(text);
+this.htmlUrl().setValue(htmlUrl);
 }
 
 /**
-	The heavy weight setter method for field text
+	The heavy weight setter method for field htmlUrl
 **/ 
 
-public void hwSetText( String text )
+public void hwSetHtmlUrl( ParsedURL htmlUrl )
 {
-this.text().setValue(text);
+this.htmlUrl().setValue(htmlUrl);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the text directly
+	 Sets the htmlUrl directly
 **/ 
 
-public void setTextMetadata(MetadataString text)
-{	this.text = text;
+public void setHtmlUrlMetadata(MetadataParsedURL htmlUrl)
+{	this.htmlUrl = htmlUrl;
 }
 /**
-	Heavy Weight Direct setter method for text
+	Heavy Weight Direct setter method for htmlUrl
 **/ 
 
-public void hwSetTextMetadata(MetadataString text)
-{	 if(this.text!=null && this.text.getValue()!=null && hasTermVector())
-		 termVector().remove(this.text.termVector());
-	 this.text = text;
+public void hwSetHtmlUrlMetadata(MetadataParsedURL htmlUrl)
+{	 if(this.htmlUrl!=null && this.htmlUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.htmlUrl.termVector());
+	 this.htmlUrl = htmlUrl;
 	rebuildCompositeTermVector();
 }
 /**
@@ -178,63 +178,95 @@ public void hwSetTitleMetadata(MetadataString title)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for type
+	Lazy Evaluation for text
 **/ 
 
-public MetadataString	type()
+public MetadataString	text()
 {
-MetadataString	result	=this.type;
+MetadataString	result	=this.text;
 if(result == null)
 {
 result = new MetadataString();
-this.type	=	 result;
+this.text	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field type
+	Gets the value of the field text
 **/ 
 
-public String getType(){
-return type().getValue();
+public String getText(){
+return text().getValue();
 }
 
 /**
-	Sets the value of the field type
+	Sets the value of the field text
 **/ 
 
-public void setType( String type )
+public void setText( String text )
 {
-this.type().setValue(type);
+this.text().setValue(text);
 }
 
 /**
-	The heavy weight setter method for field type
+	The heavy weight setter method for field text
 **/ 
 
-public void hwSetType( String type )
+public void hwSetText( String text )
 {
-this.type().setValue(type);
+this.text().setValue(text);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the type directly
+	 Sets the text directly
 **/ 
 
-public void setTypeMetadata(MetadataString type)
-{	this.type = type;
+public void setTextMetadata(MetadataString text)
+{	this.text = text;
 }
 /**
-	Heavy Weight Direct setter method for type
+	Heavy Weight Direct setter method for text
 **/ 
 
-public void hwSetTypeMetadata(MetadataString type)
-{	 if(this.type!=null && this.type.getValue()!=null && hasTermVector())
-		 termVector().remove(this.type.termVector());
-	 this.type = type;
+public void hwSetTextMetadata(MetadataString text)
+{	 if(this.text!=null && this.text.getValue()!=null && hasTermVector())
+		 termVector().remove(this.text.termVector());
+	 this.text = text;
 	rebuildCompositeTermVector();
 }
+/**
+	Lazy Evaluation for outlines
+**/ 
+
+public  ArrayList<Outline>	outlines()
+{
+ ArrayList<Outline>	result	=this.outlines;
+if(result == null)
+{
+result = new  ArrayList<Outline>();
+this.outlines	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field outlines
+**/ 
+
+public void setOutlines(  ArrayList<Outline> outlines )
+{
+this.outlines = outlines ;
+}
+
+/**
+	Get the value of field outlines
+**/ 
+
+public  ArrayList<Outline> getOutlines(){
+return this.outlines;
+}
+
 /**
 	Lazy Evaluation for xmlUrl
 **/ 
@@ -294,92 +326,60 @@ public void hwSetXmlUrlMetadata(MetadataParsedURL xmlUrl)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for htmlUrl
+	Lazy Evaluation for type
 **/ 
 
-public MetadataParsedURL	htmlUrl()
+public MetadataString	type()
 {
-MetadataParsedURL	result	=this.htmlUrl;
+MetadataString	result	=this.type;
 if(result == null)
 {
-result = new MetadataParsedURL();
-this.htmlUrl	=	 result;
+result = new MetadataString();
+this.type	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field htmlUrl
+	Gets the value of the field type
 **/ 
 
-public ParsedURL getHtmlUrl(){
-return htmlUrl().getValue();
+public String getType(){
+return type().getValue();
 }
 
 /**
-	Sets the value of the field htmlUrl
+	Sets the value of the field type
 **/ 
 
-public void setHtmlUrl( ParsedURL htmlUrl )
+public void setType( String type )
 {
-this.htmlUrl().setValue(htmlUrl);
+this.type().setValue(type);
 }
 
 /**
-	The heavy weight setter method for field htmlUrl
+	The heavy weight setter method for field type
 **/ 
 
-public void hwSetHtmlUrl( ParsedURL htmlUrl )
+public void hwSetType( String type )
 {
-this.htmlUrl().setValue(htmlUrl);
+this.type().setValue(type);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the htmlUrl directly
+	 Sets the type directly
 **/ 
 
-public void setHtmlUrlMetadata(MetadataParsedURL htmlUrl)
-{	this.htmlUrl = htmlUrl;
+public void setTypeMetadata(MetadataString type)
+{	this.type = type;
 }
 /**
-	Heavy Weight Direct setter method for htmlUrl
+	Heavy Weight Direct setter method for type
 **/ 
 
-public void hwSetHtmlUrlMetadata(MetadataParsedURL htmlUrl)
-{	 if(this.htmlUrl!=null && this.htmlUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.htmlUrl.termVector());
-	 this.htmlUrl = htmlUrl;
+public void hwSetTypeMetadata(MetadataString type)
+{	 if(this.type!=null && this.type.getValue()!=null && hasTermVector())
+		 termVector().remove(this.type.termVector());
+	 this.type = type;
 	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for outlines
-**/ 
-
-public  ArrayList<Outline>	outlines()
-{
- ArrayList<Outline>	result	=this.outlines;
-if(result == null)
-{
-result = new  ArrayList<Outline>();
-this.outlines	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field outlines
-**/ 
-
-public void setOutlines(  ArrayList<Outline> outlines )
-{
-this.outlines = outlines ;
-}
-
-/**
-	Get the value of field outlines
-**/ 
-
-public  ArrayList<Outline> getOutlines(){
-return this.outlines;
-}
-}
+}}

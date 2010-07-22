@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Anchor extends Metadata{
 
-	 @simpl_scalar private MetadataParsedURL	link;
 	 @simpl_scalar private MetadataString	anchorText;
+	 @simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Constructor
@@ -52,69 +52,11 @@ public Anchor()
 	Constructor
 **/ 
 
-public Anchor(MetaMetadata metaMetadata)
+public Anchor(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for link
-**/ 
-
-public MetadataParsedURL	link()
-{
-MetadataParsedURL	result	=this.link;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.link	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field link
-**/ 
-
-public ParsedURL getLink(){
-return link().getValue();
-}
-
-/**
-	Sets the value of the field link
-**/ 
-
-public void setLink( ParsedURL link )
-{
-this.link().setValue(link);
-}
-
-/**
-	The heavy weight setter method for field link
-**/ 
-
-public void hwSetLink( ParsedURL link )
-{
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the link directly
-**/ 
-
-public void setLinkMetadata(MetadataParsedURL link)
-{	this.link = link;
-}
-/**
-	Heavy Weight Direct setter method for link
-**/ 
-
-public void hwSetLinkMetadata(MetadataParsedURL link)
-{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
-		 termVector().remove(this.link.termVector());
-	 this.link = link;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for anchorText
 **/ 
@@ -171,5 +113,63 @@ public void hwSetAnchorTextMetadata(MetadataString anchorText)
 {	 if(this.anchorText!=null && this.anchorText.getValue()!=null && hasTermVector())
 		 termVector().remove(this.anchorText.termVector());
 	 this.anchorText = anchorText;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for link
+**/ 
+
+public MetadataParsedURL	link()
+{
+MetadataParsedURL	result	=this.link;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.link	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field link
+**/ 
+
+public ParsedURL getLink(){
+return link().getValue();
+}
+
+/**
+	Sets the value of the field link
+**/ 
+
+public void setLink( ParsedURL link )
+{
+this.link().setValue(link);
+}
+
+/**
+	The heavy weight setter method for field link
+**/ 
+
+public void hwSetLink( ParsedURL link )
+{
+this.link().setValue(link);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the link directly
+**/ 
+
+public void setLinkMetadata(MetadataParsedURL link)
+{	this.link = link;
+}
+/**
+	Heavy Weight Direct setter method for link
+**/ 
+
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
+		 termVector().remove(this.link.termVector());
+	 this.link = link;
 	rebuildCompositeTermVector();
 }}

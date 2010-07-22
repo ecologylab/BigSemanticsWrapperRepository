@@ -31,7 +31,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -70,7 +70,7 @@ public Topic()
 	Constructor
 **/ 
 
-public Topic(MetaMetadata metaMetadata)
+public Topic(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }

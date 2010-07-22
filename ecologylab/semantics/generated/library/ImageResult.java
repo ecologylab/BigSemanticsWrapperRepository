@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -38,16 +38,16 @@ public class ImageResult extends Metadata{
 
 
 /**
-	image title
-**/ 
-
-	 @simpl_scalar private MetadataString	imgTitle;
-
-/**
 	image summary
 **/ 
 
 	 @simpl_scalar private MetadataString	summary;
+
+/**
+	mime type should be extracted from this property
+**/ 
+
+	 @simpl_scalar private MetadataString	rawProperty;
 
 /**
 	raw parsed URL for extracting values 'url', 'referer_url'
@@ -56,10 +56,10 @@ public class ImageResult extends Metadata{
 	 @simpl_scalar private MetadataString	rawUrl;
 
 /**
-	mime type should be extracted from this property
+	image title
 **/ 
 
-	 @simpl_scalar private MetadataString	rawProperty;
+	 @simpl_scalar private MetadataString	imgTitle;
 
 /**
 	Constructor
@@ -74,69 +74,11 @@ public ImageResult()
 	Constructor
 **/ 
 
-public ImageResult(MetaMetadata metaMetadata)
+public ImageResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for imgTitle
-**/ 
-
-public MetadataString	imgTitle()
-{
-MetadataString	result	=this.imgTitle;
-if(result == null)
-{
-result = new MetadataString();
-this.imgTitle	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field imgTitle
-**/ 
-
-public String getImgTitle(){
-return imgTitle().getValue();
-}
-
-/**
-	Sets the value of the field imgTitle
-**/ 
-
-public void setImgTitle( String imgTitle )
-{
-this.imgTitle().setValue(imgTitle);
-}
-
-/**
-	The heavy weight setter method for field imgTitle
-**/ 
-
-public void hwSetImgTitle( String imgTitle )
-{
-this.imgTitle().setValue(imgTitle);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the imgTitle directly
-**/ 
-
-public void setImgTitleMetadata(MetadataString imgTitle)
-{	this.imgTitle = imgTitle;
-}
-/**
-	Heavy Weight Direct setter method for imgTitle
-**/ 
-
-public void hwSetImgTitleMetadata(MetadataString imgTitle)
-{	 if(this.imgTitle!=null && this.imgTitle.getValue()!=null && hasTermVector())
-		 termVector().remove(this.imgTitle.termVector());
-	 this.imgTitle = imgTitle;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for summary
 **/ 
@@ -193,6 +135,64 @@ public void hwSetSummaryMetadata(MetadataString summary)
 {	 if(this.summary!=null && this.summary.getValue()!=null && hasTermVector())
 		 termVector().remove(this.summary.termVector());
 	 this.summary = summary;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for rawProperty
+**/ 
+
+public MetadataString	rawProperty()
+{
+MetadataString	result	=this.rawProperty;
+if(result == null)
+{
+result = new MetadataString();
+this.rawProperty	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field rawProperty
+**/ 
+
+public String getRawProperty(){
+return rawProperty().getValue();
+}
+
+/**
+	Sets the value of the field rawProperty
+**/ 
+
+public void setRawProperty( String rawProperty )
+{
+this.rawProperty().setValue(rawProperty);
+}
+
+/**
+	The heavy weight setter method for field rawProperty
+**/ 
+
+public void hwSetRawProperty( String rawProperty )
+{
+this.rawProperty().setValue(rawProperty);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the rawProperty directly
+**/ 
+
+public void setRawPropertyMetadata(MetadataString rawProperty)
+{	this.rawProperty = rawProperty;
+}
+/**
+	Heavy Weight Direct setter method for rawProperty
+**/ 
+
+public void hwSetRawPropertyMetadata(MetadataString rawProperty)
+{	 if(this.rawProperty!=null && this.rawProperty.getValue()!=null && hasTermVector())
+		 termVector().remove(this.rawProperty.termVector());
+	 this.rawProperty = rawProperty;
 	rebuildCompositeTermVector();
 }
 /**
@@ -254,60 +254,60 @@ public void hwSetRawUrlMetadata(MetadataString rawUrl)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for rawProperty
+	Lazy Evaluation for imgTitle
 **/ 
 
-public MetadataString	rawProperty()
+public MetadataString	imgTitle()
 {
-MetadataString	result	=this.rawProperty;
+MetadataString	result	=this.imgTitle;
 if(result == null)
 {
 result = new MetadataString();
-this.rawProperty	=	 result;
+this.imgTitle	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field rawProperty
+	Gets the value of the field imgTitle
 **/ 
 
-public String getRawProperty(){
-return rawProperty().getValue();
+public String getImgTitle(){
+return imgTitle().getValue();
 }
 
 /**
-	Sets the value of the field rawProperty
+	Sets the value of the field imgTitle
 **/ 
 
-public void setRawProperty( String rawProperty )
+public void setImgTitle( String imgTitle )
 {
-this.rawProperty().setValue(rawProperty);
+this.imgTitle().setValue(imgTitle);
 }
 
 /**
-	The heavy weight setter method for field rawProperty
+	The heavy weight setter method for field imgTitle
 **/ 
 
-public void hwSetRawProperty( String rawProperty )
+public void hwSetImgTitle( String imgTitle )
 {
-this.rawProperty().setValue(rawProperty);
+this.imgTitle().setValue(imgTitle);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the rawProperty directly
+	 Sets the imgTitle directly
 **/ 
 
-public void setRawPropertyMetadata(MetadataString rawProperty)
-{	this.rawProperty = rawProperty;
+public void setImgTitleMetadata(MetadataString imgTitle)
+{	this.imgTitle = imgTitle;
 }
 /**
-	Heavy Weight Direct setter method for rawProperty
+	Heavy Weight Direct setter method for imgTitle
 **/ 
 
-public void hwSetRawPropertyMetadata(MetadataString rawProperty)
-{	 if(this.rawProperty!=null && this.rawProperty.getValue()!=null && hasTermVector())
-		 termVector().remove(this.rawProperty.termVector());
-	 this.rawProperty = rawProperty;
+public void hwSetImgTitleMetadata(MetadataString imgTitle)
+{	 if(this.imgTitle!=null && this.imgTitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.imgTitle.termVector());
+	 this.imgTitle = imgTitle;
 	rebuildCompositeTermVector();
 }}

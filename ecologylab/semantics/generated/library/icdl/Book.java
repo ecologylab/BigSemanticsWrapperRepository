@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -36,11 +36,11 @@ import java.util.*;
 
 public class Book extends Metadata{
 
-	 @simpl_scalar private MetadataString	booktitle;
 	 @simpl_scalar private MetadataString	languages;
 	 @simpl_scalar private MetadataParsedURL	cover;
-	 @simpl_scalar private MetadataInteger	width;
 	 @simpl_scalar private MetadataInteger	height;
+	 @simpl_scalar private MetadataInteger	width;
+	 @simpl_scalar private MetadataString	booktitle;
 	 @simpl_scalar private MetadataParsedURL	bookurl;
 
 /**
@@ -56,69 +56,11 @@ public Book()
 	Constructor
 **/ 
 
-public Book(MetaMetadata metaMetadata)
+public Book(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for booktitle
-**/ 
-
-public MetadataString	booktitle()
-{
-MetadataString	result	=this.booktitle;
-if(result == null)
-{
-result = new MetadataString();
-this.booktitle	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field booktitle
-**/ 
-
-public String getBooktitle(){
-return booktitle().getValue();
-}
-
-/**
-	Sets the value of the field booktitle
-**/ 
-
-public void setBooktitle( String booktitle )
-{
-this.booktitle().setValue(booktitle);
-}
-
-/**
-	The heavy weight setter method for field booktitle
-**/ 
-
-public void hwSetBooktitle( String booktitle )
-{
-this.booktitle().setValue(booktitle);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the booktitle directly
-**/ 
-
-public void setBooktitleMetadata(MetadataString booktitle)
-{	this.booktitle = booktitle;
-}
-/**
-	Heavy Weight Direct setter method for booktitle
-**/ 
-
-public void hwSetBooktitleMetadata(MetadataString booktitle)
-{	 if(this.booktitle!=null && this.booktitle.getValue()!=null && hasTermVector())
-		 termVector().remove(this.booktitle.termVector());
-	 this.booktitle = booktitle;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for languages
 **/ 
@@ -236,6 +178,64 @@ public void hwSetCoverMetadata(MetadataParsedURL cover)
 	rebuildCompositeTermVector();
 }
 /**
+	Lazy Evaluation for height
+**/ 
+
+public MetadataInteger	height()
+{
+MetadataInteger	result	=this.height;
+if(result == null)
+{
+result = new MetadataInteger();
+this.height	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field height
+**/ 
+
+public Integer getHeight(){
+return height().getValue();
+}
+
+/**
+	Sets the value of the field height
+**/ 
+
+public void setHeight( Integer height )
+{
+this.height().setValue(height);
+}
+
+/**
+	The heavy weight setter method for field height
+**/ 
+
+public void hwSetHeight( Integer height )
+{
+this.height().setValue(height);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the height directly
+**/ 
+
+public void setHeightMetadata(MetadataInteger height)
+{	this.height = height;
+}
+/**
+	Heavy Weight Direct setter method for height
+**/ 
+
+public void hwSetHeightMetadata(MetadataInteger height)
+{	 if(this.height!=null && this.height.getValue()!=null && hasTermVector())
+		 termVector().remove(this.height.termVector());
+	 this.height = height;
+	rebuildCompositeTermVector();
+}
+/**
 	Lazy Evaluation for width
 **/ 
 
@@ -294,61 +294,61 @@ public void hwSetWidthMetadata(MetadataInteger width)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for height
+	Lazy Evaluation for booktitle
 **/ 
 
-public MetadataInteger	height()
+public MetadataString	booktitle()
 {
-MetadataInteger	result	=this.height;
+MetadataString	result	=this.booktitle;
 if(result == null)
 {
-result = new MetadataInteger();
-this.height	=	 result;
+result = new MetadataString();
+this.booktitle	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field height
+	Gets the value of the field booktitle
 **/ 
 
-public Integer getHeight(){
-return height().getValue();
+public String getBooktitle(){
+return booktitle().getValue();
 }
 
 /**
-	Sets the value of the field height
+	Sets the value of the field booktitle
 **/ 
 
-public void setHeight( Integer height )
+public void setBooktitle( String booktitle )
 {
-this.height().setValue(height);
+this.booktitle().setValue(booktitle);
 }
 
 /**
-	The heavy weight setter method for field height
+	The heavy weight setter method for field booktitle
 **/ 
 
-public void hwSetHeight( Integer height )
+public void hwSetBooktitle( String booktitle )
 {
-this.height().setValue(height);
+this.booktitle().setValue(booktitle);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the height directly
+	 Sets the booktitle directly
 **/ 
 
-public void setHeightMetadata(MetadataInteger height)
-{	this.height = height;
+public void setBooktitleMetadata(MetadataString booktitle)
+{	this.booktitle = booktitle;
 }
 /**
-	Heavy Weight Direct setter method for height
+	Heavy Weight Direct setter method for booktitle
 **/ 
 
-public void hwSetHeightMetadata(MetadataInteger height)
-{	 if(this.height!=null && this.height.getValue()!=null && hasTermVector())
-		 termVector().remove(this.height.termVector());
-	 this.height = height;
+public void hwSetBooktitleMetadata(MetadataString booktitle)
+{	 if(this.booktitle!=null && this.booktitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.booktitle.termVector());
+	 this.booktitle = booktitle;
 	rebuildCompositeTermVector();
 }
 /**

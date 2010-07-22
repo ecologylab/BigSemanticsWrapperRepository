@@ -23,7 +23,7 @@ import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metametadata.MetaMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Tag extends Metadata{
 
-	 @simpl_scalar private MetadataString	tagName;
 	 @simpl_scalar private MetadataParsedURL	link;
+	 @simpl_scalar private MetadataString	tagName;
 
 /**
 	Constructor
@@ -52,69 +52,11 @@ public Tag()
 	Constructor
 **/ 
 
-public Tag(MetaMetadata metaMetadata)
+public Tag(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for tagName
-**/ 
-
-public MetadataString	tagName()
-{
-MetadataString	result	=this.tagName;
-if(result == null)
-{
-result = new MetadataString();
-this.tagName	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field tagName
-**/ 
-
-public String getTagName(){
-return tagName().getValue();
-}
-
-/**
-	Sets the value of the field tagName
-**/ 
-
-public void setTagName( String tagName )
-{
-this.tagName().setValue(tagName);
-}
-
-/**
-	The heavy weight setter method for field tagName
-**/ 
-
-public void hwSetTagName( String tagName )
-{
-this.tagName().setValue(tagName);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the tagName directly
-**/ 
-
-public void setTagNameMetadata(MetadataString tagName)
-{	this.tagName = tagName;
-}
-/**
-	Heavy Weight Direct setter method for tagName
-**/ 
-
-public void hwSetTagNameMetadata(MetadataString tagName)
-{	 if(this.tagName!=null && this.tagName.getValue()!=null && hasTermVector())
-		 termVector().remove(this.tagName.termVector());
-	 this.tagName = tagName;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for link
 **/ 
@@ -171,5 +113,63 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 {	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
 		 termVector().remove(this.link.termVector());
 	 this.link = link;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for tagName
+**/ 
+
+public MetadataString	tagName()
+{
+MetadataString	result	=this.tagName;
+if(result == null)
+{
+result = new MetadataString();
+this.tagName	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field tagName
+**/ 
+
+public String getTagName(){
+return tagName().getValue();
+}
+
+/**
+	Sets the value of the field tagName
+**/ 
+
+public void setTagName( String tagName )
+{
+this.tagName().setValue(tagName);
+}
+
+/**
+	The heavy weight setter method for field tagName
+**/ 
+
+public void hwSetTagName( String tagName )
+{
+this.tagName().setValue(tagName);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the tagName directly
+**/ 
+
+public void setTagNameMetadata(MetadataString tagName)
+{	this.tagName = tagName;
+}
+/**
+	Heavy Weight Direct setter method for tagName
+**/ 
+
+public void hwSetTagNameMetadata(MetadataString tagName)
+{	 if(this.tagName!=null && this.tagName.getValue()!=null && hasTermVector())
+		 termVector().remove(this.tagName.termVector());
+	 this.tagName = tagName;
 	rebuildCompositeTermVector();
 }}
