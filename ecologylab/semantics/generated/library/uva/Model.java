@@ -13,8 +13,11 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.nsdl.*;
+import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
@@ -43,6 +46,57 @@ public class  Model
 extends  Metadata
 {
 
+	@simpl_collection("topic_cluster") private ArrayList<TopicCluster>	topicClusters;
+
+/**
+	Constructor
+**/ 
+
+public Model()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public Model(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
+
+/**
+	Lazy Evaluation for topicClusters
+**/ 
+
+public  ArrayList<TopicCluster>	topicClusters()
+{
+ ArrayList<TopicCluster>	result	=this.topicClusters;
+if(result == null)
+{
+result = new  ArrayList<TopicCluster>();
+this.topicClusters	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field topicClusters
+**/ 
+
+public void setTopicClusters(  ArrayList<TopicCluster> topicClusters )
+{
+this.topicClusters = topicClusters ;
+}
+
+/**
+	Get the value of field topicClusters
+**/ 
+
+public  ArrayList<TopicCluster> getTopicClusters(){
+return this.topicClusters;
+}
 
 }
 

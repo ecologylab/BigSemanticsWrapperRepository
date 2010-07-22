@@ -13,12 +13,15 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
+import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
@@ -104,6 +107,14 @@ ecologylab.semantics.generated.library.GoogleSorry.class,
 
 ecologylab.semantics.generated.library.GooglePatentImage.class,
 
+Book.class,
+
+Response.class,
+
+Book.class,
+
+ecologylab.semantics.generated.library.icdl.Icdl.class,
+
 ecologylab.semantics.generated.library.imdb.PersonDetails.class,
 
 Genre.class,
@@ -122,8 +133,6 @@ ecologylab.semantics.generated.library.Lolz.class,
 
 ecologylab.semantics.generated.library.misc.DcDocument.class,
 
-ecologylab.semantics.generated.library.misc.Icdl.class,
-
 ecologylab.semantics.generated.library.misc.Text.class,
 
 ecologylab.semantics.generated.library.misc.IcdlImage.class,
@@ -132,9 +141,21 @@ ecologylab.semantics.generated.library.misc.Dlms.class,
 
 ecologylab.semantics.generated.library.misc.Nsdl.class,
 
+Head.class,
+
+Outline.class,
+
+Body.class,
+
+Outline.class,
+
+ecologylab.semantics.generated.library.opml.Opml.class,
+
 ecologylab.semantics.generated.library.Restaurant.class,
 
 ecologylab.semantics.generated.library.rss.Dc.class,
+
+ecologylab.semantics.generated.library.rss.Rss22.class,
 
 ecologylab.semantics.generated.library.rss.Item.class,
 
@@ -199,6 +220,16 @@ Header.class,
 ecologylab.semantics.generated.library.nsdl.NsdlService.class,
 
 ecologylab.semantics.generated.library.UrbanSpoonGenre.class,
+
+ecologylab.semantics.generated.library.uva.Topic.class,
+
+ecologylab.semantics.generated.library.uva.Model.class,
+
+ecologylab.semantics.generated.library.uva.TopicCluster.class,
+
+ecologylab.semantics.generated.library.uva.DocumentSet.class,
+
+ecologylab.semantics.generated.library.uva.KeywordSet.class,
 
 
 };

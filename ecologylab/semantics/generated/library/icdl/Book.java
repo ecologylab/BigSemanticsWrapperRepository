@@ -1,12 +1,4 @@
-package ecologylab.semantics.generated.library.uva;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.generated.library.icdl;
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -42,23 +34,20 @@ import java.util.*;
 
 @simpl_inherit
 
-public class  TopicCluster
-extends  Metadata
-{
+public class Book extends Metadata{
 
-	 @simpl_scalar private MetadataInteger	id;
-	@simpl_collection("document") private ArrayList<Document>	documentSet;
-	@simpl_collection("keyword_set") private ArrayList<KeywordSet>	keywordSets;
-	 @simpl_scalar private MetadataInteger	x;
-	 @simpl_scalar private MetadataInteger	y;
+	 @simpl_scalar private MetadataString	booktitle;
+	 @simpl_scalar private MetadataString	languages;
+	 @simpl_scalar private MetadataParsedURL	cover;
 	 @simpl_scalar private MetadataInteger	width;
 	 @simpl_scalar private MetadataInteger	height;
+	 @simpl_scalar private MetadataParsedURL	bookurl;
 
 /**
 	Constructor
 **/ 
 
-public TopicCluster()
+public Book()
 {
  super();
 }
@@ -67,247 +56,183 @@ public TopicCluster()
 	Constructor
 **/ 
 
-public TopicCluster(MetaMetadata metaMetadata)
+public Book(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for id
+	Lazy Evaluation for booktitle
 **/ 
 
-public MetadataInteger	id()
+public MetadataString	booktitle()
 {
-MetadataInteger	result	=this.id;
+MetadataString	result	=this.booktitle;
 if(result == null)
 {
-result = new MetadataInteger();
-this.id	=	 result;
+result = new MetadataString();
+this.booktitle	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field id
+	Gets the value of the field booktitle
 **/ 
 
-public Integer getId(){
-return id().getValue();
+public String getBooktitle(){
+return booktitle().getValue();
 }
 
 /**
-	Sets the value of the field id
+	Sets the value of the field booktitle
 **/ 
 
-public void setId( Integer id )
+public void setBooktitle( String booktitle )
 {
-this.id().setValue(id);
+this.booktitle().setValue(booktitle);
 }
 
 /**
-	The heavy weight setter method for field id
+	The heavy weight setter method for field booktitle
 **/ 
 
-public void hwSetId( Integer id )
+public void hwSetBooktitle( String booktitle )
 {
-this.id().setValue(id);
+this.booktitle().setValue(booktitle);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the id directly
+	 Sets the booktitle directly
 **/ 
 
-public void setIdMetadata(MetadataInteger id)
-{	this.id = id;
+public void setBooktitleMetadata(MetadataString booktitle)
+{	this.booktitle = booktitle;
 }
 /**
-	Heavy Weight Direct setter method for id
+	Heavy Weight Direct setter method for booktitle
 **/ 
 
-public void hwSetIdMetadata(MetadataInteger id)
-{	 if(this.id!=null && this.id.getValue()!=null && hasTermVector())
-		 termVector().remove(this.id.termVector());
-	 this.id = id;
+public void hwSetBooktitleMetadata(MetadataString booktitle)
+{	 if(this.booktitle!=null && this.booktitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.booktitle.termVector());
+	 this.booktitle = booktitle;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for documentSet
+	Lazy Evaluation for languages
 **/ 
 
-public  ArrayList<Document>	documentSet()
+public MetadataString	languages()
 {
- ArrayList<Document>	result	=this.documentSet;
+MetadataString	result	=this.languages;
 if(result == null)
 {
-result = new  ArrayList<Document>();
-this.documentSet	=	 result;
+result = new MetadataString();
+this.languages	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field documentSet
+	Gets the value of the field languages
 **/ 
 
-public void setDocumentSet(  ArrayList<Document> documentSet )
-{
-this.documentSet = documentSet ;
+public String getLanguages(){
+return languages().getValue();
 }
 
 /**
-	Get the value of field documentSet
+	Sets the value of the field languages
 **/ 
 
-public  ArrayList<Document> getDocumentSet(){
-return this.documentSet;
+public void setLanguages( String languages )
+{
+this.languages().setValue(languages);
 }
 
 /**
-	Lazy Evaluation for keywordSets
+	The heavy weight setter method for field languages
 **/ 
 
-public  ArrayList<KeywordSet>	keywordSets()
+public void hwSetLanguages( String languages )
 {
- ArrayList<KeywordSet>	result	=this.keywordSets;
-if(result == null)
-{
-result = new  ArrayList<KeywordSet>();
-this.keywordSets	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field keywordSets
-**/ 
-
-public void setKeywordSets(  ArrayList<KeywordSet> keywordSets )
-{
-this.keywordSets = keywordSets ;
-}
-
-/**
-	Get the value of field keywordSets
-**/ 
-
-public  ArrayList<KeywordSet> getKeywordSets(){
-return this.keywordSets;
-}
-
-/**
-	Lazy Evaluation for x
-**/ 
-
-public MetadataInteger	x()
-{
-MetadataInteger	result	=this.x;
-if(result == null)
-{
-result = new MetadataInteger();
-this.x	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field x
-**/ 
-
-public Integer getX(){
-return x().getValue();
-}
-
-/**
-	Sets the value of the field x
-**/ 
-
-public void setX( Integer x )
-{
-this.x().setValue(x);
-}
-
-/**
-	The heavy weight setter method for field x
-**/ 
-
-public void hwSetX( Integer x )
-{
-this.x().setValue(x);
+this.languages().setValue(languages);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the x directly
+	 Sets the languages directly
 **/ 
 
-public void setXMetadata(MetadataInteger x)
-{	this.x = x;
+public void setLanguagesMetadata(MetadataString languages)
+{	this.languages = languages;
 }
 /**
-	Heavy Weight Direct setter method for x
+	Heavy Weight Direct setter method for languages
 **/ 
 
-public void hwSetXMetadata(MetadataInteger x)
-{	 if(this.x!=null && this.x.getValue()!=null && hasTermVector())
-		 termVector().remove(this.x.termVector());
-	 this.x = x;
+public void hwSetLanguagesMetadata(MetadataString languages)
+{	 if(this.languages!=null && this.languages.getValue()!=null && hasTermVector())
+		 termVector().remove(this.languages.termVector());
+	 this.languages = languages;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for y
+	Lazy Evaluation for cover
 **/ 
 
-public MetadataInteger	y()
+public MetadataParsedURL	cover()
 {
-MetadataInteger	result	=this.y;
+MetadataParsedURL	result	=this.cover;
 if(result == null)
 {
-result = new MetadataInteger();
-this.y	=	 result;
+result = new MetadataParsedURL();
+this.cover	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field y
+	Gets the value of the field cover
 **/ 
 
-public Integer getY(){
-return y().getValue();
+public ParsedURL getCover(){
+return cover().getValue();
 }
 
 /**
-	Sets the value of the field y
+	Sets the value of the field cover
 **/ 
 
-public void setY( Integer y )
+public void setCover( ParsedURL cover )
 {
-this.y().setValue(y);
+this.cover().setValue(cover);
 }
 
 /**
-	The heavy weight setter method for field y
+	The heavy weight setter method for field cover
 **/ 
 
-public void hwSetY( Integer y )
+public void hwSetCover( ParsedURL cover )
 {
-this.y().setValue(y);
+this.cover().setValue(cover);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the y directly
+	 Sets the cover directly
 **/ 
 
-public void setYMetadata(MetadataInteger y)
-{	this.y = y;
+public void setCoverMetadata(MetadataParsedURL cover)
+{	this.cover = cover;
 }
 /**
-	Heavy Weight Direct setter method for y
+	Heavy Weight Direct setter method for cover
 **/ 
 
-public void hwSetYMetadata(MetadataInteger y)
-{	 if(this.y!=null && this.y.getValue()!=null && hasTermVector())
-		 termVector().remove(this.y.termVector());
-	 this.y = y;
+public void hwSetCoverMetadata(MetadataParsedURL cover)
+{	 if(this.cover!=null && this.cover.getValue()!=null && hasTermVector())
+		 termVector().remove(this.cover.termVector());
+	 this.cover = cover;
 	rebuildCompositeTermVector();
 }
 /**
@@ -426,5 +351,61 @@ public void hwSetHeightMetadata(MetadataInteger height)
 	 this.height = height;
 	rebuildCompositeTermVector();
 }
+/**
+	Lazy Evaluation for bookurl
+**/ 
+
+public MetadataParsedURL	bookurl()
+{
+MetadataParsedURL	result	=this.bookurl;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.bookurl	=	 result;
+}
+return result;
 }
 
+/**
+	Gets the value of the field bookurl
+**/ 
+
+public ParsedURL getBookurl(){
+return bookurl().getValue();
+}
+
+/**
+	Sets the value of the field bookurl
+**/ 
+
+public void setBookurl( ParsedURL bookurl )
+{
+this.bookurl().setValue(bookurl);
+}
+
+/**
+	The heavy weight setter method for field bookurl
+**/ 
+
+public void hwSetBookurl( ParsedURL bookurl )
+{
+this.bookurl().setValue(bookurl);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the bookurl directly
+**/ 
+
+public void setBookurlMetadata(MetadataParsedURL bookurl)
+{	this.bookurl = bookurl;
+}
+/**
+	Heavy Weight Direct setter method for bookurl
+**/ 
+
+public void hwSetBookurlMetadata(MetadataParsedURL bookurl)
+{	 if(this.bookurl!=null && this.bookurl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.bookurl.termVector());
+	 this.bookurl = bookurl;
+	rebuildCompositeTermVector();
+}}

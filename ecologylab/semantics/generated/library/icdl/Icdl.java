@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.icdl;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -40,19 +40,24 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	The ICDL class
+**/ 
+
 @simpl_inherit
 
-public class  Search
+public class  Icdl
 extends  Document
 {
 
-	@simpl_collection("search_result") @simpl_nowrap private ArrayList<SearchResult>	searchResults;
 
+private  @simpl_composite Response	response;
 /**
 	Constructor
 **/ 
 
-public Search()
+public Icdl()
 {
  super();
 }
@@ -61,41 +66,41 @@ public Search()
 	Constructor
 **/ 
 
-public Search(MetaMetadata metaMetadata)
+public Icdl(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for searchResults
+	Lazy Evaluation for response
 **/ 
 
-public  ArrayList<SearchResult>	searchResults()
+public Response	response()
 {
- ArrayList<SearchResult>	result	=this.searchResults;
+Response	result	=this.response;
 if(result == null)
 {
-result = new  ArrayList<SearchResult>();
-this.searchResults	=	 result;
+result = new Response();
+this.response	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field searchResults
+	Set the value of field response
 **/ 
 
-public void setSearchResults(  ArrayList<SearchResult> searchResults )
+public void setResponse( Response response )
 {
-this.searchResults = searchResults ;
+this.response = response ;
 }
 
 /**
-	Get the value of field searchResults
+	Get the value of field response
 **/ 
 
-public  ArrayList<SearchResult> getSearchResults(){
-return this.searchResults;
+public Response getResponse(){
+return this.response;
 }
 
 }

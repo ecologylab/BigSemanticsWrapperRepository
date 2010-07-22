@@ -13,8 +13,11 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.nsdl.*;
+import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
@@ -43,6 +46,57 @@ public class  DocumentSet
 extends  Metadata
 {
 
+	@simpl_collection("document") @simpl_nowrap private ArrayList<Document>	documents;
+
+/**
+	Constructor
+**/ 
+
+public DocumentSet()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public DocumentSet(MetaMetadata metaMetadata)
+{
+super(metaMetadata);
+}
+
+/**
+	Lazy Evaluation for documents
+**/ 
+
+public  ArrayList<Document>	documents()
+{
+ ArrayList<Document>	result	=this.documents;
+if(result == null)
+{
+result = new  ArrayList<Document>();
+this.documents	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field documents
+**/ 
+
+public void setDocuments(  ArrayList<Document> documents )
+{
+this.documents = documents ;
+}
+
+/**
+	Get the value of field documents
+**/ 
+
+public  ArrayList<Document> getDocuments(){
+return this.documents;
+}
 
 }
 

@@ -1,12 +1,4 @@
-package ecologylab.semantics.generated.library.search;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.generated.library.opml;
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -42,17 +34,15 @@ import java.util.*;
 
 @simpl_inherit
 
-public class  Search
-extends  Document
-{
+public class Head extends Metadata{
 
-	@simpl_collection("search_result") @simpl_nowrap private ArrayList<SearchResult>	searchResults;
+	 @simpl_scalar private MetadataString	title;
 
 /**
 	Constructor
 **/ 
 
-public Search()
+public Head()
 {
  super();
 }
@@ -61,42 +51,66 @@ public Search()
 	Constructor
 **/ 
 
-public Search(MetaMetadata metaMetadata)
+public Head(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for searchResults
+	Lazy Evaluation for title
 **/ 
 
-public  ArrayList<SearchResult>	searchResults()
+public MetadataString	title()
 {
- ArrayList<SearchResult>	result	=this.searchResults;
+MetadataString	result	=this.title;
 if(result == null)
 {
-result = new  ArrayList<SearchResult>();
-this.searchResults	=	 result;
+result = new MetadataString();
+this.title	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field searchResults
+	Gets the value of the field title
 **/ 
 
-public void setSearchResults(  ArrayList<SearchResult> searchResults )
-{
-this.searchResults = searchResults ;
+public String getTitle(){
+return title().getValue();
 }
 
 /**
-	Get the value of field searchResults
+	Sets the value of the field title
 **/ 
 
-public  ArrayList<SearchResult> getSearchResults(){
-return this.searchResults;
+public void setTitle( String title )
+{
+this.title().setValue(title);
 }
 
-}
+/**
+	The heavy weight setter method for field title
+**/ 
 
+public void hwSetTitle( String title )
+{
+this.title().setValue(title);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the title directly
+**/ 
+
+public void setTitleMetadata(MetadataString title)
+{	this.title = title;
+}
+/**
+	Heavy Weight Direct setter method for title
+**/ 
+
+public void hwSetTitleMetadata(MetadataString title)
+{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
+		 termVector().remove(this.title.termVector());
+	 this.title = title;
+	rebuildCompositeTermVector();
+}}

@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.opml;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -13,8 +13,11 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
+import ecologylab.semantics.generated.library.nsdl.*;
+import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
@@ -37,24 +40,20 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Google images
-**/ 
-
 @simpl_inherit
 
-public class  GoogleImage
+public class  Opml
 extends  Document
 {
 
-	@simpl_collection("image_title") @simpl_nowrap private ArrayList<ImageTitle>	imageTitles;
 
+private  @simpl_composite Head	head;
+private  @simpl_composite Body	body;
 /**
 	Constructor
 **/ 
 
-public GoogleImage()
+public Opml()
 {
  super();
 }
@@ -63,41 +62,73 @@ public GoogleImage()
 	Constructor
 **/ 
 
-public GoogleImage(MetaMetadata metaMetadata)
+public Opml(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for imageTitles
+	Lazy Evaluation for head
 **/ 
 
-public  ArrayList<ImageTitle>	imageTitles()
+public Head	head()
 {
- ArrayList<ImageTitle>	result	=this.imageTitles;
+Head	result	=this.head;
 if(result == null)
 {
-result = new  ArrayList<ImageTitle>();
-this.imageTitles	=	 result;
+result = new Head();
+this.head	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field imageTitles
+	Set the value of field head
 **/ 
 
-public void setImageTitles(  ArrayList<ImageTitle> imageTitles )
+public void setHead( Head head )
 {
-this.imageTitles = imageTitles ;
+this.head = head ;
 }
 
 /**
-	Get the value of field imageTitles
+	Get the value of field head
 **/ 
 
-public  ArrayList<ImageTitle> getImageTitles(){
-return this.imageTitles;
+public Head getHead(){
+return this.head;
+}
+
+/**
+	Lazy Evaluation for body
+**/ 
+
+public Body	body()
+{
+Body	result	=this.body;
+if(result == null)
+{
+result = new Body();
+this.body	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field body
+**/ 
+
+public void setBody( Body body )
+{
+this.body = body ;
+}
+
+/**
+	Get the value of field body
+**/ 
+
+public Body getBody(){
+return this.body;
 }
 
 }

@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.rss;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -40,19 +40,24 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	A news feed, yucky style.
+**/ 
+
 @simpl_inherit
 
-public class  Search
+public class  Rss22
 extends  Document
 {
 
-	@simpl_collection("search_result") @simpl_nowrap private ArrayList<SearchResult>	searchResults;
+	@simpl_collection("item") @simpl_nowrap private ArrayList<Item>	items;
 
 /**
 	Constructor
 **/ 
 
-public Search()
+public Rss22()
 {
  super();
 }
@@ -61,41 +66,41 @@ public Search()
 	Constructor
 **/ 
 
-public Search(MetaMetadata metaMetadata)
+public Rss22(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for searchResults
+	Lazy Evaluation for items
 **/ 
 
-public  ArrayList<SearchResult>	searchResults()
+public  ArrayList<Item>	items()
 {
- ArrayList<SearchResult>	result	=this.searchResults;
+ ArrayList<Item>	result	=this.items;
 if(result == null)
 {
-result = new  ArrayList<SearchResult>();
-this.searchResults	=	 result;
+result = new  ArrayList<Item>();
+this.items	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field searchResults
+	Set the value of field items
 **/ 
 
-public void setSearchResults(  ArrayList<SearchResult> searchResults )
+public void setItems(  ArrayList<Item> items )
 {
-this.searchResults = searchResults ;
+this.items = items ;
 }
 
 /**
-	Get the value of field searchResults
+	Get the value of field items
 **/ 
 
-public  ArrayList<SearchResult> getSearchResults(){
-return this.searchResults;
+public  ArrayList<Item> getItems(){
+return this.items;
 }
 
 }

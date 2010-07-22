@@ -1,24 +1,19 @@
-package ecologylab.semantics.generated.library.misc;
-
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
+package ecologylab.semantics.generated.library.opml;
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
+import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
@@ -37,24 +32,17 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	The ICDL class
-**/ 
-
 @simpl_inherit
 
-public class  Icdl
-extends  Document
-{
+public class Body extends Metadata{
 
-	 @simpl_scalar private MetadataString	languages;
+	@simpl_collection("outline") @simpl_nowrap private ArrayList<Outline>	outline;
 
 /**
 	Constructor
 **/ 
 
-public Icdl()
+public Body()
 {
  super();
 }
@@ -63,68 +51,40 @@ public Icdl()
 	Constructor
 **/ 
 
-public Icdl(MetaMetadata metaMetadata)
+public Body(MetaMetadata metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for languages
+	Lazy Evaluation for outline
 **/ 
 
-public MetadataString	languages()
+public  ArrayList<Outline>	outline()
 {
-MetadataString	result	=this.languages;
+ ArrayList<Outline>	result	=this.outline;
 if(result == null)
 {
-result = new MetadataString();
-this.languages	=	 result;
+result = new  ArrayList<Outline>();
+this.outline	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field languages
+	Set the value of field outline
 **/ 
 
-public String getLanguages(){
-return languages().getValue();
-}
-
-/**
-	Sets the value of the field languages
-**/ 
-
-public void setLanguages( String languages )
+public void setOutline(  ArrayList<Outline> outline )
 {
-this.languages().setValue(languages);
+this.outline = outline ;
 }
 
 /**
-	The heavy weight setter method for field languages
+	Get the value of field outline
 **/ 
 
-public void hwSetLanguages( String languages )
-{
-this.languages().setValue(languages);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the languages directly
-**/ 
-
-public void setLanguagesMetadata(MetadataString languages)
-{	this.languages = languages;
-}
-/**
-	Heavy Weight Direct setter method for languages
-**/ 
-
-public void hwSetLanguagesMetadata(MetadataString languages)
-{	 if(this.languages!=null && this.languages.getValue()!=null && hasTermVector())
-		 termVector().remove(this.languages.termVector());
-	 this.languages = languages;
-	rebuildCompositeTermVector();
+public  ArrayList<Outline> getOutline(){
+return this.outline;
 }
 }
-
