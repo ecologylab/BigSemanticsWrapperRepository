@@ -51,7 +51,7 @@ public class  GoogleImageSearchPage
 extends  GoogleImageSearchType
 {
 
-	@simpl_collection("image_result") private ArrayList<ImageResult>	imageResults;
+	@simpl_collection("image_result") @mm_name("image_results") private ArrayList<ImageResult>	imageResults;
 
 /**
 	Constructor

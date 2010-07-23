@@ -51,22 +51,22 @@ public class  PersonDetails
 extends  Document
 {
 
-	 @simpl_scalar private MetadataParsedURL	personImg;
+	@simpl_scalar private MetadataParsedURL	personImg;
 
-private  @simpl_composite BirthDetail	birthDetail;	 @simpl_scalar private MetadataString	miniBiography;
-	 @simpl_scalar private MetadataParsedURL	biographyLink;
-	 @simpl_scalar private MetadataString	trivia;
-	 @simpl_scalar private MetadataParsedURL	triviaLink;
-	 @simpl_scalar private MetadataString	awards;
-	 @simpl_scalar private MetadataParsedURL	awardsLink;
-	 @simpl_scalar private MetadataString	alternateNames;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
-	@simpl_collection("imdb_title") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
+private @simpl_composite @mm_name("birth_detail") BirthDetail	birthDetail;	@simpl_scalar private MetadataString	miniBiography;
+	@simpl_scalar private MetadataParsedURL	biographyLink;
+	@simpl_scalar private MetadataString	trivia;
+	@simpl_scalar private MetadataParsedURL	triviaLink;
+	@simpl_scalar private MetadataString	awards;
+	@simpl_scalar private MetadataParsedURL	awardsLink;
+	@simpl_scalar private MetadataString	alternateNames;
+	@simpl_collection("imdb_title") @mm_name("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
+	@simpl_collection("imdb_title") @mm_name("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
+	@simpl_collection("imdb_title") @mm_name("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
+	@simpl_collection("imdb_title") @mm_name("titles_as_producer") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
+	@simpl_collection("imdb_title") @mm_name("titles_thanked_in") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
+	@simpl_collection("imdb_title") @mm_name("titles_as_self") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
+	@simpl_collection("imdb_title") @mm_name("titles_in_development") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
 
 /**
 	Constructor

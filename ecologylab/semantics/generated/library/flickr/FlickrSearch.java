@@ -51,7 +51,7 @@ public class  FlickrSearch
 extends  Document
 {
 
-	@simpl_collection("flickr_image") private ArrayList<FlickrImage>	flickrResults;
+	@simpl_collection("flickr_image") @mm_name("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
 /**
 	Constructor

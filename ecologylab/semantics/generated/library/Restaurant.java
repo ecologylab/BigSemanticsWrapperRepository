@@ -56,38 +56,38 @@ extends  Document
 	Phone number of the restaurant
 **/ 
 
-	 @simpl_scalar private MetadataString	phone;
+	@simpl_scalar private MetadataString	phone;
 
 /**
 	A picture from the restaurant
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	pic;
+	@simpl_scalar private MetadataParsedURL	pic;
 
 /**
 	Link to the restaurant's website
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	link;
+	@simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Rating of the restaurant
 **/ 
 
-	 @simpl_scalar private MetadataString	rating;
+	@simpl_scalar private MetadataString	rating;
 
 /**
 	Price range of the restaurant
 **/ 
 
-	 @simpl_scalar private MetadataString	priceRange;
+	@simpl_scalar private MetadataString	priceRange;
 
 /**
 	Map image of the restaurant's location or link to a directions page
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	map;
-	@simpl_collection("search_result") private ArrayList<SearchResult>	genres;
+	@simpl_scalar private MetadataParsedURL	map;
+	@simpl_collection("search_result") @mm_name("genres") private ArrayList<SearchResult>	genres;
 
 /**
 	Constructor

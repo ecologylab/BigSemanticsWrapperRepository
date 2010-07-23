@@ -36,7 +36,7 @@ import java.util.*;
 
 public class Body extends Metadata{
 
-	@simpl_collection("outline") @simpl_nowrap private ArrayList<Outline>	outline;
+	@simpl_collection("outline") @simpl_nowrap @mm_name("outline") private ArrayList<Outline>	outline;
 
 /**
 	Constructor

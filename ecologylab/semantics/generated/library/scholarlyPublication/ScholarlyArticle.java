@@ -51,14 +51,14 @@ extends  Pdf
 	citation.cfm
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	metadataPage;
-	@xml_tag("abstract") @simpl_scalar private MetadataString	abstractField;
+	@simpl_scalar private MetadataParsedURL	metadataPage;
+	@xml_tag("abstract")@simpl_scalar private MetadataString	abstractField;
 
-private  @simpl_composite Source	source;	@simpl_collection("author") private ArrayList<Author>	authors;
-	@simpl_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
-	@simpl_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
-	@simpl_collection("tag") private ArrayList<Tag>	classifications;
-	@simpl_collection("tag") private ArrayList<Tag>	keywords;
+private @simpl_composite @mm_name("source") Source	source;	@simpl_collection("author") @mm_name("authors") private ArrayList<Author>	authors;
+	@simpl_collection("reference") @mm_name("references") private ArrayList<Entity<ScholarlyArticle>>	references;
+	@simpl_collection("citation") @mm_name("citations") private ArrayList<Entity<ScholarlyArticle>>	citations;
+	@simpl_collection("tag") @mm_name("classifications") private ArrayList<Tag>	classifications;
+	@simpl_collection("tag") @mm_name("keywords") private ArrayList<Tag>	keywords;
 
 /**
 	Constructor

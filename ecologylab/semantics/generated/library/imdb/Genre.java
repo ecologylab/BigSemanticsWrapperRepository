@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Genre extends Metadata{
 
-	 @simpl_scalar private MetadataParsedURL	genreLink;
-	 @simpl_scalar private MetadataString	name;
+	@simpl_scalar private MetadataParsedURL	genreLink;
+	@simpl_scalar private MetadataString	name;
 
 /**
 	Constructor

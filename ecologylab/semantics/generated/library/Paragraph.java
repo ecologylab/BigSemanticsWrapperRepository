@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Paragraph extends Metadata{
 
-	@simpl_collection("anchor") private ArrayList<Anchor>	anchors;
-	 @simpl_scalar private MetadataString	paragraphText;
+	@simpl_collection("anchor") @mm_name("anchors") private ArrayList<Anchor>	anchors;
+	@simpl_scalar private MetadataString	paragraphText;
 
 /**
 	Constructor

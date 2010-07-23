@@ -51,8 +51,8 @@ public class  UrbanSpoonGenre
 extends  Search
 {
 
-	@simpl_collection("search_result") private ArrayList<SearchResult>	searchResults;
-	@simpl_collection("search_result") private ArrayList<SearchResult>	topResults;
+	@simpl_collection("search_result") @mm_name("search_results") private ArrayList<SearchResult>	searchResults;
+	@simpl_collection("search_result") @mm_name("top_results") private ArrayList<SearchResult>	topResults;
 
 /**
 	Constructor

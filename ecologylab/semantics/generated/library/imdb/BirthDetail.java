@@ -51,12 +51,12 @@ public class  BirthDetail
 extends  Document
 {
 
-	 @simpl_scalar private MetadataString	dayOfBirth;
-	 @simpl_scalar private MetadataString	yearOfBirth;
-	 @simpl_scalar private MetadataString	placeOfBirth;
-	 @simpl_scalar private MetadataParsedURL	dayOfBirthLink;
-	 @simpl_scalar private MetadataParsedURL	yearOfBirthLink;
-	 @simpl_scalar private MetadataParsedURL	placeOfBirthLink;
+	@simpl_scalar private MetadataString	dayOfBirth;
+	@simpl_scalar private MetadataString	yearOfBirth;
+	@simpl_scalar private MetadataString	placeOfBirth;
+	@simpl_scalar private MetadataParsedURL	dayOfBirthLink;
+	@simpl_scalar private MetadataParsedURL	yearOfBirthLink;
+	@simpl_scalar private MetadataParsedURL	placeOfBirthLink;
 
 /**
 	Constructor

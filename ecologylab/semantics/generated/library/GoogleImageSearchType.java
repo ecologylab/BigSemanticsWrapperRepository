@@ -51,7 +51,7 @@ public class  GoogleImageSearchType
 extends  Document
 {
 
-	@simpl_collection("image_result") @simpl_nowrap private ArrayList<ImageResult>	imageResults;
+	@simpl_collection("image_result") @simpl_nowrap @mm_name("image_results") private ArrayList<ImageResult>	imageResults;
 
 /**
 	Constructor

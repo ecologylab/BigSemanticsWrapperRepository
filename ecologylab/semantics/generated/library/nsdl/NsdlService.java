@@ -47,7 +47,7 @@ extends  Metadata
 {
 
 
-private @xml_tag("SearchResults") @simpl_composite SearchResults	searchResults;
+private @xml_tag("SearchResults")@simpl_composite @mm_name("search_results") SearchResults	searchResults;
 /**
 	Constructor
 **/ 

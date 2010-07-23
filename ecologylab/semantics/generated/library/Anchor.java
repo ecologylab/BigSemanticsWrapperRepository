@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Anchor extends Metadata{
 
-	 @simpl_scalar private MetadataString	anchorText;
-	 @simpl_scalar private MetadataParsedURL	link;
+	@simpl_scalar private MetadataString	anchorText;
+	@simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Constructor

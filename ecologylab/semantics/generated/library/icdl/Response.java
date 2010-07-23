@@ -36,9 +36,9 @@ import java.util.*;
 
 public class Response extends Metadata{
 
-	 @simpl_scalar private MetadataInteger	pnum;
-	 @simpl_scalar private MetadataInteger	total;
-	@simpl_collection("book") @simpl_nowrap private ArrayList<Book>	books;
+	@simpl_scalar private MetadataInteger	pnum;
+	@simpl_scalar private MetadataInteger	total;
+	@simpl_collection("book") @simpl_nowrap @mm_name("books") private ArrayList<Book>	books;
 
 /**
 	Constructor

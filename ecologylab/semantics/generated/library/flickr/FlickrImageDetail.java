@@ -52,7 +52,7 @@ extends  Document
 {
 
 
-private  @simpl_composite FlickrImage	flickrImage;
+private @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;
 /**
 	Constructor
 **/ 

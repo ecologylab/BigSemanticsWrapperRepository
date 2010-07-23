@@ -51,7 +51,7 @@ public class  Text
 extends  Media
 {
 
-	 @simpl_scalar private MetadataString	text;
+	@simpl_scalar private MetadataString	text;
 
 /**
 	Constructor

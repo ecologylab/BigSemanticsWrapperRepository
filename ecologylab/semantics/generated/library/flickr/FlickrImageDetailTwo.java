@@ -51,10 +51,10 @@ public class  FlickrImageDetailTwo
 extends  Document
 {
 
-	@simpl_collection("related_photo") private ArrayList<RelatedPhoto>	relatedPhotos;
+	@simpl_collection("related_photo") @mm_name("related_photos") private ArrayList<RelatedPhoto>	relatedPhotos;
 
-private  @simpl_composite FlickrImage	flickrImage;	@simpl_collection("author_photos") private ArrayList<AuthorPhotos>	authorPhotos;
-	@simpl_collection("flickr_tag") private ArrayList<FlickrTag>	flickrTags;
+private @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;	@simpl_collection("author_photos") @mm_name("author_photos") private ArrayList<AuthorPhotos>	authorPhotos;
+	@simpl_collection("flickr_tag") @mm_name("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
 /**
 	Constructor

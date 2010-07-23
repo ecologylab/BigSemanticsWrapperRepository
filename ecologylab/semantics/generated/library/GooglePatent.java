@@ -51,13 +51,13 @@ public class  GooglePatent
 extends  Document
 {
 
-	 @simpl_scalar private MetadataString	inventor;
-	 @simpl_scalar private MetadataString	abstractField;
-	 @simpl_scalar private MetadataString	claims;
-	 @simpl_scalar private MetadataParsedURL	picLink;
-	@simpl_collection("search_result") private ArrayList<SearchResult>	referencedBys;
-	@simpl_collection("search_result") private ArrayList<SearchResult>	citations;
-	@simpl_collection("search_result") private ArrayList<SearchResult>	picLinks;
+	@simpl_scalar private MetadataString	inventor;
+	@simpl_scalar private MetadataString	abstractField;
+	@simpl_scalar private MetadataString	claims;
+	@simpl_scalar private MetadataParsedURL	picLink;
+	@simpl_collection("search_result") @mm_name("referenced_bys") private ArrayList<SearchResult>	referencedBys;
+	@simpl_collection("search_result") @mm_name("citations") private ArrayList<SearchResult>	citations;
+	@simpl_collection("search_result") @mm_name("pic_links") private ArrayList<SearchResult>	picLinks;
 
 /**
 	Constructor

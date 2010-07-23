@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Category extends Metadata{
 
-	 @simpl_scalar private MetadataString	name;
-	 @simpl_scalar private MetadataParsedURL	catLink;
+	@simpl_scalar private MetadataString	name;
+	@simpl_scalar private MetadataParsedURL	catLink;
 
 /**
 	Constructor

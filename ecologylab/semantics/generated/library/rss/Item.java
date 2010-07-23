@@ -51,9 +51,9 @@ public class  Item
 extends  YahooMediaRss
 {
 
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
-	 @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	guid;
+	@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
+	@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
+	@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	guid;
 
 /**
 	Constructor

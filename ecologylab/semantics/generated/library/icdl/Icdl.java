@@ -52,7 +52,7 @@ extends  Document
 {
 
 
-private  @simpl_composite Response	response;
+private @simpl_composite @mm_name("response") Response	response;
 /**
 	Constructor
 **/ 

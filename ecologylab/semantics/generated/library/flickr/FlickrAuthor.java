@@ -51,7 +51,7 @@ public class  FlickrAuthor
 extends  Document
 {
 
-	@simpl_collection("flickr_link") private ArrayList<FlickrLink>	flickrLinkSet;
+	@simpl_collection("flickr_link") @mm_name("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
 
 /**
 	Constructor

@@ -52,7 +52,7 @@ extends  Document
 {
 
 
-private  @simpl_composite Channel	channel;
+private @simpl_composite @mm_name("channel") Channel	channel;
 /**
 	Constructor
 **/ 

@@ -46,7 +46,7 @@ public class  Search
 extends  Document
 {
 
-	@simpl_collection("search_result") @simpl_nowrap private ArrayList<SearchResult>	searchResults;
+	@simpl_collection("search_result") @simpl_nowrap @mm_name("search_results") private ArrayList<SearchResult>	searchResults;
 
 /**
 	Constructor

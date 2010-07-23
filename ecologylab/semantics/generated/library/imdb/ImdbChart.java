@@ -51,7 +51,7 @@ public class  ImdbChart
 extends  Document
 {
 
-	@simpl_collection("imdb_title") private ArrayList<ImdbTitle>	results;
+	@simpl_collection("imdb_title") @mm_name("results") private ArrayList<ImdbTitle>	results;
 
 /**
 	Constructor

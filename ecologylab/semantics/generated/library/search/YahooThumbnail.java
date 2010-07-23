@@ -46,9 +46,9 @@ public class  YahooThumbnail
 extends  Metadata
 {
 
-	@xml_tag("Url") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	thumbUrl;
-	@xml_tag("Width") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	width;
-	@xml_tag("Height") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	height;
+	@xml_tag("Url")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	thumbUrl;
+	@xml_tag("Width")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	width;
+	@xml_tag("Height")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataInteger	height;
 
 /**
 	Constructor

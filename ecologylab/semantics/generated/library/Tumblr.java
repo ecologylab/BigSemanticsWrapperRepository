@@ -56,7 +56,7 @@ extends  Document
 	Phone number of the restaurant
 **/ 
 
-	 @simpl_scalar private MetadataString	post;
+	@simpl_scalar private MetadataString	post;
 
 /**
 	Constructor

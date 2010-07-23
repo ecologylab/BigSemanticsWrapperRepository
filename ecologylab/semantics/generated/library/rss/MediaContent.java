@@ -36,9 +36,9 @@ import java.util.*;
 @xml_tag("media:content")
 public class MediaContent extends Metadata{
 
-	@xml_tag("url") @simpl_scalar private MetadataParsedURL	mediaUrl;
-	 @simpl_scalar private MetadataInteger	height;
-	 @simpl_scalar private MetadataInteger	width;
+	@xml_tag("url")@simpl_scalar private MetadataParsedURL	mediaUrl;
+	@simpl_scalar private MetadataInteger	height;
+	@simpl_scalar private MetadataInteger	width;
 
 /**
 	Constructor

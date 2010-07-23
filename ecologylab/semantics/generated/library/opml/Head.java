@@ -36,7 +36,7 @@ import java.util.*;
 
 public class Head extends Metadata{
 
-	 @simpl_scalar private MetadataString	title;
+	@simpl_scalar private MetadataString	title;
 
 /**
 	Constructor

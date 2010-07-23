@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Tag extends Metadata{
 
-	 @simpl_scalar private MetadataParsedURL	link;
-	 @simpl_scalar private MetadataString	tagName;
+	@simpl_scalar private MetadataParsedURL	link;
+	@simpl_scalar private MetadataString	tagName;
 
 /**
 	Constructor

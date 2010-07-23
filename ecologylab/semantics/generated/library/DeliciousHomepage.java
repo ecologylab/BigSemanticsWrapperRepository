@@ -51,7 +51,7 @@ public class  DeliciousHomepage
 extends  Document
 {
 
-	@simpl_collection("bookmark") private ArrayList<Bookmark>	bookmarks;
+	@simpl_collection("bookmark") @mm_name("bookmarks") private ArrayList<Bookmark>	bookmarks;
 
 /**
 	Constructor

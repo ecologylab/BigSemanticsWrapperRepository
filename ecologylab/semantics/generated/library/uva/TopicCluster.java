@@ -46,13 +46,13 @@ public class  TopicCluster
 extends  Metadata
 {
 
-	 @simpl_scalar private MetadataInteger	id;
-	@simpl_collection("document") private ArrayList<Document>	documentSet;
-	@simpl_collection("keyword_set") private ArrayList<KeywordSet>	keywordSets;
-	 @simpl_scalar private MetadataInteger	x;
-	 @simpl_scalar private MetadataInteger	y;
-	 @simpl_scalar private MetadataInteger	width;
-	 @simpl_scalar private MetadataInteger	height;
+	@simpl_scalar private MetadataInteger	id;
+	@simpl_collection("document") @mm_name("document_set") private ArrayList<Document>	documentSet;
+	@simpl_collection("keyword_set") @mm_name("keyword_sets") private ArrayList<KeywordSet>	keywordSets;
+	@simpl_scalar private MetadataInteger	x;
+	@simpl_scalar private MetadataInteger	y;
+	@simpl_scalar private MetadataInteger	width;
+	@simpl_scalar private MetadataInteger	height;
 
 /**
 	Constructor

@@ -36,8 +36,8 @@ import java.util.*;
 
 public class Channel extends Metadata{
 
-	 @simpl_scalar private MetadataString	title;
-	@simpl_collection("item") @simpl_nowrap private ArrayList<Item>	items;
+	@simpl_scalar private MetadataString	title;
+	@simpl_collection("item") @simpl_nowrap @mm_name("items") private ArrayList<Item>	items;
 
 /**
 	Constructor

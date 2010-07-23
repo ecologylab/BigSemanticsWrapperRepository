@@ -51,9 +51,9 @@ public class  WikipediaPageType
 extends  Document
 {
 
-	@simpl_collection("paragraph") private ArrayList<Paragraph>	paragraphs;
-	@simpl_collection("category") private ArrayList<Category>	categories;
-	@simpl_collection("thumbinner") private ArrayList<Thumbinner>	thumbinners;
+	@simpl_collection("paragraph") @mm_name("paragraphs") private ArrayList<Paragraph>	paragraphs;
+	@simpl_collection("category") @mm_name("categories") private ArrayList<Category>	categories;
+	@simpl_collection("thumbinner") @mm_name("thumbinners") private ArrayList<Thumbinner>	thumbinners;
 
 /**
 	Constructor

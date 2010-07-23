@@ -56,7 +56,7 @@ extends  Image
 	The language of the library
 **/ 
 
-	 @simpl_scalar private MetadataString	languages;
+	@simpl_scalar private MetadataString	languages;
 
 /**
 	Constructor

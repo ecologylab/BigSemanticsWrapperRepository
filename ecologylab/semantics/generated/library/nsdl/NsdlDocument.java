@@ -37,8 +37,8 @@ import java.util.*;
 public class NsdlDocument extends Metadata{
 
 
-private @xml_tag("fields") @simpl_composite Dc	nsdlDocument;
-private  @simpl_composite Header	header;
+private @xml_tag("fields")@simpl_composite @mm_name("nsdl_document") Dc	nsdlDocument;
+private @simpl_composite @mm_name("header") Header	header;
 /**
 	Constructor
 **/ 

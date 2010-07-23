@@ -51,7 +51,7 @@ public class  Rss22
 extends  Document
 {
 
-	@simpl_collection("item") @simpl_nowrap private ArrayList<Item>	items;
+	@simpl_collection("item") @simpl_nowrap @mm_name("items") private ArrayList<Item>	items;
 
 /**
 	Constructor

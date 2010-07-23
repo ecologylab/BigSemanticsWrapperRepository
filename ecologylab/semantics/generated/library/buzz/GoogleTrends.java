@@ -51,7 +51,7 @@ public class  GoogleTrends
 extends  Document
 {
 
-	@simpl_collection("hot_search") @simpl_nowrap private ArrayList<HotSearch>	hotSearches;
+	@simpl_collection("hot_search") @simpl_nowrap @mm_name("hot_searches") private ArrayList<HotSearch>	hotSearches;
 
 /**
 	Constructor

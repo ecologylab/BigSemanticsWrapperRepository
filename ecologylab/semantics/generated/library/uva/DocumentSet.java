@@ -46,7 +46,7 @@ public class  DocumentSet
 extends  Metadata
 {
 
-	@simpl_collection("document") @simpl_nowrap private ArrayList<Document>	documents;
+	@simpl_collection("document") @simpl_nowrap @mm_name("documents") private ArrayList<Document>	documents;
 
 /**
 	Constructor

@@ -46,8 +46,8 @@ public class  AcmProceeding
 extends  Document
 {
 
-	@simpl_collection("search_result") private ArrayList<SearchResult>	proceedings;
-	@simpl_collection("search_result") private ArrayList<SearchResult>	papers;
+	@simpl_collection("search_result") @mm_name("proceedings") private ArrayList<SearchResult>	proceedings;
+	@simpl_collection("search_result") @mm_name("papers") private ArrayList<SearchResult>	papers;
 
 /**
 	Constructor

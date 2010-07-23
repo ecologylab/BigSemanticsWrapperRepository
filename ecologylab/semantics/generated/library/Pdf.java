@@ -56,39 +56,39 @@ extends  Document
 	The author of the pdf document
 **/ 
 
-	 @simpl_scalar private MetadataString	author;
+	@simpl_scalar private MetadataString	author;
 
 /**
 	Summary of the pdf document
 **/ 
 
-	 @simpl_scalar private MetadataString	summary;
+	@simpl_scalar private MetadataString	summary;
 
 /**
 	Key Words of the document
 **/ 
 
-	 @simpl_scalar private MetadataString	pdfKeywordsString;
+	@simpl_scalar private MetadataString	pdfKeywordsString;
 
 /**
 	Subject of the document
 **/ 
 
-	 @simpl_scalar private MetadataString	subject;
-	 @simpl_scalar private MetadataString	trapped;
-	 @simpl_scalar private MetadataString	modified;
+	@simpl_scalar private MetadataString	subject;
+	@simpl_scalar private MetadataString	trapped;
+	@simpl_scalar private MetadataString	modified;
 
 /**
 	Contents of the document
 **/ 
 
-	 @simpl_scalar private MetadataString	contents;
+	@simpl_scalar private MetadataString	contents;
 
 /**
 	Creation date of the document
 **/ 
 
-	 @simpl_scalar private MetadataString	creationdate;
+	@simpl_scalar private MetadataString	creationdate;
 
 /**
 	Constructor

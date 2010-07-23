@@ -46,7 +46,7 @@ public class  Model
 extends  Metadata
 {
 
-	@simpl_collection("topic_cluster") private ArrayList<TopicCluster>	topicClusters;
+	@simpl_collection("topic_cluster") @mm_name("topic_clusters") private ArrayList<TopicCluster>	topicClusters;
 
 /**
 	Constructor

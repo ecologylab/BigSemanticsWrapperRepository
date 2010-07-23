@@ -51,17 +51,17 @@ public class  ImdbTitle
 extends  Document
 {
 
-	 @simpl_scalar private MetadataString	yearReleased;
-	 @simpl_scalar private MetadataString	rating;
-	@simpl_collection("person_details") private ArrayList<Entity<PersonDetails>>	directors;
-	@simpl_collection("person_details") private ArrayList<Entity<PersonDetails>>	writers;
-	 @simpl_scalar private MetadataString	releaseDate;
-	@simpl_collection("genre") private ArrayList<Genre>	genres;
-	 @simpl_scalar private MetadataString	plot;
-	 @simpl_scalar private MetadataString	tagline;
-	@simpl_collection("cast_member") private ArrayList<CastMember>	cast;
-	@simpl_collection("image") private ArrayList<Image>	titlePhotos;
-	 @simpl_scalar private MetadataParsedURL	posterImg;
+	@simpl_scalar private MetadataString	yearReleased;
+	@simpl_scalar private MetadataString	rating;
+	@simpl_collection("person_details") @mm_name("directors") private ArrayList<Entity<PersonDetails>>	directors;
+	@simpl_collection("person_details") @mm_name("writers") private ArrayList<Entity<PersonDetails>>	writers;
+	@simpl_scalar private MetadataString	releaseDate;
+	@simpl_collection("genre") @mm_name("genres") private ArrayList<Genre>	genres;
+	@simpl_scalar private MetadataString	plot;
+	@simpl_scalar private MetadataString	tagline;
+	@simpl_collection("cast_member") @mm_name("cast") private ArrayList<CastMember>	cast;
+	@simpl_collection("image") @mm_name("title_photos") private ArrayList<Image>	titlePhotos;
+	@simpl_scalar private MetadataParsedURL	posterImg;
 
 /**
 	Constructor

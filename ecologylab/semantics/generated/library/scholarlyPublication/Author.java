@@ -51,9 +51,9 @@ public class  Author
 extends  Document
 {
 
-	 @simpl_scalar private MetadataString	name;
-	 @simpl_scalar private MetadataString	affiliation;
-	 @simpl_scalar private MetadataString	city;
+	@simpl_scalar private MetadataString	name;
+	@simpl_scalar private MetadataString	affiliation;
+	@simpl_scalar private MetadataString	city;
 
 /**
 	Constructor

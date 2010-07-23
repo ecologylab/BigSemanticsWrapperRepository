@@ -52,7 +52,7 @@ extends  Dc
 {
 
 
-private @xml_tag("media:content") @simpl_composite MediaContent	mediaContent;	@xml_tag("media:description") @simpl_scalar private MetadataString	mediaDescription;
+private @xml_tag("media:content")@simpl_composite @mm_name("media_content") MediaContent	mediaContent;	@xml_tag("media:description")@simpl_scalar private MetadataString	mediaDescription;
 
 /**
 	Constructor

@@ -51,7 +51,7 @@ public class  Dlms
 extends  Document
 {
 
-	 @simpl_scalar private MetadataString	subject;
+	@simpl_scalar private MetadataString	subject;
 
 /**
 	Constructor

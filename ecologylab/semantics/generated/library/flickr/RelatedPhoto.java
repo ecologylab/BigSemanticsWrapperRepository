@@ -46,8 +46,8 @@ public class  RelatedPhoto
 extends  Metadata
 {
 
-	 @simpl_scalar private MetadataParsedURL	nearbyPhotosLink;
-	 @simpl_scalar private MetadataString	nearbyPhotos;
+	@simpl_scalar private MetadataParsedURL	nearbyPhotosLink;
+	@simpl_scalar private MetadataString	nearbyPhotos;
 
 /**
 	Constructor

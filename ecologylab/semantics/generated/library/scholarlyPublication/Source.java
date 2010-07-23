@@ -51,15 +51,15 @@ public class  Source
 extends  Document
 {
 
-	 @simpl_scalar private MetadataInteger	yearOfPublication;
+	@simpl_scalar private MetadataInteger	yearOfPublication;
 
 /**
 	Archive of conference or journal.
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	archive;
-	 @simpl_scalar private MetadataString	pages;
-	 @simpl_scalar private MetadataString	isbn;
+	@simpl_scalar private MetadataParsedURL	archive;
+	@simpl_scalar private MetadataString	pages;
+	@simpl_scalar private MetadataString	isbn;
 
 /**
 	Constructor

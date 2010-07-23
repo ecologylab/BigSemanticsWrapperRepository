@@ -41,25 +41,25 @@ public class ImageResult extends Metadata{
 	raw parsed URL for extracting values 'url', 'referer_url'
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	imgUrl;
+	@simpl_scalar private MetadataParsedURL	imgUrl;
 
 /**
 	image summary
 **/ 
 
-	 @simpl_scalar private MetadataString	summary;
+	@simpl_scalar private MetadataString	summary;
 
 /**
 	mime type should be extracted from this property
 **/ 
 
-	 @simpl_scalar private MetadataString	rawProperty;
+	@simpl_scalar private MetadataString	rawProperty;
 
 /**
 	image title
 **/ 
 
-	 @simpl_scalar private MetadataString	imgTitle;
+	@simpl_scalar private MetadataString	imgTitle;
 
 /**
 	Constructor

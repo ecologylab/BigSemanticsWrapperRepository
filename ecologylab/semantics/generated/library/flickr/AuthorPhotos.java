@@ -46,14 +46,14 @@ public class  AuthorPhotos
 extends  Metadata
 {
 
-	 @simpl_scalar private MetadataParsedURL	authorFlickrPageLink;
-	 @simpl_scalar private MetadataString	authorFlickrPage;
-	 @simpl_scalar private MetadataParsedURL	photosThatDayLink;
-	 @simpl_scalar private MetadataParsedURL	photosThatMonthLink;
-	 @simpl_scalar private MetadataParsedURL	photosThatYearLink;
-	 @simpl_scalar private MetadataString	photosThatDay;
-	 @simpl_scalar private MetadataString	photosThatMonth;
-	 @simpl_scalar private MetadataString	photosThatYear;
+	@simpl_scalar private MetadataParsedURL	authorFlickrPageLink;
+	@simpl_scalar private MetadataString	authorFlickrPage;
+	@simpl_scalar private MetadataParsedURL	photosThatDayLink;
+	@simpl_scalar private MetadataParsedURL	photosThatMonthLink;
+	@simpl_scalar private MetadataParsedURL	photosThatYearLink;
+	@simpl_scalar private MetadataString	photosThatDay;
+	@simpl_scalar private MetadataString	photosThatMonth;
+	@simpl_scalar private MetadataString	photosThatYear;
 
 /**
 	Constructor

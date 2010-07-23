@@ -51,31 +51,31 @@ public class  Artwork
 extends  Document
 {
 
-	@simpl_collection("author") private ArrayList<Author>	artists;
+	@simpl_collection("author") @mm_name("artists") private ArrayList<Author>	artists;
 
 /**
 	Abstract of the work.
 **/ 
 
-	@xml_tag("abstract") @simpl_scalar private MetadataString	abstractField;
+	@xml_tag("abstract")@simpl_scalar private MetadataString	abstractField;
 
 /**
 	Medium on which the work is done.
 **/ 
 
-	 @simpl_scalar private MetadataString	medium;
+	@simpl_scalar private MetadataString	medium;
 
 /**
 	Year the work was created.
 **/ 
 
-	 @simpl_scalar private MetadataString	year;
+	@simpl_scalar private MetadataString	year;
 
 /**
 	Website of the work or group responsible.
 **/ 
 
-	 @simpl_scalar private MetadataParsedURL	website;
+	@simpl_scalar private MetadataParsedURL	website;
 
 /**
 	Constructor

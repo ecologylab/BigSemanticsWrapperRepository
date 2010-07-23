@@ -46,8 +46,8 @@ public class  KeywordSet
 extends  Metadata
 {
 
-	 @simpl_scalar private MetadataString	type;
-	@simpl_collection("String") private ArrayList<String>	keywords;
+	@simpl_scalar private MetadataString	type;
+	@simpl_collection("String") @mm_name("keywords") private ArrayList<String>	keywords;
 
 /**
 	Constructor

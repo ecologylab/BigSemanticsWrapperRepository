@@ -51,7 +51,7 @@ public class  YahooResultSet
 extends  Document
 {
 
-	@simpl_collection("Result") @simpl_nowrap private ArrayList<Result>	results;
+	@simpl_collection("Result") @simpl_nowrap @mm_name("results") private ArrayList<Result>	results;
 
 /**
 	Constructor

@@ -37,8 +37,8 @@ import java.util.*;
 public class CastMember extends Metadata{
 
 
-private  @simpl_composite Entity<PersonDetails>	actor;
-private  @simpl_composite Entity<PersonDetails>	character;
+private @simpl_composite @mm_name("actor") Entity<PersonDetails>	actor;
+private @simpl_composite @mm_name("character") Entity<PersonDetails>	character;
 /**
 	Constructor
 **/ 

@@ -51,11 +51,11 @@ public class  Dc
 extends  Document
 {
 
-	@xml_tag("dc:creator") @simpl_scalar private MetadataString	dcCreator;
-	@xml_tag("dc:subject") @simpl_scalar private MetadataString	dcSubject;
-	@xml_tag("dc:description") @simpl_scalar private MetadataString	dcDescription;
-	@xml_tag("dc:title") @simpl_scalar private MetadataString	dcTitle;
-	@xml_tag("dc:date") @simpl_scalar private MetadataDate	dcDate;
+	@xml_tag("dc:creator")@simpl_scalar private MetadataString	dcCreator;
+	@xml_tag("dc:subject")@simpl_scalar private MetadataString	dcSubject;
+	@xml_tag("dc:description")@simpl_scalar private MetadataString	dcDescription;
+	@xml_tag("dc:title")@simpl_scalar private MetadataString	dcTitle;
+	@xml_tag("dc:date")@simpl_scalar private MetadataDate	dcDate;
 
 /**
 	Constructor

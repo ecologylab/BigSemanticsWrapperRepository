@@ -36,12 +36,12 @@ import java.util.*;
 
 public class Book extends Metadata{
 
-	 @simpl_scalar private MetadataString	languages;
-	 @simpl_scalar private MetadataParsedURL	cover;
-	 @simpl_scalar private MetadataInteger	height;
-	 @simpl_scalar private MetadataInteger	width;
-	 @simpl_scalar private MetadataString	booktitle;
-	 @simpl_scalar private MetadataParsedURL	bookurl;
+	@simpl_scalar private MetadataString	languages;
+	@simpl_scalar private MetadataParsedURL	cover;
+	@simpl_scalar private MetadataInteger	height;
+	@simpl_scalar private MetadataInteger	width;
+	@simpl_scalar private MetadataString	booktitle;
+	@simpl_scalar private MetadataParsedURL	bookurl;
 
 /**
 	Constructor

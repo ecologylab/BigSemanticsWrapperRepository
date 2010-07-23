@@ -36,7 +36,7 @@ import java.util.*;
 
 public class Header extends Metadata{
 
-	@xml_tag("resourceIdentifier") @simpl_scalar private MetadataParsedURL	resourceIdentifier;
+	@xml_tag("resourceIdentifier")@simpl_scalar private MetadataParsedURL	resourceIdentifier;
 
 /**
 	Constructor

@@ -36,13 +36,13 @@ import java.util.*;
 
 public class Result extends Metadata{
 
-	@xml_tag("ModificationDate") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	modificationDate;
-	@xml_tag("Summary") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	summary;
-	@xml_tag("Title") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
+	@xml_tag("ModificationDate")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	modificationDate;
+	@xml_tag("Summary")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	summary;
+	@xml_tag("Title")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
 
-private @xml_tag("Thumbnail") @simpl_composite YahooThumbnail	thumbnail;	@xml_tag("MimeType") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	mimeType;
-	@xml_tag("RefererUrl") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	refererUrl;
-	@xml_tag("Url") @simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	url;
+private @xml_tag("Thumbnail")@simpl_composite @mm_name("thumbnail") YahooThumbnail	thumbnail;	@xml_tag("MimeType")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	mimeType;
+	@xml_tag("RefererUrl")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	refererUrl;
+	@xml_tag("Url")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	url;
 
 /**
 	Constructor

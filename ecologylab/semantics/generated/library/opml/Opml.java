@@ -47,8 +47,8 @@ extends  Document
 {
 
 
-private  @simpl_composite Head	head;
-private  @simpl_composite Body	body;
+private @simpl_composite @mm_name("head") Head	head;
+private @simpl_composite @mm_name("body") Body	body;
 /**
 	Constructor
 **/ 

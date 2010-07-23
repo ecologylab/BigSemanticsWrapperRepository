@@ -36,7 +36,7 @@ import java.util.*;
 @xml_tag("SearchResults")
 public class SearchResults extends Metadata{
 
-	@simpl_collection("nsdl_document") private ArrayList<NsdlDocument>	results;
+	@simpl_collection("nsdl_document") @mm_name("results") private ArrayList<NsdlDocument>	results;
 
 /**
 	Constructor

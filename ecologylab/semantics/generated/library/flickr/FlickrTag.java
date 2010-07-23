@@ -46,8 +46,8 @@ public class  FlickrTag
 extends  Metadata
 {
 
-	 @simpl_scalar private MetadataString	tagName;
-	 @simpl_scalar private MetadataParsedURL	tagLink;
+	@simpl_scalar private MetadataString	tagName;
+	@simpl_scalar private MetadataParsedURL	tagLink;
 
 /**
 	Constructor

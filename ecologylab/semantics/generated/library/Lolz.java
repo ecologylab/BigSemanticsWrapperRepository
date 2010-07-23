@@ -51,9 +51,9 @@ public class  Lolz
 extends  Document
 {
 
-	 @simpl_scalar private MetadataString	caption;
-	 @simpl_scalar private MetadataParsedURL	picture;
-	 @simpl_scalar private MetadataParsedURL	mightLike;
+	@simpl_scalar private MetadataString	caption;
+	@simpl_scalar private MetadataParsedURL	picture;
+	@simpl_scalar private MetadataParsedURL	mightLike;
 
 /**
 	Constructor
