@@ -39,6 +39,7 @@ public class Outline extends Metadata{
 	@xml_tag("htmlUrl")@simpl_scalar private MetadataParsedURL	htmlUrl;
 	@simpl_scalar private MetadataString	title;
 	@simpl_scalar private MetadataString	text;
+	@simpl_collection("outline") @simpl_nowrap @mm_name("outlines") private ArrayList<Outline>	outlines;
 	@xml_tag("xmlUrl")@simpl_scalar private MetadataParsedURL	xmlUrl;
 	@simpl_scalar private MetadataString	type;
 
@@ -234,6 +235,38 @@ public void hwSetTextMetadata(MetadataString text)
 	 this.text = text;
 	rebuildCompositeTermVector();
 }
+/**
+	Lazy Evaluation for outlines
+**/ 
+
+public  ArrayList<Outline>	outlines()
+{
+ ArrayList<Outline>	result	=this.outlines;
+if(result == null)
+{
+result = new  ArrayList<Outline>();
+this.outlines	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field outlines
+**/ 
+
+public void setOutlines(  ArrayList<Outline> outlines )
+{
+this.outlines = outlines ;
+}
+
+/**
+	Get the value of field outlines
+**/ 
+
+public  ArrayList<Outline> getOutlines(){
+return this.outlines;
+}
+
 /**
 	Lazy Evaluation for xmlUrl
 **/ 
