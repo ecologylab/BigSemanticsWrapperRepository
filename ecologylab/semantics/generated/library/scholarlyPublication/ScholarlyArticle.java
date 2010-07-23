@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
@@ -57,7 +58,7 @@ extends  Pdf
 private  @simpl_composite Source	source;	@simpl_collection("author") private ArrayList<Author>	authors;
 	@simpl_collection("reference") private ArrayList<Entity<ScholarlyArticle>>	references;
 	@simpl_collection("citation") private ArrayList<Entity<ScholarlyArticle>>	citations;
-	@simpl_collection("tag") private ArrayList<Tag>	classification;
+	@simpl_collection("tag") private ArrayList<Tag>	classifications;
 	@simpl_collection("tag") private ArrayList<Tag>	keywords;
 
 /**
@@ -323,35 +324,35 @@ return this.citations;
 }
 
 /**
-	Lazy Evaluation for classification
+	Lazy Evaluation for classifications
 **/ 
 
-public  ArrayList<Tag>	classification()
+public  ArrayList<Tag>	classifications()
 {
- ArrayList<Tag>	result	=this.classification;
+ ArrayList<Tag>	result	=this.classifications;
 if(result == null)
 {
 result = new  ArrayList<Tag>();
-this.classification	=	 result;
+this.classifications	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field classification
+	Set the value of field classifications
 **/ 
 
-public void setClassification(  ArrayList<Tag> classification )
+public void setClassifications(  ArrayList<Tag> classifications )
 {
-this.classification = classification ;
+this.classifications = classifications ;
 }
 
 /**
-	Get the value of field classification
+	Get the value of field classifications
 **/ 
 
-public  ArrayList<Tag> getClassification(){
-return this.classification;
+public  ArrayList<Tag> getClassifications(){
+return this.classifications;
 }
 
 /**
