@@ -38,6 +38,12 @@ public class ImageResult extends Metadata{
 
 
 /**
+	raw parsed URL for extracting values 'url', 'referer_url'
+**/ 
+
+	 @simpl_scalar private MetadataParsedURL	imgUrl;
+
+/**
 	image summary
 **/ 
 
@@ -48,12 +54,6 @@ public class ImageResult extends Metadata{
 **/ 
 
 	 @simpl_scalar private MetadataString	rawProperty;
-
-/**
-	raw parsed URL for extracting values 'url', 'referer_url'
-**/ 
-
-	 @simpl_scalar private MetadataString	rawUrl;
 
 /**
 	image title
@@ -79,6 +79,64 @@ public ImageResult(MetaMetadataCompositeField metaMetadata)
 super(metaMetadata);
 }
 
+/**
+	Lazy Evaluation for imgUrl
+**/ 
+
+public MetadataParsedURL	imgUrl()
+{
+MetadataParsedURL	result	=this.imgUrl;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.imgUrl	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field imgUrl
+**/ 
+
+public ParsedURL getImgUrl(){
+return imgUrl().getValue();
+}
+
+/**
+	Sets the value of the field imgUrl
+**/ 
+
+public void setImgUrl( ParsedURL imgUrl )
+{
+this.imgUrl().setValue(imgUrl);
+}
+
+/**
+	The heavy weight setter method for field imgUrl
+**/ 
+
+public void hwSetImgUrl( ParsedURL imgUrl )
+{
+this.imgUrl().setValue(imgUrl);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the imgUrl directly
+**/ 
+
+public void setImgUrlMetadata(MetadataParsedURL imgUrl)
+{	this.imgUrl = imgUrl;
+}
+/**
+	Heavy Weight Direct setter method for imgUrl
+**/ 
+
+public void hwSetImgUrlMetadata(MetadataParsedURL imgUrl)
+{	 if(this.imgUrl!=null && this.imgUrl.getValue()!=null && hasTermVector())
+		 termVector().remove(this.imgUrl.termVector());
+	 this.imgUrl = imgUrl;
+	rebuildCompositeTermVector();
+}
 /**
 	Lazy Evaluation for summary
 **/ 
@@ -193,64 +251,6 @@ public void hwSetRawPropertyMetadata(MetadataString rawProperty)
 {	 if(this.rawProperty!=null && this.rawProperty.getValue()!=null && hasTermVector())
 		 termVector().remove(this.rawProperty.termVector());
 	 this.rawProperty = rawProperty;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for rawUrl
-**/ 
-
-public MetadataString	rawUrl()
-{
-MetadataString	result	=this.rawUrl;
-if(result == null)
-{
-result = new MetadataString();
-this.rawUrl	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field rawUrl
-**/ 
-
-public String getRawUrl(){
-return rawUrl().getValue();
-}
-
-/**
-	Sets the value of the field rawUrl
-**/ 
-
-public void setRawUrl( String rawUrl )
-{
-this.rawUrl().setValue(rawUrl);
-}
-
-/**
-	The heavy weight setter method for field rawUrl
-**/ 
-
-public void hwSetRawUrl( String rawUrl )
-{
-this.rawUrl().setValue(rawUrl);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the rawUrl directly
-**/ 
-
-public void setRawUrlMetadata(MetadataString rawUrl)
-{	this.rawUrl = rawUrl;
-}
-/**
-	Heavy Weight Direct setter method for rawUrl
-**/ 
-
-public void hwSetRawUrlMetadata(MetadataString rawUrl)
-{	 if(this.rawUrl!=null && this.rawUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.rawUrl.termVector());
-	 this.rawUrl = rawUrl;
 	rebuildCompositeTermVector();
 }
 /**

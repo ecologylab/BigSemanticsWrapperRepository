@@ -33,7 +33,7 @@ import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
 @simpl_inherit
-
+@xml_tag("this_should_be_document")
 public class NsdlDocument extends Metadata{
 
 
