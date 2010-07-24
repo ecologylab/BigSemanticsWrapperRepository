@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.slashdot;
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;

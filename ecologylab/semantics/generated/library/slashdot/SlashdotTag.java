@@ -1,4 +1,12 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.slashdot;
+
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -35,16 +43,18 @@ import java.util.*;
 
 @simpl_inherit
 
-public class Anchor extends Metadata{
+public class  SlashdotTag
+extends  Metadata
+{
 
-	@simpl_scalar private MetadataString	anchorText;
+	@simpl_scalar private MetadataString	name;
 	@simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Constructor
 **/ 
 
-public Anchor()
+public SlashdotTag()
 {
  super();
 }
@@ -53,67 +63,67 @@ public Anchor()
 	Constructor
 **/ 
 
-public Anchor(MetaMetadataCompositeField metaMetadata)
+public SlashdotTag(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for anchorText
+	Lazy Evaluation for name
 **/ 
 
-public MetadataString	anchorText()
+public MetadataString	name()
 {
-MetadataString	result	=this.anchorText;
+MetadataString	result	=this.name;
 if(result == null)
 {
 result = new MetadataString();
-this.anchorText	=	 result;
+this.name	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field anchorText
+	Gets the value of the field name
 **/ 
 
-public String getAnchorText(){
-return anchorText().getValue();
+public String getName(){
+return name().getValue();
 }
 
 /**
-	Sets the value of the field anchorText
+	Sets the value of the field name
 **/ 
 
-public void setAnchorText( String anchorText )
+public void setName( String name )
 {
-this.anchorText().setValue(anchorText);
+this.name().setValue(name);
 }
 
 /**
-	The heavy weight setter method for field anchorText
+	The heavy weight setter method for field name
 **/ 
 
-public void hwSetAnchorText( String anchorText )
+public void hwSetName( String name )
 {
-this.anchorText().setValue(anchorText);
+this.name().setValue(name);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the anchorText directly
+	 Sets the name directly
 **/ 
 
-public void setAnchorTextMetadata(MetadataString anchorText)
-{	this.anchorText = anchorText;
+public void setNameMetadata(MetadataString name)
+{	this.name = name;
 }
 /**
-	Heavy Weight Direct setter method for anchorText
+	Heavy Weight Direct setter method for name
 **/ 
 
-public void hwSetAnchorTextMetadata(MetadataString anchorText)
-{	 if(this.anchorText!=null && this.anchorText.getValue()!=null && hasTermVector())
-		 termVector().remove(this.anchorText.termVector());
-	 this.anchorText = anchorText;
+public void hwSetNameMetadata(MetadataString name)
+{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
+		 termVector().remove(this.name.termVector());
+	 this.name = name;
 	rebuildCompositeTermVector();
 }
 /**
@@ -173,4 +183,6 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 		 termVector().remove(this.link.termVector());
 	 this.link = link;
 	rebuildCompositeTermVector();
-}}
+}
+}
+

@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.misc;
+package ecologylab.semantics.generated.library.slashdot;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -41,24 +41,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	The DLMS Class
-**/ 
-
 @simpl_inherit
-
-public class  Dlms
+@xml_tag("rdf:RDF")
+public class  SlashdotRss
 extends  Document
 {
 
-	@simpl_scalar private MetadataString	subject;
+	@simpl_collection("item") @simpl_nowrap @mm_name("items") private ArrayList<SlashdotItem>	items;
 
 /**
 	Constructor
 **/ 
 
-public Dlms()
+public SlashdotRss()
 {
  super();
 }
@@ -67,68 +62,42 @@ public Dlms()
 	Constructor
 **/ 
 
-public Dlms(MetaMetadataCompositeField metaMetadata)
+public SlashdotRss(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for subject
+	Lazy Evaluation for items
 **/ 
 
-public MetadataString	subject()
+public  ArrayList<SlashdotItem>	items()
 {
-MetadataString	result	=this.subject;
+ ArrayList<SlashdotItem>	result	=this.items;
 if(result == null)
 {
-result = new MetadataString();
-this.subject	=	 result;
+result = new  ArrayList<SlashdotItem>();
+this.items	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field subject
+	Set the value of field items
 **/ 
 
-public String getSubject(){
-return subject().getValue();
-}
-
-/**
-	Sets the value of the field subject
-**/ 
-
-public void setSubject( String subject )
+public void setItems(  ArrayList<SlashdotItem> items )
 {
-this.subject().setValue(subject);
+this.items = items ;
 }
 
 /**
-	The heavy weight setter method for field subject
+	Get the value of field items
 **/ 
 
-public void hwSetSubject( String subject )
-{
-this.subject().setValue(subject);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the subject directly
-**/ 
-
-public void setSubjectMetadata(MetadataString subject)
-{	this.subject = subject;
+public  ArrayList<SlashdotItem> getItems(){
+return this.items;
 }
-/**
-	Heavy Weight Direct setter method for subject
-**/ 
 
-public void hwSetSubjectMetadata(MetadataString subject)
-{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
-		 termVector().remove(this.subject.termVector());
-	 this.subject = subject;
-	rebuildCompositeTermVector();
-}
 }
 

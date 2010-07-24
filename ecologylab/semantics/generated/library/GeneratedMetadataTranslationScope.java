@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
@@ -184,6 +185,16 @@ ecologylab.semantics.generated.library.search.Search.class,
 ecologylab.semantics.generated.library.search.SearchResult.class,
 
 ecologylab.semantics.generated.library.search.YahooThumbnail.class,
+
+ecologylab.semantics.generated.library.slashdot.SlashdotRss.class,
+
+Anchor.class,
+
+ecologylab.semantics.generated.library.slashdot.SlashdotArticle.class,
+
+ecologylab.semantics.generated.library.slashdot.SlashdotItem.class,
+
+ecologylab.semantics.generated.library.slashdot.SlashdotTag.class,
 
 ecologylab.semantics.generated.library.Tumblr.class,
 
