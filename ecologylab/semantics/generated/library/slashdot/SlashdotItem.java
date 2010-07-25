@@ -54,7 +54,6 @@ extends  Item
 
 	@xml_tag("slash:department")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	department;
 	@xml_tag("slash:section")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	section;
-	@xml_tag("feedburner:origLink")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	origLink;
 
 /**
 	Constructor
@@ -188,64 +187,6 @@ public void hwSetSectionMetadata(MetadataString section)
 {	 if(this.section!=null && this.section.getValue()!=null && hasTermVector())
 		 termVector().remove(this.section.termVector());
 	 this.section = section;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for origLink
-**/ 
-
-public MetadataParsedURL	origLink()
-{
-MetadataParsedURL	result	=this.origLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.origLink	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field origLink
-**/ 
-
-public ParsedURL getOrigLink(){
-return origLink().getValue();
-}
-
-/**
-	Sets the value of the field origLink
-**/ 
-
-public void setOrigLink( ParsedURL origLink )
-{
-this.origLink().setValue(origLink);
-}
-
-/**
-	The heavy weight setter method for field origLink
-**/ 
-
-public void hwSetOrigLink( ParsedURL origLink )
-{
-this.origLink().setValue(origLink);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the origLink directly
-**/ 
-
-public void setOrigLinkMetadata(MetadataParsedURL origLink)
-{	this.origLink = origLink;
-}
-/**
-	Heavy Weight Direct setter method for origLink
-**/ 
-
-public void hwSetOrigLinkMetadata(MetadataParsedURL origLink)
-{	 if(this.origLink!=null && this.origLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.origLink.termVector());
-	 this.origLink = origLink;
 	rebuildCompositeTermVector();
 }
 }

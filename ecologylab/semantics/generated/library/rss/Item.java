@@ -52,9 +52,8 @@ public class  Item
 extends  YahooMediaRss
 {
 
-	@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	title;
 	@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	link;
-	@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	guid;
+	@xml_tag("guid")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataParsedURL	location;
 
 /**
 	Constructor
@@ -74,64 +73,6 @@ public Item(MetaMetadataCompositeField metaMetadata)
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for title
-**/ 
-
-public MetadataString	title()
-{
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field title
-**/ 
-
-public String getTitle(){
-return title().getValue();
-}
-
-/**
-	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
-{
-this.title().setValue(title);
-}
-
-/**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
-}
-/**
-	Heavy Weight Direct setter method for title
-**/ 
-
-public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for link
 **/ 
@@ -191,61 +132,61 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for guid
+	Lazy Evaluation for location
 **/ 
 
-public MetadataParsedURL	guid()
+public MetadataParsedURL	location()
 {
-MetadataParsedURL	result	=this.guid;
+MetadataParsedURL	result	=this.location;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.guid	=	 result;
+this.location	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field guid
+	Gets the value of the field location
 **/ 
 
-public ParsedURL getGuid(){
-return guid().getValue();
+public ParsedURL getLocation(){
+return location().getValue();
 }
 
 /**
-	Sets the value of the field guid
+	Sets the value of the field location
 **/ 
 
-public void setGuid( ParsedURL guid )
+public void setLocation( ParsedURL location )
 {
-this.guid().setValue(guid);
+this.location().setValue(location);
 }
 
 /**
-	The heavy weight setter method for field guid
+	The heavy weight setter method for field location
 **/ 
 
-public void hwSetGuid( ParsedURL guid )
+public void hwSetLocation( ParsedURL location )
 {
-this.guid().setValue(guid);
+this.location().setValue(location);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the guid directly
+	 Sets the location directly
 **/ 
 
-public void setGuidMetadata(MetadataParsedURL guid)
-{	this.guid = guid;
+public void setLocationMetadata(MetadataParsedURL location)
+{	this.location = location;
 }
 /**
-	Heavy Weight Direct setter method for guid
+	Heavy Weight Direct setter method for location
 **/ 
 
-public void hwSetGuidMetadata(MetadataParsedURL guid)
-{	 if(this.guid!=null && this.guid.getValue()!=null && hasTermVector())
-		 termVector().remove(this.guid.termVector());
-	 this.guid = guid;
+public void hwSetLocationMetadata(MetadataParsedURL location)
+{	 if(this.location!=null && this.location.getValue()!=null && hasTermVector())
+		 termVector().remove(this.location.termVector());
+	 this.location = location;
 	rebuildCompositeTermVector();
 }
 }
