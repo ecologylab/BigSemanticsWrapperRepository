@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -48,7 +49,7 @@ extends  Metadata
 {
 
 	@simpl_scalar private MetadataString	type;
-	@simpl_collection("String") @mm_name("keywords") private ArrayList<String>	keywords;
+	 @simpl_collection("String") @xml_tag("keywords") @mm_name("keywords") private ArrayList<String>	keywords;
 
 /**
 	Constructor

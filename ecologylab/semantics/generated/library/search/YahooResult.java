@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -54,7 +55,7 @@ extends  Document
 	@xml_tag("ModificationDate")@simpl_scalar private MetadataString	modificationDate;
 	@xml_tag("MimeType")@simpl_scalar private MetadataString	mimeType;
 
-private @xml_tag("Thumbnail")@simpl_composite @mm_name("thumbnail") YahooThumbnail	thumbnail;
+private @xml_tag("Thumbnail") @simpl_composite @mm_name("thumbnail") YahooThumbnail	thumbnail;
 /**
 	Constructor
 **/ 

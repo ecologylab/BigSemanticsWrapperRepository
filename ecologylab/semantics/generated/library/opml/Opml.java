@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -48,8 +49,8 @@ extends  Document
 {
 
 
-private @simpl_composite @mm_name("head") Head	head;
-private @simpl_composite @mm_name("body") Body	body;
+private  @simpl_composite @mm_name("head") Head	head;
+private  @simpl_composite @mm_name("body") Body	body;
 /**
 	Constructor
 **/ 

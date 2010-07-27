@@ -13,6 +13,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -38,8 +39,8 @@ import java.util.*;
 public class CastMember extends Metadata{
 
 
-private @simpl_composite @mm_name("actor") Entity<PersonDetails>	actor;
-private @simpl_composite @mm_name("character") Entity<PersonDetails>	character;
+private  @simpl_composite @mm_name("actor") Entity<PersonDetails>	actor;
+private  @simpl_composite @mm_name("character") Entity<PersonDetails>	character;
 /**
 	Constructor
 **/ 

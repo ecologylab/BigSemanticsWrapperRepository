@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,9 +53,9 @@ public class  WikipediaPageType
 extends  Document
 {
 
-	@simpl_collection("paragraph") @mm_name("paragraphs") private ArrayList<Paragraph>	paragraphs;
-	@simpl_collection("category") @mm_name("categories") private ArrayList<Category>	categories;
-	@simpl_collection("thumbinner") @mm_name("thumbinners") private ArrayList<Thumbinner>	thumbinners;
+	 @simpl_collection("paragraph") @xml_tag("paragraphs") @mm_name("paragraphs") private ArrayList<Paragraph>	paragraphs;
+	 @simpl_collection("category") @xml_tag("categories") @mm_name("categories") private ArrayList<Category>	categories;
+	 @simpl_collection("thumbinner") @xml_tag("thumbinners") @mm_name("thumbinners") private ArrayList<Thumbinner>	thumbinners;
 
 /**
 	Constructor

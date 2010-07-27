@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.imdb;
+package ecologylab.semantics.generated.library.search.bingapi;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -42,24 +42,20 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	IMDB genre
-**/ 
-
 @simpl_inherit
-
-public class  ImdbGenre
+@xml_tag("SearchResponse")
+public class  BingApiSearch
 extends  Document
 {
 
-	 @simpl_collection("imdb_title") @xml_tag("results") @mm_name("results") private ArrayList<ImdbTitle>	results;
 
+private @xml_tag("web:Web") @simpl_composite @mm_name("web_section") WebSection	webSection;
+private @xml_tag("mms:Image") @simpl_composite @mm_name("image_section") ImageSection	imageSection;
 /**
 	Constructor
 **/ 
 
-public ImdbGenre()
+public BingApiSearch()
 {
  super();
 }
@@ -68,41 +64,73 @@ public ImdbGenre()
 	Constructor
 **/ 
 
-public ImdbGenre(MetaMetadataCompositeField metaMetadata)
+public BingApiSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
+	Lazy Evaluation for webSection
 **/ 
 
-public  ArrayList<ImdbTitle>	results()
+public WebSection	webSection()
 {
- ArrayList<ImdbTitle>	result	=this.results;
+WebSection	result	=this.webSection;
 if(result == null)
 {
-result = new  ArrayList<ImdbTitle>();
-this.results	=	 result;
+result = new WebSection();
+this.webSection	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field results
+	Set the value of field webSection
 **/ 
 
-public void setResults(  ArrayList<ImdbTitle> results )
+public void setWebSection( WebSection webSection )
 {
-this.results = results ;
+this.webSection = webSection ;
 }
 
 /**
-	Get the value of field results
+	Get the value of field webSection
 **/ 
 
-public  ArrayList<ImdbTitle> getResults(){
-return this.results;
+public WebSection getWebSection(){
+return this.webSection;
+}
+
+/**
+	Lazy Evaluation for imageSection
+**/ 
+
+public ImageSection	imageSection()
+{
+ImageSection	result	=this.imageSection;
+if(result == null)
+{
+result = new ImageSection();
+this.imageSection	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field imageSection
+**/ 
+
+public void setImageSection( ImageSection imageSection )
+{
+this.imageSection = imageSection ;
+}
+
+/**
+	Get the value of field imageSection
+**/ 
+
+public ImageSection getImageSection(){
+return this.imageSection;
 }
 
 }

@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -56,9 +57,9 @@ extends  Document
 	@simpl_scalar private MetadataString	abstractField;
 	@simpl_scalar private MetadataString	claims;
 	@simpl_scalar private MetadataParsedURL	picLink;
-	@simpl_collection("search_result") @mm_name("referenced_bys") private ArrayList<SearchResult>	referencedBys;
-	@simpl_collection("search_result") @mm_name("citations") private ArrayList<SearchResult>	citations;
-	@simpl_collection("search_result") @mm_name("pic_links") private ArrayList<SearchResult>	picLinks;
+	 @simpl_collection("search_result") @xml_tag("referenced_bys") @mm_name("referenced_bys") private ArrayList<SearchResult>	referencedBys;
+	 @simpl_collection("search_result") @xml_tag("citations") @mm_name("citations") private ArrayList<SearchResult>	citations;
+	 @simpl_collection("search_result") @xml_tag("pic_links") @mm_name("pic_links") private ArrayList<SearchResult>	picLinks;
 
 /**
 	Constructor

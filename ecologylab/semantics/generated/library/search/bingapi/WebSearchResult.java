@@ -1,4 +1,12 @@
-package ecologylab.semantics.generated.library.slashdot;
+package ecologylab.semantics.generated.library.search.bingapi;
+
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -34,18 +42,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	Bing web search result.
+**/ 
+
 @simpl_inherit
 
-public class Anchor extends Metadata{
+public class  WebSearchResult
+extends  Document
+{
 
-	@simpl_scalar private MetadataString	anchorText;
-	@simpl_scalar private MetadataParsedURL	link;
+	@xml_tag("web:Title")@simpl_scalar private MetadataString	heading;
+	@xml_tag("web:Description")@simpl_scalar private MetadataString	snippet;
+	@xml_tag("web:Url")@simpl_scalar private MetadataParsedURL	link;
 
 /**
 	Constructor
 **/ 
 
-public Anchor()
+public WebSearchResult()
 {
  super();
 }
@@ -54,67 +70,125 @@ public Anchor()
 	Constructor
 **/ 
 
-public Anchor(MetaMetadataCompositeField metaMetadata)
+public WebSearchResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for anchorText
+	Lazy Evaluation for heading
 **/ 
 
-public MetadataString	anchorText()
+public MetadataString	heading()
 {
-MetadataString	result	=this.anchorText;
+MetadataString	result	=this.heading;
 if(result == null)
 {
 result = new MetadataString();
-this.anchorText	=	 result;
+this.heading	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field anchorText
+	Gets the value of the field heading
 **/ 
 
-public String getAnchorText(){
-return anchorText().getValue();
+public String getHeading(){
+return heading().getValue();
 }
 
 /**
-	Sets the value of the field anchorText
+	Sets the value of the field heading
 **/ 
 
-public void setAnchorText( String anchorText )
+public void setHeading( String heading )
 {
-this.anchorText().setValue(anchorText);
+this.heading().setValue(heading);
 }
 
 /**
-	The heavy weight setter method for field anchorText
+	The heavy weight setter method for field heading
 **/ 
 
-public void hwSetAnchorText( String anchorText )
+public void hwSetHeading( String heading )
 {
-this.anchorText().setValue(anchorText);
+this.heading().setValue(heading);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the anchorText directly
+	 Sets the heading directly
 **/ 
 
-public void setAnchorTextMetadata(MetadataString anchorText)
-{	this.anchorText = anchorText;
+public void setHeadingMetadata(MetadataString heading)
+{	this.heading = heading;
 }
 /**
-	Heavy Weight Direct setter method for anchorText
+	Heavy Weight Direct setter method for heading
 **/ 
 
-public void hwSetAnchorTextMetadata(MetadataString anchorText)
-{	 if(this.anchorText!=null && this.anchorText.getValue()!=null && hasTermVector())
-		 termVector().remove(this.anchorText.termVector());
-	 this.anchorText = anchorText;
+public void hwSetHeadingMetadata(MetadataString heading)
+{	 if(this.heading!=null && this.heading.getValue()!=null && hasTermVector())
+		 termVector().remove(this.heading.termVector());
+	 this.heading = heading;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for snippet
+**/ 
+
+public MetadataString	snippet()
+{
+MetadataString	result	=this.snippet;
+if(result == null)
+{
+result = new MetadataString();
+this.snippet	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field snippet
+**/ 
+
+public String getSnippet(){
+return snippet().getValue();
+}
+
+/**
+	Sets the value of the field snippet
+**/ 
+
+public void setSnippet( String snippet )
+{
+this.snippet().setValue(snippet);
+}
+
+/**
+	The heavy weight setter method for field snippet
+**/ 
+
+public void hwSetSnippet( String snippet )
+{
+this.snippet().setValue(snippet);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the snippet directly
+**/ 
+
+public void setSnippetMetadata(MetadataString snippet)
+{	this.snippet = snippet;
+}
+/**
+	Heavy Weight Direct setter method for snippet
+**/ 
+
+public void hwSetSnippetMetadata(MetadataString snippet)
+{	 if(this.snippet!=null && this.snippet.getValue()!=null && hasTermVector())
+		 termVector().remove(this.snippet.termVector());
+	 this.snippet = snippet;
 	rebuildCompositeTermVector();
 }
 /**
@@ -174,4 +248,6 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 		 termVector().remove(this.link.termVector());
 	 this.link = link;
 	rebuildCompositeTermVector();
-}}
+}
+}
+

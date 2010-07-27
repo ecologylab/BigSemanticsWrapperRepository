@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -57,6 +58,18 @@ ecologylab.semantics.generated.library.scholarlyPublication.AcmProceeding.class,
 ecologylab.semantics.generated.library.MmArtwork.class,
 
 ecologylab.semantics.generated.library.Artwork.class,
+
+ecologylab.semantics.generated.library.search.bingapi.ImageInSearchResult.class,
+
+ecologylab.semantics.generated.library.search.bingapi.ImageSection.class,
+
+ecologylab.semantics.generated.library.search.bingapi.BingApiSearch.class,
+
+ecologylab.semantics.generated.library.search.bingapi.ImageSearchResult.class,
+
+ecologylab.semantics.generated.library.search.bingapi.WebSearchResult.class,
+
+ecologylab.semantics.generated.library.search.bingapi.WebSection.class,
 
 HotSearch.class,
 

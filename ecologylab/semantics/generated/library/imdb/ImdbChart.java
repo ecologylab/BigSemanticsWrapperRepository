@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,7 +53,7 @@ public class  ImdbChart
 extends  Document
 {
 
-	@simpl_collection("imdb_title") @mm_name("results") private ArrayList<ImdbTitle>	results;
+	 @simpl_collection("imdb_title") @xml_tag("results") @mm_name("results") private ArrayList<ImdbTitle>	results;
 
 /**
 	Constructor

@@ -13,6 +13,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -37,7 +38,7 @@ import java.util.*;
 @xml_tag("SearchResults")
 public class SearchResults extends Metadata{
 
-	@simpl_collection("nsdl_document") @mm_name("results") private ArrayList<NsdlDocument>	results;
+	 @simpl_collection("nsdl_document") @xml_tag("this_should_be_document") @mm_name("results") private ArrayList<NsdlDocument>	results;
 
 /**
 	Constructor

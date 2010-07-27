@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,7 +53,7 @@ public class  DeliciousHomepage
 extends  Document
 {
 
-	@simpl_collection("bookmark") @mm_name("bookmarks") private ArrayList<Bookmark>	bookmarks;
+	 @simpl_collection("bookmark") @xml_tag("bookmarks") @mm_name("bookmarks") private ArrayList<Bookmark>	bookmarks;
 
 /**
 	Constructor

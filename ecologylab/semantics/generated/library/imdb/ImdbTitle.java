@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -54,14 +55,14 @@ extends  Document
 
 	@simpl_scalar private MetadataString	yearReleased;
 	@simpl_scalar private MetadataString	rating;
-	@simpl_collection("person_details") @mm_name("directors") private ArrayList<Entity<PersonDetails>>	directors;
-	@simpl_collection("person_details") @mm_name("writers") private ArrayList<Entity<PersonDetails>>	writers;
+	 @simpl_collection("person_details") @xml_tag("directors") @mm_name("directors") private ArrayList<Entity<PersonDetails>>	directors;
+	 @simpl_collection("person_details") @xml_tag("writers") @mm_name("writers") private ArrayList<Entity<PersonDetails>>	writers;
 	@simpl_scalar private MetadataString	releaseDate;
-	@simpl_collection("genre") @mm_name("genres") private ArrayList<Genre>	genres;
+	 @simpl_collection("genre") @xml_tag("genres") @mm_name("genres") private ArrayList<Genre>	genres;
 	@simpl_scalar private MetadataString	plot;
 	@simpl_scalar private MetadataString	tagline;
-	@simpl_collection("cast_member") @mm_name("cast") private ArrayList<CastMember>	cast;
-	@simpl_collection("image") @mm_name("title_photos") private ArrayList<Image>	titlePhotos;
+	 @simpl_collection("cast_member") @xml_tag("cast") @mm_name("cast") private ArrayList<CastMember>	cast;
+	 @simpl_collection("image") @xml_tag("title_photos") @mm_name("title_photos") private ArrayList<Image>	titlePhotos;
 	@simpl_scalar private MetadataParsedURL	posterImg;
 
 /**

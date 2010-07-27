@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,7 +53,7 @@ public class  FlickrSearchTwo
 extends  Document
 {
 
-	@simpl_collection("flickr_image") @mm_name("flickr_results") private ArrayList<FlickrImage>	flickrResults;
+	 @simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
 /**
 	Constructor

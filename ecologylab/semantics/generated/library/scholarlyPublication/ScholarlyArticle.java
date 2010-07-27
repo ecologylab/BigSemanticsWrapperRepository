@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -55,11 +56,11 @@ extends  Pdf
 	@simpl_scalar private MetadataParsedURL	metadataPage;
 	@xml_tag("abstract")@simpl_scalar private MetadataString	abstractField;
 
-private @simpl_composite @mm_name("source") Source	source;	@simpl_collection("author") @mm_name("authors") private ArrayList<Author>	authors;
-	@simpl_collection("reference") @mm_name("references") private ArrayList<Entity<ScholarlyArticle>>	references;
-	@simpl_collection("citation") @mm_name("citations") private ArrayList<Entity<ScholarlyArticle>>	citations;
-	@simpl_collection("tag") @mm_name("classifications") private ArrayList<Tag>	classifications;
-	@simpl_collection("tag") @mm_name("keywords") private ArrayList<Tag>	keywords;
+private  @simpl_composite @mm_name("source") Source	source;	 @simpl_collection("author") @xml_tag("authors") @mm_name("authors") private ArrayList<Author>	authors;
+	 @simpl_collection("reference") @xml_tag("references") @mm_name("references") private ArrayList<Entity<ScholarlyArticle>>	references;
+	 @simpl_collection("citation") @xml_tag("citations") @mm_name("citations") private ArrayList<Entity<ScholarlyArticle>>	citations;
+	 @simpl_collection("tag") @xml_tag("classifications") @mm_name("classifications") private ArrayList<Tag>	classifications;
+	 @simpl_collection("tag") @xml_tag("keywords") @mm_name("keywords") private ArrayList<Tag>	keywords;
 
 /**
 	Constructor

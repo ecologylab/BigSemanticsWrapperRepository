@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -50,7 +51,7 @@ extends  Document
 	@simpl_scalar private MetadataString	poster;
 	@simpl_scalar private MetadataParsedURL	posterUrl;
 	@simpl_scalar private MetadataString	description;
-	@simpl_collection("anchor") @mm_name("anchors") private ArrayList<Anchor>	anchors;
+	 @simpl_collection("anchor") @xml_tag("anchors") @mm_name("anchors") private ArrayList<Anchor>	anchors;
 
 /**
 	Constructor

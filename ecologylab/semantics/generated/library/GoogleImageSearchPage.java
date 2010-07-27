@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,7 +53,7 @@ public class  GoogleImageSearchPage
 extends  GoogleImageSearchType
 {
 
-	@simpl_collection("image_result") @mm_name("image_results") private ArrayList<ImageResult>	imageResults;
+	 @simpl_collection("image_result") @xml_tag("image_results") @mm_name("image_results") private ArrayList<ImageResult>	imageResults;
 
 /**
 	Constructor

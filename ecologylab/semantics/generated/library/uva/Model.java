@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -47,7 +48,7 @@ public class  Model
 extends  Metadata
 {
 
-	@simpl_collection("topic_cluster") @mm_name("topic_clusters") private ArrayList<TopicCluster>	topicClusters;
+	 @simpl_collection("topic_cluster") @xml_tag("topic_clusters") @mm_name("topic_clusters") private ArrayList<TopicCluster>	topicClusters;
 
 /**
 	Constructor

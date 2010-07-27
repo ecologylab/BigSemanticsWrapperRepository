@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,8 +53,8 @@ public class  UrbanSpoonGenre
 extends  Search
 {
 
-	@simpl_collection("search_result") @mm_name("search_results") private ArrayList<SearchResult>	searchResults;
-	@simpl_collection("search_result") @mm_name("top_results") private ArrayList<SearchResult>	topResults;
+	 @simpl_collection("search_result") @xml_tag("search_results") @mm_name("search_results") private ArrayList<SearchResult>	searchResults;
+	 @simpl_collection("search_result") @xml_tag("top_results") @mm_name("top_results") private ArrayList<SearchResult>	topResults;
 
 /**
 	Constructor

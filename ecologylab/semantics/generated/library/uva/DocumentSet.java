@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -47,7 +48,7 @@ public class  DocumentSet
 extends  Metadata
 {
 
-	@simpl_collection("document") @simpl_nowrap @mm_name("documents") private ArrayList<Document>	documents;
+	 @simpl_collection("document") @simpl_nowrap @mm_name("documents") private ArrayList<Document>	documents;
 
 /**
 	Constructor

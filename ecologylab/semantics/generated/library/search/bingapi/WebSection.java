@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.imdb;
+package ecologylab.semantics.generated.library.search.bingapi;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -42,24 +42,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	IMDB genre
-**/ 
-
 @simpl_inherit
 
-public class  ImdbGenre
+public class  WebSection
 extends  Document
 {
 
-	 @simpl_collection("imdb_title") @xml_tag("results") @mm_name("results") private ArrayList<ImdbTitle>	results;
+	 @simpl_collection("web:WebResult") @xml_tag("web:Results") @mm_name("web_search_results") private ArrayList<WebSearchResult>	webSearchResults;
 
 /**
 	Constructor
 **/ 
 
-public ImdbGenre()
+public WebSection()
 {
  super();
 }
@@ -68,41 +63,41 @@ public ImdbGenre()
 	Constructor
 **/ 
 
-public ImdbGenre(MetaMetadataCompositeField metaMetadata)
+public WebSection(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
+	Lazy Evaluation for webSearchResults
 **/ 
 
-public  ArrayList<ImdbTitle>	results()
+public  ArrayList<WebSearchResult>	webSearchResults()
 {
- ArrayList<ImdbTitle>	result	=this.results;
+ ArrayList<WebSearchResult>	result	=this.webSearchResults;
 if(result == null)
 {
-result = new  ArrayList<ImdbTitle>();
-this.results	=	 result;
+result = new  ArrayList<WebSearchResult>();
+this.webSearchResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field results
+	Set the value of field webSearchResults
 **/ 
 
-public void setResults(  ArrayList<ImdbTitle> results )
+public void setWebSearchResults(  ArrayList<WebSearchResult> webSearchResults )
 {
-this.results = results ;
+this.webSearchResults = webSearchResults ;
 }
 
 /**
-	Get the value of field results
+	Get the value of field webSearchResults
 **/ 
 
-public  ArrayList<ImdbTitle> getResults(){
-return this.results;
+public  ArrayList<WebSearchResult> getWebSearchResults(){
+return this.webSearchResults;
 }
 
 }

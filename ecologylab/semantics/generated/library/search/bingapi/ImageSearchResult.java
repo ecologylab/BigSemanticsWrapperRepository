@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.imdb;
+package ecologylab.semantics.generated.library.search.bingapi;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -44,22 +44,22 @@ import java.util.*;
 
 
 /**
-	IMDB genre
+	Bing image search result.
 **/ 
 
 @simpl_inherit
 
-public class  ImdbGenre
-extends  Document
+public class  ImageSearchResult
+extends  ImageInSearchResult
 {
 
-	 @simpl_collection("imdb_title") @xml_tag("results") @mm_name("results") private ArrayList<ImdbTitle>	results;
 
+private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public ImdbGenre()
+public ImageSearchResult()
 {
  super();
 }
@@ -68,41 +68,41 @@ public ImdbGenre()
 	Constructor
 **/ 
 
-public ImdbGenre(MetaMetadataCompositeField metaMetadata)
+public ImageSearchResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
+	Lazy Evaluation for thumbnail
 **/ 
 
-public  ArrayList<ImdbTitle>	results()
+public ImageInSearchResult	thumbnail()
 {
- ArrayList<ImdbTitle>	result	=this.results;
+ImageInSearchResult	result	=this.thumbnail;
 if(result == null)
 {
-result = new  ArrayList<ImdbTitle>();
-this.results	=	 result;
+result = new ImageInSearchResult();
+this.thumbnail	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field results
+	Set the value of field thumbnail
 **/ 
 
-public void setResults(  ArrayList<ImdbTitle> results )
+public void setThumbnail( ImageInSearchResult thumbnail )
 {
-this.results = results ;
+this.thumbnail = thumbnail ;
 }
 
 /**
-	Get the value of field results
+	Get the value of field thumbnail
 **/ 
 
-public  ArrayList<ImdbTitle> getResults(){
-return this.results;
+public ImageInSearchResult getThumbnail(){
+return this.thumbnail;
 }
 
 }

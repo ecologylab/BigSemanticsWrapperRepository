@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -52,10 +53,10 @@ public class  FlickrImageDetailTwo
 extends  Document
 {
 
-	@simpl_collection("related_photo") @mm_name("related_photos") private ArrayList<RelatedPhoto>	relatedPhotos;
+	 @simpl_collection("related_photo") @xml_tag("related_photos") @mm_name("related_photos") private ArrayList<RelatedPhoto>	relatedPhotos;
 
-private @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;	@simpl_collection("author_photos") @mm_name("author_photos") private ArrayList<AuthorPhotos>	authorPhotos;
-	@simpl_collection("flickr_tag") @mm_name("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
+private  @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;	 @simpl_collection("author_photos") @xml_tag("author_photos") @mm_name("author_photos") private ArrayList<AuthorPhotos>	authorPhotos;
+	 @simpl_collection("flickr_tag") @xml_tag("flickr_tags") @mm_name("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
 /**
 	Constructor

@@ -13,6 +13,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -40,7 +41,7 @@ public class Outline extends Metadata{
 	@xml_tag("htmlUrl")@simpl_scalar private MetadataParsedURL	htmlUrl;
 	@simpl_scalar private MetadataString	title;
 	@simpl_scalar private MetadataString	text;
-	@simpl_collection("outline") @simpl_nowrap @mm_name("outlines") private ArrayList<Outline>	outlines;
+	 @simpl_collection("outline") @simpl_nowrap @mm_name("outlines") private ArrayList<Outline>	outlines;
 	@xml_tag("xmlUrl")@simpl_scalar private MetadataParsedURL	xmlUrl;
 	@simpl_scalar private MetadataString	type;
 

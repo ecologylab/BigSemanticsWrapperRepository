@@ -21,6 +21,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
+import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -53,7 +54,7 @@ extends  Document
 {
 
 	@simpl_scalar private MetadataString	inventor;
-	@simpl_collection("search_result") @mm_name("pic_urls") private ArrayList<SearchResult>	picUrls;
+	 @simpl_collection("search_result") @xml_tag("pic_urls") @mm_name("pic_urls") private ArrayList<SearchResult>	picUrls;
 
 /**
 	Constructor

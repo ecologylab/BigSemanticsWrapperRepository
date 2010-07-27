@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.imdb;
+package ecologylab.semantics.generated.library.search.bingapi;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -42,24 +42,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	IMDB genre
-**/ 
-
 @simpl_inherit
 
-public class  ImdbGenre
+public class  ImageSection
 extends  Document
 {
 
-	 @simpl_collection("imdb_title") @xml_tag("results") @mm_name("results") private ArrayList<ImdbTitle>	results;
+	 @simpl_collection("mms:ImageResult") @xml_tag("mms:Results") @mm_name("image_search_results") private ArrayList<ImageSearchResult>	imageSearchResults;
 
 /**
 	Constructor
 **/ 
 
-public ImdbGenre()
+public ImageSection()
 {
  super();
 }
@@ -68,41 +63,41 @@ public ImdbGenre()
 	Constructor
 **/ 
 
-public ImdbGenre(MetaMetadataCompositeField metaMetadata)
+public ImageSection(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
+	Lazy Evaluation for imageSearchResults
 **/ 
 
-public  ArrayList<ImdbTitle>	results()
+public  ArrayList<ImageSearchResult>	imageSearchResults()
 {
- ArrayList<ImdbTitle>	result	=this.results;
+ ArrayList<ImageSearchResult>	result	=this.imageSearchResults;
 if(result == null)
 {
-result = new  ArrayList<ImdbTitle>();
-this.results	=	 result;
+result = new  ArrayList<ImageSearchResult>();
+this.imageSearchResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field results
+	Set the value of field imageSearchResults
 **/ 
 
-public void setResults(  ArrayList<ImdbTitle> results )
+public void setImageSearchResults(  ArrayList<ImageSearchResult> imageSearchResults )
 {
-this.results = results ;
+this.imageSearchResults = imageSearchResults ;
 }
 
 /**
-	Get the value of field results
+	Get the value of field imageSearchResults
 **/ 
 
-public  ArrayList<ImdbTitle> getResults(){
-return this.results;
+public  ArrayList<ImageSearchResult> getImageSearchResults(){
+return this.imageSearchResults;
 }
 
 }
