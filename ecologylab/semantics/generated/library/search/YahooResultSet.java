@@ -52,7 +52,7 @@ public class  YahooResultSet
 extends  Document
 {
 
-	@simpl_collection("Result") @simpl_nowrap @mm_name("results") private ArrayList<Result>	results;
+	@simpl_collection("Result") @simpl_nowrap @mm_name("results") private ArrayList<YahooResult>	results;
 
 /**
 	Constructor
@@ -76,12 +76,12 @@ super(metaMetadata);
 	Lazy Evaluation for results
 **/ 
 
-public  ArrayList<Result>	results()
+public  ArrayList<YahooResult>	results()
 {
- ArrayList<Result>	result	=this.results;
+ ArrayList<YahooResult>	result	=this.results;
 if(result == null)
 {
-result = new  ArrayList<Result>();
+result = new  ArrayList<YahooResult>();
 this.results	=	 result;
 }
 return result;
@@ -91,7 +91,7 @@ return result;
 	Set the value of field results
 **/ 
 
-public void setResults(  ArrayList<Result> results )
+public void setResults(  ArrayList<YahooResult> results )
 {
 this.results = results ;
 }
@@ -100,7 +100,7 @@ this.results = results ;
 	Get the value of field results
 **/ 
 
-public  ArrayList<Result> getResults(){
+public  ArrayList<YahooResult> getResults(){
 return this.results;
 }
 

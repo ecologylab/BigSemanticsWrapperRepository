@@ -176,11 +176,11 @@ ecologylab.semantics.generated.library.scholarlyPublication.Author.class,
 
 ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
 
-Result.class,
-
 ecologylab.semantics.generated.library.search.YahooResultSet.class,
 
 ecologylab.semantics.generated.library.search.Search.class,
+
+ecologylab.semantics.generated.library.search.YahooResult.class,
 
 ecologylab.semantics.generated.library.search.SearchResult.class,
 
