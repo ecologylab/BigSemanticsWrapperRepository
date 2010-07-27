@@ -39,6 +39,7 @@ public class Anchor extends Metadata{
 
 	@simpl_scalar private MetadataString	anchorText;
 	@simpl_scalar private MetadataParsedURL	link;
+	@simpl_scalar private MetadataString	targetTitle;
 
 /**
 	Constructor
@@ -172,5 +173,63 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 {	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
 		 termVector().remove(this.link.termVector());
 	 this.link = link;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for targetTitle
+**/ 
+
+public MetadataString	targetTitle()
+{
+MetadataString	result	=this.targetTitle;
+if(result == null)
+{
+result = new MetadataString();
+this.targetTitle	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field targetTitle
+**/ 
+
+public String getTargetTitle(){
+return targetTitle().getValue();
+}
+
+/**
+	Sets the value of the field targetTitle
+**/ 
+
+public void setTargetTitle( String targetTitle )
+{
+this.targetTitle().setValue(targetTitle);
+}
+
+/**
+	The heavy weight setter method for field targetTitle
+**/ 
+
+public void hwSetTargetTitle( String targetTitle )
+{
+this.targetTitle().setValue(targetTitle);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the targetTitle directly
+**/ 
+
+public void setTargetTitleMetadata(MetadataString targetTitle)
+{	this.targetTitle = targetTitle;
+}
+/**
+	Heavy Weight Direct setter method for targetTitle
+**/ 
+
+public void hwSetTargetTitleMetadata(MetadataString targetTitle)
+{	 if(this.targetTitle!=null && this.targetTitle.getValue()!=null && hasTermVector())
+		 termVector().remove(this.targetTitle.termVector());
+	 this.targetTitle = targetTitle;
 	rebuildCompositeTermVector();
 }}
