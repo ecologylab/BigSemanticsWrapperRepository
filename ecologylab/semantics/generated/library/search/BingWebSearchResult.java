@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search.bingapi;
+package ecologylab.semantics.generated.library.search;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -21,7 +21,6 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -49,7 +48,7 @@ import java.util.*;
 
 @simpl_inherit
 
-public class  WebSearchResult
+public class  BingWebSearchResult
 extends  Document
 {
 
@@ -61,7 +60,7 @@ extends  Document
 	Constructor
 **/ 
 
-public WebSearchResult()
+public BingWebSearchResult()
 {
  super();
 }
@@ -70,7 +69,7 @@ public WebSearchResult()
 	Constructor
 **/ 
 
-public WebSearchResult(MetaMetadataCompositeField metaMetadata)
+public BingWebSearchResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }

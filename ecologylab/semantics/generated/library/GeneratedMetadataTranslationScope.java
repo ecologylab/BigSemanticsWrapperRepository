@@ -21,7 +21,6 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -58,18 +57,6 @@ ecologylab.semantics.generated.library.scholarlyPublication.AcmProceeding.class,
 ecologylab.semantics.generated.library.MmArtwork.class,
 
 ecologylab.semantics.generated.library.Artwork.class,
-
-ecologylab.semantics.generated.library.search.bingapi.ImageInSearchResult.class,
-
-ecologylab.semantics.generated.library.search.bingapi.ImageSection.class,
-
-ecologylab.semantics.generated.library.search.bingapi.BingApiSearch.class,
-
-ecologylab.semantics.generated.library.search.bingapi.ImageSearchResult.class,
-
-ecologylab.semantics.generated.library.search.bingapi.WebSearchResult.class,
-
-ecologylab.semantics.generated.library.search.bingapi.WebSection.class,
 
 HotSearch.class,
 
@@ -189,15 +176,27 @@ ecologylab.semantics.generated.library.scholarlyPublication.Author.class,
 
 ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
 
+ecologylab.semantics.generated.library.search.ImageInSearchResult.class,
+
+ecologylab.semantics.generated.library.search.BingSearch.class,
+
+ecologylab.semantics.generated.library.search.YahooResult.class,
+
+ecologylab.semantics.generated.library.search.YahooThumbnail.class,
+
+ecologylab.semantics.generated.library.search.BingWebSearchResult.class,
+
 ecologylab.semantics.generated.library.search.YahooResultSet.class,
 
 ecologylab.semantics.generated.library.search.Search.class,
 
-ecologylab.semantics.generated.library.search.YahooResult.class,
+ecologylab.semantics.generated.library.search.BingImageSearchResult.class,
 
 ecologylab.semantics.generated.library.search.SearchResult.class,
 
-ecologylab.semantics.generated.library.search.YahooThumbnail.class,
+ecologylab.semantics.generated.library.search.BingSearchWebSection.class,
+
+ecologylab.semantics.generated.library.search.BingSearchImageSection.class,
 
 ecologylab.semantics.generated.library.slashdot.SlashdotRss.class,
 

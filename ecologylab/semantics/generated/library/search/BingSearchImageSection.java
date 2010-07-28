@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search.bingapi;
+package ecologylab.semantics.generated.library.search;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -21,7 +21,6 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -44,17 +43,17 @@ import java.util.*;
 
 @simpl_inherit
 
-public class  ImageSection
+public class  BingSearchImageSection
 extends  Document
 {
 
-	 @simpl_collection("mms:ImageResult") @xml_tag("mms:Results") @mm_name("image_search_results") private ArrayList<ImageSearchResult>	imageSearchResults;
+	 @simpl_collection("mms:ImageResult") @xml_tag("mms:Results") @mm_name("image_search_results") private ArrayList<BingImageSearchResult>	imageSearchResults;
 
 /**
 	Constructor
 **/ 
 
-public ImageSection()
+public BingSearchImageSection()
 {
  super();
 }
@@ -63,7 +62,7 @@ public ImageSection()
 	Constructor
 **/ 
 
-public ImageSection(MetaMetadataCompositeField metaMetadata)
+public BingSearchImageSection(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
@@ -72,12 +71,12 @@ super(metaMetadata);
 	Lazy Evaluation for imageSearchResults
 **/ 
 
-public  ArrayList<ImageSearchResult>	imageSearchResults()
+public  ArrayList<BingImageSearchResult>	imageSearchResults()
 {
- ArrayList<ImageSearchResult>	result	=this.imageSearchResults;
+ ArrayList<BingImageSearchResult>	result	=this.imageSearchResults;
 if(result == null)
 {
-result = new  ArrayList<ImageSearchResult>();
+result = new  ArrayList<BingImageSearchResult>();
 this.imageSearchResults	=	 result;
 }
 return result;
@@ -87,7 +86,7 @@ return result;
 	Set the value of field imageSearchResults
 **/ 
 
-public void setImageSearchResults(  ArrayList<ImageSearchResult> imageSearchResults )
+public void setImageSearchResults(  ArrayList<BingImageSearchResult> imageSearchResults )
 {
 this.imageSearchResults = imageSearchResults ;
 }
@@ -96,7 +95,7 @@ this.imageSearchResults = imageSearchResults ;
 	Get the value of field imageSearchResults
 **/ 
 
-public  ArrayList<ImageSearchResult> getImageSearchResults(){
+public  ArrayList<BingImageSearchResult> getImageSearchResults(){
 return this.imageSearchResults;
 }
 

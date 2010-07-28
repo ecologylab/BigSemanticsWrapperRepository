@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search.bingapi;
+package ecologylab.semantics.generated.library.search;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -21,7 +21,6 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -44,18 +43,18 @@ import java.util.*;
 
 @simpl_inherit
 @xml_tag("SearchResponse")
-public class  BingApiSearch
+public class  BingSearch
 extends  Document
 {
 
 
-private @xml_tag("web:Web") @simpl_composite @mm_name("web_section") WebSection	webSection;
-private @xml_tag("mms:Image") @simpl_composite @mm_name("image_section") ImageSection	imageSection;
+private @xml_tag("web:Web") @simpl_composite @mm_name("web_section") BingSearchWebSection	webSection;
+private @xml_tag("mms:Image") @simpl_composite @mm_name("image_section") BingSearchImageSection	imageSection;
 /**
 	Constructor
 **/ 
 
-public BingApiSearch()
+public BingSearch()
 {
  super();
 }
@@ -64,7 +63,7 @@ public BingApiSearch()
 	Constructor
 **/ 
 
-public BingApiSearch(MetaMetadataCompositeField metaMetadata)
+public BingSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
@@ -73,12 +72,12 @@ super(metaMetadata);
 	Lazy Evaluation for webSection
 **/ 
 
-public WebSection	webSection()
+public BingSearchWebSection	webSection()
 {
-WebSection	result	=this.webSection;
+BingSearchWebSection	result	=this.webSection;
 if(result == null)
 {
-result = new WebSection();
+result = new BingSearchWebSection();
 this.webSection	=	 result;
 }
 return result;
@@ -88,7 +87,7 @@ return result;
 	Set the value of field webSection
 **/ 
 
-public void setWebSection( WebSection webSection )
+public void setWebSection( BingSearchWebSection webSection )
 {
 this.webSection = webSection ;
 }
@@ -97,7 +96,7 @@ this.webSection = webSection ;
 	Get the value of field webSection
 **/ 
 
-public WebSection getWebSection(){
+public BingSearchWebSection getWebSection(){
 return this.webSection;
 }
 
@@ -105,12 +104,12 @@ return this.webSection;
 	Lazy Evaluation for imageSection
 **/ 
 
-public ImageSection	imageSection()
+public BingSearchImageSection	imageSection()
 {
-ImageSection	result	=this.imageSection;
+BingSearchImageSection	result	=this.imageSection;
 if(result == null)
 {
-result = new ImageSection();
+result = new BingSearchImageSection();
 this.imageSection	=	 result;
 }
 return result;
@@ -120,7 +119,7 @@ return result;
 	Set the value of field imageSection
 **/ 
 
-public void setImageSection( ImageSection imageSection )
+public void setImageSection( BingSearchImageSection imageSection )
 {
 this.imageSection = imageSection ;
 }
@@ -129,7 +128,7 @@ this.imageSection = imageSection ;
 	Get the value of field imageSection
 **/ 
 
-public ImageSection getImageSection(){
+public BingSearchImageSection getImageSection(){
 return this.imageSection;
 }
 

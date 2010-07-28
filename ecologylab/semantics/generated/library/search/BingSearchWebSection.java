@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search.bingapi;
+package ecologylab.semantics.generated.library.search;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -21,7 +21,6 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
-import ecologylab.semantics.generated.library.search.bingapi.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
@@ -42,24 +41,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Bing image search result.
-**/ 
-
 @simpl_inherit
 
-public class  ImageSearchResult
-extends  ImageInSearchResult
+public class  BingSearchWebSection
+extends  Document
 {
 
+	 @simpl_collection("web:WebResult") @xml_tag("web:Results") @mm_name("web_search_results") private ArrayList<BingWebSearchResult>	webSearchResults;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public ImageSearchResult()
+public BingSearchWebSection()
 {
  super();
 }
@@ -68,41 +62,41 @@ public ImageSearchResult()
 	Constructor
 **/ 
 
-public ImageSearchResult(MetaMetadataCompositeField metaMetadata)
+public BingSearchWebSection(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
+	Lazy Evaluation for webSearchResults
 **/ 
 
-public ImageInSearchResult	thumbnail()
+public  ArrayList<BingWebSearchResult>	webSearchResults()
 {
-ImageInSearchResult	result	=this.thumbnail;
+ ArrayList<BingWebSearchResult>	result	=this.webSearchResults;
 if(result == null)
 {
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
+result = new  ArrayList<BingWebSearchResult>();
+this.webSearchResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field thumbnail
+	Set the value of field webSearchResults
 **/ 
 
-public void setThumbnail( ImageInSearchResult thumbnail )
+public void setWebSearchResults(  ArrayList<BingWebSearchResult> webSearchResults )
 {
-this.thumbnail = thumbnail ;
+this.webSearchResults = webSearchResults ;
 }
 
 /**
-	Get the value of field thumbnail
+	Get the value of field webSearchResults
 **/ 
 
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+public  ArrayList<BingWebSearchResult> getWebSearchResults(){
+return this.webSearchResults;
 }
 
 }
