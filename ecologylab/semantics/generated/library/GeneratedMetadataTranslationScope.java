@@ -226,6 +226,8 @@ Anchor.class,
 
 ecologylab.semantics.generated.library.WikipediaPageType.class,
 
+ecologylab.semantics.generated.library.WikipediaPageForParsing.class,
+
 Header.class,
 
 NsdlDocument.class,
