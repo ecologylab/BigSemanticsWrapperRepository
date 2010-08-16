@@ -47,7 +47,7 @@ import java.util.*;
 **/ 
 
 @simpl_inherit
-
+@xml_tag("rss_2_2")
 public class  Rss22
 extends  Document
 {
