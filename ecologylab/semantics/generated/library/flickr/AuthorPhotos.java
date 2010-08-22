@@ -12,16 +12,20 @@ import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.dreamHouse.*;
+import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
+import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
+import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
@@ -47,8 +51,8 @@ public class  AuthorPhotos
 extends  Metadata
 {
 
-	@simpl_scalar private MetadataParsedURL	authorFlickrPageLink;
-	@simpl_scalar private MetadataString	authorFlickrPage;
+	@simpl_scalar private MetadataParsedURL	authorPhotostreamLink;
+	@simpl_scalar private MetadataString	authorPhotostream;
 	@simpl_scalar private MetadataParsedURL	photosThatDayLink;
 	@simpl_scalar private MetadataParsedURL	photosThatMonthLink;
 	@simpl_scalar private MetadataParsedURL	photosThatYearLink;
@@ -75,119 +79,119 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for authorFlickrPageLink
+	Lazy Evaluation for authorPhotostreamLink
 **/ 
 
-public MetadataParsedURL	authorFlickrPageLink()
+public MetadataParsedURL	authorPhotostreamLink()
 {
-MetadataParsedURL	result	=this.authorFlickrPageLink;
+MetadataParsedURL	result	=this.authorPhotostreamLink;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.authorFlickrPageLink	=	 result;
+this.authorPhotostreamLink	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field authorFlickrPageLink
+	Gets the value of the field authorPhotostreamLink
 **/ 
 
-public ParsedURL getAuthorFlickrPageLink(){
-return authorFlickrPageLink().getValue();
+public ParsedURL getAuthorPhotostreamLink(){
+return authorPhotostreamLink().getValue();
 }
 
 /**
-	Sets the value of the field authorFlickrPageLink
+	Sets the value of the field authorPhotostreamLink
 **/ 
 
-public void setAuthorFlickrPageLink( ParsedURL authorFlickrPageLink )
+public void setAuthorPhotostreamLink( ParsedURL authorPhotostreamLink )
 {
-this.authorFlickrPageLink().setValue(authorFlickrPageLink);
+this.authorPhotostreamLink().setValue(authorPhotostreamLink);
 }
 
 /**
-	The heavy weight setter method for field authorFlickrPageLink
+	The heavy weight setter method for field authorPhotostreamLink
 **/ 
 
-public void hwSetAuthorFlickrPageLink( ParsedURL authorFlickrPageLink )
+public void hwSetAuthorPhotostreamLink( ParsedURL authorPhotostreamLink )
 {
-this.authorFlickrPageLink().setValue(authorFlickrPageLink);
+this.authorPhotostreamLink().setValue(authorPhotostreamLink);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the authorFlickrPageLink directly
+	 Sets the authorPhotostreamLink directly
 **/ 
 
-public void setAuthorFlickrPageLinkMetadata(MetadataParsedURL authorFlickrPageLink)
-{	this.authorFlickrPageLink = authorFlickrPageLink;
+public void setAuthorPhotostreamLinkMetadata(MetadataParsedURL authorPhotostreamLink)
+{	this.authorPhotostreamLink = authorPhotostreamLink;
 }
 /**
-	Heavy Weight Direct setter method for authorFlickrPageLink
+	Heavy Weight Direct setter method for authorPhotostreamLink
 **/ 
 
-public void hwSetAuthorFlickrPageLinkMetadata(MetadataParsedURL authorFlickrPageLink)
-{	 if(this.authorFlickrPageLink!=null && this.authorFlickrPageLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.authorFlickrPageLink.termVector());
-	 this.authorFlickrPageLink = authorFlickrPageLink;
+public void hwSetAuthorPhotostreamLinkMetadata(MetadataParsedURL authorPhotostreamLink)
+{	 if(this.authorPhotostreamLink!=null && this.authorPhotostreamLink.getValue()!=null && hasTermVector())
+		 termVector().remove(this.authorPhotostreamLink.termVector());
+	 this.authorPhotostreamLink = authorPhotostreamLink;
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for authorFlickrPage
+	Lazy Evaluation for authorPhotostream
 **/ 
 
-public MetadataString	authorFlickrPage()
+public MetadataString	authorPhotostream()
 {
-MetadataString	result	=this.authorFlickrPage;
+MetadataString	result	=this.authorPhotostream;
 if(result == null)
 {
 result = new MetadataString();
-this.authorFlickrPage	=	 result;
+this.authorPhotostream	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field authorFlickrPage
+	Gets the value of the field authorPhotostream
 **/ 
 
-public String getAuthorFlickrPage(){
-return authorFlickrPage().getValue();
+public String getAuthorPhotostream(){
+return authorPhotostream().getValue();
 }
 
 /**
-	Sets the value of the field authorFlickrPage
+	Sets the value of the field authorPhotostream
 **/ 
 
-public void setAuthorFlickrPage( String authorFlickrPage )
+public void setAuthorPhotostream( String authorPhotostream )
 {
-this.authorFlickrPage().setValue(authorFlickrPage);
+this.authorPhotostream().setValue(authorPhotostream);
 }
 
 /**
-	The heavy weight setter method for field authorFlickrPage
+	The heavy weight setter method for field authorPhotostream
 **/ 
 
-public void hwSetAuthorFlickrPage( String authorFlickrPage )
+public void hwSetAuthorPhotostream( String authorPhotostream )
 {
-this.authorFlickrPage().setValue(authorFlickrPage);
+this.authorPhotostream().setValue(authorPhotostream);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the authorFlickrPage directly
+	 Sets the authorPhotostream directly
 **/ 
 
-public void setAuthorFlickrPageMetadata(MetadataString authorFlickrPage)
-{	this.authorFlickrPage = authorFlickrPage;
+public void setAuthorPhotostreamMetadata(MetadataString authorPhotostream)
+{	this.authorPhotostream = authorPhotostream;
 }
 /**
-	Heavy Weight Direct setter method for authorFlickrPage
+	Heavy Weight Direct setter method for authorPhotostream
 **/ 
 
-public void hwSetAuthorFlickrPageMetadata(MetadataString authorFlickrPage)
-{	 if(this.authorFlickrPage!=null && this.authorFlickrPage.getValue()!=null && hasTermVector())
-		 termVector().remove(this.authorFlickrPage.termVector());
-	 this.authorFlickrPage = authorFlickrPage;
+public void hwSetAuthorPhotostreamMetadata(MetadataString authorPhotostream)
+{	 if(this.authorPhotostream!=null && this.authorPhotostream.getValue()!=null && hasTermVector())
+		 termVector().remove(this.authorPhotostream.termVector());
+	 this.authorPhotostream = authorPhotostream;
 	rebuildCompositeTermVector();
 }
 /**

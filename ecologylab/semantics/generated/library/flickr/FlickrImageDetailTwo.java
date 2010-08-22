@@ -12,16 +12,20 @@ import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.dreamHouse.*;
+import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
+import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
+import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
@@ -52,11 +56,13 @@ public class  FlickrImageDetailTwo
 extends  Document
 {
 
-	 @simpl_collection("related_photo") @xml_tag("related_photos") @mm_name("related_photos") private ArrayList<RelatedPhoto>	relatedPhotos;
+	@simpl_scalar private MetadataString	views;
+	@simpl_scalar private MetadataString	place;
+	@simpl_scalar private MetadataParsedURL	placeLink;
 
-private  @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;	 @simpl_collection("author_photos") @xml_tag("author_photos") @mm_name("author_photos") private ArrayList<AuthorPhotos>	authorPhotos;
-	 @simpl_collection("flickr_tag") @xml_tag("flickr_tags") @mm_name("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
+private  @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;	 @simpl_collection("flickr_tag") @xml_tag("flickr_tags") @mm_name("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
+private  @simpl_composite @mm_name("author_photos") AuthorPhotos	authorPhotos;
 /**
 	Constructor
 **/ 
@@ -76,37 +82,179 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for relatedPhotos
+	Lazy Evaluation for views
 **/ 
 
-public  ArrayList<RelatedPhoto>	relatedPhotos()
+public MetadataString	views()
 {
- ArrayList<RelatedPhoto>	result	=this.relatedPhotos;
+MetadataString	result	=this.views;
 if(result == null)
 {
-result = new  ArrayList<RelatedPhoto>();
-this.relatedPhotos	=	 result;
+result = new MetadataString();
+this.views	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field relatedPhotos
+	Gets the value of the field views
 **/ 
 
-public void setRelatedPhotos(  ArrayList<RelatedPhoto> relatedPhotos )
-{
-this.relatedPhotos = relatedPhotos ;
+public String getViews(){
+return views().getValue();
 }
 
 /**
-	Get the value of field relatedPhotos
+	Sets the value of the field views
 **/ 
 
-public  ArrayList<RelatedPhoto> getRelatedPhotos(){
-return this.relatedPhotos;
+public void setViews( String views )
+{
+this.views().setValue(views);
 }
 
+/**
+	The heavy weight setter method for field views
+**/ 
+
+public void hwSetViews( String views )
+{
+this.views().setValue(views);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the views directly
+**/ 
+
+public void setViewsMetadata(MetadataString views)
+{	this.views = views;
+}
+/**
+	Heavy Weight Direct setter method for views
+**/ 
+
+public void hwSetViewsMetadata(MetadataString views)
+{	 if(this.views!=null && this.views.getValue()!=null && hasTermVector())
+		 termVector().remove(this.views.termVector());
+	 this.views = views;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for place
+**/ 
+
+public MetadataString	place()
+{
+MetadataString	result	=this.place;
+if(result == null)
+{
+result = new MetadataString();
+this.place	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field place
+**/ 
+
+public String getPlace(){
+return place().getValue();
+}
+
+/**
+	Sets the value of the field place
+**/ 
+
+public void setPlace( String place )
+{
+this.place().setValue(place);
+}
+
+/**
+	The heavy weight setter method for field place
+**/ 
+
+public void hwSetPlace( String place )
+{
+this.place().setValue(place);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the place directly
+**/ 
+
+public void setPlaceMetadata(MetadataString place)
+{	this.place = place;
+}
+/**
+	Heavy Weight Direct setter method for place
+**/ 
+
+public void hwSetPlaceMetadata(MetadataString place)
+{	 if(this.place!=null && this.place.getValue()!=null && hasTermVector())
+		 termVector().remove(this.place.termVector());
+	 this.place = place;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for placeLink
+**/ 
+
+public MetadataParsedURL	placeLink()
+{
+MetadataParsedURL	result	=this.placeLink;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.placeLink	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field placeLink
+**/ 
+
+public ParsedURL getPlaceLink(){
+return placeLink().getValue();
+}
+
+/**
+	Sets the value of the field placeLink
+**/ 
+
+public void setPlaceLink( ParsedURL placeLink )
+{
+this.placeLink().setValue(placeLink);
+}
+
+/**
+	The heavy weight setter method for field placeLink
+**/ 
+
+public void hwSetPlaceLink( ParsedURL placeLink )
+{
+this.placeLink().setValue(placeLink);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the placeLink directly
+**/ 
+
+public void setPlaceLinkMetadata(MetadataParsedURL placeLink)
+{	this.placeLink = placeLink;
+}
+/**
+	Heavy Weight Direct setter method for placeLink
+**/ 
+
+public void hwSetPlaceLinkMetadata(MetadataParsedURL placeLink)
+{	 if(this.placeLink!=null && this.placeLink.getValue()!=null && hasTermVector())
+		 termVector().remove(this.placeLink.termVector());
+	 this.placeLink = placeLink;
+	rebuildCompositeTermVector();
+}
 /**
 	Lazy Evaluation for flickrImage
 **/ 
@@ -140,38 +288,6 @@ return this.flickrImage;
 }
 
 /**
-	Lazy Evaluation for authorPhotos
-**/ 
-
-public  ArrayList<AuthorPhotos>	authorPhotos()
-{
- ArrayList<AuthorPhotos>	result	=this.authorPhotos;
-if(result == null)
-{
-result = new  ArrayList<AuthorPhotos>();
-this.authorPhotos	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field authorPhotos
-**/ 
-
-public void setAuthorPhotos(  ArrayList<AuthorPhotos> authorPhotos )
-{
-this.authorPhotos = authorPhotos ;
-}
-
-/**
-	Get the value of field authorPhotos
-**/ 
-
-public  ArrayList<AuthorPhotos> getAuthorPhotos(){
-return this.authorPhotos;
-}
-
-/**
 	Lazy Evaluation for flickrTags
 **/ 
 
@@ -201,6 +317,38 @@ this.flickrTags = flickrTags ;
 
 public  ArrayList<FlickrTag> getFlickrTags(){
 return this.flickrTags;
+}
+
+/**
+	Lazy Evaluation for authorPhotos
+**/ 
+
+public AuthorPhotos	authorPhotos()
+{
+AuthorPhotos	result	=this.authorPhotos;
+if(result == null)
+{
+result = new AuthorPhotos();
+this.authorPhotos	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field authorPhotos
+**/ 
+
+public void setAuthorPhotos( AuthorPhotos authorPhotos )
+{
+this.authorPhotos = authorPhotos ;
+}
+
+/**
+	Get the value of field authorPhotos
+**/ 
+
+public AuthorPhotos getAuthorPhotos(){
+return this.authorPhotos;
 }
 
 }

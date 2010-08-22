@@ -12,16 +12,20 @@ import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.dreamHouse.*;
+import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
+import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
+import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
@@ -65,6 +69,12 @@ extends  Document
 **/ 
 
 	@simpl_scalar private MetadataParsedURL	link;
+
+/**
+	Alternate link in search results
+**/ 
+
+	@simpl_scalar private MetadataParsedURL	linkOther;
 
 /**
 	Constructor
@@ -256,6 +266,64 @@ public void hwSetLinkMetadata(MetadataParsedURL link)
 {	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
 		 termVector().remove(this.link.termVector());
 	 this.link = link;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for linkOther
+**/ 
+
+public MetadataParsedURL	linkOther()
+{
+MetadataParsedURL	result	=this.linkOther;
+if(result == null)
+{
+result = new MetadataParsedURL();
+this.linkOther	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field linkOther
+**/ 
+
+public ParsedURL getLinkOther(){
+return linkOther().getValue();
+}
+
+/**
+	Sets the value of the field linkOther
+**/ 
+
+public void setLinkOther( ParsedURL linkOther )
+{
+this.linkOther().setValue(linkOther);
+}
+
+/**
+	The heavy weight setter method for field linkOther
+**/ 
+
+public void hwSetLinkOther( ParsedURL linkOther )
+{
+this.linkOther().setValue(linkOther);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the linkOther directly
+**/ 
+
+public void setLinkOtherMetadata(MetadataParsedURL linkOther)
+{	this.linkOther = linkOther;
+}
+/**
+	Heavy Weight Direct setter method for linkOther
+**/ 
+
+public void hwSetLinkOtherMetadata(MetadataParsedURL linkOther)
+{	 if(this.linkOther!=null && this.linkOther.getValue()!=null && hasTermVector())
+		 termVector().remove(this.linkOther.termVector());
+	 this.linkOther = linkOther;
 	rebuildCompositeTermVector();
 }
 }

@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.urbanspoon;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -47,22 +47,23 @@ import java.util.*;
 
 
 /**
-	Bing image search result.
+	UrbanSpoon Search Class
 **/ 
 
 @simpl_inherit
 
-public class  BingImageSearchResult
-extends  ImageInSearchResult
+public class  UrbanSpoonGenre
+extends  Search
 {
 
+	 @simpl_collection("search_result") @xml_tag("search_results") @mm_name("search_results") private ArrayList<SearchResult>	searchResults;
+	 @simpl_collection("search_result") @xml_tag("top_results") @mm_name("top_results") private ArrayList<SearchResult>	topResults;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public BingImageSearchResult()
+public UrbanSpoonGenre()
 {
  super();
 }
@@ -71,41 +72,73 @@ public BingImageSearchResult()
 	Constructor
 **/ 
 
-public BingImageSearchResult(MetaMetadataCompositeField metaMetadata)
+public UrbanSpoonGenre(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
+	Lazy Evaluation for searchResults
 **/ 
 
-public ImageInSearchResult	thumbnail()
+public  ArrayList<SearchResult>	searchResults()
 {
-ImageInSearchResult	result	=this.thumbnail;
+ ArrayList<SearchResult>	result	=this.searchResults;
 if(result == null)
 {
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
+result = new  ArrayList<SearchResult>();
+this.searchResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field thumbnail
+	Set the value of field searchResults
 **/ 
 
-public void setThumbnail( ImageInSearchResult thumbnail )
+public void setSearchResults(  ArrayList<SearchResult> searchResults )
 {
-this.thumbnail = thumbnail ;
+this.searchResults = searchResults ;
 }
 
 /**
-	Get the value of field thumbnail
+	Get the value of field searchResults
 **/ 
 
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+public  ArrayList<SearchResult> getSearchResults(){
+return this.searchResults;
+}
+
+/**
+	Lazy Evaluation for topResults
+**/ 
+
+public  ArrayList<SearchResult>	topResults()
+{
+ ArrayList<SearchResult>	result	=this.topResults;
+if(result == null)
+{
+result = new  ArrayList<SearchResult>();
+this.topResults	=	 result;
+}
+return result;
+}
+
+/**
+	Set the value of field topResults
+**/ 
+
+public void setTopResults(  ArrayList<SearchResult> topResults )
+{
+this.topResults = topResults ;
+}
+
+/**
+	Get the value of field topResults
+**/ 
+
+public  ArrayList<SearchResult> getTopResults(){
+return this.topResults;
 }
 
 }

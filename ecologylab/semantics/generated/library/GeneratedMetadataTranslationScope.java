@@ -12,16 +12,20 @@ import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.dreamHouse.*;
+import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
+import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
+import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
@@ -66,6 +70,10 @@ Bookmark.class,
 
 ecologylab.semantics.generated.library.DeliciousHomepage.class,
 
+ecologylab.semantics.generated.library.fastflip.Thumbnail.class,
+
+ecologylab.semantics.generated.library.fastflip.FastflipSearch.class,
+
 ecologylab.semantics.generated.library.flickr.FlickrImageDetail.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrTag.class,
@@ -78,15 +86,11 @@ ecologylab.semantics.generated.library.flickr.FlickrImageDetailTwo.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
 
-FlickrLink.class,
-
-FlickrLink.class,
-
-ecologylab.semantics.generated.library.flickr.FlickrNearby.class,
-
 ecologylab.semantics.generated.library.flickr.FlickrLink.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
+
+ecologylab.semantics.generated.library.flickr.FlickrGroups.class,
 
 ecologylab.semantics.generated.library.flickr.FlickrImage.class,
 
@@ -151,6 +155,8 @@ Body.class,
 Outline.class,
 
 ecologylab.semantics.generated.library.opml.Opml.class,
+
+ecologylab.semantics.generated.library.products.Product.class,
 
 ecologylab.semantics.generated.library.Restaurant.class,
 
@@ -244,7 +250,7 @@ Header.class,
 
 ecologylab.semantics.generated.library.nsdl.NsdlService.class,
 
-ecologylab.semantics.generated.library.UrbanSpoonGenre.class,
+ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonGenre.class,
 
 ecologylab.semantics.generated.library.uva.Topic.class,
 

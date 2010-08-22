@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.fastflip;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -47,22 +47,22 @@ import java.util.*;
 
 
 /**
-	Bing image search result.
+	Fast Flip Search
 **/ 
 
 @simpl_inherit
 
-public class  BingImageSearchResult
-extends  ImageInSearchResult
+public class  FastflipSearch
+extends  Document
 {
 
+	 @simpl_collection("thumbnail") @xml_tag("thumbnails") @mm_name("thumbnails") private ArrayList<Thumbnail>	thumbnails;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public BingImageSearchResult()
+public FastflipSearch()
 {
  super();
 }
@@ -71,41 +71,41 @@ public BingImageSearchResult()
 	Constructor
 **/ 
 
-public BingImageSearchResult(MetaMetadataCompositeField metaMetadata)
+public FastflipSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
+	Lazy Evaluation for thumbnails
 **/ 
 
-public ImageInSearchResult	thumbnail()
+public  ArrayList<Thumbnail>	thumbnails()
 {
-ImageInSearchResult	result	=this.thumbnail;
+ ArrayList<Thumbnail>	result	=this.thumbnails;
 if(result == null)
 {
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
+result = new  ArrayList<Thumbnail>();
+this.thumbnails	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field thumbnail
+	Set the value of field thumbnails
 **/ 
 
-public void setThumbnail( ImageInSearchResult thumbnail )
+public void setThumbnails(  ArrayList<Thumbnail> thumbnails )
 {
-this.thumbnail = thumbnail ;
+this.thumbnails = thumbnails ;
 }
 
 /**
-	Get the value of field thumbnail
+	Get the value of field thumbnails
 **/ 
 
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+public  ArrayList<Thumbnail> getThumbnails(){
+return this.thumbnails;
 }
 
 }

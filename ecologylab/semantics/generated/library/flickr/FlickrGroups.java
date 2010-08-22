@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.flickr;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -47,22 +47,22 @@ import java.util.*;
 
 
 /**
-	Bing image search result.
+	The flickr search class
 **/ 
 
 @simpl_inherit
 
-public class  BingImageSearchResult
-extends  ImageInSearchResult
+public class  FlickrGroups
+extends  Document
 {
 
+	 @simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results") private ArrayList<FlickrImage>	flickrResults;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public BingImageSearchResult()
+public FlickrGroups()
 {
  super();
 }
@@ -71,41 +71,41 @@ public BingImageSearchResult()
 	Constructor
 **/ 
 
-public BingImageSearchResult(MetaMetadataCompositeField metaMetadata)
+public FlickrGroups(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
+	Lazy Evaluation for flickrResults
 **/ 
 
-public ImageInSearchResult	thumbnail()
+public  ArrayList<FlickrImage>	flickrResults()
 {
-ImageInSearchResult	result	=this.thumbnail;
+ ArrayList<FlickrImage>	result	=this.flickrResults;
 if(result == null)
 {
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
+result = new  ArrayList<FlickrImage>();
+this.flickrResults	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field thumbnail
+	Set the value of field flickrResults
 **/ 
 
-public void setThumbnail( ImageInSearchResult thumbnail )
+public void setFlickrResults(  ArrayList<FlickrImage> flickrResults )
 {
-this.thumbnail = thumbnail ;
+this.flickrResults = flickrResults ;
 }
 
 /**
-	Get the value of field thumbnail
+	Get the value of field flickrResults
 **/ 
 
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+public  ArrayList<FlickrImage> getFlickrResults(){
+return this.flickrResults;
 }
 
 }

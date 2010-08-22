@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.fastflip;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -45,24 +45,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Bing image search result.
-**/ 
-
 @simpl_inherit
 
-public class  BingImageSearchResult
-extends  ImageInSearchResult
+public class  Thumbnail
+extends  Metadata
 {
 
+	@simpl_scalar private MetadataParsedURL	pic;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public BingImageSearchResult()
+public Thumbnail()
 {
  super();
 }
@@ -71,42 +66,68 @@ public BingImageSearchResult()
 	Constructor
 **/ 
 
-public BingImageSearchResult(MetaMetadataCompositeField metaMetadata)
+public Thumbnail(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
+	Lazy Evaluation for pic
 **/ 
 
-public ImageInSearchResult	thumbnail()
+public MetadataParsedURL	pic()
 {
-ImageInSearchResult	result	=this.thumbnail;
+MetadataParsedURL	result	=this.pic;
 if(result == null)
 {
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
+result = new MetadataParsedURL();
+this.pic	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field thumbnail
+	Gets the value of the field pic
 **/ 
 
-public void setThumbnail( ImageInSearchResult thumbnail )
-{
-this.thumbnail = thumbnail ;
+public ParsedURL getPic(){
+return pic().getValue();
 }
 
 /**
-	Get the value of field thumbnail
+	Sets the value of the field pic
 **/ 
 
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+public void setPic( ParsedURL pic )
+{
+this.pic().setValue(pic);
 }
 
+/**
+	The heavy weight setter method for field pic
+**/ 
+
+public void hwSetPic( ParsedURL pic )
+{
+this.pic().setValue(pic);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the pic directly
+**/ 
+
+public void setPicMetadata(MetadataParsedURL pic)
+{	this.pic = pic;
+}
+/**
+	Heavy Weight Direct setter method for pic
+**/ 
+
+public void hwSetPicMetadata(MetadataParsedURL pic)
+{	 if(this.pic!=null && this.pic.getValue()!=null && hasTermVector())
+		 termVector().remove(this.pic.termVector());
+	 this.pic = pic;
+	rebuildCompositeTermVector();
+}
 }
 

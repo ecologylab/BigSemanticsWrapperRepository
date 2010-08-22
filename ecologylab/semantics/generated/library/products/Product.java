@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.search;
+package ecologylab.semantics.generated.library.products;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -45,24 +45,19 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-
-/**
-	Bing image search result.
-**/ 
-
 @simpl_inherit
 
-public class  BingImageSearchResult
-extends  ImageInSearchResult
+public class  Product
+extends  Document
 {
 
+	@simpl_scalar private MetadataString	price;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
 /**
 	Constructor
 **/ 
 
-public BingImageSearchResult()
+public Product()
 {
  super();
 }
@@ -71,42 +66,68 @@ public BingImageSearchResult()
 	Constructor
 **/ 
 
-public BingImageSearchResult(MetaMetadataCompositeField metaMetadata)
+public Product(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
+	Lazy Evaluation for price
 **/ 
 
-public ImageInSearchResult	thumbnail()
+public MetadataString	price()
 {
-ImageInSearchResult	result	=this.thumbnail;
+MetadataString	result	=this.price;
 if(result == null)
 {
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
+result = new MetadataString();
+this.price	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field thumbnail
+	Gets the value of the field price
 **/ 
 
-public void setThumbnail( ImageInSearchResult thumbnail )
-{
-this.thumbnail = thumbnail ;
+public String getPrice(){
+return price().getValue();
 }
 
 /**
-	Get the value of field thumbnail
+	Sets the value of the field price
 **/ 
 
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+public void setPrice( String price )
+{
+this.price().setValue(price);
 }
 
+/**
+	The heavy weight setter method for field price
+**/ 
+
+public void hwSetPrice( String price )
+{
+this.price().setValue(price);
+rebuildCompositeTermVector();
+ }
+/**
+	 Sets the price directly
+**/ 
+
+public void setPriceMetadata(MetadataString price)
+{	this.price = price;
+}
+/**
+	Heavy Weight Direct setter method for price
+**/ 
+
+public void hwSetPriceMetadata(MetadataString price)
+{	 if(this.price!=null && this.price.getValue()!=null && hasTermVector())
+		 termVector().remove(this.price.termVector());
+	 this.price = price;
+	rebuildCompositeTermVector();
+}
 }
 
