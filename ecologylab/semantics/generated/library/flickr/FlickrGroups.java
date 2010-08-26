@@ -47,16 +47,16 @@ import java.util.*;
 
 
 /**
-	The flickr search class
+	Searching from a photo for nearby photos
 **/ 
 
 @simpl_inherit
 
 public class  FlickrGroups
-extends  Document
+extends  Search
 {
 
-	 @simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results") private ArrayList<FlickrImage>	flickrResults;
+	 @simpl_collection("flickr_tag") @xml_tag("flickr_tags") @mm_name("flickr_tags") private ArrayList<FlickrTag>	flickrTags;
 
 /**
 	Constructor
@@ -77,35 +77,35 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for flickrResults
+	Lazy Evaluation for flickrTags
 **/ 
 
-public  ArrayList<FlickrImage>	flickrResults()
+public  ArrayList<FlickrTag>	flickrTags()
 {
- ArrayList<FlickrImage>	result	=this.flickrResults;
+ ArrayList<FlickrTag>	result	=this.flickrTags;
 if(result == null)
 {
-result = new  ArrayList<FlickrImage>();
-this.flickrResults	=	 result;
+result = new  ArrayList<FlickrTag>();
+this.flickrTags	=	 result;
 }
 return result;
 }
 
 /**
-	Set the value of field flickrResults
+	Set the value of field flickrTags
 **/ 
 
-public void setFlickrResults(  ArrayList<FlickrImage> flickrResults )
+public void setFlickrTags(  ArrayList<FlickrTag> flickrTags )
 {
-this.flickrResults = flickrResults ;
+this.flickrTags = flickrTags ;
 }
 
 /**
-	Get the value of field flickrResults
+	Get the value of field flickrTags
 **/ 
 
-public  ArrayList<FlickrImage> getFlickrResults(){
-return this.flickrResults;
+public  ArrayList<FlickrTag> getFlickrTags(){
+return this.flickrTags;
 }
 
 }

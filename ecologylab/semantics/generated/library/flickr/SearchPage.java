@@ -1,4 +1,12 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.flickr;
+
+/**
+This is a generated code. DO NOT edit or modify it.
+ @author MetadataCompiler 
+
+**/ 
+
+
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -39,16 +47,17 @@ import java.util.*;
 
 @simpl_inherit
 
-public class Category extends Metadata{
+public class  SearchPage
+extends  Metadata
+{
 
-	@simpl_scalar private MetadataString	name;
-	@simpl_scalar private MetadataParsedURL	catLink;
+	@simpl_scalar private MetadataParsedURL	linkPage;
 
 /**
 	Constructor
 **/ 
 
-public Category()
+public SearchPage()
 {
  super();
 }
@@ -57,124 +66,68 @@ public Category()
 	Constructor
 **/ 
 
-public Category(MetaMetadataCompositeField metaMetadata)
+public SearchPage(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for name
+	Lazy Evaluation for linkPage
 **/ 
 
-public MetadataString	name()
+public MetadataParsedURL	linkPage()
 {
-MetadataString	result	=this.name;
-if(result == null)
-{
-result = new MetadataString();
-this.name	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field name
-**/ 
-
-public String getName(){
-return name().getValue();
-}
-
-/**
-	Sets the value of the field name
-**/ 
-
-public void setName( String name )
-{
-this.name().setValue(name);
-}
-
-/**
-	The heavy weight setter method for field name
-**/ 
-
-public void hwSetName( String name )
-{
-this.name().setValue(name);
-rebuildCompositeTermVector();
- }
-/**
-	 Sets the name directly
-**/ 
-
-public void setNameMetadata(MetadataString name)
-{	this.name = name;
-}
-/**
-	Heavy Weight Direct setter method for name
-**/ 
-
-public void hwSetNameMetadata(MetadataString name)
-{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
-		 termVector().remove(this.name.termVector());
-	 this.name = name;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for catLink
-**/ 
-
-public MetadataParsedURL	catLink()
-{
-MetadataParsedURL	result	=this.catLink;
+MetadataParsedURL	result	=this.linkPage;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.catLink	=	 result;
+this.linkPage	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field catLink
+	Gets the value of the field linkPage
 **/ 
 
-public ParsedURL getCatLink(){
-return catLink().getValue();
+public ParsedURL getLinkPage(){
+return linkPage().getValue();
 }
 
 /**
-	Sets the value of the field catLink
+	Sets the value of the field linkPage
 **/ 
 
-public void setCatLink( ParsedURL catLink )
+public void setLinkPage( ParsedURL linkPage )
 {
-this.catLink().setValue(catLink);
+this.linkPage().setValue(linkPage);
 }
 
 /**
-	The heavy weight setter method for field catLink
+	The heavy weight setter method for field linkPage
 **/ 
 
-public void hwSetCatLink( ParsedURL catLink )
+public void hwSetLinkPage( ParsedURL linkPage )
 {
-this.catLink().setValue(catLink);
+this.linkPage().setValue(linkPage);
 rebuildCompositeTermVector();
  }
 /**
-	 Sets the catLink directly
+	 Sets the linkPage directly
 **/ 
 
-public void setCatLinkMetadata(MetadataParsedURL catLink)
-{	this.catLink = catLink;
+public void setLinkPageMetadata(MetadataParsedURL linkPage)
+{	this.linkPage = linkPage;
 }
 /**
-	Heavy Weight Direct setter method for catLink
+	Heavy Weight Direct setter method for linkPage
 **/ 
 
-public void hwSetCatLinkMetadata(MetadataParsedURL catLink)
-{	 if(this.catLink!=null && this.catLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.catLink.termVector());
-	 this.catLink = catLink;
+public void hwSetLinkPageMetadata(MetadataParsedURL linkPage)
+{	 if(this.linkPage!=null && this.linkPage.getValue()!=null && hasTermVector())
+		 termVector().remove(this.linkPage.termVector());
+	 this.linkPage = linkPage;
 	rebuildCompositeTermVector();
-}}
+}
+}
+

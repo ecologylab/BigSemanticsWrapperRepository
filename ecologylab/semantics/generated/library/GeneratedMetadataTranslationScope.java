@@ -98,8 +98,6 @@ ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
 ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
-ecologylab.semantics.generated.library.flickr.RelatedPhoto.class,
-
 ecologylab.semantics.generated.library.GoogleImageSearchPage.class,
 
 ImageResult.class,
