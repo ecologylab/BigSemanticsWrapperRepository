@@ -53,7 +53,7 @@ import java.util.*;
 @simpl_inherit
 
 public class  BingWebSearchResult
-extends  Document
+extends  SearchResult
 {
 
 	@xml_tag("web:Title")@simpl_scalar private MetadataString	heading;
