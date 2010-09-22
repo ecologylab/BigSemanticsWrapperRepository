@@ -57,7 +57,6 @@ extends  WikipediaPageType
 {
 
 	 @simpl_collection("paragraph") @xml_tag("paragraphs") @mm_name("paragraphs") private ArrayList<Paragraph>	paragraphs;
-	 @simpl_collection("category") @xml_tag("categories") @mm_name("categories") private ArrayList<Category>	categories;
 
 /**
 	Constructor
@@ -107,38 +106,6 @@ this.paragraphs = paragraphs ;
 
 public  ArrayList<Paragraph> getParagraphs(){
 return this.paragraphs;
-}
-
-/**
-	Lazy Evaluation for categories
-**/ 
-
-public  ArrayList<Category>	categories()
-{
- ArrayList<Category>	result	=this.categories;
-if(result == null)
-{
-result = new  ArrayList<Category>();
-this.categories	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field categories
-**/ 
-
-public void setCategories(  ArrayList<Category> categories )
-{
-this.categories = categories ;
-}
-
-/**
-	Get the value of field categories
-**/ 
-
-public  ArrayList<Category> getCategories(){
-return this.categories;
 }
 
 }
