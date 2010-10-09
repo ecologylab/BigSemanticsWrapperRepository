@@ -103,8 +103,9 @@ return result;
 	Gets the value of the field yearOfPublication
 **/ 
 
-public Integer getYearOfPublication(){
-return yearOfPublication().getValue();
+public Integer getYearOfPublication()
+{
+	return yearOfPublication().getValue();
 }
 
 /**
@@ -113,7 +114,7 @@ return yearOfPublication().getValue();
 
 public void setYearOfPublication( Integer yearOfPublication )
 {
-this.yearOfPublication().setValue(yearOfPublication);
+	this.yearOfPublication().setValue(yearOfPublication);
 }
 
 /**
@@ -122,9 +123,18 @@ this.yearOfPublication().setValue(yearOfPublication);
 
 public void hwSetYearOfPublication( Integer yearOfPublication )
 {
-this.yearOfPublication().setValue(yearOfPublication);
-rebuildCompositeTermVector();
- }
+	this.yearOfPublication().setValue(yearOfPublication);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: yearOfPublication
+**/ 
+
+public boolean isNullYearOfPublication()
+{
+	return yearOfPublication == null || yearOfPublication.getValue() == null;
+}
+
 /**
 	 Sets the yearOfPublication directly
 **/ 
@@ -161,8 +171,9 @@ return result;
 	Gets the value of the field archive
 **/ 
 
-public ParsedURL getArchive(){
-return archive().getValue();
+public ParsedURL getArchive()
+{
+	return archive().getValue();
 }
 
 /**
@@ -171,7 +182,7 @@ return archive().getValue();
 
 public void setArchive( ParsedURL archive )
 {
-this.archive().setValue(archive);
+	this.archive().setValue(archive);
 }
 
 /**
@@ -180,9 +191,18 @@ this.archive().setValue(archive);
 
 public void hwSetArchive( ParsedURL archive )
 {
-this.archive().setValue(archive);
-rebuildCompositeTermVector();
- }
+	this.archive().setValue(archive);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: archive
+**/ 
+
+public boolean isNullArchive()
+{
+	return archive == null || archive.getValue() == null;
+}
+
 /**
 	 Sets the archive directly
 **/ 
@@ -219,8 +239,9 @@ return result;
 	Gets the value of the field pages
 **/ 
 
-public String getPages(){
-return pages().getValue();
+public String getPages()
+{
+	return pages().getValue();
 }
 
 /**
@@ -229,7 +250,7 @@ return pages().getValue();
 
 public void setPages( String pages )
 {
-this.pages().setValue(pages);
+	this.pages().setValue(pages);
 }
 
 /**
@@ -238,9 +259,18 @@ this.pages().setValue(pages);
 
 public void hwSetPages( String pages )
 {
-this.pages().setValue(pages);
-rebuildCompositeTermVector();
- }
+	this.pages().setValue(pages);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: pages
+**/ 
+
+public boolean isNullPages()
+{
+	return pages == null || pages.getValue() == null;
+}
+
 /**
 	 Sets the pages directly
 **/ 
@@ -277,8 +307,9 @@ return result;
 	Gets the value of the field isbn
 **/ 
 
-public String getIsbn(){
-return isbn().getValue();
+public String getIsbn()
+{
+	return isbn().getValue();
 }
 
 /**
@@ -287,7 +318,7 @@ return isbn().getValue();
 
 public void setIsbn( String isbn )
 {
-this.isbn().setValue(isbn);
+	this.isbn().setValue(isbn);
 }
 
 /**
@@ -296,9 +327,18 @@ this.isbn().setValue(isbn);
 
 public void hwSetIsbn( String isbn )
 {
-this.isbn().setValue(isbn);
-rebuildCompositeTermVector();
- }
+	this.isbn().setValue(isbn);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: isbn
+**/ 
+
+public boolean isNullIsbn()
+{
+	return isbn == null || isbn.getValue() == null;
+}
+
 /**
 	 Sets the isbn directly
 **/ 

@@ -96,8 +96,9 @@ return result;
 	Gets the value of the field inventor
 **/ 
 
-public String getInventor(){
-return inventor().getValue();
+public String getInventor()
+{
+	return inventor().getValue();
 }
 
 /**
@@ -106,7 +107,7 @@ return inventor().getValue();
 
 public void setInventor( String inventor )
 {
-this.inventor().setValue(inventor);
+	this.inventor().setValue(inventor);
 }
 
 /**
@@ -115,9 +116,18 @@ this.inventor().setValue(inventor);
 
 public void hwSetInventor( String inventor )
 {
-this.inventor().setValue(inventor);
-rebuildCompositeTermVector();
- }
+	this.inventor().setValue(inventor);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: inventor
+**/ 
+
+public boolean isNullInventor()
+{
+	return inventor == null || inventor.getValue() == null;
+}
+
 /**
 	 Sets the inventor directly
 **/ 

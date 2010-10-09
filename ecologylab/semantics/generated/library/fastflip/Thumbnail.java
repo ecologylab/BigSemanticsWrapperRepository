@@ -90,8 +90,9 @@ return result;
 	Gets the value of the field pic
 **/ 
 
-public ParsedURL getPic(){
-return pic().getValue();
+public ParsedURL getPic()
+{
+	return pic().getValue();
 }
 
 /**
@@ -100,7 +101,7 @@ return pic().getValue();
 
 public void setPic( ParsedURL pic )
 {
-this.pic().setValue(pic);
+	this.pic().setValue(pic);
 }
 
 /**
@@ -109,9 +110,18 @@ this.pic().setValue(pic);
 
 public void hwSetPic( ParsedURL pic )
 {
-this.pic().setValue(pic);
-rebuildCompositeTermVector();
- }
+	this.pic().setValue(pic);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: pic
+**/ 
+
+public boolean isNullPic()
+{
+	return pic == null || pic.getValue() == null;
+}
+
 /**
 	 Sets the pic directly
 **/ 

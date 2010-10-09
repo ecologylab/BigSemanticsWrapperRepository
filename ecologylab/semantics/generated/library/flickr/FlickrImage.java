@@ -96,8 +96,9 @@ return result;
 	Gets the value of the field browsePurl
 **/ 
 
-public ParsedURL getBrowsePurl(){
-return browsePurl().getValue();
+public ParsedURL getBrowsePurl()
+{
+	return browsePurl().getValue();
 }
 
 /**
@@ -106,7 +107,7 @@ return browsePurl().getValue();
 
 public void setBrowsePurl( ParsedURL browsePurl )
 {
-this.browsePurl().setValue(browsePurl);
+	this.browsePurl().setValue(browsePurl);
 }
 
 /**
@@ -115,9 +116,18 @@ this.browsePurl().setValue(browsePurl);
 
 public void hwSetBrowsePurl( ParsedURL browsePurl )
 {
-this.browsePurl().setValue(browsePurl);
-rebuildCompositeTermVector();
- }
+	this.browsePurl().setValue(browsePurl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: browsePurl
+**/ 
+
+public boolean isNullBrowsePurl()
+{
+	return browsePurl == null || browsePurl.getValue() == null;
+}
+
 /**
 	 Sets the browsePurl directly
 **/ 

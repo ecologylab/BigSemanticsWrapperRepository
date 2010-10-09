@@ -98,8 +98,9 @@ return result;
 	Gets the value of the field mainImageSrc
 **/ 
 
-public ParsedURL getMainImageSrc(){
-return mainImageSrc().getValue();
+public ParsedURL getMainImageSrc()
+{
+	return mainImageSrc().getValue();
 }
 
 /**
@@ -108,7 +109,7 @@ return mainImageSrc().getValue();
 
 public void setMainImageSrc( ParsedURL mainImageSrc )
 {
-this.mainImageSrc().setValue(mainImageSrc);
+	this.mainImageSrc().setValue(mainImageSrc);
 }
 
 /**
@@ -117,9 +118,18 @@ this.mainImageSrc().setValue(mainImageSrc);
 
 public void hwSetMainImageSrc( ParsedURL mainImageSrc )
 {
-this.mainImageSrc().setValue(mainImageSrc);
-rebuildCompositeTermVector();
- }
+	this.mainImageSrc().setValue(mainImageSrc);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: mainImageSrc
+**/ 
+
+public boolean isNullMainImageSrc()
+{
+	return mainImageSrc == null || mainImageSrc.getValue() == null;
+}
+
 /**
 	 Sets the mainImageSrc directly
 **/ 

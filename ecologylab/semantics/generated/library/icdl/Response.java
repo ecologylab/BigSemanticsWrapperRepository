@@ -82,8 +82,9 @@ return result;
 	Gets the value of the field pnum
 **/ 
 
-public Integer getPnum(){
-return pnum().getValue();
+public Integer getPnum()
+{
+	return pnum().getValue();
 }
 
 /**
@@ -92,7 +93,7 @@ return pnum().getValue();
 
 public void setPnum( Integer pnum )
 {
-this.pnum().setValue(pnum);
+	this.pnum().setValue(pnum);
 }
 
 /**
@@ -101,9 +102,18 @@ this.pnum().setValue(pnum);
 
 public void hwSetPnum( Integer pnum )
 {
-this.pnum().setValue(pnum);
-rebuildCompositeTermVector();
- }
+	this.pnum().setValue(pnum);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: pnum
+**/ 
+
+public boolean isNullPnum()
+{
+	return pnum == null || pnum.getValue() == null;
+}
+
 /**
 	 Sets the pnum directly
 **/ 
@@ -140,8 +150,9 @@ return result;
 	Gets the value of the field total
 **/ 
 
-public Integer getTotal(){
-return total().getValue();
+public Integer getTotal()
+{
+	return total().getValue();
 }
 
 /**
@@ -150,7 +161,7 @@ return total().getValue();
 
 public void setTotal( Integer total )
 {
-this.total().setValue(total);
+	this.total().setValue(total);
 }
 
 /**
@@ -159,9 +170,18 @@ this.total().setValue(total);
 
 public void hwSetTotal( Integer total )
 {
-this.total().setValue(total);
-rebuildCompositeTermVector();
- }
+	this.total().setValue(total);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: total
+**/ 
+
+public boolean isNullTotal()
+{
+	return total == null || total.getValue() == null;
+}
+
 /**
 	 Sets the total directly
 **/ 

@@ -97,8 +97,9 @@ return result;
 	Gets the value of the field name
 **/ 
 
-public String getName(){
-return name().getValue();
+public String getName()
+{
+	return name().getValue();
 }
 
 /**
@@ -107,7 +108,7 @@ return name().getValue();
 
 public void setName( String name )
 {
-this.name().setValue(name);
+	this.name().setValue(name);
 }
 
 /**
@@ -116,9 +117,18 @@ this.name().setValue(name);
 
 public void hwSetName( String name )
 {
-this.name().setValue(name);
-rebuildCompositeTermVector();
- }
+	this.name().setValue(name);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: name
+**/ 
+
+public boolean isNullName()
+{
+	return name == null || name.getValue() == null;
+}
+
 /**
 	 Sets the name directly
 **/ 
@@ -155,8 +165,9 @@ return result;
 	Gets the value of the field affiliation
 **/ 
 
-public String getAffiliation(){
-return affiliation().getValue();
+public String getAffiliation()
+{
+	return affiliation().getValue();
 }
 
 /**
@@ -165,7 +176,7 @@ return affiliation().getValue();
 
 public void setAffiliation( String affiliation )
 {
-this.affiliation().setValue(affiliation);
+	this.affiliation().setValue(affiliation);
 }
 
 /**
@@ -174,9 +185,18 @@ this.affiliation().setValue(affiliation);
 
 public void hwSetAffiliation( String affiliation )
 {
-this.affiliation().setValue(affiliation);
-rebuildCompositeTermVector();
- }
+	this.affiliation().setValue(affiliation);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: affiliation
+**/ 
+
+public boolean isNullAffiliation()
+{
+	return affiliation == null || affiliation.getValue() == null;
+}
+
 /**
 	 Sets the affiliation directly
 **/ 
@@ -213,8 +233,9 @@ return result;
 	Gets the value of the field city
 **/ 
 
-public String getCity(){
-return city().getValue();
+public String getCity()
+{
+	return city().getValue();
 }
 
 /**
@@ -223,7 +244,7 @@ return city().getValue();
 
 public void setCity( String city )
 {
-this.city().setValue(city);
+	this.city().setValue(city);
 }
 
 /**
@@ -232,9 +253,18 @@ this.city().setValue(city);
 
 public void hwSetCity( String city )
 {
-this.city().setValue(city);
-rebuildCompositeTermVector();
- }
+	this.city().setValue(city);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: city
+**/ 
+
+public boolean isNullCity()
+{
+	return city == null || city.getValue() == null;
+}
+
 /**
 	 Sets the city directly
 **/ 

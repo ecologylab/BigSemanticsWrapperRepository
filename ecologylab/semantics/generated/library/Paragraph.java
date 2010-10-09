@@ -113,8 +113,9 @@ return result;
 	Gets the value of the field paragraphText
 **/ 
 
-public String getParagraphText(){
-return paragraphText().getValue();
+public String getParagraphText()
+{
+	return paragraphText().getValue();
 }
 
 /**
@@ -123,7 +124,7 @@ return paragraphText().getValue();
 
 public void setParagraphText( String paragraphText )
 {
-this.paragraphText().setValue(paragraphText);
+	this.paragraphText().setValue(paragraphText);
 }
 
 /**
@@ -132,9 +133,18 @@ this.paragraphText().setValue(paragraphText);
 
 public void hwSetParagraphText( String paragraphText )
 {
-this.paragraphText().setValue(paragraphText);
-rebuildCompositeTermVector();
- }
+	this.paragraphText().setValue(paragraphText);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: paragraphText
+**/ 
+
+public boolean isNullParagraphText()
+{
+	return paragraphText == null || paragraphText.getValue() == null;
+}
+
 /**
 	 Sets the paragraphText directly
 **/ 

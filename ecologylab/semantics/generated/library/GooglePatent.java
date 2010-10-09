@@ -101,8 +101,9 @@ return result;
 	Gets the value of the field inventor
 **/ 
 
-public String getInventor(){
-return inventor().getValue();
+public String getInventor()
+{
+	return inventor().getValue();
 }
 
 /**
@@ -111,7 +112,7 @@ return inventor().getValue();
 
 public void setInventor( String inventor )
 {
-this.inventor().setValue(inventor);
+	this.inventor().setValue(inventor);
 }
 
 /**
@@ -120,9 +121,18 @@ this.inventor().setValue(inventor);
 
 public void hwSetInventor( String inventor )
 {
-this.inventor().setValue(inventor);
-rebuildCompositeTermVector();
- }
+	this.inventor().setValue(inventor);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: inventor
+**/ 
+
+public boolean isNullInventor()
+{
+	return inventor == null || inventor.getValue() == null;
+}
+
 /**
 	 Sets the inventor directly
 **/ 
@@ -159,8 +169,9 @@ return result;
 	Gets the value of the field abstractField
 **/ 
 
-public String getAbstractField(){
-return abstractField().getValue();
+public String getAbstractField()
+{
+	return abstractField().getValue();
 }
 
 /**
@@ -169,7 +180,7 @@ return abstractField().getValue();
 
 public void setAbstractField( String abstractField )
 {
-this.abstractField().setValue(abstractField);
+	this.abstractField().setValue(abstractField);
 }
 
 /**
@@ -178,9 +189,18 @@ this.abstractField().setValue(abstractField);
 
 public void hwSetAbstractField( String abstractField )
 {
-this.abstractField().setValue(abstractField);
-rebuildCompositeTermVector();
- }
+	this.abstractField().setValue(abstractField);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: abstractField
+**/ 
+
+public boolean isNullAbstractField()
+{
+	return abstractField == null || abstractField.getValue() == null;
+}
+
 /**
 	 Sets the abstractField directly
 **/ 
@@ -217,8 +237,9 @@ return result;
 	Gets the value of the field claims
 **/ 
 
-public String getClaims(){
-return claims().getValue();
+public String getClaims()
+{
+	return claims().getValue();
 }
 
 /**
@@ -227,7 +248,7 @@ return claims().getValue();
 
 public void setClaims( String claims )
 {
-this.claims().setValue(claims);
+	this.claims().setValue(claims);
 }
 
 /**
@@ -236,9 +257,18 @@ this.claims().setValue(claims);
 
 public void hwSetClaims( String claims )
 {
-this.claims().setValue(claims);
-rebuildCompositeTermVector();
- }
+	this.claims().setValue(claims);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: claims
+**/ 
+
+public boolean isNullClaims()
+{
+	return claims == null || claims.getValue() == null;
+}
+
 /**
 	 Sets the claims directly
 **/ 
@@ -275,8 +305,9 @@ return result;
 	Gets the value of the field picLink
 **/ 
 
-public ParsedURL getPicLink(){
-return picLink().getValue();
+public ParsedURL getPicLink()
+{
+	return picLink().getValue();
 }
 
 /**
@@ -285,7 +316,7 @@ return picLink().getValue();
 
 public void setPicLink( ParsedURL picLink )
 {
-this.picLink().setValue(picLink);
+	this.picLink().setValue(picLink);
 }
 
 /**
@@ -294,9 +325,18 @@ this.picLink().setValue(picLink);
 
 public void hwSetPicLink( ParsedURL picLink )
 {
-this.picLink().setValue(picLink);
-rebuildCompositeTermVector();
- }
+	this.picLink().setValue(picLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: picLink
+**/ 
+
+public boolean isNullPicLink()
+{
+	return picLink == null || picLink.getValue() == null;
+}
+
 /**
 	 Sets the picLink directly
 **/ 

@@ -136,8 +136,9 @@ return result;
 	Gets the value of the field city
 **/ 
 
-public String getCity(){
-return city().getValue();
+public String getCity()
+{
+	return city().getValue();
 }
 
 /**
@@ -146,7 +147,7 @@ return city().getValue();
 
 public void setCity( String city )
 {
-this.city().setValue(city);
+	this.city().setValue(city);
 }
 
 /**
@@ -155,9 +156,18 @@ this.city().setValue(city);
 
 public void hwSetCity( String city )
 {
-this.city().setValue(city);
-rebuildCompositeTermVector();
- }
+	this.city().setValue(city);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: city
+**/ 
+
+public boolean isNullCity()
+{
+	return city == null || city.getValue() == null;
+}
+
 /**
 	 Sets the city directly
 **/ 
@@ -194,8 +204,9 @@ return result;
 	Gets the value of the field weather
 **/ 
 
-public String getWeather(){
-return weather().getValue();
+public String getWeather()
+{
+	return weather().getValue();
 }
 
 /**
@@ -204,7 +215,7 @@ return weather().getValue();
 
 public void setWeather( String weather )
 {
-this.weather().setValue(weather);
+	this.weather().setValue(weather);
 }
 
 /**
@@ -213,9 +224,18 @@ this.weather().setValue(weather);
 
 public void hwSetWeather( String weather )
 {
-this.weather().setValue(weather);
-rebuildCompositeTermVector();
- }
+	this.weather().setValue(weather);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: weather
+**/ 
+
+public boolean isNullWeather()
+{
+	return weather == null || weather.getValue() == null;
+}
+
 /**
 	 Sets the weather directly
 **/ 
@@ -252,8 +272,9 @@ return result;
 	Gets the value of the field picUrl
 **/ 
 
-public ParsedURL getPicUrl(){
-return picUrl().getValue();
+public ParsedURL getPicUrl()
+{
+	return picUrl().getValue();
 }
 
 /**
@@ -262,7 +283,7 @@ return picUrl().getValue();
 
 public void setPicUrl( ParsedURL picUrl )
 {
-this.picUrl().setValue(picUrl);
+	this.picUrl().setValue(picUrl);
 }
 
 /**
@@ -271,9 +292,18 @@ this.picUrl().setValue(picUrl);
 
 public void hwSetPicUrl( ParsedURL picUrl )
 {
-this.picUrl().setValue(picUrl);
-rebuildCompositeTermVector();
- }
+	this.picUrl().setValue(picUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: picUrl
+**/ 
+
+public boolean isNullPicUrl()
+{
+	return picUrl == null || picUrl.getValue() == null;
+}
+
 /**
 	 Sets the picUrl directly
 **/ 
@@ -310,8 +340,9 @@ return result;
 	Gets the value of the field temperature
 **/ 
 
-public String getTemperature(){
-return temperature().getValue();
+public String getTemperature()
+{
+	return temperature().getValue();
 }
 
 /**
@@ -320,7 +351,7 @@ return temperature().getValue();
 
 public void setTemperature( String temperature )
 {
-this.temperature().setValue(temperature);
+	this.temperature().setValue(temperature);
 }
 
 /**
@@ -329,9 +360,18 @@ this.temperature().setValue(temperature);
 
 public void hwSetTemperature( String temperature )
 {
-this.temperature().setValue(temperature);
-rebuildCompositeTermVector();
- }
+	this.temperature().setValue(temperature);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: temperature
+**/ 
+
+public boolean isNullTemperature()
+{
+	return temperature == null || temperature.getValue() == null;
+}
+
 /**
 	 Sets the temperature directly
 **/ 
@@ -368,8 +408,9 @@ return result;
 	Gets the value of the field humidity
 **/ 
 
-public String getHumidity(){
-return humidity().getValue();
+public String getHumidity()
+{
+	return humidity().getValue();
 }
 
 /**
@@ -378,7 +419,7 @@ return humidity().getValue();
 
 public void setHumidity( String humidity )
 {
-this.humidity().setValue(humidity);
+	this.humidity().setValue(humidity);
 }
 
 /**
@@ -387,9 +428,18 @@ this.humidity().setValue(humidity);
 
 public void hwSetHumidity( String humidity )
 {
-this.humidity().setValue(humidity);
-rebuildCompositeTermVector();
- }
+	this.humidity().setValue(humidity);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: humidity
+**/ 
+
+public boolean isNullHumidity()
+{
+	return humidity == null || humidity.getValue() == null;
+}
+
 /**
 	 Sets the humidity directly
 **/ 
@@ -426,8 +476,9 @@ return result;
 	Gets the value of the field wind
 **/ 
 
-public String getWind(){
-return wind().getValue();
+public String getWind()
+{
+	return wind().getValue();
 }
 
 /**
@@ -436,7 +487,7 @@ return wind().getValue();
 
 public void setWind( String wind )
 {
-this.wind().setValue(wind);
+	this.wind().setValue(wind);
 }
 
 /**
@@ -445,9 +496,18 @@ this.wind().setValue(wind);
 
 public void hwSetWind( String wind )
 {
-this.wind().setValue(wind);
-rebuildCompositeTermVector();
- }
+	this.wind().setValue(wind);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: wind
+**/ 
+
+public boolean isNullWind()
+{
+	return wind == null || wind.getValue() == null;
+}
+
 /**
 	 Sets the wind directly
 **/ 
@@ -484,8 +544,9 @@ return result;
 	Gets the value of the field dewPoint
 **/ 
 
-public String getDewPoint(){
-return dewPoint().getValue();
+public String getDewPoint()
+{
+	return dewPoint().getValue();
 }
 
 /**
@@ -494,7 +555,7 @@ return dewPoint().getValue();
 
 public void setDewPoint( String dewPoint )
 {
-this.dewPoint().setValue(dewPoint);
+	this.dewPoint().setValue(dewPoint);
 }
 
 /**
@@ -503,9 +564,18 @@ this.dewPoint().setValue(dewPoint);
 
 public void hwSetDewPoint( String dewPoint )
 {
-this.dewPoint().setValue(dewPoint);
-rebuildCompositeTermVector();
- }
+	this.dewPoint().setValue(dewPoint);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dewPoint
+**/ 
+
+public boolean isNullDewPoint()
+{
+	return dewPoint == null || dewPoint.getValue() == null;
+}
+
 /**
 	 Sets the dewPoint directly
 **/ 

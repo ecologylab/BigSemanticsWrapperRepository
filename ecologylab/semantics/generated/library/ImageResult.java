@@ -103,8 +103,9 @@ return result;
 	Gets the value of the field imgUrl
 **/ 
 
-public ParsedURL getImgUrl(){
-return imgUrl().getValue();
+public ParsedURL getImgUrl()
+{
+	return imgUrl().getValue();
 }
 
 /**
@@ -113,7 +114,7 @@ return imgUrl().getValue();
 
 public void setImgUrl( ParsedURL imgUrl )
 {
-this.imgUrl().setValue(imgUrl);
+	this.imgUrl().setValue(imgUrl);
 }
 
 /**
@@ -122,9 +123,18 @@ this.imgUrl().setValue(imgUrl);
 
 public void hwSetImgUrl( ParsedURL imgUrl )
 {
-this.imgUrl().setValue(imgUrl);
-rebuildCompositeTermVector();
- }
+	this.imgUrl().setValue(imgUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: imgUrl
+**/ 
+
+public boolean isNullImgUrl()
+{
+	return imgUrl == null || imgUrl.getValue() == null;
+}
+
 /**
 	 Sets the imgUrl directly
 **/ 
@@ -161,8 +171,9 @@ return result;
 	Gets the value of the field summary
 **/ 
 
-public String getSummary(){
-return summary().getValue();
+public String getSummary()
+{
+	return summary().getValue();
 }
 
 /**
@@ -171,7 +182,7 @@ return summary().getValue();
 
 public void setSummary( String summary )
 {
-this.summary().setValue(summary);
+	this.summary().setValue(summary);
 }
 
 /**
@@ -180,9 +191,18 @@ this.summary().setValue(summary);
 
 public void hwSetSummary( String summary )
 {
-this.summary().setValue(summary);
-rebuildCompositeTermVector();
- }
+	this.summary().setValue(summary);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: summary
+**/ 
+
+public boolean isNullSummary()
+{
+	return summary == null || summary.getValue() == null;
+}
+
 /**
 	 Sets the summary directly
 **/ 
@@ -219,8 +239,9 @@ return result;
 	Gets the value of the field rawProperty
 **/ 
 
-public String getRawProperty(){
-return rawProperty().getValue();
+public String getRawProperty()
+{
+	return rawProperty().getValue();
 }
 
 /**
@@ -229,7 +250,7 @@ return rawProperty().getValue();
 
 public void setRawProperty( String rawProperty )
 {
-this.rawProperty().setValue(rawProperty);
+	this.rawProperty().setValue(rawProperty);
 }
 
 /**
@@ -238,9 +259,18 @@ this.rawProperty().setValue(rawProperty);
 
 public void hwSetRawProperty( String rawProperty )
 {
-this.rawProperty().setValue(rawProperty);
-rebuildCompositeTermVector();
- }
+	this.rawProperty().setValue(rawProperty);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: rawProperty
+**/ 
+
+public boolean isNullRawProperty()
+{
+	return rawProperty == null || rawProperty.getValue() == null;
+}
+
 /**
 	 Sets the rawProperty directly
 **/ 
@@ -277,8 +307,9 @@ return result;
 	Gets the value of the field imgTitle
 **/ 
 
-public String getImgTitle(){
-return imgTitle().getValue();
+public String getImgTitle()
+{
+	return imgTitle().getValue();
 }
 
 /**
@@ -287,7 +318,7 @@ return imgTitle().getValue();
 
 public void setImgTitle( String imgTitle )
 {
-this.imgTitle().setValue(imgTitle);
+	this.imgTitle().setValue(imgTitle);
 }
 
 /**
@@ -296,9 +327,18 @@ this.imgTitle().setValue(imgTitle);
 
 public void hwSetImgTitle( String imgTitle )
 {
-this.imgTitle().setValue(imgTitle);
-rebuildCompositeTermVector();
- }
+	this.imgTitle().setValue(imgTitle);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: imgTitle
+**/ 
+
+public boolean isNullImgTitle()
+{
+	return imgTitle == null || imgTitle.getValue() == null;
+}
+
 /**
 	 Sets the imgTitle directly
 **/ 

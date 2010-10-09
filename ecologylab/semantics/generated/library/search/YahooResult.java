@@ -96,8 +96,9 @@ return result;
 	Gets the value of the field title
 **/ 
 
-public String getTitle(){
-return title().getValue();
+public String getTitle()
+{
+	return title().getValue();
 }
 
 /**
@@ -106,7 +107,7 @@ return title().getValue();
 
 public void setTitle( String title )
 {
-this.title().setValue(title);
+	this.title().setValue(title);
 }
 
 /**
@@ -115,9 +116,18 @@ this.title().setValue(title);
 
 public void hwSetTitle( String title )
 {
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
+	this.title().setValue(title);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: title
+**/ 
+
+public boolean isNullTitle()
+{
+	return title == null || title.getValue() == null;
+}
+
 /**
 	 Sets the title directly
 **/ 
@@ -154,8 +164,9 @@ return result;
 	Gets the value of the field summary
 **/ 
 
-public String getSummary(){
-return summary().getValue();
+public String getSummary()
+{
+	return summary().getValue();
 }
 
 /**
@@ -164,7 +175,7 @@ return summary().getValue();
 
 public void setSummary( String summary )
 {
-this.summary().setValue(summary);
+	this.summary().setValue(summary);
 }
 
 /**
@@ -173,9 +184,18 @@ this.summary().setValue(summary);
 
 public void hwSetSummary( String summary )
 {
-this.summary().setValue(summary);
-rebuildCompositeTermVector();
- }
+	this.summary().setValue(summary);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: summary
+**/ 
+
+public boolean isNullSummary()
+{
+	return summary == null || summary.getValue() == null;
+}
+
 /**
 	 Sets the summary directly
 **/ 
@@ -212,8 +232,9 @@ return result;
 	Gets the value of the field location
 **/ 
 
-public ParsedURL getLocation(){
-return location().getValue();
+public ParsedURL getLocation()
+{
+	return location().getValue();
 }
 
 /**
@@ -222,7 +243,7 @@ return location().getValue();
 
 public void setLocation( ParsedURL location )
 {
-this.location().setValue(location);
+	this.location().setValue(location);
 }
 
 /**
@@ -231,9 +252,18 @@ this.location().setValue(location);
 
 public void hwSetLocation( ParsedURL location )
 {
-this.location().setValue(location);
-rebuildCompositeTermVector();
- }
+	this.location().setValue(location);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: location
+**/ 
+
+public boolean isNullLocation()
+{
+	return location == null || location.getValue() == null;
+}
+
 /**
 	 Sets the location directly
 **/ 
@@ -270,8 +300,9 @@ return result;
 	Gets the value of the field refererUrl
 **/ 
 
-public ParsedURL getRefererUrl(){
-return refererUrl().getValue();
+public ParsedURL getRefererUrl()
+{
+	return refererUrl().getValue();
 }
 
 /**
@@ -280,7 +311,7 @@ return refererUrl().getValue();
 
 public void setRefererUrl( ParsedURL refererUrl )
 {
-this.refererUrl().setValue(refererUrl);
+	this.refererUrl().setValue(refererUrl);
 }
 
 /**
@@ -289,9 +320,18 @@ this.refererUrl().setValue(refererUrl);
 
 public void hwSetRefererUrl( ParsedURL refererUrl )
 {
-this.refererUrl().setValue(refererUrl);
-rebuildCompositeTermVector();
- }
+	this.refererUrl().setValue(refererUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: refererUrl
+**/ 
+
+public boolean isNullRefererUrl()
+{
+	return refererUrl == null || refererUrl.getValue() == null;
+}
+
 /**
 	 Sets the refererUrl directly
 **/ 
@@ -328,8 +368,9 @@ return result;
 	Gets the value of the field modificationDate
 **/ 
 
-public String getModificationDate(){
-return modificationDate().getValue();
+public String getModificationDate()
+{
+	return modificationDate().getValue();
 }
 
 /**
@@ -338,7 +379,7 @@ return modificationDate().getValue();
 
 public void setModificationDate( String modificationDate )
 {
-this.modificationDate().setValue(modificationDate);
+	this.modificationDate().setValue(modificationDate);
 }
 
 /**
@@ -347,9 +388,18 @@ this.modificationDate().setValue(modificationDate);
 
 public void hwSetModificationDate( String modificationDate )
 {
-this.modificationDate().setValue(modificationDate);
-rebuildCompositeTermVector();
- }
+	this.modificationDate().setValue(modificationDate);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: modificationDate
+**/ 
+
+public boolean isNullModificationDate()
+{
+	return modificationDate == null || modificationDate.getValue() == null;
+}
+
 /**
 	 Sets the modificationDate directly
 **/ 
@@ -386,8 +436,9 @@ return result;
 	Gets the value of the field mimeType
 **/ 
 
-public String getMimeType(){
-return mimeType().getValue();
+public String getMimeType()
+{
+	return mimeType().getValue();
 }
 
 /**
@@ -396,7 +447,7 @@ return mimeType().getValue();
 
 public void setMimeType( String mimeType )
 {
-this.mimeType().setValue(mimeType);
+	this.mimeType().setValue(mimeType);
 }
 
 /**
@@ -405,9 +456,18 @@ this.mimeType().setValue(mimeType);
 
 public void hwSetMimeType( String mimeType )
 {
-this.mimeType().setValue(mimeType);
-rebuildCompositeTermVector();
- }
+	this.mimeType().setValue(mimeType);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: mimeType
+**/ 
+
+public boolean isNullMimeType()
+{
+	return mimeType == null || mimeType.getValue() == null;
+}
+
 /**
 	 Sets the mimeType directly
 **/ 

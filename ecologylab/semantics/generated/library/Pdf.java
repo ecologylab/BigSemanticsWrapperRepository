@@ -132,8 +132,9 @@ return result;
 	Gets the value of the field author
 **/ 
 
-public String getAuthor(){
-return author().getValue();
+public String getAuthor()
+{
+	return author().getValue();
 }
 
 /**
@@ -142,7 +143,7 @@ return author().getValue();
 
 public void setAuthor( String author )
 {
-this.author().setValue(author);
+	this.author().setValue(author);
 }
 
 /**
@@ -151,9 +152,18 @@ this.author().setValue(author);
 
 public void hwSetAuthor( String author )
 {
-this.author().setValue(author);
-rebuildCompositeTermVector();
- }
+	this.author().setValue(author);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: author
+**/ 
+
+public boolean isNullAuthor()
+{
+	return author == null || author.getValue() == null;
+}
+
 /**
 	 Sets the author directly
 **/ 
@@ -190,8 +200,9 @@ return result;
 	Gets the value of the field summary
 **/ 
 
-public String getSummary(){
-return summary().getValue();
+public String getSummary()
+{
+	return summary().getValue();
 }
 
 /**
@@ -200,7 +211,7 @@ return summary().getValue();
 
 public void setSummary( String summary )
 {
-this.summary().setValue(summary);
+	this.summary().setValue(summary);
 }
 
 /**
@@ -209,9 +220,18 @@ this.summary().setValue(summary);
 
 public void hwSetSummary( String summary )
 {
-this.summary().setValue(summary);
-rebuildCompositeTermVector();
- }
+	this.summary().setValue(summary);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: summary
+**/ 
+
+public boolean isNullSummary()
+{
+	return summary == null || summary.getValue() == null;
+}
+
 /**
 	 Sets the summary directly
 **/ 
@@ -248,8 +268,9 @@ return result;
 	Gets the value of the field pdfKeywordsString
 **/ 
 
-public String getPdfKeywordsString(){
-return pdfKeywordsString().getValue();
+public String getPdfKeywordsString()
+{
+	return pdfKeywordsString().getValue();
 }
 
 /**
@@ -258,7 +279,7 @@ return pdfKeywordsString().getValue();
 
 public void setPdfKeywordsString( String pdfKeywordsString )
 {
-this.pdfKeywordsString().setValue(pdfKeywordsString);
+	this.pdfKeywordsString().setValue(pdfKeywordsString);
 }
 
 /**
@@ -267,9 +288,18 @@ this.pdfKeywordsString().setValue(pdfKeywordsString);
 
 public void hwSetPdfKeywordsString( String pdfKeywordsString )
 {
-this.pdfKeywordsString().setValue(pdfKeywordsString);
-rebuildCompositeTermVector();
- }
+	this.pdfKeywordsString().setValue(pdfKeywordsString);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: pdfKeywordsString
+**/ 
+
+public boolean isNullPdfKeywordsString()
+{
+	return pdfKeywordsString == null || pdfKeywordsString.getValue() == null;
+}
+
 /**
 	 Sets the pdfKeywordsString directly
 **/ 
@@ -306,8 +336,9 @@ return result;
 	Gets the value of the field subject
 **/ 
 
-public String getSubject(){
-return subject().getValue();
+public String getSubject()
+{
+	return subject().getValue();
 }
 
 /**
@@ -316,7 +347,7 @@ return subject().getValue();
 
 public void setSubject( String subject )
 {
-this.subject().setValue(subject);
+	this.subject().setValue(subject);
 }
 
 /**
@@ -325,9 +356,18 @@ this.subject().setValue(subject);
 
 public void hwSetSubject( String subject )
 {
-this.subject().setValue(subject);
-rebuildCompositeTermVector();
- }
+	this.subject().setValue(subject);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: subject
+**/ 
+
+public boolean isNullSubject()
+{
+	return subject == null || subject.getValue() == null;
+}
+
 /**
 	 Sets the subject directly
 **/ 
@@ -364,8 +404,9 @@ return result;
 	Gets the value of the field trapped
 **/ 
 
-public String getTrapped(){
-return trapped().getValue();
+public String getTrapped()
+{
+	return trapped().getValue();
 }
 
 /**
@@ -374,7 +415,7 @@ return trapped().getValue();
 
 public void setTrapped( String trapped )
 {
-this.trapped().setValue(trapped);
+	this.trapped().setValue(trapped);
 }
 
 /**
@@ -383,9 +424,18 @@ this.trapped().setValue(trapped);
 
 public void hwSetTrapped( String trapped )
 {
-this.trapped().setValue(trapped);
-rebuildCompositeTermVector();
- }
+	this.trapped().setValue(trapped);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: trapped
+**/ 
+
+public boolean isNullTrapped()
+{
+	return trapped == null || trapped.getValue() == null;
+}
+
 /**
 	 Sets the trapped directly
 **/ 
@@ -422,8 +472,9 @@ return result;
 	Gets the value of the field modified
 **/ 
 
-public String getModified(){
-return modified().getValue();
+public String getModified()
+{
+	return modified().getValue();
 }
 
 /**
@@ -432,7 +483,7 @@ return modified().getValue();
 
 public void setModified( String modified )
 {
-this.modified().setValue(modified);
+	this.modified().setValue(modified);
 }
 
 /**
@@ -441,9 +492,18 @@ this.modified().setValue(modified);
 
 public void hwSetModified( String modified )
 {
-this.modified().setValue(modified);
-rebuildCompositeTermVector();
- }
+	this.modified().setValue(modified);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: modified
+**/ 
+
+public boolean isNullModified()
+{
+	return modified == null || modified.getValue() == null;
+}
+
 /**
 	 Sets the modified directly
 **/ 
@@ -480,8 +540,9 @@ return result;
 	Gets the value of the field contents
 **/ 
 
-public String getContents(){
-return contents().getValue();
+public String getContents()
+{
+	return contents().getValue();
 }
 
 /**
@@ -490,7 +551,7 @@ return contents().getValue();
 
 public void setContents( String contents )
 {
-this.contents().setValue(contents);
+	this.contents().setValue(contents);
 }
 
 /**
@@ -499,9 +560,18 @@ this.contents().setValue(contents);
 
 public void hwSetContents( String contents )
 {
-this.contents().setValue(contents);
-rebuildCompositeTermVector();
- }
+	this.contents().setValue(contents);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: contents
+**/ 
+
+public boolean isNullContents()
+{
+	return contents == null || contents.getValue() == null;
+}
+
 /**
 	 Sets the contents directly
 **/ 
@@ -538,8 +608,9 @@ return result;
 	Gets the value of the field creationdate
 **/ 
 
-public String getCreationdate(){
-return creationdate().getValue();
+public String getCreationdate()
+{
+	return creationdate().getValue();
 }
 
 /**
@@ -548,7 +619,7 @@ return creationdate().getValue();
 
 public void setCreationdate( String creationdate )
 {
-this.creationdate().setValue(creationdate);
+	this.creationdate().setValue(creationdate);
 }
 
 /**
@@ -557,9 +628,18 @@ this.creationdate().setValue(creationdate);
 
 public void hwSetCreationdate( String creationdate )
 {
-this.creationdate().setValue(creationdate);
-rebuildCompositeTermVector();
- }
+	this.creationdate().setValue(creationdate);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: creationdate
+**/ 
+
+public boolean isNullCreationdate()
+{
+	return creationdate == null || creationdate.getValue() == null;
+}
+
 /**
 	 Sets the creationdate directly
 **/ 

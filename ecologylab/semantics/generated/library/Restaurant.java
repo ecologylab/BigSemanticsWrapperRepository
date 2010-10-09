@@ -131,8 +131,9 @@ return result;
 	Gets the value of the field phone
 **/ 
 
-public String getPhone(){
-return phone().getValue();
+public String getPhone()
+{
+	return phone().getValue();
 }
 
 /**
@@ -141,7 +142,7 @@ return phone().getValue();
 
 public void setPhone( String phone )
 {
-this.phone().setValue(phone);
+	this.phone().setValue(phone);
 }
 
 /**
@@ -150,9 +151,18 @@ this.phone().setValue(phone);
 
 public void hwSetPhone( String phone )
 {
-this.phone().setValue(phone);
-rebuildCompositeTermVector();
- }
+	this.phone().setValue(phone);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: phone
+**/ 
+
+public boolean isNullPhone()
+{
+	return phone == null || phone.getValue() == null;
+}
+
 /**
 	 Sets the phone directly
 **/ 
@@ -189,8 +199,9 @@ return result;
 	Gets the value of the field pic
 **/ 
 
-public ParsedURL getPic(){
-return pic().getValue();
+public ParsedURL getPic()
+{
+	return pic().getValue();
 }
 
 /**
@@ -199,7 +210,7 @@ return pic().getValue();
 
 public void setPic( ParsedURL pic )
 {
-this.pic().setValue(pic);
+	this.pic().setValue(pic);
 }
 
 /**
@@ -208,9 +219,18 @@ this.pic().setValue(pic);
 
 public void hwSetPic( ParsedURL pic )
 {
-this.pic().setValue(pic);
-rebuildCompositeTermVector();
- }
+	this.pic().setValue(pic);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: pic
+**/ 
+
+public boolean isNullPic()
+{
+	return pic == null || pic.getValue() == null;
+}
+
 /**
 	 Sets the pic directly
 **/ 
@@ -247,8 +267,9 @@ return result;
 	Gets the value of the field link
 **/ 
 
-public ParsedURL getLink(){
-return link().getValue();
+public ParsedURL getLink()
+{
+	return link().getValue();
 }
 
 /**
@@ -257,7 +278,7 @@ return link().getValue();
 
 public void setLink( ParsedURL link )
 {
-this.link().setValue(link);
+	this.link().setValue(link);
 }
 
 /**
@@ -266,9 +287,18 @@ this.link().setValue(link);
 
 public void hwSetLink( ParsedURL link )
 {
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
+	this.link().setValue(link);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: link
+**/ 
+
+public boolean isNullLink()
+{
+	return link == null || link.getValue() == null;
+}
+
 /**
 	 Sets the link directly
 **/ 
@@ -305,8 +335,9 @@ return result;
 	Gets the value of the field rating
 **/ 
 
-public String getRating(){
-return rating().getValue();
+public String getRating()
+{
+	return rating().getValue();
 }
 
 /**
@@ -315,7 +346,7 @@ return rating().getValue();
 
 public void setRating( String rating )
 {
-this.rating().setValue(rating);
+	this.rating().setValue(rating);
 }
 
 /**
@@ -324,9 +355,18 @@ this.rating().setValue(rating);
 
 public void hwSetRating( String rating )
 {
-this.rating().setValue(rating);
-rebuildCompositeTermVector();
- }
+	this.rating().setValue(rating);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: rating
+**/ 
+
+public boolean isNullRating()
+{
+	return rating == null || rating.getValue() == null;
+}
+
 /**
 	 Sets the rating directly
 **/ 
@@ -363,8 +403,9 @@ return result;
 	Gets the value of the field priceRange
 **/ 
 
-public String getPriceRange(){
-return priceRange().getValue();
+public String getPriceRange()
+{
+	return priceRange().getValue();
 }
 
 /**
@@ -373,7 +414,7 @@ return priceRange().getValue();
 
 public void setPriceRange( String priceRange )
 {
-this.priceRange().setValue(priceRange);
+	this.priceRange().setValue(priceRange);
 }
 
 /**
@@ -382,9 +423,18 @@ this.priceRange().setValue(priceRange);
 
 public void hwSetPriceRange( String priceRange )
 {
-this.priceRange().setValue(priceRange);
-rebuildCompositeTermVector();
- }
+	this.priceRange().setValue(priceRange);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: priceRange
+**/ 
+
+public boolean isNullPriceRange()
+{
+	return priceRange == null || priceRange.getValue() == null;
+}
+
 /**
 	 Sets the priceRange directly
 **/ 
@@ -421,8 +471,9 @@ return result;
 	Gets the value of the field map
 **/ 
 
-public ParsedURL getMap(){
-return map().getValue();
+public ParsedURL getMap()
+{
+	return map().getValue();
 }
 
 /**
@@ -431,7 +482,7 @@ return map().getValue();
 
 public void setMap( ParsedURL map )
 {
-this.map().setValue(map);
+	this.map().setValue(map);
 }
 
 /**
@@ -440,9 +491,18 @@ this.map().setValue(map);
 
 public void hwSetMap( ParsedURL map )
 {
-this.map().setValue(map);
-rebuildCompositeTermVector();
- }
+	this.map().setValue(map);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: map
+**/ 
+
+public boolean isNullMap()
+{
+	return map == null || map.getValue() == null;
+}
+
 /**
 	 Sets the map directly
 **/ 

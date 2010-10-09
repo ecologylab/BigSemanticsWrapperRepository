@@ -97,8 +97,9 @@ return result;
 	Gets the value of the field authorPhotostreamLink
 **/ 
 
-public ParsedURL getAuthorPhotostreamLink(){
-return authorPhotostreamLink().getValue();
+public ParsedURL getAuthorPhotostreamLink()
+{
+	return authorPhotostreamLink().getValue();
 }
 
 /**
@@ -107,7 +108,7 @@ return authorPhotostreamLink().getValue();
 
 public void setAuthorPhotostreamLink( ParsedURL authorPhotostreamLink )
 {
-this.authorPhotostreamLink().setValue(authorPhotostreamLink);
+	this.authorPhotostreamLink().setValue(authorPhotostreamLink);
 }
 
 /**
@@ -116,9 +117,18 @@ this.authorPhotostreamLink().setValue(authorPhotostreamLink);
 
 public void hwSetAuthorPhotostreamLink( ParsedURL authorPhotostreamLink )
 {
-this.authorPhotostreamLink().setValue(authorPhotostreamLink);
-rebuildCompositeTermVector();
- }
+	this.authorPhotostreamLink().setValue(authorPhotostreamLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: authorPhotostreamLink
+**/ 
+
+public boolean isNullAuthorPhotostreamLink()
+{
+	return authorPhotostreamLink == null || authorPhotostreamLink.getValue() == null;
+}
+
 /**
 	 Sets the authorPhotostreamLink directly
 **/ 
@@ -155,8 +165,9 @@ return result;
 	Gets the value of the field authorPhotostream
 **/ 
 
-public String getAuthorPhotostream(){
-return authorPhotostream().getValue();
+public String getAuthorPhotostream()
+{
+	return authorPhotostream().getValue();
 }
 
 /**
@@ -165,7 +176,7 @@ return authorPhotostream().getValue();
 
 public void setAuthorPhotostream( String authorPhotostream )
 {
-this.authorPhotostream().setValue(authorPhotostream);
+	this.authorPhotostream().setValue(authorPhotostream);
 }
 
 /**
@@ -174,9 +185,18 @@ this.authorPhotostream().setValue(authorPhotostream);
 
 public void hwSetAuthorPhotostream( String authorPhotostream )
 {
-this.authorPhotostream().setValue(authorPhotostream);
-rebuildCompositeTermVector();
- }
+	this.authorPhotostream().setValue(authorPhotostream);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: authorPhotostream
+**/ 
+
+public boolean isNullAuthorPhotostream()
+{
+	return authorPhotostream == null || authorPhotostream.getValue() == null;
+}
+
 /**
 	 Sets the authorPhotostream directly
 **/ 
@@ -213,8 +233,9 @@ return result;
 	Gets the value of the field photosThatDayLink
 **/ 
 
-public ParsedURL getPhotosThatDayLink(){
-return photosThatDayLink().getValue();
+public ParsedURL getPhotosThatDayLink()
+{
+	return photosThatDayLink().getValue();
 }
 
 /**
@@ -223,7 +244,7 @@ return photosThatDayLink().getValue();
 
 public void setPhotosThatDayLink( ParsedURL photosThatDayLink )
 {
-this.photosThatDayLink().setValue(photosThatDayLink);
+	this.photosThatDayLink().setValue(photosThatDayLink);
 }
 
 /**
@@ -232,9 +253,18 @@ this.photosThatDayLink().setValue(photosThatDayLink);
 
 public void hwSetPhotosThatDayLink( ParsedURL photosThatDayLink )
 {
-this.photosThatDayLink().setValue(photosThatDayLink);
-rebuildCompositeTermVector();
- }
+	this.photosThatDayLink().setValue(photosThatDayLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: photosThatDayLink
+**/ 
+
+public boolean isNullPhotosThatDayLink()
+{
+	return photosThatDayLink == null || photosThatDayLink.getValue() == null;
+}
+
 /**
 	 Sets the photosThatDayLink directly
 **/ 
@@ -271,8 +301,9 @@ return result;
 	Gets the value of the field photosThatMonthLink
 **/ 
 
-public ParsedURL getPhotosThatMonthLink(){
-return photosThatMonthLink().getValue();
+public ParsedURL getPhotosThatMonthLink()
+{
+	return photosThatMonthLink().getValue();
 }
 
 /**
@@ -281,7 +312,7 @@ return photosThatMonthLink().getValue();
 
 public void setPhotosThatMonthLink( ParsedURL photosThatMonthLink )
 {
-this.photosThatMonthLink().setValue(photosThatMonthLink);
+	this.photosThatMonthLink().setValue(photosThatMonthLink);
 }
 
 /**
@@ -290,9 +321,18 @@ this.photosThatMonthLink().setValue(photosThatMonthLink);
 
 public void hwSetPhotosThatMonthLink( ParsedURL photosThatMonthLink )
 {
-this.photosThatMonthLink().setValue(photosThatMonthLink);
-rebuildCompositeTermVector();
- }
+	this.photosThatMonthLink().setValue(photosThatMonthLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: photosThatMonthLink
+**/ 
+
+public boolean isNullPhotosThatMonthLink()
+{
+	return photosThatMonthLink == null || photosThatMonthLink.getValue() == null;
+}
+
 /**
 	 Sets the photosThatMonthLink directly
 **/ 
@@ -329,8 +369,9 @@ return result;
 	Gets the value of the field photosThatYearLink
 **/ 
 
-public ParsedURL getPhotosThatYearLink(){
-return photosThatYearLink().getValue();
+public ParsedURL getPhotosThatYearLink()
+{
+	return photosThatYearLink().getValue();
 }
 
 /**
@@ -339,7 +380,7 @@ return photosThatYearLink().getValue();
 
 public void setPhotosThatYearLink( ParsedURL photosThatYearLink )
 {
-this.photosThatYearLink().setValue(photosThatYearLink);
+	this.photosThatYearLink().setValue(photosThatYearLink);
 }
 
 /**
@@ -348,9 +389,18 @@ this.photosThatYearLink().setValue(photosThatYearLink);
 
 public void hwSetPhotosThatYearLink( ParsedURL photosThatYearLink )
 {
-this.photosThatYearLink().setValue(photosThatYearLink);
-rebuildCompositeTermVector();
- }
+	this.photosThatYearLink().setValue(photosThatYearLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: photosThatYearLink
+**/ 
+
+public boolean isNullPhotosThatYearLink()
+{
+	return photosThatYearLink == null || photosThatYearLink.getValue() == null;
+}
+
 /**
 	 Sets the photosThatYearLink directly
 **/ 
@@ -387,8 +437,9 @@ return result;
 	Gets the value of the field photosThatDay
 **/ 
 
-public String getPhotosThatDay(){
-return photosThatDay().getValue();
+public String getPhotosThatDay()
+{
+	return photosThatDay().getValue();
 }
 
 /**
@@ -397,7 +448,7 @@ return photosThatDay().getValue();
 
 public void setPhotosThatDay( String photosThatDay )
 {
-this.photosThatDay().setValue(photosThatDay);
+	this.photosThatDay().setValue(photosThatDay);
 }
 
 /**
@@ -406,9 +457,18 @@ this.photosThatDay().setValue(photosThatDay);
 
 public void hwSetPhotosThatDay( String photosThatDay )
 {
-this.photosThatDay().setValue(photosThatDay);
-rebuildCompositeTermVector();
- }
+	this.photosThatDay().setValue(photosThatDay);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: photosThatDay
+**/ 
+
+public boolean isNullPhotosThatDay()
+{
+	return photosThatDay == null || photosThatDay.getValue() == null;
+}
+
 /**
 	 Sets the photosThatDay directly
 **/ 
@@ -445,8 +505,9 @@ return result;
 	Gets the value of the field photosThatMonth
 **/ 
 
-public String getPhotosThatMonth(){
-return photosThatMonth().getValue();
+public String getPhotosThatMonth()
+{
+	return photosThatMonth().getValue();
 }
 
 /**
@@ -455,7 +516,7 @@ return photosThatMonth().getValue();
 
 public void setPhotosThatMonth( String photosThatMonth )
 {
-this.photosThatMonth().setValue(photosThatMonth);
+	this.photosThatMonth().setValue(photosThatMonth);
 }
 
 /**
@@ -464,9 +525,18 @@ this.photosThatMonth().setValue(photosThatMonth);
 
 public void hwSetPhotosThatMonth( String photosThatMonth )
 {
-this.photosThatMonth().setValue(photosThatMonth);
-rebuildCompositeTermVector();
- }
+	this.photosThatMonth().setValue(photosThatMonth);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: photosThatMonth
+**/ 
+
+public boolean isNullPhotosThatMonth()
+{
+	return photosThatMonth == null || photosThatMonth.getValue() == null;
+}
+
 /**
 	 Sets the photosThatMonth directly
 **/ 
@@ -503,8 +573,9 @@ return result;
 	Gets the value of the field photosThatYear
 **/ 
 
-public String getPhotosThatYear(){
-return photosThatYear().getValue();
+public String getPhotosThatYear()
+{
+	return photosThatYear().getValue();
 }
 
 /**
@@ -513,7 +584,7 @@ return photosThatYear().getValue();
 
 public void setPhotosThatYear( String photosThatYear )
 {
-this.photosThatYear().setValue(photosThatYear);
+	this.photosThatYear().setValue(photosThatYear);
 }
 
 /**
@@ -522,9 +593,18 @@ this.photosThatYear().setValue(photosThatYear);
 
 public void hwSetPhotosThatYear( String photosThatYear )
 {
-this.photosThatYear().setValue(photosThatYear);
-rebuildCompositeTermVector();
- }
+	this.photosThatYear().setValue(photosThatYear);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: photosThatYear
+**/ 
+
+public boolean isNullPhotosThatYear()
+{
+	return photosThatYear == null || photosThatYear.getValue() == null;
+}
+
 /**
 	 Sets the photosThatYear directly
 **/ 

@@ -100,8 +100,9 @@ return result;
 	Gets the value of the field views
 **/ 
 
-public String getViews(){
-return views().getValue();
+public String getViews()
+{
+	return views().getValue();
 }
 
 /**
@@ -110,7 +111,7 @@ return views().getValue();
 
 public void setViews( String views )
 {
-this.views().setValue(views);
+	this.views().setValue(views);
 }
 
 /**
@@ -119,9 +120,18 @@ this.views().setValue(views);
 
 public void hwSetViews( String views )
 {
-this.views().setValue(views);
-rebuildCompositeTermVector();
- }
+	this.views().setValue(views);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: views
+**/ 
+
+public boolean isNullViews()
+{
+	return views == null || views.getValue() == null;
+}
+
 /**
 	 Sets the views directly
 **/ 
@@ -158,8 +168,9 @@ return result;
 	Gets the value of the field place
 **/ 
 
-public String getPlace(){
-return place().getValue();
+public String getPlace()
+{
+	return place().getValue();
 }
 
 /**
@@ -168,7 +179,7 @@ return place().getValue();
 
 public void setPlace( String place )
 {
-this.place().setValue(place);
+	this.place().setValue(place);
 }
 
 /**
@@ -177,9 +188,18 @@ this.place().setValue(place);
 
 public void hwSetPlace( String place )
 {
-this.place().setValue(place);
-rebuildCompositeTermVector();
- }
+	this.place().setValue(place);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: place
+**/ 
+
+public boolean isNullPlace()
+{
+	return place == null || place.getValue() == null;
+}
+
 /**
 	 Sets the place directly
 **/ 
@@ -216,8 +236,9 @@ return result;
 	Gets the value of the field placeLink
 **/ 
 
-public ParsedURL getPlaceLink(){
-return placeLink().getValue();
+public ParsedURL getPlaceLink()
+{
+	return placeLink().getValue();
 }
 
 /**
@@ -226,7 +247,7 @@ return placeLink().getValue();
 
 public void setPlaceLink( ParsedURL placeLink )
 {
-this.placeLink().setValue(placeLink);
+	this.placeLink().setValue(placeLink);
 }
 
 /**
@@ -235,9 +256,18 @@ this.placeLink().setValue(placeLink);
 
 public void hwSetPlaceLink( ParsedURL placeLink )
 {
-this.placeLink().setValue(placeLink);
-rebuildCompositeTermVector();
- }
+	this.placeLink().setValue(placeLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: placeLink
+**/ 
+
+public boolean isNullPlaceLink()
+{
+	return placeLink == null || placeLink.getValue() == null;
+}
+
 /**
 	 Sets the placeLink directly
 **/ 

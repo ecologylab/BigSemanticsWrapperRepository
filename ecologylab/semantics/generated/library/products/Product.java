@@ -90,8 +90,9 @@ return result;
 	Gets the value of the field price
 **/ 
 
-public String getPrice(){
-return price().getValue();
+public String getPrice()
+{
+	return price().getValue();
 }
 
 /**
@@ -100,7 +101,7 @@ return price().getValue();
 
 public void setPrice( String price )
 {
-this.price().setValue(price);
+	this.price().setValue(price);
 }
 
 /**
@@ -109,9 +110,18 @@ this.price().setValue(price);
 
 public void hwSetPrice( String price )
 {
-this.price().setValue(price);
-rebuildCompositeTermVector();
- }
+	this.price().setValue(price);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: price
+**/ 
+
+public boolean isNullPrice()
+{
+	return price == null || price.getValue() == null;
+}
+
 /**
 	 Sets the price directly
 **/ 

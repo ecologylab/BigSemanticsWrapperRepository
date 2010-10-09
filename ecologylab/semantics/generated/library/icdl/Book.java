@@ -85,8 +85,9 @@ return result;
 	Gets the value of the field languages
 **/ 
 
-public String getLanguages(){
-return languages().getValue();
+public String getLanguages()
+{
+	return languages().getValue();
 }
 
 /**
@@ -95,7 +96,7 @@ return languages().getValue();
 
 public void setLanguages( String languages )
 {
-this.languages().setValue(languages);
+	this.languages().setValue(languages);
 }
 
 /**
@@ -104,9 +105,18 @@ this.languages().setValue(languages);
 
 public void hwSetLanguages( String languages )
 {
-this.languages().setValue(languages);
-rebuildCompositeTermVector();
- }
+	this.languages().setValue(languages);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: languages
+**/ 
+
+public boolean isNullLanguages()
+{
+	return languages == null || languages.getValue() == null;
+}
+
 /**
 	 Sets the languages directly
 **/ 
@@ -143,8 +153,9 @@ return result;
 	Gets the value of the field cover
 **/ 
 
-public ParsedURL getCover(){
-return cover().getValue();
+public ParsedURL getCover()
+{
+	return cover().getValue();
 }
 
 /**
@@ -153,7 +164,7 @@ return cover().getValue();
 
 public void setCover( ParsedURL cover )
 {
-this.cover().setValue(cover);
+	this.cover().setValue(cover);
 }
 
 /**
@@ -162,9 +173,18 @@ this.cover().setValue(cover);
 
 public void hwSetCover( ParsedURL cover )
 {
-this.cover().setValue(cover);
-rebuildCompositeTermVector();
- }
+	this.cover().setValue(cover);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: cover
+**/ 
+
+public boolean isNullCover()
+{
+	return cover == null || cover.getValue() == null;
+}
+
 /**
 	 Sets the cover directly
 **/ 
@@ -201,8 +221,9 @@ return result;
 	Gets the value of the field height
 **/ 
 
-public Integer getHeight(){
-return height().getValue();
+public Integer getHeight()
+{
+	return height().getValue();
 }
 
 /**
@@ -211,7 +232,7 @@ return height().getValue();
 
 public void setHeight( Integer height )
 {
-this.height().setValue(height);
+	this.height().setValue(height);
 }
 
 /**
@@ -220,9 +241,18 @@ this.height().setValue(height);
 
 public void hwSetHeight( Integer height )
 {
-this.height().setValue(height);
-rebuildCompositeTermVector();
- }
+	this.height().setValue(height);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: height
+**/ 
+
+public boolean isNullHeight()
+{
+	return height == null || height.getValue() == null;
+}
+
 /**
 	 Sets the height directly
 **/ 
@@ -259,8 +289,9 @@ return result;
 	Gets the value of the field width
 **/ 
 
-public Integer getWidth(){
-return width().getValue();
+public Integer getWidth()
+{
+	return width().getValue();
 }
 
 /**
@@ -269,7 +300,7 @@ return width().getValue();
 
 public void setWidth( Integer width )
 {
-this.width().setValue(width);
+	this.width().setValue(width);
 }
 
 /**
@@ -278,9 +309,18 @@ this.width().setValue(width);
 
 public void hwSetWidth( Integer width )
 {
-this.width().setValue(width);
-rebuildCompositeTermVector();
- }
+	this.width().setValue(width);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: width
+**/ 
+
+public boolean isNullWidth()
+{
+	return width == null || width.getValue() == null;
+}
+
 /**
 	 Sets the width directly
 **/ 
@@ -317,8 +357,9 @@ return result;
 	Gets the value of the field booktitle
 **/ 
 
-public String getBooktitle(){
-return booktitle().getValue();
+public String getBooktitle()
+{
+	return booktitle().getValue();
 }
 
 /**
@@ -327,7 +368,7 @@ return booktitle().getValue();
 
 public void setBooktitle( String booktitle )
 {
-this.booktitle().setValue(booktitle);
+	this.booktitle().setValue(booktitle);
 }
 
 /**
@@ -336,9 +377,18 @@ this.booktitle().setValue(booktitle);
 
 public void hwSetBooktitle( String booktitle )
 {
-this.booktitle().setValue(booktitle);
-rebuildCompositeTermVector();
- }
+	this.booktitle().setValue(booktitle);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: booktitle
+**/ 
+
+public boolean isNullBooktitle()
+{
+	return booktitle == null || booktitle.getValue() == null;
+}
+
 /**
 	 Sets the booktitle directly
 **/ 
@@ -375,8 +425,9 @@ return result;
 	Gets the value of the field bookurl
 **/ 
 
-public ParsedURL getBookurl(){
-return bookurl().getValue();
+public ParsedURL getBookurl()
+{
+	return bookurl().getValue();
 }
 
 /**
@@ -385,7 +436,7 @@ return bookurl().getValue();
 
 public void setBookurl( ParsedURL bookurl )
 {
-this.bookurl().setValue(bookurl);
+	this.bookurl().setValue(bookurl);
 }
 
 /**
@@ -394,9 +445,18 @@ this.bookurl().setValue(bookurl);
 
 public void hwSetBookurl( ParsedURL bookurl )
 {
-this.bookurl().setValue(bookurl);
-rebuildCompositeTermVector();
- }
+	this.bookurl().setValue(bookurl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: bookurl
+**/ 
+
+public boolean isNullBookurl()
+{
+	return bookurl == null || bookurl.getValue() == null;
+}
+
 /**
 	 Sets the bookurl directly
 **/ 

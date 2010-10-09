@@ -93,8 +93,9 @@ return result;
 	Gets the value of the field poster
 **/ 
 
-public String getPoster(){
-return poster().getValue();
+public String getPoster()
+{
+	return poster().getValue();
 }
 
 /**
@@ -103,7 +104,7 @@ return poster().getValue();
 
 public void setPoster( String poster )
 {
-this.poster().setValue(poster);
+	this.poster().setValue(poster);
 }
 
 /**
@@ -112,9 +113,18 @@ this.poster().setValue(poster);
 
 public void hwSetPoster( String poster )
 {
-this.poster().setValue(poster);
-rebuildCompositeTermVector();
- }
+	this.poster().setValue(poster);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: poster
+**/ 
+
+public boolean isNullPoster()
+{
+	return poster == null || poster.getValue() == null;
+}
+
 /**
 	 Sets the poster directly
 **/ 
@@ -151,8 +161,9 @@ return result;
 	Gets the value of the field posterUrl
 **/ 
 
-public ParsedURL getPosterUrl(){
-return posterUrl().getValue();
+public ParsedURL getPosterUrl()
+{
+	return posterUrl().getValue();
 }
 
 /**
@@ -161,7 +172,7 @@ return posterUrl().getValue();
 
 public void setPosterUrl( ParsedURL posterUrl )
 {
-this.posterUrl().setValue(posterUrl);
+	this.posterUrl().setValue(posterUrl);
 }
 
 /**
@@ -170,9 +181,18 @@ this.posterUrl().setValue(posterUrl);
 
 public void hwSetPosterUrl( ParsedURL posterUrl )
 {
-this.posterUrl().setValue(posterUrl);
-rebuildCompositeTermVector();
- }
+	this.posterUrl().setValue(posterUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: posterUrl
+**/ 
+
+public boolean isNullPosterUrl()
+{
+	return posterUrl == null || posterUrl.getValue() == null;
+}
+
 /**
 	 Sets the posterUrl directly
 **/ 
@@ -209,8 +229,9 @@ return result;
 	Gets the value of the field description
 **/ 
 
-public String getDescription(){
-return description().getValue();
+public String getDescription()
+{
+	return description().getValue();
 }
 
 /**
@@ -219,7 +240,7 @@ return description().getValue();
 
 public void setDescription( String description )
 {
-this.description().setValue(description);
+	this.description().setValue(description);
 }
 
 /**
@@ -228,9 +249,18 @@ this.description().setValue(description);
 
 public void hwSetDescription( String description )
 {
-this.description().setValue(description);
-rebuildCompositeTermVector();
- }
+	this.description().setValue(description);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: description
+**/ 
+
+public boolean isNullDescription()
+{
+	return description == null || description.getValue() == null;
+}
+
 /**
 	 Sets the description directly
 **/ 

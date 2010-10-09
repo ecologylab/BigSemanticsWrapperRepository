@@ -105,8 +105,9 @@ return result;
 	Gets the value of the field yearReleased
 **/ 
 
-public String getYearReleased(){
-return yearReleased().getValue();
+public String getYearReleased()
+{
+	return yearReleased().getValue();
 }
 
 /**
@@ -115,7 +116,7 @@ return yearReleased().getValue();
 
 public void setYearReleased( String yearReleased )
 {
-this.yearReleased().setValue(yearReleased);
+	this.yearReleased().setValue(yearReleased);
 }
 
 /**
@@ -124,9 +125,18 @@ this.yearReleased().setValue(yearReleased);
 
 public void hwSetYearReleased( String yearReleased )
 {
-this.yearReleased().setValue(yearReleased);
-rebuildCompositeTermVector();
- }
+	this.yearReleased().setValue(yearReleased);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: yearReleased
+**/ 
+
+public boolean isNullYearReleased()
+{
+	return yearReleased == null || yearReleased.getValue() == null;
+}
+
 /**
 	 Sets the yearReleased directly
 **/ 
@@ -163,8 +173,9 @@ return result;
 	Gets the value of the field rating
 **/ 
 
-public String getRating(){
-return rating().getValue();
+public String getRating()
+{
+	return rating().getValue();
 }
 
 /**
@@ -173,7 +184,7 @@ return rating().getValue();
 
 public void setRating( String rating )
 {
-this.rating().setValue(rating);
+	this.rating().setValue(rating);
 }
 
 /**
@@ -182,9 +193,18 @@ this.rating().setValue(rating);
 
 public void hwSetRating( String rating )
 {
-this.rating().setValue(rating);
-rebuildCompositeTermVector();
- }
+	this.rating().setValue(rating);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: rating
+**/ 
+
+public boolean isNullRating()
+{
+	return rating == null || rating.getValue() == null;
+}
+
 /**
 	 Sets the rating directly
 **/ 
@@ -285,8 +305,9 @@ return result;
 	Gets the value of the field releaseDate
 **/ 
 
-public String getReleaseDate(){
-return releaseDate().getValue();
+public String getReleaseDate()
+{
+	return releaseDate().getValue();
 }
 
 /**
@@ -295,7 +316,7 @@ return releaseDate().getValue();
 
 public void setReleaseDate( String releaseDate )
 {
-this.releaseDate().setValue(releaseDate);
+	this.releaseDate().setValue(releaseDate);
 }
 
 /**
@@ -304,9 +325,18 @@ this.releaseDate().setValue(releaseDate);
 
 public void hwSetReleaseDate( String releaseDate )
 {
-this.releaseDate().setValue(releaseDate);
-rebuildCompositeTermVector();
- }
+	this.releaseDate().setValue(releaseDate);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: releaseDate
+**/ 
+
+public boolean isNullReleaseDate()
+{
+	return releaseDate == null || releaseDate.getValue() == null;
+}
+
 /**
 	 Sets the releaseDate directly
 **/ 
@@ -375,8 +405,9 @@ return result;
 	Gets the value of the field plot
 **/ 
 
-public String getPlot(){
-return plot().getValue();
+public String getPlot()
+{
+	return plot().getValue();
 }
 
 /**
@@ -385,7 +416,7 @@ return plot().getValue();
 
 public void setPlot( String plot )
 {
-this.plot().setValue(plot);
+	this.plot().setValue(plot);
 }
 
 /**
@@ -394,9 +425,18 @@ this.plot().setValue(plot);
 
 public void hwSetPlot( String plot )
 {
-this.plot().setValue(plot);
-rebuildCompositeTermVector();
- }
+	this.plot().setValue(plot);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: plot
+**/ 
+
+public boolean isNullPlot()
+{
+	return plot == null || plot.getValue() == null;
+}
+
 /**
 	 Sets the plot directly
 **/ 
@@ -433,8 +473,9 @@ return result;
 	Gets the value of the field tagline
 **/ 
 
-public String getTagline(){
-return tagline().getValue();
+public String getTagline()
+{
+	return tagline().getValue();
 }
 
 /**
@@ -443,7 +484,7 @@ return tagline().getValue();
 
 public void setTagline( String tagline )
 {
-this.tagline().setValue(tagline);
+	this.tagline().setValue(tagline);
 }
 
 /**
@@ -452,9 +493,18 @@ this.tagline().setValue(tagline);
 
 public void hwSetTagline( String tagline )
 {
-this.tagline().setValue(tagline);
-rebuildCompositeTermVector();
- }
+	this.tagline().setValue(tagline);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: tagline
+**/ 
+
+public boolean isNullTagline()
+{
+	return tagline == null || tagline.getValue() == null;
+}
+
 /**
 	 Sets the tagline directly
 **/ 
@@ -555,8 +605,9 @@ return result;
 	Gets the value of the field posterImg
 **/ 
 
-public ParsedURL getPosterImg(){
-return posterImg().getValue();
+public ParsedURL getPosterImg()
+{
+	return posterImg().getValue();
 }
 
 /**
@@ -565,7 +616,7 @@ return posterImg().getValue();
 
 public void setPosterImg( ParsedURL posterImg )
 {
-this.posterImg().setValue(posterImg);
+	this.posterImg().setValue(posterImg);
 }
 
 /**
@@ -574,9 +625,18 @@ this.posterImg().setValue(posterImg);
 
 public void hwSetPosterImg( ParsedURL posterImg )
 {
-this.posterImg().setValue(posterImg);
-rebuildCompositeTermVector();
- }
+	this.posterImg().setValue(posterImg);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: posterImg
+**/ 
+
+public boolean isNullPosterImg()
+{
+	return posterImg == null || posterImg.getValue() == null;
+}
+
 /**
 	 Sets the posterImg directly
 **/ 

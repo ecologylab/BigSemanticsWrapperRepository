@@ -82,8 +82,9 @@ return result;
 	Gets the value of the field mediaUrl
 **/ 
 
-public ParsedURL getMediaUrl(){
-return mediaUrl().getValue();
+public ParsedURL getMediaUrl()
+{
+	return mediaUrl().getValue();
 }
 
 /**
@@ -92,7 +93,7 @@ return mediaUrl().getValue();
 
 public void setMediaUrl( ParsedURL mediaUrl )
 {
-this.mediaUrl().setValue(mediaUrl);
+	this.mediaUrl().setValue(mediaUrl);
 }
 
 /**
@@ -101,9 +102,18 @@ this.mediaUrl().setValue(mediaUrl);
 
 public void hwSetMediaUrl( ParsedURL mediaUrl )
 {
-this.mediaUrl().setValue(mediaUrl);
-rebuildCompositeTermVector();
- }
+	this.mediaUrl().setValue(mediaUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: mediaUrl
+**/ 
+
+public boolean isNullMediaUrl()
+{
+	return mediaUrl == null || mediaUrl.getValue() == null;
+}
+
 /**
 	 Sets the mediaUrl directly
 **/ 
@@ -140,8 +150,9 @@ return result;
 	Gets the value of the field height
 **/ 
 
-public Integer getHeight(){
-return height().getValue();
+public Integer getHeight()
+{
+	return height().getValue();
 }
 
 /**
@@ -150,7 +161,7 @@ return height().getValue();
 
 public void setHeight( Integer height )
 {
-this.height().setValue(height);
+	this.height().setValue(height);
 }
 
 /**
@@ -159,9 +170,18 @@ this.height().setValue(height);
 
 public void hwSetHeight( Integer height )
 {
-this.height().setValue(height);
-rebuildCompositeTermVector();
- }
+	this.height().setValue(height);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: height
+**/ 
+
+public boolean isNullHeight()
+{
+	return height == null || height.getValue() == null;
+}
+
 /**
 	 Sets the height directly
 **/ 
@@ -198,8 +218,9 @@ return result;
 	Gets the value of the field width
 **/ 
 
-public Integer getWidth(){
-return width().getValue();
+public Integer getWidth()
+{
+	return width().getValue();
 }
 
 /**
@@ -208,7 +229,7 @@ return width().getValue();
 
 public void setWidth( Integer width )
 {
-this.width().setValue(width);
+	this.width().setValue(width);
 }
 
 /**
@@ -217,9 +238,18 @@ this.width().setValue(width);
 
 public void hwSetWidth( Integer width )
 {
-this.width().setValue(width);
-rebuildCompositeTermVector();
- }
+	this.width().setValue(width);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: width
+**/ 
+
+public boolean isNullWidth()
+{
+	return width == null || width.getValue() == null;
+}
+
 /**
 	 Sets the width directly
 **/ 

@@ -92,8 +92,9 @@ return result;
 	Gets the value of the field thumbUrl
 **/ 
 
-public ParsedURL getThumbUrl(){
-return thumbUrl().getValue();
+public ParsedURL getThumbUrl()
+{
+	return thumbUrl().getValue();
 }
 
 /**
@@ -102,7 +103,7 @@ return thumbUrl().getValue();
 
 public void setThumbUrl( ParsedURL thumbUrl )
 {
-this.thumbUrl().setValue(thumbUrl);
+	this.thumbUrl().setValue(thumbUrl);
 }
 
 /**
@@ -111,9 +112,18 @@ this.thumbUrl().setValue(thumbUrl);
 
 public void hwSetThumbUrl( ParsedURL thumbUrl )
 {
-this.thumbUrl().setValue(thumbUrl);
-rebuildCompositeTermVector();
- }
+	this.thumbUrl().setValue(thumbUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: thumbUrl
+**/ 
+
+public boolean isNullThumbUrl()
+{
+	return thumbUrl == null || thumbUrl.getValue() == null;
+}
+
 /**
 	 Sets the thumbUrl directly
 **/ 
@@ -150,8 +160,9 @@ return result;
 	Gets the value of the field width
 **/ 
 
-public Integer getWidth(){
-return width().getValue();
+public Integer getWidth()
+{
+	return width().getValue();
 }
 
 /**
@@ -160,7 +171,7 @@ return width().getValue();
 
 public void setWidth( Integer width )
 {
-this.width().setValue(width);
+	this.width().setValue(width);
 }
 
 /**
@@ -169,9 +180,18 @@ this.width().setValue(width);
 
 public void hwSetWidth( Integer width )
 {
-this.width().setValue(width);
-rebuildCompositeTermVector();
- }
+	this.width().setValue(width);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: width
+**/ 
+
+public boolean isNullWidth()
+{
+	return width == null || width.getValue() == null;
+}
+
 /**
 	 Sets the width directly
 **/ 
@@ -208,8 +228,9 @@ return result;
 	Gets the value of the field height
 **/ 
 
-public Integer getHeight(){
-return height().getValue();
+public Integer getHeight()
+{
+	return height().getValue();
 }
 
 /**
@@ -218,7 +239,7 @@ return height().getValue();
 
 public void setHeight( Integer height )
 {
-this.height().setValue(height);
+	this.height().setValue(height);
 }
 
 /**
@@ -227,9 +248,18 @@ this.height().setValue(height);
 
 public void hwSetHeight( Integer height )
 {
-this.height().setValue(height);
-rebuildCompositeTermVector();
- }
+	this.height().setValue(height);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: height
+**/ 
+
+public boolean isNullHeight()
+{
+	return height == null || height.getValue() == null;
+}
+
 /**
 	 Sets the height directly
 **/ 

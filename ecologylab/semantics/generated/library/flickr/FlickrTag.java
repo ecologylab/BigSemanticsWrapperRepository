@@ -91,8 +91,9 @@ return result;
 	Gets the value of the field tagName
 **/ 
 
-public String getTagName(){
-return tagName().getValue();
+public String getTagName()
+{
+	return tagName().getValue();
 }
 
 /**
@@ -101,7 +102,7 @@ return tagName().getValue();
 
 public void setTagName( String tagName )
 {
-this.tagName().setValue(tagName);
+	this.tagName().setValue(tagName);
 }
 
 /**
@@ -110,9 +111,18 @@ this.tagName().setValue(tagName);
 
 public void hwSetTagName( String tagName )
 {
-this.tagName().setValue(tagName);
-rebuildCompositeTermVector();
- }
+	this.tagName().setValue(tagName);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: tagName
+**/ 
+
+public boolean isNullTagName()
+{
+	return tagName == null || tagName.getValue() == null;
+}
+
 /**
 	 Sets the tagName directly
 **/ 
@@ -149,8 +159,9 @@ return result;
 	Gets the value of the field tagLink
 **/ 
 
-public ParsedURL getTagLink(){
-return tagLink().getValue();
+public ParsedURL getTagLink()
+{
+	return tagLink().getValue();
 }
 
 /**
@@ -159,7 +170,7 @@ return tagLink().getValue();
 
 public void setTagLink( ParsedURL tagLink )
 {
-this.tagLink().setValue(tagLink);
+	this.tagLink().setValue(tagLink);
 }
 
 /**
@@ -168,9 +179,18 @@ this.tagLink().setValue(tagLink);
 
 public void hwSetTagLink( ParsedURL tagLink )
 {
-this.tagLink().setValue(tagLink);
-rebuildCompositeTermVector();
- }
+	this.tagLink().setValue(tagLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: tagLink
+**/ 
+
+public boolean isNullTagLink()
+{
+	return tagLink == null || tagLink.getValue() == null;
+}
+
 /**
 	 Sets the tagLink directly
 **/ 

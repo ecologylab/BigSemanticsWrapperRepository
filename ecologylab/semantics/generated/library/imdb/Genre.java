@@ -81,8 +81,9 @@ return result;
 	Gets the value of the field genreLink
 **/ 
 
-public ParsedURL getGenreLink(){
-return genreLink().getValue();
+public ParsedURL getGenreLink()
+{
+	return genreLink().getValue();
 }
 
 /**
@@ -91,7 +92,7 @@ return genreLink().getValue();
 
 public void setGenreLink( ParsedURL genreLink )
 {
-this.genreLink().setValue(genreLink);
+	this.genreLink().setValue(genreLink);
 }
 
 /**
@@ -100,9 +101,18 @@ this.genreLink().setValue(genreLink);
 
 public void hwSetGenreLink( ParsedURL genreLink )
 {
-this.genreLink().setValue(genreLink);
-rebuildCompositeTermVector();
- }
+	this.genreLink().setValue(genreLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: genreLink
+**/ 
+
+public boolean isNullGenreLink()
+{
+	return genreLink == null || genreLink.getValue() == null;
+}
+
 /**
 	 Sets the genreLink directly
 **/ 
@@ -139,8 +149,9 @@ return result;
 	Gets the value of the field name
 **/ 
 
-public String getName(){
-return name().getValue();
+public String getName()
+{
+	return name().getValue();
 }
 
 /**
@@ -149,7 +160,7 @@ return name().getValue();
 
 public void setName( String name )
 {
-this.name().setValue(name);
+	this.name().setValue(name);
 }
 
 /**
@@ -158,9 +169,18 @@ this.name().setValue(name);
 
 public void hwSetName( String name )
 {
-this.name().setValue(name);
-rebuildCompositeTermVector();
- }
+	this.name().setValue(name);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: name
+**/ 
+
+public boolean isNullName()
+{
+	return name == null || name.getValue() == null;
+}
+
 /**
 	 Sets the name directly
 **/ 

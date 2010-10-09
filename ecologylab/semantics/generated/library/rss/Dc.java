@@ -99,8 +99,9 @@ return result;
 	Gets the value of the field dcCreator
 **/ 
 
-public String getDcCreator(){
-return dcCreator().getValue();
+public String getDcCreator()
+{
+	return dcCreator().getValue();
 }
 
 /**
@@ -109,7 +110,7 @@ return dcCreator().getValue();
 
 public void setDcCreator( String dcCreator )
 {
-this.dcCreator().setValue(dcCreator);
+	this.dcCreator().setValue(dcCreator);
 }
 
 /**
@@ -118,9 +119,18 @@ this.dcCreator().setValue(dcCreator);
 
 public void hwSetDcCreator( String dcCreator )
 {
-this.dcCreator().setValue(dcCreator);
-rebuildCompositeTermVector();
- }
+	this.dcCreator().setValue(dcCreator);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dcCreator
+**/ 
+
+public boolean isNullDcCreator()
+{
+	return dcCreator == null || dcCreator.getValue() == null;
+}
+
 /**
 	 Sets the dcCreator directly
 **/ 
@@ -157,8 +167,9 @@ return result;
 	Gets the value of the field dcSubject
 **/ 
 
-public String getDcSubject(){
-return dcSubject().getValue();
+public String getDcSubject()
+{
+	return dcSubject().getValue();
 }
 
 /**
@@ -167,7 +178,7 @@ return dcSubject().getValue();
 
 public void setDcSubject( String dcSubject )
 {
-this.dcSubject().setValue(dcSubject);
+	this.dcSubject().setValue(dcSubject);
 }
 
 /**
@@ -176,9 +187,18 @@ this.dcSubject().setValue(dcSubject);
 
 public void hwSetDcSubject( String dcSubject )
 {
-this.dcSubject().setValue(dcSubject);
-rebuildCompositeTermVector();
- }
+	this.dcSubject().setValue(dcSubject);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dcSubject
+**/ 
+
+public boolean isNullDcSubject()
+{
+	return dcSubject == null || dcSubject.getValue() == null;
+}
+
 /**
 	 Sets the dcSubject directly
 **/ 
@@ -215,8 +235,9 @@ return result;
 	Gets the value of the field dcDescription
 **/ 
 
-public String getDcDescription(){
-return dcDescription().getValue();
+public String getDcDescription()
+{
+	return dcDescription().getValue();
 }
 
 /**
@@ -225,7 +246,7 @@ return dcDescription().getValue();
 
 public void setDcDescription( String dcDescription )
 {
-this.dcDescription().setValue(dcDescription);
+	this.dcDescription().setValue(dcDescription);
 }
 
 /**
@@ -234,9 +255,18 @@ this.dcDescription().setValue(dcDescription);
 
 public void hwSetDcDescription( String dcDescription )
 {
-this.dcDescription().setValue(dcDescription);
-rebuildCompositeTermVector();
- }
+	this.dcDescription().setValue(dcDescription);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dcDescription
+**/ 
+
+public boolean isNullDcDescription()
+{
+	return dcDescription == null || dcDescription.getValue() == null;
+}
+
 /**
 	 Sets the dcDescription directly
 **/ 
@@ -273,8 +303,9 @@ return result;
 	Gets the value of the field dcTitle
 **/ 
 
-public String getDcTitle(){
-return dcTitle().getValue();
+public String getDcTitle()
+{
+	return dcTitle().getValue();
 }
 
 /**
@@ -283,7 +314,7 @@ return dcTitle().getValue();
 
 public void setDcTitle( String dcTitle )
 {
-this.dcTitle().setValue(dcTitle);
+	this.dcTitle().setValue(dcTitle);
 }
 
 /**
@@ -292,9 +323,18 @@ this.dcTitle().setValue(dcTitle);
 
 public void hwSetDcTitle( String dcTitle )
 {
-this.dcTitle().setValue(dcTitle);
-rebuildCompositeTermVector();
- }
+	this.dcTitle().setValue(dcTitle);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dcTitle
+**/ 
+
+public boolean isNullDcTitle()
+{
+	return dcTitle == null || dcTitle.getValue() == null;
+}
+
 /**
 	 Sets the dcTitle directly
 **/ 
@@ -331,8 +371,9 @@ return result;
 	Gets the value of the field dcDate
 **/ 
 
-public Date getDcDate(){
-return dcDate().getValue();
+public Date getDcDate()
+{
+	return dcDate().getValue();
 }
 
 /**
@@ -341,7 +382,7 @@ return dcDate().getValue();
 
 public void setDcDate( Date dcDate )
 {
-this.dcDate().setValue(dcDate);
+	this.dcDate().setValue(dcDate);
 }
 
 /**
@@ -350,9 +391,18 @@ this.dcDate().setValue(dcDate);
 
 public void hwSetDcDate( Date dcDate )
 {
-this.dcDate().setValue(dcDate);
-rebuildCompositeTermVector();
- }
+	this.dcDate().setValue(dcDate);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dcDate
+**/ 
+
+public boolean isNullDcDate()
+{
+	return dcDate == null || dcDate.getValue() == null;
+}
+
 /**
 	 Sets the dcDate directly
 **/ 

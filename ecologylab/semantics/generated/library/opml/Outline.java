@@ -85,8 +85,9 @@ return result;
 	Gets the value of the field htmlUrl
 **/ 
 
-public ParsedURL getHtmlUrl(){
-return htmlUrl().getValue();
+public ParsedURL getHtmlUrl()
+{
+	return htmlUrl().getValue();
 }
 
 /**
@@ -95,7 +96,7 @@ return htmlUrl().getValue();
 
 public void setHtmlUrl( ParsedURL htmlUrl )
 {
-this.htmlUrl().setValue(htmlUrl);
+	this.htmlUrl().setValue(htmlUrl);
 }
 
 /**
@@ -104,9 +105,18 @@ this.htmlUrl().setValue(htmlUrl);
 
 public void hwSetHtmlUrl( ParsedURL htmlUrl )
 {
-this.htmlUrl().setValue(htmlUrl);
-rebuildCompositeTermVector();
- }
+	this.htmlUrl().setValue(htmlUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: htmlUrl
+**/ 
+
+public boolean isNullHtmlUrl()
+{
+	return htmlUrl == null || htmlUrl.getValue() == null;
+}
+
 /**
 	 Sets the htmlUrl directly
 **/ 
@@ -143,8 +153,9 @@ return result;
 	Gets the value of the field title
 **/ 
 
-public String getTitle(){
-return title().getValue();
+public String getTitle()
+{
+	return title().getValue();
 }
 
 /**
@@ -153,7 +164,7 @@ return title().getValue();
 
 public void setTitle( String title )
 {
-this.title().setValue(title);
+	this.title().setValue(title);
 }
 
 /**
@@ -162,9 +173,18 @@ this.title().setValue(title);
 
 public void hwSetTitle( String title )
 {
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
+	this.title().setValue(title);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: title
+**/ 
+
+public boolean isNullTitle()
+{
+	return title == null || title.getValue() == null;
+}
+
 /**
 	 Sets the title directly
 **/ 
@@ -201,8 +221,9 @@ return result;
 	Gets the value of the field text
 **/ 
 
-public String getText(){
-return text().getValue();
+public String getText()
+{
+	return text().getValue();
 }
 
 /**
@@ -211,7 +232,7 @@ return text().getValue();
 
 public void setText( String text )
 {
-this.text().setValue(text);
+	this.text().setValue(text);
 }
 
 /**
@@ -220,9 +241,18 @@ this.text().setValue(text);
 
 public void hwSetText( String text )
 {
-this.text().setValue(text);
-rebuildCompositeTermVector();
- }
+	this.text().setValue(text);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: text
+**/ 
+
+public boolean isNullText()
+{
+	return text == null || text.getValue() == null;
+}
+
 /**
 	 Sets the text directly
 **/ 
@@ -291,8 +321,9 @@ return result;
 	Gets the value of the field xmlUrl
 **/ 
 
-public ParsedURL getXmlUrl(){
-return xmlUrl().getValue();
+public ParsedURL getXmlUrl()
+{
+	return xmlUrl().getValue();
 }
 
 /**
@@ -301,7 +332,7 @@ return xmlUrl().getValue();
 
 public void setXmlUrl( ParsedURL xmlUrl )
 {
-this.xmlUrl().setValue(xmlUrl);
+	this.xmlUrl().setValue(xmlUrl);
 }
 
 /**
@@ -310,9 +341,18 @@ this.xmlUrl().setValue(xmlUrl);
 
 public void hwSetXmlUrl( ParsedURL xmlUrl )
 {
-this.xmlUrl().setValue(xmlUrl);
-rebuildCompositeTermVector();
- }
+	this.xmlUrl().setValue(xmlUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: xmlUrl
+**/ 
+
+public boolean isNullXmlUrl()
+{
+	return xmlUrl == null || xmlUrl.getValue() == null;
+}
+
 /**
 	 Sets the xmlUrl directly
 **/ 
@@ -349,8 +389,9 @@ return result;
 	Gets the value of the field type
 **/ 
 
-public String getType(){
-return type().getValue();
+public String getType()
+{
+	return type().getValue();
 }
 
 /**
@@ -359,7 +400,7 @@ return type().getValue();
 
 public void setType( String type )
 {
-this.type().setValue(type);
+	this.type().setValue(type);
 }
 
 /**
@@ -368,9 +409,18 @@ this.type().setValue(type);
 
 public void hwSetType( String type )
 {
-this.type().setValue(type);
-rebuildCompositeTermVector();
- }
+	this.type().setValue(type);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: type
+**/ 
+
+public boolean isNullType()
+{
+	return type == null || type.getValue() == null;
+}
+
 /**
 	 Sets the type directly
 **/ 

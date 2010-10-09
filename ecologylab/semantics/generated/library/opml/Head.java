@@ -80,8 +80,9 @@ return result;
 	Gets the value of the field title
 **/ 
 
-public String getTitle(){
-return title().getValue();
+public String getTitle()
+{
+	return title().getValue();
 }
 
 /**
@@ -90,7 +91,7 @@ return title().getValue();
 
 public void setTitle( String title )
 {
-this.title().setValue(title);
+	this.title().setValue(title);
 }
 
 /**
@@ -99,9 +100,18 @@ this.title().setValue(title);
 
 public void hwSetTitle( String title )
 {
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
+	this.title().setValue(title);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: title
+**/ 
+
+public boolean isNullTitle()
+{
+	return title == null || title.getValue() == null;
+}
+
 /**
 	 Sets the title directly
 **/ 

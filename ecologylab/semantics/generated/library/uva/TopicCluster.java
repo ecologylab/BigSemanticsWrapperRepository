@@ -96,8 +96,9 @@ return result;
 	Gets the value of the field id
 **/ 
 
-public Integer getId(){
-return id().getValue();
+public Integer getId()
+{
+	return id().getValue();
 }
 
 /**
@@ -106,7 +107,7 @@ return id().getValue();
 
 public void setId( Integer id )
 {
-this.id().setValue(id);
+	this.id().setValue(id);
 }
 
 /**
@@ -115,9 +116,18 @@ this.id().setValue(id);
 
 public void hwSetId( Integer id )
 {
-this.id().setValue(id);
-rebuildCompositeTermVector();
- }
+	this.id().setValue(id);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: id
+**/ 
+
+public boolean isNullId()
+{
+	return id == null || id.getValue() == null;
+}
+
 /**
 	 Sets the id directly
 **/ 
@@ -218,8 +228,9 @@ return result;
 	Gets the value of the field x
 **/ 
 
-public Integer getX(){
-return x().getValue();
+public Integer getX()
+{
+	return x().getValue();
 }
 
 /**
@@ -228,7 +239,7 @@ return x().getValue();
 
 public void setX( Integer x )
 {
-this.x().setValue(x);
+	this.x().setValue(x);
 }
 
 /**
@@ -237,9 +248,18 @@ this.x().setValue(x);
 
 public void hwSetX( Integer x )
 {
-this.x().setValue(x);
-rebuildCompositeTermVector();
- }
+	this.x().setValue(x);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: x
+**/ 
+
+public boolean isNullX()
+{
+	return x == null || x.getValue() == null;
+}
+
 /**
 	 Sets the x directly
 **/ 
@@ -276,8 +296,9 @@ return result;
 	Gets the value of the field y
 **/ 
 
-public Integer getY(){
-return y().getValue();
+public Integer getY()
+{
+	return y().getValue();
 }
 
 /**
@@ -286,7 +307,7 @@ return y().getValue();
 
 public void setY( Integer y )
 {
-this.y().setValue(y);
+	this.y().setValue(y);
 }
 
 /**
@@ -295,9 +316,18 @@ this.y().setValue(y);
 
 public void hwSetY( Integer y )
 {
-this.y().setValue(y);
-rebuildCompositeTermVector();
- }
+	this.y().setValue(y);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: y
+**/ 
+
+public boolean isNullY()
+{
+	return y == null || y.getValue() == null;
+}
+
 /**
 	 Sets the y directly
 **/ 
@@ -334,8 +364,9 @@ return result;
 	Gets the value of the field width
 **/ 
 
-public Integer getWidth(){
-return width().getValue();
+public Integer getWidth()
+{
+	return width().getValue();
 }
 
 /**
@@ -344,7 +375,7 @@ return width().getValue();
 
 public void setWidth( Integer width )
 {
-this.width().setValue(width);
+	this.width().setValue(width);
 }
 
 /**
@@ -353,9 +384,18 @@ this.width().setValue(width);
 
 public void hwSetWidth( Integer width )
 {
-this.width().setValue(width);
-rebuildCompositeTermVector();
- }
+	this.width().setValue(width);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: width
+**/ 
+
+public boolean isNullWidth()
+{
+	return width == null || width.getValue() == null;
+}
+
 /**
 	 Sets the width directly
 **/ 
@@ -392,8 +432,9 @@ return result;
 	Gets the value of the field height
 **/ 
 
-public Integer getHeight(){
-return height().getValue();
+public Integer getHeight()
+{
+	return height().getValue();
 }
 
 /**
@@ -402,7 +443,7 @@ return height().getValue();
 
 public void setHeight( Integer height )
 {
-this.height().setValue(height);
+	this.height().setValue(height);
 }
 
 /**
@@ -411,9 +452,18 @@ this.height().setValue(height);
 
 public void hwSetHeight( Integer height )
 {
-this.height().setValue(height);
-rebuildCompositeTermVector();
- }
+	this.height().setValue(height);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: height
+**/ 
+
+public boolean isNullHeight()
+{
+	return height == null || height.getValue() == null;
+}
+
 /**
 	 Sets the height directly
 **/ 

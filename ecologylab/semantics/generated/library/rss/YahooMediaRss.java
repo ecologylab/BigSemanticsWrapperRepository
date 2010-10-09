@@ -128,8 +128,9 @@ return result;
 	Gets the value of the field mediaDescription
 **/ 
 
-public String getMediaDescription(){
-return mediaDescription().getValue();
+public String getMediaDescription()
+{
+	return mediaDescription().getValue();
 }
 
 /**
@@ -138,7 +139,7 @@ return mediaDescription().getValue();
 
 public void setMediaDescription( String mediaDescription )
 {
-this.mediaDescription().setValue(mediaDescription);
+	this.mediaDescription().setValue(mediaDescription);
 }
 
 /**
@@ -147,9 +148,18 @@ this.mediaDescription().setValue(mediaDescription);
 
 public void hwSetMediaDescription( String mediaDescription )
 {
-this.mediaDescription().setValue(mediaDescription);
-rebuildCompositeTermVector();
- }
+	this.mediaDescription().setValue(mediaDescription);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: mediaDescription
+**/ 
+
+public boolean isNullMediaDescription()
+{
+	return mediaDescription == null || mediaDescription.getValue() == null;
+}
+
 /**
 	 Sets the mediaDescription directly
 **/ 

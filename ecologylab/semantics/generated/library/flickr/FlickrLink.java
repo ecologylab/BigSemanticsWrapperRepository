@@ -101,8 +101,9 @@ return result;
 	Gets the value of the field link
 **/ 
 
-public ParsedURL getLink(){
-return link().getValue();
+public ParsedURL getLink()
+{
+	return link().getValue();
 }
 
 /**
@@ -111,7 +112,7 @@ return link().getValue();
 
 public void setLink( ParsedURL link )
 {
-this.link().setValue(link);
+	this.link().setValue(link);
 }
 
 /**
@@ -120,9 +121,18 @@ this.link().setValue(link);
 
 public void hwSetLink( ParsedURL link )
 {
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
+	this.link().setValue(link);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: link
+**/ 
+
+public boolean isNullLink()
+{
+	return link == null || link.getValue() == null;
+}
+
 /**
 	 Sets the link directly
 **/ 
@@ -159,8 +169,9 @@ return result;
 	Gets the value of the field title
 **/ 
 
-public String getTitle(){
-return title().getValue();
+public String getTitle()
+{
+	return title().getValue();
 }
 
 /**
@@ -169,7 +180,7 @@ return title().getValue();
 
 public void setTitle( String title )
 {
-this.title().setValue(title);
+	this.title().setValue(title);
 }
 
 /**
@@ -178,9 +189,18 @@ this.title().setValue(title);
 
 public void hwSetTitle( String title )
 {
-this.title().setValue(title);
-rebuildCompositeTermVector();
- }
+	this.title().setValue(title);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: title
+**/ 
+
+public boolean isNullTitle()
+{
+	return title == null || title.getValue() == null;
+}
+
 /**
 	 Sets the title directly
 **/ 

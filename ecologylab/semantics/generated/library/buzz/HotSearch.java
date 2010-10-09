@@ -80,8 +80,9 @@ return result;
 	Gets the value of the field search
 **/ 
 
-public String getSearch(){
-return search().getValue();
+public String getSearch()
+{
+	return search().getValue();
 }
 
 /**
@@ -90,7 +91,7 @@ return search().getValue();
 
 public void setSearch( String search )
 {
-this.search().setValue(search);
+	this.search().setValue(search);
 }
 
 /**
@@ -99,9 +100,18 @@ this.search().setValue(search);
 
 public void hwSetSearch( String search )
 {
-this.search().setValue(search);
-rebuildCompositeTermVector();
- }
+	this.search().setValue(search);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: search
+**/ 
+
+public boolean isNullSearch()
+{
+	return search == null || search.getValue() == null;
+}
+
 /**
 	 Sets the search directly
 **/ 

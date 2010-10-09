@@ -102,8 +102,9 @@ return result;
 	Gets the value of the field metadataPage
 **/ 
 
-public ParsedURL getMetadataPage(){
-return metadataPage().getValue();
+public ParsedURL getMetadataPage()
+{
+	return metadataPage().getValue();
 }
 
 /**
@@ -112,7 +113,7 @@ return metadataPage().getValue();
 
 public void setMetadataPage( ParsedURL metadataPage )
 {
-this.metadataPage().setValue(metadataPage);
+	this.metadataPage().setValue(metadataPage);
 }
 
 /**
@@ -121,9 +122,18 @@ this.metadataPage().setValue(metadataPage);
 
 public void hwSetMetadataPage( ParsedURL metadataPage )
 {
-this.metadataPage().setValue(metadataPage);
-rebuildCompositeTermVector();
- }
+	this.metadataPage().setValue(metadataPage);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: metadataPage
+**/ 
+
+public boolean isNullMetadataPage()
+{
+	return metadataPage == null || metadataPage.getValue() == null;
+}
+
 /**
 	 Sets the metadataPage directly
 **/ 
@@ -160,8 +170,9 @@ return result;
 	Gets the value of the field abstractField
 **/ 
 
-public String getAbstractField(){
-return abstractField().getValue();
+public String getAbstractField()
+{
+	return abstractField().getValue();
 }
 
 /**
@@ -170,7 +181,7 @@ return abstractField().getValue();
 
 public void setAbstractField( String abstractField )
 {
-this.abstractField().setValue(abstractField);
+	this.abstractField().setValue(abstractField);
 }
 
 /**
@@ -179,9 +190,18 @@ this.abstractField().setValue(abstractField);
 
 public void hwSetAbstractField( String abstractField )
 {
-this.abstractField().setValue(abstractField);
-rebuildCompositeTermVector();
- }
+	this.abstractField().setValue(abstractField);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: abstractField
+**/ 
+
+public boolean isNullAbstractField()
+{
+	return abstractField == null || abstractField.getValue() == null;
+}
+
 /**
 	 Sets the abstractField directly
 **/ 

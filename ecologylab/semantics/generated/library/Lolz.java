@@ -97,8 +97,9 @@ return result;
 	Gets the value of the field caption
 **/ 
 
-public String getCaption(){
-return caption().getValue();
+public String getCaption()
+{
+	return caption().getValue();
 }
 
 /**
@@ -107,7 +108,7 @@ return caption().getValue();
 
 public void setCaption( String caption )
 {
-this.caption().setValue(caption);
+	this.caption().setValue(caption);
 }
 
 /**
@@ -116,9 +117,18 @@ this.caption().setValue(caption);
 
 public void hwSetCaption( String caption )
 {
-this.caption().setValue(caption);
-rebuildCompositeTermVector();
- }
+	this.caption().setValue(caption);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: caption
+**/ 
+
+public boolean isNullCaption()
+{
+	return caption == null || caption.getValue() == null;
+}
+
 /**
 	 Sets the caption directly
 **/ 
@@ -155,8 +165,9 @@ return result;
 	Gets the value of the field picture
 **/ 
 
-public ParsedURL getPicture(){
-return picture().getValue();
+public ParsedURL getPicture()
+{
+	return picture().getValue();
 }
 
 /**
@@ -165,7 +176,7 @@ return picture().getValue();
 
 public void setPicture( ParsedURL picture )
 {
-this.picture().setValue(picture);
+	this.picture().setValue(picture);
 }
 
 /**
@@ -174,9 +185,18 @@ this.picture().setValue(picture);
 
 public void hwSetPicture( ParsedURL picture )
 {
-this.picture().setValue(picture);
-rebuildCompositeTermVector();
- }
+	this.picture().setValue(picture);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: picture
+**/ 
+
+public boolean isNullPicture()
+{
+	return picture == null || picture.getValue() == null;
+}
+
 /**
 	 Sets the picture directly
 **/ 
@@ -213,8 +233,9 @@ return result;
 	Gets the value of the field mightLike
 **/ 
 
-public ParsedURL getMightLike(){
-return mightLike().getValue();
+public ParsedURL getMightLike()
+{
+	return mightLike().getValue();
 }
 
 /**
@@ -223,7 +244,7 @@ return mightLike().getValue();
 
 public void setMightLike( ParsedURL mightLike )
 {
-this.mightLike().setValue(mightLike);
+	this.mightLike().setValue(mightLike);
 }
 
 /**
@@ -232,9 +253,18 @@ this.mightLike().setValue(mightLike);
 
 public void hwSetMightLike( ParsedURL mightLike )
 {
-this.mightLike().setValue(mightLike);
-rebuildCompositeTermVector();
- }
+	this.mightLike().setValue(mightLike);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: mightLike
+**/ 
+
+public boolean isNullMightLike()
+{
+	return mightLike == null || mightLike.getValue() == null;
+}
+
 /**
 	 Sets the mightLike directly
 **/ 

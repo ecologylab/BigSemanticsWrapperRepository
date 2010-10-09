@@ -95,8 +95,9 @@ return result;
 	Gets the value of the field text
 **/ 
 
-public String getText(){
-return text().getValue();
+public String getText()
+{
+	return text().getValue();
 }
 
 /**
@@ -105,7 +106,7 @@ return text().getValue();
 
 public void setText( String text )
 {
-this.text().setValue(text);
+	this.text().setValue(text);
 }
 
 /**
@@ -114,9 +115,18 @@ this.text().setValue(text);
 
 public void hwSetText( String text )
 {
-this.text().setValue(text);
-rebuildCompositeTermVector();
- }
+	this.text().setValue(text);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: text
+**/ 
+
+public boolean isNullText()
+{
+	return text == null || text.getValue() == null;
+}
+
 /**
 	 Sets the text directly
 **/ 

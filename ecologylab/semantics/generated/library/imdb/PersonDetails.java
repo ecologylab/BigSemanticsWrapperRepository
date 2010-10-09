@@ -110,8 +110,9 @@ return result;
 	Gets the value of the field personImg
 **/ 
 
-public ParsedURL getPersonImg(){
-return personImg().getValue();
+public ParsedURL getPersonImg()
+{
+	return personImg().getValue();
 }
 
 /**
@@ -120,7 +121,7 @@ return personImg().getValue();
 
 public void setPersonImg( ParsedURL personImg )
 {
-this.personImg().setValue(personImg);
+	this.personImg().setValue(personImg);
 }
 
 /**
@@ -129,9 +130,18 @@ this.personImg().setValue(personImg);
 
 public void hwSetPersonImg( ParsedURL personImg )
 {
-this.personImg().setValue(personImg);
-rebuildCompositeTermVector();
- }
+	this.personImg().setValue(personImg);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: personImg
+**/ 
+
+public boolean isNullPersonImg()
+{
+	return personImg == null || personImg.getValue() == null;
+}
+
 /**
 	 Sets the personImg directly
 **/ 
@@ -200,8 +210,9 @@ return result;
 	Gets the value of the field miniBiography
 **/ 
 
-public String getMiniBiography(){
-return miniBiography().getValue();
+public String getMiniBiography()
+{
+	return miniBiography().getValue();
 }
 
 /**
@@ -210,7 +221,7 @@ return miniBiography().getValue();
 
 public void setMiniBiography( String miniBiography )
 {
-this.miniBiography().setValue(miniBiography);
+	this.miniBiography().setValue(miniBiography);
 }
 
 /**
@@ -219,9 +230,18 @@ this.miniBiography().setValue(miniBiography);
 
 public void hwSetMiniBiography( String miniBiography )
 {
-this.miniBiography().setValue(miniBiography);
-rebuildCompositeTermVector();
- }
+	this.miniBiography().setValue(miniBiography);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: miniBiography
+**/ 
+
+public boolean isNullMiniBiography()
+{
+	return miniBiography == null || miniBiography.getValue() == null;
+}
+
 /**
 	 Sets the miniBiography directly
 **/ 
@@ -258,8 +278,9 @@ return result;
 	Gets the value of the field biographyLink
 **/ 
 
-public ParsedURL getBiographyLink(){
-return biographyLink().getValue();
+public ParsedURL getBiographyLink()
+{
+	return biographyLink().getValue();
 }
 
 /**
@@ -268,7 +289,7 @@ return biographyLink().getValue();
 
 public void setBiographyLink( ParsedURL biographyLink )
 {
-this.biographyLink().setValue(biographyLink);
+	this.biographyLink().setValue(biographyLink);
 }
 
 /**
@@ -277,9 +298,18 @@ this.biographyLink().setValue(biographyLink);
 
 public void hwSetBiographyLink( ParsedURL biographyLink )
 {
-this.biographyLink().setValue(biographyLink);
-rebuildCompositeTermVector();
- }
+	this.biographyLink().setValue(biographyLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: biographyLink
+**/ 
+
+public boolean isNullBiographyLink()
+{
+	return biographyLink == null || biographyLink.getValue() == null;
+}
+
 /**
 	 Sets the biographyLink directly
 **/ 
@@ -316,8 +346,9 @@ return result;
 	Gets the value of the field trivia
 **/ 
 
-public String getTrivia(){
-return trivia().getValue();
+public String getTrivia()
+{
+	return trivia().getValue();
 }
 
 /**
@@ -326,7 +357,7 @@ return trivia().getValue();
 
 public void setTrivia( String trivia )
 {
-this.trivia().setValue(trivia);
+	this.trivia().setValue(trivia);
 }
 
 /**
@@ -335,9 +366,18 @@ this.trivia().setValue(trivia);
 
 public void hwSetTrivia( String trivia )
 {
-this.trivia().setValue(trivia);
-rebuildCompositeTermVector();
- }
+	this.trivia().setValue(trivia);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: trivia
+**/ 
+
+public boolean isNullTrivia()
+{
+	return trivia == null || trivia.getValue() == null;
+}
+
 /**
 	 Sets the trivia directly
 **/ 
@@ -374,8 +414,9 @@ return result;
 	Gets the value of the field triviaLink
 **/ 
 
-public ParsedURL getTriviaLink(){
-return triviaLink().getValue();
+public ParsedURL getTriviaLink()
+{
+	return triviaLink().getValue();
 }
 
 /**
@@ -384,7 +425,7 @@ return triviaLink().getValue();
 
 public void setTriviaLink( ParsedURL triviaLink )
 {
-this.triviaLink().setValue(triviaLink);
+	this.triviaLink().setValue(triviaLink);
 }
 
 /**
@@ -393,9 +434,18 @@ this.triviaLink().setValue(triviaLink);
 
 public void hwSetTriviaLink( ParsedURL triviaLink )
 {
-this.triviaLink().setValue(triviaLink);
-rebuildCompositeTermVector();
- }
+	this.triviaLink().setValue(triviaLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: triviaLink
+**/ 
+
+public boolean isNullTriviaLink()
+{
+	return triviaLink == null || triviaLink.getValue() == null;
+}
+
 /**
 	 Sets the triviaLink directly
 **/ 
@@ -432,8 +482,9 @@ return result;
 	Gets the value of the field awards
 **/ 
 
-public String getAwards(){
-return awards().getValue();
+public String getAwards()
+{
+	return awards().getValue();
 }
 
 /**
@@ -442,7 +493,7 @@ return awards().getValue();
 
 public void setAwards( String awards )
 {
-this.awards().setValue(awards);
+	this.awards().setValue(awards);
 }
 
 /**
@@ -451,9 +502,18 @@ this.awards().setValue(awards);
 
 public void hwSetAwards( String awards )
 {
-this.awards().setValue(awards);
-rebuildCompositeTermVector();
- }
+	this.awards().setValue(awards);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: awards
+**/ 
+
+public boolean isNullAwards()
+{
+	return awards == null || awards.getValue() == null;
+}
+
 /**
 	 Sets the awards directly
 **/ 
@@ -490,8 +550,9 @@ return result;
 	Gets the value of the field awardsLink
 **/ 
 
-public ParsedURL getAwardsLink(){
-return awardsLink().getValue();
+public ParsedURL getAwardsLink()
+{
+	return awardsLink().getValue();
 }
 
 /**
@@ -500,7 +561,7 @@ return awardsLink().getValue();
 
 public void setAwardsLink( ParsedURL awardsLink )
 {
-this.awardsLink().setValue(awardsLink);
+	this.awardsLink().setValue(awardsLink);
 }
 
 /**
@@ -509,9 +570,18 @@ this.awardsLink().setValue(awardsLink);
 
 public void hwSetAwardsLink( ParsedURL awardsLink )
 {
-this.awardsLink().setValue(awardsLink);
-rebuildCompositeTermVector();
- }
+	this.awardsLink().setValue(awardsLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: awardsLink
+**/ 
+
+public boolean isNullAwardsLink()
+{
+	return awardsLink == null || awardsLink.getValue() == null;
+}
+
 /**
 	 Sets the awardsLink directly
 **/ 
@@ -548,8 +618,9 @@ return result;
 	Gets the value of the field alternateNames
 **/ 
 
-public String getAlternateNames(){
-return alternateNames().getValue();
+public String getAlternateNames()
+{
+	return alternateNames().getValue();
 }
 
 /**
@@ -558,7 +629,7 @@ return alternateNames().getValue();
 
 public void setAlternateNames( String alternateNames )
 {
-this.alternateNames().setValue(alternateNames);
+	this.alternateNames().setValue(alternateNames);
 }
 
 /**
@@ -567,9 +638,18 @@ this.alternateNames().setValue(alternateNames);
 
 public void hwSetAlternateNames( String alternateNames )
 {
-this.alternateNames().setValue(alternateNames);
-rebuildCompositeTermVector();
- }
+	this.alternateNames().setValue(alternateNames);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: alternateNames
+**/ 
+
+public boolean isNullAlternateNames()
+{
+	return alternateNames == null || alternateNames.getValue() == null;
+}
+
 /**
 	 Sets the alternateNames directly
 **/ 

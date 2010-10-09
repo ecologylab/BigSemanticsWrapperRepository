@@ -99,8 +99,9 @@ return result;
 	Gets the value of the field contentKeywords
 **/ 
 
-public StringBuilder getContentKeywords(){
-return contentKeywords().getValue();
+public StringBuilder getContentKeywords()
+{
+	return contentKeywords().getValue();
 }
 
 /**
@@ -109,7 +110,7 @@ return contentKeywords().getValue();
 
 public void setContentKeywords( StringBuilder contentKeywords )
 {
-this.contentKeywords().setValue(contentKeywords);
+	this.contentKeywords().setValue(contentKeywords);
 }
 
 /**
@@ -118,9 +119,18 @@ this.contentKeywords().setValue(contentKeywords);
 
 public void hwSetContentKeywords( StringBuilder contentKeywords )
 {
-this.contentKeywords().setValue(contentKeywords);
-rebuildCompositeTermVector();
- }
+	this.contentKeywords().setValue(contentKeywords);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: contentKeywords
+**/ 
+
+public boolean isNullContentKeywords()
+{
+	return contentKeywords == null || contentKeywords.getValue() == null;
+}
+
 /**
 	 Sets the contentKeywords directly
 **/ 
@@ -184,8 +194,9 @@ return result;
 	Gets the value of the field anchorKeywords
 **/ 
 
-public StringBuilder getAnchorKeywords(){
-return anchorKeywords().getValue();
+public StringBuilder getAnchorKeywords()
+{
+	return anchorKeywords().getValue();
 }
 
 /**
@@ -194,7 +205,7 @@ return anchorKeywords().getValue();
 
 public void setAnchorKeywords( StringBuilder anchorKeywords )
 {
-this.anchorKeywords().setValue(anchorKeywords);
+	this.anchorKeywords().setValue(anchorKeywords);
 }
 
 /**
@@ -203,9 +214,18 @@ this.anchorKeywords().setValue(anchorKeywords);
 
 public void hwSetAnchorKeywords( StringBuilder anchorKeywords )
 {
-this.anchorKeywords().setValue(anchorKeywords);
-rebuildCompositeTermVector();
- }
+	this.anchorKeywords().setValue(anchorKeywords);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: anchorKeywords
+**/ 
+
+public boolean isNullAnchorKeywords()
+{
+	return anchorKeywords == null || anchorKeywords.getValue() == null;
+}
+
 /**
 	 Sets the anchorKeywords directly
 **/ 
@@ -269,8 +289,9 @@ return result;
 	Gets the value of the field urlKeywords
 **/ 
 
-public StringBuilder getUrlKeywords(){
-return urlKeywords().getValue();
+public StringBuilder getUrlKeywords()
+{
+	return urlKeywords().getValue();
 }
 
 /**
@@ -279,7 +300,7 @@ return urlKeywords().getValue();
 
 public void setUrlKeywords( StringBuilder urlKeywords )
 {
-this.urlKeywords().setValue(urlKeywords);
+	this.urlKeywords().setValue(urlKeywords);
 }
 
 /**
@@ -288,9 +309,18 @@ this.urlKeywords().setValue(urlKeywords);
 
 public void hwSetUrlKeywords( StringBuilder urlKeywords )
 {
-this.urlKeywords().setValue(urlKeywords);
-rebuildCompositeTermVector();
- }
+	this.urlKeywords().setValue(urlKeywords);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: urlKeywords
+**/ 
+
+public boolean isNullUrlKeywords()
+{
+	return urlKeywords == null || urlKeywords.getValue() == null;
+}
+
 /**
 	 Sets the urlKeywords directly
 **/ 
@@ -354,8 +384,9 @@ return result;
 	Gets the value of the field titleKeywords
 **/ 
 
-public StringBuilder getTitleKeywords(){
-return titleKeywords().getValue();
+public StringBuilder getTitleKeywords()
+{
+	return titleKeywords().getValue();
 }
 
 /**
@@ -364,7 +395,7 @@ return titleKeywords().getValue();
 
 public void setTitleKeywords( StringBuilder titleKeywords )
 {
-this.titleKeywords().setValue(titleKeywords);
+	this.titleKeywords().setValue(titleKeywords);
 }
 
 /**
@@ -373,9 +404,18 @@ this.titleKeywords().setValue(titleKeywords);
 
 public void hwSetTitleKeywords( StringBuilder titleKeywords )
 {
-this.titleKeywords().setValue(titleKeywords);
-rebuildCompositeTermVector();
- }
+	this.titleKeywords().setValue(titleKeywords);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: titleKeywords
+**/ 
+
+public boolean isNullTitleKeywords()
+{
+	return titleKeywords == null || titleKeywords.getValue() == null;
+}
+
 /**
 	 Sets the titleKeywords directly
 **/ 
@@ -439,8 +479,9 @@ return result;
 	Gets the value of the field id
 **/ 
 
-public Integer getId(){
-return id().getValue();
+public Integer getId()
+{
+	return id().getValue();
 }
 
 /**
@@ -449,7 +490,7 @@ return id().getValue();
 
 public void setId( Integer id )
 {
-this.id().setValue(id);
+	this.id().setValue(id);
 }
 
 /**
@@ -458,9 +499,18 @@ this.id().setValue(id);
 
 public void hwSetId( Integer id )
 {
-this.id().setValue(id);
-rebuildCompositeTermVector();
- }
+	this.id().setValue(id);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: id
+**/ 
+
+public boolean isNullId()
+{
+	return id == null || id.getValue() == null;
+}
+
 /**
 	 Sets the id directly
 **/ 

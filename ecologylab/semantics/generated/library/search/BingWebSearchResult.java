@@ -97,8 +97,9 @@ return result;
 	Gets the value of the field heading
 **/ 
 
-public String getHeading(){
-return heading().getValue();
+public String getHeading()
+{
+	return heading().getValue();
 }
 
 /**
@@ -107,7 +108,7 @@ return heading().getValue();
 
 public void setHeading( String heading )
 {
-this.heading().setValue(heading);
+	this.heading().setValue(heading);
 }
 
 /**
@@ -116,9 +117,18 @@ this.heading().setValue(heading);
 
 public void hwSetHeading( String heading )
 {
-this.heading().setValue(heading);
-rebuildCompositeTermVector();
- }
+	this.heading().setValue(heading);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: heading
+**/ 
+
+public boolean isNullHeading()
+{
+	return heading == null || heading.getValue() == null;
+}
+
 /**
 	 Sets the heading directly
 **/ 
@@ -155,8 +165,9 @@ return result;
 	Gets the value of the field snippet
 **/ 
 
-public String getSnippet(){
-return snippet().getValue();
+public String getSnippet()
+{
+	return snippet().getValue();
 }
 
 /**
@@ -165,7 +176,7 @@ return snippet().getValue();
 
 public void setSnippet( String snippet )
 {
-this.snippet().setValue(snippet);
+	this.snippet().setValue(snippet);
 }
 
 /**
@@ -174,9 +185,18 @@ this.snippet().setValue(snippet);
 
 public void hwSetSnippet( String snippet )
 {
-this.snippet().setValue(snippet);
-rebuildCompositeTermVector();
- }
+	this.snippet().setValue(snippet);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: snippet
+**/ 
+
+public boolean isNullSnippet()
+{
+	return snippet == null || snippet.getValue() == null;
+}
+
 /**
 	 Sets the snippet directly
 **/ 
@@ -213,8 +233,9 @@ return result;
 	Gets the value of the field link
 **/ 
 
-public ParsedURL getLink(){
-return link().getValue();
+public ParsedURL getLink()
+{
+	return link().getValue();
 }
 
 /**
@@ -223,7 +244,7 @@ return link().getValue();
 
 public void setLink( ParsedURL link )
 {
-this.link().setValue(link);
+	this.link().setValue(link);
 }
 
 /**
@@ -232,9 +253,18 @@ this.link().setValue(link);
 
 public void hwSetLink( ParsedURL link )
 {
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
+	this.link().setValue(link);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: link
+**/ 
+
+public boolean isNullLink()
+{
+	return link == null || link.getValue() == null;
+}
+
 /**
 	 Sets the link directly
 **/ 

@@ -90,8 +90,9 @@ return result;
 	Gets the value of the field subject
 **/ 
 
-public String getSubject(){
-return subject().getValue();
+public String getSubject()
+{
+	return subject().getValue();
 }
 
 /**
@@ -100,7 +101,7 @@ return subject().getValue();
 
 public void setSubject( String subject )
 {
-this.subject().setValue(subject);
+	this.subject().setValue(subject);
 }
 
 /**
@@ -109,9 +110,18 @@ this.subject().setValue(subject);
 
 public void hwSetSubject( String subject )
 {
-this.subject().setValue(subject);
-rebuildCompositeTermVector();
- }
+	this.subject().setValue(subject);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: subject
+**/ 
+
+public boolean isNullSubject()
+{
+	return subject == null || subject.getValue() == null;
+}
+
 /**
 	 Sets the subject directly
 **/ 

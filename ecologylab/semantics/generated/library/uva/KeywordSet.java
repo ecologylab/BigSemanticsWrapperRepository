@@ -91,8 +91,9 @@ return result;
 	Gets the value of the field type
 **/ 
 
-public String getType(){
-return type().getValue();
+public String getType()
+{
+	return type().getValue();
 }
 
 /**
@@ -101,7 +102,7 @@ return type().getValue();
 
 public void setType( String type )
 {
-this.type().setValue(type);
+	this.type().setValue(type);
 }
 
 /**
@@ -110,9 +111,18 @@ this.type().setValue(type);
 
 public void hwSetType( String type )
 {
-this.type().setValue(type);
-rebuildCompositeTermVector();
- }
+	this.type().setValue(type);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: type
+**/ 
+
+public boolean isNullType()
+{
+	return type == null || type.getValue() == null;
+}
+
 /**
 	 Sets the type directly
 **/ 

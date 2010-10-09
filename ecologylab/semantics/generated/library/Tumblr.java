@@ -100,8 +100,9 @@ return result;
 	Gets the value of the field post
 **/ 
 
-public String getPost(){
-return post().getValue();
+public String getPost()
+{
+	return post().getValue();
 }
 
 /**
@@ -110,7 +111,7 @@ return post().getValue();
 
 public void setPost( String post )
 {
-this.post().setValue(post);
+	this.post().setValue(post);
 }
 
 /**
@@ -119,9 +120,18 @@ this.post().setValue(post);
 
 public void hwSetPost( String post )
 {
-this.post().setValue(post);
-rebuildCompositeTermVector();
- }
+	this.post().setValue(post);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: post
+**/ 
+
+public boolean isNullPost()
+{
+	return post == null || post.getValue() == null;
+}
+
 /**
 	 Sets the post directly
 **/ 

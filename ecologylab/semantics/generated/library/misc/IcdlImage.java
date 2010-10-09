@@ -100,8 +100,9 @@ return result;
 	Gets the value of the field languages
 **/ 
 
-public String getLanguages(){
-return languages().getValue();
+public String getLanguages()
+{
+	return languages().getValue();
 }
 
 /**
@@ -110,7 +111,7 @@ return languages().getValue();
 
 public void setLanguages( String languages )
 {
-this.languages().setValue(languages);
+	this.languages().setValue(languages);
 }
 
 /**
@@ -119,9 +120,18 @@ this.languages().setValue(languages);
 
 public void hwSetLanguages( String languages )
 {
-this.languages().setValue(languages);
-rebuildCompositeTermVector();
- }
+	this.languages().setValue(languages);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: languages
+**/ 
+
+public boolean isNullLanguages()
+{
+	return languages == null || languages.getValue() == null;
+}
+
 /**
 	 Sets the languages directly
 **/ 

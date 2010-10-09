@@ -126,8 +126,9 @@ return result;
 	Gets the value of the field artTitle
 **/ 
 
-public String getArtTitle(){
-return artTitle().getValue();
+public String getArtTitle()
+{
+	return artTitle().getValue();
 }
 
 /**
@@ -136,7 +137,7 @@ return artTitle().getValue();
 
 public void setArtTitle( String artTitle )
 {
-this.artTitle().setValue(artTitle);
+	this.artTitle().setValue(artTitle);
 }
 
 /**
@@ -145,9 +146,18 @@ this.artTitle().setValue(artTitle);
 
 public void hwSetArtTitle( String artTitle )
 {
-this.artTitle().setValue(artTitle);
-rebuildCompositeTermVector();
- }
+	this.artTitle().setValue(artTitle);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: artTitle
+**/ 
+
+public boolean isNullArtTitle()
+{
+	return artTitle == null || artTitle.getValue() == null;
+}
+
 /**
 	 Sets the artTitle directly
 **/ 
@@ -216,8 +226,9 @@ return result;
 	Gets the value of the field abstractField
 **/ 
 
-public String getAbstractField(){
-return abstractField().getValue();
+public String getAbstractField()
+{
+	return abstractField().getValue();
 }
 
 /**
@@ -226,7 +237,7 @@ return abstractField().getValue();
 
 public void setAbstractField( String abstractField )
 {
-this.abstractField().setValue(abstractField);
+	this.abstractField().setValue(abstractField);
 }
 
 /**
@@ -235,9 +246,18 @@ this.abstractField().setValue(abstractField);
 
 public void hwSetAbstractField( String abstractField )
 {
-this.abstractField().setValue(abstractField);
-rebuildCompositeTermVector();
- }
+	this.abstractField().setValue(abstractField);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: abstractField
+**/ 
+
+public boolean isNullAbstractField()
+{
+	return abstractField == null || abstractField.getValue() == null;
+}
+
 /**
 	 Sets the abstractField directly
 **/ 
@@ -274,8 +294,9 @@ return result;
 	Gets the value of the field medium
 **/ 
 
-public String getMedium(){
-return medium().getValue();
+public String getMedium()
+{
+	return medium().getValue();
 }
 
 /**
@@ -284,7 +305,7 @@ return medium().getValue();
 
 public void setMedium( String medium )
 {
-this.medium().setValue(medium);
+	this.medium().setValue(medium);
 }
 
 /**
@@ -293,9 +314,18 @@ this.medium().setValue(medium);
 
 public void hwSetMedium( String medium )
 {
-this.medium().setValue(medium);
-rebuildCompositeTermVector();
- }
+	this.medium().setValue(medium);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: medium
+**/ 
+
+public boolean isNullMedium()
+{
+	return medium == null || medium.getValue() == null;
+}
+
 /**
 	 Sets the medium directly
 **/ 
@@ -332,8 +362,9 @@ return result;
 	Gets the value of the field year
 **/ 
 
-public String getYear(){
-return year().getValue();
+public String getYear()
+{
+	return year().getValue();
 }
 
 /**
@@ -342,7 +373,7 @@ return year().getValue();
 
 public void setYear( String year )
 {
-this.year().setValue(year);
+	this.year().setValue(year);
 }
 
 /**
@@ -351,9 +382,18 @@ this.year().setValue(year);
 
 public void hwSetYear( String year )
 {
-this.year().setValue(year);
-rebuildCompositeTermVector();
- }
+	this.year().setValue(year);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: year
+**/ 
+
+public boolean isNullYear()
+{
+	return year == null || year.getValue() == null;
+}
+
 /**
 	 Sets the year directly
 **/ 
@@ -390,8 +430,9 @@ return result;
 	Gets the value of the field website
 **/ 
 
-public ParsedURL getWebsite(){
-return website().getValue();
+public ParsedURL getWebsite()
+{
+	return website().getValue();
 }
 
 /**
@@ -400,7 +441,7 @@ return website().getValue();
 
 public void setWebsite( ParsedURL website )
 {
-this.website().setValue(website);
+	this.website().setValue(website);
 }
 
 /**
@@ -409,9 +450,18 @@ this.website().setValue(website);
 
 public void hwSetWebsite( ParsedURL website )
 {
-this.website().setValue(website);
-rebuildCompositeTermVector();
- }
+	this.website().setValue(website);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: website
+**/ 
+
+public boolean isNullWebsite()
+{
+	return website == null || website.getValue() == null;
+}
+
 /**
 	 Sets the website directly
 **/ 
@@ -448,8 +498,9 @@ return result;
 	Gets the value of the field extendedAbstract
 **/ 
 
-public ParsedURL getExtendedAbstract(){
-return extendedAbstract().getValue();
+public ParsedURL getExtendedAbstract()
+{
+	return extendedAbstract().getValue();
 }
 
 /**
@@ -458,7 +509,7 @@ return extendedAbstract().getValue();
 
 public void setExtendedAbstract( ParsedURL extendedAbstract )
 {
-this.extendedAbstract().setValue(extendedAbstract);
+	this.extendedAbstract().setValue(extendedAbstract);
 }
 
 /**
@@ -467,9 +518,18 @@ this.extendedAbstract().setValue(extendedAbstract);
 
 public void hwSetExtendedAbstract( ParsedURL extendedAbstract )
 {
-this.extendedAbstract().setValue(extendedAbstract);
-rebuildCompositeTermVector();
- }
+	this.extendedAbstract().setValue(extendedAbstract);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: extendedAbstract
+**/ 
+
+public boolean isNullExtendedAbstract()
+{
+	return extendedAbstract == null || extendedAbstract.getValue() == null;
+}
+
 /**
 	 Sets the extendedAbstract directly
 **/ 

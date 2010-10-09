@@ -81,8 +81,9 @@ return result;
 	Gets the value of the field anchorText
 **/ 
 
-public String getAnchorText(){
-return anchorText().getValue();
+public String getAnchorText()
+{
+	return anchorText().getValue();
 }
 
 /**
@@ -91,7 +92,7 @@ return anchorText().getValue();
 
 public void setAnchorText( String anchorText )
 {
-this.anchorText().setValue(anchorText);
+	this.anchorText().setValue(anchorText);
 }
 
 /**
@@ -100,9 +101,18 @@ this.anchorText().setValue(anchorText);
 
 public void hwSetAnchorText( String anchorText )
 {
-this.anchorText().setValue(anchorText);
-rebuildCompositeTermVector();
- }
+	this.anchorText().setValue(anchorText);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: anchorText
+**/ 
+
+public boolean isNullAnchorText()
+{
+	return anchorText == null || anchorText.getValue() == null;
+}
+
 /**
 	 Sets the anchorText directly
 **/ 
@@ -139,8 +149,9 @@ return result;
 	Gets the value of the field link
 **/ 
 
-public ParsedURL getLink(){
-return link().getValue();
+public ParsedURL getLink()
+{
+	return link().getValue();
 }
 
 /**
@@ -149,7 +160,7 @@ return link().getValue();
 
 public void setLink( ParsedURL link )
 {
-this.link().setValue(link);
+	this.link().setValue(link);
 }
 
 /**
@@ -158,9 +169,18 @@ this.link().setValue(link);
 
 public void hwSetLink( ParsedURL link )
 {
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
+	this.link().setValue(link);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: link
+**/ 
+
+public boolean isNullLink()
+{
+	return link == null || link.getValue() == null;
+}
+
 /**
 	 Sets the link directly
 **/ 

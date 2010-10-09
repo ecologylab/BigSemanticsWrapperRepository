@@ -101,8 +101,9 @@ return result;
 	Gets the value of the field caption
 **/ 
 
-public String getCaption(){
-return caption().getValue();
+public String getCaption()
+{
+	return caption().getValue();
 }
 
 /**
@@ -111,7 +112,7 @@ return caption().getValue();
 
 public void setCaption( String caption )
 {
-this.caption().setValue(caption);
+	this.caption().setValue(caption);
 }
 
 /**
@@ -120,9 +121,18 @@ this.caption().setValue(caption);
 
 public void hwSetCaption( String caption )
 {
-this.caption().setValue(caption);
-rebuildCompositeTermVector();
- }
+	this.caption().setValue(caption);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: caption
+**/ 
+
+public boolean isNullCaption()
+{
+	return caption == null || caption.getValue() == null;
+}
+
 /**
 	 Sets the caption directly
 **/ 
@@ -159,8 +169,9 @@ return result;
 	Gets the value of the field location
 **/ 
 
-public ParsedURL getLocation(){
-return location().getValue();
+public ParsedURL getLocation()
+{
+	return location().getValue();
 }
 
 /**
@@ -169,7 +180,7 @@ return location().getValue();
 
 public void setLocation( ParsedURL location )
 {
-this.location().setValue(location);
+	this.location().setValue(location);
 }
 
 /**
@@ -178,9 +189,18 @@ this.location().setValue(location);
 
 public void hwSetLocation( ParsedURL location )
 {
-this.location().setValue(location);
-rebuildCompositeTermVector();
- }
+	this.location().setValue(location);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: location
+**/ 
+
+public boolean isNullLocation()
+{
+	return location == null || location.getValue() == null;
+}
+
 /**
 	 Sets the location directly
 **/ 
@@ -217,8 +237,9 @@ return result;
 	Gets the value of the field contentType
 **/ 
 
-public String getContentType(){
-return contentType().getValue();
+public String getContentType()
+{
+	return contentType().getValue();
 }
 
 /**
@@ -227,7 +248,7 @@ return contentType().getValue();
 
 public void setContentType( String contentType )
 {
-this.contentType().setValue(contentType);
+	this.contentType().setValue(contentType);
 }
 
 /**
@@ -236,9 +257,18 @@ this.contentType().setValue(contentType);
 
 public void hwSetContentType( String contentType )
 {
-this.contentType().setValue(contentType);
-rebuildCompositeTermVector();
- }
+	this.contentType().setValue(contentType);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: contentType
+**/ 
+
+public boolean isNullContentType()
+{
+	return contentType == null || contentType.getValue() == null;
+}
+
 /**
 	 Sets the contentType directly
 **/ 
@@ -275,8 +305,9 @@ return result;
 	Gets the value of the field referrerUrl
 **/ 
 
-public ParsedURL getReferrerUrl(){
-return referrerUrl().getValue();
+public ParsedURL getReferrerUrl()
+{
+	return referrerUrl().getValue();
 }
 
 /**
@@ -285,7 +316,7 @@ return referrerUrl().getValue();
 
 public void setReferrerUrl( ParsedURL referrerUrl )
 {
-this.referrerUrl().setValue(referrerUrl);
+	this.referrerUrl().setValue(referrerUrl);
 }
 
 /**
@@ -294,9 +325,18 @@ this.referrerUrl().setValue(referrerUrl);
 
 public void hwSetReferrerUrl( ParsedURL referrerUrl )
 {
-this.referrerUrl().setValue(referrerUrl);
-rebuildCompositeTermVector();
- }
+	this.referrerUrl().setValue(referrerUrl);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: referrerUrl
+**/ 
+
+public boolean isNullReferrerUrl()
+{
+	return referrerUrl == null || referrerUrl.getValue() == null;
+}
+
 /**
 	 Sets the referrerUrl directly
 **/ 
@@ -333,8 +373,9 @@ return result;
 	Gets the value of the field width
 **/ 
 
-public Integer getWidth(){
-return width().getValue();
+public Integer getWidth()
+{
+	return width().getValue();
 }
 
 /**
@@ -343,7 +384,7 @@ return width().getValue();
 
 public void setWidth( Integer width )
 {
-this.width().setValue(width);
+	this.width().setValue(width);
 }
 
 /**
@@ -352,9 +393,18 @@ this.width().setValue(width);
 
 public void hwSetWidth( Integer width )
 {
-this.width().setValue(width);
-rebuildCompositeTermVector();
- }
+	this.width().setValue(width);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: width
+**/ 
+
+public boolean isNullWidth()
+{
+	return width == null || width.getValue() == null;
+}
+
 /**
 	 Sets the width directly
 **/ 
@@ -391,8 +441,9 @@ return result;
 	Gets the value of the field height
 **/ 
 
-public Integer getHeight(){
-return height().getValue();
+public Integer getHeight()
+{
+	return height().getValue();
 }
 
 /**
@@ -401,7 +452,7 @@ return height().getValue();
 
 public void setHeight( Integer height )
 {
-this.height().setValue(height);
+	this.height().setValue(height);
 }
 
 /**
@@ -410,9 +461,18 @@ this.height().setValue(height);
 
 public void hwSetHeight( Integer height )
 {
-this.height().setValue(height);
-rebuildCompositeTermVector();
- }
+	this.height().setValue(height);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: height
+**/ 
+
+public boolean isNullHeight()
+{
+	return height == null || height.getValue() == null;
+}
+
 /**
 	 Sets the height directly
 **/ 
@@ -449,8 +509,9 @@ return result;
 	Gets the value of the field fileSize
 **/ 
 
-public Integer getFileSize(){
-return fileSize().getValue();
+public Integer getFileSize()
+{
+	return fileSize().getValue();
 }
 
 /**
@@ -459,7 +520,7 @@ return fileSize().getValue();
 
 public void setFileSize( Integer fileSize )
 {
-this.fileSize().setValue(fileSize);
+	this.fileSize().setValue(fileSize);
 }
 
 /**
@@ -468,9 +529,18 @@ this.fileSize().setValue(fileSize);
 
 public void hwSetFileSize( Integer fileSize )
 {
-this.fileSize().setValue(fileSize);
-rebuildCompositeTermVector();
- }
+	this.fileSize().setValue(fileSize);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: fileSize
+**/ 
+
+public boolean isNullFileSize()
+{
+	return fileSize == null || fileSize.getValue() == null;
+}
+
 /**
 	 Sets the fileSize directly
 **/ 

@@ -80,8 +80,9 @@ return result;
 	Gets the value of the field resourceIdentifier
 **/ 
 
-public ParsedURL getResourceIdentifier(){
-return resourceIdentifier().getValue();
+public ParsedURL getResourceIdentifier()
+{
+	return resourceIdentifier().getValue();
 }
 
 /**
@@ -90,7 +91,7 @@ return resourceIdentifier().getValue();
 
 public void setResourceIdentifier( ParsedURL resourceIdentifier )
 {
-this.resourceIdentifier().setValue(resourceIdentifier);
+	this.resourceIdentifier().setValue(resourceIdentifier);
 }
 
 /**
@@ -99,9 +100,18 @@ this.resourceIdentifier().setValue(resourceIdentifier);
 
 public void hwSetResourceIdentifier( ParsedURL resourceIdentifier )
 {
-this.resourceIdentifier().setValue(resourceIdentifier);
-rebuildCompositeTermVector();
- }
+	this.resourceIdentifier().setValue(resourceIdentifier);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: resourceIdentifier
+**/ 
+
+public boolean isNullResourceIdentifier()
+{
+	return resourceIdentifier == null || resourceIdentifier.getValue() == null;
+}
+
 /**
 	 Sets the resourceIdentifier directly
 **/ 

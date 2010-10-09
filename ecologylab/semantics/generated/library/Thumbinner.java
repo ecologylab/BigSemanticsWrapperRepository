@@ -81,8 +81,9 @@ return result;
 	Gets the value of the field thumbImgCaption
 **/ 
 
-public String getThumbImgCaption(){
-return thumbImgCaption().getValue();
+public String getThumbImgCaption()
+{
+	return thumbImgCaption().getValue();
 }
 
 /**
@@ -91,7 +92,7 @@ return thumbImgCaption().getValue();
 
 public void setThumbImgCaption( String thumbImgCaption )
 {
-this.thumbImgCaption().setValue(thumbImgCaption);
+	this.thumbImgCaption().setValue(thumbImgCaption);
 }
 
 /**
@@ -100,9 +101,18 @@ this.thumbImgCaption().setValue(thumbImgCaption);
 
 public void hwSetThumbImgCaption( String thumbImgCaption )
 {
-this.thumbImgCaption().setValue(thumbImgCaption);
-rebuildCompositeTermVector();
- }
+	this.thumbImgCaption().setValue(thumbImgCaption);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: thumbImgCaption
+**/ 
+
+public boolean isNullThumbImgCaption()
+{
+	return thumbImgCaption == null || thumbImgCaption.getValue() == null;
+}
+
 /**
 	 Sets the thumbImgCaption directly
 **/ 
@@ -139,8 +149,9 @@ return result;
 	Gets the value of the field thumbImgSrc
 **/ 
 
-public ParsedURL getThumbImgSrc(){
-return thumbImgSrc().getValue();
+public ParsedURL getThumbImgSrc()
+{
+	return thumbImgSrc().getValue();
 }
 
 /**
@@ -149,7 +160,7 @@ return thumbImgSrc().getValue();
 
 public void setThumbImgSrc( ParsedURL thumbImgSrc )
 {
-this.thumbImgSrc().setValue(thumbImgSrc);
+	this.thumbImgSrc().setValue(thumbImgSrc);
 }
 
 /**
@@ -158,9 +169,18 @@ this.thumbImgSrc().setValue(thumbImgSrc);
 
 public void hwSetThumbImgSrc( ParsedURL thumbImgSrc )
 {
-this.thumbImgSrc().setValue(thumbImgSrc);
-rebuildCompositeTermVector();
- }
+	this.thumbImgSrc().setValue(thumbImgSrc);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: thumbImgSrc
+**/ 
+
+public boolean isNullThumbImgSrc()
+{
+	return thumbImgSrc == null || thumbImgSrc.getValue() == null;
+}
+
 /**
 	 Sets the thumbImgSrc directly
 **/ 

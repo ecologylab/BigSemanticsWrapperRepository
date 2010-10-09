@@ -96,8 +96,9 @@ return result;
 	Gets the value of the field department
 **/ 
 
-public String getDepartment(){
-return department().getValue();
+public String getDepartment()
+{
+	return department().getValue();
 }
 
 /**
@@ -106,7 +107,7 @@ return department().getValue();
 
 public void setDepartment( String department )
 {
-this.department().setValue(department);
+	this.department().setValue(department);
 }
 
 /**
@@ -115,9 +116,18 @@ this.department().setValue(department);
 
 public void hwSetDepartment( String department )
 {
-this.department().setValue(department);
-rebuildCompositeTermVector();
- }
+	this.department().setValue(department);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: department
+**/ 
+
+public boolean isNullDepartment()
+{
+	return department == null || department.getValue() == null;
+}
+
 /**
 	 Sets the department directly
 **/ 
@@ -154,8 +164,9 @@ return result;
 	Gets the value of the field section
 **/ 
 
-public String getSection(){
-return section().getValue();
+public String getSection()
+{
+	return section().getValue();
 }
 
 /**
@@ -164,7 +175,7 @@ return section().getValue();
 
 public void setSection( String section )
 {
-this.section().setValue(section);
+	this.section().setValue(section);
 }
 
 /**
@@ -173,9 +184,18 @@ this.section().setValue(section);
 
 public void hwSetSection( String section )
 {
-this.section().setValue(section);
-rebuildCompositeTermVector();
- }
+	this.section().setValue(section);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: section
+**/ 
+
+public boolean isNullSection()
+{
+	return section == null || section.getValue() == null;
+}
+
 /**
 	 Sets the section directly
 **/ 

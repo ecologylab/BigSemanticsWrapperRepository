@@ -100,8 +100,9 @@ return result;
 	Gets the value of the field dayOfBirth
 **/ 
 
-public String getDayOfBirth(){
-return dayOfBirth().getValue();
+public String getDayOfBirth()
+{
+	return dayOfBirth().getValue();
 }
 
 /**
@@ -110,7 +111,7 @@ return dayOfBirth().getValue();
 
 public void setDayOfBirth( String dayOfBirth )
 {
-this.dayOfBirth().setValue(dayOfBirth);
+	this.dayOfBirth().setValue(dayOfBirth);
 }
 
 /**
@@ -119,9 +120,18 @@ this.dayOfBirth().setValue(dayOfBirth);
 
 public void hwSetDayOfBirth( String dayOfBirth )
 {
-this.dayOfBirth().setValue(dayOfBirth);
-rebuildCompositeTermVector();
- }
+	this.dayOfBirth().setValue(dayOfBirth);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dayOfBirth
+**/ 
+
+public boolean isNullDayOfBirth()
+{
+	return dayOfBirth == null || dayOfBirth.getValue() == null;
+}
+
 /**
 	 Sets the dayOfBirth directly
 **/ 
@@ -158,8 +168,9 @@ return result;
 	Gets the value of the field yearOfBirth
 **/ 
 
-public String getYearOfBirth(){
-return yearOfBirth().getValue();
+public String getYearOfBirth()
+{
+	return yearOfBirth().getValue();
 }
 
 /**
@@ -168,7 +179,7 @@ return yearOfBirth().getValue();
 
 public void setYearOfBirth( String yearOfBirth )
 {
-this.yearOfBirth().setValue(yearOfBirth);
+	this.yearOfBirth().setValue(yearOfBirth);
 }
 
 /**
@@ -177,9 +188,18 @@ this.yearOfBirth().setValue(yearOfBirth);
 
 public void hwSetYearOfBirth( String yearOfBirth )
 {
-this.yearOfBirth().setValue(yearOfBirth);
-rebuildCompositeTermVector();
- }
+	this.yearOfBirth().setValue(yearOfBirth);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: yearOfBirth
+**/ 
+
+public boolean isNullYearOfBirth()
+{
+	return yearOfBirth == null || yearOfBirth.getValue() == null;
+}
+
 /**
 	 Sets the yearOfBirth directly
 **/ 
@@ -216,8 +236,9 @@ return result;
 	Gets the value of the field placeOfBirth
 **/ 
 
-public String getPlaceOfBirth(){
-return placeOfBirth().getValue();
+public String getPlaceOfBirth()
+{
+	return placeOfBirth().getValue();
 }
 
 /**
@@ -226,7 +247,7 @@ return placeOfBirth().getValue();
 
 public void setPlaceOfBirth( String placeOfBirth )
 {
-this.placeOfBirth().setValue(placeOfBirth);
+	this.placeOfBirth().setValue(placeOfBirth);
 }
 
 /**
@@ -235,9 +256,18 @@ this.placeOfBirth().setValue(placeOfBirth);
 
 public void hwSetPlaceOfBirth( String placeOfBirth )
 {
-this.placeOfBirth().setValue(placeOfBirth);
-rebuildCompositeTermVector();
- }
+	this.placeOfBirth().setValue(placeOfBirth);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: placeOfBirth
+**/ 
+
+public boolean isNullPlaceOfBirth()
+{
+	return placeOfBirth == null || placeOfBirth.getValue() == null;
+}
+
 /**
 	 Sets the placeOfBirth directly
 **/ 
@@ -274,8 +304,9 @@ return result;
 	Gets the value of the field dayOfBirthLink
 **/ 
 
-public ParsedURL getDayOfBirthLink(){
-return dayOfBirthLink().getValue();
+public ParsedURL getDayOfBirthLink()
+{
+	return dayOfBirthLink().getValue();
 }
 
 /**
@@ -284,7 +315,7 @@ return dayOfBirthLink().getValue();
 
 public void setDayOfBirthLink( ParsedURL dayOfBirthLink )
 {
-this.dayOfBirthLink().setValue(dayOfBirthLink);
+	this.dayOfBirthLink().setValue(dayOfBirthLink);
 }
 
 /**
@@ -293,9 +324,18 @@ this.dayOfBirthLink().setValue(dayOfBirthLink);
 
 public void hwSetDayOfBirthLink( ParsedURL dayOfBirthLink )
 {
-this.dayOfBirthLink().setValue(dayOfBirthLink);
-rebuildCompositeTermVector();
- }
+	this.dayOfBirthLink().setValue(dayOfBirthLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: dayOfBirthLink
+**/ 
+
+public boolean isNullDayOfBirthLink()
+{
+	return dayOfBirthLink == null || dayOfBirthLink.getValue() == null;
+}
+
 /**
 	 Sets the dayOfBirthLink directly
 **/ 
@@ -332,8 +372,9 @@ return result;
 	Gets the value of the field yearOfBirthLink
 **/ 
 
-public ParsedURL getYearOfBirthLink(){
-return yearOfBirthLink().getValue();
+public ParsedURL getYearOfBirthLink()
+{
+	return yearOfBirthLink().getValue();
 }
 
 /**
@@ -342,7 +383,7 @@ return yearOfBirthLink().getValue();
 
 public void setYearOfBirthLink( ParsedURL yearOfBirthLink )
 {
-this.yearOfBirthLink().setValue(yearOfBirthLink);
+	this.yearOfBirthLink().setValue(yearOfBirthLink);
 }
 
 /**
@@ -351,9 +392,18 @@ this.yearOfBirthLink().setValue(yearOfBirthLink);
 
 public void hwSetYearOfBirthLink( ParsedURL yearOfBirthLink )
 {
-this.yearOfBirthLink().setValue(yearOfBirthLink);
-rebuildCompositeTermVector();
- }
+	this.yearOfBirthLink().setValue(yearOfBirthLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: yearOfBirthLink
+**/ 
+
+public boolean isNullYearOfBirthLink()
+{
+	return yearOfBirthLink == null || yearOfBirthLink.getValue() == null;
+}
+
 /**
 	 Sets the yearOfBirthLink directly
 **/ 
@@ -390,8 +440,9 @@ return result;
 	Gets the value of the field placeOfBirthLink
 **/ 
 
-public ParsedURL getPlaceOfBirthLink(){
-return placeOfBirthLink().getValue();
+public ParsedURL getPlaceOfBirthLink()
+{
+	return placeOfBirthLink().getValue();
 }
 
 /**
@@ -400,7 +451,7 @@ return placeOfBirthLink().getValue();
 
 public void setPlaceOfBirthLink( ParsedURL placeOfBirthLink )
 {
-this.placeOfBirthLink().setValue(placeOfBirthLink);
+	this.placeOfBirthLink().setValue(placeOfBirthLink);
 }
 
 /**
@@ -409,9 +460,18 @@ this.placeOfBirthLink().setValue(placeOfBirthLink);
 
 public void hwSetPlaceOfBirthLink( ParsedURL placeOfBirthLink )
 {
-this.placeOfBirthLink().setValue(placeOfBirthLink);
-rebuildCompositeTermVector();
- }
+	this.placeOfBirthLink().setValue(placeOfBirthLink);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: placeOfBirthLink
+**/ 
+
+public boolean isNullPlaceOfBirthLink()
+{
+	return placeOfBirthLink == null || placeOfBirthLink.getValue() == null;
+}
+
 /**
 	 Sets the placeOfBirthLink directly
 **/ 

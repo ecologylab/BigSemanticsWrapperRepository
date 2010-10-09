@@ -96,8 +96,9 @@ return result;
 	Gets the value of the field link
 **/ 
 
-public ParsedURL getLink(){
-return link().getValue();
+public ParsedURL getLink()
+{
+	return link().getValue();
 }
 
 /**
@@ -106,7 +107,7 @@ return link().getValue();
 
 public void setLink( ParsedURL link )
 {
-this.link().setValue(link);
+	this.link().setValue(link);
 }
 
 /**
@@ -115,9 +116,18 @@ this.link().setValue(link);
 
 public void hwSetLink( ParsedURL link )
 {
-this.link().setValue(link);
-rebuildCompositeTermVector();
- }
+	this.link().setValue(link);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: link
+**/ 
+
+public boolean isNullLink()
+{
+	return link == null || link.getValue() == null;
+}
+
 /**
 	 Sets the link directly
 **/ 
@@ -154,8 +164,9 @@ return result;
 	Gets the value of the field location
 **/ 
 
-public ParsedURL getLocation(){
-return location().getValue();
+public ParsedURL getLocation()
+{
+	return location().getValue();
 }
 
 /**
@@ -164,7 +175,7 @@ return location().getValue();
 
 public void setLocation( ParsedURL location )
 {
-this.location().setValue(location);
+	this.location().setValue(location);
 }
 
 /**
@@ -173,9 +184,18 @@ this.location().setValue(location);
 
 public void hwSetLocation( ParsedURL location )
 {
-this.location().setValue(location);
-rebuildCompositeTermVector();
- }
+	this.location().setValue(location);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: location
+**/ 
+
+public boolean isNullLocation()
+{
+	return location == null || location.getValue() == null;
+}
+
 /**
 	 Sets the location directly
 **/ 
