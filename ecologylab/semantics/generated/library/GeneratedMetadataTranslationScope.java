@@ -30,12 +30,15 @@ import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.ClippableDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
@@ -135,8 +138,6 @@ ecologylab.semantics.generated.library.imdb.BirthDetail.class,
 ecologylab.semantics.generated.library.Lolz.class,
 
 ecologylab.semantics.generated.library.misc.DcDocument.class,
-
-ecologylab.semantics.generated.library.misc.Text.class,
 
 ecologylab.semantics.generated.library.misc.IcdlImage.class,
 

@@ -30,12 +30,15 @@ import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.ClippableDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.Media;
 import ecologylab.semantics.metadata.scalar.*;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
@@ -60,18 +63,12 @@ extends  Document
 
 private  @simpl_composite @mm_name("birth_detail") BirthDetail	birthDetail;	@simpl_scalar private MetadataString	miniBiography;
 	@simpl_scalar private MetadataParsedURL	biographyLink;
-	@simpl_scalar private MetadataString	trivia;
-	@simpl_scalar private MetadataParsedURL	triviaLink;
-	@simpl_scalar private MetadataString	awards;
-	@simpl_scalar private MetadataParsedURL	awardsLink;
-	@simpl_scalar private MetadataString	alternateNames;
 	 @simpl_collection("imdb_title") @xml_tag("titles_as_actor") @mm_name("titles_as_actor") private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
 	 @simpl_collection("imdb_title") @xml_tag("titles_as_director") @mm_name("titles_as_director") private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
 	 @simpl_collection("imdb_title") @xml_tag("titles_for_soundtrack") @mm_name("titles_for_soundtrack") private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
 	 @simpl_collection("imdb_title") @xml_tag("titles_as_producer") @mm_name("titles_as_producer") private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
 	 @simpl_collection("imdb_title") @xml_tag("titles_thanked_in") @mm_name("titles_thanked_in") private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
 	 @simpl_collection("imdb_title") @xml_tag("titles_as_self") @mm_name("titles_as_self") private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
-	 @simpl_collection("imdb_title") @xml_tag("titles_in_development") @mm_name("titles_in_development") private ArrayList<Entity<ImdbTitle>>	titlesInDevelopment;
 
 /**
 	Constructor
@@ -328,346 +325,6 @@ public void hwSetBiographyLinkMetadata(MetadataParsedURL biographyLink)
 	rebuildCompositeTermVector();
 }
 /**
-	Lazy Evaluation for trivia
-**/ 
-
-public MetadataString	trivia()
-{
-MetadataString	result	=this.trivia;
-if(result == null)
-{
-result = new MetadataString();
-this.trivia	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field trivia
-**/ 
-
-public String getTrivia()
-{
-	return trivia().getValue();
-}
-
-/**
-	Sets the value of the field trivia
-**/ 
-
-public void setTrivia( String trivia )
-{
-	this.trivia().setValue(trivia);
-}
-
-/**
-	The heavy weight setter method for field trivia
-**/ 
-
-public void hwSetTrivia( String trivia )
-{
-	this.trivia().setValue(trivia);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: trivia
-**/ 
-
-public boolean isNullTrivia()
-{
-	return trivia == null || trivia.getValue() == null;
-}
-
-/**
-	 Sets the trivia directly
-**/ 
-
-public void setTriviaMetadata(MetadataString trivia)
-{	this.trivia = trivia;
-}
-/**
-	Heavy Weight Direct setter method for trivia
-**/ 
-
-public void hwSetTriviaMetadata(MetadataString trivia)
-{	 if(this.trivia!=null && this.trivia.getValue()!=null && hasTermVector())
-		 termVector().remove(this.trivia.termVector());
-	 this.trivia = trivia;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for triviaLink
-**/ 
-
-public MetadataParsedURL	triviaLink()
-{
-MetadataParsedURL	result	=this.triviaLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.triviaLink	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field triviaLink
-**/ 
-
-public ParsedURL getTriviaLink()
-{
-	return triviaLink().getValue();
-}
-
-/**
-	Sets the value of the field triviaLink
-**/ 
-
-public void setTriviaLink( ParsedURL triviaLink )
-{
-	this.triviaLink().setValue(triviaLink);
-}
-
-/**
-	The heavy weight setter method for field triviaLink
-**/ 
-
-public void hwSetTriviaLink( ParsedURL triviaLink )
-{
-	this.triviaLink().setValue(triviaLink);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: triviaLink
-**/ 
-
-public boolean isNullTriviaLink()
-{
-	return triviaLink == null || triviaLink.getValue() == null;
-}
-
-/**
-	 Sets the triviaLink directly
-**/ 
-
-public void setTriviaLinkMetadata(MetadataParsedURL triviaLink)
-{	this.triviaLink = triviaLink;
-}
-/**
-	Heavy Weight Direct setter method for triviaLink
-**/ 
-
-public void hwSetTriviaLinkMetadata(MetadataParsedURL triviaLink)
-{	 if(this.triviaLink!=null && this.triviaLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.triviaLink.termVector());
-	 this.triviaLink = triviaLink;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for awards
-**/ 
-
-public MetadataString	awards()
-{
-MetadataString	result	=this.awards;
-if(result == null)
-{
-result = new MetadataString();
-this.awards	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field awards
-**/ 
-
-public String getAwards()
-{
-	return awards().getValue();
-}
-
-/**
-	Sets the value of the field awards
-**/ 
-
-public void setAwards( String awards )
-{
-	this.awards().setValue(awards);
-}
-
-/**
-	The heavy weight setter method for field awards
-**/ 
-
-public void hwSetAwards( String awards )
-{
-	this.awards().setValue(awards);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: awards
-**/ 
-
-public boolean isNullAwards()
-{
-	return awards == null || awards.getValue() == null;
-}
-
-/**
-	 Sets the awards directly
-**/ 
-
-public void setAwardsMetadata(MetadataString awards)
-{	this.awards = awards;
-}
-/**
-	Heavy Weight Direct setter method for awards
-**/ 
-
-public void hwSetAwardsMetadata(MetadataString awards)
-{	 if(this.awards!=null && this.awards.getValue()!=null && hasTermVector())
-		 termVector().remove(this.awards.termVector());
-	 this.awards = awards;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for awardsLink
-**/ 
-
-public MetadataParsedURL	awardsLink()
-{
-MetadataParsedURL	result	=this.awardsLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.awardsLink	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field awardsLink
-**/ 
-
-public ParsedURL getAwardsLink()
-{
-	return awardsLink().getValue();
-}
-
-/**
-	Sets the value of the field awardsLink
-**/ 
-
-public void setAwardsLink( ParsedURL awardsLink )
-{
-	this.awardsLink().setValue(awardsLink);
-}
-
-/**
-	The heavy weight setter method for field awardsLink
-**/ 
-
-public void hwSetAwardsLink( ParsedURL awardsLink )
-{
-	this.awardsLink().setValue(awardsLink);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: awardsLink
-**/ 
-
-public boolean isNullAwardsLink()
-{
-	return awardsLink == null || awardsLink.getValue() == null;
-}
-
-/**
-	 Sets the awardsLink directly
-**/ 
-
-public void setAwardsLinkMetadata(MetadataParsedURL awardsLink)
-{	this.awardsLink = awardsLink;
-}
-/**
-	Heavy Weight Direct setter method for awardsLink
-**/ 
-
-public void hwSetAwardsLinkMetadata(MetadataParsedURL awardsLink)
-{	 if(this.awardsLink!=null && this.awardsLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.awardsLink.termVector());
-	 this.awardsLink = awardsLink;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for alternateNames
-**/ 
-
-public MetadataString	alternateNames()
-{
-MetadataString	result	=this.alternateNames;
-if(result == null)
-{
-result = new MetadataString();
-this.alternateNames	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field alternateNames
-**/ 
-
-public String getAlternateNames()
-{
-	return alternateNames().getValue();
-}
-
-/**
-	Sets the value of the field alternateNames
-**/ 
-
-public void setAlternateNames( String alternateNames )
-{
-	this.alternateNames().setValue(alternateNames);
-}
-
-/**
-	The heavy weight setter method for field alternateNames
-**/ 
-
-public void hwSetAlternateNames( String alternateNames )
-{
-	this.alternateNames().setValue(alternateNames);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: alternateNames
-**/ 
-
-public boolean isNullAlternateNames()
-{
-	return alternateNames == null || alternateNames.getValue() == null;
-}
-
-/**
-	 Sets the alternateNames directly
-**/ 
-
-public void setAlternateNamesMetadata(MetadataString alternateNames)
-{	this.alternateNames = alternateNames;
-}
-/**
-	Heavy Weight Direct setter method for alternateNames
-**/ 
-
-public void hwSetAlternateNamesMetadata(MetadataString alternateNames)
-{	 if(this.alternateNames!=null && this.alternateNames.getValue()!=null && hasTermVector())
-		 termVector().remove(this.alternateNames.termVector());
-	 this.alternateNames = alternateNames;
-	rebuildCompositeTermVector();
-}
-/**
 	Lazy Evaluation for titlesAsActor
 **/ 
 
@@ -857,38 +514,6 @@ this.titlesAsSelf = titlesAsSelf ;
 
 public  ArrayList<Entity<ImdbTitle>> getTitlesAsSelf(){
 return this.titlesAsSelf;
-}
-
-/**
-	Lazy Evaluation for titlesInDevelopment
-**/ 
-
-public  ArrayList<Entity<ImdbTitle>>	titlesInDevelopment()
-{
- ArrayList<Entity<ImdbTitle>>	result	=this.titlesInDevelopment;
-if(result == null)
-{
-result = new  ArrayList<Entity<ImdbTitle>>();
-this.titlesInDevelopment	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field titlesInDevelopment
-**/ 
-
-public void setTitlesInDevelopment(  ArrayList<Entity<ImdbTitle>> titlesInDevelopment )
-{
-this.titlesInDevelopment = titlesInDevelopment ;
-}
-
-/**
-	Get the value of field titlesInDevelopment
-**/ 
-
-public  ArrayList<Entity<ImdbTitle>> getTitlesInDevelopment(){
-return this.titlesInDevelopment;
 }
 
 }
