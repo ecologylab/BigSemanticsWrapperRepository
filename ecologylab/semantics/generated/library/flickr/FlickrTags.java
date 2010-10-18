@@ -11,6 +11,7 @@ This is a generated code. DO NOT edit or modify it.
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.dreamHouse.*;
 import ecologylab.semantics.generated.library.fastflip.*;

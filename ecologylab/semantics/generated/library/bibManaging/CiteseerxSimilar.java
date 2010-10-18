@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.bibManaging;
 
 /**
 This is a generated code. DO NOT edit or modify it.
@@ -50,12 +50,35 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	Citation or co-citation page from CiteSeerX.
+**/ 
+
 @simpl_inherit
 
-public class  GoogleSorry
-extends  Document
+public class  CiteseerxSimilar
+extends  CiteseerxRecord
 {
 
+
+/**
+	Constructor
+**/ 
+
+public CiteseerxSimilar()
+{
+ super();
+}
+
+/**
+	Constructor
+**/ 
+
+public CiteseerxSimilar(MetaMetadataCompositeField metaMetadata)
+{
+super(metaMetadata);
+}
 
 }
 

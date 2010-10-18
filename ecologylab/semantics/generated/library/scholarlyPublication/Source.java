@@ -11,6 +11,7 @@ This is a generated code. DO NOT edit or modify it.
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.dreamHouse.*;
 import ecologylab.semantics.generated.library.fastflip.*;
@@ -64,6 +65,12 @@ extends  Document
 
 /**
 	Archive of conference or journal.
+**/ 
+
+	@simpl_scalar private MetadataString	archiveName;
+
+/**
+	Url to the archive of conference or journal.
 **/ 
 
 	@simpl_scalar private MetadataParsedURL	archive;
@@ -154,6 +161,74 @@ public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
 {	 if(this.yearOfPublication!=null && this.yearOfPublication.getValue()!=null && hasTermVector())
 		 termVector().remove(this.yearOfPublication.termVector());
 	 this.yearOfPublication = yearOfPublication;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for archiveName
+**/ 
+
+public MetadataString	archiveName()
+{
+MetadataString	result	=this.archiveName;
+if(result == null)
+{
+result = new MetadataString();
+this.archiveName	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field archiveName
+**/ 
+
+public String getArchiveName()
+{
+	return archiveName().getValue();
+}
+
+/**
+	Sets the value of the field archiveName
+**/ 
+
+public void setArchiveName( String archiveName )
+{
+	this.archiveName().setValue(archiveName);
+}
+
+/**
+	The heavy weight setter method for field archiveName
+**/ 
+
+public void hwSetArchiveName( String archiveName )
+{
+	this.archiveName().setValue(archiveName);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: archiveName
+**/ 
+
+public boolean isNullArchiveName()
+{
+	return archiveName == null || archiveName.getValue() == null;
+}
+
+/**
+	 Sets the archiveName directly
+**/ 
+
+public void setArchiveNameMetadata(MetadataString archiveName)
+{	this.archiveName = archiveName;
+}
+/**
+	Heavy Weight Direct setter method for archiveName
+**/ 
+
+public void hwSetArchiveNameMetadata(MetadataString archiveName)
+{	 if(this.archiveName!=null && this.archiveName.getValue()!=null && hasTermVector())
+		 termVector().remove(this.archiveName.termVector());
+	 this.archiveName = archiveName;
 	rebuildCompositeTermVector();
 }
 /**
