@@ -75,6 +75,8 @@ ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord.class,
 
 ecologylab.semantics.generated.library.bibManaging.CiteseerxSimilar.class,
 
+ecologylab.semantics.generated.library.bibManaging.CiteseerxSearch.class,
+
 ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary.class,
 
 Bookmark.class,
