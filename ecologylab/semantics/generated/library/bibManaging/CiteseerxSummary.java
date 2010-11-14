@@ -38,9 +38,6 @@ import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Surrogate;
 import ecologylab.semantics.metadata.builtins.Text;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
@@ -61,8 +58,8 @@ public class  CiteseerxSummary
 extends  CiteseerxRecord
 {
 
-	@simpl_scalar private MetadataString	sourceBibtex;
-	@simpl_scalar private MetadataParsedURL	citationPage;
+
+private  @simpl_composite @mm_name("source") Source	source;	@simpl_scalar private MetadataParsedURL	citationPage;
 	@simpl_scalar private MetadataParsedURL	cocitationPage;
 
 /**
@@ -84,73 +81,37 @@ super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for sourceBibtex
+	Lazy Evaluation for source
 **/ 
 
-public MetadataString	sourceBibtex()
+public Source	source()
 {
-MetadataString	result	=this.sourceBibtex;
+Source	result	=this.source;
 if(result == null)
 {
-result = new MetadataString();
-this.sourceBibtex	=	 result;
+result = new Source();
+this.source	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field sourceBibtex
+	Set the value of field source
 **/ 
 
-public String getSourceBibtex()
+public void setSource( Source source )
 {
-	return sourceBibtex().getValue();
+this.source = source ;
 }
 
 /**
-	Sets the value of the field sourceBibtex
+	Get the value of field source
 **/ 
 
-public void setSourceBibtex( String sourceBibtex )
-{
-	this.sourceBibtex().setValue(sourceBibtex);
+public Source getSource(){
+return this.source;
 }
 
-/**
-	The heavy weight setter method for field sourceBibtex
-**/ 
-
-public void hwSetSourceBibtex( String sourceBibtex )
-{
-	this.sourceBibtex().setValue(sourceBibtex);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: sourceBibtex
-**/ 
-
-public boolean isNullSourceBibtex()
-{
-	return sourceBibtex == null || sourceBibtex.getValue() == null;
-}
-
-/**
-	 Sets the sourceBibtex directly
-**/ 
-
-public void setSourceBibtexMetadata(MetadataString sourceBibtex)
-{	this.sourceBibtex = sourceBibtex;
-}
-/**
-	Heavy Weight Direct setter method for sourceBibtex
-**/ 
-
-public void hwSetSourceBibtexMetadata(MetadataString sourceBibtex)
-{	 if(this.sourceBibtex!=null && this.sourceBibtex.getValue()!=null && hasTermVector())
-		 termVector().remove(this.sourceBibtex.termVector());
-	 this.sourceBibtex = sourceBibtex;
-	rebuildCompositeTermVector();
-}
 /**
 	Lazy Evaluation for citationPage
 **/ 

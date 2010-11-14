@@ -38,9 +38,6 @@ import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.Surrogate;
 import ecologylab.semantics.metadata.builtins.Text;
 import ecologylab.semantics.metadata.scalar.*;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
 import ecologylab.serialization.ElementState.xml_tag;
@@ -74,6 +71,8 @@ ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
 ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord.class,
 
 ecologylab.semantics.generated.library.bibManaging.CiteseerxSimilar.class,
+
+ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
 
 ecologylab.semantics.generated.library.bibManaging.CiteseerxSearch.class,
 
