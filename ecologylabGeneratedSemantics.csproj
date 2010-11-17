@@ -142,13 +142,6 @@
     <Compile Include="ecologylab\semantics\generated\library\WikipediaPage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\WikipediaPageForParsing.cs" />
     <Compile Include="ecologylab\semantics\generated\library\WikipediaPageType.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\ClippableDocument.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\DebugMetadata.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\Document.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\Entity.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\Image.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\Surrogate.cs" />
-    <Compile Include="ecologylab\semantics\metadata\builtins\Text.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tscope\GeneratedMetadataTranslations.cs" />
   </ItemGroup>
