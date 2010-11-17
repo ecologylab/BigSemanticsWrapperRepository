@@ -18,7 +18,6 @@ namespace ecologylab.semantics.generated.library.bibManaging
 	/// <summary>
 	/// CiteSeerX search using keywords.
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
 	[simpl_inherit]
 	public class CiteseerxSearch : Search
 	{

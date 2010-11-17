@@ -21,10 +21,11 @@ using ecologylab.semantics.generated.library.bibManaging;
 using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.generated.library.nsdl;
 using ecologylab.semantics.metadata.builtins;
+using ecologylab.serialization;
 
 //developer should modify the namespace
 //by default it falls into ecologylab.serialization
-namespace ecologylab.serialization 
+namespace ecologylab.semantics.generated 
 {
 	public class GeneratedMetadataTranslations
 	{

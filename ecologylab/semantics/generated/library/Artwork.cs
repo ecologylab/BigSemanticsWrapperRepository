@@ -19,7 +19,6 @@ namespace ecologylab.semantics.generated.library
 	/// <summary>
 	/// Artwork class
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
 	[simpl_inherit]
 	public class Artwork : Document
 	{
