@@ -24,6 +24,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
+import ecologylab.semantics.generated.library.scienceDirect.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.urbanspoon.*;
@@ -53,7 +54,6 @@ public class  AcmProceeding
 extends  Document
 {
 
-	 @simpl_collection("search_result") @xml_tag("proceedings") @mm_name("proceedings") private ArrayList<SearchResult>	proceedings;
 	 @simpl_collection("search_result") @xml_tag("papers") @mm_name("papers") private ArrayList<SearchResult>	papers;
 
 /**
@@ -72,38 +72,6 @@ public AcmProceeding()
 public AcmProceeding(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
-}
-
-/**
-	Lazy Evaluation for proceedings
-**/ 
-
-public  ArrayList<SearchResult>	proceedings()
-{
- ArrayList<SearchResult>	result	=this.proceedings;
-if(result == null)
-{
-result = new  ArrayList<SearchResult>();
-this.proceedings	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field proceedings
-**/ 
-
-public void setProceedings(  ArrayList<SearchResult> proceedings )
-{
-this.proceedings = proceedings ;
-}
-
-/**
-	Get the value of field proceedings
-**/ 
-
-public  ArrayList<SearchResult> getProceedings(){
-return this.proceedings;
 }
 
 /**

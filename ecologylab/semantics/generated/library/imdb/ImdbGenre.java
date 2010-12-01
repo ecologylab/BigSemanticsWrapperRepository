@@ -24,6 +24,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
+import ecologylab.semantics.generated.library.scienceDirect.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.urbanspoon.*;

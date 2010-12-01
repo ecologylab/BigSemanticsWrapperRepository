@@ -24,6 +24,7 @@ import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
+import ecologylab.semantics.generated.library.scienceDirect.*;
 import ecologylab.semantics.generated.library.search.*;
 import ecologylab.semantics.generated.library.slashdot.*;
 import ecologylab.semantics.generated.library.urbanspoon.*;
@@ -110,6 +111,14 @@ ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
 ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
+Chapter.class,
+
+Term.class,
+
+Subject.class,
+
+ecologylab.semantics.generated.library.GoogleBook.class,
+
 ecologylab.semantics.generated.library.GoogleImageSearchPage.class,
 
 ImageResult.class,
@@ -189,6 +198,8 @@ ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.cla
 ecologylab.semantics.generated.library.scholarlyPublication.Author.class,
 
 ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
+
+ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
 
 ecologylab.semantics.generated.library.search.ImageInSearchResult.class,
 

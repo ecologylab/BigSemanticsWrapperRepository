@@ -42,16 +42,16 @@ import java.util.*;
 
 @simpl_inherit
 
-public class Category extends Metadata{
+public class Subject extends Metadata{
 
-	@simpl_scalar private MetadataString	name;
-	@simpl_scalar private MetadataParsedURL	catLink;
+	@simpl_scalar private MetadataParsedURL	location;
+	@simpl_scalar private MetadataString	subject;
 
 /**
 	Constructor
 **/ 
 
-public Category()
+public Subject()
 {
  super();
 }
@@ -60,144 +60,144 @@ public Category()
 	Constructor
 **/ 
 
-public Category(MetaMetadataCompositeField metaMetadata)
+public Subject(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for name
+	Lazy Evaluation for location
 **/ 
 
-public MetadataString	name()
+public MetadataParsedURL	location()
 {
-MetadataString	result	=this.name;
-if(result == null)
-{
-result = new MetadataString();
-this.name	=	 result;
-}
-return result;
-}
-
-/**
-	Gets the value of the field name
-**/ 
-
-public String getName()
-{
-	return name().getValue();
-}
-
-/**
-	Sets the value of the field name
-**/ 
-
-public void setName( String name )
-{
-	this.name().setValue(name);
-}
-
-/**
-	The heavy weight setter method for field name
-**/ 
-
-public void hwSetName( String name )
-{
-	this.name().setValue(name);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: name
-**/ 
-
-public boolean isNullName()
-{
-	return name == null || name.getValue() == null;
-}
-
-/**
-	 Sets the name directly
-**/ 
-
-public void setNameMetadata(MetadataString name)
-{	this.name = name;
-}
-/**
-	Heavy Weight Direct setter method for name
-**/ 
-
-public void hwSetNameMetadata(MetadataString name)
-{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
-		 termVector().remove(this.name.termVector());
-	 this.name = name;
-	rebuildCompositeTermVector();
-}
-/**
-	Lazy Evaluation for catLink
-**/ 
-
-public MetadataParsedURL	catLink()
-{
-MetadataParsedURL	result	=this.catLink;
+MetadataParsedURL	result	=this.location;
 if(result == null)
 {
 result = new MetadataParsedURL();
-this.catLink	=	 result;
+this.location	=	 result;
 }
 return result;
 }
 
 /**
-	Gets the value of the field catLink
+	Gets the value of the field location
 **/ 
 
-public ParsedURL getCatLink()
+public ParsedURL getLocation()
 {
-	return catLink().getValue();
+	return location().getValue();
 }
 
 /**
-	Sets the value of the field catLink
+	Sets the value of the field location
 **/ 
 
-public void setCatLink( ParsedURL catLink )
+public void setLocation( ParsedURL location )
 {
-	this.catLink().setValue(catLink);
+	this.location().setValue(location);
 }
 
 /**
-	The heavy weight setter method for field catLink
+	The heavy weight setter method for field location
 **/ 
 
-public void hwSetCatLink( ParsedURL catLink )
+public void hwSetLocation( ParsedURL location )
 {
-	this.catLink().setValue(catLink);
+	this.location().setValue(location);
 	rebuildCompositeTermVector();
 }
 /**
-	Tests to see if the value of the field is null, or if the field itself is null: catLink
+	Tests to see if the value of the field is null, or if the field itself is null: location
 **/ 
 
-public boolean isNullCatLink()
+public boolean isNullLocation()
 {
-	return catLink == null || catLink.getValue() == null;
+	return location == null || location.getValue() == null;
 }
 
 /**
-	 Sets the catLink directly
+	 Sets the location directly
 **/ 
 
-public void setCatLinkMetadata(MetadataParsedURL catLink)
-{	this.catLink = catLink;
+public void setLocationMetadata(MetadataParsedURL location)
+{	this.location = location;
 }
 /**
-	Heavy Weight Direct setter method for catLink
+	Heavy Weight Direct setter method for location
 **/ 
 
-public void hwSetCatLinkMetadata(MetadataParsedURL catLink)
-{	 if(this.catLink!=null && this.catLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.catLink.termVector());
-	 this.catLink = catLink;
+public void hwSetLocationMetadata(MetadataParsedURL location)
+{	 if(this.location!=null && this.location.getValue()!=null && hasTermVector())
+		 termVector().remove(this.location.termVector());
+	 this.location = location;
+	rebuildCompositeTermVector();
+}
+/**
+	Lazy Evaluation for subject
+**/ 
+
+public MetadataString	subject()
+{
+MetadataString	result	=this.subject;
+if(result == null)
+{
+result = new MetadataString();
+this.subject	=	 result;
+}
+return result;
+}
+
+/**
+	Gets the value of the field subject
+**/ 
+
+public String getSubject()
+{
+	return subject().getValue();
+}
+
+/**
+	Sets the value of the field subject
+**/ 
+
+public void setSubject( String subject )
+{
+	this.subject().setValue(subject);
+}
+
+/**
+	The heavy weight setter method for field subject
+**/ 
+
+public void hwSetSubject( String subject )
+{
+	this.subject().setValue(subject);
+	rebuildCompositeTermVector();
+}
+/**
+	Tests to see if the value of the field is null, or if the field itself is null: subject
+**/ 
+
+public boolean isNullSubject()
+{
+	return subject == null || subject.getValue() == null;
+}
+
+/**
+	 Sets the subject directly
+**/ 
+
+public void setSubjectMetadata(MetadataString subject)
+{	this.subject = subject;
+}
+/**
+	Heavy Weight Direct setter method for subject
+**/ 
+
+public void hwSetSubjectMetadata(MetadataString subject)
+{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
+		 termVector().remove(this.subject.termVector());
+	 this.subject = subject;
 	rebuildCompositeTermVector();
 }}
