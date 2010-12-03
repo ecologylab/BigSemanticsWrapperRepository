@@ -207,9 +207,11 @@ ecologylab.semantics.generated.library.search.BingSearch.class,
 
 ecologylab.semantics.generated.library.search.YahooResult.class,
 
-ecologylab.semantics.generated.library.search.YahooThumbnail.class,
+ecologylab.semantics.generated.library.search.GoogleScholarSearchResult.class,
 
 ecologylab.semantics.generated.library.search.BingWebSearchResult.class,
+
+ecologylab.semantics.generated.library.search.YahooThumbnail.class,
 
 ecologylab.semantics.generated.library.search.YahooResultSet.class,
 
@@ -220,6 +222,8 @@ ecologylab.semantics.generated.library.search.BingImageSearchResult.class,
 ecologylab.semantics.generated.library.search.SearchResult.class,
 
 ecologylab.semantics.generated.library.search.BingSearchWebSection.class,
+
+ecologylab.semantics.generated.library.search.GoogleScholarSearch.class,
 
 ecologylab.semantics.generated.library.search.BingSearchImageSection.class,
 
