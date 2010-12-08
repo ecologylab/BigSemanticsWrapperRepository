@@ -19,6 +19,7 @@ namespace ecologylab.semantics.generated.library.icdl
 	/// The ICDL class
 	/// </summary>
 	[simpl_inherit]
+    [simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
 	public class Icdl : Document
 	{
 		/// <summary>

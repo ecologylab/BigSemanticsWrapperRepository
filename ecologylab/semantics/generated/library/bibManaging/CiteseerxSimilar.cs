@@ -18,6 +18,7 @@ namespace ecologylab.semantics.generated.library.bibManaging
 	/// Citation or co-citation page from CiteSeerX.
 	/// </summary>
 	[simpl_inherit]
+    [simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
 	public class CiteseerxSimilar : CiteseerxRecord
 	{
 		public CiteseerxSimilar()
