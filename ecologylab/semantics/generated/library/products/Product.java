@@ -56,6 +56,9 @@ extends Document
 private MetadataString	price;
 
 @simpl_scalar
+private MetadataString	model;
+
+@simpl_scalar
 private MetadataParsedURL	imageUrl;
 
 @simpl_scalar
@@ -145,6 +148,72 @@ public void hwSetPriceMetadata(MetadataString price)
 	if (this.price != null && this.price.getValue() != null && hasTermVector())
 		termVector().remove(this.price.termVector());
 	this.price = price;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for model
+*/
+public MetadataString	model()
+{
+	MetadataString	result = this.model;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.model = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field model
+*/
+public String getModel()
+{
+	return this.model().getValue();
+}
+
+/**
+	Sets the value of the field model
+*/
+public void setModel(String model)
+{
+	this.model().setValue(model);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: model
+*/
+public boolean isNullModel()
+{
+	return model == null || model.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field model
+*/
+public void hwSetModel(String model)
+{
+	this.model().setValue(model);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the model directly.
+*/
+public void setModelMetadata(MetadataString model)
+{
+	this.model = model;
+}
+
+/**
+	Heavy Weight Direct setter method for model
+*/
+public void hwSetModelMetadata(MetadataString model)
+{
+	if (this.model != null && this.model.getValue() != null && hasTermVector())
+		termVector().remove(this.model.termVector());
+	this.model = model;
 	rebuildCompositeTermVector();
 }
 
