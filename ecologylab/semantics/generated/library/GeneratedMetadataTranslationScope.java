@@ -170,6 +170,8 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.opml.Opml.class,
 
+		ecologylab.semantics.generated.library.products.ProductReview.class,
+
 		ecologylab.semantics.generated.library.products.Product.class,
 
 		ecologylab.semantics.generated.library.Restaurant.class,

@@ -55,6 +55,15 @@ extends Document
 @simpl_scalar
 private MetadataString	price;
 
+@simpl_scalar
+private MetadataParsedURL	imageUrl;
+
+@simpl_scalar
+private MetadataString	overallRating;
+
+@simpl_collection("product_review") @xml_tag("reviews") @mm_name("reviews")
+private ArrayList<ProductReview>	reviews;
+
 
 
 /**
@@ -137,6 +146,168 @@ public void hwSetPriceMetadata(MetadataString price)
 		termVector().remove(this.price.termVector());
 	this.price = price;
 	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for imageUrl
+*/
+public MetadataParsedURL	imageUrl()
+{
+	MetadataParsedURL	result = this.imageUrl;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.imageUrl = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field imageUrl
+*/
+public ParsedURL getImageUrl()
+{
+	return this.imageUrl().getValue();
+}
+
+/**
+	Sets the value of the field imageUrl
+*/
+public void setImageUrl(ParsedURL imageUrl)
+{
+	this.imageUrl().setValue(imageUrl);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: imageUrl
+*/
+public boolean isNullImageUrl()
+{
+	return imageUrl == null || imageUrl.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field imageUrl
+*/
+public void hwSetImageUrl(ParsedURL imageUrl)
+{
+	this.imageUrl().setValue(imageUrl);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the imageUrl directly.
+*/
+public void setImageUrlMetadata(MetadataParsedURL imageUrl)
+{
+	this.imageUrl = imageUrl;
+}
+
+/**
+	Heavy Weight Direct setter method for imageUrl
+*/
+public void hwSetImageUrlMetadata(MetadataParsedURL imageUrl)
+{
+	if (this.imageUrl != null && this.imageUrl.getValue() != null && hasTermVector())
+		termVector().remove(this.imageUrl.termVector());
+	this.imageUrl = imageUrl;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for overallRating
+*/
+public MetadataString	overallRating()
+{
+	MetadataString	result = this.overallRating;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.overallRating = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field overallRating
+*/
+public String getOverallRating()
+{
+	return this.overallRating().getValue();
+}
+
+/**
+	Sets the value of the field overallRating
+*/
+public void setOverallRating(String overallRating)
+{
+	this.overallRating().setValue(overallRating);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: overallRating
+*/
+public boolean isNullOverallRating()
+{
+	return overallRating == null || overallRating.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field overallRating
+*/
+public void hwSetOverallRating(String overallRating)
+{
+	this.overallRating().setValue(overallRating);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the overallRating directly.
+*/
+public void setOverallRatingMetadata(MetadataString overallRating)
+{
+	this.overallRating = overallRating;
+}
+
+/**
+	Heavy Weight Direct setter method for overallRating
+*/
+public void hwSetOverallRatingMetadata(MetadataString overallRating)
+{
+	if (this.overallRating != null && this.overallRating.getValue() != null && hasTermVector())
+		termVector().remove(this.overallRating.termVector());
+	this.overallRating = overallRating;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for reviews
+*/
+public ArrayList<ProductReview>	reviews()
+{
+	ArrayList<ProductReview>	result = this.reviews;
+	if (result == null)
+	{
+		result = new ArrayList<ProductReview>();
+		this.reviews = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field reviews
+*/
+public ArrayList<ProductReview> getReviews()
+{
+	return this.reviews;
+}
+
+/**
+	Set the value of field reviews
+*/
+public void setReviews(ArrayList<ProductReview> reviews)
+{
+	this.reviews = reviews;
 }
 
 
