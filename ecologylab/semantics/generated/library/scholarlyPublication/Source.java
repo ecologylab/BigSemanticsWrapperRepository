@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.scholarlyPublication;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,34 +44,43 @@ import java.util.*;
 
 /**
 	Metadata related to where an article is published.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  Source
-extends  Document
+public class Source
+extends Document
 {
 
-	@simpl_scalar private MetadataInteger	yearOfPublication;
+@simpl_scalar
+private MetadataInteger	yearOfPublication;
+
 
 /**
 	Archive of conference or journal.
-**/ 
+*/
+@simpl_scalar
+private MetadataString	archiveName;
 
-	@simpl_scalar private MetadataString	archiveName;
 
 /**
 	Url to the archive of conference or journal.
-**/ 
+*/
+@simpl_scalar
+private MetadataParsedURL	archive;
 
-	@simpl_scalar private MetadataParsedURL	archive;
-	@simpl_scalar private MetadataString	pages;
-	@simpl_scalar private MetadataString	isbn;
+@simpl_scalar
+private MetadataString	pages;
+
+@simpl_scalar
+private MetadataString	isbn;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Source()
 {
  super();
@@ -86,352 +88,342 @@ public Source()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Source(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for yearOfPublication
-**/ 
-
+	Lazy evaluation for yearOfPublication
+*/
 public MetadataInteger	yearOfPublication()
 {
-MetadataInteger	result	=this.yearOfPublication;
-if(result == null)
-{
-result = new MetadataInteger();
-this.yearOfPublication	=	 result;
-}
-return result;
+	MetadataInteger	result = this.yearOfPublication;
+	if (result == null)
+	{
+		result = new MetadataInteger();
+		this.yearOfPublication = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field yearOfPublication
-**/ 
-
+*/
 public Integer getYearOfPublication()
 {
-	return yearOfPublication().getValue();
+	return this.yearOfPublication().getValue();
 }
 
 /**
 	Sets the value of the field yearOfPublication
-**/ 
-
-public void setYearOfPublication( Integer yearOfPublication )
+*/
+public void setYearOfPublication(Integer yearOfPublication)
 {
 	this.yearOfPublication().setValue(yearOfPublication);
 }
 
 /**
-	The heavy weight setter method for field yearOfPublication
-**/ 
-
-public void hwSetYearOfPublication( Integer yearOfPublication )
-{
-	this.yearOfPublication().setValue(yearOfPublication);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: yearOfPublication
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: yearOfPublication
+*/
 public boolean isNullYearOfPublication()
 {
 	return yearOfPublication == null || yearOfPublication.getValue() == null;
 }
 
 /**
-	 Sets the yearOfPublication directly
-**/ 
-
-public void setYearOfPublicationMetadata(MetadataInteger yearOfPublication)
-{	this.yearOfPublication = yearOfPublication;
-}
-/**
-	Heavy Weight Direct setter method for yearOfPublication
-**/ 
-
-public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
-{	 if(this.yearOfPublication!=null && this.yearOfPublication.getValue()!=null && hasTermVector())
-		 termVector().remove(this.yearOfPublication.termVector());
-	 this.yearOfPublication = yearOfPublication;
+	The heavy weight setter method for field yearOfPublication
+*/
+public void hwSetYearOfPublication(Integer yearOfPublication)
+{
+	this.yearOfPublication().setValue(yearOfPublication);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for archiveName
-**/ 
 
+/**
+	 Sets the yearOfPublication directly.
+*/
+public void setYearOfPublicationMetadata(MetadataInteger yearOfPublication)
+{
+	this.yearOfPublication = yearOfPublication;
+}
+
+/**
+	Heavy Weight Direct setter method for yearOfPublication
+*/
+public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
+{
+	if (this.yearOfPublication != null && this.yearOfPublication.getValue() != null && hasTermVector())
+		termVector().remove(this.yearOfPublication.termVector());
+	this.yearOfPublication = yearOfPublication;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for archiveName
+*/
 public MetadataString	archiveName()
 {
-MetadataString	result	=this.archiveName;
-if(result == null)
-{
-result = new MetadataString();
-this.archiveName	=	 result;
-}
-return result;
+	MetadataString	result = this.archiveName;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.archiveName = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field archiveName
-**/ 
-
+*/
 public String getArchiveName()
 {
-	return archiveName().getValue();
+	return this.archiveName().getValue();
 }
 
 /**
 	Sets the value of the field archiveName
-**/ 
-
-public void setArchiveName( String archiveName )
+*/
+public void setArchiveName(String archiveName)
 {
 	this.archiveName().setValue(archiveName);
 }
 
 /**
-	The heavy weight setter method for field archiveName
-**/ 
-
-public void hwSetArchiveName( String archiveName )
-{
-	this.archiveName().setValue(archiveName);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: archiveName
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: archiveName
+*/
 public boolean isNullArchiveName()
 {
 	return archiveName == null || archiveName.getValue() == null;
 }
 
 /**
-	 Sets the archiveName directly
-**/ 
-
-public void setArchiveNameMetadata(MetadataString archiveName)
-{	this.archiveName = archiveName;
-}
-/**
-	Heavy Weight Direct setter method for archiveName
-**/ 
-
-public void hwSetArchiveNameMetadata(MetadataString archiveName)
-{	 if(this.archiveName!=null && this.archiveName.getValue()!=null && hasTermVector())
-		 termVector().remove(this.archiveName.termVector());
-	 this.archiveName = archiveName;
+	The heavy weight setter method for field archiveName
+*/
+public void hwSetArchiveName(String archiveName)
+{
+	this.archiveName().setValue(archiveName);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for archive
-**/ 
 
+/**
+	 Sets the archiveName directly.
+*/
+public void setArchiveNameMetadata(MetadataString archiveName)
+{
+	this.archiveName = archiveName;
+}
+
+/**
+	Heavy Weight Direct setter method for archiveName
+*/
+public void hwSetArchiveNameMetadata(MetadataString archiveName)
+{
+	if (this.archiveName != null && this.archiveName.getValue() != null && hasTermVector())
+		termVector().remove(this.archiveName.termVector());
+	this.archiveName = archiveName;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for archive
+*/
 public MetadataParsedURL	archive()
 {
-MetadataParsedURL	result	=this.archive;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.archive	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.archive;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.archive = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field archive
-**/ 
-
+*/
 public ParsedURL getArchive()
 {
-	return archive().getValue();
+	return this.archive().getValue();
 }
 
 /**
 	Sets the value of the field archive
-**/ 
-
-public void setArchive( ParsedURL archive )
+*/
+public void setArchive(ParsedURL archive)
 {
 	this.archive().setValue(archive);
 }
 
 /**
-	The heavy weight setter method for field archive
-**/ 
-
-public void hwSetArchive( ParsedURL archive )
-{
-	this.archive().setValue(archive);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: archive
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: archive
+*/
 public boolean isNullArchive()
 {
 	return archive == null || archive.getValue() == null;
 }
 
 /**
-	 Sets the archive directly
-**/ 
-
-public void setArchiveMetadata(MetadataParsedURL archive)
-{	this.archive = archive;
-}
-/**
-	Heavy Weight Direct setter method for archive
-**/ 
-
-public void hwSetArchiveMetadata(MetadataParsedURL archive)
-{	 if(this.archive!=null && this.archive.getValue()!=null && hasTermVector())
-		 termVector().remove(this.archive.termVector());
-	 this.archive = archive;
+	The heavy weight setter method for field archive
+*/
+public void hwSetArchive(ParsedURL archive)
+{
+	this.archive().setValue(archive);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for pages
-**/ 
 
+/**
+	 Sets the archive directly.
+*/
+public void setArchiveMetadata(MetadataParsedURL archive)
+{
+	this.archive = archive;
+}
+
+/**
+	Heavy Weight Direct setter method for archive
+*/
+public void hwSetArchiveMetadata(MetadataParsedURL archive)
+{
+	if (this.archive != null && this.archive.getValue() != null && hasTermVector())
+		termVector().remove(this.archive.termVector());
+	this.archive = archive;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for pages
+*/
 public MetadataString	pages()
 {
-MetadataString	result	=this.pages;
-if(result == null)
-{
-result = new MetadataString();
-this.pages	=	 result;
-}
-return result;
+	MetadataString	result = this.pages;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.pages = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field pages
-**/ 
-
+*/
 public String getPages()
 {
-	return pages().getValue();
+	return this.pages().getValue();
 }
 
 /**
 	Sets the value of the field pages
-**/ 
-
-public void setPages( String pages )
+*/
+public void setPages(String pages)
 {
 	this.pages().setValue(pages);
 }
 
 /**
-	The heavy weight setter method for field pages
-**/ 
-
-public void hwSetPages( String pages )
-{
-	this.pages().setValue(pages);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: pages
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: pages
+*/
 public boolean isNullPages()
 {
 	return pages == null || pages.getValue() == null;
 }
 
 /**
-	 Sets the pages directly
-**/ 
-
-public void setPagesMetadata(MetadataString pages)
-{	this.pages = pages;
-}
-/**
-	Heavy Weight Direct setter method for pages
-**/ 
-
-public void hwSetPagesMetadata(MetadataString pages)
-{	 if(this.pages!=null && this.pages.getValue()!=null && hasTermVector())
-		 termVector().remove(this.pages.termVector());
-	 this.pages = pages;
+	The heavy weight setter method for field pages
+*/
+public void hwSetPages(String pages)
+{
+	this.pages().setValue(pages);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for isbn
-**/ 
 
+/**
+	 Sets the pages directly.
+*/
+public void setPagesMetadata(MetadataString pages)
+{
+	this.pages = pages;
+}
+
+/**
+	Heavy Weight Direct setter method for pages
+*/
+public void hwSetPagesMetadata(MetadataString pages)
+{
+	if (this.pages != null && this.pages.getValue() != null && hasTermVector())
+		termVector().remove(this.pages.termVector());
+	this.pages = pages;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for isbn
+*/
 public MetadataString	isbn()
 {
-MetadataString	result	=this.isbn;
-if(result == null)
-{
-result = new MetadataString();
-this.isbn	=	 result;
-}
-return result;
+	MetadataString	result = this.isbn;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.isbn = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field isbn
-**/ 
-
+*/
 public String getIsbn()
 {
-	return isbn().getValue();
+	return this.isbn().getValue();
 }
 
 /**
 	Sets the value of the field isbn
-**/ 
-
-public void setIsbn( String isbn )
+*/
+public void setIsbn(String isbn)
 {
 	this.isbn().setValue(isbn);
 }
 
 /**
-	The heavy weight setter method for field isbn
-**/ 
-
-public void hwSetIsbn( String isbn )
-{
-	this.isbn().setValue(isbn);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: isbn
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: isbn
+*/
 public boolean isNullIsbn()
 {
 	return isbn == null || isbn.getValue() == null;
 }
 
 /**
-	 Sets the isbn directly
-**/ 
-
-public void setIsbnMetadata(MetadataString isbn)
-{	this.isbn = isbn;
-}
-/**
-	Heavy Weight Direct setter method for isbn
-**/ 
-
-public void hwSetIsbnMetadata(MetadataString isbn)
-{	 if(this.isbn!=null && this.isbn.getValue()!=null && hasTermVector())
-		 termVector().remove(this.isbn.termVector());
-	 this.isbn = isbn;
+	The heavy weight setter method for field isbn
+*/
+public void hwSetIsbn(String isbn)
+{
+	this.isbn().setValue(isbn);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the isbn directly.
+*/
+public void setIsbnMetadata(MetadataString isbn)
+{
+	this.isbn = isbn;
+}
+
+/**
+	Heavy Weight Direct setter method for isbn
+*/
+public void hwSetIsbnMetadata(MetadataString isbn)
+{
+	if (this.isbn != null && this.isbn.getValue() != null && hasTermVector())
+		termVector().remove(this.isbn.termVector());
+	this.isbn = isbn;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

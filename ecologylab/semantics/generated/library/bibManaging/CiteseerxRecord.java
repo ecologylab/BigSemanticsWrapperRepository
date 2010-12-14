@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.bibManaging;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	CiteSeerX record for an article.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  CiteseerxRecord
-extends  ScholarlyArticle
+public class CiteseerxRecord
+extends ScholarlyArticle
 {
 
+@simpl_composite @mm_name("citation_info")
+private CitationInfo	citationInfo;
 
-private  @simpl_composite @mm_name("citation_info") CitationInfo	citationInfo;
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public CiteseerxRecord()
 {
  super();
@@ -72,44 +68,42 @@ public CiteseerxRecord()
 
 /**
 	Constructor
-**/ 
-
+*/
 public CiteseerxRecord(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for citationInfo
-**/ 
-
+	Lazy evaluation for citationInfo
+*/
 public CitationInfo	citationInfo()
 {
-CitationInfo	result	=this.citationInfo;
-if(result == null)
-{
-result = new CitationInfo();
-this.citationInfo	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field citationInfo
-**/ 
-
-public void setCitationInfo( CitationInfo citationInfo )
-{
-this.citationInfo = citationInfo ;
+	CitationInfo	result = this.citationInfo;
+	if (result == null)
+	{
+		result = new CitationInfo();
+		this.citationInfo = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field citationInfo
-**/ 
-
-public CitationInfo getCitationInfo(){
-return this.citationInfo;
+*/
+public CitationInfo getCitationInfo()
+{
+	return this.citationInfo;
 }
+
+/**
+	Set the value of field citationInfo
+*/
+public void setCitationInfo(CitationInfo citationInfo)
+{
+	this.citationInfo = citationInfo;
+}
+
 
 }
 

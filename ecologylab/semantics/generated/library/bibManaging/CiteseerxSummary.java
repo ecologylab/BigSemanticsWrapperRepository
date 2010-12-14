@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.bibManaging;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,22 +44,26 @@ import java.util.*;
 
 /**
 	Summary page from CiteSeerX.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  CiteseerxSummary
-extends  CiteseerxRecord
+public class CiteseerxSummary
+extends CiteseerxRecord
 {
 
+@simpl_scalar
+private MetadataParsedURL	citationPage;
 
-private  @simpl_composite @mm_name("source") Source	source;	@simpl_scalar private MetadataParsedURL	citationPage;
-	@simpl_scalar private MetadataParsedURL	cocitationPage;
+@simpl_scalar
+private MetadataParsedURL	cocitationPage;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public CiteseerxSummary()
 {
  super();
@@ -74,180 +71,144 @@ public CiteseerxSummary()
 
 /**
 	Constructor
-**/ 
-
+*/
 public CiteseerxSummary(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for source
-**/ 
-
-public Source	source()
-{
-Source	result	=this.source;
-if(result == null)
-{
-result = new Source();
-this.source	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field source
-**/ 
-
-public void setSource( Source source )
-{
-this.source = source ;
-}
-
-/**
-	Get the value of field source
-**/ 
-
-public Source getSource(){
-return this.source;
-}
-
-/**
-	Lazy Evaluation for citationPage
-**/ 
-
+	Lazy evaluation for citationPage
+*/
 public MetadataParsedURL	citationPage()
 {
-MetadataParsedURL	result	=this.citationPage;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.citationPage	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.citationPage;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.citationPage = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field citationPage
-**/ 
-
+*/
 public ParsedURL getCitationPage()
 {
-	return citationPage().getValue();
+	return this.citationPage().getValue();
 }
 
 /**
 	Sets the value of the field citationPage
-**/ 
-
-public void setCitationPage( ParsedURL citationPage )
+*/
+public void setCitationPage(ParsedURL citationPage)
 {
 	this.citationPage().setValue(citationPage);
 }
 
 /**
-	The heavy weight setter method for field citationPage
-**/ 
-
-public void hwSetCitationPage( ParsedURL citationPage )
-{
-	this.citationPage().setValue(citationPage);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: citationPage
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: citationPage
+*/
 public boolean isNullCitationPage()
 {
 	return citationPage == null || citationPage.getValue() == null;
 }
 
 /**
-	 Sets the citationPage directly
-**/ 
-
-public void setCitationPageMetadata(MetadataParsedURL citationPage)
-{	this.citationPage = citationPage;
-}
-/**
-	Heavy Weight Direct setter method for citationPage
-**/ 
-
-public void hwSetCitationPageMetadata(MetadataParsedURL citationPage)
-{	 if(this.citationPage!=null && this.citationPage.getValue()!=null && hasTermVector())
-		 termVector().remove(this.citationPage.termVector());
-	 this.citationPage = citationPage;
+	The heavy weight setter method for field citationPage
+*/
+public void hwSetCitationPage(ParsedURL citationPage)
+{
+	this.citationPage().setValue(citationPage);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for cocitationPage
-**/ 
 
+/**
+	 Sets the citationPage directly.
+*/
+public void setCitationPageMetadata(MetadataParsedURL citationPage)
+{
+	this.citationPage = citationPage;
+}
+
+/**
+	Heavy Weight Direct setter method for citationPage
+*/
+public void hwSetCitationPageMetadata(MetadataParsedURL citationPage)
+{
+	if (this.citationPage != null && this.citationPage.getValue() != null && hasTermVector())
+		termVector().remove(this.citationPage.termVector());
+	this.citationPage = citationPage;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for cocitationPage
+*/
 public MetadataParsedURL	cocitationPage()
 {
-MetadataParsedURL	result	=this.cocitationPage;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.cocitationPage	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.cocitationPage;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.cocitationPage = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field cocitationPage
-**/ 
-
+*/
 public ParsedURL getCocitationPage()
 {
-	return cocitationPage().getValue();
+	return this.cocitationPage().getValue();
 }
 
 /**
 	Sets the value of the field cocitationPage
-**/ 
-
-public void setCocitationPage( ParsedURL cocitationPage )
+*/
+public void setCocitationPage(ParsedURL cocitationPage)
 {
 	this.cocitationPage().setValue(cocitationPage);
 }
 
 /**
-	The heavy weight setter method for field cocitationPage
-**/ 
-
-public void hwSetCocitationPage( ParsedURL cocitationPage )
-{
-	this.cocitationPage().setValue(cocitationPage);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: cocitationPage
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: cocitationPage
+*/
 public boolean isNullCocitationPage()
 {
 	return cocitationPage == null || cocitationPage.getValue() == null;
 }
 
 /**
-	 Sets the cocitationPage directly
-**/ 
-
-public void setCocitationPageMetadata(MetadataParsedURL cocitationPage)
-{	this.cocitationPage = cocitationPage;
-}
-/**
-	Heavy Weight Direct setter method for cocitationPage
-**/ 
-
-public void hwSetCocitationPageMetadata(MetadataParsedURL cocitationPage)
-{	 if(this.cocitationPage!=null && this.cocitationPage.getValue()!=null && hasTermVector())
-		 termVector().remove(this.cocitationPage.termVector());
-	 this.cocitationPage = cocitationPage;
+	The heavy weight setter method for field cocitationPage
+*/
+public void hwSetCocitationPage(ParsedURL cocitationPage)
+{
+	this.cocitationPage().setValue(cocitationPage);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the cocitationPage directly.
+*/
+public void setCocitationPageMetadata(MetadataParsedURL cocitationPage)
+{
+	this.cocitationPage = cocitationPage;
+}
+
+/**
+	Heavy Weight Direct setter method for cocitationPage
+*/
+public void hwSetCocitationPageMetadata(MetadataParsedURL cocitationPage)
+{
+	if (this.cocitationPage != null && this.cocitationPage.getValue() != null && hasTermVector())
+		termVector().remove(this.cocitationPage.termVector());
+	this.cocitationPage = cocitationPage;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

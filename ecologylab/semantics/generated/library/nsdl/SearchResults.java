@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.nsdl;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,16 +41,27 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("SearchResults")
-public class SearchResults extends Metadata{
+public class SearchResults
+extends Metadata
+{
 
-	 @simpl_collection("nsdl_document") @xml_tag("this_should_be_document") @mm_name("results") private ArrayList<NsdlDocument>	results;
+@simpl_collection("nsdl_document") @xml_tag("this_should_be_document") @mm_name("results")
+private ArrayList<NsdlDocument>	results;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public SearchResults()
 {
  super();
@@ -57,42 +69,42 @@ public SearchResults()
 
 /**
 	Constructor
-**/ 
-
+*/
 public SearchResults(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
-**/ 
-
-public  ArrayList<NsdlDocument>	results()
+	Lazy evaluation for results
+*/
+public ArrayList<NsdlDocument>	results()
 {
- ArrayList<NsdlDocument>	result	=this.results;
-if(result == null)
-{
-result = new  ArrayList<NsdlDocument>();
-this.results	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field results
-**/ 
-
-public void setResults(  ArrayList<NsdlDocument> results )
-{
-this.results = results ;
+	ArrayList<NsdlDocument>	result = this.results;
+	if (result == null)
+	{
+		result = new ArrayList<NsdlDocument>();
+		this.results = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field results
-**/ 
+*/
+public ArrayList<NsdlDocument> getResults()
+{
+	return this.results;
+}
 
-public  ArrayList<NsdlDocument> getResults(){
-return this.results;
+/**
+	Set the value of field results
+*/
+public void setResults(ArrayList<NsdlDocument> results)
+{
+	this.results = results;
 }
+
+
 }
+

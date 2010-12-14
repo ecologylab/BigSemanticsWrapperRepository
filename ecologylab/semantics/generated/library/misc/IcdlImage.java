@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.misc;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,25 +44,27 @@ import java.util.*;
 
 /**
 	Image from The Interantional Children's digital library.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  IcdlImage
-extends  Image
+public class IcdlImage
+extends Image
 {
 
 
 /**
 	The language of the library
-**/ 
+*/
+@simpl_scalar
+private MetadataString	languages;
 
-	@simpl_scalar private MetadataString	languages;
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public IcdlImage()
 {
  super();
@@ -77,80 +72,78 @@ public IcdlImage()
 
 /**
 	Constructor
-**/ 
-
+*/
 public IcdlImage(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for languages
-**/ 
-
+	Lazy evaluation for languages
+*/
 public MetadataString	languages()
 {
-MetadataString	result	=this.languages;
-if(result == null)
-{
-result = new MetadataString();
-this.languages	=	 result;
-}
-return result;
+	MetadataString	result = this.languages;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.languages = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field languages
-**/ 
-
+*/
 public String getLanguages()
 {
-	return languages().getValue();
+	return this.languages().getValue();
 }
 
 /**
 	Sets the value of the field languages
-**/ 
-
-public void setLanguages( String languages )
+*/
+public void setLanguages(String languages)
 {
 	this.languages().setValue(languages);
 }
 
 /**
-	The heavy weight setter method for field languages
-**/ 
-
-public void hwSetLanguages( String languages )
-{
-	this.languages().setValue(languages);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: languages
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: languages
+*/
 public boolean isNullLanguages()
 {
 	return languages == null || languages.getValue() == null;
 }
 
 /**
-	 Sets the languages directly
-**/ 
-
-public void setLanguagesMetadata(MetadataString languages)
-{	this.languages = languages;
-}
-/**
-	Heavy Weight Direct setter method for languages
-**/ 
-
-public void hwSetLanguagesMetadata(MetadataString languages)
-{	 if(this.languages!=null && this.languages.getValue()!=null && hasTermVector())
-		 termVector().remove(this.languages.termVector());
-	 this.languages = languages;
+	The heavy weight setter method for field languages
+*/
+public void hwSetLanguages(String languages)
+{
+	this.languages().setValue(languages);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the languages directly.
+*/
+public void setLanguagesMetadata(MetadataString languages)
+{
+	this.languages = languages;
+}
+
+/**
+	Heavy Weight Direct setter method for languages
+*/
+public void hwSetLanguagesMetadata(MetadataString languages)
+{
+	if (this.languages != null && this.languages.getValue() != null && hasTermVector())
+		termVector().remove(this.languages.termVector());
+	this.languages = languages;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.bibManaging;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,19 +44,20 @@ import java.util.*;
 
 /**
 	CiteSeerX search using keywords.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  CiteseerxSearch
-extends  Search
+public class CiteseerxSearch
+extends Search
 {
+
 
 
 /**
 	Constructor
-**/ 
-
+*/
 public CiteseerxSearch()
 {
  super();
@@ -71,12 +65,12 @@ public CiteseerxSearch()
 
 /**
 	Constructor
-**/ 
-
+*/
 public CiteseerxSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
+
 
 }
 

@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.slashdot;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,21 +44,26 @@ import java.util.*;
 
 /**
 	One item in a feed.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  SlashdotItem
-extends  Item
+public class SlashdotItem
+extends Item
 {
 
-	@xml_tag("slash:department")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	department;
-	@xml_tag("slash:section")@simpl_scalar @simpl_hints(Hint.XML_LEAF) private MetadataString	section;
+@simpl_scalar @xml_tag("slash:department") @simpl_hints(Hint.XML_LEAF)
+private MetadataString	department;
+
+@simpl_scalar @xml_tag("slash:section") @simpl_hints(Hint.XML_LEAF)
+private MetadataString	section;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public SlashdotItem()
 {
  super();
@@ -73,148 +71,144 @@ public SlashdotItem()
 
 /**
 	Constructor
-**/ 
-
+*/
 public SlashdotItem(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for department
-**/ 
-
+	Lazy evaluation for department
+*/
 public MetadataString	department()
 {
-MetadataString	result	=this.department;
-if(result == null)
-{
-result = new MetadataString();
-this.department	=	 result;
-}
-return result;
+	MetadataString	result = this.department;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.department = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field department
-**/ 
-
+*/
 public String getDepartment()
 {
-	return department().getValue();
+	return this.department().getValue();
 }
 
 /**
 	Sets the value of the field department
-**/ 
-
-public void setDepartment( String department )
+*/
+public void setDepartment(String department)
 {
 	this.department().setValue(department);
 }
 
 /**
-	The heavy weight setter method for field department
-**/ 
-
-public void hwSetDepartment( String department )
-{
-	this.department().setValue(department);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: department
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: department
+*/
 public boolean isNullDepartment()
 {
 	return department == null || department.getValue() == null;
 }
 
 /**
-	 Sets the department directly
-**/ 
-
-public void setDepartmentMetadata(MetadataString department)
-{	this.department = department;
-}
-/**
-	Heavy Weight Direct setter method for department
-**/ 
-
-public void hwSetDepartmentMetadata(MetadataString department)
-{	 if(this.department!=null && this.department.getValue()!=null && hasTermVector())
-		 termVector().remove(this.department.termVector());
-	 this.department = department;
+	The heavy weight setter method for field department
+*/
+public void hwSetDepartment(String department)
+{
+	this.department().setValue(department);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for section
-**/ 
 
+/**
+	 Sets the department directly.
+*/
+public void setDepartmentMetadata(MetadataString department)
+{
+	this.department = department;
+}
+
+/**
+	Heavy Weight Direct setter method for department
+*/
+public void hwSetDepartmentMetadata(MetadataString department)
+{
+	if (this.department != null && this.department.getValue() != null && hasTermVector())
+		termVector().remove(this.department.termVector());
+	this.department = department;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for section
+*/
 public MetadataString	section()
 {
-MetadataString	result	=this.section;
-if(result == null)
-{
-result = new MetadataString();
-this.section	=	 result;
-}
-return result;
+	MetadataString	result = this.section;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.section = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field section
-**/ 
-
+*/
 public String getSection()
 {
-	return section().getValue();
+	return this.section().getValue();
 }
 
 /**
 	Sets the value of the field section
-**/ 
-
-public void setSection( String section )
+*/
+public void setSection(String section)
 {
 	this.section().setValue(section);
 }
 
 /**
-	The heavy weight setter method for field section
-**/ 
-
-public void hwSetSection( String section )
-{
-	this.section().setValue(section);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: section
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: section
+*/
 public boolean isNullSection()
 {
 	return section == null || section.getValue() == null;
 }
 
 /**
-	 Sets the section directly
-**/ 
-
-public void setSectionMetadata(MetadataString section)
-{	this.section = section;
-}
-/**
-	Heavy Weight Direct setter method for section
-**/ 
-
-public void hwSetSectionMetadata(MetadataString section)
-{	 if(this.section!=null && this.section.getValue()!=null && hasTermVector())
-		 termVector().remove(this.section.termVector());
-	 this.section = section;
+	The heavy weight setter method for field section
+*/
+public void hwSetSection(String section)
+{
+	this.section().setValue(section);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the section directly.
+*/
+public void setSectionMetadata(MetadataString section)
+{
+	this.section = section;
+}
+
+/**
+	Heavy Weight Direct setter method for section
+*/
+public void hwSetSectionMetadata(MetadataString section)
+{
+	if (this.section != null && this.section.getValue() != null && hasTermVector())
+		termVector().remove(this.section.termVector());
+	this.section = section;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

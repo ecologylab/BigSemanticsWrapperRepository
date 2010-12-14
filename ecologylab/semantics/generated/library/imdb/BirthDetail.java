@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.imdb;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,25 +44,38 @@ import java.util.*;
 
 /**
 	Metadata for storing details of birth (date and place) of people
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  BirthDetail
-extends  Document
+public class BirthDetail
+extends Document
 {
 
-	@simpl_scalar private MetadataString	dayOfBirth;
-	@simpl_scalar private MetadataString	yearOfBirth;
-	@simpl_scalar private MetadataString	placeOfBirth;
-	@simpl_scalar private MetadataParsedURL	dayOfBirthLink;
-	@simpl_scalar private MetadataParsedURL	yearOfBirthLink;
-	@simpl_scalar private MetadataParsedURL	placeOfBirthLink;
+@simpl_scalar
+private MetadataString	dayOfBirth;
+
+@simpl_scalar
+private MetadataString	yearOfBirth;
+
+@simpl_scalar
+private MetadataString	placeOfBirth;
+
+@simpl_scalar
+private MetadataParsedURL	dayOfBirthLink;
+
+@simpl_scalar
+private MetadataParsedURL	yearOfBirthLink;
+
+@simpl_scalar
+private MetadataParsedURL	placeOfBirthLink;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public BirthDetail()
 {
  super();
@@ -77,420 +83,408 @@ public BirthDetail()
 
 /**
 	Constructor
-**/ 
-
+*/
 public BirthDetail(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for dayOfBirth
-**/ 
-
+	Lazy evaluation for dayOfBirth
+*/
 public MetadataString	dayOfBirth()
 {
-MetadataString	result	=this.dayOfBirth;
-if(result == null)
-{
-result = new MetadataString();
-this.dayOfBirth	=	 result;
-}
-return result;
+	MetadataString	result = this.dayOfBirth;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.dayOfBirth = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field dayOfBirth
-**/ 
-
+*/
 public String getDayOfBirth()
 {
-	return dayOfBirth().getValue();
+	return this.dayOfBirth().getValue();
 }
 
 /**
 	Sets the value of the field dayOfBirth
-**/ 
-
-public void setDayOfBirth( String dayOfBirth )
+*/
+public void setDayOfBirth(String dayOfBirth)
 {
 	this.dayOfBirth().setValue(dayOfBirth);
 }
 
 /**
-	The heavy weight setter method for field dayOfBirth
-**/ 
-
-public void hwSetDayOfBirth( String dayOfBirth )
-{
-	this.dayOfBirth().setValue(dayOfBirth);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: dayOfBirth
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: dayOfBirth
+*/
 public boolean isNullDayOfBirth()
 {
 	return dayOfBirth == null || dayOfBirth.getValue() == null;
 }
 
 /**
-	 Sets the dayOfBirth directly
-**/ 
-
-public void setDayOfBirthMetadata(MetadataString dayOfBirth)
-{	this.dayOfBirth = dayOfBirth;
-}
-/**
-	Heavy Weight Direct setter method for dayOfBirth
-**/ 
-
-public void hwSetDayOfBirthMetadata(MetadataString dayOfBirth)
-{	 if(this.dayOfBirth!=null && this.dayOfBirth.getValue()!=null && hasTermVector())
-		 termVector().remove(this.dayOfBirth.termVector());
-	 this.dayOfBirth = dayOfBirth;
+	The heavy weight setter method for field dayOfBirth
+*/
+public void hwSetDayOfBirth(String dayOfBirth)
+{
+	this.dayOfBirth().setValue(dayOfBirth);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for yearOfBirth
-**/ 
 
+/**
+	 Sets the dayOfBirth directly.
+*/
+public void setDayOfBirthMetadata(MetadataString dayOfBirth)
+{
+	this.dayOfBirth = dayOfBirth;
+}
+
+/**
+	Heavy Weight Direct setter method for dayOfBirth
+*/
+public void hwSetDayOfBirthMetadata(MetadataString dayOfBirth)
+{
+	if (this.dayOfBirth != null && this.dayOfBirth.getValue() != null && hasTermVector())
+		termVector().remove(this.dayOfBirth.termVector());
+	this.dayOfBirth = dayOfBirth;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for yearOfBirth
+*/
 public MetadataString	yearOfBirth()
 {
-MetadataString	result	=this.yearOfBirth;
-if(result == null)
-{
-result = new MetadataString();
-this.yearOfBirth	=	 result;
-}
-return result;
+	MetadataString	result = this.yearOfBirth;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.yearOfBirth = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field yearOfBirth
-**/ 
-
+*/
 public String getYearOfBirth()
 {
-	return yearOfBirth().getValue();
+	return this.yearOfBirth().getValue();
 }
 
 /**
 	Sets the value of the field yearOfBirth
-**/ 
-
-public void setYearOfBirth( String yearOfBirth )
+*/
+public void setYearOfBirth(String yearOfBirth)
 {
 	this.yearOfBirth().setValue(yearOfBirth);
 }
 
 /**
-	The heavy weight setter method for field yearOfBirth
-**/ 
-
-public void hwSetYearOfBirth( String yearOfBirth )
-{
-	this.yearOfBirth().setValue(yearOfBirth);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: yearOfBirth
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: yearOfBirth
+*/
 public boolean isNullYearOfBirth()
 {
 	return yearOfBirth == null || yearOfBirth.getValue() == null;
 }
 
 /**
-	 Sets the yearOfBirth directly
-**/ 
-
-public void setYearOfBirthMetadata(MetadataString yearOfBirth)
-{	this.yearOfBirth = yearOfBirth;
-}
-/**
-	Heavy Weight Direct setter method for yearOfBirth
-**/ 
-
-public void hwSetYearOfBirthMetadata(MetadataString yearOfBirth)
-{	 if(this.yearOfBirth!=null && this.yearOfBirth.getValue()!=null && hasTermVector())
-		 termVector().remove(this.yearOfBirth.termVector());
-	 this.yearOfBirth = yearOfBirth;
+	The heavy weight setter method for field yearOfBirth
+*/
+public void hwSetYearOfBirth(String yearOfBirth)
+{
+	this.yearOfBirth().setValue(yearOfBirth);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for placeOfBirth
-**/ 
 
+/**
+	 Sets the yearOfBirth directly.
+*/
+public void setYearOfBirthMetadata(MetadataString yearOfBirth)
+{
+	this.yearOfBirth = yearOfBirth;
+}
+
+/**
+	Heavy Weight Direct setter method for yearOfBirth
+*/
+public void hwSetYearOfBirthMetadata(MetadataString yearOfBirth)
+{
+	if (this.yearOfBirth != null && this.yearOfBirth.getValue() != null && hasTermVector())
+		termVector().remove(this.yearOfBirth.termVector());
+	this.yearOfBirth = yearOfBirth;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for placeOfBirth
+*/
 public MetadataString	placeOfBirth()
 {
-MetadataString	result	=this.placeOfBirth;
-if(result == null)
-{
-result = new MetadataString();
-this.placeOfBirth	=	 result;
-}
-return result;
+	MetadataString	result = this.placeOfBirth;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.placeOfBirth = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field placeOfBirth
-**/ 
-
+*/
 public String getPlaceOfBirth()
 {
-	return placeOfBirth().getValue();
+	return this.placeOfBirth().getValue();
 }
 
 /**
 	Sets the value of the field placeOfBirth
-**/ 
-
-public void setPlaceOfBirth( String placeOfBirth )
+*/
+public void setPlaceOfBirth(String placeOfBirth)
 {
 	this.placeOfBirth().setValue(placeOfBirth);
 }
 
 /**
-	The heavy weight setter method for field placeOfBirth
-**/ 
-
-public void hwSetPlaceOfBirth( String placeOfBirth )
-{
-	this.placeOfBirth().setValue(placeOfBirth);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: placeOfBirth
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: placeOfBirth
+*/
 public boolean isNullPlaceOfBirth()
 {
 	return placeOfBirth == null || placeOfBirth.getValue() == null;
 }
 
 /**
-	 Sets the placeOfBirth directly
-**/ 
-
-public void setPlaceOfBirthMetadata(MetadataString placeOfBirth)
-{	this.placeOfBirth = placeOfBirth;
-}
-/**
-	Heavy Weight Direct setter method for placeOfBirth
-**/ 
-
-public void hwSetPlaceOfBirthMetadata(MetadataString placeOfBirth)
-{	 if(this.placeOfBirth!=null && this.placeOfBirth.getValue()!=null && hasTermVector())
-		 termVector().remove(this.placeOfBirth.termVector());
-	 this.placeOfBirth = placeOfBirth;
+	The heavy weight setter method for field placeOfBirth
+*/
+public void hwSetPlaceOfBirth(String placeOfBirth)
+{
+	this.placeOfBirth().setValue(placeOfBirth);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for dayOfBirthLink
-**/ 
 
+/**
+	 Sets the placeOfBirth directly.
+*/
+public void setPlaceOfBirthMetadata(MetadataString placeOfBirth)
+{
+	this.placeOfBirth = placeOfBirth;
+}
+
+/**
+	Heavy Weight Direct setter method for placeOfBirth
+*/
+public void hwSetPlaceOfBirthMetadata(MetadataString placeOfBirth)
+{
+	if (this.placeOfBirth != null && this.placeOfBirth.getValue() != null && hasTermVector())
+		termVector().remove(this.placeOfBirth.termVector());
+	this.placeOfBirth = placeOfBirth;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for dayOfBirthLink
+*/
 public MetadataParsedURL	dayOfBirthLink()
 {
-MetadataParsedURL	result	=this.dayOfBirthLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.dayOfBirthLink	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.dayOfBirthLink;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.dayOfBirthLink = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field dayOfBirthLink
-**/ 
-
+*/
 public ParsedURL getDayOfBirthLink()
 {
-	return dayOfBirthLink().getValue();
+	return this.dayOfBirthLink().getValue();
 }
 
 /**
 	Sets the value of the field dayOfBirthLink
-**/ 
-
-public void setDayOfBirthLink( ParsedURL dayOfBirthLink )
+*/
+public void setDayOfBirthLink(ParsedURL dayOfBirthLink)
 {
 	this.dayOfBirthLink().setValue(dayOfBirthLink);
 }
 
 /**
-	The heavy weight setter method for field dayOfBirthLink
-**/ 
-
-public void hwSetDayOfBirthLink( ParsedURL dayOfBirthLink )
-{
-	this.dayOfBirthLink().setValue(dayOfBirthLink);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: dayOfBirthLink
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: dayOfBirthLink
+*/
 public boolean isNullDayOfBirthLink()
 {
 	return dayOfBirthLink == null || dayOfBirthLink.getValue() == null;
 }
 
 /**
-	 Sets the dayOfBirthLink directly
-**/ 
-
-public void setDayOfBirthLinkMetadata(MetadataParsedURL dayOfBirthLink)
-{	this.dayOfBirthLink = dayOfBirthLink;
-}
-/**
-	Heavy Weight Direct setter method for dayOfBirthLink
-**/ 
-
-public void hwSetDayOfBirthLinkMetadata(MetadataParsedURL dayOfBirthLink)
-{	 if(this.dayOfBirthLink!=null && this.dayOfBirthLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.dayOfBirthLink.termVector());
-	 this.dayOfBirthLink = dayOfBirthLink;
+	The heavy weight setter method for field dayOfBirthLink
+*/
+public void hwSetDayOfBirthLink(ParsedURL dayOfBirthLink)
+{
+	this.dayOfBirthLink().setValue(dayOfBirthLink);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for yearOfBirthLink
-**/ 
 
+/**
+	 Sets the dayOfBirthLink directly.
+*/
+public void setDayOfBirthLinkMetadata(MetadataParsedURL dayOfBirthLink)
+{
+	this.dayOfBirthLink = dayOfBirthLink;
+}
+
+/**
+	Heavy Weight Direct setter method for dayOfBirthLink
+*/
+public void hwSetDayOfBirthLinkMetadata(MetadataParsedURL dayOfBirthLink)
+{
+	if (this.dayOfBirthLink != null && this.dayOfBirthLink.getValue() != null && hasTermVector())
+		termVector().remove(this.dayOfBirthLink.termVector());
+	this.dayOfBirthLink = dayOfBirthLink;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for yearOfBirthLink
+*/
 public MetadataParsedURL	yearOfBirthLink()
 {
-MetadataParsedURL	result	=this.yearOfBirthLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.yearOfBirthLink	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.yearOfBirthLink;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.yearOfBirthLink = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field yearOfBirthLink
-**/ 
-
+*/
 public ParsedURL getYearOfBirthLink()
 {
-	return yearOfBirthLink().getValue();
+	return this.yearOfBirthLink().getValue();
 }
 
 /**
 	Sets the value of the field yearOfBirthLink
-**/ 
-
-public void setYearOfBirthLink( ParsedURL yearOfBirthLink )
+*/
+public void setYearOfBirthLink(ParsedURL yearOfBirthLink)
 {
 	this.yearOfBirthLink().setValue(yearOfBirthLink);
 }
 
 /**
-	The heavy weight setter method for field yearOfBirthLink
-**/ 
-
-public void hwSetYearOfBirthLink( ParsedURL yearOfBirthLink )
-{
-	this.yearOfBirthLink().setValue(yearOfBirthLink);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: yearOfBirthLink
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: yearOfBirthLink
+*/
 public boolean isNullYearOfBirthLink()
 {
 	return yearOfBirthLink == null || yearOfBirthLink.getValue() == null;
 }
 
 /**
-	 Sets the yearOfBirthLink directly
-**/ 
-
-public void setYearOfBirthLinkMetadata(MetadataParsedURL yearOfBirthLink)
-{	this.yearOfBirthLink = yearOfBirthLink;
-}
-/**
-	Heavy Weight Direct setter method for yearOfBirthLink
-**/ 
-
-public void hwSetYearOfBirthLinkMetadata(MetadataParsedURL yearOfBirthLink)
-{	 if(this.yearOfBirthLink!=null && this.yearOfBirthLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.yearOfBirthLink.termVector());
-	 this.yearOfBirthLink = yearOfBirthLink;
+	The heavy weight setter method for field yearOfBirthLink
+*/
+public void hwSetYearOfBirthLink(ParsedURL yearOfBirthLink)
+{
+	this.yearOfBirthLink().setValue(yearOfBirthLink);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for placeOfBirthLink
-**/ 
 
+/**
+	 Sets the yearOfBirthLink directly.
+*/
+public void setYearOfBirthLinkMetadata(MetadataParsedURL yearOfBirthLink)
+{
+	this.yearOfBirthLink = yearOfBirthLink;
+}
+
+/**
+	Heavy Weight Direct setter method for yearOfBirthLink
+*/
+public void hwSetYearOfBirthLinkMetadata(MetadataParsedURL yearOfBirthLink)
+{
+	if (this.yearOfBirthLink != null && this.yearOfBirthLink.getValue() != null && hasTermVector())
+		termVector().remove(this.yearOfBirthLink.termVector());
+	this.yearOfBirthLink = yearOfBirthLink;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for placeOfBirthLink
+*/
 public MetadataParsedURL	placeOfBirthLink()
 {
-MetadataParsedURL	result	=this.placeOfBirthLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.placeOfBirthLink	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.placeOfBirthLink;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.placeOfBirthLink = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field placeOfBirthLink
-**/ 
-
+*/
 public ParsedURL getPlaceOfBirthLink()
 {
-	return placeOfBirthLink().getValue();
+	return this.placeOfBirthLink().getValue();
 }
 
 /**
 	Sets the value of the field placeOfBirthLink
-**/ 
-
-public void setPlaceOfBirthLink( ParsedURL placeOfBirthLink )
+*/
+public void setPlaceOfBirthLink(ParsedURL placeOfBirthLink)
 {
 	this.placeOfBirthLink().setValue(placeOfBirthLink);
 }
 
 /**
-	The heavy weight setter method for field placeOfBirthLink
-**/ 
-
-public void hwSetPlaceOfBirthLink( ParsedURL placeOfBirthLink )
-{
-	this.placeOfBirthLink().setValue(placeOfBirthLink);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: placeOfBirthLink
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: placeOfBirthLink
+*/
 public boolean isNullPlaceOfBirthLink()
 {
 	return placeOfBirthLink == null || placeOfBirthLink.getValue() == null;
 }
 
 /**
-	 Sets the placeOfBirthLink directly
-**/ 
-
-public void setPlaceOfBirthLinkMetadata(MetadataParsedURL placeOfBirthLink)
-{	this.placeOfBirthLink = placeOfBirthLink;
-}
-/**
-	Heavy Weight Direct setter method for placeOfBirthLink
-**/ 
-
-public void hwSetPlaceOfBirthLinkMetadata(MetadataParsedURL placeOfBirthLink)
-{	 if(this.placeOfBirthLink!=null && this.placeOfBirthLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.placeOfBirthLink.termVector());
-	 this.placeOfBirthLink = placeOfBirthLink;
+	The heavy weight setter method for field placeOfBirthLink
+*/
+public void hwSetPlaceOfBirthLink(ParsedURL placeOfBirthLink)
+{
+	this.placeOfBirthLink().setValue(placeOfBirthLink);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the placeOfBirthLink directly.
+*/
+public void setPlaceOfBirthLinkMetadata(MetadataParsedURL placeOfBirthLink)
+{
+	this.placeOfBirthLink = placeOfBirthLink;
+}
+
+/**
+	Heavy Weight Direct setter method for placeOfBirthLink
+*/
+public void hwSetPlaceOfBirthLinkMetadata(MetadataParsedURL placeOfBirthLink)
+{
+	if (this.placeOfBirthLink != null && this.placeOfBirthLink.getValue() != null && hasTermVector())
+		termVector().remove(this.placeOfBirthLink.termVector());
+	this.placeOfBirthLink = placeOfBirthLink;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

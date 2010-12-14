@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.flickr;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	A Flickr Image result page
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  FlickrImageDetail
-extends  Document
+public class FlickrImageDetail
+extends Document
 {
 
+@simpl_composite @mm_name("flickr_image")
+private FlickrImage	flickrImage;
 
-private  @simpl_composite @mm_name("flickr_image") FlickrImage	flickrImage;
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public FlickrImageDetail()
 {
  super();
@@ -72,44 +68,42 @@ public FlickrImageDetail()
 
 /**
 	Constructor
-**/ 
-
+*/
 public FlickrImageDetail(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for flickrImage
-**/ 
-
+	Lazy evaluation for flickrImage
+*/
 public FlickrImage	flickrImage()
 {
-FlickrImage	result	=this.flickrImage;
-if(result == null)
-{
-result = new FlickrImage();
-this.flickrImage	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field flickrImage
-**/ 
-
-public void setFlickrImage( FlickrImage flickrImage )
-{
-this.flickrImage = flickrImage ;
+	FlickrImage	result = this.flickrImage;
+	if (result == null)
+	{
+		result = new FlickrImage();
+		this.flickrImage = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field flickrImage
-**/ 
-
-public FlickrImage getFlickrImage(){
-return this.flickrImage;
+*/
+public FlickrImage getFlickrImage()
+{
+	return this.flickrImage;
 }
+
+/**
+	Set the value of field flickrImage
+*/
+public void setFlickrImage(FlickrImage flickrImage)
+{
+	this.flickrImage = flickrImage;
+}
+
 
 }
 

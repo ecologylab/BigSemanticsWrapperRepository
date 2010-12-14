@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.buzz;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,16 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class HotSearch
+extends Metadata
+{
 
-public class HotSearch extends Metadata{
+@simpl_scalar
+private MetadataString	search;
 
-	@simpl_scalar private MetadataString	search;
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public HotSearch()
 {
  super();
@@ -57,78 +68,78 @@ public HotSearch()
 
 /**
 	Constructor
-**/ 
-
+*/
 public HotSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for search
-**/ 
-
+	Lazy evaluation for search
+*/
 public MetadataString	search()
 {
-MetadataString	result	=this.search;
-if(result == null)
-{
-result = new MetadataString();
-this.search	=	 result;
-}
-return result;
+	MetadataString	result = this.search;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.search = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field search
-**/ 
-
+*/
 public String getSearch()
 {
-	return search().getValue();
+	return this.search().getValue();
 }
 
 /**
 	Sets the value of the field search
-**/ 
-
-public void setSearch( String search )
+*/
+public void setSearch(String search)
 {
 	this.search().setValue(search);
 }
 
 /**
-	The heavy weight setter method for field search
-**/ 
-
-public void hwSetSearch( String search )
-{
-	this.search().setValue(search);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: search
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: search
+*/
 public boolean isNullSearch()
 {
 	return search == null || search.getValue() == null;
 }
 
 /**
-	 Sets the search directly
-**/ 
-
-public void setSearchMetadata(MetadataString search)
-{	this.search = search;
+	The heavy weight setter method for field search
+*/
+public void hwSetSearch(String search)
+{
+	this.search().setValue(search);
+	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the search directly.
+*/
+public void setSearchMetadata(MetadataString search)
+{
+	this.search = search;
+}
+
 /**
 	Heavy Weight Direct setter method for search
-**/ 
-
+*/
 public void hwSetSearchMetadata(MetadataString search)
-{	 if(this.search!=null && this.search.getValue()!=null && hasTermVector())
-		 termVector().remove(this.search.termVector());
-	 this.search = search;
+{
+	if (this.search != null && this.search.getValue() != null && hasTermVector())
+		termVector().remove(this.search.termVector());
+	this.search = search;
 	rebuildCompositeTermVector();
-}}
+}
+
+
+}
+

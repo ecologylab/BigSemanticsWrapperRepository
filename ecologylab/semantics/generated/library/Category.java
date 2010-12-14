@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,17 +41,29 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	Wikipedia Categories
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Category
+extends Metadata
+{
 
-public class Category extends Metadata{
+@simpl_scalar
+private MetadataString	name;
 
-	@simpl_scalar private MetadataString	name;
-	@simpl_scalar private MetadataParsedURL	catLink;
+@simpl_scalar
+private MetadataParsedURL	catLink;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Category()
 {
  super();
@@ -58,146 +71,144 @@ public Category()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Category(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for name
-**/ 
-
+	Lazy evaluation for name
+*/
 public MetadataString	name()
 {
-MetadataString	result	=this.name;
-if(result == null)
-{
-result = new MetadataString();
-this.name	=	 result;
-}
-return result;
+	MetadataString	result = this.name;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.name = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field name
-**/ 
-
+*/
 public String getName()
 {
-	return name().getValue();
+	return this.name().getValue();
 }
 
 /**
 	Sets the value of the field name
-**/ 
-
-public void setName( String name )
+*/
+public void setName(String name)
 {
 	this.name().setValue(name);
 }
 
 /**
-	The heavy weight setter method for field name
-**/ 
-
-public void hwSetName( String name )
-{
-	this.name().setValue(name);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: name
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: name
+*/
 public boolean isNullName()
 {
 	return name == null || name.getValue() == null;
 }
 
 /**
-	 Sets the name directly
-**/ 
-
-public void setNameMetadata(MetadataString name)
-{	this.name = name;
-}
-/**
-	Heavy Weight Direct setter method for name
-**/ 
-
-public void hwSetNameMetadata(MetadataString name)
-{	 if(this.name!=null && this.name.getValue()!=null && hasTermVector())
-		 termVector().remove(this.name.termVector());
-	 this.name = name;
+	The heavy weight setter method for field name
+*/
+public void hwSetName(String name)
+{
+	this.name().setValue(name);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for catLink
-**/ 
 
+/**
+	 Sets the name directly.
+*/
+public void setNameMetadata(MetadataString name)
+{
+	this.name = name;
+}
+
+/**
+	Heavy Weight Direct setter method for name
+*/
+public void hwSetNameMetadata(MetadataString name)
+{
+	if (this.name != null && this.name.getValue() != null && hasTermVector())
+		termVector().remove(this.name.termVector());
+	this.name = name;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for catLink
+*/
 public MetadataParsedURL	catLink()
 {
-MetadataParsedURL	result	=this.catLink;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.catLink	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.catLink;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.catLink = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field catLink
-**/ 
-
+*/
 public ParsedURL getCatLink()
 {
-	return catLink().getValue();
+	return this.catLink().getValue();
 }
 
 /**
 	Sets the value of the field catLink
-**/ 
-
-public void setCatLink( ParsedURL catLink )
+*/
+public void setCatLink(ParsedURL catLink)
 {
 	this.catLink().setValue(catLink);
 }
 
 /**
-	The heavy weight setter method for field catLink
-**/ 
-
-public void hwSetCatLink( ParsedURL catLink )
-{
-	this.catLink().setValue(catLink);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: catLink
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: catLink
+*/
 public boolean isNullCatLink()
 {
 	return catLink == null || catLink.getValue() == null;
 }
 
 /**
-	 Sets the catLink directly
-**/ 
-
-public void setCatLinkMetadata(MetadataParsedURL catLink)
-{	this.catLink = catLink;
+	The heavy weight setter method for field catLink
+*/
+public void hwSetCatLink(ParsedURL catLink)
+{
+	this.catLink().setValue(catLink);
+	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the catLink directly.
+*/
+public void setCatLinkMetadata(MetadataParsedURL catLink)
+{
+	this.catLink = catLink;
+}
+
 /**
 	Heavy Weight Direct setter method for catLink
-**/ 
-
+*/
 public void hwSetCatLinkMetadata(MetadataParsedURL catLink)
-{	 if(this.catLink!=null && this.catLink.getValue()!=null && hasTermVector())
-		 termVector().remove(this.catLink.termVector());
-	 this.catLink = catLink;
+{
+	if (this.catLink != null && this.catLink.getValue() != null && hasTermVector())
+		termVector().remove(this.catLink.termVector());
+	this.catLink = catLink;
 	rebuildCompositeTermVector();
-}}
+}
+
+
+}
+

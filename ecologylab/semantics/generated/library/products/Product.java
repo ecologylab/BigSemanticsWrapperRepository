@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.products;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-@simpl_inherit
 
-public class  Product
-extends  Document
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
+@simpl_inherit
+public class Product
+extends Document
 {
 
-	@simpl_scalar private MetadataString	price;
+@simpl_scalar
+private MetadataString	price;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Product()
 {
  super();
@@ -67,80 +68,78 @@ public Product()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Product(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for price
-**/ 
-
+	Lazy evaluation for price
+*/
 public MetadataString	price()
 {
-MetadataString	result	=this.price;
-if(result == null)
-{
-result = new MetadataString();
-this.price	=	 result;
-}
-return result;
+	MetadataString	result = this.price;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.price = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field price
-**/ 
-
+*/
 public String getPrice()
 {
-	return price().getValue();
+	return this.price().getValue();
 }
 
 /**
 	Sets the value of the field price
-**/ 
-
-public void setPrice( String price )
+*/
+public void setPrice(String price)
 {
 	this.price().setValue(price);
 }
 
 /**
-	The heavy weight setter method for field price
-**/ 
-
-public void hwSetPrice( String price )
-{
-	this.price().setValue(price);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: price
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: price
+*/
 public boolean isNullPrice()
 {
 	return price == null || price.getValue() == null;
 }
 
 /**
-	 Sets the price directly
-**/ 
-
-public void setPriceMetadata(MetadataString price)
-{	this.price = price;
-}
-/**
-	Heavy Weight Direct setter method for price
-**/ 
-
-public void hwSetPriceMetadata(MetadataString price)
-{	 if(this.price!=null && this.price.getValue()!=null && hasTermVector())
-		 termVector().remove(this.price.termVector());
-	 this.price = price;
+	The heavy weight setter method for field price
+*/
+public void hwSetPrice(String price)
+{
+	this.price().setValue(price);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the price directly.
+*/
+public void setPriceMetadata(MetadataString price)
+{
+	this.price = price;
+}
+
+/**
+	Heavy Weight Direct setter method for price
+*/
+public void hwSetPriceMetadata(MetadataString price)
+{
+	if (this.price != null && this.price.getValue() != null && hasTermVector())
+		termVector().remove(this.price.termVector());
+	this.price = price;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.flickr;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	The flickr search class
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  FlickrSearch
-extends  Document
+public class FlickrSearch
+extends Document
 {
 
-	 @simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results") private ArrayList<FlickrImage>	flickrResults;
+@simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results")
+private ArrayList<FlickrImage>	flickrResults;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public FlickrSearch()
 {
  super();
@@ -72,44 +68,42 @@ public FlickrSearch()
 
 /**
 	Constructor
-**/ 
-
+*/
 public FlickrSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for flickrResults
-**/ 
-
-public  ArrayList<FlickrImage>	flickrResults()
+	Lazy evaluation for flickrResults
+*/
+public ArrayList<FlickrImage>	flickrResults()
 {
- ArrayList<FlickrImage>	result	=this.flickrResults;
-if(result == null)
-{
-result = new  ArrayList<FlickrImage>();
-this.flickrResults	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field flickrResults
-**/ 
-
-public void setFlickrResults(  ArrayList<FlickrImage> flickrResults )
-{
-this.flickrResults = flickrResults ;
+	ArrayList<FlickrImage>	result = this.flickrResults;
+	if (result == null)
+	{
+		result = new ArrayList<FlickrImage>();
+		this.flickrResults = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field flickrResults
-**/ 
-
-public  ArrayList<FlickrImage> getFlickrResults(){
-return this.flickrResults;
+*/
+public ArrayList<FlickrImage> getFlickrResults()
+{
+	return this.flickrResults;
 }
+
+/**
+	Set the value of field flickrResults
+*/
+public void setFlickrResults(ArrayList<FlickrImage> flickrResults)
+{
+	this.flickrResults = flickrResults;
+}
+
 
 }
 

@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.opml;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,16 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Head
+extends Metadata
+{
 
-public class Head extends Metadata{
+@simpl_scalar
+private MetadataString	title;
 
-	@simpl_scalar private MetadataString	title;
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Head()
 {
  super();
@@ -57,78 +68,78 @@ public Head()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Head(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for title
-**/ 
-
+	Lazy evaluation for title
+*/
 public MetadataString	title()
 {
-MetadataString	result	=this.title;
-if(result == null)
-{
-result = new MetadataString();
-this.title	=	 result;
-}
-return result;
+	MetadataString	result = this.title;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.title = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field title
-**/ 
-
+*/
 public String getTitle()
 {
-	return title().getValue();
+	return this.title().getValue();
 }
 
 /**
 	Sets the value of the field title
-**/ 
-
-public void setTitle( String title )
+*/
+public void setTitle(String title)
 {
 	this.title().setValue(title);
 }
 
 /**
-	The heavy weight setter method for field title
-**/ 
-
-public void hwSetTitle( String title )
-{
-	this.title().setValue(title);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: title
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: title
+*/
 public boolean isNullTitle()
 {
 	return title == null || title.getValue() == null;
 }
 
 /**
-	 Sets the title directly
-**/ 
-
-public void setTitleMetadata(MetadataString title)
-{	this.title = title;
+	The heavy weight setter method for field title
+*/
+public void hwSetTitle(String title)
+{
+	this.title().setValue(title);
+	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the title directly.
+*/
+public void setTitleMetadata(MetadataString title)
+{
+	this.title = title;
+}
+
 /**
 	Heavy Weight Direct setter method for title
-**/ 
-
+*/
 public void hwSetTitleMetadata(MetadataString title)
-{	 if(this.title!=null && this.title.getValue()!=null && hasTermVector())
-		 termVector().remove(this.title.termVector());
-	 this.title = title;
+{
+	if (this.title != null && this.title.getValue() != null && hasTermVector())
+		termVector().remove(this.title.termVector());
+	this.title = title;
 	rebuildCompositeTermVector();
-}}
+}
+
+
+}
+

@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.imdb;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	IMDB chart
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  ImdbChart
-extends  Document
+public class ImdbChart
+extends Document
 {
 
-	 @simpl_collection("imdb_title") @xml_tag("results") @mm_name("results") private ArrayList<ImdbTitle>	results;
+@simpl_collection("imdb_title") @xml_tag("results") @mm_name("results")
+private ArrayList<ImdbTitle>	results;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public ImdbChart()
 {
  super();
@@ -72,44 +68,42 @@ public ImdbChart()
 
 /**
 	Constructor
-**/ 
-
+*/
 public ImdbChart(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
-**/ 
-
-public  ArrayList<ImdbTitle>	results()
+	Lazy evaluation for results
+*/
+public ArrayList<ImdbTitle>	results()
 {
- ArrayList<ImdbTitle>	result	=this.results;
-if(result == null)
-{
-result = new  ArrayList<ImdbTitle>();
-this.results	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field results
-**/ 
-
-public void setResults(  ArrayList<ImdbTitle> results )
-{
-this.results = results ;
+	ArrayList<ImdbTitle>	result = this.results;
+	if (result == null)
+	{
+		result = new ArrayList<ImdbTitle>();
+		this.results = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field results
-**/ 
-
-public  ArrayList<ImdbTitle> getResults(){
-return this.results;
+*/
+public ArrayList<ImdbTitle> getResults()
+{
+	return this.results;
 }
+
+/**
+	Set the value of field results
+*/
+public void setResults(ArrayList<ImdbTitle> results)
+{
+	this.results = results;
+}
+
 
 }
 

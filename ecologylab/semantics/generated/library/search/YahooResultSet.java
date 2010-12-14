@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.search;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,28 @@ import java.util.*;
 
 /**
 	Yahoo Web Search Service
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("ResultSet")
-public class  YahooResultSet
-extends  Document
+public class YahooResultSet
+extends Document
 {
 
-	 @simpl_collection("Result") @simpl_nowrap @mm_name("results") private ArrayList<YahooResult>	results;
+
+/**
+	Collection of results for yahoo search
+*/
+@simpl_collection("Result") @simpl_nowrap @mm_name("results")
+private ArrayList<YahooResult>	results;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public YahooResultSet()
 {
  super();
@@ -72,44 +73,42 @@ public YahooResultSet()
 
 /**
 	Constructor
-**/ 
-
+*/
 public YahooResultSet(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for results
-**/ 
-
-public  ArrayList<YahooResult>	results()
+	Lazy evaluation for results
+*/
+public ArrayList<YahooResult>	results()
 {
- ArrayList<YahooResult>	result	=this.results;
-if(result == null)
-{
-result = new  ArrayList<YahooResult>();
-this.results	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field results
-**/ 
-
-public void setResults(  ArrayList<YahooResult> results )
-{
-this.results = results ;
+	ArrayList<YahooResult>	result = this.results;
+	if (result == null)
+	{
+		result = new ArrayList<YahooResult>();
+		this.results = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field results
-**/ 
-
-public  ArrayList<YahooResult> getResults(){
-return this.results;
+*/
+public ArrayList<YahooResult> getResults()
+{
+	return this.results;
 }
+
+/**
+	Set the value of field results
+*/
+public void setResults(ArrayList<YahooResult> results)
+{
+	this.results = results;
+}
+
 
 }
 

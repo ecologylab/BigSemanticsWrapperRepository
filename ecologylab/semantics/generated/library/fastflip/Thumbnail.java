@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.fastflip;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-@simpl_inherit
 
-public class  Thumbnail
-extends  Metadata
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
+@simpl_inherit
+public class Thumbnail
+extends Metadata
 {
 
-	@simpl_scalar private MetadataParsedURL	pic;
+@simpl_scalar
+private MetadataParsedURL	pic;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Thumbnail()
 {
  super();
@@ -67,80 +68,78 @@ public Thumbnail()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Thumbnail(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for pic
-**/ 
-
+	Lazy evaluation for pic
+*/
 public MetadataParsedURL	pic()
 {
-MetadataParsedURL	result	=this.pic;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.pic	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.pic;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.pic = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field pic
-**/ 
-
+*/
 public ParsedURL getPic()
 {
-	return pic().getValue();
+	return this.pic().getValue();
 }
 
 /**
 	Sets the value of the field pic
-**/ 
-
-public void setPic( ParsedURL pic )
+*/
+public void setPic(ParsedURL pic)
 {
 	this.pic().setValue(pic);
 }
 
 /**
-	The heavy weight setter method for field pic
-**/ 
-
-public void hwSetPic( ParsedURL pic )
-{
-	this.pic().setValue(pic);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: pic
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: pic
+*/
 public boolean isNullPic()
 {
 	return pic == null || pic.getValue() == null;
 }
 
 /**
-	 Sets the pic directly
-**/ 
-
-public void setPicMetadata(MetadataParsedURL pic)
-{	this.pic = pic;
-}
-/**
-	Heavy Weight Direct setter method for pic
-**/ 
-
-public void hwSetPicMetadata(MetadataParsedURL pic)
-{	 if(this.pic!=null && this.pic.getValue()!=null && hasTermVector())
-		 termVector().remove(this.pic.termVector());
-	 this.pic = pic;
+	The heavy weight setter method for field pic
+*/
+public void hwSetPic(ParsedURL pic)
+{
+	this.pic().setValue(pic);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the pic directly.
+*/
+public void setPicMetadata(MetadataParsedURL pic)
+{
+	this.pic = pic;
+}
+
+/**
+	Heavy Weight Direct setter method for pic
+*/
+public void hwSetPicMetadata(MetadataParsedURL pic)
+{
+	if (this.pic != null && this.pic.getValue() != null && hasTermVector())
+		termVector().remove(this.pic.termVector());
+	this.pic = pic;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

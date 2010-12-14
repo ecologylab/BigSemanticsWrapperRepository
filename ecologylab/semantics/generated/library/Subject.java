@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,17 +41,29 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Subject
+extends Metadata
+{
 
-public class Subject extends Metadata{
+@simpl_scalar
+private MetadataParsedURL	location;
 
-	@simpl_scalar private MetadataParsedURL	location;
-	@simpl_scalar private MetadataString	subject;
+@simpl_scalar
+private MetadataString	subject;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Subject()
 {
  super();
@@ -58,146 +71,144 @@ public Subject()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Subject(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for location
-**/ 
-
+	Lazy evaluation for location
+*/
 public MetadataParsedURL	location()
 {
-MetadataParsedURL	result	=this.location;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.location	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.location;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.location = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field location
-**/ 
-
+*/
 public ParsedURL getLocation()
 {
-	return location().getValue();
+	return this.location().getValue();
 }
 
 /**
 	Sets the value of the field location
-**/ 
-
-public void setLocation( ParsedURL location )
+*/
+public void setLocation(ParsedURL location)
 {
 	this.location().setValue(location);
 }
 
 /**
-	The heavy weight setter method for field location
-**/ 
-
-public void hwSetLocation( ParsedURL location )
-{
-	this.location().setValue(location);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: location
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: location
+*/
 public boolean isNullLocation()
 {
 	return location == null || location.getValue() == null;
 }
 
 /**
-	 Sets the location directly
-**/ 
-
-public void setLocationMetadata(MetadataParsedURL location)
-{	this.location = location;
-}
-/**
-	Heavy Weight Direct setter method for location
-**/ 
-
-public void hwSetLocationMetadata(MetadataParsedURL location)
-{	 if(this.location!=null && this.location.getValue()!=null && hasTermVector())
-		 termVector().remove(this.location.termVector());
-	 this.location = location;
+	The heavy weight setter method for field location
+*/
+public void hwSetLocation(ParsedURL location)
+{
+	this.location().setValue(location);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for subject
-**/ 
 
+/**
+	 Sets the location directly.
+*/
+public void setLocationMetadata(MetadataParsedURL location)
+{
+	this.location = location;
+}
+
+/**
+	Heavy Weight Direct setter method for location
+*/
+public void hwSetLocationMetadata(MetadataParsedURL location)
+{
+	if (this.location != null && this.location.getValue() != null && hasTermVector())
+		termVector().remove(this.location.termVector());
+	this.location = location;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for subject
+*/
 public MetadataString	subject()
 {
-MetadataString	result	=this.subject;
-if(result == null)
-{
-result = new MetadataString();
-this.subject	=	 result;
-}
-return result;
+	MetadataString	result = this.subject;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.subject = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field subject
-**/ 
-
+*/
 public String getSubject()
 {
-	return subject().getValue();
+	return this.subject().getValue();
 }
 
 /**
 	Sets the value of the field subject
-**/ 
-
-public void setSubject( String subject )
+*/
+public void setSubject(String subject)
 {
 	this.subject().setValue(subject);
 }
 
 /**
-	The heavy weight setter method for field subject
-**/ 
-
-public void hwSetSubject( String subject )
-{
-	this.subject().setValue(subject);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: subject
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: subject
+*/
 public boolean isNullSubject()
 {
 	return subject == null || subject.getValue() == null;
 }
 
 /**
-	 Sets the subject directly
-**/ 
-
-public void setSubjectMetadata(MetadataString subject)
-{	this.subject = subject;
+	The heavy weight setter method for field subject
+*/
+public void hwSetSubject(String subject)
+{
+	this.subject().setValue(subject);
+	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the subject directly.
+*/
+public void setSubjectMetadata(MetadataString subject)
+{
+	this.subject = subject;
+}
+
 /**
 	Heavy Weight Direct setter method for subject
-**/ 
-
+*/
 public void hwSetSubjectMetadata(MetadataString subject)
-{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
-		 termVector().remove(this.subject.termVector());
-	 this.subject = subject;
+{
+	if (this.subject != null && this.subject.getValue() != null && hasTermVector())
+		termVector().remove(this.subject.termVector());
+	this.subject = subject;
 	rebuildCompositeTermVector();
-}}
+}
+
+
+}
+

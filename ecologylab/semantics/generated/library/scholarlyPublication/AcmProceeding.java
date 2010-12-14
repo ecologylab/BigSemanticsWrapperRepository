@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.scholarlyPublication;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-@simpl_inherit
 
-public class  AcmProceeding
-extends  Document
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
+@simpl_inherit
+public class AcmProceeding
+extends Document
 {
 
-	 @simpl_collection("search_result") @xml_tag("papers") @mm_name("papers") private ArrayList<SearchResult>	papers;
+@simpl_collection("search_result") @xml_tag("papers") @mm_name("papers")
+private ArrayList<SearchResult>	papers;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public AcmProceeding()
 {
  super();
@@ -67,44 +68,42 @@ public AcmProceeding()
 
 /**
 	Constructor
-**/ 
-
+*/
 public AcmProceeding(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for papers
-**/ 
-
-public  ArrayList<SearchResult>	papers()
+	Lazy evaluation for papers
+*/
+public ArrayList<SearchResult>	papers()
 {
- ArrayList<SearchResult>	result	=this.papers;
-if(result == null)
-{
-result = new  ArrayList<SearchResult>();
-this.papers	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field papers
-**/ 
-
-public void setPapers(  ArrayList<SearchResult> papers )
-{
-this.papers = papers ;
+	ArrayList<SearchResult>	result = this.papers;
+	if (result == null)
+	{
+		result = new ArrayList<SearchResult>();
+		this.papers = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field papers
-**/ 
-
-public  ArrayList<SearchResult> getPapers(){
-return this.papers;
+*/
+public ArrayList<SearchResult> getPapers()
+{
+	return this.papers;
 }
+
+/**
+	Set the value of field papers
+*/
+public void setPapers(ArrayList<SearchResult> papers)
+{
+	this.papers = papers;
+}
+
 
 }
 

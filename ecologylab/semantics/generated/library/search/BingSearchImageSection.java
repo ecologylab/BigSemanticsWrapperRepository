@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.search;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-@simpl_inherit
 
-public class  BingSearchImageSection
-extends  Document
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
+@simpl_inherit
+public class BingSearchImageSection
+extends Document
 {
 
-	 @simpl_collection("mms:ImageResult") @xml_tag("mms:Results") @mm_name("image_search_results") private ArrayList<BingImageSearchResult>	imageSearchResults;
+@simpl_collection("mms:ImageResult") @xml_tag("mms:Results") @mm_name("image_search_results")
+private ArrayList<BingImageSearchResult>	imageSearchResults;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public BingSearchImageSection()
 {
  super();
@@ -67,44 +68,42 @@ public BingSearchImageSection()
 
 /**
 	Constructor
-**/ 
-
+*/
 public BingSearchImageSection(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for imageSearchResults
-**/ 
-
-public  ArrayList<BingImageSearchResult>	imageSearchResults()
+	Lazy evaluation for imageSearchResults
+*/
+public ArrayList<BingImageSearchResult>	imageSearchResults()
 {
- ArrayList<BingImageSearchResult>	result	=this.imageSearchResults;
-if(result == null)
-{
-result = new  ArrayList<BingImageSearchResult>();
-this.imageSearchResults	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field imageSearchResults
-**/ 
-
-public void setImageSearchResults(  ArrayList<BingImageSearchResult> imageSearchResults )
-{
-this.imageSearchResults = imageSearchResults ;
+	ArrayList<BingImageSearchResult>	result = this.imageSearchResults;
+	if (result == null)
+	{
+		result = new ArrayList<BingImageSearchResult>();
+		this.imageSearchResults = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field imageSearchResults
-**/ 
-
-public  ArrayList<BingImageSearchResult> getImageSearchResults(){
-return this.imageSearchResults;
+*/
+public ArrayList<BingImageSearchResult> getImageSearchResults()
+{
+	return this.imageSearchResults;
 }
+
+/**
+	Set the value of field imageSearchResults
+*/
+public void setImageSearchResults(ArrayList<BingImageSearchResult> imageSearchResults)
+{
+	this.imageSearchResults = imageSearchResults;
+}
+
 
 }
 

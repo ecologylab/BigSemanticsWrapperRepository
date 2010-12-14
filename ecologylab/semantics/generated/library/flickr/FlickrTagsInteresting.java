@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.flickr;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,27 @@ import java.util.*;
 
 /**
 	Used for flickr search results
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  FlickrTagsInteresting
-extends  Search
+public class FlickrTagsInteresting
+extends Search
 {
 
-	 @simpl_collection("flickr_link") @xml_tag("flickr_link_set") @mm_name("flickr_link_set") private ArrayList<FlickrLink>	flickrLinkSet;
+
+/**
+	Collection of all images of a user
+*/
+@simpl_collection("flickr_link") @xml_tag("flickr_link_set") @mm_name("flickr_link_set")
+private ArrayList<FlickrLink>	flickrLinkSet;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public FlickrTagsInteresting()
 {
  super();
@@ -72,44 +72,42 @@ public FlickrTagsInteresting()
 
 /**
 	Constructor
-**/ 
-
+*/
 public FlickrTagsInteresting(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for flickrLinkSet
-**/ 
-
-public  ArrayList<FlickrLink>	flickrLinkSet()
+	Lazy evaluation for flickrLinkSet
+*/
+public ArrayList<FlickrLink>	flickrLinkSet()
 {
- ArrayList<FlickrLink>	result	=this.flickrLinkSet;
-if(result == null)
-{
-result = new  ArrayList<FlickrLink>();
-this.flickrLinkSet	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field flickrLinkSet
-**/ 
-
-public void setFlickrLinkSet(  ArrayList<FlickrLink> flickrLinkSet )
-{
-this.flickrLinkSet = flickrLinkSet ;
+	ArrayList<FlickrLink>	result = this.flickrLinkSet;
+	if (result == null)
+	{
+		result = new ArrayList<FlickrLink>();
+		this.flickrLinkSet = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field flickrLinkSet
-**/ 
-
-public  ArrayList<FlickrLink> getFlickrLinkSet(){
-return this.flickrLinkSet;
+*/
+public ArrayList<FlickrLink> getFlickrLinkSet()
+{
+	return this.flickrLinkSet;
 }
+
+/**
+	Set the value of field flickrLinkSet
+*/
+public void setFlickrLinkSet(ArrayList<FlickrLink> flickrLinkSet)
+{
+	this.flickrLinkSet = flickrLinkSet;
+}
+
 
 }
 

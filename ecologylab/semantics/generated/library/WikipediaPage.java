@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,23 +44,23 @@ import java.util.*;
 
 /**
 	An article on wikipedia (used in cF)
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  WikipediaPage
-extends  WikipediaPageType
+public class WikipediaPage
+extends WikipediaPageType
 {
 
-	@simpl_scalar private MetadataParsedURL	mainImageSrc;
-	 @simpl_collection("paragraph") @xml_tag("paragraphs") @mm_name("paragraphs") private ArrayList<Paragraph>	paragraphs;
-	 @simpl_collection("category") @xml_tag("categories") @mm_name("categories") private ArrayList<Category>	categories;
-	 @simpl_collection("thumbinner") @xml_tag("thumbinners") @mm_name("thumbinners") private ArrayList<Thumbinner>	thumbinners;
+@simpl_scalar
+private MetadataParsedURL	mainImageSrc;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public WikipediaPage()
 {
  super();
@@ -75,176 +68,78 @@ public WikipediaPage()
 
 /**
 	Constructor
-**/ 
-
+*/
 public WikipediaPage(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for mainImageSrc
-**/ 
-
+	Lazy evaluation for mainImageSrc
+*/
 public MetadataParsedURL	mainImageSrc()
 {
-MetadataParsedURL	result	=this.mainImageSrc;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.mainImageSrc	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.mainImageSrc;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.mainImageSrc = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field mainImageSrc
-**/ 
-
+*/
 public ParsedURL getMainImageSrc()
 {
-	return mainImageSrc().getValue();
+	return this.mainImageSrc().getValue();
 }
 
 /**
 	Sets the value of the field mainImageSrc
-**/ 
-
-public void setMainImageSrc( ParsedURL mainImageSrc )
+*/
+public void setMainImageSrc(ParsedURL mainImageSrc)
 {
 	this.mainImageSrc().setValue(mainImageSrc);
 }
 
 /**
-	The heavy weight setter method for field mainImageSrc
-**/ 
-
-public void hwSetMainImageSrc( ParsedURL mainImageSrc )
-{
-	this.mainImageSrc().setValue(mainImageSrc);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: mainImageSrc
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: mainImageSrc
+*/
 public boolean isNullMainImageSrc()
 {
 	return mainImageSrc == null || mainImageSrc.getValue() == null;
 }
 
 /**
-	 Sets the mainImageSrc directly
-**/ 
-
-public void setMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
-{	this.mainImageSrc = mainImageSrc;
-}
-/**
-	Heavy Weight Direct setter method for mainImageSrc
-**/ 
-
-public void hwSetMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
-{	 if(this.mainImageSrc!=null && this.mainImageSrc.getValue()!=null && hasTermVector())
-		 termVector().remove(this.mainImageSrc.termVector());
-	 this.mainImageSrc = mainImageSrc;
+	The heavy weight setter method for field mainImageSrc
+*/
+public void hwSetMainImageSrc(ParsedURL mainImageSrc)
+{
+	this.mainImageSrc().setValue(mainImageSrc);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for paragraphs
-**/ 
 
-public  ArrayList<Paragraph>	paragraphs()
+/**
+	 Sets the mainImageSrc directly.
+*/
+public void setMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
 {
- ArrayList<Paragraph>	result	=this.paragraphs;
-if(result == null)
-{
-result = new  ArrayList<Paragraph>();
-this.paragraphs	=	 result;
-}
-return result;
+	this.mainImageSrc = mainImageSrc;
 }
 
 /**
-	Set the value of field paragraphs
-**/ 
-
-public void setParagraphs(  ArrayList<Paragraph> paragraphs )
+	Heavy Weight Direct setter method for mainImageSrc
+*/
+public void hwSetMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
 {
-this.paragraphs = paragraphs ;
+	if (this.mainImageSrc != null && this.mainImageSrc.getValue() != null && hasTermVector())
+		termVector().remove(this.mainImageSrc.termVector());
+	this.mainImageSrc = mainImageSrc;
+	rebuildCompositeTermVector();
 }
 
-/**
-	Get the value of field paragraphs
-**/ 
-
-public  ArrayList<Paragraph> getParagraphs(){
-return this.paragraphs;
-}
-
-/**
-	Lazy Evaluation for categories
-**/ 
-
-public  ArrayList<Category>	categories()
-{
- ArrayList<Category>	result	=this.categories;
-if(result == null)
-{
-result = new  ArrayList<Category>();
-this.categories	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field categories
-**/ 
-
-public void setCategories(  ArrayList<Category> categories )
-{
-this.categories = categories ;
-}
-
-/**
-	Get the value of field categories
-**/ 
-
-public  ArrayList<Category> getCategories(){
-return this.categories;
-}
-
-/**
-	Lazy Evaluation for thumbinners
-**/ 
-
-public  ArrayList<Thumbinner>	thumbinners()
-{
- ArrayList<Thumbinner>	result	=this.thumbinners;
-if(result == null)
-{
-result = new  ArrayList<Thumbinner>();
-this.thumbinners	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field thumbinners
-**/ 
-
-public void setThumbinners(  ArrayList<Thumbinner> thumbinners )
-{
-this.thumbinners = thumbinners ;
-}
-
-/**
-	Get the value of field thumbinners
-**/ 
-
-public  ArrayList<Thumbinner> getThumbinners(){
-return this.thumbinners;
-}
 
 }
 

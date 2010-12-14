@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.misc;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	The NSDL class
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  Nsdl
-extends  Document
+public class Nsdl
+extends Document
 {
 
-	@simpl_scalar private MetadataString	subject;
+@simpl_scalar
+private MetadataString	subject;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Nsdl()
 {
  super();
@@ -72,80 +68,78 @@ public Nsdl()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Nsdl(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for subject
-**/ 
-
+	Lazy evaluation for subject
+*/
 public MetadataString	subject()
 {
-MetadataString	result	=this.subject;
-if(result == null)
-{
-result = new MetadataString();
-this.subject	=	 result;
-}
-return result;
+	MetadataString	result = this.subject;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.subject = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field subject
-**/ 
-
+*/
 public String getSubject()
 {
-	return subject().getValue();
+	return this.subject().getValue();
 }
 
 /**
 	Sets the value of the field subject
-**/ 
-
-public void setSubject( String subject )
+*/
+public void setSubject(String subject)
 {
 	this.subject().setValue(subject);
 }
 
 /**
-	The heavy weight setter method for field subject
-**/ 
-
-public void hwSetSubject( String subject )
-{
-	this.subject().setValue(subject);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: subject
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: subject
+*/
 public boolean isNullSubject()
 {
 	return subject == null || subject.getValue() == null;
 }
 
 /**
-	 Sets the subject directly
-**/ 
-
-public void setSubjectMetadata(MetadataString subject)
-{	this.subject = subject;
-}
-/**
-	Heavy Weight Direct setter method for subject
-**/ 
-
-public void hwSetSubjectMetadata(MetadataString subject)
-{	 if(this.subject!=null && this.subject.getValue()!=null && hasTermVector())
-		 termVector().remove(this.subject.termVector());
-	 this.subject = subject;
+	The heavy weight setter method for field subject
+*/
+public void hwSetSubject(String subject)
+{
+	this.subject().setValue(subject);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the subject directly.
+*/
+public void setSubjectMetadata(MetadataString subject)
+{
+	this.subject = subject;
+}
+
+/**
+	Heavy Weight Direct setter method for subject
+*/
+public void hwSetSubjectMetadata(MetadataString subject)
+{
+	if (this.subject != null && this.subject.getValue() != null && hasTermVector())
+		termVector().remove(this.subject.termVector());
+	this.subject = subject;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

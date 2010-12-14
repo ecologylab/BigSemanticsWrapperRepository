@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.slashdot;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,27 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("rdf:RDF")
-public class  SlashdotRss
-extends  Document
+public class SlashdotRss
+extends Document
 {
 
-	 @simpl_collection("item") @simpl_nowrap @mm_name("items") private ArrayList<SlashdotItem>	items;
+@simpl_collection("item") @simpl_nowrap @mm_name("items")
+private ArrayList<SlashdotItem>	items;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public SlashdotRss()
 {
  super();
@@ -67,44 +69,42 @@ public SlashdotRss()
 
 /**
 	Constructor
-**/ 
-
+*/
 public SlashdotRss(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for items
-**/ 
-
-public  ArrayList<SlashdotItem>	items()
+	Lazy evaluation for items
+*/
+public ArrayList<SlashdotItem>	items()
 {
- ArrayList<SlashdotItem>	result	=this.items;
-if(result == null)
-{
-result = new  ArrayList<SlashdotItem>();
-this.items	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field items
-**/ 
-
-public void setItems(  ArrayList<SlashdotItem> items )
-{
-this.items = items ;
+	ArrayList<SlashdotItem>	result = this.items;
+	if (result == null)
+	{
+		result = new ArrayList<SlashdotItem>();
+		this.items = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field items
-**/ 
-
-public  ArrayList<SlashdotItem> getItems(){
-return this.items;
+*/
+public ArrayList<SlashdotItem> getItems()
+{
+	return this.items;
 }
+
+/**
+	Set the value of field items
+*/
+public void setItems(ArrayList<SlashdotItem> items)
+{
+	this.items = items;
+}
+
 
 }
 

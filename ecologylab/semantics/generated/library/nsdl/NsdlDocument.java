@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.nsdl;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,17 +41,27 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("this_should_be_document")
-public class NsdlDocument extends Metadata{
+public class NsdlDocument
+extends Metadata
+{
+
+@simpl_composite @mm_name("header")
+private Header	header;
 
 
-private @xml_tag("fields") @simpl_composite @mm_name("nsdl_document") Dc	nsdlDocument;
-private  @simpl_composite @mm_name("header") Header	header;
+
 /**
 	Constructor
-**/ 
-
+*/
 public NsdlDocument()
 {
  super();
@@ -58,74 +69,42 @@ public NsdlDocument()
 
 /**
 	Constructor
-**/ 
-
+*/
 public NsdlDocument(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for nsdlDocument
-**/ 
-
-public Dc	nsdlDocument()
-{
-Dc	result	=this.nsdlDocument;
-if(result == null)
-{
-result = new Dc();
-this.nsdlDocument	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field nsdlDocument
-**/ 
-
-public void setNsdlDocument( Dc nsdlDocument )
-{
-this.nsdlDocument = nsdlDocument ;
-}
-
-/**
-	Get the value of field nsdlDocument
-**/ 
-
-public Dc getNsdlDocument(){
-return this.nsdlDocument;
-}
-
-/**
-	Lazy Evaluation for header
-**/ 
-
+	Lazy evaluation for header
+*/
 public Header	header()
 {
-Header	result	=this.header;
-if(result == null)
-{
-result = new Header();
-this.header	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field header
-**/ 
-
-public void setHeader( Header header )
-{
-this.header = header ;
+	Header	result = this.header;
+	if (result == null)
+	{
+		result = new Header();
+		this.header = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field header
-**/ 
+*/
+public Header getHeader()
+{
+	return this.header;
+}
 
-public Header getHeader(){
-return this.header;
+/**
+	Set the value of field header
+*/
+public void setHeader(Header header)
+{
+	this.header = header;
 }
+
+
 }
+

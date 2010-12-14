@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,17 +41,29 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Term
+extends Metadata
+{
 
-public class Term extends Metadata{
+@simpl_scalar
+private MetadataParsedURL	location;
 
-	@simpl_scalar private MetadataString	term;
-	@simpl_scalar private MetadataParsedURL	link;
+@simpl_scalar
+private MetadataString	term;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Term()
 {
  super();
@@ -58,146 +71,144 @@ public Term()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Term(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for term
-**/ 
+	Lazy evaluation for location
+*/
+public MetadataParsedURL	location()
+{
+	MetadataParsedURL	result = this.location;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.location = result;
+	}
+	return result;
+}
 
+/**
+	Gets the value of the field location
+*/
+public ParsedURL getLocation()
+{
+	return this.location().getValue();
+}
+
+/**
+	Sets the value of the field location
+*/
+public void setLocation(ParsedURL location)
+{
+	this.location().setValue(location);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: location
+*/
+public boolean isNullLocation()
+{
+	return location == null || location.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field location
+*/
+public void hwSetLocation(ParsedURL location)
+{
+	this.location().setValue(location);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the location directly.
+*/
+public void setLocationMetadata(MetadataParsedURL location)
+{
+	this.location = location;
+}
+
+/**
+	Heavy Weight Direct setter method for location
+*/
+public void hwSetLocationMetadata(MetadataParsedURL location)
+{
+	if (this.location != null && this.location.getValue() != null && hasTermVector())
+		termVector().remove(this.location.termVector());
+	this.location = location;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for term
+*/
 public MetadataString	term()
 {
-MetadataString	result	=this.term;
-if(result == null)
-{
-result = new MetadataString();
-this.term	=	 result;
-}
-return result;
+	MetadataString	result = this.term;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.term = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field term
-**/ 
-
+*/
 public String getTerm()
 {
-	return term().getValue();
+	return this.term().getValue();
 }
 
 /**
 	Sets the value of the field term
-**/ 
-
-public void setTerm( String term )
+*/
+public void setTerm(String term)
 {
 	this.term().setValue(term);
 }
 
 /**
-	The heavy weight setter method for field term
-**/ 
-
-public void hwSetTerm( String term )
-{
-	this.term().setValue(term);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: term
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: term
+*/
 public boolean isNullTerm()
 {
 	return term == null || term.getValue() == null;
 }
 
 /**
-	 Sets the term directly
-**/ 
-
-public void setTermMetadata(MetadataString term)
-{	this.term = term;
+	The heavy weight setter method for field term
+*/
+public void hwSetTerm(String term)
+{
+	this.term().setValue(term);
+	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the term directly.
+*/
+public void setTermMetadata(MetadataString term)
+{
+	this.term = term;
+}
+
 /**
 	Heavy Weight Direct setter method for term
-**/ 
-
+*/
 public void hwSetTermMetadata(MetadataString term)
-{	 if(this.term!=null && this.term.getValue()!=null && hasTermVector())
-		 termVector().remove(this.term.termVector());
-	 this.term = term;
+{
+	if (this.term != null && this.term.getValue() != null && hasTermVector())
+		termVector().remove(this.term.termVector());
+	this.term = term;
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for link
-**/ 
 
-public MetadataParsedURL	link()
-{
-MetadataParsedURL	result	=this.link;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.link	=	 result;
-}
-return result;
+
 }
 
-/**
-	Gets the value of the field link
-**/ 
-
-public ParsedURL getLink()
-{
-	return link().getValue();
-}
-
-/**
-	Sets the value of the field link
-**/ 
-
-public void setLink( ParsedURL link )
-{
-	this.link().setValue(link);
-}
-
-/**
-	The heavy weight setter method for field link
-**/ 
-
-public void hwSetLink( ParsedURL link )
-{
-	this.link().setValue(link);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: link
-**/ 
-
-public boolean isNullLink()
-{
-	return link == null || link.getValue() == null;
-}
-
-/**
-	 Sets the link directly
-**/ 
-
-public void setLinkMetadata(MetadataParsedURL link)
-{	this.link = link;
-}
-/**
-	Heavy Weight Direct setter method for link
-**/ 
-
-public void hwSetLinkMetadata(MetadataParsedURL link)
-{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
-		 termVector().remove(this.link.termVector());
-	 this.link = link;
-	rebuildCompositeTermVector();
-}}

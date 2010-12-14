@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.uva;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,24 +44,35 @@ import java.util.*;
 
 /**
 	For Collabartion with UVA's Cluster formation project.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  Topic
-extends  Document
+public class Topic
+extends Document
 {
 
-	@simpl_scalar private MetadataStringBuilder	contentKeywords;
-	@simpl_scalar private MetadataStringBuilder	anchorKeywords;
-	@simpl_scalar private MetadataStringBuilder	urlKeywords;
-	@simpl_scalar private MetadataStringBuilder	titleKeywords;
-	@simpl_scalar private MetadataInteger	id;
+@simpl_scalar
+private MetadataStringBuilder	contentKeywords;
+
+@simpl_scalar
+private MetadataStringBuilder	anchorKeywords;
+
+@simpl_scalar
+private MetadataStringBuilder	urlKeywords;
+
+@simpl_scalar
+private MetadataStringBuilder	titleKeywords;
+
+@simpl_scalar
+private MetadataInteger	id;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Topic()
 {
  super();
@@ -76,460 +80,342 @@ public Topic()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Topic(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for contentKeywords
-**/ 
-
+	Lazy evaluation for contentKeywords
+*/
 public MetadataStringBuilder	contentKeywords()
 {
-MetadataStringBuilder	result	=this.contentKeywords;
-if(result == null)
-{
-result = new MetadataStringBuilder();
-this.contentKeywords	=	 result;
-}
-return result;
+	MetadataStringBuilder	result = this.contentKeywords;
+	if (result == null)
+	{
+		result = new MetadataStringBuilder();
+		this.contentKeywords = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field contentKeywords
-**/ 
-
+*/
 public StringBuilder getContentKeywords()
 {
-	return contentKeywords().getValue();
+	return this.contentKeywords().getValue();
 }
 
 /**
 	Sets the value of the field contentKeywords
-**/ 
-
-public void setContentKeywords( StringBuilder contentKeywords )
+*/
+public void setContentKeywords(StringBuilder contentKeywords)
 {
 	this.contentKeywords().setValue(contentKeywords);
 }
 
 /**
-	The heavy weight setter method for field contentKeywords
-**/ 
-
-public void hwSetContentKeywords( StringBuilder contentKeywords )
-{
-	this.contentKeywords().setValue(contentKeywords);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: contentKeywords
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: contentKeywords
+*/
 public boolean isNullContentKeywords()
 {
 	return contentKeywords == null || contentKeywords.getValue() == null;
 }
 
 /**
-	 Sets the contentKeywords directly
-**/ 
-
-public void setContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
-{	this.contentKeywords = contentKeywords;
-}
-/**
-	Heavy Weight Direct setter method for contentKeywords
-**/ 
-
-public void hwSetContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
-{	 if(this.contentKeywords!=null && this.contentKeywords.getValue()!=null && hasTermVector())
-		 termVector().remove(this.contentKeywords.termVector());
-	 this.contentKeywords = contentKeywords;
+	The heavy weight setter method for field contentKeywords
+*/
+public void hwSetContentKeywords(StringBuilder contentKeywords)
+{
+	this.contentKeywords().setValue(contentKeywords);
 	rebuildCompositeTermVector();
 }
-/**
-	 Appends the value to the field contentKeywords
-**/ 
 
-public void appendContentKeywords( String contentKeywords )
+/**
+	 Sets the contentKeywords directly.
+*/
+public void setContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
 {
-this.contentKeywords().setValue(contentKeywords);
+	this.contentKeywords = contentKeywords;
 }
 
 /**
-	The heavy weight Append method for field contentKeywords
-**/ 
-
-public void hwAppendContentKeywords( StringBuilder contentKeywords )
+	Heavy Weight Direct setter method for contentKeywords
+*/
+public void hwSetContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
 {
-this.contentKeywords().setValue(contentKeywords);
-rebuildCompositeTermVector();
- }
-/**
-	The heavy weight Append method for field contentKeywords
-**/ 
+	if (this.contentKeywords != null && this.contentKeywords.getValue() != null && hasTermVector())
+		termVector().remove(this.contentKeywords.termVector());
+	this.contentKeywords = contentKeywords;
+	rebuildCompositeTermVector();
+}
 
-public void hwAppendContentKeywords( String contentKeywords )
-{
-this.contentKeywords().setValue(contentKeywords);
-rebuildCompositeTermVector();
- }
 /**
-	Lazy Evaluation for anchorKeywords
-**/ 
-
+	Lazy evaluation for anchorKeywords
+*/
 public MetadataStringBuilder	anchorKeywords()
 {
-MetadataStringBuilder	result	=this.anchorKeywords;
-if(result == null)
-{
-result = new MetadataStringBuilder();
-this.anchorKeywords	=	 result;
-}
-return result;
+	MetadataStringBuilder	result = this.anchorKeywords;
+	if (result == null)
+	{
+		result = new MetadataStringBuilder();
+		this.anchorKeywords = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field anchorKeywords
-**/ 
-
+*/
 public StringBuilder getAnchorKeywords()
 {
-	return anchorKeywords().getValue();
+	return this.anchorKeywords().getValue();
 }
 
 /**
 	Sets the value of the field anchorKeywords
-**/ 
-
-public void setAnchorKeywords( StringBuilder anchorKeywords )
+*/
+public void setAnchorKeywords(StringBuilder anchorKeywords)
 {
 	this.anchorKeywords().setValue(anchorKeywords);
 }
 
 /**
-	The heavy weight setter method for field anchorKeywords
-**/ 
-
-public void hwSetAnchorKeywords( StringBuilder anchorKeywords )
-{
-	this.anchorKeywords().setValue(anchorKeywords);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: anchorKeywords
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: anchorKeywords
+*/
 public boolean isNullAnchorKeywords()
 {
 	return anchorKeywords == null || anchorKeywords.getValue() == null;
 }
 
 /**
-	 Sets the anchorKeywords directly
-**/ 
-
-public void setAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
-{	this.anchorKeywords = anchorKeywords;
-}
-/**
-	Heavy Weight Direct setter method for anchorKeywords
-**/ 
-
-public void hwSetAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
-{	 if(this.anchorKeywords!=null && this.anchorKeywords.getValue()!=null && hasTermVector())
-		 termVector().remove(this.anchorKeywords.termVector());
-	 this.anchorKeywords = anchorKeywords;
+	The heavy weight setter method for field anchorKeywords
+*/
+public void hwSetAnchorKeywords(StringBuilder anchorKeywords)
+{
+	this.anchorKeywords().setValue(anchorKeywords);
 	rebuildCompositeTermVector();
 }
-/**
-	 Appends the value to the field anchorKeywords
-**/ 
 
-public void appendAnchorKeywords( String anchorKeywords )
+/**
+	 Sets the anchorKeywords directly.
+*/
+public void setAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
 {
-this.anchorKeywords().setValue(anchorKeywords);
+	this.anchorKeywords = anchorKeywords;
 }
 
 /**
-	The heavy weight Append method for field anchorKeywords
-**/ 
-
-public void hwAppendAnchorKeywords( StringBuilder anchorKeywords )
+	Heavy Weight Direct setter method for anchorKeywords
+*/
+public void hwSetAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
 {
-this.anchorKeywords().setValue(anchorKeywords);
-rebuildCompositeTermVector();
- }
-/**
-	The heavy weight Append method for field anchorKeywords
-**/ 
+	if (this.anchorKeywords != null && this.anchorKeywords.getValue() != null && hasTermVector())
+		termVector().remove(this.anchorKeywords.termVector());
+	this.anchorKeywords = anchorKeywords;
+	rebuildCompositeTermVector();
+}
 
-public void hwAppendAnchorKeywords( String anchorKeywords )
-{
-this.anchorKeywords().setValue(anchorKeywords);
-rebuildCompositeTermVector();
- }
 /**
-	Lazy Evaluation for urlKeywords
-**/ 
-
+	Lazy evaluation for urlKeywords
+*/
 public MetadataStringBuilder	urlKeywords()
 {
-MetadataStringBuilder	result	=this.urlKeywords;
-if(result == null)
-{
-result = new MetadataStringBuilder();
-this.urlKeywords	=	 result;
-}
-return result;
+	MetadataStringBuilder	result = this.urlKeywords;
+	if (result == null)
+	{
+		result = new MetadataStringBuilder();
+		this.urlKeywords = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field urlKeywords
-**/ 
-
+*/
 public StringBuilder getUrlKeywords()
 {
-	return urlKeywords().getValue();
+	return this.urlKeywords().getValue();
 }
 
 /**
 	Sets the value of the field urlKeywords
-**/ 
-
-public void setUrlKeywords( StringBuilder urlKeywords )
+*/
+public void setUrlKeywords(StringBuilder urlKeywords)
 {
 	this.urlKeywords().setValue(urlKeywords);
 }
 
 /**
-	The heavy weight setter method for field urlKeywords
-**/ 
-
-public void hwSetUrlKeywords( StringBuilder urlKeywords )
-{
-	this.urlKeywords().setValue(urlKeywords);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: urlKeywords
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: urlKeywords
+*/
 public boolean isNullUrlKeywords()
 {
 	return urlKeywords == null || urlKeywords.getValue() == null;
 }
 
 /**
-	 Sets the urlKeywords directly
-**/ 
-
-public void setUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
-{	this.urlKeywords = urlKeywords;
-}
-/**
-	Heavy Weight Direct setter method for urlKeywords
-**/ 
-
-public void hwSetUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
-{	 if(this.urlKeywords!=null && this.urlKeywords.getValue()!=null && hasTermVector())
-		 termVector().remove(this.urlKeywords.termVector());
-	 this.urlKeywords = urlKeywords;
+	The heavy weight setter method for field urlKeywords
+*/
+public void hwSetUrlKeywords(StringBuilder urlKeywords)
+{
+	this.urlKeywords().setValue(urlKeywords);
 	rebuildCompositeTermVector();
 }
-/**
-	 Appends the value to the field urlKeywords
-**/ 
 
-public void appendUrlKeywords( String urlKeywords )
+/**
+	 Sets the urlKeywords directly.
+*/
+public void setUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
 {
-this.urlKeywords().setValue(urlKeywords);
+	this.urlKeywords = urlKeywords;
 }
 
 /**
-	The heavy weight Append method for field urlKeywords
-**/ 
-
-public void hwAppendUrlKeywords( StringBuilder urlKeywords )
+	Heavy Weight Direct setter method for urlKeywords
+*/
+public void hwSetUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
 {
-this.urlKeywords().setValue(urlKeywords);
-rebuildCompositeTermVector();
- }
-/**
-	The heavy weight Append method for field urlKeywords
-**/ 
+	if (this.urlKeywords != null && this.urlKeywords.getValue() != null && hasTermVector())
+		termVector().remove(this.urlKeywords.termVector());
+	this.urlKeywords = urlKeywords;
+	rebuildCompositeTermVector();
+}
 
-public void hwAppendUrlKeywords( String urlKeywords )
-{
-this.urlKeywords().setValue(urlKeywords);
-rebuildCompositeTermVector();
- }
 /**
-	Lazy Evaluation for titleKeywords
-**/ 
-
+	Lazy evaluation for titleKeywords
+*/
 public MetadataStringBuilder	titleKeywords()
 {
-MetadataStringBuilder	result	=this.titleKeywords;
-if(result == null)
-{
-result = new MetadataStringBuilder();
-this.titleKeywords	=	 result;
-}
-return result;
+	MetadataStringBuilder	result = this.titleKeywords;
+	if (result == null)
+	{
+		result = new MetadataStringBuilder();
+		this.titleKeywords = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field titleKeywords
-**/ 
-
+*/
 public StringBuilder getTitleKeywords()
 {
-	return titleKeywords().getValue();
+	return this.titleKeywords().getValue();
 }
 
 /**
 	Sets the value of the field titleKeywords
-**/ 
-
-public void setTitleKeywords( StringBuilder titleKeywords )
+*/
+public void setTitleKeywords(StringBuilder titleKeywords)
 {
 	this.titleKeywords().setValue(titleKeywords);
 }
 
 /**
-	The heavy weight setter method for field titleKeywords
-**/ 
-
-public void hwSetTitleKeywords( StringBuilder titleKeywords )
-{
-	this.titleKeywords().setValue(titleKeywords);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: titleKeywords
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: titleKeywords
+*/
 public boolean isNullTitleKeywords()
 {
 	return titleKeywords == null || titleKeywords.getValue() == null;
 }
 
 /**
-	 Sets the titleKeywords directly
-**/ 
-
-public void setTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
-{	this.titleKeywords = titleKeywords;
-}
-/**
-	Heavy Weight Direct setter method for titleKeywords
-**/ 
-
-public void hwSetTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
-{	 if(this.titleKeywords!=null && this.titleKeywords.getValue()!=null && hasTermVector())
-		 termVector().remove(this.titleKeywords.termVector());
-	 this.titleKeywords = titleKeywords;
+	The heavy weight setter method for field titleKeywords
+*/
+public void hwSetTitleKeywords(StringBuilder titleKeywords)
+{
+	this.titleKeywords().setValue(titleKeywords);
 	rebuildCompositeTermVector();
 }
-/**
-	 Appends the value to the field titleKeywords
-**/ 
 
-public void appendTitleKeywords( String titleKeywords )
+/**
+	 Sets the titleKeywords directly.
+*/
+public void setTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
 {
-this.titleKeywords().setValue(titleKeywords);
+	this.titleKeywords = titleKeywords;
 }
 
 /**
-	The heavy weight Append method for field titleKeywords
-**/ 
-
-public void hwAppendTitleKeywords( StringBuilder titleKeywords )
+	Heavy Weight Direct setter method for titleKeywords
+*/
+public void hwSetTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
 {
-this.titleKeywords().setValue(titleKeywords);
-rebuildCompositeTermVector();
- }
-/**
-	The heavy weight Append method for field titleKeywords
-**/ 
+	if (this.titleKeywords != null && this.titleKeywords.getValue() != null && hasTermVector())
+		termVector().remove(this.titleKeywords.termVector());
+	this.titleKeywords = titleKeywords;
+	rebuildCompositeTermVector();
+}
 
-public void hwAppendTitleKeywords( String titleKeywords )
-{
-this.titleKeywords().setValue(titleKeywords);
-rebuildCompositeTermVector();
- }
 /**
-	Lazy Evaluation for id
-**/ 
-
+	Lazy evaluation for id
+*/
 public MetadataInteger	id()
 {
-MetadataInteger	result	=this.id;
-if(result == null)
-{
-result = new MetadataInteger();
-this.id	=	 result;
-}
-return result;
+	MetadataInteger	result = this.id;
+	if (result == null)
+	{
+		result = new MetadataInteger();
+		this.id = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field id
-**/ 
-
+*/
 public Integer getId()
 {
-	return id().getValue();
+	return this.id().getValue();
 }
 
 /**
 	Sets the value of the field id
-**/ 
-
-public void setId( Integer id )
+*/
+public void setId(Integer id)
 {
 	this.id().setValue(id);
 }
 
 /**
-	The heavy weight setter method for field id
-**/ 
-
-public void hwSetId( Integer id )
-{
-	this.id().setValue(id);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: id
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: id
+*/
 public boolean isNullId()
 {
 	return id == null || id.getValue() == null;
 }
 
 /**
-	 Sets the id directly
-**/ 
-
-public void setIdMetadata(MetadataInteger id)
-{	this.id = id;
-}
-/**
-	Heavy Weight Direct setter method for id
-**/ 
-
-public void hwSetIdMetadata(MetadataInteger id)
-{	 if(this.id!=null && this.id.getValue()!=null && hasTermVector())
-		 termVector().remove(this.id.termVector());
-	 this.id = id;
+	The heavy weight setter method for field id
+*/
+public void hwSetId(Integer id)
+{
+	this.id().setValue(id);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the id directly.
+*/
+public void setIdMetadata(MetadataInteger id)
+{
+	this.id = id;
+}
+
+/**
+	Heavy Weight Direct setter method for id
+*/
+public void hwSetIdMetadata(MetadataInteger id)
+{
+	if (this.id != null && this.id.getValue() != null && hasTermVector())
+		termVector().remove(this.id.termVector());
+	this.id = id;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

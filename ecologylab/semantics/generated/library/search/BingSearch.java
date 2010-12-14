@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.search;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,19 +41,30 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("SearchResponse")
-public class  BingSearch
-extends  Document
+public class BingSearch
+extends Document
 {
 
+@simpl_composite @xml_tag("web:Web") @mm_name("web_section")
+private BingSearchWebSection	webSection;
 
-private @xml_tag("web:Web") @simpl_composite @mm_name("web_section") BingSearchWebSection	webSection;
-private @xml_tag("mms:Image") @simpl_composite @mm_name("image_section") BingSearchImageSection	imageSection;
+@simpl_composite @xml_tag("mms:Image") @mm_name("image_section")
+private BingSearchImageSection	imageSection;
+
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public BingSearch()
 {
  super();
@@ -68,76 +72,72 @@ public BingSearch()
 
 /**
 	Constructor
-**/ 
-
+*/
 public BingSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for webSection
-**/ 
-
+	Lazy evaluation for webSection
+*/
 public BingSearchWebSection	webSection()
 {
-BingSearchWebSection	result	=this.webSection;
-if(result == null)
-{
-result = new BingSearchWebSection();
-this.webSection	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field webSection
-**/ 
-
-public void setWebSection( BingSearchWebSection webSection )
-{
-this.webSection = webSection ;
+	BingSearchWebSection	result = this.webSection;
+	if (result == null)
+	{
+		result = new BingSearchWebSection();
+		this.webSection = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field webSection
-**/ 
-
-public BingSearchWebSection getWebSection(){
-return this.webSection;
+*/
+public BingSearchWebSection getWebSection()
+{
+	return this.webSection;
 }
 
 /**
-	Lazy Evaluation for imageSection
-**/ 
+	Set the value of field webSection
+*/
+public void setWebSection(BingSearchWebSection webSection)
+{
+	this.webSection = webSection;
+}
 
+/**
+	Lazy evaluation for imageSection
+*/
 public BingSearchImageSection	imageSection()
 {
-BingSearchImageSection	result	=this.imageSection;
-if(result == null)
-{
-result = new BingSearchImageSection();
-this.imageSection	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field imageSection
-**/ 
-
-public void setImageSection( BingSearchImageSection imageSection )
-{
-this.imageSection = imageSection ;
+	BingSearchImageSection	result = this.imageSection;
+	if (result == null)
+	{
+		result = new BingSearchImageSection();
+		this.imageSection = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field imageSection
-**/ 
-
-public BingSearchImageSection getImageSection(){
-return this.imageSection;
+*/
+public BingSearchImageSection getImageSection()
+{
+	return this.imageSection;
 }
+
+/**
+	Set the value of field imageSection
+*/
+public void setImageSection(BingSearchImageSection imageSection)
+{
+	this.imageSection = imageSection;
+}
+
 
 }
 

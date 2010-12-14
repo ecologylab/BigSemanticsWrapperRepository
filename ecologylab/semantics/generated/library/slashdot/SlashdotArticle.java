@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.slashdot;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,21 +41,35 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-@simpl_inherit
 
-public class  SlashdotArticle
-extends  Document
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
+@simpl_inherit
+public class SlashdotArticle
+extends Document
 {
 
-	@simpl_scalar private MetadataString	poster;
-	@simpl_scalar private MetadataParsedURL	posterUrl;
-	@simpl_scalar private MetadataString	description;
-	 @simpl_collection("anchor") @xml_tag("anchors") @mm_name("anchors") private ArrayList<Anchor>	anchors;
+@simpl_scalar
+private MetadataString	poster;
+
+@simpl_scalar
+private MetadataParsedURL	posterUrl;
+
+@simpl_scalar
+private MetadataString	description;
+
+@simpl_collection("anchor") @xml_tag("anchors") @mm_name("anchors")
+private ArrayList<Anchor>	anchors;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public SlashdotArticle()
 {
  super();
@@ -70,248 +77,240 @@ public SlashdotArticle()
 
 /**
 	Constructor
-**/ 
-
+*/
 public SlashdotArticle(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for poster
-**/ 
-
+	Lazy evaluation for poster
+*/
 public MetadataString	poster()
 {
-MetadataString	result	=this.poster;
-if(result == null)
-{
-result = new MetadataString();
-this.poster	=	 result;
-}
-return result;
+	MetadataString	result = this.poster;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.poster = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field poster
-**/ 
-
+*/
 public String getPoster()
 {
-	return poster().getValue();
+	return this.poster().getValue();
 }
 
 /**
 	Sets the value of the field poster
-**/ 
-
-public void setPoster( String poster )
+*/
+public void setPoster(String poster)
 {
 	this.poster().setValue(poster);
 }
 
 /**
-	The heavy weight setter method for field poster
-**/ 
-
-public void hwSetPoster( String poster )
-{
-	this.poster().setValue(poster);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: poster
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: poster
+*/
 public boolean isNullPoster()
 {
 	return poster == null || poster.getValue() == null;
 }
 
 /**
-	 Sets the poster directly
-**/ 
-
-public void setPosterMetadata(MetadataString poster)
-{	this.poster = poster;
-}
-/**
-	Heavy Weight Direct setter method for poster
-**/ 
-
-public void hwSetPosterMetadata(MetadataString poster)
-{	 if(this.poster!=null && this.poster.getValue()!=null && hasTermVector())
-		 termVector().remove(this.poster.termVector());
-	 this.poster = poster;
+	The heavy weight setter method for field poster
+*/
+public void hwSetPoster(String poster)
+{
+	this.poster().setValue(poster);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for posterUrl
-**/ 
 
+/**
+	 Sets the poster directly.
+*/
+public void setPosterMetadata(MetadataString poster)
+{
+	this.poster = poster;
+}
+
+/**
+	Heavy Weight Direct setter method for poster
+*/
+public void hwSetPosterMetadata(MetadataString poster)
+{
+	if (this.poster != null && this.poster.getValue() != null && hasTermVector())
+		termVector().remove(this.poster.termVector());
+	this.poster = poster;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for posterUrl
+*/
 public MetadataParsedURL	posterUrl()
 {
-MetadataParsedURL	result	=this.posterUrl;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.posterUrl	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.posterUrl;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.posterUrl = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field posterUrl
-**/ 
-
+*/
 public ParsedURL getPosterUrl()
 {
-	return posterUrl().getValue();
+	return this.posterUrl().getValue();
 }
 
 /**
 	Sets the value of the field posterUrl
-**/ 
-
-public void setPosterUrl( ParsedURL posterUrl )
+*/
+public void setPosterUrl(ParsedURL posterUrl)
 {
 	this.posterUrl().setValue(posterUrl);
 }
 
 /**
-	The heavy weight setter method for field posterUrl
-**/ 
-
-public void hwSetPosterUrl( ParsedURL posterUrl )
-{
-	this.posterUrl().setValue(posterUrl);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: posterUrl
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: posterUrl
+*/
 public boolean isNullPosterUrl()
 {
 	return posterUrl == null || posterUrl.getValue() == null;
 }
 
 /**
-	 Sets the posterUrl directly
-**/ 
-
-public void setPosterUrlMetadata(MetadataParsedURL posterUrl)
-{	this.posterUrl = posterUrl;
-}
-/**
-	Heavy Weight Direct setter method for posterUrl
-**/ 
-
-public void hwSetPosterUrlMetadata(MetadataParsedURL posterUrl)
-{	 if(this.posterUrl!=null && this.posterUrl.getValue()!=null && hasTermVector())
-		 termVector().remove(this.posterUrl.termVector());
-	 this.posterUrl = posterUrl;
+	The heavy weight setter method for field posterUrl
+*/
+public void hwSetPosterUrl(ParsedURL posterUrl)
+{
+	this.posterUrl().setValue(posterUrl);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for description
-**/ 
 
+/**
+	 Sets the posterUrl directly.
+*/
+public void setPosterUrlMetadata(MetadataParsedURL posterUrl)
+{
+	this.posterUrl = posterUrl;
+}
+
+/**
+	Heavy Weight Direct setter method for posterUrl
+*/
+public void hwSetPosterUrlMetadata(MetadataParsedURL posterUrl)
+{
+	if (this.posterUrl != null && this.posterUrl.getValue() != null && hasTermVector())
+		termVector().remove(this.posterUrl.termVector());
+	this.posterUrl = posterUrl;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for description
+*/
 public MetadataString	description()
 {
-MetadataString	result	=this.description;
-if(result == null)
-{
-result = new MetadataString();
-this.description	=	 result;
-}
-return result;
+	MetadataString	result = this.description;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.description = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field description
-**/ 
-
+*/
 public String getDescription()
 {
-	return description().getValue();
+	return this.description().getValue();
 }
 
 /**
 	Sets the value of the field description
-**/ 
-
-public void setDescription( String description )
+*/
+public void setDescription(String description)
 {
 	this.description().setValue(description);
 }
 
 /**
-	The heavy weight setter method for field description
-**/ 
-
-public void hwSetDescription( String description )
-{
-	this.description().setValue(description);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: description
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: description
+*/
 public boolean isNullDescription()
 {
 	return description == null || description.getValue() == null;
 }
 
 /**
-	 Sets the description directly
-**/ 
-
-public void setDescriptionMetadata(MetadataString description)
-{	this.description = description;
-}
-/**
-	Heavy Weight Direct setter method for description
-**/ 
-
-public void hwSetDescriptionMetadata(MetadataString description)
-{	 if(this.description!=null && this.description.getValue()!=null && hasTermVector())
-		 termVector().remove(this.description.termVector());
-	 this.description = description;
+	The heavy weight setter method for field description
+*/
+public void hwSetDescription(String description)
+{
+	this.description().setValue(description);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for anchors
-**/ 
 
-public  ArrayList<Anchor>	anchors()
+/**
+	 Sets the description directly.
+*/
+public void setDescriptionMetadata(MetadataString description)
 {
- ArrayList<Anchor>	result	=this.anchors;
-if(result == null)
-{
-result = new  ArrayList<Anchor>();
-this.anchors	=	 result;
-}
-return result;
+	this.description = description;
 }
 
 /**
-	Set the value of field anchors
-**/ 
-
-public void setAnchors(  ArrayList<Anchor> anchors )
+	Heavy Weight Direct setter method for description
+*/
+public void hwSetDescriptionMetadata(MetadataString description)
 {
-this.anchors = anchors ;
+	if (this.description != null && this.description.getValue() != null && hasTermVector())
+		termVector().remove(this.description.termVector());
+	this.description = description;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for anchors
+*/
+public ArrayList<Anchor>	anchors()
+{
+	ArrayList<Anchor>	result = this.anchors;
+	if (result == null)
+	{
+		result = new ArrayList<Anchor>();
+		this.anchors = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field anchors
-**/ 
-
-public  ArrayList<Anchor> getAnchors(){
-return this.anchors;
+*/
+public ArrayList<Anchor> getAnchors()
+{
+	return this.anchors;
 }
+
+/**
+	Set the value of field anchors
+*/
+public void setAnchors(ArrayList<Anchor> anchors)
+{
+	this.anchors = anchors;
+}
+
 
 }
 

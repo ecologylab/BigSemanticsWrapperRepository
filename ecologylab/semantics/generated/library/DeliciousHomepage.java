@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	Delicious home page class
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  DeliciousHomepage
-extends  Document
+public class DeliciousHomepage
+extends Document
 {
 
-	 @simpl_collection("bookmark") @xml_tag("bookmarks") @mm_name("bookmarks") private ArrayList<Bookmark>	bookmarks;
+@simpl_collection("bookmark") @xml_tag("bookmarks") @mm_name("bookmarks")
+private ArrayList<Bookmark>	bookmarks;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public DeliciousHomepage()
 {
  super();
@@ -72,44 +68,42 @@ public DeliciousHomepage()
 
 /**
 	Constructor
-**/ 
-
+*/
 public DeliciousHomepage(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for bookmarks
-**/ 
-
-public  ArrayList<Bookmark>	bookmarks()
+	Lazy evaluation for bookmarks
+*/
+public ArrayList<Bookmark>	bookmarks()
 {
- ArrayList<Bookmark>	result	=this.bookmarks;
-if(result == null)
-{
-result = new  ArrayList<Bookmark>();
-this.bookmarks	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field bookmarks
-**/ 
-
-public void setBookmarks(  ArrayList<Bookmark> bookmarks )
-{
-this.bookmarks = bookmarks ;
+	ArrayList<Bookmark>	result = this.bookmarks;
+	if (result == null)
+	{
+		result = new ArrayList<Bookmark>();
+		this.bookmarks = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field bookmarks
-**/ 
-
-public  ArrayList<Bookmark> getBookmarks(){
-return this.bookmarks;
+*/
+public ArrayList<Bookmark> getBookmarks()
+{
+	return this.bookmarks;
 }
+
+/**
+	Set the value of field bookmarks
+*/
+public void setBookmarks(ArrayList<Bookmark> bookmarks)
+{
+	this.bookmarks = bookmarks;
+}
+
 
 }
 

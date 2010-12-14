@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.search;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	Bing image search result.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  BingImageSearchResult
-extends  ImageInSearchResult
+public class BingImageSearchResult
+extends ImageInSearchResult
 {
 
+@simpl_composite @xml_tag("mms:Thumbnail") @mm_name("thumbnail")
+private ImageInSearchResult	thumbnail;
 
-private @xml_tag("mms:Thumbnail") @simpl_composite @mm_name("thumbnail") ImageInSearchResult	thumbnail;
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public BingImageSearchResult()
 {
  super();
@@ -72,44 +68,42 @@ public BingImageSearchResult()
 
 /**
 	Constructor
-**/ 
-
+*/
 public BingImageSearchResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnail
-**/ 
-
+	Lazy evaluation for thumbnail
+*/
 public ImageInSearchResult	thumbnail()
 {
-ImageInSearchResult	result	=this.thumbnail;
-if(result == null)
-{
-result = new ImageInSearchResult();
-this.thumbnail	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field thumbnail
-**/ 
-
-public void setThumbnail( ImageInSearchResult thumbnail )
-{
-this.thumbnail = thumbnail ;
+	ImageInSearchResult	result = this.thumbnail;
+	if (result == null)
+	{
+		result = new ImageInSearchResult();
+		this.thumbnail = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field thumbnail
-**/ 
-
-public ImageInSearchResult getThumbnail(){
-return this.thumbnail;
+*/
+public ImageInSearchResult getThumbnail()
+{
+	return this.thumbnail;
 }
+
+/**
+	Set the value of field thumbnail
+*/
+public void setThumbnail(ImageInSearchResult thumbnail)
+{
+	this.thumbnail = thumbnail;
+}
+
 
 }
 

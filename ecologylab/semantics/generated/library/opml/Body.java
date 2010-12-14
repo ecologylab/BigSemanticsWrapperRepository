@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.opml;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,16 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Body
+extends Metadata
+{
 
-public class Body extends Metadata{
+@simpl_collection("outline") @simpl_nowrap @mm_name("outline")
+private ArrayList<Outline>	outline;
 
-	 @simpl_collection("outline") @simpl_nowrap @mm_name("outline") private ArrayList<Outline>	outline;
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Body()
 {
  super();
@@ -57,42 +68,42 @@ public Body()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Body(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for outline
-**/ 
-
-public  ArrayList<Outline>	outline()
+	Lazy evaluation for outline
+*/
+public ArrayList<Outline>	outline()
 {
- ArrayList<Outline>	result	=this.outline;
-if(result == null)
-{
-result = new  ArrayList<Outline>();
-this.outline	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field outline
-**/ 
-
-public void setOutline(  ArrayList<Outline> outline )
-{
-this.outline = outline ;
+	ArrayList<Outline>	result = this.outline;
+	if (result == null)
+	{
+		result = new ArrayList<Outline>();
+		this.outline = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field outline
-**/ 
+*/
+public ArrayList<Outline> getOutline()
+{
+	return this.outline;
+}
 
-public  ArrayList<Outline> getOutline(){
-return this.outline;
+/**
+	Set the value of field outline
+*/
+public void setOutline(ArrayList<Outline> outline)
+{
+	this.outline = outline;
 }
+
+
 }
+

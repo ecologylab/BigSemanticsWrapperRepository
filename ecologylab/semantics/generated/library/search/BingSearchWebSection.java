@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.search;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,26 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
-@simpl_inherit
 
-public class  BingSearchWebSection
-extends  Document
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
+@simpl_inherit
+public class BingSearchWebSection
+extends Document
 {
 
-	 @simpl_collection("web:WebResult") @xml_tag("web:Results") @mm_name("web_search_results") private ArrayList<BingWebSearchResult>	webSearchResults;
+@simpl_collection("web:WebResult") @xml_tag("web:Results") @mm_name("web_search_results")
+private ArrayList<BingWebSearchResult>	webSearchResults;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public BingSearchWebSection()
 {
  super();
@@ -67,44 +68,42 @@ public BingSearchWebSection()
 
 /**
 	Constructor
-**/ 
-
+*/
 public BingSearchWebSection(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for webSearchResults
-**/ 
-
-public  ArrayList<BingWebSearchResult>	webSearchResults()
+	Lazy evaluation for webSearchResults
+*/
+public ArrayList<BingWebSearchResult>	webSearchResults()
 {
- ArrayList<BingWebSearchResult>	result	=this.webSearchResults;
-if(result == null)
-{
-result = new  ArrayList<BingWebSearchResult>();
-this.webSearchResults	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field webSearchResults
-**/ 
-
-public void setWebSearchResults(  ArrayList<BingWebSearchResult> webSearchResults )
-{
-this.webSearchResults = webSearchResults ;
+	ArrayList<BingWebSearchResult>	result = this.webSearchResults;
+	if (result == null)
+	{
+		result = new ArrayList<BingWebSearchResult>();
+		this.webSearchResults = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field webSearchResults
-**/ 
-
-public  ArrayList<BingWebSearchResult> getWebSearchResults(){
-return this.webSearchResults;
+*/
+public ArrayList<BingWebSearchResult> getWebSearchResults()
+{
+	return this.webSearchResults;
 }
+
+/**
+	Set the value of field webSearchResults
+*/
+public void setWebSearchResults(ArrayList<BingWebSearchResult> webSearchResults)
+{
+	this.webSearchResults = webSearchResults;
+}
+
 
 }
 

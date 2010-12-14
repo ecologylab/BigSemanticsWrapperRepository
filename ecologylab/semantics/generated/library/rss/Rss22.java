@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.rss;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,24 @@ import java.util.*;
 
 /**
 	A news feed, yucky style.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("rss_2_2")
-public class  Rss22
-extends  Document
+public class Rss22
+extends Document
 {
 
-	 @simpl_collection("item") @simpl_nowrap @mm_name("items") private ArrayList<Item>	items;
+@simpl_collection("item") @simpl_nowrap @mm_name("items")
+private ArrayList<Item>	items;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Rss22()
 {
  super();
@@ -72,44 +69,42 @@ public Rss22()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Rss22(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for items
-**/ 
-
-public  ArrayList<Item>	items()
+	Lazy evaluation for items
+*/
+public ArrayList<Item>	items()
 {
- ArrayList<Item>	result	=this.items;
-if(result == null)
-{
-result = new  ArrayList<Item>();
-this.items	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field items
-**/ 
-
-public void setItems(  ArrayList<Item> items )
-{
-this.items = items ;
+	ArrayList<Item>	result = this.items;
+	if (result == null)
+	{
+		result = new ArrayList<Item>();
+		this.items = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field items
-**/ 
-
-public  ArrayList<Item> getItems(){
-return this.items;
+*/
+public ArrayList<Item> getItems()
+{
+	return this.items;
 }
+
+/**
+	Set the value of field items
+*/
+public void setItems(ArrayList<Item> items)
+{
+	this.items = items;
+}
+
 
 }
 

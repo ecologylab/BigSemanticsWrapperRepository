@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.icdl;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	The ICDL class
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  Icdl
-extends  Document
+public class Icdl
+extends Document
 {
 
+@simpl_composite @mm_name("response")
+private Response	response;
 
-private  @simpl_composite @mm_name("response") Response	response;
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public Icdl()
 {
  super();
@@ -72,44 +68,42 @@ public Icdl()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Icdl(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for response
-**/ 
-
+	Lazy evaluation for response
+*/
 public Response	response()
 {
-Response	result	=this.response;
-if(result == null)
-{
-result = new Response();
-this.response	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field response
-**/ 
-
-public void setResponse( Response response )
-{
-this.response = response ;
+	Response	result = this.response;
+	if (result == null)
+	{
+		result = new Response();
+		this.response = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field response
-**/ 
-
-public Response getResponse(){
-return this.response;
+*/
+public Response getResponse()
+{
+	return this.response;
 }
+
+/**
+	Set the value of field response
+*/
+public void setResponse(Response response)
+{
+	this.response = response;
+}
+
 
 }
 

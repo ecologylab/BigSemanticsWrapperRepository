@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.search;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	The google Search class
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  GoogleScholarSearch
-extends  Document
+public class GoogleScholarSearch
+extends Document
 {
 
-	 @simpl_collection("google_scholar_search_result") @simpl_nowrap @mm_name("search_results") private ArrayList<GoogleScholarSearchResult>	searchResults;
+@simpl_collection("google_scholar_search_result") @simpl_nowrap @mm_name("search_results")
+private ArrayList<GoogleScholarSearchResult>	searchResults;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public GoogleScholarSearch()
 {
  super();
@@ -72,44 +68,42 @@ public GoogleScholarSearch()
 
 /**
 	Constructor
-**/ 
-
+*/
 public GoogleScholarSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for searchResults
-**/ 
-
-public  ArrayList<GoogleScholarSearchResult>	searchResults()
+	Lazy evaluation for searchResults
+*/
+public ArrayList<GoogleScholarSearchResult>	searchResults()
 {
- ArrayList<GoogleScholarSearchResult>	result	=this.searchResults;
-if(result == null)
-{
-result = new  ArrayList<GoogleScholarSearchResult>();
-this.searchResults	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field searchResults
-**/ 
-
-public void setSearchResults(  ArrayList<GoogleScholarSearchResult> searchResults )
-{
-this.searchResults = searchResults ;
+	ArrayList<GoogleScholarSearchResult>	result = this.searchResults;
+	if (result == null)
+	{
+		result = new ArrayList<GoogleScholarSearchResult>();
+		this.searchResults = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field searchResults
-**/ 
-
-public  ArrayList<GoogleScholarSearchResult> getSearchResults(){
-return this.searchResults;
+*/
+public ArrayList<GoogleScholarSearchResult> getSearchResults()
+{
+	return this.searchResults;
 }
+
+/**
+	Set the value of field searchResults
+*/
+public void setSearchResults(ArrayList<GoogleScholarSearchResult> searchResults)
+{
+	this.searchResults = searchResults;
+}
+
 
 }
 

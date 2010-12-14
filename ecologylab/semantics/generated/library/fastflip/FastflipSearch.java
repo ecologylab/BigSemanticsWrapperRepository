@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.fastflip;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	Fast Flip Search
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  FastflipSearch
-extends  Document
+public class FastflipSearch
+extends Document
 {
 
-	 @simpl_collection("thumbnail") @xml_tag("thumbnails") @mm_name("thumbnails") private ArrayList<Thumbnail>	thumbnails;
+@simpl_collection("thumbnail") @xml_tag("thumbnails") @mm_name("thumbnails")
+private ArrayList<Thumbnail>	thumbnails;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public FastflipSearch()
 {
  super();
@@ -72,44 +68,42 @@ public FastflipSearch()
 
 /**
 	Constructor
-**/ 
-
+*/
 public FastflipSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for thumbnails
-**/ 
-
-public  ArrayList<Thumbnail>	thumbnails()
+	Lazy evaluation for thumbnails
+*/
+public ArrayList<Thumbnail>	thumbnails()
 {
- ArrayList<Thumbnail>	result	=this.thumbnails;
-if(result == null)
-{
-result = new  ArrayList<Thumbnail>();
-this.thumbnails	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field thumbnails
-**/ 
-
-public void setThumbnails(  ArrayList<Thumbnail> thumbnails )
-{
-this.thumbnails = thumbnails ;
+	ArrayList<Thumbnail>	result = this.thumbnails;
+	if (result == null)
+	{
+		result = new ArrayList<Thumbnail>();
+		this.thumbnails = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field thumbnails
-**/ 
-
-public  ArrayList<Thumbnail> getThumbnails(){
-return this.thumbnails;
+*/
+public ArrayList<Thumbnail> getThumbnails()
+{
+	return this.thumbnails;
 }
+
+/**
+	Set the value of field thumbnails
+*/
+public void setThumbnails(ArrayList<Thumbnail> thumbnails)
+{
+	this.thumbnails = thumbnails;
+}
+
 
 }
 

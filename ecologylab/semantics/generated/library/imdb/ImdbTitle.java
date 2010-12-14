@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.imdb;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,30 +44,53 @@ import java.util.*;
 
 /**
 	IMDB metadata
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  ImdbTitle
-extends  Document
+public class ImdbTitle
+extends Document
 {
 
-	@simpl_scalar private MetadataString	yearReleased;
-	@simpl_scalar private MetadataString	rating;
-	 @simpl_collection("person_details") @xml_tag("directors") @mm_name("directors") private ArrayList<Entity<PersonDetails>>	directors;
-	 @simpl_collection("person_details") @xml_tag("writers") @mm_name("writers") private ArrayList<Entity<PersonDetails>>	writers;
-	@simpl_scalar private MetadataString	releaseDate;
-	 @simpl_collection("genre") @xml_tag("genres") @mm_name("genres") private ArrayList<Genre>	genres;
-	@simpl_scalar private MetadataString	plot;
-	@simpl_scalar private MetadataString	tagline;
-	 @simpl_collection("cast_member") @xml_tag("cast") @mm_name("cast") private ArrayList<CastMember>	cast;
-	 @simpl_collection("image") @xml_tag("title_photos") @mm_name("title_photos") private ArrayList<Image>	titlePhotos;
-	@simpl_scalar private MetadataParsedURL	posterImg;
+@simpl_scalar
+private MetadataString	yearReleased;
+
+@simpl_scalar
+private MetadataString	rating;
+
+@simpl_collection("person_details") @xml_tag("directors") @mm_name("directors")
+private ArrayList<Entity<PersonDetails>>	directors;
+
+@simpl_collection("person_details") @xml_tag("writers") @mm_name("writers")
+private ArrayList<Entity<PersonDetails>>	writers;
+
+@simpl_scalar
+private MetadataString	releaseDate;
+
+@simpl_collection("genre") @xml_tag("genres") @mm_name("genres")
+private ArrayList<Genre>	genres;
+
+@simpl_scalar
+private MetadataString	plot;
+
+@simpl_scalar
+private MetadataString	tagline;
+
+@simpl_collection("cast_member") @xml_tag("cast") @mm_name("cast")
+private ArrayList<CastMember>	cast;
+
+@simpl_collection("image") @xml_tag("title_photos") @mm_name("title_photos")
+private ArrayList<Image>	titlePhotos;
+
+@simpl_scalar
+private MetadataParsedURL	posterImg;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public ImdbTitle()
 {
  super();
@@ -82,580 +98,558 @@ public ImdbTitle()
 
 /**
 	Constructor
-**/ 
-
+*/
 public ImdbTitle(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for yearReleased
-**/ 
-
+	Lazy evaluation for yearReleased
+*/
 public MetadataString	yearReleased()
 {
-MetadataString	result	=this.yearReleased;
-if(result == null)
-{
-result = new MetadataString();
-this.yearReleased	=	 result;
-}
-return result;
+	MetadataString	result = this.yearReleased;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.yearReleased = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field yearReleased
-**/ 
-
+*/
 public String getYearReleased()
 {
-	return yearReleased().getValue();
+	return this.yearReleased().getValue();
 }
 
 /**
 	Sets the value of the field yearReleased
-**/ 
-
-public void setYearReleased( String yearReleased )
+*/
+public void setYearReleased(String yearReleased)
 {
 	this.yearReleased().setValue(yearReleased);
 }
 
 /**
-	The heavy weight setter method for field yearReleased
-**/ 
-
-public void hwSetYearReleased( String yearReleased )
-{
-	this.yearReleased().setValue(yearReleased);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: yearReleased
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: yearReleased
+*/
 public boolean isNullYearReleased()
 {
 	return yearReleased == null || yearReleased.getValue() == null;
 }
 
 /**
-	 Sets the yearReleased directly
-**/ 
-
-public void setYearReleasedMetadata(MetadataString yearReleased)
-{	this.yearReleased = yearReleased;
-}
-/**
-	Heavy Weight Direct setter method for yearReleased
-**/ 
-
-public void hwSetYearReleasedMetadata(MetadataString yearReleased)
-{	 if(this.yearReleased!=null && this.yearReleased.getValue()!=null && hasTermVector())
-		 termVector().remove(this.yearReleased.termVector());
-	 this.yearReleased = yearReleased;
+	The heavy weight setter method for field yearReleased
+*/
+public void hwSetYearReleased(String yearReleased)
+{
+	this.yearReleased().setValue(yearReleased);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for rating
-**/ 
 
+/**
+	 Sets the yearReleased directly.
+*/
+public void setYearReleasedMetadata(MetadataString yearReleased)
+{
+	this.yearReleased = yearReleased;
+}
+
+/**
+	Heavy Weight Direct setter method for yearReleased
+*/
+public void hwSetYearReleasedMetadata(MetadataString yearReleased)
+{
+	if (this.yearReleased != null && this.yearReleased.getValue() != null && hasTermVector())
+		termVector().remove(this.yearReleased.termVector());
+	this.yearReleased = yearReleased;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for rating
+*/
 public MetadataString	rating()
 {
-MetadataString	result	=this.rating;
-if(result == null)
-{
-result = new MetadataString();
-this.rating	=	 result;
-}
-return result;
+	MetadataString	result = this.rating;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.rating = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field rating
-**/ 
-
+*/
 public String getRating()
 {
-	return rating().getValue();
+	return this.rating().getValue();
 }
 
 /**
 	Sets the value of the field rating
-**/ 
-
-public void setRating( String rating )
+*/
+public void setRating(String rating)
 {
 	this.rating().setValue(rating);
 }
 
 /**
-	The heavy weight setter method for field rating
-**/ 
-
-public void hwSetRating( String rating )
-{
-	this.rating().setValue(rating);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: rating
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: rating
+*/
 public boolean isNullRating()
 {
 	return rating == null || rating.getValue() == null;
 }
 
 /**
-	 Sets the rating directly
-**/ 
-
-public void setRatingMetadata(MetadataString rating)
-{	this.rating = rating;
-}
-/**
-	Heavy Weight Direct setter method for rating
-**/ 
-
-public void hwSetRatingMetadata(MetadataString rating)
-{	 if(this.rating!=null && this.rating.getValue()!=null && hasTermVector())
-		 termVector().remove(this.rating.termVector());
-	 this.rating = rating;
+	The heavy weight setter method for field rating
+*/
+public void hwSetRating(String rating)
+{
+	this.rating().setValue(rating);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for directors
-**/ 
 
-public  ArrayList<Entity<PersonDetails>>	directors()
+/**
+	 Sets the rating directly.
+*/
+public void setRatingMetadata(MetadataString rating)
 {
- ArrayList<Entity<PersonDetails>>	result	=this.directors;
-if(result == null)
-{
-result = new  ArrayList<Entity<PersonDetails>>();
-this.directors	=	 result;
-}
-return result;
+	this.rating = rating;
 }
 
 /**
-	Set the value of field directors
-**/ 
-
-public void setDirectors(  ArrayList<Entity<PersonDetails>> directors )
+	Heavy Weight Direct setter method for rating
+*/
+public void hwSetRatingMetadata(MetadataString rating)
 {
-this.directors = directors ;
+	if (this.rating != null && this.rating.getValue() != null && hasTermVector())
+		termVector().remove(this.rating.termVector());
+	this.rating = rating;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for directors
+*/
+public ArrayList<Entity<PersonDetails>>	directors()
+{
+	ArrayList<Entity<PersonDetails>>	result = this.directors;
+	if (result == null)
+	{
+		result = new ArrayList<Entity<PersonDetails>>();
+		this.directors = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field directors
-**/ 
-
-public  ArrayList<Entity<PersonDetails>> getDirectors(){
-return this.directors;
+*/
+public ArrayList<Entity<PersonDetails>> getDirectors()
+{
+	return this.directors;
 }
 
 /**
-	Lazy Evaluation for writers
-**/ 
-
-public  ArrayList<Entity<PersonDetails>>	writers()
+	Set the value of field directors
+*/
+public void setDirectors(ArrayList<Entity<PersonDetails>> directors)
 {
- ArrayList<Entity<PersonDetails>>	result	=this.writers;
-if(result == null)
-{
-result = new  ArrayList<Entity<PersonDetails>>();
-this.writers	=	 result;
-}
-return result;
+	this.directors = directors;
 }
 
 /**
-	Set the value of field writers
-**/ 
-
-public void setWriters(  ArrayList<Entity<PersonDetails>> writers )
+	Lazy evaluation for writers
+*/
+public ArrayList<Entity<PersonDetails>>	writers()
 {
-this.writers = writers ;
+	ArrayList<Entity<PersonDetails>>	result = this.writers;
+	if (result == null)
+	{
+		result = new ArrayList<Entity<PersonDetails>>();
+		this.writers = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field writers
-**/ 
-
-public  ArrayList<Entity<PersonDetails>> getWriters(){
-return this.writers;
+*/
+public ArrayList<Entity<PersonDetails>> getWriters()
+{
+	return this.writers;
 }
 
 /**
-	Lazy Evaluation for releaseDate
-**/ 
+	Set the value of field writers
+*/
+public void setWriters(ArrayList<Entity<PersonDetails>> writers)
+{
+	this.writers = writers;
+}
 
+/**
+	Lazy evaluation for releaseDate
+*/
 public MetadataString	releaseDate()
 {
-MetadataString	result	=this.releaseDate;
-if(result == null)
-{
-result = new MetadataString();
-this.releaseDate	=	 result;
-}
-return result;
+	MetadataString	result = this.releaseDate;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.releaseDate = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field releaseDate
-**/ 
-
+*/
 public String getReleaseDate()
 {
-	return releaseDate().getValue();
+	return this.releaseDate().getValue();
 }
 
 /**
 	Sets the value of the field releaseDate
-**/ 
-
-public void setReleaseDate( String releaseDate )
+*/
+public void setReleaseDate(String releaseDate)
 {
 	this.releaseDate().setValue(releaseDate);
 }
 
 /**
-	The heavy weight setter method for field releaseDate
-**/ 
-
-public void hwSetReleaseDate( String releaseDate )
-{
-	this.releaseDate().setValue(releaseDate);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: releaseDate
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: releaseDate
+*/
 public boolean isNullReleaseDate()
 {
 	return releaseDate == null || releaseDate.getValue() == null;
 }
 
 /**
-	 Sets the releaseDate directly
-**/ 
-
-public void setReleaseDateMetadata(MetadataString releaseDate)
-{	this.releaseDate = releaseDate;
-}
-/**
-	Heavy Weight Direct setter method for releaseDate
-**/ 
-
-public void hwSetReleaseDateMetadata(MetadataString releaseDate)
-{	 if(this.releaseDate!=null && this.releaseDate.getValue()!=null && hasTermVector())
-		 termVector().remove(this.releaseDate.termVector());
-	 this.releaseDate = releaseDate;
+	The heavy weight setter method for field releaseDate
+*/
+public void hwSetReleaseDate(String releaseDate)
+{
+	this.releaseDate().setValue(releaseDate);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for genres
-**/ 
 
-public  ArrayList<Genre>	genres()
+/**
+	 Sets the releaseDate directly.
+*/
+public void setReleaseDateMetadata(MetadataString releaseDate)
 {
- ArrayList<Genre>	result	=this.genres;
-if(result == null)
-{
-result = new  ArrayList<Genre>();
-this.genres	=	 result;
-}
-return result;
+	this.releaseDate = releaseDate;
 }
 
 /**
-	Set the value of field genres
-**/ 
-
-public void setGenres(  ArrayList<Genre> genres )
+	Heavy Weight Direct setter method for releaseDate
+*/
+public void hwSetReleaseDateMetadata(MetadataString releaseDate)
 {
-this.genres = genres ;
+	if (this.releaseDate != null && this.releaseDate.getValue() != null && hasTermVector())
+		termVector().remove(this.releaseDate.termVector());
+	this.releaseDate = releaseDate;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for genres
+*/
+public ArrayList<Genre>	genres()
+{
+	ArrayList<Genre>	result = this.genres;
+	if (result == null)
+	{
+		result = new ArrayList<Genre>();
+		this.genres = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field genres
-**/ 
-
-public  ArrayList<Genre> getGenres(){
-return this.genres;
+*/
+public ArrayList<Genre> getGenres()
+{
+	return this.genres;
 }
 
 /**
-	Lazy Evaluation for plot
-**/ 
+	Set the value of field genres
+*/
+public void setGenres(ArrayList<Genre> genres)
+{
+	this.genres = genres;
+}
 
+/**
+	Lazy evaluation for plot
+*/
 public MetadataString	plot()
 {
-MetadataString	result	=this.plot;
-if(result == null)
-{
-result = new MetadataString();
-this.plot	=	 result;
-}
-return result;
+	MetadataString	result = this.plot;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.plot = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field plot
-**/ 
-
+*/
 public String getPlot()
 {
-	return plot().getValue();
+	return this.plot().getValue();
 }
 
 /**
 	Sets the value of the field plot
-**/ 
-
-public void setPlot( String plot )
+*/
+public void setPlot(String plot)
 {
 	this.plot().setValue(plot);
 }
 
 /**
-	The heavy weight setter method for field plot
-**/ 
-
-public void hwSetPlot( String plot )
-{
-	this.plot().setValue(plot);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: plot
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: plot
+*/
 public boolean isNullPlot()
 {
 	return plot == null || plot.getValue() == null;
 }
 
 /**
-	 Sets the plot directly
-**/ 
-
-public void setPlotMetadata(MetadataString plot)
-{	this.plot = plot;
-}
-/**
-	Heavy Weight Direct setter method for plot
-**/ 
-
-public void hwSetPlotMetadata(MetadataString plot)
-{	 if(this.plot!=null && this.plot.getValue()!=null && hasTermVector())
-		 termVector().remove(this.plot.termVector());
-	 this.plot = plot;
+	The heavy weight setter method for field plot
+*/
+public void hwSetPlot(String plot)
+{
+	this.plot().setValue(plot);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for tagline
-**/ 
 
+/**
+	 Sets the plot directly.
+*/
+public void setPlotMetadata(MetadataString plot)
+{
+	this.plot = plot;
+}
+
+/**
+	Heavy Weight Direct setter method for plot
+*/
+public void hwSetPlotMetadata(MetadataString plot)
+{
+	if (this.plot != null && this.plot.getValue() != null && hasTermVector())
+		termVector().remove(this.plot.termVector());
+	this.plot = plot;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for tagline
+*/
 public MetadataString	tagline()
 {
-MetadataString	result	=this.tagline;
-if(result == null)
-{
-result = new MetadataString();
-this.tagline	=	 result;
-}
-return result;
+	MetadataString	result = this.tagline;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.tagline = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field tagline
-**/ 
-
+*/
 public String getTagline()
 {
-	return tagline().getValue();
+	return this.tagline().getValue();
 }
 
 /**
 	Sets the value of the field tagline
-**/ 
-
-public void setTagline( String tagline )
+*/
+public void setTagline(String tagline)
 {
 	this.tagline().setValue(tagline);
 }
 
 /**
-	The heavy weight setter method for field tagline
-**/ 
-
-public void hwSetTagline( String tagline )
-{
-	this.tagline().setValue(tagline);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: tagline
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: tagline
+*/
 public boolean isNullTagline()
 {
 	return tagline == null || tagline.getValue() == null;
 }
 
 /**
-	 Sets the tagline directly
-**/ 
-
-public void setTaglineMetadata(MetadataString tagline)
-{	this.tagline = tagline;
-}
-/**
-	Heavy Weight Direct setter method for tagline
-**/ 
-
-public void hwSetTaglineMetadata(MetadataString tagline)
-{	 if(this.tagline!=null && this.tagline.getValue()!=null && hasTermVector())
-		 termVector().remove(this.tagline.termVector());
-	 this.tagline = tagline;
+	The heavy weight setter method for field tagline
+*/
+public void hwSetTagline(String tagline)
+{
+	this.tagline().setValue(tagline);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for cast
-**/ 
 
-public  ArrayList<CastMember>	cast()
+/**
+	 Sets the tagline directly.
+*/
+public void setTaglineMetadata(MetadataString tagline)
 {
- ArrayList<CastMember>	result	=this.cast;
-if(result == null)
-{
-result = new  ArrayList<CastMember>();
-this.cast	=	 result;
-}
-return result;
+	this.tagline = tagline;
 }
 
 /**
-	Set the value of field cast
-**/ 
-
-public void setCast(  ArrayList<CastMember> cast )
+	Heavy Weight Direct setter method for tagline
+*/
+public void hwSetTaglineMetadata(MetadataString tagline)
 {
-this.cast = cast ;
+	if (this.tagline != null && this.tagline.getValue() != null && hasTermVector())
+		termVector().remove(this.tagline.termVector());
+	this.tagline = tagline;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for cast
+*/
+public ArrayList<CastMember>	cast()
+{
+	ArrayList<CastMember>	result = this.cast;
+	if (result == null)
+	{
+		result = new ArrayList<CastMember>();
+		this.cast = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field cast
-**/ 
-
-public  ArrayList<CastMember> getCast(){
-return this.cast;
+*/
+public ArrayList<CastMember> getCast()
+{
+	return this.cast;
 }
 
 /**
-	Lazy Evaluation for titlePhotos
-**/ 
-
-public  ArrayList<Image>	titlePhotos()
+	Set the value of field cast
+*/
+public void setCast(ArrayList<CastMember> cast)
 {
- ArrayList<Image>	result	=this.titlePhotos;
-if(result == null)
-{
-result = new  ArrayList<Image>();
-this.titlePhotos	=	 result;
-}
-return result;
+	this.cast = cast;
 }
 
 /**
-	Set the value of field titlePhotos
-**/ 
-
-public void setTitlePhotos(  ArrayList<Image> titlePhotos )
+	Lazy evaluation for titlePhotos
+*/
+public ArrayList<Image>	titlePhotos()
 {
-this.titlePhotos = titlePhotos ;
+	ArrayList<Image>	result = this.titlePhotos;
+	if (result == null)
+	{
+		result = new ArrayList<Image>();
+		this.titlePhotos = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field titlePhotos
-**/ 
-
-public  ArrayList<Image> getTitlePhotos(){
-return this.titlePhotos;
+*/
+public ArrayList<Image> getTitlePhotos()
+{
+	return this.titlePhotos;
 }
 
 /**
-	Lazy Evaluation for posterImg
-**/ 
+	Set the value of field titlePhotos
+*/
+public void setTitlePhotos(ArrayList<Image> titlePhotos)
+{
+	this.titlePhotos = titlePhotos;
+}
 
+/**
+	Lazy evaluation for posterImg
+*/
 public MetadataParsedURL	posterImg()
 {
-MetadataParsedURL	result	=this.posterImg;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.posterImg	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.posterImg;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.posterImg = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field posterImg
-**/ 
-
+*/
 public ParsedURL getPosterImg()
 {
-	return posterImg().getValue();
+	return this.posterImg().getValue();
 }
 
 /**
 	Sets the value of the field posterImg
-**/ 
-
-public void setPosterImg( ParsedURL posterImg )
+*/
+public void setPosterImg(ParsedURL posterImg)
 {
 	this.posterImg().setValue(posterImg);
 }
 
 /**
-	The heavy weight setter method for field posterImg
-**/ 
-
-public void hwSetPosterImg( ParsedURL posterImg )
-{
-	this.posterImg().setValue(posterImg);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: posterImg
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: posterImg
+*/
 public boolean isNullPosterImg()
 {
 	return posterImg == null || posterImg.getValue() == null;
 }
 
 /**
-	 Sets the posterImg directly
-**/ 
-
-public void setPosterImgMetadata(MetadataParsedURL posterImg)
-{	this.posterImg = posterImg;
-}
-/**
-	Heavy Weight Direct setter method for posterImg
-**/ 
-
-public void hwSetPosterImgMetadata(MetadataParsedURL posterImg)
-{	 if(this.posterImg!=null && this.posterImg.getValue()!=null && hasTermVector())
-		 termVector().remove(this.posterImg.termVector());
-	 this.posterImg = posterImg;
+	The heavy weight setter method for field posterImg
+*/
+public void hwSetPosterImg(ParsedURL posterImg)
+{
+	this.posterImg().setValue(posterImg);
 	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the posterImg directly.
+*/
+public void setPosterImgMetadata(MetadataParsedURL posterImg)
+{
+	this.posterImg = posterImg;
+}
+
+/**
+	Heavy Weight Direct setter method for posterImg
+*/
+public void hwSetPosterImgMetadata(MetadataParsedURL posterImg)
+{
+	if (this.posterImg != null && this.posterImg.getValue() != null && hasTermVector())
+		termVector().remove(this.posterImg.termVector());
+	this.posterImg = posterImg;
+	rebuildCompositeTermVector();
+}
+
+
 }
 

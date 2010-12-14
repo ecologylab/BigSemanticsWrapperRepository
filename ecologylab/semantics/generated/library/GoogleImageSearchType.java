@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,27 @@ import java.util.*;
 
 /**
 	Google image search type
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  GoogleImageSearchType
-extends  Document
+public class GoogleImageSearchType
+extends Document
 {
 
-	 @simpl_collection("image_result") @simpl_nowrap @mm_name("image_results") private ArrayList<ImageResult>	imageResults;
+
+/**
+	Collection of results for google image search
+*/
+@simpl_collection("image_result") @simpl_nowrap @mm_name("image_results")
+private ArrayList<ImageResult>	imageResults;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public GoogleImageSearchType()
 {
  super();
@@ -72,44 +72,42 @@ public GoogleImageSearchType()
 
 /**
 	Constructor
-**/ 
-
+*/
 public GoogleImageSearchType(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for imageResults
-**/ 
-
-public  ArrayList<ImageResult>	imageResults()
+	Lazy evaluation for imageResults
+*/
+public ArrayList<ImageResult>	imageResults()
 {
- ArrayList<ImageResult>	result	=this.imageResults;
-if(result == null)
-{
-result = new  ArrayList<ImageResult>();
-this.imageResults	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field imageResults
-**/ 
-
-public void setImageResults(  ArrayList<ImageResult> imageResults )
-{
-this.imageResults = imageResults ;
+	ArrayList<ImageResult>	result = this.imageResults;
+	if (result == null)
+	{
+		result = new ArrayList<ImageResult>();
+		this.imageResults = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field imageResults
-**/ 
-
-public  ArrayList<ImageResult> getImageResults(){
-return this.imageResults;
+*/
+public ArrayList<ImageResult> getImageResults()
+{
+	return this.imageResults;
 }
+
+/**
+	Set the value of field imageResults
+*/
+public void setImageResults(ArrayList<ImageResult> imageResults)
+{
+	this.imageResults = imageResults;
+}
+
 
 }
 

@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.buzz;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	Google trends
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  GoogleTrends
-extends  Document
+public class GoogleTrends
+extends Document
 {
 
-	 @simpl_collection("hot_search") @simpl_nowrap @mm_name("hot_searches") private ArrayList<HotSearch>	hotSearches;
+@simpl_collection("hot_search") @simpl_nowrap @mm_name("hot_searches")
+private ArrayList<HotSearch>	hotSearches;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public GoogleTrends()
 {
  super();
@@ -72,44 +68,42 @@ public GoogleTrends()
 
 /**
 	Constructor
-**/ 
-
+*/
 public GoogleTrends(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for hotSearches
-**/ 
-
-public  ArrayList<HotSearch>	hotSearches()
+	Lazy evaluation for hotSearches
+*/
+public ArrayList<HotSearch>	hotSearches()
 {
- ArrayList<HotSearch>	result	=this.hotSearches;
-if(result == null)
-{
-result = new  ArrayList<HotSearch>();
-this.hotSearches	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field hotSearches
-**/ 
-
-public void setHotSearches(  ArrayList<HotSearch> hotSearches )
-{
-this.hotSearches = hotSearches ;
+	ArrayList<HotSearch>	result = this.hotSearches;
+	if (result == null)
+	{
+		result = new ArrayList<HotSearch>();
+		this.hotSearches = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field hotSearches
-**/ 
-
-public  ArrayList<HotSearch> getHotSearches(){
-return this.hotSearches;
+*/
+public ArrayList<HotSearch> getHotSearches()
+{
+	return this.hotSearches;
 }
+
+/**
+	Set the value of field hotSearches
+*/
+public void setHotSearches(ArrayList<HotSearch> hotSearches)
+{
+	this.hotSearches = hotSearches;
+}
+
 
 }
 

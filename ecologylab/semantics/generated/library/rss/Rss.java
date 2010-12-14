@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.rss;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,23 @@ import java.util.*;
 
 /**
 	A news feed.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  Rss
-extends  Document
+public class Rss
+extends Document
 {
 
+@simpl_composite @mm_name("channel")
+private Channel	channel;
 
-private  @simpl_composite @mm_name("channel") Channel	channel;
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public Rss()
 {
  super();
@@ -72,44 +68,42 @@ public Rss()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Rss(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for channel
-**/ 
-
+	Lazy evaluation for channel
+*/
 public Channel	channel()
 {
-Channel	result	=this.channel;
-if(result == null)
-{
-result = new Channel();
-this.channel	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field channel
-**/ 
-
-public void setChannel( Channel channel )
-{
-this.channel = channel ;
+	Channel	result = this.channel;
+	if (result == null)
+	{
+		result = new Channel();
+		this.channel = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field channel
-**/ 
-
-public Channel getChannel(){
-return this.channel;
+*/
+public Channel getChannel()
+{
+	return this.channel;
 }
+
+/**
+	Set the value of field channel
+*/
+public void setChannel(Channel channel)
+{
+	this.channel = channel;
+}
+
 
 }
 

@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.icdl;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,18 +41,32 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Response
+extends Metadata
+{
 
-public class Response extends Metadata{
+@simpl_scalar
+private MetadataInteger	pnum;
 
-	@simpl_scalar private MetadataInteger	pnum;
-	@simpl_scalar private MetadataInteger	total;
-	 @simpl_collection("book") @simpl_nowrap @mm_name("books") private ArrayList<Book>	books;
+@simpl_scalar
+private MetadataInteger	total;
+
+@simpl_collection("book") @simpl_nowrap @mm_name("books")
+private ArrayList<Book>	books;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Response()
 {
  super();
@@ -59,178 +74,174 @@ public Response()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Response(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for pnum
-**/ 
-
+	Lazy evaluation for pnum
+*/
 public MetadataInteger	pnum()
 {
-MetadataInteger	result	=this.pnum;
-if(result == null)
-{
-result = new MetadataInteger();
-this.pnum	=	 result;
-}
-return result;
+	MetadataInteger	result = this.pnum;
+	if (result == null)
+	{
+		result = new MetadataInteger();
+		this.pnum = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field pnum
-**/ 
-
+*/
 public Integer getPnum()
 {
-	return pnum().getValue();
+	return this.pnum().getValue();
 }
 
 /**
 	Sets the value of the field pnum
-**/ 
-
-public void setPnum( Integer pnum )
+*/
+public void setPnum(Integer pnum)
 {
 	this.pnum().setValue(pnum);
 }
 
 /**
-	The heavy weight setter method for field pnum
-**/ 
-
-public void hwSetPnum( Integer pnum )
-{
-	this.pnum().setValue(pnum);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: pnum
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: pnum
+*/
 public boolean isNullPnum()
 {
 	return pnum == null || pnum.getValue() == null;
 }
 
 /**
-	 Sets the pnum directly
-**/ 
-
-public void setPnumMetadata(MetadataInteger pnum)
-{	this.pnum = pnum;
-}
-/**
-	Heavy Weight Direct setter method for pnum
-**/ 
-
-public void hwSetPnumMetadata(MetadataInteger pnum)
-{	 if(this.pnum!=null && this.pnum.getValue()!=null && hasTermVector())
-		 termVector().remove(this.pnum.termVector());
-	 this.pnum = pnum;
+	The heavy weight setter method for field pnum
+*/
+public void hwSetPnum(Integer pnum)
+{
+	this.pnum().setValue(pnum);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for total
-**/ 
 
+/**
+	 Sets the pnum directly.
+*/
+public void setPnumMetadata(MetadataInteger pnum)
+{
+	this.pnum = pnum;
+}
+
+/**
+	Heavy Weight Direct setter method for pnum
+*/
+public void hwSetPnumMetadata(MetadataInteger pnum)
+{
+	if (this.pnum != null && this.pnum.getValue() != null && hasTermVector())
+		termVector().remove(this.pnum.termVector());
+	this.pnum = pnum;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for total
+*/
 public MetadataInteger	total()
 {
-MetadataInteger	result	=this.total;
-if(result == null)
-{
-result = new MetadataInteger();
-this.total	=	 result;
-}
-return result;
+	MetadataInteger	result = this.total;
+	if (result == null)
+	{
+		result = new MetadataInteger();
+		this.total = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field total
-**/ 
-
+*/
 public Integer getTotal()
 {
-	return total().getValue();
+	return this.total().getValue();
 }
 
 /**
 	Sets the value of the field total
-**/ 
-
-public void setTotal( Integer total )
+*/
+public void setTotal(Integer total)
 {
 	this.total().setValue(total);
 }
 
 /**
-	The heavy weight setter method for field total
-**/ 
-
-public void hwSetTotal( Integer total )
-{
-	this.total().setValue(total);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: total
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: total
+*/
 public boolean isNullTotal()
 {
 	return total == null || total.getValue() == null;
 }
 
 /**
-	 Sets the total directly
-**/ 
-
-public void setTotalMetadata(MetadataInteger total)
-{	this.total = total;
-}
-/**
-	Heavy Weight Direct setter method for total
-**/ 
-
-public void hwSetTotalMetadata(MetadataInteger total)
-{	 if(this.total!=null && this.total.getValue()!=null && hasTermVector())
-		 termVector().remove(this.total.termVector());
-	 this.total = total;
+	The heavy weight setter method for field total
+*/
+public void hwSetTotal(Integer total)
+{
+	this.total().setValue(total);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for books
-**/ 
 
-public  ArrayList<Book>	books()
+/**
+	 Sets the total directly.
+*/
+public void setTotalMetadata(MetadataInteger total)
 {
- ArrayList<Book>	result	=this.books;
-if(result == null)
-{
-result = new  ArrayList<Book>();
-this.books	=	 result;
-}
-return result;
+	this.total = total;
 }
 
 /**
-	Set the value of field books
-**/ 
-
-public void setBooks(  ArrayList<Book> books )
+	Heavy Weight Direct setter method for total
+*/
+public void hwSetTotalMetadata(MetadataInteger total)
 {
-this.books = books ;
+	if (this.total != null && this.total.getValue() != null && hasTermVector())
+		termVector().remove(this.total.termVector());
+	this.total = total;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for books
+*/
+public ArrayList<Book>	books()
+{
+	ArrayList<Book>	result = this.books;
+	if (result == null)
+	{
+		result = new ArrayList<Book>();
+		this.books = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field books
-**/ 
+*/
+public ArrayList<Book> getBooks()
+{
+	return this.books;
+}
 
-public  ArrayList<Book> getBooks(){
-return this.books;
+/**
+	Set the value of field books
+*/
+public void setBooks(ArrayList<Book> books)
+{
+	this.books = books;
 }
+
+
 }
+

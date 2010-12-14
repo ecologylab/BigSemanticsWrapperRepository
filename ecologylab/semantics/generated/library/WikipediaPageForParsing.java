@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -51,20 +44,20 @@ import java.util.*;
 
 /**
 	Used to parse wikipedia pages for concept mapping project.
-**/ 
 
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
-
-public class  WikipediaPageForParsing
-extends  WikipediaPageType
+public class WikipediaPageForParsing
+extends WikipediaPageType
 {
 
-	 @simpl_collection("paragraph") @xml_tag("paragraphs") @mm_name("paragraphs") private ArrayList<Paragraph>	paragraphs;
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public WikipediaPageForParsing()
 {
  super();
@@ -72,44 +65,12 @@ public WikipediaPageForParsing()
 
 /**
 	Constructor
-**/ 
-
+*/
 public WikipediaPageForParsing(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
-/**
-	Lazy Evaluation for paragraphs
-**/ 
-
-public  ArrayList<Paragraph>	paragraphs()
-{
- ArrayList<Paragraph>	result	=this.paragraphs;
-if(result == null)
-{
-result = new  ArrayList<Paragraph>();
-this.paragraphs	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field paragraphs
-**/ 
-
-public void setParagraphs(  ArrayList<Paragraph> paragraphs )
-{
-this.paragraphs = paragraphs ;
-}
-
-/**
-	Get the value of field paragraphs
-**/ 
-
-public  ArrayList<Paragraph> getParagraphs(){
-return this.paragraphs;
-}
 
 }
 

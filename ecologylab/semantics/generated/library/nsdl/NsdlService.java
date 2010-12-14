@@ -1,12 +1,5 @@
 package ecologylab.semantics.generated.library.nsdl;
 
-/**
-This is a generated code. DO NOT edit or modify it.
- @author MetadataCompiler 
-
-**/ 
-
-
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
@@ -31,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -48,18 +41,27 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
 @xml_tag("NSDLSearchService")
-public class  NsdlService
-extends  Metadata
+public class NsdlService
+extends Metadata
 {
 
+@simpl_composite @xml_tag("SearchResults") @mm_name("search_results")
+private SearchResults	searchResults;
 
-private @xml_tag("SearchResults") @simpl_composite @mm_name("search_results") SearchResults	searchResults;
+
+
 /**
 	Constructor
-**/ 
-
+*/
 public NsdlService()
 {
  super();
@@ -67,44 +69,42 @@ public NsdlService()
 
 /**
 	Constructor
-**/ 
-
+*/
 public NsdlService(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for searchResults
-**/ 
-
+	Lazy evaluation for searchResults
+*/
 public SearchResults	searchResults()
 {
-SearchResults	result	=this.searchResults;
-if(result == null)
-{
-result = new SearchResults();
-this.searchResults	=	 result;
-}
-return result;
-}
-
-/**
-	Set the value of field searchResults
-**/ 
-
-public void setSearchResults( SearchResults searchResults )
-{
-this.searchResults = searchResults ;
+	SearchResults	result = this.searchResults;
+	if (result == null)
+	{
+		result = new SearchResults();
+		this.searchResults = result;
+	}
+	return result;
 }
 
 /**
 	Get the value of field searchResults
-**/ 
-
-public SearchResults getSearchResults(){
-return this.searchResults;
+*/
+public SearchResults getSearchResults()
+{
+	return this.searchResults;
 }
+
+/**
+	Set the value of field searchResults
+*/
+public void setSearchResults(SearchResults searchResults)
+{
+	this.searchResults = searchResults;
+}
+
 
 }
 

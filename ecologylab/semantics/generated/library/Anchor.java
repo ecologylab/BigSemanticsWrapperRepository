@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library;
 
+
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
@@ -23,7 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -40,18 +41,32 @@ import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.types.element.Mappable;
 import java.util.*;
 
+
+/**
+	Anchors (links) in the paragraph, typically links to another Wikipedia article.
+
+This is a generated code. DO NOT edit or modify it.
+@author MetadataCompiler
+*/
 @simpl_inherit
+public class Anchor
+extends Metadata
+{
 
-public class Anchor extends Metadata{
+@simpl_scalar
+private MetadataString	anchorText;
 
-	@simpl_scalar private MetadataString	anchorText;
-	@simpl_scalar private MetadataParsedURL	link;
-	@simpl_scalar private MetadataString	targetTitle;
+@simpl_scalar
+private MetadataParsedURL	link;
+
+@simpl_scalar
+private MetadataString	targetTitle;
+
+
 
 /**
 	Constructor
-**/ 
-
+*/
 public Anchor()
 {
  super();
@@ -59,214 +74,210 @@ public Anchor()
 
 /**
 	Constructor
-**/ 
-
+*/
 public Anchor(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy Evaluation for anchorText
-**/ 
-
+	Lazy evaluation for anchorText
+*/
 public MetadataString	anchorText()
 {
-MetadataString	result	=this.anchorText;
-if(result == null)
-{
-result = new MetadataString();
-this.anchorText	=	 result;
-}
-return result;
+	MetadataString	result = this.anchorText;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.anchorText = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field anchorText
-**/ 
-
+*/
 public String getAnchorText()
 {
-	return anchorText().getValue();
+	return this.anchorText().getValue();
 }
 
 /**
 	Sets the value of the field anchorText
-**/ 
-
-public void setAnchorText( String anchorText )
+*/
+public void setAnchorText(String anchorText)
 {
 	this.anchorText().setValue(anchorText);
 }
 
 /**
-	The heavy weight setter method for field anchorText
-**/ 
-
-public void hwSetAnchorText( String anchorText )
-{
-	this.anchorText().setValue(anchorText);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: anchorText
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: anchorText
+*/
 public boolean isNullAnchorText()
 {
 	return anchorText == null || anchorText.getValue() == null;
 }
 
 /**
-	 Sets the anchorText directly
-**/ 
-
-public void setAnchorTextMetadata(MetadataString anchorText)
-{	this.anchorText = anchorText;
-}
-/**
-	Heavy Weight Direct setter method for anchorText
-**/ 
-
-public void hwSetAnchorTextMetadata(MetadataString anchorText)
-{	 if(this.anchorText!=null && this.anchorText.getValue()!=null && hasTermVector())
-		 termVector().remove(this.anchorText.termVector());
-	 this.anchorText = anchorText;
+	The heavy weight setter method for field anchorText
+*/
+public void hwSetAnchorText(String anchorText)
+{
+	this.anchorText().setValue(anchorText);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for link
-**/ 
 
+/**
+	 Sets the anchorText directly.
+*/
+public void setAnchorTextMetadata(MetadataString anchorText)
+{
+	this.anchorText = anchorText;
+}
+
+/**
+	Heavy Weight Direct setter method for anchorText
+*/
+public void hwSetAnchorTextMetadata(MetadataString anchorText)
+{
+	if (this.anchorText != null && this.anchorText.getValue() != null && hasTermVector())
+		termVector().remove(this.anchorText.termVector());
+	this.anchorText = anchorText;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for link
+*/
 public MetadataParsedURL	link()
 {
-MetadataParsedURL	result	=this.link;
-if(result == null)
-{
-result = new MetadataParsedURL();
-this.link	=	 result;
-}
-return result;
+	MetadataParsedURL	result = this.link;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.link = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field link
-**/ 
-
+*/
 public ParsedURL getLink()
 {
-	return link().getValue();
+	return this.link().getValue();
 }
 
 /**
 	Sets the value of the field link
-**/ 
-
-public void setLink( ParsedURL link )
+*/
+public void setLink(ParsedURL link)
 {
 	this.link().setValue(link);
 }
 
 /**
-	The heavy weight setter method for field link
-**/ 
-
-public void hwSetLink( ParsedURL link )
-{
-	this.link().setValue(link);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: link
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: link
+*/
 public boolean isNullLink()
 {
 	return link == null || link.getValue() == null;
 }
 
 /**
-	 Sets the link directly
-**/ 
-
-public void setLinkMetadata(MetadataParsedURL link)
-{	this.link = link;
-}
-/**
-	Heavy Weight Direct setter method for link
-**/ 
-
-public void hwSetLinkMetadata(MetadataParsedURL link)
-{	 if(this.link!=null && this.link.getValue()!=null && hasTermVector())
-		 termVector().remove(this.link.termVector());
-	 this.link = link;
+	The heavy weight setter method for field link
+*/
+public void hwSetLink(ParsedURL link)
+{
+	this.link().setValue(link);
 	rebuildCompositeTermVector();
 }
-/**
-	Lazy Evaluation for targetTitle
-**/ 
 
+/**
+	 Sets the link directly.
+*/
+public void setLinkMetadata(MetadataParsedURL link)
+{
+	this.link = link;
+}
+
+/**
+	Heavy Weight Direct setter method for link
+*/
+public void hwSetLinkMetadata(MetadataParsedURL link)
+{
+	if (this.link != null && this.link.getValue() != null && hasTermVector())
+		termVector().remove(this.link.termVector());
+	this.link = link;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for targetTitle
+*/
 public MetadataString	targetTitle()
 {
-MetadataString	result	=this.targetTitle;
-if(result == null)
-{
-result = new MetadataString();
-this.targetTitle	=	 result;
-}
-return result;
+	MetadataString	result = this.targetTitle;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.targetTitle = result;
+	}
+	return result;
 }
 
 /**
 	Gets the value of the field targetTitle
-**/ 
-
+*/
 public String getTargetTitle()
 {
-	return targetTitle().getValue();
+	return this.targetTitle().getValue();
 }
 
 /**
 	Sets the value of the field targetTitle
-**/ 
-
-public void setTargetTitle( String targetTitle )
+*/
+public void setTargetTitle(String targetTitle)
 {
 	this.targetTitle().setValue(targetTitle);
 }
 
 /**
-	The heavy weight setter method for field targetTitle
-**/ 
-
-public void hwSetTargetTitle( String targetTitle )
-{
-	this.targetTitle().setValue(targetTitle);
-	rebuildCompositeTermVector();
-}
-/**
-	Tests to see if the value of the field is null, or if the field itself is null: targetTitle
-**/ 
-
+	Test to see if the value of the field is null, or if the field itself is null: targetTitle
+*/
 public boolean isNullTargetTitle()
 {
 	return targetTitle == null || targetTitle.getValue() == null;
 }
 
 /**
-	 Sets the targetTitle directly
-**/ 
-
-public void setTargetTitleMetadata(MetadataString targetTitle)
-{	this.targetTitle = targetTitle;
+	The heavy weight setter method for field targetTitle
+*/
+public void hwSetTargetTitle(String targetTitle)
+{
+	this.targetTitle().setValue(targetTitle);
+	rebuildCompositeTermVector();
 }
+
+/**
+	 Sets the targetTitle directly.
+*/
+public void setTargetTitleMetadata(MetadataString targetTitle)
+{
+	this.targetTitle = targetTitle;
+}
+
 /**
 	Heavy Weight Direct setter method for targetTitle
-**/ 
-
+*/
 public void hwSetTargetTitleMetadata(MetadataString targetTitle)
-{	 if(this.targetTitle!=null && this.targetTitle.getValue()!=null && hasTermVector())
-		 termVector().remove(this.targetTitle.termVector());
-	 this.targetTitle = targetTitle;
+{
+	if (this.targetTitle != null && this.targetTitle.getValue() != null && hasTermVector())
+		termVector().remove(this.targetTitle.termVector());
+	this.targetTitle = targetTitle;
 	rebuildCompositeTermVector();
-}}
+}
+
+
+}
+
