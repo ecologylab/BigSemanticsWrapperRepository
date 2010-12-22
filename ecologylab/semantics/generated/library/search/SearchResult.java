@@ -49,7 +49,7 @@ This is a generated code. DO NOT edit or modify it.
 */
 @simpl_inherit
 public class SearchResult
-extends Document
+extends Metadata
 {
 
 
