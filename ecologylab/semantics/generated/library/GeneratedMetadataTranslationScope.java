@@ -132,8 +132,6 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.icdl.Book.class,
 
-		ecologylab.semantics.generated.library.icdl.Response.class,
-
 		ecologylab.semantics.generated.library.icdl.Icdl.class,
 
 		ecologylab.semantics.generated.library.imdb.PersonDetails.class,

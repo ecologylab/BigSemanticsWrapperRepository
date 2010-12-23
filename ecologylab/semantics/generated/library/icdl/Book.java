@@ -53,7 +53,7 @@ extends Metadata
 {
 
 @simpl_scalar
-private MetadataInteger	id;
+private MetadataString	id;
 
 @simpl_scalar
 private MetadataString	languages;
@@ -94,12 +94,12 @@ super(metaMetadata);
 /**
 	Lazy evaluation for id
 */
-public MetadataInteger	id()
+public MetadataString	id()
 {
-	MetadataInteger	result = this.id;
+	MetadataString	result = this.id;
 	if (result == null)
 	{
-		result = new MetadataInteger();
+		result = new MetadataString();
 		this.id = result;
 	}
 	return result;
@@ -108,7 +108,7 @@ public MetadataInteger	id()
 /**
 	Gets the value of the field id
 */
-public Integer getId()
+public String getId()
 {
 	return this.id().getValue();
 }
@@ -116,7 +116,7 @@ public Integer getId()
 /**
 	Sets the value of the field id
 */
-public void setId(Integer id)
+public void setId(String id)
 {
 	this.id().setValue(id);
 }
@@ -132,7 +132,7 @@ public boolean isNullId()
 /**
 	The heavy weight setter method for field id
 */
-public void hwSetId(Integer id)
+public void hwSetId(String id)
 {
 	this.id().setValue(id);
 	rebuildCompositeTermVector();
@@ -141,7 +141,7 @@ public void hwSetId(Integer id)
 /**
 	 Sets the id directly.
 */
-public void setIdMetadata(MetadataInteger id)
+public void setIdMetadata(MetadataString id)
 {
 	this.id = id;
 }
@@ -149,7 +149,7 @@ public void setIdMetadata(MetadataInteger id)
 /**
 	Heavy Weight Direct setter method for id
 */
-public void hwSetIdMetadata(MetadataInteger id)
+public void hwSetIdMetadata(MetadataString id)
 {
 	if (this.id != null && this.id.getValue() != null && hasTermVector())
 		termVector().remove(this.id.termVector());
