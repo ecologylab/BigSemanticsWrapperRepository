@@ -14,6 +14,7 @@ import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.products.*;
+import ecologylab.semantics.generated.library.publication.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.scienceDirect.*;
@@ -56,19 +57,13 @@ extends SearchResult
 private MetadataParsedURL	documentLink;
 
 @simpl_scalar
-private MetadataInteger	citations;
+private MetadataInteger	citationCount;
 
 @simpl_scalar
 private MetadataParsedURL	citationsLink;
 
 @simpl_scalar
 private MetadataParsedURL	relatedArticlesLink;
-
-@simpl_scalar
-private MetadataInteger	versions;
-
-@simpl_scalar
-private MetadataParsedURL	versionsLink;
 
 
 
@@ -155,68 +150,68 @@ public void hwSetDocumentLinkMetadata(MetadataParsedURL documentLink)
 }
 
 /**
-	Lazy evaluation for citations
+	Lazy evaluation for citationCount
 */
-public MetadataInteger	citations()
+public MetadataInteger	citationCount()
 {
-	MetadataInteger	result = this.citations;
+	MetadataInteger	result = this.citationCount;
 	if (result == null)
 	{
 		result = new MetadataInteger();
-		this.citations = result;
+		this.citationCount = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field citations
+	Gets the value of the field citationCount
 */
-public Integer getCitations()
+public Integer getCitationCount()
 {
-	return this.citations().getValue();
+	return this.citationCount().getValue();
 }
 
 /**
-	Sets the value of the field citations
+	Sets the value of the field citationCount
 */
-public void setCitations(Integer citations)
+public void setCitationCount(Integer citationCount)
 {
-	this.citations().setValue(citations);
+	this.citationCount().setValue(citationCount);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: citations
+	Test to see if the value of the field is null, or if the field itself is null: citationCount
 */
-public boolean isNullCitations()
+public boolean isNullCitationCount()
 {
-	return citations == null || citations.getValue() == null;
+	return citationCount == null || citationCount.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field citations
+	The heavy weight setter method for field citationCount
 */
-public void hwSetCitations(Integer citations)
+public void hwSetCitationCount(Integer citationCount)
 {
-	this.citations().setValue(citations);
+	this.citationCount().setValue(citationCount);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the citations directly.
+	 Sets the citationCount directly.
 */
-public void setCitationsMetadata(MetadataInteger citations)
+public void setCitationCountMetadata(MetadataInteger citationCount)
 {
-	this.citations = citations;
+	this.citationCount = citationCount;
 }
 
 /**
-	Heavy Weight Direct setter method for citations
+	Heavy Weight Direct setter method for citationCount
 */
-public void hwSetCitationsMetadata(MetadataInteger citations)
+public void hwSetCitationCountMetadata(MetadataInteger citationCount)
 {
-	if (this.citations != null && this.citations.getValue() != null && hasTermVector())
-		termVector().remove(this.citations.termVector());
-	this.citations = citations;
+	if (this.citationCount != null && this.citationCount.getValue() != null && hasTermVector())
+		termVector().remove(this.citationCount.termVector());
+	this.citationCount = citationCount;
 	rebuildCompositeTermVector();
 }
 
@@ -349,138 +344,6 @@ public void hwSetRelatedArticlesLinkMetadata(MetadataParsedURL relatedArticlesLi
 	if (this.relatedArticlesLink != null && this.relatedArticlesLink.getValue() != null && hasTermVector())
 		termVector().remove(this.relatedArticlesLink.termVector());
 	this.relatedArticlesLink = relatedArticlesLink;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for versions
-*/
-public MetadataInteger	versions()
-{
-	MetadataInteger	result = this.versions;
-	if (result == null)
-	{
-		result = new MetadataInteger();
-		this.versions = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field versions
-*/
-public Integer getVersions()
-{
-	return this.versions().getValue();
-}
-
-/**
-	Sets the value of the field versions
-*/
-public void setVersions(Integer versions)
-{
-	this.versions().setValue(versions);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: versions
-*/
-public boolean isNullVersions()
-{
-	return versions == null || versions.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field versions
-*/
-public void hwSetVersions(Integer versions)
-{
-	this.versions().setValue(versions);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the versions directly.
-*/
-public void setVersionsMetadata(MetadataInteger versions)
-{
-	this.versions = versions;
-}
-
-/**
-	Heavy Weight Direct setter method for versions
-*/
-public void hwSetVersionsMetadata(MetadataInteger versions)
-{
-	if (this.versions != null && this.versions.getValue() != null && hasTermVector())
-		termVector().remove(this.versions.termVector());
-	this.versions = versions;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for versionsLink
-*/
-public MetadataParsedURL	versionsLink()
-{
-	MetadataParsedURL	result = this.versionsLink;
-	if (result == null)
-	{
-		result = new MetadataParsedURL();
-		this.versionsLink = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field versionsLink
-*/
-public ParsedURL getVersionsLink()
-{
-	return this.versionsLink().getValue();
-}
-
-/**
-	Sets the value of the field versionsLink
-*/
-public void setVersionsLink(ParsedURL versionsLink)
-{
-	this.versionsLink().setValue(versionsLink);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: versionsLink
-*/
-public boolean isNullVersionsLink()
-{
-	return versionsLink == null || versionsLink.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field versionsLink
-*/
-public void hwSetVersionsLink(ParsedURL versionsLink)
-{
-	this.versionsLink().setValue(versionsLink);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the versionsLink directly.
-*/
-public void setVersionsLinkMetadata(MetadataParsedURL versionsLink)
-{
-	this.versionsLink = versionsLink;
-}
-
-/**
-	Heavy Weight Direct setter method for versionsLink
-*/
-public void hwSetVersionsLinkMetadata(MetadataParsedURL versionsLink)
-{
-	if (this.versionsLink != null && this.versionsLink.getValue() != null && hasTermVector())
-		termVector().remove(this.versionsLink.termVector());
-	this.versionsLink = versionsLink;
 	rebuildCompositeTermVector();
 }
 

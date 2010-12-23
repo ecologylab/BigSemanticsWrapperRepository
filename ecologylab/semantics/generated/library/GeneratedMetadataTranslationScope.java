@@ -20,6 +20,7 @@ import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.products.*;
+import ecologylab.semantics.generated.library.publication.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.scienceDirect.*;
@@ -130,9 +131,11 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.GooglePatentImage.class,
 
+		ecologylab.semantics.generated.library.icdl.IcdlBookPreview.class,
+
 		ecologylab.semantics.generated.library.icdl.Book.class,
 
-		ecologylab.semantics.generated.library.icdl.Icdl.class,
+		ecologylab.semantics.generated.library.icdl.IcdlImageResult.class,
 
 		ecologylab.semantics.generated.library.imdb.PersonDetails.class,
 
@@ -172,6 +175,8 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.products.Product.class,
 
+		ecologylab.semantics.generated.library.publication.Author.class,
+
 		ecologylab.semantics.generated.library.Restaurant.class,
 
 		ecologylab.semantics.generated.library.rss.Dc.class,
@@ -193,8 +198,6 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.scholarlyPublication.Tag.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.Author.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
 

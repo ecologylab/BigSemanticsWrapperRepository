@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.urbanspoon;
+package ecologylab.semantics.generated.library.icdl;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -43,25 +43,26 @@ import java.util.*;
 
 
 /**
-	UrbanSpoon Search Class
+	Thumbnail Image
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class UrbanSpoonGenre
-extends Search
+@xml_tag("response")
+public class IcdlImageResult
+extends Document
 {
 
-@simpl_collection("search_result") @xml_tag("top_results") @mm_name("top_results")
-private ArrayList<SearchResult>	topResults;
+@simpl_collection("book") @simpl_nowrap @mm_name("books")
+private ArrayList<Book>	books;
 
 
 
 /**
 	Constructor
 */
-public UrbanSpoonGenre()
+public IcdlImageResult()
 {
  super();
 }
@@ -69,39 +70,39 @@ public UrbanSpoonGenre()
 /**
 	Constructor
 */
-public UrbanSpoonGenre(MetaMetadataCompositeField metaMetadata)
+public IcdlImageResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for topResults
+	Lazy evaluation for books
 */
-public ArrayList<SearchResult>	topResults()
+public ArrayList<Book>	books()
 {
-	ArrayList<SearchResult>	result = this.topResults;
+	ArrayList<Book>	result = this.books;
 	if (result == null)
 	{
-		result = new ArrayList<SearchResult>();
-		this.topResults = result;
+		result = new ArrayList<Book>();
+		this.books = result;
 	}
 	return result;
 }
 
 /**
-	Get the value of field topResults
+	Get the value of field books
 */
-public ArrayList<SearchResult> getTopResults()
+public ArrayList<Book> getBooks()
 {
-	return this.topResults;
+	return this.books;
 }
 
 /**
-	Set the value of field topResults
+	Set the value of field books
 */
-public void setTopResults(ArrayList<SearchResult> topResults)
+public void setBooks(ArrayList<Book> books)
 {
-	this.topResults = topResults;
+	this.books = books;
 }
 
 

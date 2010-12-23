@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.scholarlyPublication;
+package ecologylab.semantics.generated.library.publication;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -14,6 +14,7 @@ import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
 import ecologylab.semantics.generated.library.products.*;
+import ecologylab.semantics.generated.library.publication.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
 import ecologylab.semantics.generated.library.scienceDirect.*;
