@@ -86,9 +86,6 @@ private MetadataString	aboutTheAuthor;
 @simpl_collection("scholarly_article") @xml_tag("references_from_books") @mm_name("references_from_books")
 private ArrayList<ScholarlyArticle>	referencesFromBooks;
 
-@simpl_collection("scholarly_article") @xml_tag("references_from_google_scholar") @mm_name("references_from_google_scholar")
-private ArrayList<ScholarlyArticle>	referencesFromGoogleScholar;
-
 @simpl_scalar
 private MetadataString	isbn;
 
@@ -657,36 +654,6 @@ public ArrayList<ScholarlyArticle> getReferencesFromBooks()
 public void setReferencesFromBooks(ArrayList<ScholarlyArticle> referencesFromBooks)
 {
 	this.referencesFromBooks = referencesFromBooks;
-}
-
-/**
-	Lazy evaluation for referencesFromGoogleScholar
-*/
-public ArrayList<ScholarlyArticle>	referencesFromGoogleScholar()
-{
-	ArrayList<ScholarlyArticle>	result = this.referencesFromGoogleScholar;
-	if (result == null)
-	{
-		result = new ArrayList<ScholarlyArticle>();
-		this.referencesFromGoogleScholar = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field referencesFromGoogleScholar
-*/
-public ArrayList<ScholarlyArticle> getReferencesFromGoogleScholar()
-{
-	return this.referencesFromGoogleScholar;
-}
-
-/**
-	Set the value of field referencesFromGoogleScholar
-*/
-public void setReferencesFromGoogleScholar(ArrayList<ScholarlyArticle> referencesFromGoogleScholar)
-{
-	this.referencesFromGoogleScholar = referencesFromGoogleScholar;
 }
 
 /**

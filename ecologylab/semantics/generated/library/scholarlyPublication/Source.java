@@ -71,9 +71,6 @@ private MetadataString	archiveName;
 private MetadataParsedURL	archive;
 
 @simpl_scalar
-private MetadataString	pages;
-
-@simpl_scalar
 private MetadataString	isbn;
 
 
@@ -289,72 +286,6 @@ public void hwSetArchiveMetadata(MetadataParsedURL archive)
 	if (this.archive != null && this.archive.getValue() != null && hasTermVector())
 		termVector().remove(this.archive.termVector());
 	this.archive = archive;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for pages
-*/
-public MetadataString	pages()
-{
-	MetadataString	result = this.pages;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.pages = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field pages
-*/
-public String getPages()
-{
-	return this.pages().getValue();
-}
-
-/**
-	Sets the value of the field pages
-*/
-public void setPages(String pages)
-{
-	this.pages().setValue(pages);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: pages
-*/
-public boolean isNullPages()
-{
-	return pages == null || pages.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field pages
-*/
-public void hwSetPages(String pages)
-{
-	this.pages().setValue(pages);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the pages directly.
-*/
-public void setPagesMetadata(MetadataString pages)
-{
-	this.pages = pages;
-}
-
-/**
-	Heavy Weight Direct setter method for pages
-*/
-public void hwSetPagesMetadata(MetadataString pages)
-{
-	if (this.pages != null && this.pages.getValue() != null && hasTermVector())
-		termVector().remove(this.pages.termVector());
-	this.pages = pages;
 	rebuildCompositeTermVector();
 }
 
