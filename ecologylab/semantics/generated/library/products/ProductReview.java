@@ -24,6 +24,7 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
+import ecologylab.semantics.metadata.builtins.ClippableMetadata;
 import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;

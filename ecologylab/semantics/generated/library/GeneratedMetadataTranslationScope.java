@@ -19,6 +19,7 @@ import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
 import ecologylab.semantics.generated.library.opml.*;
+import ecologylab.semantics.generated.library.products.*;
 import ecologylab.semantics.generated.library.publication.*;
 import ecologylab.semantics.generated.library.rss.*;
 import ecologylab.semantics.generated.library.scholarlyPublication.*;
@@ -170,6 +171,10 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.opml.Body.class,
 
 		ecologylab.semantics.generated.library.opml.Opml.class,
+
+		ecologylab.semantics.generated.library.products.ProductReview.class,
+
+		ecologylab.semantics.generated.library.products.Product.class,
 
 		ecologylab.semantics.generated.library.publication.Author.class,
 
