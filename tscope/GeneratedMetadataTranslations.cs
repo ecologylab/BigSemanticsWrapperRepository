@@ -9,11 +9,13 @@ using ecologylab.semantics.generated.library.imdb;
 using ecologylab.semantics.generated.library.flickr;
 using ecologylab.semantics.generated.library.scholarlyPublication;
 using ecologylab.semantics.generated.library.buzz;
+using ecologylab.semantics.generated.library.publication;
 using ecologylab.semantics.generated.library.rss;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.generated.library.fastflip;
 using ecologylab.semantics.generated.library;
 using ecologylab.semantics.generated.library.slashdot;
+using ecologylab.semantics.generated.library.scienceDirect;
 using ecologylab.semantics.generated.library.opml;
 using ecologylab.semantics.generated.library.icdl;
 using ecologylab.semantics.metadata;
@@ -21,14 +23,14 @@ using ecologylab.semantics.generated.library.bibManaging;
 using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.generated.library.nsdl;
 using ecologylab.semantics.metadata.builtins;
-using ecologylab.serialization;
 
 //developer should modify the namespace
 //by default it falls into ecologylab.serialization
-namespace ecologylab.semantics.generated 
+namespace ecologylab.serialization 
 {
 	public class GeneratedMetadataTranslations
 	{
+
 		public GeneratedMetadataTranslations()
 		{ }
 
@@ -44,18 +46,20 @@ namespace ecologylab.semantics.generated
 				typeof(NsdlDocument),
 				typeof(FlickrImage),
 				typeof(DcDocument),
+				typeof(ProductReview),
 				typeof(Item),
 				typeof(SlashdotArticle),
 				typeof(FlickrLink),
 				typeof(Thumbinner),
 				typeof(CiteseerxSearch),
 				typeof(MmArtwork),
-				typeof(SlashdotRss),
 				typeof(GoogleImageSearchPage),
+				typeof(SlashdotRss),
 				typeof(FlickrTags),
 				typeof(FlickrSearch),
 				typeof(Nsdl),
 				typeof(CastMember),
+				typeof(Term),
 				typeof(ImageInSearchResult),
 				typeof(ImdbTitle),
 				typeof(Rss22),
@@ -64,13 +68,15 @@ namespace ecologylab.semantics.generated
 				typeof(Pdf),
 				typeof(Bookmark),
 				typeof(Book),
-				typeof(FlickrTagsInteresting),
 				typeof(HotSearch),
+				typeof(FlickrTagsInteresting),
 				typeof(DebugMetadata),
 				typeof(Author),
 				typeof(WikipediaPageType),
 				typeof(BirthDetail),
+				typeof(IcdlImageResult),
 				typeof(ImdbChart),
+				typeof(LinkRun),
 				typeof(Header),
 				typeof(Image),
 				typeof(Topic),
@@ -80,22 +86,25 @@ namespace ecologylab.semantics.generated
 				typeof(DocumentSet),
 				typeof(MediaContent),
 				typeof(DeliciousHomepage),
+				typeof(Subject),
 				typeof(KeywordSet),
-				typeof(Response),
+				typeof(TextRun),
 				typeof(NsdlService),
 				typeof(CiteseerxRecord),
 				typeof(CiteseerxSimilar),
 				typeof(FlickrTag),
 				typeof(ImageResult),
 				typeof(SlashdotItem),
+				typeof(GoogleScholarSearchResult),
 				typeof(PersonDetails),
+				typeof(GoogleScholarSearch),
 				typeof(Rss),
 				typeof(FlickrImageDetailTwo),
 				typeof(YahooResultSet),
 				typeof(BingWebSearchResult),
 				typeof(FlickrSearchTwo),
-				typeof(Thumbnail),
 				typeof(WikipediaPageForParsing),
+				typeof(Thumbnail),
 				typeof(Paragraph),
 				typeof(AuthorPhotos),
 				typeof(YahooMediaRss),
@@ -108,47 +117,54 @@ namespace ecologylab.semantics.generated
 				typeof(Opml),
 				typeof(ScholarlyArticle),
 				typeof(Body),
-				typeof(Head),
 				typeof(Product),
-				typeof(BingImageSearchResult),
-				typeof(Artwork),
+				typeof(Head),
 				typeof(GoogleTrends),
+				typeof(Artwork),
+				typeof(BingImageSearchResult),
 				typeof(TopicCluster),
+				typeof(ClippableMetadata),
 				typeof(YahooThumbnail),
 				typeof(Source),
 				typeof(Anchor),
 				typeof(CiteseerxSummary),
-				typeof(ClippableDocument),
 				typeof(Outline),
+				typeof(IcdlBookPreview),
 				typeof(Dlms),
-				typeof(Entity),
+				//typeof(Entity),
 				typeof(YahooResult),
 				typeof(Lolz),
 				typeof(Tumblr),
+				typeof(Clipping),
 				typeof(FastflipSearch),
 				typeof(GooglePatentImage),
 				typeof(BingSearchWebSection),
+				typeof(Chapter),
+				typeof(CitationInfo),
 				typeof(WikipediaPage),
 				typeof(Surrogate),
 				typeof(Document),
 				typeof(AcmProceeding),
-				typeof(Icdl),
 				typeof(UrbanSpoonGenre),
 				typeof(Text),
 				typeof(Category),
 				typeof(Restaurant),
 				typeof(BingSearchImageSection),
 				typeof(FlickrImageDetail),
+				typeof(HypertextPara),
 				typeof(GoogleImageSearchType),
 				typeof(SearchResults),
+				typeof(ScienceDirectArticle),
+				typeof(GoogleBook),
+				typeof(StyleInfo),
 				typeof(Surrogate),
 				typeof(Text),
 				typeof(Document),
 				typeof(DebugMetadata),
+				typeof(ClippableMetadata),
 				typeof(Image),
-				typeof(ClippableDocument),
-				typeof(Metadata),
-				typeof(Entity));
+				typeof(Clipping),
+				typeof(Metadata));
 		}
 	}
 }
