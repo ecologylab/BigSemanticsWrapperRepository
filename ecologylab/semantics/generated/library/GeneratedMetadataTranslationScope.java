@@ -72,11 +72,9 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord.class,
 
-		ecologylab.semantics.generated.library.bibManaging.CiteseerxSimilar.class,
-
 		ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
 
-		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearch.class,
+		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary.class,
 

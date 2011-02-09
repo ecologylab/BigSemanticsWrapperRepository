@@ -44,22 +44,25 @@ import java.util.*;
 
 
 /**
-	CiteSeerX search using keywords.
+	
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class CiteseerxSearch
-extends Search
+public class CiteseerxSearchResult
+extends SearchResult
 {
+
+@simpl_scalar
+private MetadataString	citationInfo;
 
 
 
 /**
 	Constructor
 */
-public CiteseerxSearch()
+public CiteseerxSearchResult()
 {
  super();
 }
@@ -67,9 +70,75 @@ public CiteseerxSearch()
 /**
 	Constructor
 */
-public CiteseerxSearch(MetaMetadataCompositeField metaMetadata)
+public CiteseerxSearchResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
+}
+
+/**
+	Lazy evaluation for citationInfo
+*/
+public MetadataString	citationInfo()
+{
+	MetadataString	result = this.citationInfo;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.citationInfo = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field citationInfo
+*/
+public String getCitationInfo()
+{
+	return this.citationInfo().getValue();
+}
+
+/**
+	Sets the value of the field citationInfo
+*/
+public void setCitationInfo(String citationInfo)
+{
+	this.citationInfo().setValue(citationInfo);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: citationInfo
+*/
+public boolean isNullCitationInfo()
+{
+	return citationInfo == null || citationInfo.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field citationInfo
+*/
+public void hwSetCitationInfo(String citationInfo)
+{
+	this.citationInfo().setValue(citationInfo);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the citationInfo directly.
+*/
+public void setCitationInfoMetadata(MetadataString citationInfo)
+{
+	this.citationInfo = citationInfo;
+}
+
+/**
+	Heavy Weight Direct setter method for citationInfo
+*/
+public void hwSetCitationInfoMetadata(MetadataString citationInfo)
+{
+	if (this.citationInfo != null && this.citationInfo.getValue() != null && hasTermVector())
+		termVector().remove(this.citationInfo.termVector());
+	this.citationInfo = citationInfo;
+	rebuildCompositeTermVector();
 }
 
 

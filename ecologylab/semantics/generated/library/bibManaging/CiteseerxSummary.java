@@ -57,6 +57,17 @@ extends CiteseerxRecord
 @simpl_scalar
 private MetadataParsedURL	citationPage;
 
+
+/**
+	Papers that cite the same works.
+*/
+@simpl_scalar
+private MetadataParsedURL	activeBibliographyPage;
+
+
+/**
+	Papers that are cited by the same works.
+*/
 @simpl_scalar
 private MetadataParsedURL	cocitationPage;
 
@@ -141,6 +152,72 @@ public void hwSetCitationPageMetadata(MetadataParsedURL citationPage)
 	if (this.citationPage != null && this.citationPage.getValue() != null && hasTermVector())
 		termVector().remove(this.citationPage.termVector());
 	this.citationPage = citationPage;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for activeBibliographyPage
+*/
+public MetadataParsedURL	activeBibliographyPage()
+{
+	MetadataParsedURL	result = this.activeBibliographyPage;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.activeBibliographyPage = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field activeBibliographyPage
+*/
+public ParsedURL getActiveBibliographyPage()
+{
+	return this.activeBibliographyPage().getValue();
+}
+
+/**
+	Sets the value of the field activeBibliographyPage
+*/
+public void setActiveBibliographyPage(ParsedURL activeBibliographyPage)
+{
+	this.activeBibliographyPage().setValue(activeBibliographyPage);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: activeBibliographyPage
+*/
+public boolean isNullActiveBibliographyPage()
+{
+	return activeBibliographyPage == null || activeBibliographyPage.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field activeBibliographyPage
+*/
+public void hwSetActiveBibliographyPage(ParsedURL activeBibliographyPage)
+{
+	this.activeBibliographyPage().setValue(activeBibliographyPage);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the activeBibliographyPage directly.
+*/
+public void setActiveBibliographyPageMetadata(MetadataParsedURL activeBibliographyPage)
+{
+	this.activeBibliographyPage = activeBibliographyPage;
+}
+
+/**
+	Heavy Weight Direct setter method for activeBibliographyPage
+*/
+public void hwSetActiveBibliographyPageMetadata(MetadataParsedURL activeBibliographyPage)
+{
+	if (this.activeBibliographyPage != null && this.activeBibliographyPage.getValue() != null && hasTermVector())
+		termVector().remove(this.activeBibliographyPage.termVector());
+	this.activeBibliographyPage = activeBibliographyPage;
 	rebuildCompositeTermVector();
 }
 
