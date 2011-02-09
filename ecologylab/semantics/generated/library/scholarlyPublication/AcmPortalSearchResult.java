@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.scholarlyPublication;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -50,22 +50,22 @@ This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Term
-extends Metadata
+public class AcmPortalSearchResult
+extends SearchResult
 {
 
 @simpl_scalar
-private MetadataParsedURL	location;
+private MetadataString	authorList;
 
 @simpl_scalar
-private MetadataString	term;
+private MetadataString	publication;
 
 
 
 /**
 	Constructor
 */
-public Term()
+public AcmPortalSearchResult()
 {
  super();
 }
@@ -73,140 +73,140 @@ public Term()
 /**
 	Constructor
 */
-public Term(MetaMetadataCompositeField metaMetadata)
+public AcmPortalSearchResult(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for location
+	Lazy evaluation for authorList
 */
-public MetadataParsedURL	location()
+public MetadataString	authorList()
 {
-	MetadataParsedURL	result = this.location;
-	if (result == null)
-	{
-		result = new MetadataParsedURL();
-		this.location = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field location
-*/
-public ParsedURL getLocation()
-{
-	return this.location().getValue();
-}
-
-/**
-	Sets the value of the field location
-*/
-public void setLocation(ParsedURL location)
-{
-	this.location().setValue(location);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: location
-*/
-public boolean isNullLocation()
-{
-	return location == null || location.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field location
-*/
-public void hwSetLocation(ParsedURL location)
-{
-	this.location().setValue(location);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the location directly.
-*/
-public void setLocationMetadata(MetadataParsedURL location)
-{
-	this.location = location;
-}
-
-/**
-	Heavy Weight Direct setter method for location
-*/
-public void hwSetLocationMetadata(MetadataParsedURL location)
-{
-	if (this.location != null && this.location.getValue() != null && hasTermVector())
-		termVector().remove(this.location.termVector());
-	this.location = location;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for term
-*/
-public MetadataString	term()
-{
-	MetadataString	result = this.term;
+	MetadataString	result = this.authorList;
 	if (result == null)
 	{
 		result = new MetadataString();
-		this.term = result;
+		this.authorList = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field term
+	Gets the value of the field authorList
 */
-public String getTerm()
+public String getAuthorList()
 {
-	return this.term().getValue();
+	return this.authorList().getValue();
 }
 
 /**
-	Sets the value of the field term
+	Sets the value of the field authorList
 */
-public void setTerm(String term)
+public void setAuthorList(String authorList)
 {
-	this.term().setValue(term);
+	this.authorList().setValue(authorList);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: term
+	Test to see if the value of the field is null, or if the field itself is null: authorList
 */
-public boolean isNullTerm()
+public boolean isNullAuthorList()
 {
-	return term == null || term.getValue() == null;
+	return authorList == null || authorList.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field term
+	The heavy weight setter method for field authorList
 */
-public void hwSetTerm(String term)
+public void hwSetAuthorList(String authorList)
 {
-	this.term().setValue(term);
+	this.authorList().setValue(authorList);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the term directly.
+	 Sets the authorList directly.
 */
-public void setTermMetadata(MetadataString term)
+public void setAuthorListMetadata(MetadataString authorList)
 {
-	this.term = term;
+	this.authorList = authorList;
 }
 
 /**
-	Heavy Weight Direct setter method for term
+	Heavy Weight Direct setter method for authorList
 */
-public void hwSetTermMetadata(MetadataString term)
+public void hwSetAuthorListMetadata(MetadataString authorList)
 {
-	if (this.term != null && this.term.getValue() != null && hasTermVector())
-		termVector().remove(this.term.termVector());
-	this.term = term;
+	if (this.authorList != null && this.authorList.getValue() != null && hasTermVector())
+		termVector().remove(this.authorList.termVector());
+	this.authorList = authorList;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for publication
+*/
+public MetadataString	publication()
+{
+	MetadataString	result = this.publication;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.publication = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field publication
+*/
+public String getPublication()
+{
+	return this.publication().getValue();
+}
+
+/**
+	Sets the value of the field publication
+*/
+public void setPublication(String publication)
+{
+	this.publication().setValue(publication);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: publication
+*/
+public boolean isNullPublication()
+{
+	return publication == null || publication.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field publication
+*/
+public void hwSetPublication(String publication)
+{
+	this.publication().setValue(publication);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the publication directly.
+*/
+public void setPublicationMetadata(MetadataString publication)
+{
+	this.publication = publication;
+}
+
+/**
+	Heavy Weight Direct setter method for publication
+*/
+public void hwSetPublicationMetadata(MetadataString publication)
+{
+	if (this.publication != null && this.publication.getValue() != null && hasTermVector())
+		termVector().remove(this.publication.termVector());
+	this.publication = publication;
 	rebuildCompositeTermVector();
 }
 

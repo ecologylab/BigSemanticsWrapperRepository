@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.publication;
 
 
 import ecologylab.generic.HashMapArrayList;

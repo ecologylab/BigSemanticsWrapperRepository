@@ -51,47 +51,26 @@ This is a generated code. DO NOT edit or modify it.
 */
 @simpl_inherit
 public class GoogleBook
-extends Document
+extends GeneralBook
 {
-
-@simpl_scalar
-private MetadataString	title;
-
-@simpl_collection("author") @xml_tag("authors") @mm_name("authors")
-private ArrayList<Author>	authors;
-
-@simpl_scalar
-private MetadataString	publisher;
 
 @simpl_scalar
 private MetadataString	category;
 
 @simpl_scalar
-private MetadataString	pages;
-
-@simpl_scalar
 private MetadataString	description;
 
-@simpl_collection("document") @xml_tag("related_books") @mm_name("related_books")
-private ArrayList<Document>	relatedBooks;
-
-@simpl_collection("chapter") @xml_tag("contents") @mm_name("contents")
-private ArrayList<Chapter>	contents;
-
-@simpl_collection("term") @xml_tag("common_terms") @mm_name("common_terms")
-private ArrayList<Term>	commonTerms;
-
 @simpl_scalar
-private MetadataString	aboutTheAuthor;
+private MetadataParsedURL	placesMentionedKml;
+
+@simpl_collection("page") @xml_tag("selected_pages") @mm_name("selected_pages")
+private ArrayList<Page>	selectedPages;
+
+@simpl_collection("google_book") @xml_tag("related_books") @mm_name("related_books")
+private ArrayList<GoogleBook>	relatedBooks;
 
 @simpl_collection("scholarly_article") @xml_tag("references_from_books") @mm_name("references_from_books")
 private ArrayList<ScholarlyArticle>	referencesFromBooks;
-
-@simpl_scalar
-private MetadataString	isbn;
-
-@simpl_collection("subject") @xml_tag("subjects") @mm_name("subjects")
-private ArrayList<Subject>	subjects;
 
 
 
@@ -109,168 +88,6 @@ public GoogleBook()
 public GoogleBook(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
-}
-
-/**
-	Lazy evaluation for title
-*/
-public MetadataString	title()
-{
-	MetadataString	result = this.title;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.title = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field title
-*/
-public String getTitle()
-{
-	return this.title().getValue();
-}
-
-/**
-	Sets the value of the field title
-*/
-public void setTitle(String title)
-{
-	this.title().setValue(title);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: title
-*/
-public boolean isNullTitle()
-{
-	return title == null || title.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field title
-*/
-public void hwSetTitle(String title)
-{
-	this.title().setValue(title);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the title directly.
-*/
-public void setTitleMetadata(MetadataString title)
-{
-	this.title = title;
-}
-
-/**
-	Heavy Weight Direct setter method for title
-*/
-public void hwSetTitleMetadata(MetadataString title)
-{
-	if (this.title != null && this.title.getValue() != null && hasTermVector())
-		termVector().remove(this.title.termVector());
-	this.title = title;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for authors
-*/
-public ArrayList<Author>	authors()
-{
-	ArrayList<Author>	result = this.authors;
-	if (result == null)
-	{
-		result = new ArrayList<Author>();
-		this.authors = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field authors
-*/
-public ArrayList<Author> getAuthors()
-{
-	return this.authors;
-}
-
-/**
-	Set the value of field authors
-*/
-public void setAuthors(ArrayList<Author> authors)
-{
-	this.authors = authors;
-}
-
-/**
-	Lazy evaluation for publisher
-*/
-public MetadataString	publisher()
-{
-	MetadataString	result = this.publisher;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.publisher = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field publisher
-*/
-public String getPublisher()
-{
-	return this.publisher().getValue();
-}
-
-/**
-	Sets the value of the field publisher
-*/
-public void setPublisher(String publisher)
-{
-	this.publisher().setValue(publisher);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: publisher
-*/
-public boolean isNullPublisher()
-{
-	return publisher == null || publisher.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field publisher
-*/
-public void hwSetPublisher(String publisher)
-{
-	this.publisher().setValue(publisher);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the publisher directly.
-*/
-public void setPublisherMetadata(MetadataString publisher)
-{
-	this.publisher = publisher;
-}
-
-/**
-	Heavy Weight Direct setter method for publisher
-*/
-public void hwSetPublisherMetadata(MetadataString publisher)
-{
-	if (this.publisher != null && this.publisher.getValue() != null && hasTermVector())
-		termVector().remove(this.publisher.termVector());
-	this.publisher = publisher;
-	rebuildCompositeTermVector();
 }
 
 /**
@@ -336,72 +153,6 @@ public void hwSetCategoryMetadata(MetadataString category)
 	if (this.category != null && this.category.getValue() != null && hasTermVector())
 		termVector().remove(this.category.termVector());
 	this.category = category;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for pages
-*/
-public MetadataString	pages()
-{
-	MetadataString	result = this.pages;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.pages = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field pages
-*/
-public String getPages()
-{
-	return this.pages().getValue();
-}
-
-/**
-	Sets the value of the field pages
-*/
-public void setPages(String pages)
-{
-	this.pages().setValue(pages);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: pages
-*/
-public boolean isNullPages()
-{
-	return pages == null || pages.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field pages
-*/
-public void hwSetPages(String pages)
-{
-	this.pages().setValue(pages);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the pages directly.
-*/
-public void setPagesMetadata(MetadataString pages)
-{
-	this.pages = pages;
-}
-
-/**
-	Heavy Weight Direct setter method for pages
-*/
-public void hwSetPagesMetadata(MetadataString pages)
-{
-	if (this.pages != null && this.pages.getValue() != null && hasTermVector())
-		termVector().remove(this.pages.termVector());
-	this.pages = pages;
 	rebuildCompositeTermVector();
 }
 
@@ -472,14 +223,110 @@ public void hwSetDescriptionMetadata(MetadataString description)
 }
 
 /**
-	Lazy evaluation for relatedBooks
+	Lazy evaluation for placesMentionedKml
 */
-public ArrayList<Document>	relatedBooks()
+public MetadataParsedURL	placesMentionedKml()
 {
-	ArrayList<Document>	result = this.relatedBooks;
+	MetadataParsedURL	result = this.placesMentionedKml;
 	if (result == null)
 	{
-		result = new ArrayList<Document>();
+		result = new MetadataParsedURL();
+		this.placesMentionedKml = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field placesMentionedKml
+*/
+public ParsedURL getPlacesMentionedKml()
+{
+	return this.placesMentionedKml().getValue();
+}
+
+/**
+	Sets the value of the field placesMentionedKml
+*/
+public void setPlacesMentionedKml(ParsedURL placesMentionedKml)
+{
+	this.placesMentionedKml().setValue(placesMentionedKml);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: placesMentionedKml
+*/
+public boolean isNullPlacesMentionedKml()
+{
+	return placesMentionedKml == null || placesMentionedKml.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field placesMentionedKml
+*/
+public void hwSetPlacesMentionedKml(ParsedURL placesMentionedKml)
+{
+	this.placesMentionedKml().setValue(placesMentionedKml);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the placesMentionedKml directly.
+*/
+public void setPlacesMentionedKmlMetadata(MetadataParsedURL placesMentionedKml)
+{
+	this.placesMentionedKml = placesMentionedKml;
+}
+
+/**
+	Heavy Weight Direct setter method for placesMentionedKml
+*/
+public void hwSetPlacesMentionedKmlMetadata(MetadataParsedURL placesMentionedKml)
+{
+	if (this.placesMentionedKml != null && this.placesMentionedKml.getValue() != null && hasTermVector())
+		termVector().remove(this.placesMentionedKml.termVector());
+	this.placesMentionedKml = placesMentionedKml;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for selectedPages
+*/
+public ArrayList<Page>	selectedPages()
+{
+	ArrayList<Page>	result = this.selectedPages;
+	if (result == null)
+	{
+		result = new ArrayList<Page>();
+		this.selectedPages = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field selectedPages
+*/
+public ArrayList<Page> getSelectedPages()
+{
+	return this.selectedPages;
+}
+
+/**
+	Set the value of field selectedPages
+*/
+public void setSelectedPages(ArrayList<Page> selectedPages)
+{
+	this.selectedPages = selectedPages;
+}
+
+/**
+	Lazy evaluation for relatedBooks
+*/
+public ArrayList<GoogleBook>	relatedBooks()
+{
+	ArrayList<GoogleBook>	result = this.relatedBooks;
+	if (result == null)
+	{
+		result = new ArrayList<GoogleBook>();
 		this.relatedBooks = result;
 	}
 	return result;
@@ -488,7 +335,7 @@ public ArrayList<Document>	relatedBooks()
 /**
 	Get the value of field relatedBooks
 */
-public ArrayList<Document> getRelatedBooks()
+public ArrayList<GoogleBook> getRelatedBooks()
 {
 	return this.relatedBooks;
 }
@@ -496,135 +343,9 @@ public ArrayList<Document> getRelatedBooks()
 /**
 	Set the value of field relatedBooks
 */
-public void setRelatedBooks(ArrayList<Document> relatedBooks)
+public void setRelatedBooks(ArrayList<GoogleBook> relatedBooks)
 {
 	this.relatedBooks = relatedBooks;
-}
-
-/**
-	Lazy evaluation for contents
-*/
-public ArrayList<Chapter>	contents()
-{
-	ArrayList<Chapter>	result = this.contents;
-	if (result == null)
-	{
-		result = new ArrayList<Chapter>();
-		this.contents = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field contents
-*/
-public ArrayList<Chapter> getContents()
-{
-	return this.contents;
-}
-
-/**
-	Set the value of field contents
-*/
-public void setContents(ArrayList<Chapter> contents)
-{
-	this.contents = contents;
-}
-
-/**
-	Lazy evaluation for commonTerms
-*/
-public ArrayList<Term>	commonTerms()
-{
-	ArrayList<Term>	result = this.commonTerms;
-	if (result == null)
-	{
-		result = new ArrayList<Term>();
-		this.commonTerms = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field commonTerms
-*/
-public ArrayList<Term> getCommonTerms()
-{
-	return this.commonTerms;
-}
-
-/**
-	Set the value of field commonTerms
-*/
-public void setCommonTerms(ArrayList<Term> commonTerms)
-{
-	this.commonTerms = commonTerms;
-}
-
-/**
-	Lazy evaluation for aboutTheAuthor
-*/
-public MetadataString	aboutTheAuthor()
-{
-	MetadataString	result = this.aboutTheAuthor;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.aboutTheAuthor = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field aboutTheAuthor
-*/
-public String getAboutTheAuthor()
-{
-	return this.aboutTheAuthor().getValue();
-}
-
-/**
-	Sets the value of the field aboutTheAuthor
-*/
-public void setAboutTheAuthor(String aboutTheAuthor)
-{
-	this.aboutTheAuthor().setValue(aboutTheAuthor);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: aboutTheAuthor
-*/
-public boolean isNullAboutTheAuthor()
-{
-	return aboutTheAuthor == null || aboutTheAuthor.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field aboutTheAuthor
-*/
-public void hwSetAboutTheAuthor(String aboutTheAuthor)
-{
-	this.aboutTheAuthor().setValue(aboutTheAuthor);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the aboutTheAuthor directly.
-*/
-public void setAboutTheAuthorMetadata(MetadataString aboutTheAuthor)
-{
-	this.aboutTheAuthor = aboutTheAuthor;
-}
-
-/**
-	Heavy Weight Direct setter method for aboutTheAuthor
-*/
-public void hwSetAboutTheAuthorMetadata(MetadataString aboutTheAuthor)
-{
-	if (this.aboutTheAuthor != null && this.aboutTheAuthor.getValue() != null && hasTermVector())
-		termVector().remove(this.aboutTheAuthor.termVector());
-	this.aboutTheAuthor = aboutTheAuthor;
-	rebuildCompositeTermVector();
 }
 
 /**
@@ -655,102 +376,6 @@ public ArrayList<ScholarlyArticle> getReferencesFromBooks()
 public void setReferencesFromBooks(ArrayList<ScholarlyArticle> referencesFromBooks)
 {
 	this.referencesFromBooks = referencesFromBooks;
-}
-
-/**
-	Lazy evaluation for isbn
-*/
-public MetadataString	isbn()
-{
-	MetadataString	result = this.isbn;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.isbn = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field isbn
-*/
-public String getIsbn()
-{
-	return this.isbn().getValue();
-}
-
-/**
-	Sets the value of the field isbn
-*/
-public void setIsbn(String isbn)
-{
-	this.isbn().setValue(isbn);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: isbn
-*/
-public boolean isNullIsbn()
-{
-	return isbn == null || isbn.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field isbn
-*/
-public void hwSetIsbn(String isbn)
-{
-	this.isbn().setValue(isbn);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the isbn directly.
-*/
-public void setIsbnMetadata(MetadataString isbn)
-{
-	this.isbn = isbn;
-}
-
-/**
-	Heavy Weight Direct setter method for isbn
-*/
-public void hwSetIsbnMetadata(MetadataString isbn)
-{
-	if (this.isbn != null && this.isbn.getValue() != null && hasTermVector())
-		termVector().remove(this.isbn.termVector());
-	this.isbn = isbn;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for subjects
-*/
-public ArrayList<Subject>	subjects()
-{
-	ArrayList<Subject>	result = this.subjects;
-	if (result == null)
-	{
-		result = new ArrayList<Subject>();
-		this.subjects = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field subjects
-*/
-public ArrayList<Subject> getSubjects()
-{
-	return this.subjects;
-}
-
-/**
-	Set the value of field subjects
-*/
-public void setSubjects(ArrayList<Subject> subjects)
-{
-	this.subjects = subjects;
 }
 
 

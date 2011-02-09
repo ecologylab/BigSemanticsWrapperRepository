@@ -60,7 +60,7 @@ public class GeneratedMetadataTranslationScope
 	{
 		ecologylab.semantics.generated.library.Pdf.class,
 
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmProceeding.class,
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult.class,
 
 		ecologylab.semantics.generated.library.MmArtwork.class,
 
@@ -112,11 +112,7 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
-		ecologylab.semantics.generated.library.Chapter.class,
-
-		ecologylab.semantics.generated.library.Term.class,
-
-		ecologylab.semantics.generated.library.Subject.class,
+		ecologylab.semantics.generated.library.Page.class,
 
 		ecologylab.semantics.generated.library.GoogleBook.class,
 
@@ -178,6 +174,16 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.publication.Author.class,
 
+		ecologylab.semantics.generated.library.publication.GeneralBook.class,
+
+		ecologylab.semantics.generated.library.publication.Publisher.class,
+
+		ecologylab.semantics.generated.library.publication.Subject.class,
+
+		ecologylab.semantics.generated.library.publication.Term.class,
+
+		ecologylab.semantics.generated.library.publication.Publication.class,
+
 		ecologylab.semantics.generated.library.Restaurant.class,
 
 		ecologylab.semantics.generated.library.rss.Dc.class,
@@ -194,13 +200,11 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rss.Rss.class,
 
-		ecologylab.semantics.generated.library.scholarlyPublication.Tag.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.Tag.class,
-
 		ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.Tag.class,
 
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
 

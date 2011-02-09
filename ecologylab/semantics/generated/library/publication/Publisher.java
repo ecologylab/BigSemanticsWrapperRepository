@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.publication;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -44,25 +44,28 @@ import java.util.*;
 
 
 /**
-	
+	A publishing company.
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Chapter
-extends Metadata
+public class Publisher
+extends Document
 {
 
 @simpl_scalar
-private MetadataString	title;
+private MetadataString	name;
+
+@simpl_scalar
+private MetadataString	city;
 
 
 
 /**
 	Constructor
 */
-public Chapter()
+public Publisher()
 {
  super();
 }
@@ -70,74 +73,140 @@ public Chapter()
 /**
 	Constructor
 */
-public Chapter(MetaMetadataCompositeField metaMetadata)
+public Publisher(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for title
+	Lazy evaluation for name
 */
-public MetadataString	title()
+public MetadataString	name()
 {
-	MetadataString	result = this.title;
+	MetadataString	result = this.name;
 	if (result == null)
 	{
 		result = new MetadataString();
-		this.title = result;
+		this.name = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field title
+	Gets the value of the field name
 */
-public String getTitle()
+public String getName()
 {
-	return this.title().getValue();
+	return this.name().getValue();
 }
 
 /**
-	Sets the value of the field title
+	Sets the value of the field name
 */
-public void setTitle(String title)
+public void setName(String name)
 {
-	this.title().setValue(title);
+	this.name().setValue(name);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: title
+	Test to see if the value of the field is null, or if the field itself is null: name
 */
-public boolean isNullTitle()
+public boolean isNullName()
 {
-	return title == null || title.getValue() == null;
+	return name == null || name.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field title
+	The heavy weight setter method for field name
 */
-public void hwSetTitle(String title)
+public void hwSetName(String name)
 {
-	this.title().setValue(title);
+	this.name().setValue(name);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the title directly.
+	 Sets the name directly.
 */
-public void setTitleMetadata(MetadataString title)
+public void setNameMetadata(MetadataString name)
 {
-	this.title = title;
+	this.name = name;
 }
 
 /**
-	Heavy Weight Direct setter method for title
+	Heavy Weight Direct setter method for name
 */
-public void hwSetTitleMetadata(MetadataString title)
+public void hwSetNameMetadata(MetadataString name)
 {
-	if (this.title != null && this.title.getValue() != null && hasTermVector())
-		termVector().remove(this.title.termVector());
-	this.title = title;
+	if (this.name != null && this.name.getValue() != null && hasTermVector())
+		termVector().remove(this.name.termVector());
+	this.name = name;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for city
+*/
+public MetadataString	city()
+{
+	MetadataString	result = this.city;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.city = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field city
+*/
+public String getCity()
+{
+	return this.city().getValue();
+}
+
+/**
+	Sets the value of the field city
+*/
+public void setCity(String city)
+{
+	this.city().setValue(city);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: city
+*/
+public boolean isNullCity()
+{
+	return city == null || city.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field city
+*/
+public void hwSetCity(String city)
+{
+	this.city().setValue(city);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the city directly.
+*/
+public void setCityMetadata(MetadataString city)
+{
+	this.city = city;
+}
+
+/**
+	Heavy Weight Direct setter method for city
+*/
+public void hwSetCityMetadata(MetadataString city)
+{
+	if (this.city != null && this.city.getValue() != null && hasTermVector())
+		termVector().remove(this.city.termVector());
+	this.city = city;
 	rebuildCompositeTermVector();
 }
 
