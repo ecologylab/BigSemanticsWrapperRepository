@@ -29,6 +29,11 @@ namespace ecologylab.semantics.generated.library
 		[simpl_scalar]
 		private MetadataParsedURL mainImageSrc;
 
+        [simpl_collection("hypertext_para")]
+        [xml_tag("hypertext_paras")]
+        [mm_name("hypertext_paras")]
+        private List<HypertextPara> hypertextParas;
+
 		public WikipediaPage()
 		{ }
 

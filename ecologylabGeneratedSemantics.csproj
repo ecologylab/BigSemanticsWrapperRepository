@@ -117,6 +117,7 @@
     <Compile Include="ecologylab\semantics\generated\library\rss\Rss.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\Rss22.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\YahooMediaRss.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\Run.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmProceeding.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\ScholarlyArticle.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\Source.cs" />

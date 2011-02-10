@@ -26,48 +26,48 @@ namespace ecologylab.semantics.generated.library
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
 		[simpl_scalar]
-		private MetadataString bold;
+        private MetadataBoolean bold;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
 		[simpl_scalar]
-		private MetadataString italics;
+        private MetadataBoolean italics;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
 		[simpl_scalar]
-		private MetadataString underline;
+        private MetadataBoolean underline;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
 		[simpl_scalar]
-		private MetadataString strikethru;
+        private MetadataBoolean strikethru;
 
 		public StyleInfo()
 		{ }
 
-		public MetadataString Bold
+        public MetadataBoolean Bold
 		{
 			get{return bold;}
 			set{bold = value;}
 		}
 
-		public MetadataString Italics
+        public MetadataBoolean Italics
 		{
 			get{return italics;}
 			set{italics = value;}
 		}
 
-		public MetadataString Underline
+        public MetadataBoolean Underline
 		{
 			get{return underline;}
 			set{underline = value;}
 		}
 
-		public MetadataString Strikethru
+        public MetadataBoolean Strikethru
 		{
 			get{return strikethru;}
 			set{strikethru = value;}

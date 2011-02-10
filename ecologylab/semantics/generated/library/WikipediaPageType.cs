@@ -32,12 +32,6 @@ namespace ecologylab.semantics.generated.library
 		[mm_name("paragraphs")]
 		private List<Paragraph> paragraphs;
 
-        [simpl_collection("paragraph")]
-        [xml_tag("paragraphs")]
-        [mm_name("paragraphs")]
-        private List<HypertextPara> hypertextParas;
-
-
 		/// <summary>
 		/// Wikipedia Categories
 		/// </summary>

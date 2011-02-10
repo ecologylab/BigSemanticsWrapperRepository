@@ -30,7 +30,6 @@ namespace ecologylab.serialization
 {
 	public class GeneratedMetadataTranslations
 	{
-
 		public GeneratedMetadataTranslations()
 		{ }
 
@@ -131,7 +130,6 @@ namespace ecologylab.serialization
 				typeof(Outline),
 				typeof(IcdlBookPreview),
 				typeof(Dlms),
-				//typeof(Entity),
 				typeof(YahooResult),
 				typeof(Lolz),
 				typeof(Tumblr),
@@ -142,6 +140,7 @@ namespace ecologylab.serialization
 				typeof(Chapter),
 				typeof(CitationInfo),
 				typeof(WikipediaPage),
+				typeof(Run),
 				typeof(Surrogate),
 				typeof(Document),
 				typeof(AcmProceeding),
