@@ -14,6 +14,7 @@ import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.googleBooks.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
@@ -110,9 +111,9 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
 
-		ecologylab.semantics.generated.library.Page.class,
+		ecologylab.semantics.generated.library.googleBooks.Page.class,
 
-		ecologylab.semantics.generated.library.GoogleBook.class,
+		ecologylab.semantics.generated.library.googleBooks.GoogleBook.class,
 
 		ecologylab.semantics.generated.library.GoogleImageSearchPage.class,
 
@@ -128,7 +129,7 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.icdl.IcdlBookPreview.class,
 
-		ecologylab.semantics.generated.library.icdl.Book.class,
+		ecologylab.semantics.generated.library.icdl.IcdlBook.class,
 
 		ecologylab.semantics.generated.library.icdl.IcdlImageResult.class,
 
@@ -172,7 +173,7 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.publication.Author.class,
 
-		ecologylab.semantics.generated.library.publication.GeneralBook.class,
+		ecologylab.semantics.generated.library.publication.Book.class,
 
 		ecologylab.semantics.generated.library.publication.Publisher.class,
 

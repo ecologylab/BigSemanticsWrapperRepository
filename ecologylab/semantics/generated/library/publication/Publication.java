@@ -8,6 +8,7 @@ import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.googleBooks.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
@@ -54,14 +55,11 @@ public class Publication
 extends Document
 {
 
-@simpl_scalar
-private MetadataString	title;
-
 @simpl_collection("author") @xml_tag("authors") @mm_name("authors")
 private ArrayList<Author>	authors;
 
-@simpl_scalar
-private MetadataString	publisher;
+@simpl_composite @mm_name("publisher")
+private Publisher	publisher;
 
 @simpl_scalar
 private MetadataString	pages;
@@ -100,72 +98,6 @@ super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for title
-*/
-public MetadataString	title()
-{
-	MetadataString	result = this.title;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.title = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field title
-*/
-public String getTitle()
-{
-	return this.title().getValue();
-}
-
-/**
-	Sets the value of the field title
-*/
-public void setTitle(String title)
-{
-	this.title().setValue(title);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: title
-*/
-public boolean isNullTitle()
-{
-	return title == null || title.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field title
-*/
-public void hwSetTitle(String title)
-{
-	this.title().setValue(title);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the title directly.
-*/
-public void setTitleMetadata(MetadataString title)
-{
-	this.title = title;
-}
-
-/**
-	Heavy Weight Direct setter method for title
-*/
-public void hwSetTitleMetadata(MetadataString title)
-{
-	if (this.title != null && this.title.getValue() != null && hasTermVector())
-		termVector().remove(this.title.termVector());
-	this.title = title;
-	rebuildCompositeTermVector();
-}
-
-/**
 	Lazy evaluation for authors
 */
 public ArrayList<Author>	authors()
@@ -198,67 +130,31 @@ public void setAuthors(ArrayList<Author> authors)
 /**
 	Lazy evaluation for publisher
 */
-public MetadataString	publisher()
+public Publisher	publisher()
 {
-	MetadataString	result = this.publisher;
+	Publisher	result = this.publisher;
 	if (result == null)
 	{
-		result = new MetadataString();
+		result = new Publisher();
 		this.publisher = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field publisher
+	Get the value of field publisher
 */
-public String getPublisher()
+public Publisher getPublisher()
 {
-	return this.publisher().getValue();
+	return this.publisher;
 }
 
 /**
-	Sets the value of the field publisher
+	Set the value of field publisher
 */
-public void setPublisher(String publisher)
-{
-	this.publisher().setValue(publisher);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: publisher
-*/
-public boolean isNullPublisher()
-{
-	return publisher == null || publisher.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field publisher
-*/
-public void hwSetPublisher(String publisher)
-{
-	this.publisher().setValue(publisher);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the publisher directly.
-*/
-public void setPublisherMetadata(MetadataString publisher)
+public void setPublisher(Publisher publisher)
 {
 	this.publisher = publisher;
-}
-
-/**
-	Heavy Weight Direct setter method for publisher
-*/
-public void hwSetPublisherMetadata(MetadataString publisher)
-{
-	if (this.publisher != null && this.publisher.getValue() != null && hasTermVector())
-		termVector().remove(this.publisher.termVector());
-	this.publisher = publisher;
-	rebuildCompositeTermVector();
 }
 
 /**

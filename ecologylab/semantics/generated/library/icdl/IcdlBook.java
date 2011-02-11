@@ -8,6 +8,7 @@ import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.googleBooks.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
@@ -50,7 +51,7 @@ This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Book
+public class IcdlBook
 extends Metadata
 {
 
@@ -80,7 +81,7 @@ private MetadataParsedURL	bookurl;
 /**
 	Constructor
 */
-public Book()
+public IcdlBook()
 {
  super();
 }
@@ -88,7 +89,7 @@ public Book()
 /**
 	Constructor
 */
-public Book(MetaMetadataCompositeField metaMetadata)
+public IcdlBook(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }

@@ -8,6 +8,7 @@ import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.googleBooks.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
@@ -56,7 +57,7 @@ extends Document
 {
 
 @simpl_collection("book") @simpl_nowrap @mm_name("books")
-private ArrayList<Book>	books;
+private ArrayList<IcdlBook>	books;
 
 
 
@@ -79,12 +80,12 @@ super(metaMetadata);
 /**
 	Lazy evaluation for books
 */
-public ArrayList<Book>	books()
+public ArrayList<IcdlBook>	books()
 {
-	ArrayList<Book>	result = this.books;
+	ArrayList<IcdlBook>	result = this.books;
 	if (result == null)
 	{
-		result = new ArrayList<Book>();
+		result = new ArrayList<IcdlBook>();
 		this.books = result;
 	}
 	return result;
@@ -93,7 +94,7 @@ public ArrayList<Book>	books()
 /**
 	Get the value of field books
 */
-public ArrayList<Book> getBooks()
+public ArrayList<IcdlBook> getBooks()
 {
 	return this.books;
 }
@@ -101,7 +102,7 @@ public ArrayList<Book> getBooks()
 /**
 	Set the value of field books
 */
-public void setBooks(ArrayList<Book> books)
+public void setBooks(ArrayList<IcdlBook> books)
 {
 	this.books = books;
 }

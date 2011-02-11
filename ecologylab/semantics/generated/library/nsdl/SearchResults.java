@@ -8,6 +8,7 @@ import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
+import ecologylab.semantics.generated.library.googleBooks.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
@@ -55,7 +56,11 @@ public class SearchResults
 extends Metadata
 {
 
-@simpl_collection("nsdl_document") @xml_tag("this_should_be_document") @mm_name("results")
+
+/**
+	this_should_be_document
+*/
+@simpl_collection("nsdl_document") @xml_tag("results") @mm_name("results")
 private ArrayList<NsdlDocument>	results;
 
 

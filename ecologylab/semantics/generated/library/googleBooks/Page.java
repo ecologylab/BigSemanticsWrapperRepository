@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.publication;
+package ecologylab.semantics.generated.library.googleBooks;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -51,22 +51,25 @@ This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Subject
+public class Page
 extends Metadata
 {
 
 @simpl_scalar
+private MetadataParsedURL	pageThumbnail;
+
+@simpl_scalar
 private MetadataParsedURL	location;
 
-@simpl_scalar @simpl_composite_as_scalar
-private MetadataString	subject;
+@simpl_scalar
+private MetadataInteger	pageNumber;
 
 
 
 /**
 	Constructor
 */
-public Subject()
+public Page()
 {
  super();
 }
@@ -74,9 +77,75 @@ public Subject()
 /**
 	Constructor
 */
-public Subject(MetaMetadataCompositeField metaMetadata)
+public Page(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
+}
+
+/**
+	Lazy evaluation for pageThumbnail
+*/
+public MetadataParsedURL	pageThumbnail()
+{
+	MetadataParsedURL	result = this.pageThumbnail;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.pageThumbnail = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field pageThumbnail
+*/
+public ParsedURL getPageThumbnail()
+{
+	return this.pageThumbnail().getValue();
+}
+
+/**
+	Sets the value of the field pageThumbnail
+*/
+public void setPageThumbnail(ParsedURL pageThumbnail)
+{
+	this.pageThumbnail().setValue(pageThumbnail);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: pageThumbnail
+*/
+public boolean isNullPageThumbnail()
+{
+	return pageThumbnail == null || pageThumbnail.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field pageThumbnail
+*/
+public void hwSetPageThumbnail(ParsedURL pageThumbnail)
+{
+	this.pageThumbnail().setValue(pageThumbnail);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the pageThumbnail directly.
+*/
+public void setPageThumbnailMetadata(MetadataParsedURL pageThumbnail)
+{
+	this.pageThumbnail = pageThumbnail;
+}
+
+/**
+	Heavy Weight Direct setter method for pageThumbnail
+*/
+public void hwSetPageThumbnailMetadata(MetadataParsedURL pageThumbnail)
+{
+	if (this.pageThumbnail != null && this.pageThumbnail.getValue() != null && hasTermVector())
+		termVector().remove(this.pageThumbnail.termVector());
+	this.pageThumbnail = pageThumbnail;
+	rebuildCompositeTermVector();
 }
 
 /**
@@ -146,68 +215,68 @@ public void hwSetLocationMetadata(MetadataParsedURL location)
 }
 
 /**
-	Lazy evaluation for subject
+	Lazy evaluation for pageNumber
 */
-public MetadataString	subject()
+public MetadataInteger	pageNumber()
 {
-	MetadataString	result = this.subject;
+	MetadataInteger	result = this.pageNumber;
 	if (result == null)
 	{
-		result = new MetadataString();
-		this.subject = result;
+		result = new MetadataInteger();
+		this.pageNumber = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field subject
+	Gets the value of the field pageNumber
 */
-public String getSubject()
+public Integer getPageNumber()
 {
-	return this.subject().getValue();
+	return this.pageNumber().getValue();
 }
 
 /**
-	Sets the value of the field subject
+	Sets the value of the field pageNumber
 */
-public void setSubject(String subject)
+public void setPageNumber(Integer pageNumber)
 {
-	this.subject().setValue(subject);
+	this.pageNumber().setValue(pageNumber);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: subject
+	Test to see if the value of the field is null, or if the field itself is null: pageNumber
 */
-public boolean isNullSubject()
+public boolean isNullPageNumber()
 {
-	return subject == null || subject.getValue() == null;
+	return pageNumber == null || pageNumber.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field subject
+	The heavy weight setter method for field pageNumber
 */
-public void hwSetSubject(String subject)
+public void hwSetPageNumber(Integer pageNumber)
 {
-	this.subject().setValue(subject);
+	this.pageNumber().setValue(pageNumber);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the subject directly.
+	 Sets the pageNumber directly.
 */
-public void setSubjectMetadata(MetadataString subject)
+public void setPageNumberMetadata(MetadataInteger pageNumber)
 {
-	this.subject = subject;
+	this.pageNumber = pageNumber;
 }
 
 /**
-	Heavy Weight Direct setter method for subject
+	Heavy Weight Direct setter method for pageNumber
 */
-public void hwSetSubjectMetadata(MetadataString subject)
+public void hwSetPageNumberMetadata(MetadataInteger pageNumber)
 {
-	if (this.subject != null && this.subject.getValue() != null && hasTermVector())
-		termVector().remove(this.subject.termVector());
-	this.subject = subject;
+	if (this.pageNumber != null && this.pageNumber.getValue() != null && hasTermVector())
+		termVector().remove(this.pageNumber.termVector());
+	this.pageNumber = pageNumber;
 	rebuildCompositeTermVector();
 }
 
