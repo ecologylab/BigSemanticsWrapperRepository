@@ -34,6 +34,8 @@ namespace ecologylab.semantics.generated.library
         [mm_name("hypertext_paras")]
         private List<HypertextPara> hypertextParas;
 
+
+
 		public WikipediaPage()
 		{ }
 
@@ -42,5 +44,11 @@ namespace ecologylab.semantics.generated.library
 			get{return mainImageSrc;}
 			set{mainImageSrc = value;}
 		}
+
+        public List<HypertextPara> HypertextParas
+        {
+            get { return hypertextParas; }
+            set { hypertextParas = value; }
+        }
 	}
 }

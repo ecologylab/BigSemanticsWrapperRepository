@@ -12,6 +12,7 @@ using ecologylab.attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
+using System.Collections.ObjectModel;
 
 namespace ecologylab.semantics.generated.library 
 {
@@ -46,7 +47,11 @@ namespace ecologylab.semantics.generated.library
 		[simpl_collection("thumbinner")]
 		[xml_tag("thumbinners")]
 		[mm_name("thumbinners")]
-		private List<Thumbinner> thumbinners;
+		private ObservableCollection<Thumbinner> thumbinners;
+
+        [simpl_composite]
+        [mm_name("style_info")]
+        private HypertextPara introPara;
 
 		public WikipediaPageType()
 		{ }
@@ -63,10 +68,16 @@ namespace ecologylab.semantics.generated.library
 			set{categories = value;}
 		}
 
-		public List<Thumbinner> Thumbinners
+        public ObservableCollection<Thumbinner> Thumbinners
 		{
 			get{return thumbinners;}
 			set{thumbinners = value;}
 		}
+
+        public HypertextPara IntroPara
+        {
+            get { return introPara; }
+            set { introPara = value; }
+        }
 	}
 }
