@@ -259,8 +259,6 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.WikipediaPageType.class,
 
-		ecologylab.semantics.generated.library.WikipediaPageForParsing.class,
-
 		ecologylab.semantics.generated.library.nsdl.Header.class,
 
 		ecologylab.semantics.generated.library.nsdl.NsdlDocument.class,
