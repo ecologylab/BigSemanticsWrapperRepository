@@ -8,6 +8,7 @@ This is a generated code. DO NOT edit or modify it.
 */
 
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.tools.MetaMetadataCompilerUtils;
 import ecologylab.serialization.TranslationScope;
 
 
@@ -245,6 +246,6 @@ public class GeneratedMetadataTranslationScope
  
 public static TranslationScope get()
 {
-return TranslationScope.get("generated_metadata_translations", MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
+return TranslationScope.get(MetaMetadataCompilerUtils.GENERATED_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
 }
 }
