@@ -1,9 +1,10 @@
-package ecologylab.semantics.generated.library.scholarlyPublication;
+package ecologylab.semantics.generated.library.artwork;
 
 
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.generated.library.artwork.*;
 import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
@@ -27,6 +28,7 @@ import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
 import ecologylab.semantics.metadata.builtins.ClippableDocument;
 import ecologylab.semantics.metadata.builtins.Clipping;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -37,6 +39,7 @@ import ecologylab.semantics.metadata.builtins.TextClipping;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
+import ecologylab.semantics.tools.MetaMetadataCompilerUtils;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
 import ecologylab.serialization.TranslationScope;
@@ -52,22 +55,22 @@ This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Tag
-extends Metadata
+public class MomaList
+extends CompoundDocument
 {
 
-@simpl_scalar
-private MetadataString	tagName;
+@simpl_collection("moma_artwork") @simpl_nowrap @mm_name("artworks")
+private ArrayList<MomaArtwork>	artworks;
 
 @simpl_scalar
-private MetadataParsedURL	link;
+private MetadataParsedURL	nextList;
 
 
 
 /**
 	Constructor
 */
-public Tag()
+public MomaList()
 {
  super();
 }
@@ -75,140 +78,104 @@ public Tag()
 /**
 	Constructor
 */
-public Tag(MetaMetadataCompositeField metaMetadata)
+public MomaList(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for tagName
+	Lazy evaluation for artworks
 */
-public MetadataString	tagName()
+public ArrayList<MomaArtwork>	artworks()
 {
-	MetadataString	result = this.tagName;
+	ArrayList<MomaArtwork>	result = this.artworks;
 	if (result == null)
 	{
-		result = new MetadataString();
-		this.tagName = result;
+		result = new ArrayList<MomaArtwork>();
+		this.artworks = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field tagName
+	Get the value of field artworks
 */
-public String getTagName()
+public ArrayList<MomaArtwork> getArtworks()
 {
-	return this.tagName().getValue();
+	return this.artworks;
 }
 
 /**
-	Sets the value of the field tagName
+	Set the value of field artworks
 */
-public void setTagName(String tagName)
+public void setArtworks(ArrayList<MomaArtwork> artworks)
 {
-	this.tagName().setValue(tagName);
+	this.artworks = artworks;
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: tagName
+	Lazy evaluation for nextList
 */
-public boolean isNullTagName()
+public MetadataParsedURL	nextList()
 {
-	return tagName == null || tagName.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field tagName
-*/
-public void hwSetTagName(String tagName)
-{
-	this.tagName().setValue(tagName);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the tagName directly.
-*/
-public void setTagNameMetadata(MetadataString tagName)
-{
-	this.tagName = tagName;
-}
-
-/**
-	Heavy Weight Direct setter method for tagName
-*/
-public void hwSetTagNameMetadata(MetadataString tagName)
-{
-	if (this.tagName != null && this.tagName.getValue() != null && hasTermVector())
-		termVector().remove(this.tagName.termVector());
-	this.tagName = tagName;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for link
-*/
-public MetadataParsedURL	link()
-{
-	MetadataParsedURL	result = this.link;
+	MetadataParsedURL	result = this.nextList;
 	if (result == null)
 	{
 		result = new MetadataParsedURL();
-		this.link = result;
+		this.nextList = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field link
+	Gets the value of the field nextList
 */
-public ParsedURL getLink()
+public ParsedURL getNextList()
 {
-	return this.link().getValue();
+	return this.nextList().getValue();
 }
 
 /**
-	Sets the value of the field link
+	Sets the value of the field nextList
 */
-public void setLink(ParsedURL link)
+public void setNextList(ParsedURL nextList)
 {
-	this.link().setValue(link);
+	this.nextList().setValue(nextList);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: link
+	Test to see if the value of the field is null, or if the field itself is null: nextList
 */
-public boolean isNullLink()
+public boolean isNullNextList()
 {
-	return link == null || link.getValue() == null;
+	return nextList == null || nextList.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field link
+	The heavy weight setter method for field nextList
 */
-public void hwSetLink(ParsedURL link)
+public void hwSetNextList(ParsedURL nextList)
 {
-	this.link().setValue(link);
+	this.nextList().setValue(nextList);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the link directly.
+	 Sets the nextList directly.
 */
-public void setLinkMetadata(MetadataParsedURL link)
+public void setNextListMetadata(MetadataParsedURL nextList)
 {
-	this.link = link;
+	this.nextList = nextList;
 }
 
 /**
-	Heavy Weight Direct setter method for link
+	Heavy Weight Direct setter method for nextList
 */
-public void hwSetLinkMetadata(MetadataParsedURL link)
+public void hwSetNextListMetadata(MetadataParsedURL nextList)
 {
-	if (this.link != null && this.link.getValue() != null && hasTermVector())
-		termVector().remove(this.link.termVector());
-	this.link = link;
+	if (this.nextList != null && this.nextList.getValue() != null && hasTermVector())
+		termVector().remove(this.nextList.termVector());
+	this.nextList = nextList;
 	rebuildCompositeTermVector();
 }
 

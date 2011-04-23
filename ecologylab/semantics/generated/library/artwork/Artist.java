@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.artwork;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -49,22 +49,25 @@ import java.util.*;
 
 
 /**
-	Google image search page
+	
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class GoogleImageSearchPage
-extends GoogleImageSearchType
+public class Artist
+extends Author
 {
+
+@simpl_collection("artwork") @xml_tag("artworks") @mm_name("artworks")
+private ArrayList<Artwork>	artworks;
 
 
 
 /**
 	Constructor
 */
-public GoogleImageSearchPage()
+public Artist()
 {
  super();
 }
@@ -72,9 +75,39 @@ public GoogleImageSearchPage()
 /**
 	Constructor
 */
-public GoogleImageSearchPage(MetaMetadataCompositeField metaMetadata)
+public Artist(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
+}
+
+/**
+	Lazy evaluation for artworks
+*/
+public ArrayList<Artwork>	artworks()
+{
+	ArrayList<Artwork>	result = this.artworks;
+	if (result == null)
+	{
+		result = new ArrayList<Artwork>();
+		this.artworks = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field artworks
+*/
+public ArrayList<Artwork> getArtworks()
+{
+	return this.artworks;
+}
+
+/**
+	Set the value of field artworks
+*/
+public void setArtworks(ArrayList<Artwork> artworks)
+{
+	this.artworks = artworks;
 }
 
 

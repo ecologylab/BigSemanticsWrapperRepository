@@ -10,6 +10,7 @@ This is a generated code. DO NOT edit or modify it.
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.generated.library.artwork.*;
 import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
@@ -33,6 +34,7 @@ import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
 import ecologylab.semantics.metadata.builtins.ClippableDocument;
 import ecologylab.semantics.metadata.builtins.Clipping;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -43,6 +45,7 @@ import ecologylab.semantics.metadata.builtins.TextClipping;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
+import ecologylab.semantics.tools.MetaMetadataCompilerUtils;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
 import ecologylab.serialization.TranslationScope;
@@ -60,13 +63,23 @@ public class GeneratedMetadataTranslationScope
 {
 	protected static final Class TRANSLATIONS[] =
 	{
-		ecologylab.semantics.generated.library.Pdf.class,
+		ecologylab.semantics.generated.library.PdfMixin.class,
+
+		ecologylab.semantics.generated.library.Tag.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult.class,
 
-		ecologylab.semantics.generated.library.MmArtwork.class,
+		ecologylab.semantics.generated.library.artwork.MmArtwork.class,
 
-		ecologylab.semantics.generated.library.Artwork.class,
+		ecologylab.semantics.generated.library.artwork.MomaList.class,
+
+		ecologylab.semantics.generated.library.artwork.Artist.class,
+
+		ecologylab.semantics.generated.library.artwork.TempFieldValueHolder.class,
+
+		ecologylab.semantics.generated.library.artwork.MomaArtwork.class,
+
+		ecologylab.semantics.generated.library.artwork.Artwork.class,
 
 		ecologylab.semantics.generated.library.buzz.HotSearch.class,
 
@@ -204,8 +217,6 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.scholarlyPublication.Source.class,
 
-		ecologylab.semantics.generated.library.scholarlyPublication.Tag.class,
-
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
 
 		ecologylab.semantics.generated.library.search.ImageInSearchResult.class,
@@ -285,6 +296,6 @@ public class GeneratedMetadataTranslationScope
  
 public static TranslationScope get()
 {
-return TranslationScope.get("generated_metadata_translations", MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
+return TranslationScope.get(MetaMetadataCompilerUtils.GENERATED_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
 }
 }

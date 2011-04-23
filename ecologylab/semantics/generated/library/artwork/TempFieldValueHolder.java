@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.artwork;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -55,22 +55,22 @@ This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Thumbinner
+public class TempFieldValueHolder
 extends Metadata
 {
 
 @simpl_scalar
-private MetadataString	thumbImgCaption;
+private MetadataString	tempMedium;
 
 @simpl_scalar
-private MetadataParsedURL	thumbImgSrc;
+private MetadataString	tempDimensions;
 
 
 
 /**
 	Constructor
 */
-public Thumbinner()
+public TempFieldValueHolder()
 {
  super();
 }
@@ -78,140 +78,140 @@ public Thumbinner()
 /**
 	Constructor
 */
-public Thumbinner(MetaMetadataCompositeField metaMetadata)
+public TempFieldValueHolder(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for thumbImgCaption
+	Lazy evaluation for tempMedium
 */
-public MetadataString	thumbImgCaption()
+public MetadataString	tempMedium()
 {
-	MetadataString	result = this.thumbImgCaption;
+	MetadataString	result = this.tempMedium;
 	if (result == null)
 	{
 		result = new MetadataString();
-		this.thumbImgCaption = result;
+		this.tempMedium = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field thumbImgCaption
+	Gets the value of the field tempMedium
 */
-public String getThumbImgCaption()
+public String getTempMedium()
 {
-	return this.thumbImgCaption().getValue();
+	return this.tempMedium().getValue();
 }
 
 /**
-	Sets the value of the field thumbImgCaption
+	Sets the value of the field tempMedium
 */
-public void setThumbImgCaption(String thumbImgCaption)
+public void setTempMedium(String tempMedium)
 {
-	this.thumbImgCaption().setValue(thumbImgCaption);
+	this.tempMedium().setValue(tempMedium);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: thumbImgCaption
+	Test to see if the value of the field is null, or if the field itself is null: tempMedium
 */
-public boolean isNullThumbImgCaption()
+public boolean isNullTempMedium()
 {
-	return thumbImgCaption == null || thumbImgCaption.getValue() == null;
+	return tempMedium == null || tempMedium.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field thumbImgCaption
+	The heavy weight setter method for field tempMedium
 */
-public void hwSetThumbImgCaption(String thumbImgCaption)
+public void hwSetTempMedium(String tempMedium)
 {
-	this.thumbImgCaption().setValue(thumbImgCaption);
+	this.tempMedium().setValue(tempMedium);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the thumbImgCaption directly.
+	 Sets the tempMedium directly.
 */
-public void setThumbImgCaptionMetadata(MetadataString thumbImgCaption)
+public void setTempMediumMetadata(MetadataString tempMedium)
 {
-	this.thumbImgCaption = thumbImgCaption;
+	this.tempMedium = tempMedium;
 }
 
 /**
-	Heavy Weight Direct setter method for thumbImgCaption
+	Heavy Weight Direct setter method for tempMedium
 */
-public void hwSetThumbImgCaptionMetadata(MetadataString thumbImgCaption)
+public void hwSetTempMediumMetadata(MetadataString tempMedium)
 {
-	if (this.thumbImgCaption != null && this.thumbImgCaption.getValue() != null && hasTermVector())
-		termVector().remove(this.thumbImgCaption.termVector());
-	this.thumbImgCaption = thumbImgCaption;
+	if (this.tempMedium != null && this.tempMedium.getValue() != null && hasTermVector())
+		termVector().remove(this.tempMedium.termVector());
+	this.tempMedium = tempMedium;
 	rebuildCompositeTermVector();
 }
 
 /**
-	Lazy evaluation for thumbImgSrc
+	Lazy evaluation for tempDimensions
 */
-public MetadataParsedURL	thumbImgSrc()
+public MetadataString	tempDimensions()
 {
-	MetadataParsedURL	result = this.thumbImgSrc;
+	MetadataString	result = this.tempDimensions;
 	if (result == null)
 	{
-		result = new MetadataParsedURL();
-		this.thumbImgSrc = result;
+		result = new MetadataString();
+		this.tempDimensions = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field thumbImgSrc
+	Gets the value of the field tempDimensions
 */
-public ParsedURL getThumbImgSrc()
+public String getTempDimensions()
 {
-	return this.thumbImgSrc().getValue();
+	return this.tempDimensions().getValue();
 }
 
 /**
-	Sets the value of the field thumbImgSrc
+	Sets the value of the field tempDimensions
 */
-public void setThumbImgSrc(ParsedURL thumbImgSrc)
+public void setTempDimensions(String tempDimensions)
 {
-	this.thumbImgSrc().setValue(thumbImgSrc);
+	this.tempDimensions().setValue(tempDimensions);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: thumbImgSrc
+	Test to see if the value of the field is null, or if the field itself is null: tempDimensions
 */
-public boolean isNullThumbImgSrc()
+public boolean isNullTempDimensions()
 {
-	return thumbImgSrc == null || thumbImgSrc.getValue() == null;
+	return tempDimensions == null || tempDimensions.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field thumbImgSrc
+	The heavy weight setter method for field tempDimensions
 */
-public void hwSetThumbImgSrc(ParsedURL thumbImgSrc)
+public void hwSetTempDimensions(String tempDimensions)
 {
-	this.thumbImgSrc().setValue(thumbImgSrc);
+	this.tempDimensions().setValue(tempDimensions);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the thumbImgSrc directly.
+	 Sets the tempDimensions directly.
 */
-public void setThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
+public void setTempDimensionsMetadata(MetadataString tempDimensions)
 {
-	this.thumbImgSrc = thumbImgSrc;
+	this.tempDimensions = tempDimensions;
 }
 
 /**
-	Heavy Weight Direct setter method for thumbImgSrc
+	Heavy Weight Direct setter method for tempDimensions
 */
-public void hwSetThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
+public void hwSetTempDimensionsMetadata(MetadataString tempDimensions)
 {
-	if (this.thumbImgSrc != null && this.thumbImgSrc.getValue() != null && hasTermVector())
-		termVector().remove(this.thumbImgSrc.termVector());
-	this.thumbImgSrc = thumbImgSrc;
+	if (this.tempDimensions != null && this.tempDimensions.getValue() != null && hasTermVector())
+		termVector().remove(this.tempDimensions.termVector());
+	this.tempDimensions = tempDimensions;
 	rebuildCompositeTermVector();
 }
 

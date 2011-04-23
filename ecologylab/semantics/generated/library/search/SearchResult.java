@@ -4,6 +4,7 @@ package ecologylab.semantics.generated.library.search;
 import ecologylab.generic.HashMapArrayList;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.*;
+import ecologylab.semantics.generated.library.artwork.*;
 import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
@@ -27,6 +28,7 @@ import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
 import ecologylab.semantics.metadata.builtins.ClippableDocument;
 import ecologylab.semantics.metadata.builtins.Clipping;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Entity;
@@ -37,6 +39,7 @@ import ecologylab.semantics.metadata.builtins.TextClipping;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
+import ecologylab.semantics.tools.MetaMetadataCompilerUtils;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
 import ecologylab.serialization.TranslationScope;
@@ -83,6 +86,27 @@ private MetadataParsedURL	link;
 */
 @simpl_scalar
 private MetadataParsedURL	linkOther;
+
+
+/**
+	The search engine used for this result
+*/
+@simpl_scalar
+private MetadataString	engine;
+
+
+/**
+	The author of this item
+*/
+@simpl_scalar
+private MetadataString	author;
+
+
+/**
+	Associated tags from the search engine, if exist
+*/
+@simpl_collection("tag") @xml_tag("tags") @mm_name("tags")
+private ArrayList<Tag>	tags;
 
 
 
@@ -364,6 +388,168 @@ public void hwSetLinkOtherMetadata(MetadataParsedURL linkOther)
 		termVector().remove(this.linkOther.termVector());
 	this.linkOther = linkOther;
 	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for engine
+*/
+public MetadataString	engine()
+{
+	MetadataString	result = this.engine;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.engine = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field engine
+*/
+public String getEngine()
+{
+	return this.engine().getValue();
+}
+
+/**
+	Sets the value of the field engine
+*/
+public void setEngine(String engine)
+{
+	this.engine().setValue(engine);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: engine
+*/
+public boolean isNullEngine()
+{
+	return engine == null || engine.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field engine
+*/
+public void hwSetEngine(String engine)
+{
+	this.engine().setValue(engine);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the engine directly.
+*/
+public void setEngineMetadata(MetadataString engine)
+{
+	this.engine = engine;
+}
+
+/**
+	Heavy Weight Direct setter method for engine
+*/
+public void hwSetEngineMetadata(MetadataString engine)
+{
+	if (this.engine != null && this.engine.getValue() != null && hasTermVector())
+		termVector().remove(this.engine.termVector());
+	this.engine = engine;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for author
+*/
+public MetadataString	author()
+{
+	MetadataString	result = this.author;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.author = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field author
+*/
+public String getAuthor()
+{
+	return this.author().getValue();
+}
+
+/**
+	Sets the value of the field author
+*/
+public void setAuthor(String author)
+{
+	this.author().setValue(author);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: author
+*/
+public boolean isNullAuthor()
+{
+	return author == null || author.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field author
+*/
+public void hwSetAuthor(String author)
+{
+	this.author().setValue(author);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the author directly.
+*/
+public void setAuthorMetadata(MetadataString author)
+{
+	this.author = author;
+}
+
+/**
+	Heavy Weight Direct setter method for author
+*/
+public void hwSetAuthorMetadata(MetadataString author)
+{
+	if (this.author != null && this.author.getValue() != null && hasTermVector())
+		termVector().remove(this.author.termVector());
+	this.author = author;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for tags
+*/
+public ArrayList<Tag>	tags()
+{
+	ArrayList<Tag>	result = this.tags;
+	if (result == null)
+	{
+		result = new ArrayList<Tag>();
+		this.tags = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field tags
+*/
+public ArrayList<Tag> getTags()
+{
+	return this.tags;
+}
+
+/**
+	Set the value of field tags
+*/
+public void setTags(ArrayList<Tag> tags)
+{
+	this.tags = tags;
 }
 
 

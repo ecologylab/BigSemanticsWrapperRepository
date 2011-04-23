@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.artwork;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -49,28 +49,36 @@ import java.util.*;
 
 
 /**
-	
+	ACM Multimedia Interactive Artwork class
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Thumbinner
-extends Metadata
+public class MmArtwork
+extends Artwork
 {
 
-@simpl_scalar
-private MetadataString	thumbImgCaption;
 
+/**
+	Website of the work or group responsible.
+*/
 @simpl_scalar
-private MetadataParsedURL	thumbImgSrc;
+private MetadataParsedURL	website;
+
+
+/**
+	Link the ACM Portal page.
+*/
+@simpl_scalar
+private MetadataParsedURL	extendedAbstract;
 
 
 
 /**
 	Constructor
 */
-public Thumbinner()
+public MmArtwork()
 {
  super();
 }
@@ -78,140 +86,140 @@ public Thumbinner()
 /**
 	Constructor
 */
-public Thumbinner(MetaMetadataCompositeField metaMetadata)
+public MmArtwork(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for thumbImgCaption
+	Lazy evaluation for website
 */
-public MetadataString	thumbImgCaption()
+public MetadataParsedURL	website()
 {
-	MetadataString	result = this.thumbImgCaption;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.thumbImgCaption = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field thumbImgCaption
-*/
-public String getThumbImgCaption()
-{
-	return this.thumbImgCaption().getValue();
-}
-
-/**
-	Sets the value of the field thumbImgCaption
-*/
-public void setThumbImgCaption(String thumbImgCaption)
-{
-	this.thumbImgCaption().setValue(thumbImgCaption);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: thumbImgCaption
-*/
-public boolean isNullThumbImgCaption()
-{
-	return thumbImgCaption == null || thumbImgCaption.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field thumbImgCaption
-*/
-public void hwSetThumbImgCaption(String thumbImgCaption)
-{
-	this.thumbImgCaption().setValue(thumbImgCaption);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the thumbImgCaption directly.
-*/
-public void setThumbImgCaptionMetadata(MetadataString thumbImgCaption)
-{
-	this.thumbImgCaption = thumbImgCaption;
-}
-
-/**
-	Heavy Weight Direct setter method for thumbImgCaption
-*/
-public void hwSetThumbImgCaptionMetadata(MetadataString thumbImgCaption)
-{
-	if (this.thumbImgCaption != null && this.thumbImgCaption.getValue() != null && hasTermVector())
-		termVector().remove(this.thumbImgCaption.termVector());
-	this.thumbImgCaption = thumbImgCaption;
-	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for thumbImgSrc
-*/
-public MetadataParsedURL	thumbImgSrc()
-{
-	MetadataParsedURL	result = this.thumbImgSrc;
+	MetadataParsedURL	result = this.website;
 	if (result == null)
 	{
 		result = new MetadataParsedURL();
-		this.thumbImgSrc = result;
+		this.website = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field thumbImgSrc
+	Gets the value of the field website
 */
-public ParsedURL getThumbImgSrc()
+public ParsedURL getWebsite()
 {
-	return this.thumbImgSrc().getValue();
+	return this.website().getValue();
 }
 
 /**
-	Sets the value of the field thumbImgSrc
+	Sets the value of the field website
 */
-public void setThumbImgSrc(ParsedURL thumbImgSrc)
+public void setWebsite(ParsedURL website)
 {
-	this.thumbImgSrc().setValue(thumbImgSrc);
+	this.website().setValue(website);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: thumbImgSrc
+	Test to see if the value of the field is null, or if the field itself is null: website
 */
-public boolean isNullThumbImgSrc()
+public boolean isNullWebsite()
 {
-	return thumbImgSrc == null || thumbImgSrc.getValue() == null;
+	return website == null || website.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field thumbImgSrc
+	The heavy weight setter method for field website
 */
-public void hwSetThumbImgSrc(ParsedURL thumbImgSrc)
+public void hwSetWebsite(ParsedURL website)
 {
-	this.thumbImgSrc().setValue(thumbImgSrc);
+	this.website().setValue(website);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the thumbImgSrc directly.
+	 Sets the website directly.
 */
-public void setThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
+public void setWebsiteMetadata(MetadataParsedURL website)
 {
-	this.thumbImgSrc = thumbImgSrc;
+	this.website = website;
 }
 
 /**
-	Heavy Weight Direct setter method for thumbImgSrc
+	Heavy Weight Direct setter method for website
 */
-public void hwSetThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
+public void hwSetWebsiteMetadata(MetadataParsedURL website)
 {
-	if (this.thumbImgSrc != null && this.thumbImgSrc.getValue() != null && hasTermVector())
-		termVector().remove(this.thumbImgSrc.termVector());
-	this.thumbImgSrc = thumbImgSrc;
+	if (this.website != null && this.website.getValue() != null && hasTermVector())
+		termVector().remove(this.website.termVector());
+	this.website = website;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for extendedAbstract
+*/
+public MetadataParsedURL	extendedAbstract()
+{
+	MetadataParsedURL	result = this.extendedAbstract;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.extendedAbstract = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field extendedAbstract
+*/
+public ParsedURL getExtendedAbstract()
+{
+	return this.extendedAbstract().getValue();
+}
+
+/**
+	Sets the value of the field extendedAbstract
+*/
+public void setExtendedAbstract(ParsedURL extendedAbstract)
+{
+	this.extendedAbstract().setValue(extendedAbstract);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: extendedAbstract
+*/
+public boolean isNullExtendedAbstract()
+{
+	return extendedAbstract == null || extendedAbstract.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field extendedAbstract
+*/
+public void hwSetExtendedAbstract(ParsedURL extendedAbstract)
+{
+	this.extendedAbstract().setValue(extendedAbstract);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the extendedAbstract directly.
+*/
+public void setExtendedAbstractMetadata(MetadataParsedURL extendedAbstract)
+{
+	this.extendedAbstract = extendedAbstract;
+}
+
+/**
+	Heavy Weight Direct setter method for extendedAbstract
+*/
+public void hwSetExtendedAbstractMetadata(MetadataParsedURL extendedAbstract)
+{
+	if (this.extendedAbstract != null && this.extendedAbstract.getValue() != null && hasTermVector())
+		termVector().remove(this.extendedAbstract.termVector());
+	this.extendedAbstract = extendedAbstract;
 	rebuildCompositeTermVector();
 }
 
