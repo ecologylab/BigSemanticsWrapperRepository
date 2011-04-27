@@ -39,7 +39,7 @@ namespace ecologylab.semantics.generated.library
 		public WikipediaPage()
 		{ }
 
-		public MetadataParsedURL MainImageSrc
+		public MetadataParsedURL MainImageSrc  
 		{
 			get{return mainImageSrc;}
 			set{mainImageSrc = value;}
