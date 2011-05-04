@@ -45,7 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ecologylab\semantics\generated\library\Anchor.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\Artwork.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\artwork\Artist.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\artwork\Artwork.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\artwork\MmArtwork.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\artwork\MomaArtwork.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\artwork\MomaList.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\artwork\TempFieldValueHolder.cs" />
     <Compile Include="ecologylab\semantics\generated\library\bibManaging\CitationInfo.cs" />
     <Compile Include="ecologylab\semantics\generated\library\bibManaging\CiteseerxRecord.cs" />
     <Compile Include="ecologylab\semantics\generated\library\bibManaging\CiteseerxSearch.cs" />
@@ -71,7 +76,6 @@
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTag.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTags.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTagsInteresting.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\GoogleBook.cs" />
     <Compile Include="ecologylab\semantics\generated\library\GoogleImageSearchPage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\GoogleImageSearchType.cs" />
     <Compile Include="ecologylab\semantics\generated\library\GooglePatent.cs" />
@@ -95,7 +99,6 @@
     <Compile Include="ecologylab\semantics\generated\library\misc\Dlms.cs" />
     <Compile Include="ecologylab\semantics\generated\library\misc\IcdlImage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\misc\Nsdl.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\MmArtwork.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\Header.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\NsdlDocument.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\NsdlService.cs" />
@@ -169,7 +172,9 @@
       <Name>ecologylabSemantics</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ecologylab\semantics\generated\library\googleBooks\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
