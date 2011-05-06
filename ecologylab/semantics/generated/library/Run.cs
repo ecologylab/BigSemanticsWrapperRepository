@@ -23,7 +23,7 @@ namespace ecologylab.semantics.generated.library
 	public class Run : Metadata
 	{
 		/// <summary>
-		/// Should be MetadataBoolean, Fixme.
+		/// 
 		/// </summary>
 		[simpl_composite]
 		[mm_name("style_info")]
