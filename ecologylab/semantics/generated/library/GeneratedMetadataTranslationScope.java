@@ -185,7 +185,11 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.products.Product.class,
 
+		ecologylab.semantics.generated.library.products.AmazonProduct.class,
+
 		ecologylab.semantics.generated.library.publication.Author.class,
+
+		ecologylab.semantics.generated.library.publication.AmazonBook.class,
 
 		ecologylab.semantics.generated.library.publication.Book.class,
 
