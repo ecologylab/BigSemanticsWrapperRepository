@@ -60,10 +60,6 @@ public class SearchResults
 extends Metadata
 {
 
-
-/**
-	this_should_be_document
-*/
 @simpl_collection("nsdl_document") @xml_tag("results") @mm_name("results")
 private ArrayList<NsdlDocument>	results;
 

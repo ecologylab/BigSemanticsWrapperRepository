@@ -63,10 +63,10 @@ extends Artwork
 private MetadataString	status;
 
 @simpl_composite @mm_name("moma_deparment")
-private Document	momaDeparment;
+private CompoundDocument	momaDeparment;
 
 @simpl_composite @mm_name("moma_classification")
-private Document	momaClassification;
+private CompoundDocument	momaClassification;
 
 @simpl_scalar
 private MetadataParsedURL	permalink;
@@ -170,12 +170,12 @@ public void hwSetStatusMetadata(MetadataString status)
 /**
 	Lazy evaluation for momaDeparment
 */
-public Document	momaDeparment()
+public CompoundDocument	momaDeparment()
 {
-	Document	result = this.momaDeparment;
+	CompoundDocument	result = this.momaDeparment;
 	if (result == null)
 	{
-		result = new Document();
+		result = new CompoundDocument();
 		this.momaDeparment = result;
 	}
 	return result;
@@ -184,7 +184,7 @@ public Document	momaDeparment()
 /**
 	Get the value of field momaDeparment
 */
-public Document getMomaDeparment()
+public CompoundDocument getMomaDeparment()
 {
 	return this.momaDeparment;
 }
@@ -192,7 +192,7 @@ public Document getMomaDeparment()
 /**
 	Set the value of field momaDeparment
 */
-public void setMomaDeparment(Document momaDeparment)
+public void setMomaDeparment(CompoundDocument momaDeparment)
 {
 	this.momaDeparment = momaDeparment;
 }
@@ -200,12 +200,12 @@ public void setMomaDeparment(Document momaDeparment)
 /**
 	Lazy evaluation for momaClassification
 */
-public Document	momaClassification()
+public CompoundDocument	momaClassification()
 {
-	Document	result = this.momaClassification;
+	CompoundDocument	result = this.momaClassification;
 	if (result == null)
 	{
-		result = new Document();
+		result = new CompoundDocument();
 		this.momaClassification = result;
 	}
 	return result;
@@ -214,7 +214,7 @@ public Document	momaClassification()
 /**
 	Get the value of field momaClassification
 */
-public Document getMomaClassification()
+public CompoundDocument getMomaClassification()
 {
 	return this.momaClassification;
 }
@@ -222,7 +222,7 @@ public Document getMomaClassification()
 /**
 	Set the value of field momaClassification
 */
-public void setMomaClassification(Document momaClassification)
+public void setMomaClassification(CompoundDocument momaClassification)
 {
 	this.momaClassification = momaClassification;
 }

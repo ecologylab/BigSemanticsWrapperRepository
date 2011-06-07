@@ -59,8 +59,8 @@ public class FlickrSearchTwo
 extends CompoundDocument
 {
 
-@simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results")
-private ArrayList<FlickrImage>	flickrResults;
+@simpl_collection("flickr_image_detail") @xml_tag("flickr_results") @mm_name("flickr_results")
+private ArrayList<FlickrImageDetail>	flickrResults;
 
 
 
@@ -83,12 +83,12 @@ super(metaMetadata);
 /**
 	Lazy evaluation for flickrResults
 */
-public ArrayList<FlickrImage>	flickrResults()
+public ArrayList<FlickrImageDetail>	flickrResults()
 {
-	ArrayList<FlickrImage>	result = this.flickrResults;
+	ArrayList<FlickrImageDetail>	result = this.flickrResults;
 	if (result == null)
 	{
-		result = new ArrayList<FlickrImage>();
+		result = new ArrayList<FlickrImageDetail>();
 		this.flickrResults = result;
 	}
 	return result;
@@ -97,7 +97,7 @@ public ArrayList<FlickrImage>	flickrResults()
 /**
 	Get the value of field flickrResults
 */
-public ArrayList<FlickrImage> getFlickrResults()
+public ArrayList<FlickrImageDetail> getFlickrResults()
 {
 	return this.flickrResults;
 }
@@ -105,7 +105,7 @@ public ArrayList<FlickrImage> getFlickrResults()
 /**
 	Set the value of field flickrResults
 */
-public void setFlickrResults(ArrayList<FlickrImage> flickrResults)
+public void setFlickrResults(ArrayList<FlickrImageDetail> flickrResults)
 {
 	this.flickrResults = flickrResults;
 }

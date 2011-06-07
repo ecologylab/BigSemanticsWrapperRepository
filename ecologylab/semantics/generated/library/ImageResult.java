@@ -73,6 +73,9 @@ private MetadataParsedURL	imgUrl;
 @simpl_scalar
 private MetadataString	summary;
 
+@simpl_scalar
+private MetadataString	imgSimilarUrl;
+
 
 /**
 	mime type should be extracted from this property
@@ -234,6 +237,72 @@ public void hwSetSummaryMetadata(MetadataString summary)
 	if (this.summary != null && this.summary.getValue() != null && hasTermVector())
 		termVector().remove(this.summary.termVector());
 	this.summary = summary;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for imgSimilarUrl
+*/
+public MetadataString	imgSimilarUrl()
+{
+	MetadataString	result = this.imgSimilarUrl;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.imgSimilarUrl = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field imgSimilarUrl
+*/
+public String getImgSimilarUrl()
+{
+	return this.imgSimilarUrl().getValue();
+}
+
+/**
+	Sets the value of the field imgSimilarUrl
+*/
+public void setImgSimilarUrl(String imgSimilarUrl)
+{
+	this.imgSimilarUrl().setValue(imgSimilarUrl);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: imgSimilarUrl
+*/
+public boolean isNullImgSimilarUrl()
+{
+	return imgSimilarUrl == null || imgSimilarUrl.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field imgSimilarUrl
+*/
+public void hwSetImgSimilarUrl(String imgSimilarUrl)
+{
+	this.imgSimilarUrl().setValue(imgSimilarUrl);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the imgSimilarUrl directly.
+*/
+public void setImgSimilarUrlMetadata(MetadataString imgSimilarUrl)
+{
+	this.imgSimilarUrl = imgSimilarUrl;
+}
+
+/**
+	Heavy Weight Direct setter method for imgSimilarUrl
+*/
+public void hwSetImgSimilarUrlMetadata(MetadataString imgSimilarUrl)
+{
+	if (this.imgSimilarUrl != null && this.imgSimilarUrl.getValue() != null && hasTermVector())
+		termVector().remove(this.imgSimilarUrl.termVector());
+	this.imgSimilarUrl = imgSimilarUrl;
 	rebuildCompositeTermVector();
 }
 

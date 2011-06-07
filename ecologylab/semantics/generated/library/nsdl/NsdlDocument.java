@@ -49,14 +49,14 @@ import java.util.*;
 
 
 /**
-	this_should_be_document
+	
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
 public class NsdlDocument
-extends Metadata
+extends Dc
 {
 
 @simpl_composite @mm_name("header")

@@ -59,9 +59,6 @@ public class FlickrSearch
 extends CompoundDocument
 {
 
-@simpl_collection("flickr_image") @xml_tag("flickr_results") @mm_name("flickr_results")
-private ArrayList<FlickrImage>	flickrResults;
-
 
 
 /**
@@ -78,36 +75,6 @@ public FlickrSearch()
 public FlickrSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
-}
-
-/**
-	Lazy evaluation for flickrResults
-*/
-public ArrayList<FlickrImage>	flickrResults()
-{
-	ArrayList<FlickrImage>	result = this.flickrResults;
-	if (result == null)
-	{
-		result = new ArrayList<FlickrImage>();
-		this.flickrResults = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field flickrResults
-*/
-public ArrayList<FlickrImage> getFlickrResults()
-{
-	return this.flickrResults;
-}
-
-/**
-	Set the value of field flickrResults
-*/
-public void setFlickrResults(ArrayList<FlickrImage> flickrResults)
-{
-	this.flickrResults = flickrResults;
 }
 
 

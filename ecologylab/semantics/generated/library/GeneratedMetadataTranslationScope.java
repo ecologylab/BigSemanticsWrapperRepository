@@ -101,6 +101,8 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.fastflip.FastflipSearch.class,
 
+		ecologylab.semantics.generated.library.flickr.FlickrGroups.class,
+
 		ecologylab.semantics.generated.library.flickr.FlickrImageDetail.class,
 
 		ecologylab.semantics.generated.library.flickr.FlickrTag.class,
@@ -111,19 +113,15 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.flickr.FlickrImageDetailTwo.class,
 
-		ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrLink.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrGroups.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrImage.class,
-
 		ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
 		ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
+
+		ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
+
+		ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
+
+		ecologylab.semantics.generated.library.flickr.FlickrLink.class,
 
 		ecologylab.semantics.generated.library.googleBooks.Page.class,
 

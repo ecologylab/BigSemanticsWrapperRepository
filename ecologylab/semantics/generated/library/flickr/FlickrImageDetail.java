@@ -59,8 +59,14 @@ public class FlickrImageDetail
 extends CompoundDocument
 {
 
-@simpl_composite @mm_name("flickr_image")
-private FlickrImage	flickrImage;
+@simpl_scalar
+private MetadataParsedURL	thumbnailKludge;
+
+@simpl_scalar
+private MetadataParsedURL	imageKludge;
+
+@simpl_collection("flickr_tag") @xml_tag("flickr_tags") @mm_name("flickr_tags")
+private ArrayList<FlickrTag>	flickrTags;
 
 
 
@@ -81,33 +87,165 @@ super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for flickrImage
+	Lazy evaluation for thumbnailKludge
 */
-public FlickrImage	flickrImage()
+public MetadataParsedURL	thumbnailKludge()
 {
-	FlickrImage	result = this.flickrImage;
+	MetadataParsedURL	result = this.thumbnailKludge;
 	if (result == null)
 	{
-		result = new FlickrImage();
-		this.flickrImage = result;
+		result = new MetadataParsedURL();
+		this.thumbnailKludge = result;
 	}
 	return result;
 }
 
 /**
-	Get the value of field flickrImage
+	Gets the value of the field thumbnailKludge
 */
-public FlickrImage getFlickrImage()
+public ParsedURL getThumbnailKludge()
 {
-	return this.flickrImage;
+	return this.thumbnailKludge().getValue();
 }
 
 /**
-	Set the value of field flickrImage
+	Sets the value of the field thumbnailKludge
 */
-public void setFlickrImage(FlickrImage flickrImage)
+public void setThumbnailKludge(ParsedURL thumbnailKludge)
 {
-	this.flickrImage = flickrImage;
+	this.thumbnailKludge().setValue(thumbnailKludge);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: thumbnailKludge
+*/
+public boolean isNullThumbnailKludge()
+{
+	return thumbnailKludge == null || thumbnailKludge.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field thumbnailKludge
+*/
+public void hwSetThumbnailKludge(ParsedURL thumbnailKludge)
+{
+	this.thumbnailKludge().setValue(thumbnailKludge);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the thumbnailKludge directly.
+*/
+public void setThumbnailKludgeMetadata(MetadataParsedURL thumbnailKludge)
+{
+	this.thumbnailKludge = thumbnailKludge;
+}
+
+/**
+	Heavy Weight Direct setter method for thumbnailKludge
+*/
+public void hwSetThumbnailKludgeMetadata(MetadataParsedURL thumbnailKludge)
+{
+	if (this.thumbnailKludge != null && this.thumbnailKludge.getValue() != null && hasTermVector())
+		termVector().remove(this.thumbnailKludge.termVector());
+	this.thumbnailKludge = thumbnailKludge;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for imageKludge
+*/
+public MetadataParsedURL	imageKludge()
+{
+	MetadataParsedURL	result = this.imageKludge;
+	if (result == null)
+	{
+		result = new MetadataParsedURL();
+		this.imageKludge = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field imageKludge
+*/
+public ParsedURL getImageKludge()
+{
+	return this.imageKludge().getValue();
+}
+
+/**
+	Sets the value of the field imageKludge
+*/
+public void setImageKludge(ParsedURL imageKludge)
+{
+	this.imageKludge().setValue(imageKludge);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: imageKludge
+*/
+public boolean isNullImageKludge()
+{
+	return imageKludge == null || imageKludge.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field imageKludge
+*/
+public void hwSetImageKludge(ParsedURL imageKludge)
+{
+	this.imageKludge().setValue(imageKludge);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the imageKludge directly.
+*/
+public void setImageKludgeMetadata(MetadataParsedURL imageKludge)
+{
+	this.imageKludge = imageKludge;
+}
+
+/**
+	Heavy Weight Direct setter method for imageKludge
+*/
+public void hwSetImageKludgeMetadata(MetadataParsedURL imageKludge)
+{
+	if (this.imageKludge != null && this.imageKludge.getValue() != null && hasTermVector())
+		termVector().remove(this.imageKludge.termVector());
+	this.imageKludge = imageKludge;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for flickrTags
+*/
+public ArrayList<FlickrTag>	flickrTags()
+{
+	ArrayList<FlickrTag>	result = this.flickrTags;
+	if (result == null)
+	{
+		result = new ArrayList<FlickrTag>();
+		this.flickrTags = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field flickrTags
+*/
+public ArrayList<FlickrTag> getFlickrTags()
+{
+	return this.flickrTags;
+}
+
+/**
+	Set the value of field flickrTags
+*/
+public void setFlickrTags(ArrayList<FlickrTag> flickrTags)
+{
+	this.flickrTags = flickrTags;
 }
 
 

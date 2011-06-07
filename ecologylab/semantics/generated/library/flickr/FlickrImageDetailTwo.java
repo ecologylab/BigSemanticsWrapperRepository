@@ -68,9 +68,6 @@ private MetadataString	place;
 @simpl_scalar
 private MetadataParsedURL	placeLink;
 
-@simpl_composite @mm_name("flickr_image")
-private FlickrImage	flickrImage;
-
 @simpl_collection("flickr_tag") @xml_tag("flickr_tags") @mm_name("flickr_tags")
 private ArrayList<FlickrTag>	flickrTags;
 
@@ -291,36 +288,6 @@ public void hwSetPlaceLinkMetadata(MetadataParsedURL placeLink)
 		termVector().remove(this.placeLink.termVector());
 	this.placeLink = placeLink;
 	rebuildCompositeTermVector();
-}
-
-/**
-	Lazy evaluation for flickrImage
-*/
-public FlickrImage	flickrImage()
-{
-	FlickrImage	result = this.flickrImage;
-	if (result == null)
-	{
-		result = new FlickrImage();
-		this.flickrImage = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field flickrImage
-*/
-public FlickrImage getFlickrImage()
-{
-	return this.flickrImage;
-}
-
-/**
-	Set the value of field flickrImage
-*/
-public void setFlickrImage(FlickrImage flickrImage)
-{
-	this.flickrImage = flickrImage;
 }
 
 /**
