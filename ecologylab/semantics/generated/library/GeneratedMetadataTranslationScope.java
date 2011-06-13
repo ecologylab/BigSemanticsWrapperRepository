@@ -16,7 +16,6 @@ import ecologylab.semantics.generated.library.buzz.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.googleBooks.*;
-import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
@@ -69,6 +68,8 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult.class,
 
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearch.class,
+
 		ecologylab.semantics.generated.library.artwork.MmArtwork.class,
 
 		ecologylab.semantics.generated.library.artwork.MomaList.class,
@@ -88,6 +89,8 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
+
+		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearch.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult.class,
 
@@ -138,12 +141,6 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.GooglePatentImage.class,
-
-		ecologylab.semantics.generated.library.icdl.IcdlBookPreview.class,
-
-		ecologylab.semantics.generated.library.icdl.IcdlBook.class,
-
-		ecologylab.semantics.generated.library.icdl.IcdlImageResult.class,
 
 		ecologylab.semantics.generated.library.imdb.PersonDetails.class,
 
@@ -211,9 +208,9 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rss.YahooMediaRss.class,
 
-		ecologylab.semantics.generated.library.rss.Channel.class,
-
 		ecologylab.semantics.generated.library.rss.Rss.class,
+
+		ecologylab.semantics.generated.library.rss.Channel.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.class,
 
@@ -230,8 +227,6 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.search.GoogleScholarSearchResult.class,
 
 		ecologylab.semantics.generated.library.search.BingWebSearchResult.class,
-
-		ecologylab.semantics.generated.library.search.YahooThumbnail.class,
 
 		ecologylab.semantics.generated.library.search.YahooResultSet.class,
 

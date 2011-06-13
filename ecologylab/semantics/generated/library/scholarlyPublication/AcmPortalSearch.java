@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library;
+package ecologylab.semantics.generated.library.scholarlyPublication;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -48,29 +48,22 @@ import java.util.*;
 
 
 /**
-	Tumblr blog class
+	
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Tumblr
-extends CompoundDocument
+public class AcmPortalSearch
+extends Search
 {
-
-
-/**
-	Phone number of the restaurant
-*/
-@simpl_scalar
-private MetadataString	post;
 
 
 
 /**
 	Constructor
 */
-public Tumblr()
+public AcmPortalSearch()
 {
  super();
 }
@@ -78,75 +71,9 @@ public Tumblr()
 /**
 	Constructor
 */
-public Tumblr(MetaMetadataCompositeField metaMetadata)
+public AcmPortalSearch(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
-}
-
-/**
-	Lazy evaluation for post
-*/
-public MetadataString	post()
-{
-	MetadataString	result = this.post;
-	if (result == null)
-	{
-		result = new MetadataString();
-		this.post = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field post
-*/
-public String getPost()
-{
-	return this.post().getValue();
-}
-
-/**
-	Sets the value of the field post
-*/
-public void setPost(String post)
-{
-	this.post().setValue(post);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: post
-*/
-public boolean isNullPost()
-{
-	return post == null || post.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field post
-*/
-public void hwSetPost(String post)
-{
-	this.post().setValue(post);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the post directly.
-*/
-public void setPostMetadata(MetadataString post)
-{
-	this.post = post;
-}
-
-/**
-	Heavy Weight Direct setter method for post
-*/
-public void hwSetPostMetadata(MetadataString post)
-{
-	if (this.post != null && this.post.getValue() != null && hasTermVector())
-		termVector().remove(this.post.termVector());
-	this.post = post;
-	rebuildCompositeTermVector();
 }
 
 
