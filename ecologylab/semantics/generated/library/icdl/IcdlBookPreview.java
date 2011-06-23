@@ -7,6 +7,7 @@ import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.artwork.*;
 import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.camera.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.googleBooks.*;

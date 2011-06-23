@@ -13,9 +13,11 @@ import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.artwork.*;
 import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.camera.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.googleBooks.*;
+import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
 import ecologylab.semantics.generated.library.nsdl.*;
@@ -86,6 +88,8 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
 
+		ecologylab.semantics.generated.library.camera.CameraSettings.class,
+
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
@@ -141,6 +145,12 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.GooglePatentImage.class,
+
+		ecologylab.semantics.generated.library.icdl.IcdlBookPreview.class,
+
+		ecologylab.semantics.generated.library.icdl.IcdlBook.class,
+
+		ecologylab.semantics.generated.library.icdl.IcdlImageResult.class,
 
 		ecologylab.semantics.generated.library.imdb.PersonDetails.class,
 

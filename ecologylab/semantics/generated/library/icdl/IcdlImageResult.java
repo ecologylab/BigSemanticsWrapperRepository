@@ -7,6 +7,7 @@ import ecologylab.semantics.generated.library.*;
 import ecologylab.semantics.generated.library.artwork.*;
 import ecologylab.semantics.generated.library.bibManaging.*;
 import ecologylab.semantics.generated.library.buzz.*;
+import ecologylab.semantics.generated.library.camera.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.googleBooks.*;
@@ -57,7 +58,7 @@ This is a generated code. DO NOT edit or modify it.
 @simpl_inherit
 @xml_tag("response")
 public class IcdlImageResult
-extends Metadata
+extends Document
 {
 
 @simpl_collection("book") @simpl_nowrap @mm_name("books")
