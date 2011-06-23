@@ -1,4 +1,4 @@
-package ecologylab.semantics.generated.library.misc;
+package ecologylab.semantics.generated.library.gps;
 
 
 import ecologylab.generic.HashMapArrayList;
@@ -51,25 +51,28 @@ import java.util.*;
 
 
 /**
-	The NSDL class
+	
 
 This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Nsdl
-extends CompoundDocument
+public class GpsLocation
+extends Metadata
 {
 
 @simpl_scalar
-private MetadataString	subject;
+private MetadataString	latitude;
+
+@simpl_scalar
+private MetadataString	longitude;
 
 
 
 /**
 	Constructor
 */
-public Nsdl()
+public GpsLocation()
 {
  super();
 }
@@ -77,74 +80,140 @@ public Nsdl()
 /**
 	Constructor
 */
-public Nsdl(MetaMetadataCompositeField metaMetadata)
+public GpsLocation(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }
 
 /**
-	Lazy evaluation for subject
+	Lazy evaluation for latitude
 */
-public MetadataString	subject()
+public MetadataString	latitude()
 {
-	MetadataString	result = this.subject;
+	MetadataString	result = this.latitude;
 	if (result == null)
 	{
 		result = new MetadataString();
-		this.subject = result;
+		this.latitude = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field subject
+	Gets the value of the field latitude
 */
-public String getSubject()
+public String getLatitude()
 {
-	return this.subject().getValue();
+	return this.latitude().getValue();
 }
 
 /**
-	Sets the value of the field subject
+	Sets the value of the field latitude
 */
-public void setSubject(String subject)
+public void setLatitude(String latitude)
 {
-	this.subject().setValue(subject);
+	this.latitude().setValue(latitude);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: subject
+	Test to see if the value of the field is null, or if the field itself is null: latitude
 */
-public boolean isNullSubject()
+public boolean isNullLatitude()
 {
-	return subject == null || subject.getValue() == null;
+	return latitude == null || latitude.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field subject
+	The heavy weight setter method for field latitude
 */
-public void hwSetSubject(String subject)
+public void hwSetLatitude(String latitude)
 {
-	this.subject().setValue(subject);
+	this.latitude().setValue(latitude);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the subject directly.
+	 Sets the latitude directly.
 */
-public void setSubjectMetadata(MetadataString subject)
+public void setLatitudeMetadata(MetadataString latitude)
 {
-	this.subject = subject;
+	this.latitude = latitude;
 }
 
 /**
-	Heavy Weight Direct setter method for subject
+	Heavy Weight Direct setter method for latitude
 */
-public void hwSetSubjectMetadata(MetadataString subject)
+public void hwSetLatitudeMetadata(MetadataString latitude)
 {
-	if (this.subject != null && this.subject.getValue() != null && hasTermVector())
-		termVector().remove(this.subject.termVector());
-	this.subject = subject;
+	if (this.latitude != null && this.latitude.getValue() != null && hasTermVector())
+		termVector().remove(this.latitude.termVector());
+	this.latitude = latitude;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for longitude
+*/
+public MetadataString	longitude()
+{
+	MetadataString	result = this.longitude;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.longitude = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field longitude
+*/
+public String getLongitude()
+{
+	return this.longitude().getValue();
+}
+
+/**
+	Sets the value of the field longitude
+*/
+public void setLongitude(String longitude)
+{
+	this.longitude().setValue(longitude);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: longitude
+*/
+public boolean isNullLongitude()
+{
+	return longitude == null || longitude.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field longitude
+*/
+public void hwSetLongitude(String longitude)
+{
+	this.longitude().setValue(longitude);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the longitude directly.
+*/
+public void setLongitudeMetadata(MetadataString longitude)
+{
+	this.longitude = longitude;
+}
+
+/**
+	Heavy Weight Direct setter method for longitude
+*/
+public void hwSetLongitudeMetadata(MetadataString longitude)
+{
+	if (this.longitude != null && this.longitude.getValue() != null && hasTermVector())
+		termVector().remove(this.longitude.termVector());
+	this.longitude = longitude;
 	rebuildCompositeTermVector();
 }
 

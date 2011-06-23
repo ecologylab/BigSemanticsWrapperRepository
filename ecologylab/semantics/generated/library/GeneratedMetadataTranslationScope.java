@@ -17,6 +17,7 @@ import ecologylab.semantics.generated.library.camera.*;
 import ecologylab.semantics.generated.library.fastflip.*;
 import ecologylab.semantics.generated.library.flickr.*;
 import ecologylab.semantics.generated.library.googleBooks.*;
+import ecologylab.semantics.generated.library.gps.*;
 import ecologylab.semantics.generated.library.icdl.*;
 import ecologylab.semantics.generated.library.imdb.*;
 import ecologylab.semantics.generated.library.misc.*;
@@ -145,6 +146,8 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.GooglePatentImage.class,
+
+		ecologylab.semantics.generated.library.gps.GpsLocation.class,
 
 		ecologylab.semantics.generated.library.icdl.IcdlBookPreview.class,
 
