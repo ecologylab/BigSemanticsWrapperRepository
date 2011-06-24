@@ -67,6 +67,12 @@ private MetadataString	latitude;
 @simpl_scalar
 private MetadataString	longitude;
 
+@simpl_scalar
+private MetadataString	altitude;
+
+@simpl_scalar
+private MetadataString	satellites;
+
 
 
 /**
@@ -214,6 +220,138 @@ public void hwSetLongitudeMetadata(MetadataString longitude)
 	if (this.longitude != null && this.longitude.getValue() != null && hasTermVector())
 		termVector().remove(this.longitude.termVector());
 	this.longitude = longitude;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for altitude
+*/
+public MetadataString	altitude()
+{
+	MetadataString	result = this.altitude;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.altitude = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field altitude
+*/
+public String getAltitude()
+{
+	return this.altitude().getValue();
+}
+
+/**
+	Sets the value of the field altitude
+*/
+public void setAltitude(String altitude)
+{
+	this.altitude().setValue(altitude);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: altitude
+*/
+public boolean isNullAltitude()
+{
+	return altitude == null || altitude.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field altitude
+*/
+public void hwSetAltitude(String altitude)
+{
+	this.altitude().setValue(altitude);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the altitude directly.
+*/
+public void setAltitudeMetadata(MetadataString altitude)
+{
+	this.altitude = altitude;
+}
+
+/**
+	Heavy Weight Direct setter method for altitude
+*/
+public void hwSetAltitudeMetadata(MetadataString altitude)
+{
+	if (this.altitude != null && this.altitude.getValue() != null && hasTermVector())
+		termVector().remove(this.altitude.termVector());
+	this.altitude = altitude;
+	rebuildCompositeTermVector();
+}
+
+/**
+	Lazy evaluation for satellites
+*/
+public MetadataString	satellites()
+{
+	MetadataString	result = this.satellites;
+	if (result == null)
+	{
+		result = new MetadataString();
+		this.satellites = result;
+	}
+	return result;
+}
+
+/**
+	Gets the value of the field satellites
+*/
+public String getSatellites()
+{
+	return this.satellites().getValue();
+}
+
+/**
+	Sets the value of the field satellites
+*/
+public void setSatellites(String satellites)
+{
+	this.satellites().setValue(satellites);
+}
+
+/**
+	Test to see if the value of the field is null, or if the field itself is null: satellites
+*/
+public boolean isNullSatellites()
+{
+	return satellites == null || satellites.getValue() == null;
+}
+
+/**
+	The heavy weight setter method for field satellites
+*/
+public void hwSetSatellites(String satellites)
+{
+	this.satellites().setValue(satellites);
+	rebuildCompositeTermVector();
+}
+
+/**
+	 Sets the satellites directly.
+*/
+public void setSatellitesMetadata(MetadataString satellites)
+{
+	this.satellites = satellites;
+}
+
+/**
+	Heavy Weight Direct setter method for satellites
+*/
+public void hwSetSatellitesMetadata(MetadataString satellites)
+{
+	if (this.satellites != null && this.satellites.getValue() != null && hasTermVector())
+		termVector().remove(this.satellites.termVector());
+	this.satellites = satellites;
 	rebuildCompositeTermVector();
 }
 
