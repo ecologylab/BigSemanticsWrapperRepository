@@ -33,7 +33,6 @@ import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.ImageClipping;
 import ecologylab.semantics.metadata.builtins.MediaClipping;
@@ -62,10 +61,10 @@ extends Metadata
 {
 
 @simpl_composite @mm_name("actor")
-private Entity<PersonDetails>	actor;
+private PersonDetails	actor;
 
 @simpl_composite @mm_name("character")
-private Entity<PersonDetails>	character;
+private PersonDetails	character;
 
 
 
@@ -88,12 +87,12 @@ super(metaMetadata);
 /**
 	Lazy evaluation for actor
 */
-public Entity<PersonDetails>	actor()
+public PersonDetails	actor()
 {
-	Entity<PersonDetails>	result = this.actor;
+	PersonDetails	result = this.actor;
 	if (result == null)
 	{
-		result = new Entity<PersonDetails>();
+		result = new PersonDetails();
 		this.actor = result;
 	}
 	return result;
@@ -102,7 +101,7 @@ public Entity<PersonDetails>	actor()
 /**
 	Get the value of field actor
 */
-public Entity<PersonDetails> getActor()
+public PersonDetails getActor()
 {
 	return this.actor;
 }
@@ -110,7 +109,7 @@ public Entity<PersonDetails> getActor()
 /**
 	Set the value of field actor
 */
-public void setActor(Entity<PersonDetails> actor)
+public void setActor(PersonDetails actor)
 {
 	this.actor = actor;
 }
@@ -118,12 +117,12 @@ public void setActor(Entity<PersonDetails> actor)
 /**
 	Lazy evaluation for character
 */
-public Entity<PersonDetails>	character()
+public PersonDetails	character()
 {
-	Entity<PersonDetails>	result = this.character;
+	PersonDetails	result = this.character;
 	if (result == null)
 	{
-		result = new Entity<PersonDetails>();
+		result = new PersonDetails();
 		this.character = result;
 	}
 	return result;
@@ -132,7 +131,7 @@ public Entity<PersonDetails>	character()
 /**
 	Get the value of field character
 */
-public Entity<PersonDetails> getCharacter()
+public PersonDetails getCharacter()
 {
 	return this.character;
 }
@@ -140,7 +139,7 @@ public Entity<PersonDetails> getCharacter()
 /**
 	Set the value of field character
 */
-public void setCharacter(Entity<PersonDetails> character)
+public void setCharacter(PersonDetails character)
 {
 	this.character = character;
 }

@@ -33,7 +33,6 @@ import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.ImageClipping;
 import ecologylab.semantics.metadata.builtins.MediaClipping;
@@ -58,7 +57,7 @@ This is a generated code. DO NOT edit or modify it.
 */
 @simpl_inherit
 public class CitationInfo
-extends CompoundDocument
+extends Metadata
 {
 
 @simpl_scalar

@@ -33,7 +33,6 @@ import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.ImageClipping;
 import ecologylab.semantics.metadata.builtins.MediaClipping;
@@ -61,22 +60,15 @@ public class Source
 extends Document
 {
 
-@simpl_scalar
-private MetadataInteger	yearOfPublication;
-
 
 /**
-	Archive of conference or journal.
+	Same as title, but used for composite scalar
 */
-@simpl_scalar
+@simpl_scalar @simpl_composite_as_scalar
 private MetadataString	archiveName;
 
-
-/**
-	Url to the archive of conference or journal.
-*/
 @simpl_scalar
-private MetadataParsedURL	archive;
+private MetadataInteger	yearOfPublication;
 
 @simpl_scalar
 private MetadataString	isbn;
@@ -100,72 +92,6 @@ public Source()
 public Source(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
-}
-
-/**
-	Lazy evaluation for yearOfPublication
-*/
-public MetadataInteger	yearOfPublication()
-{
-	MetadataInteger	result = this.yearOfPublication;
-	if (result == null)
-	{
-		result = new MetadataInteger();
-		this.yearOfPublication = result;
-	}
-	return result;
-}
-
-/**
-	Gets the value of the field yearOfPublication
-*/
-public Integer getYearOfPublication()
-{
-	return this.yearOfPublication().getValue();
-}
-
-/**
-	Sets the value of the field yearOfPublication
-*/
-public void setYearOfPublication(Integer yearOfPublication)
-{
-	this.yearOfPublication().setValue(yearOfPublication);
-}
-
-/**
-	Test to see if the value of the field is null, or if the field itself is null: yearOfPublication
-*/
-public boolean isNullYearOfPublication()
-{
-	return yearOfPublication == null || yearOfPublication.getValue() == null;
-}
-
-/**
-	The heavy weight setter method for field yearOfPublication
-*/
-public void hwSetYearOfPublication(Integer yearOfPublication)
-{
-	this.yearOfPublication().setValue(yearOfPublication);
-	rebuildCompositeTermVector();
-}
-
-/**
-	 Sets the yearOfPublication directly.
-*/
-public void setYearOfPublicationMetadata(MetadataInteger yearOfPublication)
-{
-	this.yearOfPublication = yearOfPublication;
-}
-
-/**
-	Heavy Weight Direct setter method for yearOfPublication
-*/
-public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
-{
-	if (this.yearOfPublication != null && this.yearOfPublication.getValue() != null && hasTermVector())
-		termVector().remove(this.yearOfPublication.termVector());
-	this.yearOfPublication = yearOfPublication;
-	rebuildCompositeTermVector();
 }
 
 /**
@@ -235,68 +161,68 @@ public void hwSetArchiveNameMetadata(MetadataString archiveName)
 }
 
 /**
-	Lazy evaluation for archive
+	Lazy evaluation for yearOfPublication
 */
-public MetadataParsedURL	archive()
+public MetadataInteger	yearOfPublication()
 {
-	MetadataParsedURL	result = this.archive;
+	MetadataInteger	result = this.yearOfPublication;
 	if (result == null)
 	{
-		result = new MetadataParsedURL();
-		this.archive = result;
+		result = new MetadataInteger();
+		this.yearOfPublication = result;
 	}
 	return result;
 }
 
 /**
-	Gets the value of the field archive
+	Gets the value of the field yearOfPublication
 */
-public ParsedURL getArchive()
+public Integer getYearOfPublication()
 {
-	return this.archive().getValue();
+	return this.yearOfPublication().getValue();
 }
 
 /**
-	Sets the value of the field archive
+	Sets the value of the field yearOfPublication
 */
-public void setArchive(ParsedURL archive)
+public void setYearOfPublication(Integer yearOfPublication)
 {
-	this.archive().setValue(archive);
+	this.yearOfPublication().setValue(yearOfPublication);
 }
 
 /**
-	Test to see if the value of the field is null, or if the field itself is null: archive
+	Test to see if the value of the field is null, or if the field itself is null: yearOfPublication
 */
-public boolean isNullArchive()
+public boolean isNullYearOfPublication()
 {
-	return archive == null || archive.getValue() == null;
+	return yearOfPublication == null || yearOfPublication.getValue() == null;
 }
 
 /**
-	The heavy weight setter method for field archive
+	The heavy weight setter method for field yearOfPublication
 */
-public void hwSetArchive(ParsedURL archive)
+public void hwSetYearOfPublication(Integer yearOfPublication)
 {
-	this.archive().setValue(archive);
+	this.yearOfPublication().setValue(yearOfPublication);
 	rebuildCompositeTermVector();
 }
 
 /**
-	 Sets the archive directly.
+	 Sets the yearOfPublication directly.
 */
-public void setArchiveMetadata(MetadataParsedURL archive)
+public void setYearOfPublicationMetadata(MetadataInteger yearOfPublication)
 {
-	this.archive = archive;
+	this.yearOfPublication = yearOfPublication;
 }
 
 /**
-	Heavy Weight Direct setter method for archive
+	Heavy Weight Direct setter method for yearOfPublication
 */
-public void hwSetArchiveMetadata(MetadataParsedURL archive)
+public void hwSetYearOfPublicationMetadata(MetadataInteger yearOfPublication)
 {
-	if (this.archive != null && this.archive.getValue() != null && hasTermVector())
-		termVector().remove(this.archive.termVector());
-	this.archive = archive;
+	if (this.yearOfPublication != null && this.yearOfPublication.getValue() != null && hasTermVector())
+		termVector().remove(this.yearOfPublication.termVector());
+	this.yearOfPublication = yearOfPublication;
 	rebuildCompositeTermVector();
 }
 

@@ -33,7 +33,6 @@ import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.ImageClipping;
 import ecologylab.semantics.metadata.builtins.MediaClipping;
@@ -68,16 +67,6 @@ extends CompoundDocument
 @simpl_scalar
 private MetadataParsedURL	metadataPage;
 
-@simpl_scalar @xml_tag("abstract")
-private MetadataString	abstractField;
-
-
-/**
-	Metadata related to where this article was published.
-*/
-@simpl_composite @mm_name("source")
-private Source	source;
-
 
 /**
 	Set of authors.
@@ -87,17 +76,27 @@ private ArrayList<Author>	authors;
 
 
 /**
+	Metadata related to where this article was published.
+*/
+@simpl_composite @mm_name("source")
+private Source	source;
+
+@simpl_scalar @xml_tag("abstract") @simpl_hints(Hint.XML_LEAF)
+private MetadataString	abstractField;
+
+
+/**
 	Papers cited by this paper.
 */
 @simpl_collection("reference") @xml_tag("references") @mm_name("references")
-private ArrayList<Entity<ScholarlyArticle>>	references;
+private ArrayList<ScholarlyArticle>	references;
 
 
 /**
 	Papers that cite this paper.
 */
 @simpl_collection("citation") @xml_tag("citations") @mm_name("citations")
-private ArrayList<Entity<ScholarlyArticle>>	citations;
+private ArrayList<ScholarlyArticle>	citations;
 
 
 /**
@@ -201,6 +200,66 @@ public void hwSetMetadataPageMetadata(MetadataParsedURL metadataPage)
 }
 
 /**
+	Lazy evaluation for authors
+*/
+public ArrayList<Author>	authors()
+{
+	ArrayList<Author>	result = this.authors;
+	if (result == null)
+	{
+		result = new ArrayList<Author>();
+		this.authors = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field authors
+*/
+public ArrayList<Author> getAuthors()
+{
+	return this.authors;
+}
+
+/**
+	Set the value of field authors
+*/
+public void setAuthors(ArrayList<Author> authors)
+{
+	this.authors = authors;
+}
+
+/**
+	Lazy evaluation for source
+*/
+public Source	source()
+{
+	Source	result = this.source;
+	if (result == null)
+	{
+		result = new Source();
+		this.source = result;
+	}
+	return result;
+}
+
+/**
+	Get the value of field source
+*/
+public Source getSource()
+{
+	return this.source;
+}
+
+/**
+	Set the value of field source
+*/
+public void setSource(Source source)
+{
+	this.source = source;
+}
+
+/**
 	Lazy evaluation for abstractField
 */
 public MetadataString	abstractField()
@@ -267,74 +326,14 @@ public void hwSetAbstractFieldMetadata(MetadataString abstractField)
 }
 
 /**
-	Lazy evaluation for source
-*/
-public Source	source()
-{
-	Source	result = this.source;
-	if (result == null)
-	{
-		result = new Source();
-		this.source = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field source
-*/
-public Source getSource()
-{
-	return this.source;
-}
-
-/**
-	Set the value of field source
-*/
-public void setSource(Source source)
-{
-	this.source = source;
-}
-
-/**
-	Lazy evaluation for authors
-*/
-public ArrayList<Author>	authors()
-{
-	ArrayList<Author>	result = this.authors;
-	if (result == null)
-	{
-		result = new ArrayList<Author>();
-		this.authors = result;
-	}
-	return result;
-}
-
-/**
-	Get the value of field authors
-*/
-public ArrayList<Author> getAuthors()
-{
-	return this.authors;
-}
-
-/**
-	Set the value of field authors
-*/
-public void setAuthors(ArrayList<Author> authors)
-{
-	this.authors = authors;
-}
-
-/**
 	Lazy evaluation for references
 */
-public ArrayList<Entity<ScholarlyArticle>>	references()
+public ArrayList<ScholarlyArticle>	references()
 {
-	ArrayList<Entity<ScholarlyArticle>>	result = this.references;
+	ArrayList<ScholarlyArticle>	result = this.references;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ScholarlyArticle>>();
+		result = new ArrayList<ScholarlyArticle>();
 		this.references = result;
 	}
 	return result;
@@ -343,7 +342,7 @@ public ArrayList<Entity<ScholarlyArticle>>	references()
 /**
 	Get the value of field references
 */
-public ArrayList<Entity<ScholarlyArticle>> getReferences()
+public ArrayList<ScholarlyArticle> getReferences()
 {
 	return this.references;
 }
@@ -351,7 +350,7 @@ public ArrayList<Entity<ScholarlyArticle>> getReferences()
 /**
 	Set the value of field references
 */
-public void setReferences(ArrayList<Entity<ScholarlyArticle>> references)
+public void setReferences(ArrayList<ScholarlyArticle> references)
 {
 	this.references = references;
 }
@@ -359,12 +358,12 @@ public void setReferences(ArrayList<Entity<ScholarlyArticle>> references)
 /**
 	Lazy evaluation for citations
 */
-public ArrayList<Entity<ScholarlyArticle>>	citations()
+public ArrayList<ScholarlyArticle>	citations()
 {
-	ArrayList<Entity<ScholarlyArticle>>	result = this.citations;
+	ArrayList<ScholarlyArticle>	result = this.citations;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ScholarlyArticle>>();
+		result = new ArrayList<ScholarlyArticle>();
 		this.citations = result;
 	}
 	return result;
@@ -373,7 +372,7 @@ public ArrayList<Entity<ScholarlyArticle>>	citations()
 /**
 	Get the value of field citations
 */
-public ArrayList<Entity<ScholarlyArticle>> getCitations()
+public ArrayList<ScholarlyArticle> getCitations()
 {
 	return this.citations;
 }
@@ -381,7 +380,7 @@ public ArrayList<Entity<ScholarlyArticle>> getCitations()
 /**
 	Set the value of field citations
 */
-public void setCitations(ArrayList<Entity<ScholarlyArticle>> citations)
+public void setCitations(ArrayList<ScholarlyArticle> citations)
 {
 	this.citations = citations;
 }

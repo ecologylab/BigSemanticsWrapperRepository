@@ -33,7 +33,6 @@ import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.ImageClipping;
 import ecologylab.semantics.metadata.builtins.MediaClipping;
@@ -68,10 +67,10 @@ private MetadataString	yearReleased;
 private MetadataString	rating;
 
 @simpl_collection("person_details") @xml_tag("directors") @mm_name("directors")
-private ArrayList<Entity<PersonDetails>>	directors;
+private ArrayList<PersonDetails>	directors;
 
 @simpl_collection("person_details") @xml_tag("writers") @mm_name("writers")
-private ArrayList<Entity<PersonDetails>>	writers;
+private ArrayList<PersonDetails>	writers;
 
 @simpl_scalar
 private MetadataString	releaseDate;
@@ -247,12 +246,12 @@ public void hwSetRatingMetadata(MetadataString rating)
 /**
 	Lazy evaluation for directors
 */
-public ArrayList<Entity<PersonDetails>>	directors()
+public ArrayList<PersonDetails>	directors()
 {
-	ArrayList<Entity<PersonDetails>>	result = this.directors;
+	ArrayList<PersonDetails>	result = this.directors;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<PersonDetails>>();
+		result = new ArrayList<PersonDetails>();
 		this.directors = result;
 	}
 	return result;
@@ -261,7 +260,7 @@ public ArrayList<Entity<PersonDetails>>	directors()
 /**
 	Get the value of field directors
 */
-public ArrayList<Entity<PersonDetails>> getDirectors()
+public ArrayList<PersonDetails> getDirectors()
 {
 	return this.directors;
 }
@@ -269,7 +268,7 @@ public ArrayList<Entity<PersonDetails>> getDirectors()
 /**
 	Set the value of field directors
 */
-public void setDirectors(ArrayList<Entity<PersonDetails>> directors)
+public void setDirectors(ArrayList<PersonDetails> directors)
 {
 	this.directors = directors;
 }
@@ -277,12 +276,12 @@ public void setDirectors(ArrayList<Entity<PersonDetails>> directors)
 /**
 	Lazy evaluation for writers
 */
-public ArrayList<Entity<PersonDetails>>	writers()
+public ArrayList<PersonDetails>	writers()
 {
-	ArrayList<Entity<PersonDetails>>	result = this.writers;
+	ArrayList<PersonDetails>	result = this.writers;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<PersonDetails>>();
+		result = new ArrayList<PersonDetails>();
 		this.writers = result;
 	}
 	return result;
@@ -291,7 +290,7 @@ public ArrayList<Entity<PersonDetails>>	writers()
 /**
 	Get the value of field writers
 */
-public ArrayList<Entity<PersonDetails>> getWriters()
+public ArrayList<PersonDetails> getWriters()
 {
 	return this.writers;
 }
@@ -299,7 +298,7 @@ public ArrayList<Entity<PersonDetails>> getWriters()
 /**
 	Set the value of field writers
 */
-public void setWriters(ArrayList<Entity<PersonDetails>> writers)
+public void setWriters(ArrayList<PersonDetails> writers)
 {
 	this.writers = writers;
 }

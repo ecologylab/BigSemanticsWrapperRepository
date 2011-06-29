@@ -33,7 +33,6 @@ import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.DebugMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Entity;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.ImageClipping;
 import ecologylab.semantics.metadata.builtins.MediaClipping;
@@ -74,25 +73,25 @@ private MetadataString	miniBiography;
 private MetadataParsedURL	biographyLink;
 
 @simpl_collection("imdb_title") @xml_tag("titles_as_actor") @mm_name("titles_as_actor")
-private ArrayList<Entity<ImdbTitle>>	titlesAsActor;
+private ArrayList<ImdbTitle>	titlesAsActor;
 
 @simpl_collection("imdb_title") @xml_tag("titles_as_actress") @mm_name("titles_as_actress")
-private ArrayList<Entity<ImdbTitle>>	titlesAsActress;
+private ArrayList<ImdbTitle>	titlesAsActress;
 
 @simpl_collection("imdb_title") @xml_tag("titles_as_director") @mm_name("titles_as_director")
-private ArrayList<Entity<ImdbTitle>>	titlesAsDirector;
+private ArrayList<ImdbTitle>	titlesAsDirector;
 
 @simpl_collection("imdb_title") @xml_tag("titles_for_soundtrack") @mm_name("titles_for_soundtrack")
-private ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack;
+private ArrayList<ImdbTitle>	titlesForSoundtrack;
 
 @simpl_collection("imdb_title") @xml_tag("titles_as_producer") @mm_name("titles_as_producer")
-private ArrayList<Entity<ImdbTitle>>	titlesAsProducer;
+private ArrayList<ImdbTitle>	titlesAsProducer;
 
 @simpl_collection("imdb_title") @xml_tag("titles_thanked_in") @mm_name("titles_thanked_in")
-private ArrayList<Entity<ImdbTitle>>	titlesThankedIn;
+private ArrayList<ImdbTitle>	titlesThankedIn;
 
 @simpl_collection("imdb_title") @xml_tag("titles_as_self") @mm_name("titles_as_self")
-private ArrayList<Entity<ImdbTitle>>	titlesAsSelf;
+private ArrayList<ImdbTitle>	titlesAsSelf;
 
 
 
@@ -343,12 +342,12 @@ public void hwSetBiographyLinkMetadata(MetadataParsedURL biographyLink)
 /**
 	Lazy evaluation for titlesAsActor
 */
-public ArrayList<Entity<ImdbTitle>>	titlesAsActor()
+public ArrayList<ImdbTitle>	titlesAsActor()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesAsActor;
+	ArrayList<ImdbTitle>	result = this.titlesAsActor;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesAsActor = result;
 	}
 	return result;
@@ -357,7 +356,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesAsActor()
 /**
 	Get the value of field titlesAsActor
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesAsActor()
+public ArrayList<ImdbTitle> getTitlesAsActor()
 {
 	return this.titlesAsActor;
 }
@@ -365,7 +364,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesAsActor()
 /**
 	Set the value of field titlesAsActor
 */
-public void setTitlesAsActor(ArrayList<Entity<ImdbTitle>> titlesAsActor)
+public void setTitlesAsActor(ArrayList<ImdbTitle> titlesAsActor)
 {
 	this.titlesAsActor = titlesAsActor;
 }
@@ -373,12 +372,12 @@ public void setTitlesAsActor(ArrayList<Entity<ImdbTitle>> titlesAsActor)
 /**
 	Lazy evaluation for titlesAsActress
 */
-public ArrayList<Entity<ImdbTitle>>	titlesAsActress()
+public ArrayList<ImdbTitle>	titlesAsActress()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesAsActress;
+	ArrayList<ImdbTitle>	result = this.titlesAsActress;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesAsActress = result;
 	}
 	return result;
@@ -387,7 +386,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesAsActress()
 /**
 	Get the value of field titlesAsActress
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesAsActress()
+public ArrayList<ImdbTitle> getTitlesAsActress()
 {
 	return this.titlesAsActress;
 }
@@ -395,7 +394,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesAsActress()
 /**
 	Set the value of field titlesAsActress
 */
-public void setTitlesAsActress(ArrayList<Entity<ImdbTitle>> titlesAsActress)
+public void setTitlesAsActress(ArrayList<ImdbTitle> titlesAsActress)
 {
 	this.titlesAsActress = titlesAsActress;
 }
@@ -403,12 +402,12 @@ public void setTitlesAsActress(ArrayList<Entity<ImdbTitle>> titlesAsActress)
 /**
 	Lazy evaluation for titlesAsDirector
 */
-public ArrayList<Entity<ImdbTitle>>	titlesAsDirector()
+public ArrayList<ImdbTitle>	titlesAsDirector()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesAsDirector;
+	ArrayList<ImdbTitle>	result = this.titlesAsDirector;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesAsDirector = result;
 	}
 	return result;
@@ -417,7 +416,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesAsDirector()
 /**
 	Get the value of field titlesAsDirector
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesAsDirector()
+public ArrayList<ImdbTitle> getTitlesAsDirector()
 {
 	return this.titlesAsDirector;
 }
@@ -425,7 +424,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesAsDirector()
 /**
 	Set the value of field titlesAsDirector
 */
-public void setTitlesAsDirector(ArrayList<Entity<ImdbTitle>> titlesAsDirector)
+public void setTitlesAsDirector(ArrayList<ImdbTitle> titlesAsDirector)
 {
 	this.titlesAsDirector = titlesAsDirector;
 }
@@ -433,12 +432,12 @@ public void setTitlesAsDirector(ArrayList<Entity<ImdbTitle>> titlesAsDirector)
 /**
 	Lazy evaluation for titlesForSoundtrack
 */
-public ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack()
+public ArrayList<ImdbTitle>	titlesForSoundtrack()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesForSoundtrack;
+	ArrayList<ImdbTitle>	result = this.titlesForSoundtrack;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesForSoundtrack = result;
 	}
 	return result;
@@ -447,7 +446,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesForSoundtrack()
 /**
 	Get the value of field titlesForSoundtrack
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesForSoundtrack()
+public ArrayList<ImdbTitle> getTitlesForSoundtrack()
 {
 	return this.titlesForSoundtrack;
 }
@@ -455,7 +454,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesForSoundtrack()
 /**
 	Set the value of field titlesForSoundtrack
 */
-public void setTitlesForSoundtrack(ArrayList<Entity<ImdbTitle>> titlesForSoundtrack)
+public void setTitlesForSoundtrack(ArrayList<ImdbTitle> titlesForSoundtrack)
 {
 	this.titlesForSoundtrack = titlesForSoundtrack;
 }
@@ -463,12 +462,12 @@ public void setTitlesForSoundtrack(ArrayList<Entity<ImdbTitle>> titlesForSoundtr
 /**
 	Lazy evaluation for titlesAsProducer
 */
-public ArrayList<Entity<ImdbTitle>>	titlesAsProducer()
+public ArrayList<ImdbTitle>	titlesAsProducer()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesAsProducer;
+	ArrayList<ImdbTitle>	result = this.titlesAsProducer;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesAsProducer = result;
 	}
 	return result;
@@ -477,7 +476,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesAsProducer()
 /**
 	Get the value of field titlesAsProducer
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesAsProducer()
+public ArrayList<ImdbTitle> getTitlesAsProducer()
 {
 	return this.titlesAsProducer;
 }
@@ -485,7 +484,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesAsProducer()
 /**
 	Set the value of field titlesAsProducer
 */
-public void setTitlesAsProducer(ArrayList<Entity<ImdbTitle>> titlesAsProducer)
+public void setTitlesAsProducer(ArrayList<ImdbTitle> titlesAsProducer)
 {
 	this.titlesAsProducer = titlesAsProducer;
 }
@@ -493,12 +492,12 @@ public void setTitlesAsProducer(ArrayList<Entity<ImdbTitle>> titlesAsProducer)
 /**
 	Lazy evaluation for titlesThankedIn
 */
-public ArrayList<Entity<ImdbTitle>>	titlesThankedIn()
+public ArrayList<ImdbTitle>	titlesThankedIn()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesThankedIn;
+	ArrayList<ImdbTitle>	result = this.titlesThankedIn;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesThankedIn = result;
 	}
 	return result;
@@ -507,7 +506,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesThankedIn()
 /**
 	Get the value of field titlesThankedIn
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesThankedIn()
+public ArrayList<ImdbTitle> getTitlesThankedIn()
 {
 	return this.titlesThankedIn;
 }
@@ -515,7 +514,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesThankedIn()
 /**
 	Set the value of field titlesThankedIn
 */
-public void setTitlesThankedIn(ArrayList<Entity<ImdbTitle>> titlesThankedIn)
+public void setTitlesThankedIn(ArrayList<ImdbTitle> titlesThankedIn)
 {
 	this.titlesThankedIn = titlesThankedIn;
 }
@@ -523,12 +522,12 @@ public void setTitlesThankedIn(ArrayList<Entity<ImdbTitle>> titlesThankedIn)
 /**
 	Lazy evaluation for titlesAsSelf
 */
-public ArrayList<Entity<ImdbTitle>>	titlesAsSelf()
+public ArrayList<ImdbTitle>	titlesAsSelf()
 {
-	ArrayList<Entity<ImdbTitle>>	result = this.titlesAsSelf;
+	ArrayList<ImdbTitle>	result = this.titlesAsSelf;
 	if (result == null)
 	{
-		result = new ArrayList<Entity<ImdbTitle>>();
+		result = new ArrayList<ImdbTitle>();
 		this.titlesAsSelf = result;
 	}
 	return result;
@@ -537,7 +536,7 @@ public ArrayList<Entity<ImdbTitle>>	titlesAsSelf()
 /**
 	Get the value of field titlesAsSelf
 */
-public ArrayList<Entity<ImdbTitle>> getTitlesAsSelf()
+public ArrayList<ImdbTitle> getTitlesAsSelf()
 {
 	return this.titlesAsSelf;
 }
@@ -545,7 +544,7 @@ public ArrayList<Entity<ImdbTitle>> getTitlesAsSelf()
 /**
 	Set the value of field titlesAsSelf
 */
-public void setTitlesAsSelf(ArrayList<Entity<ImdbTitle>> titlesAsSelf)
+public void setTitlesAsSelf(ArrayList<ImdbTitle> titlesAsSelf)
 {
 	this.titlesAsSelf = titlesAsSelf;
 }
