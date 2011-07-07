@@ -34,19 +34,10 @@ import ecologylab.semantics.generated.library.urbanspoon.*;
 import ecologylab.semantics.generated.library.uva.*;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.*;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
-import ecologylab.semantics.metadata.builtins.Clipping;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.DebugMetadata;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.ImageClipping;
-import ecologylab.semantics.metadata.builtins.MediaClipping;
-import ecologylab.semantics.metadata.builtins.TextClipping;
 import ecologylab.semantics.metadata.scalar.*;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metametadata.MetaMetadataRepository;
-import ecologylab.semantics.tools.MetaMetadataCompilerUtils;
+import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.serialization.Hint;
 import ecologylab.serialization.TranslationScope;
@@ -305,6 +296,6 @@ public class GeneratedMetadataTranslationScope
  
 public static TranslationScope get()
 {
-return TranslationScope.get(MetaMetadataCompilerUtils.GENERATED_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
+return TranslationScope.get(SemanticsNames.GENERATED_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
 }
 }
