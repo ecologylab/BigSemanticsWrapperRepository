@@ -56,7 +56,7 @@ This is a generated code. DO NOT edit or modify it.
 @author MetadataCompiler
 */
 @simpl_inherit
-public class Term
+public class TermType
 extends Metadata
 {
 
@@ -74,7 +74,7 @@ private MetadataInteger	frequency;
 /**
 	Constructor
 */
-public Term()
+public TermType()
 {
  super();
 }
@@ -82,7 +82,7 @@ public Term()
 /**
 	Constructor
 */
-public Term(MetaMetadataCompositeField metaMetadata)
+public TermType(MetaMetadataCompositeField metaMetadata)
 {
 super(metaMetadata);
 }

@@ -82,7 +82,7 @@ private ArrayList<Subject>	subjects;
 private MetadataString	aboutTheAuthors;
 
 @simpl_collection("term") @xml_tag("common_terms") @mm_name("common_terms")
-private ArrayList<Term>	commonTerms;
+private ArrayList<TermType>	commonTerms;
 
 
 
@@ -459,12 +459,12 @@ public void hwSetAboutTheAuthorsMetadata(MetadataString aboutTheAuthors)
 /**
 	Lazy evaluation for commonTerms
 */
-public ArrayList<Term>	commonTerms()
+public ArrayList<TermType>	commonTerms()
 {
-	ArrayList<Term>	result = this.commonTerms;
+	ArrayList<TermType>	result = this.commonTerms;
 	if (result == null)
 	{
-		result = new ArrayList<Term>();
+		result = new ArrayList<TermType>();
 		this.commonTerms = result;
 	}
 	return result;
@@ -473,7 +473,7 @@ public ArrayList<Term>	commonTerms()
 /**
 	Get the value of field commonTerms
 */
-public ArrayList<Term> getCommonTerms()
+public ArrayList<TermType> getCommonTerms()
 {
 	return this.commonTerms;
 }
@@ -481,7 +481,7 @@ public ArrayList<Term> getCommonTerms()
 /**
 	Set the value of field commonTerms
 */
-public void setCommonTerms(ArrayList<Term> commonTerms)
+public void setCommonTerms(ArrayList<TermType> commonTerms)
 {
 	this.commonTerms = commonTerms;
 }

@@ -195,7 +195,7 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.publication.Subject.class,
 
-		ecologylab.semantics.generated.library.publication.Term.class,
+		ecologylab.semantics.generated.library.publication.TermType.class,
 
 		ecologylab.semantics.generated.library.publication.Publication.class,
 
@@ -232,6 +232,8 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.search.BingWebSearchResult.class,
 
 		ecologylab.semantics.generated.library.search.YahooResultSet.class,
+		
+		ecologylab.semantics.generated.library.search.YahooThumbnail.class,
 
 		ecologylab.semantics.generated.library.search.Search.class,
 
