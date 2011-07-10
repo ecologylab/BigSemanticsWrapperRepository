@@ -93,6 +93,8 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.opml.MmdInlineHeadInOpml.class,
 
+		ecologylab.semantics.generated.library.nsdl.MmdInlineSearchResultsInNsdlService.class,
+
 		ecologylab.semantics.generated.library.misc.IcdlImage.class,
 
 		ecologylab.semantics.generated.library.flickr.FlickrImageDetailTwo.class,
@@ -199,9 +201,13 @@ public class GeneratedMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.artwork.Artist.class,
 
+		ecologylab.semantics.generated.library.nsdl.NsdlService.class,
+
 		ecologylab.semantics.generated.library.search.BingSearchImageSection.class,
 
 		ecologylab.semantics.generated.library.buzz.MmdInlineHotSearchInHotSearchesInGoogleTrends.class,
+
+		ecologylab.semantics.generated.library.nsdl.MmdInlineHeaderInNsdlDocument.class,
 
 		ecologylab.semantics.generated.library.flickr.FlickrSearchTwo.class,
 
@@ -242,6 +248,8 @@ public class GeneratedMetadataTranslationScope
 		ecologylab.semantics.generated.library.imdb.MmdInlineCastMemberInCastInImdbTitle.class,
 
 		ecologylab.semantics.generated.library.GoogleImageSearchType.class,
+
+		ecologylab.semantics.generated.library.nsdl.NsdlDocument.class,
 
 		ecologylab.semantics.generated.library.search.BingSearchWebSection.class,
 
