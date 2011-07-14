@@ -21,7 +21,7 @@ import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
  * This is the tranlation scope class for generated files.
  */
 
-public class GeneratedMetadataTranslationScope
+public class RepositoryMetadataTranslationScope
 {
 	protected static final Class TRANSLATIONS[] =
 	{
@@ -267,7 +267,7 @@ public class GeneratedMetadataTranslationScope
 
 	public static TranslationScope get()
 	{
-		return TranslationScope.get(SemanticsNames.GENERATED_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
+		return TranslationScope.get(SemanticsNames.REPOSITORY_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
 	}
 
 }
