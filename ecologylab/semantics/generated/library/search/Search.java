@@ -1,12 +1,15 @@
 package ecologylab.semantics.generated.library.search;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
-
-import ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
 import ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.generated.library.search.SearchResult;
 
 /**
 *  Search.java
@@ -24,7 +27,7 @@ public class Search extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_nowrap	@simpl_collection("search_result")	@simpl_classes({CiteseerxSearchResult.class, AcmPortalSearchResult.class, SearchResult.class}) @mm_name("search_results")	private ArrayList<SearchResult> searchResults;
+	@simpl_nowrap	@simpl_collection("search_result")	@simpl_classes({AcmPortalSearchResult.class, CiteseerxSearchResult.class, SearchResult.class}) @mm_name("search_results")	private ArrayList<SearchResult> searchResults;
 
 	public Search()
 	{ }

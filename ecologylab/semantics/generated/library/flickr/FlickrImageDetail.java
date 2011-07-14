@@ -1,12 +1,15 @@
 package ecologylab.semantics.generated.library.flickr;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
-
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.flickr.FlickrTag;
+import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 
 /**
 *  FlickrImageDetail.java

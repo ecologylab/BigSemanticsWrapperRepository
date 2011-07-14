@@ -1,15 +1,17 @@
 package ecologylab.semantics.generated.library.infocomp;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
-
-import ecologylab.semantics.metadata.builtins.Annotation;
-import ecologylab.semantics.metadata.builtins.ClippableDocument;
-import ecologylab.semantics.metadata.builtins.Clipping;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.scalar.MetadataFloat;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
+import ecologylab.semantics.metadata.builtins.ClippableDocument;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metadata.builtins.Annotation;
+import ecologylab.semantics.metadata.builtins.Clipping;
+import ecologylab.semantics.metadata.scalar.MetadataFloat;
 
 /**
 *  InformationCompositionBase.java

@@ -1,7 +1,11 @@
 package ecologylab.semantics.generated.library.search;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
+import ecologylab.semantics.generated.library.search.ImageInSearchResult;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.ElementState.xml_tag;
 
 /**
 *  BingImageSearchResult.java
