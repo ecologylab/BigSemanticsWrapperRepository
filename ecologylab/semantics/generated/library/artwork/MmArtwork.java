@@ -27,12 +27,12 @@ public class MmArtwork extends Artwork
 	/** 
 	 * Website of the work or group responsible.
 	 */ 
-	@simpl_scalar	private MetadataParsedURL website;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL website;
 
 	/** 
 	 * Link the ACM Portal page.
 	 */ 
-	@simpl_scalar	private MetadataParsedURL extendedAbstract;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL extendedAbstract;
 
 	public MmArtwork()
 	{ }
@@ -42,64 +42,66 @@ public class MmArtwork extends Artwork
 	}
 
 
-	public MetadataParsedURL	website()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	website()
 	{
-		MetadataParsedURL	result = this.website;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.website;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.website = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getWebsite()
+	public ecologylab.net.ParsedURL getWebsite()
 	{
-		return this.website().getValue();
+		return this.website == null ? null : website().getValue();
 	}
 
-	public MetadataParsedURL getWebsiteMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getWebsiteMetadata()
 	{
 		return website;
 	}
 
-	public void setWebsite(ParsedURL website)
+	public void setWebsite(ecologylab.net.ParsedURL website)
 	{
-		this.website().setValue(website);
+		if (website != null)
+			this.website().setValue(website);
 	}
 
-	public void setWebsiteMetadata(MetadataParsedURL website)
+	public void setWebsiteMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL website)
 	{
 		this.website = website;
 	}
 
-	public MetadataParsedURL	extendedAbstract()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	extendedAbstract()
 	{
-		MetadataParsedURL	result = this.extendedAbstract;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.extendedAbstract;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.extendedAbstract = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getExtendedAbstract()
+	public ecologylab.net.ParsedURL getExtendedAbstract()
 	{
-		return this.extendedAbstract().getValue();
+		return this.extendedAbstract == null ? null : extendedAbstract().getValue();
 	}
 
-	public MetadataParsedURL getExtendedAbstractMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getExtendedAbstractMetadata()
 	{
 		return extendedAbstract;
 	}
 
-	public void setExtendedAbstract(ParsedURL extendedAbstract)
+	public void setExtendedAbstract(ecologylab.net.ParsedURL extendedAbstract)
 	{
-		this.extendedAbstract().setValue(extendedAbstract);
+		if (extendedAbstract != null)
+			this.extendedAbstract().setValue(extendedAbstract);
 	}
 
-	public void setExtendedAbstractMetadata(MetadataParsedURL extendedAbstract)
+	public void setExtendedAbstractMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL extendedAbstract)
 	{
 		this.extendedAbstract = extendedAbstract;
 	}

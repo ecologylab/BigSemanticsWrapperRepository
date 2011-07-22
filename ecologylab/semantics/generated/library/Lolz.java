@@ -27,15 +27,15 @@ public class Lolz extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString caption;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString caption;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL picture;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL picture;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL mightLike;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL mightLike;
 
 	public Lolz()
 	{ }
@@ -45,95 +45,98 @@ public class Lolz extends CompoundDocument
 	}
 
 
-	public MetadataString	caption()
+	public ecologylab.semantics.metadata.scalar.MetadataString	caption()
 	{
-		MetadataString	result = this.caption;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.caption;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.caption = result;
 		}
 		return result;
 	}
 
-	public String getCaption()
+	public java.lang.String getCaption()
 	{
-		return this.caption().getValue();
+		return this.caption == null ? null : caption().getValue();
 	}
 
-	public MetadataString getCaptionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCaptionMetadata()
 	{
 		return caption;
 	}
 
-	public void setCaption(String caption)
+	public void setCaption(java.lang.String caption)
 	{
-		this.caption().setValue(caption);
+		if (caption != null)
+			this.caption().setValue(caption);
 	}
 
-	public void setCaptionMetadata(MetadataString caption)
+	public void setCaptionMetadata(ecologylab.semantics.metadata.scalar.MetadataString caption)
 	{
 		this.caption = caption;
 	}
 
-	public MetadataParsedURL	picture()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	picture()
 	{
-		MetadataParsedURL	result = this.picture;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.picture;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.picture = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPicture()
+	public ecologylab.net.ParsedURL getPicture()
 	{
-		return this.picture().getValue();
+		return this.picture == null ? null : picture().getValue();
 	}
 
-	public MetadataParsedURL getPictureMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPictureMetadata()
 	{
 		return picture;
 	}
 
-	public void setPicture(ParsedURL picture)
+	public void setPicture(ecologylab.net.ParsedURL picture)
 	{
-		this.picture().setValue(picture);
+		if (picture != null)
+			this.picture().setValue(picture);
 	}
 
-	public void setPictureMetadata(MetadataParsedURL picture)
+	public void setPictureMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL picture)
 	{
 		this.picture = picture;
 	}
 
-	public MetadataParsedURL	mightLike()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	mightLike()
 	{
-		MetadataParsedURL	result = this.mightLike;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.mightLike;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.mightLike = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getMightLike()
+	public ecologylab.net.ParsedURL getMightLike()
 	{
-		return this.mightLike().getValue();
+		return this.mightLike == null ? null : mightLike().getValue();
 	}
 
-	public MetadataParsedURL getMightLikeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getMightLikeMetadata()
 	{
 		return mightLike;
 	}
 
-	public void setMightLike(ParsedURL mightLike)
+	public void setMightLike(ecologylab.net.ParsedURL mightLike)
 	{
-		this.mightLike().setValue(mightLike);
+		if (mightLike != null)
+			this.mightLike().setValue(mightLike);
 	}
 
-	public void setMightLikeMetadata(MetadataParsedURL mightLike)
+	public void setMightLikeMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL mightLike)
 	{
 		this.mightLike = mightLike;
 	}

@@ -26,11 +26,11 @@ public class MmdInlineAnchorInAnchorsInSlashdotArticle extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString anchorText;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString anchorText;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL link;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
 
 	public MmdInlineAnchorInAnchorsInSlashdotArticle()
 	{ }
@@ -40,64 +40,66 @@ public class MmdInlineAnchorInAnchorsInSlashdotArticle extends Metadata
 	}
 
 
-	public MetadataString	anchorText()
+	public ecologylab.semantics.metadata.scalar.MetadataString	anchorText()
 	{
-		MetadataString	result = this.anchorText;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.anchorText;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.anchorText = result;
 		}
 		return result;
 	}
 
-	public String getAnchorText()
+	public java.lang.String getAnchorText()
 	{
-		return this.anchorText().getValue();
+		return this.anchorText == null ? null : anchorText().getValue();
 	}
 
-	public MetadataString getAnchorTextMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAnchorTextMetadata()
 	{
 		return anchorText;
 	}
 
-	public void setAnchorText(String anchorText)
+	public void setAnchorText(java.lang.String anchorText)
 	{
-		this.anchorText().setValue(anchorText);
+		if (anchorText != null)
+			this.anchorText().setValue(anchorText);
 	}
 
-	public void setAnchorTextMetadata(MetadataString anchorText)
+	public void setAnchorTextMetadata(ecologylab.semantics.metadata.scalar.MetadataString anchorText)
 	{
 		this.anchorText = anchorText;
 	}
 
-	public MetadataParsedURL	link()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	link()
 	{
-		MetadataParsedURL	result = this.link;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.link;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.link = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLink()
+	public ecologylab.net.ParsedURL getLink()
 	{
-		return this.link().getValue();
+		return this.link == null ? null : link().getValue();
 	}
 
-	public MetadataParsedURL getLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLinkMetadata()
 	{
 		return link;
 	}
 
-	public void setLink(ParsedURL link)
+	public void setLink(ecologylab.net.ParsedURL link)
 	{
-		this.link().setValue(link);
+		if (link != null)
+			this.link().setValue(link);
 	}
 
-	public void setLinkMetadata(MetadataParsedURL link)
+	public void setLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL link)
 	{
 		this.link = link;
 	}

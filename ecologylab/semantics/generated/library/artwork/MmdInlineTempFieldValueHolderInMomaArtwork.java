@@ -24,15 +24,15 @@ public class MmdInlineTempFieldValueHolderInMomaArtwork extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString tempDimensions;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString tempDimensions;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString tempYear;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString tempYear;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString tempMedium;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString tempMedium;
 
 	public MmdInlineTempFieldValueHolderInMomaArtwork()
 	{ }
@@ -42,95 +42,98 @@ public class MmdInlineTempFieldValueHolderInMomaArtwork extends Metadata
 	}
 
 
-	public MetadataString	tempDimensions()
+	public ecologylab.semantics.metadata.scalar.MetadataString	tempDimensions()
 	{
-		MetadataString	result = this.tempDimensions;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.tempDimensions;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.tempDimensions = result;
 		}
 		return result;
 	}
 
-	public String getTempDimensions()
+	public java.lang.String getTempDimensions()
 	{
-		return this.tempDimensions().getValue();
+		return this.tempDimensions == null ? null : tempDimensions().getValue();
 	}
 
-	public MetadataString getTempDimensionsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTempDimensionsMetadata()
 	{
 		return tempDimensions;
 	}
 
-	public void setTempDimensions(String tempDimensions)
+	public void setTempDimensions(java.lang.String tempDimensions)
 	{
-		this.tempDimensions().setValue(tempDimensions);
+		if (tempDimensions != null)
+			this.tempDimensions().setValue(tempDimensions);
 	}
 
-	public void setTempDimensionsMetadata(MetadataString tempDimensions)
+	public void setTempDimensionsMetadata(ecologylab.semantics.metadata.scalar.MetadataString tempDimensions)
 	{
 		this.tempDimensions = tempDimensions;
 	}
 
-	public MetadataString	tempYear()
+	public ecologylab.semantics.metadata.scalar.MetadataString	tempYear()
 	{
-		MetadataString	result = this.tempYear;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.tempYear;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.tempYear = result;
 		}
 		return result;
 	}
 
-	public String getTempYear()
+	public java.lang.String getTempYear()
 	{
-		return this.tempYear().getValue();
+		return this.tempYear == null ? null : tempYear().getValue();
 	}
 
-	public MetadataString getTempYearMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTempYearMetadata()
 	{
 		return tempYear;
 	}
 
-	public void setTempYear(String tempYear)
+	public void setTempYear(java.lang.String tempYear)
 	{
-		this.tempYear().setValue(tempYear);
+		if (tempYear != null)
+			this.tempYear().setValue(tempYear);
 	}
 
-	public void setTempYearMetadata(MetadataString tempYear)
+	public void setTempYearMetadata(ecologylab.semantics.metadata.scalar.MetadataString tempYear)
 	{
 		this.tempYear = tempYear;
 	}
 
-	public MetadataString	tempMedium()
+	public ecologylab.semantics.metadata.scalar.MetadataString	tempMedium()
 	{
-		MetadataString	result = this.tempMedium;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.tempMedium;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.tempMedium = result;
 		}
 		return result;
 	}
 
-	public String getTempMedium()
+	public java.lang.String getTempMedium()
 	{
-		return this.tempMedium().getValue();
+		return this.tempMedium == null ? null : tempMedium().getValue();
 	}
 
-	public MetadataString getTempMediumMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTempMediumMetadata()
 	{
 		return tempMedium;
 	}
 
-	public void setTempMedium(String tempMedium)
+	public void setTempMedium(java.lang.String tempMedium)
 	{
-		this.tempMedium().setValue(tempMedium);
+		if (tempMedium != null)
+			this.tempMedium().setValue(tempMedium);
 	}
 
-	public void setTempMediumMetadata(MetadataString tempMedium)
+	public void setTempMediumMetadata(ecologylab.semantics.metadata.scalar.MetadataString tempMedium)
 	{
 		this.tempMedium = tempMedium;
 	}

@@ -28,19 +28,19 @@ public class Product extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString price;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString price;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString model;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString model;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL imageUrl;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imageUrl;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString overallRating;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString overallRating;
 
 	/** 
 	 */ 
@@ -54,126 +54,130 @@ public class Product extends CompoundDocument
 	}
 
 
-	public MetadataString	price()
+	public ecologylab.semantics.metadata.scalar.MetadataString	price()
 	{
-		MetadataString	result = this.price;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.price;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.price = result;
 		}
 		return result;
 	}
 
-	public String getPrice()
+	public java.lang.String getPrice()
 	{
-		return this.price().getValue();
+		return this.price == null ? null : price().getValue();
 	}
 
-	public MetadataString getPriceMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPriceMetadata()
 	{
 		return price;
 	}
 
-	public void setPrice(String price)
+	public void setPrice(java.lang.String price)
 	{
-		this.price().setValue(price);
+		if (price != null)
+			this.price().setValue(price);
 	}
 
-	public void setPriceMetadata(MetadataString price)
+	public void setPriceMetadata(ecologylab.semantics.metadata.scalar.MetadataString price)
 	{
 		this.price = price;
 	}
 
-	public MetadataString	model()
+	public ecologylab.semantics.metadata.scalar.MetadataString	model()
 	{
-		MetadataString	result = this.model;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.model;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.model = result;
 		}
 		return result;
 	}
 
-	public String getModel()
+	public java.lang.String getModel()
 	{
-		return this.model().getValue();
+		return this.model == null ? null : model().getValue();
 	}
 
-	public MetadataString getModelMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getModelMetadata()
 	{
 		return model;
 	}
 
-	public void setModel(String model)
+	public void setModel(java.lang.String model)
 	{
-		this.model().setValue(model);
+		if (model != null)
+			this.model().setValue(model);
 	}
 
-	public void setModelMetadata(MetadataString model)
+	public void setModelMetadata(ecologylab.semantics.metadata.scalar.MetadataString model)
 	{
 		this.model = model;
 	}
 
-	public MetadataParsedURL	imageUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	imageUrl()
 	{
-		MetadataParsedURL	result = this.imageUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.imageUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.imageUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getImageUrl()
+	public ecologylab.net.ParsedURL getImageUrl()
 	{
-		return this.imageUrl().getValue();
+		return this.imageUrl == null ? null : imageUrl().getValue();
 	}
 
-	public MetadataParsedURL getImageUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getImageUrlMetadata()
 	{
 		return imageUrl;
 	}
 
-	public void setImageUrl(ParsedURL imageUrl)
+	public void setImageUrl(ecologylab.net.ParsedURL imageUrl)
 	{
-		this.imageUrl().setValue(imageUrl);
+		if (imageUrl != null)
+			this.imageUrl().setValue(imageUrl);
 	}
 
-	public void setImageUrlMetadata(MetadataParsedURL imageUrl)
+	public void setImageUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL imageUrl)
 	{
 		this.imageUrl = imageUrl;
 	}
 
-	public MetadataString	overallRating()
+	public ecologylab.semantics.metadata.scalar.MetadataString	overallRating()
 	{
-		MetadataString	result = this.overallRating;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.overallRating;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.overallRating = result;
 		}
 		return result;
 	}
 
-	public String getOverallRating()
+	public java.lang.String getOverallRating()
 	{
-		return this.overallRating().getValue();
+		return this.overallRating == null ? null : overallRating().getValue();
 	}
 
-	public MetadataString getOverallRatingMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getOverallRatingMetadata()
 	{
 		return overallRating;
 	}
 
-	public void setOverallRating(String overallRating)
+	public void setOverallRating(java.lang.String overallRating)
 	{
-		this.overallRating().setValue(overallRating);
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
 	}
 
-	public void setOverallRatingMetadata(MetadataString overallRating)
+	public void setOverallRatingMetadata(ecologylab.semantics.metadata.scalar.MetadataString overallRating)
 	{
 		this.overallRating = overallRating;
 	}

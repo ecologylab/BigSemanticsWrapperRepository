@@ -24,7 +24,7 @@ public class KeywordSet extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString type;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString type;
 
 	public KeywordSet()
 	{ }
@@ -34,33 +34,34 @@ public class KeywordSet extends Metadata
 	}
 
 
-	public MetadataString	type()
+	public ecologylab.semantics.metadata.scalar.MetadataString	type()
 	{
-		MetadataString	result = this.type;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.type;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.type = result;
 		}
 		return result;
 	}
 
-	public String getType()
+	public java.lang.String getType()
 	{
-		return this.type().getValue();
+		return this.type == null ? null : type().getValue();
 	}
 
-	public MetadataString getTypeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTypeMetadata()
 	{
 		return type;
 	}
 
-	public void setType(String type)
+	public void setType(java.lang.String type)
 	{
-		this.type().setValue(type);
+		if (type != null)
+			this.type().setValue(type);
 	}
 
-	public void setTypeMetadata(MetadataString type)
+	public void setTypeMetadata(ecologylab.semantics.metadata.scalar.MetadataString type)
 	{
 		this.type = type;
 	}

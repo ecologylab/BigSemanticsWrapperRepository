@@ -27,19 +27,19 @@ public class Source extends Document
 	/** 
 	 * Same as title, but used for composite scalar
 	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private MetadataString archiveName;
+	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString archiveName;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger yearOfPublication;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger yearOfPublication;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString isbn;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString isbn;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString pages;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString pages;
 
 	public Source()
 	{ }
@@ -49,126 +49,130 @@ public class Source extends Document
 	}
 
 
-	public MetadataString	archiveName()
+	public ecologylab.semantics.metadata.scalar.MetadataString	archiveName()
 	{
-		MetadataString	result = this.archiveName;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.archiveName;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.archiveName = result;
 		}
 		return result;
 	}
 
-	public String getArchiveName()
+	public java.lang.String getArchiveName()
 	{
-		return this.archiveName().getValue();
+		return this.archiveName == null ? null : archiveName().getValue();
 	}
 
-	public MetadataString getArchiveNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getArchiveNameMetadata()
 	{
 		return archiveName;
 	}
 
-	public void setArchiveName(String archiveName)
+	public void setArchiveName(java.lang.String archiveName)
 	{
-		this.archiveName().setValue(archiveName);
+		if (archiveName != null)
+			this.archiveName().setValue(archiveName);
 	}
 
-	public void setArchiveNameMetadata(MetadataString archiveName)
+	public void setArchiveNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString archiveName)
 	{
 		this.archiveName = archiveName;
 	}
 
-	public MetadataInteger	yearOfPublication()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	yearOfPublication()
 	{
-		MetadataInteger	result = this.yearOfPublication;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.yearOfPublication;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.yearOfPublication = result;
 		}
 		return result;
 	}
 
-	public int getYearOfPublication()
+	public java.lang.Integer getYearOfPublication()
 	{
-		return this.yearOfPublication().getValue();
+		return this.yearOfPublication == null ? 0 : yearOfPublication().getValue();
 	}
 
-	public MetadataInteger getYearOfPublicationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getYearOfPublicationMetadata()
 	{
 		return yearOfPublication;
 	}
 
-	public void setYearOfPublication(int yearOfPublication)
+	public void setYearOfPublication(java.lang.Integer yearOfPublication)
 	{
-		this.yearOfPublication().setValue(yearOfPublication);
+		if (yearOfPublication != 0)
+			this.yearOfPublication().setValue(yearOfPublication);
 	}
 
-	public void setYearOfPublicationMetadata(MetadataInteger yearOfPublication)
+	public void setYearOfPublicationMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger yearOfPublication)
 	{
 		this.yearOfPublication = yearOfPublication;
 	}
 
-	public MetadataString	isbn()
+	public ecologylab.semantics.metadata.scalar.MetadataString	isbn()
 	{
-		MetadataString	result = this.isbn;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.isbn;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.isbn = result;
 		}
 		return result;
 	}
 
-	public String getIsbn()
+	public java.lang.String getIsbn()
 	{
-		return this.isbn().getValue();
+		return this.isbn == null ? null : isbn().getValue();
 	}
 
-	public MetadataString getIsbnMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getIsbnMetadata()
 	{
 		return isbn;
 	}
 
-	public void setIsbn(String isbn)
+	public void setIsbn(java.lang.String isbn)
 	{
-		this.isbn().setValue(isbn);
+		if (isbn != null)
+			this.isbn().setValue(isbn);
 	}
 
-	public void setIsbnMetadata(MetadataString isbn)
+	public void setIsbnMetadata(ecologylab.semantics.metadata.scalar.MetadataString isbn)
 	{
 		this.isbn = isbn;
 	}
 
-	public MetadataString	pages()
+	public ecologylab.semantics.metadata.scalar.MetadataString	pages()
 	{
-		MetadataString	result = this.pages;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.pages;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.pages = result;
 		}
 		return result;
 	}
 
-	public String getPages()
+	public java.lang.String getPages()
 	{
-		return this.pages().getValue();
+		return this.pages == null ? null : pages().getValue();
 	}
 
-	public MetadataString getPagesMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPagesMetadata()
 	{
 		return pages;
 	}
 
-	public void setPages(String pages)
+	public void setPages(java.lang.String pages)
 	{
-		this.pages().setValue(pages);
+		if (pages != null)
+			this.pages().setValue(pages);
 	}
 
-	public void setPagesMetadata(MetadataString pages)
+	public void setPagesMetadata(ecologylab.semantics.metadata.scalar.MetadataString pages)
 	{
 		this.pages = pages;
 	}

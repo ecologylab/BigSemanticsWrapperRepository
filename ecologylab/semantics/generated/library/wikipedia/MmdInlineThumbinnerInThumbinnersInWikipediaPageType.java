@@ -26,11 +26,11 @@ public class MmdInlineThumbinnerInThumbinnersInWikipediaPageType extends Metadat
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString thumbImgCaption;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString thumbImgCaption;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL thumbImgSrc;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbImgSrc;
 
 	public MmdInlineThumbinnerInThumbinnersInWikipediaPageType()
 	{ }
@@ -40,64 +40,66 @@ public class MmdInlineThumbinnerInThumbinnersInWikipediaPageType extends Metadat
 	}
 
 
-	public MetadataString	thumbImgCaption()
+	public ecologylab.semantics.metadata.scalar.MetadataString	thumbImgCaption()
 	{
-		MetadataString	result = this.thumbImgCaption;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.thumbImgCaption;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.thumbImgCaption = result;
 		}
 		return result;
 	}
 
-	public String getThumbImgCaption()
+	public java.lang.String getThumbImgCaption()
 	{
-		return this.thumbImgCaption().getValue();
+		return this.thumbImgCaption == null ? null : thumbImgCaption().getValue();
 	}
 
-	public MetadataString getThumbImgCaptionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getThumbImgCaptionMetadata()
 	{
 		return thumbImgCaption;
 	}
 
-	public void setThumbImgCaption(String thumbImgCaption)
+	public void setThumbImgCaption(java.lang.String thumbImgCaption)
 	{
-		this.thumbImgCaption().setValue(thumbImgCaption);
+		if (thumbImgCaption != null)
+			this.thumbImgCaption().setValue(thumbImgCaption);
 	}
 
-	public void setThumbImgCaptionMetadata(MetadataString thumbImgCaption)
+	public void setThumbImgCaptionMetadata(ecologylab.semantics.metadata.scalar.MetadataString thumbImgCaption)
 	{
 		this.thumbImgCaption = thumbImgCaption;
 	}
 
-	public MetadataParsedURL	thumbImgSrc()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	thumbImgSrc()
 	{
-		MetadataParsedURL	result = this.thumbImgSrc;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.thumbImgSrc;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.thumbImgSrc = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getThumbImgSrc()
+	public ecologylab.net.ParsedURL getThumbImgSrc()
 	{
-		return this.thumbImgSrc().getValue();
+		return this.thumbImgSrc == null ? null : thumbImgSrc().getValue();
 	}
 
-	public MetadataParsedURL getThumbImgSrcMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getThumbImgSrcMetadata()
 	{
 		return thumbImgSrc;
 	}
 
-	public void setThumbImgSrc(ParsedURL thumbImgSrc)
+	public void setThumbImgSrc(ecologylab.net.ParsedURL thumbImgSrc)
 	{
-		this.thumbImgSrc().setValue(thumbImgSrc);
+		if (thumbImgSrc != null)
+			this.thumbImgSrc().setValue(thumbImgSrc);
 	}
 
-	public void setThumbImgSrcMetadata(MetadataParsedURL thumbImgSrc)
+	public void setThumbImgSrcMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbImgSrc)
 	{
 		this.thumbImgSrc = thumbImgSrc;
 	}

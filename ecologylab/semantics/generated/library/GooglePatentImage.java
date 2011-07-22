@@ -27,7 +27,7 @@ public class GooglePatentImage extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString inventor;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString inventor;
 
 	/** 
 	 */ 
@@ -41,33 +41,34 @@ public class GooglePatentImage extends CompoundDocument
 	}
 
 
-	public MetadataString	inventor()
+	public ecologylab.semantics.metadata.scalar.MetadataString	inventor()
 	{
-		MetadataString	result = this.inventor;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.inventor;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.inventor = result;
 		}
 		return result;
 	}
 
-	public String getInventor()
+	public java.lang.String getInventor()
 	{
-		return this.inventor().getValue();
+		return this.inventor == null ? null : inventor().getValue();
 	}
 
-	public MetadataString getInventorMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getInventorMetadata()
 	{
 		return inventor;
 	}
 
-	public void setInventor(String inventor)
+	public void setInventor(java.lang.String inventor)
 	{
-		this.inventor().setValue(inventor);
+		if (inventor != null)
+			this.inventor().setValue(inventor);
 	}
 
-	public void setInventorMetadata(MetadataString inventor)
+	public void setInventorMetadata(ecologylab.semantics.metadata.scalar.MetadataString inventor)
 	{
 		this.inventor = inventor;
 	}

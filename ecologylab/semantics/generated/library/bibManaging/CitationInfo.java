@@ -25,11 +25,11 @@ public class CitationInfo extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger totalCitation;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger totalCitation;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger selfCitation;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger selfCitation;
 
 	public CitationInfo()
 	{ }
@@ -39,64 +39,66 @@ public class CitationInfo extends Metadata
 	}
 
 
-	public MetadataInteger	totalCitation()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	totalCitation()
 	{
-		MetadataInteger	result = this.totalCitation;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.totalCitation;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.totalCitation = result;
 		}
 		return result;
 	}
 
-	public int getTotalCitation()
+	public java.lang.Integer getTotalCitation()
 	{
-		return this.totalCitation().getValue();
+		return this.totalCitation == null ? 0 : totalCitation().getValue();
 	}
 
-	public MetadataInteger getTotalCitationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getTotalCitationMetadata()
 	{
 		return totalCitation;
 	}
 
-	public void setTotalCitation(int totalCitation)
+	public void setTotalCitation(java.lang.Integer totalCitation)
 	{
-		this.totalCitation().setValue(totalCitation);
+		if (totalCitation != 0)
+			this.totalCitation().setValue(totalCitation);
 	}
 
-	public void setTotalCitationMetadata(MetadataInteger totalCitation)
+	public void setTotalCitationMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger totalCitation)
 	{
 		this.totalCitation = totalCitation;
 	}
 
-	public MetadataInteger	selfCitation()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	selfCitation()
 	{
-		MetadataInteger	result = this.selfCitation;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.selfCitation;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.selfCitation = result;
 		}
 		return result;
 	}
 
-	public int getSelfCitation()
+	public java.lang.Integer getSelfCitation()
 	{
-		return this.selfCitation().getValue();
+		return this.selfCitation == null ? 0 : selfCitation().getValue();
 	}
 
-	public MetadataInteger getSelfCitationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getSelfCitationMetadata()
 	{
 		return selfCitation;
 	}
 
-	public void setSelfCitation(int selfCitation)
+	public void setSelfCitation(java.lang.Integer selfCitation)
 	{
-		this.selfCitation().setValue(selfCitation);
+		if (selfCitation != 0)
+			this.selfCitation().setValue(selfCitation);
 	}
 
-	public void setSelfCitationMetadata(MetadataInteger selfCitation)
+	public void setSelfCitationMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger selfCitation)
 	{
 		this.selfCitation = selfCitation;
 	}

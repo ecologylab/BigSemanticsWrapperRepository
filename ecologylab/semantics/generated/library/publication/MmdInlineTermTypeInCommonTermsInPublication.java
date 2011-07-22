@@ -25,11 +25,11 @@ public class MmdInlineTermTypeInCommonTermsInPublication extends Document
 {
 	/** 
 	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private MetadataString term;
+	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString term;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger frequency;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger frequency;
 
 	public MmdInlineTermTypeInCommonTermsInPublication()
 	{ }
@@ -39,64 +39,66 @@ public class MmdInlineTermTypeInCommonTermsInPublication extends Document
 	}
 
 
-	public MetadataString	term()
+	public ecologylab.semantics.metadata.scalar.MetadataString	term()
 	{
-		MetadataString	result = this.term;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.term;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.term = result;
 		}
 		return result;
 	}
 
-	public String getTerm()
+	public java.lang.String getTerm()
 	{
-		return this.term().getValue();
+		return this.term == null ? null : term().getValue();
 	}
 
-	public MetadataString getTermMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTermMetadata()
 	{
 		return term;
 	}
 
-	public void setTerm(String term)
+	public void setTerm(java.lang.String term)
 	{
-		this.term().setValue(term);
+		if (term != null)
+			this.term().setValue(term);
 	}
 
-	public void setTermMetadata(MetadataString term)
+	public void setTermMetadata(ecologylab.semantics.metadata.scalar.MetadataString term)
 	{
 		this.term = term;
 	}
 
-	public MetadataInteger	frequency()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	frequency()
 	{
-		MetadataInteger	result = this.frequency;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.frequency;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.frequency = result;
 		}
 		return result;
 	}
 
-	public int getFrequency()
+	public java.lang.Integer getFrequency()
 	{
-		return this.frequency().getValue();
+		return this.frequency == null ? 0 : frequency().getValue();
 	}
 
-	public MetadataInteger getFrequencyMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getFrequencyMetadata()
 	{
 		return frequency;
 	}
 
-	public void setFrequency(int frequency)
+	public void setFrequency(java.lang.Integer frequency)
 	{
-		this.frequency().setValue(frequency);
+		if (frequency != 0)
+			this.frequency().setValue(frequency);
 	}
 
-	public void setFrequencyMetadata(MetadataInteger frequency)
+	public void setFrequencyMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger frequency)
 	{
 		this.frequency = frequency;
 	}

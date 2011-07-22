@@ -24,7 +24,7 @@ public class MmdInlineHotSearchInHotSearchesInGoogleTrends extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString search;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString search;
 
 	public MmdInlineHotSearchInHotSearchesInGoogleTrends()
 	{ }
@@ -34,33 +34,34 @@ public class MmdInlineHotSearchInHotSearchesInGoogleTrends extends Metadata
 	}
 
 
-	public MetadataString	search()
+	public ecologylab.semantics.metadata.scalar.MetadataString	search()
 	{
-		MetadataString	result = this.search;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.search;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.search = result;
 		}
 		return result;
 	}
 
-	public String getSearch()
+	public java.lang.String getSearch()
 	{
-		return this.search().getValue();
+		return this.search == null ? null : search().getValue();
 	}
 
-	public MetadataString getSearchMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSearchMetadata()
 	{
 		return search;
 	}
 
-	public void setSearch(String search)
+	public void setSearch(java.lang.String search)
 	{
-		this.search().setValue(search);
+		if (search != null)
+			this.search().setValue(search);
 	}
 
-	public void setSearchMetadata(MetadataString search)
+	public void setSearchMetadata(ecologylab.semantics.metadata.scalar.MetadataString search)
 	{
 		this.search = search;
 	}

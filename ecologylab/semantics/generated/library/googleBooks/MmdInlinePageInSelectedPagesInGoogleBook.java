@@ -26,11 +26,11 @@ public class MmdInlinePageInSelectedPagesInGoogleBook extends Document
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL pageThumbnail;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pageThumbnail;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger pageNumber;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger pageNumber;
 
 	public MmdInlinePageInSelectedPagesInGoogleBook()
 	{ }
@@ -40,64 +40,66 @@ public class MmdInlinePageInSelectedPagesInGoogleBook extends Document
 	}
 
 
-	public MetadataParsedURL	pageThumbnail()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	pageThumbnail()
 	{
-		MetadataParsedURL	result = this.pageThumbnail;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.pageThumbnail;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.pageThumbnail = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPageThumbnail()
+	public ecologylab.net.ParsedURL getPageThumbnail()
 	{
-		return this.pageThumbnail().getValue();
+		return this.pageThumbnail == null ? null : pageThumbnail().getValue();
 	}
 
-	public MetadataParsedURL getPageThumbnailMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPageThumbnailMetadata()
 	{
 		return pageThumbnail;
 	}
 
-	public void setPageThumbnail(ParsedURL pageThumbnail)
+	public void setPageThumbnail(ecologylab.net.ParsedURL pageThumbnail)
 	{
-		this.pageThumbnail().setValue(pageThumbnail);
+		if (pageThumbnail != null)
+			this.pageThumbnail().setValue(pageThumbnail);
 	}
 
-	public void setPageThumbnailMetadata(MetadataParsedURL pageThumbnail)
+	public void setPageThumbnailMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL pageThumbnail)
 	{
 		this.pageThumbnail = pageThumbnail;
 	}
 
-	public MetadataInteger	pageNumber()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	pageNumber()
 	{
-		MetadataInteger	result = this.pageNumber;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.pageNumber;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.pageNumber = result;
 		}
 		return result;
 	}
 
-	public int getPageNumber()
+	public java.lang.Integer getPageNumber()
 	{
-		return this.pageNumber().getValue();
+		return this.pageNumber == null ? 0 : pageNumber().getValue();
 	}
 
-	public MetadataInteger getPageNumberMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getPageNumberMetadata()
 	{
 		return pageNumber;
 	}
 
-	public void setPageNumber(int pageNumber)
+	public void setPageNumber(java.lang.Integer pageNumber)
 	{
-		this.pageNumber().setValue(pageNumber);
+		if (pageNumber != 0)
+			this.pageNumber().setValue(pageNumber);
 	}
 
-	public void setPageNumberMetadata(MetadataInteger pageNumber)
+	public void setPageNumberMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger pageNumber)
 	{
 		this.pageNumber = pageNumber;
 	}

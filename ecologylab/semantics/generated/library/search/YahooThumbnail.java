@@ -26,15 +26,15 @@ public class YahooThumbnail extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Url")	@simpl_hints(Hint.XML_LEAF)	private MetadataParsedURL thumbUrl;
+	@simpl_scalar	@xml_tag("Url")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbUrl;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Width")	@simpl_hints(Hint.XML_LEAF)	private MetadataInteger width;
+	@simpl_scalar	@xml_tag("Width")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Height")	@simpl_hints(Hint.XML_LEAF)	private MetadataInteger height;
+	@simpl_scalar	@xml_tag("Height")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
 
 	public YahooThumbnail()
 	{ }
@@ -44,95 +44,98 @@ public class YahooThumbnail extends Metadata
 	}
 
 
-	public MetadataParsedURL	thumbUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	thumbUrl()
 	{
-		MetadataParsedURL	result = this.thumbUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.thumbUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.thumbUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getThumbUrl()
+	public ecologylab.net.ParsedURL getThumbUrl()
 	{
-		return this.thumbUrl().getValue();
+		return this.thumbUrl == null ? null : thumbUrl().getValue();
 	}
 
-	public MetadataParsedURL getThumbUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getThumbUrlMetadata()
 	{
 		return thumbUrl;
 	}
 
-	public void setThumbUrl(ParsedURL thumbUrl)
+	public void setThumbUrl(ecologylab.net.ParsedURL thumbUrl)
 	{
-		this.thumbUrl().setValue(thumbUrl);
+		if (thumbUrl != null)
+			this.thumbUrl().setValue(thumbUrl);
 	}
 
-	public void setThumbUrlMetadata(MetadataParsedURL thumbUrl)
+	public void setThumbUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbUrl)
 	{
 		this.thumbUrl = thumbUrl;
 	}
 
-	public MetadataInteger	width()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	width()
 	{
-		MetadataInteger	result = this.width;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.width;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.width = result;
 		}
 		return result;
 	}
 
-	public int getWidth()
+	public java.lang.Integer getWidth()
 	{
-		return this.width().getValue();
+		return this.width == null ? 0 : width().getValue();
 	}
 
-	public MetadataInteger getWidthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getWidthMetadata()
 	{
 		return width;
 	}
 
-	public void setWidth(int width)
+	public void setWidth(java.lang.Integer width)
 	{
-		this.width().setValue(width);
+		if (width != 0)
+			this.width().setValue(width);
 	}
 
-	public void setWidthMetadata(MetadataInteger width)
+	public void setWidthMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger width)
 	{
 		this.width = width;
 	}
 
-	public MetadataInteger	height()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	height()
 	{
-		MetadataInteger	result = this.height;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.height;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.height = result;
 		}
 		return result;
 	}
 
-	public int getHeight()
+	public java.lang.Integer getHeight()
 	{
-		return this.height().getValue();
+		return this.height == null ? 0 : height().getValue();
 	}
 
-	public MetadataInteger getHeightMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getHeightMetadata()
 	{
 		return height;
 	}
 
-	public void setHeight(int height)
+	public void setHeight(java.lang.Integer height)
 	{
-		this.height().setValue(height);
+		if (height != 0)
+			this.height().setValue(height);
 	}
 
-	public void setHeightMetadata(MetadataInteger height)
+	public void setHeightMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger height)
 	{
 		this.height = height;
 	}

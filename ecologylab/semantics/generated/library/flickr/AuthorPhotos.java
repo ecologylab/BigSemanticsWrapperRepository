@@ -26,35 +26,35 @@ public class AuthorPhotos extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL authorPhotostreamLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL authorPhotostreamLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString authorPhotostream;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString authorPhotostream;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL photosThatDayLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatDayLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL photosThatMonthLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatMonthLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL photosThatYearLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatYearLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString photosThatDay;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString photosThatDay;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString photosThatMonth;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString photosThatMonth;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString photosThatYear;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString photosThatYear;
 
 	public AuthorPhotos()
 	{ }
@@ -64,250 +64,258 @@ public class AuthorPhotos extends Metadata
 	}
 
 
-	public MetadataParsedURL	authorPhotostreamLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	authorPhotostreamLink()
 	{
-		MetadataParsedURL	result = this.authorPhotostreamLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.authorPhotostreamLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.authorPhotostreamLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getAuthorPhotostreamLink()
+	public ecologylab.net.ParsedURL getAuthorPhotostreamLink()
 	{
-		return this.authorPhotostreamLink().getValue();
+		return this.authorPhotostreamLink == null ? null : authorPhotostreamLink().getValue();
 	}
 
-	public MetadataParsedURL getAuthorPhotostreamLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getAuthorPhotostreamLinkMetadata()
 	{
 		return authorPhotostreamLink;
 	}
 
-	public void setAuthorPhotostreamLink(ParsedURL authorPhotostreamLink)
+	public void setAuthorPhotostreamLink(ecologylab.net.ParsedURL authorPhotostreamLink)
 	{
-		this.authorPhotostreamLink().setValue(authorPhotostreamLink);
+		if (authorPhotostreamLink != null)
+			this.authorPhotostreamLink().setValue(authorPhotostreamLink);
 	}
 
-	public void setAuthorPhotostreamLinkMetadata(MetadataParsedURL authorPhotostreamLink)
+	public void setAuthorPhotostreamLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL authorPhotostreamLink)
 	{
 		this.authorPhotostreamLink = authorPhotostreamLink;
 	}
 
-	public MetadataString	authorPhotostream()
+	public ecologylab.semantics.metadata.scalar.MetadataString	authorPhotostream()
 	{
-		MetadataString	result = this.authorPhotostream;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.authorPhotostream;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.authorPhotostream = result;
 		}
 		return result;
 	}
 
-	public String getAuthorPhotostream()
+	public java.lang.String getAuthorPhotostream()
 	{
-		return this.authorPhotostream().getValue();
+		return this.authorPhotostream == null ? null : authorPhotostream().getValue();
 	}
 
-	public MetadataString getAuthorPhotostreamMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAuthorPhotostreamMetadata()
 	{
 		return authorPhotostream;
 	}
 
-	public void setAuthorPhotostream(String authorPhotostream)
+	public void setAuthorPhotostream(java.lang.String authorPhotostream)
 	{
-		this.authorPhotostream().setValue(authorPhotostream);
+		if (authorPhotostream != null)
+			this.authorPhotostream().setValue(authorPhotostream);
 	}
 
-	public void setAuthorPhotostreamMetadata(MetadataString authorPhotostream)
+	public void setAuthorPhotostreamMetadata(ecologylab.semantics.metadata.scalar.MetadataString authorPhotostream)
 	{
 		this.authorPhotostream = authorPhotostream;
 	}
 
-	public MetadataParsedURL	photosThatDayLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	photosThatDayLink()
 	{
-		MetadataParsedURL	result = this.photosThatDayLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.photosThatDayLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.photosThatDayLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPhotosThatDayLink()
+	public ecologylab.net.ParsedURL getPhotosThatDayLink()
 	{
-		return this.photosThatDayLink().getValue();
+		return this.photosThatDayLink == null ? null : photosThatDayLink().getValue();
 	}
 
-	public MetadataParsedURL getPhotosThatDayLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPhotosThatDayLinkMetadata()
 	{
 		return photosThatDayLink;
 	}
 
-	public void setPhotosThatDayLink(ParsedURL photosThatDayLink)
+	public void setPhotosThatDayLink(ecologylab.net.ParsedURL photosThatDayLink)
 	{
-		this.photosThatDayLink().setValue(photosThatDayLink);
+		if (photosThatDayLink != null)
+			this.photosThatDayLink().setValue(photosThatDayLink);
 	}
 
-	public void setPhotosThatDayLinkMetadata(MetadataParsedURL photosThatDayLink)
+	public void setPhotosThatDayLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatDayLink)
 	{
 		this.photosThatDayLink = photosThatDayLink;
 	}
 
-	public MetadataParsedURL	photosThatMonthLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	photosThatMonthLink()
 	{
-		MetadataParsedURL	result = this.photosThatMonthLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.photosThatMonthLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.photosThatMonthLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPhotosThatMonthLink()
+	public ecologylab.net.ParsedURL getPhotosThatMonthLink()
 	{
-		return this.photosThatMonthLink().getValue();
+		return this.photosThatMonthLink == null ? null : photosThatMonthLink().getValue();
 	}
 
-	public MetadataParsedURL getPhotosThatMonthLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPhotosThatMonthLinkMetadata()
 	{
 		return photosThatMonthLink;
 	}
 
-	public void setPhotosThatMonthLink(ParsedURL photosThatMonthLink)
+	public void setPhotosThatMonthLink(ecologylab.net.ParsedURL photosThatMonthLink)
 	{
-		this.photosThatMonthLink().setValue(photosThatMonthLink);
+		if (photosThatMonthLink != null)
+			this.photosThatMonthLink().setValue(photosThatMonthLink);
 	}
 
-	public void setPhotosThatMonthLinkMetadata(MetadataParsedURL photosThatMonthLink)
+	public void setPhotosThatMonthLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatMonthLink)
 	{
 		this.photosThatMonthLink = photosThatMonthLink;
 	}
 
-	public MetadataParsedURL	photosThatYearLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	photosThatYearLink()
 	{
-		MetadataParsedURL	result = this.photosThatYearLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.photosThatYearLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.photosThatYearLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPhotosThatYearLink()
+	public ecologylab.net.ParsedURL getPhotosThatYearLink()
 	{
-		return this.photosThatYearLink().getValue();
+		return this.photosThatYearLink == null ? null : photosThatYearLink().getValue();
 	}
 
-	public MetadataParsedURL getPhotosThatYearLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPhotosThatYearLinkMetadata()
 	{
 		return photosThatYearLink;
 	}
 
-	public void setPhotosThatYearLink(ParsedURL photosThatYearLink)
+	public void setPhotosThatYearLink(ecologylab.net.ParsedURL photosThatYearLink)
 	{
-		this.photosThatYearLink().setValue(photosThatYearLink);
+		if (photosThatYearLink != null)
+			this.photosThatYearLink().setValue(photosThatYearLink);
 	}
 
-	public void setPhotosThatYearLinkMetadata(MetadataParsedURL photosThatYearLink)
+	public void setPhotosThatYearLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatYearLink)
 	{
 		this.photosThatYearLink = photosThatYearLink;
 	}
 
-	public MetadataString	photosThatDay()
+	public ecologylab.semantics.metadata.scalar.MetadataString	photosThatDay()
 	{
-		MetadataString	result = this.photosThatDay;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.photosThatDay;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.photosThatDay = result;
 		}
 		return result;
 	}
 
-	public String getPhotosThatDay()
+	public java.lang.String getPhotosThatDay()
 	{
-		return this.photosThatDay().getValue();
+		return this.photosThatDay == null ? null : photosThatDay().getValue();
 	}
 
-	public MetadataString getPhotosThatDayMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPhotosThatDayMetadata()
 	{
 		return photosThatDay;
 	}
 
-	public void setPhotosThatDay(String photosThatDay)
+	public void setPhotosThatDay(java.lang.String photosThatDay)
 	{
-		this.photosThatDay().setValue(photosThatDay);
+		if (photosThatDay != null)
+			this.photosThatDay().setValue(photosThatDay);
 	}
 
-	public void setPhotosThatDayMetadata(MetadataString photosThatDay)
+	public void setPhotosThatDayMetadata(ecologylab.semantics.metadata.scalar.MetadataString photosThatDay)
 	{
 		this.photosThatDay = photosThatDay;
 	}
 
-	public MetadataString	photosThatMonth()
+	public ecologylab.semantics.metadata.scalar.MetadataString	photosThatMonth()
 	{
-		MetadataString	result = this.photosThatMonth;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.photosThatMonth;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.photosThatMonth = result;
 		}
 		return result;
 	}
 
-	public String getPhotosThatMonth()
+	public java.lang.String getPhotosThatMonth()
 	{
-		return this.photosThatMonth().getValue();
+		return this.photosThatMonth == null ? null : photosThatMonth().getValue();
 	}
 
-	public MetadataString getPhotosThatMonthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPhotosThatMonthMetadata()
 	{
 		return photosThatMonth;
 	}
 
-	public void setPhotosThatMonth(String photosThatMonth)
+	public void setPhotosThatMonth(java.lang.String photosThatMonth)
 	{
-		this.photosThatMonth().setValue(photosThatMonth);
+		if (photosThatMonth != null)
+			this.photosThatMonth().setValue(photosThatMonth);
 	}
 
-	public void setPhotosThatMonthMetadata(MetadataString photosThatMonth)
+	public void setPhotosThatMonthMetadata(ecologylab.semantics.metadata.scalar.MetadataString photosThatMonth)
 	{
 		this.photosThatMonth = photosThatMonth;
 	}
 
-	public MetadataString	photosThatYear()
+	public ecologylab.semantics.metadata.scalar.MetadataString	photosThatYear()
 	{
-		MetadataString	result = this.photosThatYear;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.photosThatYear;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.photosThatYear = result;
 		}
 		return result;
 	}
 
-	public String getPhotosThatYear()
+	public java.lang.String getPhotosThatYear()
 	{
-		return this.photosThatYear().getValue();
+		return this.photosThatYear == null ? null : photosThatYear().getValue();
 	}
 
-	public MetadataString getPhotosThatYearMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPhotosThatYearMetadata()
 	{
 		return photosThatYear;
 	}
 
-	public void setPhotosThatYear(String photosThatYear)
+	public void setPhotosThatYear(java.lang.String photosThatYear)
 	{
-		this.photosThatYear().setValue(photosThatYear);
+		if (photosThatYear != null)
+			this.photosThatYear().setValue(photosThatYear);
 	}
 
-	public void setPhotosThatYearMetadata(MetadataString photosThatYear)
+	public void setPhotosThatYearMetadata(ecologylab.semantics.metadata.scalar.MetadataString photosThatYear)
 	{
 		this.photosThatYear = photosThatYear;
 	}

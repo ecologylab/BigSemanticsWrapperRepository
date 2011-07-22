@@ -29,19 +29,19 @@ public class GooglePatent extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString inventor;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString inventor;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString abstractField;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString abstractField;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString claims;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString claims;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL picLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL picLink;
 
 	/** 
 	 */ 
@@ -63,126 +63,130 @@ public class GooglePatent extends CompoundDocument
 	}
 
 
-	public MetadataString	inventor()
+	public ecologylab.semantics.metadata.scalar.MetadataString	inventor()
 	{
-		MetadataString	result = this.inventor;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.inventor;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.inventor = result;
 		}
 		return result;
 	}
 
-	public String getInventor()
+	public java.lang.String getInventor()
 	{
-		return this.inventor().getValue();
+		return this.inventor == null ? null : inventor().getValue();
 	}
 
-	public MetadataString getInventorMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getInventorMetadata()
 	{
 		return inventor;
 	}
 
-	public void setInventor(String inventor)
+	public void setInventor(java.lang.String inventor)
 	{
-		this.inventor().setValue(inventor);
+		if (inventor != null)
+			this.inventor().setValue(inventor);
 	}
 
-	public void setInventorMetadata(MetadataString inventor)
+	public void setInventorMetadata(ecologylab.semantics.metadata.scalar.MetadataString inventor)
 	{
 		this.inventor = inventor;
 	}
 
-	public MetadataString	abstractField()
+	public ecologylab.semantics.metadata.scalar.MetadataString	abstractField()
 	{
-		MetadataString	result = this.abstractField;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.abstractField;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.abstractField = result;
 		}
 		return result;
 	}
 
-	public String getAbstractField()
+	public java.lang.String getAbstractField()
 	{
-		return this.abstractField().getValue();
+		return this.abstractField == null ? null : abstractField().getValue();
 	}
 
-	public MetadataString getAbstractFieldMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAbstractFieldMetadata()
 	{
 		return abstractField;
 	}
 
-	public void setAbstractField(String abstractField)
+	public void setAbstractField(java.lang.String abstractField)
 	{
-		this.abstractField().setValue(abstractField);
+		if (abstractField != null)
+			this.abstractField().setValue(abstractField);
 	}
 
-	public void setAbstractFieldMetadata(MetadataString abstractField)
+	public void setAbstractFieldMetadata(ecologylab.semantics.metadata.scalar.MetadataString abstractField)
 	{
 		this.abstractField = abstractField;
 	}
 
-	public MetadataString	claims()
+	public ecologylab.semantics.metadata.scalar.MetadataString	claims()
 	{
-		MetadataString	result = this.claims;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.claims;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.claims = result;
 		}
 		return result;
 	}
 
-	public String getClaims()
+	public java.lang.String getClaims()
 	{
-		return this.claims().getValue();
+		return this.claims == null ? null : claims().getValue();
 	}
 
-	public MetadataString getClaimsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getClaimsMetadata()
 	{
 		return claims;
 	}
 
-	public void setClaims(String claims)
+	public void setClaims(java.lang.String claims)
 	{
-		this.claims().setValue(claims);
+		if (claims != null)
+			this.claims().setValue(claims);
 	}
 
-	public void setClaimsMetadata(MetadataString claims)
+	public void setClaimsMetadata(ecologylab.semantics.metadata.scalar.MetadataString claims)
 	{
 		this.claims = claims;
 	}
 
-	public MetadataParsedURL	picLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	picLink()
 	{
-		MetadataParsedURL	result = this.picLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.picLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.picLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPicLink()
+	public ecologylab.net.ParsedURL getPicLink()
 	{
-		return this.picLink().getValue();
+		return this.picLink == null ? null : picLink().getValue();
 	}
 
-	public MetadataParsedURL getPicLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPicLinkMetadata()
 	{
 		return picLink;
 	}
 
-	public void setPicLink(ParsedURL picLink)
+	public void setPicLink(ecologylab.net.ParsedURL picLink)
 	{
-		this.picLink().setValue(picLink);
+		if (picLink != null)
+			this.picLink().setValue(picLink);
 	}
 
-	public void setPicLinkMetadata(MetadataParsedURL picLink)
+	public void setPicLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL picLink)
 	{
 		this.picLink = picLink;
 	}

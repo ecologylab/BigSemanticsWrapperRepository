@@ -39,15 +39,15 @@ public class Publication extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString pages;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString pages;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString isbn;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString isbn;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger year;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger year;
 
 	/** 
 	 */ 
@@ -55,7 +55,7 @@ public class Publication extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString aboutTheAuthors;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString aboutTheAuthors;
 
 	/** 
 	 */ 
@@ -89,95 +89,98 @@ public class Publication extends CompoundDocument
 		this.publisher = publisher;
 	}
 
-	public MetadataString	pages()
+	public ecologylab.semantics.metadata.scalar.MetadataString	pages()
 	{
-		MetadataString	result = this.pages;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.pages;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.pages = result;
 		}
 		return result;
 	}
 
-	public String getPages()
+	public java.lang.String getPages()
 	{
-		return this.pages().getValue();
+		return this.pages == null ? null : pages().getValue();
 	}
 
-	public MetadataString getPagesMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPagesMetadata()
 	{
 		return pages;
 	}
 
-	public void setPages(String pages)
+	public void setPages(java.lang.String pages)
 	{
-		this.pages().setValue(pages);
+		if (pages != null)
+			this.pages().setValue(pages);
 	}
 
-	public void setPagesMetadata(MetadataString pages)
+	public void setPagesMetadata(ecologylab.semantics.metadata.scalar.MetadataString pages)
 	{
 		this.pages = pages;
 	}
 
-	public MetadataString	isbn()
+	public ecologylab.semantics.metadata.scalar.MetadataString	isbn()
 	{
-		MetadataString	result = this.isbn;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.isbn;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.isbn = result;
 		}
 		return result;
 	}
 
-	public String getIsbn()
+	public java.lang.String getIsbn()
 	{
-		return this.isbn().getValue();
+		return this.isbn == null ? null : isbn().getValue();
 	}
 
-	public MetadataString getIsbnMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getIsbnMetadata()
 	{
 		return isbn;
 	}
 
-	public void setIsbn(String isbn)
+	public void setIsbn(java.lang.String isbn)
 	{
-		this.isbn().setValue(isbn);
+		if (isbn != null)
+			this.isbn().setValue(isbn);
 	}
 
-	public void setIsbnMetadata(MetadataString isbn)
+	public void setIsbnMetadata(ecologylab.semantics.metadata.scalar.MetadataString isbn)
 	{
 		this.isbn = isbn;
 	}
 
-	public MetadataInteger	year()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	year()
 	{
-		MetadataInteger	result = this.year;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.year;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.year = result;
 		}
 		return result;
 	}
 
-	public int getYear()
+	public java.lang.Integer getYear()
 	{
-		return this.year().getValue();
+		return this.year == null ? 0 : year().getValue();
 	}
 
-	public MetadataInteger getYearMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getYearMetadata()
 	{
 		return year;
 	}
 
-	public void setYear(int year)
+	public void setYear(java.lang.Integer year)
 	{
-		this.year().setValue(year);
+		if (year != 0)
+			this.year().setValue(year);
 	}
 
-	public void setYearMetadata(MetadataInteger year)
+	public void setYearMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger year)
 	{
 		this.year = year;
 	}
@@ -192,33 +195,34 @@ public class Publication extends CompoundDocument
 		this.subjects = subjects;
 	}
 
-	public MetadataString	aboutTheAuthors()
+	public ecologylab.semantics.metadata.scalar.MetadataString	aboutTheAuthors()
 	{
-		MetadataString	result = this.aboutTheAuthors;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.aboutTheAuthors;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.aboutTheAuthors = result;
 		}
 		return result;
 	}
 
-	public String getAboutTheAuthors()
+	public java.lang.String getAboutTheAuthors()
 	{
-		return this.aboutTheAuthors().getValue();
+		return this.aboutTheAuthors == null ? null : aboutTheAuthors().getValue();
 	}
 
-	public MetadataString getAboutTheAuthorsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAboutTheAuthorsMetadata()
 	{
 		return aboutTheAuthors;
 	}
 
-	public void setAboutTheAuthors(String aboutTheAuthors)
+	public void setAboutTheAuthors(java.lang.String aboutTheAuthors)
 	{
-		this.aboutTheAuthors().setValue(aboutTheAuthors);
+		if (aboutTheAuthors != null)
+			this.aboutTheAuthors().setValue(aboutTheAuthors);
 	}
 
-	public void setAboutTheAuthorsMetadata(MetadataString aboutTheAuthors)
+	public void setAboutTheAuthorsMetadata(ecologylab.semantics.metadata.scalar.MetadataString aboutTheAuthors)
 	{
 		this.aboutTheAuthors = aboutTheAuthors;
 	}

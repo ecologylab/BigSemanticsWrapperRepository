@@ -31,7 +31,7 @@ public class MmdInlineParagraphInParagraphsInWikipediaPageType extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString paragraphText;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString paragraphText;
 
 	public MmdInlineParagraphInParagraphsInWikipediaPageType()
 	{ }
@@ -51,33 +51,34 @@ public class MmdInlineParagraphInParagraphsInWikipediaPageType extends Metadata
 		this.anchors = anchors;
 	}
 
-	public MetadataString	paragraphText()
+	public ecologylab.semantics.metadata.scalar.MetadataString	paragraphText()
 	{
-		MetadataString	result = this.paragraphText;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.paragraphText;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.paragraphText = result;
 		}
 		return result;
 	}
 
-	public String getParagraphText()
+	public java.lang.String getParagraphText()
 	{
-		return this.paragraphText().getValue();
+		return this.paragraphText == null ? null : paragraphText().getValue();
 	}
 
-	public MetadataString getParagraphTextMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getParagraphTextMetadata()
 	{
 		return paragraphText;
 	}
 
-	public void setParagraphText(String paragraphText)
+	public void setParagraphText(java.lang.String paragraphText)
 	{
-		this.paragraphText().setValue(paragraphText);
+		if (paragraphText != null)
+			this.paragraphText().setValue(paragraphText);
 	}
 
-	public void setParagraphTextMetadata(MetadataString paragraphText)
+	public void setParagraphTextMetadata(ecologylab.semantics.metadata.scalar.MetadataString paragraphText)
 	{
 		this.paragraphText = paragraphText;
 	}

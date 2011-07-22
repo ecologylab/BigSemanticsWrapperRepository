@@ -26,7 +26,7 @@ public class WikipediaPage extends WikipediaPageType
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL mainImageSrc;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL mainImageSrc;
 
 	public WikipediaPage()
 	{ }
@@ -36,33 +36,34 @@ public class WikipediaPage extends WikipediaPageType
 	}
 
 
-	public MetadataParsedURL	mainImageSrc()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	mainImageSrc()
 	{
-		MetadataParsedURL	result = this.mainImageSrc;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.mainImageSrc;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.mainImageSrc = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getMainImageSrc()
+	public ecologylab.net.ParsedURL getMainImageSrc()
 	{
-		return this.mainImageSrc().getValue();
+		return this.mainImageSrc == null ? null : mainImageSrc().getValue();
 	}
 
-	public MetadataParsedURL getMainImageSrcMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getMainImageSrcMetadata()
 	{
 		return mainImageSrc;
 	}
 
-	public void setMainImageSrc(ParsedURL mainImageSrc)
+	public void setMainImageSrc(ecologylab.net.ParsedURL mainImageSrc)
 	{
-		this.mainImageSrc().setValue(mainImageSrc);
+		if (mainImageSrc != null)
+			this.mainImageSrc().setValue(mainImageSrc);
 	}
 
-	public void setMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
+	public void setMainImageSrcMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL mainImageSrc)
 	{
 		this.mainImageSrc = mainImageSrc;
 	}

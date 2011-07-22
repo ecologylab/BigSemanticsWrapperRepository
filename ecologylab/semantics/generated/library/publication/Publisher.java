@@ -25,11 +25,11 @@ public class Publisher extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private MetadataString name;
+	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString city;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString city;
 
 	public Publisher()
 	{ }
@@ -39,64 +39,66 @@ public class Publisher extends Metadata
 	}
 
 
-	public MetadataString	name()
+	public ecologylab.semantics.metadata.scalar.MetadataString	name()
 	{
-		MetadataString	result = this.name;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.name;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.name = result;
 		}
 		return result;
 	}
 
-	public String getName()
+	public java.lang.String getName()
 	{
-		return this.name().getValue();
+		return this.name == null ? null : name().getValue();
 	}
 
-	public MetadataString getNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
 	{
 		return name;
 	}
 
-	public void setName(String name)
+	public void setName(java.lang.String name)
 	{
-		this.name().setValue(name);
+		if (name != null)
+			this.name().setValue(name);
 	}
 
-	public void setNameMetadata(MetadataString name)
+	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
 	{
 		this.name = name;
 	}
 
-	public MetadataString	city()
+	public ecologylab.semantics.metadata.scalar.MetadataString	city()
 	{
-		MetadataString	result = this.city;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.city;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.city = result;
 		}
 		return result;
 	}
 
-	public String getCity()
+	public java.lang.String getCity()
 	{
-		return this.city().getValue();
+		return this.city == null ? null : city().getValue();
 	}
 
-	public MetadataString getCityMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCityMetadata()
 	{
 		return city;
 	}
 
-	public void setCity(String city)
+	public void setCity(java.lang.String city)
 	{
-		this.city().setValue(city);
+		if (city != null)
+			this.city().setValue(city);
 	}
 
-	public void setCityMetadata(MetadataString city)
+	public void setCityMetadata(ecologylab.semantics.metadata.scalar.MetadataString city)
 	{
 		this.city = city;
 	}

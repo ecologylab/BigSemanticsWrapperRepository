@@ -26,7 +26,7 @@ public class IcdlImage extends Image
 	/** 
 	 * The language of the library
 	 */ 
-	@simpl_scalar	private MetadataString languages;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString languages;
 
 	public IcdlImage()
 	{ }
@@ -36,33 +36,34 @@ public class IcdlImage extends Image
 	}
 
 
-	public MetadataString	languages()
+	public ecologylab.semantics.metadata.scalar.MetadataString	languages()
 	{
-		MetadataString	result = this.languages;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.languages;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.languages = result;
 		}
 		return result;
 	}
 
-	public String getLanguages()
+	public java.lang.String getLanguages()
 	{
-		return this.languages().getValue();
+		return this.languages == null ? null : languages().getValue();
 	}
 
-	public MetadataString getLanguagesMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getLanguagesMetadata()
 	{
 		return languages;
 	}
 
-	public void setLanguages(String languages)
+	public void setLanguages(java.lang.String languages)
 	{
-		this.languages().setValue(languages);
+		if (languages != null)
+			this.languages().setValue(languages);
 	}
 
-	public void setLanguagesMetadata(MetadataString languages)
+	public void setLanguagesMetadata(ecologylab.semantics.metadata.scalar.MetadataString languages)
 	{
 		this.languages = languages;
 	}

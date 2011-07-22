@@ -25,7 +25,7 @@ public class MmdInlineHeaderInNsdlDocument extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("resourceIdentifier")	private MetadataParsedURL resourceIdentifier;
+	@simpl_scalar	@xml_tag("resourceIdentifier")	private ecologylab.semantics.metadata.scalar.MetadataParsedURL resourceIdentifier;
 
 	public MmdInlineHeaderInNsdlDocument()
 	{ }
@@ -35,33 +35,34 @@ public class MmdInlineHeaderInNsdlDocument extends Metadata
 	}
 
 
-	public MetadataParsedURL	resourceIdentifier()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	resourceIdentifier()
 	{
-		MetadataParsedURL	result = this.resourceIdentifier;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.resourceIdentifier;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.resourceIdentifier = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getResourceIdentifier()
+	public ecologylab.net.ParsedURL getResourceIdentifier()
 	{
-		return this.resourceIdentifier().getValue();
+		return this.resourceIdentifier == null ? null : resourceIdentifier().getValue();
 	}
 
-	public MetadataParsedURL getResourceIdentifierMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getResourceIdentifierMetadata()
 	{
 		return resourceIdentifier;
 	}
 
-	public void setResourceIdentifier(ParsedURL resourceIdentifier)
+	public void setResourceIdentifier(ecologylab.net.ParsedURL resourceIdentifier)
 	{
-		this.resourceIdentifier().setValue(resourceIdentifier);
+		if (resourceIdentifier != null)
+			this.resourceIdentifier().setValue(resourceIdentifier);
 	}
 
-	public void setResourceIdentifierMetadata(MetadataParsedURL resourceIdentifier)
+	public void setResourceIdentifierMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL resourceIdentifier)
 	{
 		this.resourceIdentifier = resourceIdentifier;
 	}

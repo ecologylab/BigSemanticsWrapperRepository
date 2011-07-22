@@ -30,7 +30,11 @@ public class PersonDetails extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL personImg;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString gist;
+
+	/** 
+	 */ 
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL personImg;
 
 	/** 
 	 */ 
@@ -38,11 +42,11 @@ public class PersonDetails extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString miniBiography;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString miniBiography;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL biographyLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL biographyLink;
 
 	/** 
 	 */ 
@@ -80,33 +84,66 @@ public class PersonDetails extends CompoundDocument
 	}
 
 
-	public MetadataParsedURL	personImg()
+	public ecologylab.semantics.metadata.scalar.MetadataString	gist()
 	{
-		MetadataParsedURL	result = this.personImg;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.gist;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
+			this.gist = result;
+		}
+		return result;
+	}
+
+	public java.lang.String getGist()
+	{
+		return this.gist == null ? null : gist().getValue();
+	}
+
+	public ecologylab.semantics.metadata.scalar.MetadataString getGistMetadata()
+	{
+		return gist;
+	}
+
+	public void setGist(java.lang.String gist)
+	{
+		if (gist != null)
+			this.gist().setValue(gist);
+	}
+
+	public void setGistMetadata(ecologylab.semantics.metadata.scalar.MetadataString gist)
+	{
+		this.gist = gist;
+	}
+
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	personImg()
+	{
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.personImg;
+		if (result == null)
+		{
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.personImg = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPersonImg()
+	public ecologylab.net.ParsedURL getPersonImg()
 	{
-		return this.personImg().getValue();
+		return this.personImg == null ? null : personImg().getValue();
 	}
 
-	public MetadataParsedURL getPersonImgMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPersonImgMetadata()
 	{
 		return personImg;
 	}
 
-	public void setPersonImg(ParsedURL personImg)
+	public void setPersonImg(ecologylab.net.ParsedURL personImg)
 	{
-		this.personImg().setValue(personImg);
+		if (personImg != null)
+			this.personImg().setValue(personImg);
 	}
 
-	public void setPersonImgMetadata(MetadataParsedURL personImg)
+	public void setPersonImgMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL personImg)
 	{
 		this.personImg = personImg;
 	}
@@ -121,64 +158,66 @@ public class PersonDetails extends CompoundDocument
 		this.birthDetail = birthDetail;
 	}
 
-	public MetadataString	miniBiography()
+	public ecologylab.semantics.metadata.scalar.MetadataString	miniBiography()
 	{
-		MetadataString	result = this.miniBiography;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.miniBiography;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.miniBiography = result;
 		}
 		return result;
 	}
 
-	public String getMiniBiography()
+	public java.lang.String getMiniBiography()
 	{
-		return this.miniBiography().getValue();
+		return this.miniBiography == null ? null : miniBiography().getValue();
 	}
 
-	public MetadataString getMiniBiographyMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getMiniBiographyMetadata()
 	{
 		return miniBiography;
 	}
 
-	public void setMiniBiography(String miniBiography)
+	public void setMiniBiography(java.lang.String miniBiography)
 	{
-		this.miniBiography().setValue(miniBiography);
+		if (miniBiography != null)
+			this.miniBiography().setValue(miniBiography);
 	}
 
-	public void setMiniBiographyMetadata(MetadataString miniBiography)
+	public void setMiniBiographyMetadata(ecologylab.semantics.metadata.scalar.MetadataString miniBiography)
 	{
 		this.miniBiography = miniBiography;
 	}
 
-	public MetadataParsedURL	biographyLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	biographyLink()
 	{
-		MetadataParsedURL	result = this.biographyLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.biographyLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.biographyLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getBiographyLink()
+	public ecologylab.net.ParsedURL getBiographyLink()
 	{
-		return this.biographyLink().getValue();
+		return this.biographyLink == null ? null : biographyLink().getValue();
 	}
 
-	public MetadataParsedURL getBiographyLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getBiographyLinkMetadata()
 	{
 		return biographyLink;
 	}
 
-	public void setBiographyLink(ParsedURL biographyLink)
+	public void setBiographyLink(ecologylab.net.ParsedURL biographyLink)
 	{
-		this.biographyLink().setValue(biographyLink);
+		if (biographyLink != null)
+			this.biographyLink().setValue(biographyLink);
 	}
 
-	public void setBiographyLinkMetadata(MetadataParsedURL biographyLink)
+	public void setBiographyLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL biographyLink)
 	{
 		this.biographyLink = biographyLink;
 	}

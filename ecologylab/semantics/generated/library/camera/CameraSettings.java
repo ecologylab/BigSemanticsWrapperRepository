@@ -27,31 +27,31 @@ public class CameraSettings extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString subjectDistance;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString subjectDistance;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString exposureTime;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString exposureTime;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataFloat aperture;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataFloat aperture;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataFloat shutterSpeed;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataFloat shutterSpeed;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString model;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString model;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString orientation;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString orientation;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger resolution;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger resolution;
 
 	public CameraSettings()
 	{ }
@@ -61,219 +61,226 @@ public class CameraSettings extends Metadata
 	}
 
 
-	public MetadataString	subjectDistance()
+	public ecologylab.semantics.metadata.scalar.MetadataString	subjectDistance()
 	{
-		MetadataString	result = this.subjectDistance;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.subjectDistance;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.subjectDistance = result;
 		}
 		return result;
 	}
 
-	public String getSubjectDistance()
+	public java.lang.String getSubjectDistance()
 	{
-		return this.subjectDistance().getValue();
+		return this.subjectDistance == null ? null : subjectDistance().getValue();
 	}
 
-	public MetadataString getSubjectDistanceMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSubjectDistanceMetadata()
 	{
 		return subjectDistance;
 	}
 
-	public void setSubjectDistance(String subjectDistance)
+	public void setSubjectDistance(java.lang.String subjectDistance)
 	{
-		this.subjectDistance().setValue(subjectDistance);
+		if (subjectDistance != null)
+			this.subjectDistance().setValue(subjectDistance);
 	}
 
-	public void setSubjectDistanceMetadata(MetadataString subjectDistance)
+	public void setSubjectDistanceMetadata(ecologylab.semantics.metadata.scalar.MetadataString subjectDistance)
 	{
 		this.subjectDistance = subjectDistance;
 	}
 
-	public MetadataString	exposureTime()
+	public ecologylab.semantics.metadata.scalar.MetadataString	exposureTime()
 	{
-		MetadataString	result = this.exposureTime;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.exposureTime;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.exposureTime = result;
 		}
 		return result;
 	}
 
-	public String getExposureTime()
+	public java.lang.String getExposureTime()
 	{
-		return this.exposureTime().getValue();
+		return this.exposureTime == null ? null : exposureTime().getValue();
 	}
 
-	public MetadataString getExposureTimeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getExposureTimeMetadata()
 	{
 		return exposureTime;
 	}
 
-	public void setExposureTime(String exposureTime)
+	public void setExposureTime(java.lang.String exposureTime)
 	{
-		this.exposureTime().setValue(exposureTime);
+		if (exposureTime != null)
+			this.exposureTime().setValue(exposureTime);
 	}
 
-	public void setExposureTimeMetadata(MetadataString exposureTime)
+	public void setExposureTimeMetadata(ecologylab.semantics.metadata.scalar.MetadataString exposureTime)
 	{
 		this.exposureTime = exposureTime;
 	}
 
-	public MetadataFloat	aperture()
+	public ecologylab.semantics.metadata.scalar.MetadataFloat	aperture()
 	{
-		MetadataFloat	result = this.aperture;
+		ecologylab.semantics.metadata.scalar.MetadataFloat	result = this.aperture;
 		if (result == null)
 		{
-			result = new MetadataFloat();
+			result = new ecologylab.semantics.metadata.scalar.MetadataFloat();
 			this.aperture = result;
 		}
 		return result;
 	}
 
-	public float getAperture()
+	public java.lang.Float getAperture()
 	{
-		return this.aperture().getValue();
+		return this.aperture == null ? 0 : aperture().getValue();
 	}
 
-	public MetadataFloat getApertureMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataFloat getApertureMetadata()
 	{
 		return aperture;
 	}
 
-	public void setAperture(float aperture)
+	public void setAperture(java.lang.Float aperture)
 	{
-		this.aperture().setValue(aperture);
+		if (aperture != 0)
+			this.aperture().setValue(aperture);
 	}
 
-	public void setApertureMetadata(MetadataFloat aperture)
+	public void setApertureMetadata(ecologylab.semantics.metadata.scalar.MetadataFloat aperture)
 	{
 		this.aperture = aperture;
 	}
 
-	public MetadataFloat	shutterSpeed()
+	public ecologylab.semantics.metadata.scalar.MetadataFloat	shutterSpeed()
 	{
-		MetadataFloat	result = this.shutterSpeed;
+		ecologylab.semantics.metadata.scalar.MetadataFloat	result = this.shutterSpeed;
 		if (result == null)
 		{
-			result = new MetadataFloat();
+			result = new ecologylab.semantics.metadata.scalar.MetadataFloat();
 			this.shutterSpeed = result;
 		}
 		return result;
 	}
 
-	public float getShutterSpeed()
+	public java.lang.Float getShutterSpeed()
 	{
-		return this.shutterSpeed().getValue();
+		return this.shutterSpeed == null ? 0 : shutterSpeed().getValue();
 	}
 
-	public MetadataFloat getShutterSpeedMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataFloat getShutterSpeedMetadata()
 	{
 		return shutterSpeed;
 	}
 
-	public void setShutterSpeed(float shutterSpeed)
+	public void setShutterSpeed(java.lang.Float shutterSpeed)
 	{
-		this.shutterSpeed().setValue(shutterSpeed);
+		if (shutterSpeed != 0)
+			this.shutterSpeed().setValue(shutterSpeed);
 	}
 
-	public void setShutterSpeedMetadata(MetadataFloat shutterSpeed)
+	public void setShutterSpeedMetadata(ecologylab.semantics.metadata.scalar.MetadataFloat shutterSpeed)
 	{
 		this.shutterSpeed = shutterSpeed;
 	}
 
-	public MetadataString	model()
+	public ecologylab.semantics.metadata.scalar.MetadataString	model()
 	{
-		MetadataString	result = this.model;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.model;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.model = result;
 		}
 		return result;
 	}
 
-	public String getModel()
+	public java.lang.String getModel()
 	{
-		return this.model().getValue();
+		return this.model == null ? null : model().getValue();
 	}
 
-	public MetadataString getModelMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getModelMetadata()
 	{
 		return model;
 	}
 
-	public void setModel(String model)
+	public void setModel(java.lang.String model)
 	{
-		this.model().setValue(model);
+		if (model != null)
+			this.model().setValue(model);
 	}
 
-	public void setModelMetadata(MetadataString model)
+	public void setModelMetadata(ecologylab.semantics.metadata.scalar.MetadataString model)
 	{
 		this.model = model;
 	}
 
-	public MetadataString	orientation()
+	public ecologylab.semantics.metadata.scalar.MetadataString	orientation()
 	{
-		MetadataString	result = this.orientation;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.orientation;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.orientation = result;
 		}
 		return result;
 	}
 
-	public String getOrientation()
+	public java.lang.String getOrientation()
 	{
-		return this.orientation().getValue();
+		return this.orientation == null ? null : orientation().getValue();
 	}
 
-	public MetadataString getOrientationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getOrientationMetadata()
 	{
 		return orientation;
 	}
 
-	public void setOrientation(String orientation)
+	public void setOrientation(java.lang.String orientation)
 	{
-		this.orientation().setValue(orientation);
+		if (orientation != null)
+			this.orientation().setValue(orientation);
 	}
 
-	public void setOrientationMetadata(MetadataString orientation)
+	public void setOrientationMetadata(ecologylab.semantics.metadata.scalar.MetadataString orientation)
 	{
 		this.orientation = orientation;
 	}
 
-	public MetadataInteger	resolution()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	resolution()
 	{
-		MetadataInteger	result = this.resolution;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.resolution;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.resolution = result;
 		}
 		return result;
 	}
 
-	public int getResolution()
+	public java.lang.Integer getResolution()
 	{
-		return this.resolution().getValue();
+		return this.resolution == null ? 0 : resolution().getValue();
 	}
 
-	public MetadataInteger getResolutionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getResolutionMetadata()
 	{
 		return resolution;
 	}
 
-	public void setResolution(int resolution)
+	public void setResolution(java.lang.Integer resolution)
 	{
-		this.resolution().setValue(resolution);
+		if (resolution != 0)
+			this.resolution().setValue(resolution);
 	}
 
-	public void setResolutionMetadata(MetadataInteger resolution)
+	public void setResolutionMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger resolution)
 	{
 		this.resolution = resolution;
 	}

@@ -30,32 +30,32 @@ public class Restaurant extends CompoundDocument
 	/** 
 	 * Phone number of the restaurant
 	 */ 
-	@simpl_scalar	private MetadataString phone;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString phone;
 
 	/** 
 	 * A picture from the restaurant
 	 */ 
-	@simpl_scalar	private MetadataParsedURL pic;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pic;
 
 	/** 
 	 * Link to the restaurant's website
 	 */ 
-	@simpl_scalar	private MetadataParsedURL link;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
 
 	/** 
 	 * Rating of the restaurant
 	 */ 
-	@simpl_scalar	private MetadataString rating;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString rating;
 
 	/** 
 	 * Price range of the restaurant
 	 */ 
-	@simpl_scalar	private MetadataString priceRange;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString priceRange;
 
 	/** 
 	 * Map image of the restaurant's location or link to a directions page
 	 */ 
-	@simpl_scalar	private MetadataParsedURL map;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL map;
 
 	/** 
 	 * The genres of food offered
@@ -70,188 +70,194 @@ public class Restaurant extends CompoundDocument
 	}
 
 
-	public MetadataString	phone()
+	public ecologylab.semantics.metadata.scalar.MetadataString	phone()
 	{
-		MetadataString	result = this.phone;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.phone;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.phone = result;
 		}
 		return result;
 	}
 
-	public String getPhone()
+	public java.lang.String getPhone()
 	{
-		return this.phone().getValue();
+		return this.phone == null ? null : phone().getValue();
 	}
 
-	public MetadataString getPhoneMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPhoneMetadata()
 	{
 		return phone;
 	}
 
-	public void setPhone(String phone)
+	public void setPhone(java.lang.String phone)
 	{
-		this.phone().setValue(phone);
+		if (phone != null)
+			this.phone().setValue(phone);
 	}
 
-	public void setPhoneMetadata(MetadataString phone)
+	public void setPhoneMetadata(ecologylab.semantics.metadata.scalar.MetadataString phone)
 	{
 		this.phone = phone;
 	}
 
-	public MetadataParsedURL	pic()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	pic()
 	{
-		MetadataParsedURL	result = this.pic;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.pic;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.pic = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPic()
+	public ecologylab.net.ParsedURL getPic()
 	{
-		return this.pic().getValue();
+		return this.pic == null ? null : pic().getValue();
 	}
 
-	public MetadataParsedURL getPicMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPicMetadata()
 	{
 		return pic;
 	}
 
-	public void setPic(ParsedURL pic)
+	public void setPic(ecologylab.net.ParsedURL pic)
 	{
-		this.pic().setValue(pic);
+		if (pic != null)
+			this.pic().setValue(pic);
 	}
 
-	public void setPicMetadata(MetadataParsedURL pic)
+	public void setPicMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL pic)
 	{
 		this.pic = pic;
 	}
 
-	public MetadataParsedURL	link()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	link()
 	{
-		MetadataParsedURL	result = this.link;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.link;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.link = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLink()
+	public ecologylab.net.ParsedURL getLink()
 	{
-		return this.link().getValue();
+		return this.link == null ? null : link().getValue();
 	}
 
-	public MetadataParsedURL getLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLinkMetadata()
 	{
 		return link;
 	}
 
-	public void setLink(ParsedURL link)
+	public void setLink(ecologylab.net.ParsedURL link)
 	{
-		this.link().setValue(link);
+		if (link != null)
+			this.link().setValue(link);
 	}
 
-	public void setLinkMetadata(MetadataParsedURL link)
+	public void setLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL link)
 	{
 		this.link = link;
 	}
 
-	public MetadataString	rating()
+	public ecologylab.semantics.metadata.scalar.MetadataString	rating()
 	{
-		MetadataString	result = this.rating;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.rating;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.rating = result;
 		}
 		return result;
 	}
 
-	public String getRating()
+	public java.lang.String getRating()
 	{
-		return this.rating().getValue();
+		return this.rating == null ? null : rating().getValue();
 	}
 
-	public MetadataString getRatingMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getRatingMetadata()
 	{
 		return rating;
 	}
 
-	public void setRating(String rating)
+	public void setRating(java.lang.String rating)
 	{
-		this.rating().setValue(rating);
+		if (rating != null)
+			this.rating().setValue(rating);
 	}
 
-	public void setRatingMetadata(MetadataString rating)
+	public void setRatingMetadata(ecologylab.semantics.metadata.scalar.MetadataString rating)
 	{
 		this.rating = rating;
 	}
 
-	public MetadataString	priceRange()
+	public ecologylab.semantics.metadata.scalar.MetadataString	priceRange()
 	{
-		MetadataString	result = this.priceRange;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.priceRange;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.priceRange = result;
 		}
 		return result;
 	}
 
-	public String getPriceRange()
+	public java.lang.String getPriceRange()
 	{
-		return this.priceRange().getValue();
+		return this.priceRange == null ? null : priceRange().getValue();
 	}
 
-	public MetadataString getPriceRangeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPriceRangeMetadata()
 	{
 		return priceRange;
 	}
 
-	public void setPriceRange(String priceRange)
+	public void setPriceRange(java.lang.String priceRange)
 	{
-		this.priceRange().setValue(priceRange);
+		if (priceRange != null)
+			this.priceRange().setValue(priceRange);
 	}
 
-	public void setPriceRangeMetadata(MetadataString priceRange)
+	public void setPriceRangeMetadata(ecologylab.semantics.metadata.scalar.MetadataString priceRange)
 	{
 		this.priceRange = priceRange;
 	}
 
-	public MetadataParsedURL	map()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	map()
 	{
-		MetadataParsedURL	result = this.map;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.map;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.map = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getMap()
+	public ecologylab.net.ParsedURL getMap()
 	{
-		return this.map().getValue();
+		return this.map == null ? null : map().getValue();
 	}
 
-	public MetadataParsedURL getMapMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getMapMetadata()
 	{
 		return map;
 	}
 
-	public void setMap(ParsedURL map)
+	public void setMap(ecologylab.net.ParsedURL map)
 	{
-		this.map().setValue(map);
+		if (map != null)
+			this.map().setValue(map);
 	}
 
-	public void setMapMetadata(MetadataParsedURL map)
+	public void setMapMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL map)
 	{
 		this.map = map;
 	}

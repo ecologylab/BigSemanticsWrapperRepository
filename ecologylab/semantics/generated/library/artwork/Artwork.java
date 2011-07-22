@@ -33,21 +33,21 @@ public class Artwork extends CompoundDocument
 	/** 
 	 * Medium on which the work is done.
 	 */ 
-	@simpl_scalar	private MetadataString medium;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString medium;
 
 	/** 
 	 * Abstract of the work.
 	 */ 
-	@simpl_scalar	@xml_tag("abstract")	private MetadataString abstractField;
+	@simpl_scalar	@xml_tag("abstract")	private ecologylab.semantics.metadata.scalar.MetadataString abstractField;
 
 	/** 
 	 * Year the work was created.
 	 */ 
-	@simpl_scalar	private MetadataString year;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString year;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString dimensions;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString dimensions;
 
 	public Artwork()
 	{ }
@@ -67,126 +67,130 @@ public class Artwork extends CompoundDocument
 		this.artists = artists;
 	}
 
-	public MetadataString	medium()
+	public ecologylab.semantics.metadata.scalar.MetadataString	medium()
 	{
-		MetadataString	result = this.medium;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.medium;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.medium = result;
 		}
 		return result;
 	}
 
-	public String getMedium()
+	public java.lang.String getMedium()
 	{
-		return this.medium().getValue();
+		return this.medium == null ? null : medium().getValue();
 	}
 
-	public MetadataString getMediumMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getMediumMetadata()
 	{
 		return medium;
 	}
 
-	public void setMedium(String medium)
+	public void setMedium(java.lang.String medium)
 	{
-		this.medium().setValue(medium);
+		if (medium != null)
+			this.medium().setValue(medium);
 	}
 
-	public void setMediumMetadata(MetadataString medium)
+	public void setMediumMetadata(ecologylab.semantics.metadata.scalar.MetadataString medium)
 	{
 		this.medium = medium;
 	}
 
-	public MetadataString	abstractField()
+	public ecologylab.semantics.metadata.scalar.MetadataString	abstractField()
 	{
-		MetadataString	result = this.abstractField;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.abstractField;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.abstractField = result;
 		}
 		return result;
 	}
 
-	public String getAbstractField()
+	public java.lang.String getAbstractField()
 	{
-		return this.abstractField().getValue();
+		return this.abstractField == null ? null : abstractField().getValue();
 	}
 
-	public MetadataString getAbstractFieldMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAbstractFieldMetadata()
 	{
 		return abstractField;
 	}
 
-	public void setAbstractField(String abstractField)
+	public void setAbstractField(java.lang.String abstractField)
 	{
-		this.abstractField().setValue(abstractField);
+		if (abstractField != null)
+			this.abstractField().setValue(abstractField);
 	}
 
-	public void setAbstractFieldMetadata(MetadataString abstractField)
+	public void setAbstractFieldMetadata(ecologylab.semantics.metadata.scalar.MetadataString abstractField)
 	{
 		this.abstractField = abstractField;
 	}
 
-	public MetadataString	year()
+	public ecologylab.semantics.metadata.scalar.MetadataString	year()
 	{
-		MetadataString	result = this.year;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.year;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.year = result;
 		}
 		return result;
 	}
 
-	public String getYear()
+	public java.lang.String getYear()
 	{
-		return this.year().getValue();
+		return this.year == null ? null : year().getValue();
 	}
 
-	public MetadataString getYearMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getYearMetadata()
 	{
 		return year;
 	}
 
-	public void setYear(String year)
+	public void setYear(java.lang.String year)
 	{
-		this.year().setValue(year);
+		if (year != null)
+			this.year().setValue(year);
 	}
 
-	public void setYearMetadata(MetadataString year)
+	public void setYearMetadata(ecologylab.semantics.metadata.scalar.MetadataString year)
 	{
 		this.year = year;
 	}
 
-	public MetadataString	dimensions()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dimensions()
 	{
-		MetadataString	result = this.dimensions;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dimensions;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dimensions = result;
 		}
 		return result;
 	}
 
-	public String getDimensions()
+	public java.lang.String getDimensions()
 	{
-		return this.dimensions().getValue();
+		return this.dimensions == null ? null : dimensions().getValue();
 	}
 
-	public MetadataString getDimensionsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDimensionsMetadata()
 	{
 		return dimensions;
 	}
 
-	public void setDimensions(String dimensions)
+	public void setDimensions(java.lang.String dimensions)
 	{
-		this.dimensions().setValue(dimensions);
+		if (dimensions != null)
+			this.dimensions().setValue(dimensions);
 	}
 
-	public void setDimensionsMetadata(MetadataString dimensions)
+	public void setDimensionsMetadata(ecologylab.semantics.metadata.scalar.MetadataString dimensions)
 	{
 		this.dimensions = dimensions;
 	}

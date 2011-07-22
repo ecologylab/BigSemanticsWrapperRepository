@@ -27,19 +27,19 @@ public class YahooResult extends Document
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Summary")	private MetadataString summary;
+	@simpl_scalar	@xml_tag("Summary")	private ecologylab.semantics.metadata.scalar.MetadataString summary;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("RefererUrl")	private MetadataParsedURL refererUrl;
+	@simpl_scalar	@xml_tag("RefererUrl")	private ecologylab.semantics.metadata.scalar.MetadataParsedURL refererUrl;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("ModificationDate")	private MetadataString modificationDate;
+	@simpl_scalar	@xml_tag("ModificationDate")	private ecologylab.semantics.metadata.scalar.MetadataString modificationDate;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("MimeType")	private MetadataString mimeType;
+	@simpl_scalar	@xml_tag("MimeType")	private ecologylab.semantics.metadata.scalar.MetadataString mimeType;
 
 	/** 
 	 */ 
@@ -47,31 +47,31 @@ public class YahooResult extends Document
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString line1;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString line1;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString line2;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString line2;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString city;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString city;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString county;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString county;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString state;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString state;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString postal;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString postal;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString country;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString country;
 
 	public YahooResult()
 	{ }
@@ -81,126 +81,130 @@ public class YahooResult extends Document
 	}
 
 
-	public MetadataString	summary()
+	public ecologylab.semantics.metadata.scalar.MetadataString	summary()
 	{
-		MetadataString	result = this.summary;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.summary;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.summary = result;
 		}
 		return result;
 	}
 
-	public String getSummary()
+	public java.lang.String getSummary()
 	{
-		return this.summary().getValue();
+		return this.summary == null ? null : summary().getValue();
 	}
 
-	public MetadataString getSummaryMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSummaryMetadata()
 	{
 		return summary;
 	}
 
-	public void setSummary(String summary)
+	public void setSummary(java.lang.String summary)
 	{
-		this.summary().setValue(summary);
+		if (summary != null)
+			this.summary().setValue(summary);
 	}
 
-	public void setSummaryMetadata(MetadataString summary)
+	public void setSummaryMetadata(ecologylab.semantics.metadata.scalar.MetadataString summary)
 	{
 		this.summary = summary;
 	}
 
-	public MetadataParsedURL	refererUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	refererUrl()
 	{
-		MetadataParsedURL	result = this.refererUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.refererUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.refererUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getRefererUrl()
+	public ecologylab.net.ParsedURL getRefererUrl()
 	{
-		return this.refererUrl().getValue();
+		return this.refererUrl == null ? null : refererUrl().getValue();
 	}
 
-	public MetadataParsedURL getRefererUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getRefererUrlMetadata()
 	{
 		return refererUrl;
 	}
 
-	public void setRefererUrl(ParsedURL refererUrl)
+	public void setRefererUrl(ecologylab.net.ParsedURL refererUrl)
 	{
-		this.refererUrl().setValue(refererUrl);
+		if (refererUrl != null)
+			this.refererUrl().setValue(refererUrl);
 	}
 
-	public void setRefererUrlMetadata(MetadataParsedURL refererUrl)
+	public void setRefererUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL refererUrl)
 	{
 		this.refererUrl = refererUrl;
 	}
 
-	public MetadataString	modificationDate()
+	public ecologylab.semantics.metadata.scalar.MetadataString	modificationDate()
 	{
-		MetadataString	result = this.modificationDate;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.modificationDate;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.modificationDate = result;
 		}
 		return result;
 	}
 
-	public String getModificationDate()
+	public java.lang.String getModificationDate()
 	{
-		return this.modificationDate().getValue();
+		return this.modificationDate == null ? null : modificationDate().getValue();
 	}
 
-	public MetadataString getModificationDateMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getModificationDateMetadata()
 	{
 		return modificationDate;
 	}
 
-	public void setModificationDate(String modificationDate)
+	public void setModificationDate(java.lang.String modificationDate)
 	{
-		this.modificationDate().setValue(modificationDate);
+		if (modificationDate != null)
+			this.modificationDate().setValue(modificationDate);
 	}
 
-	public void setModificationDateMetadata(MetadataString modificationDate)
+	public void setModificationDateMetadata(ecologylab.semantics.metadata.scalar.MetadataString modificationDate)
 	{
 		this.modificationDate = modificationDate;
 	}
 
-	public MetadataString	mimeType()
+	public ecologylab.semantics.metadata.scalar.MetadataString	mimeType()
 	{
-		MetadataString	result = this.mimeType;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.mimeType;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.mimeType = result;
 		}
 		return result;
 	}
 
-	public String getMimeType()
+	public java.lang.String getMimeType()
 	{
-		return this.mimeType().getValue();
+		return this.mimeType == null ? null : mimeType().getValue();
 	}
 
-	public MetadataString getMimeTypeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getMimeTypeMetadata()
 	{
 		return mimeType;
 	}
 
-	public void setMimeType(String mimeType)
+	public void setMimeType(java.lang.String mimeType)
 	{
-		this.mimeType().setValue(mimeType);
+		if (mimeType != null)
+			this.mimeType().setValue(mimeType);
 	}
 
-	public void setMimeTypeMetadata(MetadataString mimeType)
+	public void setMimeTypeMetadata(ecologylab.semantics.metadata.scalar.MetadataString mimeType)
 	{
 		this.mimeType = mimeType;
 	}
@@ -215,219 +219,226 @@ public class YahooResult extends Document
 		this.thumbnail = thumbnail;
 	}
 
-	public MetadataString	line1()
+	public ecologylab.semantics.metadata.scalar.MetadataString	line1()
 	{
-		MetadataString	result = this.line1;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.line1;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.line1 = result;
 		}
 		return result;
 	}
 
-	public String getLine1()
+	public java.lang.String getLine1()
 	{
-		return this.line1().getValue();
+		return this.line1 == null ? null : line1().getValue();
 	}
 
-	public MetadataString getLine1Metadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getLine1Metadata()
 	{
 		return line1;
 	}
 
-	public void setLine1(String line1)
+	public void setLine1(java.lang.String line1)
 	{
-		this.line1().setValue(line1);
+		if (line1 != null)
+			this.line1().setValue(line1);
 	}
 
-	public void setLine1Metadata(MetadataString line1)
+	public void setLine1Metadata(ecologylab.semantics.metadata.scalar.MetadataString line1)
 	{
 		this.line1 = line1;
 	}
 
-	public MetadataString	line2()
+	public ecologylab.semantics.metadata.scalar.MetadataString	line2()
 	{
-		MetadataString	result = this.line2;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.line2;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.line2 = result;
 		}
 		return result;
 	}
 
-	public String getLine2()
+	public java.lang.String getLine2()
 	{
-		return this.line2().getValue();
+		return this.line2 == null ? null : line2().getValue();
 	}
 
-	public MetadataString getLine2Metadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getLine2Metadata()
 	{
 		return line2;
 	}
 
-	public void setLine2(String line2)
+	public void setLine2(java.lang.String line2)
 	{
-		this.line2().setValue(line2);
+		if (line2 != null)
+			this.line2().setValue(line2);
 	}
 
-	public void setLine2Metadata(MetadataString line2)
+	public void setLine2Metadata(ecologylab.semantics.metadata.scalar.MetadataString line2)
 	{
 		this.line2 = line2;
 	}
 
-	public MetadataString	city()
+	public ecologylab.semantics.metadata.scalar.MetadataString	city()
 	{
-		MetadataString	result = this.city;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.city;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.city = result;
 		}
 		return result;
 	}
 
-	public String getCity()
+	public java.lang.String getCity()
 	{
-		return this.city().getValue();
+		return this.city == null ? null : city().getValue();
 	}
 
-	public MetadataString getCityMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCityMetadata()
 	{
 		return city;
 	}
 
-	public void setCity(String city)
+	public void setCity(java.lang.String city)
 	{
-		this.city().setValue(city);
+		if (city != null)
+			this.city().setValue(city);
 	}
 
-	public void setCityMetadata(MetadataString city)
+	public void setCityMetadata(ecologylab.semantics.metadata.scalar.MetadataString city)
 	{
 		this.city = city;
 	}
 
-	public MetadataString	county()
+	public ecologylab.semantics.metadata.scalar.MetadataString	county()
 	{
-		MetadataString	result = this.county;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.county;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.county = result;
 		}
 		return result;
 	}
 
-	public String getCounty()
+	public java.lang.String getCounty()
 	{
-		return this.county().getValue();
+		return this.county == null ? null : county().getValue();
 	}
 
-	public MetadataString getCountyMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCountyMetadata()
 	{
 		return county;
 	}
 
-	public void setCounty(String county)
+	public void setCounty(java.lang.String county)
 	{
-		this.county().setValue(county);
+		if (county != null)
+			this.county().setValue(county);
 	}
 
-	public void setCountyMetadata(MetadataString county)
+	public void setCountyMetadata(ecologylab.semantics.metadata.scalar.MetadataString county)
 	{
 		this.county = county;
 	}
 
-	public MetadataString	state()
+	public ecologylab.semantics.metadata.scalar.MetadataString	state()
 	{
-		MetadataString	result = this.state;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.state;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.state = result;
 		}
 		return result;
 	}
 
-	public String getState()
+	public java.lang.String getState()
 	{
-		return this.state().getValue();
+		return this.state == null ? null : state().getValue();
 	}
 
-	public MetadataString getStateMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getStateMetadata()
 	{
 		return state;
 	}
 
-	public void setState(String state)
+	public void setState(java.lang.String state)
 	{
-		this.state().setValue(state);
+		if (state != null)
+			this.state().setValue(state);
 	}
 
-	public void setStateMetadata(MetadataString state)
+	public void setStateMetadata(ecologylab.semantics.metadata.scalar.MetadataString state)
 	{
 		this.state = state;
 	}
 
-	public MetadataString	postal()
+	public ecologylab.semantics.metadata.scalar.MetadataString	postal()
 	{
-		MetadataString	result = this.postal;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.postal;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.postal = result;
 		}
 		return result;
 	}
 
-	public String getPostal()
+	public java.lang.String getPostal()
 	{
-		return this.postal().getValue();
+		return this.postal == null ? null : postal().getValue();
 	}
 
-	public MetadataString getPostalMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPostalMetadata()
 	{
 		return postal;
 	}
 
-	public void setPostal(String postal)
+	public void setPostal(java.lang.String postal)
 	{
-		this.postal().setValue(postal);
+		if (postal != null)
+			this.postal().setValue(postal);
 	}
 
-	public void setPostalMetadata(MetadataString postal)
+	public void setPostalMetadata(ecologylab.semantics.metadata.scalar.MetadataString postal)
 	{
 		this.postal = postal;
 	}
 
-	public MetadataString	country()
+	public ecologylab.semantics.metadata.scalar.MetadataString	country()
 	{
-		MetadataString	result = this.country;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.country;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.country = result;
 		}
 		return result;
 	}
 
-	public String getCountry()
+	public java.lang.String getCountry()
 	{
-		return this.country().getValue();
+		return this.country == null ? null : country().getValue();
 	}
 
-	public MetadataString getCountryMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCountryMetadata()
 	{
 		return country;
 	}
 
-	public void setCountry(String country)
+	public void setCountry(java.lang.String country)
 	{
-		this.country().setValue(country);
+		if (country != null)
+			this.country().setValue(country);
 	}
 
-	public void setCountryMetadata(MetadataString country)
+	public void setCountryMetadata(ecologylab.semantics.metadata.scalar.MetadataString country)
 	{
 		this.country = country;
 	}

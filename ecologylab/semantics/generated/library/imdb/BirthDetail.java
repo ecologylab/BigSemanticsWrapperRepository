@@ -27,27 +27,27 @@ public class BirthDetail extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString dayOfBirth;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString dayOfBirth;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString yearOfBirth;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString yearOfBirth;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString placeOfBirth;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString placeOfBirth;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL dayOfBirthLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL dayOfBirthLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL yearOfBirthLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL yearOfBirthLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL placeOfBirthLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL placeOfBirthLink;
 
 	public BirthDetail()
 	{ }
@@ -57,188 +57,194 @@ public class BirthDetail extends CompoundDocument
 	}
 
 
-	public MetadataString	dayOfBirth()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dayOfBirth()
 	{
-		MetadataString	result = this.dayOfBirth;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dayOfBirth;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dayOfBirth = result;
 		}
 		return result;
 	}
 
-	public String getDayOfBirth()
+	public java.lang.String getDayOfBirth()
 	{
-		return this.dayOfBirth().getValue();
+		return this.dayOfBirth == null ? null : dayOfBirth().getValue();
 	}
 
-	public MetadataString getDayOfBirthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDayOfBirthMetadata()
 	{
 		return dayOfBirth;
 	}
 
-	public void setDayOfBirth(String dayOfBirth)
+	public void setDayOfBirth(java.lang.String dayOfBirth)
 	{
-		this.dayOfBirth().setValue(dayOfBirth);
+		if (dayOfBirth != null)
+			this.dayOfBirth().setValue(dayOfBirth);
 	}
 
-	public void setDayOfBirthMetadata(MetadataString dayOfBirth)
+	public void setDayOfBirthMetadata(ecologylab.semantics.metadata.scalar.MetadataString dayOfBirth)
 	{
 		this.dayOfBirth = dayOfBirth;
 	}
 
-	public MetadataString	yearOfBirth()
+	public ecologylab.semantics.metadata.scalar.MetadataString	yearOfBirth()
 	{
-		MetadataString	result = this.yearOfBirth;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.yearOfBirth;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.yearOfBirth = result;
 		}
 		return result;
 	}
 
-	public String getYearOfBirth()
+	public java.lang.String getYearOfBirth()
 	{
-		return this.yearOfBirth().getValue();
+		return this.yearOfBirth == null ? null : yearOfBirth().getValue();
 	}
 
-	public MetadataString getYearOfBirthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getYearOfBirthMetadata()
 	{
 		return yearOfBirth;
 	}
 
-	public void setYearOfBirth(String yearOfBirth)
+	public void setYearOfBirth(java.lang.String yearOfBirth)
 	{
-		this.yearOfBirth().setValue(yearOfBirth);
+		if (yearOfBirth != null)
+			this.yearOfBirth().setValue(yearOfBirth);
 	}
 
-	public void setYearOfBirthMetadata(MetadataString yearOfBirth)
+	public void setYearOfBirthMetadata(ecologylab.semantics.metadata.scalar.MetadataString yearOfBirth)
 	{
 		this.yearOfBirth = yearOfBirth;
 	}
 
-	public MetadataString	placeOfBirth()
+	public ecologylab.semantics.metadata.scalar.MetadataString	placeOfBirth()
 	{
-		MetadataString	result = this.placeOfBirth;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.placeOfBirth;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.placeOfBirth = result;
 		}
 		return result;
 	}
 
-	public String getPlaceOfBirth()
+	public java.lang.String getPlaceOfBirth()
 	{
-		return this.placeOfBirth().getValue();
+		return this.placeOfBirth == null ? null : placeOfBirth().getValue();
 	}
 
-	public MetadataString getPlaceOfBirthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPlaceOfBirthMetadata()
 	{
 		return placeOfBirth;
 	}
 
-	public void setPlaceOfBirth(String placeOfBirth)
+	public void setPlaceOfBirth(java.lang.String placeOfBirth)
 	{
-		this.placeOfBirth().setValue(placeOfBirth);
+		if (placeOfBirth != null)
+			this.placeOfBirth().setValue(placeOfBirth);
 	}
 
-	public void setPlaceOfBirthMetadata(MetadataString placeOfBirth)
+	public void setPlaceOfBirthMetadata(ecologylab.semantics.metadata.scalar.MetadataString placeOfBirth)
 	{
 		this.placeOfBirth = placeOfBirth;
 	}
 
-	public MetadataParsedURL	dayOfBirthLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	dayOfBirthLink()
 	{
-		MetadataParsedURL	result = this.dayOfBirthLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.dayOfBirthLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.dayOfBirthLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getDayOfBirthLink()
+	public ecologylab.net.ParsedURL getDayOfBirthLink()
 	{
-		return this.dayOfBirthLink().getValue();
+		return this.dayOfBirthLink == null ? null : dayOfBirthLink().getValue();
 	}
 
-	public MetadataParsedURL getDayOfBirthLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getDayOfBirthLinkMetadata()
 	{
 		return dayOfBirthLink;
 	}
 
-	public void setDayOfBirthLink(ParsedURL dayOfBirthLink)
+	public void setDayOfBirthLink(ecologylab.net.ParsedURL dayOfBirthLink)
 	{
-		this.dayOfBirthLink().setValue(dayOfBirthLink);
+		if (dayOfBirthLink != null)
+			this.dayOfBirthLink().setValue(dayOfBirthLink);
 	}
 
-	public void setDayOfBirthLinkMetadata(MetadataParsedURL dayOfBirthLink)
+	public void setDayOfBirthLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL dayOfBirthLink)
 	{
 		this.dayOfBirthLink = dayOfBirthLink;
 	}
 
-	public MetadataParsedURL	yearOfBirthLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	yearOfBirthLink()
 	{
-		MetadataParsedURL	result = this.yearOfBirthLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.yearOfBirthLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.yearOfBirthLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getYearOfBirthLink()
+	public ecologylab.net.ParsedURL getYearOfBirthLink()
 	{
-		return this.yearOfBirthLink().getValue();
+		return this.yearOfBirthLink == null ? null : yearOfBirthLink().getValue();
 	}
 
-	public MetadataParsedURL getYearOfBirthLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getYearOfBirthLinkMetadata()
 	{
 		return yearOfBirthLink;
 	}
 
-	public void setYearOfBirthLink(ParsedURL yearOfBirthLink)
+	public void setYearOfBirthLink(ecologylab.net.ParsedURL yearOfBirthLink)
 	{
-		this.yearOfBirthLink().setValue(yearOfBirthLink);
+		if (yearOfBirthLink != null)
+			this.yearOfBirthLink().setValue(yearOfBirthLink);
 	}
 
-	public void setYearOfBirthLinkMetadata(MetadataParsedURL yearOfBirthLink)
+	public void setYearOfBirthLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL yearOfBirthLink)
 	{
 		this.yearOfBirthLink = yearOfBirthLink;
 	}
 
-	public MetadataParsedURL	placeOfBirthLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	placeOfBirthLink()
 	{
-		MetadataParsedURL	result = this.placeOfBirthLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.placeOfBirthLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.placeOfBirthLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPlaceOfBirthLink()
+	public ecologylab.net.ParsedURL getPlaceOfBirthLink()
 	{
-		return this.placeOfBirthLink().getValue();
+		return this.placeOfBirthLink == null ? null : placeOfBirthLink().getValue();
 	}
 
-	public MetadataParsedURL getPlaceOfBirthLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPlaceOfBirthLinkMetadata()
 	{
 		return placeOfBirthLink;
 	}
 
-	public void setPlaceOfBirthLink(ParsedURL placeOfBirthLink)
+	public void setPlaceOfBirthLink(ecologylab.net.ParsedURL placeOfBirthLink)
 	{
-		this.placeOfBirthLink().setValue(placeOfBirthLink);
+		if (placeOfBirthLink != null)
+			this.placeOfBirthLink().setValue(placeOfBirthLink);
 	}
 
-	public void setPlaceOfBirthLinkMetadata(MetadataParsedURL placeOfBirthLink)
+	public void setPlaceOfBirthLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL placeOfBirthLink)
 	{
 		this.placeOfBirthLink = placeOfBirthLink;
 	}

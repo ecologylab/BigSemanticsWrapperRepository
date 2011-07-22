@@ -28,11 +28,11 @@ public class SlashdotArticle extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString poster;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString poster;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL posterUrl;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL posterUrl;
 
 	/** 
 	 */ 
@@ -46,64 +46,66 @@ public class SlashdotArticle extends CompoundDocument
 	}
 
 
-	public MetadataString	poster()
+	public ecologylab.semantics.metadata.scalar.MetadataString	poster()
 	{
-		MetadataString	result = this.poster;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.poster;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.poster = result;
 		}
 		return result;
 	}
 
-	public String getPoster()
+	public java.lang.String getPoster()
 	{
-		return this.poster().getValue();
+		return this.poster == null ? null : poster().getValue();
 	}
 
-	public MetadataString getPosterMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPosterMetadata()
 	{
 		return poster;
 	}
 
-	public void setPoster(String poster)
+	public void setPoster(java.lang.String poster)
 	{
-		this.poster().setValue(poster);
+		if (poster != null)
+			this.poster().setValue(poster);
 	}
 
-	public void setPosterMetadata(MetadataString poster)
+	public void setPosterMetadata(ecologylab.semantics.metadata.scalar.MetadataString poster)
 	{
 		this.poster = poster;
 	}
 
-	public MetadataParsedURL	posterUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	posterUrl()
 	{
-		MetadataParsedURL	result = this.posterUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.posterUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.posterUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPosterUrl()
+	public ecologylab.net.ParsedURL getPosterUrl()
 	{
-		return this.posterUrl().getValue();
+		return this.posterUrl == null ? null : posterUrl().getValue();
 	}
 
-	public MetadataParsedURL getPosterUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPosterUrlMetadata()
 	{
 		return posterUrl;
 	}
 
-	public void setPosterUrl(ParsedURL posterUrl)
+	public void setPosterUrl(ecologylab.net.ParsedURL posterUrl)
 	{
-		this.posterUrl().setValue(posterUrl);
+		if (posterUrl != null)
+			this.posterUrl().setValue(posterUrl);
 	}
 
-	public void setPosterUrlMetadata(MetadataParsedURL posterUrl)
+	public void setPosterUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL posterUrl)
 	{
 		this.posterUrl = posterUrl;
 	}

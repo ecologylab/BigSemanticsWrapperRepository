@@ -26,17 +26,17 @@ public class CiteseerxSummary extends CiteseerxRecord
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL citationPage;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL citationPage;
 
 	/** 
 	 * Papers that cite the same works.
 	 */ 
-	@simpl_scalar	private MetadataParsedURL activeBibliographyPage;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL activeBibliographyPage;
 
 	/** 
 	 * Papers that are cited by the same works.
 	 */ 
-	@simpl_scalar	private MetadataParsedURL cocitationPage;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL cocitationPage;
 
 	public CiteseerxSummary()
 	{ }
@@ -46,95 +46,98 @@ public class CiteseerxSummary extends CiteseerxRecord
 	}
 
 
-	public MetadataParsedURL	citationPage()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	citationPage()
 	{
-		MetadataParsedURL	result = this.citationPage;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.citationPage;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.citationPage = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getCitationPage()
+	public ecologylab.net.ParsedURL getCitationPage()
 	{
-		return this.citationPage().getValue();
+		return this.citationPage == null ? null : citationPage().getValue();
 	}
 
-	public MetadataParsedURL getCitationPageMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getCitationPageMetadata()
 	{
 		return citationPage;
 	}
 
-	public void setCitationPage(ParsedURL citationPage)
+	public void setCitationPage(ecologylab.net.ParsedURL citationPage)
 	{
-		this.citationPage().setValue(citationPage);
+		if (citationPage != null)
+			this.citationPage().setValue(citationPage);
 	}
 
-	public void setCitationPageMetadata(MetadataParsedURL citationPage)
+	public void setCitationPageMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL citationPage)
 	{
 		this.citationPage = citationPage;
 	}
 
-	public MetadataParsedURL	activeBibliographyPage()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	activeBibliographyPage()
 	{
-		MetadataParsedURL	result = this.activeBibliographyPage;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.activeBibliographyPage;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.activeBibliographyPage = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getActiveBibliographyPage()
+	public ecologylab.net.ParsedURL getActiveBibliographyPage()
 	{
-		return this.activeBibliographyPage().getValue();
+		return this.activeBibliographyPage == null ? null : activeBibliographyPage().getValue();
 	}
 
-	public MetadataParsedURL getActiveBibliographyPageMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getActiveBibliographyPageMetadata()
 	{
 		return activeBibliographyPage;
 	}
 
-	public void setActiveBibliographyPage(ParsedURL activeBibliographyPage)
+	public void setActiveBibliographyPage(ecologylab.net.ParsedURL activeBibliographyPage)
 	{
-		this.activeBibliographyPage().setValue(activeBibliographyPage);
+		if (activeBibliographyPage != null)
+			this.activeBibliographyPage().setValue(activeBibliographyPage);
 	}
 
-	public void setActiveBibliographyPageMetadata(MetadataParsedURL activeBibliographyPage)
+	public void setActiveBibliographyPageMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL activeBibliographyPage)
 	{
 		this.activeBibliographyPage = activeBibliographyPage;
 	}
 
-	public MetadataParsedURL	cocitationPage()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	cocitationPage()
 	{
-		MetadataParsedURL	result = this.cocitationPage;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.cocitationPage;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.cocitationPage = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getCocitationPage()
+	public ecologylab.net.ParsedURL getCocitationPage()
 	{
-		return this.cocitationPage().getValue();
+		return this.cocitationPage == null ? null : cocitationPage().getValue();
 	}
 
-	public MetadataParsedURL getCocitationPageMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getCocitationPageMetadata()
 	{
 		return cocitationPage;
 	}
 
-	public void setCocitationPage(ParsedURL cocitationPage)
+	public void setCocitationPage(ecologylab.net.ParsedURL cocitationPage)
 	{
-		this.cocitationPage().setValue(cocitationPage);
+		if (cocitationPage != null)
+			this.cocitationPage().setValue(cocitationPage);
 	}
 
-	public void setCocitationPageMetadata(MetadataParsedURL cocitationPage)
+	public void setCocitationPageMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL cocitationPage)
 	{
 		this.cocitationPage = cocitationPage;
 	}

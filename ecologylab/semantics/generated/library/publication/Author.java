@@ -25,15 +25,15 @@ public class Author extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private MetadataString name;
+	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString affiliation;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString affiliation;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString city;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString city;
 
 	public Author()
 	{ }
@@ -43,95 +43,98 @@ public class Author extends CompoundDocument
 	}
 
 
-	public MetadataString	name()
+	public ecologylab.semantics.metadata.scalar.MetadataString	name()
 	{
-		MetadataString	result = this.name;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.name;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.name = result;
 		}
 		return result;
 	}
 
-	public String getName()
+	public java.lang.String getName()
 	{
-		return this.name().getValue();
+		return this.name == null ? null : name().getValue();
 	}
 
-	public MetadataString getNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
 	{
 		return name;
 	}
 
-	public void setName(String name)
+	public void setName(java.lang.String name)
 	{
-		this.name().setValue(name);
+		if (name != null)
+			this.name().setValue(name);
 	}
 
-	public void setNameMetadata(MetadataString name)
+	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
 	{
 		this.name = name;
 	}
 
-	public MetadataString	affiliation()
+	public ecologylab.semantics.metadata.scalar.MetadataString	affiliation()
 	{
-		MetadataString	result = this.affiliation;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.affiliation;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.affiliation = result;
 		}
 		return result;
 	}
 
-	public String getAffiliation()
+	public java.lang.String getAffiliation()
 	{
-		return this.affiliation().getValue();
+		return this.affiliation == null ? null : affiliation().getValue();
 	}
 
-	public MetadataString getAffiliationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAffiliationMetadata()
 	{
 		return affiliation;
 	}
 
-	public void setAffiliation(String affiliation)
+	public void setAffiliation(java.lang.String affiliation)
 	{
-		this.affiliation().setValue(affiliation);
+		if (affiliation != null)
+			this.affiliation().setValue(affiliation);
 	}
 
-	public void setAffiliationMetadata(MetadataString affiliation)
+	public void setAffiliationMetadata(ecologylab.semantics.metadata.scalar.MetadataString affiliation)
 	{
 		this.affiliation = affiliation;
 	}
 
-	public MetadataString	city()
+	public ecologylab.semantics.metadata.scalar.MetadataString	city()
 	{
-		MetadataString	result = this.city;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.city;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.city = result;
 		}
 		return result;
 	}
 
-	public String getCity()
+	public java.lang.String getCity()
 	{
-		return this.city().getValue();
+		return this.city == null ? null : city().getValue();
 	}
 
-	public MetadataString getCityMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCityMetadata()
 	{
 		return city;
 	}
 
-	public void setCity(String city)
+	public void setCity(java.lang.String city)
 	{
-		this.city().setValue(city);
+		if (city != null)
+			this.city().setValue(city);
 	}
 
-	public void setCityMetadata(MetadataString city)
+	public void setCityMetadata(ecologylab.semantics.metadata.scalar.MetadataString city)
 	{
 		this.city = city;
 	}

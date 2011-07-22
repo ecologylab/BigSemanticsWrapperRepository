@@ -26,20 +26,20 @@ public class ScienceDirectArticle extends ScholarlyArticle
 	/** 
 	 * The journal or other publication that the article comes from
 	 */ 
-	@simpl_scalar	private MetadataString publicationName;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString publicationName;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString volume;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString volume;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString issue;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString issue;
 
 	/** 
 	 * The digital object identifier of the article
 	 */ 
-	@simpl_scalar	private MetadataString doi;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString doi;
 
 	public ScienceDirectArticle()
 	{ }
@@ -49,126 +49,130 @@ public class ScienceDirectArticle extends ScholarlyArticle
 	}
 
 
-	public MetadataString	publicationName()
+	public ecologylab.semantics.metadata.scalar.MetadataString	publicationName()
 	{
-		MetadataString	result = this.publicationName;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.publicationName;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.publicationName = result;
 		}
 		return result;
 	}
 
-	public String getPublicationName()
+	public java.lang.String getPublicationName()
 	{
-		return this.publicationName().getValue();
+		return this.publicationName == null ? null : publicationName().getValue();
 	}
 
-	public MetadataString getPublicationNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPublicationNameMetadata()
 	{
 		return publicationName;
 	}
 
-	public void setPublicationName(String publicationName)
+	public void setPublicationName(java.lang.String publicationName)
 	{
-		this.publicationName().setValue(publicationName);
+		if (publicationName != null)
+			this.publicationName().setValue(publicationName);
 	}
 
-	public void setPublicationNameMetadata(MetadataString publicationName)
+	public void setPublicationNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString publicationName)
 	{
 		this.publicationName = publicationName;
 	}
 
-	public MetadataString	volume()
+	public ecologylab.semantics.metadata.scalar.MetadataString	volume()
 	{
-		MetadataString	result = this.volume;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.volume;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.volume = result;
 		}
 		return result;
 	}
 
-	public String getVolume()
+	public java.lang.String getVolume()
 	{
-		return this.volume().getValue();
+		return this.volume == null ? null : volume().getValue();
 	}
 
-	public MetadataString getVolumeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getVolumeMetadata()
 	{
 		return volume;
 	}
 
-	public void setVolume(String volume)
+	public void setVolume(java.lang.String volume)
 	{
-		this.volume().setValue(volume);
+		if (volume != null)
+			this.volume().setValue(volume);
 	}
 
-	public void setVolumeMetadata(MetadataString volume)
+	public void setVolumeMetadata(ecologylab.semantics.metadata.scalar.MetadataString volume)
 	{
 		this.volume = volume;
 	}
 
-	public MetadataString	issue()
+	public ecologylab.semantics.metadata.scalar.MetadataString	issue()
 	{
-		MetadataString	result = this.issue;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.issue;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.issue = result;
 		}
 		return result;
 	}
 
-	public String getIssue()
+	public java.lang.String getIssue()
 	{
-		return this.issue().getValue();
+		return this.issue == null ? null : issue().getValue();
 	}
 
-	public MetadataString getIssueMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getIssueMetadata()
 	{
 		return issue;
 	}
 
-	public void setIssue(String issue)
+	public void setIssue(java.lang.String issue)
 	{
-		this.issue().setValue(issue);
+		if (issue != null)
+			this.issue().setValue(issue);
 	}
 
-	public void setIssueMetadata(MetadataString issue)
+	public void setIssueMetadata(ecologylab.semantics.metadata.scalar.MetadataString issue)
 	{
 		this.issue = issue;
 	}
 
-	public MetadataString	doi()
+	public ecologylab.semantics.metadata.scalar.MetadataString	doi()
 	{
-		MetadataString	result = this.doi;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.doi;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.doi = result;
 		}
 		return result;
 	}
 
-	public String getDoi()
+	public java.lang.String getDoi()
 	{
-		return this.doi().getValue();
+		return this.doi == null ? null : doi().getValue();
 	}
 
-	public MetadataString getDoiMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDoiMetadata()
 	{
 		return doi;
 	}
 
-	public void setDoi(String doi)
+	public void setDoi(java.lang.String doi)
 	{
-		this.doi().setValue(doi);
+		if (doi != null)
+			this.doi().setValue(doi);
 	}
 
-	public void setDoiMetadata(MetadataString doi)
+	public void setDoiMetadata(ecologylab.semantics.metadata.scalar.MetadataString doi)
 	{
 		this.doi = doi;
 	}

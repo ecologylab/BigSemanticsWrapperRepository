@@ -26,11 +26,11 @@ public class MmdInlineCategoryInCategoriesInWikipediaPageType extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString name;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL catLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL catLink;
 
 	public MmdInlineCategoryInCategoriesInWikipediaPageType()
 	{ }
@@ -40,64 +40,66 @@ public class MmdInlineCategoryInCategoriesInWikipediaPageType extends Metadata
 	}
 
 
-	public MetadataString	name()
+	public ecologylab.semantics.metadata.scalar.MetadataString	name()
 	{
-		MetadataString	result = this.name;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.name;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.name = result;
 		}
 		return result;
 	}
 
-	public String getName()
+	public java.lang.String getName()
 	{
-		return this.name().getValue();
+		return this.name == null ? null : name().getValue();
 	}
 
-	public MetadataString getNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
 	{
 		return name;
 	}
 
-	public void setName(String name)
+	public void setName(java.lang.String name)
 	{
-		this.name().setValue(name);
+		if (name != null)
+			this.name().setValue(name);
 	}
 
-	public void setNameMetadata(MetadataString name)
+	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
 	{
 		this.name = name;
 	}
 
-	public MetadataParsedURL	catLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	catLink()
 	{
-		MetadataParsedURL	result = this.catLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.catLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.catLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getCatLink()
+	public ecologylab.net.ParsedURL getCatLink()
 	{
-		return this.catLink().getValue();
+		return this.catLink == null ? null : catLink().getValue();
 	}
 
-	public MetadataParsedURL getCatLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getCatLinkMetadata()
 	{
 		return catLink;
 	}
 
-	public void setCatLink(ParsedURL catLink)
+	public void setCatLink(ecologylab.net.ParsedURL catLink)
 	{
-		this.catLink().setValue(catLink);
+		if (catLink != null)
+			this.catLink().setValue(catLink);
 	}
 
-	public void setCatLinkMetadata(MetadataParsedURL catLink)
+	public void setCatLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL catLink)
 	{
 		this.catLink = catLink;
 	}

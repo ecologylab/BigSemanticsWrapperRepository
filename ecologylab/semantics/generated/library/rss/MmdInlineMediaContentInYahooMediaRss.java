@@ -26,15 +26,15 @@ public class MmdInlineMediaContentInYahooMediaRss extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger height;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("url")	private MetadataParsedURL mediaUrl;
+	@simpl_scalar	@xml_tag("url")	private ecologylab.semantics.metadata.scalar.MetadataParsedURL mediaUrl;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger width;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
 
 	public MmdInlineMediaContentInYahooMediaRss()
 	{ }
@@ -44,95 +44,98 @@ public class MmdInlineMediaContentInYahooMediaRss extends Metadata
 	}
 
 
-	public MetadataInteger	height()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	height()
 	{
-		MetadataInteger	result = this.height;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.height;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.height = result;
 		}
 		return result;
 	}
 
-	public int getHeight()
+	public java.lang.Integer getHeight()
 	{
-		return this.height().getValue();
+		return this.height == null ? 0 : height().getValue();
 	}
 
-	public MetadataInteger getHeightMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getHeightMetadata()
 	{
 		return height;
 	}
 
-	public void setHeight(int height)
+	public void setHeight(java.lang.Integer height)
 	{
-		this.height().setValue(height);
+		if (height != 0)
+			this.height().setValue(height);
 	}
 
-	public void setHeightMetadata(MetadataInteger height)
+	public void setHeightMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger height)
 	{
 		this.height = height;
 	}
 
-	public MetadataParsedURL	mediaUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	mediaUrl()
 	{
-		MetadataParsedURL	result = this.mediaUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.mediaUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.mediaUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getMediaUrl()
+	public ecologylab.net.ParsedURL getMediaUrl()
 	{
-		return this.mediaUrl().getValue();
+		return this.mediaUrl == null ? null : mediaUrl().getValue();
 	}
 
-	public MetadataParsedURL getMediaUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getMediaUrlMetadata()
 	{
 		return mediaUrl;
 	}
 
-	public void setMediaUrl(ParsedURL mediaUrl)
+	public void setMediaUrl(ecologylab.net.ParsedURL mediaUrl)
 	{
-		this.mediaUrl().setValue(mediaUrl);
+		if (mediaUrl != null)
+			this.mediaUrl().setValue(mediaUrl);
 	}
 
-	public void setMediaUrlMetadata(MetadataParsedURL mediaUrl)
+	public void setMediaUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL mediaUrl)
 	{
 		this.mediaUrl = mediaUrl;
 	}
 
-	public MetadataInteger	width()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	width()
 	{
-		MetadataInteger	result = this.width;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.width;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.width = result;
 		}
 		return result;
 	}
 
-	public int getWidth()
+	public java.lang.Integer getWidth()
 	{
-		return this.width().getValue();
+		return this.width == null ? 0 : width().getValue();
 	}
 
-	public MetadataInteger getWidthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getWidthMetadata()
 	{
 		return width;
 	}
 
-	public void setWidth(int width)
+	public void setWidth(java.lang.Integer width)
 	{
-		this.width().setValue(width);
+		if (width != 0)
+			this.width().setValue(width);
 	}
 
-	public void setWidthMetadata(MetadataInteger width)
+	public void setWidthMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger width)
 	{
 		this.width = width;
 	}

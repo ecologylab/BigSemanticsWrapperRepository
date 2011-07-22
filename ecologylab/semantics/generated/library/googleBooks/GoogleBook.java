@@ -29,7 +29,7 @@ public class GoogleBook extends Book
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString category;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString category;
 
 	/** 
 	 */ 
@@ -37,7 +37,7 @@ public class GoogleBook extends Book
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL placesMentionedKml;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL placesMentionedKml;
 
 	/** 
 	 */ 
@@ -51,33 +51,34 @@ public class GoogleBook extends Book
 	}
 
 
-	public MetadataString	category()
+	public ecologylab.semantics.metadata.scalar.MetadataString	category()
 	{
-		MetadataString	result = this.category;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.category;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.category = result;
 		}
 		return result;
 	}
 
-	public String getCategory()
+	public java.lang.String getCategory()
 	{
-		return this.category().getValue();
+		return this.category == null ? null : category().getValue();
 	}
 
-	public MetadataString getCategoryMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCategoryMetadata()
 	{
 		return category;
 	}
 
-	public void setCategory(String category)
+	public void setCategory(java.lang.String category)
 	{
-		this.category().setValue(category);
+		if (category != null)
+			this.category().setValue(category);
 	}
 
-	public void setCategoryMetadata(MetadataString category)
+	public void setCategoryMetadata(ecologylab.semantics.metadata.scalar.MetadataString category)
 	{
 		this.category = category;
 	}
@@ -92,33 +93,34 @@ public class GoogleBook extends Book
 		this.referencesFromBooks = referencesFromBooks;
 	}
 
-	public MetadataParsedURL	placesMentionedKml()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	placesMentionedKml()
 	{
-		MetadataParsedURL	result = this.placesMentionedKml;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.placesMentionedKml;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.placesMentionedKml = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPlacesMentionedKml()
+	public ecologylab.net.ParsedURL getPlacesMentionedKml()
 	{
-		return this.placesMentionedKml().getValue();
+		return this.placesMentionedKml == null ? null : placesMentionedKml().getValue();
 	}
 
-	public MetadataParsedURL getPlacesMentionedKmlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPlacesMentionedKmlMetadata()
 	{
 		return placesMentionedKml;
 	}
 
-	public void setPlacesMentionedKml(ParsedURL placesMentionedKml)
+	public void setPlacesMentionedKml(ecologylab.net.ParsedURL placesMentionedKml)
 	{
-		this.placesMentionedKml().setValue(placesMentionedKml);
+		if (placesMentionedKml != null)
+			this.placesMentionedKml().setValue(placesMentionedKml);
 	}
 
-	public void setPlacesMentionedKmlMetadata(MetadataParsedURL placesMentionedKml)
+	public void setPlacesMentionedKmlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL placesMentionedKml)
 	{
 		this.placesMentionedKml = placesMentionedKml;
 	}

@@ -27,23 +27,23 @@ public class Dc extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:creator")	@simpl_hints(Hint.XML_LEAF)	private MetadataString dcCreator;
+	@simpl_scalar	@xml_tag("dc:creator")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString dcCreator;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:subject")	@simpl_hints(Hint.XML_LEAF)	private MetadataString dcSubject;
+	@simpl_scalar	@xml_tag("dc:subject")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString dcSubject;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:description")	@simpl_hints(Hint.XML_LEAF)	private MetadataString dcDescription;
+	@simpl_scalar	@xml_tag("dc:description")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString dcDescription;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:title")	@simpl_hints(Hint.XML_LEAF)	private MetadataString dcTitle;
+	@simpl_scalar	@xml_tag("dc:title")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString dcTitle;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:date")	@simpl_hints(Hint.XML_LEAF)	private MetadataDate dcDate;
+	@simpl_scalar	@xml_tag("dc:date")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataDate dcDate;
 
 	public Dc()
 	{ }
@@ -53,157 +53,162 @@ public class Dc extends CompoundDocument
 	}
 
 
-	public MetadataString	dcCreator()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dcCreator()
 	{
-		MetadataString	result = this.dcCreator;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dcCreator;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dcCreator = result;
 		}
 		return result;
 	}
 
-	public String getDcCreator()
+	public java.lang.String getDcCreator()
 	{
-		return this.dcCreator().getValue();
+		return this.dcCreator == null ? null : dcCreator().getValue();
 	}
 
-	public MetadataString getDcCreatorMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDcCreatorMetadata()
 	{
 		return dcCreator;
 	}
 
-	public void setDcCreator(String dcCreator)
+	public void setDcCreator(java.lang.String dcCreator)
 	{
-		this.dcCreator().setValue(dcCreator);
+		if (dcCreator != null)
+			this.dcCreator().setValue(dcCreator);
 	}
 
-	public void setDcCreatorMetadata(MetadataString dcCreator)
+	public void setDcCreatorMetadata(ecologylab.semantics.metadata.scalar.MetadataString dcCreator)
 	{
 		this.dcCreator = dcCreator;
 	}
 
-	public MetadataString	dcSubject()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dcSubject()
 	{
-		MetadataString	result = this.dcSubject;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dcSubject;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dcSubject = result;
 		}
 		return result;
 	}
 
-	public String getDcSubject()
+	public java.lang.String getDcSubject()
 	{
-		return this.dcSubject().getValue();
+		return this.dcSubject == null ? null : dcSubject().getValue();
 	}
 
-	public MetadataString getDcSubjectMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDcSubjectMetadata()
 	{
 		return dcSubject;
 	}
 
-	public void setDcSubject(String dcSubject)
+	public void setDcSubject(java.lang.String dcSubject)
 	{
-		this.dcSubject().setValue(dcSubject);
+		if (dcSubject != null)
+			this.dcSubject().setValue(dcSubject);
 	}
 
-	public void setDcSubjectMetadata(MetadataString dcSubject)
+	public void setDcSubjectMetadata(ecologylab.semantics.metadata.scalar.MetadataString dcSubject)
 	{
 		this.dcSubject = dcSubject;
 	}
 
-	public MetadataString	dcDescription()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dcDescription()
 	{
-		MetadataString	result = this.dcDescription;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dcDescription;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dcDescription = result;
 		}
 		return result;
 	}
 
-	public String getDcDescription()
+	public java.lang.String getDcDescription()
 	{
-		return this.dcDescription().getValue();
+		return this.dcDescription == null ? null : dcDescription().getValue();
 	}
 
-	public MetadataString getDcDescriptionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDcDescriptionMetadata()
 	{
 		return dcDescription;
 	}
 
-	public void setDcDescription(String dcDescription)
+	public void setDcDescription(java.lang.String dcDescription)
 	{
-		this.dcDescription().setValue(dcDescription);
+		if (dcDescription != null)
+			this.dcDescription().setValue(dcDescription);
 	}
 
-	public void setDcDescriptionMetadata(MetadataString dcDescription)
+	public void setDcDescriptionMetadata(ecologylab.semantics.metadata.scalar.MetadataString dcDescription)
 	{
 		this.dcDescription = dcDescription;
 	}
 
-	public MetadataString	dcTitle()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dcTitle()
 	{
-		MetadataString	result = this.dcTitle;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dcTitle;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dcTitle = result;
 		}
 		return result;
 	}
 
-	public String getDcTitle()
+	public java.lang.String getDcTitle()
 	{
-		return this.dcTitle().getValue();
+		return this.dcTitle == null ? null : dcTitle().getValue();
 	}
 
-	public MetadataString getDcTitleMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDcTitleMetadata()
 	{
 		return dcTitle;
 	}
 
-	public void setDcTitle(String dcTitle)
+	public void setDcTitle(java.lang.String dcTitle)
 	{
-		this.dcTitle().setValue(dcTitle);
+		if (dcTitle != null)
+			this.dcTitle().setValue(dcTitle);
 	}
 
-	public void setDcTitleMetadata(MetadataString dcTitle)
+	public void setDcTitleMetadata(ecologylab.semantics.metadata.scalar.MetadataString dcTitle)
 	{
 		this.dcTitle = dcTitle;
 	}
 
-	public MetadataDate	dcDate()
+	public ecologylab.semantics.metadata.scalar.MetadataDate	dcDate()
 	{
-		MetadataDate	result = this.dcDate;
+		ecologylab.semantics.metadata.scalar.MetadataDate	result = this.dcDate;
 		if (result == null)
 		{
-			result = new MetadataDate();
+			result = new ecologylab.semantics.metadata.scalar.MetadataDate();
 			this.dcDate = result;
 		}
 		return result;
 	}
 
-	public Date getDcDate()
+	public java.util.Date getDcDate()
 	{
-		return this.dcDate().getValue();
+		return this.dcDate == null ? null : dcDate().getValue();
 	}
 
-	public MetadataDate getDcDateMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataDate getDcDateMetadata()
 	{
 		return dcDate;
 	}
 
-	public void setDcDate(Date dcDate)
+	public void setDcDate(java.util.Date dcDate)
 	{
-		this.dcDate().setValue(dcDate);
+		if (dcDate != null)
+			this.dcDate().setValue(dcDate);
 	}
 
-	public void setDcDateMetadata(MetadataDate dcDate)
+	public void setDcDateMetadata(ecologylab.semantics.metadata.scalar.MetadataDate dcDate)
 	{
 		this.dcDate = dcDate;
 	}

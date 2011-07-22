@@ -3,8 +3,8 @@ package ecologylab.semantics.generated.library.scholarlyPublication;
 import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
 import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.generated.library.publication.Author;
 import ecologylab.semantics.generated.library.Tag;
+import ecologylab.semantics.generated.library.publication.Author;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.Hint;
 import java.util.List;
@@ -31,7 +31,7 @@ public class ScholarlyArticle extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("abstract")	@simpl_hints(Hint.XML_LEAF)	private MetadataString abstractField;
+	@simpl_scalar	@xml_tag("abstract")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString abstractField;
 
 	/** 
 	 * Set of authors.
@@ -46,7 +46,7 @@ public class ScholarlyArticle extends CompoundDocument
 	/** 
 	 * citation.cfm
 	 */ 
-	@simpl_scalar	private MetadataParsedURL metadataPage;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL metadataPage;
 
 	/** 
 	 * Papers cited by this paper.
@@ -70,7 +70,7 @@ public class ScholarlyArticle extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString pages;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString pages;
 
 	public ScholarlyArticle()
 	{ }
@@ -80,33 +80,34 @@ public class ScholarlyArticle extends CompoundDocument
 	}
 
 
-	public MetadataString	abstractField()
+	public ecologylab.semantics.metadata.scalar.MetadataString	abstractField()
 	{
-		MetadataString	result = this.abstractField;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.abstractField;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.abstractField = result;
 		}
 		return result;
 	}
 
-	public String getAbstractField()
+	public java.lang.String getAbstractField()
 	{
-		return this.abstractField().getValue();
+		return this.abstractField == null ? null : abstractField().getValue();
 	}
 
-	public MetadataString getAbstractFieldMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAbstractFieldMetadata()
 	{
 		return abstractField;
 	}
 
-	public void setAbstractField(String abstractField)
+	public void setAbstractField(java.lang.String abstractField)
 	{
-		this.abstractField().setValue(abstractField);
+		if (abstractField != null)
+			this.abstractField().setValue(abstractField);
 	}
 
-	public void setAbstractFieldMetadata(MetadataString abstractField)
+	public void setAbstractFieldMetadata(ecologylab.semantics.metadata.scalar.MetadataString abstractField)
 	{
 		this.abstractField = abstractField;
 	}
@@ -131,33 +132,34 @@ public class ScholarlyArticle extends CompoundDocument
 		this.source = source;
 	}
 
-	public MetadataParsedURL	metadataPage()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	metadataPage()
 	{
-		MetadataParsedURL	result = this.metadataPage;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.metadataPage;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.metadataPage = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getMetadataPage()
+	public ecologylab.net.ParsedURL getMetadataPage()
 	{
-		return this.metadataPage().getValue();
+		return this.metadataPage == null ? null : metadataPage().getValue();
 	}
 
-	public MetadataParsedURL getMetadataPageMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getMetadataPageMetadata()
 	{
 		return metadataPage;
 	}
 
-	public void setMetadataPage(ParsedURL metadataPage)
+	public void setMetadataPage(ecologylab.net.ParsedURL metadataPage)
 	{
-		this.metadataPage().setValue(metadataPage);
+		if (metadataPage != null)
+			this.metadataPage().setValue(metadataPage);
 	}
 
-	public void setMetadataPageMetadata(MetadataParsedURL metadataPage)
+	public void setMetadataPageMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL metadataPage)
 	{
 		this.metadataPage = metadataPage;
 	}
@@ -202,33 +204,34 @@ public class ScholarlyArticle extends CompoundDocument
 		this.keywords = keywords;
 	}
 
-	public MetadataString	pages()
+	public ecologylab.semantics.metadata.scalar.MetadataString	pages()
 	{
-		MetadataString	result = this.pages;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.pages;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.pages = result;
 		}
 		return result;
 	}
 
-	public String getPages()
+	public java.lang.String getPages()
 	{
-		return this.pages().getValue();
+		return this.pages == null ? null : pages().getValue();
 	}
 
-	public MetadataString getPagesMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPagesMetadata()
 	{
 		return pages;
 	}
 
-	public void setPages(String pages)
+	public void setPages(java.lang.String pages)
 	{
-		this.pages().setValue(pages);
+		if (pages != null)
+			this.pages().setValue(pages);
 	}
 
-	public void setPagesMetadata(MetadataString pages)
+	public void setPagesMetadata(ecologylab.semantics.metadata.scalar.MetadataString pages)
 	{
 		this.pages = pages;
 	}

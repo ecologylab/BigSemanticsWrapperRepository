@@ -32,7 +32,7 @@ public class Book extends Publication
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString edition;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString edition;
 
 	/** 
 	 */ 
@@ -40,7 +40,7 @@ public class Book extends Publication
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL coverImage;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL coverImage;
 
 	public Book()
 	{ }
@@ -60,33 +60,34 @@ public class Book extends Publication
 		this.editors = editors;
 	}
 
-	public MetadataString	edition()
+	public ecologylab.semantics.metadata.scalar.MetadataString	edition()
 	{
-		MetadataString	result = this.edition;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.edition;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.edition = result;
 		}
 		return result;
 	}
 
-	public String getEdition()
+	public java.lang.String getEdition()
 	{
-		return this.edition().getValue();
+		return this.edition == null ? null : edition().getValue();
 	}
 
-	public MetadataString getEditionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getEditionMetadata()
 	{
 		return edition;
 	}
 
-	public void setEdition(String edition)
+	public void setEdition(java.lang.String edition)
 	{
-		this.edition().setValue(edition);
+		if (edition != null)
+			this.edition().setValue(edition);
 	}
 
-	public void setEditionMetadata(MetadataString edition)
+	public void setEditionMetadata(ecologylab.semantics.metadata.scalar.MetadataString edition)
 	{
 		this.edition = edition;
 	}
@@ -101,33 +102,34 @@ public class Book extends Publication
 		this.tableOfContents = tableOfContents;
 	}
 
-	public MetadataParsedURL	coverImage()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	coverImage()
 	{
-		MetadataParsedURL	result = this.coverImage;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.coverImage;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.coverImage = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getCoverImage()
+	public ecologylab.net.ParsedURL getCoverImage()
 	{
-		return this.coverImage().getValue();
+		return this.coverImage == null ? null : coverImage().getValue();
 	}
 
-	public MetadataParsedURL getCoverImageMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getCoverImageMetadata()
 	{
 		return coverImage;
 	}
 
-	public void setCoverImage(ParsedURL coverImage)
+	public void setCoverImage(ecologylab.net.ParsedURL coverImage)
 	{
-		this.coverImage().setValue(coverImage);
+		if (coverImage != null)
+			this.coverImage().setValue(coverImage);
 	}
 
-	public void setCoverImageMetadata(MetadataParsedURL coverImage)
+	public void setCoverImageMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL coverImage)
 	{
 		this.coverImage = coverImage;
 	}

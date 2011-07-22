@@ -32,7 +32,7 @@ public class ImdbTitle extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString yearReleased;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString yearReleased;
 
 	/** 
 	 */ 
@@ -48,11 +48,11 @@ public class ImdbTitle extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString rating;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString rating;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString releaseDate;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString releaseDate;
 
 	/** 
 	 */ 
@@ -60,11 +60,11 @@ public class ImdbTitle extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString plot;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString plot;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString tagline;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString tagline;
 
 	/** 
 	 */ 
@@ -72,7 +72,7 @@ public class ImdbTitle extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL posterImg;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL posterImg;
 
 	public ImdbTitle()
 	{ }
@@ -82,33 +82,34 @@ public class ImdbTitle extends CompoundDocument
 	}
 
 
-	public MetadataString	yearReleased()
+	public ecologylab.semantics.metadata.scalar.MetadataString	yearReleased()
 	{
-		MetadataString	result = this.yearReleased;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.yearReleased;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.yearReleased = result;
 		}
 		return result;
 	}
 
-	public String getYearReleased()
+	public java.lang.String getYearReleased()
 	{
-		return this.yearReleased().getValue();
+		return this.yearReleased == null ? null : yearReleased().getValue();
 	}
 
-	public MetadataString getYearReleasedMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getYearReleasedMetadata()
 	{
 		return yearReleased;
 	}
 
-	public void setYearReleased(String yearReleased)
+	public void setYearReleased(java.lang.String yearReleased)
 	{
-		this.yearReleased().setValue(yearReleased);
+		if (yearReleased != null)
+			this.yearReleased().setValue(yearReleased);
 	}
 
-	public void setYearReleasedMetadata(MetadataString yearReleased)
+	public void setYearReleasedMetadata(ecologylab.semantics.metadata.scalar.MetadataString yearReleased)
 	{
 		this.yearReleased = yearReleased;
 	}
@@ -143,64 +144,66 @@ public class ImdbTitle extends CompoundDocument
 		this.cast = cast;
 	}
 
-	public MetadataString	rating()
+	public ecologylab.semantics.metadata.scalar.MetadataString	rating()
 	{
-		MetadataString	result = this.rating;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.rating;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.rating = result;
 		}
 		return result;
 	}
 
-	public String getRating()
+	public java.lang.String getRating()
 	{
-		return this.rating().getValue();
+		return this.rating == null ? null : rating().getValue();
 	}
 
-	public MetadataString getRatingMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getRatingMetadata()
 	{
 		return rating;
 	}
 
-	public void setRating(String rating)
+	public void setRating(java.lang.String rating)
 	{
-		this.rating().setValue(rating);
+		if (rating != null)
+			this.rating().setValue(rating);
 	}
 
-	public void setRatingMetadata(MetadataString rating)
+	public void setRatingMetadata(ecologylab.semantics.metadata.scalar.MetadataString rating)
 	{
 		this.rating = rating;
 	}
 
-	public MetadataString	releaseDate()
+	public ecologylab.semantics.metadata.scalar.MetadataString	releaseDate()
 	{
-		MetadataString	result = this.releaseDate;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.releaseDate;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.releaseDate = result;
 		}
 		return result;
 	}
 
-	public String getReleaseDate()
+	public java.lang.String getReleaseDate()
 	{
-		return this.releaseDate().getValue();
+		return this.releaseDate == null ? null : releaseDate().getValue();
 	}
 
-	public MetadataString getReleaseDateMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getReleaseDateMetadata()
 	{
 		return releaseDate;
 	}
 
-	public void setReleaseDate(String releaseDate)
+	public void setReleaseDate(java.lang.String releaseDate)
 	{
-		this.releaseDate().setValue(releaseDate);
+		if (releaseDate != null)
+			this.releaseDate().setValue(releaseDate);
 	}
 
-	public void setReleaseDateMetadata(MetadataString releaseDate)
+	public void setReleaseDateMetadata(ecologylab.semantics.metadata.scalar.MetadataString releaseDate)
 	{
 		this.releaseDate = releaseDate;
 	}
@@ -215,64 +218,66 @@ public class ImdbTitle extends CompoundDocument
 		this.genres = genres;
 	}
 
-	public MetadataString	plot()
+	public ecologylab.semantics.metadata.scalar.MetadataString	plot()
 	{
-		MetadataString	result = this.plot;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.plot;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.plot = result;
 		}
 		return result;
 	}
 
-	public String getPlot()
+	public java.lang.String getPlot()
 	{
-		return this.plot().getValue();
+		return this.plot == null ? null : plot().getValue();
 	}
 
-	public MetadataString getPlotMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPlotMetadata()
 	{
 		return plot;
 	}
 
-	public void setPlot(String plot)
+	public void setPlot(java.lang.String plot)
 	{
-		this.plot().setValue(plot);
+		if (plot != null)
+			this.plot().setValue(plot);
 	}
 
-	public void setPlotMetadata(MetadataString plot)
+	public void setPlotMetadata(ecologylab.semantics.metadata.scalar.MetadataString plot)
 	{
 		this.plot = plot;
 	}
 
-	public MetadataString	tagline()
+	public ecologylab.semantics.metadata.scalar.MetadataString	tagline()
 	{
-		MetadataString	result = this.tagline;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.tagline;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.tagline = result;
 		}
 		return result;
 	}
 
-	public String getTagline()
+	public java.lang.String getTagline()
 	{
-		return this.tagline().getValue();
+		return this.tagline == null ? null : tagline().getValue();
 	}
 
-	public MetadataString getTaglineMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTaglineMetadata()
 	{
 		return tagline;
 	}
 
-	public void setTagline(String tagline)
+	public void setTagline(java.lang.String tagline)
 	{
-		this.tagline().setValue(tagline);
+		if (tagline != null)
+			this.tagline().setValue(tagline);
 	}
 
-	public void setTaglineMetadata(MetadataString tagline)
+	public void setTaglineMetadata(ecologylab.semantics.metadata.scalar.MetadataString tagline)
 	{
 		this.tagline = tagline;
 	}
@@ -287,33 +292,34 @@ public class ImdbTitle extends CompoundDocument
 		this.titlePhotos = titlePhotos;
 	}
 
-	public MetadataParsedURL	posterImg()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	posterImg()
 	{
-		MetadataParsedURL	result = this.posterImg;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.posterImg;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.posterImg = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPosterImg()
+	public ecologylab.net.ParsedURL getPosterImg()
 	{
-		return this.posterImg().getValue();
+		return this.posterImg == null ? null : posterImg().getValue();
 	}
 
-	public MetadataParsedURL getPosterImgMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPosterImgMetadata()
 	{
 		return posterImg;
 	}
 
-	public void setPosterImg(ParsedURL posterImg)
+	public void setPosterImg(ecologylab.net.ParsedURL posterImg)
 	{
-		this.posterImg().setValue(posterImg);
+		if (posterImg != null)
+			this.posterImg().setValue(posterImg);
 	}
 
-	public void setPosterImgMetadata(MetadataParsedURL posterImg)
+	public void setPosterImgMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL posterImg)
 	{
 		this.posterImg = posterImg;
 	}

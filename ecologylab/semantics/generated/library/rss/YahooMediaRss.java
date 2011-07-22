@@ -30,7 +30,7 @@ public class YahooMediaRss extends Dc
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("media:description")	@simpl_hints(Hint.XML_LEAF)	private MetadataString mediaDescription;
+	@simpl_scalar	@xml_tag("media:description")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString mediaDescription;
 
 	public YahooMediaRss()
 	{ }
@@ -50,33 +50,34 @@ public class YahooMediaRss extends Dc
 		this.mediaContent = mediaContent;
 	}
 
-	public MetadataString	mediaDescription()
+	public ecologylab.semantics.metadata.scalar.MetadataString	mediaDescription()
 	{
-		MetadataString	result = this.mediaDescription;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.mediaDescription;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.mediaDescription = result;
 		}
 		return result;
 	}
 
-	public String getMediaDescription()
+	public java.lang.String getMediaDescription()
 	{
-		return this.mediaDescription().getValue();
+		return this.mediaDescription == null ? null : mediaDescription().getValue();
 	}
 
-	public MetadataString getMediaDescriptionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getMediaDescriptionMetadata()
 	{
 		return mediaDescription;
 	}
 
-	public void setMediaDescription(String mediaDescription)
+	public void setMediaDescription(java.lang.String mediaDescription)
 	{
-		this.mediaDescription().setValue(mediaDescription);
+		if (mediaDescription != null)
+			this.mediaDescription().setValue(mediaDescription);
 	}
 
-	public void setMediaDescriptionMetadata(MetadataString mediaDescription)
+	public void setMediaDescriptionMetadata(ecologylab.semantics.metadata.scalar.MetadataString mediaDescription)
 	{
 		this.mediaDescription = mediaDescription;
 	}

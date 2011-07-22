@@ -26,15 +26,15 @@ public class MmdInlineBookmarkInBookmarksInDeliciousHomepage extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private MetadataString title;
+	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString title;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL link;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL pic;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pic;
 
 	public MmdInlineBookmarkInBookmarksInDeliciousHomepage()
 	{ }
@@ -44,95 +44,98 @@ public class MmdInlineBookmarkInBookmarksInDeliciousHomepage extends Metadata
 	}
 
 
-	public MetadataString	title()
+	public ecologylab.semantics.metadata.scalar.MetadataString	title()
 	{
-		MetadataString	result = this.title;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.title;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.title = result;
 		}
 		return result;
 	}
 
-	public String getTitle()
+	public java.lang.String getTitle()
 	{
-		return this.title().getValue();
+		return this.title == null ? null : title().getValue();
 	}
 
-	public MetadataString getTitleMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTitleMetadata()
 	{
 		return title;
 	}
 
-	public void setTitle(String title)
+	public void setTitle(java.lang.String title)
 	{
-		this.title().setValue(title);
+		if (title != null)
+			this.title().setValue(title);
 	}
 
-	public void setTitleMetadata(MetadataString title)
+	public void setTitleMetadata(ecologylab.semantics.metadata.scalar.MetadataString title)
 	{
 		this.title = title;
 	}
 
-	public MetadataParsedURL	link()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	link()
 	{
-		MetadataParsedURL	result = this.link;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.link;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.link = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLink()
+	public ecologylab.net.ParsedURL getLink()
 	{
-		return this.link().getValue();
+		return this.link == null ? null : link().getValue();
 	}
 
-	public MetadataParsedURL getLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLinkMetadata()
 	{
 		return link;
 	}
 
-	public void setLink(ParsedURL link)
+	public void setLink(ecologylab.net.ParsedURL link)
 	{
-		this.link().setValue(link);
+		if (link != null)
+			this.link().setValue(link);
 	}
 
-	public void setLinkMetadata(MetadataParsedURL link)
+	public void setLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL link)
 	{
 		this.link = link;
 	}
 
-	public MetadataParsedURL	pic()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	pic()
 	{
-		MetadataParsedURL	result = this.pic;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.pic;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.pic = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPic()
+	public ecologylab.net.ParsedURL getPic()
 	{
-		return this.pic().getValue();
+		return this.pic == null ? null : pic().getValue();
 	}
 
-	public MetadataParsedURL getPicMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPicMetadata()
 	{
 		return pic;
 	}
 
-	public void setPic(ParsedURL pic)
+	public void setPic(ecologylab.net.ParsedURL pic)
 	{
-		this.pic().setValue(pic);
+		if (pic != null)
+			this.pic().setValue(pic);
 	}
 
-	public void setPicMetadata(MetadataParsedURL pic)
+	public void setPicMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL pic)
 	{
 		this.pic = pic;
 	}

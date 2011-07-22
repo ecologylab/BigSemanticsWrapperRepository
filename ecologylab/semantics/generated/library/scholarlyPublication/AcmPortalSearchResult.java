@@ -24,11 +24,11 @@ public class AcmPortalSearchResult extends SearchResult
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString authorList;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString authorList;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString publication;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString publication;
 
 	public AcmPortalSearchResult()
 	{ }
@@ -38,64 +38,66 @@ public class AcmPortalSearchResult extends SearchResult
 	}
 
 
-	public MetadataString	authorList()
+	public ecologylab.semantics.metadata.scalar.MetadataString	authorList()
 	{
-		MetadataString	result = this.authorList;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.authorList;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.authorList = result;
 		}
 		return result;
 	}
 
-	public String getAuthorList()
+	public java.lang.String getAuthorList()
 	{
-		return this.authorList().getValue();
+		return this.authorList == null ? null : authorList().getValue();
 	}
 
-	public MetadataString getAuthorListMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAuthorListMetadata()
 	{
 		return authorList;
 	}
 
-	public void setAuthorList(String authorList)
+	public void setAuthorList(java.lang.String authorList)
 	{
-		this.authorList().setValue(authorList);
+		if (authorList != null)
+			this.authorList().setValue(authorList);
 	}
 
-	public void setAuthorListMetadata(MetadataString authorList)
+	public void setAuthorListMetadata(ecologylab.semantics.metadata.scalar.MetadataString authorList)
 	{
 		this.authorList = authorList;
 	}
 
-	public MetadataString	publication()
+	public ecologylab.semantics.metadata.scalar.MetadataString	publication()
 	{
-		MetadataString	result = this.publication;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.publication;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.publication = result;
 		}
 		return result;
 	}
 
-	public String getPublication()
+	public java.lang.String getPublication()
 	{
-		return this.publication().getValue();
+		return this.publication == null ? null : publication().getValue();
 	}
 
-	public MetadataString getPublicationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPublicationMetadata()
 	{
 		return publication;
 	}
 
-	public void setPublication(String publication)
+	public void setPublication(java.lang.String publication)
 	{
-		this.publication().setValue(publication);
+		if (publication != null)
+			this.publication().setValue(publication);
 	}
 
-	public void setPublicationMetadata(MetadataString publication)
+	public void setPublicationMetadata(ecologylab.semantics.metadata.scalar.MetadataString publication)
 	{
 		this.publication = publication;
 	}

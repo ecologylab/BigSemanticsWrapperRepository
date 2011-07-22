@@ -25,15 +25,15 @@ public class ContactPoint extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString telephone;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString telephone;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString faxNumber;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString faxNumber;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString email;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString email;
 
 	public ContactPoint()
 	{ }
@@ -43,95 +43,98 @@ public class ContactPoint extends Metadata
 	}
 
 
-	public MetadataString	telephone()
+	public ecologylab.semantics.metadata.scalar.MetadataString	telephone()
 	{
-		MetadataString	result = this.telephone;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.telephone;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.telephone = result;
 		}
 		return result;
 	}
 
-	public String getTelephone()
+	public java.lang.String getTelephone()
 	{
-		return this.telephone().getValue();
+		return this.telephone == null ? null : telephone().getValue();
 	}
 
-	public MetadataString getTelephoneMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTelephoneMetadata()
 	{
 		return telephone;
 	}
 
-	public void setTelephone(String telephone)
+	public void setTelephone(java.lang.String telephone)
 	{
-		this.telephone().setValue(telephone);
+		if (telephone != null)
+			this.telephone().setValue(telephone);
 	}
 
-	public void setTelephoneMetadata(MetadataString telephone)
+	public void setTelephoneMetadata(ecologylab.semantics.metadata.scalar.MetadataString telephone)
 	{
 		this.telephone = telephone;
 	}
 
-	public MetadataString	faxNumber()
+	public ecologylab.semantics.metadata.scalar.MetadataString	faxNumber()
 	{
-		MetadataString	result = this.faxNumber;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.faxNumber;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.faxNumber = result;
 		}
 		return result;
 	}
 
-	public String getFaxNumber()
+	public java.lang.String getFaxNumber()
 	{
-		return this.faxNumber().getValue();
+		return this.faxNumber == null ? null : faxNumber().getValue();
 	}
 
-	public MetadataString getFaxNumberMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getFaxNumberMetadata()
 	{
 		return faxNumber;
 	}
 
-	public void setFaxNumber(String faxNumber)
+	public void setFaxNumber(java.lang.String faxNumber)
 	{
-		this.faxNumber().setValue(faxNumber);
+		if (faxNumber != null)
+			this.faxNumber().setValue(faxNumber);
 	}
 
-	public void setFaxNumberMetadata(MetadataString faxNumber)
+	public void setFaxNumberMetadata(ecologylab.semantics.metadata.scalar.MetadataString faxNumber)
 	{
 		this.faxNumber = faxNumber;
 	}
 
-	public MetadataString	email()
+	public ecologylab.semantics.metadata.scalar.MetadataString	email()
 	{
-		MetadataString	result = this.email;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.email;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.email = result;
 		}
 		return result;
 	}
 
-	public String getEmail()
+	public java.lang.String getEmail()
 	{
-		return this.email().getValue();
+		return this.email == null ? null : email().getValue();
 	}
 
-	public MetadataString getEmailMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getEmailMetadata()
 	{
 		return email;
 	}
 
-	public void setEmail(String email)
+	public void setEmail(java.lang.String email)
 	{
-		this.email().setValue(email);
+		if (email != null)
+			this.email().setValue(email);
 	}
 
-	public void setEmailMetadata(MetadataString email)
+	public void setEmailMetadata(ecologylab.semantics.metadata.scalar.MetadataString email)
 	{
 		this.email = email;
 	}

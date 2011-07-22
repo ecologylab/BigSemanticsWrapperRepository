@@ -24,11 +24,11 @@ public class MmdInlineProductReviewInReviewsInProduct extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString content;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString content;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString rating;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString rating;
 
 	public MmdInlineProductReviewInReviewsInProduct()
 	{ }
@@ -38,64 +38,66 @@ public class MmdInlineProductReviewInReviewsInProduct extends Metadata
 	}
 
 
-	public MetadataString	content()
+	public ecologylab.semantics.metadata.scalar.MetadataString	content()
 	{
-		MetadataString	result = this.content;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.content;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.content = result;
 		}
 		return result;
 	}
 
-	public String getContent()
+	public java.lang.String getContent()
 	{
-		return this.content().getValue();
+		return this.content == null ? null : content().getValue();
 	}
 
-	public MetadataString getContentMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getContentMetadata()
 	{
 		return content;
 	}
 
-	public void setContent(String content)
+	public void setContent(java.lang.String content)
 	{
-		this.content().setValue(content);
+		if (content != null)
+			this.content().setValue(content);
 	}
 
-	public void setContentMetadata(MetadataString content)
+	public void setContentMetadata(ecologylab.semantics.metadata.scalar.MetadataString content)
 	{
 		this.content = content;
 	}
 
-	public MetadataString	rating()
+	public ecologylab.semantics.metadata.scalar.MetadataString	rating()
 	{
-		MetadataString	result = this.rating;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.rating;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.rating = result;
 		}
 		return result;
 	}
 
-	public String getRating()
+	public java.lang.String getRating()
 	{
-		return this.rating().getValue();
+		return this.rating == null ? null : rating().getValue();
 	}
 
-	public MetadataString getRatingMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getRatingMetadata()
 	{
 		return rating;
 	}
 
-	public void setRating(String rating)
+	public void setRating(java.lang.String rating)
 	{
-		this.rating().setValue(rating);
+		if (rating != null)
+			this.rating().setValue(rating);
 	}
 
-	public void setRatingMetadata(MetadataString rating)
+	public void setRatingMetadata(ecologylab.semantics.metadata.scalar.MetadataString rating)
 	{
 		this.rating = rating;
 	}

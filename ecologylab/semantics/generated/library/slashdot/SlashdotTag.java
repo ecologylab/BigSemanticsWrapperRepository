@@ -26,11 +26,11 @@ public class SlashdotTag extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString name;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL link;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
 
 	public SlashdotTag()
 	{ }
@@ -40,64 +40,66 @@ public class SlashdotTag extends Metadata
 	}
 
 
-	public MetadataString	name()
+	public ecologylab.semantics.metadata.scalar.MetadataString	name()
 	{
-		MetadataString	result = this.name;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.name;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.name = result;
 		}
 		return result;
 	}
 
-	public String getName()
+	public java.lang.String getName()
 	{
-		return this.name().getValue();
+		return this.name == null ? null : name().getValue();
 	}
 
-	public MetadataString getNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
 	{
 		return name;
 	}
 
-	public void setName(String name)
+	public void setName(java.lang.String name)
 	{
-		this.name().setValue(name);
+		if (name != null)
+			this.name().setValue(name);
 	}
 
-	public void setNameMetadata(MetadataString name)
+	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
 	{
 		this.name = name;
 	}
 
-	public MetadataParsedURL	link()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	link()
 	{
-		MetadataParsedURL	result = this.link;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.link;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.link = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLink()
+	public ecologylab.net.ParsedURL getLink()
 	{
-		return this.link().getValue();
+		return this.link == null ? null : link().getValue();
 	}
 
-	public MetadataParsedURL getLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLinkMetadata()
 	{
 		return link;
 	}
 
-	public void setLink(ParsedURL link)
+	public void setLink(ecologylab.net.ParsedURL link)
 	{
-		this.link().setValue(link);
+		if (link != null)
+			this.link().setValue(link);
 	}
 
-	public void setLinkMetadata(MetadataParsedURL link)
+	public void setLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL link)
 	{
 		this.link = link;
 	}

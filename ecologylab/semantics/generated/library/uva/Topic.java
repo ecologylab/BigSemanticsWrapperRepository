@@ -26,23 +26,23 @@ public class Topic extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataStringBuilder contentKeywords;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder contentKeywords;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataStringBuilder anchorKeywords;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder anchorKeywords;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataStringBuilder urlKeywords;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder urlKeywords;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataStringBuilder titleKeywords;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder titleKeywords;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger id;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger id;
 
 	public Topic()
 	{ }
@@ -52,157 +52,162 @@ public class Topic extends CompoundDocument
 	}
 
 
-	public MetadataStringBuilder	contentKeywords()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder	contentKeywords()
 	{
-		MetadataStringBuilder	result = this.contentKeywords;
+		ecologylab.semantics.metadata.scalar.MetadataStringBuilder	result = this.contentKeywords;
 		if (result == null)
 		{
-			result = new MetadataStringBuilder();
+			result = new ecologylab.semantics.metadata.scalar.MetadataStringBuilder();
 			this.contentKeywords = result;
 		}
 		return result;
 	}
 
-	public StringBuilder getContentKeywords()
+	public java.lang.StringBuilder getContentKeywords()
 	{
-		return this.contentKeywords().getValue();
+		return this.contentKeywords == null ? null : contentKeywords().getValue();
 	}
 
-	public MetadataStringBuilder getContentKeywordsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder getContentKeywordsMetadata()
 	{
 		return contentKeywords;
 	}
 
-	public void setContentKeywords(StringBuilder contentKeywords)
+	public void setContentKeywords(java.lang.StringBuilder contentKeywords)
 	{
-		this.contentKeywords().setValue(contentKeywords);
+		if (contentKeywords != null)
+			this.contentKeywords().setValue(contentKeywords);
 	}
 
-	public void setContentKeywordsMetadata(MetadataStringBuilder contentKeywords)
+	public void setContentKeywordsMetadata(ecologylab.semantics.metadata.scalar.MetadataStringBuilder contentKeywords)
 	{
 		this.contentKeywords = contentKeywords;
 	}
 
-	public MetadataStringBuilder	anchorKeywords()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder	anchorKeywords()
 	{
-		MetadataStringBuilder	result = this.anchorKeywords;
+		ecologylab.semantics.metadata.scalar.MetadataStringBuilder	result = this.anchorKeywords;
 		if (result == null)
 		{
-			result = new MetadataStringBuilder();
+			result = new ecologylab.semantics.metadata.scalar.MetadataStringBuilder();
 			this.anchorKeywords = result;
 		}
 		return result;
 	}
 
-	public StringBuilder getAnchorKeywords()
+	public java.lang.StringBuilder getAnchorKeywords()
 	{
-		return this.anchorKeywords().getValue();
+		return this.anchorKeywords == null ? null : anchorKeywords().getValue();
 	}
 
-	public MetadataStringBuilder getAnchorKeywordsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder getAnchorKeywordsMetadata()
 	{
 		return anchorKeywords;
 	}
 
-	public void setAnchorKeywords(StringBuilder anchorKeywords)
+	public void setAnchorKeywords(java.lang.StringBuilder anchorKeywords)
 	{
-		this.anchorKeywords().setValue(anchorKeywords);
+		if (anchorKeywords != null)
+			this.anchorKeywords().setValue(anchorKeywords);
 	}
 
-	public void setAnchorKeywordsMetadata(MetadataStringBuilder anchorKeywords)
+	public void setAnchorKeywordsMetadata(ecologylab.semantics.metadata.scalar.MetadataStringBuilder anchorKeywords)
 	{
 		this.anchorKeywords = anchorKeywords;
 	}
 
-	public MetadataStringBuilder	urlKeywords()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder	urlKeywords()
 	{
-		MetadataStringBuilder	result = this.urlKeywords;
+		ecologylab.semantics.metadata.scalar.MetadataStringBuilder	result = this.urlKeywords;
 		if (result == null)
 		{
-			result = new MetadataStringBuilder();
+			result = new ecologylab.semantics.metadata.scalar.MetadataStringBuilder();
 			this.urlKeywords = result;
 		}
 		return result;
 	}
 
-	public StringBuilder getUrlKeywords()
+	public java.lang.StringBuilder getUrlKeywords()
 	{
-		return this.urlKeywords().getValue();
+		return this.urlKeywords == null ? null : urlKeywords().getValue();
 	}
 
-	public MetadataStringBuilder getUrlKeywordsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder getUrlKeywordsMetadata()
 	{
 		return urlKeywords;
 	}
 
-	public void setUrlKeywords(StringBuilder urlKeywords)
+	public void setUrlKeywords(java.lang.StringBuilder urlKeywords)
 	{
-		this.urlKeywords().setValue(urlKeywords);
+		if (urlKeywords != null)
+			this.urlKeywords().setValue(urlKeywords);
 	}
 
-	public void setUrlKeywordsMetadata(MetadataStringBuilder urlKeywords)
+	public void setUrlKeywordsMetadata(ecologylab.semantics.metadata.scalar.MetadataStringBuilder urlKeywords)
 	{
 		this.urlKeywords = urlKeywords;
 	}
 
-	public MetadataStringBuilder	titleKeywords()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder	titleKeywords()
 	{
-		MetadataStringBuilder	result = this.titleKeywords;
+		ecologylab.semantics.metadata.scalar.MetadataStringBuilder	result = this.titleKeywords;
 		if (result == null)
 		{
-			result = new MetadataStringBuilder();
+			result = new ecologylab.semantics.metadata.scalar.MetadataStringBuilder();
 			this.titleKeywords = result;
 		}
 		return result;
 	}
 
-	public StringBuilder getTitleKeywords()
+	public java.lang.StringBuilder getTitleKeywords()
 	{
-		return this.titleKeywords().getValue();
+		return this.titleKeywords == null ? null : titleKeywords().getValue();
 	}
 
-	public MetadataStringBuilder getTitleKeywordsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataStringBuilder getTitleKeywordsMetadata()
 	{
 		return titleKeywords;
 	}
 
-	public void setTitleKeywords(StringBuilder titleKeywords)
+	public void setTitleKeywords(java.lang.StringBuilder titleKeywords)
 	{
-		this.titleKeywords().setValue(titleKeywords);
+		if (titleKeywords != null)
+			this.titleKeywords().setValue(titleKeywords);
 	}
 
-	public void setTitleKeywordsMetadata(MetadataStringBuilder titleKeywords)
+	public void setTitleKeywordsMetadata(ecologylab.semantics.metadata.scalar.MetadataStringBuilder titleKeywords)
 	{
 		this.titleKeywords = titleKeywords;
 	}
 
-	public MetadataInteger	id()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	id()
 	{
-		MetadataInteger	result = this.id;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.id;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.id = result;
 		}
 		return result;
 	}
 
-	public int getId()
+	public java.lang.Integer getId()
 	{
-		return this.id().getValue();
+		return this.id == null ? 0 : id().getValue();
 	}
 
-	public MetadataInteger getIdMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getIdMetadata()
 	{
 		return id;
 	}
 
-	public void setId(int id)
+	public void setId(java.lang.Integer id)
 	{
-		this.id().setValue(id);
+		if (id != 0)
+			this.id().setValue(id);
 	}
 
-	public void setIdMetadata(MetadataInteger id)
+	public void setIdMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger id)
 	{
 		this.id = id;
 	}

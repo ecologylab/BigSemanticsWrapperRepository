@@ -31,7 +31,7 @@ public class MomaList extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL nextList;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL nextList;
 
 	public MomaList()
 	{ }
@@ -51,33 +51,34 @@ public class MomaList extends CompoundDocument
 		this.artworks = artworks;
 	}
 
-	public MetadataParsedURL	nextList()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	nextList()
 	{
-		MetadataParsedURL	result = this.nextList;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.nextList;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.nextList = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getNextList()
+	public ecologylab.net.ParsedURL getNextList()
 	{
-		return this.nextList().getValue();
+		return this.nextList == null ? null : nextList().getValue();
 	}
 
-	public MetadataParsedURL getNextListMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getNextListMetadata()
 	{
 		return nextList;
 	}
 
-	public void setNextList(ParsedURL nextList)
+	public void setNextList(ecologylab.net.ParsedURL nextList)
 	{
-		this.nextList().setValue(nextList);
+		if (nextList != null)
+			this.nextList().setValue(nextList);
 	}
 
-	public void setNextListMetadata(MetadataParsedURL nextList)
+	public void setNextListMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL nextList)
 	{
 		this.nextList = nextList;
 	}

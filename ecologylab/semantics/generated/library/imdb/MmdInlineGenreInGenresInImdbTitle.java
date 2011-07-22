@@ -26,11 +26,11 @@ public class MmdInlineGenreInGenresInImdbTitle extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL genreLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL genreLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString name;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
 
 	public MmdInlineGenreInGenresInImdbTitle()
 	{ }
@@ -40,64 +40,66 @@ public class MmdInlineGenreInGenresInImdbTitle extends Metadata
 	}
 
 
-	public MetadataParsedURL	genreLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	genreLink()
 	{
-		MetadataParsedURL	result = this.genreLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.genreLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.genreLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getGenreLink()
+	public ecologylab.net.ParsedURL getGenreLink()
 	{
-		return this.genreLink().getValue();
+		return this.genreLink == null ? null : genreLink().getValue();
 	}
 
-	public MetadataParsedURL getGenreLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getGenreLinkMetadata()
 	{
 		return genreLink;
 	}
 
-	public void setGenreLink(ParsedURL genreLink)
+	public void setGenreLink(ecologylab.net.ParsedURL genreLink)
 	{
-		this.genreLink().setValue(genreLink);
+		if (genreLink != null)
+			this.genreLink().setValue(genreLink);
 	}
 
-	public void setGenreLinkMetadata(MetadataParsedURL genreLink)
+	public void setGenreLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL genreLink)
 	{
 		this.genreLink = genreLink;
 	}
 
-	public MetadataString	name()
+	public ecologylab.semantics.metadata.scalar.MetadataString	name()
 	{
-		MetadataString	result = this.name;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.name;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.name = result;
 		}
 		return result;
 	}
 
-	public String getName()
+	public java.lang.String getName()
 	{
-		return this.name().getValue();
+		return this.name == null ? null : name().getValue();
 	}
 
-	public MetadataString getNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
 	{
 		return name;
 	}
 
-	public void setName(String name)
+	public void setName(java.lang.String name)
 	{
-		this.name().setValue(name);
+		if (name != null)
+			this.name().setValue(name);
 	}
 
-	public void setNameMetadata(MetadataString name)
+	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
 	{
 		this.name = name;
 	}

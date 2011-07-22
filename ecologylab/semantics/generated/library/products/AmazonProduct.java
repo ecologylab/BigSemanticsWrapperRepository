@@ -24,7 +24,7 @@ public class AmazonProduct extends Product
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString department;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString department;
 
 	public AmazonProduct()
 	{ }
@@ -34,33 +34,34 @@ public class AmazonProduct extends Product
 	}
 
 
-	public MetadataString	department()
+	public ecologylab.semantics.metadata.scalar.MetadataString	department()
 	{
-		MetadataString	result = this.department;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.department;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.department = result;
 		}
 		return result;
 	}
 
-	public String getDepartment()
+	public java.lang.String getDepartment()
 	{
-		return this.department().getValue();
+		return this.department == null ? null : department().getValue();
 	}
 
-	public MetadataString getDepartmentMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDepartmentMetadata()
 	{
 		return department;
 	}
 
-	public void setDepartment(String department)
+	public void setDepartment(java.lang.String department)
 	{
-		this.department().setValue(department);
+		if (department != null)
+			this.department().setValue(department);
 	}
 
-	public void setDepartmentMetadata(MetadataString department)
+	public void setDepartmentMetadata(ecologylab.semantics.metadata.scalar.MetadataString department)
 	{
 		this.department = department;
 	}

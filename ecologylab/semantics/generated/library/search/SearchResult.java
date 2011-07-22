@@ -30,32 +30,32 @@ public class SearchResult extends Metadata
 	/** 
 	 * The heading of search result
 	 */ 
-	@simpl_scalar	@xml_other_tags({"web:Title"})	private MetadataString heading;
+	@simpl_scalar	@xml_other_tags({"web:Title"})	private ecologylab.semantics.metadata.scalar.MetadataString heading;
 
 	/** 
 	 * The snippet of search result
 	 */ 
-	@simpl_scalar	@xml_other_tags({"web:Description"})	private MetadataString snippet;
+	@simpl_scalar	@xml_other_tags({"web:Description"})	private ecologylab.semantics.metadata.scalar.MetadataString snippet;
 
 	/** 
 	 * The link of the search result
 	 */ 
-	@simpl_scalar	@xml_other_tags({"web:Url"})	private MetadataParsedURL link;
+	@simpl_scalar	@xml_other_tags({"web:Url"})	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
 
 	/** 
 	 * Alternate link in search results
 	 */ 
-	@simpl_scalar	private MetadataParsedURL linkOther;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL linkOther;
 
 	/** 
 	 * The search engine used for this result
 	 */ 
-	@simpl_scalar	private MetadataString engine;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString engine;
 
 	/** 
 	 * The author of this item
 	 */ 
-	@simpl_scalar	private MetadataString author;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString author;
 
 	/** 
 	 * Associated tags from the search engine, if exist
@@ -70,188 +70,194 @@ public class SearchResult extends Metadata
 	}
 
 
-	public MetadataString	heading()
+	public ecologylab.semantics.metadata.scalar.MetadataString	heading()
 	{
-		MetadataString	result = this.heading;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.heading;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.heading = result;
 		}
 		return result;
 	}
 
-	public String getHeading()
+	public java.lang.String getHeading()
 	{
-		return this.heading().getValue();
+		return this.heading == null ? null : heading().getValue();
 	}
 
-	public MetadataString getHeadingMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getHeadingMetadata()
 	{
 		return heading;
 	}
 
-	public void setHeading(String heading)
+	public void setHeading(java.lang.String heading)
 	{
-		this.heading().setValue(heading);
+		if (heading != null)
+			this.heading().setValue(heading);
 	}
 
-	public void setHeadingMetadata(MetadataString heading)
+	public void setHeadingMetadata(ecologylab.semantics.metadata.scalar.MetadataString heading)
 	{
 		this.heading = heading;
 	}
 
-	public MetadataString	snippet()
+	public ecologylab.semantics.metadata.scalar.MetadataString	snippet()
 	{
-		MetadataString	result = this.snippet;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.snippet;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.snippet = result;
 		}
 		return result;
 	}
 
-	public String getSnippet()
+	public java.lang.String getSnippet()
 	{
-		return this.snippet().getValue();
+		return this.snippet == null ? null : snippet().getValue();
 	}
 
-	public MetadataString getSnippetMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSnippetMetadata()
 	{
 		return snippet;
 	}
 
-	public void setSnippet(String snippet)
+	public void setSnippet(java.lang.String snippet)
 	{
-		this.snippet().setValue(snippet);
+		if (snippet != null)
+			this.snippet().setValue(snippet);
 	}
 
-	public void setSnippetMetadata(MetadataString snippet)
+	public void setSnippetMetadata(ecologylab.semantics.metadata.scalar.MetadataString snippet)
 	{
 		this.snippet = snippet;
 	}
 
-	public MetadataParsedURL	link()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	link()
 	{
-		MetadataParsedURL	result = this.link;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.link;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.link = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLink()
+	public ecologylab.net.ParsedURL getLink()
 	{
-		return this.link().getValue();
+		return this.link == null ? null : link().getValue();
 	}
 
-	public MetadataParsedURL getLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLinkMetadata()
 	{
 		return link;
 	}
 
-	public void setLink(ParsedURL link)
+	public void setLink(ecologylab.net.ParsedURL link)
 	{
-		this.link().setValue(link);
+		if (link != null)
+			this.link().setValue(link);
 	}
 
-	public void setLinkMetadata(MetadataParsedURL link)
+	public void setLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL link)
 	{
 		this.link = link;
 	}
 
-	public MetadataParsedURL	linkOther()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	linkOther()
 	{
-		MetadataParsedURL	result = this.linkOther;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.linkOther;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.linkOther = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLinkOther()
+	public ecologylab.net.ParsedURL getLinkOther()
 	{
-		return this.linkOther().getValue();
+		return this.linkOther == null ? null : linkOther().getValue();
 	}
 
-	public MetadataParsedURL getLinkOtherMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLinkOtherMetadata()
 	{
 		return linkOther;
 	}
 
-	public void setLinkOther(ParsedURL linkOther)
+	public void setLinkOther(ecologylab.net.ParsedURL linkOther)
 	{
-		this.linkOther().setValue(linkOther);
+		if (linkOther != null)
+			this.linkOther().setValue(linkOther);
 	}
 
-	public void setLinkOtherMetadata(MetadataParsedURL linkOther)
+	public void setLinkOtherMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL linkOther)
 	{
 		this.linkOther = linkOther;
 	}
 
-	public MetadataString	engine()
+	public ecologylab.semantics.metadata.scalar.MetadataString	engine()
 	{
-		MetadataString	result = this.engine;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.engine;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.engine = result;
 		}
 		return result;
 	}
 
-	public String getEngine()
+	public java.lang.String getEngine()
 	{
-		return this.engine().getValue();
+		return this.engine == null ? null : engine().getValue();
 	}
 
-	public MetadataString getEngineMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getEngineMetadata()
 	{
 		return engine;
 	}
 
-	public void setEngine(String engine)
+	public void setEngine(java.lang.String engine)
 	{
-		this.engine().setValue(engine);
+		if (engine != null)
+			this.engine().setValue(engine);
 	}
 
-	public void setEngineMetadata(MetadataString engine)
+	public void setEngineMetadata(ecologylab.semantics.metadata.scalar.MetadataString engine)
 	{
 		this.engine = engine;
 	}
 
-	public MetadataString	author()
+	public ecologylab.semantics.metadata.scalar.MetadataString	author()
 	{
-		MetadataString	result = this.author;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.author;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.author = result;
 		}
 		return result;
 	}
 
-	public String getAuthor()
+	public java.lang.String getAuthor()
 	{
-		return this.author().getValue();
+		return this.author == null ? null : author().getValue();
 	}
 
-	public MetadataString getAuthorMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAuthorMetadata()
 	{
 		return author;
 	}
 
-	public void setAuthor(String author)
+	public void setAuthor(java.lang.String author)
 	{
-		this.author().setValue(author);
+		if (author != null)
+			this.author().setValue(author);
 	}
 
-	public void setAuthorMetadata(MetadataString author)
+	public void setAuthorMetadata(ecologylab.semantics.metadata.scalar.MetadataString author)
 	{
 		this.author = author;
 	}

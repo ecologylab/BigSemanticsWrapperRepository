@@ -30,15 +30,15 @@ public class FlickrImageDetailTwo extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString views;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString views;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString place;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString place;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL placeLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL placeLink;
 
 	/** 
 	 */ 
@@ -56,95 +56,98 @@ public class FlickrImageDetailTwo extends CompoundDocument
 	}
 
 
-	public MetadataString	views()
+	public ecologylab.semantics.metadata.scalar.MetadataString	views()
 	{
-		MetadataString	result = this.views;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.views;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.views = result;
 		}
 		return result;
 	}
 
-	public String getViews()
+	public java.lang.String getViews()
 	{
-		return this.views().getValue();
+		return this.views == null ? null : views().getValue();
 	}
 
-	public MetadataString getViewsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getViewsMetadata()
 	{
 		return views;
 	}
 
-	public void setViews(String views)
+	public void setViews(java.lang.String views)
 	{
-		this.views().setValue(views);
+		if (views != null)
+			this.views().setValue(views);
 	}
 
-	public void setViewsMetadata(MetadataString views)
+	public void setViewsMetadata(ecologylab.semantics.metadata.scalar.MetadataString views)
 	{
 		this.views = views;
 	}
 
-	public MetadataString	place()
+	public ecologylab.semantics.metadata.scalar.MetadataString	place()
 	{
-		MetadataString	result = this.place;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.place;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.place = result;
 		}
 		return result;
 	}
 
-	public String getPlace()
+	public java.lang.String getPlace()
 	{
-		return this.place().getValue();
+		return this.place == null ? null : place().getValue();
 	}
 
-	public MetadataString getPlaceMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPlaceMetadata()
 	{
 		return place;
 	}
 
-	public void setPlace(String place)
+	public void setPlace(java.lang.String place)
 	{
-		this.place().setValue(place);
+		if (place != null)
+			this.place().setValue(place);
 	}
 
-	public void setPlaceMetadata(MetadataString place)
+	public void setPlaceMetadata(ecologylab.semantics.metadata.scalar.MetadataString place)
 	{
 		this.place = place;
 	}
 
-	public MetadataParsedURL	placeLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	placeLink()
 	{
-		MetadataParsedURL	result = this.placeLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.placeLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.placeLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPlaceLink()
+	public ecologylab.net.ParsedURL getPlaceLink()
 	{
-		return this.placeLink().getValue();
+		return this.placeLink == null ? null : placeLink().getValue();
 	}
 
-	public MetadataParsedURL getPlaceLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPlaceLinkMetadata()
 	{
 		return placeLink;
 	}
 
-	public void setPlaceLink(ParsedURL placeLink)
+	public void setPlaceLink(ecologylab.net.ParsedURL placeLink)
 	{
-		this.placeLink().setValue(placeLink);
+		if (placeLink != null)
+			this.placeLink().setValue(placeLink);
 	}
 
-	public void setPlaceLinkMetadata(MetadataParsedURL placeLink)
+	public void setPlaceLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL placeLink)
 	{
 		this.placeLink = placeLink;
 	}

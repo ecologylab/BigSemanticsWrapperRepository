@@ -24,7 +24,7 @@ public class MmdInlineHeadInOpml extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString title;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString title;
 
 	public MmdInlineHeadInOpml()
 	{ }
@@ -34,33 +34,34 @@ public class MmdInlineHeadInOpml extends Metadata
 	}
 
 
-	public MetadataString	title()
+	public ecologylab.semantics.metadata.scalar.MetadataString	title()
 	{
-		MetadataString	result = this.title;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.title;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.title = result;
 		}
 		return result;
 	}
 
-	public String getTitle()
+	public java.lang.String getTitle()
 	{
-		return this.title().getValue();
+		return this.title == null ? null : title().getValue();
 	}
 
-	public MetadataString getTitleMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTitleMetadata()
 	{
 		return title;
 	}
 
-	public void setTitle(String title)
+	public void setTitle(java.lang.String title)
 	{
-		this.title().setValue(title);
+		if (title != null)
+			this.title().setValue(title);
 	}
 
-	public void setTitleMetadata(MetadataString title)
+	public void setTitleMetadata(ecologylab.semantics.metadata.scalar.MetadataString title)
 	{
 		this.title = title;
 	}

@@ -25,7 +25,7 @@ public class Thumbnail extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL pic;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pic;
 
 	public Thumbnail()
 	{ }
@@ -35,33 +35,34 @@ public class Thumbnail extends Metadata
 	}
 
 
-	public MetadataParsedURL	pic()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	pic()
 	{
-		MetadataParsedURL	result = this.pic;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.pic;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.pic = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPic()
+	public ecologylab.net.ParsedURL getPic()
 	{
-		return this.pic().getValue();
+		return this.pic == null ? null : pic().getValue();
 	}
 
-	public MetadataParsedURL getPicMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPicMetadata()
 	{
 		return pic;
 	}
 
-	public void setPic(ParsedURL pic)
+	public void setPic(ecologylab.net.ParsedURL pic)
 	{
-		this.pic().setValue(pic);
+		if (pic != null)
+			this.pic().setValue(pic);
 	}
 
-	public void setPicMetadata(MetadataParsedURL pic)
+	public void setPicMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL pic)
 	{
 		this.pic = pic;
 	}

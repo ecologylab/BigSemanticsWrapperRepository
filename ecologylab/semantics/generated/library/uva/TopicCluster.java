@@ -27,7 +27,7 @@ public class TopicCluster extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger id;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger id;
 
 	/** 
 	 */ 
@@ -39,19 +39,19 @@ public class TopicCluster extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger x;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger x;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger y;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger y;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger width;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger height;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
 
 	public TopicCluster()
 	{ }
@@ -61,33 +61,34 @@ public class TopicCluster extends Metadata
 	}
 
 
-	public MetadataInteger	id()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	id()
 	{
-		MetadataInteger	result = this.id;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.id;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.id = result;
 		}
 		return result;
 	}
 
-	public int getId()
+	public java.lang.Integer getId()
 	{
-		return this.id().getValue();
+		return this.id == null ? 0 : id().getValue();
 	}
 
-	public MetadataInteger getIdMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getIdMetadata()
 	{
 		return id;
 	}
 
-	public void setId(int id)
+	public void setId(java.lang.Integer id)
 	{
-		this.id().setValue(id);
+		if (id != 0)
+			this.id().setValue(id);
 	}
 
-	public void setIdMetadata(MetadataInteger id)
+	public void setIdMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger id)
 	{
 		this.id = id;
 	}
@@ -112,126 +113,130 @@ public class TopicCluster extends Metadata
 		this.keywordSets = keywordSets;
 	}
 
-	public MetadataInteger	x()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	x()
 	{
-		MetadataInteger	result = this.x;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.x;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.x = result;
 		}
 		return result;
 	}
 
-	public int getX()
+	public java.lang.Integer getX()
 	{
-		return this.x().getValue();
+		return this.x == null ? 0 : x().getValue();
 	}
 
-	public MetadataInteger getXMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getXMetadata()
 	{
 		return x;
 	}
 
-	public void setX(int x)
+	public void setX(java.lang.Integer x)
 	{
-		this.x().setValue(x);
+		if (x != 0)
+			this.x().setValue(x);
 	}
 
-	public void setXMetadata(MetadataInteger x)
+	public void setXMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger x)
 	{
 		this.x = x;
 	}
 
-	public MetadataInteger	y()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	y()
 	{
-		MetadataInteger	result = this.y;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.y;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.y = result;
 		}
 		return result;
 	}
 
-	public int getY()
+	public java.lang.Integer getY()
 	{
-		return this.y().getValue();
+		return this.y == null ? 0 : y().getValue();
 	}
 
-	public MetadataInteger getYMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getYMetadata()
 	{
 		return y;
 	}
 
-	public void setY(int y)
+	public void setY(java.lang.Integer y)
 	{
-		this.y().setValue(y);
+		if (y != 0)
+			this.y().setValue(y);
 	}
 
-	public void setYMetadata(MetadataInteger y)
+	public void setYMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger y)
 	{
 		this.y = y;
 	}
 
-	public MetadataInteger	width()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	width()
 	{
-		MetadataInteger	result = this.width;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.width;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.width = result;
 		}
 		return result;
 	}
 
-	public int getWidth()
+	public java.lang.Integer getWidth()
 	{
-		return this.width().getValue();
+		return this.width == null ? 0 : width().getValue();
 	}
 
-	public MetadataInteger getWidthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getWidthMetadata()
 	{
 		return width;
 	}
 
-	public void setWidth(int width)
+	public void setWidth(java.lang.Integer width)
 	{
-		this.width().setValue(width);
+		if (width != 0)
+			this.width().setValue(width);
 	}
 
-	public void setWidthMetadata(MetadataInteger width)
+	public void setWidthMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger width)
 	{
 		this.width = width;
 	}
 
-	public MetadataInteger	height()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	height()
 	{
-		MetadataInteger	result = this.height;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.height;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.height = result;
 		}
 		return result;
 	}
 
-	public int getHeight()
+	public java.lang.Integer getHeight()
 	{
-		return this.height().getValue();
+		return this.height == null ? 0 : height().getValue();
 	}
 
-	public MetadataInteger getHeightMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getHeightMetadata()
 	{
 		return height;
 	}
 
-	public void setHeight(int height)
+	public void setHeight(java.lang.Integer height)
 	{
-		this.height().setValue(height);
+		if (height != 0)
+			this.height().setValue(height);
 	}
 
-	public void setHeightMetadata(MetadataInteger height)
+	public void setHeightMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger height)
 	{
 		this.height = height;
 	}

@@ -26,11 +26,11 @@ public class MmdInlineSubjectInSubjectsInPublication extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL location;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL location;
 
 	/** 
 	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private MetadataString subject;
+	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString subject;
 
 	public MmdInlineSubjectInSubjectsInPublication()
 	{ }
@@ -40,64 +40,66 @@ public class MmdInlineSubjectInSubjectsInPublication extends Metadata
 	}
 
 
-	public MetadataParsedURL	location()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	location()
 	{
-		MetadataParsedURL	result = this.location;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.location;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.location = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getLocation()
+	public ecologylab.net.ParsedURL getLocation()
 	{
-		return this.location().getValue();
+		return this.location == null ? null : location().getValue();
 	}
 
-	public MetadataParsedURL getLocationMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getLocationMetadata()
 	{
 		return location;
 	}
 
-	public void setLocation(ParsedURL location)
+	public void setLocation(ecologylab.net.ParsedURL location)
 	{
-		this.location().setValue(location);
+		if (location != null)
+			this.location().setValue(location);
 	}
 
-	public void setLocationMetadata(MetadataParsedURL location)
+	public void setLocationMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL location)
 	{
 		this.location = location;
 	}
 
-	public MetadataString	subject()
+	public ecologylab.semantics.metadata.scalar.MetadataString	subject()
 	{
-		MetadataString	result = this.subject;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.subject;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.subject = result;
 		}
 		return result;
 	}
 
-	public String getSubject()
+	public java.lang.String getSubject()
 	{
-		return this.subject().getValue();
+		return this.subject == null ? null : subject().getValue();
 	}
 
-	public MetadataString getSubjectMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSubjectMetadata()
 	{
 		return subject;
 	}
 
-	public void setSubject(String subject)
+	public void setSubject(java.lang.String subject)
 	{
-		this.subject().setValue(subject);
+		if (subject != null)
+			this.subject().setValue(subject);
 	}
 
-	public void setSubjectMetadata(MetadataString subject)
+	public void setSubjectMetadata(ecologylab.semantics.metadata.scalar.MetadataString subject)
 	{
 		this.subject = subject;
 	}

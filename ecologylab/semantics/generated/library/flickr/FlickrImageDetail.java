@@ -28,11 +28,11 @@ public class FlickrImageDetail extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL thumbnailKludge;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbnailKludge;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL imageKludge;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imageKludge;
 
 	/** 
 	 */ 
@@ -46,64 +46,66 @@ public class FlickrImageDetail extends CompoundDocument
 	}
 
 
-	public MetadataParsedURL	thumbnailKludge()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	thumbnailKludge()
 	{
-		MetadataParsedURL	result = this.thumbnailKludge;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.thumbnailKludge;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.thumbnailKludge = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getThumbnailKludge()
+	public ecologylab.net.ParsedURL getThumbnailKludge()
 	{
-		return this.thumbnailKludge().getValue();
+		return this.thumbnailKludge == null ? null : thumbnailKludge().getValue();
 	}
 
-	public MetadataParsedURL getThumbnailKludgeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getThumbnailKludgeMetadata()
 	{
 		return thumbnailKludge;
 	}
 
-	public void setThumbnailKludge(ParsedURL thumbnailKludge)
+	public void setThumbnailKludge(ecologylab.net.ParsedURL thumbnailKludge)
 	{
-		this.thumbnailKludge().setValue(thumbnailKludge);
+		if (thumbnailKludge != null)
+			this.thumbnailKludge().setValue(thumbnailKludge);
 	}
 
-	public void setThumbnailKludgeMetadata(MetadataParsedURL thumbnailKludge)
+	public void setThumbnailKludgeMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbnailKludge)
 	{
 		this.thumbnailKludge = thumbnailKludge;
 	}
 
-	public MetadataParsedURL	imageKludge()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	imageKludge()
 	{
-		MetadataParsedURL	result = this.imageKludge;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.imageKludge;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.imageKludge = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getImageKludge()
+	public ecologylab.net.ParsedURL getImageKludge()
 	{
-		return this.imageKludge().getValue();
+		return this.imageKludge == null ? null : imageKludge().getValue();
 	}
 
-	public MetadataParsedURL getImageKludgeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getImageKludgeMetadata()
 	{
 		return imageKludge;
 	}
 
-	public void setImageKludge(ParsedURL imageKludge)
+	public void setImageKludge(ecologylab.net.ParsedURL imageKludge)
 	{
-		this.imageKludge().setValue(imageKludge);
+		if (imageKludge != null)
+			this.imageKludge().setValue(imageKludge);
 	}
 
-	public void setImageKludgeMetadata(MetadataParsedURL imageKludge)
+	public void setImageKludgeMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL imageKludge)
 	{
 		this.imageKludge = imageKludge;
 	}

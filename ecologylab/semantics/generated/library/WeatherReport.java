@@ -28,37 +28,37 @@ public class WeatherReport extends CompoundDocument
 	/** 
 	 * The name of the city.
 	 */ 
-	@simpl_scalar	private MetadataString city;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString city;
 
 	/** 
 	 * The weather condition of the city, like sunny or cloudy.
 	 */ 
-	@simpl_scalar	private MetadataString weather;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString weather;
 
 	/** 
 	 * The URL of the picture indicating weather condition.
 	 */ 
-	@simpl_scalar	private MetadataParsedURL picUrl;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL picUrl;
 
 	/** 
 	 * The temperature.
 	 */ 
-	@simpl_scalar	private MetadataString temperature;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString temperature;
 
 	/** 
 	 * The humidity of the air.
 	 */ 
-	@simpl_scalar	private MetadataString humidity;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString humidity;
 
 	/** 
 	 * The wind speed.
 	 */ 
-	@simpl_scalar	private MetadataString wind;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString wind;
 
 	/** 
 	 * The dew point.
 	 */ 
-	@simpl_scalar	private MetadataString dewPoint;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString dewPoint;
 
 	public WeatherReport()
 	{ }
@@ -68,219 +68,226 @@ public class WeatherReport extends CompoundDocument
 	}
 
 
-	public MetadataString	city()
+	public ecologylab.semantics.metadata.scalar.MetadataString	city()
 	{
-		MetadataString	result = this.city;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.city;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.city = result;
 		}
 		return result;
 	}
 
-	public String getCity()
+	public java.lang.String getCity()
 	{
-		return this.city().getValue();
+		return this.city == null ? null : city().getValue();
 	}
 
-	public MetadataString getCityMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCityMetadata()
 	{
 		return city;
 	}
 
-	public void setCity(String city)
+	public void setCity(java.lang.String city)
 	{
-		this.city().setValue(city);
+		if (city != null)
+			this.city().setValue(city);
 	}
 
-	public void setCityMetadata(MetadataString city)
+	public void setCityMetadata(ecologylab.semantics.metadata.scalar.MetadataString city)
 	{
 		this.city = city;
 	}
 
-	public MetadataString	weather()
+	public ecologylab.semantics.metadata.scalar.MetadataString	weather()
 	{
-		MetadataString	result = this.weather;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.weather;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.weather = result;
 		}
 		return result;
 	}
 
-	public String getWeather()
+	public java.lang.String getWeather()
 	{
-		return this.weather().getValue();
+		return this.weather == null ? null : weather().getValue();
 	}
 
-	public MetadataString getWeatherMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getWeatherMetadata()
 	{
 		return weather;
 	}
 
-	public void setWeather(String weather)
+	public void setWeather(java.lang.String weather)
 	{
-		this.weather().setValue(weather);
+		if (weather != null)
+			this.weather().setValue(weather);
 	}
 
-	public void setWeatherMetadata(MetadataString weather)
+	public void setWeatherMetadata(ecologylab.semantics.metadata.scalar.MetadataString weather)
 	{
 		this.weather = weather;
 	}
 
-	public MetadataParsedURL	picUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	picUrl()
 	{
-		MetadataParsedURL	result = this.picUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.picUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.picUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPicUrl()
+	public ecologylab.net.ParsedURL getPicUrl()
 	{
-		return this.picUrl().getValue();
+		return this.picUrl == null ? null : picUrl().getValue();
 	}
 
-	public MetadataParsedURL getPicUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPicUrlMetadata()
 	{
 		return picUrl;
 	}
 
-	public void setPicUrl(ParsedURL picUrl)
+	public void setPicUrl(ecologylab.net.ParsedURL picUrl)
 	{
-		this.picUrl().setValue(picUrl);
+		if (picUrl != null)
+			this.picUrl().setValue(picUrl);
 	}
 
-	public void setPicUrlMetadata(MetadataParsedURL picUrl)
+	public void setPicUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL picUrl)
 	{
 		this.picUrl = picUrl;
 	}
 
-	public MetadataString	temperature()
+	public ecologylab.semantics.metadata.scalar.MetadataString	temperature()
 	{
-		MetadataString	result = this.temperature;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.temperature;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.temperature = result;
 		}
 		return result;
 	}
 
-	public String getTemperature()
+	public java.lang.String getTemperature()
 	{
-		return this.temperature().getValue();
+		return this.temperature == null ? null : temperature().getValue();
 	}
 
-	public MetadataString getTemperatureMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTemperatureMetadata()
 	{
 		return temperature;
 	}
 
-	public void setTemperature(String temperature)
+	public void setTemperature(java.lang.String temperature)
 	{
-		this.temperature().setValue(temperature);
+		if (temperature != null)
+			this.temperature().setValue(temperature);
 	}
 
-	public void setTemperatureMetadata(MetadataString temperature)
+	public void setTemperatureMetadata(ecologylab.semantics.metadata.scalar.MetadataString temperature)
 	{
 		this.temperature = temperature;
 	}
 
-	public MetadataString	humidity()
+	public ecologylab.semantics.metadata.scalar.MetadataString	humidity()
 	{
-		MetadataString	result = this.humidity;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.humidity;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.humidity = result;
 		}
 		return result;
 	}
 
-	public String getHumidity()
+	public java.lang.String getHumidity()
 	{
-		return this.humidity().getValue();
+		return this.humidity == null ? null : humidity().getValue();
 	}
 
-	public MetadataString getHumidityMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getHumidityMetadata()
 	{
 		return humidity;
 	}
 
-	public void setHumidity(String humidity)
+	public void setHumidity(java.lang.String humidity)
 	{
-		this.humidity().setValue(humidity);
+		if (humidity != null)
+			this.humidity().setValue(humidity);
 	}
 
-	public void setHumidityMetadata(MetadataString humidity)
+	public void setHumidityMetadata(ecologylab.semantics.metadata.scalar.MetadataString humidity)
 	{
 		this.humidity = humidity;
 	}
 
-	public MetadataString	wind()
+	public ecologylab.semantics.metadata.scalar.MetadataString	wind()
 	{
-		MetadataString	result = this.wind;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.wind;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.wind = result;
 		}
 		return result;
 	}
 
-	public String getWind()
+	public java.lang.String getWind()
 	{
-		return this.wind().getValue();
+		return this.wind == null ? null : wind().getValue();
 	}
 
-	public MetadataString getWindMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getWindMetadata()
 	{
 		return wind;
 	}
 
-	public void setWind(String wind)
+	public void setWind(java.lang.String wind)
 	{
-		this.wind().setValue(wind);
+		if (wind != null)
+			this.wind().setValue(wind);
 	}
 
-	public void setWindMetadata(MetadataString wind)
+	public void setWindMetadata(ecologylab.semantics.metadata.scalar.MetadataString wind)
 	{
 		this.wind = wind;
 	}
 
-	public MetadataString	dewPoint()
+	public ecologylab.semantics.metadata.scalar.MetadataString	dewPoint()
 	{
-		MetadataString	result = this.dewPoint;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.dewPoint;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.dewPoint = result;
 		}
 		return result;
 	}
 
-	public String getDewPoint()
+	public java.lang.String getDewPoint()
 	{
-		return this.dewPoint().getValue();
+		return this.dewPoint == null ? null : dewPoint().getValue();
 	}
 
-	public MetadataString getDewPointMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDewPointMetadata()
 	{
 		return dewPoint;
 	}
 
-	public void setDewPoint(String dewPoint)
+	public void setDewPoint(java.lang.String dewPoint)
 	{
-		this.dewPoint().setValue(dewPoint);
+		if (dewPoint != null)
+			this.dewPoint().setValue(dewPoint);
 	}
 
-	public void setDewPointMetadata(MetadataString dewPoint)
+	public void setDewPointMetadata(ecologylab.semantics.metadata.scalar.MetadataString dewPoint)
 	{
 		this.dewPoint = dewPoint;
 	}

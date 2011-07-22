@@ -27,27 +27,27 @@ public class GoogleScholarSearchResult extends SearchResult
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL documentLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL documentLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger citations;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger citations;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL citationsLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL citationsLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL relatedArticlesLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL relatedArticlesLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger versions;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger versions;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL versionsLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL versionsLink;
 
 	public GoogleScholarSearchResult()
 	{ }
@@ -57,188 +57,194 @@ public class GoogleScholarSearchResult extends SearchResult
 	}
 
 
-	public MetadataParsedURL	documentLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	documentLink()
 	{
-		MetadataParsedURL	result = this.documentLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.documentLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.documentLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getDocumentLink()
+	public ecologylab.net.ParsedURL getDocumentLink()
 	{
-		return this.documentLink().getValue();
+		return this.documentLink == null ? null : documentLink().getValue();
 	}
 
-	public MetadataParsedURL getDocumentLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getDocumentLinkMetadata()
 	{
 		return documentLink;
 	}
 
-	public void setDocumentLink(ParsedURL documentLink)
+	public void setDocumentLink(ecologylab.net.ParsedURL documentLink)
 	{
-		this.documentLink().setValue(documentLink);
+		if (documentLink != null)
+			this.documentLink().setValue(documentLink);
 	}
 
-	public void setDocumentLinkMetadata(MetadataParsedURL documentLink)
+	public void setDocumentLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL documentLink)
 	{
 		this.documentLink = documentLink;
 	}
 
-	public MetadataInteger	citations()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	citations()
 	{
-		MetadataInteger	result = this.citations;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.citations;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.citations = result;
 		}
 		return result;
 	}
 
-	public int getCitations()
+	public java.lang.Integer getCitations()
 	{
-		return this.citations().getValue();
+		return this.citations == null ? 0 : citations().getValue();
 	}
 
-	public MetadataInteger getCitationsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getCitationsMetadata()
 	{
 		return citations;
 	}
 
-	public void setCitations(int citations)
+	public void setCitations(java.lang.Integer citations)
 	{
-		this.citations().setValue(citations);
+		if (citations != 0)
+			this.citations().setValue(citations);
 	}
 
-	public void setCitationsMetadata(MetadataInteger citations)
+	public void setCitationsMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger citations)
 	{
 		this.citations = citations;
 	}
 
-	public MetadataParsedURL	citationsLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	citationsLink()
 	{
-		MetadataParsedURL	result = this.citationsLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.citationsLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.citationsLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getCitationsLink()
+	public ecologylab.net.ParsedURL getCitationsLink()
 	{
-		return this.citationsLink().getValue();
+		return this.citationsLink == null ? null : citationsLink().getValue();
 	}
 
-	public MetadataParsedURL getCitationsLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getCitationsLinkMetadata()
 	{
 		return citationsLink;
 	}
 
-	public void setCitationsLink(ParsedURL citationsLink)
+	public void setCitationsLink(ecologylab.net.ParsedURL citationsLink)
 	{
-		this.citationsLink().setValue(citationsLink);
+		if (citationsLink != null)
+			this.citationsLink().setValue(citationsLink);
 	}
 
-	public void setCitationsLinkMetadata(MetadataParsedURL citationsLink)
+	public void setCitationsLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL citationsLink)
 	{
 		this.citationsLink = citationsLink;
 	}
 
-	public MetadataParsedURL	relatedArticlesLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	relatedArticlesLink()
 	{
-		MetadataParsedURL	result = this.relatedArticlesLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.relatedArticlesLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.relatedArticlesLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getRelatedArticlesLink()
+	public ecologylab.net.ParsedURL getRelatedArticlesLink()
 	{
-		return this.relatedArticlesLink().getValue();
+		return this.relatedArticlesLink == null ? null : relatedArticlesLink().getValue();
 	}
 
-	public MetadataParsedURL getRelatedArticlesLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getRelatedArticlesLinkMetadata()
 	{
 		return relatedArticlesLink;
 	}
 
-	public void setRelatedArticlesLink(ParsedURL relatedArticlesLink)
+	public void setRelatedArticlesLink(ecologylab.net.ParsedURL relatedArticlesLink)
 	{
-		this.relatedArticlesLink().setValue(relatedArticlesLink);
+		if (relatedArticlesLink != null)
+			this.relatedArticlesLink().setValue(relatedArticlesLink);
 	}
 
-	public void setRelatedArticlesLinkMetadata(MetadataParsedURL relatedArticlesLink)
+	public void setRelatedArticlesLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL relatedArticlesLink)
 	{
 		this.relatedArticlesLink = relatedArticlesLink;
 	}
 
-	public MetadataInteger	versions()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	versions()
 	{
-		MetadataInteger	result = this.versions;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.versions;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.versions = result;
 		}
 		return result;
 	}
 
-	public int getVersions()
+	public java.lang.Integer getVersions()
 	{
-		return this.versions().getValue();
+		return this.versions == null ? 0 : versions().getValue();
 	}
 
-	public MetadataInteger getVersionsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getVersionsMetadata()
 	{
 		return versions;
 	}
 
-	public void setVersions(int versions)
+	public void setVersions(java.lang.Integer versions)
 	{
-		this.versions().setValue(versions);
+		if (versions != 0)
+			this.versions().setValue(versions);
 	}
 
-	public void setVersionsMetadata(MetadataInteger versions)
+	public void setVersionsMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger versions)
 	{
 		this.versions = versions;
 	}
 
-	public MetadataParsedURL	versionsLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	versionsLink()
 	{
-		MetadataParsedURL	result = this.versionsLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.versionsLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.versionsLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getVersionsLink()
+	public ecologylab.net.ParsedURL getVersionsLink()
 	{
-		return this.versionsLink().getValue();
+		return this.versionsLink == null ? null : versionsLink().getValue();
 	}
 
-	public MetadataParsedURL getVersionsLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getVersionsLinkMetadata()
 	{
 		return versionsLink;
 	}
 
-	public void setVersionsLink(ParsedURL versionsLink)
+	public void setVersionsLink(ecologylab.net.ParsedURL versionsLink)
 	{
-		this.versionsLink().setValue(versionsLink);
+		if (versionsLink != null)
+			this.versionsLink().setValue(versionsLink);
 	}
 
-	public void setVersionsLinkMetadata(MetadataParsedURL versionsLink)
+	public void setVersionsLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL versionsLink)
 	{
 		this.versionsLink = versionsLink;
 	}

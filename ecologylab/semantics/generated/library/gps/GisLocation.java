@@ -25,19 +25,19 @@ public class GisLocation extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataDouble latitude;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataDouble latitude;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataDouble longitude;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataDouble longitude;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataDouble altitude;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataDouble altitude;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString satellites;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString satellites;
 
 	public GisLocation()
 	{ }
@@ -47,126 +47,130 @@ public class GisLocation extends Metadata
 	}
 
 
-	public MetadataDouble	latitude()
+	public ecologylab.semantics.metadata.scalar.MetadataDouble	latitude()
 	{
-		MetadataDouble	result = this.latitude;
+		ecologylab.semantics.metadata.scalar.MetadataDouble	result = this.latitude;
 		if (result == null)
 		{
-			result = new MetadataDouble();
+			result = new ecologylab.semantics.metadata.scalar.MetadataDouble();
 			this.latitude = result;
 		}
 		return result;
 	}
 
-	public double getLatitude()
+	public java.lang.Double getLatitude()
 	{
-		return this.latitude().getValue();
+		return this.latitude == null ? 0.0 : latitude().getValue();
 	}
 
-	public MetadataDouble getLatitudeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataDouble getLatitudeMetadata()
 	{
 		return latitude;
 	}
 
-	public void setLatitude(double latitude)
+	public void setLatitude(java.lang.Double latitude)
 	{
-		this.latitude().setValue(latitude);
+		if (latitude != 0.0)
+			this.latitude().setValue(latitude);
 	}
 
-	public void setLatitudeMetadata(MetadataDouble latitude)
+	public void setLatitudeMetadata(ecologylab.semantics.metadata.scalar.MetadataDouble latitude)
 	{
 		this.latitude = latitude;
 	}
 
-	public MetadataDouble	longitude()
+	public ecologylab.semantics.metadata.scalar.MetadataDouble	longitude()
 	{
-		MetadataDouble	result = this.longitude;
+		ecologylab.semantics.metadata.scalar.MetadataDouble	result = this.longitude;
 		if (result == null)
 		{
-			result = new MetadataDouble();
+			result = new ecologylab.semantics.metadata.scalar.MetadataDouble();
 			this.longitude = result;
 		}
 		return result;
 	}
 
-	public double getLongitude()
+	public java.lang.Double getLongitude()
 	{
-		return this.longitude().getValue();
+		return this.longitude == null ? 0.0 : longitude().getValue();
 	}
 
-	public MetadataDouble getLongitudeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataDouble getLongitudeMetadata()
 	{
 		return longitude;
 	}
 
-	public void setLongitude(double longitude)
+	public void setLongitude(java.lang.Double longitude)
 	{
-		this.longitude().setValue(longitude);
+		if (longitude != 0.0)
+			this.longitude().setValue(longitude);
 	}
 
-	public void setLongitudeMetadata(MetadataDouble longitude)
+	public void setLongitudeMetadata(ecologylab.semantics.metadata.scalar.MetadataDouble longitude)
 	{
 		this.longitude = longitude;
 	}
 
-	public MetadataDouble	altitude()
+	public ecologylab.semantics.metadata.scalar.MetadataDouble	altitude()
 	{
-		MetadataDouble	result = this.altitude;
+		ecologylab.semantics.metadata.scalar.MetadataDouble	result = this.altitude;
 		if (result == null)
 		{
-			result = new MetadataDouble();
+			result = new ecologylab.semantics.metadata.scalar.MetadataDouble();
 			this.altitude = result;
 		}
 		return result;
 	}
 
-	public double getAltitude()
+	public java.lang.Double getAltitude()
 	{
-		return this.altitude().getValue();
+		return this.altitude == null ? 0.0 : altitude().getValue();
 	}
 
-	public MetadataDouble getAltitudeMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataDouble getAltitudeMetadata()
 	{
 		return altitude;
 	}
 
-	public void setAltitude(double altitude)
+	public void setAltitude(java.lang.Double altitude)
 	{
-		this.altitude().setValue(altitude);
+		if (altitude != 0.0)
+			this.altitude().setValue(altitude);
 	}
 
-	public void setAltitudeMetadata(MetadataDouble altitude)
+	public void setAltitudeMetadata(ecologylab.semantics.metadata.scalar.MetadataDouble altitude)
 	{
 		this.altitude = altitude;
 	}
 
-	public MetadataString	satellites()
+	public ecologylab.semantics.metadata.scalar.MetadataString	satellites()
 	{
-		MetadataString	result = this.satellites;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.satellites;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.satellites = result;
 		}
 		return result;
 	}
 
-	public String getSatellites()
+	public java.lang.String getSatellites()
 	{
-		return this.satellites().getValue();
+		return this.satellites == null ? null : satellites().getValue();
 	}
 
-	public MetadataString getSatellitesMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSatellitesMetadata()
 	{
 		return satellites;
 	}
 
-	public void setSatellites(String satellites)
+	public void setSatellites(java.lang.String satellites)
 	{
-		this.satellites().setValue(satellites);
+		if (satellites != null)
+			this.satellites().setValue(satellites);
 	}
 
-	public void setSatellitesMetadata(MetadataString satellites)
+	public void setSatellitesMetadata(ecologylab.semantics.metadata.scalar.MetadataString satellites)
 	{
 		this.satellites = satellites;
 	}

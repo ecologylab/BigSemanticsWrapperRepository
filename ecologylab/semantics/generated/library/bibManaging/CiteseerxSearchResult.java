@@ -24,7 +24,7 @@ public class CiteseerxSearchResult extends SearchResult
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString citationInfo;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString citationInfo;
 
 	public CiteseerxSearchResult()
 	{ }
@@ -34,33 +34,34 @@ public class CiteseerxSearchResult extends SearchResult
 	}
 
 
-	public MetadataString	citationInfo()
+	public ecologylab.semantics.metadata.scalar.MetadataString	citationInfo()
 	{
-		MetadataString	result = this.citationInfo;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.citationInfo;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.citationInfo = result;
 		}
 		return result;
 	}
 
-	public String getCitationInfo()
+	public java.lang.String getCitationInfo()
 	{
-		return this.citationInfo().getValue();
+		return this.citationInfo == null ? null : citationInfo().getValue();
 	}
 
-	public MetadataString getCitationInfoMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCitationInfoMetadata()
 	{
 		return citationInfo;
 	}
 
-	public void setCitationInfo(String citationInfo)
+	public void setCitationInfo(java.lang.String citationInfo)
 	{
-		this.citationInfo().setValue(citationInfo);
+		if (citationInfo != null)
+			this.citationInfo().setValue(citationInfo);
 	}
 
-	public void setCitationInfoMetadata(MetadataString citationInfo)
+	public void setCitationInfoMetadata(ecologylab.semantics.metadata.scalar.MetadataString citationInfo)
 	{
 		this.citationInfo = citationInfo;
 	}

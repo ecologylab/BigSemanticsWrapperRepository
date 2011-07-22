@@ -25,7 +25,7 @@ public class Nsdl extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString subject;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString subject;
 
 	public Nsdl()
 	{ }
@@ -35,33 +35,34 @@ public class Nsdl extends CompoundDocument
 	}
 
 
-	public MetadataString	subject()
+	public ecologylab.semantics.metadata.scalar.MetadataString	subject()
 	{
-		MetadataString	result = this.subject;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.subject;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.subject = result;
 		}
 		return result;
 	}
 
-	public String getSubject()
+	public java.lang.String getSubject()
 	{
-		return this.subject().getValue();
+		return this.subject == null ? null : subject().getValue();
 	}
 
-	public MetadataString getSubjectMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSubjectMetadata()
 	{
 		return subject;
 	}
 
-	public void setSubject(String subject)
+	public void setSubject(java.lang.String subject)
 	{
-		this.subject().setValue(subject);
+		if (subject != null)
+			this.subject().setValue(subject);
 	}
 
-	public void setSubjectMetadata(MetadataString subject)
+	public void setSubjectMetadata(ecologylab.semantics.metadata.scalar.MetadataString subject)
 	{
 		this.subject = subject;
 	}

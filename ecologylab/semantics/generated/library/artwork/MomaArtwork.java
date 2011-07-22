@@ -28,7 +28,7 @@ public class MomaArtwork extends Artwork
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString status;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString status;
 
 	/** 
 	 */ 
@@ -40,19 +40,19 @@ public class MomaArtwork extends Artwork
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL permalink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL permalink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL databaseLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL databaseLink;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString momaId;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString momaId;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL imageUrl;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imageUrl;
 
 	/** 
 	 */ 
@@ -66,33 +66,34 @@ public class MomaArtwork extends Artwork
 	}
 
 
-	public MetadataString	status()
+	public ecologylab.semantics.metadata.scalar.MetadataString	status()
 	{
-		MetadataString	result = this.status;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.status;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.status = result;
 		}
 		return result;
 	}
 
-	public String getStatus()
+	public java.lang.String getStatus()
 	{
-		return this.status().getValue();
+		return this.status == null ? null : status().getValue();
 	}
 
-	public MetadataString getStatusMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getStatusMetadata()
 	{
 		return status;
 	}
 
-	public void setStatus(String status)
+	public void setStatus(java.lang.String status)
 	{
-		this.status().setValue(status);
+		if (status != null)
+			this.status().setValue(status);
 	}
 
-	public void setStatusMetadata(MetadataString status)
+	public void setStatusMetadata(ecologylab.semantics.metadata.scalar.MetadataString status)
 	{
 		this.status = status;
 	}
@@ -117,126 +118,130 @@ public class MomaArtwork extends Artwork
 		this.momaClassification = momaClassification;
 	}
 
-	public MetadataParsedURL	permalink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	permalink()
 	{
-		MetadataParsedURL	result = this.permalink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.permalink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.permalink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getPermalink()
+	public ecologylab.net.ParsedURL getPermalink()
 	{
-		return this.permalink().getValue();
+		return this.permalink == null ? null : permalink().getValue();
 	}
 
-	public MetadataParsedURL getPermalinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getPermalinkMetadata()
 	{
 		return permalink;
 	}
 
-	public void setPermalink(ParsedURL permalink)
+	public void setPermalink(ecologylab.net.ParsedURL permalink)
 	{
-		this.permalink().setValue(permalink);
+		if (permalink != null)
+			this.permalink().setValue(permalink);
 	}
 
-	public void setPermalinkMetadata(MetadataParsedURL permalink)
+	public void setPermalinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL permalink)
 	{
 		this.permalink = permalink;
 	}
 
-	public MetadataParsedURL	databaseLink()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	databaseLink()
 	{
-		MetadataParsedURL	result = this.databaseLink;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.databaseLink;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.databaseLink = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getDatabaseLink()
+	public ecologylab.net.ParsedURL getDatabaseLink()
 	{
-		return this.databaseLink().getValue();
+		return this.databaseLink == null ? null : databaseLink().getValue();
 	}
 
-	public MetadataParsedURL getDatabaseLinkMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getDatabaseLinkMetadata()
 	{
 		return databaseLink;
 	}
 
-	public void setDatabaseLink(ParsedURL databaseLink)
+	public void setDatabaseLink(ecologylab.net.ParsedURL databaseLink)
 	{
-		this.databaseLink().setValue(databaseLink);
+		if (databaseLink != null)
+			this.databaseLink().setValue(databaseLink);
 	}
 
-	public void setDatabaseLinkMetadata(MetadataParsedURL databaseLink)
+	public void setDatabaseLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL databaseLink)
 	{
 		this.databaseLink = databaseLink;
 	}
 
-	public MetadataString	momaId()
+	public ecologylab.semantics.metadata.scalar.MetadataString	momaId()
 	{
-		MetadataString	result = this.momaId;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.momaId;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.momaId = result;
 		}
 		return result;
 	}
 
-	public String getMomaId()
+	public java.lang.String getMomaId()
 	{
-		return this.momaId().getValue();
+		return this.momaId == null ? null : momaId().getValue();
 	}
 
-	public MetadataString getMomaIdMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getMomaIdMetadata()
 	{
 		return momaId;
 	}
 
-	public void setMomaId(String momaId)
+	public void setMomaId(java.lang.String momaId)
 	{
-		this.momaId().setValue(momaId);
+		if (momaId != null)
+			this.momaId().setValue(momaId);
 	}
 
-	public void setMomaIdMetadata(MetadataString momaId)
+	public void setMomaIdMetadata(ecologylab.semantics.metadata.scalar.MetadataString momaId)
 	{
 		this.momaId = momaId;
 	}
 
-	public MetadataParsedURL	imageUrl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	imageUrl()
 	{
-		MetadataParsedURL	result = this.imageUrl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.imageUrl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.imageUrl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getImageUrl()
+	public ecologylab.net.ParsedURL getImageUrl()
 	{
-		return this.imageUrl().getValue();
+		return this.imageUrl == null ? null : imageUrl().getValue();
 	}
 
-	public MetadataParsedURL getImageUrlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getImageUrlMetadata()
 	{
 		return imageUrl;
 	}
 
-	public void setImageUrl(ParsedURL imageUrl)
+	public void setImageUrl(ecologylab.net.ParsedURL imageUrl)
 	{
-		this.imageUrl().setValue(imageUrl);
+		if (imageUrl != null)
+			this.imageUrl().setValue(imageUrl);
 	}
 
-	public void setImageUrlMetadata(MetadataParsedURL imageUrl)
+	public void setImageUrlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL imageUrl)
 	{
 		this.imageUrl = imageUrl;
 	}

@@ -26,7 +26,7 @@ public class Tumblr extends CompoundDocument
 	/** 
 	 * Phone number of the restaurant
 	 */ 
-	@simpl_scalar	private MetadataString post;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString post;
 
 	public Tumblr()
 	{ }
@@ -36,33 +36,34 @@ public class Tumblr extends CompoundDocument
 	}
 
 
-	public MetadataString	post()
+	public ecologylab.semantics.metadata.scalar.MetadataString	post()
 	{
-		MetadataString	result = this.post;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.post;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.post = result;
 		}
 		return result;
 	}
 
-	public String getPost()
+	public java.lang.String getPost()
 	{
-		return this.post().getValue();
+		return this.post == null ? null : post().getValue();
 	}
 
-	public MetadataString getPostMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPostMetadata()
 	{
 		return post;
 	}
 
-	public void setPost(String post)
+	public void setPost(java.lang.String post)
 	{
-		this.post().setValue(post);
+		if (post != null)
+			this.post().setValue(post);
 	}
 
-	public void setPostMetadata(MetadataString post)
+	public void setPostMetadata(ecologylab.semantics.metadata.scalar.MetadataString post)
 	{
 		this.post = post;
 	}

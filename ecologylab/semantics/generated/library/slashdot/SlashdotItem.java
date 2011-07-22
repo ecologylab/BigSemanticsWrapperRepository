@@ -25,11 +25,11 @@ public class SlashdotItem extends Item
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("slash:department")	@simpl_hints(Hint.XML_LEAF)	private MetadataString department;
+	@simpl_scalar	@xml_tag("slash:department")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString department;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("slash:section")	@simpl_hints(Hint.XML_LEAF)	private MetadataString section;
+	@simpl_scalar	@xml_tag("slash:section")	@simpl_hints(Hint.XML_LEAF)	private ecologylab.semantics.metadata.scalar.MetadataString section;
 
 	public SlashdotItem()
 	{ }
@@ -39,64 +39,66 @@ public class SlashdotItem extends Item
 	}
 
 
-	public MetadataString	department()
+	public ecologylab.semantics.metadata.scalar.MetadataString	department()
 	{
-		MetadataString	result = this.department;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.department;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.department = result;
 		}
 		return result;
 	}
 
-	public String getDepartment()
+	public java.lang.String getDepartment()
 	{
-		return this.department().getValue();
+		return this.department == null ? null : department().getValue();
 	}
 
-	public MetadataString getDepartmentMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getDepartmentMetadata()
 	{
 		return department;
 	}
 
-	public void setDepartment(String department)
+	public void setDepartment(java.lang.String department)
 	{
-		this.department().setValue(department);
+		if (department != null)
+			this.department().setValue(department);
 	}
 
-	public void setDepartmentMetadata(MetadataString department)
+	public void setDepartmentMetadata(ecologylab.semantics.metadata.scalar.MetadataString department)
 	{
 		this.department = department;
 	}
 
-	public MetadataString	section()
+	public ecologylab.semantics.metadata.scalar.MetadataString	section()
 	{
-		MetadataString	result = this.section;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.section;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.section = result;
 		}
 		return result;
 	}
 
-	public String getSection()
+	public java.lang.String getSection()
 	{
-		return this.section().getValue();
+		return this.section == null ? null : section().getValue();
 	}
 
-	public MetadataString getSectionMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSectionMetadata()
 	{
 		return section;
 	}
 
-	public void setSection(String section)
+	public void setSection(java.lang.String section)
 	{
-		this.section().setValue(section);
+		if (section != null)
+			this.section().setValue(section);
 	}
 
-	public void setSectionMetadata(MetadataString section)
+	public void setSectionMetadata(ecologylab.semantics.metadata.scalar.MetadataString section)
 	{
 		this.section = section;
 	}

@@ -27,31 +27,31 @@ public class MmdInlineIcdlBookInBooksInIcdlImageResult extends Document
 {
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString id;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString id;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString languages;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString languages;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL cover;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL cover;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger height;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataInteger width;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString booktitle;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString booktitle;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataParsedURL bookurl;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL bookurl;
 
 	public MmdInlineIcdlBookInBooksInIcdlImageResult()
 	{ }
@@ -61,219 +61,226 @@ public class MmdInlineIcdlBookInBooksInIcdlImageResult extends Document
 	}
 
 
-	public MetadataString	id()
+	public ecologylab.semantics.metadata.scalar.MetadataString	id()
 	{
-		MetadataString	result = this.id;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.id;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.id = result;
 		}
 		return result;
 	}
 
-	public String getId()
+	public java.lang.String getId()
 	{
-		return this.id().getValue();
+		return this.id == null ? null : id().getValue();
 	}
 
-	public MetadataString getIdMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getIdMetadata()
 	{
 		return id;
 	}
 
-	public void setId(String id)
+	public void setId(java.lang.String id)
 	{
-		this.id().setValue(id);
+		if (id != null)
+			this.id().setValue(id);
 	}
 
-	public void setIdMetadata(MetadataString id)
+	public void setIdMetadata(ecologylab.semantics.metadata.scalar.MetadataString id)
 	{
 		this.id = id;
 	}
 
-	public MetadataString	languages()
+	public ecologylab.semantics.metadata.scalar.MetadataString	languages()
 	{
-		MetadataString	result = this.languages;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.languages;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.languages = result;
 		}
 		return result;
 	}
 
-	public String getLanguages()
+	public java.lang.String getLanguages()
 	{
-		return this.languages().getValue();
+		return this.languages == null ? null : languages().getValue();
 	}
 
-	public MetadataString getLanguagesMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getLanguagesMetadata()
 	{
 		return languages;
 	}
 
-	public void setLanguages(String languages)
+	public void setLanguages(java.lang.String languages)
 	{
-		this.languages().setValue(languages);
+		if (languages != null)
+			this.languages().setValue(languages);
 	}
 
-	public void setLanguagesMetadata(MetadataString languages)
+	public void setLanguagesMetadata(ecologylab.semantics.metadata.scalar.MetadataString languages)
 	{
 		this.languages = languages;
 	}
 
-	public MetadataParsedURL	cover()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	cover()
 	{
-		MetadataParsedURL	result = this.cover;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.cover;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.cover = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getCover()
+	public ecologylab.net.ParsedURL getCover()
 	{
-		return this.cover().getValue();
+		return this.cover == null ? null : cover().getValue();
 	}
 
-	public MetadataParsedURL getCoverMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getCoverMetadata()
 	{
 		return cover;
 	}
 
-	public void setCover(ParsedURL cover)
+	public void setCover(ecologylab.net.ParsedURL cover)
 	{
-		this.cover().setValue(cover);
+		if (cover != null)
+			this.cover().setValue(cover);
 	}
 
-	public void setCoverMetadata(MetadataParsedURL cover)
+	public void setCoverMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL cover)
 	{
 		this.cover = cover;
 	}
 
-	public MetadataInteger	height()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	height()
 	{
-		MetadataInteger	result = this.height;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.height;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.height = result;
 		}
 		return result;
 	}
 
-	public int getHeight()
+	public java.lang.Integer getHeight()
 	{
-		return this.height().getValue();
+		return this.height == null ? 0 : height().getValue();
 	}
 
-	public MetadataInteger getHeightMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getHeightMetadata()
 	{
 		return height;
 	}
 
-	public void setHeight(int height)
+	public void setHeight(java.lang.Integer height)
 	{
-		this.height().setValue(height);
+		if (height != 0)
+			this.height().setValue(height);
 	}
 
-	public void setHeightMetadata(MetadataInteger height)
+	public void setHeightMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger height)
 	{
 		this.height = height;
 	}
 
-	public MetadataInteger	width()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger	width()
 	{
-		MetadataInteger	result = this.width;
+		ecologylab.semantics.metadata.scalar.MetadataInteger	result = this.width;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new ecologylab.semantics.metadata.scalar.MetadataInteger();
 			this.width = result;
 		}
 		return result;
 	}
 
-	public int getWidth()
+	public java.lang.Integer getWidth()
 	{
-		return this.width().getValue();
+		return this.width == null ? 0 : width().getValue();
 	}
 
-	public MetadataInteger getWidthMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataInteger getWidthMetadata()
 	{
 		return width;
 	}
 
-	public void setWidth(int width)
+	public void setWidth(java.lang.Integer width)
 	{
-		this.width().setValue(width);
+		if (width != 0)
+			this.width().setValue(width);
 	}
 
-	public void setWidthMetadata(MetadataInteger width)
+	public void setWidthMetadata(ecologylab.semantics.metadata.scalar.MetadataInteger width)
 	{
 		this.width = width;
 	}
 
-	public MetadataString	booktitle()
+	public ecologylab.semantics.metadata.scalar.MetadataString	booktitle()
 	{
-		MetadataString	result = this.booktitle;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.booktitle;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.booktitle = result;
 		}
 		return result;
 	}
 
-	public String getBooktitle()
+	public java.lang.String getBooktitle()
 	{
-		return this.booktitle().getValue();
+		return this.booktitle == null ? null : booktitle().getValue();
 	}
 
-	public MetadataString getBooktitleMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getBooktitleMetadata()
 	{
 		return booktitle;
 	}
 
-	public void setBooktitle(String booktitle)
+	public void setBooktitle(java.lang.String booktitle)
 	{
-		this.booktitle().setValue(booktitle);
+		if (booktitle != null)
+			this.booktitle().setValue(booktitle);
 	}
 
-	public void setBooktitleMetadata(MetadataString booktitle)
+	public void setBooktitleMetadata(ecologylab.semantics.metadata.scalar.MetadataString booktitle)
 	{
 		this.booktitle = booktitle;
 	}
 
-	public MetadataParsedURL	bookurl()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL	bookurl()
 	{
-		MetadataParsedURL	result = this.bookurl;
+		ecologylab.semantics.metadata.scalar.MetadataParsedURL	result = this.bookurl;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
+			result = new ecologylab.semantics.metadata.scalar.MetadataParsedURL();
 			this.bookurl = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getBookurl()
+	public ecologylab.net.ParsedURL getBookurl()
 	{
-		return this.bookurl().getValue();
+		return this.bookurl == null ? null : bookurl().getValue();
 	}
 
-	public MetadataParsedURL getBookurlMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataParsedURL getBookurlMetadata()
 	{
 		return bookurl;
 	}
 
-	public void setBookurl(ParsedURL bookurl)
+	public void setBookurl(ecologylab.net.ParsedURL bookurl)
 	{
-		this.bookurl().setValue(bookurl);
+		if (bookurl != null)
+			this.bookurl().setValue(bookurl);
 	}
 
-	public void setBookurlMetadata(MetadataParsedURL bookurl)
+	public void setBookurlMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL bookurl)
 	{
 		this.bookurl = bookurl;
 	}

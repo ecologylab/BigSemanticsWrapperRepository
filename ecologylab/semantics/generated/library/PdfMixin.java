@@ -26,40 +26,40 @@ public class PdfMixin extends Metadata
 	/** 
 	 * The author of the pdf document
 	 */ 
-	@simpl_scalar	private MetadataString author;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString author;
 
 	/** 
 	 * Summary of the pdf document
 	 */ 
-	@simpl_scalar	private MetadataString summary;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString summary;
 
 	/** 
 	 * Key Words of the document
 	 */ 
-	@simpl_scalar	private MetadataString pdfKeywordsString;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString pdfKeywordsString;
 
 	/** 
 	 * Subject of the document
 	 */ 
-	@simpl_scalar	private MetadataString subject;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString subject;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString trapped;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString trapped;
 
 	/** 
 	 */ 
-	@simpl_scalar	private MetadataString modified;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString modified;
 
 	/** 
 	 * Contents of the document
 	 */ 
-	@simpl_scalar	private MetadataString contents;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString contents;
 
 	/** 
 	 * Creation date of the document
 	 */ 
-	@simpl_scalar	private MetadataString creationdate;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString creationdate;
 
 	public PdfMixin()
 	{ }
@@ -69,250 +69,258 @@ public class PdfMixin extends Metadata
 	}
 
 
-	public MetadataString	author()
+	public ecologylab.semantics.metadata.scalar.MetadataString	author()
 	{
-		MetadataString	result = this.author;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.author;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.author = result;
 		}
 		return result;
 	}
 
-	public String getAuthor()
+	public java.lang.String getAuthor()
 	{
-		return this.author().getValue();
+		return this.author == null ? null : author().getValue();
 	}
 
-	public MetadataString getAuthorMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getAuthorMetadata()
 	{
 		return author;
 	}
 
-	public void setAuthor(String author)
+	public void setAuthor(java.lang.String author)
 	{
-		this.author().setValue(author);
+		if (author != null)
+			this.author().setValue(author);
 	}
 
-	public void setAuthorMetadata(MetadataString author)
+	public void setAuthorMetadata(ecologylab.semantics.metadata.scalar.MetadataString author)
 	{
 		this.author = author;
 	}
 
-	public MetadataString	summary()
+	public ecologylab.semantics.metadata.scalar.MetadataString	summary()
 	{
-		MetadataString	result = this.summary;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.summary;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.summary = result;
 		}
 		return result;
 	}
 
-	public String getSummary()
+	public java.lang.String getSummary()
 	{
-		return this.summary().getValue();
+		return this.summary == null ? null : summary().getValue();
 	}
 
-	public MetadataString getSummaryMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSummaryMetadata()
 	{
 		return summary;
 	}
 
-	public void setSummary(String summary)
+	public void setSummary(java.lang.String summary)
 	{
-		this.summary().setValue(summary);
+		if (summary != null)
+			this.summary().setValue(summary);
 	}
 
-	public void setSummaryMetadata(MetadataString summary)
+	public void setSummaryMetadata(ecologylab.semantics.metadata.scalar.MetadataString summary)
 	{
 		this.summary = summary;
 	}
 
-	public MetadataString	pdfKeywordsString()
+	public ecologylab.semantics.metadata.scalar.MetadataString	pdfKeywordsString()
 	{
-		MetadataString	result = this.pdfKeywordsString;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.pdfKeywordsString;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.pdfKeywordsString = result;
 		}
 		return result;
 	}
 
-	public String getPdfKeywordsString()
+	public java.lang.String getPdfKeywordsString()
 	{
-		return this.pdfKeywordsString().getValue();
+		return this.pdfKeywordsString == null ? null : pdfKeywordsString().getValue();
 	}
 
-	public MetadataString getPdfKeywordsStringMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getPdfKeywordsStringMetadata()
 	{
 		return pdfKeywordsString;
 	}
 
-	public void setPdfKeywordsString(String pdfKeywordsString)
+	public void setPdfKeywordsString(java.lang.String pdfKeywordsString)
 	{
-		this.pdfKeywordsString().setValue(pdfKeywordsString);
+		if (pdfKeywordsString != null)
+			this.pdfKeywordsString().setValue(pdfKeywordsString);
 	}
 
-	public void setPdfKeywordsStringMetadata(MetadataString pdfKeywordsString)
+	public void setPdfKeywordsStringMetadata(ecologylab.semantics.metadata.scalar.MetadataString pdfKeywordsString)
 	{
 		this.pdfKeywordsString = pdfKeywordsString;
 	}
 
-	public MetadataString	subject()
+	public ecologylab.semantics.metadata.scalar.MetadataString	subject()
 	{
-		MetadataString	result = this.subject;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.subject;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.subject = result;
 		}
 		return result;
 	}
 
-	public String getSubject()
+	public java.lang.String getSubject()
 	{
-		return this.subject().getValue();
+		return this.subject == null ? null : subject().getValue();
 	}
 
-	public MetadataString getSubjectMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getSubjectMetadata()
 	{
 		return subject;
 	}
 
-	public void setSubject(String subject)
+	public void setSubject(java.lang.String subject)
 	{
-		this.subject().setValue(subject);
+		if (subject != null)
+			this.subject().setValue(subject);
 	}
 
-	public void setSubjectMetadata(MetadataString subject)
+	public void setSubjectMetadata(ecologylab.semantics.metadata.scalar.MetadataString subject)
 	{
 		this.subject = subject;
 	}
 
-	public MetadataString	trapped()
+	public ecologylab.semantics.metadata.scalar.MetadataString	trapped()
 	{
-		MetadataString	result = this.trapped;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.trapped;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.trapped = result;
 		}
 		return result;
 	}
 
-	public String getTrapped()
+	public java.lang.String getTrapped()
 	{
-		return this.trapped().getValue();
+		return this.trapped == null ? null : trapped().getValue();
 	}
 
-	public MetadataString getTrappedMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getTrappedMetadata()
 	{
 		return trapped;
 	}
 
-	public void setTrapped(String trapped)
+	public void setTrapped(java.lang.String trapped)
 	{
-		this.trapped().setValue(trapped);
+		if (trapped != null)
+			this.trapped().setValue(trapped);
 	}
 
-	public void setTrappedMetadata(MetadataString trapped)
+	public void setTrappedMetadata(ecologylab.semantics.metadata.scalar.MetadataString trapped)
 	{
 		this.trapped = trapped;
 	}
 
-	public MetadataString	modified()
+	public ecologylab.semantics.metadata.scalar.MetadataString	modified()
 	{
-		MetadataString	result = this.modified;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.modified;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.modified = result;
 		}
 		return result;
 	}
 
-	public String getModified()
+	public java.lang.String getModified()
 	{
-		return this.modified().getValue();
+		return this.modified == null ? null : modified().getValue();
 	}
 
-	public MetadataString getModifiedMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getModifiedMetadata()
 	{
 		return modified;
 	}
 
-	public void setModified(String modified)
+	public void setModified(java.lang.String modified)
 	{
-		this.modified().setValue(modified);
+		if (modified != null)
+			this.modified().setValue(modified);
 	}
 
-	public void setModifiedMetadata(MetadataString modified)
+	public void setModifiedMetadata(ecologylab.semantics.metadata.scalar.MetadataString modified)
 	{
 		this.modified = modified;
 	}
 
-	public MetadataString	contents()
+	public ecologylab.semantics.metadata.scalar.MetadataString	contents()
 	{
-		MetadataString	result = this.contents;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.contents;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.contents = result;
 		}
 		return result;
 	}
 
-	public String getContents()
+	public java.lang.String getContents()
 	{
-		return this.contents().getValue();
+		return this.contents == null ? null : contents().getValue();
 	}
 
-	public MetadataString getContentsMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getContentsMetadata()
 	{
 		return contents;
 	}
 
-	public void setContents(String contents)
+	public void setContents(java.lang.String contents)
 	{
-		this.contents().setValue(contents);
+		if (contents != null)
+			this.contents().setValue(contents);
 	}
 
-	public void setContentsMetadata(MetadataString contents)
+	public void setContentsMetadata(ecologylab.semantics.metadata.scalar.MetadataString contents)
 	{
 		this.contents = contents;
 	}
 
-	public MetadataString	creationdate()
+	public ecologylab.semantics.metadata.scalar.MetadataString	creationdate()
 	{
-		MetadataString	result = this.creationdate;
+		ecologylab.semantics.metadata.scalar.MetadataString	result = this.creationdate;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new ecologylab.semantics.metadata.scalar.MetadataString();
 			this.creationdate = result;
 		}
 		return result;
 	}
 
-	public String getCreationdate()
+	public java.lang.String getCreationdate()
 	{
-		return this.creationdate().getValue();
+		return this.creationdate == null ? null : creationdate().getValue();
 	}
 
-	public MetadataString getCreationdateMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getCreationdateMetadata()
 	{
 		return creationdate;
 	}
 
-	public void setCreationdate(String creationdate)
+	public void setCreationdate(java.lang.String creationdate)
 	{
-		this.creationdate().setValue(creationdate);
+		if (creationdate != null)
+			this.creationdate().setValue(creationdate);
 	}
 
-	public void setCreationdateMetadata(MetadataString creationdate)
+	public void setCreationdateMetadata(ecologylab.semantics.metadata.scalar.MetadataString creationdate)
 	{
 		this.creationdate = creationdate;
 	}
