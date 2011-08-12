@@ -1,14 +1,11 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
 import ecologylab.semantics.generated.library.dlese.Contributor;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
 import java.util.List;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
 
 /**
 *  Lifecycle.java

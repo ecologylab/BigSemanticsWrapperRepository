@@ -1,9 +1,7 @@
 package ecologylab.semantics.generated.library.search;
 
-import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
 import java.util.List;
 import ecologylab.semantics.generated.library.search.YahooResult;
 import ecologylab.semantics.metadata.builtins.Document;

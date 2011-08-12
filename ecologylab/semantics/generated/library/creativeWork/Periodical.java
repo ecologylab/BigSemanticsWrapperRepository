@@ -1,13 +1,9 @@
 package ecologylab.semantics.generated.library.creativeWork;
 
-import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
 import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
-import java.util.List;
 import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
 
 /**
 *  Periodical.java
