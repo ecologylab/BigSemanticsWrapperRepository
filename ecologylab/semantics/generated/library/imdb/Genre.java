@@ -1,10 +1,14 @@
 package ecologylab.semantics.generated.library.imdb;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
+import java.util.List;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
+import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 
 /**
@@ -22,11 +26,11 @@ public class Genre extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL genreLink;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString title;
 
 	/** 
 	 */ 
-	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
+	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataParsedURL genreLink;
 
 	public Genre()
 	{ }
@@ -35,6 +39,38 @@ public class Genre extends Metadata
 		super(mmd);
 	}
 
+
+	public MetadataString	title()
+	{
+		MetadataString	result = this.title;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.title = result;
+		}
+		return result;
+	}
+
+	public String getTitle()
+	{
+		return this.title == null ? null : title().getValue();
+	}
+
+	public ecologylab.semantics.metadata.scalar.MetadataString getTitleMetadata()
+	{
+		return title;
+	}
+
+	public void setTitle(String title)
+	{
+		if (title != null)
+			this.title().setValue(title);
+	}
+
+	public void setTitleMetadata(ecologylab.semantics.metadata.scalar.MetadataString title)
+	{
+		this.title = title;
+	}
 
 	public MetadataParsedURL	genreLink()
 	{
@@ -66,37 +102,5 @@ public class Genre extends Metadata
 	public void setGenreLinkMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL genreLink)
 	{
 		this.genreLink = genreLink;
-	}
-
-	public MetadataString	name()
-	{
-		MetadataString	result = this.name;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.name = result;
-		}
-		return result;
-	}
-
-	public String getName()
-	{
-		return this.name == null ? null : name().getValue();
-	}
-
-	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
-	{
-		return name;
-	}
-
-	public void setName(String name)
-	{
-		if (name != null)
-			this.name().setValue(name);
-	}
-
-	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
-	{
-		this.name = name;
 	}
 }

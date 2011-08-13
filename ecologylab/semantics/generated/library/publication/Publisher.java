@@ -1,9 +1,13 @@
 package ecologylab.semantics.generated.library.publication;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
+import ecologylab.serialization.Hint;
+import java.util.List;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.ElementState.xml_tag;
 
 /**
 *  Publisher.java
@@ -17,12 +21,8 @@ import ecologylab.serialization.simpl_inherit;
 	 * A publishing company.
  */ 
 @simpl_inherit
-public class Publisher extends Metadata
+public class Publisher extends Document
 {
-	/** 
-	 */ 
-	@simpl_scalar @simpl_composite_as_scalar	private ecologylab.semantics.metadata.scalar.MetadataString name;
-
 	/** 
 	 */ 
 	@simpl_scalar	private ecologylab.semantics.metadata.scalar.MetadataString city;
@@ -34,38 +34,6 @@ public class Publisher extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	name()
-	{
-		MetadataString	result = this.name;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.name = result;
-		}
-		return result;
-	}
-
-	public String getName()
-	{
-		return this.name == null ? null : name().getValue();
-	}
-
-	public ecologylab.semantics.metadata.scalar.MetadataString getNameMetadata()
-	{
-		return name;
-	}
-
-	public void setName(String name)
-	{
-		if (name != null)
-			this.name().setValue(name);
-	}
-
-	public void setNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString name)
-	{
-		this.name = name;
-	}
 
 	public MetadataString	city()
 	{

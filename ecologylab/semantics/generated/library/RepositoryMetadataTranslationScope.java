@@ -31,15 +31,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.GoogleImageSearchType.class,
 
-		ecologylab.semantics.generated.library.GooglePatent.class,
-
-		ecologylab.semantics.generated.library.GooglePatentImage.class,
-
-		ecologylab.semantics.generated.library.GoogleSorry.class,
-
 		ecologylab.semantics.generated.library.Lolz.class,
-
-		ecologylab.semantics.generated.library.Patent.class,
 
 		ecologylab.semantics.generated.library.PdfMixin.class,
 
@@ -50,16 +42,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.Tumblr.class,
 
 		ecologylab.semantics.generated.library.WeatherReport.class,
-
-		ecologylab.semantics.generated.library.artwork.Artist.class,
-
-		ecologylab.semantics.generated.library.artwork.Artwork.class,
-
-		ecologylab.semantics.generated.library.artwork.MmArtwork.class,
-
-		ecologylab.semantics.generated.library.artwork.MomaArtwork.class,
-
-		ecologylab.semantics.generated.library.artwork.MomaList.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
 
@@ -148,6 +130,14 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.nsdl.NsdlService.class,
 
 		ecologylab.semantics.generated.library.opml.Opml.class,
+
+		ecologylab.semantics.generated.library.patents.GooglePatent.class,
+
+		ecologylab.semantics.generated.library.patents.GooglePatentImage.class,
+
+		ecologylab.semantics.generated.library.patents.GoogleSorry.class,
+
+		ecologylab.semantics.generated.library.patents.Patent.class,
 
 		ecologylab.semantics.generated.library.products.AmazonProduct.class,
 
