@@ -1,5 +1,6 @@
 package ecologylab.semantics.generated.library.creativeWork;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
@@ -9,6 +10,7 @@ import java.util.List;
 import ecologylab.semantics.generated.library.creativeWork.Author;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.ElementState.xml_tag;
 
 /**
 *  CreativeWork.java

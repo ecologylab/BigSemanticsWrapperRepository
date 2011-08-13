@@ -1,11 +1,15 @@
 package ecologylab.semantics.generated.library.icdl;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
+import java.util.List;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
+import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 
 /**

@@ -1,6 +1,9 @@
 package ecologylab.semantics.generated.library.search;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
+import java.util.List;
 import ecologylab.semantics.generated.library.search.BingSearchImageSection;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.serialization.simpl_inherit;

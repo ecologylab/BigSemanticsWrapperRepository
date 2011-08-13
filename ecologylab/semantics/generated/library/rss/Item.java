@@ -1,9 +1,12 @@
 package ecologylab.semantics.generated.library.rss;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.Hint;
+import java.util.List;
 import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
+import ecologylab.serialization.ElementState.xml_tag;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.generated.library.rss.YahooMediaRss;
 

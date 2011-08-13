@@ -1,11 +1,14 @@
 package ecologylab.semantics.generated.library.imdb;
 
+import ecologylab.serialization.ElementState.xml_other_tags;
 import java.util.ArrayList;
 import ecologylab.semantics.generated.library.imdb.ImdbTitle;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.Hint;
 import java.util.List;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.ElementState.xml_tag;
 
 /**
 *  ImdbGenre.java
