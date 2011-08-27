@@ -3,6 +3,9 @@ package ecologylab.semantics.generated.library.creativeWork;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
+import java.util.Date;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
 
 /**
@@ -14,16 +17,27 @@ import ecologylab.serialization.simpl_inherit;
 */
 
 /** 
-	 * Metadata related to where an article is published.
+	 * An issue of a periodical.
  */ 
 @simpl_inherit
 public class Periodical extends BasicPublication
 {
 	/** 
-	 * Same as title, but used for composite scalar
+	 * All the issues of a periodical.
 	 */ 
-	@simpl_scalar	@simpl_composite_as_scalar
-	private ecologylab.semantics.metadata.scalar.MetadataString archiveName;
+	@simpl_composite	@mm_name("archive")
+	private Document archive;
+
+	/** 
+	 */ 
+	@simpl_scalar	
+	private ecologylab.semantics.metadata.scalar.MetadataString volumeAndIssue;
+
+	/** 
+	 * Publication Date
+	 */ 
+	@simpl_scalar	
+	private ecologylab.semantics.metadata.scalar.MetadataDate date;
 
 	public Periodical()
 	{ }
@@ -33,35 +47,77 @@ public class Periodical extends BasicPublication
 	}
 
 
-	public MetadataString	archiveName()
+	public Document getArchive()
 	{
-		MetadataString	result = this.archiveName;
+		return archive;
+	}
+
+	public void setArchive(Document archive)
+	{
+		this.archive = archive;
+	}
+
+	public MetadataString	volumeAndIssue()
+	{
+		MetadataString	result = this.volumeAndIssue;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.archiveName = result;
+			this.volumeAndIssue = result;
 		}
 		return result;
 	}
 
-	public String getArchiveName()
+	public String getVolumeAndIssue()
 	{
-		return this.archiveName == null ? null : archiveName().getValue();
+		return this.volumeAndIssue == null ? null : volumeAndIssue().getValue();
 	}
 
-	public ecologylab.semantics.metadata.scalar.MetadataString getArchiveNameMetadata()
+	public ecologylab.semantics.metadata.scalar.MetadataString getVolumeAndIssueMetadata()
 	{
-		return archiveName;
+		return volumeAndIssue;
 	}
 
-	public void setArchiveName(String archiveName)
+	public void setVolumeAndIssue(String volumeAndIssue)
 	{
-		if (archiveName != null)
-			this.archiveName().setValue(archiveName);
+		if (volumeAndIssue != null)
+			this.volumeAndIssue().setValue(volumeAndIssue);
 	}
 
-	public void setArchiveNameMetadata(ecologylab.semantics.metadata.scalar.MetadataString archiveName)
+	public void setVolumeAndIssueMetadata(ecologylab.semantics.metadata.scalar.MetadataString volumeAndIssue)
 	{
-		this.archiveName = archiveName;
+		this.volumeAndIssue = volumeAndIssue;
+	}
+
+	public MetadataDate	date()
+	{
+		MetadataDate	result = this.date;
+		if (result == null)
+		{
+			result = new MetadataDate();
+			this.date = result;
+		}
+		return result;
+	}
+
+	public Date getDate()
+	{
+		return this.date == null ? null : date().getValue();
+	}
+
+	public ecologylab.semantics.metadata.scalar.MetadataDate getDateMetadata()
+	{
+		return date;
+	}
+
+	public void setDate(Date date)
+	{
+		if (date != null)
+			this.date().setValue(date);
+	}
+
+	public void setDateMetadata(ecologylab.semantics.metadata.scalar.MetadataDate date)
+	{
+		this.date = date;
 	}
 }

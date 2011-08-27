@@ -41,12 +41,12 @@ public class Product extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString overallRating;
+	private ecologylab.semantics.metadata.scalar.MetadataParsedURL reviewsLocation;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL reviewsLocation;
+	private ecologylab.semantics.metadata.scalar.MetadataString overallRating;
 
 	/** 
 	 */ 
@@ -157,38 +157,6 @@ public class Product extends CompoundDocument
 		this.imageUrl = imageUrl;
 	}
 
-	public MetadataString	overallRating()
-	{
-		MetadataString	result = this.overallRating;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.overallRating = result;
-		}
-		return result;
-	}
-
-	public String getOverallRating()
-	{
-		return this.overallRating == null ? null : overallRating().getValue();
-	}
-
-	public ecologylab.semantics.metadata.scalar.MetadataString getOverallRatingMetadata()
-	{
-		return overallRating;
-	}
-
-	public void setOverallRating(String overallRating)
-	{
-		if (overallRating != null)
-			this.overallRating().setValue(overallRating);
-	}
-
-	public void setOverallRatingMetadata(ecologylab.semantics.metadata.scalar.MetadataString overallRating)
-	{
-		this.overallRating = overallRating;
-	}
-
 	public MetadataParsedURL	reviewsLocation()
 	{
 		MetadataParsedURL	result = this.reviewsLocation;
@@ -219,6 +187,38 @@ public class Product extends CompoundDocument
 	public void setReviewsLocationMetadata(ecologylab.semantics.metadata.scalar.MetadataParsedURL reviewsLocation)
 	{
 		this.reviewsLocation = reviewsLocation;
+	}
+
+	public MetadataString	overallRating()
+	{
+		MetadataString	result = this.overallRating;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.overallRating = result;
+		}
+		return result;
+	}
+
+	public String getOverallRating()
+	{
+		return this.overallRating == null ? null : overallRating().getValue();
+	}
+
+	public ecologylab.semantics.metadata.scalar.MetadataString getOverallRatingMetadata()
+	{
+		return overallRating;
+	}
+
+	public void setOverallRating(String overallRating)
+	{
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
+	}
+
+	public void setOverallRatingMetadata(ecologylab.semantics.metadata.scalar.MetadataString overallRating)
+	{
+		this.overallRating = overallRating;
 	}
 
 	public List<ProductReview> getReviews()
