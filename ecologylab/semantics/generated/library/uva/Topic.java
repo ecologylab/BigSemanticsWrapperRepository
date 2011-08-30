@@ -23,27 +23,27 @@ public class Topic extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder contentKeywords;
+	private MetadataStringBuilder contentKeywords;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder anchorKeywords;
+	private MetadataStringBuilder anchorKeywords;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder urlKeywords;
+	private MetadataStringBuilder urlKeywords;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataStringBuilder titleKeywords;
+	private MetadataStringBuilder titleKeywords;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger id;
+	private MetadataInteger id;
 
 	public Topic()
 	{ }

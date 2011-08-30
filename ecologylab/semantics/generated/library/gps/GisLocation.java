@@ -22,22 +22,22 @@ public class GisLocation extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDouble latitude;
+	private MetadataDouble latitude;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDouble longitude;
+	private MetadataDouble longitude;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDouble altitude;
+	private MetadataDouble altitude;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString satellites;
+	private MetadataString satellites;
 
 	public GisLocation()
 	{ }

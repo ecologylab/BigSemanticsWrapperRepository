@@ -23,17 +23,17 @@ public class Bookmark extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@simpl_composite_as_scalar
-	private ecologylab.semantics.metadata.scalar.MetadataString title;
+	private MetadataString title;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pic;
+	private MetadataParsedURL pic;
 
 	public Bookmark()
 	{ }

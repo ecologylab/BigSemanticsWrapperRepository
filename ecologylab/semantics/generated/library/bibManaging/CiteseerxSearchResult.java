@@ -21,7 +21,7 @@ public class CiteseerxSearchResult extends SearchResult
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString citationInfo;
+	private MetadataString citationInfo;
 
 	public CiteseerxSearchResult()
 	{ }

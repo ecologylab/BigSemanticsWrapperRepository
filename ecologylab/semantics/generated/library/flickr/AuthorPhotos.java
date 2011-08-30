@@ -23,42 +23,42 @@ public class AuthorPhotos extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL authorPhotostreamLink;
+	private MetadataParsedURL authorPhotostreamLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString authorPhotostream;
+	private MetadataString authorPhotostream;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatDayLink;
+	private MetadataParsedURL photosThatDayLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatMonthLink;
+	private MetadataParsedURL photosThatMonthLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL photosThatYearLink;
+	private MetadataParsedURL photosThatYearLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString photosThatDay;
+	private MetadataString photosThatDay;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString photosThatMonth;
+	private MetadataString photosThatMonth;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString photosThatYear;
+	private MetadataString photosThatYear;
 
 	public AuthorPhotos()
 	{ }

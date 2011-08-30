@@ -23,12 +23,12 @@ public class FlickrTag extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@simpl_composite_as_scalar
-	private ecologylab.semantics.metadata.scalar.MetadataString tagName;
+	private MetadataString tagName;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL tagLink;
+	private MetadataParsedURL tagLink;
 
 	public FlickrTag()
 	{ }

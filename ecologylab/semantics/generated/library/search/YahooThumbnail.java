@@ -24,17 +24,17 @@ public class YahooThumbnail extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("Url")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbUrl;
+	private MetadataParsedURL thumbUrl;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("Width")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
+	private MetadataInteger width;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("Height")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
+	private MetadataInteger height;
 
 	public YahooThumbnail()
 	{ }

@@ -22,12 +22,12 @@ public class Author extends Document
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString affiliation;
+	private MetadataString affiliation;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString city;
+	private MetadataString city;
 
 	public Author()
 	{ }

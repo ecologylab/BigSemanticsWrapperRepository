@@ -24,32 +24,32 @@ public class GoogleScholarSearchResult extends SearchResult
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL documentLink;
+	private MetadataParsedURL documentLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger citations;
+	private MetadataInteger citations;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL citationsLink;
+	private MetadataParsedURL citationsLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL relatedArticlesLink;
+	private MetadataParsedURL relatedArticlesLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger versions;
+	private MetadataInteger versions;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL versionsLink;
+	private MetadataParsedURL versionsLink;
 
 	public GoogleScholarSearchResult()
 	{ }

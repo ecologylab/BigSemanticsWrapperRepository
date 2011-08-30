@@ -26,12 +26,12 @@ public class SlashdotArticle extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString poster;
+	private MetadataString poster;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL posterUrl;
+	private MetadataParsedURL posterUrl;
 
 	/** 
 	 */ 

@@ -29,7 +29,7 @@ public class YahooMediaRss extends Dc
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("media:description")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString mediaDescription;
+	private MetadataString mediaDescription;
 
 	public YahooMediaRss()
 	{ }

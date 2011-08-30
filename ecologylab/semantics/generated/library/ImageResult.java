@@ -24,30 +24,30 @@ public class ImageResult extends Metadata
 	 * image summary
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString summary;
+	private MetadataString summary;
 
 	/** 
 	 * raw parsed URL for extracting values 'url', 'referer_url'
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imgUrl;
+	private MetadataParsedURL imgUrl;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString imgSimilarUrl;
+	private MetadataString imgSimilarUrl;
 
 	/** 
 	 * mime type should be extracted from this property
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString rawProperty;
+	private MetadataString rawProperty;
 
 	/** 
 	 * image title
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString imgTitle;
+	private MetadataString imgTitle;
 
 	public ImageResult()
 	{ }

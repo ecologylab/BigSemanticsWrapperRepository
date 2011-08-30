@@ -23,47 +23,47 @@ public class PdfMixin extends Metadata
 	 * The author of the pdf document
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString author;
+	private MetadataString author;
 
 	/** 
 	 * Summary of the pdf document
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString summary;
+	private MetadataString summary;
 
 	/** 
 	 * Key Words of the document
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString pdfKeywordsString;
+	private MetadataString pdfKeywordsString;
 
 	/** 
 	 * Subject of the document
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString subject;
+	private MetadataString subject;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString trapped;
+	private MetadataString trapped;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString modified;
+	private MetadataString modified;
 
 	/** 
 	 * Contents of the document
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString contents;
+	private MetadataString contents;
 
 	/** 
 	 * Creation date of the document
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString creationdate;
+	private MetadataString creationdate;
 
 	public PdfMixin()
 	{ }

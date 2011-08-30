@@ -3,8 +3,8 @@ package ecologylab.semantics.generated.library.slashdot;
 import java.util.ArrayList;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.generated.library.slashdot.SlashdotItem;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.serialization.simpl_inherit;
 import ecologylab.serialization.ElementState.xml_tag;
 

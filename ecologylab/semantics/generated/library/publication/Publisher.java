@@ -22,7 +22,7 @@ public class Publisher extends Document
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString city;
+	private MetadataString city;
 
 	public Publisher()
 	{ }

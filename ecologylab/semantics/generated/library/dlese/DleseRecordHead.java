@@ -25,17 +25,17 @@ public class DleseRecordHead extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString id;
+	private MetadataString id;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("fileLastModified")	
-	private ecologylab.semantics.metadata.scalar.MetadataDate lastModified;
+	private MetadataDate lastModified;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("xmlFormat")	
-	private ecologylab.semantics.metadata.scalar.MetadataString xmlFormat;
+	private MetadataString xmlFormat;
 
 	/** 
 	 */ 

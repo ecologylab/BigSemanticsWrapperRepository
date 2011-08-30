@@ -23,23 +23,23 @@ public class ScienceDirectArticle extends ScholarlyArticle
 	 * The journal or other publication that the article comes from
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString publicationName;
+	private MetadataString publicationName;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString volume;
+	private MetadataString volume;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString issue;
+	private MetadataString issue;
 
 	/** 
 	 * The digital object identifier of the article
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString doi;
+	private MetadataString doi;
 
 	public ScienceDirectArticle()
 	{ }

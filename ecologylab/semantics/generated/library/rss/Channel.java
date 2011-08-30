@@ -24,7 +24,7 @@ public class Channel extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString title;
+	private MetadataString title;
 
 	/** 
 	 */ 

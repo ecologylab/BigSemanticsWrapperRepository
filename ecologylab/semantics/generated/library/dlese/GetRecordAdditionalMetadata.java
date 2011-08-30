@@ -21,17 +21,17 @@ public class GetRecordAdditionalMetadata extends AdditionalMetadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString realm;
+	private MetadataString realm;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("partOfDrc")	
-	private ecologylab.semantics.metadata.scalar.MetadataString partOfDrc;
+	private MetadataString partOfDrc;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("accessionStatus")	
-	private ecologylab.semantics.metadata.scalar.MetadataString accessionStatus;
+	private MetadataString accessionStatus;
 
 	public GetRecordAdditionalMetadata()
 	{ }

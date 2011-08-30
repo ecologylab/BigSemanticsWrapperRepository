@@ -21,7 +21,7 @@ public class Audience extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("gradeRange")	
-	private ecologylab.semantics.metadata.scalar.MetadataString gradeRange;
+	private MetadataString gradeRange;
 
 	public Audience()
 	{ }

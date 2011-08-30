@@ -30,7 +30,7 @@ public class Paragraph extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString paragraphText;
+	private MetadataString paragraphText;
 
 	public Paragraph()
 	{ }

@@ -35,7 +35,7 @@ public class ScholarlyArticle extends CreativeWork
 	 * citation.cfm
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL metadataPage;
+	private MetadataParsedURL metadataPage;
 
 	/** 
 	 * Papers cited by this paper.
@@ -64,7 +64,7 @@ public class ScholarlyArticle extends CreativeWork
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString pages;
+	private MetadataString pages;
 
 	public ScholarlyArticle()
 	{ }

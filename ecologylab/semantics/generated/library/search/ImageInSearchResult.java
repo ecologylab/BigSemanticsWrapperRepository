@@ -25,22 +25,22 @@ public class ImageInSearchResult extends Image
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("mms:Title")	
-	private ecologylab.semantics.metadata.scalar.MetadataString caption;
+	private MetadataString caption;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("mms:ContentType")	
-	private ecologylab.semantics.metadata.scalar.MetadataString contentType;
+	private MetadataString contentType;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL referrerUrl;
+	private MetadataParsedURL referrerUrl;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("mms:FileSize")	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger fileSize;
+	private MetadataInteger fileSize;
 
 	public ImageInSearchResult()
 	{ }

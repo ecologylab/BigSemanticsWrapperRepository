@@ -24,13 +24,13 @@ public class MmArtwork extends Artwork
 	 * Website of the work or group responsible.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL website;
+	private MetadataParsedURL website;
 
 	/** 
 	 * Link the ACM Portal page.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL extendedAbstract;
+	private MetadataParsedURL extendedAbstract;
 
 	public MmArtwork()
 	{ }

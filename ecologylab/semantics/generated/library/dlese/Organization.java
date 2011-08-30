@@ -21,12 +21,12 @@ public class Organization extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("instEmail")	
-	private ecologylab.semantics.metadata.scalar.MetadataString email;
+	private MetadataString email;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("instName")	
-	private ecologylab.semantics.metadata.scalar.MetadataString name;
+	private MetadataString name;
 
 	public Organization()
 	{ }

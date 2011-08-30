@@ -22,7 +22,7 @@ public class Dlms extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString subject;
+	private MetadataString subject;
 
 	public Dlms()
 	{ }

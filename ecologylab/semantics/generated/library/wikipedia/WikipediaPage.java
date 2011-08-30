@@ -23,7 +23,7 @@ public class WikipediaPage extends WikipediaPageType
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL mainImageSrc;
+	private MetadataParsedURL mainImageSrc;
 
 	public WikipediaPage()
 	{ }

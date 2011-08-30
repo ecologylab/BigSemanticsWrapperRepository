@@ -24,17 +24,17 @@ public class Lolz extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString caption;
+	private MetadataString caption;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL picture;
+	private MetadataParsedURL picture;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL mightLike;
+	private MetadataParsedURL mightLike;
 
 	public Lolz()
 	{ }

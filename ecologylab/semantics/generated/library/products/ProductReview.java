@@ -21,12 +21,12 @@ public class ProductReview extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString content;
+	private MetadataString content;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString rating;
+	private MetadataString rating;
 
 	public ProductReview()
 	{ }

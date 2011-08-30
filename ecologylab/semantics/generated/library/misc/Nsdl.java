@@ -22,7 +22,7 @@ public class Nsdl extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString subject;
+	private MetadataString subject;
 
 	public Nsdl()
 	{ }

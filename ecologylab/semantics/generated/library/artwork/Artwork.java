@@ -32,24 +32,24 @@ public class Artwork extends CompoundDocument
 	 * Medium on which the work is done.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString medium;
+	private MetadataString medium;
 
 	/** 
 	 * Abstract of the work.
 	 */ 
 	@simpl_scalar	@xml_tag("abstract")	
-	private ecologylab.semantics.metadata.scalar.MetadataString abstractField;
+	private MetadataString abstractField;
 
 	/** 
 	 * Year the work was created.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString year;
+	private MetadataString year;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString dimensions;
+	private MetadataString dimensions;
 
 	public Artwork()
 	{ }

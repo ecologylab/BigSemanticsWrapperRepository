@@ -21,7 +21,7 @@ public class Collection extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("recordId")	
-	private ecologylab.semantics.metadata.scalar.MetadataString id;
+	private MetadataString id;
 
 	public Collection()
 	{ }

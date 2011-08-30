@@ -21,22 +21,22 @@ public class ResultInfo extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger offset;
+	private MetadataInteger offset;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("numReturned")	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger returned;
+	private MetadataInteger returned;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("totalNumRecordsInLibrary")	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger totalRecords;
+	private MetadataInteger totalRecords;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("totalNumResults")	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger totalResults;
+	private MetadataInteger totalResults;
 
 	public ResultInfo()
 	{ }

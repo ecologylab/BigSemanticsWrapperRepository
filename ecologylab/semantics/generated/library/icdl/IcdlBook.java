@@ -24,37 +24,37 @@ public class IcdlBook extends Document
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString id;
+	private MetadataString id;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString languages;
+	private MetadataString languages;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL cover;
+	private MetadataParsedURL cover;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
+	private MetadataInteger height;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
+	private MetadataInteger width;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString booktitle;
+	private MetadataString booktitle;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL bookurl;
+	private MetadataParsedURL bookurl;
 
 	public IcdlBook()
 	{ }

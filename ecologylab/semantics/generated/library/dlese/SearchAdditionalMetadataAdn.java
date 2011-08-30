@@ -21,12 +21,12 @@ public class SearchAdditionalMetadataAdn extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("partOfDrc")	
-	private ecologylab.semantics.metadata.scalar.MetadataString partOfDrc;
+	private MetadataString partOfDrc;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("accessionStatus")	
-	private ecologylab.semantics.metadata.scalar.MetadataString accessionStatus;
+	private MetadataString accessionStatus;
 
 	public SearchAdditionalMetadataAdn()
 	{ }

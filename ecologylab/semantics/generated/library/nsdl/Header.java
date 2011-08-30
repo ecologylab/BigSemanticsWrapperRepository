@@ -22,7 +22,7 @@ public class Header extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("resourceIdentifier")	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL resourceIdentifier;
+	private MetadataParsedURL resourceIdentifier;
 
 	public Header()
 	{ }

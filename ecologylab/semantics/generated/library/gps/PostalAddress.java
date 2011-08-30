@@ -23,35 +23,35 @@ public class PostalAddress extends ContactPoint
 	 * number + street + apartment
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString streetAddress;
+	private MetadataString streetAddress;
 
 	/** 
 	 * This is really the city.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString locality;
+	private MetadataString locality;
 
 	/** 
 	 * This is state in the U.S., province in Canada, and varies internationaaly.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString region;
+	private MetadataString region;
 
 	/** 
 	 * The internationalized version of zip code.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString postalCode;
+	private MetadataString postalCode;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString county;
+	private MetadataString county;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString country;
+	private MetadataString country;
 
 	public PostalAddress()
 	{ }

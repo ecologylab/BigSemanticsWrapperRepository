@@ -23,12 +23,12 @@ public class Subject extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL location;
+	private MetadataParsedURL location;
 
 	/** 
 	 */ 
 	@simpl_scalar	@simpl_composite_as_scalar
-	private ecologylab.semantics.metadata.scalar.MetadataString subject;
+	private MetadataString subject;
 
 	public Subject()
 	{ }

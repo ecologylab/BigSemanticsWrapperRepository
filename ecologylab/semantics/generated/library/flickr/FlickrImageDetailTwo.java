@@ -28,17 +28,17 @@ public class FlickrImageDetailTwo extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString views;
+	private MetadataString views;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString place;
+	private MetadataString place;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL placeLink;
+	private MetadataParsedURL placeLink;
 
 	/** 
 	 */ 

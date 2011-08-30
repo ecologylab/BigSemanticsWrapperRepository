@@ -25,43 +25,43 @@ public class WeatherReport extends CompoundDocument
 	 * The name of the city.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString city;
+	private MetadataString city;
 
 	/** 
 	 * The weather condition of the city, like sunny or cloudy.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString weather;
+	private MetadataString weather;
 
 	/** 
 	 * The URL of the picture indicating weather condition.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL picUrl;
+	private MetadataParsedURL picUrl;
 
 	/** 
 	 * The temperature.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString temperature;
+	private MetadataString temperature;
 
 	/** 
 	 * The humidity of the air.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString humidity;
+	private MetadataString humidity;
 
 	/** 
 	 * The wind speed.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString wind;
+	private MetadataString wind;
 
 	/** 
 	 * The dew point.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString dewPoint;
+	private MetadataString dewPoint;
 
 	public WeatherReport()
 	{ }

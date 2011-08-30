@@ -23,19 +23,19 @@ public class CiteseerxSummary extends CiteseerxRecord
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL citationPage;
+	private MetadataParsedURL citationPage;
 
 	/** 
 	 * Papers that cite the same works.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL activeBibliographyPage;
+	private MetadataParsedURL activeBibliographyPage;
 
 	/** 
 	 * Papers that are cited by the same works.
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL cocitationPage;
+	private MetadataParsedURL cocitationPage;
 
 	public CiteseerxSummary()
 	{ }

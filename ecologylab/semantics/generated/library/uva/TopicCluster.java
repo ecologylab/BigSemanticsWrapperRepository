@@ -25,7 +25,7 @@ public class TopicCluster extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger id;
+	private MetadataInteger id;
 
 	/** 
 	 */ 
@@ -40,22 +40,22 @@ public class TopicCluster extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger x;
+	private MetadataInteger x;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger y;
+	private MetadataInteger y;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
+	private MetadataInteger width;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
+	private MetadataInteger height;
 
 	public TopicCluster()
 	{ }

@@ -21,17 +21,17 @@ public class TempFieldValueHolder extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString tempDimensions;
+	private MetadataString tempDimensions;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString tempYear;
+	private MetadataString tempYear;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString tempMedium;
+	private MetadataString tempMedium;
 
 	public TempFieldValueHolder()
 	{ }

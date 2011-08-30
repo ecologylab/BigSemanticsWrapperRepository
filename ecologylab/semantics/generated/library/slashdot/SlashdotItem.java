@@ -23,12 +23,12 @@ public class SlashdotItem extends Item
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("slash:department")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString department;
+	private MetadataString department;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("slash:section")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString section;
+	private MetadataString section;
 
 	public SlashdotItem()
 	{ }

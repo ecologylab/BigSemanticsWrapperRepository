@@ -22,12 +22,12 @@ public class TermType extends Document
 	/** 
 	 */ 
 	@simpl_scalar	@simpl_composite_as_scalar
-	private ecologylab.semantics.metadata.scalar.MetadataString term;
+	private MetadataString term;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger frequency;
+	private MetadataInteger frequency;
 
 	public TermType()
 	{ }

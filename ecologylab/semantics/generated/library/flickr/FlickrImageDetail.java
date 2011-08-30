@@ -26,12 +26,12 @@ public class FlickrImageDetail extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbnailKludge;
+	private MetadataParsedURL thumbnailKludge;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imageKludge;
+	private MetadataParsedURL imageKludge;
 
 	/** 
 	 */ 

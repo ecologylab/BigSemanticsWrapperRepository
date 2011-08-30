@@ -21,7 +21,7 @@ public class KeywordSet extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString type;
+	private MetadataString type;
 
 	public KeywordSet()
 	{ }

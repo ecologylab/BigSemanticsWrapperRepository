@@ -22,12 +22,12 @@ public class CitationInfo extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger totalCitation;
+	private MetadataInteger totalCitation;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger selfCitation;
+	private MetadataInteger selfCitation;
 
 	public CitationInfo()
 	{ }

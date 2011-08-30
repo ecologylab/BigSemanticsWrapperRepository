@@ -25,27 +25,27 @@ public class Dc extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("dc:creator")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString dcCreator;
+	private MetadataString dcCreator;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("dc:subject")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString dcSubject;
+	private MetadataString dcSubject;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("dc:description")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString dcDescription;
+	private MetadataString dcDescription;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("dc:title")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString dcTitle;
+	private MetadataString dcTitle;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("dc:date")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataDate dcDate;
+	private MetadataDate dcDate;
 
 	public Dc()
 	{ }

@@ -21,7 +21,7 @@ public class BestsellerList extends Document
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString rank;
+	private MetadataString rank;
 
 	public BestsellerList()
 	{ }

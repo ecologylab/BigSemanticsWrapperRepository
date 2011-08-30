@@ -22,12 +22,12 @@ public class DateInfo extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDate created;
+	private MetadataDate created;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDate accessioned;
+	private MetadataDate accessioned;
 
 	public DateInfo()
 	{ }

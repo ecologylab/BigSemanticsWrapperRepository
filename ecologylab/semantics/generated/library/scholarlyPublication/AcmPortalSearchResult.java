@@ -21,12 +21,12 @@ public class AcmPortalSearchResult extends SearchResult
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString authorList;
+	private MetadataString authorList;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString publication;
+	private MetadataString publication;
 
 	public AcmPortalSearchResult()
 	{ }

@@ -31,13 +31,13 @@ public class Periodical extends BasicPublication
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString volumeAndIssue;
+	private MetadataString volumeAndIssue;
 
 	/** 
 	 * Publication Date
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDate date;
+	private MetadataDate date;
 
 	public Periodical()
 	{ }

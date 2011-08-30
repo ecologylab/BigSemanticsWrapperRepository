@@ -23,12 +23,12 @@ public class Anchor extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString anchorText;
+	private MetadataString anchorText;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	public Anchor()
 	{ }

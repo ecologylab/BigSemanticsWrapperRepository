@@ -95,6 +95,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.flickr.FlickrLink.class,
 
+		ecologylab.semantics.generated.library.flickr.FlickrNearby.class,
+
 		ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
 
 		ecologylab.semantics.generated.library.flickr.FlickrSearchTwo.class,
@@ -189,6 +191,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.BingWebSearchResult.class,
 
+		ecologylab.semantics.generated.library.search.DeliciousSearch.class,
+
 		ecologylab.semantics.generated.library.search.GoogleScholarSearch.class,
 
 		ecologylab.semantics.generated.library.search.GoogleScholarSearchResult.class,
@@ -198,6 +202,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.search.Search.class,
 
 		ecologylab.semantics.generated.library.search.SearchResult.class,
+
+		ecologylab.semantics.generated.library.search.SlashdotSearch.class,
+
+		ecologylab.semantics.generated.library.search.SocialMediaSearchResult.class,
+
+		ecologylab.semantics.generated.library.search.TumblrSearch.class,
 
 		ecologylab.semantics.generated.library.search.YahooGeoCode.class,
 

@@ -23,17 +23,17 @@ public class WikiAnchor extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString anchorText;
+	private MetadataString anchorText;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString targetTitle;
+	private MetadataString targetTitle;
 
 	public WikiAnchor()
 	{ }

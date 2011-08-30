@@ -24,7 +24,7 @@ public class Item extends YahooMediaRss
 	/** 
 	 */ 
 	@simpl_scalar	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	public Item()
 	{ }

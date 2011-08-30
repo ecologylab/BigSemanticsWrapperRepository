@@ -27,7 +27,7 @@ public class GoogleBook extends Book
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString category;
+	private MetadataString category;
 
 	/** 
 	 */ 
@@ -37,7 +37,7 @@ public class GoogleBook extends Book
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL placesMentionedKml;
+	private MetadataParsedURL placesMentionedKml;
 
 	/** 
 	 */ 

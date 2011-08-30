@@ -23,7 +23,7 @@ public class IcdlImage extends Image
 	 * The language of the library
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString languages;
+	private MetadataString languages;
 
 	public IcdlImage()
 	{ }

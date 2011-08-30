@@ -24,12 +24,12 @@ public class YahooResult extends Document
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("Summary")	
-	private ecologylab.semantics.metadata.scalar.MetadataString summary;
+	private MetadataString summary;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("ModificationDate")	
-	private ecologylab.semantics.metadata.scalar.MetadataString modificationDate;
+	private MetadataString modificationDate;
 
 	/** 
 	 */ 
@@ -39,12 +39,12 @@ public class YahooResult extends Document
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("MimeType")	
-	private ecologylab.semantics.metadata.scalar.MetadataString mimeType;
+	private MetadataString mimeType;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("RefererUrl")	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL refererUrl;
+	private MetadataParsedURL refererUrl;
 
 	public YahooResult()
 	{ }

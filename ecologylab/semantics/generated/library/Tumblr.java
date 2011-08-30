@@ -23,7 +23,7 @@ public class Tumblr extends CompoundDocument
 	 * Phone number of the restaurant
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString post;
+	private MetadataString post;
 
 	public Tumblr()
 	{ }

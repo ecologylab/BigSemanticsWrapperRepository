@@ -30,7 +30,7 @@ public class MomaList extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL nextList;
+	private MetadataParsedURL nextList;
 
 	public MomaList()
 	{ }

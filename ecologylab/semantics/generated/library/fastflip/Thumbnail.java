@@ -22,7 +22,7 @@ public class Thumbnail extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pic;
+	private MetadataParsedURL pic;
 
 	public Thumbnail()
 	{ }

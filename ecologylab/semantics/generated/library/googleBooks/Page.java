@@ -23,12 +23,12 @@ public class Page extends Document
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pageThumbnail;
+	private MetadataParsedURL pageThumbnail;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger pageNumber;
+	private MetadataInteger pageNumber;
 
 	public Page()
 	{ }

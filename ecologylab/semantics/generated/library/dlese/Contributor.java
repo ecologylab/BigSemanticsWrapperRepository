@@ -28,12 +28,12 @@ public class Contributor extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString role;
+	private MetadataString role;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger date;
+	private MetadataInteger date;
 
 	public Contributor()
 	{ }

@@ -26,17 +26,17 @@ public class Outline extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString text;
+	private MetadataString text;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString title;
+	private MetadataString title;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("htmlUrl")	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL htmlUrl;
+	private MetadataParsedURL htmlUrl;
 
 	/** 
 	 */ 
@@ -46,12 +46,12 @@ public class Outline extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("xmlUrl")	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL xmlUrl;
+	private MetadataParsedURL xmlUrl;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString type;
+	private MetadataString type;
 
 	public Outline()
 	{ }

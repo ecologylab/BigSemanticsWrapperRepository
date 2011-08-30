@@ -23,12 +23,12 @@ public class Thumbinner extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString thumbImgCaption;
+	private MetadataString thumbImgCaption;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL thumbImgSrc;
+	private MetadataParsedURL thumbImgSrc;
 
 	public Thumbinner()
 	{ }

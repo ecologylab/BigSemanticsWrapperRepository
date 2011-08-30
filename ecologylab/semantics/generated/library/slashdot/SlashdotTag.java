@@ -23,12 +23,12 @@ public class SlashdotTag extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString name;
+	private MetadataString name;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	public SlashdotTag()
 	{ }

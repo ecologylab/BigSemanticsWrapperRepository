@@ -26,7 +26,7 @@ public class Publication extends BasicPublication
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString pages;
+	private MetadataString pages;
 
 	/** 
 	 */ 
@@ -36,7 +36,7 @@ public class Publication extends BasicPublication
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString aboutTheAuthors;
+	private MetadataString aboutTheAuthors;
 
 	/** 
 	 */ 

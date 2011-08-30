@@ -24,37 +24,37 @@ public class CameraSettings extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString subjectDistance;
+	private MetadataString subjectDistance;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString exposureTime;
+	private MetadataString exposureTime;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataFloat aperture;
+	private MetadataFloat aperture;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataFloat shutterSpeed;
+	private MetadataFloat shutterSpeed;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString model;
+	private MetadataString model;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString orientation;
+	private MetadataString orientation;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger resolution;
+	private MetadataInteger resolution;
 
 	public CameraSettings()
 	{ }

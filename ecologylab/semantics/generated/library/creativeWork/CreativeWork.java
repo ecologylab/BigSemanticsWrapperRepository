@@ -26,7 +26,7 @@ public class CreativeWork extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("abstract")	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString abstractField;
+	private MetadataString abstractField;
 
 	/** 
 	 * Set of authors.
@@ -37,7 +37,7 @@ public class CreativeWork extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	@xml_other_tags({"year_of_publication"})	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger year;
+	private MetadataInteger year;
 
 	public CreativeWork()
 	{ }

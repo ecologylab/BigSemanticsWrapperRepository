@@ -30,7 +30,7 @@ public class ImdbTitle extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString yearReleased;
+	private MetadataString yearReleased;
 
 	/** 
 	 */ 
@@ -50,12 +50,12 @@ public class ImdbTitle extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString rating;
+	private MetadataString rating;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString releaseDate;
+	private MetadataString releaseDate;
 
 	/** 
 	 */ 
@@ -65,12 +65,12 @@ public class ImdbTitle extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString plot;
+	private MetadataString plot;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString tagline;
+	private MetadataString tagline;
 
 	/** 
 	 */ 
@@ -80,7 +80,7 @@ public class ImdbTitle extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL posterImg;
+	private MetadataParsedURL posterImg;
 
 	public ImdbTitle()
 	{ }

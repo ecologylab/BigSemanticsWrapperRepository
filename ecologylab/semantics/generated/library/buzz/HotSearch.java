@@ -21,7 +21,7 @@ public class HotSearch extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString search;
+	private MetadataString search;
 
 	public HotSearch()
 	{ }

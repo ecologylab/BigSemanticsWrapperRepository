@@ -23,17 +23,17 @@ public class MediaContent extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger height;
+	private MetadataInteger height;
 
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("url")	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL mediaUrl;
+	private MetadataParsedURL mediaUrl;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataInteger width;
+	private MetadataInteger width;
 
 	public MediaContent()
 	{ }

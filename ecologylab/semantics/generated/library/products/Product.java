@@ -26,27 +26,27 @@ public class Product extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString price;
+	private MetadataString price;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString model;
+	private MetadataString model;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imageUrl;
+	private MetadataParsedURL imageUrl;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL reviewsLocation;
+	private MetadataParsedURL reviewsLocation;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString overallRating;
+	private MetadataString overallRating;
 
 	/** 
 	 */ 

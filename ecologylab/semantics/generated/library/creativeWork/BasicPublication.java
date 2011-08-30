@@ -23,7 +23,7 @@ public class BasicPublication extends CreativeWork
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString isbn;
+	private MetadataString isbn;
 
 	/** 
 	 */ 

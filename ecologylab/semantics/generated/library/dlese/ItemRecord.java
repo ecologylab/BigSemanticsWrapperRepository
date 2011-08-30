@@ -31,7 +31,7 @@ public class ItemRecord extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	@xml_tag("schemaLocation")	@xml_other_tags({"xsi:schemaLocation"})	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL location;
+	private MetadataParsedURL location;
 
 	/** 
 	 */ 

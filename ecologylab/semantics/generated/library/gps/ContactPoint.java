@@ -22,17 +22,17 @@ public class ContactPoint extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString telephone;
+	private MetadataString telephone;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString faxNumber;
+	private MetadataString faxNumber;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString email;
+	private MetadataString email;
 
 	public ContactPoint()
 	{ }

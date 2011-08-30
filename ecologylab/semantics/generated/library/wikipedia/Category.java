@@ -23,12 +23,12 @@ public class Category extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString name;
+	private MetadataString name;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL catLink;
+	private MetadataParsedURL catLink;
 
 	public Category()
 	{ }

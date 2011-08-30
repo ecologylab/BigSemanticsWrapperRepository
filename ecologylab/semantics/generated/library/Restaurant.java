@@ -28,37 +28,37 @@ public class Restaurant extends CompoundDocument
 	 * Phone number of the restaurant
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString phone;
+	private MetadataString phone;
 
 	/** 
 	 * A picture from the restaurant
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL pic;
+	private MetadataParsedURL pic;
 
 	/** 
 	 * Link to the restaurant's website
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	/** 
 	 * Rating of the restaurant
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString rating;
+	private MetadataString rating;
 
 	/** 
 	 * Price range of the restaurant
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString priceRange;
+	private MetadataString priceRange;
 
 	/** 
 	 * Map image of the restaurant's location or link to a directions page
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL map;
+	private MetadataParsedURL map;
 
 	/** 
 	 * The genres of food offered

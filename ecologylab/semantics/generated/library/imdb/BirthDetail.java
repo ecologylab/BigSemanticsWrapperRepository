@@ -24,32 +24,32 @@ public class BirthDetail extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString dayOfBirth;
+	private MetadataString dayOfBirth;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString yearOfBirth;
+	private MetadataString yearOfBirth;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString placeOfBirth;
+	private MetadataString placeOfBirth;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL dayOfBirthLink;
+	private MetadataParsedURL dayOfBirthLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL yearOfBirthLink;
+	private MetadataParsedURL yearOfBirthLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL placeOfBirthLink;
+	private MetadataParsedURL placeOfBirthLink;
 
 	public BirthDetail()
 	{ }

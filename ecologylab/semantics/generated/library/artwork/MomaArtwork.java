@@ -25,7 +25,7 @@ public class MomaArtwork extends Artwork
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString status;
+	private MetadataString status;
 
 	/** 
 	 */ 
@@ -40,22 +40,22 @@ public class MomaArtwork extends Artwork
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL permalink;
+	private MetadataParsedURL permalink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL databaseLink;
+	private MetadataParsedURL databaseLink;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString momaId;
+	private MetadataString momaId;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL imageUrl;
+	private MetadataParsedURL imageUrl;
 
 	/** 
 	 */ 

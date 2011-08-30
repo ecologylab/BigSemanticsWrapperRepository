@@ -24,13 +24,13 @@ public class FlickrLink extends Metadata
 	 * flickr_image_detail
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL link;
+	private MetadataParsedURL link;
 
 	/** 
 	 * flickr_image_detail
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString title;
+	private MetadataString title;
 
 	public FlickrLink()
 	{ }

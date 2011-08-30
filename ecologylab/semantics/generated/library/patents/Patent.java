@@ -28,17 +28,17 @@ public class Patent extends CreativeWork
 	/** 
 	 */ 
 	@simpl_scalar	@simpl_hints(Hint.XML_LEAF)	
-	private ecologylab.semantics.metadata.scalar.MetadataString claims;
+	private MetadataString claims;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString inventor;
+	private MetadataString inventor;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataDate filingDate;
+	private MetadataDate filingDate;
 
 	/** 
 	 */ 

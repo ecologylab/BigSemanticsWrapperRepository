@@ -31,7 +31,7 @@ public class Book extends Publication
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString edition;
+	private MetadataString edition;
 
 	/** 
 	 */ 
@@ -41,7 +41,7 @@ public class Book extends Publication
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL coverImage;
+	private MetadataParsedURL coverImage;
 
 	public Book()
 	{ }

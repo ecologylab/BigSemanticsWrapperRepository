@@ -28,12 +28,12 @@ public class PersonDetails extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString gist;
+	private MetadataString gist;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL personImg;
+	private MetadataParsedURL personImg;
 
 	/** 
 	 */ 
@@ -43,12 +43,12 @@ public class PersonDetails extends CompoundDocument
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString miniBiography;
+	private MetadataString miniBiography;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL biographyLink;
+	private MetadataParsedURL biographyLink;
 
 	/** 
 	 */ 

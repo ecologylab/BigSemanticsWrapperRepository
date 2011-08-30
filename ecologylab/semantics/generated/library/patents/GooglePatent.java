@@ -26,7 +26,7 @@ public class GooglePatent extends Patent
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataParsedURL picLink;
+	private MetadataParsedURL picLink;
 
 	/** 
 	 */ 

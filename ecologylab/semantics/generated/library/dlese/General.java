@@ -23,7 +23,7 @@ public class General extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString title;
+	private MetadataString title;
 
 	/** 
 	 */ 
@@ -33,12 +33,12 @@ public class General extends Metadata
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString description;
+	private MetadataString description;
 
 	/** 
 	 */ 
 	@simpl_scalar	
-	private ecologylab.semantics.metadata.scalar.MetadataString language;
+	private MetadataString language;
 
 	public General()
 	{ }
