@@ -2,6 +2,8 @@ package ecologylab.semantics.generated.library.british_cartoon_archive;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import java.util.Date;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
 
@@ -32,16 +34,33 @@ public class BritishCartoonArchive extends Document
 	private MetadataString publishedIn;
 
 	/** 
+	 * Date of the publication
+	 */ 
+	@simpl_scalar	
+	private MetadataDate publicationDate;
+
+	/** 
 	 * Format of the publication
 	 */ 
 	@simpl_scalar	
 	private MetadataString publicationFormat;
 
 	/** 
+	 * Cartoon Caption
+	 */ 
+	@simpl_scalar	
+	private MetadataString caption;
+
+	/** 
+	 */ 
+	@simpl_scalar	
+	private MetadataString referenceNumber;
+
+	/** 
 	 * url of the image
 	 */ 
 	@simpl_scalar	
-	private MetadataString imgPurl;
+	private MetadataString imgLocation;
 
 	public BritishCartoonArchive()
 	{ }
@@ -115,6 +134,38 @@ public class BritishCartoonArchive extends Document
 		this.publishedIn = publishedIn;
 	}
 
+	public MetadataDate	publicationDate()
+	{
+		MetadataDate	result = this.publicationDate;
+		if (result == null)
+		{
+			result = new MetadataDate();
+			this.publicationDate = result;
+		}
+		return result;
+	}
+
+	public Date getPublicationDate()
+	{
+		return this.publicationDate == null ? null : publicationDate().getValue();
+	}
+
+	public MetadataDate getPublicationDateMetadata()
+	{
+		return publicationDate;
+	}
+
+	public void setPublicationDate(Date publicationDate)
+	{
+		if (publicationDate != null)
+			this.publicationDate().setValue(publicationDate);
+	}
+
+	public void setPublicationDateMetadata(MetadataDate publicationDate)
+	{
+		this.publicationDate = publicationDate;
+	}
+
 	public MetadataString	publicationFormat()
 	{
 		MetadataString	result = this.publicationFormat;
@@ -147,35 +198,99 @@ public class BritishCartoonArchive extends Document
 		this.publicationFormat = publicationFormat;
 	}
 
-	public MetadataString	imgPurl()
+	public MetadataString	caption()
 	{
-		MetadataString	result = this.imgPurl;
+		MetadataString	result = this.caption;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.imgPurl = result;
+			this.caption = result;
 		}
 		return result;
 	}
 
-	public String getImgPurl()
+	public String getCaption()
 	{
-		return this.imgPurl == null ? null : imgPurl().getValue();
+		return this.caption == null ? null : caption().getValue();
 	}
 
-	public MetadataString getImgPurlMetadata()
+	public MetadataString getCaptionMetadata()
 	{
-		return imgPurl;
+		return caption;
 	}
 
-	public void setImgPurl(String imgPurl)
+	public void setCaption(String caption)
 	{
-		if (imgPurl != null)
-			this.imgPurl().setValue(imgPurl);
+		if (caption != null)
+			this.caption().setValue(caption);
 	}
 
-	public void setImgPurlMetadata(MetadataString imgPurl)
+	public void setCaptionMetadata(MetadataString caption)
 	{
-		this.imgPurl = imgPurl;
+		this.caption = caption;
+	}
+
+	public MetadataString	referenceNumber()
+	{
+		MetadataString	result = this.referenceNumber;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.referenceNumber = result;
+		}
+		return result;
+	}
+
+	public String getReferenceNumber()
+	{
+		return this.referenceNumber == null ? null : referenceNumber().getValue();
+	}
+
+	public MetadataString getReferenceNumberMetadata()
+	{
+		return referenceNumber;
+	}
+
+	public void setReferenceNumber(String referenceNumber)
+	{
+		if (referenceNumber != null)
+			this.referenceNumber().setValue(referenceNumber);
+	}
+
+	public void setReferenceNumberMetadata(MetadataString referenceNumber)
+	{
+		this.referenceNumber = referenceNumber;
+	}
+
+	public MetadataString	imgLocation()
+	{
+		MetadataString	result = this.imgLocation;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.imgLocation = result;
+		}
+		return result;
+	}
+
+	public String getImgLocation()
+	{
+		return this.imgLocation == null ? null : imgLocation().getValue();
+	}
+
+	public MetadataString getImgLocationMetadata()
+	{
+		return imgLocation;
+	}
+
+	public void setImgLocation(String imgLocation)
+	{
+		if (imgLocation != null)
+			this.imgLocation().setValue(imgLocation);
+	}
+
+	public void setImgLocationMetadata(MetadataString imgLocation)
+	{
+		this.imgLocation = imgLocation;
 	}
 }

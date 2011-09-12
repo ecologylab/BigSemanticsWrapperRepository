@@ -2,6 +2,8 @@ package ecologylab.semantics.generated.library.sfu_cartoon_archive;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import java.util.Date;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.serialization.simpl_inherit;
 
@@ -35,7 +37,7 @@ public class SfuCartoonArchive extends Document
 	 * 
 	 */ 
 	@simpl_scalar	
-	private MetadataString datePublished;
+	private MetadataDate datePublished;
 
 	/** 
 	 * 
@@ -133,34 +135,34 @@ public class SfuCartoonArchive extends Document
 		this.cartoonist = cartoonist;
 	}
 
-	public MetadataString	datePublished()
+	public MetadataDate	datePublished()
 	{
-		MetadataString	result = this.datePublished;
+		MetadataDate	result = this.datePublished;
 		if (result == null)
 		{
-			result = new MetadataString();
+			result = new MetadataDate();
 			this.datePublished = result;
 		}
 		return result;
 	}
 
-	public String getDatePublished()
+	public Date getDatePublished()
 	{
 		return this.datePublished == null ? null : datePublished().getValue();
 	}
 
-	public MetadataString getDatePublishedMetadata()
+	public MetadataDate getDatePublishedMetadata()
 	{
 		return datePublished;
 	}
 
-	public void setDatePublished(String datePublished)
+	public void setDatePublished(Date datePublished)
 	{
 		if (datePublished != null)
 			this.datePublished().setValue(datePublished);
 	}
 
-	public void setDatePublishedMetadata(MetadataString datePublished)
+	public void setDatePublishedMetadata(MetadataDate datePublished)
 	{
 		this.datePublished = datePublished;
 	}
