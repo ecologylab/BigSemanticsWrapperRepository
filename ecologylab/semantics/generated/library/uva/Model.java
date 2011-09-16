@@ -1,11 +1,11 @@
 package ecologylab.semantics.generated.library.uva;
 
-import java.util.ArrayList;
-import ecologylab.semantics.generated.library.uva.TopicCluster;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  Model.java

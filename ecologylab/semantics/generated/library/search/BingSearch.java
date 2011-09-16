@@ -1,11 +1,10 @@
 package ecologylab.semantics.generated.library.search;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.search.BingSearchImageSection;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
-import ecologylab.semantics.generated.library.search.BingSearchWebSection;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  BingSearch.java
@@ -18,17 +17,17 @@ import ecologylab.semantics.generated.library.search.BingSearchWebSection;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("SearchResponse")
+@simpl_tag("SearchResponse")
 public class BingSearch extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("web:Web")	@mm_name("web_section")
+	@simpl_composite	@simpl_tag("web:Web")	@mm_name("web_section")
 	private BingSearchWebSection webSection;
 
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("mms:Image")	@mm_name("image_section")
+	@simpl_composite	@simpl_tag("mms:Image")	@mm_name("image_section")
 	private BingSearchImageSection imageSection;
 
 	public BingSearch()

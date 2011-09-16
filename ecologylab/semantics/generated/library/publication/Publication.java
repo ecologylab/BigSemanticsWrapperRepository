@@ -1,13 +1,13 @@
 package ecologylab.semantics.generated.library.publication;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
-import java.util.List;
-import ecologylab.semantics.generated.library.publication.Subject;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.publication.TermType;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  Publication.java

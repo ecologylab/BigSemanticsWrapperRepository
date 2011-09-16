@@ -1,12 +1,13 @@
 package ecologylab.semantics.generated.library.rss;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.generated.library.rss.Item;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Rss22.java
@@ -20,7 +21,7 @@ import ecologylab.serialization.ElementState.xml_tag;
 	 * A news feed, yucky style.
  */ 
 @simpl_inherit
-@xml_tag("rss_2_2")
+@simpl_tag("rss_2_2")
 public class Rss22 extends CompoundDocument
 {
 	/** 

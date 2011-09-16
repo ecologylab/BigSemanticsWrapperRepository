@@ -1,10 +1,12 @@
 package ecologylab.semantics.generated.library.publication;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite_as_scalar;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  TermType.java

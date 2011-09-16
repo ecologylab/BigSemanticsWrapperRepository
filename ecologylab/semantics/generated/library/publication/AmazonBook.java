@@ -1,8 +1,7 @@
 package ecologylab.semantics.generated.library.publication;
 
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.publication.Book;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  AmazonBook.java

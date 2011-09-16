@@ -1,11 +1,12 @@
 package ecologylab.semantics.generated.library.buzz;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.buzz.HotSearch;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
 
 /**
 *  GoogleTrends.java

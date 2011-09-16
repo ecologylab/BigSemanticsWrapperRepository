@@ -1,12 +1,13 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import java.util.ArrayList;
-import ecologylab.semantics.generated.library.dlese.DleseRecord1;
-import ecologylab.semantics.generated.library.dlese.ResultInfo;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  SearchSection.java
@@ -23,12 +24,12 @@ public class SearchSection extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("resultInfo")	@mm_name("result_info")
+	@simpl_composite	@simpl_tag("resultInfo")	@mm_name("result_info")
 	private ResultInfo resultInfo;
 
 	/** 
 	 */ 
-	@simpl_collection("record")	@xml_tag("results")	@mm_name("search_results")
+	@simpl_collection("record")	@simpl_tag("results")	@mm_name("search_results")
 	private List<DleseRecord1> searchResults;
 
 	public SearchSection()

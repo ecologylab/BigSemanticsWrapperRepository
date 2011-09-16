@@ -11,11 +11,9 @@ package ecologylab.semantics.generated.library;
 
 
 
-import ecologylab.serialization.TranslationScope;
-
-import ecologylab.semantics.namesandnums.SemanticsNames;
-
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.TranslationScope;
 
 /**
  * This is the tranlation scope class for generated files.

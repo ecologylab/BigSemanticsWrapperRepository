@@ -1,9 +1,10 @@
 package ecologylab.semantics.generated.library.misc;
 
+import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  IcdlImage.java

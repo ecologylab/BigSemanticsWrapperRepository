@@ -1,9 +1,10 @@
 package ecologylab.semantics.generated.library.dlese;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.generated.library.dlese.AdditionalMetadata;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  GetRecordAdditionalMetadata.java
@@ -25,12 +26,12 @@ public class GetRecordAdditionalMetadata extends AdditionalMetadata
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("partOfDrc")	
+	@simpl_scalar	@simpl_tag("partOfDrc")	
 	private MetadataString partOfDrc;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("accessionStatus")	
+	@simpl_scalar	@simpl_tag("accessionStatus")	
 	private MetadataString accessionStatus;
 
 	public GetRecordAdditionalMetadata()

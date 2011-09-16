@@ -1,8 +1,7 @@
 package ecologylab.semantics.generated.library.search;
 
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.search.Search;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  TumblrSearch.java

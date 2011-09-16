@@ -1,10 +1,12 @@
 package ecologylab.semantics.generated.library.nsdl;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Header.java
@@ -21,7 +23,7 @@ public class Header extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("resourceIdentifier")	
+	@simpl_scalar	@simpl_tag("resourceIdentifier")	
 	private MetadataParsedURL resourceIdentifier;
 
 	public Header()

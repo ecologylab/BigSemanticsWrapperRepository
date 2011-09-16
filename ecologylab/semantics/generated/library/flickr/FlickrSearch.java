@@ -1,8 +1,8 @@
 package ecologylab.semantics.generated.library.flickr;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  FlickrSearch.java

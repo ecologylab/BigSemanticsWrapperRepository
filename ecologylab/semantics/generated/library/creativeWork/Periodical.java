@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.creativeWork;
 
+import java.util.Date;
+
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
-import java.util.Date;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  Periodical.java

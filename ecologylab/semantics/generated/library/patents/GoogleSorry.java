@@ -1,8 +1,8 @@
 package ecologylab.semantics.generated.library.patents;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  GoogleSorry.java

@@ -1,14 +1,18 @@
 package ecologylab.semantics.generated.library.creativeWork;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
 import java.util.List;
-import ecologylab.semantics.generated.library.creativeWork.Author;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.Hint;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_hints;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  CreativeWork.java
@@ -25,7 +29,7 @@ public class CreativeWork extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("abstract")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("abstract")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString abstractField;
 
 	/** 
@@ -36,7 +40,7 @@ public class CreativeWork extends CompoundDocument
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_other_tags({"year_of_publication"})	
+	@simpl_scalar	@simpl_other_tags({"year_of_publication"})	
 	private MetadataInteger year;
 
 	public CreativeWork()

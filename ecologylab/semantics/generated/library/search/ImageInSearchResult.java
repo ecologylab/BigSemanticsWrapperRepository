@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.search;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  ImageInSearchResult.java
@@ -24,12 +26,12 @@ public class ImageInSearchResult extends Image
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("mms:Title")	
+	@simpl_scalar	@simpl_tag("mms:Title")	
 	private MetadataString caption;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("mms:ContentType")	
+	@simpl_scalar	@simpl_tag("mms:ContentType")	
 	private MetadataString contentType;
 
 	/** 
@@ -39,7 +41,7 @@ public class ImageInSearchResult extends Image
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("mms:FileSize")	
+	@simpl_scalar	@simpl_tag("mms:FileSize")	
 	private MetadataInteger fileSize;
 
 	public ImageInSearchResult()

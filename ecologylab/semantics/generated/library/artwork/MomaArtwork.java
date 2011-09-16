@@ -1,13 +1,13 @@
 package ecologylab.semantics.generated.library.artwork;
 
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.generated.library.artwork.TempFieldValueHolder;
-import ecologylab.semantics.generated.library.artwork.Artwork;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  MomaArtwork.java

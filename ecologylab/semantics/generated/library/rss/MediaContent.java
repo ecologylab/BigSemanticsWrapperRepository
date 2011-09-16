@@ -1,11 +1,13 @@
 package ecologylab.semantics.generated.library.rss;
 
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  MediaContent.java
@@ -27,7 +29,7 @@ public class MediaContent extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("url")	
+	@simpl_scalar	@simpl_tag("url")	
 	private MetadataParsedURL mediaUrl;
 
 	/** 

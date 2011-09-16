@@ -1,9 +1,11 @@
 package ecologylab.semantics.generated.library.dlese;
 
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  ResultInfo.java
@@ -25,17 +27,17 @@ public class ResultInfo extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("numReturned")	
+	@simpl_scalar	@simpl_tag("numReturned")	
 	private MetadataInteger returned;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("totalNumRecordsInLibrary")	
+	@simpl_scalar	@simpl_tag("totalNumRecordsInLibrary")	
 	private MetadataInteger totalRecords;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("totalNumResults")	
+	@simpl_scalar	@simpl_tag("totalNumResults")	
 	private MetadataInteger totalResults;
 
 	public ResultInfo()

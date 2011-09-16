@@ -1,17 +1,16 @@
 package ecologylab.semantics.generated.library.imdb;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.generated.library.imdb.PersonDetails;
-import ecologylab.semantics.generated.library.imdb.CastMember;
+
 import ecologylab.net.ParsedURL;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.generated.library.imdb.Genre;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.Image;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  ImdbTitle.java

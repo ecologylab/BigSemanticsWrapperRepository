@@ -1,13 +1,11 @@
 package ecologylab.semantics.generated.library.wikipedia;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.generated.library.wikipedia.Thumbinner;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.wikipedia.Category;
-import ecologylab.semantics.generated.library.wikipedia.Paragraph;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  WikipediaPageType.java

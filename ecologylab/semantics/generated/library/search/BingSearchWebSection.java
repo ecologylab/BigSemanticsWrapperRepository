@@ -1,11 +1,12 @@
 package ecologylab.semantics.generated.library.search;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.generated.library.search.BingWebSearchResult;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  BingSearchWebSection.java
@@ -22,7 +23,7 @@ public class BingSearchWebSection extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_collection("web:WebResult")	@xml_tag("web:Results")	@mm_name("web_search_results")
+	@simpl_collection("web:WebResult")	@simpl_tag("web:Results")	@mm_name("web_search_results")
 	private List<BingWebSearchResult> webSearchResults;
 
 	public BingSearchWebSection()

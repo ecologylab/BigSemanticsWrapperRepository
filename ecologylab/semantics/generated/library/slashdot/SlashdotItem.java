@@ -1,10 +1,13 @@
 package ecologylab.semantics.generated.library.slashdot;
 
+import ecologylab.semantics.generated.library.rss.Item;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
-import ecologylab.semantics.generated.library.rss.Item;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.Hint;
+import ecologylab.serialization.annotations.simpl_hints;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  SlashdotItem.java
@@ -22,12 +25,12 @@ public class SlashdotItem extends Item
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("slash:department")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("slash:department")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString department;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("slash:section")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("slash:section")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString section;
 
 	public SlashdotItem()

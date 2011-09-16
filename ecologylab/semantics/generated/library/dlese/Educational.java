@@ -1,12 +1,13 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.dlese.Audience;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Educational.java
@@ -28,7 +29,7 @@ public class Educational extends Metadata
 
 	/** 
 	 */ 
-	@simpl_collection("resourceType")	@xml_tag("resourceTypes")	@mm_name("resource_types")
+	@simpl_collection("resourceType")	@simpl_tag("resourceTypes")	@mm_name("resource_types")
 	private List<MetadataString> resourceTypes;
 
 	public Educational()

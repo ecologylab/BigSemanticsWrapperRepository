@@ -2,10 +2,12 @@ package ecologylab.semantics.generated.library.rss;
 
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
-import ecologylab.semantics.generated.library.rss.Dc;
-import ecologylab.semantics.generated.library.rss.MediaContent;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.Hint;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_hints;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  YahooMediaRss.java
@@ -23,12 +25,12 @@ public class YahooMediaRss extends Dc
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("media:content")	@mm_name("media_content")
+	@simpl_composite	@simpl_tag("media:content")	@mm_name("media_content")
 	private MediaContent mediaContent;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("media:description")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("media:description")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString mediaDescription;
 
 	public YahooMediaRss()

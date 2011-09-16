@@ -1,12 +1,12 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import java.util.ArrayList;
-import ecologylab.semantics.generated.library.dlese.DleseRecord2;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  DleseGetRecord.java
@@ -19,12 +19,12 @@ import ecologylab.serialization.ElementState.xml_tag;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("DDSWebService")
+@simpl_tag("DDSWebService")
 public class DleseGetRecord extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_collection("record")	@xml_tag("GetRecord")	@mm_name("records")
+	@simpl_collection("record")	@simpl_tag("GetRecord")	@mm_name("records")
 	private List<DleseRecord2> records;
 
 	public DleseGetRecord()

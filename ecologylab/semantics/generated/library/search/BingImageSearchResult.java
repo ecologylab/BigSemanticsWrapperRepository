@@ -1,8 +1,9 @@
 package ecologylab.semantics.generated.library.search;
 
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.search.ImageInSearchResult;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  BingImageSearchResult.java
@@ -20,7 +21,7 @@ public class BingImageSearchResult extends ImageInSearchResult
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("mms:Thumbnail")	@mm_name("thumbnail")
+	@simpl_composite	@simpl_tag("mms:Thumbnail")	@mm_name("thumbnail")
 	private ImageInSearchResult thumbnail;
 
 	public BingImageSearchResult()

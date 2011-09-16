@@ -1,11 +1,11 @@
 package ecologylab.semantics.generated.library.artwork;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.generated.library.creativeWork.Author;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.artwork.Artwork;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  Artist.java

@@ -1,9 +1,9 @@
 package ecologylab.semantics.generated.library.nsdl;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.nsdl.Header;
 import ecologylab.semantics.generated.library.rss.Dc;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  NsdlDocument.java

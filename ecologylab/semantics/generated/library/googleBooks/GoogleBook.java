@@ -1,15 +1,15 @@
 package ecologylab.semantics.generated.library.googleBooks;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.publication.Book;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.googleBooks.GoogleBook;
-import java.util.List;
-import ecologylab.semantics.generated.library.publication.Book;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.googleBooks.Page;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  GoogleBook.java

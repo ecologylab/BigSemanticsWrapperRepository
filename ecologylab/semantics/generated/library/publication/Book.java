@@ -1,14 +1,15 @@
 package ecologylab.semantics.generated.library.publication;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.creativeWork.Author;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
-import ecologylab.semantics.generated.library.creativeWork.Author;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.publication.Publication;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  Book.java

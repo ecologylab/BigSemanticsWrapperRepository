@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.search;
 
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.search.YahooThumbnail;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  YahooResult.java
@@ -23,27 +25,27 @@ public class YahooResult extends Document
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Summary")	
+	@simpl_scalar	@simpl_tag("Summary")	
 	private MetadataString summary;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("ModificationDate")	
+	@simpl_scalar	@simpl_tag("ModificationDate")	
 	private MetadataString modificationDate;
 
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("Thumbnail")	@mm_name("thumbnail")
+	@simpl_composite	@simpl_tag("Thumbnail")	@mm_name("thumbnail")
 	private YahooThumbnail thumbnail;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("MimeType")	
+	@simpl_scalar	@simpl_tag("MimeType")	
 	private MetadataString mimeType;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("RefererUrl")	
+	@simpl_scalar	@simpl_tag("RefererUrl")	
 	private MetadataParsedURL refererUrl;
 
 	public YahooResult()

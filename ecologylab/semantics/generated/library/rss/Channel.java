@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.rss;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
-import ecologylab.semantics.generated.library.rss.Item;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  Channel.java

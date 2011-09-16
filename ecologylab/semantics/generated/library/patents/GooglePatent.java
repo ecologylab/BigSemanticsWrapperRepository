@@ -1,13 +1,14 @@
 package ecologylab.semantics.generated.library.patents;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.serialization.simpl_inherit;
+
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.generated.library.patents.Patent;
 import ecologylab.semantics.generated.library.search.SearchResult;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  GooglePatent.java

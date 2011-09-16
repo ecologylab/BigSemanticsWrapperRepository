@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.globe_cartoon;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.Date;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
+
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  GlobeCartoon.java

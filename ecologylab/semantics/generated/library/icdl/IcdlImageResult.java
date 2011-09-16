@@ -1,12 +1,13 @@
 package ecologylab.semantics.generated.library.icdl;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.generated.library.icdl.IcdlBook;
+
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  IcdlImageResult.java
@@ -20,7 +21,7 @@ import ecologylab.serialization.ElementState.xml_tag;
 	 * Thumbnail Image
  */ 
 @simpl_inherit
-@xml_tag("response")
+@simpl_tag("response")
 public class IcdlImageResult extends Document
 {
 	/** 

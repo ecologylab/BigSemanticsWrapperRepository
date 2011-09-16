@@ -1,13 +1,15 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.generated.library.dlese.Collection;
-import ecologylab.semantics.generated.library.dlese.AdditionalMetadata;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.Date;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
+
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  DleseRecordHead.java
@@ -29,12 +31,12 @@ public class DleseRecordHead extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("fileLastModified")	
+	@simpl_scalar	@simpl_tag("fileLastModified")	
 	private MetadataDate lastModified;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("xmlFormat")	
+	@simpl_scalar	@simpl_tag("xmlFormat")	
 	private MetadataString xmlFormat;
 
 	/** 
@@ -44,7 +46,7 @@ public class DleseRecordHead extends Metadata
 
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("additionalMetadata")	@mm_name("additional_metadata")
+	@simpl_composite	@simpl_tag("additionalMetadata")	@mm_name("additional_metadata")
 	private AdditionalMetadata additionalMetadata;
 
 	public DleseRecordHead()

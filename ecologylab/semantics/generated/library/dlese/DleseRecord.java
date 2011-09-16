@@ -1,11 +1,10 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.dlese.DleseRecordHead;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
-import ecologylab.semantics.generated.library.dlese.RecordMetadata;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  DleseRecord.java
@@ -18,17 +17,17 @@ import ecologylab.semantics.generated.library.dlese.RecordMetadata;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("record")
+@simpl_tag("record")
 public class DleseRecord extends Document
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("head")	@mm_name("dlese_record_head")
+	@simpl_composite	@simpl_tag("head")	@mm_name("dlese_record_head")
 	private DleseRecordHead dleseRecordHead;
 
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("metadata")	@mm_name("record_metadata")
+	@simpl_composite	@simpl_tag("metadata")	@mm_name("record_metadata")
 	private RecordMetadata recordMetadata;
 
 	public DleseRecord()

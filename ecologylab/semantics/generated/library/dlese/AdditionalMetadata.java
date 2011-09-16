@@ -1,8 +1,8 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  AdditionalMetadata.java

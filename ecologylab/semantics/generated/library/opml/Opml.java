@@ -1,10 +1,9 @@
 package ecologylab.semantics.generated.library.opml;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.opml.Head;
-import ecologylab.semantics.generated.library.opml.Body;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  Opml.java

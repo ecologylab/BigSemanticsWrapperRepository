@@ -1,11 +1,13 @@
 package ecologylab.semantics.generated.library.british_cartoon_archive;
 
+import java.util.Date;
+
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.Date;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
-import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  BritishCartoonArchive.java

@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.dlese.DateInfo;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  RecordMetaMetadata.java
@@ -23,12 +25,12 @@ public class RecordMetaMetadata extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("dateInfo")	@mm_name("date_info")
+	@simpl_composite	@simpl_tag("dateInfo")	@mm_name("date_info")
 	private DateInfo dateInfo;
 
 	/** 
 	 */ 
-	@simpl_collection("catalog")	@xml_tag("catalogEntries")	@mm_name("catalogs")
+	@simpl_collection("catalog")	@simpl_tag("catalogEntries")	@mm_name("catalogs")
 	private List<MetadataString> catalogs;
 
 	public RecordMetaMetadata()

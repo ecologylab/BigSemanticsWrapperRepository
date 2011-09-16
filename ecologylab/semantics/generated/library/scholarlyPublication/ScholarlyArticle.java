@@ -1,16 +1,18 @@
 package ecologylab.semantics.generated.library.scholarlyPublication;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.generated.library.Tag;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
-import ecologylab.serialization.simpl_inherit;
+
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
+import ecologylab.semantics.generated.library.Tag;
+import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.semantics.generated.library.creativeWork.Periodical;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  ScholarlyArticle.java

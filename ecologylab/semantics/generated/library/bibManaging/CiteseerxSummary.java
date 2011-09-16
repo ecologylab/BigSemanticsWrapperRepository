@@ -1,10 +1,10 @@
 package ecologylab.semantics.generated.library.bibManaging;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  CiteseerxSummary.java

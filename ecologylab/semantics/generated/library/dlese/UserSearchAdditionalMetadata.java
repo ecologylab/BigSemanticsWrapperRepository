@@ -1,9 +1,9 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.generated.library.dlese.AdditionalMetadata;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.dlese.SearchAdditionalMetadataAdn;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  UserSearchAdditionalMetadata.java
@@ -20,7 +20,7 @@ public class UserSearchAdditionalMetadata extends AdditionalMetadata
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("adn")	@mm_name("search_additional_metadata_adn")
+	@simpl_composite	@simpl_tag("adn")	@mm_name("search_additional_metadata_adn")
 	private SearchAdditionalMetadataAdn searchAdditionalMetadataAdn;
 
 	public UserSearchAdditionalMetadata()

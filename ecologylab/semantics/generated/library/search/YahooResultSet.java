@@ -1,12 +1,13 @@
 package ecologylab.semantics.generated.library.search;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.semantics.generated.library.search.YahooResult;
+
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  YahooResultSet.java
@@ -20,7 +21,7 @@ import ecologylab.serialization.ElementState.xml_tag;
 	 * Yahoo Web Search Service
  */ 
 @simpl_inherit
-@xml_tag("ResultSet")
+@simpl_tag("ResultSet")
 public class YahooResultSet extends Document
 {
 	/** 

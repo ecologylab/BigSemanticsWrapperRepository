@@ -1,10 +1,10 @@
 package ecologylab.semantics.generated.library.nsdl;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.nsdl.SearchResults;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  NsdlService.java
@@ -17,12 +17,12 @@ import ecologylab.serialization.ElementState.xml_tag;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("NSDLSearchService")
+@simpl_tag("NSDLSearchService")
 public class NsdlService extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("SearchResults")	@mm_name("search_results")
+	@simpl_composite	@simpl_tag("SearchResults")	@mm_name("search_results")
 	private SearchResults searchResults;
 
 	public NsdlService()

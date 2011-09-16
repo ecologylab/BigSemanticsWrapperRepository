@@ -1,9 +1,11 @@
 package ecologylab.semantics.generated.library.dlese;
 
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  SearchAdditionalMetadataAdn.java
@@ -20,12 +22,12 @@ public class SearchAdditionalMetadataAdn extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("partOfDrc")	
+	@simpl_scalar	@simpl_tag("partOfDrc")	
 	private MetadataString partOfDrc;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("accessionStatus")	
+	@simpl_scalar	@simpl_tag("accessionStatus")	
 	private MetadataString accessionStatus;
 
 	public SearchAdditionalMetadataAdn()

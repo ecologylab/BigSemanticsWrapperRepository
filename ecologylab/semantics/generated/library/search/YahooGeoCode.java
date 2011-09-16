@@ -1,9 +1,8 @@
 package ecologylab.semantics.generated.library.search;
 
-import ecologylab.semantics.generated.library.search.YahooResultSet;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  YahooGeoCode.java
@@ -16,7 +15,7 @@ import ecologylab.serialization.ElementState.xml_tag;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("ResultSet")
+@simpl_tag("ResultSet")
 public class YahooGeoCode extends YahooResultSet
 {
 	public YahooGeoCode()

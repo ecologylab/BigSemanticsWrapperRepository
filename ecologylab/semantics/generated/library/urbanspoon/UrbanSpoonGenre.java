@@ -1,11 +1,12 @@
 package ecologylab.semantics.generated.library.urbanspoon;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.search.SearchResult;
+
 import ecologylab.semantics.generated.library.search.Search;
+import ecologylab.semantics.generated.library.search.SearchResult;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  UrbanSpoonGenre.java

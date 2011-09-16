@@ -1,10 +1,12 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.Date;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
+
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  DateInfo.java

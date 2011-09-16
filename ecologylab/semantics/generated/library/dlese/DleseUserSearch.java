@@ -1,10 +1,10 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
-import ecologylab.semantics.generated.library.dlese.SearchSection;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  DleseUserSearch.java
@@ -17,12 +17,12 @@ import ecologylab.semantics.metadata.builtins.CompoundDocument;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("DDSWebService")
+@simpl_tag("DDSWebService")
 public class DleseUserSearch extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("Search")	@mm_name("search_section")
+	@simpl_composite	@simpl_tag("Search")	@mm_name("search_section")
 	private SearchSection searchSection;
 
 	public DleseUserSearch()

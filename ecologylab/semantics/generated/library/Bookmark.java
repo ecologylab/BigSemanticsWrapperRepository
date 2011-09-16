@@ -1,11 +1,13 @@
 package ecologylab.semantics.generated.library;
 
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.serialization.annotations.simpl_composite_as_scalar;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  Bookmark.java

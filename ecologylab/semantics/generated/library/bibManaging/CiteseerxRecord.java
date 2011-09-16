@@ -1,9 +1,9 @@
 package ecologylab.semantics.generated.library.bibManaging;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.bibManaging.CitationInfo;
 import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  CiteseerxRecord.java

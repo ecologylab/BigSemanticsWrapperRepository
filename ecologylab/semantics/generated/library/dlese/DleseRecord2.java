@@ -1,9 +1,8 @@
 package ecologylab.semantics.generated.library.dlese;
 
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.semantics.generated.library.dlese.DleseRecord;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  DleseRecord2.java
@@ -16,7 +15,7 @@ import ecologylab.serialization.ElementState.xml_tag;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("record")
+@simpl_tag("record")
 public class DleseRecord2 extends DleseRecord
 {
 	public DleseRecord2()

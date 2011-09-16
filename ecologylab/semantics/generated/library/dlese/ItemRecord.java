@@ -1,14 +1,14 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.dlese.RecordMetaMetadata;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.dlese.General;
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.generated.library.dlese.Educational;
-import ecologylab.semantics.generated.library.dlese.Lifecycle;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  ItemRecord.java
@@ -25,12 +25,12 @@ public class ItemRecord extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("metaMetadata")	@mm_name("record_meta_metadata")
+	@simpl_composite	@simpl_tag("metaMetadata")	@mm_name("record_meta_metadata")
 	private RecordMetaMetadata recordMetaMetadata;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("schemaLocation")	@xml_other_tags({"xsi:schemaLocation"})	
+	@simpl_scalar	@simpl_tag("schemaLocation")	@simpl_other_tags({"xsi:schemaLocation"})	
 	private MetadataParsedURL location;
 
 	/** 

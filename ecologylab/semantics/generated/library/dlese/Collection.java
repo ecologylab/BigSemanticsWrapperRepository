@@ -1,9 +1,11 @@
 package ecologylab.semantics.generated.library.dlese;
 
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Collection.java
@@ -20,7 +22,7 @@ public class Collection extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("recordId")	
+	@simpl_scalar	@simpl_tag("recordId")	
 	private MetadataString id;
 
 	public Collection()

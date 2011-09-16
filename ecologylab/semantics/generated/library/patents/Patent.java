@@ -1,14 +1,16 @@
 package ecologylab.semantics.generated.library.patents;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
 import java.util.Date;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
+import java.util.List;
+
 import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataDate;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  Patent.java

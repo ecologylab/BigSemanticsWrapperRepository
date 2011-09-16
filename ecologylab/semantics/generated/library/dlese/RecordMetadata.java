@@ -1,9 +1,10 @@
 package ecologylab.semantics.generated.library.dlese;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.generated.library.dlese.ItemRecord;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  RecordMetadata.java
@@ -20,7 +21,7 @@ public class RecordMetadata extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_composite	@xml_tag("itemRecord")	@mm_name("item_record")
+	@simpl_composite	@simpl_tag("itemRecord")	@mm_name("item_record")
 	private ItemRecord itemRecord;
 
 	public RecordMetadata()

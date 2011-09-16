@@ -1,12 +1,13 @@
 package ecologylab.semantics.generated.library.slashdot;
 
-import java.util.ArrayList;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.generated.library.slashdot.SlashdotItem;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.serialization.ElementState.xml_tag;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  SlashdotRss.java
@@ -19,7 +20,7 @@ import ecologylab.serialization.ElementState.xml_tag;
 /** 
  */ 
 @simpl_inherit
-@xml_tag("rdf:RDF")
+@simpl_tag("rdf:RDF")
 public class SlashdotRss extends CompoundDocument
 {
 	/** 

@@ -1,12 +1,16 @@
 package ecologylab.semantics.generated.library.rss;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
 import java.util.Date;
+
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.Hint;
+import ecologylab.serialization.annotations.simpl_hints;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Dc.java
@@ -24,27 +28,27 @@ public class Dc extends CompoundDocument
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:creator")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("dc:creator")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString dcCreator;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:subject")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("dc:subject")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString dcSubject;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:description")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("dc:description")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString dcDescription;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:title")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("dc:title")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataString dcTitle;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("dc:date")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("dc:date")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataDate dcDate;
 
 	public Dc()

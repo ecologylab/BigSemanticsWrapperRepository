@@ -1,12 +1,15 @@
 package ecologylab.semantics.generated.library.search;
 
-import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.serialization.Hint;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.Hint;
+import ecologylab.serialization.annotations.simpl_hints;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  YahooThumbnail.java
@@ -23,17 +26,17 @@ public class YahooThumbnail extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Url")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("Url")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataParsedURL thumbUrl;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Width")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("Width")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataInteger width;
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("Height")	@simpl_hints(Hint.XML_LEAF)	
+	@simpl_scalar	@simpl_tag("Height")	@simpl_hints(Hint.XML_LEAF)	
 	private MetadataInteger height;
 
 	public YahooThumbnail()

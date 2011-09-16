@@ -1,10 +1,9 @@
 package ecologylab.semantics.generated.library.products;
 
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.products.Product;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.generated.library.products.BestsellerList;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
 
 /**
 *  AmazonProduct.java

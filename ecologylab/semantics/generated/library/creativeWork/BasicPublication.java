@@ -1,10 +1,11 @@
 package ecologylab.semantics.generated.library.creativeWork;
 
+import ecologylab.semantics.generated.library.publication.Publisher;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
-import ecologylab.semantics.generated.library.publication.Publisher;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  BasicPublication.java

@@ -1,10 +1,12 @@
 package ecologylab.semantics.generated.library.icdl;
 
-import ecologylab.semantics.metadata.scalar.MetadataString;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.generated.library.creativeWork.Author;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.semantics.metadata.scalar.MetadataString;
+import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 
 /**
 *  IcdlBookPreview.java

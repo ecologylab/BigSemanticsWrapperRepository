@@ -1,12 +1,14 @@
 package ecologylab.semantics.generated.library.artwork;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.generated.library.artwork.Artist;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Artwork.java
@@ -37,7 +39,7 @@ public class Artwork extends CompoundDocument
 	/** 
 	 * Abstract of the work.
 	 */ 
-	@simpl_scalar	@xml_tag("abstract")	
+	@simpl_scalar	@simpl_tag("abstract")	
 	private MetadataString abstractField;
 
 	/** 

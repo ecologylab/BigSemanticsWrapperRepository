@@ -1,9 +1,11 @@
 package ecologylab.semantics.generated.library.dlese;
 
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Audience.java
@@ -20,7 +22,7 @@ public class Audience extends Metadata
 {
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("gradeRange")	
+	@simpl_scalar	@simpl_tag("gradeRange")	
 	private MetadataString gradeRange;
 
 	public Audience()

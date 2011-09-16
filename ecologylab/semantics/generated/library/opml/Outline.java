@@ -1,14 +1,17 @@
 package ecologylab.semantics.generated.library.opml;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import java.util.List;
-import ecologylab.semantics.generated.library.opml.Outline;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.serialization.simpl_inherit;
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_tag;
 
 /**
 *  Outline.java
@@ -35,7 +38,7 @@ public class Outline extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("htmlUrl")	
+	@simpl_scalar	@simpl_tag("htmlUrl")	
 	private MetadataParsedURL htmlUrl;
 
 	/** 
@@ -45,7 +48,7 @@ public class Outline extends Metadata
 
 	/** 
 	 */ 
-	@simpl_scalar	@xml_tag("xmlUrl")	
+	@simpl_scalar	@simpl_tag("xmlUrl")	
 	private MetadataParsedURL xmlUrl;
 
 	/** 
