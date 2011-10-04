@@ -27,11 +27,6 @@ public class ImageInSearchResult extends Image
 {
 	/** 
 	 */ 
-	@simpl_scalar	@simpl_tag("mms:Title")	 @simpl_composite_as_scalar
-	private ecologylab.semantics.metadata.scalar.MetadataString caption;
-
-	/** 
-	 */ 
 	@simpl_scalar	@simpl_tag("mms:ContentType")	 @simpl_composite_as_scalar
 	private ecologylab.semantics.metadata.scalar.MetadataString contentType;
 
@@ -52,38 +47,6 @@ public class ImageInSearchResult extends Image
 		super(mmd);
 	}
 
-
-	public MetadataString	caption()
-	{
-		MetadataString	result = this.caption;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.caption = result;
-		}
-		return result;
-	}
-
-	public String getCaption()
-	{
-		return this.caption == null ? null : caption().getValue();
-	}
-
-	public ecologylab.semantics.metadata.scalar.MetadataString getCaptionMetadata()
-	{
-		return caption;
-	}
-
-	public void setCaption(String caption)
-	{
-		if (caption != null)
-			this.caption().setValue(caption);
-	}
-
-	public void setCaptionMetadata(ecologylab.semantics.metadata.scalar.MetadataString caption)
-	{
-		this.caption = caption;
-	}
 
 	public MetadataString	contentType()
 	{
