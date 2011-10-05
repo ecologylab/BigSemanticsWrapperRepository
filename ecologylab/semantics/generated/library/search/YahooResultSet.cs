@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,16 +20,16 @@ namespace ecologylab.semantics.generated.library.search
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[xml_tag("ResultSet")]
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplTag("ResultSet")]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class YahooResultSet : Document
 	{
 		/// <summary>
 		/// Collection of results for yahoo search
 		/// </summary>
-		[simpl_collection("Result")]
-		[simpl_nowrap]
+		[SimplCollection("Result")]
+		[SimplNoWrap]
 		[mm_name("results")]
 		private List<YahooResult> results;
 

@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -18,48 +18,48 @@ namespace ecologylab.semantics.generated.library.opml
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class Outline : Metadata
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("htmlUrl")]
+		[SimplScalar]
+		[SimplTag("htmlUrl")]
 		private MetadataParsedURL htmlUrl;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString title;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString text;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("outline")]
-		[simpl_nowrap]
+		[SimplCollection("outline")]
+		[SimplNoWrap]
 		[mm_name("outlines")]
 		private List<Outline> outlines;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("xmlUrl")]
+		[SimplScalar]
+		[SimplTag("xmlUrl")]
 		private MetadataParsedURL xmlUrl;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString type;
 
 		public Outline()

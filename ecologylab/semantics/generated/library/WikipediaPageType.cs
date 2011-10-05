@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -21,35 +21,35 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class WikipediaPageType : Document
 	{
 		/// <summary>
 		/// Paragraphs in the article.
 		/// </summary>
-		[simpl_collection("paragraph")]
-		[xml_tag("paragraphs")]
+		[SimplCollection("paragraph")]
+		[SimplTag("paragraphs")]
 		[mm_name("paragraphs")]
 		private List<Paragraph> paragraphs;
 
 		/// <summary>
 		/// Wikipedia Categories
 		/// </summary>
-		[simpl_collection("category")]
-		[xml_tag("categories")]
+		[SimplCollection("category")]
+		[SimplTag("categories")]
 		[mm_name("categories")]
 		private List<Category> categories;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("thumbinner")]
-		[xml_tag("thumbinners")]
+		[SimplCollection("thumbinner")]
+		[SimplTag("thumbinners")]
 		[mm_name("thumbinners")]
 		private List<Thumbinner> thumbinners;
 
-        [simpl_composite]
+        [SimplComposite]
         [mm_name("style_info")]
         private HypertextPara introPara;
 

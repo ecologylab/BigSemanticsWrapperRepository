@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -19,16 +19,16 @@ namespace ecologylab.semantics.generated.library.slashdot
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[xml_tag("rdf:RDF")]
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplTag("rdf:RDF")]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class SlashdotRss : Document
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("item")]
-		[simpl_nowrap]
+		[SimplCollection("item")]
+		[SimplNoWrap]
 		[mm_name("items")]
 		private List<SlashdotItem> items;
 

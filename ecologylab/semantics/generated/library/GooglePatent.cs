@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.generated.library.search;
@@ -21,55 +21,55 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class GooglePatent : Document
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString inventor;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString abstractField;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString claims;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL picLink;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("search_result")]
-		[xml_tag("referenced_bys")]
+		[SimplCollection("search_result")]
+		[SimplTag("referenced_bys")]
 		[mm_name("referenced_bys")]
 		private List<SearchResult> referencedBys;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("search_result")]
-		[xml_tag("citations")]
+		[SimplCollection("search_result")]
+		[SimplTag("citations")]
 		[mm_name("citations")]
 		private List<SearchResult> citations;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("search_result")]
-		[xml_tag("pic_links")]
+		[SimplCollection("search_result")]
+		[SimplTag("pic_links")]
 		[mm_name("pic_links")]
 		private List<SearchResult> picLinks;
 

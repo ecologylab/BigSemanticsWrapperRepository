@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,56 +20,56 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class Pdf : Document
 	{
 		/// <summary>
 		/// The author of the pdf document
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString author;
 
 		/// <summary>
 		/// Summary of the pdf document
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString summary;
 
 		/// <summary>
 		/// Key Words of the document
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString pdfKeywordsString;
 
 		/// <summary>
 		/// Subject of the document
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString subject;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString trapped;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString modified;
 
 		/// <summary>
 		/// Contents of the document
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString contents;
 
 		/// <summary>
 		/// Creation date of the document
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString creationdate;
 
 		public Pdf()

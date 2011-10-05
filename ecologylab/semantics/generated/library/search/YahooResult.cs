@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -19,57 +19,57 @@ namespace ecologylab.semantics.generated.library.search
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class YahooResult : Document
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("Title")]
+		[SimplScalar]
+		[SimplTag("Title")]
 		private MetadataString title;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("Summary")]
+		[SimplScalar]
+		[SimplTag("Summary")]
 		private MetadataString summary;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("Url")]
+		[SimplScalar]
+		[SimplTag("Url")]
 		private MetadataParsedURL location;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("RefererUrl")]
+		[SimplScalar]
+		[SimplTag("RefererUrl")]
 		private MetadataParsedURL refererUrl;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("ModificationDate")]
+		[SimplScalar]
+		[SimplTag("ModificationDate")]
 		private MetadataString modificationDate;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("MimeType")]
+		[SimplScalar]
+		[SimplTag("MimeType")]
 		private MetadataString mimeType;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_composite]
-		[xml_tag("Thumbnail")]
+		[SimplComposite]
+		[SimplTag("Thumbnail")]
 		[mm_name("thumbnail")]
 		private YahooThumbnail thumbnail;
 

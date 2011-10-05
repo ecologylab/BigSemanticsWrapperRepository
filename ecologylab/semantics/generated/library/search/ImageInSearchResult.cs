@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,56 +20,56 @@ namespace ecologylab.semantics.generated.library.search
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class ImageInSearchResult : Image
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("mms:Title")]
+		[SimplScalar]
+		[SimplTag("mms:Title")]
 		private MetadataString caption;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("mms:Url")]
+		[SimplScalar]
+		[SimplTag("mms:Url")]
 		private MetadataParsedURL location;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("mms:ContentType")]
+		[SimplScalar]
+		[SimplTag("mms:ContentType")]
 		private MetadataString contentType;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL referrerUrl;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("mms:Width")]
+		[SimplScalar]
+		[SimplTag("mms:Width")]
 		private MetadataInteger width;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("mms:Height")]
+		[SimplScalar]
+		[SimplTag("mms:Height")]
 		private MetadataInteger height;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("mms:FileSize")]
+		[SimplScalar]
+		[SimplTag("mms:FileSize")]
 		private MetadataInteger fileSize;
 
 		public ImageInSearchResult()

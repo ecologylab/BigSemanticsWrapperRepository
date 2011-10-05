@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,84 +20,84 @@ namespace ecologylab.semantics.generated.library.imdb
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class ImdbTitle : Document
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString yearReleased;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString rating;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("person_details")]
-		[xml_tag("directors")]
+		[SimplCollection("person_details")]
+		[SimplTag("directors")]
 		[mm_name("directors")]
 		private List<Entity<PersonDetails>> directors;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("person_details")]
-		[xml_tag("writers")]
+		[SimplCollection("person_details")]
+		[SimplTag("writers")]
 		[mm_name("writers")]
 		private List<Entity<PersonDetails>> writers;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString releaseDate;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("genre")]
-		[xml_tag("genres")]
+		[SimplCollection("genre")]
+		[SimplTag("genres")]
 		[mm_name("genres")]
 		private List<Genre> genres;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString plot;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString tagline;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("cast_member")]
-		[xml_tag("cast")]
+		[SimplCollection("cast_member")]
+		[SimplTag("cast")]
 		[mm_name("cast")]
 		private List<CastMember> cast;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("image")]
-		[xml_tag("title_photos")]
+		[SimplCollection("image")]
+		[SimplTag("title_photos")]
 		[mm_name("title_photos")]
 		private List<Image> titlePhotos;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL posterImg;
 
 		public ImdbTitle()

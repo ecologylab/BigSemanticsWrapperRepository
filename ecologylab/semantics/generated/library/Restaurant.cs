@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.generated.library.search;
@@ -21,51 +21,51 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class Restaurant : Document
 	{
 		/// <summary>
 		/// Phone number of the restaurant
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString phone;
 
 		/// <summary>
 		/// A picture from the restaurant
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL pic;
 
 		/// <summary>
 		/// Link to the restaurant's website
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL link;
 
 		/// <summary>
 		/// Rating of the restaurant
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString rating;
 
 		/// <summary>
 		/// Price range of the restaurant
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString priceRange;
 
 		/// <summary>
 		/// Map image of the restaurant's location or link to a directions page
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL map;
 
 		/// <summary>
 		/// The genres of food offered
 		/// </summary>
-		[simpl_collection("search_result")]
-		[xml_tag("genres")]
+		[SimplCollection("search_result")]
+		[SimplTag("genres")]
 		[mm_name("genres")]
 		private List<SearchResult> genres;
 

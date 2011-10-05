@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.generated.library.misc;
 using ecologylab.semantics.generated.library.imdb;
 using ecologylab.semantics.generated.library.rss;

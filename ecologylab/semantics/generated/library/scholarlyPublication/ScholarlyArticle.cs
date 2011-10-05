@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.generated.library;
 using ecologylab.semantics.metadata;
@@ -20,58 +20,58 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class ScholarlyArticle : Pdf
 	{
 		/// <summary>
 		/// citation.cfm
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL metadataPage;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("abstract")]
+		[SimplScalar]
+		[SimplTag("abstract")]
 		private MetadataString abstractField;
 
 		/// <summary>
 		/// Metadata related to where this article was published.
 		/// </summary>
-		[simpl_composite]
+		[SimplComposite]
 		[mm_name("source")]
 		private Source source;
 
 		/// <summary>
 		/// Set of authors.
 		/// </summary>
-		[simpl_collection("author")]
-		[xml_tag("authors")]
+		[SimplCollection("author")]
+		[SimplTag("authors")]
 		[mm_name("authors")]
 		private List<Author> authors;
 
 		/// <summary>
 		/// The Classifications of this paper.
 		/// </summary>
-		[simpl_collection("tag")]
-		[xml_tag("classifications")]
+		[SimplCollection("tag")]
+		[SimplTag("classifications")]
 		[mm_name("classifications")]
 		private List<Tag> classifications;
 
 		/// <summary>
 		/// Key Terms of the paper.
 		/// </summary>
-		[simpl_collection("tag")]
-		[xml_tag("keywords")]
+		[SimplCollection("tag")]
+		[SimplTag("keywords")]
 		[mm_name("keywords")]
 		private List<Tag> keywords;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString pages;
 
 		public ScholarlyArticle()

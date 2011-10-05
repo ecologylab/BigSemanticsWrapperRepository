@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -18,32 +18,32 @@ namespace ecologylab.semantics.generated.library.search
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class YahooThumbnail : Metadata
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("Url")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("Url")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataParsedURL thumbUrl;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("Width")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("Width")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataInteger width;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("Height")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("Height")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataInteger height;
 
 		public YahooThumbnail()

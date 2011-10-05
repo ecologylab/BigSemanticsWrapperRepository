@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -18,16 +18,16 @@ namespace ecologylab.semantics.generated.library.nsdl
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[xml_tag("SearchResults")]
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplTag("SearchResults")]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class SearchResults : Metadata
 	{
 		/// <summary>
 		/// this_should_be_document
 		/// </summary>
-		[simpl_collection("nsdl_document")]
-		[xml_tag("results")]
+		[SimplCollection("nsdl_document")]
+		[SimplTag("results")]
 		[mm_name("results")]
 		private List<NsdlDocument> results;
 

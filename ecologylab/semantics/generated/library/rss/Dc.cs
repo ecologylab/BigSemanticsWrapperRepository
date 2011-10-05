@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,48 +20,48 @@ namespace ecologylab.semantics.generated.library.rss
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class Dc : Document
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("dc:creator")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("dc:creator")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataString dcCreator;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("dc:subject")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("dc:subject")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataString dcSubject;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("dc:description")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("dc:description")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataString dcDescription;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("dc:title")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("dc:title")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataString dcTitle;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("dc:date")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("dc:date")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataDate dcDate;
 
 		public Dc()

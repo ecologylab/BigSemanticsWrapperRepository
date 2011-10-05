@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,50 +20,50 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class WeatherReport : Document
 	{
 		/// <summary>
 		/// The name of the city.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString city;
 
 		/// <summary>
 		/// The weather condition of the city, like sunny or cloudy.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString weather;
 
 		/// <summary>
 		/// The URL of the picture indicating weather condition.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL picUrl;
 
 		/// <summary>
 		/// The temperature.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString temperature;
 
 		/// <summary>
 		/// The humidity of the air.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString humidity;
 
 		/// <summary>
 		/// The wind speed.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString wind;
 
 		/// <summary>
 		/// The dew point.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString dewPoint;
 
 		public WeatherReport()

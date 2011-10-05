@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.generated.library.scholarlyPublication;
@@ -20,32 +20,32 @@ namespace ecologylab.semantics.generated.library.scienceDirect
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class ScienceDirectArticle : ScholarlyArticle
 	{
 		/// <summary>
 		/// The journal or other publication that the article comes from
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString publicationName;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString volume;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString issue;
 
 		/// <summary>
 		/// The digital object identifier of the article
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString doi;
 
 		public ScienceDirectArticle()

@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -19,22 +19,22 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class Paragraph : Metadata
 	{
 		/// <summary>
 		/// Anchors (links) in the paragraph, typically links to another Wikipedia article.
 		/// </summary>
-		[simpl_collection("anchor")]
-		[xml_tag("anchors")]
+		[SimplCollection("anchor")]
+		[SimplTag("anchors")]
 		[mm_name("anchors")]
 		private List<Anchor> anchors;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString paragraphText;
 
 		public Paragraph()

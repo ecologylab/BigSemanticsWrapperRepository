@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -19,23 +19,23 @@ namespace ecologylab.semantics.generated.library.rss
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class Item : YahooMediaRss
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataParsedURL link;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
-		[xml_tag("guid")]
-		[simpl_hints(new Hint[] { Hint.XML_LEAF })]
+		[SimplScalar]
+		[SimplTag("guid")]
+		[SimplHints(new Hint[] { Hint.XmlLeaf })]
 		private MetadataParsedURL location;
 
 		public Item()

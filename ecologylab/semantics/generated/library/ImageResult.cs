@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -19,32 +19,32 @@ namespace ecologylab.semantics.generated.library
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class ImageResult : Metadata
 	{
 		/// <summary>
 		/// raw parsed URL for extracting values 'url', 'referer_url'
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL imgUrl;
 
 		/// <summary>
 		/// image summary
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString summary;
 
 		/// <summary>
 		/// mime type should be extracted from this property
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString rawProperty;
 
 		/// <summary>
 		/// image title
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString imgTitle;
 
 		public ImageResult()

@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -20,88 +20,88 @@ namespace ecologylab.semantics.generated.library.imdb
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class PersonDetails : Document
 	{
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL personImg;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_composite]
+		[SimplComposite]
 		[mm_name("birth_detail")]
 		private BirthDetail birthDetail;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString miniBiography;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL biographyLink;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_as_actor")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_as_actor")]
 		[mm_name("titles_as_actor")]
 		private List<Entity<ImdbTitle>> titlesAsActor;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_as_actress")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_as_actress")]
 		[mm_name("titles_as_actress")]
 		private List<Entity<ImdbTitle>> titlesAsActress;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_as_director")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_as_director")]
 		[mm_name("titles_as_director")]
 		private List<Entity<ImdbTitle>> titlesAsDirector;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_for_soundtrack")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_for_soundtrack")]
 		[mm_name("titles_for_soundtrack")]
 		private List<Entity<ImdbTitle>> titlesForSoundtrack;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_as_producer")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_as_producer")]
 		[mm_name("titles_as_producer")]
 		private List<Entity<ImdbTitle>> titlesAsProducer;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_thanked_in")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_thanked_in")]
 		[mm_name("titles_thanked_in")]
 		private List<Entity<ImdbTitle>> titlesThankedIn;
 
 		/// <summary>
 		/// missing java doc comments or could not find the source file.
 		/// </summary>
-		[simpl_collection("imdb_title")]
-		[xml_tag("titles_as_self")]
+		[SimplCollection("imdb_title")]
+		[SimplTag("titles_as_self")]
 		[mm_name("titles_as_self")]
 		private List<Entity<ImdbTitle>> titlesAsSelf;
 

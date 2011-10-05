@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ecologylab.attributes;
+using Simpl.Serialization.Attributes;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 
@@ -18,32 +18,32 @@ namespace ecologylab.semantics.generated.library.search
 	/// This is a generated code. DO NOT edit or modify it.
 	/// @author MetadataCompiler
 	/// </summary>
-	[simpl_descriptor_classes(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
-	[simpl_inherit]
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })]
+	[SimplInherit]
 	public class SearchResult : Metadata
 	{
 		/// <summary>
 		/// The heading of search result
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString heading;
 
 		/// <summary>
 		/// The snippet of search result
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataString snippet;
 
 		/// <summary>
 		/// The link of the search result
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL link;
 
 		/// <summary>
 		/// Alternate link in search results
 		/// </summary>
-		[simpl_scalar]
+		[SimplScalar]
 		private MetadataParsedURL linkOther;
 
 		public SearchResult()
