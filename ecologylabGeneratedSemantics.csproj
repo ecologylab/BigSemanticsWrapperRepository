@@ -163,17 +163,13 @@
     <Compile Include="tscope\GeneratedMetadataTranslations.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ecologylabFundamental.NET\Simpl.Fundamental\Simpl.Fundamental.csproj">
-      <Project>{9A755A5E-88AA-4000-A9A7-ABDED3193855}</Project>
-      <Name>Simpl.Fundamental</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ecologylabFundamental.NET\Simpl.Serialization\Simpl.Serialization.csproj">
-      <Project>{2B7A3C03-D3F8-485D-9AA1-EDC9AB43E42D}</Project>
-      <Name>Simpl.Serialization</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ecologylabSemantics\ecologylabSemantics.csproj">
       <Project>{3A67F507-1E77-4ED6-BD46-981E66D15F92}</Project>
       <Name>ecologylabSemantics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simpl.Serialization\Simpl.Serialization.csproj">
+      <Project>{2B7A3C03-D3F8-485D-9AA1-EDC9AB43E42D}</Project>
+      <Name>Simpl.Serialization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
