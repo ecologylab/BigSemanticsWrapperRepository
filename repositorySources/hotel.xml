@@ -1,0 +1,33 @@
+<meta_metadata_repository name="hotel" package="ecologylab.semantics.generated.library.hotel">
+
+<meta_metadata name="hotel" extends="document">
+	<composite name="place" type="contact_point" />
+	
+	<scalar name="price" scalar_type="String" />
+	
+	<scalar name="space_size" label="size" scalar_type="String" />
+	
+	<scalar name="check_in" scalar_type="string" />
+	<scalar name="check_out" scalar_type="string" />
+	
+	<scalar name="temp" label="address" scalar_type="string"/>
+	<scalar name="location" hide="true" />
+	
+</meta_metadata>
+
+<meta_metadata name="airbnb" type="hotel" parser="xpath">
+	<selector url_path_tree="http://www.airbnb.com/rooms" />
+	<scalar name="title" xpath="//div[@class='overflow']" />
+	<scalar name="temp" xpath="//span[@id='display_address']/@data-location"/><!-- just a test to show that this xpath works when extracting directly -->
+<!-- 	<scalar name="description" xpath="//div[@id='description_text_wrapper']/p/text()"/> -->
+	<scalar name="price" xpath="//h2[@id='price_amount']"  style="metadata_h1"/>
+	<scalar name="space_size" xpath="//span[@id='size_val']" />
+	<scalar name="check_in" xpath="//span[@id='check in_val']" />
+	<scalar name="check_out" xpath="//span[@id='check out_val']" />
+	
+	<composite name="place" xpath="//span[@id='display_address']">
+		<scalar name="street_address" xpath="./text()"/>
+	</composite>
+</meta_metadata>
+
+</meta_metadata_repository>

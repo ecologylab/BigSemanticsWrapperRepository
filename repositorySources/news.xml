@@ -1,0 +1,12 @@
+<meta_metadata_repository name="news" package="ecologylab.semantics.generated.library.news" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="nytimes" type="compound_document" iparser="xpath" parser="html_dom_image_text">
+		<selector url_regex="http://www.nytimes.com/[A-z0-9_@-]+/$" domain="nytimes.com" />
+		<selector url_path_tree="http://www.nytimes.com/2011" />
+		
+		<scalar name="description" xpath="/html/head/meta[@name='description']/@content"/>
+		<scalar name="title" xpath="/html/head/meta[@name='hdl']/@content"/>
+
+
+	</meta_metadata>
+</meta_metadata_repository>

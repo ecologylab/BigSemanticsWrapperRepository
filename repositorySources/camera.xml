@@ -1,0 +1,13 @@
+<meta_metadata_repository name="camera" package="ecologylab.semantics.generated.library.camera">
+
+	<meta_metadata name="camera_settings" extends="metadata" comment="Mixin: Image description from EXIF image metadata.">
+		<scalar name="subject_distance" scalar_type="String" />
+		<scalar name="exposure_time" scalar_type="String" />
+		<scalar name="aperture" scalar_type="float" />
+		<scalar name="shutter_speed" scalar_type="Float" />
+		<scalar name="model" scalar_type="String" />
+		<scalar name="orientation" scalar_type="String" />
+		<scalar name="resolution" scalar_type="int" />
+	</meta_metadata>
+	
+</meta_metadata_repository>

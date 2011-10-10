@@ -1,0 +1,23 @@
+<meta_metadata_repository name="default" package="ecologylab.semantics.generated.library.misc">
+	<meta_metadata name="dlms" extends="compound_document" comment="The DLMS Class">
+		<scalar name="subject" scalar_type="String" />
+	</meta_metadata>
+
+	<meta_metadata name="nsdl" extends="compound_document" comment="The NSDL class">
+		<scalar name="subject" scalar_type="String" />
+	</meta_metadata>
+	
+	<meta_metadata name="dc_document" extends="compound_document" comment="">
+		<scalar name="subject" scalar_type="String" />
+		<mixins>search</mixins>
+	</meta_metadata>
+	<meta_metadata name="icdl_image" extends="image" comment="Image from The Interantional Children's digital library.">
+		<scalar name="languages" comment="The language of the library" scalar_type="String" />
+	</meta_metadata>
+	
+	<!-- 
+	<meta_metadata name="nytimes" type="document" parser="html_dom_image_text" user_agent_name="chrome_2">
+		<selector domain="nytimes.com"/>
+	</meta_metadata>
+	 -->
+</meta_metadata_repository>

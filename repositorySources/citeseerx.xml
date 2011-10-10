@@ -1,0 +1,195 @@
+<meta_metadata_repository name="bib_managing" package="ecologylab.semantics.generated.library.bibManaging" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="citation_info" extends="metadata" comment="Citation numbers.">
+		<scalar name="total_citation" scalar_type="Int" />
+		<scalar name="self_citation" scalar_type="Int" />
+	</meta_metadata>
+
+
+
+	<meta_metadata name="citeseerx_record" extends="scholarly_article" comment="CiteSeerX record for an article.">
+		<scalar name="location" xpath="//div[@id='downloads']/a[@title='View or Download this document as PDF']/@href" />
+		<scalar name="title" xpath="//h1[@class='primaryheader']" navigates_to="metadata_page" as_natural_id="title" format="text">
+			<filter regex="(\(.*\))|(\[.*\])" replace="" />
+		</scalar>
+		<collection name="authors" xpath="//div[@id='introduction']/div[contains(@class, 'char_mediumvalue')]">
+			<field_parser name="regex_split" regex="\s*,\s*" />
+			<scalar name="title" field_parser_key="$0">
+				<filter regex="^by\s+" replace="" />
+			</scalar>
+		</collection>
+		<composite name="citation_info" type="citation_info" xpath="//h1[@class='primaryheader']/a">
+			<field_parser name="regex_find" regex="(\d+) citations .* (\d+) self" />
+			<scalar name="total_citation" field_parser_key="$1" />
+			<scalar name="self_citation" field_parser_key="$2" />
+		</composite>
+	</meta_metadata>
+
+
+
+	<meta_metadata name="citeseerx_summary" extends="citeseerx_record" parser="xpath" comment="Summary page from CiteSeerX.">
+		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/summary" />
+    
+    <url_generator type="search" engine="citeseerx" use_id="title" />
+    
+		<composite name="source" xpath="//div[@id='right-sidebar']/div/div[2]/div[@class='content']">
+			<field_parser name="bibtex" />
+			<composite name="archive" >
+				<scalar name="title" field_parser_key="booktitle" />
+			</composite>
+			<scalar name="year_of_publication" field_parser_key="year" />
+			<scalar name="pages" field_parser_key="pages" />
+			<scalar name="isbn" field_parser_key="isbn" />
+		</composite>
+
+		<scalar name="abstract_field" xpath="//div[@id='main_content']/p" />
+		
+    <!-- CiteSeerX web page says these are citations, but actually they are references! -->
+		<collection name="references" xpath="//table[@class='citelist']//a">
+			<scalar name="location" xpath="./@href">
+				<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+			</scalar>
+			<scalar name="description" xpath=".." />
+		</collection>
+
+		<scalar name="citation_page" scalar_type="ParsedURL" xpath="//h1[@class='primaryheader']/a/@href" navigates_to="citation_page">
+			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+		</scalar>
+		<scalar name="active_bibliography_page" scalar_type="ParsedURL" xpath="//div[@id='conclusion']//a[2]/@href"
+            navigates_to="active_bibliography_page" comment="Papers that cite the same works.">
+			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+		</scalar>
+		<scalar name="cocitation_page" scalar_type="ParsedURL" xpath="//div[@id='conclusion']//a[3]/@href"
+            navigates_to="cocitation_page" comment="Papers that are cited by the same works.">
+			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+		</scalar>
+
+		<semantic_actions>
+			<get_field name="location" />
+			<set_field name="metadata_page" value="location" />
+			<if>
+				<not_null value="location" />
+				<parse_document now="true">
+					<arg value="metadata" name="document" />
+					<arg value="location" name="location" />
+				</parse_document>
+			</if>
+
+			<get_field name="title" />
+			<create_and_visualize_text_surrogate>
+				<arg value="title" name="text" />
+			</create_and_visualize_text_surrogate>
+
+			<get_field name="references" />
+			<if>
+				<not_null value="references" />
+				<for_each collection="references" as="ref">
+					<get_field object="ref" name="description" />
+					<parse_document>
+						<arg value="true" name="citation_sig" />
+						<arg value="description" name="anchor_text" />
+						<arg value="ref" name="entity" />
+					</parse_document>
+				</for_each>
+			</if>
+
+			<get_field name="citation_page" />
+			<if>
+				<not_null value="citation_page" />
+				<parse_document>
+					<arg value="citation_page" name="location" />
+				</parse_document>
+			</if>
+
+			<get_field name="active_bibliography_page" />
+			<if>
+				<not_null value="active_bibliography_page" />
+				<parse_document>
+					<arg name="location" value="active_bibliography_page" />
+				</parse_document>
+			</if>
+
+			<get_field name="cocitation_page" />
+			<if>
+				<not_null value="cocitation_page" />
+				<parse_document>
+					<arg value="cocitation_page" name="location" />
+				</parse_document>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+
+
+
+	<meta_metadata name="citeseerx_similar" type="citeseerx_record" parser="xpath" comment="Citation or co-citation page from CiteSeerX.">
+		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
+
+		<collection name="citations" xpath="//table[@class='citelist']//a">
+			<scalar name="location" xpath="./@href">
+				<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+			</scalar>
+			<scalar name="description" xpath=".." />
+		</collection>
+
+		<semantic_actions>
+			<get_field name="citations" />
+			<if>
+				<not_null value="citations" />
+				<for_each collection="citations" as="cite">
+					<get_field object="cite" name="description" />
+					<parse_document>
+						<arg value="true" name="citation_sig" />
+						<arg value="description" name="anchor_text" />
+						<arg value="cite" name="entity" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+
+
+
+	<meta_metadata name="citeseerx_search_result" extends="search_result">
+		<scalar name="citation_info" scalar_type="String" />
+	</meta_metadata>
+
+	<meta_metadata name="citeseerx_search" extends="search" parser="xpath" comment="CiteSeerX search using keywords.">
+		<selector url_stripped="http://citeseerx.ist.psu.edu/search" />
+
+		<collection name="search_results" child_type="citeseerx_search_result" xpath="//div[@class='searchresult'][1]/div">
+			<scalar name="title" xpath=".//a[contains(@class, 'doc_details')]" />
+			<scalar name="description" xpath=".//li[2]" />
+			<scalar name="location" xpath=".//a[contains(@class, 'doc_details')]/@href">
+				<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+			</scalar>
+			<scalar name="citation_info" xpath=".//a[contains(@class, 'citation')]" />
+		</collection>
+
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+				<get_field name="location" object="res" />
+				<parse_document now="true">
+					<arg name="location" value="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+
+
+
+	<meta_metadata name="citeseerx_citing" type="citeseerx_search" parser="xpath" comment="CiteSeerX citing results.">
+		<selector url_stripped="http://citeseerx.ist.psu.edu/showciting" />
+
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+				<get_field name="location" object="res" />
+				<parse_document>
+					<arg name="location" value="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+
+</meta_metadata_repository>

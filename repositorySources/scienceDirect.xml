@@ -1,0 +1,43 @@
+<meta_metadata_repository name="scienceDirect" package="ecologylab.semantics.generated.library.scienceDirect">
+	<meta_metadata name="science_direct_article" extends="scholarly_article" comment="Information about the article" parser="xpath">
+		<selector url_stripped="http://www.sciencedirect.com/science" />
+		<scalar name="title" xpath="//div[@class='articleTitle']"/>
+		<collection name="authors"  xpath="//div[@id='articleContent']/p" comment="All authors">
+			<field_parser name="regex_split" regex=",|and" />
+			<scalar name="title" field_parser_key="$0" required="true">
+				<filter regex="(a|b|c)\s*$" replace="" />
+			</scalar>	
+		</collection>		
+		<scalar name="abstract_field" xpath="//div[@class='articleText_indent']//p" />
+		<collection name="references" xpath="//span[@class='referenceText']/span" comment="Articles cited by the article">
+			<scalar name="gist" xpath="." >
+				<filter regex="\[[0-9]]+" replace="" />
+			</scalar>
+		</collection>
+		<scalar name="publication_name" xpath="//div[@id='artiHead']//b" comment="The journal or other publication that the article comes from" scalar_type="String" />
+		<scalar name="volume" xpath="//div[@id='artiHead']/a[2]" scalar_type="String">
+			<filter regex="(\,\s[I|i]\w+\s\d)" replace="" />
+		</scalar>
+		<scalar name="issue" xpath="//div[@id='artiHead']/a[2]" scalar_type="String">
+			<filter regex="[\w\s\,]+(?=[I|i])" replace="" />
+		</scalar>
+		<!-- 
+		<scalar name="recieved" xpath="//div[@class='articleText'][1]" scalar_type="String">
+			<filter regex="\s\;\;" replace="" />
+		</scalar>
+		<scalar name="accepted" xpath="//div[@class='articleText'][2]" scalar_type="String">
+			<filter regex="(\.\s)" replace="" />
+		</scalar>	
+		<scalar name="online" xpath="//div[@class='articleText'][3]" scalar_type="String">
+			<filter regex="\." replace="" />
+		</scalar>
+		<scalar name="pages" xpath="//div[@id='artiHead']" comment="The pages on which the article occurs in the publication">
+			<filter regex="[A-Za-z\s0-9-\,]+(?=[P|p]ages)" replace="" />
+		</scalar>		
+		 -->
+		<scalar name="doi" xpath="//a[@id='ddDoi']" comment="The digital object identifier of the article" scalar_type="String" />
+		<semantic_actions>
+			<get_field name="title" />
+		</semantic_actions>
+	</meta_metadata>
+</meta_metadata_repository>	

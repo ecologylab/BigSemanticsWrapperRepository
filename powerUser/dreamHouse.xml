@@ -1,0 +1,90 @@
+<meta_metadata_repository name="dream_house" package="ecologylab.semantics.generated.library.dreamHouse" default_user_agent_name="firefox_3_6_8">
+
+<meta_metadata name="glass_tile_store_product" type="product" parser="xpath">
+	<selector url_regex="http://www.glasstilestore.com/\w+-p/\w+.htm" domain="glasstilestore.com" />
+	
+	<scalar name="price" xpath="//font[@class='pricecolor']/text()" />
+	<scalar name="description" xpath="//table[@class='colors_descriptionbox'//p/text()"/>
+	<scalar name="title" xpath="//font[@class='productnamecolorLARGE colors_productname']/text()" />
+</meta_metadata>
+
+<meta_metadata name="urban_hardwoods_product" type="product" parser="xpath">
+	<selector url_stripped="http://www.urbanhardwoods.com/furniture/product.aspx"/>
+	
+	<scalar name="title" xpath="//span[@class='productName']/text()"/>
+	<scalar name="description" xpath="//span[@class='furnitureINTRO']/div[0]/text()"/>
+</meta_metadata>
+
+<meta_metadata name="home_depot_product" type="product" parser="xpath" user_agent_name="firefox_3_6_8">
+	<selector url_regex="http://www.homedepot.com/.+?/ProductDisplay?.*" domain="homedepot.com" />
+	
+	<scalar name="title" xpath="//p[@class='product-name']/text()"/>
+	<scalar name="description" xpath="//div[@id='tab-features']/p[1]/text()"/>
+	<scalar name="price" xpath="//p[@class='pip-price']/text()" >
+		<filter regex="/[a-z|A-Z|-]*" replace="" />
+	</scalar>
+	<scalar name="model" xpath="//input[@name='modelNumber']/@value"/>
+	
+	<scalar name="image_url" xpath="//img[@id='pip-main-image']/@src"/>
+	
+  <semantic_actions>
+    <get_field name="image_url" />
+    <get_field name="title" />
+    <create_and_visualize_img_surrogate>
+      <arg name="image_purl" value="image_url" />
+      <arg name="caption" value="title" />
+    </create_and_visualize_img_surrogate>
+  </semantic_actions>
+</meta_metadata>
+
+<meta_metadata name="remodelista_product" type="product" parser="xpath">
+	<selector url_path_tree="http://remodelista.com/products/"/>
+	
+	<scalar name="title" xpath="//h2[@class='cinza']/text()"/>
+	
+	
+	<scalar name="price" xpath="//span[@class='cinza bigfont']/text()" >
+		<filter regex="Price: " replace="" />
+	</scalar>
+	<scalar name="description" xpath="//span[@class='mce-content']/p[2]/font/text()" />
+	
+</meta_metadata>
+
+<meta_metadata name="overstock.com_product" type="product" parser="xpath">
+	<selector url_regex="http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html" domain="overstock.com" />
+	
+	<!--
+	
+	<scalar name="description" xpath="//div[@id='prodMain_descShort']//li[1]/text()"/>
+	-->
+	
+	<scalar name="description" xpath="//li[3]/text()"/>
+
+	<scalar name="title" xpath="//h1[@class='productName']/text()"/>
+	<scalar name="price" xpath="//span[@class='Ovalue']/text()"/>
+	
+	  <scalar name="image_url" xpath="//img[@id='activeImage']/@src" />
+  <scalar name="overall_rating" xpath="//div[@id='rating_ui']/span">
+    <filter regex="Rating " replace="" />
+  </scalar>
+  <collection name="reviews" xpath="//div[contains(@class, 'reviewSet')]">
+    <scalar name="rating" xpath=".//img[contains(@id, 'starImage')]/@src">
+      <filter regex="http://[^\.]+.ostkcdn.com/img/mxc/stars|_..gif" replace="" />
+    </scalar>
+    <scalar name="content" xpath=".//div[contains(@id, 'reviewText')]" />
+  </collection>
+  
+  <semantic_actions>
+    <get_field name="image_url" />
+    <get_field name="title" />
+    <create_and_visualize_img_surrogate>
+      <arg name="image_purl" value="image_url" />
+      <arg name="caption" value="title" />
+    </create_and_visualize_img_surrogate>
+  </semantic_actions>
+	
+</meta_metadata>
+
+
+
+</meta_metadata_repository>

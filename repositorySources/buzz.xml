@@ -1,0 +1,61 @@
+<meta_metadata_repository name="yahoo_buzz" package="ecologylab.semantics.generated.library.buzz">
+
+	<meta_metadata name="yahoo_buzz" comment="Yahoo Buzz." type="rss" parser="direct">
+		<selector url_path_tree="http://buzzlog.buzz.yahoo.com/feeds/"/>
+    <composite name="channel">
+      <collection name="items" child_type="item" no_wrap="true">
+        <scalar name="title">
+          <filter regex="^\d+\.\s+" replace="" />
+        </scalar>
+      </collection>
+    </composite>
+		<semantic_actions>
+			<get_field name="channel" />
+			<get_field object="channel" name="items" />
+			<for_each collection="items" as="i">
+			  <not_null value="items" />
+				<get_field object="i" name="title" />
+				<get_field object="i" name="link" />
+				<search engine="yahoo">
+					<arg value="title" name="query" />
+				</search>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="yahoo_buzz_search" comment="Yahoo buzz search" type="search" parser="xpath">
+		<selector url_path_tree="http://buzz.yahoo.com/search"/>
+		<collection name="search_results" xpath="//div[contains(@class, 'searchListContainer')]//div[contains(@class, 'searchArticleItem')]/dl">
+			<scalar name="title" xpath="./dt/a" />
+			<scalar name="description" xpath="./dd[contains(@class, 'articleSummaryContainer')]/a" />
+			<scalar name="location" xpath="./dt/a/@href" />
+		</collection>
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+				<get_field object="res" name="location" />
+				<!-- is a ResultDistributor created for each of these???? -->
+				<parse_document now="true">
+					<arg value="location" name="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="google_trends" extends="compound_document" comment="Google trends" parser="xpath">
+		<selector url_path_tree="http://www.google.com/trends"/>
+		<collection name="hot_searches" xpath="//table[@class='hotTerm']//a[not(@id)]" child_type="hot_search" child_extends="metadata" no_wrap="true">
+			<scalar name="search" xpath="." scalar_type="String" />
+		</collection>
+		<semantic_actions>
+			<get_field name="hot_searches" />
+			<for_each collection="hot_searches" as="hot_search">
+				<get_field object="hot_search" name="search" />
+				<search engine="google">
+					<arg value="search" name="query" />
+				</search>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+</meta_metadata_repository>

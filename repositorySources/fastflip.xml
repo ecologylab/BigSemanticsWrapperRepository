@@ -1,0 +1,21 @@
+<meta_metadata_repository name="fastflip" package="ecologylab.semantics.generated.library.fastflip">
+<selector name="fastflip_search_selector" default_pref="fastflip_search" pref_name="fastflip_search_type" url_stripped="http://fastflip.googlelabs.com/search"/>
+
+	<meta_metadata name="thumbnail" extends="metadata">
+		<!-- <scalar name="title" navigates_to="link" scalar_type="String" /> -->
+		<scalar name="pic" hide="true" scalar_type="ParsedURL" />
+		<!-- <scalar name="link" hide="true" scalar_type="ParsedURL" /> -->
+	</meta_metadata>
+
+	<meta_metadata name="fastflip_search" extends="compound_document" comment="Fast Flip Search" parser="xpath">
+	<selector name="fastflip_search_selector"/>
+	<collection name="thumbnails" xpath="//div[@class='thumb']" child_type="thumbnail" >
+	   	<!-- <scalar name="title" xpath="./htitle"/> -->
+		<scalar name="pic"  xpath="./a/@img"/>
+		<!-- <scalar name="link" xpath="./@href"/> -->
+	</collection>
+	</meta_metadata>
+	
+	
+
+</meta_metadata_repository>

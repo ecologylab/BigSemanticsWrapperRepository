@@ -1,0 +1,30 @@
+<meta_metadata_repository name="creativeWork" package="ecologylab.semantics.generated.library.creativeWork">
+
+	<meta_metadata name="author" extends="document" schema_org_itemtype="http://schema.org/Person" comment="An author of an article or creative work.">
+		<scalar name="location" hide="true" schema_org_itemprop="url"/>
+		<scalar name="title" other_tags="name" label="name" scalar_type="String" navigates_to="location" is_facet="true" as_composite_scalar="true" schema_org_itemprop="name" />
+		<scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation"/>
+		<scalar name="city" scalar_type="String" />
+	</meta_metadata>
+	
+	<meta_metadata name="creative_work" extends="compound_document" schema_org_itemtype="http://schema.org/CreativeWork">
+		<collection name="authors" comment="Set of authors." child_type="author" layer="8.0" schema_org_itemprop="author"/>
+		<scalar name="abstract_field" scalar_type="String" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
+		<scalar name="year" other_tags="year_of_publication" scalar_type="Int" is_facet="true" />
+		<scalar name="location" hide="true" />
+	</meta_metadata>
+
+	<meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
+		<scalar name="isbn" scalar_type="String" schema_org_itemprop="author" />
+		<composite name="publisher" type="publisher" schema_org_itemprop="publisher"/>
+	</meta_metadata>
+	
+	<meta_metadata name="periodical" extends="basic_publication" comment="An issue of a periodical.">
+		<composite name="archive" type="document" comment="All the issues of a periodical." >
+			<scalar name="location" hide="true" />
+		</composite>
+		<scalar name="volume_and_issue" scalar_type="String" />
+		<scalar name="date" scalar_type="Date" comment="Publication Date" schema_org_itemprop="datePublished" />
+	</meta_metadata>
+	
+</meta_metadata_repository>

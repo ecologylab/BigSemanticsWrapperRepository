@@ -1,0 +1,8 @@
+<meta_metadata_repository name="lolz_type" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+	<meta_metadata name="lolz" extends="compound_document" comment="The LOLZ class" user_agent_name="google_bot_0" parser="xpath">
+		<scalar name="title" xpath="//div[@id='mainbody']/div[@id='pane2']/div/h1/a" />
+		<scalar name="caption" xpath="//div[@id='md']/div/p[2]" scalar_type="String" />
+		<scalar name="picture" xpath="//div[@id='md']/div/p[1]/img/@src" scalar_type="ParsedURL" />
+		<scalar name="might_like" xpath="//div[@id='md']/div/p[3]/a/@href" scalar_type="ParsedURL" />
+	</meta_metadata>
+</meta_metadata_repository>

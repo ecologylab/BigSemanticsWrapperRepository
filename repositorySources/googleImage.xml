@@ -1,0 +1,52 @@
+<meta_metadata_repository name="google_image" package="ecologylab.semantics.generated.library" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default_user_agent_name="chrome_2">
+	
+	<meta_metadata name="google_image_search" type="search" comment="The google image search class" user_agent_name="firefox_2" parser="xpath">
+		<selector url_stripped="http://www.google.com/images/" />
+	    <collection name="search_results" xpath="//table[@id='imgtb']" > 
+			<scalar name="title" xpath=".//td[starts-with(@id,'tDataText')]/div[@class='std']/b" />	 
+			<scalar name="description" xpath=".//td[starts-with(@id,'tDataText')]//div[@class='a']" />  
+			<scalar name="location" xpath=".//td[starts-with(@id,'tDataImage')]/a/img/@src" /> 
+		</collection>
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+				<get_field object="res" name="location" />
+				<parse_document now="true">
+					<arg value="location" name="location" />  
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="google_image_search_type" extends="compound_document" comment="Google image search type" package="ecologylab.semantics.generated.library" >
+		<collection name="image_results" child_type="image_result" child_extends="metadata" no_wrap="true" comment="Collection of results for google image search">
+			<scalar name="img_title" scalar_type="String" comment="image title" />
+			<scalar name="summary" scalar_type="String" comment="image summary" />
+			<scalar name="img_url" scalar_type="ParsedURL" comment="raw parsed URL for extracting values 'url', 'referer_url'" />  <!-- type is 'String' and will be converted into ParsedURL in StringOperation -->
+			<scalar name="raw_property" scalar_type="String" comment="mime type should be extracted from this property" /> 
+			<scalar name="img_similar_url" scalar_type="String" /> 
+		</collection> 
+	</meta_metadata>
+	
+	<meta_metadata name="google_image_search_page" extends="google_image_search_type" comment="Google image search page" package="ecologylab.semantics.generated.library" parser="xpath">
+	<selector  url_stripped="http://www.google.com/images/" />
+		<collection name="image_results" child_type="image_result" xpath="//table[@id='imgtb']" >
+			<scalar name="img_title" xpath=".//td[starts-with(@id,'tDataText')]/div[@class='std']/b" />
+			<scalar name="summary" xpath=".//td[starts-with(@id,'tDataText')]/div[@class='std']/b" /> 
+			<scalar name="img_url" xpath=".//td[starts-with(@id,'tDataImage')]/a/img/@src" /> 
+			<scalar name="img_similar_url" xpath=".//td[starts-with(@id,'tDataText')]//div[@class='eft']/a/@href" /> 
+		</collection> 
+		<semantic_actions>
+			<get_field name="image_results" />
+			<for_each collection="image_results" as="result">
+				<get_field object="result" name="summary" />
+				<get_field object="result" name="img_url" />     
+					<create_and_visualize_img_surrogate>
+						<arg value="img_url" name="image_purl" />	  
+						<arg value="summary" name="caption" />
+					</create_and_visualize_img_surrogate>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+</meta_metadata_repository>

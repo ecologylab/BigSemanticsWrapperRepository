@@ -1,0 +1,219 @@
+<meta_metadata_repository name="acm_portal" package="ecologylab.semantics.generated.library.scholarlyPublication" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="acm_portal" type="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
+
+		<selector url_stripped="http://portal.acm.org/citation.cfm" />
+		<selector url_stripped="http://dl.acm.org/citation.cfm" />
+
+		<url_generator type="search" engine="acm_portal" use_id="title" />
+	
+		<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
+
+		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="metadata_page" as_natural_id="title" format="text" />
+
+		<collection name="authors" xpath="//div[@id='divmain']//a[@title='Author Profile Page']">
+			<scalar name="location" xpath="./@href" />
+			<scalar name="title" xpath="./text()" />
+			<scalar name="affiliation" xpath="../..//a[@title='Institutional Profile Page']/text()" />
+		</collection>
+
+		<composite name="source" navigates_to="location" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]">
+			<scalar name="location" xpath=".//td[text()='Title']/following-sibling::td/a[1]" />
+			<scalar name="title" xpath=".//td[text()='Title']/following-sibling::td[1]" />
+			<collection name="authors" label="chairs" comment="Publication general/program chairs." xpath=".//td[contains(text(), 'Chairs')]/following-sibling::td/a">
+				<scalar name="location" xpath="./@href" />
+				<scalar name="title" xpath="." />
+<!-- 				<scalar name="affiliation" /> -->
+<!-- 				<scalar name="city" /> -->
+			</collection>
+			<scalar name="year" xpath=".//td[text()='Publisher']/following-sibling::td" label="year published" is_facet="true">
+				<filter regex="[\D]" replace="" />
+			</scalar>
+			<scalar name="isbn" xpath=".//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]">
+				<filter regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
+			</scalar>
+		</composite>
+
+		<scalar name="abstract_field" label="abstract" xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
+
+		<collection name="references" xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">
+      <field_parser name="acm_reference" for_each_element="true" />
+      <scalar name="title" layer="20.0" field_parser_key="$title" />
+			<scalar name="location" xpath=".//a[1]/@href" />
+<!-- 			<scalar name="description" layer="10.0" xpath="." /> -->
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
+		</collection>
+
+		<collection name="citations" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
+      <field_parser name="acm_reference" for_each_element="true" />
+      <scalar name="title" layer="20.0" field_parser_key="$title" />
+			<scalar name="location" xpath=".//a[1]/@href" />
+<!-- 			<scalar name="description" layer="10.0" xpath="." /> -->
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
+		</collection>
+
+		<collection name="classifications" xpath="//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]">
+			<scalar name="link" xpath="./@href" />
+			<scalar name="tag_name" xpath="./child::text()" />
+		</collection>
+
+		<collection name="keywords" xpath="//div[@id='divtags']//a/span/ancestor::a">
+			<scalar name="link" xpath="./@href" />
+			<scalar name="tag_name" xpath="./span/child::text()" />
+		</collection>
+
+		<scalar name="pages" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td" />
+			
+		<link_with name="citeseerx_summary" by_id="title" />
+		<!-- <link_with name="google_scholar_search_result" by_id="title" /> -->
+		
+		<before_semantic_actions>
+			<filter_location>
+				<alternative_host>portal.acm.org</alternative_host>
+				<alternative_host>dl.acm.org</alternative_host>
+				<set_param name="preflayout" value="flat" />
+				<strip_param name="coll" />
+				<strip_param name="dl" />
+				<strip_param name="CFID" />
+				<strip_param name="CFTOKEN" />
+			</filter_location>
+		</before_semantic_actions>
+
+		<semantic_actions>
+			<get_field name="location" />
+			<set_field name="metadata_page" value="location" />
+			<if>
+				<not_null value="location" />
+				<parse_document now="true">
+					<arg name="document" value="metadata" />
+					<arg name="location" value="location" />
+				</parse_document>
+			</if>
+
+			<get_field name="title" />
+			<create_and_visualize_text_surrogate>
+				<arg value="title" name="text" />
+			</create_and_visualize_text_surrogate>
+
+			<!-- <get_linked_metadata name="citeseerx_summary" /> -->
+			<!-- <get_linked_metadata name="google_scholar_search_result" /> -->
+
+			<get_field name="references" />
+			<if>
+				<not_null value="references" />
+				<for_each collection="references" as="ref">
+					<get_field object="ref" name="description" />
+					<parse_document link_type="TRUSTED_SEMANTICS">
+						<arg name="ciatation_sig" value="true" />
+						<arg name="anchor_text" value="description" />
+						<arg name="entity" value="ref" />
+					</parse_document>
+				</for_each>
+			</if>
+
+			<get_field name="citations" />
+			<if>
+				<not_null value="citations" />
+				<for_each collection="citations" as="cit">
+					<get_field object="cit" name="location" />
+					<get_field object="cit" name="description" />
+					<parse_document link_type="TRUSTED_SEMANTICS">
+						<arg name="citation_sig" value="true" />
+						<arg name="anchor_text" value="description" />
+						<arg name="entity" value="cit" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+
+	</meta_metadata>
+
+<!--	<meta_metadata name="acm_proceeding" extends="compound_document" parser="xpath">-->
+<!--		<selector url_stripped="http://portal.acm.org/toc.cfm" />-->
+<!--		<collection name="proceedings" hide="true" xpath="//tr[@valign='top']/td[@class='small-text']/strong" child_type="search_result">-->
+<!--			<scalar name="link" xpath="./a/@href" />-->
+<!--			<scalar name="heading" xpath="./a/text()" />-->
+<!--		</collection>-->
+<!--		<collection name="papers" xpath="//div[@id='prox']/div/table/tr" child_type="search_result">-->
+<!--			<scalar name="link" xpath=".//@href" />-->
+<!--			<scalar name="heading" xpath=".//a" />-->
+<!--		</collection>-->
+<!--		<semantic_actions>-->
+<!--			<get_field name="proceedings" />-->
+<!--			<if>-->
+<!--				<not_null value="proceedings" />-->
+<!--				<for_each collection="proceedings" as="proceeding">-->
+<!--					<get_field object="proceeding" name="link" />-->
+<!--					<get_field object="proceeding" name="heading" />-->
+<!--					<parse_document link_type="TRUSTED_SEMANTICS">-->
+<!--						<arg value="heading" name="anchor_text" />-->
+<!--						<arg value="link" name="location" />-->
+<!--					</parse_document>-->
+<!--				</for_each>-->
+<!--			</if>-->
+<!--			<get_field name="papers" />-->
+<!--			<if>-->
+<!--				<not_null value="papers" />-->
+<!--				<for_each collection="papers" as="paper">-->
+<!--					<get_field object="paper" name="link" />-->
+<!--					<get_field object="paper" name="heading" />-->
+<!--					<parse_document link_type="TRUSTED_SEMANTICS">-->
+<!--						<arg value="heading" name="anchor_text" />-->
+<!--						<arg value="link" name="location" />-->
+<!--					</parse_document>-->
+<!--				</for_each>-->
+<!--			</if>-->
+<!--		</semantic_actions>-->
+<!--	</meta_metadata>-->
+
+	<meta_metadata name="acm_portal_search_result" extends="search_result">
+		<scalar name="author_list" scalar_type="String" />
+		<scalar name="publication" scalar_type="String" />
+	</meta_metadata>
+
+	<meta_metadata name="acm_portal_search" extends="search" parser="xpath" user_agent_name="firefox_3_6_8">
+
+		<selector url_stripped="http://portal.acm.org/results.cfm" />
+		<selector url_stripped="http://dl.acm.org/results.cfm" />
+
+		<collection name="search_results" child_type="acm_portal_search_result" xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
+			<scalar name="title" xpath="./tr[1]/td/a" />
+			<scalar name="description" xpath="./tr[5]" />
+			<scalar name="location" xpath="./tr[1]/td/a/@href" />
+			<scalar name="author_list" xpath="./tr[1]/td/div" />
+		</collection>
+
+		<semantic_actions>
+			<get_field name="search_results" />
+			<if>
+				<not_null value="search_results" />
+				<for_each collection="search_results" as="result">
+					<get_field object="result" name="title" />
+					<get_field object="result" name="location" />
+					<parse_document link_type="TRUSTED_SEMANTICS">
+						<arg name="anchor_text" value="title" />
+						<arg name="location" value="location" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+
+	</meta_metadata>
+
+</meta_metadata_repository>

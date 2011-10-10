@@ -1,0 +1,17 @@
+<meta_metadata_repository name="nsdl" package="ecologylab.semantics.generated.library.nsdl">
+
+	<meta_metadata name="nsdl_document" extends="dc">
+		<composite name="header" extends="metadata">
+			<scalar name="resource_identifier" tag="resourceIdentifier" scalar_type="ParsedURL"/>
+		</composite>
+	</meta_metadata>
+	
+	<meta_metadata name="nsdl_service" extends="metadata" tag="NSDLSearchService" parser="direct">
+		<composite name="search_results" extends="metadata" tag="SearchResults">
+			<collection name="results" child_type="nsdl_document" />
+		</composite>
+	
+		<!-- semantic actions: set resource_identifier value to location inside dc. then pass that dc extends document to parse document -->
+	</meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,13 @@
+<meta_metadata_repository name="tumblr" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+	<meta_metadata name="tumblr" extends="compound_document" comment="Tumblr blog class" parser="xpath">
+		<selector url_regex="tumblr" domain="tumblr.com"/>
+		<scalar name="title" xpath="//div[@id='header']" comment="Phone number of the restaurant" />
+		<scalar name="post" xpath="//div[@id='container']/div[5]/div/div/p/span/p[2]/strong" comment="Phone number of the restaurant" scalar_type="String" />
+		<semantic_actions>
+			<get_field name="title" />
+			<create_and_visualize_text_surrogate>
+				<arg value="title" name="text" />
+			</create_and_visualize_text_surrogate>
+		</semantic_actions>
+	</meta_metadata>
+</meta_metadata_repository>

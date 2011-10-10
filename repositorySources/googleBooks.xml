@@ -1,0 +1,107 @@
+<meta_metadata_repository name="google_books" package="ecologylab.semantics.generated.library.googleBooks" >
+
+	<meta_metadata name="google_book" extends="book" parser="xpath" user_agent_name="firefox_3_6_8">
+		<selector url_stripped="http://books.google.com/books" />
+		
+		<scalar name="title" layer="10.0" xpath="//div[@class='booktitle']" >
+			<filter regex="\(Google eBook\)" replace="" />
+		</scalar>
+		<collection name="authors" layer="9.5" xpath="//table[@id='metadata_content_table']/tr[contains(., 'Author')]/td[2]/a" >
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		<collection name="editors" xpath="//table[@id='metadata_content_table']/tr[contains(., 'Editor')]/td[2]/a" >
+			<scalar name="title" navigates_to="location" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		
+		<def_var name="publisher_year" xpath="//table[@id='metadata_content_table']/tr[contains(., 'Publisher')]/td[2]" type="node" />
+		<scalar name="year" context_node="publisher_year" layer="9.1" xpath=".">
+			<filter regex="[a-zA-Z, /-]*" replace="" />
+		</scalar>
+		<composite name="publisher" layer="9.15" context_node="publisher_year" xpath="." >
+			<scalar name="title" xpath=".">
+				<filter regex=", [0-9]+" replace="" />
+			</scalar>
+		</composite>
+		
+		<scalar name="category" layer="9.3" xpath="//div[@class='bookinfo_sectionwrap']//div[3]/a" scalar_type="String" />
+		<scalar name="pages" layer="9.05" hide="true" xpath="//table[@id='metadata_content_table']/tr[contains(., 'Length')]/td[2]" schema_org_itemprop="numberOfPages">
+			<filter regex="[pages]*" replace="" />
+		</scalar>
+		<scalar name="description" layer="9.4" xpath="//div[@id='synopsistext']" scalar_type="String" />
+		<collection name="table_of_contents" hide="true" xpath="//div[@class='toc_entry']">
+			<scalar name="title" xpath="./*/span" />
+			<scalar name="location" xpath="./a/@href" />
+			<scalar name="pages" xpath="//td[@class='toc_number']" />
+		</collection>	
+		<collection name="common_terms" hide="true" layer="8.05" xpath="//div[@id='word_cloud_v']/div/a">
+			<scalar name="term" xpath="." />
+			<scalar name="location" xpath="./@href" />
+			<scalar name="frequency" xpath="./@class">
+				<filter regex="cloud" replace="" />
+			</scalar>
+		</collection>	
+		<scalar name="about_the_authors" layer="7.0" xpath="//div[@class='textmodulecontent']" />
+		<scalar name="isbn" layer="8.1" hide="true" xpath="//table[@id='metadata_content_table']/tr[contains(., 'ISBN')]" schema_org_itemprop="isbn">
+			<filter regex="ISBN" replace="" />
+		</scalar>
+		<collection name="subjects" layer="9.2" xpath="//table[@id='metadata_content_table']/tr[contains(., 'Subjects')]/td[2]/a">
+			<scalar name="subject" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		<scalar name="cover_image" xpath="//img[@title='Front Cover']/@src" />
+		
+		<scalar name="places_mentioned_kml" xpath="//h3[@class='about_title']/font/a[text()='KML']/@href" hide="true" scalar_type="ParsedURL" />
+		<collection name="selected_pages" xpath="//div[@class='selectedpagesthumbnail']" hide="true" child_type="page" child_extends="document">
+			<scalar name="location" xpath="./a/@href" />
+			<scalar name="page_thumbnail" xpath="./a/image" scalar_type="ParsedURL" />
+			<scalar name="page_number" xpath="./a[2]" scalar_type="Int">
+				<filter regex="Page " replace="" />
+			</scalar>
+		</collection>
+		
+<!--		<collection name="related_books" xpath="//table[@id='viewport_table']/tr/td[@id='viewport_td']/div[3]/div/div[2]/div" child_type="google_book">-->
+<!--			<scalar name="title" xpath="./div/div/a" />-->
+<!--			<scalar name="location" xpath="./a/@href" />-->
+<!--			<scalar name="cover_image" xpath="./a/img/@src" />-->
+<!--		</collection>-->
+		<collection name="references_from_books" layer="8.5" xpath="//div[@id='citations_module_v']/div[1]/div/div" child_type="google_book">
+			<scalar name="title" xpath="./table/tr/td[2]/div/h5" />
+			<scalar name="location" xpath="./table/tr/td[2]/div/h5/a/@href">
+				<filter regex="\&amp;printsec=[a-z]+" replace="" />
+			</scalar>
+			<collection name="authors" xpath="./table/tr/td[2]/div/font/span/span[1]/a">
+				<scalar name="title" xpath="." />
+				<scalar name="location" xpath="./@href" />	
+			</collection>
+		</collection>
+<!--		 <collection name="references_from_google_scholar" hide="true" xpath="//div[@id='citations_module_v']/div[2]//div" child_type="scholarly_article">-->
+<!--			<scalar name="title" xpath="//div[@id='citations_module_v']/div[2]//div/div//a" />-->
+<!--			<scalar name="location" xpath="//div[@id='citations_module_v']/div[2]//div/h5//@href" />-->
+<!--			<scalar name="author_list" xpath="//div[@id='citations_module_v']/div[2]//div/div/span[1]" />				-->
+<!--		</collection>-->
+		
+		<semantic_actions>
+			<get_field name="cover_image" />
+	     	<if>
+		    	<not_null value="cover_image" />
+				<create_and_visualize_img_surrogate>
+					<arg value="cover_image" name="image_purl" />
+				</create_and_visualize_img_surrogate>
+		    </if>
+		    <get_field name="references_from_books" />
+		    <for_each collection="references_from_books" as="book" current_index="book_index" size="book_list_size">
+		    	<get_field object="book" name="location" />
+		        <if>
+		    		<not_null value="location" />
+		        	<parse_document now="true">
+						<arg value="location" name="location" />
+		        	</parse_document>
+		        </if>
+			</for_each>	
+		</semantic_actions>
+		
+	</meta_metadata>
+  
+</meta_metadata_repository>	

@@ -1,0 +1,129 @@
+<meta_metadata_repository name="artwork" package="ecologylab.semantics.generated.library.artwork" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="artwork" extends="compound_document" comment="Artwork class">
+		<collection name="artists" comment="Set of artists." child_type="artist" layer="9.5"/>
+		<scalar name="abstractField" comment="Abstract of the work." tag="abstract" label="abstract" scalar_type="String" />
+		<scalar name="medium" comment="Medium on which the work is done." scalar_type="String" layer="9.2" />
+		<scalar name="year" comment="Year the work was created." scalar_type="String" />
+<!-- 		<scalar name="website" comment="Website of the work or group responsible." scalar_type="ParsedURL" /> -->
+		<scalar name="dimensions" scalar_type="String" />
+	</meta_metadata>
+	
+	<meta_metadata name="artist" extends="author">
+<!-- 		<collection name="mentors" child_type="artist" /> -->
+		<collection name="artworks" child_type="artwork" />
+	</meta_metadata>
+	
+	<meta_metadata name="mm_artwork" extends="artwork" comment="ACM Multimedia Interactive Artwork class">
+<!-- 		<scalar name="art_title" style="metadata_h1" shadows="title" scalar_type="String" /> -->
+<!-- 		<collection name="artists" child_type="artist" /> -->
+<!-- 		<scalar name="medium" comment="Medium on which the work is done." scalar_type="String" /> -->
+<!-- 		<scalar name="year" comment="Year the work was created." scalar_type="String" /> -->
+		<scalar name="website" comment="Website of the work or group responsible." scalar_type="ParsedURL" />
+		<scalar name="extended_abstract" comment="Link the ACM Portal page." scalar_type="ParsedURL" />
+		<scalar name="location" hide="true" />
+	</meta_metadata>
+	
+	<meta_metadata name="moma_artwork" extends="artwork"  parser="xpath">
+		<selector url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" domain="moma.org"/>
+		<selector url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" domain="moma.org" />
+    
+		<scalar name="location" hide="true" />
+		<scalar name="title" xpath="//div[@id='omniture_caption']/h3/i" />
+		<collection name="artists" xpath="//h4[@class='artist']/a">
+<!--			<scalar name=  xpath="." />-->
+			<scalar name="location" xpath="./@href" hide="true" />
+		</collection>
+		<scalar name="status" scalar_type="String" xpath="//div[@class='status']/strong" />
+		<composite name="moma_deparment" type="compound_document" xpath="//div[@class='item']/h4[contains(text(), 'Department:')]/../div/a" label="department">
+			<scalar name="title" xpath="." label="name"/>
+			<scalar name="location" xpath="./@href" />
+		</composite>
+		<composite name="moma_classification" type="compound_document" xpath="//div[@class='item']/h4[contains(text(), 'Classification:')]/../div/a" label="classification">
+			<scalar name="title" xpath="." label="name"/>
+			<scalar name="location" xpath="./@href" />
+		</composite>
+		<scalar name="year" xpath="//div[@class='item']/h4[contains(text(), 'Date:')]/../span" />
+		
+		<scalar name="permalink" scalar_type="ParsedURL" xpath="//div[@class='item']/h4[contains(text(), 'Permalink:')]/../div/a/@href" hide="true"/>
+		<scalar name="database_link" scalar_type="ParsedURL" xpath="//div[@class='item']/h4[contains(text(), 'Resources:')]/../div/a/@href" hide="true" />
+		<scalar name="moma_id" scalar_type="String" xpath="//p[@class='caption'][2]" />
+		
+		<scalar name="image_url" scalar_type="ParsedURL" xpath="//p[@id='mainImage']/img/@src" hide="true" />
+		
+		<composite name="temp_field_value_holder" extends="metadata" xpath="//p[@class='caption'][1]" hide="true">
+			<field_parser name="regex_find" regex="(\S.+?)\. " />
+			<scalar name="temp_year" scalar_type="String" field_parser_key="$0">
+				<filter regex="[().]*" replace="" />
+			</scalar>
+			<scalar name="temp_medium" scalar_type="String" field_parser_key="$1">
+				<filter regex=", \d.+" replace="" />
+			</scalar>
+			<scalar name="temp_dimensions" scalar_type="String" field_parser_key="$1">
+				<filter regex="\S.+, " replace="" />
+			</scalar>
+		</composite>
+		
+		<semantic_actions>
+			<get_field name="permalink" />
+			<set_field name="location" value="permalink" />
+		
+			<get_field name="temp_field_value_holder" />
+			<if>
+				<not_null value="temp_field_value_holder" />
+<!-- 				<get_field name="temp_year" object="temp_field_value_holder" /> -->
+<!-- 				<set_field name="year" value="temp_year" /> -->
+				<get_field name="temp_medium" object="temp_field_value_holder" />
+				<set_field name="medium" value="temp_medium" />
+				<get_field name="temp_dimensions" object="temp_field_value_holder" />
+				<set_field name="dimensions" value="temp_dimensions" />
+			</if>
+			
+<!-- 			<get_field name="image_url"/> -->
+<!-- 			<create_and_visualize_img_surrogate> -->
+<!-- 				<arg name="image_purl" value="image_url" />			 -->
+<!-- 			</create_and_visualize_img_surrogate>  -->
+			
+			<get_field name="title"/>
+			<create_and_visualize_text_surrogate>
+				<arg name="text" value="title" />
+			</create_and_visualize_text_surrogate>
+			
+		</semantic_actions>
+	</meta_metadata>
+	
+<!-- 	<meta_metadata name="moma_list" extends="compound_document" parser="xpath"> -->
+<!-- 		<selector url_regex="http://www.moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" domain="moma.org" /> -->
+    
+<!-- 		<collection name="artworks" child_type="moma_artwork" child_tag="moma_artwork" xpath="//ul[@id='thumbnail-view-items']/li/a" no_wrap="true"> -->
+<!-- 			<scalar name="location" xpath="./@href" /> -->
+<!-- 		</collection> -->
+<!-- 		<scalar name="next_list" scalar_type="ParsedURL" xpath="//a[@class='slideNext']/@href" /> -->
+		
+<!-- 		<semantic_actions> -->
+<!-- 			<get_field name="artworks" /> -->
+<!-- 			<for_each collection="artworks" as="artwork"> -->
+<!-- 				<get_field name="location" object="artwork" /> -->
+<!-- 				<parse_document now="true"> -->
+<!-- 					<arg value="location" name="location" /> -->
+<!-- 					<arg value="artwork" name="document" /> -->
+<!-- 				</parse_document> -->
+<!-- 			</for_each> -->
+			
+<!-- 			<parse_document> -->
+<!-- 				<arg value="next_list" name="container_link" /> -->
+<!-- 			</parse_document> -->
+			
+<!-- 		</semantic_actions> -->
+<!-- 	</meta_metadata> -->
+	
+	<meta_metadata name="moma_list" type="search" parser="xpath">
+		<selector url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" domain="moma.org" />
+    
+		<collection name="search_results" xpath="//ul[@id='thumbnail-view-items']/li">
+      <scalar name="title" xpath=".//div[@class='description']/div" />
+			<scalar name="location" xpath="./a/@href" />
+		</collection>
+  </meta_metadata>
+		
+</meta_metadata_repository>

@@ -1,0 +1,67 @@
+<meta_metadata_repository name="slashdot" package="ecologylab.semantics.generated.library.slashdot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<meta_metadata name="slashdot_item" extends="item" comment="One item in a feed." parser="direct">
+			<scalar name="department" scalar_type="String" tag="slash:department" hint="XML_LEAF" />
+			<scalar name="section" scalar_type="String" tag="slash:section" hint="XML_LEAF" />
+	</meta_metadata>
+
+	<meta_metadata name="slashdot_rss" extends="compound_document" tag="rdf:RDF" parser="direct">
+		<selector url_stripped="http://rss.slashdot.org/Slashdot/slashdot" />
+		<collection name="items" child_type="slashdot_item" no_wrap="true" child_tag="item"/>
+		<semantic_actions>
+			<get_field name="items" />
+			<if>
+				<not_null value="items"/>
+				<for_each collection="items" as="i">
+					<get_field object="i" name="link" />
+					<get_field object="i" name="title" />
+					<parse_document>
+						<not_null value="link" />
+						<arg value="link" name="location" />
+						<arg value="title" name="anchor_text" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+	</meta_metadata> 
+	
+	<meta_metadata name="slashdot_tag" extends="metadata">
+		<scalar name="name" scalar_type="String" />
+		<scalar name="link" scalar_type="ParsedURL" />
+	</meta_metadata>
+	
+	<meta_metadata name="slashdot_article" extends="compound_document" parser="xpath">
+		<selector domain="slashdot.org" url_regex="http://[a-zA-Z]*.slashdot.org/story/" />
+		<def_var name="poster_node" xpath="//div[starts-with(@id, 'details-')]/small/a/.." type="node" />
+		<def_var name="description_node" xpath="//div[starts-with(@id, 'text-')]/i/.." type="node" />
+		<scalar name="poster" scalar_type="String" navigates_to="poster_url" context_node="poster_node" xpath="." />
+		<scalar name="poster_url" scalar_type="ParsedURL" hide="true" context_node="poster_node" xpath="./small/a" />
+		<scalar name="description" scalar_type="String" context_node="description_node" xpath="." />
+		<collection name="anchors" child_type="anchor" child_extends="metadata" xpath = "//div[starts-with(@id, 'text-')]//a" >
+			<scalar name="link"  scalar_type="ParsedURL" xpath="./@href" />
+			<scalar name="anchor_text" scalar_type="String" xpath="string(.)" />
+		</collection>
+		<!-- <collection name="related_stories" child_type="slashdot_article" xpath="">
+			<scalar name="title" xpath="" />
+			<scalar name="location" xpath="" />
+		</collection>-->
+		<semantic_actions>
+			<get_field name="anchors" />
+			<get_field name="description" />
+			<for_each collection="anchors" as="anch">
+				<get_field object="anch" name="link" />
+				<get_field object="anch" name="anchor_text" />
+				<if>
+					<not_null value="anchor_text" />
+					<not_null value="link" />
+					<parse_document>
+						<arg value="anchor_text" name="anchor_text" />
+						<arg value="description" name="anchor_context" />
+						<arg value="link" name="location" />
+					</parse_document>
+				</if>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+
+</meta_metadata_repository>

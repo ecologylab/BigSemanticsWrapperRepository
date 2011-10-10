@@ -1,0 +1,137 @@
+<meta_metadata_repository name="primitives" package="ecologylab.semantics.generated.library" default_user_agent_name="firefox_3_5">
+
+	<meta_metadata name="metadata" comment="The Metadata Class" built_in="true">
+		<scalar name="meta_metadata_name" tag="mm_name" hide="true" ignore_in_term_vector="true" comment="Stores the name of the meta-metadata, and is used on restoring from XML." scalar_type="String" />
+		<collection name="mixins" child_type="metadata" promote_children="true" polymorphic_scope="repository_metadata"/>
+<!-- 		<collection name="visuals" child_type="serializable_gui" ignore_completely="true"/> -->
+	</meta_metadata>
+	
+	<meta_metadata name="document" extends="metadata" comment="The Document Class" built_in="true" schema_org_itemtype="http://schema.org/Thing">
+		<scalar name="location" always_show="true" layer="8.0" comment="The document's actual location." scalar_type="ParsedURL" schema_org_itemprop="url"/>
+		<scalar name="title" style="metadata_h1" layer="10.0" navigates_to="location" schema_org_itemprop="name" comment="The Title of the Document" scalar_type="String"  hint="XML_LEAF"/>
+		<scalar name="description" layer="9.0" scalar_type="String" schema_org_itemprop="description"/>
+		
+		<collection name="additional_locations" child_scalar_type="ParsedURL" hide="true" child_tag="location"/>
+	</meta_metadata>
+	
+	<meta_metadata name="document_metadata_wrap" extends="metadata" comment="Used to disambiguated Document subclass composites." built_in="true">
+		<composite name="document" type="document" promote_children="true" comment="polymorphic across documents" polymorphic_scope="repository_documents"/>
+	</meta_metadata>
+	
+	<meta_metadata name="clipping" extends="metadata" built_in="true">
+		<scalar name="context" layer="10.0" scalar_type="String" />
+		<scalar name="context_html" scalar_type="String" />
+		<scalar name="xpath" scalar_type="String" hide="true"/>
+		<composite name="source_doc" label="source" type="document" polymorphic_scope="repository_documents" />
+		<composite name="outlink" type="document" polymorphic_scope="repository_documents" />
+	</meta_metadata>
+
+	<meta_metadata name="media_clipping" extends="clipping" built_in="true">
+		<scalar name="caption" style="metadata_h1" layer="11.0" comment="The caption of the image." scalar_type="String"/>
+		<composite name="media" type="clippable_document" promote_children="true" polymorphic_scope="repository_media" />
+	</meta_metadata>
+	
+	<meta_metadata name="image_clipping" extends="media_clipping" built_in="true">
+	</meta_metadata>
+	
+	<meta_metadata name="text_clipping" extends="clipping" built_in="true">
+		<scalar name="text" scalar_type="String" />
+	</meta_metadata>
+	
+	<meta_metadata name="annotation" extends="metadata" built_in="true">
+		<scalar name="text" scalar_type="String"/>
+		<scalar name="author" scalar_type="String"/>
+		<scalar name="creation_time" scalar_type="Date"/>
+	</meta_metadata>
+	
+	<meta_metadata name="clippable_document"  extends="document" built_in="true">
+		<collection name="clippings" child_type="media_clipping" comment="Clippings based on this." hide="true" polymorphic_scope="repository_clippings"/>
+		<scalar name="width" scalar_type="Integer" hide="true" />
+		<scalar name="height" scalar_type="Integer" hide="true" />
+	</meta_metadata>
+	
+	<meta_metadata name="image" extends="clippable_document" comment="The Image Base Class" built_in="true" parser="image">
+		<selector>
+			<mime_type>image/jpeg</mime_type>
+			<mime_type>image/png</mime_type>
+			<mime_type>image/gif</mime_type>
+			<mime_type>image/bmp</mime_type>
+			<suffix>jpg</suffix>
+			<suffix>jpeg</suffix>
+			<suffix>gif</suffix>
+			<suffix>png</suffix>
+			<suffix>bmp</suffix>
+		</selector>
+		<scalar name="location" layer="9.0" comment="Location of the image."/>
+		<scalar name="local_location" hide="true" comment="Relative location of local copy of image." scalar_type="File" />
+		<scalar name="creation_date" scalar_type="Date" />
+	</meta_metadata>
+	
+	
+	<meta_metadata name="compound_document"  extends="document" built_in="true">
+		<scalar name="query" layer="5.0" comment="The search query" scalar_type="String" />
+		<scalar name="page_structure" layer="6.0" hide="true" comment="For debugging. Type of the structure recognized by information extraction." scalar_type="String" />
+		<collection name="clippings" child_type="clipping" comment="Clippings that this document contains." hide="true"  polymorphic_scope="repository_clippings"/>
+	</meta_metadata>
+	
+	<meta_metadata name="html" type="compound_document" parser="html_dom_image_text" user_agent_name="firefox_3_6_8" schema_org_itemtype="http://schema.org/WebPage">
+		<selector>
+			<mime_type>text/html</mime_type>
+			<suffix>htm</suffix>
+			<suffix>html</suffix>
+			<suffix>htmls</suffix>
+			<suffix>htx</suffix>
+			<suffix>shtml</suffix>
+			<suffix>ssi</suffix>
+			<suffix>acgi</suffix>
+		</selector>
+	</meta_metadata>
+	
+	<meta_metadata name="xml" type="document"  parser="direct" user_agent_name="firefox_3_6_8">
+		<selector>
+			<mime_type>text/xml</mime_type>
+			<mime_type>application/xml</mime_type>
+			<suffix>xml</suffix>
+		</selector>
+	</meta_metadata>
+	
+	<meta_metadata name="pdf" type="compound_document" comment="The PDF class." parser="pdf">
+		<selector>
+			<mime_type>application/pdf</mime_type>
+			<mime_type>application/x-pdf</mime_type>
+			<mime_type>image/pdf</mime_type>
+			<suffix>pdf</suffix>
+		</selector>
+	</meta_metadata>
+	
+	<meta_metadata name="pdf_mixin" label="pdf" extends="metadata" comment="For metadata fields extracted by the PDF parser">
+		<scalar name="author" comment="The author of the pdf document" scalar_type="String" />
+		<scalar name="summary" comment="Summary of the pdf document" scalar_type="String" />
+		<scalar name="pdf_keywords_string" comment="Key Words of the document" scalar_type="String" />
+		<scalar name="subject" comment="Subject of the document" scalar_type="String" />
+		<scalar name="trapped" scalar_type="String" />
+		<scalar name="modified" scalar_type="String" />
+		<scalar name="contents" comment="Contents of the document" scalar_type="String" />
+		<scalar name="creationdate" comment="Creation date of the document" scalar_type="String" />	
+	</meta_metadata>
+	
+	<meta_metadata name="debug_metadata" extends="metadata" built_in="true">
+		<scalar name="new_term_vector" ignore_in_term_vector="true" scalar_type="StringBuilder" />
+	</meta_metadata>
+	
+	<meta_metadata name="tag" extends="metadata">
+		<scalar name="tag_name" scalar_type="String" navigates_to="link" />
+		<scalar name="link" hide="true" scalar_type="ParsedURL" />
+	</meta_metadata>
+	
+	<meta_metadata name="information_composition" extends="document" built_in="true">
+		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" />
+		<collection name="annotations" child_type="annotation" />
+		<collection name="media" child_type="clippable_document" polymorphic_scope="repository_media"/>
+		
+		<scalar name="version" scalar_type="Float" />
+		<scalar name="metadata_version" scalar_type="Float" />
+		<scalar name="width" scalar_type="Integer" />
+	</meta_metadata>
+	
+</meta_metadata_repository>

@@ -1,0 +1,154 @@
+<meta_metadata_repository name="patents" package="ecologylab.semantics.generated.library.patents" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
+<!-- 		<scalar name="claims" scalar_type="String" hint="XML_LEAF" /> -->
+    <collection name="claims" child_scalar_type="String" child_tag="claim" />
+		<scalar name="inventor" scalar_type="String" />
+		<scalar name="filing_date" scalar_type="Date" />
+		
+		<collection name="classifications" child_type="document"/>
+	</meta_metadata>
+	
+	<meta_metadata name="google_patent_image" type="image" parser="image">
+		<selector url_regex="http://bks[0-9].books.google.com/patents" domain="google.com"/>
+
+		<before_semantic_actions>
+			<filter_location>
+				<set_param name="zoom" value="2"/>
+			</filter_location>
+		</before_semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" user_agent_name="firefox_5" parser="xpath">
+		<selector url_stripped="http://www.google.com/patents/about"/>
+		<selector url_stripped="http://www.google.com/patents"/>
+		
+		<collection name="authors" xpath="//div[@class='patent_bibdata']/a">
+			<scalar name="location" xpath="./@href" />
+			<scalar name="title" xpath="./text()" />
+		</collection>
+
+		<collection name="classifications" xpath="//div[@class='patent_bibdata']/p/a">
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./text()" />
+		</collection>
+
+
+		<scalar name="title" xpath="//div[@id='titlebar']/h1" />
+<!-- 		<scalar name="inventor" xpath="//div[@id='titlebar']/span" /> -->
+		<scalar name="abstract_field" xpath="//table[@id='summarytable']/tbody/tr/td/text()"/>
+<!-- 		<scalar name="claims" xpath="//div[@id='patent_claims_v']" /> -->
+<!-- 		<collection name="claims" xpath="//div[@id='patent_claims_v']"> --><!-- not specifying child_scalar_type causes null pointer! this needs to be fixed. -->
+		<collection name="claims" child_scalar_type="String" xpath="//div[@id='patent_claims_v']">
+      <field_parser name="regex_split" regex="\d+\.\s+" begin_index="1" />
+    </collection>
+
+		<scalar name="filing_date" xpath="//div[@class='patent_bibdata']/p/text()[(following::b)][3]">
+			<filter regex=": " replace="" />
+		</scalar>
+		<scalar name="pic_link" xpath="//div[@id='selected_pages_v']/div[1]/a[1]/@href" scalar_type="ParsedURL" />
+		
+		<collection name="referenced_bys" hide="true" xpath="//div[@id='patent_referenced_by_v']/table/tr[position()&gt;1]" child_type="search_result">
+			<scalar name="title" xpath="./td[2]" />
+			<scalar name="location" xpath="./td[1]/a/@href" />
+		</collection>
+		<collection name="citations" hide="true" xpath="//div[@id='patent_citations_v']/table/tr[position()&gt;1]" child_type="search_result">
+			<scalar name="title" xpath="./td[2]" />
+			<scalar name="location" xpath="./td[1]/a/@href" />
+		</collection>
+		<collection name="pic_links" hide="true" xpath="//div[@id='selected_pages_v']/div/a[1]" child_type="search_result">
+			<scalar name="location" xpath="./@href" />
+		</collection>
+
+		<before_semantic_actions>
+			<filter_location>
+				<strip_param name="printsec" />
+				<strip_param name="zoom" />
+				<strip_param name="v" />
+				<strip_param name="q" />
+				<strip_param name="f" />
+				<strip_param name="pg" />
+				<regex match="/patents" replace="/patents/about"/>
+			</filter_location>
+		</before_semantic_actions>
+
+		<semantic_actions>
+<!-- 			<get_field name="patent_name" /> -->
+<!-- 			<get_field name="inventor" /> -->
+			<get_field name="pic_links" />
+			<for_each collection="pic_links" as="pic">
+				<get_field object="pic" name="location" />
+				<parse_document now="true">
+					<arg value="location" name="location" />
+				</parse_document>
+			</for_each>
+			<get_field name="abstract_field" />
+			<if>
+				<not_null value="abstract_field" />
+				<create_and_visualize_text_surrogate>
+					<arg value="abstract_field" name="text" />
+				</create_and_visualize_text_surrogate>
+			</if>
+			<get_field name="claims" />
+			<if>
+				<not_null value="claims" />
+        <for_each collection="claims" as="claim">
+  				<create_and_visualize_text_surrogate>
+  					<arg value="claim" name="text" />
+  				</create_and_visualize_text_surrogate>
+        </for_each>
+			</if>
+			<if>
+				<not_null value="citations" />
+				<get_field name="citations" />
+				<for_each collection="citations" as="cit">
+					<get_field object="cit" name="title" />
+					<get_field object="cit" name="location" />
+					<parse_document>
+						<arg value="title" name="anchor_text" />
+						<arg value="location" name="location" />
+					</parse_document>
+				</for_each>
+			</if>
+			<get_field name="referenced_bys" />
+			<if>
+				<not_null value="referenced_bys" />
+				<for_each collection="referenced_bys" as="ref">
+					<get_field object="ref" name="title" />
+					<get_field object="ref" name="location" />
+					<parse_document>
+						<arg value="title" name="anchor_text" />
+						<arg value="location" name="location" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+  
+<!-- 	<meta_metadata name="google_patent_image" extends="compound_document" comment="Google Patents Image Class" user_agent_name="firefox_2" parser="xpath">
+		<selector url_regex="(?=http://www.google.com/patents\?id=)^((?!img).)*$" domain="google.com"/>
+		<scalar name="title" xpath="//div[@id='titlebar']/h1" />
+		<scalar name="inventor" xpath="//div[@id='titlebar']/span" scalar_type="String" />
+		<collection name="pic_urls" hide="true" xpath="//img[@class='html-div']" child_type="search_result">
+			<scalar name="link" xpath="./@src" />
+		</collection>
+		<semantic_actions>
+			<get_field name="pic_urls" />
+			<for_each collection="pic_urls" as="p">
+				<get_field object="p" name="link" />
+				<create_and_visualize_img_surrogate>
+					<arg value="link" name="image_purl" />
+				</create_and_visualize_img_surrogate>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+ -->	
+ 
+ 	<meta_metadata name="google_sorry" extends="document" parser="xpath">
+		<selector url_path_tree="http://sorry.google.com"/>
+		<semantic_actions>
+			<back_off_from_site domain="google.com" />
+		</semantic_actions>
+	</meta_metadata>
+  
+</meta_metadata_repository>

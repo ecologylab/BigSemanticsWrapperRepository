@@ -1,0 +1,55 @@
+<meta_metadata_repository name="products" package="ecologylab.semantics.generated.library.products">
+
+	<meta_metadata name="product" extends="compound_document" parser="xpath" schema_org_itemtype="http://schema.org/Product">
+		<scalar name="location" hide="true" />
+
+		<scalar name="price" scalar_type="String" schema_org_itemprop="offers" />
+		<scalar name="model" scalar_type="String" schema_org_itemprop="model" />
+		<scalar name="image_url" scalar_type="ParsedURL" hide="true" />
+		<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
+		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location"  schema_org_itemprop="aggregateRating" />
+
+		<collection name="reviews" child_type="product_review" child_extends="metadata" schema_org_itemtype="http://schema.org/Review" schema_org_itemprop="reviews">
+			<scalar name="rating" scalar_type="String" schema_org_itemprop="reviewRating" />
+			<scalar name="content" scalar_type="String" schema_org_itemprop="reviewBody" />
+		</collection>
+	</meta_metadata>
+
+	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="firefox_3_6_8">
+		<selector url_regex="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
+		<selector url_regex="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
+
+		<composite name="department" type="document" xpath="//div[@id='navbar']//table[@id='navCatSubnav']//a[@class='navCatA']" >
+			<scalar name="title" xpath="."/>
+			<scalar name="location" hide="true" xpath="./@href" />
+		</composite>
+		<scalar name="price" xpath="//b[@class='priceLarge']" />
+		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
+		<scalar name="description" xpath="//a[@id='technical_details']/following-sibling::div[1]"/>
+		<scalar name="image_url" xpath="//td[@id='prodImageCell']//img/@src" />
+		
+		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
+<!-- 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" /> does not work :-( -->
+		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" /> <!-- this works but not great -->
+		<scalar name="overall_rating"   context_node="reviews_span" xpath=".//span[1]/@title" />
+
+		<collection name="reviews" xpath="//div[@class='content']/table/tbody/tr[2]/td[1]/div[position() &lt; last()-1]">
+			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" layer="20.0" />
+			<scalar name="content" xpath="." layer="10.0" /> <!-- not concise! -->
+		</collection>
+		
+		<composite name="bestseller_list" extends="document" xpath="//li[@class='zg_hrsr_item']">
+			<scalar name="title" xpath="./span[@class='zg_hrsr_ladder']/b/a/text()" />
+			<scalar name="location" hide="true" xpath="./span[@class='zg_hrsr_ladder']/b/a/@href" />
+			<scalar name="rank" scalar_type="string" xpath="./span[@class='zg_hrsr_rank']/text()" />
+		</composite>
+		<semantic_actions>
+			<reselect_meta_metadata_and_extract name="amazon_item" />
+			<if>
+				<not_null value="amazon_item" />
+				<add_mixin object="amazon_item" mixin="metadata"/>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,88 @@
+<meta_metadata_repository name="rss" package="ecologylab.semantics.generated.library.rss" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<meta_metadata name="dc" extends="compound_document" comment="Dublin core fields." parser="direct">
+		<scalar name="dc_creator" tag="dc:creator" label="author" scalar_type="String" hint="XML_LEAF"/>
+		<scalar name="dc_subject" tag="dc:subject" scalar_type="String" hint="XML_LEAF"/>
+		<scalar name="dc_description" tag="dc:description" scalar_type="String" hint="XML_LEAF"/>
+		<scalar name="dc_title" tag="dc:title" scalar_type="String" hint="XML_LEAF" hide="true"/>
+		<scalar name="dc_date" tag="dc:date" scalar_type="Date" hint="XML_LEAF" ignore_in_term_vector="true"/>
+	</meta_metadata>
+	
+	<meta_metadata name="yahoo_media_rss" extends="dc" comment="News feeds." parser="direct">
+		<composite name="media_content" extends="metadata" tag="media:content" hide="true"> <!-- should really make this a collection and seek the larger one -->
+			<scalar name="media_url" tag="url" scalar_type="ParsedURL" />
+			<scalar name="height" scalar_type="Int" />
+			<scalar name="width" scalar_type="Int" />
+		</composite>
+		<scalar name="media_description" tag="media:description" scalar_type="String" hide="true" hint="XML_LEAF"/>
+	</meta_metadata>
+
+	<meta_metadata name="item" extends="yahoo_media_rss" comment="One item in a news feed." parser="direct">
+			<!-- scalar name="title" scalar_type="String" hint="XML_LEAF" /> -->
+			<!-- scalar name="location" shadows="location" tag="link" scalar_type="ParsedURL" hint="XML_LEAF" /> -->
+			<scalar name="link" scalar_type="ParsedURL" hint="XML_LEAF" hide="true"/>
+			<scalar name="location" scalar_type="ParsedURL" tag="guid" hint="XML_LEAF" hide="true"/>
+			<!--<collection name="categories" child_tag="category" scalar_type="String"/>   -->
+	</meta_metadata>
+	
+	<meta_metadata name="channel" extends="metadata">
+		<scalar name="title" scalar_type="String" />
+		<collection name="items" child_type="item" no_wrap="true"/>
+	</meta_metadata>
+	
+	<!-- THE RSS CLASS : RSS Type -->
+	<meta_metadata name="rss" extends="document" comment="A news feed." parser="feed" user_agent_name="firefox_3_6_8">
+		<composite name="channel" type="channel"/>
+
+		<selector>
+			<suffix>rss</suffix> 
+			<mime_type>xml/rss</mime_type>
+			<mime_type>application/rss</mime_type>
+		</selector>
+		<semantic_actions>
+			<get_field name="channel" />
+			<if>
+				<not_null value="channel"/>
+				<get_field object="channel" name="items" />
+				<if>
+					<not_null value="items"/>
+					<for_each collection="items" as="item" current_index="i">
+						<get_field object="item" name="media_content" />
+						<get_field object="item" name="title" />
+						<get_field object="item" name="location" />
+						<if>
+							<null value="location"/>
+							<get_field object="item" name="link"/>
+							<set_field name="location" value="link">
+								<!-- arg value="link" name="value" /> -->
+							</set_field>
+						</if>
+						<choose>
+							<case>
+								<not_null value="media_content"/>
+								<get_field object="media_content" name="media_url" />
+								<get_field object="item" name="media_description"/>
+								<create_and_visualize_img_surrogate>
+									<arg value="media_url" name="image_purl" />
+									<arg value="media_description" name="caption" />
+									<arg value="guid" name="href" />
+								</create_and_visualize_img_surrogate>						
+							</case>
+							<otherwise>
+								<parse_document now="true">
+									<arg value="item" name="mixin" />
+									<arg value="location" name="location" />
+								</parse_document>
+							</otherwise>
+						</choose>
+					</for_each>
+				</if>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+
+	<meta_metadata name="rss_2_2" extends="compound_document" comment="A news feed, yucky style." parser="direct" tag="rss_2_2">
+		<collection name="items" no_wrap="true" child_type="item"/>
+	</meta_metadata>
+	
+</meta_metadata_repository>

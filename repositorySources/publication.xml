@@ -1,0 +1,43 @@
+<meta_metadata_repository name="publication" package="ecologylab.semantics.generated.library.publication">
+
+	<meta_metadata name="publication" extends="basic_publication" comment="A publication.">
+		<scalar name="pages" scalar_type="String" />
+		<collection name="subjects" child_type="subject" child_extends="metadata">
+			<scalar name="subject" as_composite_scalar="true" scalar_type="String" navigates_to="location" />
+			<scalar name="location" scalar_type="ParsedURL" hide="true" />
+		</collection>
+		<scalar name="about_the_authors" scalar_type="String" />
+		<collection name="common_terms" child_type="term_type" child_extends="document">
+			<scalar name="term" as_composite_scalar="true" navigates_to="location" scalar_type="String" />
+			<scalar name="location" hide="true" scalar_type="ParsedURL" />
+			<scalar name="frequency" scalar_type="Int" />
+		</collection>
+	</meta_metadata>
+
+	<meta_metadata name="book" extends="publication">
+		<collection name="editors" child_type="author" schema_org_itemprop="editor" />
+		<scalar name="edition" scalar_type="String" schema_org_itemprop="bookEdition" />
+		<collection name="table_of_contents" child_type="publication">
+			<scalar name="title"  label="chapter title" />
+		</collection>
+		<scalar name="cover_image" scalar_type="ParsedURL" hide="true" />
+	</meta_metadata>
+	
+	<meta_metadata name="publisher" extends="document" comment="A publishing company." schema_org_itemtype="http://schema.org/Organization">
+		<scalar name="title" label="name" as_composite_scalar="true" navigates_to="location" is_facet="true" scalar_type="String" />
+		<scalar name="city" scalar_type="String" schema_org_itemtype="location" />
+	</meta_metadata>
+	
+	<meta_metadata name="amazon_book" extends="book" parser="xpath">
+		<selector meta_metadata_name="amazon_product">
+			<field name="department" value="Books" />
+		</selector>
+		
+		<collection name="authors" xpath="//span[@class='contributorNameTrigger']">
+			<scalar name="title" xpath=".//a[1]" />
+			<scalar name="location" xpath=".//a[1]/@href" />
+		</collection>
+		<scalar name="cover_image" xpath="//td[@id='prodImageCell']//img/@src" />
+	</meta_metadata>
+
+</meta_metadata_repository>

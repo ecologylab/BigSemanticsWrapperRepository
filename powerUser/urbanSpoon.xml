@@ -1,0 +1,75 @@
+<meta_metadata_repository name="urban_spoon" package="ecologylab.semantics.generated.library.urbanspoon">
+	<meta_metadata name="urban_spoon_restaurant" comment="UrbanSpoon restaurant description page" type="restaurant" parser="xpath">
+		<selector url_path_tree="http://www.urbanspoon.com/r/"/>
+		
+		<scalar name="title" xpath="//div[@id='rest-main-block']/h1" />
+		<scalar name="phone" xpath="//div[@id='rest-main-block']/div/span" />
+		<scalar name="pic" xpath="//div[2]/a[1]/img/@srcd" />
+		<scalar name="link" xpath="//a[@class='url']/@href" />
+		<scalar name="rating" xpath="//div[@id='vote-score-text']/span" />
+		<scalar name="price_range" xpath="//span[@class='pricerange']/text()" />
+		<scalar name="map" xpath="//div[@id='rest-map-holder']/a/img/@srcd" />
+		<collection name="genres" xpath="//div[@id='menu-block']/p[2]/b/a">
+			<scalar name="location" xpath="./@href" />
+			<scalar name="title" xpath="./text()" />
+		</collection>
+		<semantic_actions>
+			<get_field name="pic" />
+			<create_and_visualize_img_surrogate>
+				<arg value="pic" name="image_purl" />
+			</create_and_visualize_img_surrogate>
+			<get_field name="genres" />
+			<for_each collection="genres" as="genre">
+				<get_field object="genre" name="title" />
+				<get_field object="genre" name="location" />
+				<parse_document>
+					<arg value="title" name="anchor_text" />
+					<arg value="location" name="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="urban_spoon_genre" extends="search" comment="UrbanSpoon Search Class"  parser="xpath">
+		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/f/"/>
+		<collection name="search_results" xpath="//div[@class = 't']/a[text() != '']" child_type="search_result">
+			<scalar name="location" xpath="./@href" />
+			<scalar name="title" xpath="./text()" />
+		</collection>
+		<collection name="top_results" xpath="//div[@id='callout']/ol/li/a" child_type="search_result">
+			<scalar name="location" xpath="./@href" />
+			<scalar name="title" xpath="./text()" />
+		</collection>
+		<semantic_actions>
+			<get_field name="top_results" />
+			<for_each collection="top_results" as="res">
+				<get_field object="res" name="location" />
+				<get_field object="res" name="title" />
+				<parse_document>
+					<arg value="title" name="anchor_text" />
+					<arg value="location" name="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="urban_spoon_search" comment="UrbanSpoon Search Class" type="search" parser="xpath">
+		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/"/>
+		<collection name="search_results" xpath="//div[@class = 't']/a[text() != '']" child_type="search_result">
+			<scalar name="title" xpath="./text()" />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+				<get_field object="res" name="location" />
+				<get_field object="res" name="title" />
+				<parse_document>
+					<arg value="title" name="anchor_text" />
+					<arg value="location" name="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+</meta_metadata_repository>

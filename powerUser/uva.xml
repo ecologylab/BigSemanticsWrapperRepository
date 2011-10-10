@@ -1,0 +1,104 @@
+<meta_metadata_repository name="uva" package="ecologylab.semantics.generated.library.uva">
+
+<meta_metadata name="keyword_set" extends="metadata" parser="direct">
+	<scalar name="type" scalar_type="String"/>
+  <!-- currently collection of scalar types are not supported. use a nested scalar field instead.
+	<collection name="keywords" child_type="String" />
+  -->
+</meta_metadata>
+
+<meta_metadata name="document_set" extends="metadata" parser="direct">
+	<collection name="documents" no_wrap="true" child_type="document"/>
+</meta_metadata>
+
+<meta_metadata name="topic_cluster" extends="metadata" parser="direct">
+	<scalar name="id" scalar_type="Int" />
+	
+	<collection name="document_set" child_type="document" />
+	<collection name="keyword_sets" child_tag="keyword_set" child_type="keyword_set" />
+	
+	<scalar name="x" scalar_type="Int" />
+	<scalar name="y" scalar_type="Int" />
+	<scalar name="width" scalar_type="Int" />
+	<scalar name="height" scalar_type="Int" />
+</meta_metadata>
+
+<meta_metadata name="topic" extends="compound_document" comment="For Collabartion with UVA's Cluster formation project.">
+	<scalar name="content_keywords" scalar_type="StringBuilder" />
+	<scalar name="anchor_keywords" scalar_type="StringBuilder" />
+	<scalar name="url_keywords" scalar_type="StringBuilder" />
+	<scalar name="title_keywords" scalar_type="StringBuilder" />
+	<scalar name="id" scalar_type="Int" />
+</meta_metadata>
+
+<meta_metadata name="model" extends="metadata" parser="direct">
+	<collection name="topic_clusters" child_type="topic_cluster" />
+	<!-- 
+		public void parse(Model model)
+	{
+		ArrayList<TopicCluster> topicClusters = model.getTopicClusters();
+		debug("parse() with " + topicClusters.size() + " clusters!!!!!!");
+		MetaMetadata metaMetadata	= infoCollector.getMM("topic");
+		for (TopicCluster tc : topicClusters)
+		{
+			MetadataStringBuilder contentKeywords	= new MetadataStringBuilder();
+			MetadataStringBuilder anchorKeywords	= new MetadataStringBuilder();
+			MetadataStringBuilder titleKeywords		= new MetadataStringBuilder();
+			for (KeywordSet keywordSet : tc.getKeywordSets())
+			{
+				String type	= keywordSet.getType();
+				MetadataStringBuilder theseKeywords	= 
+					"content".equals(type) ? contentKeywords :
+					"anchor".equals(type) ? anchorKeywords :
+					"title".equals(type) ? titleKeywords : null;
+				if (theseKeywords != null)
+				{
+					for (String keyword : keywordSet.getKeywords())
+					{
+						theseKeywords.setValue(keyword);
+						theseKeywords.setValue("; ");
+					}
+					StringBuilder buffy = theseKeywords.getValue();
+					buffy.setLength(buffy.length() - 2);
+				}
+			}
+			for (DocumentState doc : tc.getDocumentSet().getDocuments())
+			{
+				ParsedURL purl	= doc.getUrl();
+//				ParsedURL purl	= ParsedURL.getAbsolute("http://www.nytimes.com");
+
+				CfContainer container	= infoCollector.getContainerForSearch(null, purl, null, metaMetadata);
+				container.setJustMedia(true);
+				
+				// populate metadata
+				ecologylab.semantics.metadata.builtins.Document containterMetadata	= container.metadata();
+				Topic topicMetadata;
+				if (containterMetadata instanceof Topic)
+					topicMetadata	= (Topic) containterMetadata;
+				else
+				{	// lookout! the document may get downloaded by following a link in
+					// a previous document, in which case, it may have the wrong type of Metadata
+					// so, we create new Metadata here
+					topicMetadata	= new Topic();
+					topicMetadata.setLocation(purl);
+					//TODO - - are there other fields that need to be copied?
+					container.setMetadata(topicMetadata);
+				}
+				topicMetadata.setContentKeywords(contentKeywords.getValue());
+				topicMetadata.setAnchorKeywords(anchorKeywords.getValue());
+				topicMetadata.setTitleKeywords(titleKeywords.getValue());
+				MetadataInteger id	= new MetadataInteger();
+				id.setValue(tc.getId());
+				topicMetadata.setId(id.getValue());
+				container.queueDownload();
+			}
+		}
+
+	}
+	
+	 -->
+
+</meta_metadata>
+
+
+</meta_metadata_repository>
