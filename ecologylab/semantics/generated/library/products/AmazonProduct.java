@@ -5,6 +5,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.generated.library.products.Product;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.generated.library.products.BestsellerList;
 
 /**

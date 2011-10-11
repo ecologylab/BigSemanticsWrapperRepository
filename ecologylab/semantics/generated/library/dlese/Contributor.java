@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.library.dlese;
 
 import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

@@ -6,6 +6,7 @@ import ecologylab.semantics.generated.library.opml.Head;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.semantics.generated.library.opml.Body;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.mm_name;
 
 /**
 *  Opml.java

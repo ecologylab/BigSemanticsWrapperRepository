@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.library.artwork;
 
 import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.simpl_inherit;

@@ -1,6 +1,8 @@
 package ecologylab.semantics.generated.library.search;
 
 import java.util.ArrayList;
+
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.generated.library.Tag;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

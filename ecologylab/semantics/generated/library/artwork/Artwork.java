@@ -1,6 +1,8 @@
 package ecologylab.semantics.generated.library.artwork;
 
 import java.util.ArrayList;
+
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;

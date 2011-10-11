@@ -2,6 +2,8 @@ package ecologylab.semantics.generated.library.flickr;
 
 import ecologylab.serialization.annotations.simpl_composite;
 import java.util.ArrayList;
+
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;

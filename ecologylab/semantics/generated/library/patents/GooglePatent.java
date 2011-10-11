@@ -6,6 +6,7 @@ import java.util.List;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.semantics.generated.library.patents.Patent;

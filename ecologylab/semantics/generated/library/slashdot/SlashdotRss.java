@@ -6,6 +6,7 @@ import java.util.List;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.semantics.generated.library.slashdot.SlashdotItem;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.serialization.annotations.simpl_nowrap;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_tag;

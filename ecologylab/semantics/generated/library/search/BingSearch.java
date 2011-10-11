@@ -5,6 +5,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.generated.library.search.BingSearchImageSection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.serialization.annotations.simpl_tag;
 import ecologylab.semantics.generated.library.search.BingSearchWebSection;
 

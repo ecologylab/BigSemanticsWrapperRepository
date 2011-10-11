@@ -1,6 +1,7 @@
 package ecologylab.semantics.generated.library.nsdl;
 
 import ecologylab.serialization.annotations.simpl_composite;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.generated.library.nsdl.Header;
 import ecologylab.serialization.annotations.simpl_inherit;

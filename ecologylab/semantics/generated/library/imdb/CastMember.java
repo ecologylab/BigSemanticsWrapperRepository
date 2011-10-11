@@ -5,6 +5,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.semantics.generated.library.imdb.PersonDetails;
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.mm_name;
 
 /**
 *  CastMember.java

@@ -8,6 +8,7 @@ import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.flickr.FlickrTag;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.serialization.annotations.simpl_scalar;
 

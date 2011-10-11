@@ -8,6 +8,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import java.util.List;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_tag;
 
