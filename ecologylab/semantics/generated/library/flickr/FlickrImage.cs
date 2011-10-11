@@ -35,7 +35,7 @@ namespace ecologylab.semantics.generated.library.flickr
 		/// </summary>
 		[SimplCollection("flickr_tag")]
 		[SimplTag("flickr_tags")]
-		[mm_name("flickr_tags")]
+		[MmName("flickr_tags")]
 		private List<FlickrTag> flickrTags;
 
 		public FlickrImage()

@@ -26,7 +26,7 @@ namespace ecologylab.semantics.generated.library
 		/// 
 		/// </summary>
 		[SimplComposite]
-		[mm_name("style_info")]
+		[MmName("style_info")]
 		private StyleInfo styleInfo;
 
 		public Run()

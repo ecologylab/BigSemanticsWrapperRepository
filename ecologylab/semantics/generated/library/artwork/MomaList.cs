@@ -28,7 +28,7 @@ namespace ecologylab.semantics.generated.library.artwork
 		/// </summary>
 		[SimplCollection("moma_artwork")]
 		[SimplNoWrap]
-		[mm_name("artworks")]
+		[MmName("artworks")]
 		private List<MomaArtwork> artworks;
 
 		/// <summary>

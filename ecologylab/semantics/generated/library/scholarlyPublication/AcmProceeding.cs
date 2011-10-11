@@ -29,7 +29,7 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 		/// </summary>
 		[SimplCollection("search_result")]
 		[SimplTag("proceedings")]
-		[mm_name("proceedings")]
+		[MmName("proceedings")]
 		private List<SearchResult> proceedings;
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 		/// </summary>
 		[SimplCollection("search_result")]
 		[SimplTag("papers")]
-		[mm_name("papers")]
+		[MmName("papers")]
 		private List<SearchResult> papers;
 
 		public AcmProceeding()

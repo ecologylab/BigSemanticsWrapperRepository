@@ -28,7 +28,7 @@ namespace ecologylab.semantics.generated.library
 		/// </summary>
 		[SimplCollection]
         [SimplScope("generated_metadata_translations")]
-        [mm_name("hypertext")]
+        [MmName("hypertext")]
 		private List<Run> runs;
 
 		public HypertextPara()
