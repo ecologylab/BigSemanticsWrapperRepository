@@ -11,7 +11,7 @@ package ecologylab.semantics.generated.library;
 
 
 
-import ecologylab.serialization.TranslationScope;
+import ecologylab.serialization.SimplTypesScope;
 
 import ecologylab.semantics.namesandnums.SemanticsNames;
 
@@ -253,9 +253,9 @@ public class RepositoryMetadataTranslationScope
 
 	};
 
-	public static TranslationScope get()
+	public static SimplTypesScope get()
 	{
-		return TranslationScope.get(SemanticsNames.REPOSITORY_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
+		return SimplTypesScope.get(SemanticsNames.REPOSITORY_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
 	}
 
 }
