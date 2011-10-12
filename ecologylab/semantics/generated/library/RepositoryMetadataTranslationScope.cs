@@ -45,7 +45,7 @@ using ecologylab.semantics.generated.library.uva;
 using ecologylab.semantics.generated.library.wikipedia;
 using ecologylab.semantics.metadata.builtins;
 
-// Developer should proof-read this TranslationScope before using it for production.
+// Developer should proof-read this SimplTypesScope before using it for production.
 namespace ecologylab.semantics.generated.library 
 {
 	public class RepositoryMetadataTranslationScope
@@ -53,9 +53,9 @@ namespace ecologylab.semantics.generated.library
 		public RepositoryMetadataTranslationScope()
 		{ }
 
-		public static TranslationScope Get()
+		public static SimplTypesScope Get()
 		{
-			return TranslationScope.Get("meta-metadata-compiler-tscope", MetadataBuiltinsTranslationScope.Get(),
+			return SimplTypesScope.Get("meta-metadata-compiler-tscope", MetadataBuiltinsTranslationScope.Get(),
 				typeof(PdfMixin),
 				typeof(Tag),
 				typeof(AcmPortalSearchResult),
