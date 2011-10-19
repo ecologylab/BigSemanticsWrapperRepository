@@ -16,6 +16,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
 using ecologylab.semantics.generated.library.wikipedia;
+using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
 
@@ -25,7 +26,7 @@ namespace ecologylab.semantics.generated.library.wikipedia
 	/// An article on wikipedia (used in cF)
 	/// </summary>
 	[SimplInherit]
-	public class WikipediaPage : WikipediaPageType
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })] public class WikipediaPage : WikipediaPageType
 	{
 		[SimplScalar]
 		private MetadataParsedURL mainImageSrc;

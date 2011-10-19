@@ -7,17 +7,10 @@
 //
 
 
-using Simpl.Fundamental.Generic;
-using Simpl.Serialization;
-using Simpl.Serialization.Attributes;
 using System;
-using System.Collections;
+using Simpl.Serialization.Attributes;
 using System.Collections.Generic;
-using ecologylab.collections;
-using ecologylab.semantics.generated.library.wikipedia;
 using ecologylab.semantics.metadata;
-using ecologylab.semantics.metadata.builtins;
-using ecologylab.semantics.metametadata;
 
 namespace ecologylab.semantics.generated.library.wikipedia 
 {
@@ -25,7 +18,7 @@ namespace ecologylab.semantics.generated.library.wikipedia
 	/// An article on wikipedia
 	/// </summary>
 	[SimplInherit]
-	public class WikipediaPageType : CompoundDocument
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })] public class WikipediaPageType : CompoundDocument
 	{
 		/// <summary>
 		/// Paragraphs in the article.

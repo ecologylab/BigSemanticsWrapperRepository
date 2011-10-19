@@ -21,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.artwork 
 {
 	[SimplInherit]
-	public class TempFieldValueHolder : Metadata
+	[SimplDescriptorClasses(new Type[] { typeof(MetadataClassDescriptor), typeof(MetadataFieldDescriptor) })] public class TempFieldValueHolder : Metadata
 	{
 		[SimplScalar]
 		private MetadataString tempDimensions;
