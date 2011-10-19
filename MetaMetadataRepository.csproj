@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8BA7D48-F64D-46FA-B901-0D3906E6AD5C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MetaMetadataRepository</RootNamespace>
+    <AssemblyName>MetaMetadataRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="agents.xml" />
+    <Content Include="engines.xml" />
+    <Content Include="powerUser\british_cartoon_archive.xml" />
+    <Content Include="powerUser\dlese.xml" />
+    <Content Include="powerUser\dreamHouse.xml" />
+    <Content Include="powerUser\gaurdian_comic.xml" />
+    <Content Include="powerUser\globe_cartoon.xml" />
+    <Content Include="powerUser\lolz.xml" />
+    <Content Include="powerUser\nsdl.xml" />
+    <Content Include="powerUser\political_cartoon.xml" />
+    <Content Include="powerUser\README.txt" />
+    <Content Include="powerUser\sfu_cartoon_archive.xml" />
+    <Content Include="powerUser\truman_library_1948_campaign_cartoons.xml" />
+    <Content Include="powerUser\urbanSpoon.xml" />
+    <Content Include="powerUser\uva.xml" />
+    <Content Include="primitives.xml" />
+    <Content Include="repositorySources\acmPortal.xml" />
+    <Content Include="repositorySources\artwork.xml" />
+    <Content Include="repositorySources\buzz.xml" />
+    <Content Include="repositorySources\camera.xml" />
+    <Content Include="repositorySources\citeseerx.xml" />
+    <Content Include="repositorySources\creativeWork.xml" />
+    <Content Include="repositorySources\delicious.xml" />
+    <Content Include="repositorySources\fastflip.xml" />
+    <Content Include="repositorySources\flickr.xml" />
+    <Content Include="repositorySources\gis.xml" />
+    <Content Include="repositorySources\googleBooks.xml" />
+    <Content Include="repositorySources\googleImage.xml" />
+    <Content Include="repositorySources\hotel.xml" />
+    <Content Include="repositorySources\icdl.xml" />
+    <Content Include="repositorySources\imdb.xml" />
+    <Content Include="repositorySources\informationComposition.xml" />
+    <Content Include="repositorySources\lolzType.xml" />
+    <Content Include="repositorySources\misc.xml" />
+    <Content Include="repositorySources\news.xml" />
+    <Content Include="repositorySources\opml.xml" />
+    <Content Include="repositorySources\patents.xml" />
+    <Content Include="repositorySources\products.xml" />
+    <Content Include="repositorySources\publication.xml" />
+    <Content Include="repositorySources\restaurant.xml" />
+    <Content Include="repositorySources\rss.xml" />
+    <Content Include="repositorySources\scholarlyPublication.xml" />
+    <Content Include="repositorySources\scienceDirect.xml" />
+    <Content Include="repositorySources\search.xml" />
+    <Content Include="repositorySources\slashdot.xml" />
+    <Content Include="repositorySources\tumblr.xml" />
+    <Content Include="repositorySources\weather.xml" />
+    <Content Include="repositorySources\wikipedia.xml" />
+    <Content Include="sites.xml" />
+    <Content Include="styles.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
