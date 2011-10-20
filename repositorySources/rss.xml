@@ -18,10 +18,8 @@
 	</meta_metadata>
 
 	<meta_metadata name="item" extends="yahoo_media_rss" comment="One item in a news feed." parser="direct">
-			<!-- scalar name="title" scalar_type="String" hint="XML_LEAF" /> -->
-			<!-- scalar name="location" shadows="location" tag="link" scalar_type="ParsedURL" hint="XML_LEAF" /> -->
+			<scalar name="location" tag="guid" other_tags="rdf:about" hint="XML_LEAF" hide="true"/>
 			<scalar name="link" scalar_type="ParsedURL" hint="XML_LEAF" hide="true"/>
-			<scalar name="location" scalar_type="ParsedURL" tag="guid" hint="XML_LEAF" hide="true"/>
 			<!--<collection name="categories" child_tag="category" scalar_type="String"/>   -->
 	</meta_metadata>
 	
