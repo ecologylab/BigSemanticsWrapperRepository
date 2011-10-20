@@ -80,7 +80,9 @@
     <Content Include="repositorySources\buzz.xml" />
     <Content Include="repositorySources\camera.xml" />
     <Content Include="repositorySources\citeseerx.xml" />
-    <Content Include="repositorySources\creativeWork.xml" />
+    <Content Include="repositorySources\creativeWork.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="repositorySources\delicious.xml" />
     <Content Include="repositorySources\fastflip.xml" />
     <Content Include="repositorySources\flickr.xml" />
