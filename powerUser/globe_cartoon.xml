@@ -3,7 +3,8 @@
     <scalar name="title" comment="Title of comic" xpath="//span[@class=&#39;imageTitle&#39;]" layer="0.0" scalar_type="String"></scalar>
     <scalar name="date_published" comment="" xpath="//td[2]/span[@class=&#39;thumbSmall&#39;]" layer="0.0" scalar_type="Date"></scalar>
     <scalar name="img_location" comment="" xpath="//img[@class=&#39;thumbFrame&#39;]/@src" layer="0.0" scalar_type="ParsedURL"></scalar>
-    <selector url_path_tree="http://www.globecartoon.com/"/>
+    <selector url_stripped="http://www.globecartoon.com/"/>
+    <selector url_stripped="http://globecartoon.com/"/>
     <selector domain="globecartoon.com" url_stripped="http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/wa/dessin"/>
   </meta_metadata>
 </meta_metadata_repository>
