@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using Simpl.Serialization.Attributes;
+using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metadata;
 

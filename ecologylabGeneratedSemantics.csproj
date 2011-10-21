@@ -188,7 +188,6 @@
     <Compile Include="ecologylab\semantics\generated\library\Run.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalSearchResult.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmProceeding.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\ScholarlyArticle.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scienceDirect\ScienceDirectArticle.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\BingImageSearchResult.cs" />
