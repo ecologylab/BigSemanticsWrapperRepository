@@ -14,7 +14,7 @@
 		<collection name="authors" xpath="//div[@id='divmain']//a[@title='Author Profile Page']">
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./text()" />
-			<scalar name="affiliation" xpath="../..//a[@title='Institutional Profile Page']/text()" />
+			<scalar name="affiliation" xpath="../..//a[@title='Institutional Profile Page']" />
 		</collection>
 
 		<composite name="source" navigates_to="location" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]">
