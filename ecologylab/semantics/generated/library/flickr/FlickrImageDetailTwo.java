@@ -34,6 +34,9 @@ import java.util.List;
 public class FlickrImageDetailTwo extends CompoundDocument
 {
 	@simpl_scalar
+	private MetadataParsedURL imageLocation;
+
+	@simpl_scalar
 	private MetadataString views;
 
 	@simpl_scalar
@@ -57,6 +60,38 @@ public class FlickrImageDetailTwo extends CompoundDocument
 		super(mmd);
 	}
 
+
+	public MetadataParsedURL	imageLocation()
+	{
+		MetadataParsedURL	result = this.imageLocation;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.imageLocation = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getImageLocation()
+	{
+		return this.imageLocation == null ? null : imageLocation().getValue();
+	}
+
+	public MetadataParsedURL getImageLocationMetadata()
+	{
+		return imageLocation;
+	}
+
+	public void setImageLocation(ParsedURL imageLocation)
+	{
+		if (imageLocation != null)
+			this.imageLocation().setValue(imageLocation);
+	}
+
+	public void setImageLocationMetadata(MetadataParsedURL imageLocation)
+	{
+		this.imageLocation = imageLocation;
+	}
 
 	public MetadataString	views()
 	{
