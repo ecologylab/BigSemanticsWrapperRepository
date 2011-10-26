@@ -20,7 +20,7 @@
 	<meta_metadata name="item" extends="yahoo_media_rss" comment="One item in a news feed." parser="direct">
 			<scalar name="location" tag="guid" other_tags="rdf:about" hint="XML_LEAF" hide="true"/>
 			<scalar name="link" scalar_type="ParsedURL" hint="XML_LEAF" hide="true"/>
-			<!--<collection name="categories" child_tag="category" scalar_type="String"/>   -->
+			<collection name="categories" child_tag="category" child_scalar_type="String" no_wrap="true" />
 	</meta_metadata>
 	
 	<meta_metadata name="channel" extends="metadata">
