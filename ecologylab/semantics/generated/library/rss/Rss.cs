@@ -25,7 +25,6 @@ namespace ecologylab.semantics.generated.library.rss
 	/// A news feed.
 	/// </summary>
 	[SimplInherit]
-    [SimplOtherTags(new string[] {"rdf:RDF"})]
 	public class Rss : Document
 	{
 		[SimplComposite]
