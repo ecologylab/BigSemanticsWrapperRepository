@@ -39,7 +39,7 @@
     <scalar name="title" xpath="//*[@id='firstHeading']" />
     <scalar name="description" xpath="//*[@id='bodyContent']/p[1]" />
     <scalar name="main_image_src" hide="true" xpath="./@src" context_node="main_image" scalar_type="ParsedURL" />
-    <collection name="paragraphs" hide="true" xpath="//*[@id='bodyContent']/p[string-length(text()) > 0]" child_type="paragraph">
+    <collection name="paragraphs" hide="true" xpath="//*[@id='bodyContent']//p[string-length(text()) > 0]" child_type="paragraph">
       <scalar name="paragraph_text" xpath="." />
       <collection name="anchors" xpath="./a[@title]">
         <scalar name="link" xpath="./@href" />
@@ -103,6 +103,7 @@
           </create_and_visualize_img_surrogate>
         </if>
       </for_each>
+      <visualize_clippings/>
     </semantic_actions>
   </meta_metadata>
 
