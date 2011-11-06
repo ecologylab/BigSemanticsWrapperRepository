@@ -103,7 +103,6 @@
           </create_and_visualize_img_surrogate>
         </if>
       </for_each>
-      <visualize_clippings/>
     </semantic_actions>
   </meta_metadata>
 

@@ -72,6 +72,9 @@
 		<scalar name="query" layer="5.0" comment="The search query" scalar_type="String" />
 		<scalar name="page_structure" layer="6.0" hide="true" comment="For debugging. Type of the structure recognized by information extraction." scalar_type="String" />
 		<collection name="clippings" child_type="clipping" comment="Clippings that this document contains." hide="true"  polymorphic_scope="repository_clippings"/>
+		<after_semantic_actions>
+			<visualize_clippings/>
+		</after_semantic_actions>
 	</meta_metadata>
 	
 	<meta_metadata name="html" type="compound_document" parser="html_dom_image_text" user_agent_name="firefox_3_6_8" schema_org_itemtype="http://schema.org/WebPage">
