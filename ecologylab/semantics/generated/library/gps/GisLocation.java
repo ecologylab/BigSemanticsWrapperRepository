@@ -35,6 +35,9 @@ public class GisLocation extends Metadata
 
 	@simpl_scalar
 	private MetadataString satellites;
+	
+	@simpl_scalar
+	private MetadataDouble direction;
 
 	public GisLocation()
 	{ }
@@ -170,5 +173,37 @@ public class GisLocation extends Metadata
 	public void setSatellitesMetadata(MetadataString satellites)
 	{
 		this.satellites = satellites;
+	}
+	
+	public MetadataDouble	direction()
+	{
+		MetadataDouble	result = this.direction;
+		if (result == null)
+		{
+			result = new MetadataDouble();
+			this.direction = result;
+		}
+		return result;
+	}
+
+	public Double getDirection()
+	{
+		return this.direction == null ? 0.0 : direction().getValue();
+	}
+
+	public MetadataDouble getDirectionMetadata()
+	{
+		return direction;
+	}
+
+	public void setDirection(Double direction)
+	{
+		if (direction != 0.0)
+			this.direction().setValue(direction);
+	}
+
+	public void setDirectionMetadata(MetadataDouble direction)
+	{
+		this.direction = direction;
 	}
 }
