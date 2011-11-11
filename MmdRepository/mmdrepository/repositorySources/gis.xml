@@ -4,6 +4,7 @@
 		<scalar name="latitude" scalar_type="Double"/>
 		<scalar name="longitude" scalar_type="Double"/>
 		<scalar name="altitude" scalar_type="Double"/>
+		<scalar name="direction" scalar_type="Double"/>
 		
 		<scalar name="satellites" scalar_type="String"/>
 	</meta_metadata>
