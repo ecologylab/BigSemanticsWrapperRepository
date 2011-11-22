@@ -7,7 +7,7 @@
 
 		<url_generator type="search" engine="acm_portal" use_id="title" />
 	
-		<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
+<!-- 		<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" /> -->
 
 		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="metadata_page" as_natural_id="title" format="text" />
 
