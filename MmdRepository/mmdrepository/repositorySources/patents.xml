@@ -22,6 +22,7 @@
 	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" user_agent_name="firefox_5" parser="xpath">
 		<selector url_stripped="http://www.google.com/patents/about"/>
 		<selector url_stripped="http://www.google.com/patents"/>
+		<selector domain="google.com" url_path_tree="http://www.google.com/patents/"/>
 		
 		<collection name="authors" xpath="//div[@class='patent_bibdata']/a">
 			<scalar name="location" xpath="./@href" />

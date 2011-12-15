@@ -39,7 +39,9 @@
 		<collection name="references" xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
-			<scalar name="location" xpath=".//a[1]/@href" />
+			<scalar name="location" xpath=".//a[1]/@href">
+			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)" replace="preflayout=flat" />
+		  </scalar>
 <!-- 			<scalar name="description" layer="10.0" xpath="." /> -->
       <collection name="authors" field_parser_key="$author_list">
         <field_parser name="regex_split" regex="\s,\s" trim="true" />
@@ -55,7 +57,9 @@
 		<collection name="citations" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
-			<scalar name="location" xpath=".//a[1]/@href" />
+			<scalar name="location" xpath=".//a[1]/@href">
+			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)" replace="preflayout=flat" />
+			</scalar>
 <!-- 			<scalar name="description" layer="10.0" xpath="." /> -->
       <collection name="authors" field_parser_key="$author_list">
         <field_parser name="regex_split" regex="\s,\s" trim="true" />
