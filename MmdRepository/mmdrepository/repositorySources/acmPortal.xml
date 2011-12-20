@@ -12,7 +12,9 @@
 		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="metadata_page" as_natural_id="title" format="text" />
 
 		<collection name="authors" xpath="//div[@id='divmain']//a[@title='Author Profile Page']">
-			<scalar name="location" xpath="./@href" />
+			<scalar name="location" xpath="./@href">
+				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)" replace="" />
+			</scalar>
 			<scalar name="title" xpath="./text()" />
 			<scalar name="affiliation" xpath="../..//a[@title='Institutional Profile Page']" />
 		</collection>
@@ -21,7 +23,9 @@
 			<scalar name="location" xpath=".//td[text()='Title']/following-sibling::td/a[1]" />
 			<scalar name="title" xpath=".//td[text()='Title']/following-sibling::td[1]" />
 			<collection name="authors" label="chairs" comment="Publication general/program chairs." xpath=".//td[contains(text(), 'Chairs')]/following-sibling::td/a">
-				<scalar name="location" xpath="./@href" />
+				<scalar name="location" xpath="./@href">
+				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)" replace="" />
+				</scalar>
 				<scalar name="title" xpath="." />
 <!-- 				<scalar name="affiliation" /> -->
 <!-- 				<scalar name="city" /> -->
