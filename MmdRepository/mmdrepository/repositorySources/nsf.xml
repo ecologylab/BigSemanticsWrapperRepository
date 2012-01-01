@@ -1,0 +1,79 @@
+<meta_metadata_repository name="nsf" package="ecologylab.semantics.generated.library.nsf">
+
+  <meta_metadata name="nsf_award" comment="NSF Award details." extends="compound_document"
+    parser="xpath">
+
+    <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
+
+    <scalar name="title" xpath="//span[@class='pageheadline']/strong" />
+
+    <composite name="nsf_org" type="document"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'NSF Org:')]/following::td[@class='tabletext2'][1]/a[2]">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </composite>
+    <scalar name="initial_amendment_date" scalar_type="Date"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Initial Amendment Date:')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="latest_amendment_date" scalar_type="Date"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Latest Amendment Date:')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="award_number" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Award Number:')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="award_instrument" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Award Instrument:')]/following::td[@class='tabletext2'][1]" />
+    <composite name="program_manager" type="author"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Manager:')]/following::td[@class='tabletext2'][1]">
+      <scalar name="title" xpath="." />
+      <scalar name="affiliation" xpath="" />
+    </composite>
+    <scalar name="start_date" scalar_type="Date"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Start Date:')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="expire_date" scalar_type="Date"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Expires:')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="awarded_amount_to_date" scalar_type="Int"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to Date:')]/following::td[@class='tabletext2'][1]">
+      <filter regex="^\$" replace="" />
+    </scalar>
+    <collection name="investigators" child_tag="investigator" child_type="investigator"
+      child_extends="author"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Investigator(s):')]/following::td[@class='tabletext2'][1]">
+      <scalar name="title" xpath="." />
+      <scalar name="email_address" scalar_type="String" xpath="" />
+      <scalar name="investigation_type" scalar_type="String" xpath="" />
+    </collection>
+    <scalar name="sponsor" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Sponsor:')]/following::td[@class='tabletext2'][1]" />
+
+    <scalar name="nsf_programs" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'NSF Program(s):')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="field_applications" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Field Application(s):')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="program_reference_codes" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Reference Code(s):')]/following::td[@class='tabletext2'][1]" />
+    <scalar name="program_element_codes" scalar_type="String"
+      xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element Code(s):')]/following::td[@class='tabletext2'][1]" />
+
+    <scalar name="abstract_field" scalar_type="String" label="abstract"
+      xpath="//strong[@class='greybold' and starts-with(text(), 'ABSTRACT')]/parent::p" />
+    <collection name="relevant_locations" child_tag="relevant_location"
+      child_scalar_type="ParsedURL" />
+    <collection name="publications" child_tag="publication" child_scalar_type="String"
+      xpath="//strong[@class='greybold' and starts-with(text(), 'PUBLICATIONS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p" />
+    <collection name="proceedings" child_tag="proceeding" child_scalar_type="String"
+      xpath="//strong[@class='greybold' and starts-with(text(), 'CONFERENCE PROCEEDINGS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p" />
+
+  </meta_metadata>
+
+  <meta_metadata name="nsf_award_search" comment="NSF Award search." extends="search"
+    parser="xpath">
+
+    <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" />
+
+    <collection name="search_results" xpath="//table[@class='resultTable']/tbody//tr">
+      <scalar name="title" xpath="./td[2]" />
+      <scalar name="location" xpath="./td[2]/a/@href" />
+      <scalar name="description" xpath="" />
+    </collection>
+
+  </meta_metadata>
+
+</meta_metadata_repository>
