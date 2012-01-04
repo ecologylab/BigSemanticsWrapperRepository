@@ -29,6 +29,7 @@ using ecologylab.semantics.generated.library.icdl;
 using ecologylab.semantics.generated.library.imdb;
 using ecologylab.semantics.generated.library.misc;
 using ecologylab.semantics.generated.library.nsdl;
+using ecologylab.semantics.generated.library.nsf;
 using ecologylab.semantics.generated.library.opml;
 using ecologylab.semantics.generated.library.patents;
 using ecologylab.semantics.generated.library.political_cartoon;
@@ -109,6 +110,8 @@ namespace ecologylab.semantics.generated.library
 				typeof(IcdlImage),
 				typeof(Dlms),
 				typeof(Nsdl),
+				typeof(NsfAwardSearch),
+				typeof(NsfAward),
 				typeof(Opml),
 				typeof(GooglePatent),
 				typeof(GoogleSorry),

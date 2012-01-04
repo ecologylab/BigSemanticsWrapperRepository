@@ -55,6 +55,7 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -157,6 +158,9 @@
     <Compile Include="ecologylab\semantics\generated\library\nsdl\NsdlDocument.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\NsdlService.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\SearchResults.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\Investigator.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfAward.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfAwardSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\opml\Body.cs" />
     <Compile Include="ecologylab\semantics\generated\library\opml\Head.cs" />
     <Compile Include="ecologylab\semantics\generated\library\opml\Opml.cs" />
