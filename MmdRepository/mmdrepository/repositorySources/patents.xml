@@ -19,7 +19,7 @@
 		</before_semantic_actions>
 	</meta_metadata>
 	
-	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" user_agent_name="firefox_5" parser="xpath">
+	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" parser="xpath">
 		<selector url_stripped="http://www.google.com/patents/about"/>
 		<selector url_stripped="http://www.google.com/patents"/>
 		<selector domain="google.com" url_path_tree="http://www.google.com/patents/"/>
@@ -69,7 +69,6 @@
 				<strip_param name="q" />
 				<strip_param name="f" />
 				<strip_param name="pg" />
-				<regex match="/patents" replace="/patents/about"/>
 			</filter_location>
 		</before_semantic_actions>
 
