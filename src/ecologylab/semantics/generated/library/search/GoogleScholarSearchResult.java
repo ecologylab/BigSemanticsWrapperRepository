@@ -13,11 +13,13 @@ import ecologylab.semantics.generated.library.search.SearchResult;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +31,9 @@ public class GoogleScholarSearchResult extends SearchResult
 {
 	@simpl_scalar
 	private MetadataParsedURL documentLink;
+
+	@simpl_scalar
+	private MetadataString sourceInfo;
 
 	@simpl_scalar
 	private MetadataInteger citations;
@@ -83,6 +88,38 @@ public class GoogleScholarSearchResult extends SearchResult
 	public void setDocumentLinkMetadata(MetadataParsedURL documentLink)
 	{
 		this.documentLink = documentLink;
+	}
+
+	public MetadataString	sourceInfo()
+	{
+		MetadataString	result = this.sourceInfo;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.sourceInfo = result;
+		}
+		return result;
+	}
+
+	public String getSourceInfo()
+	{
+		return this.sourceInfo == null ? null : sourceInfo().getValue();
+	}
+
+	public MetadataString getSourceInfoMetadata()
+	{
+		return sourceInfo;
+	}
+
+	public void setSourceInfo(String sourceInfo)
+	{
+		if (sourceInfo != null)
+			this.sourceInfo().setValue(sourceInfo);
+	}
+
+	public void setSourceInfoMetadata(MetadataString sourceInfo)
+	{
+		this.sourceInfo = sourceInfo;
 	}
 
 	public MetadataInteger	citations()
