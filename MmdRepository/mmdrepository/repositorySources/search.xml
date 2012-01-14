@@ -43,7 +43,8 @@
 	<meta_metadata name="google_scholar_search_result" extends="search_result" comment="A google scholar search result" user_agent_name="opera_9" parser="xpath">
 		<url_generator type="search" engine="google_scholar" use_id="title" />
 		<scalar name="title" as_natural_id="title" />
-		<scalar name="document_link" scalar_type="ParsedURL" hide="true" />
+    <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
+    <scalar name="source_info" scalar_type="String" />
 		<scalar name="citations" scalar_type="Int" navigates_to="citations_link" />
 		<scalar name="citations_link" scalar_type="ParsedURL" hide="true" />
 		<scalar name="related_articles_link" scalar_type="ParsedURL" label="related articles" />
@@ -53,25 +54,25 @@
 
 	<meta_metadata name="google_scholar_search" extends="document" comment="The google Search class" user_agent_name="opera_9" parser="xpath">
 		<selector url_stripped="http://scholar.google.com/scholar" />
-		<def_var name="links_row" xpath="//span[@class='gs_fl']" type="node" />
-		<def_var name="pub_row" xpath="//span[@class='gs_a']" type="node" />
     
 		<collection name="search_results" xpath="//div[@class='gs_r']" child_type="google_scholar_search_result" no_wrap="true">
-			<scalar name="title" xpath="./div/h3/a" />
-			<scalar name="description" xpath="./font">
-				<filter regex="Cited by [0-9]* - [A-Za-z \-@0-9]*" replace="" />
-			</scalar>
-			<scalar name="location" xpath="./div/h3/a/@href" />
-			<scalar name="document_link" xpath="./span/a/@href" />
-			<scalar name="citations" context_node="links_row" xpath="./a[1]">
+			<scalar name="title" xpath="./h3/a" />
+			<scalar name="description" xpath="./div[@class='gs_rs']" />
+			<scalar name="location" xpath="./h3/a/@href" />
+      <scalar name="source_info" xpath="./div[@class='gs_a']" />
+      
+      <!-- FIXME this context node is not working -->
+<!--       <def_var name="links_row" xpath="./div[@class='gs_fl']" type="node" /> -->
+    
+			<scalar name="citations" xpath="./div[@class='gs_fl']/a[1]">
 				<filter regex="Cited by " replace="" />
 			</scalar>
-			<scalar name="citations_link" context_node="links_row" xpath="./a[1]/@href" />
-			<scalar name="related_articles_link" context_node="links_row" xpath="./a[2]/@href" />
-			<scalar name="versions" context_node="links_row" xpath="./a[last()]">
+			<scalar name="citations_link" xpath="./div[@class='gs_fl']/a[1]/@href" />
+			<scalar name="related_articles_link" xpath="./div[@class='gs_fl']/a[2]/@href" />
+			<scalar name="versions" xpath="./div[@class='gs_fl']/a[last()]">
 				<filter regex="All | versions" replace="" />
 			</scalar>
-			<scalar name="versions_link" context_node="links_row" xpath="./a[last()]/@href" />
+			<scalar name="versions_link" xpath="./div[@class='gs_fl']/a[last()]/@href" />
 		</collection>
     
 		<semantic_actions>
