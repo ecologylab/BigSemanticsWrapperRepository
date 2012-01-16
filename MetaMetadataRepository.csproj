@@ -92,6 +92,7 @@
     <Content Include="MmdRepository\mmdrepository\repositorySources\lolzType.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\misc.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\news.xml" />
+    <Content Include="MmdRepository\mmdrepository\repositorySources\nsf.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\opml.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\patents.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\products.xml" />
