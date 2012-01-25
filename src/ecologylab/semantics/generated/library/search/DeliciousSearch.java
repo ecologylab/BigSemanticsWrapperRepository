@@ -23,7 +23,7 @@ import java.util.Map;
 public class DeliciousSearch extends Search
 {
 	public DeliciousSearch()
-	{ }
+	{ super(); }
 
 	public DeliciousSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

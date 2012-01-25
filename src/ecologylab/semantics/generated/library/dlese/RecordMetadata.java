@@ -29,7 +29,7 @@ public class RecordMetadata extends Metadata
 	private ItemRecord itemRecord;
 
 	public RecordMetadata()
-	{ }
+	{ super(); }
 
 	public RecordMetadata(MetaMetadataCompositeField mmd) {
 		super(mmd);

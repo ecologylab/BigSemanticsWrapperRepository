@@ -38,7 +38,7 @@ public class YahooResultSet extends Document
 	private List<YahooResult> results;
 
 	public YahooResultSet()
-	{ }
+	{ super(); }
 
 	public YahooResultSet(MetaMetadataCompositeField mmd) {
 		super(mmd);

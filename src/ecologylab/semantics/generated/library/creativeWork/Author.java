@@ -32,7 +32,7 @@ public class Author extends Document
 	private MetadataString city;
 
 	public Author()
-	{ }
+	{ super(); }
 
 	public Author(MetaMetadataCompositeField mmd) {
 		super(mmd);

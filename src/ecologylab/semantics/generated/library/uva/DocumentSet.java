@@ -30,7 +30,7 @@ public class DocumentSet extends Metadata
 	private List<Document> documents;
 
 	public DocumentSet()
-	{ }
+	{ super(); }
 
 	public DocumentSet(MetaMetadataCompositeField mmd) {
 		super(mmd);

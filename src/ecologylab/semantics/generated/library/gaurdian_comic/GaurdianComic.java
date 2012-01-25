@@ -44,7 +44,7 @@ public class GaurdianComic extends Document
 	private MetadataString datePublished;
 
 	public GaurdianComic()
-	{ }
+	{ super(); }
 
 	public GaurdianComic(MetaMetadataCompositeField mmd) {
 		super(mmd);

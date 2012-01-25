@@ -30,7 +30,7 @@ public class CiteseerxRecord extends ScholarlyArticle
 	private CitationInfo citationInfo;
 
 	public CiteseerxRecord()
-	{ }
+	{ super(); }
 
 	public CiteseerxRecord(MetaMetadataCompositeField mmd) {
 		super(mmd);

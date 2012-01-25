@@ -35,7 +35,7 @@ public class Rss22 extends CompoundDocument
 	private List<Item> items;
 
 	public Rss22()
-	{ }
+	{ super(); }
 
 	public Rss22(MetaMetadataCompositeField mmd) {
 		super(mmd);

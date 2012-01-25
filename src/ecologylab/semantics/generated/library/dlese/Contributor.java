@@ -38,7 +38,7 @@ public class Contributor extends Metadata
 	private MetadataInteger date;
 
 	public Contributor()
-	{ }
+	{ super(); }
 
 	public Contributor(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -60,7 +60,7 @@ public class Artwork extends CompoundDocument
 	private MetadataString dimensions;
 
 	public Artwork()
-	{ }
+	{ super(); }
 
 	public Artwork(MetaMetadataCompositeField mmd) {
 		super(mmd);

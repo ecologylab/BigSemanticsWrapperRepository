@@ -32,7 +32,7 @@ public class SlashdotRss extends CompoundDocument
 	private List<SlashdotItem> items;
 
 	public SlashdotRss()
-	{ }
+	{ super(); }
 
 	public SlashdotRss(MetaMetadataCompositeField mmd) {
 		super(mmd);

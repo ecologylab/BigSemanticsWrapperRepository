@@ -26,7 +26,7 @@ public class Head extends Metadata
 	private MetadataString title;
 
 	public Head()
-	{ }
+	{ super(); }
 
 	public Head(MetaMetadataCompositeField mmd) {
 		super(mmd);

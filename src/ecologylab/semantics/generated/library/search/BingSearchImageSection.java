@@ -30,7 +30,7 @@ public class BingSearchImageSection extends CompoundDocument
 	private List<BingImageSearchResult> imageSearchResults;
 
 	public BingSearchImageSection()
-	{ }
+	{ super(); }
 
 	public BingSearchImageSection(MetaMetadataCompositeField mmd) {
 		super(mmd);

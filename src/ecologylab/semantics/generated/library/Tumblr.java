@@ -32,7 +32,7 @@ public class Tumblr extends CompoundDocument
 	private MetadataString post;
 
 	public Tumblr()
-	{ }
+	{ super(); }
 
 	public Tumblr(MetaMetadataCompositeField mmd) {
 		super(mmd);

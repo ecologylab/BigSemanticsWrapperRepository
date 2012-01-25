@@ -29,7 +29,7 @@ public class AcmPortalSearchResult extends SearchResult
 	private MetadataString publication;
 
 	public AcmPortalSearchResult()
-	{ }
+	{ super(); }
 
 	public AcmPortalSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

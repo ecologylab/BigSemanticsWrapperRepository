@@ -26,7 +26,7 @@ public class KeywordSet extends Metadata
 	private MetadataString type;
 
 	public KeywordSet()
-	{ }
+	{ super(); }
 
 	public KeywordSet(MetaMetadataCompositeField mmd) {
 		super(mmd);

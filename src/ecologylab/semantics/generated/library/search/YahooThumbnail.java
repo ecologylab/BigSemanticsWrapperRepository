@@ -43,7 +43,7 @@ public class YahooThumbnail extends Metadata
 	private MetadataInteger height;
 
 	public YahooThumbnail()
-	{ }
+	{ super(); }
 
 	public YahooThumbnail(MetaMetadataCompositeField mmd) {
 		super(mmd);

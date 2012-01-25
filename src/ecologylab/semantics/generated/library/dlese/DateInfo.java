@@ -29,7 +29,7 @@ public class DateInfo extends Metadata
 	private MetadataDate accessioned;
 
 	public DateInfo()
-	{ }
+	{ super(); }
 
 	public DateInfo(MetaMetadataCompositeField mmd) {
 		super(mmd);

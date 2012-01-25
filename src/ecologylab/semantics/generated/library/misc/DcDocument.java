@@ -26,7 +26,7 @@ public class DcDocument extends CompoundDocument
 	private MetadataString subject;
 
 	public DcDocument()
-	{ }
+	{ super(); }
 
 	public DcDocument(MetaMetadataCompositeField mmd) {
 		super(mmd);

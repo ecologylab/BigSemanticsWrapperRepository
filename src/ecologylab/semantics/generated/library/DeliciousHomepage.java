@@ -31,7 +31,7 @@ public class DeliciousHomepage extends CompoundDocument
 	private List<Bookmark> bookmarks;
 
 	public DeliciousHomepage()
-	{ }
+	{ super(); }
 
 	public DeliciousHomepage(MetaMetadataCompositeField mmd) {
 		super(mmd);

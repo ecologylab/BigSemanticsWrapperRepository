@@ -38,7 +38,7 @@ public class MmArtwork extends Artwork
 	private MetadataParsedURL extendedAbstract;
 
 	public MmArtwork()
-	{ }
+	{ super(); }
 
 	public MmArtwork(MetaMetadataCompositeField mmd) {
 		super(mmd);

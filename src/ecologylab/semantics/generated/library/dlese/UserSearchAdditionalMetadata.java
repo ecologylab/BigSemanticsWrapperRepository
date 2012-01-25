@@ -29,7 +29,7 @@ public class UserSearchAdditionalMetadata extends AdditionalMetadata
 	private SearchAdditionalMetadataAdn searchAdditionalMetadataAdn;
 
 	public UserSearchAdditionalMetadata()
-	{ }
+	{ super(); }
 
 	public UserSearchAdditionalMetadata(MetaMetadataCompositeField mmd) {
 		super(mmd);

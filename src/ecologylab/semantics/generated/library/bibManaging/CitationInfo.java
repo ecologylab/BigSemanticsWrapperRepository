@@ -32,7 +32,7 @@ public class CitationInfo extends Metadata
 	private MetadataInteger selfCitation;
 
 	public CitationInfo()
-	{ }
+	{ super(); }
 
 	public CitationInfo(MetaMetadataCompositeField mmd) {
 		super(mmd);

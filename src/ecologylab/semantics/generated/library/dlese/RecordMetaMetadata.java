@@ -38,7 +38,7 @@ public class RecordMetaMetadata extends Metadata
 	private List<MetadataString> catalogs;
 
 	public RecordMetaMetadata()
-	{ }
+	{ super(); }
 
 	public RecordMetaMetadata(MetaMetadataCompositeField mmd) {
 		super(mmd);

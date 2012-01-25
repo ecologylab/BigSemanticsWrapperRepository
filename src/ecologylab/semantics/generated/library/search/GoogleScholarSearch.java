@@ -33,7 +33,7 @@ public class GoogleScholarSearch extends Document
 	private List<GoogleScholarSearchResult> searchResults;
 
 	public GoogleScholarSearch()
-	{ }
+	{ super(); }
 
 	public GoogleScholarSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

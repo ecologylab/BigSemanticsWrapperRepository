@@ -32,7 +32,7 @@ public class Organization extends Metadata
 	private MetadataString name;
 
 	public Organization()
-	{ }
+	{ super(); }
 
 	public Organization(MetaMetadataCompositeField mmd) {
 		super(mmd);

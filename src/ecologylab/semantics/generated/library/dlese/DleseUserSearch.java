@@ -30,7 +30,7 @@ public class DleseUserSearch extends CompoundDocument
 	private SearchSection searchSection;
 
 	public DleseUserSearch()
-	{ }
+	{ super(); }
 
 	public DleseUserSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -26,7 +26,7 @@ public class Thumbnail extends Metadata
 	private MetadataParsedURL pic;
 
 	public Thumbnail()
-	{ }
+	{ super(); }
 
 	public Thumbnail(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -51,7 +51,7 @@ public class TopicCluster extends Metadata
 	private MetadataInteger height;
 
 	public TopicCluster()
-	{ }
+	{ super(); }
 
 	public TopicCluster(MetaMetadataCompositeField mmd) {
 		super(mmd);

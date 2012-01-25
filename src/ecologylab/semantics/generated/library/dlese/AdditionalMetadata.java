@@ -20,7 +20,7 @@ import java.util.Map;
 public class AdditionalMetadata extends Metadata
 {
 	public AdditionalMetadata()
-	{ }
+	{ super(); }
 
 	public AdditionalMetadata(MetaMetadataCompositeField mmd) {
 		super(mmd);

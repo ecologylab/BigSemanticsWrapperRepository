@@ -28,7 +28,7 @@ public class Header extends Metadata
 	private MetadataParsedURL resourceIdentifier;
 
 	public Header()
-	{ }
+	{ super(); }
 
 	public Header(MetaMetadataCompositeField mmd) {
 		super(mmd);

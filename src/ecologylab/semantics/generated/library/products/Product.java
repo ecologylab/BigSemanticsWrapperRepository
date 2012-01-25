@@ -48,7 +48,7 @@ public class Product extends CompoundDocument
 	private List<ProductReview> reviews;
 
 	public Product()
-	{ }
+	{ super(); }
 
 	public Product(MetaMetadataCompositeField mmd) {
 		super(mmd);

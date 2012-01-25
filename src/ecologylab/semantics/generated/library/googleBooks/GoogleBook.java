@@ -44,7 +44,7 @@ public class GoogleBook extends Book
 	private List<Page> selectedPages;
 
 	public GoogleBook()
-	{ }
+	{ super(); }
 
 	public GoogleBook(MetaMetadataCompositeField mmd) {
 		super(mmd);

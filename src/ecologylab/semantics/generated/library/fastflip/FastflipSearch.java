@@ -31,7 +31,7 @@ public class FastflipSearch extends CompoundDocument
 	private List<Thumbnail> thumbnails;
 
 	public FastflipSearch()
-	{ }
+	{ super(); }
 
 	public FastflipSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

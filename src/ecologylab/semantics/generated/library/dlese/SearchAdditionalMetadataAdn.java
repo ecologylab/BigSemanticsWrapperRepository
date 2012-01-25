@@ -32,7 +32,7 @@ public class SearchAdditionalMetadataAdn extends Metadata
 	private MetadataString accessionStatus;
 
 	public SearchAdditionalMetadataAdn()
-	{ }
+	{ super(); }
 
 	public SearchAdditionalMetadataAdn(MetaMetadataCompositeField mmd) {
 		super(mmd);

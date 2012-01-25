@@ -78,7 +78,7 @@ public class PersonDetails extends CompoundDocument
 	private List<ImdbTitle> titlesAsSelf;
 
 	public PersonDetails()
-	{ }
+	{ super(); }
 
 	public PersonDetails(MetaMetadataCompositeField mmd) {
 		super(mmd);

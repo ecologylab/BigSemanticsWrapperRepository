@@ -56,7 +56,7 @@ public class Dc extends CompoundDocument
 	private MetadataDate dcDate;
 
 	public Dc()
-	{ }
+	{ super(); }
 
 	public Dc(MetaMetadataCompositeField mmd) {
 		super(mmd);

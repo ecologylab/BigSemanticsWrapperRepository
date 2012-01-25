@@ -70,7 +70,7 @@ public class WeatherReport extends CompoundDocument
 	private MetadataString dewPoint;
 
 	public WeatherReport()
-	{ }
+	{ super(); }
 
 	public WeatherReport(MetaMetadataCompositeField mmd) {
 		super(mmd);

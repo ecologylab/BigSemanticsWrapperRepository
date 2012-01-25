@@ -42,7 +42,7 @@ public class TrumanLibrary1948CampaignCartoons extends Document
 	private MetadataParsedURL imgPurl;
 
 	public TrumanLibrary1948CampaignCartoons()
-	{ }
+	{ super(); }
 
 	public TrumanLibrary1948CampaignCartoons(MetaMetadataCompositeField mmd) {
 		super(mmd);

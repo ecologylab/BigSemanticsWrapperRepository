@@ -46,7 +46,7 @@ public class Patent extends CreativeWork
 	private List<Document> classifications;
 
 	public Patent()
-	{ }
+	{ super(); }
 
 	public Patent(MetaMetadataCompositeField mmd) {
 		super(mmd);

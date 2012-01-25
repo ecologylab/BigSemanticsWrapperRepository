@@ -42,7 +42,7 @@ public class YahooMediaRss extends Dc
 	private MetadataString mediaDescription;
 
 	public YahooMediaRss()
-	{ }
+	{ super(); }
 
 	public YahooMediaRss(MetaMetadataCompositeField mmd) {
 		super(mmd);

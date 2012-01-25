@@ -37,7 +37,7 @@ public class Lolz extends CompoundDocument
 	private MetadataParsedURL mightLike;
 
 	public Lolz()
-	{ }
+	{ super(); }
 
 	public Lolz(MetaMetadataCompositeField mmd) {
 		super(mmd);

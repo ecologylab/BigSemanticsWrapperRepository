@@ -26,7 +26,7 @@ public class HotSearch extends Metadata
 	private MetadataString search;
 
 	public HotSearch()
-	{ }
+	{ super(); }
 
 	public HotSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

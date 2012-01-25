@@ -43,7 +43,7 @@ public class SocialMediaSearchResult extends SearchResult
 	private List<Tag> tags;
 
 	public SocialMediaSearchResult()
-	{ }
+	{ super(); }
 
 	public SocialMediaSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

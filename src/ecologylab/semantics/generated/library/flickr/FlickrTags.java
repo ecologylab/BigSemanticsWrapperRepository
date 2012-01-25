@@ -34,7 +34,7 @@ public class FlickrTags extends CompoundDocument
 	private List<FlickrLink> flickrLinkSet;
 
 	public FlickrTags()
-	{ }
+	{ super(); }
 
 	public FlickrTags(MetaMetadataCompositeField mmd) {
 		super(mmd);

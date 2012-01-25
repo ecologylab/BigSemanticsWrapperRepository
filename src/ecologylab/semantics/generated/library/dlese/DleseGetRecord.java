@@ -31,7 +31,7 @@ public class DleseGetRecord extends CompoundDocument
 	private List<DleseRecord2> records;
 
 	public DleseGetRecord()
-	{ }
+	{ super(); }
 
 	public DleseGetRecord(MetaMetadataCompositeField mmd) {
 		super(mmd);

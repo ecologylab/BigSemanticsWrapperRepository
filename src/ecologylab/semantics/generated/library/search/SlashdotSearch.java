@@ -23,7 +23,7 @@ import java.util.Map;
 public class SlashdotSearch extends Search
 {
 	public SlashdotSearch()
-	{ }
+	{ super(); }
 
 	public SlashdotSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -23,7 +23,7 @@ import java.util.Map;
 public class CiteseerxSearch extends Search
 {
 	public CiteseerxSearch()
-	{ }
+	{ super(); }
 
 	public CiteseerxSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

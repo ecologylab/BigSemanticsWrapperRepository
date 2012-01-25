@@ -23,7 +23,7 @@ import java.util.Map;
 public class GoogleImageSearchPage extends GoogleImageSearchType
 {
 	public GoogleImageSearchPage()
-	{ }
+	{ super(); }
 
 	public GoogleImageSearchPage(MetaMetadataCompositeField mmd) {
 		super(mmd);

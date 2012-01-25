@@ -34,7 +34,7 @@ public class GlobeCartoon extends Document
 	private MetadataParsedURL imgLocation;
 
 	public GlobeCartoon()
-	{ }
+	{ super(); }
 
 	public GlobeCartoon(MetaMetadataCompositeField mmd) {
 		super(mmd);

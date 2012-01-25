@@ -46,7 +46,7 @@ public class BirthDetail extends CompoundDocument
 	private MetadataParsedURL placeOfBirthLink;
 
 	public BirthDetail()
-	{ }
+	{ super(); }
 
 	public BirthDetail(MetaMetadataCompositeField mmd) {
 		super(mmd);

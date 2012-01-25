@@ -49,7 +49,7 @@ public class CreativeWork extends CompoundDocument
 	private MetadataInteger year;
 
 	public CreativeWork()
-	{ }
+	{ super(); }
 
 	public CreativeWork(MetaMetadataCompositeField mmd) {
 		super(mmd);

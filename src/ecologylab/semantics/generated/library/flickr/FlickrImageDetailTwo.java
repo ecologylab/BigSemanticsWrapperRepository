@@ -54,7 +54,7 @@ public class FlickrImageDetailTwo extends CompoundDocument
 	private AuthorPhotos authorPhotos;
 
 	public FlickrImageDetailTwo()
-	{ }
+	{ super(); }
 
 	public FlickrImageDetailTwo(MetaMetadataCompositeField mmd) {
 		super(mmd);

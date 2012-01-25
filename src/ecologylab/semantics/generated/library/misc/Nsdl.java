@@ -29,7 +29,7 @@ public class Nsdl extends CompoundDocument
 	private MetadataString subject;
 
 	public Nsdl()
-	{ }
+	{ super(); }
 
 	public Nsdl(MetaMetadataCompositeField mmd) {
 		super(mmd);

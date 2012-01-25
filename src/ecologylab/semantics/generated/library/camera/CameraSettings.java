@@ -51,7 +51,7 @@ public class CameraSettings extends Metadata
 	private MetadataInteger resolution;
 
 	public CameraSettings()
-	{ }
+	{ super(); }
 
 	public CameraSettings(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -36,7 +36,7 @@ public class DleseRecord extends Document
 	private RecordMetadata recordMetadata;
 
 	public DleseRecord()
-	{ }
+	{ super(); }
 
 	public DleseRecord(MetaMetadataCompositeField mmd) {
 		super(mmd);

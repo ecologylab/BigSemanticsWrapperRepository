@@ -31,7 +31,7 @@ public class Category extends Metadata
 	private MetadataParsedURL catLink;
 
 	public Category()
-	{ }
+	{ super(); }
 
 	public Category(MetaMetadataCompositeField mmd) {
 		super(mmd);

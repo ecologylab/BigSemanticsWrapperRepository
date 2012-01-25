@@ -49,7 +49,7 @@ public class SfuCartoonArchive extends Document
 	private MetadataString sfuReferenceCode;
 
 	public SfuCartoonArchive()
-	{ }
+	{ super(); }
 
 	public SfuCartoonArchive(MetaMetadataCompositeField mmd) {
 		super(mmd);

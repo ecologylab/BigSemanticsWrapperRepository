@@ -30,7 +30,7 @@ public class Rss extends Document
 	private Channel channel;
 
 	public Rss()
-	{ }
+	{ super(); }
 
 	public Rss(MetaMetadataCompositeField mmd) {
 		super(mmd);

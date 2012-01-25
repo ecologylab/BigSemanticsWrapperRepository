@@ -28,7 +28,7 @@ public class Model extends Metadata
 	private List<TopicCluster> topicClusters;
 
 	public Model()
-	{ }
+	{ super(); }
 
 	public Model(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -37,7 +37,7 @@ public class FlickrLink extends Metadata
 	private MetadataString title;
 
 	public FlickrLink()
-	{ }
+	{ super(); }
 
 	public FlickrLink(MetaMetadataCompositeField mmd) {
 		super(mmd);

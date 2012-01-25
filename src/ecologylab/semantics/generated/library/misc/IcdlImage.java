@@ -32,7 +32,7 @@ public class IcdlImage extends Image
 	private MetadataString languages;
 
 	public IcdlImage()
-	{ }
+	{ super(); }
 
 	public IcdlImage(MetaMetadataCompositeField mmd) {
 		super(mmd);

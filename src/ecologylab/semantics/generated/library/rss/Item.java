@@ -43,7 +43,7 @@ public class Item extends YahooMediaRss
 	private List<MetadataString> categories;
 
 	public Item()
-	{ }
+	{ super(); }
 
 	public Item(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -40,7 +40,7 @@ public class FlickrImageDetail extends CompoundDocument
 	private List<FlickrTag> flickrTags;
 
 	public FlickrImageDetail()
-	{ }
+	{ super(); }
 
 	public FlickrImageDetail(MetaMetadataCompositeField mmd) {
 		super(mmd);

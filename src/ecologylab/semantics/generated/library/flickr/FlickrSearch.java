@@ -23,7 +23,7 @@ import java.util.Map;
 public class FlickrSearch extends CompoundDocument
 {
 	public FlickrSearch()
-	{ }
+	{ super(); }
 
 	public FlickrSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

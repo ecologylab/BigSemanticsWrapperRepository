@@ -33,7 +33,7 @@ public class GoogleTrends extends CompoundDocument
 	private List<HotSearch> hotSearches;
 
 	public GoogleTrends()
-	{ }
+	{ super(); }
 
 	public GoogleTrends(MetaMetadataCompositeField mmd) {
 		super(mmd);

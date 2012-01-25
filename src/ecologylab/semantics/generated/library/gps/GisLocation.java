@@ -40,7 +40,7 @@ public class GisLocation extends Metadata
 	private MetadataString satellites;
 
 	public GisLocation()
-	{ }
+	{ super(); }
 
 	public GisLocation(MetaMetadataCompositeField mmd) {
 		super(mmd);

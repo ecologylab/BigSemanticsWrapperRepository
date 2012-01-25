@@ -68,7 +68,7 @@ public class PdfMixin extends Metadata
 	private MetadataString creationdate;
 
 	public PdfMixin()
-	{ }
+	{ super(); }
 
 	public PdfMixin(MetaMetadataCompositeField mmd) {
 		super(mmd);

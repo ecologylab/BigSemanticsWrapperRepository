@@ -34,7 +34,7 @@ public class FlickrAuthor extends CompoundDocument
 	private List<FlickrLink> flickrLinkSet;
 
 	public FlickrAuthor()
-	{ }
+	{ super(); }
 
 	public FlickrAuthor(MetaMetadataCompositeField mmd) {
 		super(mmd);

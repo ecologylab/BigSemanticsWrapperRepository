@@ -31,7 +31,7 @@ public class FlickrSearchTwo extends CompoundDocument
 	private List<FlickrImageDetail> flickrResults;
 
 	public FlickrSearchTwo()
-	{ }
+	{ super(); }
 
 	public FlickrSearchTwo(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -33,7 +33,7 @@ public class FlickrTag extends Metadata
 	private MetadataParsedURL tagLink;
 
 	public FlickrTag()
-	{ }
+	{ super(); }
 
 	public FlickrTag(MetaMetadataCompositeField mmd) {
 		super(mmd);

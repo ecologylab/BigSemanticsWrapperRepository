@@ -28,7 +28,7 @@ public class Lifecycle extends Metadata
 	private List<Contributor> contributors;
 
 	public Lifecycle()
-	{ }
+	{ super(); }
 
 	public Lifecycle(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -36,7 +36,7 @@ public class Bookmark extends Metadata
 	private MetadataParsedURL pic;
 
 	public Bookmark()
-	{ }
+	{ super(); }
 
 	public Bookmark(MetaMetadataCompositeField mmd) {
 		super(mmd);

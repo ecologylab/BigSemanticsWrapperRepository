@@ -48,7 +48,7 @@ public class IcdlBook extends Document
 	private MetadataParsedURL bookurl;
 
 	public IcdlBook()
-	{ }
+	{ super(); }
 
 	public IcdlBook(MetaMetadataCompositeField mmd) {
 		super(mmd);

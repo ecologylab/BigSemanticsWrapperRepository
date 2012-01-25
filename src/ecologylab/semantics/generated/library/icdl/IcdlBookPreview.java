@@ -55,7 +55,7 @@ public class IcdlBookPreview extends Metadata
 	private MetadataString awards;
 
 	public IcdlBookPreview()
-	{ }
+	{ super(); }
 
 	public IcdlBookPreview(MetaMetadataCompositeField mmd) {
 		super(mmd);

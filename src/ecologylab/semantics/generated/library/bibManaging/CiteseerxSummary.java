@@ -41,7 +41,7 @@ public class CiteseerxSummary extends CiteseerxRecord
 	private MetadataParsedURL cocitationPage;
 
 	public CiteseerxSummary()
-	{ }
+	{ super(); }
 
 	public CiteseerxSummary(MetaMetadataCompositeField mmd) {
 		super(mmd);

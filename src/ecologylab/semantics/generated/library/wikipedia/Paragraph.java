@@ -37,7 +37,7 @@ public class Paragraph extends Metadata
 	private MetadataString paragraphText;
 
 	public Paragraph()
-	{ }
+	{ super(); }
 
 	public Paragraph(MetaMetadataCompositeField mmd) {
 		super(mmd);

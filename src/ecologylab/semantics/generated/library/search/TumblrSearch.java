@@ -23,7 +23,7 @@ import java.util.Map;
 public class TumblrSearch extends Search
 {
 	public TumblrSearch()
-	{ }
+	{ super(); }
 
 	public TumblrSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

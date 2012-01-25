@@ -39,7 +39,7 @@ public class SlashdotItem extends Item
 	private MetadataString section;
 
 	public SlashdotItem()
-	{ }
+	{ super(); }
 
 	public SlashdotItem(MetaMetadataCompositeField mmd) {
 		super(mmd);

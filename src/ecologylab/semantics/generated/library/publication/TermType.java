@@ -33,7 +33,7 @@ public class TermType extends Document
 	private MetadataInteger frequency;
 
 	public TermType()
-	{ }
+	{ super(); }
 
 	public TermType(MetaMetadataCompositeField mmd) {
 		super(mmd);

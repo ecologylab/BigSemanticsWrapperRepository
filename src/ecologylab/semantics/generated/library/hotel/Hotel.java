@@ -45,7 +45,7 @@ public class Hotel extends Document
 	private MetadataString temp;
 
 	public Hotel()
-	{ }
+	{ super(); }
 
 	public Hotel(MetaMetadataCompositeField mmd) {
 		super(mmd);

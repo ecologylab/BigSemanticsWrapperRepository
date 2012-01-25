@@ -36,7 +36,7 @@ public class MediaContent extends Metadata
 	private MetadataInteger width;
 
 	public MediaContent()
-	{ }
+	{ super(); }
 
 	public MediaContent(MetaMetadataCompositeField mmd) {
 		super(mmd);

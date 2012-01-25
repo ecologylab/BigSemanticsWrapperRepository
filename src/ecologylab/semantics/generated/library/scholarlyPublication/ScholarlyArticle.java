@@ -76,7 +76,7 @@ public class ScholarlyArticle extends CreativeWork
 	private MetadataString pages;
 
 	public ScholarlyArticle()
-	{ }
+	{ super(); }
 
 	public ScholarlyArticle(MetaMetadataCompositeField mmd) {
 		super(mmd);

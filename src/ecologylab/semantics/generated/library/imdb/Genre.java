@@ -31,7 +31,7 @@ public class Genre extends Metadata
 	private MetadataParsedURL genreLink;
 
 	public Genre()
-	{ }
+	{ super(); }
 
 	public Genre(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -50,7 +50,7 @@ public class PostalAddress extends ContactPoint
 	private MetadataString country;
 
 	public PostalAddress()
-	{ }
+	{ super(); }
 
 	public PostalAddress(MetaMetadataCompositeField mmd) {
 		super(mmd);

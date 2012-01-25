@@ -39,7 +39,7 @@ public class General extends Metadata
 	private MetadataString language;
 
 	public General()
-	{ }
+	{ super(); }
 
 	public General(MetaMetadataCompositeField mmd) {
 		super(mmd);

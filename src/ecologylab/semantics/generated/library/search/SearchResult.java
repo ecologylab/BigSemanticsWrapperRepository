@@ -32,7 +32,7 @@ public class SearchResult extends Document
 	private MetadataString engine;
 
 	public SearchResult()
-	{ }
+	{ super(); }
 
 	public SearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

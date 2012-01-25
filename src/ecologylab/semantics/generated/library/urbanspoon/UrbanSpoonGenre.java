@@ -31,7 +31,7 @@ public class UrbanSpoonGenre extends Search
 	private List<SearchResult> topResults;
 
 	public UrbanSpoonGenre()
-	{ }
+	{ super(); }
 
 	public UrbanSpoonGenre(MetaMetadataCompositeField mmd) {
 		super(mmd);

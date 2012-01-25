@@ -42,7 +42,7 @@ public class ImageInSearchResult extends Image
 	private MetadataInteger fileSize;
 
 	public ImageInSearchResult()
-	{ }
+	{ super(); }
 
 	public ImageInSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

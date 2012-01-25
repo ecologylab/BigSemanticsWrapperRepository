@@ -35,7 +35,7 @@ public class IcdlImageResult extends Document
 	private List<IcdlBook> books;
 
 	public IcdlImageResult()
-	{ }
+	{ super(); }
 
 	public IcdlImageResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

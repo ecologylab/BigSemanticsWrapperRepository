@@ -51,7 +51,7 @@ public class GoogleScholarSearchResult extends SearchResult
 	private MetadataParsedURL versionsLink;
 
 	public GoogleScholarSearchResult()
-	{ }
+	{ super(); }
 
 	public GoogleScholarSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

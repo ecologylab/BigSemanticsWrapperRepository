@@ -20,7 +20,7 @@ import java.util.Map;
 public class Head2 extends DleseRecordHead
 {
 	public Head2()
-	{ }
+	{ super(); }
 
 	public Head2(MetaMetadataCompositeField mmd) {
 		super(mmd);

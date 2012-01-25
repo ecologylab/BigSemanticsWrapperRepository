@@ -29,7 +29,7 @@ public class Dlms extends CompoundDocument
 	private MetadataString subject;
 
 	public Dlms()
-	{ }
+	{ super(); }
 
 	public Dlms(MetaMetadataCompositeField mmd) {
 		super(mmd);

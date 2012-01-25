@@ -53,7 +53,7 @@ public class ItemRecord extends Metadata
 	private General general;
 
 	public ItemRecord()
-	{ }
+	{ super(); }
 
 	public ItemRecord(MetaMetadataCompositeField mmd) {
 		super(mmd);

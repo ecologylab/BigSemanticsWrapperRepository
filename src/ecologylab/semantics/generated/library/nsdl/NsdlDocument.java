@@ -27,7 +27,7 @@ public class NsdlDocument extends Dc
 	private Header header;
 
 	public NsdlDocument()
-	{ }
+	{ super(); }
 
 	public NsdlDocument(MetaMetadataCompositeField mmd) {
 		super(mmd);

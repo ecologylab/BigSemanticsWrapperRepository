@@ -29,7 +29,7 @@ public class ProductReview extends Metadata
 	private MetadataString rating;
 
 	public ProductReview()
-	{ }
+	{ super(); }
 
 	public ProductReview(MetaMetadataCompositeField mmd) {
 		super(mmd);

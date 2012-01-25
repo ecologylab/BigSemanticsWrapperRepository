@@ -32,7 +32,7 @@ public class AmazonProduct extends Product
 	private BestsellerList bestsellerList;
 
 	public AmazonProduct()
-	{ }
+	{ super(); }
 
 	public AmazonProduct(MetaMetadataCompositeField mmd) {
 		super(mmd);

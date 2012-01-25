@@ -28,7 +28,7 @@ public class Artist extends Author
 	private List<Artwork> artworks;
 
 	public Artist()
-	{ }
+	{ super(); }
 
 	public Artist(MetaMetadataCompositeField mmd) {
 		super(mmd);

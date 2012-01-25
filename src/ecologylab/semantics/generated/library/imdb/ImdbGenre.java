@@ -31,7 +31,7 @@ public class ImdbGenre extends CompoundDocument
 	private List<ImdbTitle> results;
 
 	public ImdbGenre()
-	{ }
+	{ super(); }
 
 	public ImdbGenre(MetaMetadataCompositeField mmd) {
 		super(mmd);

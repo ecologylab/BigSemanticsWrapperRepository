@@ -52,7 +52,7 @@ public class ImageResult extends Metadata
 	private MetadataString imgTitle;
 
 	public ImageResult()
-	{ }
+	{ super(); }
 
 	public ImageResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

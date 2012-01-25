@@ -36,7 +36,7 @@ public class Channel extends Metadata
 	private List<Item> items;
 
 	public Channel()
-	{ }
+	{ super(); }
 
 	public Channel(MetaMetadataCompositeField mmd) {
 		super(mmd);

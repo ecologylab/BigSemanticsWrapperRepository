@@ -67,7 +67,7 @@ public class BritishCartoonArchive extends Document
 	private MetadataString imgLocation;
 
 	public BritishCartoonArchive()
-	{ }
+	{ super(); }
 
 	public BritishCartoonArchive(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -75,7 +75,7 @@ public class Restaurant extends CompoundDocument
 	private List<SearchResult> genres;
 
 	public Restaurant()
-	{ }
+	{ super(); }
 
 	public Restaurant(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -44,7 +44,7 @@ public class ScienceDirectArticle extends ScholarlyArticle
 	private MetadataString doi;
 
 	public ScienceDirectArticle()
-	{ }
+	{ super(); }
 
 	public ScienceDirectArticle(MetaMetadataCompositeField mmd) {
 		super(mmd);

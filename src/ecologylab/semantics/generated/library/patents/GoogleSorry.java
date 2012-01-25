@@ -20,7 +20,7 @@ import java.util.Map;
 public class GoogleSorry extends Document
 {
 	public GoogleSorry()
-	{ }
+	{ super(); }
 
 	public GoogleSorry(MetaMetadataCompositeField mmd) {
 		super(mmd);

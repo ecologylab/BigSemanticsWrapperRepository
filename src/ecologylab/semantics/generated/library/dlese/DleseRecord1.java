@@ -22,7 +22,7 @@ import java.util.Map;
 public class DleseRecord1 extends DleseRecord
 {
 	public DleseRecord1()
-	{ }
+	{ super(); }
 
 	public DleseRecord1(MetaMetadataCompositeField mmd) {
 		super(mmd);

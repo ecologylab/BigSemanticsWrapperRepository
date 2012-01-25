@@ -31,7 +31,7 @@ public class SlashdotTag extends Metadata
 	private MetadataParsedURL link;
 
 	public SlashdotTag()
-	{ }
+	{ super(); }
 
 	public SlashdotTag(MetaMetadataCompositeField mmd) {
 		super(mmd);

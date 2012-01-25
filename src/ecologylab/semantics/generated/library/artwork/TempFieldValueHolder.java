@@ -32,7 +32,7 @@ public class TempFieldValueHolder extends Metadata
 	private MetadataString tempMedium;
 
 	public TempFieldValueHolder()
-	{ }
+	{ super(); }
 
 	public TempFieldValueHolder(MetaMetadataCompositeField mmd) {
 		super(mmd);

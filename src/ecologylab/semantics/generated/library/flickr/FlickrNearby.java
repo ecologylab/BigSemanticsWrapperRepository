@@ -23,7 +23,7 @@ import java.util.Map;
 public class FlickrNearby extends Search
 {
 	public FlickrNearby()
-	{ }
+	{ super(); }
 
 	public FlickrNearby(MetaMetadataCompositeField mmd) {
 		super(mmd);

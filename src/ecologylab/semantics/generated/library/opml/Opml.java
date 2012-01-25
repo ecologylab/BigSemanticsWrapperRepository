@@ -32,7 +32,7 @@ public class Opml extends CompoundDocument
 	private Body body;
 
 	public Opml()
-	{ }
+	{ super(); }
 
 	public Opml(MetaMetadataCompositeField mmd) {
 		super(mmd);

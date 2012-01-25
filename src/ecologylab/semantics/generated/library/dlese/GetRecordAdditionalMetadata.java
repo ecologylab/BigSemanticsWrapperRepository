@@ -35,7 +35,7 @@ public class GetRecordAdditionalMetadata extends AdditionalMetadata
 	private MetadataString accessionStatus;
 
 	public GetRecordAdditionalMetadata()
-	{ }
+	{ super(); }
 
 	public GetRecordAdditionalMetadata(MetaMetadataCompositeField mmd) {
 		super(mmd);

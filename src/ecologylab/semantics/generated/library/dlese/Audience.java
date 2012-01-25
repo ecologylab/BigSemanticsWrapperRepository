@@ -28,7 +28,7 @@ public class Audience extends Metadata
 	private MetadataString gradeRange;
 
 	public Audience()
-	{ }
+	{ super(); }
 
 	public Audience(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -36,7 +36,7 @@ public class GoogleImageSearchType extends CompoundDocument
 	private List<ImageResult> imageResults;
 
 	public GoogleImageSearchType()
-	{ }
+	{ super(); }
 
 	public GoogleImageSearchType(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -56,7 +56,7 @@ public class MomaArtwork extends Artwork
 	private TempFieldValueHolder tempFieldValueHolder;
 
 	public MomaArtwork()
-	{ }
+	{ super(); }
 
 	public MomaArtwork(MetaMetadataCompositeField mmd) {
 		super(mmd);

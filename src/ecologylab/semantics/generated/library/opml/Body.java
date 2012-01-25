@@ -30,7 +30,7 @@ public class Body extends Metadata
 	private List<Outline> outline;
 
 	public Body()
-	{ }
+	{ super(); }
 
 	public Body(MetaMetadataCompositeField mmd) {
 		super(mmd);

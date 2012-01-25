@@ -37,7 +37,7 @@ public class SearchSection extends Metadata
 	private List<DleseRecord1> searchResults;
 
 	public SearchSection()
-	{ }
+	{ super(); }
 
 	public SearchSection(MetaMetadataCompositeField mmd) {
 		super(mmd);

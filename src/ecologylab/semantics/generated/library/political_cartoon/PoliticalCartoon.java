@@ -40,7 +40,7 @@ public class PoliticalCartoon extends Document
 	private MetadataParsedURL cartoonImg;
 
 	public PoliticalCartoon()
-	{ }
+	{ super(); }
 
 	public PoliticalCartoon(MetaMetadataCompositeField mmd) {
 		super(mmd);

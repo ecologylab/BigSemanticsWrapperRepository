@@ -102,7 +102,7 @@ public class NsfAward extends CompoundDocument
 	private List<MetadataString> proceedings;
 
 	public NsfAward()
-	{ }
+	{ super(); }
 
 	public NsfAward(MetaMetadataCompositeField mmd) {
 		super(mmd);

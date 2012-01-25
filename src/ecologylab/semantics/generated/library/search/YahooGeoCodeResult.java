@@ -44,7 +44,7 @@ public class YahooGeoCodeResult extends YahooResult
 	private MetadataString country;
 
 	public YahooGeoCodeResult()
-	{ }
+	{ super(); }
 
 	public YahooGeoCodeResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

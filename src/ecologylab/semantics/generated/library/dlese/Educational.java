@@ -36,7 +36,7 @@ public class Educational extends Metadata
 	private List<MetadataString> resourceTypes;
 
 	public Educational()
-	{ }
+	{ super(); }
 
 	public Educational(MetaMetadataCompositeField mmd) {
 		super(mmd);

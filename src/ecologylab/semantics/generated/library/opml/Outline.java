@@ -53,7 +53,7 @@ public class Outline extends Metadata
 	private MetadataString type;
 
 	public Outline()
-	{ }
+	{ super(); }
 
 	public Outline(MetaMetadataCompositeField mmd) {
 		super(mmd);

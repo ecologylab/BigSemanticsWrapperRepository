@@ -43,7 +43,7 @@ public class Topic extends CompoundDocument
 	private MetadataInteger id;
 
 	public Topic()
-	{ }
+	{ super(); }
 
 	public Topic(MetaMetadataCompositeField mmd) {
 		super(mmd);

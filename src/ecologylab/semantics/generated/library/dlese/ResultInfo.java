@@ -39,7 +39,7 @@ public class ResultInfo extends Metadata
 	private MetadataInteger totalResults;
 
 	public ResultInfo()
-	{ }
+	{ super(); }
 
 	public ResultInfo(MetaMetadataCompositeField mmd) {
 		super(mmd);

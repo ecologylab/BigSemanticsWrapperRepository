@@ -34,7 +34,7 @@ public class FlickrTagsInteresting extends Search
 	private List<FlickrLink> flickrLinkSet;
 
 	public FlickrTagsInteresting()
-	{ }
+	{ super(); }
 
 	public FlickrTagsInteresting(MetaMetadataCompositeField mmd) {
 		super(mmd);

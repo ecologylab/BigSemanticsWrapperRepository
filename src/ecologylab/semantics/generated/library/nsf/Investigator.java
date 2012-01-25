@@ -29,7 +29,7 @@ public class Investigator extends Author
 	private MetadataString emailAddress;
 
 	public Investigator()
-	{ }
+	{ super(); }
 
 	public Investigator(MetaMetadataCompositeField mmd) {
 		super(mmd);

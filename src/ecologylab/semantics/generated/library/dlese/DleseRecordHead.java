@@ -50,7 +50,7 @@ public class DleseRecordHead extends Metadata
 	private AdditionalMetadata additionalMetadata;
 
 	public DleseRecordHead()
-	{ }
+	{ super(); }
 
 	public DleseRecordHead(MetaMetadataCompositeField mmd) {
 		super(mmd);

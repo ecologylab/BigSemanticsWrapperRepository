@@ -23,7 +23,7 @@ import java.util.Map;
 public class NsfAwardSearch extends Search
 {
 	public NsfAwardSearch()
-	{ }
+	{ super(); }
 
 	public NsfAwardSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

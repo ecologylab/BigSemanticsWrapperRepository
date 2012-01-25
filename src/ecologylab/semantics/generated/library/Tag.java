@@ -31,7 +31,7 @@ public class Tag extends Metadata
 	private MetadataParsedURL link;
 
 	public Tag()
-	{ }
+	{ super(); }
 
 	public Tag(MetaMetadataCompositeField mmd) {
 		super(mmd);

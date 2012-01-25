@@ -38,7 +38,7 @@ public class ContactPoint extends Metadata
 	private MetadataString streetAddress;
 
 	public ContactPoint()
-	{ }
+	{ super(); }
 
 	public ContactPoint(MetaMetadataCompositeField mmd) {
 		super(mmd);

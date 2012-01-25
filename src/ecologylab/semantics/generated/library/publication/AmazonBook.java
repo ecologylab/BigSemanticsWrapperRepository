@@ -20,7 +20,7 @@ import java.util.Map;
 public class AmazonBook extends Book
 {
 	public AmazonBook()
-	{ }
+	{ super(); }
 
 	public AmazonBook(MetaMetadataCompositeField mmd) {
 		super(mmd);

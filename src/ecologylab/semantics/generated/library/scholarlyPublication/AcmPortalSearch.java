@@ -20,7 +20,7 @@ import java.util.Map;
 public class AcmPortalSearch extends Search
 {
 	public AcmPortalSearch()
-	{ }
+	{ super(); }
 
 	public AcmPortalSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

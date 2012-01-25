@@ -26,7 +26,7 @@ public class BestsellerList extends Document
 	private MetadataString rank;
 
 	public BestsellerList()
-	{ }
+	{ super(); }
 
 	public BestsellerList(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -31,7 +31,7 @@ public class Thumbinner extends Metadata
 	private MetadataParsedURL thumbImgSrc;
 
 	public Thumbinner()
-	{ }
+	{ super(); }
 
 	public Thumbinner(MetaMetadataCompositeField mmd) {
 		super(mmd);

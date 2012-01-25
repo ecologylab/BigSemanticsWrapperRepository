@@ -31,7 +31,7 @@ public class BingImageSearchResult extends ImageInSearchResult
 	private ImageInSearchResult thumbnail;
 
 	public BingImageSearchResult()
-	{ }
+	{ super(); }
 
 	public BingImageSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

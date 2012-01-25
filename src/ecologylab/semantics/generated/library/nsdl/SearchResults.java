@@ -28,7 +28,7 @@ public class SearchResults extends Metadata
 	private List<NsdlDocument> results;
 
 	public SearchResults()
-	{ }
+	{ super(); }
 
 	public SearchResults(MetaMetadataCompositeField mmd) {
 		super(mmd);

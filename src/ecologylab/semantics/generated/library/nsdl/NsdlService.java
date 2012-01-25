@@ -30,7 +30,7 @@ public class NsdlService extends Metadata
 	private SearchResults searchResults;
 
 	public NsdlService()
-	{ }
+	{ super(); }
 
 	public NsdlService(MetaMetadataCompositeField mmd) {
 		super(mmd);

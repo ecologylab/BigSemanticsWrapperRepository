@@ -29,7 +29,7 @@ public class WikipediaPage extends WikipediaPageType
 	private MetadataParsedURL mainImageSrc;
 
 	public WikipediaPage()
-	{ }
+	{ super(); }
 
 	public WikipediaPage(MetaMetadataCompositeField mmd) {
 		super(mmd);

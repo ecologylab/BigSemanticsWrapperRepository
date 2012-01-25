@@ -43,7 +43,7 @@ public class Book extends Publication
 	private MetadataParsedURL coverImage;
 
 	public Book()
-	{ }
+	{ super(); }
 
 	public Book(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -31,7 +31,7 @@ public class Anchor extends Metadata
 	private MetadataParsedURL link;
 
 	public Anchor()
-	{ }
+	{ super(); }
 
 	public Anchor(MetaMetadataCompositeField mmd) {
 		super(mmd);

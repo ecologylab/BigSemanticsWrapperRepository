@@ -36,7 +36,7 @@ public class BingSearch extends CompoundDocument
 	private BingSearchImageSection imageSection;
 
 	public BingSearch()
-	{ }
+	{ super(); }
 
 	public BingSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);

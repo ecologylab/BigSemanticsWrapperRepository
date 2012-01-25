@@ -33,7 +33,7 @@ public class Subject extends Metadata
 	private MetadataString subject;
 
 	public Subject()
-	{ }
+	{ super(); }
 
 	public Subject(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -49,7 +49,7 @@ public class AuthorPhotos extends Metadata
 	private MetadataString photosThatYear;
 
 	public AuthorPhotos()
-	{ }
+	{ super(); }
 
 	public AuthorPhotos(MetaMetadataCompositeField mmd) {
 		super(mmd);

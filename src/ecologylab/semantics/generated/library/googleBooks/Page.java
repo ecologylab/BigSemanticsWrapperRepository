@@ -31,7 +31,7 @@ public class Page extends Document
 	private MetadataInteger pageNumber;
 
 	public Page()
-	{ }
+	{ super(); }
 
 	public Page(MetaMetadataCompositeField mmd) {
 		super(mmd);

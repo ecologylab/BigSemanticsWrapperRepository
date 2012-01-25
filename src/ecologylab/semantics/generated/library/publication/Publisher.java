@@ -29,7 +29,7 @@ public class Publisher extends Document
 	private MetadataString city;
 
 	public Publisher()
-	{ }
+	{ super(); }
 
 	public Publisher(MetaMetadataCompositeField mmd) {
 		super(mmd);

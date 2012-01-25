@@ -47,7 +47,7 @@ public class WikipediaPageType extends CompoundDocument
 	private List<Thumbinner> thumbinners;
 
 	public WikipediaPageType()
-	{ }
+	{ super(); }
 
 	public WikipediaPageType(MetaMetadataCompositeField mmd) {
 		super(mmd);

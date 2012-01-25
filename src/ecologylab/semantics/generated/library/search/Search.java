@@ -30,7 +30,7 @@ public class Search extends Document
 	private List<SearchResult> searchResults;
 
 	public Search()
-	{ }
+	{ super(); }
 
 	public Search(MetaMetadataCompositeField mmd) {
 		super(mmd);

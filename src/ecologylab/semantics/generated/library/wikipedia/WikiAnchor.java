@@ -34,7 +34,7 @@ public class WikiAnchor extends Metadata
 	private MetadataString targetTitle;
 
 	public WikiAnchor()
-	{ }
+	{ super(); }
 
 	public WikiAnchor(MetaMetadataCompositeField mmd) {
 		super(mmd);

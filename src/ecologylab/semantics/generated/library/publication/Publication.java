@@ -45,7 +45,7 @@ public class Publication extends BasicPublication
 	private List<TermType> commonTerms;
 
 	public Publication()
-	{ }
+	{ super(); }
 
 	public Publication(MetaMetadataCompositeField mmd) {
 		super(mmd);

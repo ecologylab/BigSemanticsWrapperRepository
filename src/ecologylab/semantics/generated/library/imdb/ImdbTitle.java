@@ -73,7 +73,7 @@ public class ImdbTitle extends CompoundDocument
 	private MetadataParsedURL posterImg;
 
 	public ImdbTitle()
-	{ }
+	{ super(); }
 
 	public ImdbTitle(MetaMetadataCompositeField mmd) {
 		super(mmd);

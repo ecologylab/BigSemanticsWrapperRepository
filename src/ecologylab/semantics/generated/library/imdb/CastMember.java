@@ -31,7 +31,7 @@ public class CastMember extends Metadata
 	private PersonDetails character;
 
 	public CastMember()
-	{ }
+	{ super(); }
 
 	public CastMember(MetaMetadataCompositeField mmd) {
 		super(mmd);

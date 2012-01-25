@@ -26,7 +26,7 @@ public class CiteseerxSearchResult extends SearchResult
 	private MetadataString citationInfo;
 
 	public CiteseerxSearchResult()
-	{ }
+	{ super(); }
 
 	public CiteseerxSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

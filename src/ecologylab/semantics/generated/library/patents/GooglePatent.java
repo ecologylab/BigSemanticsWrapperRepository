@@ -45,7 +45,7 @@ public class GooglePatent extends Patent
 	private List<SearchResult> picLinks;
 
 	public GooglePatent()
-	{ }
+	{ super(); }
 
 	public GooglePatent(MetaMetadataCompositeField mmd) {
 		super(mmd);

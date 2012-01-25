@@ -50,7 +50,7 @@ public class YahooResult extends Document
 	private MetadataParsedURL refererUrl;
 
 	public YahooResult()
-	{ }
+	{ super(); }
 
 	public YahooResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -47,7 +47,7 @@ public class Periodical extends BasicPublication
 	private MetadataDate date;
 
 	public Periodical()
-	{ }
+	{ super(); }
 
 	public Periodical(MetaMetadataCompositeField mmd) {
 		super(mmd);

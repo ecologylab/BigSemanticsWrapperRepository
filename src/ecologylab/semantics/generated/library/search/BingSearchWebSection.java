@@ -30,7 +30,7 @@ public class BingSearchWebSection extends CompoundDocument
 	private List<BingWebSearchResult> webSearchResults;
 
 	public BingSearchWebSection()
-	{ }
+	{ super(); }
 
 	public BingSearchWebSection(MetaMetadataCompositeField mmd) {
 		super(mmd);

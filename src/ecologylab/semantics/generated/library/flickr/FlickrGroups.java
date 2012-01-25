@@ -31,7 +31,7 @@ public class FlickrGroups extends Search
 	private List<FlickrTag> flickrTags;
 
 	public FlickrGroups()
-	{ }
+	{ super(); }
 
 	public FlickrGroups(MetaMetadataCompositeField mmd) {
 		super(mmd);

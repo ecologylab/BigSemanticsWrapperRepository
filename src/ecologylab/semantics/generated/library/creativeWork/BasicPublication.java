@@ -36,7 +36,7 @@ public class BasicPublication extends CreativeWork
 	private Publisher publisher;
 
 	public BasicPublication()
-	{ }
+	{ super(); }
 
 	public BasicPublication(MetaMetadataCompositeField mmd) {
 		super(mmd);

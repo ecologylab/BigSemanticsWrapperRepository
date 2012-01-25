@@ -23,7 +23,7 @@ import java.util.Map;
 public class BingWebSearchResult extends SearchResult
 {
 	public BingWebSearchResult()
-	{ }
+	{ super(); }
 
 	public BingWebSearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

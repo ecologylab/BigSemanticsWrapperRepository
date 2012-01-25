@@ -26,7 +26,7 @@ public class FlickrNearbySearchResult extends SearchResult
 	private MetadataParsedURL linkOther;
 
 	public FlickrNearbySearchResult()
-	{ }
+	{ super(); }
 
 	public FlickrNearbySearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -22,7 +22,7 @@ import java.util.Map;
 public class YahooGeoCode extends YahooResultSet
 {
 	public YahooGeoCode()
-	{ }
+	{ super(); }
 
 	public YahooGeoCode(MetaMetadataCompositeField mmd) {
 		super(mmd);

@@ -31,7 +31,7 @@ public class ImdbChart extends CompoundDocument
 	private List<ImdbTitle> results;
 
 	public ImdbChart()
-	{ }
+	{ super(); }
 
 	public ImdbChart(MetaMetadataCompositeField mmd) {
 		super(mmd);

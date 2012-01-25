@@ -39,7 +39,7 @@ public class SlashdotArticle extends CompoundDocument
 	private List<Anchor> anchors;
 
 	public SlashdotArticle()
-	{ }
+	{ super(); }
 
 	public SlashdotArticle(MetaMetadataCompositeField mmd) {
 		super(mmd);

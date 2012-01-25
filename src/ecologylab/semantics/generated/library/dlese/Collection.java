@@ -28,7 +28,7 @@ public class Collection extends Metadata
 	private MetadataString id;
 
 	public Collection()
-	{ }
+	{ super(); }
 
 	public Collection(MetaMetadataCompositeField mmd) {
 		super(mmd);
