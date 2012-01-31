@@ -28,7 +28,9 @@
 	</meta_metadata>
 
 	<meta_metadata name="media_clipping" extends="clipping" built_in="true">
-	  <generic_type_var name="ME" bound="clippable_document" />
+	  <generic_type_var name="ME" bound="clippable_document">
+	    <generic_type_var parameter="ME" />
+	  </generic_type_var>
 		<scalar name="caption" style="metadata_h1" layer="11.0" comment="The caption of the image." scalar_type="String"/>
 		<composite name="media" type="clippable_document" promote_children="true" polymorphic_scope="repository_media" wrap="true">
 		  <generic_type_var generic_type="ME" />
@@ -50,7 +52,9 @@
 	</meta_metadata>
 	
 	<meta_metadata name="clippable_document"  extends="document" built_in="true">
-	  <generic_type_var name="ME" bound="clippable_document" />
+	  <generic_type_var name="ME" bound="clippable_document">
+	    <generic_type_var parameter="ME" />
+	  </generic_type_var>
 		<collection name="clippings" child_type="media_clipping" comment="Clippings based on this." hide="true" polymorphic_scope="repository_clippings">
 		  <generic_type_var parameter="ME" />
 		</collection>
@@ -140,7 +144,7 @@
 	<meta_metadata name="information_composition" extends="document" built_in="true">
 		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" />
 		<collection name="annotations" child_type="annotation" />
-		<collection name="media" child_type="clippable_document" polymorphic_scope="repository_media"/>
+		<collection name="media" child_type="metadata" polymorphic_scope="repository_media"/>
 		
 		<scalar name="version" scalar_type="Float" />
 		<scalar name="metadata_version" scalar_type="Float" />

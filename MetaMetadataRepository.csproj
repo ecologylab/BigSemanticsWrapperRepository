@@ -72,7 +72,9 @@
     <Content Include="MmdRepository\mmdrepository\powerUser\truman_library_1948_campaign_cartoons.xml" />
     <Content Include="MmdRepository\mmdrepository\powerUser\urbanSpoon.xml" />
     <Content Include="MmdRepository\mmdrepository\powerUser\uva.xml" />
-    <Content Include="MmdRepository\mmdrepository\primitives.xml" />
+    <Content Include="MmdRepository\mmdrepository\primitives.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="MmdRepository\mmdrepository\repositorySources\acmPortal.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\artwork.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\buzz.xml" />
