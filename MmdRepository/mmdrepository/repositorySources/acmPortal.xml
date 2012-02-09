@@ -70,7 +70,7 @@
         <scalar name="title" field_parser_key="$0" />
       </collection>
       <composite name="source" field_parser_key="$other">
-        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <field_parser name="regex_find" regex=".*?(\d\d\d\d).*" />
         <scalar name="title" field_parser_key="$0" />
         <scalar name="year" field_parser_key="$1" />
       </composite>
