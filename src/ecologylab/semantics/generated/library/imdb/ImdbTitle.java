@@ -50,6 +50,9 @@ public class ImdbTitle extends CompoundDocument
 	private List<CastMember> cast;
 
 	@simpl_scalar
+	private MetadataString gist;
+
+	@simpl_scalar
 	private MetadataString rating;
 
 	@simpl_scalar
@@ -140,6 +143,38 @@ public class ImdbTitle extends CompoundDocument
 	public void setCast(List<CastMember> cast)
 	{
 		this.cast = cast;
+	}
+
+	public MetadataString	gist()
+	{
+		MetadataString	result = this.gist;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.gist = result;
+		}
+		return result;
+	}
+
+	public String getGist()
+	{
+		return this.gist == null ? null : gist().getValue();
+	}
+
+	public MetadataString getGistMetadata()
+	{
+		return gist;
+	}
+
+	public void setGist(String gist)
+	{
+		if (gist != null)
+			this.gist().setValue(gist);
+	}
+
+	public void setGistMetadata(MetadataString gist)
+	{
+		this.gist = gist;
 	}
 
 	public MetadataString	rating()
