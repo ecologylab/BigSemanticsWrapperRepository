@@ -22,6 +22,9 @@
 		<scalar name="title" xpath="//h1[@class='header']">
 <!--			<filter regex="More [a-zA-Z\s&amp;;#0-9\-]*" replace="" />-->
 		</scalar>
+		
+		<scalar name="gist" scalar_type="String" />
+		
 		<scalar name="location" layer="-1.0" />
 		<scalar name="year_released" style="h1" layer="9.5" xpath="//h1[@class='header']//a" label="year released" scalar_type="String" />
 		<scalar name="rating" xpath="//span[@class='rating-rating']" scalar_type="String" />
@@ -108,7 +111,7 @@
 		<def_var name="bio_node" xpath="//td[@id='overview-top']/p" type="node" />
 <!--		<def_var name="trivia_node" xpath="//div[@class='info']/h5[starts-with(child::text(), 'Trivia:')]/.." type="node" />-->
 <!--		<def_var name="awards_node" xpath="//div[@class='info']/h5[starts-with(child::text(), 'Awards:')]/.." type="node" />-->
-		<scalar name="gist" scalar_type="string" />
+		<scalar name="gist" scalar_type="String" />
 		<scalar name="title" xpath="//div[@id='main']//h1"/>
 		<scalar name="person_img" hide="true" xpath="//td[@id='img_primary']//img/@src" scalar_type="ParsedURL" />
 		<composite name="birth_detail" xpath="//td[@id='overview-top']" type="birth_detail">
