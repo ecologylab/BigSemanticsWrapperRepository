@@ -14,6 +14,11 @@
 
 	<meta_metadata name="imdb_title" extends="compound_document" comment="IMDB metadata" parser="xpath">
 		<selector url_path_tree="http://www.imdb.com/title/" />
+		
+	  <example_urls>
+	    <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club... lots of information" />
+	    <example_url url="http://www.imdb.com/title/tt0110912/" comment="Puplp fiction." />
+	  </example_urls>
     
     <!-- for testing scalar collections
     <collection name="title_photo_urls" xpath="//div[@class='mediastrip']//img/@src" child_scalar_type="ParsedURL" child_tag="title_photo_url" />
@@ -26,7 +31,7 @@
 		<scalar name="gist" scalar_type="String" />
 		
 		<scalar name="location" layer="-1.0" />
-		<scalar name="year_released" style="h1" layer="9.5" xpath="//h1[@class='header']//a" label="year released" scalar_type="String" />
+		<scalar name="year_released" style="metadata_h1" layer="9.5" xpath="//h1[@class='header']//a" label="year released" scalar_type="String" />
 		<scalar name="rating" xpath="//span[@class='rating-rating']" scalar_type="String" />
 		<collection name="directors" layer="9.0" xpath="//td[@id='overview-top']//div[@class='txt-block'][contains(.,'Director')]//a" 
 				child_type="person_details">
