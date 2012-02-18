@@ -18,6 +18,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.Hint;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_hints;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
@@ -47,6 +48,10 @@ public class CreativeWork extends CompoundDocument
 	@simpl_scalar
 	@simpl_other_tags({"year_of_publication"})
 	private MetadataInteger year;
+
+	@simpl_composite
+	@mm_name("rich_media")
+	private CompoundDocument richMedia;
 
 	public CreativeWork()
 	{ super(); }
@@ -128,5 +133,15 @@ public class CreativeWork extends CompoundDocument
 	public void setYearMetadata(MetadataInteger year)
 	{
 		this.year = year;
+	}
+
+	public CompoundDocument getRichMedia()
+	{
+		return richMedia;
+	}
+
+	public void setRichMedia(CompoundDocument richMedia)
+	{
+		this.richMedia = richMedia;
 	}
 }

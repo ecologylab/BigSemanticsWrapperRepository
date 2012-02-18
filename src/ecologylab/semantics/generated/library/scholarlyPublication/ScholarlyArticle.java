@@ -8,14 +8,12 @@ package ecologylab.semantics.generated.library.scholarlyPublication;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.Tag;
 import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.semantics.generated.library.creativeWork.Periodical;
 import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
@@ -37,12 +35,6 @@ public class ScholarlyArticle extends CreativeWork
 	@simpl_composite
 	@mm_name("source")
 	private Periodical source;
-
-	/** 
-	 *citation.cfm
-	 */ 
-	@simpl_scalar
-	private MetadataParsedURL metadataPage;
 
 	/** 
 	 *Papers cited by this paper.
@@ -91,38 +83,6 @@ public class ScholarlyArticle extends CreativeWork
 	public void setSource(Periodical source)
 	{
 		this.source = source;
-	}
-
-	public MetadataParsedURL	metadataPage()
-	{
-		MetadataParsedURL	result = this.metadataPage;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.metadataPage = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getMetadataPage()
-	{
-		return this.metadataPage == null ? null : metadataPage().getValue();
-	}
-
-	public MetadataParsedURL getMetadataPageMetadata()
-	{
-		return metadataPage;
-	}
-
-	public void setMetadataPage(ParsedURL metadataPage)
-	{
-		if (metadataPage != null)
-			this.metadataPage().setValue(metadataPage);
-	}
-
-	public void setMetadataPageMetadata(MetadataParsedURL metadataPage)
-	{
-		this.metadataPage = metadataPage;
 	}
 
 	public List<ScholarlyArticle> getReferences()
