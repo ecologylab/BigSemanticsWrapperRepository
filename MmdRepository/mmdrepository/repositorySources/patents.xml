@@ -49,12 +49,12 @@
 		</scalar>
 		<scalar name="pic_link" xpath="//div[@id='selected_pages_v']/div[1]/a[1]/@href" scalar_type="ParsedURL" />
 		
-		<collection name="referenced_bys" hide="true" xpath="//div[@id='patent_referenced_by_v']/table/tr[position()&gt;1]" child_type="search_result">
-			<scalar name="title" xpath="./td[2]" />
+		<collection name="references" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" child_type="patent" other_tags="referenced_bys">
+			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
-		<collection name="citations" hide="true" xpath="//div[@id='patent_citations_v']/table/tr[position()&gt;1]" child_type="search_result">
-			<scalar name="title" xpath="./td[2]" />
+		<collection name="citations" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" child_type="patent">
+			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
 		<collection name="pic_links" hide="true" xpath="//div[@id='selected_pages_v']/div/a[1]" child_type="search_result">
