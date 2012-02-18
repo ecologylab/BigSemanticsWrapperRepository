@@ -1,15 +1,17 @@
 <meta_metadata_repository name="acm_portal" package="ecologylab.semantics.generated.library.scholarlyPublication" default_user_agent_name="chrome_2">
 
-	<meta_metadata name="acm_portal" type="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
+<meta_metadata name="acm_portal" type="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
 
 		<selector url_stripped="http://portal.acm.org/citation.cfm" />
 		<selector url_stripped="http://dl.acm.org/citation.cfm" />
 
 		<url_generator type="search" engine="acm_portal" use_id="title" />
 	
-<!-- 		<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" /> -->
-
-		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="metadata_page" as_natural_id="title" format="text" />
+		<composite name="rich_media">
+			<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
+		</composite>
+		
+		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="location" as_natural_id="title" format="text" />
 
 		<collection name="authors" xpath="//div[@id='divmain']//a[@title='Author Profile Page']">
 			<scalar name="location" xpath="./@href">
@@ -58,61 +60,52 @@
       </composite>
 		</collection>
 
-		<collection name="citations" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
-      <field_parser name="acm_reference" for_each_element="true" />
-      <scalar name="title" layer="20.0" field_parser_key="$title" />
+	<collection name="citations" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
+	      	<field_parser name="acm_reference" for_each_element="true" />
+	      	<scalar name="title" layer="20.0" field_parser_key="$title" />
 			<scalar name="location" xpath=".//a[1]/@href">
 			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)" replace="preflayout=flat" />
 			</scalar>
 <!-- 			<scalar name="description" layer="10.0" xpath="." /> -->
-      <collection name="authors" field_parser_key="$author_list">
-        <field_parser name="regex_split" regex="\s,\s" trim="true" />
-        <scalar name="title" field_parser_key="$0" />
-      </collection>
-      <composite name="source" field_parser_key="$other">
-        <field_parser name="regex_find" regex=".*?(\d\d\d\d).*" />
-        <scalar name="title" field_parser_key="$0" />
-        <scalar name="year" field_parser_key="$1" />
-      </composite>
-		</collection>
+	</collection>
 
-		<collection name="classifications" xpath="//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]">
-			<scalar name="link" xpath="./@href" />
-			<scalar name="tag_name" xpath="./child::text()" />
-		</collection>
+	<collection name="classifications" xpath="//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]">
+		<scalar name="link" xpath="./@href" />
+		<scalar name="tag_name" xpath="./child::text()" />
+	</collection>
 
-		<collection name="keywords" xpath="//div[@id='divtags']//a/span/ancestor::a">
-			<scalar name="link" xpath="./@href" />
-			<scalar name="tag_name" xpath="./span/child::text()" />
-		</collection>
+	<collection name="keywords" xpath="//div[@id='divtags']//a/span/ancestor::a">
+		<scalar name="link" xpath="./@href" />
+		<scalar name="tag_name" xpath="./span/child::text()" />
+	</collection>
 
-		<scalar name="pages" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td" />
-			
-		<link_with name="citeseerx_summary" by_id="title" />
-		<!-- <link_with name="google_scholar_search_result" by_id="title" /> -->
+	<scalar name="pages" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td" />
 		
-		<before_semantic_actions>
-			<filter_location>
-				<alternative_host>portal.acm.org</alternative_host>
-				<alternative_host>dl.acm.org</alternative_host>
-				<set_param name="preflayout" value="flat" />
-				<strip_param name="coll" />
-				<strip_param name="dl" />
-				<strip_param name="CFID" />
-				<strip_param name="CFTOKEN" />
-			</filter_location>
-		</before_semantic_actions>
+	<link_with name="citeseerx_summary" by_id="title" />
+	<!-- <link_with name="google_scholar_search_result" by_id="title" /> -->
+	
+	<before_semantic_actions>
+		<filter_location>
+			<alternative_host>portal.acm.org</alternative_host>
+			<alternative_host>dl.acm.org</alternative_host>
+			<set_param name="preflayout" value="flat" />
+			<strip_param name="coll" />
+			<strip_param name="dl" />
+			<strip_param name="CFID" />
+			<strip_param name="CFTOKEN" />
+		</filter_location>
+	</before_semantic_actions>
 
-		<semantic_actions>
-			<get_field name="location" />
-			<set_field name="metadata_page" value="location" />
-			<if>
-				<not_null value="location" />
+	<semantic_actions>
+<!-- 			<get_field name="location" /> -->
+<!-- 			<set_field name="metadata_page" value="location" /> -->
+<!-- 			<if> -->
+<!-- 				<not_null value="location" /> -->
 				<parse_document now="true">
-					<arg name="document" value="metadata" />
-					<arg name="location" value="location" />
+					<arg name="document" value="rich_media" />
+<!-- 					<arg name="location" value="location" /> -->
 				</parse_document>
-			</if>
+<!-- 			</if> -->
 
 			<get_field name="title" />
 			<create_and_visualize_text_surrogate>
@@ -148,9 +141,9 @@
 					</parse_document>
 				</for_each>
 			</if>
-		</semantic_actions>
+	</semantic_actions>
 
-	</meta_metadata>
+</meta_metadata>
 
 <!--	<meta_metadata name="acm_proceeding" extends="compound_document" parser="xpath">-->
 <!--		<selector url_stripped="http://portal.acm.org/toc.cfm" />-->
