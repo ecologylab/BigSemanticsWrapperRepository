@@ -23,7 +23,7 @@
 		<scalar name="context" layer="10.0" scalar_type="String" />
 		<scalar name="context_html" scalar_type="String" hint="XML_LEAF_CDATA" />
 		<scalar name="xpath" scalar_type="String" hide="true"/>
-		<composite name="source_doc" label="source" type="document" wrap="true" polymorphic_scope="repository_documents" />
+		<composite name="source_doc" label="source" type="document" wrap="true" polymorphic_scope="repository_documents" show_expanded_initially="true" />
 		<composite name="outlink" type="document" wrap="true" polymorphic_scope="repository_documents" />
 	</meta_metadata>
 
@@ -31,7 +31,7 @@
 	  <generic_type_var name="ME" bound="clippable_document">
 	    <generic_type_var parameter="ME" />
 	  </generic_type_var>
-		<scalar name="caption" style="metadata_h1" layer="11.0" comment="The caption of the image." scalar_type="String"/>
+		<scalar name="caption" style="metadata_h1" layer="11.0" comment="The caption of the image." always_show="true" scalar_type="String"/>
 		<composite name="media" type="clippable_document" promote_children="true" polymorphic_scope="repository_media" wrap="true">
 		  <generic_type_var generic_type="ME" />
 		</composite>
