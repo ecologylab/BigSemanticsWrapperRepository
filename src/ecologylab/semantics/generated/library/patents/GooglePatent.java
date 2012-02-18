@@ -18,6 +18,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +33,14 @@ public class GooglePatent extends Patent
 	@simpl_scalar
 	private MetadataParsedURL picLink;
 
-	@simpl_collection("search_result")
-	@mm_name("referenced_bys")
-	private List<SearchResult> referencedBys;
+	@simpl_collection("patent")
+	@simpl_other_tags({"referenced_bys"})
+	@mm_name("references")
+	private List<Patent> references;
 
-	@simpl_collection("search_result")
+	@simpl_collection("patent")
 	@mm_name("citations")
-	private List<SearchResult> citations;
+	private List<Patent> citations;
 
 	@simpl_collection("search_result")
 	@mm_name("pic_links")
@@ -84,22 +86,22 @@ public class GooglePatent extends Patent
 		this.picLink = picLink;
 	}
 
-	public List<SearchResult> getReferencedBys()
+	public List<Patent> getReferences()
 	{
-		return referencedBys;
+		return references;
 	}
 
-	public void setReferencedBys(List<SearchResult> referencedBys)
+	public void setReferences(List<Patent> references)
 	{
-		this.referencedBys = referencedBys;
+		this.references = references;
 	}
 
-	public List<SearchResult> getCitations()
+	public List<Patent> getCitations()
 	{
 		return citations;
 	}
 
-	public void setCitations(List<SearchResult> citations)
+	public void setCitations(List<Patent> citations)
 	{
 		this.citations = citations;
 	}
