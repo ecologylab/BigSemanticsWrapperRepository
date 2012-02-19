@@ -15,10 +15,8 @@
 	<meta_metadata name="imdb_title" extends="compound_document" comment="IMDB metadata" parser="xpath">
 		<selector url_path_tree="http://www.imdb.com/title/" />
 		
-	  <example_urls>
-	    <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club... lots of information" />
-	    <example_url url="http://www.imdb.com/title/tt0110912/" comment="Puplp fiction." />
-	  </example_urls>
+    <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club... lots of information" />
+    <example_url url="http://www.imdb.com/title/tt0110912/" comment="Puplp fiction." />
     
     <!-- for testing scalar collections
     <collection name="title_photo_urls" xpath="//div[@class='mediastrip']//img/@src" child_scalar_type="ParsedURL" child_tag="title_photo_url" />
