@@ -33,14 +33,20 @@ public class GooglePatent extends Patent
 	@simpl_scalar
 	private MetadataParsedURL picLink;
 
+	/** 
+	 *subsequent patents that represent this
+	 */ 
 	@simpl_collection("patent")
 	@simpl_other_tags({"referenced_bys"})
-	@mm_name("references")
-	private List<Patent> references;
-
-	@simpl_collection("patent")
 	@mm_name("citations")
 	private List<Patent> citations;
+
+	/** 
+	 *prior patents that this references
+	 */ 
+	@simpl_collection("patent")
+	@mm_name("references")
+	private List<Patent> references;
 
 	@simpl_collection("search_result")
 	@mm_name("pic_links")
@@ -86,16 +92,6 @@ public class GooglePatent extends Patent
 		this.picLink = picLink;
 	}
 
-	public List<Patent> getReferences()
-	{
-		return references;
-	}
-
-	public void setReferences(List<Patent> references)
-	{
-		this.references = references;
-	}
-
 	public List<Patent> getCitations()
 	{
 		return citations;
@@ -104,6 +100,16 @@ public class GooglePatent extends Patent
 	public void setCitations(List<Patent> citations)
 	{
 		this.citations = citations;
+	}
+
+	public List<Patent> getReferences()
+	{
+		return references;
+	}
+
+	public void setReferences(List<Patent> references)
+	{
+		this.references = references;
 	}
 
 	public List<SearchResult> getPicLinks()

@@ -9,22 +9,29 @@ package ecologylab.semantics.generated.library.hotel;
  */
 
 import ecologylab.semantics.generated.library.gps.ContactPoint;
+import ecologylab.semantics.generated.library.products.ProductReview;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class Hotel extends Document
 {
+	@simpl_collection("product_review")
+	@mm_name("reviews")
+	private List<ProductReview> reviews;
+
 	@simpl_composite
 	@mm_name("place")
 	private ContactPoint place;
@@ -36,13 +43,16 @@ public class Hotel extends Document
 	private MetadataString spaceSize;
 
 	@simpl_scalar
+	private MetadataString bedrooms;
+
+	@simpl_scalar
+	private MetadataString sleeps;
+
+	@simpl_scalar
 	private MetadataString checkIn;
 
 	@simpl_scalar
 	private MetadataString checkOut;
-
-	@simpl_scalar
-	private MetadataString temp;
 
 	public Hotel()
 	{ super(); }
@@ -51,6 +61,16 @@ public class Hotel extends Document
 		super(mmd);
 	}
 
+
+	public List<ProductReview> getReviews()
+	{
+		return reviews;
+	}
+
+	public void setReviews(List<ProductReview> reviews)
+	{
+		this.reviews = reviews;
+	}
 
 	public ContactPoint getPlace()
 	{
@@ -126,6 +146,70 @@ public class Hotel extends Document
 		this.spaceSize = spaceSize;
 	}
 
+	public MetadataString	bedrooms()
+	{
+		MetadataString	result = this.bedrooms;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.bedrooms = result;
+		}
+		return result;
+	}
+
+	public String getBedrooms()
+	{
+		return this.bedrooms == null ? null : bedrooms().getValue();
+	}
+
+	public MetadataString getBedroomsMetadata()
+	{
+		return bedrooms;
+	}
+
+	public void setBedrooms(String bedrooms)
+	{
+		if (bedrooms != null)
+			this.bedrooms().setValue(bedrooms);
+	}
+
+	public void setBedroomsMetadata(MetadataString bedrooms)
+	{
+		this.bedrooms = bedrooms;
+	}
+
+	public MetadataString	sleeps()
+	{
+		MetadataString	result = this.sleeps;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.sleeps = result;
+		}
+		return result;
+	}
+
+	public String getSleeps()
+	{
+		return this.sleeps == null ? null : sleeps().getValue();
+	}
+
+	public MetadataString getSleepsMetadata()
+	{
+		return sleeps;
+	}
+
+	public void setSleeps(String sleeps)
+	{
+		if (sleeps != null)
+			this.sleeps().setValue(sleeps);
+	}
+
+	public void setSleepsMetadata(MetadataString sleeps)
+	{
+		this.sleeps = sleeps;
+	}
+
 	public MetadataString	checkIn()
 	{
 		MetadataString	result = this.checkIn;
@@ -188,37 +272,5 @@ public class Hotel extends Document
 	public void setCheckOutMetadata(MetadataString checkOut)
 	{
 		this.checkOut = checkOut;
-	}
-
-	public MetadataString	temp()
-	{
-		MetadataString	result = this.temp;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.temp = result;
-		}
-		return result;
-	}
-
-	public String getTemp()
-	{
-		return this.temp == null ? null : temp().getValue();
-	}
-
-	public MetadataString getTempMetadata()
-	{
-		return temp;
-	}
-
-	public void setTemp(String temp)
-	{
-		if (temp != null)
-			this.temp().setValue(temp);
-	}
-
-	public void setTempMetadata(MetadataString temp)
-	{
-		this.temp = temp;
 	}
 }

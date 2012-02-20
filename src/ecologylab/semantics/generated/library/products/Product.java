@@ -28,6 +28,10 @@ import java.util.Map;
 @simpl_inherit
 public class Product extends CompoundDocument
 {
+	@simpl_collection("product_review")
+	@mm_name("reviews")
+	private List<ProductReview> reviews;
+
 	@simpl_scalar
 	private MetadataString price;
 
@@ -43,10 +47,6 @@ public class Product extends CompoundDocument
 	@simpl_scalar
 	private MetadataString overallRating;
 
-	@simpl_collection("product_review")
-	@mm_name("reviews")
-	private List<ProductReview> reviews;
-
 	public Product()
 	{ super(); }
 
@@ -54,6 +54,16 @@ public class Product extends CompoundDocument
 		super(mmd);
 	}
 
+
+	public List<ProductReview> getReviews()
+	{
+		return reviews;
+	}
+
+	public void setReviews(List<ProductReview> reviews)
+	{
+		this.reviews = reviews;
+	}
 
 	public MetadataString	price()
 	{
@@ -213,15 +223,5 @@ public class Product extends CompoundDocument
 	public void setOverallRatingMetadata(MetadataString overallRating)
 	{
 		this.overallRating = overallRating;
-	}
-
-	public List<ProductReview> getReviews()
-	{
-		return reviews;
-	}
-
-	public void setReviews(List<ProductReview> reviews)
-	{
-		this.reviews = reviews;
 	}
 }

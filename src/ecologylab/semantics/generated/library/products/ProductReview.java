@@ -23,10 +23,10 @@ import java.util.Map;
 public class ProductReview extends Metadata
 {
 	@simpl_scalar
-	private MetadataString content;
+	private MetadataString rating;
 
 	@simpl_scalar
-	private MetadataString rating;
+	private MetadataString content;
 
 	public ProductReview()
 	{ super(); }
@@ -35,38 +35,6 @@ public class ProductReview extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	content()
-	{
-		MetadataString	result = this.content;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.content = result;
-		}
-		return result;
-	}
-
-	public String getContent()
-	{
-		return this.content == null ? null : content().getValue();
-	}
-
-	public MetadataString getContentMetadata()
-	{
-		return content;
-	}
-
-	public void setContent(String content)
-	{
-		if (content != null)
-			this.content().setValue(content);
-	}
-
-	public void setContentMetadata(MetadataString content)
-	{
-		this.content = content;
-	}
 
 	public MetadataString	rating()
 	{
@@ -98,5 +66,37 @@ public class ProductReview extends Metadata
 	public void setRatingMetadata(MetadataString rating)
 	{
 		this.rating = rating;
+	}
+
+	public MetadataString	content()
+	{
+		MetadataString	result = this.content;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.content = result;
+		}
+		return result;
+	}
+
+	public String getContent()
+	{
+		return this.content == null ? null : content().getValue();
+	}
+
+	public MetadataString getContentMetadata()
+	{
+		return content;
+	}
+
+	public void setContent(String content)
+	{
+		if (content != null)
+			this.content().setValue(content);
+	}
+
+	public void setContentMetadata(MetadataString content)
+	{
+		this.content = content;
 	}
 }

@@ -8,11 +8,14 @@ package ecologylab.semantics.generated.library.gps;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.semantics.generated.library.gps.GisLocation;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -36,6 +39,10 @@ public class ContactPoint extends Metadata
 
 	@simpl_scalar
 	private MetadataString streetAddress;
+
+	@simpl_composite
+	@mm_name("map")
+	private GisLocation map;
 
 	public ContactPoint()
 	{ super(); }
@@ -171,5 +178,15 @@ public class ContactPoint extends Metadata
 	public void setStreetAddressMetadata(MetadataString streetAddress)
 	{
 		this.streetAddress = streetAddress;
+	}
+
+	public GisLocation getMap()
+	{
+		return map;
+	}
+
+	public void setMap(GisLocation map)
+	{
+		this.map = map;
 	}
 }
