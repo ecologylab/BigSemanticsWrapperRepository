@@ -28,7 +28,7 @@
 	<scalar name="title" xpath="//div[@class='overflow']" />
 <!-- 	<scalar name="temp" xpath="//span[@id='display_address']/text()"/> -->
 <!-- 	<scalar name="temp" xpath="//span[@id='display_address']/@data-location"/>just a test to show that this xpath works when extracting directly -->
-<!-- 	<scalar name="description" xpath="//div[@id='description_text_wrapper']/p/text()"/> -->
+	<scalar name="description" xpath="//div[@id='description_text_wrapper']/p/text()"/>
 	<scalar name="price" xpath="//h2[@id='price_amount']"  style="metadata_h1"/>
 	<scalar name="space_size" xpath="//span[@id='size_val']" />
 	<scalar name="bedrooms" xpath="//span[@id='bedrooms_val']" />
