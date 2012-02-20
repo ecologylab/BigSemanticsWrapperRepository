@@ -1,5 +1,10 @@
 <meta_metadata_repository name="products" package="ecologylab.semantics.generated.library.products">
 
+	<meta_metadata name="product_review" extends="metadata" schema_org_itemtype="http://schema.org/Review" schema_org_itemprop="reviews">
+			<scalar name="rating" scalar_type="String" schema_org_itemprop="reviewRating" />
+			<scalar name="content" scalar_type="String" schema_org_itemprop="reviewBody" />
+	</meta_metadata>
+		
 	<meta_metadata name="product" extends="compound_document" parser="xpath" schema_org_itemtype="http://schema.org/Product">
 		<scalar name="location" hide="true" />
 
@@ -9,10 +14,7 @@
 		<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
 		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location"  schema_org_itemprop="aggregateRating" />
 
-		<collection name="reviews" child_type="product_review" child_extends="metadata" schema_org_itemtype="http://schema.org/Review" schema_org_itemprop="reviews">
-			<scalar name="rating" scalar_type="String" schema_org_itemprop="reviewRating" />
-			<scalar name="content" scalar_type="String" schema_org_itemprop="reviewBody" />
-		</collection>
+		<collection name="reviews" child_type="product_review" layer="1.0"/>
 	</meta_metadata>
 
 	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="firefox_3_6_8">
