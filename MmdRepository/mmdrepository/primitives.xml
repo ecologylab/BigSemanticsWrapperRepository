@@ -10,7 +10,7 @@
 	<meta_metadata name="document" extends="metadata" comment="The Document Class" built_in="true" schema_org_itemtype="http://schema.org/Thing">
 		<scalar name="location" always_show="true" layer="8.0" comment="The document's actual location." scalar_type="ParsedURL" schema_org_itemprop="url"/>
 		<scalar name="title" style="metadata_h1" layer="10.0" navigates_to="location" schema_org_itemprop="name" comment="The Title of the Document" scalar_type="String"  hint="XML_LEAF"/>
-		<scalar name="description" layer="9.0" scalar_type="String" schema_org_itemprop="description"/>
+		<scalar name="description" layer="9.0" scalar_type="String" schema_org_itemprop="description" hint="XML_LEAF"/>
 		
 		<collection name="additional_locations" child_scalar_type="ParsedURL" hide="true" child_tag="location"/>
 	</meta_metadata>
