@@ -18,42 +18,48 @@
 			</filter_location>
 		</before_semantic_actions>
 	</meta_metadata>
-	
+
 	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" parser="xpath">
-		<selector url_stripped="http://www.google.com/patents/about"/>
-		<selector url_stripped="http://www.google.com/patents"/>
-		<selector domain="google.com" url_path_tree="http://www.google.com/patents/"/>
+		<selector url_stripped="http://www.google.com/patents/about" />
+		<selector url_stripped="http://www.google.com/patents" />
+		<selector domain="google.com" url_path_tree="http://www.google.com/patents/" />
 		
-		<collection name="authors" xpath="//div[@class='patent_bibdata']/a">
+		<example_url location="http://www.google.com/patents/US20100045705" />
+		<example_url location="http://www.google.com/patents/US7953462" />
+
+		<collection name="authors" xpath="//div[@class='patent_bibdata']/a[contains(@href,'inventor')]">
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./text()" />
 		</collection>
 
-		<collection name="classifications" xpath="//div[@class='patent_bibdata']/p/a">
-			<scalar name="location" xpath="./@href" hide="true"/>
+		<collection name="classifications" xpath="//div[@class='patent_bibdata']/a[contains(@href,'classification')]">
+			<scalar name="location" xpath="./@href" hide="true" />
 			<scalar name="title" xpath="./text()" />
 		</collection>
 
 
 		<scalar name="title" xpath="//div[@id='titlebar']/h1" />
-<!-- 		<scalar name="inventor" xpath="//div[@id='titlebar']/span" /> -->
-		<scalar name="abstract_field" xpath="//table[@id='summarytable']/tbody/tr/td/text()"/>
-<!-- 		<scalar name="claims" xpath="//div[@id='patent_claims_v']" /> -->
-<!-- 		<collection name="claims" xpath="//div[@id='patent_claims_v']"> --><!-- not specifying child_scalar_type causes null pointer! this needs to be fixed. -->
-		<collection name="claims" child_scalar_type="String" xpath="//div[@id='patent_claims_v']">
-      <field_parser name="regex_split" regex="\d+\.\s+" begin_index="1" />
-    </collection>
+		<!-- <scalar name="inventor" xpath="//div[@id='titlebar']/span" /> -->
+		<scalar name="abstract_field" xpath="//table[@id='summarytable']//p[@class='patent_abstract_text']" />
+		<!-- <scalar name="claims" xpath="//div[@id='patent_claims_v']" /> -->
+		<!-- <collection name="claims" xpath="//div[@id='patent_claims_v']"> --><!-- not specifying child_scalar_type causes null pointer! this needs to 
+			be fixed. -->
+		<collection name="claims" child_scalar_type="String"
+			xpath="//div[@id='patent_claims_v']">
+			<field_parser name="regex_split" regex="\d+\.\s+"
+				begin_index="1" />
+		</collection>
 
 		<scalar name="filing_date" xpath="//div[@class='patent_bibdata']/p/text()[(following::b)][3]">
 			<filter regex=": " replace="" />
 		</scalar>
 		<scalar name="pic_link" xpath="//div[@id='selected_pages_v']/div[1]/a[1]/@href" scalar_type="ParsedURL" />
 		
-		<collection name="references" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" child_type="patent" other_tags="referenced_bys">
+		<collection name="citations" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" child_type="patent" other_tags="referenced_bys" comment="subsequent patents that represent this">
 			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
-		<collection name="citations" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" child_type="patent">
+		<collection name="references" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" child_type="patent" comment="prior patents that this references">
 			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
@@ -110,10 +116,10 @@
 					</parse_document>
 				</for_each>
 			</if>
-			<get_field name="referenced_bys" />
+			<get_field name="references" />
 			<if>
-				<not_null value="referenced_bys" />
-				<for_each collection="referenced_bys" as="ref">
+				<not_null value="references" />
+				<for_each collection="references" as="ref">
 					<get_field object="ref" name="title" />
 					<get_field object="ref" name="location" />
 					<parse_document>
