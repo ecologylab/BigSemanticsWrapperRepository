@@ -34,10 +34,6 @@ import java.util.Map;
 @simpl_inherit
 public class Patent extends CreativeWork
 {
-	@simpl_collection("claim")
-	@mm_name("claims")
-	private List<MetadataString> claims;
-
 	@simpl_scalar
 	private MetadataString inventor;
 
@@ -47,6 +43,10 @@ public class Patent extends CreativeWork
 	@simpl_collection("document")
 	@mm_name("classifications")
 	private List<Document> classifications;
+
+	@simpl_collection("claim")
+	@mm_name("claims")
+	private List<MetadataString> claims;
 
 	/** 
 	 *subsequent patents that cite this
@@ -74,16 +74,6 @@ public class Patent extends CreativeWork
 		super(mmd);
 	}
 
-
-	public List<MetadataString> getClaims()
-	{
-		return claims;
-	}
-
-	public void setClaims(List<MetadataString> claims)
-	{
-		this.claims = claims;
-	}
 
 	public MetadataString	inventor()
 	{
@@ -157,6 +147,16 @@ public class Patent extends CreativeWork
 	public void setClassifications(List<Document> classifications)
 	{
 		this.classifications = classifications;
+	}
+
+	public List<MetadataString> getClaims()
+	{
+		return claims;
+	}
+
+	public void setClaims(List<MetadataString> claims)
+	{
+		this.claims = claims;
 	}
 
 	public List<Patent> getCitations()

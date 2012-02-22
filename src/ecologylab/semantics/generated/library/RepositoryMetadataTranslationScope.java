@@ -222,9 +222,13 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.opml.Outline.class,
 
+		ecologylab.semantics.generated.library.patents.GooglePatent.class,
+
 		ecologylab.semantics.generated.library.patents.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.patents.Patent.class,
+
+		ecologylab.semantics.generated.library.patents.PatentClassification.class,
 
 		ecologylab.semantics.generated.library.political_cartoon.PoliticalCartoon.class,
 
