@@ -202,7 +202,7 @@
 	<meta_metadata name="flickr_image_detail_two" extends="compound_document" parser="xpath" comment="A Flickr Image result page">
 		<!--   <selector name="flickr_image_detail_selector" />
 		-->
-		<selector name="flickr_image_detail_selector" url_regex="http://www.flickr.com/photos/(?!tags)[A-z0-9_@-]+/[0-9]+/$" domain="flickr.com" />
+		<selector name="flickr_image_detail_selector" url_regex="http://www.flickr.com/photos/(?!tags)[A-z0-9_@-]+/[0-9]+($|/.*$)" domain="flickr.com" />
 		
 		<def_var name="photoTD" xpath="//div[@id='meta']" type="node" />
 
