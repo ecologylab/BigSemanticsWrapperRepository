@@ -9,7 +9,9 @@ package ecologylab.semantics.generated.library.patents;
  */
 
 import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
+import ecologylab.semantics.generated.library.patents.Patent;
 import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
@@ -18,6 +20,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
 import java.util.ArrayList;
@@ -44,6 +47,25 @@ public class Patent extends CreativeWork
 	@simpl_collection("document")
 	@mm_name("classifications")
 	private List<Document> classifications;
+
+	/** 
+	 *subsequent patents that cite this
+	 */ 
+	@simpl_collection("patent")
+	@simpl_other_tags({"referenced_bys"})
+	@mm_name("citations")
+	private List<Patent> citations;
+
+	/** 
+	 *prior patents that this references
+	 */ 
+	@simpl_collection("patent")
+	@mm_name("references")
+	private List<Patent> references;
+
+	@simpl_collection("image")
+	@mm_name("drawings")
+	private List<Image> drawings;
 
 	public Patent()
 	{ super(); }
@@ -135,5 +157,35 @@ public class Patent extends CreativeWork
 	public void setClassifications(List<Document> classifications)
 	{
 		this.classifications = classifications;
+	}
+
+	public List<Patent> getCitations()
+	{
+		return citations;
+	}
+
+	public void setCitations(List<Patent> citations)
+	{
+		this.citations = citations;
+	}
+
+	public List<Patent> getReferences()
+	{
+		return references;
+	}
+
+	public void setReferences(List<Patent> references)
+	{
+		this.references = references;
+	}
+
+	public List<Image> getDrawings()
+	{
+		return drawings;
+	}
+
+	public void setDrawings(List<Image> drawings)
+	{
+		this.drawings = drawings;
 	}
 }
