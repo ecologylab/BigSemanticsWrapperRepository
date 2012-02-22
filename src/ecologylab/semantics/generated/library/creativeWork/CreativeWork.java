@@ -13,19 +13,14 @@ import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
-import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.Hint;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
-import ecologylab.serialization.annotations.simpl_hints;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.Integer;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,11 +28,6 @@ import java.util.Map;
 @simpl_inherit
 public class CreativeWork extends CompoundDocument
 {
-	@simpl_scalar
-	@simpl_hints({Hint.XML_LEAF})
-	@simpl_tag("abstract")
-	private MetadataString abstractField;
-
 	/** 
 	 *Set of authors.
 	 */ 
@@ -60,38 +50,6 @@ public class CreativeWork extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public MetadataString	abstractField()
-	{
-		MetadataString	result = this.abstractField;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.abstractField = result;
-		}
-		return result;
-	}
-
-	public String getAbstractField()
-	{
-		return this.abstractField == null ? null : abstractField().getValue();
-	}
-
-	public MetadataString getAbstractFieldMetadata()
-	{
-		return abstractField;
-	}
-
-	public void setAbstractField(String abstractField)
-	{
-		if (abstractField != null)
-			this.abstractField().setValue(abstractField);
-	}
-
-	public void setAbstractFieldMetadata(MetadataString abstractField)
-	{
-		this.abstractField = abstractField;
-	}
 
 	public List<Author> getAuthors()
 	{
