@@ -1,6 +1,6 @@
 <meta_metadata_repository name="scienceDirect" package="ecologylab.semantics.generated.library.scienceDirect">
 	<meta_metadata name="science_direct_article" extends="scholarly_article" comment="Information about the article" parser="xpath">
-		<selector url_stripped="http://www.sciencedirect.com/science" />
+		<selector url_path_tree="http://www.sciencedirect.com/science" />
 		<scalar name="title" xpath="//div[@class='articleTitle']"/>
 		<collection name="authors"  xpath="//div[@id='articleContent']/p" comment="All authors">
 			<field_parser name="regex_split" regex=",|and" />

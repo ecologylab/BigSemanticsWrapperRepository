@@ -49,7 +49,7 @@
 <meta_metadata name="homeaway" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www.homeaway.com/vacation-rental" />
 	
-	<example_url location="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42"/>
+	<example_url location="http://www.homeaway.com/vacation-rental/p100000"/>
 
 	<scalar name="title" xpath="//h1[@class='newHeader']" />
 	<scalar name="description" xpath="//div[@class='prop-desc-txt']"/>
@@ -63,8 +63,8 @@
 <!-- 	<scalar name="check_in" xpath="//span[@id='check in_val']" /> //div[@class='tel']-->
 <!-- 	<scalar name="check_out" xpath="//span[@id='check out_val']" /> -->
 	
-	<composite name="place" xpath="//div[@class='tel']">
-		<scalar name="telephone" xpath="." />
+	<composite name="place">
+		<scalar name="telephone" xpath="//div[@class='tel']" />
 <!-- 		<scalar name="street_address" xpath="."/> -->
 		<composite name="map" xpath="//script[contains(.,'mapData')]">
 <!-- 			<scalar name="latitude" xpath="./@data-lat"/> -->

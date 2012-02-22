@@ -55,11 +55,11 @@
 		</scalar>
 		<scalar name="pic_link" xpath="//div[@id='selected_pages_v']/div[1]/a[1]/@href" scalar_type="ParsedURL" />
 		
-		<collection name="citations" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" child_type="patent" other_tags="referenced_bys" comment="subsequent patents that represent this">
+		<collection name="citations" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" child_type="google_patent" other_tags="referenced_bys" comment="subsequent patents that represent this">
 			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
-		<collection name="references" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" child_type="patent" comment="prior patents that this references">
+		<collection name="references" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" child_type="google_patent" comment="prior patents that this references">
 			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
