@@ -9,6 +9,7 @@
 		<collection name="keywords" comment="Key Terms of the paper." child_type="tag" schema_org_itemprop="keywords" />
 		<scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
 		<composite name="rich_media" label="article"/>
+		
 	</meta_metadata>
 	
 	<meta_metadata name="dx_doi" type="document" redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
@@ -23,7 +24,7 @@
 		<selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />
 		
 		<scalar name="title" xpath="//div[@id='breadcrumb']/text()[5]" />
-		<scalar name="abstract_field" xpath="//div[@class='abstract']/text()[1]"/>
+		<scalar name="description" xpath="//div[@class='abstract']/text()[1]"/>
 		<composite name="source">
 			<composite name="archive" >
 				<scalar name="title" xpath="//div[@id='breadcrumb']/a[2]/text()" />

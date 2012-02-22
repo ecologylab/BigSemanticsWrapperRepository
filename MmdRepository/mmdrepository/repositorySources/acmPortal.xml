@@ -40,7 +40,7 @@
 			</scalar>
 		</composite>
 
-		<scalar name="abstract_field" label="abstract" xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
+		<scalar name="description" xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
 
 		<collection name="references" xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">
       <field_parser name="acm_reference" for_each_element="true" />

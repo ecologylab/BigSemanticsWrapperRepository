@@ -8,7 +8,7 @@
 				<filter regex="(a|b|c)\s*$" replace="" />
 			</scalar>	
 		</collection>		
-		<scalar name="abstract_field" xpath="//div[@class='articleText_indent']//p" />
+		<scalar name="" xpath="//div[@class='articleText_indent']//p" />
 		<collection name="references" xpath="//span[@class='referenceText']/span" comment="Articles cited by the article">
 			<scalar name="title" xpath="." >
 				<filter regex="\[[0-9]]+" replace="" />

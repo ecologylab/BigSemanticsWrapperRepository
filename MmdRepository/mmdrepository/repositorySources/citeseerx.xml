@@ -42,7 +42,7 @@
 			<scalar name="isbn" field_parser_key="isbn" />
 		</composite>
 
-		<scalar name="abstract_field" xpath="//div[@id='main_content']/p" />
+		<scalar name="description" xpath="//div[@id='main_content']/p" />
 		
     <!-- CiteSeerX web page says these are citations, but actually they are references! -->
 		<collection name="references" xpath="//table[@class='citelist']//a">

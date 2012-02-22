@@ -9,7 +9,7 @@
 	
 	<meta_metadata name="creative_work" extends="compound_document" schema_org_itemtype="http://schema.org/CreativeWork">
 		<collection name="authors" comment="Set of authors." child_type="author" layer="8.0" schema_org_itemprop="author"/>
-		<scalar name="abstract_field" scalar_type="String" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
+		<scalar name="description" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
 		<scalar name="year" other_tags="year_of_publication" scalar_type="Int" is_facet="true" />
 		<composite name="rich_media" type="compound_document"/>
 	</meta_metadata>

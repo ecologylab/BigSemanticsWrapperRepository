@@ -11,14 +11,16 @@
 		<scalar name="title" xpath="//td/font/big"/>
 	</meta_metadata>
 	
-	<meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
-<!-- 		<scalar name="claims" scalar_type="String" hint="XML_LEAF" /> -->
-    <collection name="claims" child_scalar_type="String" child_tag="claim" />
-		<scalar name="inventor" scalar_type="String" />
-		<scalar name="filing_date" scalar_type="Date" />
-		
+	<meta_metadata name="patent" type="creative_work" comment="Patents Class" parser="xpath">
+   
+	<scalar name="inventor" scalar_type="String" />
+	<scalar name="filing_date" scalar_type="Date" />	
+	
+	<scalar name="description" label="abstract" />
+	
 	<collection name="classifications" child_type="document"/>
-
+	<collection name="claims" child_scalar_type="String" child_tag="claim" />
+ 
 	<collection name="citations" child_type="patent" other_tags="referenced_bys" comment="subsequent patents that cite this"/>
 	<collection name="references" child_type="patent" comment="prior patents that this references"/>
 
@@ -59,7 +61,7 @@
 
 		<scalar name="title" xpath="//div[@id='titlebar']/h1" />
 		<!-- <scalar name="inventor" xpath="//div[@id='titlebar']/span" /> -->
-		<scalar name="abstract_field" xpath="//table[@id='summarytable']//p[@class='patent_abstract_text']" />
+		<scalar name="description" xpath="//table[@id='summarytable']//p[@class='patent_abstract_text']" />
 		<!-- <scalar name="claims" xpath="//div[@id='patent_claims_v']" /> -->
 		<!-- <collection name="claims" xpath="//div[@id='patent_claims_v']"> --><!-- not specifying child_scalar_type causes null pointer! this needs to 
 			be fixed. -->
@@ -107,11 +109,11 @@
 					<arg value="location" name="location" />
 				</parse_document>
 			</for_each>
-			<get_field name="abstract_field" />
+			<get_field name="description" />
 			<if>
-				<not_null value="abstract_field" />
+				<not_null value="description" />
 				<create_and_visualize_text_surrogate>
-					<arg value="abstract_field" name="text" />
+					<arg value="description" name="text" />
 				</create_and_visualize_text_surrogate>
 			</if>
 			<get_field name="claims" />
