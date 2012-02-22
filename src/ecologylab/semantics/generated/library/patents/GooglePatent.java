@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.patents;
  */
 
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.patents.GooglePatent;
 import ecologylab.semantics.generated.library.patents.Patent;
 import ecologylab.semantics.generated.library.search.SearchResult;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
@@ -36,17 +37,17 @@ public class GooglePatent extends Patent
 	/** 
 	 *subsequent patents that represent this
 	 */ 
-	@simpl_collection("patent")
+	@simpl_collection("google_patent")
 	@simpl_other_tags({"referenced_bys"})
 	@mm_name("citations")
-	private List<Patent> citations;
+	private List<GooglePatent> citations;
 
 	/** 
 	 *prior patents that this references
 	 */ 
-	@simpl_collection("patent")
+	@simpl_collection("google_patent")
 	@mm_name("references")
-	private List<Patent> references;
+	private List<GooglePatent> references;
 
 	@simpl_collection("search_result")
 	@mm_name("pic_links")
@@ -92,22 +93,22 @@ public class GooglePatent extends Patent
 		this.picLink = picLink;
 	}
 
-	public List<Patent> getCitations()
+	public List<GooglePatent> getCitations()
 	{
 		return citations;
 	}
 
-	public void setCitations(List<Patent> citations)
+	public void setCitations(List<GooglePatent> citations)
 	{
 		this.citations = citations;
 	}
 
-	public List<Patent> getReferences()
+	public List<GooglePatent> getReferences()
 	{
 		return references;
 	}
 
-	public void setReferences(List<Patent> references)
+	public void setReferences(List<GooglePatent> references)
 	{
 		this.references = references;
 	}
