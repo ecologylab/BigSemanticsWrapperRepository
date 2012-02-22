@@ -1,5 +1,16 @@
 <meta_metadata_repository name="patents" package="ecologylab.semantics.generated.library.patents" default_user_agent_name="chrome_2">
 
+	<meta_metadata name="patent_classification" extends="document" parser="xpath">
+		<selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
+		
+		<example_url location="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm"/>
+		
+		<scalar name="description" xpath="/html/body/p[3]" />
+		
+		<scalar name="patent_class" scalar_type="string" label="class" xpath="//big[1]" />
+		<scalar name="title" xpath="//td/font/big"/>
+	</meta_metadata>
+	
 	<meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
 <!-- 		<scalar name="claims" scalar_type="String" hint="XML_LEAF" /> -->
     <collection name="claims" child_scalar_type="String" child_tag="claim" />
@@ -40,9 +51,9 @@
 			<scalar name="title" xpath="./text()" />
 		</collection>
 
-		<collection name="classifications" xpath="//div[@class='patent_bibdata']/a[contains(@href,'classification')]">
+		<collection name="classifications" child_type="patent_classification" xpath="//div[@class='patent_bibdata']/a[contains(@href,'classification')]">
 			<scalar name="location" xpath="./@href" hide="true" />
-			<scalar name="title" xpath="./text()" />
+			<scalar name="patent_class" xpath="./text()" />
 		</collection>
 
 
