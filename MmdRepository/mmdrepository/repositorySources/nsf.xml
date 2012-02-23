@@ -2,6 +2,9 @@
 
   <meta_metadata name="nsf_award" comment="NSF Award details." extends="compound_document"
     parser="xpath">
+    
+    <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428" />
+    <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854" />
 
     <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
 
