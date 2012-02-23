@@ -219,7 +219,7 @@
 			<filter regex="$" replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
 		</scalar>
 
-		<collection name="flickr_tags" child_type="flickr_tag" xpath="//a[@class='tag-item ywa-track']" promote_children="true">
+		<collection name="flickr_tags" child_type="flickr_tag" xpath="//a[@class='tag-item ywa-track']">
 			<scalar name="tag_name" xpath="." />
 			<scalar name="tag_link" xpath="./@href" />
 		</collection>

@@ -1,43 +1,43 @@
 <meta_metadata_repository name="scienceDirect" package="ecologylab.semantics.generated.library.scienceDirect">
 	<meta_metadata name="science_direct_article" extends="scholarly_article" comment="Information about the article" parser="xpath">
 		<selector url_path_tree="http://www.sciencedirect.com/science" />
-		<scalar name="title" xpath="//div[@class='articleTitle']"/>
-		<collection name="authors"  xpath="//div[@id='articleContent']/p" comment="All authors">
-			<field_parser name="regex_split" regex=",|and" />
-			<scalar name="title" field_parser_key="$0" required="true">
-				<filter regex="(a|b|c)\s*$" replace="" />
-			</scalar>	
+		<scalar name="title" xpath="//h1[@class='svTitle']"/>
+		<collection name="authors"  xpath="//ul[@class='authorGroup']/li" comment="All authors">
+			<scalar name="title" xpath="a[1]" />
+			<scalar name="location" xpath="a[1]/@href" />
 		</collection>		
-		<scalar name="description" xpath="//div[@class='articleText_indent']//p" />
-		<collection name="references" xpath="//span[@class='referenceText']/span" comment="Articles cited by the article">
-			<scalar name="title" xpath="." >
-				<filter regex="\[[0-9]]+" replace="" />
+		<scalar name="description" xpath="//div[@class='svAbstract']/p" />
+		<composite name="source" xpath="//div[@class='publicationHead']">
+			<scalar name="title" xpath="div[@class='title']/a/span/text()" />
+			<scalar name="location" xpath="p/a/@href" />
+			<scalar name="volume_and_issue" xpath="p/a/text()" />
+			<scalar name="date" xpath="p/text()">
+				<filter regex=",\s[Pages \d*–\d*]*" replace="" />
+			</scalar>
+		</composite>
+		<collection name="keywords" xpath="//ul[@class='keyword']/li">
+			<scalar name="tag_name" xpath=".">
+				<filter regex=";" replace="" />
 			</scalar>
 		</collection>
-		<scalar name="publication_name" xpath="//div[@id='artiHead']//b" comment="The journal or other publication that the article comes from" scalar_type="String" />
-		<scalar name="volume" xpath="//div[@id='artiHead']/a[2]" scalar_type="String">
-			<filter regex="(\,\s[I|i]\w+\s\d)" replace="" />
-		</scalar>
-		<scalar name="issue" xpath="//div[@id='artiHead']/a[2]" scalar_type="String">
-			<filter regex="[\w\s\,]+(?=[I|i])" replace="" />
-		</scalar>
-		<!-- 
-		<scalar name="recieved" xpath="//div[@class='articleText'][1]" scalar_type="String">
-			<filter regex="\s\;\;" replace="" />
-		</scalar>
-		<scalar name="accepted" xpath="//div[@class='articleText'][2]" scalar_type="String">
-			<filter regex="(\.\s)" replace="" />
-		</scalar>	
-		<scalar name="online" xpath="//div[@class='articleText'][3]" scalar_type="String">
-			<filter regex="\." replace="" />
-		</scalar>
-		<scalar name="pages" xpath="//div[@id='artiHead']" comment="The pages on which the article occurs in the publication">
-			<filter regex="[A-Za-z\s0-9-\,]+(?=[P|p]ages)" replace="" />
-		</scalar>		
-		 -->
-		<scalar name="doi" xpath="//a[@id='ddDoi']" comment="The digital object identifier of the article" scalar_type="String" />
-		<semantic_actions>
-			<get_field name="title" />
-		</semantic_actions>
+		<collection name="references" xpath="//ol[@class='references']/li">
+			<scalar name="title" xpath="ul/li[@class='title']" />
+			<collection name="authors" xpath="ul/li[@class='author']">
+		        <field_parser name="regex_split" regex=",\s" trim="true" />
+		        <scalar name="title" field_parser_key="$0" />
+	      	</collection>
+	      	<composite name="source" xpath="ul/li[@class='source']/p">
+	      		<scalar name="title">
+	      			<filter regex=",\s.*" replace="" />
+	      		</scalar>
+	      	</composite>
+<!-- 	      	<scalar name="location" xpath="ul/li/[@class='refPlaceHolder']/div[2]/a/@href" /> -->
+		</collection>
+		<collection name="citations" xpath="//div[contains(@id, 'mlktCiteTD')]">
+			<scalar name="title" xpath="text()" />
+			<scalar name="location" xapth="a/@href" />
+		</collection>
+		
+		<scalar name="doi" xpath="//a[@id='ddDoi']/@href" hide="true" comment="The digital object identifier of the article" scalar_type="ParsedURL" />
 	</meta_metadata>
 </meta_metadata_repository>	
