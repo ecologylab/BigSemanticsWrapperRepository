@@ -74,10 +74,10 @@
     <collection name="relevant_locations" child_tag="relevant_location"
       child_scalar_type="ParsedURL" />
       
-    <collection name="publications" child_tag="publication" child_scalar_type="String"
+    <collection name="publications" child_tag="publication" child_scalar_type="String" extract_as_html="true"
       xpath="//strong[@class='greybold' and starts-with(text(), 'PUBLICATIONS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p" />
       
-    <collection name="proceedings" child_tag="proceeding" child_scalar_type="String"
+    <collection name="proceedings" child_tag="proceeding" child_scalar_type="String" extract_as_html="true"
       xpath="//strong[@class='greybold' and starts-with(text(), 'CONFERENCE PROCEEDINGS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p" />
 
   </meta_metadata>
