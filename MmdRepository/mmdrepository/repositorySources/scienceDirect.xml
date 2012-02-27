@@ -35,7 +35,7 @@
 		</collection>
 		<collection name="citations" xpath="//div[contains(@id, 'mlktCiteTD')]">
 			<scalar name="title" xpath="text()" />
-			<scalar name="location" xapth="a/@href" />
+			<scalar name="location" xpath="a/@href" />
 		</collection>
 		
 		<scalar name="doi" xpath="//a[@id='ddDoi']/@href" hide="true" comment="The digital object identifier of the article" scalar_type="ParsedURL" />
