@@ -18,7 +18,8 @@
 	
 	<scalar name="description" label="abstract" />
 	
-	<collection name="classifications" child_type="document"/>
+<!-- 	<collection name="classifications" child_type="document"/> --><!-- polymorphic fields need simpl_classes/scope meta-information! -->
+	<collection name="classifications" child_type="patent_classification"/>
 	<collection name="claims" child_scalar_type="String" child_tag="claim" />
  
 	<collection name="citations" child_type="patent" other_tags="referenced_bys" comment="subsequent patents that cite this"/>
