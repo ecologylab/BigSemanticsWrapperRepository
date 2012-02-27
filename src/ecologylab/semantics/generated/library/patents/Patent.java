@@ -10,7 +10,7 @@ package ecologylab.semantics.generated.library.patents;
 
 import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.semantics.generated.library.patents.Patent;
-import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.generated.library.patents.PatentClassification;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -40,9 +40,9 @@ public class Patent extends CreativeWork
 	@simpl_scalar
 	private MetadataDate filingDate;
 
-	@simpl_collection("document")
+	@simpl_collection("patent_classification")
 	@mm_name("classifications")
-	private List<Document> classifications;
+	private List<PatentClassification> classifications;
 
 	@simpl_collection("claim")
 	@mm_name("claims")
@@ -139,12 +139,12 @@ public class Patent extends CreativeWork
 		this.filingDate = filingDate;
 	}
 
-	public List<Document> getClassifications()
+	public List<PatentClassification> getClassifications()
 	{
 		return classifications;
 	}
 
-	public void setClassifications(List<Document> classifications)
+	public void setClassifications(List<PatentClassification> classifications)
 	{
 		this.classifications = classifications;
 	}
