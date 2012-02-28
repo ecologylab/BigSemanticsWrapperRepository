@@ -54,7 +54,7 @@
 			<scalar name="title" xpath="./text()" />
 		</collection>
 
-		<collection name="classifications" child_type="patent_classification" xpath="//div[@class='patent_bibdata']/a[contains(@href,'classification')]">
+		<collection name="classifications" xpath="//div[@class='patent_bibdata']/a[contains(@href,'classification')]">
 			<scalar name="location" xpath="./@href" hide="true" />
 			<scalar name="patent_class" xpath="./text()" />
 		</collection>
