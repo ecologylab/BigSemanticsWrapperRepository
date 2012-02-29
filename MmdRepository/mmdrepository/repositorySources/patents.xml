@@ -60,7 +60,7 @@
 		</collection>
 
 
-		<scalar name="title" xpath="//div[@id='titlebar']/h1" />
+		<scalar name="title" xpath="//h1" />
 		<!-- <scalar name="inventor" xpath="//div[@id='titlebar']/span" /> -->
 		<scalar name="description" xpath="//table[@id='summarytable']//p[@class='patent_abstract_text']" />
 		<!-- <scalar name="claims" xpath="//div[@id='patent_claims_v']" /> -->
