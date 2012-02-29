@@ -294,6 +294,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.Search.class,
 
+		ecologylab.semantics.generated.library.search.SearchMeta.class,
+
 		ecologylab.semantics.generated.library.search.SearchResult.class,
 
 		ecologylab.semantics.generated.library.search.SlashdotSearch.class,

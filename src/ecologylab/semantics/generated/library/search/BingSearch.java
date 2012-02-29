@@ -13,11 +13,14 @@ import ecologylab.semantics.generated.library.search.BingSearchWebSection;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_tag;
+import java.lang.String;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +28,10 @@ import java.util.Map;
 @simpl_tag("SearchResponse")
 public class BingSearch extends CompoundDocument
 {
+	@simpl_scalar
+	@simpl_tag("Query")
+	private MetadataString bingsearchapi;
+
 	@simpl_composite
 	@simpl_tag("web:Web")
 	@mm_name("web_section")
@@ -42,6 +49,38 @@ public class BingSearch extends CompoundDocument
 		super(mmd);
 	}
 
+
+	public MetadataString	bingsearchapi()
+	{
+		MetadataString	result = this.bingsearchapi;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.bingsearchapi = result;
+		}
+		return result;
+	}
+
+	public String getBingsearchapi()
+	{
+		return this.bingsearchapi == null ? null : bingsearchapi().getValue();
+	}
+
+	public MetadataString getBingsearchapiMetadata()
+	{
+		return bingsearchapi;
+	}
+
+	public void setBingsearchapi(String bingsearchapi)
+	{
+		if (bingsearchapi != null)
+			this.bingsearchapi().setValue(bingsearchapi);
+	}
+
+	public void setBingsearchapiMetadata(MetadataString bingsearchapi)
+	{
+		this.bingsearchapi = bingsearchapi;
+	}
 
 	public BingSearchWebSection getWebSection()
 	{
