@@ -2,11 +2,16 @@
 
 	<!-- +++++++++++++++++++++++++++++++++ More Specific Types - Search & its Children +++++++++++++++++++++++++++++++++ -->
 
-	<meta_metadata name="search_result" extends="document" comment="A result from a search.">
-    <scalar name="title" label="heading" layer="10.0" navigates_to="location" comment="The heading of the search result." />
-		<scalar name="description" label="snippet" comment="The snippet of the search result." />
-		<scalar name="location" label="link" hide="true" comment="The link of the search result." /><!-- we may want to show location in some cases -->
+	<meta_metadata show_expanded_initially="true" name="search_result" extends="document" comment="A result from a search.">
+        <scalar always_show="true" name="title" label="heading" layer="10.0" navigates_to="location" comment="The heading of the search result." />
+		<scalar always_show="true" name="description" label="snippet" comment="The snippet of the search result." />
+		<scalar always_show="true" name="location" label="link" show="true" comment="The link of the search result." /><!-- we may want to show location in some cases -->
 		<scalar name="engine" scalar_type="String" layer="-20.0" comment="The search engine used for this result." />
+	</meta_metadata>
+
+
+	<meta_metadata show_expanded_initially="true" name="search_meta" extends="metadata" comment="">
+		<collection show_expanded_initially="true" name="search_results" always_show="true" child_type="search_result" no_wrap="true" />
 	</meta_metadata>
 
 	<meta_metadata name="search" extends="document" comment="">
@@ -229,7 +234,7 @@
 
 	<!-- definitions of Bing search results from different sources. -->
 	<meta_metadata name="bing_web_search_result" extends="search_result" comment="Bing web search result.">
-		<scalar name="title" tag="web:Title" hide="true" />
+		<scalar name="title" tag="web:Title" />
 		<scalar name="description" tag="web:Description" />
 		<scalar name="location" tag="web:Url" hide="true" />
 	</meta_metadata>
@@ -246,15 +251,28 @@
 	<meta_metadata name="bing_search_image_section" extends="compound_document">
 		<collection name="image_search_results" child_type="bing_image_search_result" tag="mms:Results" child_tag="mms:ImageResult" no_wrap="false" />
 	</meta_metadata>
-
+	
 	<!-- Bing search. note that they put different types of search results (i.e. sources) into the same structure. -->
-	<meta_metadata name="bing_search" extends="compound_document" tag="SearchResponse" parser="direct" user_agent_name="opera_9">
+	<meta_metadata name="bing_search" promote_children="true" extends="compound_document" tag="SearchResponse" parser="direct" user_agent_name="opera_9">
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
 
+
+		<scalar name="bingsearchapi" label="search query" type="bing_query"  scalar_type="String" tag="Query"/>
 		<composite name="web_section" type="bing_search_web_section" tag="web:Web" />
 		<composite name="image_section" type="bing_search_image_section" tag="mms:Image" />
+		
+		
 
 		<semantic_actions>
+		<get_field name="web_section" />				
+
+			<get_field name="Query" />
+			<if>
+				<not_null value="Query" />
+				<get_field name="SearchTerms" object="Query" />
+			</if>
+
+		
 			<get_field name="web_section" />
 			<if>
 				<not_null value="web_section" />
@@ -324,7 +342,7 @@
 			</collection>
 		</collection>
 	</meta_metadata>
-
+	
 	<meta_metadata name="delicious_search" extends="search" comment="The delicious search class" user_agent_name="opera_9" parser="xpath">
 		<selector url_stripped="http://www.delicious.com/search" />
 		<collection name="search_results" xpath="//div[@id='content']/ul/li" child_type="social_media_search_result">
