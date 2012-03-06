@@ -9,9 +9,9 @@ package ecologylab.semantics.generated.library.googleBooks;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.googleBooks.GoogleBook;
 import ecologylab.semantics.generated.library.googleBooks.Page;
 import ecologylab.semantics.generated.library.publication.Book;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -21,6 +21,7 @@ import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_scope;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,16 +33,17 @@ public class GoogleBook extends Book
 	@simpl_scalar
 	private MetadataString category;
 
-	@simpl_collection("google_book")
-	@mm_name("references_from_books")
-	private List<GoogleBook> referencesFromBooks;
-
 	@simpl_scalar
 	private MetadataParsedURL placesMentionedKml;
 
 	@simpl_collection("page")
 	@mm_name("selected_pages")
 	private List<Page> selectedPages;
+
+	@simpl_collection
+	@simpl_scope("repository_documents")
+	@mm_name("citations")
+	private List<Document> citations;
 
 	public GoogleBook()
 	{ super(); }
@@ -81,16 +83,6 @@ public class GoogleBook extends Book
 	public void setCategoryMetadata(MetadataString category)
 	{
 		this.category = category;
-	}
-
-	public List<GoogleBook> getReferencesFromBooks()
-	{
-		return referencesFromBooks;
-	}
-
-	public void setReferencesFromBooks(List<GoogleBook> referencesFromBooks)
-	{
-		this.referencesFromBooks = referencesFromBooks;
 	}
 
 	public MetadataParsedURL	placesMentionedKml()
@@ -133,5 +125,15 @@ public class GoogleBook extends Book
 	public void setSelectedPages(List<Page> selectedPages)
 	{
 		this.selectedPages = selectedPages;
+	}
+
+	public List<Document> getCitations()
+	{
+		return citations;
+	}
+
+	public void setCitations(List<Document> citations)
+	{
+		this.citations = citations;
 	}
 }
