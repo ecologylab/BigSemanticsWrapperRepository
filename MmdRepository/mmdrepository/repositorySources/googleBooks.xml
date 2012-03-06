@@ -4,7 +4,7 @@
 		<selector url_stripped="http://books.google.com/books" />
 		
 		<def_var name="metadata_table" xpath="//table[@id='metadata_content_table']/tbody" type="node" />
-		<scalar name="title" layer="10.0" context_node="metadata_table" xpath="./tr[@contains='Title']/td[2]/span" />
+		<scalar name="title" layer="10.0" context_node="metadata_table" xpath="./tr[contains(., 'Title')]/td[2]/span" />
 		
 		<collection name="authors" layer="9.5" context_node="metadata_table" xpath="./tr[contains(., 'Author')]/td[2]/a" >
 			<scalar name="title" xpath="." />
