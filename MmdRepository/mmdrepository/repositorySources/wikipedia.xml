@@ -35,6 +35,7 @@
   <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia (used in cF)">
     <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
     <selector url_regex="http://en.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
+    <selector url_regex="http://en.m.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
 
     <scalar name="title" xpath="//*[@id='firstHeading']" />
     <scalar name="description" xpath="//*[@id='bodyContent']/p[1]" />
@@ -90,19 +91,23 @@
           <arg value="paragraph_text" name="text" />
         </create_and_visualize_text_surrogate>
       </for_each>
+      
       <get_field name="thumbinners" />
-      <for_each collection="thumbinners" as="thumbinner">
-        <get_field object="thumbinner" name="thumb_img_src" />
-        <get_field object="thumbinner" name="thumb_img_caption" />
-        <if>
-          <not_null value="thumb_img_src" />
-          <not_null value="thumb_img_caption" />
-          <create_and_visualize_img_surrogate>
-            <arg value="thumb_img_caption" name="caption" />
-            <arg value="thumb_img_src" name="image_purl" />
-          </create_and_visualize_img_surrogate>
-        </if>
-      </for_each>
+      <if>
+      	<not_null value="thumbinners"/>
+	      <for_each collection="thumbinners" as="thumbinner">
+	        <get_field object="thumbinner" name="thumb_img_src" />
+	        <get_field object="thumbinner" name="thumb_img_caption" />
+	        <if>
+	          <not_null value="thumb_img_src" />
+	          <not_null value="thumb_img_caption" />
+	          <create_and_visualize_img_surrogate>
+	            <arg value="thumb_img_caption" name="caption" />
+	            <arg value="thumb_img_src" name="image_purl" />
+	          </create_and_visualize_img_surrogate>
+	        </if>
+	      </for_each>
+      </if>
     </semantic_actions>
   </meta_metadata>
 
