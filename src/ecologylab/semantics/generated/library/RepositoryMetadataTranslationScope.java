@@ -344,9 +344,13 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.wikipedia.Paragraph.class,
 
+		ecologylab.semantics.generated.library.wikipedia.Section.class,
+
 		ecologylab.semantics.generated.library.wikipedia.Thumbinner.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikiAnchor.class,
+
+		ecologylab.semantics.generated.library.wikipedia.WikipediaMobilePage.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPage.class,
 
