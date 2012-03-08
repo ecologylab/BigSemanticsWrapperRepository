@@ -32,7 +32,7 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia (used in cF)">
+  <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia" user_agent_name="chrome_12">
     <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
     <selector url_regex="http://en.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
     <selector url_regex="http://en.m.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />

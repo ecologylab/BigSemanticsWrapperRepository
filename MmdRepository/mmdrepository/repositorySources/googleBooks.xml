@@ -4,7 +4,7 @@
 		<selector url_stripped="http://books.google.com/books" />
 		
 		<def_var name="metadata_table" xpath="//table[@id='metadata_content_table']/tbody" type="node" />
-		<scalar name="title" layer="10.0" context_node="metadata_table" xpath="./tr[contains(., 'Title')]/td[2]/span" />
+		<scalar name="title" context_node="metadata_table" xpath="./tr[contains(., 'Title')]/td[2]/span" />
 		
 		<collection name="authors" layer="9.5" context_node="metadata_table" xpath="./tr[contains(., 'Author')]/td[2]/a" >
 			<scalar name="title" xpath="." />
@@ -44,7 +44,7 @@
 		</collection>	
 		<scalar name="about_the_authors" layer="7.0" xpath="//div[@class='textmodulecontent']" />
 		<scalar name="isbn" layer="8.1" hide="true" context_node="metadata_table" xpath="./tr[contains(., 'ISBN')]/td[2]" schema_org_itemprop="isbn">
-			<filter regex="ISBN" replace=", [0-9]+" />
+			<filter regex="[0-9]+, " replace="" />
 		</scalar>
 		<collection name="subjects" layer="9.2" context_node="metadata_table" xpath="./tr[contains(., 'Subjects')]/td[2]/a">
 			<scalar name="subject" xpath="." />
@@ -54,8 +54,8 @@
 		
 		<scalar name="places_mentioned_kml" xpath="//h3[@class='about_title']/font/a[text()='KML']/@href" hide="true" scalar_type="ParsedURL" />
 		<collection name="selected_pages" xpath="//div[@class='selectedpagesthumbnail']" hide="true" child_type="page" child_extends="document">
-			<scalar name="location" xpath="./a/@href" />
-			<scalar name="page_thumbnail" xpath="./a/image" scalar_type="ParsedURL" />
+			<scalar name="location" xpath="./a[2]/@href" />
+			<scalar name="page_thumbnail" xpath="./a[1]/image/@src" scalar_type="ParsedURL" />
 			<scalar name="page_number" xpath="./a[2]" scalar_type="Int">
 				<filter regex="Page " replace="" />
 			</scalar>

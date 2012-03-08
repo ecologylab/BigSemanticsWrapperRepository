@@ -18,11 +18,12 @@
 <meta_metadata name="home_depot_product" type="product" parser="xpath" user_agent_name="firefox_3_6_8">
 	<selector url_regex="http://www.homedepot.com/.+?/ProductDisplay?.*" domain="homedepot.com" />
 	
-	<scalar name="title" xpath="//p[@class='product-name']/text()"/>
+	<scalar name="title" xpath="//h2[@id='superPIP__productName']/text()"/>
 	<scalar name="description" xpath="//div[@id='tab-features']/p[1]/text()"/>
-	<scalar name="price" xpath="//p[@class='pip-price']/text()" >
+	<scalar name="price" xpath="//span[@id='ajaxPrice']" >
 		<filter regex="/[a-z|A-Z|-]*" replace="" />
 	</scalar>
+	
 	<scalar name="model" xpath="//input[@name='modelNumber']/@value"/>
 	
 	<scalar name="image_url" xpath="//img[@id='pip-main-image']/@src"/>
