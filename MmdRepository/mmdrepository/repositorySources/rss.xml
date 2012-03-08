@@ -3,9 +3,9 @@
 	<meta_metadata name="dc" extends="compound_document" comment="Dublin core fields." parser="direct">
 		<scalar name="dc_creator" tag="dc:creator" label="author" scalar_type="String" hint="XML_LEAF"/>
 		<scalar name="dc_subject" tag="dc:subject" scalar_type="String" hint="XML_LEAF"/>
-		<scalar name="dc_description" tag="dc:description" scalar_type="String" hint="XML_LEAF"/>
-		<scalar name="dc_title" tag="dc:title" scalar_type="String" hint="XML_LEAF" hide="true"/>
-		<scalar name="dc_date" tag="dc:date" scalar_type="Date" hint="XML_LEAF" ignore_in_term_vector="true"/>
+		<scalar name="dc_description" tag="dc:description" other_tags="description" scalar_type="String" hint="XML_LEAF"/>
+		<scalar name="dc_title" tag="dc:title" other_tags="title" scalar_type="String" hint="XML_LEAF" hide="true"/>
+		<scalar name="dc_date" tag="dc:date" other_tags="pubDate" scalar_type="Date" hint="XML_LEAF" ignore_in_term_vector="true"/>
 	</meta_metadata>
 	
 	<meta_metadata name="yahoo_media_rss" extends="dc" comment="News feeds." parser="direct">
