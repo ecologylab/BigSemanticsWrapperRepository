@@ -56,7 +56,7 @@
 
 		<collection name="classifications" xpath="//div[@class='patent_bibdata']/a[contains(@href,'classification')]">
 			<scalar name="location" xpath="./@href" hide="true" >
-				<filter regex="&amp;q=(.*)&amp;" group="1" />
+<!--				<filter regex="&amp;q=(.*)&amp;" group="1" />-->
 			</scalar>
 			<scalar name="patent_class" xpath="./text()" />
 		</collection>
