@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *An article on wikipedia (used in cF)
+ *An article on wikipedia
  */ 
 @simpl_inherit
 public class WikipediaPage extends WikipediaPageType

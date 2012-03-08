@@ -17,6 +17,7 @@ import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.Hint;
 import ecologylab.serialization.annotations.simpl_hints;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
@@ -43,16 +44,19 @@ public class Dc extends CompoundDocument
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
 	@simpl_tag("dc:description")
+	@simpl_other_tags({"description"})
 	private MetadataString dcDescription;
 
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
 	@simpl_tag("dc:title")
+	@simpl_other_tags({"title"})
 	private MetadataString dcTitle;
 
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
 	@simpl_tag("dc:date")
+	@simpl_other_tags({"pubDate"})
 	private MetadataDate dcDate;
 
 	public Dc()
