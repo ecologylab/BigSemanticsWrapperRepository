@@ -35,7 +35,7 @@
 		<scalar name="image_url" xpath="//td[@id='prodImageCell']//img/@src" />
 
 		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
-		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" />  this works but not great 
+		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" />  
 		<scalar name="overall_rating"   context_node="reviews_span" xpath=".//span[1]/@title" />
 <!-- 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" /> does not work :-( -->
 
