@@ -17,33 +17,37 @@
 		<collection name="reviews" child_type="product_review" layer="1.0"/>
 	</meta_metadata>
 
-	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="firefox_3_6_8">
+	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="firefox">
 		<selector url_regex="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
 		<selector url_regex="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
+		
+		<example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C"/>
+		<example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY"/>
 
-		<composite name="department" type="document" xpath="//div[@id='navbar']//table[@id='navCatSubnav']//a[@class='navCatA']" >
+		<composite name="department" type="document" xpath="//table[@id='navCatSubnav']//a[@class='navCatA']" >
 			<scalar name="title" xpath="."/>
 			<scalar name="location" hide="true" xpath="./@href" />
 		</composite>
+		
 		<scalar name="price" xpath="//b[@class='priceLarge']" />
 		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
 		<scalar name="description" xpath="//a[@id='technical_details']/following-sibling::div[1]"/>
 		<scalar name="image_url" xpath="//td[@id='prodImageCell']//img/@src" />
-		
+
 		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
-<!-- 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" /> does not work :-( -->
-		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" /> <!-- this works but not great -->
+		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" />  this works but not great 
 		<scalar name="overall_rating"   context_node="reviews_span" xpath=".//span[1]/@title" />
+<!-- 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" /> does not work :-( -->
 
 		<collection name="reviews" xpath="//div[@class='content']/table/tbody/tr[2]/td[1]/div[position() &lt; last()-1]">
 			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" layer="20.0" />
 			<scalar name="content" xpath="." layer="10.0" /> <!-- not concise! -->
 		</collection>
 		
-		<composite name="bestseller_list" extends="document" xpath="//li[@class='zg_hrsr_item']">
-			<scalar name="title" xpath="./span[@class='zg_hrsr_ladder']/b/a/text()" />
-			<scalar name="location" hide="true" xpath="./span[@class='zg_hrsr_ladder']/b/a/@href" />
-			<scalar name="rank" scalar_type="string" xpath="./span[@class='zg_hrsr_rank']/text()" />
+		<composite name="bestseller_list" extends="document" xpath="//li[@id='SalesRank']">
+			<scalar name="title" xpath="./b/a" />
+			<scalar name="location" hide="true" xpath="//li[@id='SalesRank']/a/@href" />
+			<scalar name="rank" scalar_type="string" xpath="./text()" />
 		</composite>
 		<semantic_actions>
 			<reselect_meta_metadata_and_extract name="amazon_item" />
