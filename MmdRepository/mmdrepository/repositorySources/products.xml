@@ -45,9 +45,9 @@
 		</collection>
 		
 		<composite name="bestseller_list" extends="document" xpath="//li[@id='SalesRank']">
-			<scalar name="title" xpath="./b/a" />
+			<scalar name="title" xpath=".//b/a" />
 			<scalar name="location" hide="true" xpath="//li[@id='SalesRank']/a/@href" />
-			<scalar name="rank" scalar_type="string" xpath="./text()" />
+			<scalar name="rank" scalar_type="string" xpath="." />
 		</composite>
 		<semantic_actions>
 			<reselect_meta_metadata_and_extract name="amazon_item" />
