@@ -31,7 +31,7 @@
 		
 		<scalar name="price" xpath="//b[@class='priceLarge']" />
 		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
-		<scalar name="description" xpath="//a[@id='technical_details']/following-sibling::div[1]"/>
+		<scalar name="description" xpath="//div[@class='productDescriptionWrapper']"/>
 		<scalar name="image_url" xpath="//td[@id='prodImageCell']//img/@src" />
 
 		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
