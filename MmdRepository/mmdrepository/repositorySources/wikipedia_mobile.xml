@@ -1,5 +1,5 @@
 <meta_metadata_repository name="wikipedia_mobile"
-	package="ecologylab.semantics.generated.library.wikipedia" default_user_agent_name="iphone">
+	package="ecologylab.semantics.generated.library.wikipedia" default_user_agent_name="chrome_2">
 
 	<meta_metadata name="wikipedia_mobile_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia mobile site"
 	user_agent_name="firefox_3_6_8">
@@ -8,12 +8,12 @@
 		
 		<scalar name="title" xpath="//*[@id='firstHeading']" />
 		
-		<scalar name="main_image_src" xpath="./@src" context_node="main_image" scalar_type="ParsedURL" />
+		<scalar name="main_image_src" xpath="//*[starts-with(@class,'infobox')]//@src[1]" context_node="main_image" scalar_type="ParsedURL" />
 		<scalar name="main_image_caption" scalar_type="String" xpath="//*[starts-with(@class,'infobox')]//span[1]"/>
 		
-		<composite name="description_section" type="section" extends="metadata" xpath="//*[@class='mw-content-ltr']">
+		<composite name="description_section" type="section" extends="metadata">
 			<scalar name="section_title" scalar_type="String" />  
-			<collection name="paragraphs" xpath="./p" child_type="paragraph">
+			<collection name="paragraphs" xpath="//*[@class='mw-content-ltr']/p" child_type="paragraph">
 				<scalar name="paragraph_text" xpath="." />
 				<collection name="anchors" xpath="./a[@title]">
 					<scalar name="link" xpath="./@href" />
