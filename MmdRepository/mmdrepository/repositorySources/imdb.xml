@@ -12,7 +12,7 @@
 		<scalar name="place_of_birth_link" hide="true" scalar_type="ParsedURL" />
 	</meta_metadata>
 
-	<meta_metadata name="imdb_title" extends="compound_document" comment="IMDB metadata" parser="xpath">
+	<meta_metadata name="imdb_title" extends="movie_info" comment="IMDB metadata" parser="xpath">
 		<selector url_path_tree="http://www.imdb.com/title/" />
 		
     <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club... lots of information" />
@@ -28,34 +28,46 @@
 		
 		<scalar name="gist" scalar_type="String" />
 		
-		<scalar name="location" layer="-1.0" />
-		<scalar name="year_released" style="metadata_h1" layer="9.5" xpath="//h1[@class='header']//a" label="year released" scalar_type="String" />
-		<scalar name="rating" xpath="//span[@class='rating-rating']" scalar_type="String" />
-		<collection name="directors" layer="9.0" xpath="//td[@id='overview-top']//div[@class='txt-block'][contains(.,'Director')]//a" 
-				child_type="person_details">
-			<scalar name="location" xpath="./@href" />
-			<scalar name="gist" xpath="." label="name" />
-		</collection>
-		<collection name="writers" layer="8.5" xpath="//td[@id='overview-top']//div[@class='txt-block'][contains(.,'Writer')]//a" child_type="person_details">
-			<scalar name="location" xpath="./@href" />
-			<scalar name="gist" xpath="." label="name" />
-		</collection>
-		<scalar name="release_date" xpath="//td[@id='overview-top']//div[@class='txt-block'][contains(.,'Release Date')]" label="release date" scalar_type="String">
-			<filter regex="Release Date:" replace="" /> <!-- Start of string until colon, inclusive, must be removed -->
-		</scalar>
-		
-		<collection name="genres" xpath="//h4[contains(.,'Genres')]/..//a" child_type="genre" child_extends="metadata">
-			<scalar name="title" xpath="string(.)" navigates_to="genre_link" scalar_type="String">
-				<!--<filter regex="more" replace="" />-->
-			</scalar>
-			<scalar name="genre_link" hide="true" xpath="./@href" scalar_type="ParsedURL" />
-		</collection>
-		<scalar name="plot" xpath="//h2[contains(.,'Storyline')]/../p[1]" scalar_type="String">
+		<scalar name="short_desc" xpath="//div/table[@id='title-overview-widget-layout']/tbody/tr[1]/td[@id='overview-top']/p[2]" scalar_type="String">
 			<filter regex="more" replace="" />
 		</scalar>
+		
+		<scalar name="location" layer="-1.0" />
+		
+		<!-- Not sure needed <scalar name="year_released" style="metadata_h1" layer="9.5" xpath="//h1[@class='header']//a" label="year released" scalar_type="String" /> -->
+		
+		
+		<scalar name="rating" xpath="//div[@class='star-box giga-star']/div[@class='star-box-details']/strong/span" scalar_type="String" />
+		
+		<scalar name="storyline" xpath="//h2[contains(.,'Storyline')]/../p[1]" />
+				<!-- <filter regex="more" replace="" /> -->
+		
+		<collection name="directors" xpath="//h4[contains(.,'Director:')]/../a">
+			<scalar name="location" hide="true" xpath="./@href" />
+			<scalar name="title" xpath="." label="name" />	
+		</collection>
+		
+		<collection name="writers" xpath="//h4[contains(.,'Writers:')]/../a">
+			<scalar name="location" hide="true" xpath="./@href" />
+			<scalar name="title" xpath="." label="name" />	
+		</collection>
+		
+		<scalar name="theater_release" xpath="//h4[contains(.,'Release Date:')]/../time" /> 		
+		
+		<collection name="genres" xpath="//h4[contains(.,'Genres:')]/../a">
+		<!-- <collection name="genres" xpath="//div[@id='maindetails_center_bottom']/div[@class='article'][2]/div[@class='see-more inline canwrap'][2]/a"> -->
+			<scalar name="title" xpath="." scalar_type="String">
+				<!--<filter regex="more" replace="" />-->
+			</scalar>
+			<scalar name="location" hide="false" xpath="./@href" scalar_type="ParsedURL" />
+		</collection>
+
 		<scalar name="tagline" xpath="//h4[contains(.,'Tagline')]/.." scalar_type="String">
 			<filter regex="Taglines:|See more" replace="" />
 		</scalar>
+		
+		<scalar name="mpaa_rating" xpath="//h4[contains(.,'Motion Picture Rating')]/../span" />
+		<!--
 		<collection name="cast" layer="8.0" xpath="//table[@class='cast_list']//tr[@class='odd' or @class='even']" child_type="cast_member" child_extends="metadata">
 			<composite name="actor" xpath="td[@class='name']" type="person_details">
 				<scalar name="gist" xpath="string(.)" label="name" />
@@ -66,12 +78,24 @@
 				<scalar name="location" xpath="./div/a/@href" />
 			</composite>
 		</collection>
+		-->
+		
 		<collection name="title_photos" hide="true" xpath="//div[@class='mediastrip']//img/@src" child_type="image">
 			<scalar name="location" xpath="." />
 		</collection>
     
-		<scalar name="poster_img" hide="true" xpath="//td[@id='img_primary']//img/@src" scalar_type="ParsedURL" />
+		<scalar name="pic" hide="true" xpath="//td[@id='img_primary']//img/@src" scalar_type="ParsedURL" />
 
+		<semantic_actions>
+
+			<get_field name="pic"/> 
+			<create_and_visualize_img_surrogate> 
+				<arg value="pic" name="image_purl"/> 
+			</create_and_visualize_img_surrogate> 
+
+		</semantic_actions>
+	
+<!--
 		<semantic_actions>
 			<get_field name="cast" />
 			<get_field name="tagline" />
@@ -107,6 +131,7 @@
 				</parse_document>
 			</for_each>
 		</semantic_actions>
+		-->
 	</meta_metadata>
 
 	<meta_metadata name="person_details" extends="compound_document" comment="IMDB metadata" parser="xpath">

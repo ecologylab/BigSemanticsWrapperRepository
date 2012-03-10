@@ -1,0 +1,76 @@
+<meta_metadata_repository name="movie" package="ecologylab.semantics.generated.library.movie" default_user_agent_name="chrome_2">
+	
+	<meta_metadata name="movie_info" extends="compound_document" comment="The movie class">
+		<scalar name="short_desc" layer="9.0" comment="Short description of the movie" scalar_type="String" />
+		<scalar name="storyline" layer="8.5" comment="Storyline of the movie" scalar_type="String" />
+		<scalar name="rating" layer="8.0" comment="Score critics gave to the movie" scalar_type="String" />
+		<scalar name="pic" hide="true" comment="Movie Poster or other image" scalar_type="ParsedURL" />
+		<scalar name="mpaa_rating" layer="7.0" comment="MPAA rating" scalar_type="String" />
+		<scalar name="runtime" layer="6.0" comment="How long the movie runs" scalar_type="String" />
+		<scalar name="theater_release" layer="5.0" comment="When the movie was released in theaters" scalar_type="String" />
+		<!-- <scalar name="director" layer="4.0" comment="Who directed the movie" scalar_type="String" /> -->
+		<collection name="directors" layer="4.0" comment="Who directed the movie" child_type="document" />
+		<collection name="writers" layer="4.0" comment="Who wrote the movie" child_type="document" />
+		<collection name="genres" comment="Movie genres" child_type="document" />
+		<!--
+		<collection name="cast" comment="Short list of cast" child_type="search_result" />
+		-->
+		
+	</meta_metadata>
+	
+	<meta_metadata name="rotten_movie" type="movie_info" parser="xpath" comment="RottenTomatoes movie description page">
+		<selector url_path_tree="http://www.rottentomatoes.com/m/" /> 
+
+		<scalar name="title" xpath="//h1[@class='movie_title']" /> 
+        <scalar name="location" layer="-1.0" />
+
+		
+		<scalar name="short_desc" xpath="//div[@id='all-critics-numbers']/div[@class='tomato_consensus']/p[@class='critic_consensus']" /> 
+		
+		<!-- <scalar name="storyline" xpath="//div[@class='movie_content_area']/div[@class='movie_info clearfix']/p[@id='movieSynopsis']" /> --> 
+		
+		<scalar name="rating" xpath="//div[@id='all-critics-numbers']/a[@class='tomato_numbers']/span[@id='all-critics-meter']" /> 
+
+		<scalar name="pic" xpath="//div[@class='movie_poster_area']/a[@class='poster']/img/@src" /> 
+
+		<scalar name="mpaa_rating" xpath="//div[@class='left_col']/p[1]/span[@class='content'][1]/a/span" /> 
+
+		<scalar name="runtime" xpath="//div[@class='left_col']/p[1]/span[@class='content'][2]" /> 
+
+		<scalar name="theater_release" xpath="//div[@class='right_col']/p[1]/span[@class='content']/span" /> 
+		
+		<!-- <scalar name="director" xpath="//div[@class='left_col']/p[3]/span[@class='content']/a/span" /> --> 
+
+		<collection name="directors" xpath="//div[@class='left_col']/p[3]/span[@class='content']/a">
+			<scalar name="location" hide="true" xpath="./@href" />
+			<scalar name="title" xpath="./span" label="name" />	
+		</collection>
+		
+		<collection name="writers" xpath="//div[@class='left_col']/p[4]/a">
+			<scalar name="location" hide="true" xpath="./@href" />
+			<scalar name="title" xpath="." label="name" />	
+		</collection>
+		
+ 		<collection name="genres" xpath="//div[@class='left_col']/p[2]/span[@class='content']/a">
+			<scalar name="location" hide="true" xpath="./@href" />
+			<scalar name="title" xpath="./span" label="genre" />			
+		</collection>
+		
+		<!--
+  		<collection name="cast" xpath="//div[@id='cast-info']/ul/li">
+			<scalar name="location" xpath="./@href" />
+			<scalar name="name" xpath="./span" />
+		</collection>
+		-->
+		
+		<semantic_actions>
+
+			<get_field name="pic"/> 
+			<create_and_visualize_img_surrogate> 
+				<arg value="pic" name="image_purl"/> 
+			</create_and_visualize_img_surrogate> 
+
+		</semantic_actions>
+ 
+	</meta_metadata>
+</meta_metadata_repository>
