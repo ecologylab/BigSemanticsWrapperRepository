@@ -7,7 +7,9 @@
 		
 		<scalar name="description" xpath="/html/body/p[3]" />
 		
-		<scalar name="patent_class" scalar_type="string" label="class" xpath="//big[1]" />
+		<scalar name="patent_class" scalar_type="string" label="class" xpath="//big[1]" >
+				<filter regex="(\d+)" group="1" />
+		</scalar>
 		<scalar name="title" xpath="//td/font/big"/>
 	</meta_metadata>
 	
