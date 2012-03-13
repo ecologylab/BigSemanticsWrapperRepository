@@ -3,7 +3,7 @@
 <meta_metadata name="hotel" extends="document">
 	<collection name="reviews" child_type="product_review"/>
 
-	<composite name="place" type="contact_point" />
+ 	<composite name="place" type="contact_point" /> 
 	
 	<scalar name="price" scalar_type="String" />
 	
@@ -41,6 +41,17 @@
 		<composite name="map" xpath="//div[@id='map']">
 			<scalar name="latitude" xpath="./@data-lat"/>
 			<scalar name="longitude" xpath="./@data-lng"/>
+					
+			<scalar name="map_location">
+				<concatenate_values>
+					<value>http://maps.google.com/maps?q=</value>
+					<value from_scalar="latitude" />
+					<value>,</value>
+					<value from_scalar="longitude" />
+				</concatenate_values>
+			</scalar>			
+			
+			
 <!-- 			<scalar name="location" value="http://maps.google.com/maps?q=" latitudue,longitude /> -->
 		</composite>
 	</composite>
@@ -79,7 +90,7 @@
 		</collection>
 			
 </meta_metadata>
-
+<!-- 
 <meta_metadata name="hilton" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www1.hilton.com/en_US/hi/hotel" />
 	
@@ -94,5 +105,5 @@
 	</composite>
 
 </meta_metadata>
-
+-->
 </meta_metadata_repository>
