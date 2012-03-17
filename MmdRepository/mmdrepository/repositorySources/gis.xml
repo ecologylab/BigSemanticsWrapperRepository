@@ -1,17 +1,15 @@
 <meta_metadata_repository name="gps" package="ecologylab.semantics.generated.library.gps">
 
-	<meta_metadata name="gis_location" extends="metadata">
+	<meta_metadata name="gis_location" extends="document">
 		<scalar name="latitude" scalar_type="Double"/>
 		<scalar name="longitude" scalar_type="Double"/>
 		<scalar name="altitude" scalar_type="Double"/>
 		<scalar name="direction" scalar_type="Double"/>
 		
-		<scalar name="map_location" scalar_type="ParsedURL"/>
-		
 		<scalar name="satellites" scalar_type="String"/>
 	</meta_metadata>
 	
-	<meta_metadata name="contact_point" extends="metadata" schema_org_itemtype="http://schema.org/ContactPoint"
+	<meta_metadata name="contact_point" extends="document" schema_org_itemtype="http://schema.org/ContactPoint"
 	 comment="Resembles a schema.org ContactPoint but is a mixin, not extending document.">
 		<scalar name="telephone" scalar_type="String" schema_org_itemprop="telephone"/>
 		<scalar name="fax_number" scalar_type="String" schema_org_itemprop="faxNumber" label="fax"/>
