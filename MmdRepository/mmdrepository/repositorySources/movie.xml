@@ -18,9 +18,29 @@
 		
 	</meta_metadata>
 	
+	<meta_metadata> <!-- alas, this will not work until we get login / state stuff working -->
+		<selector url_path_tree="http://movies.netflix.com/Movie" />
+		
+		<example_url location="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
+		
+		<def_var name="metadata_content" xpath="//div[@id='mdp-metadata-content']"
+
+		<scalar name="title" xpath="/html/head/title" />
+		<scalar name="description" xpath="//div[@id='mdp-metadata-content']/p[@class='synopsis']" />
+		<scalar name="mpaa_rating" xpath="//div[@id='mdp-metadata-content']/span[@class='certRating']" />
+		<scalar name="runtime" xpath="//div[@id='mdp-metadata-content']/span[@class='duration']" />
+		<scalar name="theater_release"  xpath="//div[@id='mdp-metadata-content']/span[@class='year']" />
+		
+  		<collection name="cast" xpath="////dt[contains(.,'Cast')]/following-sibling::dd[1]/a">
+			<scalar name="location" hide="true" xpath="./@href" />
+			<scalar name="title" xpath="." />	  		
+  		</collection>
+		//dt[contains(.,'Cast')]/following-sibling::dd[1]
+	</meta_metadata>
+	
 	<meta_metadata name="rotten_movie" type="movie_info" parser="xpath" comment="RottenTomatoes movie description page">
 		<selector url_path_tree="http://www.rottentomatoes.com/m/" /> 
-
+		
 		<scalar name="title" xpath="//h1[@class='movie_title']" /> 
         <scalar name="location" layer="-1.0" />
 
