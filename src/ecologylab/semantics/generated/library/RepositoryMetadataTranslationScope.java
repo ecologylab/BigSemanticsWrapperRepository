@@ -172,6 +172,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.hotel.Hotel.class,
 
+		ecologylab.semantics.generated.library.hotel.TripAdvisor.class,
+
 		ecologylab.semantics.generated.library.icdl.IcdlBook.class,
 
 		ecologylab.semantics.generated.library.icdl.IcdlBookPreview.class,
