@@ -9,13 +9,17 @@ package ecologylab.semantics.generated.library.hotel;
  */
 
 import ecologylab.semantics.generated.library.hotel.Hotel;
+import ecologylab.semantics.generated.library.hotel.TripAdvisor;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +27,11 @@ import java.util.Map;
 public class TripAdvisor extends Hotel
 {
 	@simpl_scalar
-	private MetadataString ranking;
+	private MetadataString overallRating;
+
+	@simpl_collection("trip_advisor")
+	@mm_name("similar_hotels")
+	private List<TripAdvisor> similarHotels;
 
 	public TripAdvisor()
 	{ super(); }
@@ -33,35 +41,45 @@ public class TripAdvisor extends Hotel
 	}
 
 
-	public MetadataString	ranking()
+	public MetadataString	overallRating()
 	{
-		MetadataString	result = this.ranking;
+		MetadataString	result = this.overallRating;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.ranking = result;
+			this.overallRating = result;
 		}
 		return result;
 	}
 
-	public String getRanking()
+	public String getOverallRating()
 	{
-		return this.ranking == null ? null : ranking().getValue();
+		return this.overallRating == null ? null : overallRating().getValue();
 	}
 
-	public MetadataString getRankingMetadata()
+	public MetadataString getOverallRatingMetadata()
 	{
-		return ranking;
+		return overallRating;
 	}
 
-	public void setRanking(String ranking)
+	public void setOverallRating(String overallRating)
 	{
-		if (ranking != null)
-			this.ranking().setValue(ranking);
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
 	}
 
-	public void setRankingMetadata(MetadataString ranking)
+	public void setOverallRatingMetadata(MetadataString overallRating)
 	{
-		this.ranking = ranking;
+		this.overallRating = overallRating;
+	}
+
+	public List<TripAdvisor> getSimilarHotels()
+	{
+		return similarHotels;
+	}
+
+	public void setSimilarHotels(List<TripAdvisor> similarHotels)
+	{
+		this.similarHotels = similarHotels;
 	}
 }

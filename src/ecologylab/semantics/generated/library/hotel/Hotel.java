@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.hotel;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gps.ContactPoint;
+import ecologylab.semantics.generated.library.gps.PostalAddress;
 import ecologylab.semantics.generated.library.products.ProductReview;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
@@ -34,7 +34,7 @@ public class Hotel extends Document
 
 	@simpl_composite
 	@mm_name("place")
-	private ContactPoint place;
+	private PostalAddress place;
 
 	@simpl_scalar
 	private MetadataString price;
@@ -72,12 +72,12 @@ public class Hotel extends Document
 		this.reviews = reviews;
 	}
 
-	public ContactPoint getPlace()
+	public PostalAddress getPlace()
 	{
 		return place;
 	}
 
-	public void setPlace(ContactPoint place)
+	public void setPlace(PostalAddress place)
 	{
 		this.place = place;
 	}
