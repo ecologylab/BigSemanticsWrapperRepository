@@ -57,6 +57,23 @@
 	</composite>
 </meta_metadata>
 
+<meta_metadata name="trip_advisor" extends="hotel" parser="xpath">
+	<selector url_regex="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com"/>
+	
+	<example_url location="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html"/>
+
+	<scalar name="title" xpath="//h1[@id='HEADING']" />
+	
+	<scalar name="ranking" scalar_type="string" xpath="//div[@class='slim_ranking']" />
+
+	<composite name="place" xpath="//span[@rel='v:address']/span/span[@class='locality']">
+		<scalar name="street_address" xpath="//span[@property='v:street-address']"/>
+		<scalar name="locality" xpath="./span[@property='v:locality']"/>
+		<scalar name="postal_code" xpath="./span[2]"/>
+		<scalar name="region" xpath=".//span[@property='v:region']"/>
+	</composite>
+</meta_metadata>
+
 <meta_metadata name="homeaway" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www.homeaway.com/vacation-rental" />
 	
