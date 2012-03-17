@@ -3,7 +3,7 @@
 <meta_metadata name="hotel" extends="document">
 	<collection name="reviews" child_type="product_review"/>
 
- 	<composite name="place" type="contact_point" /> 
+ 	<composite name="place" type="postal_address" /> 
 	
 	<scalar name="price" scalar_type="String" />
 	
@@ -42,7 +42,7 @@
 			<scalar name="latitude" xpath="./@data-lat"/>
 			<scalar name="longitude" xpath="./@data-lng"/>
 					
-			<scalar name="map_location">
+			<scalar name="location">
 				<concatenate_values>
 					<value>http://maps.google.com/maps?q=</value>
 					<value from_scalar="latitude" />
@@ -64,14 +64,35 @@
 
 	<scalar name="title" xpath="//h1[@id='HEADING']" />
 	
-	<scalar name="ranking" scalar_type="string" xpath="//div[@class='slim_ranking']" />
+	<scalar name="overall_rating" scalar_type="string" xpath="//div[@class='slim_ranking']" />
 
 	<composite name="place" xpath="//span[@rel='v:address']/span/span[@class='locality']">
-		<scalar name="street_address" xpath="//span[@property='v:street-address']"/>
+		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
 		<scalar name="locality" xpath="./span[@property='v:locality']"/>
-		<scalar name="postal_code" xpath="./span[2]"/>
-		<scalar name="region" xpath=".//span[@property='v:region']"/>
+		<scalar name="region" xpath="./span[@property='v:region']"/>
+		<scalar name="postal_code" xpath="./span[@property='v:postal-code']" />
+
+		<scalar name="location">
+			<concatenate_values>
+				<value>http://maps.google.com/maps?q=</value>
+				<value from_scalar="street_address" />
+				<value>,</value>
+				<value from_scalar="postal_code" />
+			</concatenate_values>
+		</scalar>			
 	</composite>
+	
+	<collection name="reviews" xpath="//div[contains(@id, 'review_')]">
+		<scalar name="rating" xpath="./div/div[@class='col2of2']//img/@alt" layer="20.0" />
+		<scalar name="content" xpath="./div/div[@class='col2of2']/div[@class='entry']/p" layer="10.0" />
+	</collection>
+	
+	<collection name="similar_hotels" xpath="//div[@class='carouselHotel']" child_type="trip_advisor">
+		<scalar name="location" xpath="./div[@class='name']/a/@href" />
+		<scalar name="title" xpath="./div[@class='name']/a" />
+		<scalar name="overall_rating" xpath="./div[@class='ranking']" />
+		
+	</collection>
 </meta_metadata>
 
 <meta_metadata name="homeaway" type="hotel" parser="xpath">
