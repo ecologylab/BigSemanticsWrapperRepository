@@ -15,7 +15,7 @@
 	<scalar name="description" xpath="//span[@class='furnitureINTRO']/div[0]/text()"/>
 </meta_metadata>
 
-<meta_metadata name="home_depot_product" type="product" parser="xpath" user_agent_name="firefox_3_6_8">
+<meta_metadata name="home_depot_product" type="product" parser="xpath" user_agent_name="firefox">
 	<selector url_regex="http://www.homedepot.com/.+?/ProductDisplay?.*" domain="homedepot.com" />
 	
 	<scalar name="title" xpath="//h2[@id='superPIP__productName']/text()"/>
