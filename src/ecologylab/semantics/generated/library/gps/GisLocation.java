@@ -8,11 +8,9 @@ package ecologylab.semantics.generated.library.gps;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.scalar.MetadataDouble;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
@@ -24,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class GisLocation extends Metadata
+public class GisLocation extends Document
 {
 	@simpl_scalar
 	private MetadataDouble latitude;
@@ -37,9 +35,6 @@ public class GisLocation extends Metadata
 
 	@simpl_scalar
 	private MetadataDouble direction;
-
-	@simpl_scalar
-	private MetadataParsedURL mapLocation;
 
 	@simpl_scalar
 	private MetadataString satellites;
@@ -178,38 +173,6 @@ public class GisLocation extends Metadata
 	public void setDirectionMetadata(MetadataDouble direction)
 	{
 		this.direction = direction;
-	}
-
-	public MetadataParsedURL	mapLocation()
-	{
-		MetadataParsedURL	result = this.mapLocation;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.mapLocation = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getMapLocation()
-	{
-		return this.mapLocation == null ? null : mapLocation().getValue();
-	}
-
-	public MetadataParsedURL getMapLocationMetadata()
-	{
-		return mapLocation;
-	}
-
-	public void setMapLocation(ParsedURL mapLocation)
-	{
-		if (mapLocation != null)
-			this.mapLocation().setValue(mapLocation);
-	}
-
-	public void setMapLocationMetadata(MetadataParsedURL mapLocation)
-	{
-		this.mapLocation = mapLocation;
 	}
 
 	public MetadataString	satellites()
