@@ -13,12 +13,10 @@
 		<scalar name="title" xpath="//td/font/big"/>
 	</meta_metadata>
 	
-	<meta_metadata name="patent" type="creative_work" comment="Patents Class" parser="xpath">
+<meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
    
 	<scalar name="inventor" scalar_type="String" />
 	<scalar name="filing_date" scalar_type="Date" />	
-	
-	<scalar name="description" label="abstract" />
 	
 <!-- 	<collection name="classifications" child_type="document"/> --><!-- polymorphic fields need simpl_classes/scope meta-information! -->
 	<collection name="classifications" child_type="patent_classification"/>
@@ -64,8 +62,8 @@
 		</collection>
 
 
-		<scalar name="title" xpath="//h1" />
-		<!-- <scalar name="inventor" xpath="//div[@id='titlebar']/span" /> -->
+		<scalar name="title" xpath="//div[@id='volume-info-sidebar']/h1" />
+		<!-- <scalar name="inventor" xpath="//h1" /> -->
 		<scalar name="description" xpath="//table[@id='summarytable']//p[@class='patent_abstract_text']" />
 		<!-- <scalar name="claims" xpath="//div[@id='patent_claims_v']" /> -->
 		<!-- <collection name="claims" xpath="//div[@id='patent_claims_v']"> --><!-- not specifying child_scalar_type causes null pointer! this needs to 
@@ -105,52 +103,12 @@
 		</before_semantic_actions>
 
 		<semantic_actions>
-<!-- 			<get_field name="patent_name" /> -->
-<!-- 			<get_field name="inventor" /> -->
-<!--			<get_field name="pic_links" />-->
-<!--			<for_each collection="pic_links" as="pic">-->
-<!--				<get_field object="pic" name="location" />-->
-<!--				<parse_document now="true">-->
-<!--					<arg value="location" name="location" />-->
-<!--				</parse_document>-->
-<!--			</for_each>-->
-			<get_field name="description" />
 			<if>
-				<not_null value="description" />
-				<create_and_visualize_text_surrogate>
-					<arg value="description" name="text" />
-				</create_and_visualize_text_surrogate>
-			</if>
-			<get_field name="claims" />
-			<if>
-				<not_null value="claims" />
-        <for_each collection="claims" as="claim">
-  				<create_and_visualize_text_surrogate>
-  					<arg value="claim" name="text" />
-  				</create_and_visualize_text_surrogate>
-        </for_each>
-			</if>
-			<if>
-				<not_null value="citations" />
-				<get_field name="citations" />
-				<for_each collection="citations" as="cit">
-					<get_field object="cit" name="title" />
-					<get_field object="cit" name="location" />
+				<not_null value="classifications" />
+				<get_field name="classifications" />
+				<for_each collection="classifications" as="classification">
 					<parse_document>
-						<arg value="title" name="anchor_text" />
-						<arg value="location" name="location" />
-					</parse_document>
-				</for_each>
-			</if>
-			<get_field name="references" />
-			<if>
-				<not_null value="references" />
-				<for_each collection="references" as="ref">
-					<get_field object="ref" name="title" />
-					<get_field object="ref" name="location" />
-					<parse_document>
-						<arg value="title" name="anchor_text" />
-						<arg value="location" name="location" />
+						<arg value="classification" name="document" />
 					</parse_document>
 				</for_each>
 			</if>
