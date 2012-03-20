@@ -198,7 +198,11 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.misc.Nsdl.class,
 
+		ecologylab.semantics.generated.library.movie.Cast.class,
+
 		ecologylab.semantics.generated.library.movie.MovieInfo.class,
+
+		ecologylab.semantics.generated.library.movie.Netflix.class,
 
 		ecologylab.semantics.generated.library.nsdl.Header.class,
 
@@ -249,6 +253,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.publication.Subject.class,
 
 		ecologylab.semantics.generated.library.publication.TermType.class,
+
+		ecologylab.semantics.generated.library.rich_bookmark.RichBookmark.class,
+
+		ecologylab.semantics.generated.library.rich_bookmark.RichBookmarkCollection.class,
 
 		ecologylab.semantics.generated.library.rss.Channel.class,
 
