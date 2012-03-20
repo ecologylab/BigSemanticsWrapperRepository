@@ -5,7 +5,6 @@
 		<collection name="mixins" child_type="metadata" promote_children="true" polymorphic_scope="repository_metadata"/>
 		<collection name="linked_metadata_list" child_type="metadata" polymorphic_scope="repository_metadata"/>
 <!-- 		<collection name="visuals" child_type="serializable_gui" ignore_completely="true"/> -->
-    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
 	</meta_metadata>
 	
 	<meta_metadata name="document" extends="metadata" comment="The Document Class" built_in="true" schema_org_itemtype="http://schema.org/Thing">
@@ -146,6 +145,7 @@
 		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" />
 <!-- 		<collection name="annotations" child_type="annotation" /> --><!-- now each metadata can have annotations, including information_composition -->
 		<collection name="media" child_type="metadata" polymorphic_scope="repository_media"/>
+	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
 		
 		<scalar name="version" scalar_type="Float" />
 		<scalar name="metadata_version" scalar_type="Float" />
