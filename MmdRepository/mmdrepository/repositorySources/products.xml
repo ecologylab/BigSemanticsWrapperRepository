@@ -83,5 +83,15 @@
 		    </create_and_visualize_img_surrogate>
 		</semantic_actions>
 	</meta_metadata>
+	
+	<meta_metadata name="amazon_list" extends="document" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.amazon.com/gp/registry" />
+		<example_url location="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
+		
+		<collection name="items" child_type="amazon_product" xpath="//td[@class='lineItemMainInfo']">
+			<scalar name="title" xpath=".//span[@class='small productTitle']"/>
+			<scalar name="location" xpath=".//span[@class='small productTitle']/a/@href"/>
+		</collection>
+	</meta_metadata>
 
 </meta_metadata_repository>
