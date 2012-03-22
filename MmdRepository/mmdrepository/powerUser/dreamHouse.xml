@@ -18,6 +18,8 @@
 <meta_metadata name="home_depot_product" type="product" parser="xpath" user_agent_name="firefox">
 	<selector url_regex="http://www.homedepot.com/.+?/ProductDisplay?.*" domain="homedepot.com" />
 	
+	<example_url location="http://www.homedepot.com/Flooring-Laminate-Flooring-Laminate-Wood-Planks/Pergo/h_d1/N-5yc1vZbejkZ150/R-202882882/h_d2/ProductDisplay?catalogId=10053&amp;langId=-1&amp;storeId=10051" />
+	
 	<scalar name="title" xpath="//h2[@id='superPIP__productName']/text()"/>
 	<scalar name="description" xpath="//div[@id='tab-features']/p[1]/text()"/>
 	<scalar name="price" xpath="//span[@id='ajaxPrice']" >
@@ -26,16 +28,9 @@
 	
 	<scalar name="model" xpath="//input[@name='modelNumber']/@value"/>
 	
-	<scalar name="image_url" xpath="//img[@id='pip-main-image']/@src"/>
-	
-  <semantic_actions>
-    <get_field name="image_url" />
-    <get_field name="title" />
-    <create_and_visualize_img_surrogate>
-      <arg name="image_purl" value="image_url" />
-      <arg name="caption" value="title" />
-    </create_and_visualize_img_surrogate>
-  </semantic_actions>
+	<composite name="image">
+		<scalar name="location" xpath="//img[@id='superPIP__productImage']/@src"/>
+	</composite>
 </meta_metadata>
 
 <meta_metadata name="remodelista_product" type="product" parser="xpath">
@@ -54,17 +49,23 @@
 <meta_metadata name="overstock.com_product" type="product" parser="xpath">
 	<selector url_regex="http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html" domain="overstock.com" />
 	
+	<example_url url="http://www.overstock.com/Home-Garden/Bodipedic-Essentials-8-inch-Queen-size-Memory-Foam-Mattress/6153386/product.html?rcmndsrc=4" />
+	
 	<!--
 	
 	<scalar name="description" xpath="//div[@id='prodMain_descShort']//li[1]/text()"/>
 	-->
 	
-	<scalar name="description" xpath="//li[3]/text()"/>
+	<scalar name="description" xpath="//ul[@id='details_descFull']/text()"/>
 
-	<scalar name="title" xpath="//h1[@class='productName']/text()"/>
-	<scalar name="price" xpath="//span[@class='Ovalue']/text()"/>
+	<scalar name="title" xpath="//div[@itemprop='name']"/>
+
+	<scalar name="price" xpath="//span[@itemprop='price']/text()"/>
 	
-	  <scalar name="image_url" xpath="//img[@id='activeImage']/@src" />
+	<composite name="image">
+		<scalar name="location" xpath="//img[@id='activeImage']/@src"/>
+	</composite>
+
   <scalar name="overall_rating" xpath="//div[@id='rating_ui']/span">
     <filter regex="Rating " replace="" />
   </scalar>
@@ -75,15 +76,6 @@
     <scalar name="content" xpath=".//div[contains(@id, 'reviewText')]" />
   </collection>
   
-  <semantic_actions>
-    <get_field name="image_url" />
-    <get_field name="title" />
-    <create_and_visualize_img_surrogate>
-      <arg name="image_purl" value="image_url" />
-      <arg name="caption" value="title" />
-    </create_and_visualize_img_surrogate>
-  </semantic_actions>
-	
 </meta_metadata>
 
 
