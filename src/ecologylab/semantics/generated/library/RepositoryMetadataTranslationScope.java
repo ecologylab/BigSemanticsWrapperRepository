@@ -234,6 +234,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.political_cartoon.PoliticalCartoon.class,
 
+		ecologylab.semantics.generated.library.products.AmazonList.class,
+
 		ecologylab.semantics.generated.library.products.AmazonProduct.class,
 
 		ecologylab.semantics.generated.library.products.BestsellerList.class,
