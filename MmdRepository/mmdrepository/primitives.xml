@@ -55,7 +55,7 @@
 	  <generic_type_var name="ME" bound="clippable_document">
 	    <generic_type_var parameter="ME" />
 	  </generic_type_var>
-		<collection name="clippings" child_type="media_clipping" comment="Clippings based on this." hide="true" polymorphic_scope="repository_clippings">
+		<collection name="clippings_this_is_in" other_tags="clippings" child_type="media_clipping" comment="Clippings based on this." hide="true" polymorphic_scope="repository_clippings">
 		  <generic_type_var parameter="ME" />
 		</collection>
 		<scalar name="width" scalar_type="Integer" hide="true" />
