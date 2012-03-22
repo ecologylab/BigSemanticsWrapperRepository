@@ -94,4 +94,19 @@
 		</collection>
 	</meta_metadata>
 
+	<meta_metadata name="amazon_list_mania" extends="creative_work" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.amazon.com/*/lm"/>
+<!-- 		<selector url_regex="http://www.amazon.com/[^/]+/lm" domain="amazon.com"/> -->
+		
+		<example_url location="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
+		
+		<scalar name="title" xpath="//h1[@class='largeTitle']" />
+		
+		<collection name="items" child_type="amazon_product" xpath="//td[@class='listItem']/table/tbody">
+			<scalar name="title" xpath=".//strong/a"/>
+			<scalar name="price" xpath=".//span[@class='rpSmall']/span[1]"/>
+			<scalar name="overall_rating" xpath=".//span[@class='crAvgStars']//img/@title"/>
+		</collection>
+	</meta_metadata>
+
 </meta_metadata_repository>
