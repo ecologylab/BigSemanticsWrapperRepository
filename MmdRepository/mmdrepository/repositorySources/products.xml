@@ -8,13 +8,21 @@
 	<meta_metadata name="product" extends="compound_document" parser="xpath" schema_org_itemtype="http://schema.org/Product">
 		<scalar name="location" hide="true" />
 
-		<scalar name="price" scalar_type="String" schema_org_itemprop="offers" />
+		<scalar name="price" scalar_type="String" schema_org_itemprop="price" xpath="//span[@itemprop='price']/text()"/>
 		<scalar name="model" scalar_type="String" schema_org_itemprop="model" />
-		<scalar name="image_url" scalar_type="ParsedURL" hide="true" />
+		<composite name="image" type="image" hide="true"/>
+
 		<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
 		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location"  schema_org_itemprop="aggregateRating" />
 
 		<collection name="reviews" child_type="product_review" layer="1.0"/>
+
+	  <semantic_actions>
+	    <get_field name="image" />
+	    <create_and_visualize_img_surrogate>
+	      <arg name="metadata" value="image" />
+	    </create_and_visualize_img_surrogate>
+	  </semantic_actions>
 	</meta_metadata>
 
 	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="firefox">
@@ -23,6 +31,7 @@
 		
 		<example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C"/>
 		<example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY"/>
+		<example_url url="http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y" />
 
 		<composite name="department" type="document" xpath="//table[@id='navCatSubnav']//a[@class='navCatA']" >
 			<scalar name="title" xpath="."/>
@@ -32,7 +41,12 @@
 		<scalar name="price" xpath="//b[@class='priceLarge']" />
 		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
 		<scalar name="description" xpath="//div[@class='productDescriptionWrapper']"/>
-		<scalar name="image_url" xpath="//td[@id='prodImageCell']//img/@src" />
+		
+		<composite name="image" xpath="//img[@id='prodImage']" >
+			<scalar name="location" xpath="./@src" />
+		</composite>
+
+<!-- 		<scalar name="model" xpath="//img[@id='prodImage']/@src" /> -->
 
 		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
 		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" />  
@@ -55,6 +69,10 @@
 				<not_null value="amazon_item" />
 				<add_mixin object="amazon_item" mixin="metadata"/>
 			</if>
+		    <get_field name="image" />
+		    <create_and_visualize_img_surrogate>
+		      <arg name="metadata" value="image" />
+		    </create_and_visualize_img_surrogate>
 		</semantic_actions>
 	</meta_metadata>
 
