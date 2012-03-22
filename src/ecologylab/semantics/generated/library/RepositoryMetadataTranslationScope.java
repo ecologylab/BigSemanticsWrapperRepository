@@ -236,6 +236,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.products.AmazonList.class,
 
+		ecologylab.semantics.generated.library.products.AmazonListMania.class,
+
 		ecologylab.semantics.generated.library.products.AmazonProduct.class,
 
 		ecologylab.semantics.generated.library.products.BestsellerList.class,
