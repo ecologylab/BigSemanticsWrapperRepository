@@ -63,6 +63,14 @@
 			<scalar name="location" hide="true" xpath="//li[@id='SalesRank']/a/@href" />
 			<scalar name="rank" scalar_type="string" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
 		</composite>
+		
+		<collection name="people_also_buy" child_type="amazon_product" xpath="//div[@id='vtpsims']/ul/li">
+			<scalar name="location" xpath=".//a/@href" />
+			<scalar name="title" xpath=".//a" />
+			<scalar name="price" xpath=".//div[@class='price']" />
+			<scalar name="overall_rating" xpath=".//span[@class='swSprite s_star_3_0 ']" />
+		</collection>
+		
 		<semantic_actions>
 			<reselect_meta_metadata_and_extract name="amazon_item" />
 			<if>
