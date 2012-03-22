@@ -11,6 +11,7 @@ package ecologylab.semantics.generated.library.products;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.products.ProductReview;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -18,6 +19,7 @@ import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -38,8 +40,9 @@ public class Product extends CompoundDocument
 	@simpl_scalar
 	private MetadataString model;
 
-	@simpl_scalar
-	private MetadataParsedURL imageUrl;
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
 
 	@simpl_scalar
 	private MetadataParsedURL reviewsLocation;
@@ -129,36 +132,14 @@ public class Product extends CompoundDocument
 		this.model = model;
 	}
 
-	public MetadataParsedURL	imageUrl()
+	public Image getImage()
 	{
-		MetadataParsedURL	result = this.imageUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.imageUrl = result;
-		}
-		return result;
+		return image;
 	}
 
-	public ParsedURL getImageUrl()
+	public void setImage(Image image)
 	{
-		return this.imageUrl == null ? null : imageUrl().getValue();
-	}
-
-	public MetadataParsedURL getImageUrlMetadata()
-	{
-		return imageUrl;
-	}
-
-	public void setImageUrl(ParsedURL imageUrl)
-	{
-		if (imageUrl != null)
-			this.imageUrl().setValue(imageUrl);
-	}
-
-	public void setImageUrlMetadata(MetadataParsedURL imageUrl)
-	{
-		this.imageUrl = imageUrl;
+		this.image = image;
 	}
 
 	public MetadataParsedURL	reviewsLocation()
