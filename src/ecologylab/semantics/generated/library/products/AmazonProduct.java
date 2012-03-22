@@ -8,6 +8,7 @@ package ecologylab.semantics.generated.library.products;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.semantics.generated.library.products.AmazonProduct;
 import ecologylab.semantics.generated.library.products.BestsellerList;
 import ecologylab.semantics.generated.library.products.Product;
 import ecologylab.semantics.metadata.builtins.Document;
@@ -15,8 +16,10 @@ import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +33,10 @@ public class AmazonProduct extends Product
 	@simpl_composite
 	@mm_name("bestseller_list")
 	private BestsellerList bestsellerList;
+
+	@simpl_collection("amazon_product")
+	@mm_name("people_also_buy")
+	private List<AmazonProduct> peopleAlsoBuy;
 
 	public AmazonProduct()
 	{ super(); }
@@ -57,5 +64,15 @@ public class AmazonProduct extends Product
 	public void setBestsellerList(BestsellerList bestsellerList)
 	{
 		this.bestsellerList = bestsellerList;
+	}
+
+	public List<AmazonProduct> getPeopleAlsoBuy()
+	{
+		return peopleAlsoBuy;
+	}
+
+	public void setPeopleAlsoBuy(List<AmazonProduct> peopleAlsoBuy)
+	{
+		this.peopleAlsoBuy = peopleAlsoBuy;
 	}
 }
