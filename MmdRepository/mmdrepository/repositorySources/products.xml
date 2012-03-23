@@ -60,7 +60,7 @@
 		
 		<composite name="bestseller_list" extends="document" xpath="//li[@id='SalesRank']">
 			<scalar name="title" xpath=".//b/a" />
-			<scalar name="location" hide="true" xpath="//li[@id='SalesRank']/a/@href" />
+			<scalar name="location" hide="true" xpath="//li[@id='SalesRank']//b/a/@href" />
 			<scalar name="rank" scalar_type="string" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
 		</composite>
 		
