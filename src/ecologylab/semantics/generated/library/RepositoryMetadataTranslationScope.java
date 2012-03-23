@@ -340,8 +340,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.truman_library_1948_campaign_cartoons.TrumanLibrary1948CampaignCartoons.class,
 
-		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonGenre.class,
-
 		ecologylab.semantics.generated.library.uva.DocumentSet.class,
 
 		ecologylab.semantics.generated.library.uva.KeywordSet.class,
@@ -367,6 +365,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPage.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPageType.class,
+
+		simpl.semantics.generated.library.urbanspoon.UrbanSpoonGenre.class,
 
 	};
 
