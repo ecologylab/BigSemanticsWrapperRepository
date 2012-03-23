@@ -1,12 +1,20 @@
 <meta_metadata_repository name="restaurant" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
-	<meta_metadata name="restaurant" extends="compound_document" comment="The restaurant class">
-		<scalar name="phone" comment="Phone number of the restaurant" scalar_type="String" />
-		<scalar name="pic" hide="true" comment="A picture from the restaurant" scalar_type="ParsedURL" />
-		<scalar name="link" comment="Link to the restaurant's website" scalar_type="ParsedURL" />
-		<scalar name="rating" comment="Rating of the restaurant" scalar_type="String" />
-		<scalar name="location" hide="true" />
-		<scalar name="price_range" comment="Price range of the restaurant" scalar_type="String" />
-		<scalar name="map" hide="true" comment="Map image of the restaurant's location or link to a directions page" scalar_type="ParsedURL" />
-		<collection name="genres" comment="The genres of food offered" child_type="search_result" />
+
+	<meta_metadata name="restaurant" extends="compound_document"
+		comment="The restaurant class.">
+
+		<composite name="place" type="postal_address" />
+		
+		<composite name="image" type="image" comment="picture of food or place" />
+
+		<scalar name="link" scalar_type="ParsedURL"
+			comment="Link to the restaurant's website" />
+		<scalar name="rating" scalar_type="String" comment="Rating of the restaurant" />
+		<scalar name="price_range" scalar_type="String"
+			comment="Price range of the restaurant" />
+
+		<collection name="genres" child_type="document"
+			generate_class="false" comment="The genres of food offered" />
 	</meta_metadata>
+
 </meta_metadata_repository>
