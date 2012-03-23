@@ -71,6 +71,11 @@
 			<scalar name="overall_rating" xpath=".//span[@class='swSprite s_star_3_0 ']" />
 		</collection>
 		
+		<collection name="listmania" child_type="amazon_list_mania" xpath="//div[@id='listmania']//li" >
+			<scalar name="location" xpath=".//a[1]/@href" />
+			<scalar name="title" xpath=".//a[1]/img/@alt" />
+		</collection>
+		
 		<semantic_actions>
 			<reselect_meta_metadata_and_extract name="amazon_item" />
 			<if>
@@ -104,6 +109,7 @@
 		
 		<collection name="items" child_type="amazon_product" xpath="//td[@class='listItem']/table/tbody">
 			<scalar name="title" xpath=".//strong/a"/>
+			<scalar name="location" xpath=".//strong/a/@href"/>
 			<scalar name="price" xpath=".//span[@class='rpSmall']/span[1]"/>
 			<scalar name="overall_rating" xpath=".//span[@class='crAvgStars']//img/@title"/>
 		</collection>
