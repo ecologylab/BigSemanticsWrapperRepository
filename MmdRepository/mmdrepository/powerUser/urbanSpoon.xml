@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta_metadata_repository name="urbanSpoon"
-	package="simpl.semantics.generated.library.urbanspoon">
+	package="ecologylab.semantics.generated.library.urbanspoon">
 	
 	<meta_metadata name="urban_spoon_restaurant" type="restaurant"
 		parser="xpath" comment="UrbanSpoon restaurant description page" user_agent_string="firefox">
