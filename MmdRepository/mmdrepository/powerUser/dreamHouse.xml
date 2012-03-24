@@ -66,15 +66,25 @@
 		<scalar name="location" xpath="//img[@id='activeImage']/@src"/>
 	</composite>
 
-  <scalar name="overall_rating" xpath="//div[@id='rating_ui']/span">
+  <scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']/span">
     <filter regex="Rating " replace="" />
   </scalar>
+  
   <collection name="reviews" xpath="//div[contains(@class, 'reviewSet')]">
     <scalar name="rating" xpath=".//img[contains(@id, 'starImage')]/@src">
       <filter regex="http://[^\.]+.ostkcdn.com/img/mxc/stars|_..gif" replace="" />
     </scalar>
     <scalar name="content" xpath=".//div[contains(@id, 'reviewText')]" />
   </collection>
+  
+  <!-- this should be the fix, but I don't know why it does not work. Shenfeng
+    <collection name="reviews" xpath="//div[@id='most-helpful-reviews']//li[contains(@id, 'primaryReview')]">
+	    <scalar name="rating" xpath="./p[@class='helpful-review-rating']//@title">
+	      
+	    </scalar>
+	    <scalar name="content" xpath="./div[@class='review-copy']/p" />
+  	</collection>
+   -->
   
 </meta_metadata>
 
