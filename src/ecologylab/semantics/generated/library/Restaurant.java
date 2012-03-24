@@ -9,9 +9,9 @@ package ecologylab.semantics.generated.library;
  */
 
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.RestaurantGenre;
 import ecologylab.semantics.generated.library.gps.PostalAddress;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -66,9 +66,9 @@ public class Restaurant extends CompoundDocument
 	/** 
 	 *The genres of food offered
 	 */ 
-	@simpl_collection("document")
+	@simpl_collection("restaurant_genre")
 	@mm_name("genres")
-	private List<Document> genres;
+	private List<RestaurantGenre> genres;
 
 	public Restaurant()
 	{ super(); }
@@ -194,12 +194,12 @@ public class Restaurant extends CompoundDocument
 		this.priceRange = priceRange;
 	}
 
-	public List<Document> getGenres()
+	public List<RestaurantGenre> getGenres()
 	{
 		return genres;
 	}
 
-	public void setGenres(List<Document> genres)
+	public void setGenres(List<RestaurantGenre> genres)
 	{
 		this.genres = genres;
 	}

@@ -36,6 +36,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.Restaurant.class,
 
+		ecologylab.semantics.generated.library.RestaurantGenre.class,
+
 		ecologylab.semantics.generated.library.Tag.class,
 
 		ecologylab.semantics.generated.library.Tumblr.class,
@@ -236,8 +238,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.products.AmazonList.class,
 
-		ecologylab.semantics.generated.library.products.AmazonListMania.class,
-
 		ecologylab.semantics.generated.library.products.AmazonProduct.class,
 
 		ecologylab.semantics.generated.library.products.BestsellerList.class,
@@ -339,8 +339,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.slashdot.SlashdotTag.class,
 
 		ecologylab.semantics.generated.library.truman_library_1948_campaign_cartoons.TrumanLibrary1948CampaignCartoons.class,
-
-		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonGenre.class,
 
 		ecologylab.semantics.generated.library.uva.DocumentSet.class,
 
