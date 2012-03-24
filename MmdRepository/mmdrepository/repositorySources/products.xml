@@ -56,7 +56,7 @@
 		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
 		<scalar name="description" xpath="//div[@class='productDescriptionWrapper']"/>
 		
-		<composite name="image" xpath="//img[@id='prodImage']" >
+		<composite name="image" xpath="//img[@class='prod_image_selector']" >
 			<scalar name="location" xpath="./@src" />
 		</composite>
 
