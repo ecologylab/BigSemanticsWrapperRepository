@@ -117,9 +117,4 @@ public class RichBookmarkCollection extends Document
 	{
 		this.metadataVersion = metadataVersion;
 	}
-	
-	public void addRichBookmark(RichBookmark richBookmark)
-	{
-		this.richBookmarks.add(richBookmark);
-	}
 }
