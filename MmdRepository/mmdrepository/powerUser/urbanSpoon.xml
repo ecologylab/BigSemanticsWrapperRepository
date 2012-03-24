@@ -33,30 +33,29 @@
 		
 		<collection name="genres" xpath="//div[@id='secondary']/div[@class='cuisines']/fieldset/a">
 			<scalar name="title" xpath="./text()" />
-			<scalar name="location" xpath="./@href" />
+			<scalar name="description" xpath="./@href" />
+			<scalar name="location" >
+			<concatenate_values>
+				<value>http://www.urbanspoon.com</value>
+				<value from_scalar="description" />
+ 			</concatenate_values>
+			</scalar>
 		</collection>
 	</meta_metadata>
 
-	<meta_metadata name="urban_spoon_genre" extends="search" comment="UrbanSpoon Search Class"  parser="xpath">
-		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/f/"/>
-		<collection name="search_results" xpath="//div[@class = 't']/a[text() != '']" child_type="search_result">
+	<meta_metadata name="urban_spoon_genre" type="restaurant_genre" comment="UrbanSpoon Restaurants Genre"  parser="xpath">
+		<selector url_path_tree="http://www.urbanspoon.com/f"/>
+		
+		<example_url url="http://www.urbanspoon.com/f/114/11800/College-Station/American-Restaurants" />
+		
+		<scalar name="title" xpath="/html/head/title"/>
+		
+		<collection name="restaurants" xpath="//li[@class='row restaurant']//div[@class='title']/a" >
 			<scalar name="location" xpath="./@href" />
-			<scalar name="title" xpath="./text()" />
+			<scalar name="title" xpath="." />
 		</collection>
-		<collection name="top_results" xpath="//div[@id='callout']/ol/li/a" child_type="search_result">
-			<scalar name="location" xpath="./@href" />
-			<scalar name="title" xpath="./text()" />
-		</collection>
+		
 		<semantic_actions>
-			<get_field name="top_results" />
-			<for_each collection="top_results" as="res">
-				<get_field object="res" name="location" />
-				<get_field object="res" name="title" />
-				<parse_document>
-					<arg value="title" name="anchor_text" />
-					<arg value="location" name="location" />
-				</parse_document>
-			</for_each>
 		</semantic_actions>
 	</meta_metadata>
 	
