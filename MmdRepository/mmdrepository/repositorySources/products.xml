@@ -25,7 +25,21 @@
 	  </semantic_actions>
 	</meta_metadata>
 
-	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="firefox">
+	<meta_metadata name="amazon_list" extends="creative_work" >
+		<collection name="items" child_type="amazon_product" />
+	</meta_metadata>
+
+	<meta_metadata name="amazon_wish_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.amazon.com/gp/registry" />
+		<example_url location="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
+		
+		<collection name="items" xpath="//td[@class='lineItemMainInfo']">
+			<scalar name="title" xpath=".//span[@class='small productTitle']"/>
+			<scalar name="location" xpath=".//span[@class='small productTitle']/a/@href"/>
+		</collection>
+	</meta_metadata>
+
+	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_regex="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
 		<selector url_regex="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
 		
@@ -46,21 +60,20 @@
 			<scalar name="location" xpath="./@src" />
 		</composite>
 
-<!-- 		<scalar name="model" xpath="//img[@id='prodImage']/@src" /> -->
+		<scalar name="model" xpath="//img[@id='prodImage']/@src" />
 
 		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
-		<scalar name="reviews_location" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']/a/@href" />  
+		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" />  
 		<scalar name="overall_rating"   context_node="reviews_span" xpath=".//span[1]/@title" />
-<!-- 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" /> does not work :-( -->
 
 		<collection name="reviews" xpath="//div[@class='content']/table/tbody/tr[2]/td[1]/div[position() &lt; last()-1]">
 			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" layer="20.0" />
-			<scalar name="content" xpath="." layer="10.0" /> <!-- not concise! -->
+			<scalar name="content" xpath="." layer="10.0" />
 		</collection>
 		
 		<composite name="bestseller_list" extends="document" xpath="//li[@id='SalesRank']">
 			<scalar name="title" xpath=".//b/a" />
-			<scalar name="location" hide="true" xpath="//li[@id='SalesRank']//b/a/@href" />
+			<scalar name="location" hide="true" xpath=".//b/a/@href" />
 			<scalar name="rank" scalar_type="string" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
 		</composite>
 		
@@ -71,36 +84,30 @@
 			<scalar name="overall_rating" xpath=".//span[@class='swSprite s_star_3_0 ']" />
 		</collection>
 		
-		<collection name="listmania" child_type="amazon_list_mania" xpath="//div[@id='listmania']//li" >
-			<scalar name="location" xpath=".//a[1]/@href" />
-			<scalar name="title" xpath=".//a[1]/img/@alt" />
+<!-- 		<collection name="list_mania" child_type="document" xpath="//a[contains(@href,'/lm/')]" > -->
+		<collection name="list_mania" child_type="document" xpath="//li//td/a/img" >
+			<scalar name="location" xpath="../@href" />
+			<scalar name="title" xpath="./@alt" />
 		</collection>
 		
 		<semantic_actions>
-			<reselect_meta_metadata_and_extract name="amazon_item" />
-			<if>
-				<not_null value="amazon_item" />
-				<add_mixin object="amazon_item" mixin="metadata"/>
-			</if>
+<!-- 			<reselect_meta_metadata_and_extract name="amazon_item" /> -->
+<!-- 			<if> -->
+<!-- 				<not_null value="amazon_item" /> -->
+<!-- 				<add_mixin object="amazon_item" mixin="metadata"/> -->
+<!-- 			</if> -->
 		    <get_field name="image" />
-		    <create_and_visualize_img_surrogate>
-		      <arg name="metadata" value="image" />
-		    </create_and_visualize_img_surrogate>
+			<if>
+				<not_null value="image" />
+			    <create_and_visualize_img_surrogate>
+			      <arg name="metadata" value="image" />
+			    </create_and_visualize_img_surrogate>
+			</if>
 		</semantic_actions>
 	</meta_metadata>
 	
-	<meta_metadata name="amazon_list" extends="document" parser="xpath" user_agent_name="firefox">
-		<selector url_path_tree="http://www.amazon.com/gp/registry" />
-		<example_url location="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
-		
-		<collection name="items" child_type="amazon_product" xpath="//td[@class='lineItemMainInfo']">
-			<scalar name="title" xpath=".//span[@class='small productTitle']"/>
-			<scalar name="location" xpath=".//span[@class='small productTitle']/a/@href"/>
-		</collection>
-	</meta_metadata>
-
-	<meta_metadata name="amazon_list_mania" extends="creative_work" parser="xpath" user_agent_name="firefox">
-		<selector url_path_tree="http://www.amazon.com/*/lm"/>
+	<meta_metadata name="amazon_list_mania" type="amazon_list" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.amazon.com/*/lmfoo"/>
 <!-- 		<selector url_regex="http://www.amazon.com/[^/]+/lm" domain="amazon.com"/> -->
 		
 		<example_url location="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
