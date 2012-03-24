@@ -8,7 +8,6 @@ package ecologylab.semantics.generated.library.products;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.products.AmazonListMania;
 import ecologylab.semantics.generated.library.products.AmazonProduct;
 import ecologylab.semantics.generated.library.products.BestsellerList;
 import ecologylab.semantics.generated.library.products.Product;
@@ -39,9 +38,9 @@ public class AmazonProduct extends Product
 	@mm_name("people_also_buy")
 	private List<AmazonProduct> peopleAlsoBuy;
 
-	@simpl_collection("amazon_list_mania")
-	@mm_name("listmania")
-	private List<AmazonListMania> listmania;
+	@simpl_collection("document")
+	@mm_name("list_mania")
+	private List<Document> listMania;
 
 	public AmazonProduct()
 	{ super(); }
@@ -81,13 +80,13 @@ public class AmazonProduct extends Product
 		this.peopleAlsoBuy = peopleAlsoBuy;
 	}
 
-	public List<AmazonListMania> getListmania()
+	public List<Document> getListMania()
 	{
-		return listmania;
+		return listMania;
 	}
 
-	public void setListmania(List<AmazonListMania> listmania)
+	public void setListMania(List<Document> listMania)
 	{
-		this.listmania = listmania;
+		this.listMania = listMania;
 	}
 }
