@@ -13,6 +13,7 @@ import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
@@ -21,6 +22,7 @@ import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +40,12 @@ public class CreativeWork extends CompoundDocument
 	@simpl_scalar
 	@simpl_other_tags({"year_of_publication"})
 	private MetadataInteger year;
+
+	/** 
+	 *rating in some context
+	 */ 
+	@simpl_scalar
+	private MetadataString overallRating;
 
 	@simpl_composite
 	@mm_name("rich_media")
@@ -91,6 +99,38 @@ public class CreativeWork extends CompoundDocument
 	public void setYearMetadata(MetadataInteger year)
 	{
 		this.year = year;
+	}
+
+	public MetadataString	overallRating()
+	{
+		MetadataString	result = this.overallRating;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.overallRating = result;
+		}
+		return result;
+	}
+
+	public String getOverallRating()
+	{
+		return this.overallRating == null ? null : overallRating().getValue();
+	}
+
+	public MetadataString getOverallRatingMetadata()
+	{
+		return overallRating;
+	}
+
+	public void setOverallRating(String overallRating)
+	{
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
+	}
+
+	public void setOverallRatingMetadata(MetadataString overallRating)
+	{
+		this.overallRating = overallRating;
 	}
 
 	public CompoundDocument getRichMedia()
