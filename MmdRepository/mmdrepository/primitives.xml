@@ -145,6 +145,9 @@
 		<collection name="metadata" child_type="metadata" polymorphic_scope="repository_no_annotations" />
 	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
 		
+		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" comment="for compatability w old compositions -- do not use!"/>
+		<collection name="media" child_type="metadata" polymorphic_scope="repository_media" comment="for compatability w old compositions -- do not use!"/>
+		
 		<scalar name="version" scalar_type="Float" />
 		<scalar name="metadata_version" scalar_type="Float" />
 	</meta_metadata>
