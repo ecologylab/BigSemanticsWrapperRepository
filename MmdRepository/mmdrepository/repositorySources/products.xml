@@ -38,7 +38,7 @@
 			<scalar name="location" xpath=".//span[@class='small productTitle']/a/@href"/>
 		</collection>
 	</meta_metadata>
-
+	
 	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_regex="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
 		<selector url_regex="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
@@ -71,10 +71,10 @@
 			<scalar name="content" xpath="." layer="10.0" />
 		</collection>
 		
-		<composite name="bestseller_list" extends="document" xpath="//li[@id='SalesRank']">
+		<composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list" xpath="//li[@id='SalesRank']">
 			<scalar name="title" xpath=".//b/a" />
 			<scalar name="location" hide="true" xpath=".//b/a/@href" />
-			<scalar name="rank" scalar_type="string" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
+			<scalar name="rank" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
 		</composite>
 		
 		<collection name="people_also_buy" child_type="amazon_product" xpath="//div[@id='vtpsims']/ul/li">
@@ -120,6 +120,21 @@
 			<scalar name="price" xpath=".//span[@class='rpSmall']/span[1]"/>
 			<scalar name="overall_rating" xpath=".//span[@class='crAvgStars']//img/@title"/>
 		</collection>
+	</meta_metadata>
+
+	<meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
+		<example_url location="http://www.amazon.com/gp/bestsellers/books/6/" />
+	
+		<collection name="items" xpath="//div[@class='zg_itemRightDiv_normal']">
+			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
+			<scalar name="location" xpath=".//div[@class='zg_title']/a/@href"/>
+			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
+		</collection>
+	
+		<before_semantic_actions>
+			<filter_location strip_prefix="/ref=" />
+		</before_semantic_actions>
 	</meta_metadata>
 
 </meta_metadata_repository>
