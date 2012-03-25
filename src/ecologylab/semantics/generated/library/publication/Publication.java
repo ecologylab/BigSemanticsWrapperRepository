@@ -11,7 +11,7 @@ package ecologylab.semantics.generated.library.publication;
 import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
 import ecologylab.semantics.generated.library.publication.Subject;
 import ecologylab.semantics.generated.library.publication.TermType;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

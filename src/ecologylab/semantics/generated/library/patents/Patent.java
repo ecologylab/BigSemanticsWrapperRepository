@@ -12,7 +12,7 @@ import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.semantics.generated.library.patents.Patent;
 import ecologylab.semantics.generated.library.patents.PatentClassification;
 import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataString;

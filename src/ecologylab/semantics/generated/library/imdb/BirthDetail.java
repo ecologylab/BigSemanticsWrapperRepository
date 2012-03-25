@@ -10,7 +10,7 @@ package ecologylab.semantics.generated.library.imdb;
 
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

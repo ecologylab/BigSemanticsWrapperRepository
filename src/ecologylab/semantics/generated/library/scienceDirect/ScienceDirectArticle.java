@@ -10,7 +10,7 @@ package ecologylab.semantics.generated.library.scienceDirect;
 
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

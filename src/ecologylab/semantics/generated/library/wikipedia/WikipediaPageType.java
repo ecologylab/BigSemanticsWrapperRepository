@@ -12,7 +12,7 @@ import ecologylab.semantics.generated.library.wikipedia.Category;
 import ecologylab.semantics.generated.library.wikipedia.Paragraph;
 import ecologylab.semantics.generated.library.wikipedia.Thumbinner;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

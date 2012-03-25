@@ -12,7 +12,7 @@ import ecologylab.semantics.generated.library.gps.GisLocation;
 import ecologylab.semantics.metadata.builtins.Annotation;
 import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

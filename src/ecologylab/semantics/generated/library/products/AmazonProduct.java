@@ -12,7 +12,7 @@ import ecologylab.semantics.generated.library.products.AmazonProduct;
 import ecologylab.semantics.generated.library.products.BestsellerList;
 import ecologylab.semantics.generated.library.products.Product;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

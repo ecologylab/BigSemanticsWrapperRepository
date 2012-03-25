@@ -12,7 +12,7 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.googleBooks.Page;
 import ecologylab.semantics.generated.library.publication.Book;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;

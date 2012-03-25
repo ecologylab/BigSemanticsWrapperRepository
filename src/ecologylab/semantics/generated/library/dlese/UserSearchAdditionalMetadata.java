@@ -10,7 +10,7 @@ package ecologylab.semantics.generated.library.dlese;
 
 import ecologylab.semantics.generated.library.dlese.AdditionalMetadata;
 import ecologylab.semantics.generated.library.dlese.SearchAdditionalMetadataAdn;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

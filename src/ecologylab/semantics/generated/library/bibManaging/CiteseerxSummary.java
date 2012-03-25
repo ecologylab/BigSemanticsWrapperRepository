@@ -10,7 +10,7 @@ package ecologylab.semantics.generated.library.bibManaging;
 
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

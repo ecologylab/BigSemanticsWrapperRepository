@@ -14,7 +14,7 @@ import ecologylab.semantics.generated.library.dlese.General;
 import ecologylab.semantics.generated.library.dlese.Lifecycle;
 import ecologylab.semantics.generated.library.dlese.RecordMetaMetadata;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

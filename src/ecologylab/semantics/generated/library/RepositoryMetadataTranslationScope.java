@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.SimplTypesScope;
@@ -370,7 +370,7 @@ public class RepositoryMetadataTranslationScope
 
 	public static SimplTypesScope get()
 	{
-		return SimplTypesScope.get(SemanticsNames.REPOSITORY_METADATA_TRANSLATIONS, MetadataBuiltinsTranslationScope.get(), TRANSLATIONS);
+		return SimplTypesScope.get(SemanticsNames.REPOSITORY_METADATA_TYPE_SCOPE, MetadataBuiltinsTypesScope.get(), TRANSLATIONS);
 	}
 
 }

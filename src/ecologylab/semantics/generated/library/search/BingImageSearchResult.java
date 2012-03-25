@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.search;
  */
 
 import ecologylab.semantics.generated.library.search.ImageInSearchResult;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

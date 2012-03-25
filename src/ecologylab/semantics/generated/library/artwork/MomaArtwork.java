@@ -12,7 +12,7 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.artwork.Artwork;
 import ecologylab.semantics.generated.library.artwork.TempFieldValueHolder;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;

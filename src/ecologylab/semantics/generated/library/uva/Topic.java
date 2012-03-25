@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.uva;
  */
 
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataStringBuilder;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

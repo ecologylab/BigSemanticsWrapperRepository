@@ -10,7 +10,7 @@ package ecologylab.semantics.generated.library.hotel;
 
 import ecologylab.semantics.generated.library.hotel.Hotel;
 import ecologylab.semantics.generated.library.hotel.TripAdvisor;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

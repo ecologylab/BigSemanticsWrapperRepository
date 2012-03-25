@@ -11,7 +11,7 @@ package ecologylab.semantics.generated.library.dlese;
 import ecologylab.semantics.generated.library.dlese.DleseRecordHead;
 import ecologylab.semantics.generated.library.dlese.RecordMetadata;
 import ecologylab.semantics.metadata.builtins.Document;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;

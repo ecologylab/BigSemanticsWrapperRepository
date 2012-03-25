@@ -11,7 +11,7 @@ package ecologylab.semantics.generated.library.opml;
 import ecologylab.semantics.generated.library.opml.Body;
 import ecologylab.semantics.generated.library.opml.Head;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTranslationScope;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
