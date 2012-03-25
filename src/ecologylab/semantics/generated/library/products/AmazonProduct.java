@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.products;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.semantics.generated.library.products.AmazonList;
 import ecologylab.semantics.generated.library.products.AmazonProduct;
-import ecologylab.semantics.generated.library.products.BestsellerList;
 import ecologylab.semantics.generated.library.products.Product;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -31,8 +31,8 @@ public class AmazonProduct extends Product
 	private Document department;
 
 	@simpl_composite
-	@mm_name("bestseller_list")
-	private BestsellerList bestsellerList;
+	@mm_name("bestseller_list_rank")
+	private AmazonList bestsellerListRank;
 
 	@simpl_collection("amazon_product")
 	@mm_name("people_also_buy")
@@ -60,14 +60,14 @@ public class AmazonProduct extends Product
 		this.department = department;
 	}
 
-	public BestsellerList getBestsellerList()
+	public AmazonList getBestsellerListRank()
 	{
-		return bestsellerList;
+		return bestsellerListRank;
 	}
 
-	public void setBestsellerList(BestsellerList bestsellerList)
+	public void setBestsellerListRank(AmazonList bestsellerListRank)
 	{
-		this.bestsellerList = bestsellerList;
+		this.bestsellerListRank = bestsellerListRank;
 	}
 
 	public List<AmazonProduct> getPeopleAlsoBuy()
