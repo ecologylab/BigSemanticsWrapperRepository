@@ -142,9 +142,7 @@
 	</meta_metadata>
 	
 	<meta_metadata name="information_composition" extends="document" built_in="true">
-		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" />
-<!-- 		<collection name="annotations" child_type="annotation" /> --><!-- now each metadata can have annotations, including information_composition -->
-		<collection name="media" child_type="metadata" polymorphic_scope="repository_media"/>
+		<collection name="metadata" child_type="metadata" polymorphic_scope="repository_no_annotations" />
 	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
 		
 		<scalar name="version" scalar_type="Float" />
