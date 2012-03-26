@@ -72,6 +72,26 @@ public class Artwork extends CompoundDocument
 		return artists;
 	}
 
+  // lazy evaluation:
+  public List<Artist> artists()
+  {
+    if (artists == null)
+      artists = new ArrayList<Artist>();
+    return artists;
+  }
+
+  // addTo:
+  public void addToArtists(Artist element)
+  {
+    artists().add(element);
+  }
+
+  // size:
+  public int artistsSize()
+  {
+    return artists == null ? 0 : artists.size();
+  }
+
 	public void setArtists(List<Artist> artists)
 	{
 		this.artists = artists;

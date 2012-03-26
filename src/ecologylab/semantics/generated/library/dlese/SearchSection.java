@@ -59,6 +59,26 @@ public class SearchSection extends Metadata
 		return searchResults;
 	}
 
+  // lazy evaluation:
+  public List<DleseRecord1> searchResults()
+  {
+    if (searchResults == null)
+      searchResults = new ArrayList<DleseRecord1>();
+    return searchResults;
+  }
+
+  // addTo:
+  public void addToSearchResults(DleseRecord1 element)
+  {
+    searchResults().add(element);
+  }
+
+  // size:
+  public int searchResultsSize()
+  {
+    return searchResults == null ? 0 : searchResults.size();
+  }
+
 	public void setSearchResults(List<DleseRecord1> searchResults)
 	{
 		this.searchResults = searchResults;

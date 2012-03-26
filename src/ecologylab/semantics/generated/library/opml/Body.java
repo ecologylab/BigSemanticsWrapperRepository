@@ -42,6 +42,26 @@ public class Body extends Metadata
 		return outline;
 	}
 
+  // lazy evaluation:
+  public List<Outline> outline()
+  {
+    if (outline == null)
+      outline = new ArrayList<Outline>();
+    return outline;
+  }
+
+  // addTo:
+  public void addToOutline(Outline element)
+  {
+    outline().add(element);
+  }
+
+  // size:
+  public int outlineSize()
+  {
+    return outline == null ? 0 : outline.size();
+  }
+
 	public void setOutline(List<Outline> outline)
 	{
 		this.outline = outline;

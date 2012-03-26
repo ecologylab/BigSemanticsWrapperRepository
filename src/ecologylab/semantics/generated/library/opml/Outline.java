@@ -161,6 +161,26 @@ public class Outline extends Metadata
 		return outlines;
 	}
 
+  // lazy evaluation:
+  public List<Outline> outlines()
+  {
+    if (outlines == null)
+      outlines = new ArrayList<Outline>();
+    return outlines;
+  }
+
+  // addTo:
+  public void addToOutlines(Outline element)
+  {
+    outlines().add(element);
+  }
+
+  // size:
+  public int outlinesSize()
+  {
+    return outlines == null ? 0 : outlines.size();
+  }
+
 	public void setOutlines(List<Outline> outlines)
 	{
 		this.outlines = outlines;

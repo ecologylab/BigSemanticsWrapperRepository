@@ -228,6 +228,26 @@ public class PersonDetails extends CompoundDocument
 		return titlesAsActor;
 	}
 
+  // lazy evaluation:
+  public List<ImdbTitle> titlesAsActor()
+  {
+    if (titlesAsActor == null)
+      titlesAsActor = new ArrayList<ImdbTitle>();
+    return titlesAsActor;
+  }
+
+  // addTo:
+  public void addToTitlesAsActor(ImdbTitle element)
+  {
+    titlesAsActor().add(element);
+  }
+
+  // size:
+  public int titlesAsActorSize()
+  {
+    return titlesAsActor == null ? 0 : titlesAsActor.size();
+  }
+
 	public void setTitlesAsActor(List<ImdbTitle> titlesAsActor)
 	{
 		this.titlesAsActor = titlesAsActor;
@@ -237,6 +257,26 @@ public class PersonDetails extends CompoundDocument
 	{
 		return titlesAsActress;
 	}
+
+  // lazy evaluation:
+  public List<ImdbTitle> titlesAsActress()
+  {
+    if (titlesAsActress == null)
+      titlesAsActress = new ArrayList<ImdbTitle>();
+    return titlesAsActress;
+  }
+
+  // addTo:
+  public void addToTitlesAsActress(ImdbTitle element)
+  {
+    titlesAsActress().add(element);
+  }
+
+  // size:
+  public int titlesAsActressSize()
+  {
+    return titlesAsActress == null ? 0 : titlesAsActress.size();
+  }
 
 	public void setTitlesAsActress(List<ImdbTitle> titlesAsActress)
 	{
@@ -248,6 +288,26 @@ public class PersonDetails extends CompoundDocument
 		return titlesAsDirector;
 	}
 
+  // lazy evaluation:
+  public List<ImdbTitle> titlesAsDirector()
+  {
+    if (titlesAsDirector == null)
+      titlesAsDirector = new ArrayList<ImdbTitle>();
+    return titlesAsDirector;
+  }
+
+  // addTo:
+  public void addToTitlesAsDirector(ImdbTitle element)
+  {
+    titlesAsDirector().add(element);
+  }
+
+  // size:
+  public int titlesAsDirectorSize()
+  {
+    return titlesAsDirector == null ? 0 : titlesAsDirector.size();
+  }
+
 	public void setTitlesAsDirector(List<ImdbTitle> titlesAsDirector)
 	{
 		this.titlesAsDirector = titlesAsDirector;
@@ -257,6 +317,26 @@ public class PersonDetails extends CompoundDocument
 	{
 		return titlesForSoundtrack;
 	}
+
+  // lazy evaluation:
+  public List<ImdbTitle> titlesForSoundtrack()
+  {
+    if (titlesForSoundtrack == null)
+      titlesForSoundtrack = new ArrayList<ImdbTitle>();
+    return titlesForSoundtrack;
+  }
+
+  // addTo:
+  public void addToTitlesForSoundtrack(ImdbTitle element)
+  {
+    titlesForSoundtrack().add(element);
+  }
+
+  // size:
+  public int titlesForSoundtrackSize()
+  {
+    return titlesForSoundtrack == null ? 0 : titlesForSoundtrack.size();
+  }
 
 	public void setTitlesForSoundtrack(List<ImdbTitle> titlesForSoundtrack)
 	{
@@ -268,6 +348,26 @@ public class PersonDetails extends CompoundDocument
 		return titlesAsProducer;
 	}
 
+  // lazy evaluation:
+  public List<ImdbTitle> titlesAsProducer()
+  {
+    if (titlesAsProducer == null)
+      titlesAsProducer = new ArrayList<ImdbTitle>();
+    return titlesAsProducer;
+  }
+
+  // addTo:
+  public void addToTitlesAsProducer(ImdbTitle element)
+  {
+    titlesAsProducer().add(element);
+  }
+
+  // size:
+  public int titlesAsProducerSize()
+  {
+    return titlesAsProducer == null ? 0 : titlesAsProducer.size();
+  }
+
 	public void setTitlesAsProducer(List<ImdbTitle> titlesAsProducer)
 	{
 		this.titlesAsProducer = titlesAsProducer;
@@ -278,6 +378,26 @@ public class PersonDetails extends CompoundDocument
 		return titlesThankedIn;
 	}
 
+  // lazy evaluation:
+  public List<ImdbTitle> titlesThankedIn()
+  {
+    if (titlesThankedIn == null)
+      titlesThankedIn = new ArrayList<ImdbTitle>();
+    return titlesThankedIn;
+  }
+
+  // addTo:
+  public void addToTitlesThankedIn(ImdbTitle element)
+  {
+    titlesThankedIn().add(element);
+  }
+
+  // size:
+  public int titlesThankedInSize()
+  {
+    return titlesThankedIn == null ? 0 : titlesThankedIn.size();
+  }
+
 	public void setTitlesThankedIn(List<ImdbTitle> titlesThankedIn)
 	{
 		this.titlesThankedIn = titlesThankedIn;
@@ -287,6 +407,26 @@ public class PersonDetails extends CompoundDocument
 	{
 		return titlesAsSelf;
 	}
+
+  // lazy evaluation:
+  public List<ImdbTitle> titlesAsSelf()
+  {
+    if (titlesAsSelf == null)
+      titlesAsSelf = new ArrayList<ImdbTitle>();
+    return titlesAsSelf;
+  }
+
+  // addTo:
+  public void addToTitlesAsSelf(ImdbTitle element)
+  {
+    titlesAsSelf().add(element);
+  }
+
+  // size:
+  public int titlesAsSelfSize()
+  {
+    return titlesAsSelf == null ? 0 : titlesAsSelf.size();
+  }
 
 	public void setTitlesAsSelf(List<ImdbTitle> titlesAsSelf)
 	{

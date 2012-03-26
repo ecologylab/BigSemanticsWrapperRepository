@@ -44,6 +44,26 @@ public class SlashdotRss extends CompoundDocument
 		return items;
 	}
 
+  // lazy evaluation:
+  public List<SlashdotItem> items()
+  {
+    if (items == null)
+      items = new ArrayList<SlashdotItem>();
+    return items;
+  }
+
+  // addTo:
+  public void addToItems(SlashdotItem element)
+  {
+    items().add(element);
+  }
+
+  // size:
+  public int itemsSize()
+  {
+    return items == null ? 0 : items.size();
+  }
+
 	public void setItems(List<SlashdotItem> items)
 	{
 		this.items = items;

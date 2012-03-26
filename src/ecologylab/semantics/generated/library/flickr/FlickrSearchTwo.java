@@ -43,6 +43,26 @@ public class FlickrSearchTwo extends CompoundDocument
 		return flickrResults;
 	}
 
+  // lazy evaluation:
+  public List<FlickrImageDetail> flickrResults()
+  {
+    if (flickrResults == null)
+      flickrResults = new ArrayList<FlickrImageDetail>();
+    return flickrResults;
+  }
+
+  // addTo:
+  public void addToFlickrResults(FlickrImageDetail element)
+  {
+    flickrResults().add(element);
+  }
+
+  // size:
+  public int flickrResultsSize()
+  {
+    return flickrResults == null ? 0 : flickrResults.size();
+  }
+
 	public void setFlickrResults(List<FlickrImageDetail> flickrResults)
 	{
 		this.flickrResults = flickrResults;

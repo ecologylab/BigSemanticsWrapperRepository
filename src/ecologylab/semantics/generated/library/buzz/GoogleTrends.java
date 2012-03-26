@@ -45,6 +45,26 @@ public class GoogleTrends extends CompoundDocument
 		return hotSearches;
 	}
 
+  // lazy evaluation:
+  public List<HotSearch> hotSearches()
+  {
+    if (hotSearches == null)
+      hotSearches = new ArrayList<HotSearch>();
+    return hotSearches;
+  }
+
+  // addTo:
+  public void addToHotSearches(HotSearch element)
+  {
+    hotSearches().add(element);
+  }
+
+  // size:
+  public int hotSearchesSize()
+  {
+    return hotSearches == null ? 0 : hotSearches.size();
+  }
+
 	public void setHotSearches(List<HotSearch> hotSearches)
 	{
 		this.hotSearches = hotSearches;

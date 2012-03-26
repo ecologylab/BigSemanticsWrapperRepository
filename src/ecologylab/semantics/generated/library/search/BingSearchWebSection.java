@@ -42,6 +42,26 @@ public class BingSearchWebSection extends CompoundDocument
 		return webSearchResults;
 	}
 
+  // lazy evaluation:
+  public List<BingWebSearchResult> webSearchResults()
+  {
+    if (webSearchResults == null)
+      webSearchResults = new ArrayList<BingWebSearchResult>();
+    return webSearchResults;
+  }
+
+  // addTo:
+  public void addToWebSearchResults(BingWebSearchResult element)
+  {
+    webSearchResults().add(element);
+  }
+
+  // size:
+  public int webSearchResultsSize()
+  {
+    return webSearchResults == null ? 0 : webSearchResults.size();
+  }
+
 	public void setWebSearchResults(List<BingWebSearchResult> webSearchResults)
 	{
 		this.webSearchResults = webSearchResults;

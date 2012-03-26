@@ -40,6 +40,26 @@ public class SearchResults extends Metadata
 		return results;
 	}
 
+  // lazy evaluation:
+  public List<NsdlDocument> results()
+  {
+    if (results == null)
+      results = new ArrayList<NsdlDocument>();
+    return results;
+  }
+
+  // addTo:
+  public void addToResults(NsdlDocument element)
+  {
+    results().add(element);
+  }
+
+  // size:
+  public int resultsSize()
+  {
+    return results == null ? 0 : results.size();
+  }
+
 	public void setResults(List<NsdlDocument> results)
 	{
 		this.results = results;

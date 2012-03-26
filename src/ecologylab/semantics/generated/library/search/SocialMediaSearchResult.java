@@ -87,6 +87,26 @@ public class SocialMediaSearchResult extends SearchResult
 		return tags;
 	}
 
+  // lazy evaluation:
+  public List<Tag> tags()
+  {
+    if (tags == null)
+      tags = new ArrayList<Tag>();
+    return tags;
+  }
+
+  // addTo:
+  public void addToTags(Tag element)
+  {
+    tags().add(element);
+  }
+
+  // size:
+  public int tagsSize()
+  {
+    return tags == null ? 0 : tags.size();
+  }
+
 	public void setTags(List<Tag> tags)
 	{
 		this.tags = tags;

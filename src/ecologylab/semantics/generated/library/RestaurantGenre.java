@@ -43,6 +43,26 @@ public class RestaurantGenre extends Document
 		return restaurants;
 	}
 
+  // lazy evaluation:
+  public List<Restaurant> restaurants()
+  {
+    if (restaurants == null)
+      restaurants = new ArrayList<Restaurant>();
+    return restaurants;
+  }
+
+  // addTo:
+  public void addToRestaurants(Restaurant element)
+  {
+    restaurants().add(element);
+  }
+
+  // size:
+  public int restaurantsSize()
+  {
+    return restaurants == null ? 0 : restaurants.size();
+  }
+
 	public void setRestaurants(List<Restaurant> restaurants)
 	{
 		this.restaurants = restaurants;

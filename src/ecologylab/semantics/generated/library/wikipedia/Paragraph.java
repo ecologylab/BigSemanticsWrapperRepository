@@ -49,6 +49,26 @@ public class Paragraph extends Metadata
 		return anchors;
 	}
 
+  // lazy evaluation:
+  public List<WikiAnchor> anchors()
+  {
+    if (anchors == null)
+      anchors = new ArrayList<WikiAnchor>();
+    return anchors;
+  }
+
+  // addTo:
+  public void addToAnchors(WikiAnchor element)
+  {
+    anchors().add(element);
+  }
+
+  // size:
+  public int anchorsSize()
+  {
+    return anchors == null ? 0 : anchors.size();
+  }
+
 	public void setAnchors(List<WikiAnchor> anchors)
 	{
 		this.anchors = anchors;

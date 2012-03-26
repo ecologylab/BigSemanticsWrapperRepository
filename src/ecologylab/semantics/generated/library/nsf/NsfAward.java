@@ -358,6 +358,26 @@ public class NsfAward extends CompoundDocument
 		return investigators;
 	}
 
+  // lazy evaluation:
+  public List<Investigator> investigators()
+  {
+    if (investigators == null)
+      investigators = new ArrayList<Investigator>();
+    return investigators;
+  }
+
+  // addTo:
+  public void addToInvestigators(Investigator element)
+  {
+    investigators().add(element);
+  }
+
+  // size:
+  public int investigatorsSize()
+  {
+    return investigators == null ? 0 : investigators.size();
+  }
+
 	public void setInvestigators(List<Investigator> investigators)
 	{
 		this.investigators = investigators;
@@ -560,6 +580,26 @@ public class NsfAward extends CompoundDocument
 		return relevantLocations;
 	}
 
+  // lazy evaluation:
+  public List<MetadataParsedURL> relevantLocations()
+  {
+    if (relevantLocations == null)
+      relevantLocations = new ArrayList<MetadataParsedURL>();
+    return relevantLocations;
+  }
+
+  // addTo:
+  public void addToRelevantLocations(MetadataParsedURL element)
+  {
+    relevantLocations().add(element);
+  }
+
+  // size:
+  public int relevantLocationsSize()
+  {
+    return relevantLocations == null ? 0 : relevantLocations.size();
+  }
+
 	public void setRelevantLocations(List<MetadataParsedURL> relevantLocations)
 	{
 		this.relevantLocations = relevantLocations;
@@ -570,6 +610,26 @@ public class NsfAward extends CompoundDocument
 		return publications;
 	}
 
+  // lazy evaluation:
+  public List<MetadataString> publications()
+  {
+    if (publications == null)
+      publications = new ArrayList<MetadataString>();
+    return publications;
+  }
+
+  // addTo:
+  public void addToPublications(MetadataString element)
+  {
+    publications().add(element);
+  }
+
+  // size:
+  public int publicationsSize()
+  {
+    return publications == null ? 0 : publications.size();
+  }
+
 	public void setPublications(List<MetadataString> publications)
 	{
 		this.publications = publications;
@@ -579,6 +639,26 @@ public class NsfAward extends CompoundDocument
 	{
 		return proceedings;
 	}
+
+  // lazy evaluation:
+  public List<MetadataString> proceedings()
+  {
+    if (proceedings == null)
+      proceedings = new ArrayList<MetadataString>();
+    return proceedings;
+  }
+
+  // addTo:
+  public void addToProceedings(MetadataString element)
+  {
+    proceedings().add(element);
+  }
+
+  // size:
+  public int proceedingsSize()
+  {
+    return proceedings == null ? 0 : proceedings.size();
+  }
 
 	public void setProceedings(List<MetadataString> proceedings)
 	{

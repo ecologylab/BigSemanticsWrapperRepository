@@ -40,6 +40,26 @@ public class Lifecycle extends Metadata
 		return contributors;
 	}
 
+  // lazy evaluation:
+  public List<Contributor> contributors()
+  {
+    if (contributors == null)
+      contributors = new ArrayList<Contributor>();
+    return contributors;
+  }
+
+  // addTo:
+  public void addToContributors(Contributor element)
+  {
+    contributors().add(element);
+  }
+
+  // size:
+  public int contributorsSize()
+  {
+    return contributors == null ? 0 : contributors.size();
+  }
+
 	public void setContributors(List<Contributor> contributors)
 	{
 		this.contributors = contributors;

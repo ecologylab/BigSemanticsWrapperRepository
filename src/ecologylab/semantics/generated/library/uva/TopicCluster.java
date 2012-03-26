@@ -95,6 +95,26 @@ public class TopicCluster extends Metadata
 		return documentSet;
 	}
 
+  // lazy evaluation:
+  public List<Document> documentSet()
+  {
+    if (documentSet == null)
+      documentSet = new ArrayList<Document>();
+    return documentSet;
+  }
+
+  // addTo:
+  public void addToDocumentSet(Document element)
+  {
+    documentSet().add(element);
+  }
+
+  // size:
+  public int documentSetSize()
+  {
+    return documentSet == null ? 0 : documentSet.size();
+  }
+
 	public void setDocumentSet(List<Document> documentSet)
 	{
 		this.documentSet = documentSet;
@@ -104,6 +124,26 @@ public class TopicCluster extends Metadata
 	{
 		return keywordSets;
 	}
+
+  // lazy evaluation:
+  public List<KeywordSet> keywordSets()
+  {
+    if (keywordSets == null)
+      keywordSets = new ArrayList<KeywordSet>();
+    return keywordSets;
+  }
+
+  // addTo:
+  public void addToKeywordSets(KeywordSet element)
+  {
+    keywordSets().add(element);
+  }
+
+  // size:
+  public int keywordSetsSize()
+  {
+    return keywordSets == null ? 0 : keywordSets.size();
+  }
 
 	public void setKeywordSets(List<KeywordSet> keywordSets)
 	{

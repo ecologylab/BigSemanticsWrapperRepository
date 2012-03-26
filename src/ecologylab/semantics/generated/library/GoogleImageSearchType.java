@@ -48,6 +48,26 @@ public class GoogleImageSearchType extends CompoundDocument
 		return imageResults;
 	}
 
+  // lazy evaluation:
+  public List<ImageResult> imageResults()
+  {
+    if (imageResults == null)
+      imageResults = new ArrayList<ImageResult>();
+    return imageResults;
+  }
+
+  // addTo:
+  public void addToImageResults(ImageResult element)
+  {
+    imageResults().add(element);
+  }
+
+  // size:
+  public int imageResultsSize()
+  {
+    return imageResults == null ? 0 : imageResults.size();
+  }
+
 	public void setImageResults(List<ImageResult> imageResults)
 	{
 		this.imageResults = imageResults;

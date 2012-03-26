@@ -59,6 +59,26 @@ public class WikipediaPageType extends CompoundDocument
 		return paragraphs;
 	}
 
+  // lazy evaluation:
+  public List<Paragraph> paragraphs()
+  {
+    if (paragraphs == null)
+      paragraphs = new ArrayList<Paragraph>();
+    return paragraphs;
+  }
+
+  // addTo:
+  public void addToParagraphs(Paragraph element)
+  {
+    paragraphs().add(element);
+  }
+
+  // size:
+  public int paragraphsSize()
+  {
+    return paragraphs == null ? 0 : paragraphs.size();
+  }
+
 	public void setParagraphs(List<Paragraph> paragraphs)
 	{
 		this.paragraphs = paragraphs;
@@ -69,6 +89,26 @@ public class WikipediaPageType extends CompoundDocument
 		return categories;
 	}
 
+  // lazy evaluation:
+  public List<Category> categories()
+  {
+    if (categories == null)
+      categories = new ArrayList<Category>();
+    return categories;
+  }
+
+  // addTo:
+  public void addToCategories(Category element)
+  {
+    categories().add(element);
+  }
+
+  // size:
+  public int categoriesSize()
+  {
+    return categories == null ? 0 : categories.size();
+  }
+
 	public void setCategories(List<Category> categories)
 	{
 		this.categories = categories;
@@ -78,6 +118,26 @@ public class WikipediaPageType extends CompoundDocument
 	{
 		return thumbinners;
 	}
+
+  // lazy evaluation:
+  public List<Thumbinner> thumbinners()
+  {
+    if (thumbinners == null)
+      thumbinners = new ArrayList<Thumbinner>();
+    return thumbinners;
+  }
+
+  // addTo:
+  public void addToThumbinners(Thumbinner element)
+  {
+    thumbinners().add(element);
+  }
+
+  // size:
+  public int thumbinnersSize()
+  {
+    return thumbinners == null ? 0 : thumbinners.size();
+  }
 
 	public void setThumbinners(List<Thumbinner> thumbinners)
 	{

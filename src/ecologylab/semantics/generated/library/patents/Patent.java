@@ -144,6 +144,26 @@ public class Patent extends CreativeWork
 		return classifications;
 	}
 
+  // lazy evaluation:
+  public List<PatentClassification> classifications()
+  {
+    if (classifications == null)
+      classifications = new ArrayList<PatentClassification>();
+    return classifications;
+  }
+
+  // addTo:
+  public void addToClassifications(PatentClassification element)
+  {
+    classifications().add(element);
+  }
+
+  // size:
+  public int classificationsSize()
+  {
+    return classifications == null ? 0 : classifications.size();
+  }
+
 	public void setClassifications(List<PatentClassification> classifications)
 	{
 		this.classifications = classifications;
@@ -153,6 +173,26 @@ public class Patent extends CreativeWork
 	{
 		return claims;
 	}
+
+  // lazy evaluation:
+  public List<MetadataString> claims()
+  {
+    if (claims == null)
+      claims = new ArrayList<MetadataString>();
+    return claims;
+  }
+
+  // addTo:
+  public void addToClaims(MetadataString element)
+  {
+    claims().add(element);
+  }
+
+  // size:
+  public int claimsSize()
+  {
+    return claims == null ? 0 : claims.size();
+  }
 
 	public void setClaims(List<MetadataString> claims)
 	{
@@ -164,6 +204,26 @@ public class Patent extends CreativeWork
 		return citations;
 	}
 
+  // lazy evaluation:
+  public List<Patent> citations()
+  {
+    if (citations == null)
+      citations = new ArrayList<Patent>();
+    return citations;
+  }
+
+  // addTo:
+  public void addToCitations(Patent element)
+  {
+    citations().add(element);
+  }
+
+  // size:
+  public int citationsSize()
+  {
+    return citations == null ? 0 : citations.size();
+  }
+
 	public void setCitations(List<Patent> citations)
 	{
 		this.citations = citations;
@@ -174,6 +234,26 @@ public class Patent extends CreativeWork
 		return references;
 	}
 
+  // lazy evaluation:
+  public List<Patent> references()
+  {
+    if (references == null)
+      references = new ArrayList<Patent>();
+    return references;
+  }
+
+  // addTo:
+  public void addToReferences(Patent element)
+  {
+    references().add(element);
+  }
+
+  // size:
+  public int referencesSize()
+  {
+    return references == null ? 0 : references.size();
+  }
+
 	public void setReferences(List<Patent> references)
 	{
 		this.references = references;
@@ -183,6 +263,26 @@ public class Patent extends CreativeWork
 	{
 		return drawings;
 	}
+
+  // lazy evaluation:
+  public List<Image> drawings()
+  {
+    if (drawings == null)
+      drawings = new ArrayList<Image>();
+    return drawings;
+  }
+
+  // addTo:
+  public void addToDrawings(Image element)
+  {
+    drawings().add(element);
+  }
+
+  // size:
+  public int drawingsSize()
+  {
+    return drawings == null ? 0 : drawings.size();
+  }
 
 	public void setDrawings(List<Image> drawings)
 	{

@@ -47,6 +47,26 @@ public class Rss22 extends CompoundDocument
 		return items;
 	}
 
+  // lazy evaluation:
+  public List<Item> items()
+  {
+    if (items == null)
+      items = new ArrayList<Item>();
+    return items;
+  }
+
+  // addTo:
+  public void addToItems(Item element)
+  {
+    items().add(element);
+  }
+
+  // size:
+  public int itemsSize()
+  {
+    return items == null ? 0 : items.size();
+  }
+
 	public void setItems(List<Item> items)
 	{
 		this.items = items;

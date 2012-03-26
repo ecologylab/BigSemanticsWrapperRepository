@@ -43,6 +43,26 @@ public class DleseGetRecord extends CompoundDocument
 		return records;
 	}
 
+  // lazy evaluation:
+  public List<DleseRecord2> records()
+  {
+    if (records == null)
+      records = new ArrayList<DleseRecord2>();
+    return records;
+  }
+
+  // addTo:
+  public void addToRecords(DleseRecord2 element)
+  {
+    records().add(element);
+  }
+
+  // size:
+  public int recordsSize()
+  {
+    return records == null ? 0 : records.size();
+  }
+
 	public void setRecords(List<DleseRecord2> records)
 	{
 		this.records = records;

@@ -42,6 +42,26 @@ public class DocumentSet extends Metadata
 		return documents;
 	}
 
+  // lazy evaluation:
+  public List<Document> documents()
+  {
+    if (documents == null)
+      documents = new ArrayList<Document>();
+    return documents;
+  }
+
+  // addTo:
+  public void addToDocuments(Document element)
+  {
+    documents().add(element);
+  }
+
+  // size:
+  public int documentsSize()
+  {
+    return documents == null ? 0 : documents.size();
+  }
+
 	public void setDocuments(List<Document> documents)
 	{
 		this.documents = documents;

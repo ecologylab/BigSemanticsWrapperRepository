@@ -60,6 +60,26 @@ public class RecordMetaMetadata extends Metadata
 		return catalogs;
 	}
 
+  // lazy evaluation:
+  public List<MetadataString> catalogs()
+  {
+    if (catalogs == null)
+      catalogs = new ArrayList<MetadataString>();
+    return catalogs;
+  }
+
+  // addTo:
+  public void addToCatalogs(MetadataString element)
+  {
+    catalogs().add(element);
+  }
+
+  // size:
+  public int catalogsSize()
+  {
+    return catalogs == null ? 0 : catalogs.size();
+  }
+
 	public void setCatalogs(List<MetadataString> catalogs)
 	{
 		this.catalogs = catalogs;

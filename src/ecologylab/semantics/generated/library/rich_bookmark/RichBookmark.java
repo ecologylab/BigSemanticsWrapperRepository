@@ -72,6 +72,26 @@ public class RichBookmark extends Document
 		return annotations;
 	}
 
+  // lazy evaluation:
+  public List<Annotation> annotations()
+  {
+    if (annotations == null)
+      annotations = new ArrayList<Annotation>();
+    return annotations;
+  }
+
+  // addTo:
+  public void addToAnnotations(Annotation element)
+  {
+    annotations().add(element);
+  }
+
+  // size:
+  public int annotationsSize()
+  {
+    return annotations == null ? 0 : annotations.size();
+  }
+
 	public void setAnnotations(List<Annotation> annotations)
 	{
 		this.annotations = annotations;

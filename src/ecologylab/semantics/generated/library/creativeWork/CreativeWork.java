@@ -64,6 +64,26 @@ public class CreativeWork extends CompoundDocument
 		return authors;
 	}
 
+  // lazy evaluation:
+  public List<Author> authors()
+  {
+    if (authors == null)
+      authors = new ArrayList<Author>();
+    return authors;
+  }
+
+  // addTo:
+  public void addToAuthors(Author element)
+  {
+    authors().add(element);
+  }
+
+  // size:
+  public int authorsSize()
+  {
+    return authors == null ? 0 : authors.size();
+  }
+
 	public void setAuthors(List<Author> authors)
 	{
 		this.authors = authors;

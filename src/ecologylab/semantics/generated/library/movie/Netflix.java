@@ -150,6 +150,26 @@ public class Netflix extends CompoundDocument
 		return cast;
 	}
 
+  // lazy evaluation:
+  public List<Cast> cast()
+  {
+    if (cast == null)
+      cast = new ArrayList<Cast>();
+    return cast;
+  }
+
+  // addTo:
+  public void addToCast(Cast element)
+  {
+    cast().add(element);
+  }
+
+  // size:
+  public int castSize()
+  {
+    return cast == null ? 0 : cast.size();
+  }
+
 	public void setCast(List<Cast> cast)
 	{
 		this.cast = cast;

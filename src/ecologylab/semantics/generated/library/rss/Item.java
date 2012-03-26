@@ -87,6 +87,26 @@ public class Item extends YahooMediaRss
 		return categories;
 	}
 
+  // lazy evaluation:
+  public List<MetadataString> categories()
+  {
+    if (categories == null)
+      categories = new ArrayList<MetadataString>();
+    return categories;
+  }
+
+  // addTo:
+  public void addToCategories(MetadataString element)
+  {
+    categories().add(element);
+  }
+
+  // size:
+  public int categoriesSize()
+  {
+    return categories == null ? 0 : categories.size();
+  }
+
 	public void setCategories(List<MetadataString> categories)
 	{
 		this.categories = categories;

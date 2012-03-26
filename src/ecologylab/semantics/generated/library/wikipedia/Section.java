@@ -78,6 +78,26 @@ public class Section extends Metadata
 		return paragraphs;
 	}
 
+  // lazy evaluation:
+  public List<Paragraph> paragraphs()
+  {
+    if (paragraphs == null)
+      paragraphs = new ArrayList<Paragraph>();
+    return paragraphs;
+  }
+
+  // addTo:
+  public void addToParagraphs(Paragraph element)
+  {
+    paragraphs().add(element);
+  }
+
+  // size:
+  public int paragraphsSize()
+  {
+    return paragraphs == null ? 0 : paragraphs.size();
+  }
+
 	public void setParagraphs(List<Paragraph> paragraphs)
 	{
 		this.paragraphs = paragraphs;

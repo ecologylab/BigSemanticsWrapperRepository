@@ -138,6 +138,26 @@ public class WikipediaMobilePage extends WikipediaPageType
 		return sections;
 	}
 
+  // lazy evaluation:
+  public List<Section> sections()
+  {
+    if (sections == null)
+      sections = new ArrayList<Section>();
+    return sections;
+  }
+
+  // addTo:
+  public void addToSections(Section element)
+  {
+    sections().add(element);
+  }
+
+  // size:
+  public int sectionsSize()
+  {
+    return sections == null ? 0 : sections.size();
+  }
+
 	public void setSections(List<Section> sections)
 	{
 		this.sections = sections;

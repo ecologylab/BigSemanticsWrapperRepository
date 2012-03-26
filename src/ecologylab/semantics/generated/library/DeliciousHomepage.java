@@ -43,6 +43,26 @@ public class DeliciousHomepage extends CompoundDocument
 		return bookmarks;
 	}
 
+  // lazy evaluation:
+  public List<Bookmark> bookmarks()
+  {
+    if (bookmarks == null)
+      bookmarks = new ArrayList<Bookmark>();
+    return bookmarks;
+  }
+
+  // addTo:
+  public void addToBookmarks(Bookmark element)
+  {
+    bookmarks().add(element);
+  }
+
+  // size:
+  public int bookmarksSize()
+  {
+    return bookmarks == null ? 0 : bookmarks.size();
+  }
+
 	public void setBookmarks(List<Bookmark> bookmarks)
 	{
 		this.bookmarks = bookmarks;

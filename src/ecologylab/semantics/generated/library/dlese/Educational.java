@@ -48,6 +48,26 @@ public class Educational extends Metadata
 		return audiences;
 	}
 
+  // lazy evaluation:
+  public List<Audience> audiences()
+  {
+    if (audiences == null)
+      audiences = new ArrayList<Audience>();
+    return audiences;
+  }
+
+  // addTo:
+  public void addToAudiences(Audience element)
+  {
+    audiences().add(element);
+  }
+
+  // size:
+  public int audiencesSize()
+  {
+    return audiences == null ? 0 : audiences.size();
+  }
+
 	public void setAudiences(List<Audience> audiences)
 	{
 		this.audiences = audiences;
@@ -57,6 +77,26 @@ public class Educational extends Metadata
 	{
 		return resourceTypes;
 	}
+
+  // lazy evaluation:
+  public List<MetadataString> resourceTypes()
+  {
+    if (resourceTypes == null)
+      resourceTypes = new ArrayList<MetadataString>();
+    return resourceTypes;
+  }
+
+  // addTo:
+  public void addToResourceTypes(MetadataString element)
+  {
+    resourceTypes().add(element);
+  }
+
+  // size:
+  public int resourceTypesSize()
+  {
+    return resourceTypes == null ? 0 : resourceTypes.size();
+  }
 
 	public void setResourceTypes(List<MetadataString> resourceTypes)
 	{

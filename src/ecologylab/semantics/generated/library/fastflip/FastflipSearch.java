@@ -43,6 +43,26 @@ public class FastflipSearch extends CompoundDocument
 		return thumbnails;
 	}
 
+  // lazy evaluation:
+  public List<Thumbnail> thumbnails()
+  {
+    if (thumbnails == null)
+      thumbnails = new ArrayList<Thumbnail>();
+    return thumbnails;
+  }
+
+  // addTo:
+  public void addToThumbnails(Thumbnail element)
+  {
+    thumbnails().add(element);
+  }
+
+  // size:
+  public int thumbnailsSize()
+  {
+    return thumbnails == null ? 0 : thumbnails.size();
+  }
+
 	public void setThumbnails(List<Thumbnail> thumbnails)
 	{
 		this.thumbnails = thumbnails;

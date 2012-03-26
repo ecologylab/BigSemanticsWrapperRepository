@@ -42,6 +42,26 @@ public class SearchMeta extends Metadata
 		return searchResults;
 	}
 
+  // lazy evaluation:
+  public List<SearchResult> searchResults()
+  {
+    if (searchResults == null)
+      searchResults = new ArrayList<SearchResult>();
+    return searchResults;
+  }
+
+  // addTo:
+  public void addToSearchResults(SearchResult element)
+  {
+    searchResults().add(element);
+  }
+
+  // size:
+  public int searchResultsSize()
+  {
+    return searchResults == null ? 0 : searchResults.size();
+  }
+
 	public void setSearchResults(List<SearchResult> searchResults)
 	{
 		this.searchResults = searchResults;

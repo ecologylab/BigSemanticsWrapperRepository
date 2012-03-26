@@ -50,6 +50,26 @@ public class YahooResultSet extends Document
 		return results;
 	}
 
+  // lazy evaluation:
+  public List<YahooResult> results()
+  {
+    if (results == null)
+      results = new ArrayList<YahooResult>();
+    return results;
+  }
+
+  // addTo:
+  public void addToResults(YahooResult element)
+  {
+    results().add(element);
+  }
+
+  // size:
+  public int resultsSize()
+  {
+    return results == null ? 0 : results.size();
+  }
+
 	public void setResults(List<YahooResult> results)
 	{
 		this.results = results;

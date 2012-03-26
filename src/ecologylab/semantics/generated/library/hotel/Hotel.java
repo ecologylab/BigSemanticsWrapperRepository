@@ -67,6 +67,26 @@ public class Hotel extends Document
 		return reviews;
 	}
 
+  // lazy evaluation:
+  public List<ProductReview> reviews()
+  {
+    if (reviews == null)
+      reviews = new ArrayList<ProductReview>();
+    return reviews;
+  }
+
+  // addTo:
+  public void addToReviews(ProductReview element)
+  {
+    reviews().add(element);
+  }
+
+  // size:
+  public int reviewsSize()
+  {
+    return reviews == null ? 0 : reviews.size();
+  }
+
 	public void setReviews(List<ProductReview> reviews)
 	{
 		this.reviews = reviews;

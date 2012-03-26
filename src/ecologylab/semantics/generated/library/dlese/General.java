@@ -83,6 +83,26 @@ public class General extends Metadata
 		return subjects;
 	}
 
+  // lazy evaluation:
+  public List<MetadataString> subjects()
+  {
+    if (subjects == null)
+      subjects = new ArrayList<MetadataString>();
+    return subjects;
+  }
+
+  // addTo:
+  public void addToSubjects(MetadataString element)
+  {
+    subjects().add(element);
+  }
+
+  // size:
+  public int subjectsSize()
+  {
+    return subjects == null ? 0 : subjects.size();
+  }
+
 	public void setSubjects(List<MetadataString> subjects)
 	{
 		this.subjects = subjects;

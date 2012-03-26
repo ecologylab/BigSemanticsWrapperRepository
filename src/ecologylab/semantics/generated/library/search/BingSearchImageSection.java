@@ -42,6 +42,26 @@ public class BingSearchImageSection extends CompoundDocument
 		return imageSearchResults;
 	}
 
+  // lazy evaluation:
+  public List<BingImageSearchResult> imageSearchResults()
+  {
+    if (imageSearchResults == null)
+      imageSearchResults = new ArrayList<BingImageSearchResult>();
+    return imageSearchResults;
+  }
+
+  // addTo:
+  public void addToImageSearchResults(BingImageSearchResult element)
+  {
+    imageSearchResults().add(element);
+  }
+
+  // size:
+  public int imageSearchResultsSize()
+  {
+    return imageSearchResults == null ? 0 : imageSearchResults.size();
+  }
+
 	public void setImageSearchResults(List<BingImageSearchResult> imageSearchResults)
 	{
 		this.imageSearchResults = imageSearchResults;

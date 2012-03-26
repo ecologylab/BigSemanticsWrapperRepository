@@ -45,6 +45,26 @@ public class GoogleScholarSearch extends Document
 		return searchResults;
 	}
 
+  // lazy evaluation:
+  public List<GoogleScholarSearchResult> searchResults()
+  {
+    if (searchResults == null)
+      searchResults = new ArrayList<GoogleScholarSearchResult>();
+    return searchResults;
+  }
+
+  // addTo:
+  public void addToSearchResults(GoogleScholarSearchResult element)
+  {
+    searchResults().add(element);
+  }
+
+  // size:
+  public int searchResultsSize()
+  {
+    return searchResults == null ? 0 : searchResults.size();
+  }
+
 	public void setSearchResults(List<GoogleScholarSearchResult> searchResults)
 	{
 		this.searchResults = searchResults;

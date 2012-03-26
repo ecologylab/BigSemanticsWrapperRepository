@@ -78,6 +78,26 @@ public class TripAdvisor extends Hotel
 		return similarHotels;
 	}
 
+  // lazy evaluation:
+  public List<TripAdvisor> similarHotels()
+  {
+    if (similarHotels == null)
+      similarHotels = new ArrayList<TripAdvisor>();
+    return similarHotels;
+  }
+
+  // addTo:
+  public void addToSimilarHotels(TripAdvisor element)
+  {
+    similarHotels().add(element);
+  }
+
+  // size:
+  public int similarHotelsSize()
+  {
+    return similarHotels == null ? 0 : similarHotels.size();
+  }
+
 	public void setSimilarHotels(List<TripAdvisor> similarHotels)
 	{
 		this.similarHotels = similarHotels;

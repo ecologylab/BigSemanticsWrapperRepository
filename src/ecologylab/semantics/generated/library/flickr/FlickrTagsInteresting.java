@@ -46,6 +46,26 @@ public class FlickrTagsInteresting extends Search
 		return flickrLinkSet;
 	}
 
+  // lazy evaluation:
+  public List<FlickrLink> flickrLinkSet()
+  {
+    if (flickrLinkSet == null)
+      flickrLinkSet = new ArrayList<FlickrLink>();
+    return flickrLinkSet;
+  }
+
+  // addTo:
+  public void addToFlickrLinkSet(FlickrLink element)
+  {
+    flickrLinkSet().add(element);
+  }
+
+  // size:
+  public int flickrLinkSetSize()
+  {
+    return flickrLinkSet == null ? 0 : flickrLinkSet.size();
+  }
+
 	public void setFlickrLinkSet(List<FlickrLink> flickrLinkSet)
 	{
 		this.flickrLinkSet = flickrLinkSet;

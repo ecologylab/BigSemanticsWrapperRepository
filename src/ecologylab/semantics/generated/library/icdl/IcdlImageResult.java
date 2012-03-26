@@ -47,6 +47,26 @@ public class IcdlImageResult extends Document
 		return books;
 	}
 
+  // lazy evaluation:
+  public List<IcdlBook> books()
+  {
+    if (books == null)
+      books = new ArrayList<IcdlBook>();
+    return books;
+  }
+
+  // addTo:
+  public void addToBooks(IcdlBook element)
+  {
+    books().add(element);
+  }
+
+  // size:
+  public int booksSize()
+  {
+    return books == null ? 0 : books.size();
+  }
+
 	public void setBooks(List<IcdlBook> books)
 	{
 		this.books = books;

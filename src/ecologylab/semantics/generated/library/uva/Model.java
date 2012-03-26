@@ -40,6 +40,26 @@ public class Model extends Metadata
 		return topicClusters;
 	}
 
+  // lazy evaluation:
+  public List<TopicCluster> topicClusters()
+  {
+    if (topicClusters == null)
+      topicClusters = new ArrayList<TopicCluster>();
+    return topicClusters;
+  }
+
+  // addTo:
+  public void addToTopicClusters(TopicCluster element)
+  {
+    topicClusters().add(element);
+  }
+
+  // size:
+  public int topicClustersSize()
+  {
+    return topicClusters == null ? 0 : topicClusters.size();
+  }
+
 	public void setTopicClusters(List<TopicCluster> topicClusters)
 	{
 		this.topicClusters = topicClusters;

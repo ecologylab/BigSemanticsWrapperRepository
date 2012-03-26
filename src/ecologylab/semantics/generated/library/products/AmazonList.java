@@ -40,6 +40,26 @@ public class AmazonList extends CreativeWork
 		return items;
 	}
 
+  // lazy evaluation:
+  public List<AmazonProduct> items()
+  {
+    if (items == null)
+      items = new ArrayList<AmazonProduct>();
+    return items;
+  }
+
+  // addTo:
+  public void addToItems(AmazonProduct element)
+  {
+    items().add(element);
+  }
+
+  // size:
+  public int itemsSize()
+  {
+    return items == null ? 0 : items.size();
+  }
+
 	public void setItems(List<AmazonProduct> items)
 	{
 		this.items = items;

@@ -122,6 +122,26 @@ public class GoogleBook extends Book
 		return selectedPages;
 	}
 
+  // lazy evaluation:
+  public List<Page> selectedPages()
+  {
+    if (selectedPages == null)
+      selectedPages = new ArrayList<Page>();
+    return selectedPages;
+  }
+
+  // addTo:
+  public void addToSelectedPages(Page element)
+  {
+    selectedPages().add(element);
+  }
+
+  // size:
+  public int selectedPagesSize()
+  {
+    return selectedPages == null ? 0 : selectedPages.size();
+  }
+
 	public void setSelectedPages(List<Page> selectedPages)
 	{
 		this.selectedPages = selectedPages;
@@ -131,6 +151,26 @@ public class GoogleBook extends Book
 	{
 		return citations;
 	}
+
+  // lazy evaluation:
+  public List<Document> citations()
+  {
+    if (citations == null)
+      citations = new ArrayList<Document>();
+    return citations;
+  }
+
+  // addTo:
+  public void addToCitations(Document element)
+  {
+    citations().add(element);
+  }
+
+  // size:
+  public int citationsSize()
+  {
+    return citations == null ? 0 : citations.size();
+  }
 
 	public void setCitations(List<Document> citations)
 	{

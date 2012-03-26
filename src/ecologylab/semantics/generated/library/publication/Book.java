@@ -55,6 +55,26 @@ public class Book extends Publication
 		return editors;
 	}
 
+  // lazy evaluation:
+  public List<Author> editors()
+  {
+    if (editors == null)
+      editors = new ArrayList<Author>();
+    return editors;
+  }
+
+  // addTo:
+  public void addToEditors(Author element)
+  {
+    editors().add(element);
+  }
+
+  // size:
+  public int editorsSize()
+  {
+    return editors == null ? 0 : editors.size();
+  }
+
 	public void setEditors(List<Author> editors)
 	{
 		this.editors = editors;
@@ -96,6 +116,26 @@ public class Book extends Publication
 	{
 		return tableOfContents;
 	}
+
+  // lazy evaluation:
+  public List<Publication> tableOfContents()
+  {
+    if (tableOfContents == null)
+      tableOfContents = new ArrayList<Publication>();
+    return tableOfContents;
+  }
+
+  // addTo:
+  public void addToTableOfContents(Publication element)
+  {
+    tableOfContents().add(element);
+  }
+
+  // size:
+  public int tableOfContentsSize()
+  {
+    return tableOfContents == null ? 0 : tableOfContents.size();
+  }
 
 	public void setTableOfContents(List<Publication> tableOfContents)
 	{

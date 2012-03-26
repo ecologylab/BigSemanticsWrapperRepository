@@ -49,6 +49,26 @@ public class RichBookmarkCollection extends Document
 		return richBookmarks;
 	}
 
+  // lazy evaluation:
+  public List<RichBookmark> richBookmarks()
+  {
+    if (richBookmarks == null)
+      richBookmarks = new ArrayList<RichBookmark>();
+    return richBookmarks;
+  }
+
+  // addTo:
+  public void addToRichBookmarks(RichBookmark element)
+  {
+    richBookmarks().add(element);
+  }
+
+  // size:
+  public int richBookmarksSize()
+  {
+    return richBookmarks == null ? 0 : richBookmarks.size();
+  }
+
 	public void setRichBookmarks(List<RichBookmark> richBookmarks)
 	{
 		this.richBookmarks = richBookmarks;

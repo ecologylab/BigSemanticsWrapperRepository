@@ -116,6 +116,26 @@ public class ImdbTitle extends MovieInfo
 		return titlePhotos;
 	}
 
+  // lazy evaluation:
+  public List<Image> titlePhotos()
+  {
+    if (titlePhotos == null)
+      titlePhotos = new ArrayList<Image>();
+    return titlePhotos;
+  }
+
+  // addTo:
+  public void addToTitlePhotos(Image element)
+  {
+    titlePhotos().add(element);
+  }
+
+  // size:
+  public int titlePhotosSize()
+  {
+    return titlePhotos == null ? 0 : titlePhotos.size();
+  }
+
 	public void setTitlePhotos(List<Image> titlePhotos)
 	{
 		this.titlePhotos = titlePhotos;

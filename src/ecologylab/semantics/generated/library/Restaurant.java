@@ -199,6 +199,26 @@ public class Restaurant extends CompoundDocument
 		return genres;
 	}
 
+  // lazy evaluation:
+  public List<RestaurantGenre> genres()
+  {
+    if (genres == null)
+      genres = new ArrayList<RestaurantGenre>();
+    return genres;
+  }
+
+  // addTo:
+  public void addToGenres(RestaurantGenre element)
+  {
+    genres().add(element);
+  }
+
+  // size:
+  public int genresSize()
+  {
+    return genres == null ? 0 : genres.size();
+  }
+
 	public void setGenres(List<RestaurantGenre> genres)
 	{
 		this.genres = genres;

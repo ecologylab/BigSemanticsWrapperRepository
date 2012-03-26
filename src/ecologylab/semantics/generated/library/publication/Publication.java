@@ -89,6 +89,26 @@ public class Publication extends BasicPublication
 		return subjects;
 	}
 
+  // lazy evaluation:
+  public List<Subject> subjects()
+  {
+    if (subjects == null)
+      subjects = new ArrayList<Subject>();
+    return subjects;
+  }
+
+  // addTo:
+  public void addToSubjects(Subject element)
+  {
+    subjects().add(element);
+  }
+
+  // size:
+  public int subjectsSize()
+  {
+    return subjects == null ? 0 : subjects.size();
+  }
+
 	public void setSubjects(List<Subject> subjects)
 	{
 		this.subjects = subjects;
@@ -130,6 +150,26 @@ public class Publication extends BasicPublication
 	{
 		return commonTerms;
 	}
+
+  // lazy evaluation:
+  public List<TermType> commonTerms()
+  {
+    if (commonTerms == null)
+      commonTerms = new ArrayList<TermType>();
+    return commonTerms;
+  }
+
+  // addTo:
+  public void addToCommonTerms(TermType element)
+  {
+    commonTerms().add(element);
+  }
+
+  // size:
+  public int commonTermsSize()
+  {
+    return commonTerms == null ? 0 : commonTerms.size();
+  }
 
 	public void setCommonTerms(List<TermType> commonTerms)
 	{

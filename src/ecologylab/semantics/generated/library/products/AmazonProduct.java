@@ -75,6 +75,26 @@ public class AmazonProduct extends Product
 		return peopleAlsoBuy;
 	}
 
+  // lazy evaluation:
+  public List<AmazonProduct> peopleAlsoBuy()
+  {
+    if (peopleAlsoBuy == null)
+      peopleAlsoBuy = new ArrayList<AmazonProduct>();
+    return peopleAlsoBuy;
+  }
+
+  // addTo:
+  public void addToPeopleAlsoBuy(AmazonProduct element)
+  {
+    peopleAlsoBuy().add(element);
+  }
+
+  // size:
+  public int peopleAlsoBuySize()
+  {
+    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
+  }
+
 	public void setPeopleAlsoBuy(List<AmazonProduct> peopleAlsoBuy)
 	{
 		this.peopleAlsoBuy = peopleAlsoBuy;
@@ -84,6 +104,26 @@ public class AmazonProduct extends Product
 	{
 		return listMania;
 	}
+
+  // lazy evaluation:
+  public List<Document> listMania()
+  {
+    if (listMania == null)
+      listMania = new ArrayList<Document>();
+    return listMania;
+  }
+
+  // addTo:
+  public void addToListMania(Document element)
+  {
+    listMania().add(element);
+  }
+
+  // size:
+  public int listManiaSize()
+  {
+    return listMania == null ? 0 : listMania.size();
+  }
 
 	public void setListMania(List<Document> listMania)
 	{

@@ -194,6 +194,26 @@ public class FlickrImageDetailTwo extends CompoundDocument
 		return flickrTags;
 	}
 
+  // lazy evaluation:
+  public List<FlickrTag> flickrTags()
+  {
+    if (flickrTags == null)
+      flickrTags = new ArrayList<FlickrTag>();
+    return flickrTags;
+  }
+
+  // addTo:
+  public void addToFlickrTags(FlickrTag element)
+  {
+    flickrTags().add(element);
+  }
+
+  // size:
+  public int flickrTagsSize()
+  {
+    return flickrTags == null ? 0 : flickrTags.size();
+  }
+
 	public void setFlickrTags(List<FlickrTag> flickrTags)
 	{
 		this.flickrTags = flickrTags;

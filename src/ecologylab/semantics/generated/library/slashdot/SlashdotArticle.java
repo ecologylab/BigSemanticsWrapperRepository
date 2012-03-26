@@ -115,6 +115,26 @@ public class SlashdotArticle extends CompoundDocument
 		return anchors;
 	}
 
+  // lazy evaluation:
+  public List<Anchor> anchors()
+  {
+    if (anchors == null)
+      anchors = new ArrayList<Anchor>();
+    return anchors;
+  }
+
+  // addTo:
+  public void addToAnchors(Anchor element)
+  {
+    anchors().add(element);
+  }
+
+  // size:
+  public int anchorsSize()
+  {
+    return anchors == null ? 0 : anchors.size();
+  }
+
 	public void setAnchors(List<Anchor> anchors)
 	{
 		this.anchors = anchors;

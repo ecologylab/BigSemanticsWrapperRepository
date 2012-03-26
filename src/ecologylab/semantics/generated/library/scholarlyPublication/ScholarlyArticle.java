@@ -90,6 +90,26 @@ public class ScholarlyArticle extends CreativeWork
 		return references;
 	}
 
+  // lazy evaluation:
+  public List<ScholarlyArticle> references()
+  {
+    if (references == null)
+      references = new ArrayList<ScholarlyArticle>();
+    return references;
+  }
+
+  // addTo:
+  public void addToReferences(ScholarlyArticle element)
+  {
+    references().add(element);
+  }
+
+  // size:
+  public int referencesSize()
+  {
+    return references == null ? 0 : references.size();
+  }
+
 	public void setReferences(List<ScholarlyArticle> references)
 	{
 		this.references = references;
@@ -99,6 +119,26 @@ public class ScholarlyArticle extends CreativeWork
 	{
 		return citations;
 	}
+
+  // lazy evaluation:
+  public List<ScholarlyArticle> citations()
+  {
+    if (citations == null)
+      citations = new ArrayList<ScholarlyArticle>();
+    return citations;
+  }
+
+  // addTo:
+  public void addToCitations(ScholarlyArticle element)
+  {
+    citations().add(element);
+  }
+
+  // size:
+  public int citationsSize()
+  {
+    return citations == null ? 0 : citations.size();
+  }
 
 	public void setCitations(List<ScholarlyArticle> citations)
 	{
@@ -110,6 +150,26 @@ public class ScholarlyArticle extends CreativeWork
 		return classifications;
 	}
 
+  // lazy evaluation:
+  public List<Tag> classifications()
+  {
+    if (classifications == null)
+      classifications = new ArrayList<Tag>();
+    return classifications;
+  }
+
+  // addTo:
+  public void addToClassifications(Tag element)
+  {
+    classifications().add(element);
+  }
+
+  // size:
+  public int classificationsSize()
+  {
+    return classifications == null ? 0 : classifications.size();
+  }
+
 	public void setClassifications(List<Tag> classifications)
 	{
 		this.classifications = classifications;
@@ -119,6 +179,26 @@ public class ScholarlyArticle extends CreativeWork
 	{
 		return keywords;
 	}
+
+  // lazy evaluation:
+  public List<Tag> keywords()
+  {
+    if (keywords == null)
+      keywords = new ArrayList<Tag>();
+    return keywords;
+  }
+
+  // addTo:
+  public void addToKeywords(Tag element)
+  {
+    keywords().add(element);
+  }
+
+  // size:
+  public int keywordsSize()
+  {
+    return keywords == null ? 0 : keywords.size();
+  }
 
 	public void setKeywords(List<Tag> keywords)
 	{

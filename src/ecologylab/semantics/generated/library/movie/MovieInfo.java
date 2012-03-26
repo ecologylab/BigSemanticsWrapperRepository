@@ -299,6 +299,26 @@ public class MovieInfo extends CompoundDocument
 		return directors;
 	}
 
+  // lazy evaluation:
+  public List<Document> directors()
+  {
+    if (directors == null)
+      directors = new ArrayList<Document>();
+    return directors;
+  }
+
+  // addTo:
+  public void addToDirectors(Document element)
+  {
+    directors().add(element);
+  }
+
+  // size:
+  public int directorsSize()
+  {
+    return directors == null ? 0 : directors.size();
+  }
+
 	public void setDirectors(List<Document> directors)
 	{
 		this.directors = directors;
@@ -308,6 +328,26 @@ public class MovieInfo extends CompoundDocument
 	{
 		return writers;
 	}
+
+  // lazy evaluation:
+  public List<Document> writers()
+  {
+    if (writers == null)
+      writers = new ArrayList<Document>();
+    return writers;
+  }
+
+  // addTo:
+  public void addToWriters(Document element)
+  {
+    writers().add(element);
+  }
+
+  // size:
+  public int writersSize()
+  {
+    return writers == null ? 0 : writers.size();
+  }
 
 	public void setWriters(List<Document> writers)
 	{
@@ -350,6 +390,26 @@ public class MovieInfo extends CompoundDocument
 	{
 		return genres;
 	}
+
+  // lazy evaluation:
+  public List<Document> genres()
+  {
+    if (genres == null)
+      genres = new ArrayList<Document>();
+    return genres;
+  }
+
+  // addTo:
+  public void addToGenres(Document element)
+  {
+    genres().add(element);
+  }
+
+  // size:
+  public int genresSize()
+  {
+    return genres == null ? 0 : genres.size();
+  }
 
 	public void setGenres(List<Document> genres)
 	{

@@ -43,6 +43,26 @@ public class ImdbChart extends CompoundDocument
 		return results;
 	}
 
+  // lazy evaluation:
+  public List<ImdbTitle> results()
+  {
+    if (results == null)
+      results = new ArrayList<ImdbTitle>();
+    return results;
+  }
+
+  // addTo:
+  public void addToResults(ImdbTitle element)
+  {
+    results().add(element);
+  }
+
+  // size:
+  public int resultsSize()
+  {
+    return results == null ? 0 : results.size();
+  }
+
 	public void setResults(List<ImdbTitle> results)
 	{
 		this.results = results;

@@ -40,6 +40,26 @@ public class Artist extends Author
 		return artworks;
 	}
 
+  // lazy evaluation:
+  public List<Artwork> artworks()
+  {
+    if (artworks == null)
+      artworks = new ArrayList<Artwork>();
+    return artworks;
+  }
+
+  // addTo:
+  public void addToArtworks(Artwork element)
+  {
+    artworks().add(element);
+  }
+
+  // size:
+  public int artworksSize()
+  {
+    return artworks == null ? 0 : artworks.size();
+  }
+
 	public void setArtworks(List<Artwork> artworks)
 	{
 		this.artworks = artworks;
