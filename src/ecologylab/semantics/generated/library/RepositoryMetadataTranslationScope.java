@@ -20,6 +20,8 @@ public class RepositoryMetadataTranslationScope
 
 	protected static final Class TRANSLATIONS[] =
 	{
+		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
+
 		ecologylab.semantics.generated.library.Bookmark.class,
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,
