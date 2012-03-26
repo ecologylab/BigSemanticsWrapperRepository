@@ -19,9 +19,12 @@
 
 	  <semantic_actions>
 	    <get_field name="image" />
-	    <create_and_visualize_img_surrogate>
-	      <arg name="metadata" value="image" />
-	    </create_and_visualize_img_surrogate>
+		<if>
+			<not_null value="image" />
+		    <create_and_visualize_img_surrogate>
+		    	<arg name="metadata" value="image" />
+		    </create_and_visualize_img_surrogate>
+		</if>
 	  </semantic_actions>
 	</meta_metadata>
 
@@ -56,7 +59,7 @@
 		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
 		<scalar name="description" xpath="//div[@class='productDescriptionWrapper']"/>
 		
-		<composite name="image" xpath="//img[@class='prod_image_selector']" >
+		<composite name="image" xpath="//img[@class='prod_image_selector' or @id='prodImage']" >
 			<scalar name="location" xpath="./@src" />
 		</composite>
 
@@ -100,7 +103,7 @@
 			<if>
 				<not_null value="image" />
 			    <create_and_visualize_img_surrogate>
-			      <arg name="metadata" value="image" />
+			    	<arg name="metadata" value="image" />
 			    </create_and_visualize_img_surrogate>
 			</if>
 		</semantic_actions>
@@ -125,10 +128,13 @@
 	<meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
 		<example_url location="http://www.amazon.com/gp/bestsellers/books/6/" />
+		
+		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 	
 		<collection name="items" xpath="//div[@class='zg_itemRightDiv_normal']">
 			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
 			<scalar name="location" xpath=".//div[@class='zg_title']/a/@href"/>
+			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock_normal']//span[@class='price']/b"/>
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	
