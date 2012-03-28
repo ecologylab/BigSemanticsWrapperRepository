@@ -4,7 +4,7 @@
   <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search" user_agent_name="firefox_2" parser="xpath">
     <selector url_stripped="http://en.wikipedia.org/w/index.php?title=Special%3ASearch" />
 
-    <collection name="search_results" xpath="//div[@id='bodyContent']/div[@class='searchresults']/ul[@class='mw-search-results']/li">
+    <collection name="search_results" xpath="//ul[@class='mw-search-results']/li">
       <scalar name="title" xpath="./div[@class='mw-search-result-heading']/a" />
       <scalar name="location" xpath="./div[@class='mw-search-result-heading']/a/@href" />
       <scalar name="description" xpath="./div[@class='searchresult']" />
@@ -33,12 +33,14 @@
   </meta_metadata>
 
   <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia" user_agent_name="chrome_12">
-    <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
     <selector url_regex="http://en.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
+    
+    <example_url url="http://en.wikipedia.org/wiki/Type_system" />
    
-
+    <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
+    
     <scalar name="title" xpath="//*[@id='firstHeading']" />
-    <scalar name="description" xpath="//*[@id='bodyContent']/p[1]" />
+    <scalar name="description" xpath="//*[@id='mw-content-text']/p[1]" />
     <scalar name="main_image_src" hide="true" xpath="./@src" context_node="main_image" scalar_type="ParsedURL" />
     <collection name="paragraphs" hide="true" xpath="//*[@id='bodyContent']//p[string-length(text()) > 0]" child_type="paragraph">
       <scalar name="paragraph_text" xpath="." />
