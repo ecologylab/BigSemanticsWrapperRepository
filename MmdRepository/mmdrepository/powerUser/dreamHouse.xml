@@ -74,7 +74,7 @@
     <scalar name="rating" xpath=".//img[contains(@id, 'starImage')]/@src">
       <filter regex="http://[^\.]+.ostkcdn.com/img/mxc/stars|_..gif" replace="" />
     </scalar>
-    <scalar name="content" xpath=".//div[contains(@id, 'reviewText')]" />
+    <scalar name="description" xpath=".//div[contains(@id, 'reviewText')]" />
   </collection>
   
   <!-- this should be the fix, but I don't know why it does not work. Shenfeng

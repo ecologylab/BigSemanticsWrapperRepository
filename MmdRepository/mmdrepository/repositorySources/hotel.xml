@@ -84,7 +84,7 @@
 	
 	<collection name="reviews" xpath="//div[contains(@id, 'review_')]">
 		<scalar name="rating" xpath="./div/div[@class='col2of2']//img/@alt" layer="20.0" />
-		<scalar name="content" xpath="./div/div[@class='col2of2']/div[@class='entry']/p" layer="10.0" />
+		<scalar name="description" xpath="./div/div[@class='col2of2']/div[@class='entry']/p" layer="10.0" />
 	</collection>
 	
 	<collection name="similar_hotels" xpath="//div[@class='carouselHotel']" child_type="trip_advisor">
@@ -128,7 +128,6 @@
 		</collection>
 			
 </meta_metadata>
-<!-- 
 <meta_metadata name="hilton" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www1.hilton.com/en_US/hi/hotel" />
 	
@@ -143,5 +142,5 @@
 	</composite>
 
 </meta_metadata>
--->
+
 </meta_metadata_repository>
