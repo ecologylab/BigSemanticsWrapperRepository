@@ -1,4 +1,4 @@
-<meta_metadata_repository name="patents" package="ecologylab.semantics.generated.library.patents" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="patents" package="ecologylab.semantics.generated.library.patents" default_user_agent_name="chrome">
 
 	<meta_metadata name="patent_classification" extends="document" parser="xpath">
 		<selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
@@ -21,6 +21,8 @@
 <!-- 	<collection name="classifications" child_type="document"/> --><!-- polymorphic fields need simpl_classes/scope meta-information! -->
 	<collection name="classifications" child_type="patent_classification"/>
 	<collection name="claims" child_scalar_type="String" child_tag="claim" />
+	
+	<collection name="authors" child_type="patent_author" />
  
 	<collection name="citations" child_type="patent" other_tags="referenced_bys" comment="subsequent patents that cite this"/>
 	<collection name="references" child_type="patent" comment="prior patents that this references"/>
@@ -41,6 +43,22 @@
 		</before_semantic_actions>
 	</meta_metadata>
 
+	<meta_metadata name="patent_author" extends="author" comment="Authors of Patents; really this should be a mix-in to author" parser="xpath">	
+		<collection name="patents" child_type="patent" />
+	</meta_metadata>
+	
+	<meta_metadata name="google_patent_author" type="patent_author" parser="xpath" user_agent="chrome">
+		<selector url_regex="(ininventor)" domain="google.com"/>
+		
+		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
+		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
+
+		<collection name="patents" child_type="patent" xpath="//li[@class='g']//h3[@class='r']">
+			<scalar name="location" xpath="./a/@href" />
+			<scalar name="title" xpath="./a/@href" />
+		</collection>
+	</meta_metadata>
+	
 	<meta_metadata name="google_patent" type="patent" comment="Google Patents Class" parser="xpath">
 		<selector url_stripped="http://www.google.com/patents/about" />
 		<selector url_stripped="http://www.google.com/patents" />
