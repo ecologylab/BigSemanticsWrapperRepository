@@ -77,7 +77,7 @@
 		<composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list" xpath="//li[@id='SalesRank']">
 			<scalar name="title" xpath=".//b/a" />
 			<scalar name="location" hide="true" xpath=".//b/a/@href" />
-			<scalar name="rank" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
+			<scalar name="overall_rating" label="rank" xpath="./ul/li/span[@class='zg_hrsr_rank']" />
 		</composite>
 		
 		<collection name="people_also_buy" child_type="amazon_product" xpath="//div[@id='vtpsims']/ul/li">
