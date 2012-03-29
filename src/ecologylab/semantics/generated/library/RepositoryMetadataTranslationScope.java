@@ -234,6 +234,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.patents.Patent.class,
 
+		ecologylab.semantics.generated.library.patents.PatentAuthor.class,
+
 		ecologylab.semantics.generated.library.patents.PatentClassification.class,
 
 		ecologylab.semantics.generated.library.political_cartoon.PoliticalCartoon.class,
