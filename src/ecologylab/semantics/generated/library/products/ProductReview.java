@@ -14,6 +14,7 @@ import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
 import java.util.List;
@@ -23,10 +24,14 @@ import java.util.Map;
 public class ProductReview extends Metadata
 {
 	@simpl_scalar
-	private MetadataString rating;
+	private MetadataString title;
 
 	@simpl_scalar
-	private MetadataString content;
+	@simpl_other_tags({"content"})
+	private MetadataString description;
+
+	@simpl_scalar
+	private MetadataString rating;
 
 	public ProductReview()
 	{ super(); }
@@ -35,6 +40,70 @@ public class ProductReview extends Metadata
 		super(mmd);
 	}
 
+
+	public MetadataString	title()
+	{
+		MetadataString	result = this.title;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.title = result;
+		}
+		return result;
+	}
+
+	public String getTitle()
+	{
+		return this.title == null ? null : title().getValue();
+	}
+
+	public MetadataString getTitleMetadata()
+	{
+		return title;
+	}
+
+	public void setTitle(String title)
+	{
+		if (title != null)
+			this.title().setValue(title);
+	}
+
+	public void setTitleMetadata(MetadataString title)
+	{
+		this.title = title;
+	}
+
+	public MetadataString	description()
+	{
+		MetadataString	result = this.description;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.description = result;
+		}
+		return result;
+	}
+
+	public String getDescription()
+	{
+		return this.description == null ? null : description().getValue();
+	}
+
+	public MetadataString getDescriptionMetadata()
+	{
+		return description;
+	}
+
+	public void setDescription(String description)
+	{
+		if (description != null)
+			this.description().setValue(description);
+	}
+
+	public void setDescriptionMetadata(MetadataString description)
+	{
+		this.description = description;
+	}
 
 	public MetadataString	rating()
 	{
@@ -66,37 +135,5 @@ public class ProductReview extends Metadata
 	public void setRatingMetadata(MetadataString rating)
 	{
 		this.rating = rating;
-	}
-
-	public MetadataString	content()
-	{
-		MetadataString	result = this.content;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.content = result;
-		}
-		return result;
-	}
-
-	public String getContent()
-	{
-		return this.content == null ? null : content().getValue();
-	}
-
-	public MetadataString getContentMetadata()
-	{
-		return content;
-	}
-
-	public void setContent(String content)
-	{
-		if (content != null)
-			this.content().setValue(content);
-	}
-
-	public void setContentMetadata(MetadataString content)
-	{
-		this.content = content;
 	}
 }

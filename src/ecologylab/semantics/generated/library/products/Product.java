@@ -14,6 +14,7 @@ import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
+import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -22,6 +23,7 @@ import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,15 +42,18 @@ public class Product extends CompoundDocument
 	@simpl_scalar
 	private MetadataString model;
 
+	@simpl_scalar
+	private MetadataString overallRating;
+
+	@simpl_scalar
+	private MetadataInteger numReviews;
+
 	@simpl_composite
 	@mm_name("image")
 	private Image image;
 
 	@simpl_scalar
 	private MetadataParsedURL reviewsLocation;
-
-	@simpl_scalar
-	private MetadataString overallRating;
 
 	public Product()
 	{ super(); }
@@ -152,6 +157,70 @@ public class Product extends CompoundDocument
 		this.model = model;
 	}
 
+	public MetadataString	overallRating()
+	{
+		MetadataString	result = this.overallRating;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.overallRating = result;
+		}
+		return result;
+	}
+
+	public String getOverallRating()
+	{
+		return this.overallRating == null ? null : overallRating().getValue();
+	}
+
+	public MetadataString getOverallRatingMetadata()
+	{
+		return overallRating;
+	}
+
+	public void setOverallRating(String overallRating)
+	{
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
+	}
+
+	public void setOverallRatingMetadata(MetadataString overallRating)
+	{
+		this.overallRating = overallRating;
+	}
+
+	public MetadataInteger	numReviews()
+	{
+		MetadataInteger	result = this.numReviews;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.numReviews = result;
+		}
+		return result;
+	}
+
+	public Integer getNumReviews()
+	{
+		return this.numReviews == null ? 0 : numReviews().getValue();
+	}
+
+	public MetadataInteger getNumReviewsMetadata()
+	{
+		return numReviews;
+	}
+
+	public void setNumReviews(Integer numReviews)
+	{
+		if (numReviews != 0)
+			this.numReviews().setValue(numReviews);
+	}
+
+	public void setNumReviewsMetadata(MetadataInteger numReviews)
+	{
+		this.numReviews = numReviews;
+	}
+
 	public Image getImage()
 	{
 		return image;
@@ -192,37 +261,5 @@ public class Product extends CompoundDocument
 	public void setReviewsLocationMetadata(MetadataParsedURL reviewsLocation)
 	{
 		this.reviewsLocation = reviewsLocation;
-	}
-
-	public MetadataString	overallRating()
-	{
-		MetadataString	result = this.overallRating;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.overallRating = result;
-		}
-		return result;
-	}
-
-	public String getOverallRating()
-	{
-		return this.overallRating == null ? null : overallRating().getValue();
-	}
-
-	public MetadataString getOverallRatingMetadata()
-	{
-		return overallRating;
-	}
-
-	public void setOverallRating(String overallRating)
-	{
-		if (overallRating != null)
-			this.overallRating().setValue(overallRating);
-	}
-
-	public void setOverallRatingMetadata(MetadataString overallRating)
-	{
-		this.overallRating = overallRating;
 	}
 }
