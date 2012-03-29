@@ -1,8 +1,9 @@
 <meta_metadata_repository name="products" package="ecologylab.semantics.generated.library.products">
 
 	<meta_metadata name="product_review" extends="metadata" schema_org_itemtype="http://schema.org/Review" schema_org_itemprop="reviews">
+			<scalar name="title" scalar_type="string" />
+			<scalar name="description" other_tags="content" scalar_type="String" schema_org_itemprop="reviewBody" />
 			<scalar name="rating" scalar_type="String" schema_org_itemprop="reviewRating" />
-			<scalar name="content" scalar_type="String" schema_org_itemprop="reviewBody" />
 	</meta_metadata>
 		
 	<meta_metadata name="product" extends="compound_document" parser="xpath" schema_org_itemtype="http://schema.org/Product">
@@ -10,10 +11,13 @@
 
 		<scalar name="price" scalar_type="String" schema_org_itemprop="price" xpath="//span[@itemprop='price']/text()"/>
 		<scalar name="model" scalar_type="String" schema_org_itemprop="model" />
+
+		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" schema_org_itemprop="aggregateRating" />
+		<scalar name="num_reviews" scalar_type="integer" schema_org_itemprop="reviewCount" />
+		
 		<composite name="image" type="image" hide="true"/>
 
 		<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
-		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location"  schema_org_itemprop="aggregateRating" />
 
 		<collection name="reviews" child_type="product_review" layer="1.0"/>
 
@@ -26,6 +30,25 @@
 		    </create_and_visualize_img_surrogate>
 		</if>
 	  </semantic_actions>
+	</meta_metadata>
+	
+	<meta_metadata name="newegg_product" type="product" parser="xpath">
+		<selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
+		
+		<example_url location="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
+		
+		<scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']//img/@title" />
+		<scalar name="num_reviews" xpath="//span[@itemprop='reviewCount']" />
+		
+		<composite name="image">
+			<scalar name="location" xpath="//span[@class='mainSlide']/img/@src" />
+		</composite>
+		
+		<collection name="reviews" xpath="//table[@class='grpReviews']//tr/th[@class='reviewer']/..">
+			<scalar name="rating" xpath=".//span[@class='itmRating']/img/@alt" />
+			<scalar name="title" xpath=".//h3/text()" />
+			<scalar name="description" xpath=".//div[@class='details']" />
+		</collection>
 	</meta_metadata>
 
 	<meta_metadata name="amazon_list" extends="creative_work" >
@@ -70,8 +93,8 @@
 		<scalar name="overall_rating"   context_node="reviews_span" xpath=".//span[1]/@title" />
 
 		<collection name="reviews" xpath="//div[@class='content']/table/tbody/tr[2]/td[1]/div[position() &lt; last()-1]">
-			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" layer="20.0" />
-			<scalar name="content" xpath="." layer="10.0" />
+			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" />
+			<scalar name="description" xpath="." />
 		</collection>
 		
 		<composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list" xpath="//li[@id='SalesRank']">
