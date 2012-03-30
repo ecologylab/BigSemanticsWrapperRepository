@@ -53,7 +53,7 @@
 		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
 		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
 
-		<collection name="patents" child_type="patent" xpath="//li[@class='g']//h3[@class='r']">
+		<collection name="patents" child_type="google_patent" xpath="//li[@class='g']//h3[@class='r']">
 			<scalar name="location" xpath="./a/@href" />
 			<scalar name="title" xpath="./a/@href" />
 		</collection>
@@ -67,7 +67,7 @@
 		<example_url location="http://www.google.com/patents/US20100045705" />
 		<example_url location="http://www.google.com/patents/US7953462" />
 
-		<collection name="authors" xpath="//div[@class='patent_bibdata']/a[contains(@href,'inventor')]">
+		<collection name="authors" child_type="google_patent_author" xpath="//div[@class='patent_bibdata']/a[contains(@href,'inventor')]">
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./text()" />
 		</collection>
@@ -78,7 +78,6 @@
 			</scalar>
 			<scalar name="patent_class" xpath="./text()" />
 		</collection>
-
 
 		<scalar name="title" xpath="//div[@id='volume-info-sidebar']/h1" />
 		<!-- <scalar name="inventor" xpath="//h1" /> -->
@@ -97,16 +96,16 @@
 		</scalar>
 <!--		<scalar name="pic_link" xpath="//div[@id='selected_pages_v']/div[1]/a[1]/@href" scalar_type="ParsedURL" />-->
 		
-		<collection name="citations" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" >
+		<collection name="citations" child_type="google_patent" xpath="//div[@id='patent_referenced_by_v']/table/tbody/tr[position() > 1]" >
 			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
-		<collection name="references" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" >
+		<collection name="references" child_type="google_patent" xpath="//div[@id='patent_citations_v']/table/tbody/tr[position() > 1]" >
 			<scalar name="title" xpath="./td[@class='rel_patent_title']/text()" />
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
-		<collection name="drawings" xpath="//div[@id='selected_pages_v']/div/a[1]">
-			<scalar name="location" xpath="./@href" />
+		<collection name="drawings" xpath="//div[@id='selected_pages_v']/div/a/img">
+			<scalar name="location" xpath="./@src" />
 		</collection>
 
 		<before_semantic_actions>

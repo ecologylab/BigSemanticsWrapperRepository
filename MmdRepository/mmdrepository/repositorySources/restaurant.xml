@@ -1,4 +1,4 @@
-<meta_metadata_repository name="restaurant" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="restaurant" package="ecologylab.semantics.generated.library.restaurant" default_user_agent_name="chrome_2">
 
 	<meta_metadata name="restaurant" extends="compound_document"
 		comment="The restaurant class.">
