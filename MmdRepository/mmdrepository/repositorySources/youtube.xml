@@ -1,0 +1,54 @@
+<meta_metadata_repository name="youtube" package="ecology.semantics.grenerated.library.videos" default_user_agent_name="firefox_3_6_8">
+
+<!-- TBD add http://img.youtube.com/vi/Video_ID/0.jpg as the picture and clipping -->
+<meta_metadata name="comment_result" extends="metadata" >
+	<scalar name ="content" scalar_type="String"/>
+	<scalar name ="author" scalar_type="String"/>
+	<scalar name ="autherurl" scalar_type="ParsedURL"/>
+	<scalar name ="old" scalar_type="String"/>
+	<scalar name ="like" scalar_type="String"/>
+</meta_metadata>
+<meta_metadata name="watchyoutubevideo" extends="compound_document"  parser="xpath" comment="youtube video details">
+<scalar name="title" scalar_type="String"/>
+<scalar name="date" scalar_type="String" comment="Date on which video is uploaded" />
+<scalar name="author" scalar_type="String" comment="author of video" />
+<scalar name="authorlink" scalar_type="ParsedURL" hide="true" comment="link to auther detail" />
+<scalar name="details" scalar_type="String" comment="video details" />
+
+<collection name="tag" child_type="search_result" generate_class="false" comment="list of tags" />
+<scalar name="license" scalar_type="String" comment="video License" />
+<collection name="top_commet" child_type="comment_result" generate_class="true" comment="top 2 comments if any" />
+<scalar name="no_of_comment" scalar_type="String" comment="total no of comment recived"/>
+<scalar name="likes" scalar_type="String" comment="total no of likes recived"/>
+<scalar name="dislikes" scalar_type="String" comment="total no of dislikes recived"/>
+<scalar name="view_count" scalar_type="String" comment="total no of views"/>
+</meta_metadata>
+
+<meta_metadata name="youtube_video_view" type="watchyoutubevideo" comment="youtube video view page">
+<selector url_stripped="http://www.youtube.com/watch"/>
+<scalar name="title" xpath="/html/head/title"/>
+<scalar name="date" xpath=".//*[@id='eow-date' and @class='watch-video-date']" />
+<scalar name="author" xpath=".//a[@class='yt-user-name author' and @rel='author']" />
+<scalar name="authorlink" xpath=".//a[@class='yt-user-name author' and @rel='author']/@href" />
+<scalar name="details" xpath=".//p[@id='eow-description']" />
+
+<collection name="tag" xpath=".//ul[@id='eow-tags']/li/a" >
+	<scalar name="title" xpath="./text()"/>
+	<scalar name="location" xpath="./@href"/>
+</collection>
+<scalar name="license" xpath=".//p[@id='eow-reuse']" />
+<collection name="top_commet" xpath=".//*[@id='comments-view']/div[2]/ul/li">
+	<scalar name ="content" xpath="./div/div/div/div/p"/>
+	<scalar name ="author" xpath="./div/div/div/p/span[@class='author']/a/text()"/>
+	<scalar name ="autherurl" xpath="./div/div/div/p/span[@class='author']/a/@href"/>
+	<scalar name ="old" xpath="./div/div/div/p/span[@class='time']"/>
+	<scalar name ="like" xpath="./div/div/div/p/span[@class='comments-rating-positive']/text()"/>
+</collection>
+<scalar name="no_of_comment" xpath=".//span[@class='comments-section-stat']"/>
+<scalar name="likes" xpath=".//span[@class='likes']"/>
+<scalar name="dislikes" xpath=".//span[@class='dislikes']"/>
+<scalar name="view_count" xpath=".//span[@class='watch-view-count']/strong"/>
+
+
+	</meta_metadata>
+</meta_metadata_repository>
