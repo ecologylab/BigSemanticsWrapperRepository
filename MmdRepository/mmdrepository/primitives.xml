@@ -141,7 +141,12 @@
 		<scalar name="link" hide="true" scalar_type="ParsedURL" />
 	</meta_metadata>
 	
-	<meta_metadata name="information_composition" extends="document" built_in="true">
+	<meta_metadata name="information_composition" extends="document" built_in="true" parser="icom">
+	
+		<selector>
+			<suffix>icom</suffix>
+		</selector>
+		
 		<collection name="metadata" child_type="metadata" polymorphic_scope="repository_no_annotations" />
 	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
 		
