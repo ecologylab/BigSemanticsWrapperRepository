@@ -22,6 +22,10 @@ public class RepositoryMetadataTranslationScope
 	{
 		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
 
+		ecology.semantics.grenerated.library.videos.CommentResult.class,
+
+		ecology.semantics.grenerated.library.videos.Watchyoutubevideo.class,
+
 		ecologylab.semantics.generated.library.Bookmark.class,
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,

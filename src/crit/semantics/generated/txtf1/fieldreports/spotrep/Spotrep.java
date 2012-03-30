@@ -91,12 +91,6 @@ public class Spotrep extends Document
 	@simpl_scalar
 	private MetadataString additionalNarrative;
 
-	/** 
-	 *Photograph of the situation.
-	 */ 
-	@simpl_scalar
-	private MetadataString photograph;
-
 	public Spotrep()
 	{ super(); }
 
@@ -401,37 +395,5 @@ public class Spotrep extends Document
 	public void setAdditionalNarrativeMetadata(MetadataString additionalNarrative)
 	{
 		this.additionalNarrative = additionalNarrative;
-	}
-
-	public MetadataString	photograph()
-	{
-		MetadataString	result = this.photograph;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.photograph = result;
-		}
-		return result;
-	}
-
-	public String getPhotograph()
-	{
-		return this.photograph == null ? null : photograph().getValue();
-	}
-
-	public MetadataString getPhotographMetadata()
-	{
-		return photograph;
-	}
-
-	public void setPhotograph(String photograph)
-	{
-		if (photograph != null)
-			this.photograph().setValue(photograph);
-	}
-
-	public void setPhotographMetadata(MetadataString photograph)
-	{
-		this.photograph = photograph;
 	}
 }
