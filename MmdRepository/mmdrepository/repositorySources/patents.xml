@@ -52,7 +52,7 @@
 
 	
 
-	<meta_metadata name="google_patent" type="patent" comment="Google Patents Class" parser="xpath">
+	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" parser="xpath">
 		<selector url_stripped="http://www.google.com/patents/about" />
 		<selector url_stripped="http://www.google.com/patents" />
 		<selector domain="google.com" url_path_tree="http://www.google.com/patents/" />
