@@ -36,10 +36,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.PdfMixin.class,
 
-		ecologylab.semantics.generated.library.Restaurant.class,
-
-		ecologylab.semantics.generated.library.RestaurantGenre.class,
-
 		ecologylab.semantics.generated.library.Tag.class,
 
 		ecologylab.semantics.generated.library.Tumblr.class,
@@ -230,6 +226,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.opml.Outline.class,
 
+		ecologylab.semantics.generated.library.patents.GooglePatent.class,
+
+		ecologylab.semantics.generated.library.patents.GooglePatentAuthor.class,
+
 		ecologylab.semantics.generated.library.patents.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.patents.Patent.class,
@@ -259,6 +259,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.publication.Subject.class,
 
 		ecologylab.semantics.generated.library.publication.TermType.class,
+
+		ecologylab.semantics.generated.library.restaurant.Restaurant.class,
+
+		ecologylab.semantics.generated.library.restaurant.RestaurantGenre.class,
 
 		ecologylab.semantics.generated.library.rich_bookmark.RichBookmark.class,
 
