@@ -54,8 +54,8 @@
 		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
 
 		<collection name="patents" child_type="google_patent" xpath="//li[@class='g']//h3[@class='r']">
+			<scalar name="title" xpath="./a" />
 			<scalar name="location" xpath="./a/@href" />
-			<scalar name="title" xpath="./a/@href" />
 		</collection>
 	</meta_metadata>
 	
