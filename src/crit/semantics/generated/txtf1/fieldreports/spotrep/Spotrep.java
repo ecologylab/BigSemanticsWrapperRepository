@@ -12,6 +12,7 @@ import ecologylab.semantics.generated.library.gps.GisLocation;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
+import ecologylab.semantics.metadata.scalar.MetadataBufferedImage;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -19,6 +20,7 @@ import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import java.awt.image.BufferedImage;
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
@@ -90,6 +92,18 @@ public class Spotrep extends Document
 	 */ 
 	@simpl_scalar
 	private MetadataString additionalNarrative;
+
+	/** 
+	 *File containing photograph of the situation.
+	 */ 
+	@simpl_scalar
+	private MetadataString photographFile;
+
+	/** 
+	 *Photograph of the situation.
+	 */ 
+	@simpl_scalar
+	private MetadataBufferedImage photographData;
 
 	public Spotrep()
 	{ super(); }
@@ -395,5 +409,69 @@ public class Spotrep extends Document
 	public void setAdditionalNarrativeMetadata(MetadataString additionalNarrative)
 	{
 		this.additionalNarrative = additionalNarrative;
+	}
+
+	public MetadataString	photographFile()
+	{
+		MetadataString	result = this.photographFile;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.photographFile = result;
+		}
+		return result;
+	}
+
+	public String getPhotographFile()
+	{
+		return this.photographFile == null ? null : photographFile().getValue();
+	}
+
+	public MetadataString getPhotographFileMetadata()
+	{
+		return photographFile;
+	}
+
+	public void setPhotographFile(String photographFile)
+	{
+		if (photographFile != null)
+			this.photographFile().setValue(photographFile);
+	}
+
+	public void setPhotographFileMetadata(MetadataString photographFile)
+	{
+		this.photographFile = photographFile;
+	}
+
+	public MetadataBufferedImage	photographData()
+	{
+		MetadataBufferedImage	result = this.photographData;
+		if (result == null)
+		{
+			result = new MetadataBufferedImage();
+			this.photographData = result;
+		}
+		return result;
+	}
+
+	public BufferedImage getPhotographData()
+	{
+		return this.photographData == null ? null : photographData().getValue();
+	}
+
+	public MetadataBufferedImage getPhotographDataMetadata()
+	{
+		return photographData;
+	}
+
+	public void setPhotographData(BufferedImage photographData)
+	{
+		if (photographData != null)
+			this.photographData().setValue(photographData);
+	}
+
+	public void setPhotographDataMetadata(MetadataBufferedImage photographData)
+	{
+		this.photographData = photographData;
 	}
 }
