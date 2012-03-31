@@ -36,6 +36,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.PdfMixin.class,
 
+		ecologylab.semantics.generated.library.PubmedArticle.class,
+
 		ecologylab.semantics.generated.library.Tag.class,
 
 		ecologylab.semantics.generated.library.Tumblr.class,
