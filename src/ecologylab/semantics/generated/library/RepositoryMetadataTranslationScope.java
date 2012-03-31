@@ -22,10 +22,6 @@ public class RepositoryMetadataTranslationScope
 	{
 		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
 
-		ecology.semantics.grenerated.library.videos.CommentResult.class,
-
-		ecology.semantics.grenerated.library.videos.Watchyoutubevideo.class,
-
 		ecologylab.semantics.generated.library.Bookmark.class,
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,
@@ -286,6 +282,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rss.YahooMediaRss.class,
 
+		ecologylab.semantics.generated.library.rwandatribunal.CategoryInterviews.class,
+
+		ecologylab.semantics.generated.library.rwandatribunal.Interview.class,
+
+		ecologylab.semantics.generated.library.rwandatribunal.TribunalVoices.class,
+
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearch.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult.class,
@@ -359,6 +361,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.uva.Topic.class,
 
 		ecologylab.semantics.generated.library.uva.TopicCluster.class,
+
+		ecologylab.semantics.generated.library.videos.CommentResult.class,
+
+		ecologylab.semantics.generated.library.videos.Watchyoutubevideo.class,
 
 		ecologylab.semantics.generated.library.wikipedia.Category.class,
 
