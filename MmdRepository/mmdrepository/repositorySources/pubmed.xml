@@ -1,0 +1,26 @@
+<meta_metadata_repository name="pubmed" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome">
+
+<meta_metadata name="pubmed_article" extends="scholarly_article" parser="xpath" user_agent="firefox">
+	<selector url_path_tree="http://www.ncbi.nlm.nih.gov/pubmed" />
+	
+	<example_url url="http://www.ncbi.nlm.nih.gov/pubmed/22439083" />
+	
+<!-- 	<scalar name="title" xpath="//div[@class='rprt abstract']/h1/text()"/> -->
+
+	<scalar name="title" xpath="/html/head/meta[@name='citation_title']/@content"/>
+	<scalar name="description" xpath="//div[@class='abstr']"/>
+	
+	<collection name="authors" xpath="//div[@class='auths']/a" >
+		<scalar name="title" xpath="." />
+		<scalar name="location" xpath="./href" />
+	</collection>
+	
+<!-- 	<scalar name="study_design" scalar_type="string" xpath=""/>
+	<scalar name="purpose" scalar_type="string" xpath=""/>
+	<scalar name="methods" scalar_type="string" xpath=""/>
+	<scalar name="results" scalar_type="string" xpath=""/>
+	<scalar name="conclusions" scalar_type="string" xpath=""/>
+ -->
+</meta_metadata>
+
+</meta_metadata_repository>
