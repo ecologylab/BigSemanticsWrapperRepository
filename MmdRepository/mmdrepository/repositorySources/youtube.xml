@@ -1,4 +1,4 @@
-<meta_metadata_repository name="youtube" package="ecology.semantics.grenerated.library.videos" default_user_agent_name="firefox_3_6_8">
+<meta_metadata_repository name="youtube" package="ecologylab.semantics.generated.library.videos" default_user_agent_name="firefox_3_6_8">
 
 	<!-- TBD add http://img.youtube.com/vi/Video_ID/0.jpg as the picture and clipping -->
 	<meta_metadata name="comment_result" extends="metadata" >
