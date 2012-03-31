@@ -1,0 +1,36 @@
+<meta_metadata_repository name="rwanda_tribunal" package="ecologylab.semantics.generated.library.rwandatribunal">
+	
+	<meta_metadata name="interview" extends="document" comment="personnel interview">
+		<scalar name="title" scalar_type="String" comment="name"/>
+		<scalar name="pic" scalar_type="ParsedURL" comment="personnel pic"/>
+		<scalar name="description" scalar_type="String" comment="description"/>
+		<collection name="voices" child_type="document" comment="topic videos"/>
+		<collection name="segments" child_type="document" comment="segmented videos"/>
+	</meta_metadata>
+	
+	<meta_metadata name="category_interviews" extends="document" comment="categorized interviews">
+		<scalar name="title" scalar_type="String" comment="category"/>
+		<collection name="interviews" child_type="interview" comment="personnel interview"/>
+	</meta_metadata>
+	
+	<meta_metadata name="tribunal_voices" extends="document" parser="xpath" comment="Video Interviews with personnel from Rwanda Tribunal">
+		<selector url_path_tree="http://www.tribunalvoices.org/voices/"/>
+		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
+			<scalar name="title" xpath="."/>
+			<collection name="interviews" xpath="./following::div[@class='item']">
+				<scalar name="title" xpath="./table/tbody/tr/td[2]/h2"/>
+				<scalar name="pic" xpath="./table/tbody/tr/td[1]/img[@class='interview_photo']/@src"/>
+				<scalar name="description" xpath="./table/tbody/tr/td[2]/p"/>
+				<collection name="voices" xpath="./table/tbody/tr/td[2]/ul/li">
+					<scalar name="title" xpath="./a/@href"/>
+					<scalar name="location" xpath="./a"/>
+				</collection>
+				<collection name="segments" xpath="./table/tbody/tr/td[2]/table[@class='video_list']/tbody//a">
+					<scalar name="title" xpath="./@href"/>
+					<scalar name="location" xpath="."/>
+				</collection>
+			</collection>
+		</collection>
+	</meta_metadata>
+	
+</meta_metadata_repository>
