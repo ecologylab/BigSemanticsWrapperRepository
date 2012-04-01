@@ -14,7 +14,7 @@
 	</meta_metadata>
 	
 	<meta_metadata name="tribunal_voices" extends="document" parser="xpath" comment="Video Interviews with personnel from Rwanda Tribunal">
-		<selector url_path_tree="http://www.tribunalvoices.org/voices/"/>
+		<selector url_stripped="http://www.tribunalvoices.org/voices/interviews"/>
 		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
 			<scalar name="title" xpath="."/>
 			<collection name="interviews" xpath="./following::div[@class='item']">
