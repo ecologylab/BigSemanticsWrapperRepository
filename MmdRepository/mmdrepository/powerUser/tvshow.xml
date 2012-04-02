@@ -1,0 +1,79 @@
+<meta_metadata_repository name="tvshow" package="ecologylab.semantics.generated.library.tvshow" default_user_agent_name="firefox_5">
+	
+	<meta_metadata name="tvshow_rating" extends="metadata" comment="TV Show rating" schema_org_itemtype="http://schema.org/AggregateRating">
+		<scalar name="viewers_grade" scalar_type="String" schema_org_itemprop="ratingValue"/>
+		<scalar name="viewers_description" scalar_type="String" />
+		<scalar name="viewers_number" scalar_type="String" schema_org_itemprop="ratingCount"/>
+	</meta_metadata>
+	
+	<meta_metadata name="tvshow_episode" extends="document" comment="TV Show episode" schema_org_itemtype="http://schema.org/TVEpisode">
+		<scalar name="episode_number" scalar_type="String" schema_org_itemprop="episodeNumber" hint="XML_LEAF_CDATA" />
+	</meta_metadata>
+	
+	<meta_metadata name="tvshow_actor" extends="document" comment="TV Show actor">
+		<scalar name="role" scalar_type="String" />
+		<scalar name="actor_rating" scalar_type="String" />
+		<scalar name="pic" scalar_type="ParsedURL" hide="true" comment="Actor picture"  hint="XML_LEAF_CDATA" />
+	</meta_metadata>
+	
+	<meta_metadata name="tvshow" extends="compound_document" comment="The TV show info class">
+		<scalar name="premiered" scalar_type="String"  hint="XML_LEAF_CDATA" />
+		<scalar name="status" scalar_type="String"  hint="XML_LEAF_CDATA" />
+		<scalar name="short_description" scalar_type="String"  hint="XML_LEAF_CDATA" />	
+		<scalar name="picture" scalar_type="ParsedURL" hide="true" comment="Show picture"  hint="XML_LEAF_CDATA" />
+		<composite name="rating" type="tvshow_rating" />
+		<collection name="episode_list" child_type="tvshow_episode" />
+		<collection name="show_cast" child_type="tvshow_actor" />
+		
+		<collection name="similar_shows" child_type="tvshow" />
+	</meta_metadata>
+	
+	<meta_metadata name="tv_com" type="tvshow" parser="xpath" comment="TV.com show description page">
+		<selector url_path_tree="http://www.tv.com/shows/" /> 
+		
+		<example_url url="http://www.tv.com/shows/house" />
+		
+		<def_var name="primary_desc" type="node" xpath="//div[@class='m show_summary _standard_module _clearfix']/div[@class='description']" /> 
+		
+		<scalar name="title" xpath="//div[@class='m show_head']/h1[@itemprop='name']" />
+		<scalar name="premiered" context_node="primary_desc" xpath="./ul[@class='stats']/li[1]">
+			<filter regex="Premiered:&#10;\s*" replace="" /> 
+		</scalar>
+		<scalar name="status" context_node="primary_desc" xpath="./ul[@class='stats']/li[2]">
+			<filter regex="Status:&#10;\s*" replace="" /> 
+		</scalar>
+		<scalar name="short_description" context_node="primary_desc" xpath="./span[@itemprop='description']/span[@class='_more_less']/child::text()" />
+		<scalar name="picture" xpath="//div[@class='m show_summary _standard_module _clearfix']//img/@src" />
+		
+		<composite name="rating">
+			<scalar name="viewers_grade" xpath="//div[@itemprop='ratingValue']" />
+			<scalar name="viewers_description" xpath="//div[@class='info']/div[@class='caption']/span[@class='desc']" />
+			<scalar name="viewers_number" xpath="//div[@itemprop='ratingCount']" />
+		</composite>
+		 
+		<collection name="episode_list" xpath="//table[@itemprop='episodes']//tr">
+			<scalar name="title" xpath=".//a[@itemprop='url']/span[@itemprop='name']">
+				<filter regex="&#39;" replace="_" />
+			</scalar>
+			<scalar name="location" xpath=".//a[@itemprop='url']/@href" />
+			<scalar name="episode_number" xpath=".//span[@itemprop='episodeNumber']" />
+		</collection>
+		
+		<collection name="show_cast" xpath="//div[@class='m cast_list _standard_module']/ul[@class='persons']/li">
+			<scalar name="title" xpath="./h3[@class='name']/a/child::text()" />
+			<scalar name="location" xpath="./h3[@class='name']/a/@href" />
+			<scalar name="role" xpath="./h4[@class='role']" />
+			<scalar name="actor_rating" xpath="./div[@class='_rating']" />
+			<scalar name="pic" xpath="./a/div/img/@src" />
+		</collection>
+		
+		<collection name="similar_shows" xpath="//div[@class='m related_shows _standard_module']/ul/li">
+			<scalar name="title" xpath="./div/a" />
+			<scalar name="location" xpath="./a/@href" >
+<!-- 				<filter regex="/shows/" replace="http://www.tv.com/shows/" /> --><!-- meta-metadata does prefixing automatically -->
+			</scalar>
+			<scalar name="picture" xpath="./a/img/@src" />
+		</collection>
+	</meta_metadata>
+	
+</meta_metadata_repository>
