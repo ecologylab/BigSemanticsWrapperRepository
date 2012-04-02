@@ -10,33 +10,15 @@ package ecologylab.semantics.generated.library;
 
 import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class PubmedArticle extends ScholarlyArticle
 {
-	@simpl_scalar
-	private MetadataString studyDesign;
-
-	@simpl_scalar
-	private MetadataString purpose;
-
-	@simpl_scalar
-	private MetadataString methods;
-
-	@simpl_scalar
-	private MetadataString results;
-
-	@simpl_scalar
-	private MetadataString conclusions;
-
 	public PubmedArticle()
 	{ super(); }
 
@@ -44,164 +26,4 @@ public class PubmedArticle extends ScholarlyArticle
 		super(mmd);
 	}
 
-
-	public MetadataString	studyDesign()
-	{
-		MetadataString	result = this.studyDesign;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.studyDesign = result;
-		}
-		return result;
-	}
-
-	public String getStudyDesign()
-	{
-		return this.studyDesign == null ? null : studyDesign().getValue();
-	}
-
-	public MetadataString getStudyDesignMetadata()
-	{
-		return studyDesign;
-	}
-
-	public void setStudyDesign(String studyDesign)
-	{
-		if (studyDesign != null)
-			this.studyDesign().setValue(studyDesign);
-	}
-
-	public void setStudyDesignMetadata(MetadataString studyDesign)
-	{
-		this.studyDesign = studyDesign;
-	}
-
-	public MetadataString	purpose()
-	{
-		MetadataString	result = this.purpose;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.purpose = result;
-		}
-		return result;
-	}
-
-	public String getPurpose()
-	{
-		return this.purpose == null ? null : purpose().getValue();
-	}
-
-	public MetadataString getPurposeMetadata()
-	{
-		return purpose;
-	}
-
-	public void setPurpose(String purpose)
-	{
-		if (purpose != null)
-			this.purpose().setValue(purpose);
-	}
-
-	public void setPurposeMetadata(MetadataString purpose)
-	{
-		this.purpose = purpose;
-	}
-
-	public MetadataString	methods()
-	{
-		MetadataString	result = this.methods;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.methods = result;
-		}
-		return result;
-	}
-
-	public String getMethods()
-	{
-		return this.methods == null ? null : methods().getValue();
-	}
-
-	public MetadataString getMethodsMetadata()
-	{
-		return methods;
-	}
-
-	public void setMethods(String methods)
-	{
-		if (methods != null)
-			this.methods().setValue(methods);
-	}
-
-	public void setMethodsMetadata(MetadataString methods)
-	{
-		this.methods = methods;
-	}
-
-	public MetadataString	results()
-	{
-		MetadataString	result = this.results;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.results = result;
-		}
-		return result;
-	}
-
-	public String getResults()
-	{
-		return this.results == null ? null : results().getValue();
-	}
-
-	public MetadataString getResultsMetadata()
-	{
-		return results;
-	}
-
-	public void setResults(String results)
-	{
-		if (results != null)
-			this.results().setValue(results);
-	}
-
-	public void setResultsMetadata(MetadataString results)
-	{
-		this.results = results;
-	}
-
-	public MetadataString	conclusions()
-	{
-		MetadataString	result = this.conclusions;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.conclusions = result;
-		}
-		return result;
-	}
-
-	public String getConclusions()
-	{
-		return this.conclusions == null ? null : conclusions().getValue();
-	}
-
-	public MetadataString getConclusionsMetadata()
-	{
-		return conclusions;
-	}
-
-	public void setConclusions(String conclusions)
-	{
-		if (conclusions != null)
-			this.conclusions().setValue(conclusions);
-	}
-
-	public void setConclusionsMetadata(MetadataString conclusions)
-	{
-		this.conclusions = conclusions;
-	}
 }
