@@ -183,7 +183,7 @@
 <!--		</semantic_actions>-->
 <!--	</meta_metadata>-->
 
-	<meta_metadata name="acm_portal_search_result" extends="search_result">
+	<meta_metadata name="acm_portal_search_result" extends="document">
 		<scalar name="author_list" scalar_type="String" />
 		<scalar name="publication" scalar_type="String" />
 	</meta_metadata>

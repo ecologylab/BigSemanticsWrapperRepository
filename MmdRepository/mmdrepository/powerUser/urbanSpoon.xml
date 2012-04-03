@@ -61,7 +61,7 @@
 	
 	<meta_metadata name="urban_spoon_search" comment="UrbanSpoon Search Class" type="search" parser="xpath">
 		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/"/>
-		<collection name="search_results" xpath="//div[@class = 't']/a[text() != '']" child_type="search_result">
+		<collection name="search_results" xpath="//div[@class = 't']/a[text() != '']" child_type="document">
 			<scalar name="title" xpath="./text()" />
 			<scalar name="location" xpath="./@href" />
 		</collection>

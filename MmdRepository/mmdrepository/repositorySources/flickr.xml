@@ -260,7 +260,7 @@
 
 	<meta_metadata name="flickr_nearby" extends="search" comment="Searching from a photo for nearby photos" parser="xpath">
 		<selector name="flickr_nearby_selector" />
-		<collection name="search_results" child_type="flickr_nearby_search_result" child_extends="search_result" xpath="//span[@class='photo_container pc_m']">
+		<collection name="search_results" child_type="flickr_nearby_search_result" child_extends="document" xpath="//span[@class='photo_container pc_m']">
 			<scalar name="location" xpath="./a/@href">
 				<filter regex="nearby.+detail$"	replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
 			</scalar>

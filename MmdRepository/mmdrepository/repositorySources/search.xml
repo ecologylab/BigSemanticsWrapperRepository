@@ -2,21 +2,22 @@
 
 	<!-- +++++++++++++++++++++++++++++++++ More Specific Types - Search & its Children +++++++++++++++++++++++++++++++++ -->
 
+<!-- 
 	<meta_metadata show_expanded_initially="true" name="search_result" extends="document" comment="A result from a search.">
         <scalar always_show="true" name="title" label="heading" layer="10.0" navigates_to="location" comment="The heading of the search result." />
 		<scalar always_show="true" name="description" label="snippet" comment="The snippet of the search result." />
-		<scalar always_show="true" name="location" label="link" show="true" comment="The link of the search result." /><!-- we may want to show location in some cases -->
+		<scalar always_show="true" name="location" label="link" show="true" comment="The link of the search result." />
 		<scalar name="engine" scalar_type="String" layer="-20.0" comment="The search engine used for this result." />
 	</meta_metadata>
-
+ -->
 
 	<meta_metadata show_expanded_initially="true" name="search_meta" extends="metadata" comment="">
-		<collection show_expanded_initially="true" name="search_results" always_show="true" child_type="search_result" no_wrap="true" />
+		<collection show_expanded_initially="true" name="search_results" always_show="true" child_type="document" no_wrap="true" />
 	</meta_metadata>
 
 	<meta_metadata name="search" extends="document" comment="">
-		<collection name="search_results" child_type="search_result" no_wrap="true" />
-    
+		<scalar name="query" scalar_type="String"/>
+		<collection name="search_results" child_type="document" no_wrap="true" />
 		<semantic_actions>
 			<get_field name="search_results" />
       <if>
@@ -45,7 +46,7 @@
 		</collection>
 	</meta_metadata>
 
-	<meta_metadata name="google_scholar_search_result" extends="search_result" comment="A google scholar search result" user_agent_name="opera_9" parser="xpath">
+	<meta_metadata name="google_scholar_search_result" extends="document" comment="A google scholar search result" user_agent_name="opera_9" parser="xpath">
 		<url_generator type="search" engine="google_scholar" use_id="title" />
 		<scalar name="title" as_natural_id="title" />
     <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
@@ -232,8 +233,10 @@
 		<scalar name="file_size" scalar_type="Int" tag="mms:FileSize" />
 	</meta_metadata>
 
-	<!-- definitions of Bing search results from different sources. -->
-	<meta_metadata name="bing_web_search_result" extends="search_result" comment="Bing web search result.">
+	<!-- definitions of Bing search results from different sources. was extends document -->
+<!-- 
+
+	<meta_metadata name="bing_web_search_result" extends="document" comment="Bing web search result.">
 		<scalar name="title" tag="web:Title" />
 		<scalar name="description" tag="web:Description" />
 		<scalar name="location" tag="web:Url" hide="true" />
@@ -242,8 +245,10 @@
 	<meta_metadata name="bing_image_search_result" extends="image_in_search_result" comment="Bing image search result.">
 		<composite name="thumbnail" type="image_in_search_result" tag="mms:Thumbnail" />
 	</meta_metadata>
-
+ -->
 	<!-- intermediate layers for source types. necessary for binding tags. -->
+
+<!-- 
 	<meta_metadata name="bing_search_web_section" extends="compound_document">
 		<collection name="web_search_results" child_type="bing_web_search_result" tag="web:Results" child_tag="web:WebResult" no_wrap="false" />
 	</meta_metadata>
@@ -251,8 +256,22 @@
 	<meta_metadata name="bing_search_image_section" extends="compound_document">
 		<collection name="image_search_results" child_type="bing_image_search_result" tag="mms:Results" child_tag="mms:ImageResult" no_wrap="false" />
 	</meta_metadata>
-	
+	 -->
 	<!-- Bing search. note that they put different types of search results (i.e. sources) into the same structure. -->
+	
+	
+	<meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search apie.">
+		<selector url_stripped="http://api.bing.net/xml.aspx" />
+		<scalar name="query" xpath="//searchterms/text()"/>
+		<collection name="search_results" xpath="//*/webresult">
+			<scalar name="title" xpath="./title" />
+			<scalar name="description" xpath="./description" />
+			<scalar name="location" xpath="./url" />
+		</collection>
+	</meta_metadata>
+	
+	
+	<!--  use xpaths instead so that we can use search
 	<meta_metadata name="bing_search" promote_children="true" extends="compound_document" tag="SearchResponse" parser="direct" user_agent_name="opera_9">
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
 
@@ -311,18 +330,21 @@
 			</if>
 		</semantic_actions>
 	</meta_metadata>
+	-->
 
 	<meta_metadata name="bing_search_xpath" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">
 		<selector url_stripped="http://www.bing.com/search" />
-    
-		<collection name="search_results" xpath="//div[@id='results']/ul/li">
+		<scalar name="query" xpath="//title/text()">
+						<filter regex=" - Bing$" replace="" />
+		</scalar>
+		<collection name="search_results" xpath="//li[@class='sa_wr']">
 			<scalar name="title" xpath=".//h3/a" />
 			<scalar name="description" xpath=".//div[@class='sa_cc']/p" />
 			<scalar name="location" xpath=".//h3/a/@href" />
 		</collection>
 	</meta_metadata>
 
-	<meta_metadata name="social_media_search_result" extends="search_result" comment="A result from a social media search.">
+	<meta_metadata name="social_media_search_result" extends="document" comment="A result from a social media search.">
 		<scalar name="author" scalar_type="String" comment="The author of this item." />
 		<collection name="tags" child_type="tag" comment="Associated tags from the search engine, if exist." />
 	</meta_metadata>

@@ -149,7 +149,7 @@
 
 
 
-	<meta_metadata name="citeseerx_search_result" extends="search_result">
+	<meta_metadata name="citeseerx_search_result" extends="document">
 		<scalar name="citation_info" scalar_type="String" />
 	</meta_metadata>
 
