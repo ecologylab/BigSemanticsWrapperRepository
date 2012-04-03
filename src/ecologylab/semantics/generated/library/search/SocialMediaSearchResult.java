@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.search;
  */
 
 import ecologylab.semantics.generated.library.Tag;
-import ecologylab.semantics.generated.library.search.SearchResult;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
@@ -27,7 +27,7 @@ import java.util.Map;
  *A result from a social media search.
  */ 
 @simpl_inherit
-public class SocialMediaSearchResult extends SearchResult
+public class SocialMediaSearchResult extends Document
 {
 	/** 
 	 *The author of this item.

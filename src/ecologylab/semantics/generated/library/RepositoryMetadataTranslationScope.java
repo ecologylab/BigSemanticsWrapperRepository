@@ -298,16 +298,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
 
-		ecologylab.semantics.generated.library.search.BingImageSearchResult.class,
-
-		ecologylab.semantics.generated.library.search.BingSearch.class,
-
-		ecologylab.semantics.generated.library.search.BingSearchImageSection.class,
-
-		ecologylab.semantics.generated.library.search.BingSearchWebSection.class,
-
-		ecologylab.semantics.generated.library.search.BingWebSearchResult.class,
-
 		ecologylab.semantics.generated.library.search.DeliciousSearch.class,
 
 		ecologylab.semantics.generated.library.search.FlickrNearbySearchResult.class,
@@ -321,8 +311,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.search.Search.class,
 
 		ecologylab.semantics.generated.library.search.SearchMeta.class,
-
-		ecologylab.semantics.generated.library.search.SearchResult.class,
 
 		ecologylab.semantics.generated.library.search.SlashdotSearch.class,
 

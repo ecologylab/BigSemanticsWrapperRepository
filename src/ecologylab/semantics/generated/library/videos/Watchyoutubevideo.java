@@ -9,9 +9,9 @@ package ecologylab.semantics.generated.library.videos;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.search.SearchResult;
 import ecologylab.semantics.generated.library.videos.CommentResult;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -59,9 +59,9 @@ public class Watchyoutubevideo extends CompoundDocument
 	/** 
 	 *list of tags
 	 */ 
-	@simpl_collection("search_result")
+	@simpl_collection("document")
 	@mm_name("tag")
-	private List<SearchResult> tag;
+	private List<Document> tag;
 
 	/** 
 	 *video License
@@ -236,21 +236,21 @@ public class Watchyoutubevideo extends CompoundDocument
 		this.details = details;
 	}
 
-	public List<SearchResult> getTag()
+	public List<Document> getTag()
 	{
 		return tag;
 	}
 
   // lazy evaluation:
-  public List<SearchResult> tag()
+  public List<Document> tag()
   {
     if (tag == null)
-      tag = new ArrayList<SearchResult>();
+      tag = new ArrayList<Document>();
     return tag;
   }
 
   // addTo:
-  public void addToTag(SearchResult element)
+  public void addToTag(Document element)
   {
     tag().add(element);
   }
@@ -261,7 +261,7 @@ public class Watchyoutubevideo extends CompoundDocument
     return tag == null ? 0 : tag.size();
   }
 
-	public void setTag(List<SearchResult> tag)
+	public void setTag(List<Document> tag)
 	{
 		this.tag = tag;
 	}

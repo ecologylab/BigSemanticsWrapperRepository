@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.scholarlyPublication;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.search.SearchResult;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AcmPortalSearchResult extends SearchResult
+public class AcmPortalSearchResult extends Document
 {
 	@simpl_scalar
 	private MetadataString authorList;

@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.search;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.search.SearchResult;
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -24,10 +24,10 @@ import java.util.Map;
 @simpl_inherit
 public class SearchMeta extends Metadata
 {
-	@simpl_collection("search_result")
+	@simpl_collection("document")
 	@simpl_nowrap
 	@mm_name("search_results")
-	private List<SearchResult> searchResults;
+	private List<Document> searchResults;
 
 	public SearchMeta()
 	{ super(); }
@@ -37,21 +37,21 @@ public class SearchMeta extends Metadata
 	}
 
 
-	public List<SearchResult> getSearchResults()
+	public List<Document> getSearchResults()
 	{
 		return searchResults;
 	}
 
   // lazy evaluation:
-  public List<SearchResult> searchResults()
+  public List<Document> searchResults()
   {
     if (searchResults == null)
-      searchResults = new ArrayList<SearchResult>();
+      searchResults = new ArrayList<Document>();
     return searchResults;
   }
 
   // addTo:
-  public void addToSearchResults(SearchResult element)
+  public void addToSearchResults(Document element)
   {
     searchResults().add(element);
   }
@@ -62,7 +62,7 @@ public class SearchMeta extends Metadata
     return searchResults == null ? 0 : searchResults.size();
   }
 
-	public void setSearchResults(List<SearchResult> searchResults)
+	public void setSearchResults(List<Document> searchResults)
 	{
 		this.searchResults = searchResults;
 	}

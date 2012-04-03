@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.search;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.search.SearchResult;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class FlickrNearbySearchResult extends SearchResult
+public class FlickrNearbySearchResult extends Document
 {
 	@simpl_scalar
 	private MetadataParsedURL linkOther;

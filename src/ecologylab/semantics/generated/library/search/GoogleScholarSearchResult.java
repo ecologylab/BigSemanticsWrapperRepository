@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.search;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.search.SearchResult;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -27,7 +27,7 @@ import java.util.Map;
  *A google scholar search result
  */ 
 @simpl_inherit
-public class GoogleScholarSearchResult extends SearchResult
+public class GoogleScholarSearchResult extends Document
 {
 	@simpl_scalar
 	private MetadataParsedURL documentLink;
