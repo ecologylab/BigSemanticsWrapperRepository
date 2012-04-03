@@ -1,6 +1,5 @@
 <meta_metadata_repository name="youtube" package="ecologylab.semantics.generated.library.videos" default_user_agent_name="firefox_3_6_8">
 
-	<!-- TBD add http://img.youtube.com/vi/Video_ID/0.jpg as the picture and clipping -->
 	<meta_metadata name="comment_result" extends="metadata" >
 		<scalar name ="content" scalar_type="String"/>
 		<scalar name ="author" scalar_type="String"/>
@@ -22,6 +21,8 @@
 		<scalar name="likes" scalar_type="String" comment="total no of likes recived"/>
 		<scalar name="dislikes" scalar_type="String" comment="total no of dislikes recived"/>
 		<scalar name="view_count" scalar_type="String" comment="total no of views"/>
+		<scalar name="image_location" scalar_type="ParsedURL" hide="true"/>
+		
 	</meta_metadata>
 	
 	<meta_metadata name="youtube_video_view" type="watchyoutubevideo" comment="youtube video view page">
@@ -48,5 +49,13 @@
 	<scalar name="likes" xpath=".//span[@class='likes']"/>
 	<scalar name="dislikes" xpath=".//span[@class='dislikes']"/>
 	<scalar name="view_count" xpath=".//span[@class='watch-view-count']/strong"/>
+    <scalar name="image_location" xpath="//meta[@property='og:image']/@content"/>
+	
+	<semantic_actions>
+		<get_field name="image_location"/>
+		<create_and_visualize_img_surrogate>
+			<arg value="image_location" name="image_purl" />
+		</create_and_visualize_img_surrogate>
+	</semantic_actions>
 	</meta_metadata>
 </meta_metadata_repository>
