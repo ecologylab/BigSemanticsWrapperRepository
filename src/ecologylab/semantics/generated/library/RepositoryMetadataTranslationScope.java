@@ -342,14 +342,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.truman_library_1948_campaign_cartoons.TrumanLibrary1948CampaignCartoons.class,
 
-		ecologylab.semantics.generated.library.tutorial.flipkart.FlipkartProduct.class,
-
-		ecologylab.semantics.generated.library.tutorial.flipkart.PriceWithDisc.class,
-
-		ecologylab.semantics.generated.library.tutorial.walmart.PriceWithDisc.class,
-
-		ecologylab.semantics.generated.library.tutorial.walmart.WalmartProduct.class,
-
 		ecologylab.semantics.generated.library.tvshow.Tvshow.class,
 
 		ecologylab.semantics.generated.library.tvshow.TvshowActor.class,
