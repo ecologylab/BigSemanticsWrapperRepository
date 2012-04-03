@@ -100,6 +100,9 @@ public class Watchyoutubevideo extends CompoundDocument
 	@simpl_scalar
 	private MetadataString viewCount;
 
+	@simpl_scalar
+	private MetadataParsedURL imageLocation;
+
 	public Watchyoutubevideo()
 	{ super(); }
 
@@ -454,5 +457,37 @@ public class Watchyoutubevideo extends CompoundDocument
 	public void setViewCountMetadata(MetadataString viewCount)
 	{
 		this.viewCount = viewCount;
+	}
+
+	public MetadataParsedURL	imageLocation()
+	{
+		MetadataParsedURL	result = this.imageLocation;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.imageLocation = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getImageLocation()
+	{
+		return this.imageLocation == null ? null : imageLocation().getValue();
+	}
+
+	public MetadataParsedURL getImageLocationMetadata()
+	{
+		return imageLocation;
+	}
+
+	public void setImageLocation(ParsedURL imageLocation)
+	{
+		if (imageLocation != null)
+			this.imageLocation().setValue(imageLocation);
+	}
+
+	public void setImageLocationMetadata(MetadataParsedURL imageLocation)
+	{
+		this.imageLocation = imageLocation;
 	}
 }
