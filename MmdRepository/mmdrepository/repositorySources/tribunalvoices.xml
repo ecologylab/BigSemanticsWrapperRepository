@@ -1,7 +1,7 @@
 <meta_metadata_repository name="rwanda_tribunal" package="ecologylab.semantics.generated.library.rwandatribunal">
 	
-	<meta_metadata name="interview" extends="document" comment="personnel interview">
-		<scalar name="title" label="name"/>
+	<meta_metadata name="interview" extends="metadata" comment="personnel interview">
+		<scalar name="interviewee" scalar_type="String"/>
 		<scalar name="pic" scalar_type="ParsedURL" comment="personnel pic"/>
 		<collection name="voices" child_type="document" comment="topic videos"/>
 		<collection name="segments" child_type="document" comment="segmented videos"/>
