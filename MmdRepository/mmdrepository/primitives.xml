@@ -9,6 +9,7 @@
 	
 	<meta_metadata name="document" extends="metadata" comment="The Document Class" built_in="true" schema_org_itemtype="http://schema.org/Thing">
 		<scalar name="location" always_show="true" layer="8.0" comment="The document's actual location." scalar_type="ParsedURL" schema_org_itemprop="url"/>
+		<scalar name="local_location" hide="true" comment="Relative location of a local copy of the document." scalar_type="ParsedURL" />
 		<scalar name="title" style="metadata_h1" layer="10.0" navigates_to="location" schema_org_itemprop="name" comment="The Title of the Document" scalar_type="String"  hint="XML_LEAF"/>
 		<scalar name="description" layer="9.0" scalar_type="String" schema_org_itemprop="description" other_tags="abstract_field" hint="XML_LEAF"/>
 		
@@ -76,7 +77,7 @@
 			<suffix>bmp</suffix>
 		</selector>
 		<scalar name="location" layer="9.0" comment="Location of the image."/>
-		<scalar name="local_location" hide="true" comment="Relative location of local copy of image." scalar_type="ParsedURL" />
+		<scalar name="local_location" hide="true" comment="Relative location of local copy of image."/>
 		<scalar name="creation_date" scalar_type="Date" />
 	</meta_metadata>
 	

@@ -15,13 +15,17 @@
 		<collection show_expanded_initially="true" name="search_results" always_show="true" child_type="document" no_wrap="true" />
 	</meta_metadata>
 
+
+
 	<meta_metadata name="search" extends="document" comment="">
 		<scalar name="query" scalar_type="String"/>
 		<collection name="search_results" child_type="document" no_wrap="true" />
+		<!-- 
 		<semantic_actions>
 			<get_field name="search_results" />
       <if>
         <not_null value="search_results" />
+        
   			<for_each collection="search_results" as="result">
           <if>
             <not_null value="result" />
@@ -32,8 +36,13 @@
     				</parse_document>
           </if>
   			</for_each>
+  			
+  			
+  			    				<add_mixin object="result" mixin="metadata" /> 
+  			
+  			
       </if>
-		</semantic_actions>
+		</semantic_actions>  -->
 	</meta_metadata>
 
 	<meta_metadata name="google_search" type="search" comment="The google Search class" user_agent_name="firefox_5" parser="xpath">
@@ -260,14 +269,42 @@
 	<!-- Bing search. note that they put different types of search results (i.e. sources) into the same structure. -->
 	
 	
+	<meta_metadata name="search_crumb" extends="metadata" always_show="true">
+	  <scalar name="search_query" scalar_type="String" always_show="true"/>
+	</meta_metadata>
+		
+	
 	<meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search apie.">
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
-		<scalar name="query" xpath="//searchterms/text()"/>
-		<collection name="search_results" xpath="//*/webresult">
-			<scalar name="title" xpath="./title" />
-			<scalar name="description" xpath="./description" />
-			<scalar name="location" xpath="./url" />
+		<scalar name="query" xpath="//searchterms/text()" ignore_in_term_vector="true"/>
+		
+		<composite name="search_crumb_composite" type="search_crumb" always_show="true" promote_children="true">
+		  <scalar name="search_query" xpath="//searchterms/text()" always_show="true"/>
+		</composite>
+		
+		<collection name="search_results" xpath="//*/webresult" ignore_in_term_vector="true">
+			<scalar name="title" xpath="./title" ignore_in_term_vector="true"/>
+			<scalar name="description" xpath="./description" ignore_in_term_vector="true"/>
+			<scalar name="location" xpath="./url" ignore_in_term_vector="true"/>
 		</collection>
+		
+		
+		<semantic_actions>
+			<get_field name="search_results" />
+			<get_field name="search_crumb_composite" />
+      <if>
+        <not_null value="search_results" />
+        
+  			<for_each collection="search_results" as="result">
+          <if>
+            <not_null value="result" />
+    				<get_field object="result" name="location" />
+    				<add_mixin object="result" mixin="search_crumb_composite" />
+          </if>
+  			</for_each>
+      </if>
+		</semantic_actions>  	
+		
 	</meta_metadata>
 	
 	
