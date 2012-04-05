@@ -15,11 +15,11 @@
 	<meta_metadata name="tribunal_voices" extends="document" parser="xpath" comment="Video Interviews with personnel from Rwanda Tribunal">
 		<selector url_stripped="http://www.tribunalvoices.org/voices/interviews"/>
 		<selector url_stripped="http://www.tribunalvoices.org/voices/index.html"/>
-		<scalar name="title" xpath="" />
+		<scalar name="title" xpath="//div[@class='tv_voices_panel']/h1" />
 		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
-			<scalar name="title" xpath="."/>
+			<scalar name="category" xpath="."/>
 			<collection name="interviews" xpath="./following::div[@class='item']">
-				<scalar name="title" xpath="./table/tbody/tr/td[2]/h2"/>
+				<scalar name="interviewee" xpath="./table/tbody/tr/td[2]/h2"/>
 				<scalar name="pic" xpath="./table/tbody/tr/td[1]/img[@class='interview_photo']/@src"/>
 				<scalar name="description" xpath="./table/tbody/tr/td[2]/p"/>
 				<collection name="voices" xpath="./table/tbody/tr/td[2]/ul/li">
