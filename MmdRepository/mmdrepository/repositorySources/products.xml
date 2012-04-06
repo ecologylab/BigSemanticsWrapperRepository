@@ -57,6 +57,7 @@
 
 	<meta_metadata name="amazon_wish_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/registry" />
+		<selector url_path_tree="http://www.amazon.co.uk//gp/registry" />
 		<example_url location="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
 		
 		<collection name="items" xpath="//td[@class='lineItemMainInfo']">
@@ -67,7 +68,9 @@
 	
 	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_regex="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
+		<selector url_regex="http://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
 		<selector url_regex="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
+		<selector url_regex="http://www.amazon.co.uk/gp/product/[^/]*" domain="amazon.co.uk" />
 		
 		<example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C"/>
 		<example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY"/>
@@ -133,7 +136,8 @@
 	</meta_metadata>
 	
 	<meta_metadata name="amazon_list_mania" type="amazon_list" parser="xpath" user_agent_name="firefox">
-		<selector url_path_tree="http://www.amazon.com/*/lmfoo"/>
+		<selector url_path_tree="http://www.amazon.com/gp/registry" />
+		<selector url_path_tree="http://www.amazon.co.uk//gp/registry" />
 <!-- 		<selector url_regex="http://www.amazon.com/[^/]+/lm" domain="amazon.com"/> -->
 		
 		<example_url location="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
@@ -150,7 +154,7 @@
 
 	<meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
-		<example_url location="http://www.amazon.com/gp/bestsellers/books/6/" />
+		<example_url location="http://www.amazon.com/gp/bestsellers/books/6" />
 		
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 	
@@ -158,6 +162,24 @@
 			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
 			<scalar name="location" xpath=".//div[@class='zg_title']/a/@href"/>
 			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock_normal']//span[@class='price']/b"/>
+			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
+		</collection>
+	
+		<before_semantic_actions>
+			<filter_location strip_prefix="/ref=" />
+		</before_semantic_actions>
+	</meta_metadata>
+
+	<meta_metadata name="amazon_bestseller_list_uk" type="amazon_list" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.amazon.co.uk/gp/bestsellers" />
+		<example_url location="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
+		
+		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
+	
+		<collection name="items" xpath="//div[@class='zg_item zg_sparseListItem']">
+			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
+			<scalar name="location" xpath=".//div[@class='zg_title']/a/@href"/>
+			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock zg_isPaid']//span[@class='price']/b"/>
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	
