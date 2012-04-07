@@ -9,15 +9,18 @@ package ecologylab.semantics.generated.library.rwandatribunal;
  */
 
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,8 +29,11 @@ import java.util.Map;
  *personnel interview
  */ 
 @simpl_inherit
-public class Interview extends Document
+public class Interview extends Metadata
 {
+	@simpl_scalar
+	private MetadataString interviewee;
+
 	/** 
 	 *personnel pic
 	 */ 
@@ -55,6 +61,38 @@ public class Interview extends Document
 		super(mmd);
 	}
 
+
+	public MetadataString	interviewee()
+	{
+		MetadataString	result = this.interviewee;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.interviewee = result;
+		}
+		return result;
+	}
+
+	public String getInterviewee()
+	{
+		return this.interviewee == null ? null : interviewee().getValue();
+	}
+
+	public MetadataString getIntervieweeMetadata()
+	{
+		return interviewee;
+	}
+
+	public void setInterviewee(String interviewee)
+	{
+		if (interviewee != null)
+			this.interviewee().setValue(interviewee);
+	}
+
+	public void setIntervieweeMetadata(MetadataString interviewee)
+	{
+		this.interviewee = interviewee;
+	}
 
 	public MetadataParsedURL	pic()
 	{
