@@ -34,4 +34,17 @@
 		</collection>
 	</meta_metadata>
 	
+	<meta_metadata name="video_interview" extends="document" parser="xpath" comment="video interview">
+		<selector url_path_tree="http://www.tribunalvoices.org/voices/video/"/>
+		<scalar name="interviewee" scalar_type="String" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/h1"/>
+		<scalar name="title" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/h2"/>
+		<scalar name="position" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[1]/td"/>
+		<scalar name="country_of_origin" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[2]/td"/>
+		<scalar name="interview_date" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[3]/td"/>
+		<scalar name="interviewers" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[4]/td"/>
+		<scalar name="part_or_timestamp" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[5]/td"/>
+		<scalar name="video_download_link" scalar_type="ParsedURL" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/small/a[1]/@href"/>
+		<scalar name="audio_download_link" scalar_type="ParsedURL" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/small/a[2]/@href"/>
+	</meta_metadata>
+	
 </meta_metadata_repository>
