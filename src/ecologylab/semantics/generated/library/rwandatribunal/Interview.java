@@ -9,8 +9,8 @@ package ecologylab.semantics.generated.library.rwandatribunal;
  */
 
 import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.rwandatribunal.VideoInterview;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -43,16 +43,16 @@ public class Interview extends Metadata
 	/** 
 	 *topic videos
 	 */ 
-	@simpl_collection("document")
+	@simpl_collection("video_interview")
 	@mm_name("voices")
-	private List<Document> voices;
+	private List<VideoInterview> voices;
 
 	/** 
 	 *segmented videos
 	 */ 
-	@simpl_collection("document")
+	@simpl_collection("video_interview")
 	@mm_name("segments")
-	private List<Document> segments;
+	private List<VideoInterview> segments;
 
 	public Interview()
 	{ super(); }
@@ -126,21 +126,21 @@ public class Interview extends Metadata
 		this.pic = pic;
 	}
 
-	public List<Document> getVoices()
+	public List<VideoInterview> getVoices()
 	{
 		return voices;
 	}
 
   // lazy evaluation:
-  public List<Document> voices()
+  public List<VideoInterview> voices()
   {
     if (voices == null)
-      voices = new ArrayList<Document>();
+      voices = new ArrayList<VideoInterview>();
     return voices;
   }
 
   // addTo:
-  public void addToVoices(Document element)
+  public void addToVoices(VideoInterview element)
   {
     voices().add(element);
   }
@@ -151,26 +151,26 @@ public class Interview extends Metadata
     return voices == null ? 0 : voices.size();
   }
 
-	public void setVoices(List<Document> voices)
+	public void setVoices(List<VideoInterview> voices)
 	{
 		this.voices = voices;
 	}
 
-	public List<Document> getSegments()
+	public List<VideoInterview> getSegments()
 	{
 		return segments;
 	}
 
   // lazy evaluation:
-  public List<Document> segments()
+  public List<VideoInterview> segments()
   {
     if (segments == null)
-      segments = new ArrayList<Document>();
+      segments = new ArrayList<VideoInterview>();
     return segments;
   }
 
   // addTo:
-  public void addToSegments(Document element)
+  public void addToSegments(VideoInterview element)
   {
     segments().add(element);
   }
@@ -181,7 +181,7 @@ public class Interview extends Metadata
     return segments == null ? 0 : segments.size();
   }
 
-	public void setSegments(List<Document> segments)
+	public void setSegments(List<VideoInterview> segments)
 	{
 		this.segments = segments;
 	}
