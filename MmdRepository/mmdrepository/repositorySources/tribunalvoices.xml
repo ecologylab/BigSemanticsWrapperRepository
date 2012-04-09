@@ -3,9 +3,13 @@
 	<meta_metadata name="interview" extends="metadata" comment="personnel interview">
 		<scalar name="interviewee" scalar_type="String"/>
 		<scalar name="pic" scalar_type="ParsedURL" comment="personnel pic"/>
-		<collection name="voices" child_type="document" comment="topic videos"/>
-		<collection name="segments" child_type="document" comment="segmented videos"/>
+		<collection name="voices" child_type="video_interview" comment="topic videos"/>
+		<collection name="segments" child_type="video_interview" comment="segmented videos"/>
 	</meta_metadata>
+	
+<!-- 	<meta_metadata name="tribunal_voices_interview" extends="interview"> -->
+<!-- 		<collection name="voices" child_type="video_interview" comment="topic videos"/> -->
+<!-- 	</meta_metadata> -->
 	
 	<meta_metadata name="category_interviews" extends="metadata" comment="categorized interviews">
 		<scalar name="category" scalar_type="String" comment="category"/>
@@ -19,16 +23,16 @@
 		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
 			<scalar name="category" xpath="."/>
 			<collection name="interviews" xpath="./following::div[@class='item']">
-				<scalar name="interviewee" xpath="./table/tbody/tr/td[2]/h2"/>
+				<scalar name="interviewee" xpath="./table/tbody/tr/td[2]/h2" layer="9.9"/>
 				<scalar name="pic" xpath="./table/tbody/tr/td[1]/img[@class='interview_photo']/@src"/>
 				<scalar name="description" xpath="./table/tbody/tr/td[2]/p"/>
 				<collection name="voices" xpath="./table/tbody/tr/td[2]/ul/li">
-					<scalar name="title" xpath="./a/@href"/>
-					<scalar name="location" xpath="./a"/>
+					<scalar name="title" xpath="./a"/>
+					<scalar name="location" xpath="./a/@href"/>
 				</collection>
 				<collection name="segments" xpath="./table/tbody/tr/td[2]/table[@class='video_list']/tbody//a">
-					<scalar name="title" xpath="./@href"/>
-					<scalar name="location" xpath="."/>
+					<scalar name="title" xpath="."/>
+					<scalar name="location" xpath="./@href"/>
 				</collection>
 			</collection>
 		</collection>
@@ -36,7 +40,9 @@
 	
 	<meta_metadata name="video_interview" extends="document" parser="xpath" comment="video interview">
 		<selector url_path_tree="http://www.tribunalvoices.org/voices/video/"/>
-		<scalar name="interviewee" scalar_type="String" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/h1"/>
+		<selector url_path_tree="http://tribunalvoices.org/voices/video/"/>
+		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']/table/tbody" />
+		<scalar name="interviewee" scalar_type="String" context_node="interview_table" xpath="tr/td[1]/h1"/>
 		<scalar name="title" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/h2"/>
 		<scalar name="position" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[1]/td"/>
 		<scalar name="country_of_origin" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[2]/td"/>
