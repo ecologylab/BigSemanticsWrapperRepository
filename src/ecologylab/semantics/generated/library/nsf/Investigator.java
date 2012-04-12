@@ -9,13 +9,17 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.semantics.generated.library.creativeWork.Author;
+import ecologylab.semantics.generated.library.nsf.Grant;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,10 +27,14 @@ import java.util.Map;
 public class Investigator extends Author
 {
 	@simpl_scalar
-	private MetadataString investigationType;
+	private MetadataString email;
 
 	@simpl_scalar
-	private MetadataString emailAddress;
+	private MetadataString investigationType;
+
+	@simpl_collection("grant")
+	@mm_name("grants")
+	private List<Grant> grants;
 
 	public Investigator()
 	{ super(); }
@@ -35,6 +43,38 @@ public class Investigator extends Author
 		super(mmd);
 	}
 
+
+	public MetadataString	email()
+	{
+		MetadataString	result = this.email;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.email = result;
+		}
+		return result;
+	}
+
+	public String getEmail()
+	{
+		return this.email == null ? null : email().getValue();
+	}
+
+	public MetadataString getEmailMetadata()
+	{
+		return email;
+	}
+
+	public void setEmail(String email)
+	{
+		if (email != null)
+			this.email().setValue(email);
+	}
+
+	public void setEmailMetadata(MetadataString email)
+	{
+		this.email = email;
+	}
 
 	public MetadataString	investigationType()
 	{
@@ -68,35 +108,33 @@ public class Investigator extends Author
 		this.investigationType = investigationType;
 	}
 
-	public MetadataString	emailAddress()
+	public List<Grant> getGrants()
 	{
-		MetadataString	result = this.emailAddress;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.emailAddress = result;
-		}
-		return result;
+		return grants;
 	}
 
-	public String getEmailAddress()
-	{
-		return this.emailAddress == null ? null : emailAddress().getValue();
-	}
+  // lazy evaluation:
+  public List<Grant> grants()
+  {
+    if (grants == null)
+      grants = new ArrayList<Grant>();
+    return grants;
+  }
 
-	public MetadataString getEmailAddressMetadata()
-	{
-		return emailAddress;
-	}
+  // addTo:
+  public void addToGrants(Grant element)
+  {
+    grants().add(element);
+  }
 
-	public void setEmailAddress(String emailAddress)
-	{
-		if (emailAddress != null)
-			this.emailAddress().setValue(emailAddress);
-	}
+  // size:
+  public int grantsSize()
+  {
+    return grants == null ? 0 : grants.size();
+  }
 
-	public void setEmailAddressMetadata(MetadataString emailAddress)
+	public void setGrants(List<Grant> grants)
 	{
-		this.emailAddress = emailAddress;
+		this.grants = grants;
 	}
 }
