@@ -8,7 +8,7 @@
 	</meta_metadata>
 	
 	<meta_metadata name="document" extends="metadata" comment="The Document Class" built_in="true" schema_org_itemtype="http://schema.org/Thing">
-		<scalar name="location" always_show="true" layer="8.0" comment="The document's actual location." scalar_type="ParsedURL" schema_org_itemprop="url"/>
+		<scalar name="location" always_show="true" hide="true" layer="8.0" comment="The document's actual location." scalar_type="ParsedURL" schema_org_itemprop="url"/>
 		<scalar name="local_location" hide="true" comment="Relative location of a local copy of the document." scalar_type="ParsedURL" />
 		<scalar name="title" style="metadata_h1" layer="10.0" navigates_to="location" schema_org_itemprop="name" comment="The Title of the Document" scalar_type="String"  hint="XML_LEAF"/>
 		<scalar name="description" layer="9.0" scalar_type="String" schema_org_itemprop="description" other_tags="abstract_field" hint="XML_LEAF"/>
@@ -83,6 +83,7 @@
 	
 	
 	<meta_metadata name="compound_document"  extends="document" built_in="true">
+		<scalar name="location" always_show="false" />
 		<scalar name="query" layer="5.0" comment="The search query" scalar_type="String" hint="XML_LEAF" />
 		<scalar name="page_structure" layer="6.0" hide="true" comment="For debugging. Type of the structure recognized by information extraction." scalar_type="String" />
 		<collection name="clippings" child_type="clipping" comment="Clippings that this document contains." hide="true"  polymorphic_scope="repository_clippings"/>
