@@ -14,7 +14,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
@@ -22,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.gps 
 {
 	[SimplInherit]
-	public class GisLocation : Metadata
+	public class GisLocation : Document
 	{
 		[SimplScalar]
 		private MetadataDouble latitude;

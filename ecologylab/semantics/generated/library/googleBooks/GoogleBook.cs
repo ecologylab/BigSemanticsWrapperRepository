@@ -30,16 +30,17 @@ namespace ecologylab.semantics.generated.library.googleBooks
 		[SimplScalar]
 		private MetadataString category;
 
-		[SimplCollection("google_book")]
-		[MmName("references_from_books")]
-		private List<GoogleBook> referencesFromBooks;
-
 		[SimplScalar]
 		private MetadataParsedURL placesMentionedKml;
 
 		[SimplCollection("page")]
 		[MmName("selected_pages")]
 		private List<Page> selectedPages;
+
+		[SimplCollection]
+		[SimplScope("repository_documents")]
+		[MmName("citations")]
+		private List<Document> citations;
 
 		public GoogleBook()
 		{ }
@@ -56,19 +57,6 @@ namespace ecologylab.semantics.generated.library.googleBooks
 				{
 					this.category = value;
 					this.RaisePropertyChanged( () => this.Category );
-				}
-			}
-		}
-
-		public List<GoogleBook> ReferencesFromBooks
-		{
-			get{return referencesFromBooks;}
-			set
-			{
-				if (this.referencesFromBooks != value)
-				{
-					this.referencesFromBooks = value;
-					this.RaisePropertyChanged( () => this.ReferencesFromBooks );
 				}
 			}
 		}
@@ -95,6 +83,19 @@ namespace ecologylab.semantics.generated.library.googleBooks
 				{
 					this.selectedPages = value;
 					this.RaisePropertyChanged( () => this.SelectedPages );
+				}
+			}
+		}
+
+		public List<Document> Citations
+		{
+			get{return citations;}
+			set
+			{
+				if (this.citations != value)
+				{
+					this.citations = value;
+					this.RaisePropertyChanged( () => this.Citations );
 				}
 			}
 		}

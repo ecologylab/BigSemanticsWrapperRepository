@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
 using ecologylab.semantics.generated.library.gps;
+using ecologylab.semantics.generated.library.products;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
@@ -25,9 +26,13 @@ namespace ecologylab.semantics.generated.library.hotel
 	[SimplInherit]
 	public class Hotel : Document
 	{
+		[SimplCollection("product_review")]
+		[MmName("reviews")]
+		private List<ProductReview> reviews;
+
 		[SimplComposite]
 		[MmName("place")]
-		private ContactPoint place;
+		private PostalAddress place;
 
 		[SimplScalar]
 		private MetadataString price;
@@ -36,13 +41,16 @@ namespace ecologylab.semantics.generated.library.hotel
 		private MetadataString spaceSize;
 
 		[SimplScalar]
+		private MetadataString bedrooms;
+
+		[SimplScalar]
+		private MetadataString sleeps;
+
+		[SimplScalar]
 		private MetadataString checkIn;
 
 		[SimplScalar]
 		private MetadataString checkOut;
-
-		[SimplScalar]
-		private MetadataString temp;
 
 		public Hotel()
 		{ }
@@ -50,7 +58,20 @@ namespace ecologylab.semantics.generated.library.hotel
 		public Hotel(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public ContactPoint Place
+		public List<ProductReview> Reviews
+		{
+			get{return reviews;}
+			set
+			{
+				if (this.reviews != value)
+				{
+					this.reviews = value;
+					this.RaisePropertyChanged( () => this.Reviews );
+				}
+			}
+		}
+
+		public PostalAddress Place
 		{
 			get{return place;}
 			set
@@ -89,6 +110,32 @@ namespace ecologylab.semantics.generated.library.hotel
 			}
 		}
 
+		public MetadataString Bedrooms
+		{
+			get{return bedrooms;}
+			set
+			{
+				if (this.bedrooms != value)
+				{
+					this.bedrooms = value;
+					this.RaisePropertyChanged( () => this.Bedrooms );
+				}
+			}
+		}
+
+		public MetadataString Sleeps
+		{
+			get{return sleeps;}
+			set
+			{
+				if (this.sleeps != value)
+				{
+					this.sleeps = value;
+					this.RaisePropertyChanged( () => this.Sleeps );
+				}
+			}
+		}
+
 		public MetadataString CheckIn
 		{
 			get{return checkIn;}
@@ -111,19 +158,6 @@ namespace ecologylab.semantics.generated.library.hotel
 				{
 					this.checkOut = value;
 					this.RaisePropertyChanged( () => this.CheckOut );
-				}
-			}
-		}
-
-		public MetadataString Temp
-		{
-			get{return temp;}
-			set
-			{
-				if (this.temp != value)
-				{
-					this.temp = value;
-					this.RaisePropertyChanged( () => this.Temp );
 				}
 			}
 		}

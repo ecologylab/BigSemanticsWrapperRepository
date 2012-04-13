@@ -14,6 +14,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
+using ecologylab.semantics.generated.library.gps;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
@@ -25,7 +26,7 @@ namespace ecologylab.semantics.generated.library.gps
 	/// Resembles a schema.org ContactPoint but is a mixin, not extending document.
 	/// </summary>
 	[SimplInherit]
-	public class ContactPoint : Metadata
+	public class ContactPoint : Document
 	{
 		[SimplScalar]
 		private MetadataString telephone;
@@ -38,6 +39,10 @@ namespace ecologylab.semantics.generated.library.gps
 
 		[SimplScalar]
 		private MetadataString streetAddress;
+
+		[SimplComposite]
+		[MmName("map")]
+		private GisLocation map;
 
 		public ContactPoint()
 		{ }
@@ -93,6 +98,19 @@ namespace ecologylab.semantics.generated.library.gps
 				{
 					this.streetAddress = value;
 					this.RaisePropertyChanged( () => this.StreetAddress );
+				}
+			}
+		}
+
+		public GisLocation Map
+		{
+			get{return map;}
+			set
+			{
+				if (this.map != value)
+				{
+					this.map = value;
+					this.RaisePropertyChanged( () => this.Map );
 				}
 			}
 		}

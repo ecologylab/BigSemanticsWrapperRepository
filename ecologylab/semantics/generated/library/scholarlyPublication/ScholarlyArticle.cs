@@ -8,7 +8,6 @@
 
 
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -34,12 +33,6 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 		[SimplComposite]
 		[MmName("source")]
 		private Periodical source;
-
-		/// <summary>
-		/// citation.cfm
-		/// </summary>
-		[SimplScalar]
-		private MetadataParsedURL metadataPage;
 
 		/// <summary>
 		/// Papers cited by this paper.
@@ -87,19 +80,6 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 				{
 					this.source = value;
 					this.RaisePropertyChanged( () => this.Source );
-				}
-			}
-		}
-
-		public MetadataParsedURL MetadataPage
-		{
-			get{return metadataPage;}
-			set
-			{
-				if (this.metadataPage != value)
-				{
-					this.metadataPage = value;
-					this.RaisePropertyChanged( () => this.MetadataPage );
 				}
 			}
 		}

@@ -14,7 +14,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
@@ -22,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.scholarlyPublication 
 {
 	[SimplInherit]
-	public class AcmPortalSearchResult : SearchResult
+	public class AcmPortalSearchResult : Document
 	{
 		[SimplScalar]
 		private MetadataString authorList;

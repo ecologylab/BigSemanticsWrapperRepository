@@ -8,6 +8,7 @@
 
 
 using Simpl.Fundamental.Generic;
+using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -28,22 +29,10 @@ namespace ecologylab.semantics.generated.library.scienceDirect
 	public class ScienceDirectArticle : ScholarlyArticle
 	{
 		/// <summary>
-		/// The journal or other publication that the article comes from
-		/// </summary>
-		[SimplScalar]
-		private MetadataString publicationName;
-
-		[SimplScalar]
-		private MetadataString volume;
-
-		[SimplScalar]
-		private MetadataString issue;
-
-		/// <summary>
 		/// The digital object identifier of the article
 		/// </summary>
 		[SimplScalar]
-		private MetadataString doi;
+		private MetadataParsedURL doi;
 
 		public ScienceDirectArticle()
 		{ }
@@ -51,46 +40,7 @@ namespace ecologylab.semantics.generated.library.scienceDirect
 		public ScienceDirectArticle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString PublicationName
-		{
-			get{return publicationName;}
-			set
-			{
-				if (this.publicationName != value)
-				{
-					this.publicationName = value;
-					this.RaisePropertyChanged( () => this.PublicationName );
-				}
-			}
-		}
-
-		public MetadataString Volume
-		{
-			get{return volume;}
-			set
-			{
-				if (this.volume != value)
-				{
-					this.volume = value;
-					this.RaisePropertyChanged( () => this.Volume );
-				}
-			}
-		}
-
-		public MetadataString Issue
-		{
-			get{return issue;}
-			set
-			{
-				if (this.issue != value)
-				{
-					this.issue = value;
-					this.RaisePropertyChanged( () => this.Issue );
-				}
-			}
-		}
-
-		public MetadataString Doi
+		public MetadataParsedURL Doi
 		{
 			get{return doi;}
 			set

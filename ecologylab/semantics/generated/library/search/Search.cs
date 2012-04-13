@@ -14,9 +14,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
+using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
 
 namespace ecologylab.semantics.generated.library.search 
@@ -24,10 +24,13 @@ namespace ecologylab.semantics.generated.library.search
 	[SimplInherit]
 	public class Search : Document
 	{
-		[SimplCollection("search_result")]
+		[SimplScalar]
+		private MetadataString query;
+
+		[SimplCollection("document")]
 		[SimplNoWrap]
 		[MmName("search_results")]
-		private List<SearchResult> searchResults;
+		private List<Document> searchResults;
 
 		public Search()
 		{ }
@@ -35,7 +38,20 @@ namespace ecologylab.semantics.generated.library.search
 		public Search(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<SearchResult> SearchResults
+		public MetadataString Query
+		{
+			get{return query;}
+			set
+			{
+				if (this.query != value)
+				{
+					this.query = value;
+					this.RaisePropertyChanged( () => this.Query );
+				}
+			}
+		}
+
+		public List<Document> SearchResults
 		{
 			get{return searchResults;}
 			set

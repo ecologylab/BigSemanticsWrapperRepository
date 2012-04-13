@@ -8,14 +8,13 @@
 
 
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.generated.library.imdb;
+using ecologylab.semantics.generated.library.movie;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
@@ -27,35 +26,10 @@ namespace ecologylab.semantics.generated.library.imdb
 	/// IMDB metadata
 	/// </summary>
 	[SimplInherit]
-	public class ImdbTitle : CompoundDocument
+	public class ImdbTitle : MovieInfo
 	{
 		[SimplScalar]
-		private MetadataString yearReleased;
-
-		[SimplCollection("person_details")]
-		[MmName("directors")]
-		private List<PersonDetails> directors;
-
-		[SimplCollection("person_details")]
-		[MmName("writers")]
-		private List<PersonDetails> writers;
-
-		[SimplCollection("cast_member")]
-		[MmName("cast")]
-		private List<CastMember> cast;
-
-		[SimplScalar]
-		private MetadataString rating;
-
-		[SimplScalar]
-		private MetadataString releaseDate;
-
-		[SimplCollection("genre")]
-		[MmName("genres")]
-		private List<Genre> genres;
-
-		[SimplScalar]
-		private MetadataString plot;
+		private MetadataString gist;
 
 		[SimplScalar]
 		private MetadataString tagline;
@@ -64,115 +38,21 @@ namespace ecologylab.semantics.generated.library.imdb
 		[MmName("title_photos")]
 		private List<Image> titlePhotos;
 
-		[SimplScalar]
-		private MetadataParsedURL posterImg;
-
 		public ImdbTitle()
 		{ }
 
 		public ImdbTitle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString YearReleased
+		public MetadataString Gist
 		{
-			get{return yearReleased;}
+			get{return gist;}
 			set
 			{
-				if (this.yearReleased != value)
+				if (this.gist != value)
 				{
-					this.yearReleased = value;
-					this.RaisePropertyChanged( () => this.YearReleased );
-				}
-			}
-		}
-
-		public List<PersonDetails> Directors
-		{
-			get{return directors;}
-			set
-			{
-				if (this.directors != value)
-				{
-					this.directors = value;
-					this.RaisePropertyChanged( () => this.Directors );
-				}
-			}
-		}
-
-		public List<PersonDetails> Writers
-		{
-			get{return writers;}
-			set
-			{
-				if (this.writers != value)
-				{
-					this.writers = value;
-					this.RaisePropertyChanged( () => this.Writers );
-				}
-			}
-		}
-
-		public List<CastMember> Cast
-		{
-			get{return cast;}
-			set
-			{
-				if (this.cast != value)
-				{
-					this.cast = value;
-					this.RaisePropertyChanged( () => this.Cast );
-				}
-			}
-		}
-
-		public MetadataString Rating
-		{
-			get{return rating;}
-			set
-			{
-				if (this.rating != value)
-				{
-					this.rating = value;
-					this.RaisePropertyChanged( () => this.Rating );
-				}
-			}
-		}
-
-		public MetadataString ReleaseDate
-		{
-			get{return releaseDate;}
-			set
-			{
-				if (this.releaseDate != value)
-				{
-					this.releaseDate = value;
-					this.RaisePropertyChanged( () => this.ReleaseDate );
-				}
-			}
-		}
-
-		public List<Genre> Genres
-		{
-			get{return genres;}
-			set
-			{
-				if (this.genres != value)
-				{
-					this.genres = value;
-					this.RaisePropertyChanged( () => this.Genres );
-				}
-			}
-		}
-
-		public MetadataString Plot
-		{
-			get{return plot;}
-			set
-			{
-				if (this.plot != value)
-				{
-					this.plot = value;
-					this.RaisePropertyChanged( () => this.Plot );
+					this.gist = value;
+					this.RaisePropertyChanged( () => this.Gist );
 				}
 			}
 		}
@@ -199,19 +79,6 @@ namespace ecologylab.semantics.generated.library.imdb
 				{
 					this.titlePhotos = value;
 					this.RaisePropertyChanged( () => this.TitlePhotos );
-				}
-			}
-		}
-
-		public MetadataParsedURL PosterImg
-		{
-			get{return posterImg;}
-			set
-			{
-				if (this.posterImg != value)
-				{
-					this.posterImg = value;
-					this.RaisePropertyChanged( () => this.PosterImg );
 				}
 			}
 		}

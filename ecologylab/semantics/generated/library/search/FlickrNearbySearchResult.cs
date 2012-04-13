@@ -15,7 +15,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
@@ -23,7 +22,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.search 
 {
 	[SimplInherit]
-	public class FlickrNearbySearchResult : SearchResult
+	public class FlickrNearbySearchResult : Document
 	{
 		[SimplScalar]
 		private MetadataParsedURL linkOther;

@@ -25,11 +25,6 @@ namespace ecologylab.semantics.generated.library.creativeWork
 	[SimplInherit]
 	public class CreativeWork : CompoundDocument
 	{
-		[SimplScalar]
-		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("abstract")]
-		private MetadataString abstractField;
-
 		/// <summary>
 		/// Set of authors.
 		/// </summary>
@@ -41,24 +36,21 @@ namespace ecologylab.semantics.generated.library.creativeWork
 		[SimplOtherTags(new String[] {"year_of_publication"})]
 		private MetadataInteger year;
 
+		/// <summary>
+		/// rating in some context
+		/// </summary>
+		[SimplScalar]
+		private MetadataString overallRating;
+
+		[SimplComposite]
+		[MmName("rich_media")]
+		private CompoundDocument richMedia;
+
 		public CreativeWork()
 		{ }
 
 		public CreativeWork(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString AbstractField
-		{
-			get{return abstractField;}
-			set
-			{
-				if (this.abstractField != value)
-				{
-					this.abstractField = value;
-					this.RaisePropertyChanged( () => this.AbstractField );
-				}
-			}
-		}
 
 		public List<Author> Authors
 		{
@@ -82,6 +74,32 @@ namespace ecologylab.semantics.generated.library.creativeWork
 				{
 					this.year = value;
 					this.RaisePropertyChanged( () => this.Year );
+				}
+			}
+		}
+
+		public MetadataString OverallRating
+		{
+			get{return overallRating;}
+			set
+			{
+				if (this.overallRating != value)
+				{
+					this.overallRating = value;
+					this.RaisePropertyChanged( () => this.OverallRating );
+				}
+			}
+		}
+
+		public CompoundDocument RichMedia
+		{
+			get{return richMedia;}
+			set
+			{
+				if (this.richMedia != value)
+				{
+					this.richMedia = value;
+					this.RaisePropertyChanged( () => this.RichMedia );
 				}
 			}
 		}

@@ -23,7 +23,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.wikipedia 
 {
 	/// <summary>
-	/// An article on wikipedia (used in cF)
+	/// An article on wikipedia
 	/// </summary>
 	[SimplInherit]
 	public class WikipediaPage : WikipediaPageType

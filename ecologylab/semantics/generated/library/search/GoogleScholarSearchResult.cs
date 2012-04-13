@@ -15,7 +15,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
@@ -26,7 +25,7 @@ namespace ecologylab.semantics.generated.library.search
 	/// A google scholar search result
 	/// </summary>
 	[SimplInherit]
-	public class GoogleScholarSearchResult : SearchResult
+	public class GoogleScholarSearchResult : Document
 	{
 		[SimplScalar]
 		private MetadataParsedURL documentLink;

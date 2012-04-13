@@ -26,6 +26,10 @@ namespace ecologylab.semantics.generated.library.products
 	[SimplInherit]
 	public class Product : CompoundDocument
 	{
+		[SimplCollection("product_review")]
+		[MmName("reviews")]
+		private List<ProductReview> reviews;
+
 		[SimplScalar]
 		private MetadataString price;
 
@@ -33,23 +37,36 @@ namespace ecologylab.semantics.generated.library.products
 		private MetadataString model;
 
 		[SimplScalar]
-		private MetadataParsedURL imageUrl;
+		private MetadataString overallRating;
+
+		[SimplScalar]
+		private MetadataInteger numReviews;
+
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
 
 		[SimplScalar]
 		private MetadataParsedURL reviewsLocation;
-
-		[SimplScalar]
-		private MetadataString overallRating;
-
-		[SimplCollection("product_review")]
-		[MmName("reviews")]
-		private List<ProductReview> reviews;
 
 		public Product()
 		{ }
 
 		public Product(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public List<ProductReview> Reviews
+		{
+			get{return reviews;}
+			set
+			{
+				if (this.reviews != value)
+				{
+					this.reviews = value;
+					this.RaisePropertyChanged( () => this.Reviews );
+				}
+			}
+		}
 
 		public MetadataString Price
 		{
@@ -77,32 +94,6 @@ namespace ecologylab.semantics.generated.library.products
 			}
 		}
 
-		public MetadataParsedURL ImageUrl
-		{
-			get{return imageUrl;}
-			set
-			{
-				if (this.imageUrl != value)
-				{
-					this.imageUrl = value;
-					this.RaisePropertyChanged( () => this.ImageUrl );
-				}
-			}
-		}
-
-		public MetadataParsedURL ReviewsLocation
-		{
-			get{return reviewsLocation;}
-			set
-			{
-				if (this.reviewsLocation != value)
-				{
-					this.reviewsLocation = value;
-					this.RaisePropertyChanged( () => this.ReviewsLocation );
-				}
-			}
-		}
-
 		public MetadataString OverallRating
 		{
 			get{return overallRating;}
@@ -116,15 +107,41 @@ namespace ecologylab.semantics.generated.library.products
 			}
 		}
 
-		public List<ProductReview> Reviews
+		public MetadataInteger NumReviews
 		{
-			get{return reviews;}
+			get{return numReviews;}
 			set
 			{
-				if (this.reviews != value)
+				if (this.numReviews != value)
 				{
-					this.reviews = value;
-					this.RaisePropertyChanged( () => this.Reviews );
+					this.numReviews = value;
+					this.RaisePropertyChanged( () => this.NumReviews );
+				}
+			}
+		}
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
+					this.RaisePropertyChanged( () => this.Image );
+				}
+			}
+		}
+
+		public MetadataParsedURL ReviewsLocation
+		{
+			get{return reviewsLocation;}
+			set
+			{
+				if (this.reviewsLocation != value)
+				{
+					this.reviewsLocation = value;
+					this.RaisePropertyChanged( () => this.ReviewsLocation );
 				}
 			}
 		}

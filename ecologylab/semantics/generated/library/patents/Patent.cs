@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
 using ecologylab.semantics.generated.library.creativeWork;
+using ecologylab.semantics.generated.library.patents;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
@@ -28,38 +29,44 @@ namespace ecologylab.semantics.generated.library.patents
 	[SimplInherit]
 	public class Patent : CreativeWork
 	{
-		[SimplCollection("claim")]
-		[MmName("claims")]
-		private List<ecologylab.semantics.metadata.scalar.MetadataString> claims;
-
 		[SimplScalar]
 		private MetadataString inventor;
 
 		[SimplScalar]
 		private MetadataDate filingDate;
 
-		[SimplCollection("document")]
+		[SimplCollection("patent_classification")]
 		[MmName("classifications")]
-		private List<Document> classifications;
+		private List<PatentClassification> classifications;
+
+		[SimplCollection("claim")]
+		[MmName("claims")]
+		private List<ecologylab.semantics.metadata.scalar.MetadataString> claims;
+
+		/// <summary>
+		/// subsequent patents that cite this
+		/// </summary>
+		[SimplCollection("patent")]
+		[SimplOtherTags(new String[] {"referenced_bys"})]
+		[MmName("citations")]
+		private List<Patent> citations;
+
+		/// <summary>
+		/// prior patents that this references
+		/// </summary>
+		[SimplCollection("patent")]
+		[MmName("references")]
+		private List<Patent> references;
+
+		[SimplCollection("image")]
+		[MmName("drawings")]
+		private List<Image> drawings;
 
 		public Patent()
 		{ }
 
 		public Patent(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<ecologylab.semantics.metadata.scalar.MetadataString> Claims
-		{
-			get{return claims;}
-			set
-			{
-				if (this.claims != value)
-				{
-					this.claims = value;
-					this.RaisePropertyChanged( () => this.Claims );
-				}
-			}
-		}
 
 		public MetadataString Inventor
 		{
@@ -87,7 +94,7 @@ namespace ecologylab.semantics.generated.library.patents
 			}
 		}
 
-		public List<Document> Classifications
+		public List<PatentClassification> Classifications
 		{
 			get{return classifications;}
 			set
@@ -96,6 +103,58 @@ namespace ecologylab.semantics.generated.library.patents
 				{
 					this.classifications = value;
 					this.RaisePropertyChanged( () => this.Classifications );
+				}
+			}
+		}
+
+		public List<ecologylab.semantics.metadata.scalar.MetadataString> Claims
+		{
+			get{return claims;}
+			set
+			{
+				if (this.claims != value)
+				{
+					this.claims = value;
+					this.RaisePropertyChanged( () => this.Claims );
+				}
+			}
+		}
+
+		public List<Patent> Citations
+		{
+			get{return citations;}
+			set
+			{
+				if (this.citations != value)
+				{
+					this.citations = value;
+					this.RaisePropertyChanged( () => this.Citations );
+				}
+			}
+		}
+
+		public List<Patent> References
+		{
+			get{return references;}
+			set
+			{
+				if (this.references != value)
+				{
+					this.references = value;
+					this.RaisePropertyChanged( () => this.References );
+				}
+			}
+		}
+
+		public List<Image> Drawings
+		{
+			get{return drawings;}
+			set
+			{
+				if (this.drawings != value)
+				{
+					this.drawings = value;
+					this.RaisePropertyChanged( () => this.Drawings );
 				}
 			}
 		}

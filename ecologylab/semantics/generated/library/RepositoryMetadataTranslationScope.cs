@@ -46,6 +46,7 @@ using ecologylab.semantics.generated.library.urbanspoon;
 using ecologylab.semantics.generated.library.uva;
 using ecologylab.semantics.generated.library.wikipedia;
 using ecologylab.semantics.metadata.builtins.declarations;
+using crit.semantics.generated.txtf1.fieldreports.spotrep;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace ecologylab.semantics.generated.library 
@@ -200,6 +201,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(SlashdotSearch),
 				typeof(SlashdotTag),
 				typeof(SocialMediaSearchResult),
+                typeof(Spotrep),
 				typeof(Subject),
 				typeof(Tag),
 				typeof(TempFieldValueHolder),

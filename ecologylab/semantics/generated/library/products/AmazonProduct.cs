@@ -29,8 +29,16 @@ namespace ecologylab.semantics.generated.library.products
 		private Document department;
 
 		[SimplComposite]
-		[MmName("bestseller_list")]
-		private BestsellerList bestsellerList;
+		[MmName("bestseller_list_rank")]
+		private AmazonList bestsellerListRank;
+
+		[SimplCollection("amazon_product")]
+		[MmName("people_also_buy")]
+		private List<AmazonProduct> peopleAlsoBuy;
+
+		[SimplCollection("document")]
+		[MmName("list_mania")]
+		private List<Document> listMania;
 
 		public AmazonProduct()
 		{ }
@@ -51,15 +59,41 @@ namespace ecologylab.semantics.generated.library.products
 			}
 		}
 
-		public BestsellerList BestsellerList
+		public AmazonList BestsellerListRank
 		{
-			get{return bestsellerList;}
+			get{return bestsellerListRank;}
 			set
 			{
-				if (this.bestsellerList != value)
+				if (this.bestsellerListRank != value)
 				{
-					this.bestsellerList = value;
-					this.RaisePropertyChanged( () => this.BestsellerList );
+					this.bestsellerListRank = value;
+					this.RaisePropertyChanged( () => this.BestsellerListRank );
+				}
+			}
+		}
+
+		public List<AmazonProduct> PeopleAlsoBuy
+		{
+			get{return peopleAlsoBuy;}
+			set
+			{
+				if (this.peopleAlsoBuy != value)
+				{
+					this.peopleAlsoBuy = value;
+					this.RaisePropertyChanged( () => this.PeopleAlsoBuy );
+				}
+			}
+		}
+
+		public List<Document> ListMania
+		{
+			get{return listMania;}
+			set
+			{
+				if (this.listMania != value)
+				{
+					this.listMania = value;
+					this.RaisePropertyChanged( () => this.ListMania );
 				}
 			}
 		}

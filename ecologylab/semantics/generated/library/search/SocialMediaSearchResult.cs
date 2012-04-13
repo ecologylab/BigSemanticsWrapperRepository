@@ -15,7 +15,6 @@ using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
 using ecologylab.semantics.generated.library;
-using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
@@ -27,7 +26,7 @@ namespace ecologylab.semantics.generated.library.search
 	/// A result from a social media search.
 	/// </summary>
 	[SimplInherit]
-	public class SocialMediaSearchResult : SearchResult
+	public class SocialMediaSearchResult : Document
 	{
 		/// <summary>
 		/// The author of this item.

@@ -25,7 +25,11 @@ namespace ecologylab.semantics.generated.library.products
 	public class ProductReview : Metadata
 	{
 		[SimplScalar]
-		private MetadataString content;
+		private MetadataString title;
+
+		[SimplScalar]
+		[SimplOtherTags(new String[] {"content"})]
+		private MetadataString description;
 
 		[SimplScalar]
 		private MetadataString rating;
@@ -36,15 +40,28 @@ namespace ecologylab.semantics.generated.library.products
 		public ProductReview(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString Content
+		public MetadataString Title
 		{
-			get{return content;}
+			get{return title;}
 			set
 			{
-				if (this.content != value)
+				if (this.title != value)
 				{
-					this.content = value;
-					this.RaisePropertyChanged( () => this.Content );
+					this.title = value;
+					this.RaisePropertyChanged( () => this.Title );
+				}
+			}
+		}
+
+		public MetadataString Description
+		{
+			get{return description;}
+			set
+			{
+				if (this.description != value)
+				{
+					this.description = value;
+					this.RaisePropertyChanged( () => this.Description );
 				}
 			}
 		}
