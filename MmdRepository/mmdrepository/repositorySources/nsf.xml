@@ -27,34 +27,78 @@
     <scalar name="synopsis" scalar_type="String" />
     <scalar name="guidelines" scalar_type="String" />
     <collection name="due_dates" child_scalar_type="Date" child_tag="due_date" />
+    <collection name="grants" child_type="grant" />
   </meta_metadata>
   
   
   
-  <meta_metadata name="nsf_division" extends="compound_document">
+  <meta_metadata name="nsf_division" extends="compound_document" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/div/index.jsp" />
+    <example_url url="http://www.nsf.gov/div/index.jsp?div=IIS" />
+    
     <scalar name="title" xpath="//span[@class='pageheadline']" />
-    <collection name="programs" child_type="nsf_program" xpath="//p[text()='Programs and Funding Opportunities']/following-sibling::table[1]//a[string-length(text())>0]">
+    <collection name="programs" child_type="nsf_program" xpath="//p[text()='Programs and Funding Opportunities']/following-sibling::table[1]//a[string-length(text())>0 and not(strong)]">
       <scalar name="title" xpath="." />
       <scalar name="location" xpath="./@href" />
     </collection>
+    <collection name="recently_announced" child_type="nsf_program" xpath="//td[text()='Recently Announced Funding Opportunities']/following::tr[2]//p">
+      <scalar name="title" xpath="./a" />
+      <scalar name="location" xpath="./a/@href" />
+    </collection>
+    <collection name="upcoming_due" child_type="nsf_program" xpath="//td[text()='Upcoming Due Dates']/following::tr[2]//p">
+      <scalar name="title" xpath="./a" />
+      <scalar name="location" xpath="./a/@href" />
+    </collection>
+    
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
   </meta_metadata>
   
-  <meta_metadata name="nsf_program" extends="grant_program">
+  <meta_metadata name="nsf_program" extends="grant_program" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/funding/pgm_summ.jsp" />
-    <collection name="contacts" xpath="//strong[text()='CONTACTS']/following::table//td[@class='tabletext']/ancestor::tr">
+    <selector url_regex="http://www.nsf.gov/awardsearch/afSearch.do?ProgEleCode=.*" domain="nsf.gov" />
+    
+    <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503302" />
+    <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503581" />
+    <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503286" />
+    
+    <collection name="contacts" xpath="//strong[text()='CONTACTS']/following::table//td[@class='tabletext']/parent::tr">
       <scalar name="title" xpath="./td[1]" />
       <scalar name="email" xpath="./td[2]" />
       <scalar name="telephone" xpath="./td[3]" />
     </collection>
-    <scalar name="synopsis" xpath="//*[preceding::strong='SYNOPSIS' and following::strong='FUNDED AS PART OF THIS ACTIVITY']" />
-    <scalar name="guidelines" xpath="//*[preceding::strong='PROGRAM GUIDELINES' and following::h2='DUE DATES']" />
-    <collection name="due_dates" child_scalar_type="Date" xpath="//*[preceding::h2='DUE DATES' and following::strong='SYNOPSIS']">
-      <!-- field parser needed to extract date windows; they are windows not simple dates; we may need something to represent a window -->
+    <scalar name="synopsis" xpath="//strong[text()='SYNOPSIS']/following::p[text()][1]" />
+    <collection name="due_dates" child_scalar_type="Date" xpath="//h2[text()='DUE DATES']/following::p[@class='due_date' or @class='due_date_first']">
+      <filter regex="[A-Z][a-z]+ \d+, \d+" />
     </collection>
+    
+    <collection name="grants" child_type="nsf_award" xpath="//table[@class='resultTable']/tbody//tr">
+      <scalar name="title" xpath="./td[2]/a" />
+      <scalar name="location" xpath="./td[2]/a/@href" />
+    </collection>
+    
+    <composite name="funding_history" type="nsf_search" xpath="//a[contains(text(), 'What Has Been Funded')]">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </composite>
+    
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
   </meta_metadata>
 
   <meta_metadata name="nsf_investigator" extends="investigator" parser="xpath">
+    <example_url url="http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;IncludeCOPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne#results" />
+  
     <scalar name="first_name" hide="true" scalar_type="String" /><!-- first/last name helps forming of location -->
     <scalar name="last_name" hide="true" scalar_type="String" />
     
@@ -82,32 +126,49 @@
         <filter regex="(^\$)|,|(\.\d\d$)" replace="" />
       </scalar>
     </collection>
+    
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
   </meta_metadata>
   
   <meta_metadata name="nsf_award" extends="grant" comment="NSF award details." parser="xpath">
+    <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
     
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428" />
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854" />
-
-    <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
+    
+    <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1123972"
+                 comment="this has two PIs, good for testing splitting and parsing PI names." />
 
     <scalar name="title" xpath="//span[@class='pageheadline']/strong" />
-    <collection name="authors" child_type="nsf_investigator"
+    <collection name="authors" child_type="nsf_investigator" extract_as_html="true"
                 xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Investigator(s):')]/following::td[@class='tabletext2'][1]">
-      <field_parser name="regex_find" regex="([A-Z][a-z]*)\s+([A-Z][a-z]*)\s+([a-z0-9_.-]+@[a-z0-9_.-]+)\s+(\([^)]+\))" trim="true" for_each_element="true" />
+      <field_parser name="regex_split_and_find" regex="\s*&lt;br\s*/?&gt;\s*"
+                    regex_find="([A-Z][a-z]*)\s+([A-Z]\.?\s+)?(([A-Z][a-z]*){1,2}(-([A-Z][a-z]*){1,2})?)\s+([a-z0-9_.-]+@[a-z0-9_.-]+\s+)?(\([^)]+\))" trim="true" />
       <scalar name="first_name" field_parser_key="$1" />
-      <scalar name="last_name" field_parser_key="$2" />
-      <scalar name="title" xpath="." />
+      <scalar name="last_name" field_parser_key="$3" />
+      <scalar name="title">
+        <concatenate_values>
+          <value from_scalar="first_name" />
+          <value> </value>
+          <value from_scalar="last_name" />
+        </concatenate_values>
+      </scalar>
       <scalar name="location">
   			<concatenate_values>
-  				<value>http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;PIFirstName=</value>
+  				<value>http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;IncludeCOPI=true&amp;PIFirstName=</value>
   				<value from_scalar="first_name" />
   				<value>&amp;PILastName=</value>
   				<value from_scalar="last_name" />
   			</concatenate_values>
       </scalar>
-      <scalar name="email" field_parser_key="$3" />
-      <scalar name="investigation_type" field_parser_key="$4" />
+      <scalar name="email" field_parser_key="$7" />
+      <scalar name="investigation_type" field_parser_key="$8" />
     </collection>
     <composite name="division" type="nsf_division"
                xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'NSF Org:')]/following::td[@class='tabletext2'][1]/a[2]">
@@ -116,12 +177,23 @@
     </composite>
     <collection name="programs" child_type="nsf_program" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'NSF Program(s):')]/following::td[@class='tabletext2'][1]">
       <scalar name="title" xpath="." />
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/afSearch.do?ProgEleCode=0&amp;SearchType=afSearch&amp;page=4</value>
+        </concatenate_values>
+      </scalar>
     </collection>
     <scalar name="grant_number" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Award Number:')]/following::td[@class='tabletext2'][1]" />
     <scalar name="start_date" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Start Date:')]/following::td[@class='tabletext2'][1]" />
     <scalar name="expire_date" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Expires:')]/following::td[@class='tabletext2'][1]" />
-    <scalar name="amount" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to Date:')]/following::td[@class='tabletext2'][1]">
+    <scalar name="amount" hide="true" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to Date:')]/following::td[@class='tabletext2'][1]">
       <filter regex="\$" replace="" />
+    </scalar>
+    <scalar name="amount_string" label="amount" scalar_type="String">
+      <concatenate_values>
+        <value>$</value>
+  				<value from_scalar="amount" />
+      </concatenate_values>
     </scalar>
     <collection name="managers" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Manager:')]/following::td[@class='tabletext2'][1]">
       <scalar name="title" xpath="." />
@@ -137,23 +209,57 @@
     <scalar name="initial_amendment_date" scalar_type="Date" hide="true" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Initial Amendment Date:')]/following::td[@class='tabletext2'][1]" />
     <scalar name="latest_amendment_date" scalar_type="Date" hide="true" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Latest Amendment Date:')]/following::td[@class='tabletext2'][1]" />
     <scalar name="program_reference_codes" scalar_type="String" hide="true" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Reference Code(s):')]/following::td[@class='tabletext2'][1]" />
-    <scalar name="program_element_codes" scalar_type="String" hide="true" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element Code(s):')]/following::td[@class='tabletext2'][1]" />
+    <collection name="program_element_codes" child_scalar_type="String" hide="true" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element Code(s):')]/following::td[@class='tabletext2'][1]">
+      <field_parser name="regex_split" regex="," />
+    </collection>
 
     <scalar name="abstract_field" xpath="//strong[@class='greybold' and starts-with(text(), 'ABSTRACT')]/parent::p" />
       
     <collection name="publications" extract_as_html="true"
                 xpath="//strong[@class='greybold' and starts-with(text(), 'PUBLICATIONS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p">
-      <!-- field parser needed! -->
-      <scalar name="title" xpath="." />
+      <field_parser name="nsf_pub_list" />
+      <scalar name="title" field_parser_key="$title" />
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
     </collection>
     <collection name="proceedings" extract_as_html="true"
                 xpath="//strong[@class='greybold' and starts-with(text(), 'CONFERENCE PROCEEDINGS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p">
-      <!-- field parser needed! -->
-      <scalar name="title" xpath="." />
+      <field_parser name="nsf_pub_list" />
+      <scalar name="title" field_parser_key="$title" />
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
     </collection>
     
     <semantic_actions>
-      <!-- generate text clipping -->
+      <get_field name="programs" />
+      <get_field name="program_element_codes" />
+      <for_each collection="programs" as="program" current_index="i">
+        <not_null value="programs" />
+        <not_null value="program_element_codes" />
+        <filter_location object="program">
+          <set_param name="ProgEleCode" value_from_collection="program_element_codes" collection_index="i" />
+        </filter_location>
+      </for_each>
+      
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
     </semantic_actions>
   </meta_metadata>
 
@@ -167,26 +273,26 @@
     <collection name="search_results" label="nsf_awards" child_type="nsf_award" xpath="//table[@class='resultTable']/tbody//tr">
       <scalar name="title" xpath="./td[2]/a" />
       <scalar name="location" xpath="./td[2]/a/@href" />
-      <composite name="division" xpath="./td[3]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
-      </composite>
-      <collection name="authors" xpath="./td[6]//a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
-      </collection> 
-      <collection name="programs" xpath="./td[4]//a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
-      </collection>
-      <scalar name="start_date" xpath="./td[5]" />
-      <composite name="sponsor" xpath="./td[8]">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
-      </composite>
-      <scalar name="amount" xpath="./td[9]">
-        <filter regex="(^\$)|,|(\.\d\d$)" replace="" />
-      </scalar>
+<!--       <composite name="division" xpath="./td[3]/a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </composite> -->
+<!--       <collection name="authors" xpath="./td[6]//a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </collection>  -->
+<!--       <collection name="programs" xpath="./td[4]//a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </collection> -->
+<!--       <scalar name="start_date" xpath="./td[5]" /> -->
+<!--       <composite name="sponsor" xpath="./td[8]"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </composite> -->
+<!--       <scalar name="amount" xpath="./td[9]"> -->
+<!--         <filter regex="(^\$)|,|(\.\d\d$)" replace="" /> -->
+<!--       </scalar> -->
     </collection>
   </meta_metadata>
 
