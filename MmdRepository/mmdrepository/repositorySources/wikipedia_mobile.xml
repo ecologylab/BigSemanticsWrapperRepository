@@ -25,7 +25,7 @@
 
 		<collection name="sections" child_type="section" comment="Sections in the article." xpath="//h2" >
 			<scalar name="section_title" xpath="." />  
-			<collection name="paragraphs" xpath="./following-sibling::div[1]/p" chile_type="paragraph">
+			<collection name="paragraphs" xpath="./following-sibling::div[1]/p" child_type="paragraph">
 				<scalar name="paragraph_text" xpath="." />
 				<collection name="anchors" xpath="./a[@title]">
 					<scalar name="link" xpath="./@href" />
