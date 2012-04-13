@@ -14,9 +14,9 @@
 		<scalar name="authorlink" scalar_type="ParsedURL" hide="true" comment="link to auther detail" />
 		<scalar name="details" scalar_type="String" comment="video details" />
 		
-		<collection name="tag" child_type="document" generate_class="false" comment="list of tags" />
+		<collection name="tag" child_type="document" comment="list of tags" />
 		<scalar name="license" scalar_type="String" comment="video License" />
-		<collection name="top_commet" child_type="comment_result" generate_class="true" comment="top 2 comments if any" />
+		<collection name="top_commet" child_type="comment_result" comment="top 2 comments if any" />
 		<scalar name="no_of_comment" scalar_type="String" comment="total no of comment recived"/>
 		<scalar name="likes" scalar_type="String" comment="total no of likes recived"/>
 		<scalar name="dislikes" scalar_type="String" comment="total no of dislikes recived"/>

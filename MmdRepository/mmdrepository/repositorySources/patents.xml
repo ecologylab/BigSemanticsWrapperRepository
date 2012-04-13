@@ -123,7 +123,7 @@
 	
 	
 	
-	<meta_metadata name="google_patent_author" type="patent_author" parser="xpath" user_agent="chrome">
+	<meta_metadata name="google_patent_author" type="patent_author" parser="xpath" user_agent_name="chrome">
 		<selector url_regex="q=ininventor:" domain="google.com" />
 
 		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />

@@ -13,8 +13,7 @@
 		<scalar name="price_range" scalar_type="String"
 			comment="Price range of the restaurant" />
 
-		<collection name="genres" child_type="restaurant_genre"
-			generate_class="false" comment="The genres of food offered" />
+		<collection name="genres" child_type="restaurant_genre" comment="The genres of food offered" />
 
 	  <semantic_actions>
 	    <get_field name="image" />
