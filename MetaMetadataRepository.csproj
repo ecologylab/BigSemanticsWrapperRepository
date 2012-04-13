@@ -70,6 +70,7 @@
     <Content Include="MmdRepository\mmdrepository\powerUser\README.txt" />
     <Content Include="MmdRepository\mmdrepository\powerUser\sfu_cartoon_archive.xml" />
     <Content Include="MmdRepository\mmdrepository\powerUser\truman_library_1948_campaign_cartoons.xml" />
+    <Content Include="MmdRepository\mmdrepository\powerUser\txtf1_spotrep.xml" />
     <Content Include="MmdRepository\mmdrepository\powerUser\urbanSpoon.xml" />
     <Content Include="MmdRepository\mmdrepository\powerUser\uva.xml" />
     <Content Include="MmdRepository\mmdrepository\primitives.xml">
