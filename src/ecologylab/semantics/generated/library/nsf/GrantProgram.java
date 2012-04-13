@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.semantics.generated.library.gps.ContactPoint;
+import ecologylab.semantics.generated.library.nsf.Grant;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -41,6 +42,10 @@ public class GrantProgram extends CompoundDocument
 	@simpl_collection("due_date")
 	@mm_name("due_dates")
 	private List<MetadataDate> dueDates;
+
+	@simpl_collection("grant")
+	@mm_name("grants")
+	private List<Grant> grants;
 
 	public GrantProgram()
 	{ super(); }
@@ -172,5 +177,35 @@ public class GrantProgram extends CompoundDocument
 	public void setDueDates(List<MetadataDate> dueDates)
 	{
 		this.dueDates = dueDates;
+	}
+
+	public List<Grant> getGrants()
+	{
+		return grants;
+	}
+
+  // lazy evaluation:
+  public List<Grant> grants()
+  {
+    if (grants == null)
+      grants = new ArrayList<Grant>();
+    return grants;
+  }
+
+  // addTo:
+  public void addToGrants(Grant element)
+  {
+    grants().add(element);
+  }
+
+  // size:
+  public int grantsSize()
+  {
+    return grants == null ? 0 : grants.size();
+  }
+
+	public void setGrants(List<Grant> grants)
+	{
+		this.grants = grants;
 	}
 }

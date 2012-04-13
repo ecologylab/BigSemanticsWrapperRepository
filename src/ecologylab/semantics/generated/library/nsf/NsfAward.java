@@ -16,10 +16,12 @@ import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +35,9 @@ public class NsfAward extends Grant
 	@simpl_composite
 	@mm_name("division")
 	private NsfDivision division;
+
+	@simpl_scalar
+	private MetadataString amountString;
 
 	@simpl_scalar
 	private MetadataString awardInstrument;
@@ -49,8 +54,9 @@ public class NsfAward extends Grant
 	@simpl_scalar
 	private MetadataString programReferenceCodes;
 
-	@simpl_scalar
-	private MetadataString programElementCodes;
+	@simpl_collection("program_element_code")
+	@mm_name("program_element_codes")
+	private List<MetadataString> programElementCodes;
 
 	public NsfAward()
 	{ super(); }
@@ -68,6 +74,38 @@ public class NsfAward extends Grant
 	public void setDivision(NsfDivision division)
 	{
 		this.division = division;
+	}
+
+	public MetadataString	amountString()
+	{
+		MetadataString	result = this.amountString;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.amountString = result;
+		}
+		return result;
+	}
+
+	public String getAmountString()
+	{
+		return this.amountString == null ? null : amountString().getValue();
+	}
+
+	public MetadataString getAmountStringMetadata()
+	{
+		return amountString;
+	}
+
+	public void setAmountString(String amountString)
+	{
+		if (amountString != null)
+			this.amountString().setValue(amountString);
+	}
+
+	public void setAmountStringMetadata(MetadataString amountString)
+	{
+		this.amountString = amountString;
 	}
 
 	public MetadataString	awardInstrument()
@@ -230,34 +268,32 @@ public class NsfAward extends Grant
 		this.programReferenceCodes = programReferenceCodes;
 	}
 
-	public MetadataString	programElementCodes()
-	{
-		MetadataString	result = this.programElementCodes;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.programElementCodes = result;
-		}
-		return result;
-	}
-
-	public String getProgramElementCodes()
-	{
-		return this.programElementCodes == null ? null : programElementCodes().getValue();
-	}
-
-	public MetadataString getProgramElementCodesMetadata()
+	public List<MetadataString> getProgramElementCodes()
 	{
 		return programElementCodes;
 	}
 
-	public void setProgramElementCodes(String programElementCodes)
-	{
-		if (programElementCodes != null)
-			this.programElementCodes().setValue(programElementCodes);
-	}
+  // lazy evaluation:
+  public List<MetadataString> programElementCodes()
+  {
+    if (programElementCodes == null)
+      programElementCodes = new ArrayList<MetadataString>();
+    return programElementCodes;
+  }
 
-	public void setProgramElementCodesMetadata(MetadataString programElementCodes)
+  // addTo:
+  public void addToProgramElementCodes(MetadataString element)
+  {
+    programElementCodes().add(element);
+  }
+
+  // size:
+  public int programElementCodesSize()
+  {
+    return programElementCodes == null ? 0 : programElementCodes.size();
+  }
+
+	public void setProgramElementCodes(List<MetadataString> programElementCodes)
 	{
 		this.programElementCodes = programElementCodes;
 	}

@@ -9,9 +9,12 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.semantics.generated.library.nsf.GrantProgram;
+import ecologylab.semantics.generated.library.nsf.NsfSearch;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +22,10 @@ import java.util.Map;
 @simpl_inherit
 public class NsfProgram extends GrantProgram
 {
+	@simpl_composite
+	@mm_name("funding_history")
+	private NsfSearch fundingHistory;
+
 	public NsfProgram()
 	{ super(); }
 
@@ -26,4 +33,14 @@ public class NsfProgram extends GrantProgram
 		super(mmd);
 	}
 
+
+	public NsfSearch getFundingHistory()
+	{
+		return fundingHistory;
+	}
+
+	public void setFundingHistory(NsfSearch fundingHistory)
+	{
+		this.fundingHistory = fundingHistory;
+	}
 }

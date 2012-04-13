@@ -27,6 +27,14 @@ public class NsfDivision extends CompoundDocument
 	@mm_name("programs")
 	private List<NsfProgram> programs;
 
+	@simpl_collection("nsf_program")
+	@mm_name("recently_announced")
+	private List<NsfProgram> recentlyAnnounced;
+
+	@simpl_collection("nsf_program")
+	@mm_name("upcoming_due")
+	private List<NsfProgram> upcomingDue;
+
 	public NsfDivision()
 	{ super(); }
 
@@ -63,5 +71,65 @@ public class NsfDivision extends CompoundDocument
 	public void setPrograms(List<NsfProgram> programs)
 	{
 		this.programs = programs;
+	}
+
+	public List<NsfProgram> getRecentlyAnnounced()
+	{
+		return recentlyAnnounced;
+	}
+
+  // lazy evaluation:
+  public List<NsfProgram> recentlyAnnounced()
+  {
+    if (recentlyAnnounced == null)
+      recentlyAnnounced = new ArrayList<NsfProgram>();
+    return recentlyAnnounced;
+  }
+
+  // addTo:
+  public void addToRecentlyAnnounced(NsfProgram element)
+  {
+    recentlyAnnounced().add(element);
+  }
+
+  // size:
+  public int recentlyAnnouncedSize()
+  {
+    return recentlyAnnounced == null ? 0 : recentlyAnnounced.size();
+  }
+
+	public void setRecentlyAnnounced(List<NsfProgram> recentlyAnnounced)
+	{
+		this.recentlyAnnounced = recentlyAnnounced;
+	}
+
+	public List<NsfProgram> getUpcomingDue()
+	{
+		return upcomingDue;
+	}
+
+  // lazy evaluation:
+  public List<NsfProgram> upcomingDue()
+  {
+    if (upcomingDue == null)
+      upcomingDue = new ArrayList<NsfProgram>();
+    return upcomingDue;
+  }
+
+  // addTo:
+  public void addToUpcomingDue(NsfProgram element)
+  {
+    upcomingDue().add(element);
+  }
+
+  // size:
+  public int upcomingDueSize()
+  {
+    return upcomingDue == null ? 0 : upcomingDue.size();
+  }
+
+	public void setUpcomingDue(List<NsfProgram> upcomingDue)
+	{
+		this.upcomingDue = upcomingDue;
 	}
 }
