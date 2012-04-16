@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.semantics.generated.library.nsf.GrantStaff;
-import ecologylab.semantics.generated.library.nsf.NsfDivisionStaffList;
+import ecologylab.semantics.generated.library.nsf.NsfSearch;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
@@ -32,8 +32,8 @@ public class NsfStaff extends GrantStaff
 	private MetadataString affiliation;
 
 	@simpl_composite
-	@mm_name("division_staffs")
-	private NsfDivisionStaffList divisionStaffs;
+	@mm_name("grants_by_search")
+	private NsfSearch grantsBySearch;
 
 	public NsfStaff()
 	{ super(); }
@@ -107,13 +107,13 @@ public class NsfStaff extends GrantStaff
 		this.affiliation = affiliation;
 	}
 
-	public NsfDivisionStaffList getDivisionStaffs()
+	public NsfSearch getGrantsBySearch()
 	{
-		return divisionStaffs;
+		return grantsBySearch;
 	}
 
-	public void setDivisionStaffs(NsfDivisionStaffList divisionStaffs)
+	public void setGrantsBySearch(NsfSearch grantsBySearch)
 	{
-		this.divisionStaffs = divisionStaffs;
+		this.grantsBySearch = grantsBySearch;
 	}
 }
