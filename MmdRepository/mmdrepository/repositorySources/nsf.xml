@@ -127,7 +127,7 @@
     </collection>
     
     <composite name="grants_by_search" type="nsf_search">
-      <scalar name="title" xpath="//span[@class='pageheadline']">
+      <scalar name="title" xpath="//span[@class='pageheadline']" required="true">
         <filter regex="\s*\(.*" replace="" normalize_text="true" />
       </scalar>
       <scalar name="location">
@@ -209,7 +209,7 @@
     </collection>
     
     <composite name="grants_by_search" type="nsf_search">
-      <scalar name="title" xpath="//*[@class='pageheadline']/following::strong[1]">
+      <scalar name="title" xpath="//*[@class='pageheadline']/following::strong[1]" required="true">
         <filter regex="\s+" replace=" " />
       </scalar>
       <scalar name="location">
