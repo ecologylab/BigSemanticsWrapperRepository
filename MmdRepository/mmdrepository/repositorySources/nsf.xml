@@ -67,6 +67,8 @@
     <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503581" />
     <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503286" />
     
+    <scalar name="title" xpath="//span[@class='pageheadline']" />
+    
     <collection name="contacts" xpath="//strong[text()='CONTACTS']/following::table//td[@class='tabletext']/parent::tr">
       <scalar name="title" xpath="./td[1]" />
       <scalar name="email" xpath="./td[2]" />
@@ -277,9 +279,9 @@
 
 
   <meta_metadata name="nsf_search" extends="search" parser="xpath">
-    <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" />
-    <selector url_stripped="http://www.nsf.gov/awardsearch/progSearch.do" />
-    <selector url_stripped="http://www.nsf.gov/awardsearch/afSearch.do" />
+<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" /> -->
+<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/progSearch.do" /> -->
+<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/afSearch.do" /> -->
 
     <collection name="search_results" label="nsf_awards" child_type="nsf_award" xpath="//table[@class='resultTable']/tbody//tr">
       <scalar name="title" xpath="./td[2]/a" />
