@@ -90,12 +90,12 @@
                 xpath="//td[@class='text']//strong[@class='greybold']">
       <scalar name="title" xpath="." />
       <collection name="staffs" child_tag="staff" child_type="nsf_staff" xpath="./following::table[1]//tr[position() mod 3 = 1]">
-        <scalar name="title" xpath="./following:tr[1]/td[1]/a" />
+        <scalar name="title" layer="10.0" xpath="./following::tr[1]/td[1]/a" />
         <scalar name="occupation_title" xpath="." />
-        <scalar name="location" xpath="./following:tr[1]/td[1]/a/@href" hide="true" />
-        <scalar name="telephone" xpath="./following:tr[1]/td[2]" />
-        <scalar name="room" xpath="./following:tr[1]/td[3]" />
-        <scalar name="email" xpath="./following:tr[1]/td[4]/a" />
+        <scalar name="location" xpath="./following::tr[1]/td[1]/a/@href" hide="true" />
+        <scalar name="telephone" xpath="./following::tr[1]/td[2]" />
+        <scalar name="room" xpath="./following::tr[1]/td[3]" />
+        <scalar name="email" xpath="./following::tr[1]/td[4]/a" />
       </collection>
     </collection>
   </meta_metadata>
@@ -173,12 +173,12 @@
       <filter regex="^Title:\s*" replace="" />
     </scalar>
     <scalar name="affiliation" scalar_type="String" />
-    <composite name="division_staffs" type="nsf_division_staff_list" xpath="//strong[text()='Organization:']/following::a[1]">
-      <scalar name="title" xpath=".">
-        <filter regex="\s*\((\w+)\)\s*" group="1" />
-      </scalar>
-      <scalar name="location" xpath="./@href" />
-    </composite>
+<!--     <composite name="division_staffs" type="nsf_division_staff_list" xpath="//strong[text()='Organization:']/following::a[1]"> -->
+<!--       <scalar name="title" xpath="."> -->
+<!--         <filter regex="\s*\((\w+)\)\s*" group="1" /> -->
+<!--       </scalar> -->
+<!--       <scalar name="location" xpath="./@href" /> -->
+<!--     </composite> -->
     <collection name="programs" child_type="nsf_program" xpath="//a[starts-with(@href, '/funding/pgm_summ.jsp')]">
       <scalar name="title" xpath="." />
       <scalar name="location" xpath="./@href" />
@@ -207,6 +207,19 @@
         <filter regex="(^\$)|,|(\.\d\d$)" replace="" />
       </scalar>
     </collection>
+    
+    <composite name="grants_by_search" type="nsf_search">
+      <scalar name="title" xpath="//*[@class='pageheadline']/following::strong[1]">
+        <filter regex="\s+" replace=" " />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;QueryText=&amp;PIFirstName=&amp;PILastName=&amp;PIInstitution=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=false&amp;ProgRefCode=&amp;BooleanRef=false&amp;ProgFoaCode=&amp;OriginalAwardDateOperator=&amp;OriginalAwardDateFrom=&amp;OriginalAwardDateTo=&amp;StartDateOperator=&amp;StartDateFrom=&amp;StartDateTo=&amp;ExpDateOperator=&amp;ExpDateFrom=&amp;ExpDateTo=&amp;AwardNumberOperator=&amp;AwardNumberFrom=&amp;AwardNumberTo=&amp;AwardAmount=&amp;AwardInstrument=&amp;Restriction=0&amp;Search=Search&amp;ProgProgram=&amp;ProgOfficer=</value>
+          <value from_scalar="title" />
+        </concatenate_values>
+        <filter regex="\s+" replace="+" />
+      </scalar>
+    </composite>
     
     <semantic_actions>
       <get_field name="title" />
