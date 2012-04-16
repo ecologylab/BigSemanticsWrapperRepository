@@ -13,7 +13,7 @@
     <scalar name="start_date" scalar_type="Date" />
     <scalar name="expire_date" scalar_type="Date" />
     <scalar name="amount" scalar_type="Int" />
-    <collection name="managers" tag="managers" child_type="author" child_tag="manager" />
+    <collection name="managers" tag="managers" child_type="investigator" child_tag="manager" />
     <composite name="sponsor" type="postal_address" />
     
     <scalar name="abstract_field" scalar_type="String" label="abstract" />
@@ -195,9 +195,20 @@
   				<value from_scalar="amount" />
       </concatenate_values>
     </scalar>
-    <collection name="managers" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Manager:')]/following::td[@class='tabletext2'][1]">
-      <scalar name="title" xpath="." />
-      <scalar name="affiliation" xpath="" />
+    <collection name="managers" child_type="nsf_investigator" extract_as_html="true"
+                xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Program Manager:')]/following::td[@class='tabletext2'][1]">
+      <field_parser name="regex_split_and_find" regex_find="([\w\s.-]+?)&lt;br&gt;(.*)$" trim="true" />
+      <scalar name="title" field_parser_key="$1" layer="-2.0" />
+      <scalar name="affiliation" field_parser_key="$2" layer="-1.0">
+        <filter regex="&lt;.*?&gt;" replace=" " />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;ProgOfficer=</value>
+          <value from_scalar="title" />
+        </concatenate_values>
+        <filter regex="\s+" replace="+" />
+      </scalar>
     </collection>
     <composite name="sponsor" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Sponsor:')]/following::td[@class='tabletext2'][1]">
       <!-- field parser for addresses needed! -->
