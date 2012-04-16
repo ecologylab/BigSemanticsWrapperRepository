@@ -9,10 +9,10 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.creativeWork.Author;
 import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.semantics.generated.library.gps.PostalAddress;
 import ecologylab.semantics.generated.library.nsf.GrantProgram;
+import ecologylab.semantics.generated.library.nsf.Investigator;
 import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -54,7 +54,7 @@ public class Grant extends CreativeWork
 
 	@simpl_collection("manager")
 	@mm_name("managers")
-	private List<Author> managers;
+	private List<Investigator> managers;
 
 	@simpl_composite
 	@mm_name("sponsor")
@@ -241,21 +241,21 @@ public class Grant extends CreativeWork
 		this.amount = amount;
 	}
 
-	public List<Author> getManagers()
+	public List<Investigator> getManagers()
 	{
 		return managers;
 	}
 
   // lazy evaluation:
-  public List<Author> managers()
+  public List<Investigator> managers()
   {
     if (managers == null)
-      managers = new ArrayList<Author>();
+      managers = new ArrayList<Investigator>();
     return managers;
   }
 
   // addTo:
-  public void addToManagers(Author element)
+  public void addToManagers(Investigator element)
   {
     managers().add(element);
   }
@@ -266,7 +266,7 @@ public class Grant extends CreativeWork
     return managers == null ? 0 : managers.size();
   }
 
-	public void setManagers(List<Author> managers)
+	public void setManagers(List<Investigator> managers)
 	{
 		this.managers = managers;
 	}
