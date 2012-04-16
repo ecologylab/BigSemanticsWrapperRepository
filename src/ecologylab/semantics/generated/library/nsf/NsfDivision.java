@@ -8,6 +8,7 @@ package ecologylab.semantics.generated.library.nsf;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.semantics.generated.library.nsf.NsfDivisionStaffList;
 import ecologylab.semantics.generated.library.nsf.NsfProgram;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -15,6 +16,7 @@ import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,10 @@ public class NsfDivision extends CompoundDocument
 	@simpl_collection("nsf_program")
 	@mm_name("upcoming_due")
 	private List<NsfProgram> upcomingDue;
+
+	@simpl_composite
+	@mm_name("staffs")
+	private NsfDivisionStaffList staffs;
 
 	public NsfDivision()
 	{ super(); }
@@ -131,5 +137,15 @@ public class NsfDivision extends CompoundDocument
 	public void setUpcomingDue(List<NsfProgram> upcomingDue)
 	{
 		this.upcomingDue = upcomingDue;
+	}
+
+	public NsfDivisionStaffList getStaffs()
+	{
+		return staffs;
+	}
+
+	public void setStaffs(NsfDivisionStaffList staffs)
+	{
+		this.staffs = staffs;
 	}
 }

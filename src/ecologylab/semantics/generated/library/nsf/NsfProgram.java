@@ -23,6 +23,10 @@ import java.util.Map;
 public class NsfProgram extends GrantProgram
 {
 	@simpl_composite
+	@mm_name("grants_by_search")
+	private NsfSearch grantsBySearch;
+
+	@simpl_composite
 	@mm_name("funding_history")
 	private NsfSearch fundingHistory;
 
@@ -33,6 +37,16 @@ public class NsfProgram extends GrantProgram
 		super(mmd);
 	}
 
+
+	public NsfSearch getGrantsBySearch()
+	{
+		return grantsBySearch;
+	}
+
+	public void setGrantsBySearch(NsfSearch grantsBySearch)
+	{
+		this.grantsBySearch = grantsBySearch;
+	}
 
 	public NsfSearch getFundingHistory()
 	{

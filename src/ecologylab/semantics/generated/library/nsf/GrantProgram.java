@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.nsf;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gps.ContactPoint;
 import ecologylab.semantics.generated.library.nsf.Grant;
+import ecologylab.semantics.generated.library.nsf.GrantStaff;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -29,9 +29,9 @@ import java.util.Map;
 @simpl_inherit
 public class GrantProgram extends CompoundDocument
 {
-	@simpl_collection("contact")
-	@mm_name("contacts")
-	private List<ContactPoint> contacts;
+	@simpl_collection("staff")
+	@mm_name("staffs")
+	private List<GrantStaff> staffs;
 
 	@simpl_scalar
 	private MetadataString synopsis;
@@ -55,34 +55,34 @@ public class GrantProgram extends CompoundDocument
 	}
 
 
-	public List<ContactPoint> getContacts()
+	public List<GrantStaff> getStaffs()
 	{
-		return contacts;
+		return staffs;
 	}
 
   // lazy evaluation:
-  public List<ContactPoint> contacts()
+  public List<GrantStaff> staffs()
   {
-    if (contacts == null)
-      contacts = new ArrayList<ContactPoint>();
-    return contacts;
+    if (staffs == null)
+      staffs = new ArrayList<GrantStaff>();
+    return staffs;
   }
 
   // addTo:
-  public void addToContacts(ContactPoint element)
+  public void addToStaffs(GrantStaff element)
   {
-    contacts().add(element);
+    staffs().add(element);
   }
 
   // size:
-  public int contactsSize()
+  public int staffsSize()
   {
-    return contacts == null ? 0 : contacts.size();
+    return staffs == null ? 0 : staffs.size();
   }
 
-	public void setContacts(List<ContactPoint> contacts)
+	public void setStaffs(List<GrantStaff> staffs)
 	{
-		this.contacts = contacts;
+		this.staffs = staffs;
 	}
 
 	public MetadataString	synopsis()

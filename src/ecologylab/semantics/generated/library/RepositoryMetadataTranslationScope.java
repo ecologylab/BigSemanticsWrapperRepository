@@ -218,17 +218,25 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.nsf.GrantProgram.class,
 
+		ecologylab.semantics.generated.library.nsf.GrantStaff.class,
+
 		ecologylab.semantics.generated.library.nsf.Investigator.class,
 
 		ecologylab.semantics.generated.library.nsf.NsfAward.class,
 
 		ecologylab.semantics.generated.library.nsf.NsfDivision.class,
 
+		ecologylab.semantics.generated.library.nsf.NsfDivisionStaffList.class,
+
 		ecologylab.semantics.generated.library.nsf.NsfInvestigator.class,
 
 		ecologylab.semantics.generated.library.nsf.NsfProgram.class,
 
+		ecologylab.semantics.generated.library.nsf.NsfProgramStaffList.class,
+
 		ecologylab.semantics.generated.library.nsf.NsfSearch.class,
+
+		ecologylab.semantics.generated.library.nsf.NsfStaff.class,
 
 		ecologylab.semantics.generated.library.opml.Body.class,
 
