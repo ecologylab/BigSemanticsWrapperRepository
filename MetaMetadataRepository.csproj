@@ -97,12 +97,14 @@
     <Content Include="MmdRepository\mmdrepository\repositorySources\news.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\nsf.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\opml.xml" />
-    <Content Include="MmdRepository\mmdrepository\repositorySources\patents.xml" />
+    <Content Include="MmdRepository\mmdrepository\repositorySources\patents.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="MmdRepository\mmdrepository\repositorySources\products.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\publication.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\restaurant.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\rss.xml" />
-    <Content Include="MmdRepository\mmdrepository\repositorySources\scholarlyPublication.xml" />
+    <Content Include="MmdRepository\mmdrepository\repositorySources\scholarlyArticle.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\scienceDirect.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\search.xml" />
     <Content Include="MmdRepository\mmdrepository\repositorySources\slashdot.xml" />
