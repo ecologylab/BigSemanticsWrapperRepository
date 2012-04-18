@@ -418,26 +418,26 @@
     <collection name="search_results" label="nsf_awards" child_type="nsf_award" xpath="//table[@class='resultTable']/tbody//tr">
       <scalar name="title" xpath="./td[2]/a" />
       <scalar name="location" xpath="./td[2]/a/@href" />
-<!--       <composite name="division" type="nsf_division" xpath="./td[3]/a"> -->
-<!--         <scalar name="title" xpath="." /> -->
-<!--         <scalar name="location" xpath="./@href" /> -->
-<!--       </composite> -->
-<!--       <collection name="authors" child_type="nsf_investigator" xpath="./td[6]//a"> -->
-<!--         <scalar name="title" xpath="." /> -->
-<!--         <scalar name="location" xpath="./@href" /> -->
-<!--       </collection>  -->
-<!--       <collection name="programs" child_type="nsf_program" xpath="./td[4]//a"> -->
-<!--         <scalar name="title" xpath="." /> -->
-<!--         <scalar name="location" xpath="./@href" /> -->
-<!--       </collection> -->
-<!--       <scalar name="start_date" xpath="./td[5]" /> -->
-<!--       <composite name="sponsor" xpath="./td[8]"> -->
-<!--         <scalar name="title" xpath="." /> -->
-<!--         <scalar name="location" xpath="./@href" /> -->
-<!--       </composite> -->
-<!--       <scalar name="amount" xpath="./td[9]"> -->
-<!--         <filter regex="(^\$)|,|(\.\d\d$)" replace="" /> -->
-<!--       </scalar> -->
+      <composite name="division" type="nsf_division" xpath="./td[3]/a">
+        <scalar name="title" xpath="." />
+        <scalar name="location" xpath="./@href" />
+      </composite>
+      <collection name="authors" child_type="nsf_investigator" xpath="./td[6]//a">
+        <scalar name="title" xpath="." />
+        <scalar name="location" xpath="./@href" />
+      </collection> 
+      <collection name="programs" child_type="nsf_program" xpath="./td[4]//a">
+        <scalar name="title" xpath="." />
+        <scalar name="location" xpath="./@href" />
+      </collection>
+      <scalar name="start_date" xpath="./td[5]" />
+      <composite name="sponsor" xpath="./td[8]">
+        <scalar name="title" xpath="." />
+        <scalar name="location" xpath="./@href" />
+      </composite>
+      <scalar name="amount" xpath="./td[9]">
+        <filter regex="(^\$)|,|(\.\d\d$)" replace="" />
+      </scalar>
     </collection>
   </meta_metadata>
 
