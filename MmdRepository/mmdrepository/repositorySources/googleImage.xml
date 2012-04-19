@@ -1,5 +1,15 @@
 <meta_metadata_repository name="google_image" package="ecologylab.semantics.generated.library.google_image" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default_user_agent_name="chrome_2">
 
+  <meta_metadata name="google_image" type="image" parser="image">
+    <selector url_regex="https://encrypted-tbn[0-9]+\.google\.com/images" domain="google.com" />
+    
+    <before_semantic_actions>
+      <filter_location>
+        <regex match="https://encrypted-tbn[0-9]+\.google\.com/images" replace="http://t3.gstatic.com/images" />
+      </filter_location>
+    </before_semantic_actions>
+  </meta_metadata>
+
 	<meta_metadata name="google_image_search" type="image_search" comment="Google image search." parser="xpath" user_agent_name="chrome_12">
   	<selector url_regex="https?://www.google.com/search\?tbm=isch.*" domain="google.com" />
     <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
