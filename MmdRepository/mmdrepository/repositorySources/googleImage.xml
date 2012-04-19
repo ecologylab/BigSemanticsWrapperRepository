@@ -5,7 +5,7 @@
     
     <before_semantic_actions>
       <filter_location>
-        <regex match="https://encrypted-tbn[0-9]+\.google\.com/images" replace="http://t3.gstatic.com/images" />
+        <regex match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
       </filter_location>
     </before_semantic_actions>
   </meta_metadata>
