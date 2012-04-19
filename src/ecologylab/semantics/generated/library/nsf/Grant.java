@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
+import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.generated.library.gps.PostalAddress;
 import ecologylab.semantics.generated.library.nsf.GrantProgram;
 import ecologylab.semantics.generated.library.nsf.GrantStaff;

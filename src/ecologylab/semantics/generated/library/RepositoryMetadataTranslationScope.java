@@ -26,12 +26,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,
 
-		ecologylab.semantics.generated.library.GoogleImageSearchPage.class,
-
-		ecologylab.semantics.generated.library.GoogleImageSearchType.class,
-
-		ecologylab.semantics.generated.library.ImageResult.class,
-
 		ecologylab.semantics.generated.library.Lolz.class,
 
 		ecologylab.semantics.generated.library.PdfMixin.class,
@@ -72,13 +66,13 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.camera.CameraSettings.class,
 
-		ecologylab.semantics.generated.library.creativeWork.Author.class,
+		ecologylab.semantics.generated.library.creative_work.Author.class,
 
-		ecologylab.semantics.generated.library.creativeWork.BasicPublication.class,
+		ecologylab.semantics.generated.library.creative_work.BasicPublication.class,
 
-		ecologylab.semantics.generated.library.creativeWork.CreativeWork.class,
+		ecologylab.semantics.generated.library.creative_work.CreativeWork.class,
 
-		ecologylab.semantics.generated.library.creativeWork.Periodical.class,
+		ecologylab.semantics.generated.library.creative_work.Periodical.class,
 
 		ecologylab.semantics.generated.library.dlese.AdditionalMetadata.class,
 
@@ -328,7 +322,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.GoogleScholarSearchResult.class,
 
-		ecologylab.semantics.generated.library.search.ImageInSearchResult.class,
+		ecologylab.semantics.generated.library.search.ImageSearch.class,
+
+		ecologylab.semantics.generated.library.search.ImageSearchResult.class,
 
 		ecologylab.semantics.generated.library.search.Search.class,
 

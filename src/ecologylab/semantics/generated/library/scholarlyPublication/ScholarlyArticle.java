@@ -9,8 +9,8 @@ package ecologylab.semantics.generated.library.scholarlyPublication;
  */
 
 import ecologylab.semantics.generated.library.Tag;
-import ecologylab.semantics.generated.library.creativeWork.CreativeWork;
-import ecologylab.semantics.generated.library.creativeWork.Periodical;
+import ecologylab.semantics.generated.library.creative_work.CreativeWork;
+import ecologylab.semantics.generated.library.creative_work.Periodical;
 import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;

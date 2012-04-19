@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.publication;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.creativeWork.Author;
+import ecologylab.semantics.generated.library.creative_work.Author;
 import ecologylab.semantics.generated.library.publication.Publication;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;

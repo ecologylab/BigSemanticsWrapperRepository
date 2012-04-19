@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.publication;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.creativeWork.BasicPublication;
+import ecologylab.semantics.generated.library.creative_work.BasicPublication;
 import ecologylab.semantics.generated.library.publication.Subject;
 import ecologylab.semantics.generated.library.publication.TermType;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
