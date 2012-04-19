@@ -44,6 +44,10 @@
       </if>
 		</semantic_actions>  -->
 	</meta_metadata>
+  
+  <meta_metadata name="image_search" extends="search">
+    <collection name="search_results" child_type="image_search_result" child_tag="image_search_result" />
+  </meta_metadata>
 
 	<meta_metadata name="google_search" type="search" comment="The google Search class" user_agent_name="firefox_5" parser="xpath">
 		<selector url_regex="http://www.google.com/search\?(?:(?!tbm=pts).)*" domain="google.com"/>
@@ -232,14 +236,11 @@
 	</meta_metadata>
 
 	<!-- this definition of image might apply to many other XML-based search results. -->
-	<meta_metadata name="image_in_search_result" extends="image" comment="Def of an image in a Bing image search result.">
-		<scalar name="title" tag="mms:Title" /> <!-- shadows image.caption? -->
-		<scalar name="location" tag="mms:Url" /> <!-- shadows image.location? -->
-		<scalar name="width" tag="mms:Width" />
-		<scalar name="height" tag="mms:Height" />
-		<scalar name="content_type" scalar_type="String" tag="mms:ContentType" />
-		<scalar name="referrer_url" scalar_type="ParsedURL" />
-		<scalar name="file_size" scalar_type="Int" tag="mms:FileSize" />
+	<meta_metadata name="image_search_result" extends="image" comment="Def of an image in a Bing image search result.">
+		<scalar name="ref_location" scalar_type="ParsedURL" />
+		<scalar name="thumb_width" scalar_type="Int" />
+		<scalar name="thumb_height" scalar_type="Int" />
+		<scalar name="file_size" scalar_type="Int" />
 	</meta_metadata>
 
 	<!-- definitions of Bing search results from different sources. was extends document -->
