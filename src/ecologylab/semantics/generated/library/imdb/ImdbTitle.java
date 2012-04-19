@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.imdb;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.movie.MovieInfo;
+import ecologylab.semantics.generated.library.movie.Movie;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -27,7 +27,7 @@ import java.util.Map;
  *IMDB metadata
  */ 
 @simpl_inherit
-public class ImdbTitle extends MovieInfo
+public class ImdbTitle extends Movie
 {
 	@simpl_scalar
 	private MetadataString gist;

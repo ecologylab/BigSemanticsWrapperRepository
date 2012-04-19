@@ -178,13 +178,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.imdb.BirthDetail.class,
 
-		ecologylab.semantics.generated.library.imdb.ImdbChart.class,
-
-		ecologylab.semantics.generated.library.imdb.ImdbGenre.class,
-
 		ecologylab.semantics.generated.library.imdb.ImdbTitle.class,
-
-		ecologylab.semantics.generated.library.imdb.PersonDetails.class,
 
 		ecologylab.semantics.generated.library.misc.DcDocument.class,
 
@@ -196,7 +190,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.movie.Cast.class,
 
-		ecologylab.semantics.generated.library.movie.MovieInfo.class,
+		ecologylab.semantics.generated.library.movie.Movie.class,
 
 		ecologylab.semantics.generated.library.movie.Netflix.class,
 
