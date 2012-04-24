@@ -275,7 +275,7 @@
 	</meta_metadata>
 		
 	
-	<meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search apie.">
+	<meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search api.">
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
 		<scalar name="query" xpath="//searchterms/text()" ignore_in_term_vector="true"/>
 		
