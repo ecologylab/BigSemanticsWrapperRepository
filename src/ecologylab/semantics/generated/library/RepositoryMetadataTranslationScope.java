@@ -298,9 +298,23 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rwandatribunal.VideoInterview.class,
 
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortal.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalAuthor.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalAuthorCollaborators.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalInstitutionProfile.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalPeriodical.class,
+
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearch.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetail.class,
+
+		ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetailInstitution.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.class,
 

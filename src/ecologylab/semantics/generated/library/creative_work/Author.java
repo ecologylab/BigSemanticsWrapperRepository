@@ -8,14 +8,18 @@ package ecologylab.semantics.generated.library.creative_work;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +34,10 @@ public class Author extends Document
 
 	@simpl_scalar
 	private MetadataString city;
+
+	@simpl_collection("creative_work")
+	@mm_name("publications")
+	private List<CreativeWork> publications;
 
 	public Author()
 	{ super(); }
@@ -101,5 +109,35 @@ public class Author extends Document
 	public void setCityMetadata(MetadataString city)
 	{
 		this.city = city;
+	}
+
+	public List<CreativeWork> getPublications()
+	{
+		return publications;
+	}
+
+  // lazy evaluation:
+  public List<CreativeWork> publications()
+  {
+    if (publications == null)
+      publications = new ArrayList<CreativeWork>();
+    return publications;
+  }
+
+  // addTo:
+  public void addToPublications(CreativeWork element)
+  {
+    publications().add(element);
+  }
+
+  // size:
+  public int publicationsSize()
+  {
+    return publications == null ? 0 : publications.size();
+  }
+
+	public void setPublications(List<CreativeWork> publications)
+	{
+		this.publications = publications;
 	}
 }
