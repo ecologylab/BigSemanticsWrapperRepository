@@ -142,7 +142,7 @@
 			<scalar name="location" xpath=".//td[text()='Title']/following-sibling::td/a[1]" />
 			<scalar name="title" xpath=".//td[text()='Title']/following-sibling::td[1]" />
 			<collection name="authors" child_type="acm_portal_author" label="chairs" comment="Publication general/program chairs." xpath=".//td[contains(text(), 'Chairs')]/following-sibling::td/a">
-				<scalar name="location" xpath="./@href">
+				<scalar name="location" xpath="./../a[starts-with(@href, 'author_page.cfm')]/@href">
 				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)" replace="" />
 				</scalar>
 				<scalar name="title" xpath="." />
@@ -155,13 +155,16 @@
 			<scalar name="isbn" xpath=".//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]">
 				<filter regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
 			</scalar>
-			<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
+			<!-- xpath that could be used that returns all documents instead of just the first 10: 
+						<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
+			 -->
+			<collection name="articles" xpath="./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href, 'citation.cfm')]/../../..">
 				<scalar name="title" xpath=".//a" />
 				<scalar name="description" xpath="./following::tr[position() = 4]//div[@style='display:inline']" />
 				<scalar name="location" xpath=".//a/@href" />
 				<collection name="authors" child_type="acm_portal_author" xpath="./following::tr[position() = 1]//a">
 					<scalar name="title" xpath="./text()"/>
-	    			<scalar name="location" xpath="./@href" />
+	    			<scalar name="location" xpath="./../a[starts-with(@href, 'author_page.cfm')]/@href" />
 				</collection>
 			</collection>
 		</composite>
