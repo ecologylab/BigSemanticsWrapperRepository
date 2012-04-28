@@ -2,7 +2,7 @@
 	
 	<meta_metadata name="interview" extends="metadata" comment="personnel interview">
 		<scalar name="interviewee" scalar_type="String"/>
-		<scalar name="pic" scalar_type="ParsedURL" comment="personnel pic"/>
+		<scalar name="image" scalar_type="ParsedURL" comment="personnel photograph"/>
 		<collection name="voices" child_type="video_interview" comment="topic videos"/>
 		<collection name="segments" child_type="video_interview" comment="segmented videos"/>
 	</meta_metadata>
@@ -23,14 +23,14 @@
 		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
 			<scalar name="category" xpath="."/>
 			<collection name="interviews" xpath="./following::div[@class='item']">
-				<scalar name="interviewee" xpath="./table/tbody/tr/td[2]/h2" layer="9.9"/>
-				<scalar name="pic" xpath="./table/tbody/tr/td[1]/img[@class='interview_photo']/@src"/>
-				<scalar name="description" xpath="./table/tbody/tr/td[2]/p"/>
-				<collection name="voices" xpath="./table/tbody/tr/td[2]/ul/li">
+				<scalar name="interviewee" xpath=".//h2" layer="9.9"/>
+				<scalar name="image" xpath=".//img[@class='interview_photo']/@src"/>
+				<scalar name="description" xpath=".//p"/>
+				<collection name="voices" xpath=".//li">
 					<scalar name="title" xpath="./a"/>
 					<scalar name="location" xpath="./a/@href"/>
 				</collection>
-				<collection name="segments" xpath="./table/tbody/tr/td[2]/table[@class='video_list']/tbody//a">
+				<collection name="segments" xpath=".//table[@class='video_list']//a">
 					<scalar name="title" xpath="."/>
 					<scalar name="location" xpath="./@href"/>
 				</collection>
@@ -41,16 +41,17 @@
 	<meta_metadata name="video_interview" extends="document" parser="xpath" comment="video interview">
 		<selector url_path_tree="http://www.tribunalvoices.org/voices/video/"/>
 		<selector url_path_tree="http://tribunalvoices.org/voices/video/"/>
-		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']/table/tbody" />
-		<scalar name="interviewee" scalar_type="String" context_node="interview_table" xpath="tr/td[1]/h1"/>
-		<scalar name="title" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/h2"/>
-		<scalar name="position" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[1]/td"/>
-		<scalar name="country_of_origin" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[2]/td"/>
-		<scalar name="interview_date" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[3]/td"/>
-		<scalar name="interviewers" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[4]/td"/>
-		<scalar name="part_or_timestamp" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[5]/td"/>
-		<scalar name="video_download_link" scalar_type="ParsedURL" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/small/a[1]/@href"/>
-		<scalar name="audio_download_link" scalar_type="ParsedURL" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/small/a[2]/@href"/>
+		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']" />
+		<def_var name="video_credits" type="node" xpath="//table[@class='video_credits']/tbody" />
+		<scalar name="interviewee" scalar_type="String" context_node="interview_table" xpath="//h1"/>
+		<scalar name="title" context_node="interview_table" xpath="//h2"/>
+		<scalar name="position" scalar_type="String" context_node="video_credits" xpath="tr[1]/td"/>
+		<scalar name="country_of_origin" scalar_type="String" context_node="video_credits" xpath="tr[2]/td"/>
+		<scalar name="interview_date" scalar_type="String" context_node="video_credits" xpath="tr[3]/td"/>
+		<scalar name="interviewers" scalar_type="String" context_node="video_credits" xpath="tr[4]/td"/>
+		<scalar name="part_or_timestamp" scalar_type="String" context_node="video_credits" xpath="tr[5]/td"/>
+		<scalar name="video_download_link" scalar_type="ParsedURL" context_node="interview_table" xpath="//small/a[1]/@href"/>
+		<scalar name="audio_download_link" scalar_type="ParsedURL" context_node="interview_table" xpath="//small/a[2]/@href"/>
 	</meta_metadata>
 	
 </meta_metadata_repository>
