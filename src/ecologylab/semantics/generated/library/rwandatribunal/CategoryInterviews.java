@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.rwandatribunal;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.rwandatribunal.Interview;
+import ecologylab.semantics.generated.library.rwandatribunal.PersonnelInterview;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -38,9 +38,9 @@ public class CategoryInterviews extends Metadata
 	/** 
 	 *personnel interview
 	 */ 
-	@simpl_collection("interview")
+	@simpl_collection("personnel_interview")
 	@mm_name("interviews")
-	private List<Interview> interviews;
+	private List<PersonnelInterview> interviews;
 
 	public CategoryInterviews()
 	{ super(); }
@@ -82,21 +82,21 @@ public class CategoryInterviews extends Metadata
 		this.category = category;
 	}
 
-	public List<Interview> getInterviews()
+	public List<PersonnelInterview> getInterviews()
 	{
 		return interviews;
 	}
 
   // lazy evaluation:
-  public List<Interview> interviews()
+  public List<PersonnelInterview> interviews()
   {
     if (interviews == null)
-      interviews = new ArrayList<Interview>();
+      interviews = new ArrayList<PersonnelInterview>();
     return interviews;
   }
 
   // addTo:
-  public void addToInterviews(Interview element)
+  public void addToInterviews(PersonnelInterview element)
   {
     interviews().add(element);
   }
@@ -107,7 +107,7 @@ public class CategoryInterviews extends Metadata
     return interviews == null ? 0 : interviews.size();
   }
 
-	public void setInterviews(List<Interview> interviews)
+	public void setInterviews(List<PersonnelInterview> interviews)
 	{
 		this.interviews = interviews;
 	}

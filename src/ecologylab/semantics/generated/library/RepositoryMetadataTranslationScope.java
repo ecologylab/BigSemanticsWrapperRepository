@@ -292,7 +292,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rwandatribunal.CategoryInterviews.class,
 
-		ecologylab.semantics.generated.library.rwandatribunal.Interview.class,
+		ecologylab.semantics.generated.library.rwandatribunal.PersonnelInterview.class,
 
 		ecologylab.semantics.generated.library.rwandatribunal.TribunalVoices.class,
 
