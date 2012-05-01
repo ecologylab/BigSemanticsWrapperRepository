@@ -58,7 +58,7 @@
 </meta_metadata>
 
 <meta_metadata name="trip_advisor" extends="hotel" parser="xpath">
-	<selector url_regex="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com"/>
+	<selector url_regex_fragment="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com"/>
 	
 	<example_url location="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html"/>
 
