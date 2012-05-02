@@ -85,7 +85,7 @@
         <scalar name="title" xpath="./text()"/>
        </composite>
        
-       <collection name="publications" label="recent" ignore_in_term_vector="true" child_type="scholarly_article"  xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
+       <collection name="publications" label="recent" ignore_in_term_vector="true" child_type="acm_portal"  xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />
 			<scalar name="description" xpath="./tr[5]" />
 			<scalar name="location" xpath="./tr[1]/td/a/@href" />
@@ -111,7 +111,7 @@
 	<collection name="articles" child_type="scholarly_article"/>
 </meta_metadata>
 
-<meta_metadata name="acm_portal" type="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
+<meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
 
 		 <!-- <selector url_stripped="http://portal.acm.org/citation.cfm" /> -->
 		<selector url_stripped="http://dl.acm.org/citation.cfm" />
@@ -190,7 +190,7 @@
 		</collection>
 		 -->
 		
-	<collection name="references" xpath="/html/body/div[2]/div/div[5]/table/tbody/tr//a[starts-with(@href, 'citation.cfm')]/../..">
+	<collection name="references" child_type="acm_portal" xpath="/html/body/div[2]/div/div[5]/table/tbody/tr//a[starts-with(@href, 'citation.cfm')]/../..">
 	      	<scalar name="title" xpath=".//a[1]/text()" />
 			<scalar name="location" xpath=".//a[1]/@href">
 			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)" replace="preflayout=flat" />
@@ -198,7 +198,7 @@
 	</collection>
 	
 
-	<collection name="citations" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
+	<collection name="citations" child_type="acm_portal" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
 	      	<field_parser name="acm_reference" for_each_element="true" />
 	      	<scalar name="title" layer="20.0" field_parser_key="$title" />
 			<scalar name="location" xpath=".//a[1]/@href">
