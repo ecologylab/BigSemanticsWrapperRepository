@@ -24,7 +24,7 @@
 			<scalar name="category" xpath="."/>
 			<collection name="interviews" child_type="personnel_interview" child_tag="interview" xpath="./following::div[@class='item']">
 				<scalar name="title" label="name" navigates_to="location" xpath=".//h2"/>
-				<scalar name="location" xpath="./@id" hide="TRUE">
+				<scalar name="location" xpath="./@id" hide="true">
 					<filter regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
 				</scalar>
 			</collection>
@@ -35,6 +35,7 @@
 		<selector url_path_tree="http://www.tribunalvoices.org/voices/interview/"/>
 		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']" />
 		<scalar name="title" label="name" navigates_to="location" context_node="interview_table" xpath=".//h1"/>
+		<scalar name="location" hide="true"/>
 		<scalar name="role" scalar_type="String" context_node="interview_table" xpath=".//h2"/>
 		<scalar name="description" context_node="interview_table" xpath=".//p"/>
 		<scalar name="image" scalar_type="ParsedURL" context_node="interview_table" xpath=".//img[@class='interview_photo']/@src"/>
@@ -60,6 +61,7 @@
 		<scalar name="title" context_node="interview_table" xpath=".//h2">
 			<filter regex="Please help us index this " replace="" />
 		</scalar>
+		<scalar name="location" hide="true"/>
 		<scalar name="role" scalar_type="String" context_node="video_credits" xpath="./tr[1]/td"/>
 		<scalar name="country_of_origin" scalar_type="String" context_node="video_credits" xpath="./tr[2]/td"/>
 		<scalar name="interview_date" scalar_type="String" context_node="video_credits" xpath="./tr[3]/td"/>
