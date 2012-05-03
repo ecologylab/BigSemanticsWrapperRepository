@@ -25,7 +25,7 @@ import java.util.Map;
  *video interview
  */ 
 @simpl_inherit
-public class VideoInterview extends Document
+public class VideoInterview1 extends Document
 {
 	@simpl_scalar
 	private MetadataString interviewee;
@@ -51,10 +51,10 @@ public class VideoInterview extends Document
 	@simpl_scalar
 	private MetadataParsedURL audioDownloadLink;
 
-	public VideoInterview()
+	public VideoInterview1()
 	{ super(); }
 
-	public VideoInterview(MetaMetadataCompositeField mmd) {
+	public VideoInterview1(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

@@ -32,10 +32,10 @@ import java.util.Map;
 public class PersonnelInterview extends Document
 {
 	@simpl_scalar
-	private MetadataParsedURL image;
+	private MetadataString role;
 
 	@simpl_scalar
-	private MetadataString role;
+	private MetadataParsedURL image;
 
 	@simpl_collection("video_interview")
 	@mm_name("speaks_on")
@@ -52,38 +52,6 @@ public class PersonnelInterview extends Document
 		super(mmd);
 	}
 
-
-	public MetadataParsedURL	image()
-	{
-		MetadataParsedURL	result = this.image;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.image = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getImage()
-	{
-		return this.image == null ? null : image().getValue();
-	}
-
-	public MetadataParsedURL getImageMetadata()
-	{
-		return image;
-	}
-
-	public void setImage(ParsedURL image)
-	{
-		if (image != null)
-			this.image().setValue(image);
-	}
-
-	public void setImageMetadata(MetadataParsedURL image)
-	{
-		this.image = image;
-	}
 
 	public MetadataString	role()
 	{
@@ -115,6 +83,38 @@ public class PersonnelInterview extends Document
 	public void setRoleMetadata(MetadataString role)
 	{
 		this.role = role;
+	}
+
+	public MetadataParsedURL	image()
+	{
+		MetadataParsedURL	result = this.image;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.image = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getImage()
+	{
+		return this.image == null ? null : image().getValue();
+	}
+
+	public MetadataParsedURL getImageMetadata()
+	{
+		return image;
+	}
+
+	public void setImage(ParsedURL image)
+	{
+		if (image != null)
+			this.image().setValue(image);
+	}
+
+	public void setImageMetadata(MetadataParsedURL image)
+	{
+		this.image = image;
 	}
 
 	public List<VideoInterview> getSpeaksOn()
