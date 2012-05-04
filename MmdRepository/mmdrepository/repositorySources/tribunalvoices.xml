@@ -13,7 +13,7 @@
 	
 	<meta_metadata name="category_interviews" extends="metadata" comment="categorized interviews">
 		<scalar name="category" scalar_type="String" comment="category"/>
-		<collection name="interviews" child_type="personnel_interview" comment="personnel interview"/>
+		<collection name="people" child_type="personnel_interview" comment="personnel interview"/>
 	</meta_metadata>
 	
 	<meta_metadata name="tribunal_voices" extends="document" parser="xpath" comment="Video Interviews with personnel from Rwanda Tribunal">
@@ -22,7 +22,7 @@
 		<scalar name="title" xpath="//div[@class='tv_voices_panel']/h1" />
 		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
 			<scalar name="category" xpath="."/>
-			<collection name="interviews" child_type="personnel_interview" child_tag="interview" xpath="./following::div[@class='item']">
+			<collection name="people" child_type="personnel_interview" xpath="./following::div[@class='item']">
 				<scalar name="title" label="name" navigates_to="location" xpath=".//h2"/>
 				<scalar name="location" xpath="./@id" hide="true">
 					<filter regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
