@@ -39,8 +39,8 @@ public class CategoryInterviews extends Metadata
 	 *personnel interview
 	 */ 
 	@simpl_collection("personnel_interview")
-	@mm_name("interviews")
-	private List<PersonnelInterview> interviews;
+	@mm_name("people")
+	private List<PersonnelInterview> people;
 
 	public CategoryInterviews()
 	{ super(); }
@@ -82,33 +82,33 @@ public class CategoryInterviews extends Metadata
 		this.category = category;
 	}
 
-	public List<PersonnelInterview> getInterviews()
+	public List<PersonnelInterview> getPeople()
 	{
-		return interviews;
+		return people;
 	}
 
   // lazy evaluation:
-  public List<PersonnelInterview> interviews()
+  public List<PersonnelInterview> people()
   {
-    if (interviews == null)
-      interviews = new ArrayList<PersonnelInterview>();
-    return interviews;
+    if (people == null)
+      people = new ArrayList<PersonnelInterview>();
+    return people;
   }
 
   // addTo:
-  public void addToInterviews(PersonnelInterview element)
+  public void addToPeople(PersonnelInterview element)
   {
-    interviews().add(element);
+    people().add(element);
   }
 
   // size:
-  public int interviewsSize()
+  public int peopleSize()
   {
-    return interviews == null ? 0 : interviews.size();
+    return people == null ? 0 : people.size();
   }
 
-	public void setInterviews(List<PersonnelInterview> interviews)
+	public void setPeople(List<PersonnelInterview> people)
 	{
-		this.interviews = interviews;
+		this.people = people;
 	}
 }
