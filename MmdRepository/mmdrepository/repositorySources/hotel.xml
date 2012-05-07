@@ -3,9 +3,9 @@
 <meta_metadata name="hotel" extends="document">
 	<collection name="reviews" child_type="product_review"/>
 
- 	<composite name="place" type="postal_address" /> 
+ 	<composite name="place" type="postal_address" layer="0.8" style="reviews_div"/> 
 	
-	<scalar name="price" scalar_type="String" />
+	<scalar name="price" scalar_type="String" layer="0.8" style="reviews_div"/>
 	
 	<scalar name="space_size" label="size" scalar_type="String" />
 	
@@ -64,7 +64,7 @@
 
 	<scalar name="title" xpath="//h1[@id='HEADING']" />
 	
-	<scalar name="overall_rating" scalar_type="string" xpath="//div[@class='slim_ranking']" />
+	<scalar name="overall_rating" scalar_type="string" xpath="//div[@class='slim_ranking']" layer="1.6" style="topRight_div"/>
 
 	<composite name="place" xpath="//span[@rel='v:address']/span/span[@class='locality']">
 		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
