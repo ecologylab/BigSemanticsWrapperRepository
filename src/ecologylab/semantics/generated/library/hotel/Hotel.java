@@ -28,16 +28,16 @@ import java.util.Map;
 @simpl_inherit
 public class Hotel extends Document
 {
-	@simpl_collection("product_review")
-	@mm_name("reviews")
-	private List<ProductReview> reviews;
-
 	@simpl_composite
 	@mm_name("place")
 	private PostalAddress place;
 
 	@simpl_scalar
 	private MetadataString price;
+
+	@simpl_collection("product_review")
+	@mm_name("reviews")
+	private List<ProductReview> reviews;
 
 	@simpl_scalar
 	private MetadataString spaceSize;
@@ -61,36 +61,6 @@ public class Hotel extends Document
 		super(mmd);
 	}
 
-
-	public List<ProductReview> getReviews()
-	{
-		return reviews;
-	}
-
-  // lazy evaluation:
-  public List<ProductReview> reviews()
-  {
-    if (reviews == null)
-      reviews = new ArrayList<ProductReview>();
-    return reviews;
-  }
-
-  // addTo:
-  public void addToReviews(ProductReview element)
-  {
-    reviews().add(element);
-  }
-
-  // size:
-  public int reviewsSize()
-  {
-    return reviews == null ? 0 : reviews.size();
-  }
-
-	public void setReviews(List<ProductReview> reviews)
-	{
-		this.reviews = reviews;
-	}
 
 	public PostalAddress getPlace()
 	{
@@ -132,6 +102,36 @@ public class Hotel extends Document
 	public void setPriceMetadata(MetadataString price)
 	{
 		this.price = price;
+	}
+
+	public List<ProductReview> getReviews()
+	{
+		return reviews;
+	}
+
+  // lazy evaluation:
+  public List<ProductReview> reviews()
+  {
+    if (reviews == null)
+      reviews = new ArrayList<ProductReview>();
+    return reviews;
+  }
+
+  // addTo:
+  public void addToReviews(ProductReview element)
+  {
+    reviews().add(element);
+  }
+
+  // size:
+  public int reviewsSize()
+  {
+    return reviews == null ? 0 : reviews.size();
+  }
+
+	public void setReviews(List<ProductReview> reviews)
+	{
+		this.reviews = reviews;
 	}
 
 	public MetadataString	spaceSize()

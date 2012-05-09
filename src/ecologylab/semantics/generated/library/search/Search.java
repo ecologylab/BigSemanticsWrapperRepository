@@ -18,6 +18,7 @@ import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
 import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_scope;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +30,9 @@ public class Search extends Document
 	@simpl_scalar
 	private MetadataString query;
 
-	@simpl_collection("document")
+	@simpl_collection
 	@simpl_nowrap
+	@simpl_scope("repository_documents")
 	@mm_name("search_results")
 	private List<Document> searchResults;
 

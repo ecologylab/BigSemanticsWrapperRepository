@@ -32,15 +32,12 @@ import java.util.Map;
 @simpl_inherit
 public class Product extends CompoundDocument
 {
-	@simpl_collection("product_review")
-	@mm_name("reviews")
-	private List<ProductReview> reviews;
-
 	@simpl_scalar
 	private MetadataString price;
 
-	@simpl_scalar
-	private MetadataString model;
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
 
 	@simpl_scalar
 	private MetadataString overallRating;
@@ -48,9 +45,12 @@ public class Product extends CompoundDocument
 	@simpl_scalar
 	private MetadataInteger numReviews;
 
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
+	@simpl_collection("product_review")
+	@mm_name("reviews")
+	private List<ProductReview> reviews;
+
+	@simpl_scalar
+	private MetadataString model;
 
 	@simpl_scalar
 	private MetadataParsedURL reviewsLocation;
@@ -62,36 +62,6 @@ public class Product extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public List<ProductReview> getReviews()
-	{
-		return reviews;
-	}
-
-  // lazy evaluation:
-  public List<ProductReview> reviews()
-  {
-    if (reviews == null)
-      reviews = new ArrayList<ProductReview>();
-    return reviews;
-  }
-
-  // addTo:
-  public void addToReviews(ProductReview element)
-  {
-    reviews().add(element);
-  }
-
-  // size:
-  public int reviewsSize()
-  {
-    return reviews == null ? 0 : reviews.size();
-  }
-
-	public void setReviews(List<ProductReview> reviews)
-	{
-		this.reviews = reviews;
-	}
 
 	public MetadataString	price()
 	{
@@ -125,36 +95,14 @@ public class Product extends CompoundDocument
 		this.price = price;
 	}
 
-	public MetadataString	model()
+	public Image getImage()
 	{
-		MetadataString	result = this.model;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.model = result;
-		}
-		return result;
+		return image;
 	}
 
-	public String getModel()
+	public void setImage(Image image)
 	{
-		return this.model == null ? null : model().getValue();
-	}
-
-	public MetadataString getModelMetadata()
-	{
-		return model;
-	}
-
-	public void setModel(String model)
-	{
-		if (model != null)
-			this.model().setValue(model);
-	}
-
-	public void setModelMetadata(MetadataString model)
-	{
-		this.model = model;
+		this.image = image;
 	}
 
 	public MetadataString	overallRating()
@@ -221,14 +169,66 @@ public class Product extends CompoundDocument
 		this.numReviews = numReviews;
 	}
 
-	public Image getImage()
+	public List<ProductReview> getReviews()
 	{
-		return image;
+		return reviews;
 	}
 
-	public void setImage(Image image)
+  // lazy evaluation:
+  public List<ProductReview> reviews()
+  {
+    if (reviews == null)
+      reviews = new ArrayList<ProductReview>();
+    return reviews;
+  }
+
+  // addTo:
+  public void addToReviews(ProductReview element)
+  {
+    reviews().add(element);
+  }
+
+  // size:
+  public int reviewsSize()
+  {
+    return reviews == null ? 0 : reviews.size();
+  }
+
+	public void setReviews(List<ProductReview> reviews)
 	{
-		this.image = image;
+		this.reviews = reviews;
+	}
+
+	public MetadataString	model()
+	{
+		MetadataString	result = this.model;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.model = result;
+		}
+		return result;
+	}
+
+	public String getModel()
+	{
+		return this.model == null ? null : model().getValue();
+	}
+
+	public MetadataString getModelMetadata()
+	{
+		return model;
+	}
+
+	public void setModel(String model)
+	{
+		if (model != null)
+			this.model().setValue(model);
+	}
+
+	public void setModelMetadata(MetadataString model)
+	{
+		this.model = model;
 	}
 
 	public MetadataParsedURL	reviewsLocation()
