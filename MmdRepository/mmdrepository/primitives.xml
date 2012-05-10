@@ -29,17 +29,15 @@
 	</meta_metadata>
 
 	<meta_metadata name="media_clipping" extends="clipping" built_in="true">
-	  <generic_type_var name="ME" bound="clippable_document">
-	    <generic_type_var parameter="ME" />
+	  <generic_type_var name="ME" extends="clippable_document">
+	    <generic_type_var name="ME" arg="ME" />
 	  </generic_type_var>
 		<scalar name="caption" style="metadata_h1" layer="11.0" comment="The caption of the image." always_show="true" scalar_type="String"/>
-		<composite name="media" type="clippable_document" promote_children="true" polymorphic_scope="repository_media" wrap="true">
-		  <generic_type_var generic_type="ME" />
-		</composite>
+		<composite name="media" type="ME" promote_children="true" polymorphic_scope="repository_media" wrap="true" />
 	</meta_metadata>
 	
 	<meta_metadata name="image_clipping" extends="media_clipping" built_in="true">
-	  <generic_type_var parameter="image" />
+	  <generic_type_var name="ME" arg="image" />
 	</meta_metadata>
 	
 	<meta_metadata name="text_clipping" extends="clipping" built_in="true">
@@ -53,18 +51,18 @@
 	</meta_metadata>
 	
 	<meta_metadata name="clippable_document"  extends="document" built_in="true">
-	  <generic_type_var name="ME" bound="clippable_document">
-	    <generic_type_var parameter="ME" />
+	  <generic_type_var name="ME" extends="clippable_document">
+	    <generic_type_var name="ME" arg="ME" />
 	  </generic_type_var>
 		<collection name="clippings_this_is_in" other_tags="clippings" child_type="media_clipping" comment="Clippings based on this." hide="true" polymorphic_scope="repository_clippings">
-		  <generic_type_var parameter="ME" />
+		  <generic_type_var name="ME" arg="ME" />
 		</collection>
 		<scalar name="width" scalar_type="Integer" hide="true" />
 		<scalar name="height" scalar_type="Integer" hide="true" />
 	</meta_metadata>
 	
 	<meta_metadata name="image" extends="clippable_document" comment="The Image Base Class" built_in="true" parser="image">
-	  <generic_type_var parameter="image" />
+	  <generic_type_var name="ME" arg="image" />
 		<selector>
 			<mime_type>image/jpeg</mime_type>
 			<mime_type>image/png</mime_type>
@@ -144,13 +142,12 @@
 	</meta_metadata>
 	
 	<meta_metadata name="information_composition" extends="document" built_in="true" parser="icom">
-	
 		<selector>
 			<suffix>icom</suffix>
 		</selector>
 		
 		<collection name="metadata" child_type="metadata" polymorphic_scope="repository_no_annotations" />
-	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
+    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
 		
 		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" comment="for compatability w old compositions -- do not use!"/>
 		<collection name="media" child_type="metadata" polymorphic_scope="repository_media" comment="for compatability w old compositions -- do not use!"/>

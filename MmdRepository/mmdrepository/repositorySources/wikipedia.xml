@@ -2,6 +2,8 @@
   package="ecologylab.semantics.generated.library.wikipedia" default_user_agent_name="chrome_2">
 
   <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search" user_agent_name="firefox_2" parser="xpath">
+    <generic_type_var name="SR" arg="wikipedia_page" />
+    
     <selector url_stripped="http://en.wikipedia.org/w/index.php?title=Special%3ASearch" />
 
     <collection name="search_results" xpath="//ul[@class='mw-search-results']/li">

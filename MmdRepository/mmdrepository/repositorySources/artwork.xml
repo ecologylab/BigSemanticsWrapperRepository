@@ -118,6 +118,7 @@
 <!-- 	</meta_metadata> -->
 	
 	<meta_metadata name="moma_list" type="search" parser="xpath">
+    <generic_type_var name="SR" arg="moma_artwork" />
 		<selector url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" domain="moma.org" />
     
 		<collection name="search_results" xpath="//ul[@id='thumbnail-view-items']/li">

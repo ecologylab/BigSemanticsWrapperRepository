@@ -24,6 +24,7 @@
 	</meta_metadata>
 	
 	<meta_metadata name="yahoo_buzz_search" comment="Yahoo buzz search" type="search" parser="xpath">
+    <generic_type_var name="SR" arg="yahoo_buzz" />
 		<selector url_path_tree="http://buzz.yahoo.com/search"/>
 		<collection name="search_results" xpath="//div[contains(@class, 'searchListContainer')]//div[contains(@class, 'searchArticleItem')]/dl">
 			<scalar name="title" xpath="./dt/a" />

@@ -287,6 +287,7 @@
 	</meta_metadata>
 
 	<meta_metadata name="flickr_groups" extends="search" comment="Searching from a photo for nearby photos" parser="xpath">
+    <generic_type_var name="SR" arg="document" />
 		<selector url_regex="^http://www.flickr.com/groups/[A-z0-9_@-]+/pool" domain="flickr.com" />
 		<!-- This is a convenience thing...  there is probably a better way to do search  -->
 		<collection name="flickr_tags" xpath="//div[@class='Paginator']/a/@href" child_type="flickr_tag" hide="true">
