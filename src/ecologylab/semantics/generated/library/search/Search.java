@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Search extends Document
+public class Search<SR extends Document> extends Document
 {
 	@simpl_scalar
 	private MetadataString query;
@@ -34,7 +34,7 @@ public class Search extends Document
 	@simpl_nowrap
 	@simpl_scope("repository_documents")
 	@mm_name("search_results")
-	private List<Document> searchResults;
+	private List<SR> searchResults;
 
 	public Search()
 	{ super(); }
@@ -76,21 +76,21 @@ public class Search extends Document
 		this.query = query;
 	}
 
-	public List<Document> getSearchResults()
+	public List<SR> getSearchResults()
 	{
 		return searchResults;
 	}
 
   // lazy evaluation:
-  public List<Document> searchResults()
+  public List<SR> searchResults()
   {
     if (searchResults == null)
-      searchResults = new ArrayList<Document>();
+      searchResults = new ArrayList<SR>();
     return searchResults;
   }
 
   // addTo:
-  public void addToSearchResults(Document element)
+  public void addToSearchResults(SR element)
   {
     searchResults().add(element);
   }
@@ -101,7 +101,7 @@ public class Search extends Document
     return searchResults == null ? 0 : searchResults.size();
   }
 
-	public void setSearchResults(List<Document> searchResults)
+	public void setSearchResults(List<SR> searchResults)
 	{
 		this.searchResults = searchResults;
 	}

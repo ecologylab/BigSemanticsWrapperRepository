@@ -342,6 +342,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.SlashdotSearch.class,
 
+		ecologylab.semantics.generated.library.search.SocialMediaSearch1.class,
+
+		ecologylab.semantics.generated.library.search.SocialMediaSearch2.class,
+
 		ecologylab.semantics.generated.library.search.SocialMediaSearchResult.class,
 
 		ecologylab.semantics.generated.library.search.TumblrSearch.class,
@@ -377,6 +381,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.tvshow.TvshowEpisode.class,
 
 		ecologylab.semantics.generated.library.tvshow.TvshowRating.class,
+
+		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonSearch.class,
 
 		ecologylab.semantics.generated.library.uva.DocumentSet.class,
 

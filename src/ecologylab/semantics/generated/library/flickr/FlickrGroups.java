@@ -10,6 +10,7 @@ package ecologylab.semantics.generated.library.flickr;
 
 import ecologylab.semantics.generated.library.flickr.FlickrTag;
 import ecologylab.semantics.generated.library.search.Search;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -24,7 +25,7 @@ import java.util.Map;
  *Searching from a photo for nearby photos
  */ 
 @simpl_inherit
-public class FlickrGroups extends Search
+public class FlickrGroups extends Search<Document>
 {
 	@simpl_collection("flickr_tag")
 	@mm_name("flickr_tags")
