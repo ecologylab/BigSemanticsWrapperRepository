@@ -236,8 +236,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.patents.GooglePatent.class,
 
-		ecologylab.semantics.generated.library.patents.GooglePatentAuthor.class,
-
 		ecologylab.semantics.generated.library.patents.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.patents.Patent.class,

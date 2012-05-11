@@ -11,30 +11,23 @@ package ecologylab.semantics.generated.library.nsf;
 import ecologylab.semantics.generated.library.creative_work.Author;
 import ecologylab.semantics.generated.library.nsf.Grant;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Investigator extends Author
+public class Investigator<CW extends Grant> extends Author
 {
 	@simpl_scalar
 	private MetadataString email;
 
 	@simpl_scalar
 	private MetadataString investigationType;
-
-	@simpl_collection("grant")
-	@mm_name("grants")
-	private List<Grant> grants;
 
 	public Investigator()
 	{ super(); }
@@ -106,35 +99,5 @@ public class Investigator extends Author
 	public void setInvestigationTypeMetadata(MetadataString investigationType)
 	{
 		this.investigationType = investigationType;
-	}
-
-	public List<Grant> getGrants()
-	{
-		return grants;
-	}
-
-  // lazy evaluation:
-  public List<Grant> grants()
-  {
-    if (grants == null)
-      grants = new ArrayList<Grant>();
-    return grants;
-  }
-
-  // addTo:
-  public void addToGrants(Grant element)
-  {
-    grants().add(element);
-  }
-
-  // size:
-  public int grantsSize()
-  {
-    return grants == null ? 0 : grants.size();
-  }
-
-	public void setGrants(List<Grant> grants)
-	{
-		this.grants = grants;
 	}
 }

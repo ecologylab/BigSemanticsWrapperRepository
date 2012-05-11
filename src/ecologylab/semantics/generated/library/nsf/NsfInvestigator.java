@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.nsf;
  */
 
 import ecologylab.semantics.generated.library.nsf.Investigator;
+import ecologylab.semantics.generated.library.nsf.NsfAward;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class NsfInvestigator extends Investigator
+public class NsfInvestigator extends Investigator<NsfAward>
 {
 	@simpl_scalar
 	private MetadataString firstName;

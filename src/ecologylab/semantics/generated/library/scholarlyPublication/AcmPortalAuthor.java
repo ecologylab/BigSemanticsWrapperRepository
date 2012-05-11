@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.scholarlyPublication;
  */
 
 import ecologylab.semantics.generated.library.creative_work.Author;
+import ecologylab.semantics.generated.library.scholarlyPublication.AcmPortal;
 import ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalAuthorCollaborators;
 import ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalInstitutionProfile;
 import ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetail;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AcmPortalAuthor extends Author
+public class AcmPortalAuthor extends Author<AcmPortal>
 {
 	@simpl_composite
 	@mm_name("publication_detail")
