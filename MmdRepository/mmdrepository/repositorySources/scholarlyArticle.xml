@@ -2,6 +2,9 @@
 
 	<meta_metadata name="scholarly_article" extends="creative_work" schema_org_itemtype="http://schema.org/ScholarlyArticle">
 <!-- 		<scalar name="metadata_page" shadows="location" comment="citation.cfm" scalar_type="ParsedURL" /> -->
+    <collection name="authors" child_type="author">
+      <generic_type_var name="CW" arg="scholarly_article" />
+    </collection>
 		<composite name="source" comment="Metadata related to where this article was published." type="periodical" layer="7.0" />
 		<collection name="references" comment="Papers cited by this paper." child_tag="reference" child_type="scholarly_article" />
 		<collection name="citations" comment="Papers that cite this paper." child_tag="citation" child_type="scholarly_article" />

@@ -66,6 +66,7 @@
 </meta_metadata>
 
 <meta_metadata name="acm_portal_author" ignore_in_term_vector="true" extends="author" parser="xpath" user_agent_name="firefox_3_6_8">
+  <generic_type_var name="CW" arg="acm_portal" />
 
 		<selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
 		<example_url location="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
@@ -85,7 +86,7 @@
         <scalar name="title" xpath="./text()"/>
        </composite>
        
-       <collection name="publications" label="recent" ignore_in_term_vector="true" child_type="acm_portal"  xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
+    <collection name="publications" label="recent" ignore_in_term_vector="true" xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />
 			<scalar name="description" xpath="./tr[5]" />
 			<scalar name="location" xpath="./tr[1]/td/a/@href" />

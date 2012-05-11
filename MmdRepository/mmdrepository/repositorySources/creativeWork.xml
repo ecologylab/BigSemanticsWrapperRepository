@@ -1,11 +1,12 @@
 <meta_metadata_repository name="creative_work" package="ecologylab.semantics.generated.library.creative_work">
 
 	<meta_metadata name="author" extends="document" schema_org_itemtype="http://schema.org/Person" comment="An author of an article or creative work.">
+    <generic_type_var name="CW" extends="creative_work" />
 		<scalar name="location" hide="true" schema_org_itemprop="url"/>
 		<scalar name="title" other_tags="name" label="name" scalar_type="String" navigates_to="location" is_facet="true" as_composite_scalar="true" schema_org_itemprop="name" />
 		<scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation"/>
 		<scalar name="city" scalar_type="String" />
-		<collection name="publications" child_type="creative_work"/>
+		<collection name="publications" child_type="CW" child_tag="publication" />
 	</meta_metadata>
 	
 	<meta_metadata name="creative_work" extends="compound_document" schema_org_itemtype="http://schema.org/CreativeWork">

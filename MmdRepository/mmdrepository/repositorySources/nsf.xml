@@ -1,9 +1,10 @@
 <meta_metadata_repository name="nsf" package="ecologylab.semantics.generated.library.nsf">
 
   <meta_metadata name="investigator" extends="author">
+    <generic_type_var name="CW" extends="grant" />
     <scalar name="email" scalar_type="String" />
     <scalar name="investigation_type" scalar_type="String" />
-    <collection name="grants" child_type="grant" />
+    <collection name="publications" other_tags="grants" label="grants" />
   </meta_metadata>
   
   <meta_metadata name="grant" extends="creative_work">
@@ -231,12 +232,13 @@
   </meta_metadata>
 
   <meta_metadata name="nsf_investigator" extends="investigator" parser="xpath">
+    <generic_type_var name="CW" arg="nsf_award" />
     <example_url url="http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;IncludeCOPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne#results" />
   
     <scalar name="first_name" hide="true" scalar_type="String" /><!-- first/last name helps forming of location -->
     <scalar name="last_name" hide="true" scalar_type="String" />
     
-    <collection name="grants" child_type="nsf_award" xpath="//table[@class='resultTable']/tbody//tr">
+    <collection name="publications" child_type="nsf_award" xpath="//table[@class='resultTable']/tbody//tr">
       <scalar name="title" xpath="./td[2]/a" />
       <scalar name="location" xpath="./td[2]/a/@href" />
       <composite name="division" type="nsf_division" xpath="./td[3]/a">
@@ -272,6 +274,7 @@
   
   <meta_metadata name="nsf_award" extends="grant" comment="NSF award details." parser="xpath">
     <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
+    <selector url_stripped="http://nsf.gov/awardsearch/showAward.do" />
     
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428" />
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854" />
