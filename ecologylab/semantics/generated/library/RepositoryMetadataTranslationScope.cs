@@ -6,17 +6,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
+using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metametadata;
 
 
+using crit.semantics.generated.txtf1.fieldreports.spotrep;
 using ecologylab.semantics.generated.library;
 using ecologylab.semantics.generated.library.artwork;
 using ecologylab.semantics.generated.library.bibManaging;
 using ecologylab.semantics.generated.library.british_cartoon_archive;
 using ecologylab.semantics.generated.library.buzz;
 using ecologylab.semantics.generated.library.camera;
-using ecologylab.semantics.generated.library.creativeWork;
+using ecologylab.semantics.generated.library.creative_work;
 using ecologylab.semantics.generated.library.dlese;
 using ecologylab.semantics.generated.library.fastflip;
 using ecologylab.semantics.generated.library.flickr;
@@ -28,6 +30,7 @@ using ecologylab.semantics.generated.library.hotel;
 using ecologylab.semantics.generated.library.icdl;
 using ecologylab.semantics.generated.library.imdb;
 using ecologylab.semantics.generated.library.misc;
+using ecologylab.semantics.generated.library.movie;
 using ecologylab.semantics.generated.library.nsdl;
 using ecologylab.semantics.generated.library.nsf;
 using ecologylab.semantics.generated.library.opml;
@@ -35,18 +38,21 @@ using ecologylab.semantics.generated.library.patents;
 using ecologylab.semantics.generated.library.political_cartoon;
 using ecologylab.semantics.generated.library.products;
 using ecologylab.semantics.generated.library.publication;
+using ecologylab.semantics.generated.library.restaurant;
+using ecologylab.semantics.generated.library.rich_bookmark;
 using ecologylab.semantics.generated.library.rss;
+using ecologylab.semantics.generated.library.rwandatribunal;
 using ecologylab.semantics.generated.library.scholarlyPublication;
 using ecologylab.semantics.generated.library.scienceDirect;
 using ecologylab.semantics.generated.library.search;
 using ecologylab.semantics.generated.library.sfu_cartoon_archive;
 using ecologylab.semantics.generated.library.slashdot;
 using ecologylab.semantics.generated.library.truman_library_1948_campaign_cartoons;
-using ecologylab.semantics.generated.library.urbanspoon;
+using ecologylab.semantics.generated.library.tvshow;
 using ecologylab.semantics.generated.library.uva;
+using ecologylab.semantics.generated.library.videos;
 using ecologylab.semantics.generated.library.wikipedia;
 using ecologylab.semantics.metadata.builtins.declarations;
-using crit.semantics.generated.txtf1.fieldreports.spotrep;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace ecologylab.semantics.generated.library 
@@ -58,11 +64,17 @@ namespace ecologylab.semantics.generated.library
 
 		public static SimplTypesScope Get()
 		{
-			return SimplTypesScope.Get("meta-metadata-compiler-tscope", MetadataBuiltinsTranslationScope.Get(),
+			return SimplTypesScope.Get("meta-metadata-compiler-tscope", MetadataBuiltinsTypesScope.Get(),
+				typeof(AcmPortal),
+				typeof(AcmPortalAuthor),
+				typeof(AcmPortalAuthorCollaborators),
+				typeof(AcmPortalInstitutionProfile),
+				typeof(AcmPortalPeriodical),
 				typeof(AcmPortalSearch),
 				typeof(AcmPortalSearchResult),
 				typeof(AdditionalMetadata),
 				typeof(AmazonBook),
+				typeof(AmazonList),
 				typeof(AmazonProduct),
 				typeof(Anchor),
 				typeof(Artist),
@@ -71,20 +83,16 @@ namespace ecologylab.semantics.generated.library
 				typeof(Author),
 				typeof(AuthorPhotos),
 				typeof(BasicPublication),
-				typeof(BestsellerList),
-				typeof(BingImageSearchResult),
-				typeof(BingSearch),
-				typeof(BingSearchImageSection),
-				typeof(BingSearchWebSection),
-				typeof(BingWebSearchResult),
+				typeof(BingSearchApi),
 				typeof(BirthDetail),
 				typeof(Body),
 				typeof(Book),
 				typeof(Bookmark),
 				typeof(BritishCartoonArchive),
 				typeof(CameraSettings),
-				typeof(CastMember),
+				typeof(Cast),
 				typeof(Category),
+				typeof(CategoryInterviews),
 				typeof(Channel),
 				typeof(CitationInfo),
 				typeof(CiteseerxRecord),
@@ -92,6 +100,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(CiteseerxSearchResult),
 				typeof(CiteseerxSummary),
 				typeof(Collection),
+				typeof(CommentResult),
 				typeof(ContactPoint),
 				typeof(Contributor),
 				typeof(CreativeWork),
@@ -124,18 +133,19 @@ namespace ecologylab.semantics.generated.library
 				typeof(FlickrTagsInteresting),
 				typeof(GaurdianComic),
 				typeof(General),
-				typeof(Genre),
 				typeof(GetRecordAdditionalMetadata),
 				typeof(GisLocation),
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
-				typeof(GoogleImageSearchPage),
-				typeof(GoogleImageSearchType),
 				typeof(GooglePatent),
+				typeof(GooglePatentAuthor),
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
 				typeof(GoogleSorry),
 				typeof(GoogleTrends),
+				typeof(Grant),
+				typeof(GrantProgram),
+				typeof(GrantStaff),
 				typeof(Head),
 				typeof(Head1),
 				typeof(Head2),
@@ -146,10 +156,8 @@ namespace ecologylab.semantics.generated.library
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
 				typeof(IcdlImageResult),
-				typeof(ImageInSearchResult),
-				typeof(ImageResult),
-				typeof(ImdbChart),
-				typeof(ImdbGenre),
+				typeof(ImageSearch),
+				typeof(ImageSearchResult),
 				typeof(ImdbTitle),
 				typeof(Investigator),
 				typeof(Item),
@@ -161,39 +169,57 @@ namespace ecologylab.semantics.generated.library
 				typeof(MmArtwork),
 				typeof(Model),
 				typeof(MomaArtwork),
+				typeof(Movie),
+				typeof(Netflix),
 				typeof(Nsdl),
 				typeof(NsdlDocument),
 				typeof(NsdlService),
 				typeof(NsfAward),
-				typeof(NsfAwardSearch),
+				typeof(NsfDivision),
+				typeof(NsfDivisionStaffList),
+				typeof(NsfInvestigator),
+				typeof(NsfProgram),
+				typeof(NsfProgramStaffList),
+				typeof(NsfSearch),
+				typeof(NsfStaff),
 				typeof(Opml),
 				typeof(Organization),
 				typeof(Outline),
 				typeof(Page),
 				typeof(Paragraph),
 				typeof(Patent),
+				typeof(PatentAuthor),
+				typeof(PatentClassification),
 				typeof(PdfMixin),
 				typeof(Periodical),
-				typeof(PersonDetails),
+				typeof(PersonnelInterview),
 				typeof(PoliticalCartoon),
 				typeof(PostalAddress),
 				typeof(Product),
 				typeof(ProductReview),
 				typeof(Publication),
+				typeof(PublicationDetail),
+				typeof(PublicationDetailInstitution),
 				typeof(Publisher),
+				typeof(PubmedArticle),
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
 				typeof(Restaurant),
+				typeof(RestaurantGenre),
 				typeof(ResultInfo),
+				typeof(RichBookmark),
+				typeof(RichBookmarkCollection),
 				typeof(Rss),
 				typeof(Rss22),
 				typeof(ScholarlyArticle),
 				typeof(ScienceDirectArticle),
 				typeof(Search),
 				typeof(SearchAdditionalMetadataAdn),
-				typeof(SearchResult),
+				typeof(SearchCrumb),
+				typeof(SearchMeta),
 				typeof(SearchResults),
 				typeof(SearchSection),
+				typeof(Section),
 				typeof(SfuCartoonArchive),
 				typeof(SlashdotArticle),
 				typeof(SlashdotItem),
@@ -201,7 +227,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(SlashdotSearch),
 				typeof(SlashdotTag),
 				typeof(SocialMediaSearchResult),
-                typeof(Spotrep),
+				typeof(Spotrep),
 				typeof(Subject),
 				typeof(Tag),
 				typeof(TempFieldValueHolder),
@@ -210,13 +236,21 @@ namespace ecologylab.semantics.generated.library
 				typeof(Thumbnail),
 				typeof(Topic),
 				typeof(TopicCluster),
+				typeof(TribunalVoices),
+				typeof(TripAdvisor),
 				typeof(TrumanLibrary1948CampaignCartoons),
 				typeof(Tumblr),
 				typeof(TumblrSearch),
-				typeof(UrbanSpoonGenre),
+				typeof(Tvshow),
+				typeof(TvshowActor),
+				typeof(TvshowEpisode),
+				typeof(TvshowRating),
 				typeof(UserSearchAdditionalMetadata),
+				typeof(VideoInterview),
+				typeof(Watchyoutubevideo),
 				typeof(WeatherReport),
 				typeof(WikiAnchor),
+				typeof(WikipediaMobilePage),
 				typeof(WikipediaPage),
 				typeof(WikipediaPageType),
 				typeof(YahooGeoCode),

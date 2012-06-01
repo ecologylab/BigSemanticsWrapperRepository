@@ -26,16 +26,16 @@ namespace ecologylab.semantics.generated.library.hotel
 	[SimplInherit]
 	public class Hotel : Document
 	{
-		[SimplCollection("product_review")]
-		[MmName("reviews")]
-		private List<ProductReview> reviews;
-
 		[SimplComposite]
 		[MmName("place")]
 		private PostalAddress place;
 
 		[SimplScalar]
 		private MetadataString price;
+
+		[SimplCollection("product_review")]
+		[MmName("reviews")]
+		private List<ProductReview> reviews;
 
 		[SimplScalar]
 		private MetadataString spaceSize;
@@ -57,19 +57,6 @@ namespace ecologylab.semantics.generated.library.hotel
 
 		public Hotel(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<ProductReview> Reviews
-		{
-			get{return reviews;}
-			set
-			{
-				if (this.reviews != value)
-				{
-					this.reviews = value;
-					this.RaisePropertyChanged( () => this.Reviews );
-				}
-			}
-		}
 
 		public PostalAddress Place
 		{
@@ -93,6 +80,19 @@ namespace ecologylab.semantics.generated.library.hotel
 				{
 					this.price = value;
 					this.RaisePropertyChanged( () => this.Price );
+				}
+			}
+		}
+
+		public List<ProductReview> Reviews
+		{
+			get{return reviews;}
+			set
+			{
+				if (this.reviews != value)
+				{
+					this.reviews = value;
+					this.RaisePropertyChanged( () => this.Reviews );
 				}
 			}
 		}

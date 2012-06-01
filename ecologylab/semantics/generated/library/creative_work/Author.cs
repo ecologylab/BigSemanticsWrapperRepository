@@ -14,11 +14,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
+using ecologylab.semantics.generated.library.creative_work;
+using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
 
-namespace ecologylab.semantics.generated.library.creativeWork 
+namespace ecologylab.semantics.generated.library.creative_work 
 {
 	/// <summary>
 	/// An author of an article or creative work.
@@ -31,6 +33,10 @@ namespace ecologylab.semantics.generated.library.creativeWork
 
 		[SimplScalar]
 		private MetadataString city;
+
+		[SimplCollection("creative_work")]
+		[MmName("publications")]
+		private List<CreativeWork> publications;
 
 		public Author()
 		{ }
@@ -60,6 +66,19 @@ namespace ecologylab.semantics.generated.library.creativeWork
 				{
 					this.city = value;
 					this.RaisePropertyChanged( () => this.City );
+				}
+			}
+		}
+
+		public List<CreativeWork> Publications
+		{
+			get{return publications;}
+			set
+			{
+				if (this.publications != value)
+				{
+					this.publications = value;
+					this.RaisePropertyChanged( () => this.Publications );
 				}
 			}
 		}

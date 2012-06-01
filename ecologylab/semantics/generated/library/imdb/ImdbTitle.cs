@@ -26,7 +26,7 @@ namespace ecologylab.semantics.generated.library.imdb
 	/// IMDB metadata
 	/// </summary>
 	[SimplInherit]
-	public class ImdbTitle : MovieInfo
+	public class ImdbTitle : Movie
 	{
 		[SimplScalar]
 		private MetadataString gist;

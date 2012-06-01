@@ -15,7 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
 using ecologylab.semantics.generated.library;
-using ecologylab.semantics.generated.library.creativeWork;
+using ecologylab.semantics.generated.library.creative_work;
 using ecologylab.semantics.generated.library.scholarlyPublication;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;

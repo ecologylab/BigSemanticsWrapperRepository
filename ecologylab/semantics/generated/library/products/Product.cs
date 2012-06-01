@@ -26,15 +26,12 @@ namespace ecologylab.semantics.generated.library.products
 	[SimplInherit]
 	public class Product : CompoundDocument
 	{
-		[SimplCollection("product_review")]
-		[MmName("reviews")]
-		private List<ProductReview> reviews;
-
 		[SimplScalar]
 		private MetadataString price;
 
-		[SimplScalar]
-		private MetadataString model;
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
 
 		[SimplScalar]
 		private MetadataString overallRating;
@@ -42,9 +39,12 @@ namespace ecologylab.semantics.generated.library.products
 		[SimplScalar]
 		private MetadataInteger numReviews;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
+		[SimplCollection("product_review")]
+		[MmName("reviews")]
+		private List<ProductReview> reviews;
+
+		[SimplScalar]
+		private MetadataString model;
 
 		[SimplScalar]
 		private MetadataParsedURL reviewsLocation;
@@ -54,19 +54,6 @@ namespace ecologylab.semantics.generated.library.products
 
 		public Product(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<ProductReview> Reviews
-		{
-			get{return reviews;}
-			set
-			{
-				if (this.reviews != value)
-				{
-					this.reviews = value;
-					this.RaisePropertyChanged( () => this.Reviews );
-				}
-			}
-		}
 
 		public MetadataString Price
 		{
@@ -81,15 +68,15 @@ namespace ecologylab.semantics.generated.library.products
 			}
 		}
 
-		public MetadataString Model
+		public Image Image
 		{
-			get{return model;}
+			get{return image;}
 			set
 			{
-				if (this.model != value)
+				if (this.image != value)
 				{
-					this.model = value;
-					this.RaisePropertyChanged( () => this.Model );
+					this.image = value;
+					this.RaisePropertyChanged( () => this.Image );
 				}
 			}
 		}
@@ -120,15 +107,28 @@ namespace ecologylab.semantics.generated.library.products
 			}
 		}
 
-		public Image Image
+		public List<ProductReview> Reviews
 		{
-			get{return image;}
+			get{return reviews;}
 			set
 			{
-				if (this.image != value)
+				if (this.reviews != value)
 				{
-					this.image = value;
-					this.RaisePropertyChanged( () => this.Image );
+					this.reviews = value;
+					this.RaisePropertyChanged( () => this.Reviews );
+				}
+			}
+		}
+
+		public MetadataString Model
+		{
+			get{return model;}
+			set
+			{
+				if (this.model != value)
+				{
+					this.model = value;
+					this.RaisePropertyChanged( () => this.Model );
 				}
 			}
 		}

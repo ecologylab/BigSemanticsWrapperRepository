@@ -8,14 +8,12 @@
 
 
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using ecologylab.collections;
-using ecologylab.semantics.generated.library.creativeWork;
 using ecologylab.semantics.generated.library.nsf;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
@@ -25,14 +23,23 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.nsf 
 {
 	/// <summary>
-	/// NSF Award details.
+	/// NSF award details.
 	/// </summary>
 	[SimplInherit]
-	public class NsfAward : CompoundDocument
+	public class NsfAward : Grant
 	{
 		[SimplComposite]
-		[MmName("nsf_org")]
-		private Document nsfOrg;
+		[MmName("division")]
+		private NsfDivision division;
+
+		[SimplScalar]
+		private MetadataString amountString;
+
+		[SimplScalar]
+		private MetadataString awardInstrument;
+
+		[SimplScalar]
+		private MetadataString fieldApplications;
 
 		[SimplScalar]
 		private MetadataDate initialAmendmentDate;
@@ -41,57 +48,11 @@ namespace ecologylab.semantics.generated.library.nsf
 		private MetadataDate latestAmendmentDate;
 
 		[SimplScalar]
-		private MetadataString awardNumber;
-
-		[SimplScalar]
-		private MetadataString awardInstrument;
-
-		[SimplComposite]
-		[MmName("program_manager")]
-		private Author programManager;
-
-		[SimplScalar]
-		private MetadataDate startDate;
-
-		[SimplScalar]
-		private MetadataDate expireDate;
-
-		[SimplScalar]
-		private MetadataInteger awardedAmountToDate;
-
-		[SimplCollection("investigator")]
-		[MmName("investigators")]
-		private List<Investigator> investigators;
-
-		[SimplScalar]
-		private MetadataString sponsor;
-
-		[SimplScalar]
-		private MetadataString nsfPrograms;
-
-		[SimplScalar]
-		private MetadataString fieldApplications;
-
-		[SimplScalar]
 		private MetadataString programReferenceCodes;
 
-		[SimplScalar]
-		private MetadataString programElementCodes;
-
-		[SimplScalar]
-		private MetadataString abstractField;
-
-		[SimplCollection("relevant_location")]
-		[MmName("relevant_locations")]
-		private List<ecologylab.semantics.metadata.scalar.MetadataParsedURL> relevantLocations;
-
-		[SimplCollection("publication")]
-		[MmName("publications")]
-		private List<ecologylab.semantics.metadata.scalar.MetadataString> publications;
-
-		[SimplCollection("proceeding")]
-		[MmName("proceedings")]
-		private List<ecologylab.semantics.metadata.scalar.MetadataString> proceedings;
+		[SimplCollection("program_element_code")]
+		[MmName("program_element_codes")]
+		private List<ecologylab.semantics.metadata.scalar.MetadataString> programElementCodes;
 
 		public NsfAward()
 		{ }
@@ -99,15 +60,54 @@ namespace ecologylab.semantics.generated.library.nsf
 		public NsfAward(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Document NsfOrg
+		public NsfDivision Division
 		{
-			get{return nsfOrg;}
+			get{return division;}
 			set
 			{
-				if (this.nsfOrg != value)
+				if (this.division != value)
 				{
-					this.nsfOrg = value;
-					this.RaisePropertyChanged( () => this.NsfOrg );
+					this.division = value;
+					this.RaisePropertyChanged( () => this.Division );
+				}
+			}
+		}
+
+		public MetadataString AmountString
+		{
+			get{return amountString;}
+			set
+			{
+				if (this.amountString != value)
+				{
+					this.amountString = value;
+					this.RaisePropertyChanged( () => this.AmountString );
+				}
+			}
+		}
+
+		public MetadataString AwardInstrument
+		{
+			get{return awardInstrument;}
+			set
+			{
+				if (this.awardInstrument != value)
+				{
+					this.awardInstrument = value;
+					this.RaisePropertyChanged( () => this.AwardInstrument );
+				}
+			}
+		}
+
+		public MetadataString FieldApplications
+		{
+			get{return fieldApplications;}
+			set
+			{
+				if (this.fieldApplications != value)
+				{
+					this.fieldApplications = value;
+					this.RaisePropertyChanged( () => this.FieldApplications );
 				}
 			}
 		}
@@ -138,136 +138,6 @@ namespace ecologylab.semantics.generated.library.nsf
 			}
 		}
 
-		public MetadataString AwardNumber
-		{
-			get{return awardNumber;}
-			set
-			{
-				if (this.awardNumber != value)
-				{
-					this.awardNumber = value;
-					this.RaisePropertyChanged( () => this.AwardNumber );
-				}
-			}
-		}
-
-		public MetadataString AwardInstrument
-		{
-			get{return awardInstrument;}
-			set
-			{
-				if (this.awardInstrument != value)
-				{
-					this.awardInstrument = value;
-					this.RaisePropertyChanged( () => this.AwardInstrument );
-				}
-			}
-		}
-
-		public Author ProgramManager
-		{
-			get{return programManager;}
-			set
-			{
-				if (this.programManager != value)
-				{
-					this.programManager = value;
-					this.RaisePropertyChanged( () => this.ProgramManager );
-				}
-			}
-		}
-
-		public MetadataDate StartDate
-		{
-			get{return startDate;}
-			set
-			{
-				if (this.startDate != value)
-				{
-					this.startDate = value;
-					this.RaisePropertyChanged( () => this.StartDate );
-				}
-			}
-		}
-
-		public MetadataDate ExpireDate
-		{
-			get{return expireDate;}
-			set
-			{
-				if (this.expireDate != value)
-				{
-					this.expireDate = value;
-					this.RaisePropertyChanged( () => this.ExpireDate );
-				}
-			}
-		}
-
-		public MetadataInteger AwardedAmountToDate
-		{
-			get{return awardedAmountToDate;}
-			set
-			{
-				if (this.awardedAmountToDate != value)
-				{
-					this.awardedAmountToDate = value;
-					this.RaisePropertyChanged( () => this.AwardedAmountToDate );
-				}
-			}
-		}
-
-		public List<Investigator> Investigators
-		{
-			get{return investigators;}
-			set
-			{
-				if (this.investigators != value)
-				{
-					this.investigators = value;
-					this.RaisePropertyChanged( () => this.Investigators );
-				}
-			}
-		}
-
-		public MetadataString Sponsor
-		{
-			get{return sponsor;}
-			set
-			{
-				if (this.sponsor != value)
-				{
-					this.sponsor = value;
-					this.RaisePropertyChanged( () => this.Sponsor );
-				}
-			}
-		}
-
-		public MetadataString NsfPrograms
-		{
-			get{return nsfPrograms;}
-			set
-			{
-				if (this.nsfPrograms != value)
-				{
-					this.nsfPrograms = value;
-					this.RaisePropertyChanged( () => this.NsfPrograms );
-				}
-			}
-		}
-
-		public MetadataString FieldApplications
-		{
-			get{return fieldApplications;}
-			set
-			{
-				if (this.fieldApplications != value)
-				{
-					this.fieldApplications = value;
-					this.RaisePropertyChanged( () => this.FieldApplications );
-				}
-			}
-		}
-
 		public MetadataString ProgramReferenceCodes
 		{
 			get{return programReferenceCodes;}
@@ -281,7 +151,7 @@ namespace ecologylab.semantics.generated.library.nsf
 			}
 		}
 
-		public MetadataString ProgramElementCodes
+		public List<ecologylab.semantics.metadata.scalar.MetadataString> ProgramElementCodes
 		{
 			get{return programElementCodes;}
 			set
@@ -290,58 +160,6 @@ namespace ecologylab.semantics.generated.library.nsf
 				{
 					this.programElementCodes = value;
 					this.RaisePropertyChanged( () => this.ProgramElementCodes );
-				}
-			}
-		}
-
-		public MetadataString AbstractField
-		{
-			get{return abstractField;}
-			set
-			{
-				if (this.abstractField != value)
-				{
-					this.abstractField = value;
-					this.RaisePropertyChanged( () => this.AbstractField );
-				}
-			}
-		}
-
-		public List<ecologylab.semantics.metadata.scalar.MetadataParsedURL> RelevantLocations
-		{
-			get{return relevantLocations;}
-			set
-			{
-				if (this.relevantLocations != value)
-				{
-					this.relevantLocations = value;
-					this.RaisePropertyChanged( () => this.RelevantLocations );
-				}
-			}
-		}
-
-		public List<ecologylab.semantics.metadata.scalar.MetadataString> Publications
-		{
-			get{return publications;}
-			set
-			{
-				if (this.publications != value)
-				{
-					this.publications = value;
-					this.RaisePropertyChanged( () => this.Publications );
-				}
-			}
-		}
-
-		public List<ecologylab.semantics.metadata.scalar.MetadataString> Proceedings
-		{
-			get{return proceedings;}
-			set
-			{
-				if (this.proceedings != value)
-				{
-					this.proceedings = value;
-					this.RaisePropertyChanged( () => this.Proceedings );
 				}
 			}
 		}
