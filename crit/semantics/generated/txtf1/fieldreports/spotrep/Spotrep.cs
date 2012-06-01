@@ -19,7 +19,7 @@ using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
-using java.awt.image;
+//using java.awt.image;
 
 namespace crit.semantics.generated.txtf1.fieldreports.spotrep 
 {
@@ -96,11 +96,11 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 		[SimplScalar]
 		private MetadataString photographFile;
 
-		/// <summary>
-		/// Photograph of the situation.
-		/// </summary>
-		[SimplScalar]
-		private MetadataBufferedImage photographData;
+        ///// <summary>
+        ///// Photograph of the situation.
+        ///// </summary>
+        //[SimplScalar]
+        //private MetadataBufferedImage photographData;
 
 		public Spotrep()
 		{ }
@@ -251,17 +251,17 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 			}
 		}
 
-		public MetadataBufferedImage PhotographData
-		{
-			get{return photographData;}
-			set
-			{
-				if (this.photographData != value)
-				{
-					this.photographData = value;
-					this.RaisePropertyChanged( () => this.PhotographData );
-				}
-			}
-		}
+        //public MetadataBufferedImage PhotographData
+        //{
+        //    get{return photographData;}
+        //    set
+        //    {
+        //        if (this.photographData != value)
+        //        {
+        //            this.photographData = value;
+        //            this.RaisePropertyChanged( () => this.PhotographData );
+        //        }
+        //    }
+        //}
 	}
 }

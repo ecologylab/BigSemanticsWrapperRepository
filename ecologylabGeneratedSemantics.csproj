@@ -105,7 +105,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -115,6 +115,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crit\semantics\generated\txtf1\fieldreports\spotrep\Spotrep.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ecologylab\semantics\generated\library\artwork\Artist.cs" />
     <Compile Include="ecologylab\semantics\generated\library\artwork\Artwork.cs" />
     <Compile Include="ecologylab\semantics\generated\library\artwork\MmArtwork.cs" />
@@ -131,10 +134,10 @@
     <Compile Include="ecologylab\semantics\generated\library\buzz\GoogleTrends.cs" />
     <Compile Include="ecologylab\semantics\generated\library\buzz\HotSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\camera\CameraSettings.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\creativeWork\Author.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\creativeWork\BasicPublication.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\creativeWork\CreativeWork.cs" />
-    <Compile Include="ecologylab\semantics\generated\library\creativeWork\Periodical.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\creative_work\Author.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\creative_work\BasicPublication.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\creative_work\CreativeWork.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\creative_work\Periodical.cs" />
     <Compile Include="ecologylab\semantics\generated\library\DeliciousHomepage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\dlese\AdditionalMetadata.cs" />
     <Compile Include="ecologylab\semantics\generated\library\dlese\Audience.cs" />
@@ -186,6 +189,7 @@
     <Compile Include="ecologylab\semantics\generated\library\gps\GisLocation.cs" />
     <Compile Include="ecologylab\semantics\generated\library\gps\PostalAddress.cs" />
     <Compile Include="ecologylab\semantics\generated\library\hotel\Hotel.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\hotel\TripAdvisor.cs" />
     <Compile Include="ecologylab\semantics\generated\library\HypertextPara.cs" />
     <Compile Include="ecologylab\semantics\generated\library\icdl\IcdlBook.cs" />
     <Compile Include="ecologylab\semantics\generated\library\icdl\IcdlBookPreview.cs" />
@@ -205,15 +209,26 @@
     <Compile Include="ecologylab\semantics\generated\library\misc\IcdlImage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\misc\Nsdl.cs" />
     <Compile Include="ecologylab\semantics\generated\library\movie\Cast.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\movie\Movie.cs" />
     <Compile Include="ecologylab\semantics\generated\library\movie\MovieInfo.cs" />
     <Compile Include="ecologylab\semantics\generated\library\movie\Netflix.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\Header.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\NsdlDocument.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\NsdlService.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsdl\SearchResults.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\Grant.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\GrantProgram.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\GrantStaff.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsf\Investigator.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsf\NsfAward.cs" />
     <Compile Include="ecologylab\semantics\generated\library\nsf\NsfAwardSearch.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfDivision.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfDivisionStaffList.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfInvestigator.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfProgram.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfProgramStaffList.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfSearch.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\nsf\NsfStaff.cs" />
     <Compile Include="ecologylab\semantics\generated\library\opml\Body.cs" />
     <Compile Include="ecologylab\semantics\generated\library\opml\Head.cs" />
     <Compile Include="ecologylab\semantics\generated\library\opml\Opml.cs" />
@@ -237,8 +252,13 @@
     <Compile Include="ecologylab\semantics\generated\library\publication\Publisher.cs" />
     <Compile Include="ecologylab\semantics\generated\library\publication\Subject.cs" />
     <Compile Include="ecologylab\semantics\generated\library\publication\TermType.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\PubmedArticle.cs" />
     <Compile Include="ecologylab\semantics\generated\library\RepositoryMetadataTranslationScope.cs" />
     <Compile Include="ecologylab\semantics\generated\library\Restaurant.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\restaurant\Restaurant.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\restaurant\RestaurantGenre.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rich_bookmark\RichBookmark.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rich_bookmark\RichBookmarkCollection.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\Channel.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\Dc.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\Item.cs" />
@@ -247,12 +267,24 @@
     <Compile Include="ecologylab\semantics\generated\library\rss\Rss22.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\YahooMediaRss.cs" />
     <Compile Include="ecologylab\semantics\generated\library\Run.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rwandatribunal\CategoryInterviews.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rwandatribunal\PersonnelInterview.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rwandatribunal\TribunalVoices.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rwandatribunal\VideoInterview.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortal.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalAuthor.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalAuthorCollaborators.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalInstitutionProfile.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalPeriodical.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\AcmPortalSearchResult.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\PublicationDetail.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\PublicationDetailInstitution.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scholarlyPublication\ScholarlyArticle.cs" />
     <Compile Include="ecologylab\semantics\generated\library\scienceDirect\ScienceDirectArticle.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\BingImageSearchResult.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\BingSearch.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\BingSearchApi.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\BingSearchImageSection.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\BingSearchWebSection.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\BingWebSearchResult.cs" />
@@ -261,7 +293,11 @@
     <Compile Include="ecologylab\semantics\generated\library\search\GoogleScholarSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\GoogleScholarSearchResult.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\ImageInSearchResult.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\ImageSearch.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\ImageSearchResult.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\Search.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\SearchCrumb.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\SearchMeta.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\SearchResult.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\SlashdotSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\SocialMediaSearchResult.cs" />
@@ -282,21 +318,28 @@
     <Compile Include="ecologylab\semantics\generated\library\TextRun.cs" />
     <Compile Include="ecologylab\semantics\generated\library\truman_library_1948_campaign_cartoons\TrumanLibrary1948CampaignCartoons.cs" />
     <Compile Include="ecologylab\semantics\generated\library\Tumblr.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\tvshow\Tvshow.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\tvshow\TvshowActor.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\tvshow\TvshowEpisode.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\tvshow\TvshowRating.cs" />
     <Compile Include="ecologylab\semantics\generated\library\urbanspoon\UrbanSpoonGenre.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\DocumentSet.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\KeywordSet.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\Model.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\Topic.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\TopicCluster.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\videos\CommentResult.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\videos\Watchyoutubevideo.cs" />
     <Compile Include="ecologylab\semantics\generated\library\WeatherReport.cs" />
     <Compile Include="ecologylab\semantics\generated\library\wikipedia\Category.cs" />
     <Compile Include="ecologylab\semantics\generated\library\wikipedia\Paragraph.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\wikipedia\Section.cs" />
     <Compile Include="ecologylab\semantics\generated\library\wikipedia\Thumbinner.cs" />
     <Compile Include="ecologylab\semantics\generated\library\wikipedia\WikiAnchor.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\wikipedia\WikipediaMobilePage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\wikipedia\WikipediaPage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\wikipedia\WikipediaPageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spotrep.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ecologylabFundamental\Simpl.Fundamental\Simpl.Fundamental.csproj">
