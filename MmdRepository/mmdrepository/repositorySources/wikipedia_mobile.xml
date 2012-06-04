@@ -6,14 +6,14 @@
 		<selector url_regex="http://en.m.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
 		<def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
 		
-		<scalar name="title" xpath="//*[@id='firstHeading']" />
+		<scalar name="title" xpath="//caption" />
 		
 		<scalar name="main_image_src" xpath="//*[starts-with(@class,'infobox')]//@src[1]" context_node="main_image" scalar_type="ParsedURL" />
 		<scalar name="main_image_caption" scalar_type="String" xpath="//*[starts-with(@class,'infobox')]//span[1]"/>
 		
 		<composite name="description_section" type="section" extends="metadata">
 			<scalar name="section_title" scalar_type="String" />  
-			<collection name="paragraphs" xpath="//*[@class='mw-content-ltr']/p" child_type="paragraph">
+			<collection name="paragraphs" xpath="//div[@id='content']/p" child_type="paragraph">
 				<scalar name="paragraph_text" xpath="." />
 				<collection name="anchors" xpath="./a[@title]">
 					<scalar name="link" xpath="./@href" />
@@ -24,7 +24,9 @@
 		</composite>
 
 		<collection name="sections" child_type="section" comment="Sections in the article." xpath="//h2" >
-			<scalar name="section_title" xpath="." />  
+			<scalar name="section_title" xpath="." >
+				<filter regex="ShowHide" replace="" />
+			</scalar>  
 			<collection name="paragraphs" xpath="./following-sibling::div[1]/p" child_type="paragraph">
 				<scalar name="paragraph_text" xpath="." />
 				<collection name="anchors" xpath="./a[@title]">
