@@ -44,11 +44,11 @@
 	<meta_metadata name="google_patent_image" type="image" parser="image">
 		<selector url_regex_fragment="http://bks[0-9].books.google.com/patents" domain="google.com" />
 
-		<before_semantic_actions>
-			<filter_location>
-				<set_param name="zoom" value="2" />
-			</filter_location>
-		</before_semantic_actions>
+<!-- 		<before_semantic_actions> -->
+<!-- 			<filter_location> -->
+<!-- 				<set_param name="zoom" value="2" /> -->
+<!-- 			</filter_location> -->
+<!-- 		</before_semantic_actions> -->
 	</meta_metadata>
 
 	
