@@ -35,7 +35,7 @@
 	<meta_metadata name="newegg_product" type="product" parser="xpath">
 		<selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
 		
-		<example_url location="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
+		<example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
 		
 		<scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']//img/@title" />
 		<scalar name="num_reviews" xpath="//span[@itemprop='reviewCount']" />
@@ -58,7 +58,7 @@
 	<meta_metadata name="amazon_wish_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/registry" />
 		<selector url_path_tree="http://www.amazon.co.uk//gp/registry" />
-		<example_url location="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
+		<example_url url="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
 		
 		<collection name="items" xpath="//td[@class='lineItemMainInfo']">
 			<scalar name="title" xpath=".//span[@class='small productTitle']"/>
@@ -140,7 +140,7 @@
 		<selector url_path_tree="http://www.amazon.co.uk//gp/registry" />
 <!-- 		<selector url_regex="http://www.amazon.com/[^/]+/lm" domain="amazon.com"/> -->
 		
-		<example_url location="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
+		<example_url url="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
 		
 		<scalar name="title" xpath="//h1[@class='largeTitle']" />
 		
@@ -154,7 +154,7 @@
 
 	<meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
-		<example_url location="http://www.amazon.com/gp/bestsellers/books/6" />
+		<example_url url="http://www.amazon.com/gp/bestsellers/books/6" />
 		
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 	
@@ -172,7 +172,7 @@
 
 	<meta_metadata name="amazon_bestseller_list_uk" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.co.uk/gp/bestsellers" />
-		<example_url location="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
+		<example_url url="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
 		
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 	

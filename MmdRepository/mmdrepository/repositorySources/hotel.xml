@@ -23,7 +23,7 @@
 <meta_metadata name="airbnb" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www.airbnb.com/rooms" />
 	
-	<example_url location="http://www.airbnb.com/rooms/72247"/>
+	<example_url url="http://www.airbnb.com/rooms/72247"/>
 	
 	<scalar name="title" xpath="//div[@class='overflow']" />
 <!-- 	<scalar name="temp" xpath="//span[@id='display_address']/text()"/> -->
@@ -60,7 +60,7 @@
 <meta_metadata name="trip_advisor" extends="hotel" parser="xpath">
 	<selector url_regex_fragment="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com"/>
 	
-	<example_url location="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html"/>
+	<example_url url="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html"/>
 
 	<scalar name="title" xpath="//h1[@id='HEADING']" />
 	
@@ -98,7 +98,7 @@
 <meta_metadata name="homeaway" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www.homeaway.com/vacation-rental" />
 	
-	<example_url location="http://www.homeaway.com/vacation-rental/p100000"/>
+	<example_url url="http://www.homeaway.com/vacation-rental/p100000"/>
 
 	<scalar name="title" xpath="//h1[@class='newHeader']" />
 	<scalar name="description" xpath="//div[@class='prop-desc-txt']"/>
@@ -131,7 +131,7 @@
 <meta_metadata name="hilton" type="hotel" parser="xpath">
 	<selector url_path_tree="http://www1.hilton.com/en_US/hi/hotel" />
 	
-	<example_url location="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42"/>
+	<example_url url="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42"/>
 
 	<scalar name="title" xpath="//html/head/title" />
 	<scalar name="description" xpath="/html/head/meta[@name='description']/@content"/>

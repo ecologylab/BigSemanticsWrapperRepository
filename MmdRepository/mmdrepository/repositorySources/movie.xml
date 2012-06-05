@@ -23,7 +23,7 @@
 	<meta_metadata name="netflix" extends="compound_document"> <!-- alas, this will not work until we get login / state stuff working -->
 		<selector url_path_tree="http://movies.netflix.com/Movie" />
 		
-		<example_url location="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
+		<example_url url="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
 		
 		<def_var name="metadata_content" xpath="//div[@id='mdp-metadata-content']" />
 

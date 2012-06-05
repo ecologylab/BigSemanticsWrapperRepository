@@ -18,7 +18,7 @@
 <meta_metadata name="home_depot_product" type="product" parser="xpath" user_agent_name="firefox">
 	<selector url_regex="http://www.homedepot.com/.+?/ProductDisplay?.*" domain="homedepot.com" />
 	
-	<example_url location="http://www.homedepot.com/Flooring-Laminate-Flooring-Laminate-Wood-Planks/Pergo/h_d1/N-5yc1vZbejkZ150/R-202882882/h_d2/ProductDisplay?catalogId=10053&amp;langId=-1&amp;storeId=10051" />
+	<example_url url="http://www.homedepot.com/Flooring-Laminate-Flooring-Laminate-Wood-Planks/Pergo/h_d1/N-5yc1vZbejkZ150/R-202882882/h_d2/ProductDisplay?catalogId=10053&amp;langId=-1&amp;storeId=10051" />
 	
 	<scalar name="title" xpath="//h2[@id='superPIP__productName']/text()"/>
 	<scalar name="description" xpath="//div[@id='tab-features']/p[1]/text()"/>

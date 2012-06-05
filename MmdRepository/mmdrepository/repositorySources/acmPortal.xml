@@ -16,7 +16,7 @@
 
 <meta_metadata name="acm_portal_institution_profile" extends="document" parser="xpath">
     <selector url_stripped="http://dl.acm.org/inst_page.cfm" />
-	<example_url location="http://dl.acm.org/inst_page.cfm?id=1013772"/>
+	<example_url url="http://dl.acm.org/inst_page.cfm?id=1013772"/>
 	<scalar name="title" xpath="//title/text()"/>
 	<composite name="home_page" type="document" xpath="//span/strong/..">
 		<scalar name="title" xpath="./a"/>
@@ -57,7 +57,7 @@
 
 <meta_metadata name="acm_portal_author_collaborators" extends="document" parser="xpath">
     <selector url_regex="http://dl.acm.org/author_page.cfm.+dsp=coll.*" domain="acm.org" />
-	<example_url location="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll"/>
+	<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll"/>
 	<scalar name="title" xpath="//span/strong/text()"/>
 	<collection name="collaborators" child_type="acm_portal_author" xpath="//div/a[@target='_self']">
 	    <scalar name="title" xpath="./text()"/>
@@ -69,7 +69,7 @@
   <generic_type_var name="CW" arg="acm_portal" />
 
 		<selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
-		<example_url location="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
+		<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
        
        <scalar name="title" xpath="//span/strong/text()"/>
        <scalar name="location" hidden="true"/>
@@ -117,7 +117,7 @@
 		 <!-- <selector url_stripped="http://portal.acm.org/citation.cfm" /> -->
 		<selector url_stripped="http://dl.acm.org/citation.cfm" />
 		
-		<example_url location="http://dl.acm.org/citation.cfm?id=2063231.2063237&amp;coll=DL" />
+		<example_url url="http://dl.acm.org/citation.cfm?id=2063231.2063237&amp;coll=DL" />
 
 		<url_generator type="search" engine="acm_portal" use_id="title" />
 	
