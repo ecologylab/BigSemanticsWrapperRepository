@@ -10,15 +10,18 @@ package ecologylab.semantics.generated.library.wikipedia;
 
 import ecologylab.semantics.generated.library.wikipedia.Paragraph;
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @simpl_inherit
 public class Section extends Metadata

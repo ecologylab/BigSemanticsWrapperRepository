@@ -11,10 +11,12 @@ package ecologylab.semantics.generated.library.wikipedia;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.wikipedia.Section;
 import ecologylab.semantics.generated.library.wikipedia.WikipediaPageType;
+import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
@@ -23,6 +25,7 @@ import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /** 
  *An article on wikipedia mobile site

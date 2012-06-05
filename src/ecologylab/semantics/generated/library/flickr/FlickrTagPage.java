@@ -9,65 +9,81 @@ package ecologylab.semantics.generated.library.flickr;
  */
 
 import ecologylab.semantics.generated.library.flickr.FlickrPhoto;
+import ecologylab.semantics.generated.library.flickr.FlickrTagPage;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /** 
- *All flickr photos of a particular user
+ *For flickr crawled tags
  */ 
 @simpl_inherit
-public class FlickrAuthor extends CompoundDocument
+public class FlickrTagPage extends CompoundDocument
 {
 	/** 
 	 *Collection of all images of a user
 	 */ 
 	@simpl_collection("flickr_photo")
-	@mm_name("stream")
-	private List<FlickrPhoto> stream;
+	@mm_name("photos")
+	private List<FlickrPhoto> photos;
 
-	public FlickrAuthor()
+	@simpl_composite
+	@mm_name("public_tags")
+	private FlickrTagPage publicTags;
+
+	public FlickrTagPage()
 	{ super(); }
 
-	public FlickrAuthor(MetaMetadataCompositeField mmd) {
+	public FlickrTagPage(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<FlickrPhoto> getStream()
+	public List<FlickrPhoto> getPhotos()
 	{
-		return stream;
+		return photos;
 	}
 
   // lazy evaluation:
-  public List<FlickrPhoto> stream()
+  public List<FlickrPhoto> photos()
   {
-    if (stream == null)
-      stream = new ArrayList<FlickrPhoto>();
-    return stream;
+    if (photos == null)
+      photos = new ArrayList<FlickrPhoto>();
+    return photos;
   }
 
   // addTo:
-  public void addToStream(FlickrPhoto element)
+  public void addToPhotos(FlickrPhoto element)
   {
-    stream().add(element);
+    photos().add(element);
   }
 
   // size:
-  public int streamSize()
+  public int photosSize()
   {
-    return stream == null ? 0 : stream.size();
+    return photos == null ? 0 : photos.size();
   }
 
-	public void setStream(List<FlickrPhoto> stream)
+	public void setPhotos(List<FlickrPhoto> photos)
 	{
-		this.stream = stream;
+		this.photos = photos;
+	}
+
+	public FlickrTagPage getPublicTags()
+	{
+		return publicTags;
+	}
+
+	public void setPublicTags(FlickrTagPage publicTags)
+	{
+		this.publicTags = publicTags;
 	}
 }

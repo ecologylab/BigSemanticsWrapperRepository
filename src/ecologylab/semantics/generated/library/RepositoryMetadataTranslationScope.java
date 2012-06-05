@@ -132,25 +132,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
-		ecologylab.semantics.generated.library.flickr.FlickrGroups.class,
+		ecologylab.semantics.generated.library.flickr.FlickrPhoto.class,
 
-		ecologylab.semantics.generated.library.flickr.FlickrImageDetail.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrImageDetailTwo.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrLink.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrNearby.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrSearch.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrSearchTwo.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrTag.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrTags.class,
-
-		ecologylab.semantics.generated.library.flickr.FlickrTagsInteresting.class,
+		ecologylab.semantics.generated.library.flickr.FlickrTagPage.class,
 
 		ecologylab.semantics.generated.library.gaurdian_comic.GaurdianComic.class,
 
@@ -321,8 +305,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.search.BingSearchApi.class,
 
 		ecologylab.semantics.generated.library.search.DeliciousSearch.class,
-
-		ecologylab.semantics.generated.library.search.FlickrNearbySearchResult.class,
 
 		ecologylab.semantics.generated.library.search.GoogleScholarSearch.class,
 
