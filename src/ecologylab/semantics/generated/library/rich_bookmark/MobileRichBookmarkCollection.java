@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.rich_bookmark;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.rich_bookmark.RichBookmark;
-import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.generated.library.rich_bookmark.MobileRichBookmark;
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataFloat;
@@ -24,11 +24,11 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class RichBookmarkCollection extends Document
+public class MobileRichBookmarkCollection extends Metadata
 {
-	@simpl_collection("rich_bookmark")
-	@mm_name("rich_bookmarks")
-	private List<RichBookmark> richBookmarks;
+	@simpl_collection("mobile_rich_bookmark")
+	@mm_name("mobile_rich_bookmarks")
+	private List<MobileRichBookmark> mobileRichBookmarks;
 
 	@simpl_scalar
 	private MetadataFloat version;
@@ -36,42 +36,42 @@ public class RichBookmarkCollection extends Document
 	@simpl_scalar
 	private MetadataFloat metadataVersion;
 
-	public RichBookmarkCollection()
+	public MobileRichBookmarkCollection()
 	{ super(); }
 
-	public RichBookmarkCollection(MetaMetadataCompositeField mmd) {
+	public MobileRichBookmarkCollection(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<RichBookmark> getRichBookmarks()
+	public List<MobileRichBookmark> getMobileRichBookmarks()
 	{
-		return richBookmarks;
+		return mobileRichBookmarks;
 	}
 
   // lazy evaluation:
-  public List<RichBookmark> richBookmarks()
+  public List<MobileRichBookmark> mobileRichBookmarks()
   {
-    if (richBookmarks == null)
-      richBookmarks = new ArrayList<RichBookmark>();
-    return richBookmarks;
+    if (mobileRichBookmarks == null)
+      mobileRichBookmarks = new ArrayList<MobileRichBookmark>();
+    return mobileRichBookmarks;
   }
 
   // addTo:
-  public void addToRichBookmarks(RichBookmark element)
+  public void addToMobileRichBookmarks(MobileRichBookmark element)
   {
-    richBookmarks().add(element);
+    mobileRichBookmarks().add(element);
   }
 
   // size:
-  public int richBookmarksSize()
+  public int mobileRichBookmarksSize()
   {
-    return richBookmarks == null ? 0 : richBookmarks.size();
+    return mobileRichBookmarks == null ? 0 : mobileRichBookmarks.size();
   }
 
-	public void setRichBookmarks(List<RichBookmark> richBookmarks)
+	public void setMobileRichBookmarks(List<MobileRichBookmark> mobileRichBookmarks)
 	{
-		this.richBookmarks = richBookmarks;
+		this.mobileRichBookmarks = mobileRichBookmarks;
 	}
 
 	public MetadataFloat	version()

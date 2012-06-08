@@ -9,38 +9,28 @@ package ecologylab.semantics.generated.library.rich_bookmark;
  */
 
 import ecologylab.semantics.generated.library.gps.GisLocation;
-import ecologylab.semantics.metadata.builtins.Annotation;
+import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.Clipping;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class RichBookmark extends Document
+public class MobileRichBookmark extends Metadata
 {
 	@simpl_composite
 	@simpl_scope("repository_clippings")
 	@mm_name("clipping")
 	private Clipping clipping;
-
-	/** 
-	 *User annotations.
-	 */ 
-	@simpl_collection("annotation")
-	@mm_name("annotations")
-	private List<Annotation> annotations;
 
 	@simpl_scalar
 	private MetadataDate time;
@@ -49,10 +39,10 @@ public class RichBookmark extends Document
 	@mm_name("gis_location")
 	private GisLocation gisLocation;
 
-	public RichBookmark()
+	public MobileRichBookmark()
 	{ super(); }
 
-	public RichBookmark(MetaMetadataCompositeField mmd) {
+	public MobileRichBookmark(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
@@ -65,36 +55,6 @@ public class RichBookmark extends Document
 	public void setClipping(Clipping clipping)
 	{
 		this.clipping = clipping;
-	}
-
-	public List<Annotation> getAnnotations()
-	{
-		return annotations;
-	}
-
-  // lazy evaluation:
-  public List<Annotation> annotations()
-  {
-    if (annotations == null)
-      annotations = new ArrayList<Annotation>();
-    return annotations;
-  }
-
-  // addTo:
-  public void addToAnnotations(Annotation element)
-  {
-    annotations().add(element);
-  }
-
-  // size:
-  public int annotationsSize()
-  {
-    return annotations == null ? 0 : annotations.size();
-  }
-
-	public void setAnnotations(List<Annotation> annotations)
-	{
-		this.annotations = annotations;
 	}
 
 	public MetadataDate	time()
