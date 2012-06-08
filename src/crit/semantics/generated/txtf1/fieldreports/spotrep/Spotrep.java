@@ -9,20 +9,16 @@ package crit.semantics.generated.txtf1.fieldreports.spotrep;
  */
 
 import ecologylab.semantics.generated.library.gps.GisLocation;
-import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Annotation;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
-import ecologylab.semantics.metadata.scalar.MetadataBufferedImage;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import java.awt.image.BufferedImage;
 import java.lang.String;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -30,20 +26,8 @@ import java.util.Map;
  *A 9-line report from the field.
  */ 
 @simpl_inherit
-public class Spotrep extends Document
+public class Spotrep extends Annotation
 {
-	/** 
-	 *Timestamp for the report.
-	 */ 
-	@simpl_scalar
-	private MetadataDate timeDate;
-
-	/** 
-	 *Unit making the report.
-	 */ 
-	@simpl_scalar
-	private MetadataString reportingUnit;
-
 	/** 
 	 *Extent of damage at location.
 	 */ 
@@ -88,22 +72,10 @@ public class Spotrep extends Document
 	private MetadataString assessment;
 
 	/** 
-	 *Additional comments by the observer.
-	 */ 
-	@simpl_scalar
-	private MetadataString additionalNarrative;
-
-	/** 
 	 *File containing photograph of the situation.
 	 */ 
 	@simpl_scalar
 	private MetadataString photographFile;
-
-	/** 
-	 *Photograph of the situation.
-	 */ 
-	@simpl_scalar
-	private MetadataBufferedImage photographData;
 
 	public Spotrep()
 	{ super(); }
@@ -112,70 +84,6 @@ public class Spotrep extends Document
 		super(mmd);
 	}
 
-
-	public MetadataDate	timeDate()
-	{
-		MetadataDate	result = this.timeDate;
-		if (result == null)
-		{
-			result = new MetadataDate();
-			this.timeDate = result;
-		}
-		return result;
-	}
-
-	public Date getTimeDate()
-	{
-		return this.timeDate == null ? null : timeDate().getValue();
-	}
-
-	public MetadataDate getTimeDateMetadata()
-	{
-		return timeDate;
-	}
-
-	public void setTimeDate(Date timeDate)
-	{
-		if (timeDate != null)
-			this.timeDate().setValue(timeDate);
-	}
-
-	public void setTimeDateMetadata(MetadataDate timeDate)
-	{
-		this.timeDate = timeDate;
-	}
-
-	public MetadataString	reportingUnit()
-	{
-		MetadataString	result = this.reportingUnit;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.reportingUnit = result;
-		}
-		return result;
-	}
-
-	public String getReportingUnit()
-	{
-		return this.reportingUnit == null ? null : reportingUnit().getValue();
-	}
-
-	public MetadataString getReportingUnitMetadata()
-	{
-		return reportingUnit;
-	}
-
-	public void setReportingUnit(String reportingUnit)
-	{
-		if (reportingUnit != null)
-			this.reportingUnit().setValue(reportingUnit);
-	}
-
-	public void setReportingUnitMetadata(MetadataString reportingUnit)
-	{
-		this.reportingUnit = reportingUnit;
-	}
 
 	public MetadataString	damageExtent()
 	{
@@ -379,38 +287,6 @@ public class Spotrep extends Document
 		this.assessment = assessment;
 	}
 
-	public MetadataString	additionalNarrative()
-	{
-		MetadataString	result = this.additionalNarrative;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.additionalNarrative = result;
-		}
-		return result;
-	}
-
-	public String getAdditionalNarrative()
-	{
-		return this.additionalNarrative == null ? null : additionalNarrative().getValue();
-	}
-
-	public MetadataString getAdditionalNarrativeMetadata()
-	{
-		return additionalNarrative;
-	}
-
-	public void setAdditionalNarrative(String additionalNarrative)
-	{
-		if (additionalNarrative != null)
-			this.additionalNarrative().setValue(additionalNarrative);
-	}
-
-	public void setAdditionalNarrativeMetadata(MetadataString additionalNarrative)
-	{
-		this.additionalNarrative = additionalNarrative;
-	}
-
 	public MetadataString	photographFile()
 	{
 		MetadataString	result = this.photographFile;
@@ -441,37 +317,5 @@ public class Spotrep extends Document
 	public void setPhotographFileMetadata(MetadataString photographFile)
 	{
 		this.photographFile = photographFile;
-	}
-
-	public MetadataBufferedImage	photographData()
-	{
-		MetadataBufferedImage	result = this.photographData;
-		if (result == null)
-		{
-			result = new MetadataBufferedImage();
-			this.photographData = result;
-		}
-		return result;
-	}
-
-	public BufferedImage getPhotographData()
-	{
-		return this.photographData == null ? null : photographData().getValue();
-	}
-
-	public MetadataBufferedImage getPhotographDataMetadata()
-	{
-		return photographData;
-	}
-
-	public void setPhotographData(BufferedImage photographData)
-	{
-		if (photographData != null)
-			this.photographData().setValue(photographData);
-	}
-
-	public void setPhotographDataMetadata(MetadataBufferedImage photographData)
-	{
-		this.photographData = photographData;
 	}
 }
