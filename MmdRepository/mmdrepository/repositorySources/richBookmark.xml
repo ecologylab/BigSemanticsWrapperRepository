@@ -1,14 +1,14 @@
-<meta_metadata_repository name="rich_bookmark" package="ecologylab.semantics.generated.library.rich_bookmark">
+<meta_metadata_repository name="mobile_rich_bookmark" package="ecologylab.semantics.generated.library.rich_bookmark">
 
-	<meta_metadata name="rich_bookmark" extends="document">
+	<meta_metadata name="mobile_rich_bookmark" extends="metadata">
 		<composite name="clipping" type="clipping" polymorphic_scope="repository_clippings" />
-	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." />
+<!-- 	    <collection name="annotations" child_type="annotation" promote_children="true" comment="User annotations." /> -->
 		<scalar name="time" scalar_type="Date" />
 		<composite name="gis_location" type="gis_location" />
 	</meta_metadata>
 
-	<meta_metadata name="rich_bookmark_collection" extends="document">
-		<collection name="rich_bookmarks" child_type="rich_bookmark" />
+	<meta_metadata name="mobile_rich_bookmark_collection" extends="metadata">
+		<collection name="mobile_rich_bookmarks" child_type="mobile_rich_bookmark" />
 
 		<scalar name="version" scalar_type="Float" />
 		<scalar name="metadata_version" scalar_type="Float" />
