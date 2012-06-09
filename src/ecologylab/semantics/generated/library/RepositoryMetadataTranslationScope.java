@@ -20,6 +20,10 @@ public class RepositoryMetadataTranslationScope
 
 	protected static final Class TRANSLATIONS[] =
 	{
+		crit.semantics.generated.txtf1.fieldreports.emergent_event.EmergentEvent.class,
+
+		crit.semantics.generated.txtf1.fieldreports.emergent_event.EmergentEventCollection.class,
+
 		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
 
 		ecologylab.semantics.generated.library.Bookmark.class,
@@ -218,16 +222,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.opml.Outline.class,
 
-		ecologylab.semantics.generated.library.patents.GooglePatent.class,
-
-		ecologylab.semantics.generated.library.patents.GoogleSorry.class,
-
-		ecologylab.semantics.generated.library.patents.Patent.class,
-
-		ecologylab.semantics.generated.library.patents.PatentAuthor.class,
-
-		ecologylab.semantics.generated.library.patents.PatentClassification.class,
-
 		ecologylab.semantics.generated.library.political_cartoon.PoliticalCartoon.class,
 
 		ecologylab.semantics.generated.library.products.AmazonList.class,
@@ -254,9 +248,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.restaurant.RestaurantGenre.class,
 
-		ecologylab.semantics.generated.library.rich_bookmark.RichBookmark.class,
+		ecologylab.semantics.generated.library.rich_bookmark.MobileRichBookmark.class,
 
-		ecologylab.semantics.generated.library.rich_bookmark.RichBookmarkCollection.class,
+		ecologylab.semantics.generated.library.rich_bookmark.MobileRichBookmarkCollection.class,
 
 		ecologylab.semantics.generated.library.rss.Channel.class,
 
