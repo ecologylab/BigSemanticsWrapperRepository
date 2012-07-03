@@ -84,13 +84,13 @@
 			<scalar name="location" xpath="." />
 		</collection>
     
-		<scalar name="pic" hide="true" xpath="//td[@id='img_primary']//img/@src" scalar_type="ParsedURL" />
+		<composite name="poster" xpath="//td[@id='img_primary']//img/@src" type="image" hide="true" layer="3.0" "/>
 
 		<semantic_actions>
 
-			<get_field name="pic"/> 
+			<get_field name="poster"/> 
 			<create_and_visualize_img_surrogate> 
-				<arg value="pic" name="image_purl"/> 
+				<arg value="poster" name="image_purl"/> 
 			</create_and_visualize_img_surrogate> 
 
 		</semantic_actions>
