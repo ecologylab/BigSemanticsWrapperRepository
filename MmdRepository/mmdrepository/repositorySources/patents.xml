@@ -42,7 +42,7 @@
 	
 	
 	<meta_metadata name="google_patent_image" type="image" parser="image">
-		<example_url url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&printsec=abstract&img=1&zoom=1&sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
+		<example_url url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&amp;printsec=abstract&amp;img=1&amp;zoom=1&amp;sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
 		<selector url_regex_fragment="http://bks[0-9].books.google.com/patents" domain="google.com" />
 
 <!-- 		<before_semantic_actions> -->

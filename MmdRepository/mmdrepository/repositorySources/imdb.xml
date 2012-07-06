@@ -84,7 +84,7 @@
 			<scalar name="location" xpath="." />
 		</collection>
     
-		<composite name="poster" xpath="//td[@id='img_primary']//img/@src" type="image" hide="true" layer="3.0" "/>
+		<composite name="poster" xpath="//td[@id='img_primary']//img/@src" type="image" hide="true" layer="3.0"/>
 
 		<semantic_actions>
 
