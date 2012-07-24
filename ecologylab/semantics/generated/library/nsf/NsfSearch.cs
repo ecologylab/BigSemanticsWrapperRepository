@@ -21,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.nsf 
 {
 	[SimplInherit]
-	public class NsfSearch : Search
+	public class NsfSearch : Search<Document>
 	{
 		public NsfSearch()
 		{ }

@@ -26,7 +26,7 @@ namespace ecologylab.semantics.generated.library.flickr
 	/// Searching from a photo for nearby photos
 	/// </summary>
 	[SimplInherit]
-	public class FlickrGroups : Search
+	public class FlickrGroups : Search<Document>
 	{
 		[SimplCollection("flickr_tag")]
 		[MmName("flickr_tags")]

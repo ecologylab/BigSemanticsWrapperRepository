@@ -21,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.patents 
 {
 	[SimplInherit]
-	public class GooglePatentAuthor : PatentAuthor
+	public class GooglePatentAuthor : PatentAuthor<Patent>
 	{
 		public GooglePatentAuthor()
 		{ }

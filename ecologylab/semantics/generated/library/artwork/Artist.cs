@@ -23,7 +23,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.artwork 
 {
 	[SimplInherit]
-	public class Artist : Author
+	public class Artist : Author<CreativeWork>
 	{
 		[SimplCollection("artwork")]
 		[MmName("artworks")]

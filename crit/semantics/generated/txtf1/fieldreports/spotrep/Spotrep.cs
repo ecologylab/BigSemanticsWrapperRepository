@@ -19,7 +19,6 @@ using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
-//using java.awt.image;
 
 namespace crit.semantics.generated.txtf1.fieldreports.spotrep 
 {
@@ -27,20 +26,8 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 	/// A 9-line report from the field.
 	/// </summary>
 	[SimplInherit]
-	public class Spotrep : Document
+	public class Spotrep : Annotation
 	{
-		/// <summary>
-		/// Timestamp for the report.
-		/// </summary>
-		[SimplScalar]
-		private MetadataDate timeDate;
-
-		/// <summary>
-		/// Unit making the report.
-		/// </summary>
-		[SimplScalar]
-		private MetadataString reportingUnit;
-
 		/// <summary>
 		/// Extent of damage at location.
 		/// </summary>
@@ -85,54 +72,16 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 		private MetadataString assessment;
 
 		/// <summary>
-		/// Additional comments by the observer.
-		/// </summary>
-		[SimplScalar]
-		private MetadataString additionalNarrative;
-
-		/// <summary>
 		/// File containing photograph of the situation.
 		/// </summary>
 		[SimplScalar]
 		private MetadataString photographFile;
-
-        ///// <summary>
-        ///// Photograph of the situation.
-        ///// </summary>
-        //[SimplScalar]
-        //private MetadataBufferedImage photographData;
 
 		public Spotrep()
 		{ }
 
 		public Spotrep(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataDate TimeDate
-		{
-			get{return timeDate;}
-			set
-			{
-				if (this.timeDate != value)
-				{
-					this.timeDate = value;
-					this.RaisePropertyChanged( () => this.TimeDate );
-				}
-			}
-		}
-
-		public MetadataString ReportingUnit
-		{
-			get{return reportingUnit;}
-			set
-			{
-				if (this.reportingUnit != value)
-				{
-					this.reportingUnit = value;
-					this.RaisePropertyChanged( () => this.ReportingUnit );
-				}
-			}
-		}
 
 		public MetadataString DamageExtent
 		{
@@ -225,19 +174,6 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 			}
 		}
 
-		public MetadataString AdditionalNarrative
-		{
-			get{return additionalNarrative;}
-			set
-			{
-				if (this.additionalNarrative != value)
-				{
-					this.additionalNarrative = value;
-					this.RaisePropertyChanged( () => this.AdditionalNarrative );
-				}
-			}
-		}
-
 		public MetadataString PhotographFile
 		{
 			get{return photographFile;}
@@ -250,18 +186,5 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				}
 			}
 		}
-
-        //public MetadataBufferedImage PhotographData
-        //{
-        //    get{return photographData;}
-        //    set
-        //    {
-        //        if (this.photographData != value)
-        //        {
-        //            this.photographData = value;
-        //            this.RaisePropertyChanged( () => this.PhotographData );
-        //        }
-        //    }
-        //}
 	}
 }

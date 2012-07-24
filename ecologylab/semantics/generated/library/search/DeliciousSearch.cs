@@ -24,7 +24,7 @@ namespace ecologylab.semantics.generated.library.search
 	/// The delicious search class
 	/// </summary>
 	[SimplInherit]
-	public class DeliciousSearch : Search
+	public class DeliciousSearch : Search<Document>
 	{
 		public DeliciousSearch()
 		{ }

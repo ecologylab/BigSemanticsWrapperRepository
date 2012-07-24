@@ -23,7 +23,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.scholarlyPublication 
 {
 	[SimplInherit]
-	public class AcmPortalAuthor : Author
+	public class AcmPortalAuthor : Author<AcmPortal>
 	{
 		[SimplComposite]
 		[MmName("publication_detail")]

@@ -30,7 +30,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 		/// </summary>
 		[SimplCollection("author")]
 		[MmName("authors")]
-		private List<Author> authors;
+		private List<Author<CreativeWork>> authors;
 
 		[SimplScalar]
 		[SimplOtherTags(new String[] {"year_of_publication"})]
@@ -52,7 +52,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 		public CreativeWork(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Author> Authors
+		public List<Author<CreativeWork>> Authors
 		{
 			get{return authors;}
 			set

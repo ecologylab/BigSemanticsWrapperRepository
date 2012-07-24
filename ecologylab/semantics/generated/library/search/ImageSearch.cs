@@ -21,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.search 
 {
 	[SimplInherit]
-	public class ImageSearch : Search
+	public class ImageSearch : Search<Document>
 	{
 		public ImageSearch()
 		{ }

@@ -10,6 +10,7 @@ using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metametadata;
 
 
+using crit.semantics.generated.txtf1.fieldreports.emergent_event;
 using crit.semantics.generated.txtf1.fieldreports.spotrep;
 using ecologylab.semantics.generated.library;
 using ecologylab.semantics.generated.library.artwork;
@@ -48,10 +49,12 @@ using ecologylab.semantics.generated.library.sfu_cartoon_archive;
 using ecologylab.semantics.generated.library.slashdot;
 using ecologylab.semantics.generated.library.truman_library_1948_campaign_cartoons;
 using ecologylab.semantics.generated.library.tvshow;
+using ecologylab.semantics.generated.library.urbanspoon;
 using ecologylab.semantics.generated.library.uva;
 using ecologylab.semantics.generated.library.videos;
 using ecologylab.semantics.generated.library.wikipedia;
-using ecologylab.semantics.metadata.builtins.declarations;
+using ecologylab.semantics.metadata;
+using ecologylab.semantics.metadata.builtins;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace ecologylab.semantics.generated.library 
@@ -79,7 +82,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(Artist),
 				typeof(Artwork),
 				typeof(Audience),
-				typeof(Author),
+				typeof(Author<>),
 				typeof(AuthorPhotos),
 				typeof(BasicPublication),
 				typeof(BingSearchApi),
@@ -117,19 +120,12 @@ namespace ecologylab.semantics.generated.library
 				typeof(Dlms),
 				typeof(DocumentSet),
 				typeof(Educational),
+				typeof(EmergentEvent),
+				typeof(EmergentEventCollection),
 				typeof(FastflipSearch),
 				typeof(FlickrAuthor),
-				typeof(FlickrGroups),
-				typeof(FlickrImageDetail),
-				typeof(FlickrImageDetailTwo),
-				typeof(FlickrLink),
-				typeof(FlickrNearby),
-				typeof(FlickrNearbySearchResult),
-				typeof(FlickrSearch),
-				typeof(FlickrSearchTwo),
-				typeof(FlickrTag),
-				typeof(FlickrTags),
-				typeof(FlickrTagsInteresting),
+				typeof(FlickrPhoto),
+				typeof(FlickrTagPage),
 				typeof(GaurdianComic),
 				typeof(General),
 				typeof(GetRecordAdditionalMetadata),
@@ -137,7 +133,6 @@ namespace ecologylab.semantics.generated.library
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
 				typeof(GooglePatent),
-				typeof(GooglePatentAuthor),
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
 				typeof(GoogleSorry),
@@ -158,7 +153,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
 				typeof(ImdbTitle),
-				typeof(Investigator),
+				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
 				typeof(KeywordSet),
@@ -166,6 +161,8 @@ namespace ecologylab.semantics.generated.library
 				typeof(Lolz),
 				typeof(MediaContent),
 				typeof(MmArtwork),
+				typeof(MobileRichBookmark),
+				typeof(MobileRichBookmarkCollection),
 				typeof(Model),
 				typeof(MomaArtwork),
 				typeof(Movie),
@@ -187,7 +184,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(Page),
 				typeof(Paragraph),
 				typeof(Patent),
-				typeof(PatentAuthor),
+				typeof(PatentAuthor<>),
 				typeof(PatentClassification),
 				typeof(PdfMixin),
 				typeof(Periodical),
@@ -206,13 +203,11 @@ namespace ecologylab.semantics.generated.library
 				typeof(Restaurant),
 				typeof(RestaurantGenre),
 				typeof(ResultInfo),
-				typeof(RichBookmark),
-				typeof(RichBookmarkCollection),
 				typeof(Rss),
 				typeof(Rss22),
 				typeof(ScholarlyArticle),
 				typeof(ScienceDirectArticle),
-				typeof(Search),
+				typeof(Search<>),
 				typeof(SearchAdditionalMetadataAdn),
 				typeof(SearchCrumb),
 				typeof(SearchMeta),
@@ -225,6 +220,8 @@ namespace ecologylab.semantics.generated.library
 				typeof(SlashdotRss),
 				typeof(SlashdotSearch),
 				typeof(SlashdotTag),
+				typeof(SocialMediaSearch1),
+				typeof(SocialMediaSearch2<>),
 				typeof(SocialMediaSearchResult),
 				typeof(Spotrep),
 				typeof(Subject),
@@ -244,6 +241,7 @@ namespace ecologylab.semantics.generated.library
 				typeof(TvshowActor),
 				typeof(TvshowEpisode),
 				typeof(TvshowRating),
+				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(VideoInterview),
 				typeof(Watchyoutubevideo),

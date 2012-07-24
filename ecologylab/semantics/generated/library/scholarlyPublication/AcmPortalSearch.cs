@@ -21,7 +21,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.scholarlyPublication 
 {
 	[SimplInherit]
-	public class AcmPortalSearch : Search
+	public class AcmPortalSearch : Search<Document>
 	{
 		public AcmPortalSearch()
 		{ }

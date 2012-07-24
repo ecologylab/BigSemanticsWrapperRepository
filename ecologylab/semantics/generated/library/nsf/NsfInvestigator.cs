@@ -22,7 +22,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.nsf 
 {
 	[SimplInherit]
-	public class NsfInvestigator : Investigator
+	public class NsfInvestigator : Investigator<NsfAward>
 	{
 		[SimplScalar]
 		private MetadataString firstName;

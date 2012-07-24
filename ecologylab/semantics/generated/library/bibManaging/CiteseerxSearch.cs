@@ -24,7 +24,7 @@ namespace ecologylab.semantics.generated.library.bibManaging
 	/// CiteSeerX search using keywords.
 	/// </summary>
 	[SimplInherit]
-	public class CiteseerxSearch : Search
+	public class CiteseerxSearch : Search<Document>
 	{
 		public CiteseerxSearch()
 		{ }

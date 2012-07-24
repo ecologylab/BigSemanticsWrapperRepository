@@ -28,6 +28,10 @@ namespace ecologylab.semantics.generated.library.imdb
 	[SimplInherit]
 	public class ImdbTitle : Movie
 	{
+		[SimplComposite]
+		[MmName("poster")]
+		private Image poster;
+
 		[SimplScalar]
 		private MetadataString gist;
 
@@ -43,6 +47,19 @@ namespace ecologylab.semantics.generated.library.imdb
 
 		public ImdbTitle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public Image Poster
+		{
+			get{return poster;}
+			set
+			{
+				if (this.poster != value)
+				{
+					this.poster = value;
+					this.RaisePropertyChanged( () => this.Poster );
+				}
+			}
+		}
 
 		public MetadataString Gist
 		{

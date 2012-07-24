@@ -25,7 +25,7 @@ namespace ecologylab.semantics.generated.library.urbanspoon
 	/// UrbanSpoon Search Class
 	/// </summary>
 	[SimplInherit]
-	public class UrbanSpoonGenre : Search
+	public class UrbanSpoonGenre : Search<Document>
 	{
 		[SimplCollection("search_result")]
 		[MmName("top_results")]

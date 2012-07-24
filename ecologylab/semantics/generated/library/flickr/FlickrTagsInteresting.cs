@@ -26,7 +26,7 @@ namespace ecologylab.semantics.generated.library.flickr
 	/// Used for flickr search results
 	/// </summary>
 	[SimplInherit]
-	public class FlickrTagsInteresting : Search
+	public class FlickrTagsInteresting : Search<Document>
 	{
 		/// <summary>
 		/// Collection of all images of a user

@@ -22,7 +22,7 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.search 
 {
 	[SimplInherit]
-	public class Search : Document
+	public class Search<SR> : Document where SR : Document
 	{
 		[SimplScalar]
 		private MetadataString query;

@@ -26,7 +26,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 	/// An author of an article or creative work.
 	/// </summary>
 	[SimplInherit]
-	public class Author : Document
+	public class Author<CW> : Document where CW : CreativeWork
 	{
 		[SimplScalar]
 		private MetadataString affiliation;
@@ -34,7 +34,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 		[SimplScalar]
 		private MetadataString city;
 
-		[SimplCollection("creative_work")]
+		[SimplCollection("publication")]
 		[MmName("publications")]
 		private List<CreativeWork> publications;
 

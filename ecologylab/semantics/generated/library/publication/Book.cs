@@ -29,7 +29,7 @@ namespace ecologylab.semantics.generated.library.publication
 	{
 		[SimplCollection("author")]
 		[MmName("editors")]
-		private List<Author> editors;
+		private List<Author<CreativeWork>> editors;
 
 		[SimplScalar]
 		private MetadataString edition;
@@ -47,7 +47,7 @@ namespace ecologylab.semantics.generated.library.publication
 		public Book(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Author> Editors
+		public List<Author<CreativeWork>> Editors
 		{
 			get{return editors;}
 			set

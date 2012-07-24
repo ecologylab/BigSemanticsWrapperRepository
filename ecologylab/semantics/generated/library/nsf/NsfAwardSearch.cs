@@ -24,7 +24,7 @@ namespace ecologylab.semantics.generated.library.nsf
 	/// NSF Award search.
 	/// </summary>
 	[SimplInherit]
-	public class NsfAwardSearch : Search
+	public class NsfAwardSearch : Search<Document>
 	{
 		public NsfAwardSearch()
 		{ }

@@ -115,6 +115,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crit\semantics\generated\txtf1\fieldreports\emergent_event\EmergentEvent.cs" />
+    <Compile Include="crit\semantics\generated\txtf1\fieldreports\emergent_event\EmergentEventCollection.cs" />
     <Compile Include="crit\semantics\generated\txtf1\fieldreports\spotrep\Spotrep.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -174,9 +176,11 @@
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrImageDetailTwo.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrLink.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrNearby.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrPhoto.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrSearchTwo.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTag.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTagPage.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTags.cs" />
     <Compile Include="ecologylab\semantics\generated\library\flickr\FlickrTagsInteresting.cs" />
     <Compile Include="ecologylab\semantics\generated\library\gaurdian_comic\GaurdianComic.cs" />
@@ -257,6 +261,8 @@
     <Compile Include="ecologylab\semantics\generated\library\Restaurant.cs" />
     <Compile Include="ecologylab\semantics\generated\library\restaurant\Restaurant.cs" />
     <Compile Include="ecologylab\semantics\generated\library\restaurant\RestaurantGenre.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rich_bookmark\MobileRichBookmark.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\rich_bookmark\MobileRichBookmarkCollection.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rich_bookmark\RichBookmark.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rich_bookmark\RichBookmarkCollection.cs" />
     <Compile Include="ecologylab\semantics\generated\library\rss\Channel.cs" />
@@ -300,6 +306,8 @@
     <Compile Include="ecologylab\semantics\generated\library\search\SearchMeta.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\SearchResult.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\SlashdotSearch.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\SocialMediaSearch1.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\search\SocialMediaSearch2.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\SocialMediaSearchResult.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\TumblrSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\search\YahooGeoCode.cs" />
@@ -323,6 +331,7 @@
     <Compile Include="ecologylab\semantics\generated\library\tvshow\TvshowEpisode.cs" />
     <Compile Include="ecologylab\semantics\generated\library\tvshow\TvshowRating.cs" />
     <Compile Include="ecologylab\semantics\generated\library\urbanspoon\UrbanSpoonGenre.cs" />
+    <Compile Include="ecologylab\semantics\generated\library\urbanspoon\UrbanSpoonSearch.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\DocumentSet.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\KeywordSet.cs" />
     <Compile Include="ecologylab\semantics\generated\library\uva\Model.cs" />

@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using ecologylab.collections;
 using ecologylab.semantics.generated.library.creative_work;
 using ecologylab.semantics.generated.library.nsf;
-using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
@@ -24,17 +23,13 @@ using ecologylab.semantics.metametadata;
 namespace ecologylab.semantics.generated.library.nsf 
 {
 	[SimplInherit]
-	public class Investigator : Author
+	public class Investigator<CW> : Author<CreativeWork> where CW : Grant
 	{
 		[SimplScalar]
 		private MetadataString email;
 
 		[SimplScalar]
 		private MetadataString investigationType;
-
-		[SimplCollection("grant")]
-		[MmName("grants")]
-		private List<Grant> grants;
 
 		public Investigator()
 		{ }
@@ -64,19 +59,6 @@ namespace ecologylab.semantics.generated.library.nsf
 				{
 					this.investigationType = value;
 					this.RaisePropertyChanged( () => this.InvestigationType );
-				}
-			}
-		}
-
-		public List<Grant> Grants
-		{
-			get{return grants;}
-			set
-			{
-				if (this.grants != value)
-				{
-					this.grants = value;
-					this.RaisePropertyChanged( () => this.Grants );
 				}
 			}
 		}

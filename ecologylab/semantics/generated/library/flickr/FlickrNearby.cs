@@ -24,7 +24,7 @@ namespace ecologylab.semantics.generated.library.flickr
 	/// Searching from a photo for nearby photos
 	/// </summary>
 	[SimplInherit]
-	public class FlickrNearby : Search
+	public class FlickrNearby : Search<Document>
 	{
 		public FlickrNearby()
 		{ }
