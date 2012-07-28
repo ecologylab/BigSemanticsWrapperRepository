@@ -19,6 +19,7 @@ using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
+using ecologylabGeneratedSemantics.ecologylab.semantics.generated.library.creative_work;
 
 namespace ecologylab.semantics.generated.library.creative_work 
 {
@@ -30,7 +31,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 		/// </summary>
 		[SimplCollection("author")]
 		[MmName("authors")]
-		private List<Author<CreativeWork>> authors;
+		private List<IAuthor<CreativeWork>> authors;
 
 		[SimplScalar]
 		[SimplOtherTags(new String[] {"year_of_publication"})]
@@ -52,7 +53,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 		public CreativeWork(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Author<CreativeWork>> Authors
+		public List<IAuthor<CreativeWork>> Authors
 		{
 			get{return authors;}
 			set

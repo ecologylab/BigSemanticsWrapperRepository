@@ -19,6 +19,7 @@ using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
 using ecologylab.semantics.metadata.scalar;
 using ecologylab.semantics.metametadata;
+using ecologylabGeneratedSemantics.ecologylab.semantics.generated.library.creative_work;
 
 namespace ecologylab.semantics.generated.library.creative_work 
 {
@@ -26,7 +27,7 @@ namespace ecologylab.semantics.generated.library.creative_work
 	/// An author of an article or creative work.
 	/// </summary>
 	[SimplInherit]
-	public class Author<CW> : Document where CW : CreativeWork
+	public class Author<CW> : Document, IAuthor<CW> where CW : CreativeWork
 	{
 		[SimplScalar]
 		private MetadataString affiliation;
