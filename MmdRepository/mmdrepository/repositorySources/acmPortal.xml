@@ -109,7 +109,7 @@
 
 <meta_metadata name="acm_portal_periodical" extends="periodical">
     <scalar name="publisher" scalar_type="String"/>
-	<collection name="articles" child_type="scholarly_article"/>
+	<collection name="articles" child_type="acm_portal"/>
 </meta_metadata>
 
 <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
