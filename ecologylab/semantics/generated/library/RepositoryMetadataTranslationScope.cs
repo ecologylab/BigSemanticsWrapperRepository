@@ -55,6 +55,7 @@ using ecologylab.semantics.generated.library.videos;
 using ecologylab.semantics.generated.library.wikipedia;
 using ecologylab.semantics.metadata;
 using ecologylab.semantics.metadata.builtins;
+using ecologylab.semantics.namesandnums;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace ecologylab.semantics.generated.library 
@@ -66,7 +67,7 @@ namespace ecologylab.semantics.generated.library
 
 		public static SimplTypesScope Get()
 		{
-			return SimplTypesScope.Get("meta-metadata-compiler-tscope", MetadataBuiltinsTypesScope.Get(),
+			return SimplTypesScope.Get(SemanticNames.REPOSITORY_METADATA_TRANSLATIONS, MetadataBuiltinsTypesScope.Get(),
 				typeof(AcmPortal),
 				typeof(AcmPortalAuthor),
 				typeof(AcmPortalAuthorCollaborators),
