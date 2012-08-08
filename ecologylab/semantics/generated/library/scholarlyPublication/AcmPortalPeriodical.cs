@@ -25,9 +25,9 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 	[SimplInherit]
 	public class AcmPortalPeriodical : Periodical
 	{
-		[SimplCollection("scholarly_article")]
+		[SimplCollection("acm_portal")]
 		[MmName("articles")]
-		private List<ScholarlyArticle> articles;
+		private List<AcmPortal> articles;
 
 		public AcmPortalPeriodical()
 		{ }
@@ -35,7 +35,7 @@ namespace ecologylab.semantics.generated.library.scholarlyPublication
 		public AcmPortalPeriodical(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<ScholarlyArticle> Articles
+		public List<AcmPortal> Articles
 		{
 			get{return articles;}
 			set
