@@ -53,9 +53,7 @@ using ecologylab.semantics.generated.library.urbanspoon;
 using ecologylab.semantics.generated.library.uva;
 using ecologylab.semantics.generated.library.videos;
 using ecologylab.semantics.generated.library.wikipedia;
-using ecologylab.semantics.metadata;
-using ecologylab.semantics.metadata.builtins;
-using ecologylab.semantics.namesandnums;
+using ecologylab.semantics.metadata.builtins.declarations;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace ecologylab.semantics.generated.library 
@@ -67,7 +65,7 @@ namespace ecologylab.semantics.generated.library
 
 		public static SimplTypesScope Get()
 		{
-			return SimplTypesScope.Get(SemanticNames.REPOSITORY_METADATA_TRANSLATIONS, MetadataBuiltinsTypesScope.Get(),
+			return SimplTypesScope.Get("repository_metadata", MetadataBuiltinsTypesScope.Get(),
 				typeof(AcmPortal),
 				typeof(AcmPortalAuthor),
 				typeof(AcmPortalAuthorCollaborators),
