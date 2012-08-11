@@ -113,6 +113,9 @@
     <Content Include="MmdRepository\mmdrepository\repositorySources\wikipedia.xml" />
     <Content Include="MmdRepository\mmdrepository\sites.xml" />
     <Content Include="MmdRepository\mmdrepository\styles.xml" />
+    <Content Include="MmdRepository\testData\collectedExampleUrlMetadata.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
