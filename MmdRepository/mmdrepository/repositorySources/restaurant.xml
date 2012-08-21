@@ -7,8 +7,9 @@
 		
 		<composite name="image" type="image" comment="picture of food or place" />
 
-		<scalar name="link" scalar_type="ParsedURL"
-			comment="Link to the restaurant's website" />
+		<composite name="website" type="compound_document" />
+<!-- 		<scalar name="link" scalar_type="ParsedURL" -->
+<!-- 			comment="Link to the restaurant's website" /> -->
 		<scalar name="rating" scalar_type="String" comment="Rating of the restaurant" />
 		<scalar name="price_range" scalar_type="String"
 			comment="Price range of the restaurant" />

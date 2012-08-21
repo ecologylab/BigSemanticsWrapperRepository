@@ -5,7 +5,7 @@
 	<meta_metadata name="urban_spoon_restaurant" type="restaurant"
 		parser="xpath" comment="UrbanSpoon restaurant description page" user_agent_string="firefox">
 		
-		<selector url_path_tree="http://www.urbanspoon.com/r/" />
+		<selector url_path_tree="http://www.urbanspoon.com/r" />
 		
 		<example_url url="http://www.urbanspoon.com/r/114/875031/restaurant/College-Station/Christophers-World-Grill-Bryan" />
 		
@@ -13,22 +13,38 @@
 		<def_var name="primary" type="node" xpath="//div[@id='primary']" />
 		
 		<scalar name="title" context_node="main_block" xpath="./div/h1"/>
-		<scalar name="link" context_node="primary" xpath="./p[@class='website']/a[@class='ext']/@href" />
 		<scalar name="rating" xpath="//div[@id='vote_block']/div[@class='score up']/div[@class='number']/span[@class='digits percent-text rating average']" />
 		<scalar name="price_range" xpath="//div[@id='secondary']/div[@class='menu']/fieldset/div[@class='price']/span[@class='pricerange']" />
-
+		
+		<composite name="website">
+			<scalar name="location" context_node="primary" xpath="./p[@class='website']/a[@class='ext']/@href" />
+		</composite>
 		
 		<composite name="image" >
 			<scalar name="location" xpath="//div[@id='aside']//ul[contains(@id,'_collection')]/li[contains(@id,'restaurant_photo')][1]//img/@srcd" />
 		</composite>
 		
+
+<!-- 		<composite name="restaurant_site"  xpath="//p[@class='website']"> -->
+<!-- 			<scalar name="location" xpath="./a[@class='ext']/@href" />		 -->
+<!-- 		</composite> -->
+		
 		<composite name="place" xpath="//div[@id='primary']">
-			<scalar name="location" xpath="./div[@class='address adr']/a[1]/@href" />
+<!-- 			<scalar name="location" xpath="./div[@class='address adr']/a[1]/@href" /> -->
 			<scalar name="telephone" xpath="./h3" />
 			<scalar name="street_address" xpath=".//span[@class='street-address']" />
 			<scalar name="locality" xpath=".//span[@class='locality']" />
 			<scalar name="postal_code" xpath=".//a[@class='postal-code']" />
 			<scalar name="region" xpath=".//span[@class='region']" />
+			
+			<scalar name="location" >
+				<concatenate_values>
+					<value>http://maps.google.com/maps?q=</value>
+					<value from_scalar="street_address" />
+					<value>,</value>
+					<value from_scalar="postal_code" />
+	 			</concatenate_values>
+	 		</scalar>
 		</composite>
 		
 		<collection name="genres" xpath="//div[@id='secondary']/div[@class='cuisines']/fieldset/a">
