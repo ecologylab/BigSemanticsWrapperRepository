@@ -16,6 +16,7 @@ import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -29,6 +30,10 @@ import java.util.Map;
 @simpl_inherit
 public class ImdbTitle extends Movie
 {
+	@simpl_composite
+	@mm_name("poster")
+	private Image poster;
+
 	@simpl_scalar
 	private MetadataString gist;
 
@@ -46,6 +51,16 @@ public class ImdbTitle extends Movie
 		super(mmd);
 	}
 
+
+	public Image getPoster()
+	{
+		return poster;
+	}
+
+	public void setPoster(Image poster)
+	{
+		this.poster = poster;
+	}
 
 	public MetadataString	gist()
 	{

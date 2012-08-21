@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.scholarlyPublication;
  */
 
 import ecologylab.semantics.generated.library.creative_work.Periodical;
-import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
+import ecologylab.semantics.generated.library.scholarlyPublication.AcmPortal;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -23,9 +23,9 @@ import java.util.Map;
 @simpl_inherit
 public class AcmPortalPeriodical extends Periodical
 {
-	@simpl_collection("scholarly_article")
+	@simpl_collection("acm_portal")
 	@mm_name("articles")
-	private List<ScholarlyArticle> articles;
+	private List<AcmPortal> articles;
 
 	public AcmPortalPeriodical()
 	{ super(); }
@@ -35,21 +35,21 @@ public class AcmPortalPeriodical extends Periodical
 	}
 
 
-	public List<ScholarlyArticle> getArticles()
+	public List<AcmPortal> getArticles()
 	{
 		return articles;
 	}
 
   // lazy evaluation:
-  public List<ScholarlyArticle> articles()
+  public List<AcmPortal> articles()
   {
     if (articles == null)
-      articles = new ArrayList<ScholarlyArticle>();
+      articles = new ArrayList<AcmPortal>();
     return articles;
   }
 
   // addTo:
-  public void addToArticles(ScholarlyArticle element)
+  public void addToArticles(AcmPortal element)
   {
     articles().add(element);
   }
@@ -60,7 +60,7 @@ public class AcmPortalPeriodical extends Periodical
     return articles == null ? 0 : articles.size();
   }
 
-	public void setArticles(List<ScholarlyArticle> articles)
+	public void setArticles(List<AcmPortal> articles)
 	{
 		this.articles = articles;
 	}
