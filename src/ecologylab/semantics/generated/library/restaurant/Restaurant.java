@@ -8,14 +8,12 @@ package ecologylab.semantics.generated.library.restaurant;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.gps.PostalAddress;
 import ecologylab.semantics.generated.library.restaurant.RestaurantGenre;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
@@ -45,11 +43,9 @@ public class Restaurant extends CompoundDocument
 	@mm_name("image")
 	private Image image;
 
-	/** 
-	 *Link to the restaurant's website
-	 */ 
-	@simpl_scalar
-	private MetadataParsedURL link;
+	@simpl_composite
+	@mm_name("website")
+	private CompoundDocument website;
 
 	/** 
 	 *Rating of the restaurant
@@ -98,36 +94,14 @@ public class Restaurant extends CompoundDocument
 		this.image = image;
 	}
 
-	public MetadataParsedURL	link()
+	public CompoundDocument getWebsite()
 	{
-		MetadataParsedURL	result = this.link;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.link = result;
-		}
-		return result;
+		return website;
 	}
 
-	public ParsedURL getLink()
+	public void setWebsite(CompoundDocument website)
 	{
-		return this.link == null ? null : link().getValue();
-	}
-
-	public MetadataParsedURL getLinkMetadata()
-	{
-		return link;
-	}
-
-	public void setLink(ParsedURL link)
-	{
-		if (link != null)
-			this.link().setValue(link);
-	}
-
-	public void setLinkMetadata(MetadataParsedURL link)
-	{
-		this.link = link;
+		this.website = website;
 	}
 
 	public MetadataString	rating()
