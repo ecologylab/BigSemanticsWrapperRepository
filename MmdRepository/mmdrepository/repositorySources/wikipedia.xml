@@ -39,7 +39,7 @@
     
     <example_url url="http://en.wikipedia.org/wiki/Type_system" />
    
-    <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
+    <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[@width>50][1]" type="node" />
     
     <scalar name="title" xpath="//*[@id='firstHeading']" />
     <scalar name="description" xpath="//*[@id='mw-content-text']/p[1]" />
