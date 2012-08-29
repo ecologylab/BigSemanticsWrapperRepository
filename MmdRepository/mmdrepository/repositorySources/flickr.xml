@@ -10,7 +10,7 @@
 
 		<scalar name="title" xpath="//div[@id='meta']/h1" scalar_type="String" navigates_to="location"/>
 		<scalar name="description" xpath="//div[@id='meta']/div[@class='photo-desc']" ignore_in_term_vector="true" scalar_type="String"/>
-		<scalar name="image_location" xpath="//div[@class='photo-div']/img/@src" hide="true" scalar_type="ParsedURL"/>
+		<scalar name="image_location" xpath="//link[@rel='image_src']/@href" hide="true" scalar_type="ParsedURL"/>
 		
 		<scalar name="views" xpath="//span[@id='view-count']" scalar_type="String">
 			<filter regex=" views$" replace="" />
