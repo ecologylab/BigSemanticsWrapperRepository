@@ -1,178 +1,199 @@
-<meta_metadata_repository name="acm_portal" package="ecologylab.semantics.generated.library.scholarlyPublication" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="acm_portal"
+                          package="ecologylab.semantics.generated.library.scholarlyPublication"
+                          default_user_agent_name="chrome_2">
+
+  <meta_metadata name="publication_detail_institution" extends="metadata" parser="xpath" >
+      <scalar name="publication_years" scalar_type="String" />
+      <scalar name="publication_count" scalar_type="Int" />
+      <scalar name="citation_count" scalar_type="Int" />
+      <scalar name="six_week_download_count" scalar_type="Int" />
+      <scalar name="year_download_count" scalar_type="Int" />
+      <scalar name="download_count" scalar_type="Int" />
+      <scalar name="downloads_per_article" scalar_type="Float" />
+      <scalar name="citations_per_article" scalar_type="Float" />   
+  </meta_metadata>
 
 
-
-<meta_metadata name="publication_detail_institution" extends="metadata" parser="xpath" >
-    <scalar name="publication_years" scalar_type="String" />
-    <scalar name="publication_count" scalar_type="Int" />
-    <scalar name="citation_count" scalar_type="Int" />
-    <scalar name="six_week_download_count" scalar_type="Int" />
-    <scalar name="year_download_count" scalar_type="Int" />
-    <scalar name="download_count" scalar_type="Int" />
-    <scalar name="downloads_per_article" scalar_type="Float" />
-    <scalar name="citations_per_article" scalar_type="Float" />   
-</meta_metadata>
-
-
-<meta_metadata name="acm_portal_institution_profile" extends="document" parser="xpath">
+  <meta_metadata name="acm_portal_institution_profile" extends="document" parser="xpath">
     <selector url_stripped="http://dl.acm.org/inst_page.cfm" />
-	<example_url url="http://dl.acm.org/inst_page.cfm?id=1013772"/>
-	<scalar name="title" xpath="//title/text()"/>
-	<composite name="home_page" type="document" xpath="//span/strong/..">
-		<scalar name="title" xpath="./a"/>
-		<scalar name="location" xpath="./a/@href"/>
-	</composite>
-	<!-- Dynamic :(
-	<composite name="publication_details" type="publication_detail_institution" xpath=".">
-		<scalar name="publication_years" xpath="//td[text()='Publication years']/../td[2]/text()" />
-		<scalar name="publication_count" xpath="//td[text()='Publication count']/../td[2]/text()" />
-		<scalar name="citation_count" xpath="//td[text()='Citation Count']/../td[2]/text()" />
-		<scalar name="six_week_download_count" xpath="//td[text()='Downloads (6 Weeks)']/../td[2]/text()" />
-		<scalar name="year_download_count" xpath="//td[text()='Downloads (12 Months)']/../td[2]/text()" />
-		<scalar name="download_count" xpath="//td[text()='Downloads (cumulative)']/../td[2]/text()" />
-		<scalar name="downloads_per_article" xpath="//td[text()='Average downloads per article']/../td[2]/text()" />
-		<scalar name="citations_per_article" xpath="//td[text()='Average citations per article']/../td[2]/text()" />
-    </composite>
-     -->
-	<!-- Dynamic content :(
-	<collection name="most_downloaded" child_type="acm_portal" xpath="//a[starts-with(@href, 'citation.cfm')]">
-	<scalar name="title" xpath="./text()" />
-    <scalar name="location" xpath="./@href" />
+  	<example_url url="http://dl.acm.org/inst_page.cfm?id=1013772"/>
     
-		<collection name="authors" child_type="acm_portal_author" xpath="./following::tr[position() = 1]//a">
-    		<scalar name="title" xpath="./text()"/>
-			<scalar name="location" xpath="./@href" />
-		</collection>
-		 
-	</collection>
-	-->
-</meta_metadata>
+  	<scalar name="title" xpath="//title/text()"/>
+  	<composite name="home_page" type="document" xpath="//span/strong/..">
+  		<scalar name="title" xpath="./a"/>
+  		<scalar name="location" xpath="./a/@href"/>
+  	</composite>
+  	<!-- Dynamic content :(
+  	<composite name="publication_details" type="publication_detail_institution" xpath=".">
+  		<scalar name="publication_years" xpath="//td[text()='Publication years']/../td[2]/text()" />
+  		<scalar name="publication_count" xpath="//td[text()='Publication count']/../td[2]/text()" />
+  		<scalar name="citation_count" xpath="//td[text()='Citation Count']/../td[2]/text()" />
+  		<scalar name="six_week_download_count" xpath="//td[text()='Downloads (6 Weeks)']/../td[2]/text()" />
+  		<scalar name="year_download_count" xpath="//td[text()='Downloads (12 Months)']/../td[2]/text()" />
+  		<scalar name="download_count" xpath="//td[text()='Downloads (cumulative)']/../td[2]/text()" />
+  		<scalar name="downloads_per_article" xpath="//td[text()='Average downloads per article']/../td[2]/text()" />
+  		<scalar name="citations_per_article" xpath="//td[text()='Average citations per article']/../td[2]/text()" />
+      </composite>
+    -->
+  	<!-- Dynamic content :(
+  	<collection name="most_downloaded" child_type="acm_portal" xpath="//a[starts-with(@href, 'citation.cfm')]">
+  	<scalar name="title" xpath="./text()" />
+      <scalar name="location" xpath="./@href" />
+      
+  		<collection name="authors" child_type="acm_portal_author" xpath="./following::tr[position() = 1]//a">
+      		<scalar name="title" xpath="./text()"/>
+  			<scalar name="location" xpath="./@href" />
+  		</collection>
+  		 
+  	</collection>
+  	-->
+  </meta_metadata>
 
-<meta_metadata name="publication_detail" extends="metadata" parser="xpath" >
-    <scalar name="publication_count" scalar_type="String" />
-    <scalar name="citation_count" scalar_type="String" />
-   <scalar name="years" scalar_type="String" />
-</meta_metadata>
+
+  <meta_metadata name="publication_detail" extends="metadata" parser="xpath" >
+     <scalar name="publication_count" scalar_type="String" />
+     <scalar name="citation_count" scalar_type="String" />
+     <scalar name="years" scalar_type="String" />
+  </meta_metadata>
 
 
-<meta_metadata name="acm_portal_author_collaborators" extends="document" parser="xpath">
+  <meta_metadata name="acm_portal_author_collaborators" extends="document" parser="xpath">
     <selector url_regex="http://dl.acm.org/author_page.cfm.+dsp=coll.*" domain="acm.org" />
-	<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll"/>
-	<scalar name="title" xpath="//span/strong/text()"/>
-	<collection name="collaborators" child_type="acm_portal_author" xpath="//div/a[@target='_self']">
-	    <scalar name="title" xpath="./text()"/>
-	    <scalar name="location" xpath="./@href" />
-	</collection>
-</meta_metadata>
+  	<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll"/>
+  	<scalar name="title" xpath="//span/strong/text()"/>
+  	<collection name="collaborators" child_type="acm_portal_author"
+                xpath="//div/a[@target='_self']">
+      <scalar name="title" xpath="./text()"/>
+  	  <scalar name="location" xpath="./@href" />
+  	</collection>
+  </meta_metadata>
 
-<meta_metadata name="acm_portal_author" ignore_in_term_vector="true" extends="author" parser="xpath" user_agent_name="firefox_3_6_8">
-  <generic_type_var name="CW" arg="acm_portal" />
 
+  <meta_metadata name="acm_portal_author" extends="author" parser="xpath"
+                 ignore_in_term_vector="true" user_agent_name="firefox_3_6_8">
+    <generic_type_var name="CW" arg="acm_portal" />
+  
 		<selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
 		<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
-       
-       <scalar name="title" xpath="//span/strong/text()"/>
-       <scalar name="location" hidden="true"/>
-
-       <composite name="publication_detail" type="publication_detail">
-			<scalar name="publication_count" xpath="//td[text()='Publication count']/../td[2]/text()" />
-       		<scalar name="citation_count" xpath="//td[text()='Citation Count']/../td[2]/text()"/>
-			<scalar name="years" xpath="//td[text()='Publication years']/../td[2]/text()"/>
-       </composite>
-
-        
-       <composite name="collaborators" type="acm_portal_author_collaborators" xpath="//a[starts-with(text(), 'See all colleagues of this author')]">
-        <scalar name="location" xpath="./@href"/>
-        <scalar name="title" xpath="./text()"/>
-       </composite>
-       
-    <collection name="publications" label="recent" ignore_in_term_vector="true" xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
+         
+    <scalar name="title" xpath="//span/strong/text()"/>
+    <scalar name="location" hidden="true"/>
+  
+    <composite name="publication_detail" type="publication_detail">
+    	<scalar name="publication_count" xpath="//td[text()='Publication count']/../td[2]/text()" />
+      <scalar name="citation_count" xpath="//td[text()='Citation Count']/../td[2]/text()"/>
+    	<scalar name="years" xpath="//td[text()='Publication years']/../td[2]/text()"/>
+    </composite>
+  
+          
+    <composite name="collaborators" type="acm_portal_author_collaborators"
+               xpath="//a[starts-with(text(), 'See all colleagues of this author')]">
+      <scalar name="location" xpath="./@href"/>
+      <scalar name="title" xpath="./text()"/>
+    </composite>
+         
+    <collection name="publications" label="recent" ignore_in_term_vector="true"
+                xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />
 			<scalar name="description" xpath="./tr[5]" />
 			<scalar name="location" xpath="./tr[1]/td/a/@href" />
 			<!-- This should work but does not...???
 			<collection ignore_in_term_vector="true" name="authors" xpath="./*/*/div[@class='authors']/a">
-			 <scalar name="location" xpath="./@href">
+		    <scalar name="location" xpath="./@href">
 				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)" replace="" />
-			</scalar>
+			  </scalar>
 			  <scalar name="title" xpath="./text()" />
 			</collection>
-			 -->
+			-->
 		</collection>
-		<collection name="affiliations" ignore_in_term_vector="true" child_type="acm_portal_institution_profile"  xpath="//a[starts-with(@href, 'inst_page.cfm')]">
-		   	<scalar name="title" xpath="." />
+    
+		<collection name="affiliations" child_type="acm_portal_institution_profile"
+                ignore_in_term_vector="true" xpath="//a[starts-with(@href, 'inst_page.cfm')]">
+		  <scalar name="title" xpath="." />
 			<scalar name="location" xpath="./@href" />
 		</collection>
-		
- </meta_metadata>
+  </meta_metadata>
+  
 
-
-<meta_metadata name="acm_portal_periodical" extends="periodical">
+  <meta_metadata name="acm_portal_periodical" extends="periodical">
     <scalar name="publisher" scalar_type="String"/>
-	<collection name="articles" child_type="acm_portal"/>
-</meta_metadata>
+  	<collection name="articles" child_type="acm_portal"/>
+  </meta_metadata>
 
-<meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath" user_agent_name="google_bot_2">
 
+  <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath"
+                 user_agent_name="google_bot_2">
 		 <!-- <selector url_stripped="http://portal.acm.org/citation.cfm" /> -->
 		<selector url_stripped="http://dl.acm.org/citation.cfm" />
-		
 		<example_url url="http://dl.acm.org/citation.cfm?id=2063231.2063237&amp;coll=DL" />
 
 		<url_generator type="search" engine="acm_portal" use_id="title" />
 	
 		<composite name="rich_media">
-			<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
+			<scalar name="location"
+              xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
 		</composite>
 		
-		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="location" as_natural_id="title" format="text" />
+		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="location"
+            as_natural_id="title" format="text" />
 
-		<collection name="authors"  ignore_in_term_vector="true"  xpath="//div[@id='divmain']//a[@title='Author Profile Page']" child_type="acm_portal_author">
+		<collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true"
+                xpath="//div[@id='divmain']//a[@title='Author Profile Page']">
 			<scalar name="location" xpath="./@href">
-				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)" replace="" />
+				<filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)"
+                replace="" />
 			</scalar>
 			<scalar name="title" xpath="./text()" />
-			<collection name="affiliations" child_type="acm_portal_institution_profile" xpath="../..//a[@title='Institutional Profile Page']">
-			    <scalar name="title" xpath="." />
-			    <scalar name="location" xpath="./@href" />
+			<collection name="affiliations" child_type="acm_portal_institution_profile"
+                  xpath="../..//a[@title='Institutional Profile Page']">
+			  <scalar name="title" xpath="." />
+			  <scalar name="location" xpath="./@href" />
 			</collection>
-			
 		</collection>
 
-		<composite name="source" type="acm_portal_periodical" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]">
+		<composite name="source" type="acm_portal_periodical"
+               xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]">
 			<scalar name="location" xpath=".//td[text()='Title']/following-sibling::td/a[1]" />
 			<scalar name="title" xpath=".//td[text()='Title']/following-sibling::td[1]" />
-			<collection name="authors" child_type="acm_portal_author" label="chairs" comment="Publication general/program chairs." xpath=".//td[contains(text(), 'Chairs')]/following-sibling::td/a">
+			<collection name="authors" child_type="acm_portal_author" label="chairs"
+                  xpath=".//td[contains(text(), 'Chairs')]/following-sibling::td/a"
+                  comment="Publication general/program chairs.">
 				<scalar name="location" xpath="./../a[starts-with(@href, 'author_page.cfm')]/@href">
-				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)" replace="" />
+				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)"
+                  replace="" />
 				</scalar>
 				<scalar name="title" xpath="." />
 <!-- 				<scalar name="affiliation" /> -->
 <!-- 				<scalar name="city" /> -->
 			</collection>
-			<scalar name="year" xpath=".//td[text()='Publisher']/following-sibling::td" label="year published" is_facet="true">
+			<scalar name="year" xpath=".//td[text()='Publisher']/following-sibling::td"
+              label="year published" is_facet="true">
 				<filter regex="[\D]" replace="" />
 			</scalar>
 			<scalar name="isbn" xpath=".//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]">
 				<filter regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
 			</scalar>
 			<!-- xpath that could be used that returns all documents instead of just the first 10: 
-						<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
-			 -->
-			<collection name="articles" xpath="./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href, 'citation.cfm')]/../../..">
+			<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
+			-->
+			<collection name="articles"
+                  xpath="./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href, 'citation.cfm')]/../../..">
 				<scalar name="title" xpath=".//a" />
-				<scalar name="description" xpath="./following::tr[position() = 4]//div[@style='display:inline']" />
+				<scalar name="description"
+                xpath="./following::tr[position() = 4]//div[@style='display:inline']" />
 				<scalar name="location" xpath=".//a/@href" />
-				<collection name="authors" child_type="acm_portal_author" xpath="./following::tr[position() = 1]//a">
+				<collection name="authors" child_type="acm_portal_author"
+                    xpath="./following::tr[position() = 1]//a">
 					<scalar name="title" xpath="./text()"/>
-	    			<scalar name="location" xpath="./../a[starts-with(@href, 'author_page.cfm')]/@href" />
+	    	  <scalar name="location" xpath="./../a[starts-with(@href, 'author_page.cfm')]/@href" />
 				</collection>
 			</collection>
 		</composite>
 
-		<scalar name="description" xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
+		<scalar name="description"
+            xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
 
-<!-- 
+    <!-- 
 		<collection name="references" xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
@@ -189,68 +210,73 @@
         <scalar name="year" field_parser_key="$1" />
       </composite>
 		</collection>
-		 -->
+		-->
 		
-	<collection name="references" child_type="acm_portal" xpath="/html/body/div[2]/div/div[5]/table/tbody/tr//a[starts-with(@href, 'citation.cfm')]/../..">
-	      	<scalar name="title" xpath=".//a[1]/text()" />
-			<scalar name="location" xpath=".//a[1]/@href">
-			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)" replace="preflayout=flat" />
+	  <collection name="references" child_type="acm_portal"
+                xpath="/html/body/div[2]/div/div[5]/table/tbody/tr//a[starts-with(@href, 'citation.cfm')]/../..">
+	    <scalar name="title" xpath=".//a[1]/text()" />
+		  <scalar name="location" xpath=".//a[1]/@href">
+			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)"
+                replace="preflayout=flat" />
 			</scalar>
-	</collection>
+	  </collection>
 	
 
-	<collection name="citations" child_type="acm_portal" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
-	      	<field_parser name="acm_reference" for_each_element="true" />
-	      	<scalar name="title" layer="20.0" field_parser_key="$title" />
+	  <collection name="citations" child_type="acm_portal"
+              xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
+	   	<field_parser name="acm_reference" for_each_element="true" />
+	   	<scalar name="title" layer="20.0" field_parser_key="$title" />
 			<scalar name="location" xpath=".//a[1]/@href">
 			  <filter regex="(cfid=\d+&amp;cftoken=\d+)|(CFID=\d+&amp;CFTOKEN=\d+)" replace="preflayout=flat" />
 			</scalar>
 <!-- 			<scalar name="description" layer="10.0" xpath="." /> -->
   	</collection>
-	
-	
+    
+  	<collection name="classifications"
+                xpath="//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]">
+  		<scalar name="link" xpath="./@href" />
+  		<scalar name="tag_name" xpath="./child::text()" />
+  	</collection>
 
-	
+  	<collection name="keywords" xpath="//div[@id='divtags']//a/span/ancestor::a">
+  		<scalar name="link" xpath="./@href" />
+  		<scalar name="tag_name" xpath="./span/child::text()" />
+  	</collection>
 
-	<collection name="classifications" xpath="//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]">
-		<scalar name="link" xpath="./@href" />
-		<scalar name="tag_name" xpath="./child::text()" />
-	</collection>
-
-	<collection name="keywords" xpath="//div[@id='divtags']//a/span/ancestor::a">
-		<scalar name="link" xpath="./@href" />
-		<scalar name="tag_name" xpath="./span/child::text()" />
-	</collection>
-
-	<scalar name="pages" xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td" />
+  	<scalar name="pages"
+            xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td" />
 	
 		
-	<link_with name="citeseerx_summary" by_id="title" />
-	<!-- <link_with name="google_scholar_search_result" by_id="title" /> -->
+  	<link_with name="citeseerx_summary" by_id="title" />
+  	<!-- <link_with name="google_scholar_search_result" by_id="title" /> -->
 	
-	<before_semantic_actions>
-		<filter_location>
-			<alternative_host>portal.acm.org</alternative_host>
-			<alternative_host>dl.acm.org</alternative_host>
-			<set_param name="preflayout" value="flat" />
-			<strip_param name="coll" />
-			<strip_param name="dl" />
-			<strip_param name="CFID" />
-			<strip_param name="CFTOKEN" />
-		</filter_location>
-	</before_semantic_actions>
+  	<before_semantic_actions>
+  		<filter_location>
+  			<alternative_host>portal.acm.org</alternative_host>
+  			<alternative_host>dl.acm.org</alternative_host>
+  			<set_param name="preflayout" value="flat" />
+  			<strip_param name="coll" />
+  			<strip_param name="dl" />
+  			<strip_param name="CFID" />
+  			<strip_param name="CFTOKEN" />
+  		</filter_location>
+  	</before_semantic_actions>
 
-	<semantic_actions>
+  	<semantic_actions>
 <!-- 			<get_field name="location" /> -->
 <!-- 			<set_field name="metadata_page" value="location" /> -->
 <!-- 			<if> -->
 <!-- 				<not_null value="location" /> -->
-				<parse_document now="true">
-					<arg name="document" value="rich_media" />
+<!-- 				<parse_document now="true"> -->
+<!-- 					<arg name="document" value="rich_media" /> -->
 <!-- 					<arg name="location" value="location" /> -->
-				</parse_document>
+<!-- 				</parse_document> -->
 <!-- 			</if> -->
 
+			<parse_document now="true">
+				<arg name="document" value="rich_media" />
+			</parse_document>
+      
 			<get_field name="title" />
 			<create_and_visualize_text_surrogate>
 				<arg value="title" name="text" />
@@ -285,9 +311,9 @@
 					</parse_document>
 				</for_each>
 			</if>
-	</semantic_actions>
+  	</semantic_actions>
+  </meta_metadata>
 
-</meta_metadata>
 
 <!--	<meta_metadata name="acm_proceeding" extends="compound_document" parser="xpath">-->
 <!--		<selector url_stripped="http://portal.acm.org/toc.cfm" />-->
@@ -337,12 +363,14 @@
 		<scalar name="publication" scalar_type="String" />
 	</meta_metadata>
 
-	<meta_metadata name="acm_portal_search" extends="search" parser="xpath" user_agent_name="firefox_3_6_8">
 
+	<meta_metadata name="acm_portal_search" extends="search" parser="xpath"
+                 user_agent_name="firefox_3_6_8">
 		<selector url_stripped="http://portal.acm.org/results.cfm" />
 		<selector url_stripped="http://dl.acm.org/results.cfm" />
 
-		<collection name="search_results" child_type="acm_portal_search_result" xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
+		<collection name="search_results" child_type="acm_portal_search_result"
+                xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />
 			<scalar name="description" xpath="./tr[5]" />
 			<scalar name="location" xpath="./tr[1]/td/a/@href" />
@@ -363,7 +391,6 @@
 				</for_each>
 			</if>
 		</semantic_actions>
-
 	</meta_metadata>
 
 </meta_metadata_repository>

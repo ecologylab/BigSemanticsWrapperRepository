@@ -1,6 +1,8 @@
-<meta_metadata_repository name="lolz" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="lolz" package="ecologylab.semantics.generated.library"
+                          default_user_agent_name="chrome_2">
+                          
 	<meta_metadata name="cats" type="lolz">
-	<selector url_path_tree="http://icanhascheezburger.com/"/>		
+  	<selector url_path_tree="http://icanhascheezburger.com/"/>		
 		<semantic_actions>
 			<get_field name="caption" />
 			<get_field name="picture" />
@@ -14,8 +16,9 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="dogs" type="lolz">
-	<selector url_path_tree="http://ihasahotdog.com/"/>
+  	<selector url_path_tree="http://ihasahotdog.com/"/>
 		<semantic_actions>
 			<get_field name="caption" />
 			<get_field name="picture" />
@@ -29,8 +32,9 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="celebs" type="lolz">
-		<selector  url_path_tree="http://roflrazzi.com/"/>
+		<selector url_path_tree="http://roflrazzi.com/"/>
 		<semantic_actions>
 			<get_field name="caption" />
 			<get_field name="picture" />
@@ -44,6 +48,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="lookalikes" type="lolz">
 		<selector url_path_tree="http://totallylookslike.com/"/>
 		<semantic_actions>
@@ -59,6 +64,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="politics" type="lolz">
 		<selector url_path_tree="http://punditkitchen.com/"/>
 		<semantic_actions>
@@ -74,6 +80,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="sports" type="lolz">
 		<selector url_path_tree="http://upnextinsports.com/"/>
 		<semantic_actions>
@@ -89,6 +96,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="graphs" type="lolz">
 		<selector url_path_tree="http://graphjam.com/"/>
 		<semantic_actions>
@@ -104,6 +112,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="fixes" type="lolz">
 		<selector url_path_tree="http://thereifixedit.com/"/>
 		<semantic_actions>
@@ -119,6 +128,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="fails" type="lolz">
 		<selector url_path_tree="http://failblog.org/"/>
 		<semantic_actions>
@@ -134,6 +144,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="facebooks" type="lolz">
 		<selector url_path_tree="http://failbooking.com/"/>
 		<semantic_actions>
@@ -149,6 +160,7 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 	<meta_metadata name="engrish" type="lolz">
 		<selector url_path_tree="http://engrishfunny.com/"/>
 		<semantic_actions>
@@ -164,4 +176,5 @@
 			</parse_document>
 		</semantic_actions>
 	</meta_metadata>
+  
 </meta_metadata_repository>

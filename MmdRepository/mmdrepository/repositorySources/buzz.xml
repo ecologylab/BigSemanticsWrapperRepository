@@ -2,6 +2,7 @@
 
 	<meta_metadata name="yahoo_buzz" comment="Yahoo Buzz." type="rss" parser="direct">
 		<selector url_path_tree="http://buzzlog.buzz.yahoo.com/feeds/"/>
+    
     <composite name="channel">
       <collection name="items" child_type="item" no_wrap="true">
         <scalar name="title">
@@ -22,11 +23,14 @@
 			</for_each>
 		</semantic_actions>
 	</meta_metadata>
-	
+  
+  
 	<meta_metadata name="yahoo_buzz_search" comment="Yahoo buzz search" type="search" parser="xpath">
     <generic_type_var name="SR" arg="yahoo_buzz" />
 		<selector url_path_tree="http://buzz.yahoo.com/search"/>
-		<collection name="search_results" xpath="//div[contains(@class, 'searchListContainer')]//div[contains(@class, 'searchArticleItem')]/dl">
+    
+		<collection name="search_results"
+                xpath="//div[contains(@class, 'searchListContainer')]//div[contains(@class, 'searchArticleItem')]/dl">
 			<scalar name="title" xpath="./dt/a" />
 			<scalar name="description" xpath="./dd[contains(@class, 'articleSummaryContainer')]/a" />
 			<scalar name="location" xpath="./dt/a/@href" />
@@ -43,9 +47,13 @@
 		</semantic_actions>
 	</meta_metadata>
 	
-	<meta_metadata name="google_trends" extends="compound_document" comment="Google trends" parser="xpath">
+  
+	<meta_metadata name="google_trends" extends="compound_document" parser="xpath"
+                 comment="Google trends">
 		<selector url_path_tree="http://www.google.com/trends"/>
-		<collection name="hot_searches" xpath="//table[@class='hotTerm']//a[not(@id)]" child_type="hot_search" child_extends="metadata" no_wrap="true">
+    
+		<collection name="hot_searches" child_type="hot_search" child_extends="metadata"
+                xpath="//table[@class='hotTerm']//a[not(@id)]" no_wrap="true">
 			<scalar name="search" xpath="." scalar_type="String" />
 		</collection>
 		<semantic_actions>

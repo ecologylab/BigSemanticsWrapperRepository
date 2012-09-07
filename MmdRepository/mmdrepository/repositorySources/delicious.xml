@@ -1,12 +1,17 @@
 <meta_metadata_repository name="delicious" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
-	<meta_metadata name="delicious_homepage" extends="compound_document" comment="Delicious home page class" parser="xpath">
-	<selector url_path_tree="http://delicious.com/" domain="delicious.com"/>
+
+	<meta_metadata name="delicious_homepage" extends="compound_document" parser="xpath"
+                 comment="Delicious home page class">
+  	<selector url_path_tree="http://delicious.com/" domain="delicious.com"/>
 	
-		<collection name="bookmarks" xpath="//ul[@id='bookmarklist']/li" child_type="bookmark" child_extends="metadata">
-			<scalar name="title" as_composite_scalar="true" xpath="./div/div[@class='data']/h4/a/text()" scalar_type="String" />
+		<collection name="bookmarks" child_type="bookmark" child_extends="metadata"
+                xpath="//ul[@id='bookmarklist']/li">
+			<scalar name="title" as_composite_scalar="true" scalar_type="String"
+              xpath="./div/div[@class='data']/h4/a/text()" />
 			<scalar name="link" xpath="./div/div[@class='data']/h4/a/@href" scalar_type="ParsedURL" />
 			<scalar name="pic" xpath=".//img/@src" scalar_type="ParsedURL" />
 		</collection>
+    
 		<semantic_actions>
 			<get_field name="bookmarks" />
 			<for_each collection="bookmarks" as="mark">
@@ -21,4 +26,5 @@
 			</for_each>
 		</semantic_actions>
 	</meta_metadata>
+  
 </meta_metadata_repository>
