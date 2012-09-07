@@ -6,13 +6,16 @@
 	</meta_metadata>
 
 
-
-	<meta_metadata name="citeseerx_record" extends="scholarly_article" comment="CiteSeerX record for an article.">
-		<scalar name="location" xpath="//div[@id='downloads']/a[@title='View or Download this document as PDF']/@href" />
-		<scalar name="title" xpath="//h1[@class='primaryheader']" navigates_to="metadata_page" as_natural_id="title" format="text">
+	<meta_metadata name="citeseerx_record" extends="scholarly_article"
+                 comment="CiteSeerX record for an article.">
+		<scalar name="location"
+            xpath="//div[@id='downloads']/a[@title='View or Download this document as PDF']/@href" />
+		<scalar name="title" xpath="//h1[@class='primaryheader']" navigates_to="metadata_page"
+            as_natural_id="title" format="text">
 			<filter regex="(\(.*\))|(\[.*\])" replace="" />
 		</scalar>
-		<collection name="authors" xpath="//div[@id='introduction']/div[contains(@class, 'char_mediumvalue')]">
+		<collection name="authors"
+                xpath="//div[@id='introduction']/div[contains(@class, 'char_mediumvalue')]">
 			<field_parser name="regex_split" regex="\s*,\s*" />
 			<scalar name="title" field_parser_key="$0">
 				<filter regex="^by\s+" replace="" />
@@ -27,7 +30,8 @@
 
 
 
-	<meta_metadata name="citeseerx_summary" extends="citeseerx_record" parser="xpath" comment="Summary page from CiteSeerX.">
+	<meta_metadata name="citeseerx_summary" extends="citeseerx_record" parser="xpath"
+                 comment="Summary page from CiteSeerX.">
 		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/summary" />
     
     <url_generator type="search" engine="citeseerx" use_id="title" />
@@ -52,14 +56,18 @@
 			<scalar name="description" xpath=".." />
 		</collection>
 
-		<scalar name="citation_page" scalar_type="ParsedURL" xpath="//h1[@class='primaryheader']/a/@href" navigates_to="citation_page">
+		<scalar name="citation_page" scalar_type="ParsedURL"
+            xpath="//h1[@class='primaryheader']/a/@href"
+            navigates_to="citation_page">
 			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
 		</scalar>
-		<scalar name="active_bibliography_page" scalar_type="ParsedURL" xpath="//div[@id='conclusion']//a[2]/@href"
+		<scalar name="active_bibliography_page" scalar_type="ParsedURL"
+            xpath="//div[@id='conclusion']//a[2]/@href"
             navigates_to="active_bibliography_page" comment="Papers that cite the same works.">
 			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
 		</scalar>
-		<scalar name="cocitation_page" scalar_type="ParsedURL" xpath="//div[@id='conclusion']//a[3]/@href"
+		<scalar name="cocitation_page" scalar_type="ParsedURL"
+            xpath="//div[@id='conclusion']//a[3]/@href"
             navigates_to="cocitation_page" comment="Papers that are cited by the same works.">
 			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
 		</scalar>
@@ -120,8 +128,8 @@
 	</meta_metadata>
 
 
-
-	<meta_metadata name="citeseerx_similar" type="citeseerx_record" parser="xpath" comment="Citation or co-citation page from CiteSeerX.">
+	<meta_metadata name="citeseerx_similar" type="citeseerx_record" parser="xpath"
+                 comment="Citation or co-citation page from CiteSeerX.">
 		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
 
 		<collection name="citations" xpath="//table[@class='citelist']//a">
@@ -148,15 +156,16 @@
 	</meta_metadata>
 
 
-
 	<meta_metadata name="citeseerx_search_result" extends="document">
 		<scalar name="citation_info" scalar_type="String" />
 	</meta_metadata>
 
-	<meta_metadata name="citeseerx_search" extends="search" parser="xpath" comment="CiteSeerX search using keywords.">
+	<meta_metadata name="citeseerx_search" extends="search" parser="xpath"
+                 comment="CiteSeerX search using keywords.">
 		<selector url_stripped="http://citeseerx.ist.psu.edu/search" />
 
-		<collection name="search_results" child_type="citeseerx_search_result" xpath="//div[@class='searchresult'][1]/div">
+		<collection name="search_results" child_type="citeseerx_search_result"
+                xpath="//div[@class='searchresult'][1]/div">
 			<scalar name="title" xpath=".//a[contains(@class, 'doc_details')]" />
 			<scalar name="description" xpath=".//li[2]" />
 			<scalar name="location" xpath=".//a[contains(@class, 'doc_details')]/@href">
@@ -177,8 +186,8 @@
 	</meta_metadata>
 
 
-
-	<meta_metadata name="citeseerx_citing" type="citeseerx_search" parser="xpath" comment="CiteSeerX citing results.">
+	<meta_metadata name="citeseerx_citing" type="citeseerx_search" parser="xpath"
+                 comment="CiteSeerX citing results.">
 		<selector url_stripped="http://citeseerx.ist.psu.edu/showciting" />
 
 		<semantic_actions>
