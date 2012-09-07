@@ -3,7 +3,7 @@
 	<meta_metadata name="patent_classification" extends="document" parser="xpath">
 		<selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
 
-		<example_url location="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm" />
+		<example_url url="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm" />
 
 		<scalar name="description" xpath="/html/body/p[3]" />
 		<scalar name="patent_class" scalar_type="string" label="class" xpath="//big[1]">
@@ -35,19 +35,21 @@
 
 
 	<meta_metadata name="patent_author" extends="author" comment="Authors of Patents; really this should be a mix-in to author" parser="xpath">
-		<collection name="patents" child_type="patent" />
+    <generic_type_var name="CW" extends="patent" />
+		<collection name="publications" other_tags="patents" label="patents" />
 	</meta_metadata>
 	
 	
 	
 	<meta_metadata name="google_patent_image" type="image" parser="image">
-		<selector url_regex="http://bks[0-9].books.google.com/patents" domain="google.com" />
+		<example_url url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&amp;printsec=abstract&amp;img=1&amp;zoom=1&amp;sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
+		<selector url_regex_fragment="http://bks[0-9].books.google.com/patents" domain="google.com" />
 
-		<before_semantic_actions>
-			<filter_location>
-				<set_param name="zoom" value="2" />
-			</filter_location>
-		</before_semantic_actions>
+<!-- 		<before_semantic_actions> -->
+<!-- 			<filter_location> -->
+<!-- 				<set_param name="zoom" value="2" /> -->
+<!-- 			</filter_location> -->
+<!-- 		</before_semantic_actions> -->
 	</meta_metadata>
 
 	
@@ -57,8 +59,8 @@
 		<selector url_stripped="http://www.google.com/patents" />
 		<selector domain="google.com" url_path_tree="http://www.google.com/patents/" />
 
-		<example_url location="http://www.google.com/patents/US20100045705" />
-		<example_url location="http://www.google.com/patents/US7953462" />
+		<example_url url="http://www.google.com/patents/US20100045705" />
+		<example_url url="http://www.google.com/patents/US7953462" />
 
 		<collection name="authors" child_type="google_patent_author" xpath="//div[@class='patent_bibdata']/a[contains(@href,'inventor')]">
 			<scalar name="location" xpath="./@href" />
@@ -124,12 +126,13 @@
 	
 	
 	<meta_metadata name="google_patent_author" type="patent_author" parser="xpath" user_agent_name="chrome">
-		<selector url_regex="q=ininventor:" domain="google.com" />
+    <generic_type_var name="CW" arg="google_patent" />
+		<selector url_regex_fragment="q=ininventor:" domain="google.com" />
 
-		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
-		<example_url location="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
+		<example_url url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
+		<example_url url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
 
-		<collection name="patents" child_type="google_patent" xpath="//li[@class='g']//h3[@class='r']">
+		<collection name="publications" xpath="//li[@class='g']//h3[@class='r']">
 			<scalar name="title" xpath="./a" />
 			<scalar name="location" xpath="./a/@href" />
 		</collection>

@@ -1,11 +1,11 @@
 <meta_metadata_repository name="rwanda_tribunal" package="ecologylab.semantics.generated.library.rwandatribunal">
 	
-	<meta_metadata name="interview" extends="metadata" comment="personnel interview">
-		<scalar name="interviewee" scalar_type="String"/>
-		<scalar name="pic" scalar_type="ParsedURL" comment="personnel pic"/>
-		<collection name="voices" child_type="video_interview" comment="topic videos"/>
-		<collection name="segments" child_type="video_interview" comment="segmented videos"/>
-	</meta_metadata>
+<!-- 	<meta_metadata name="interview" extends="metadata" comment="personnel interview"> -->
+<!-- 		<scalar name="interviewee" scalar_type="String"/> -->
+<!-- 		<scalar name="image" scalar_type="ParsedURL" comment="personnel photograph"/> -->
+<!-- 		<collection name="voices" child_type="video_interview" comment="topic videos"/> -->
+<!-- 		<collection name="segments" child_type="video_interview" comment="segmented videos"/> -->
+<!-- 	</meta_metadata> -->
 	
 <!-- 	<meta_metadata name="tribunal_voices_interview" extends="interview"> -->
 <!-- 		<collection name="voices" child_type="video_interview" comment="topic videos"/> -->
@@ -13,7 +13,7 @@
 	
 	<meta_metadata name="category_interviews" extends="metadata" comment="categorized interviews">
 		<scalar name="category" scalar_type="String" comment="category"/>
-		<collection name="interviews" child_type="interview" comment="personnel interview"/>
+		<collection name="people" child_type="personnel_interview" comment="personnel interview"/>
 	</meta_metadata>
 	
 	<meta_metadata name="tribunal_voices" extends="document" parser="xpath" comment="Video Interviews with personnel from Rwanda Tribunal">
@@ -22,35 +22,53 @@
 		<scalar name="title" xpath="//div[@class='tv_voices_panel']/h1" />
 		<collection name="categorized_interviews" child_type="category_interviews" xpath="//div[@id='interview_list']/h2">
 			<scalar name="category" xpath="."/>
-			<collection name="interviews" xpath="./following::div[@class='item']">
-				<scalar name="interviewee" xpath="./table/tbody/tr/td[2]/h2" layer="9.9"/>
-				<scalar name="pic" xpath="./table/tbody/tr/td[1]/img[@class='interview_photo']/@src"/>
-				<scalar name="description" xpath="./table/tbody/tr/td[2]/p"/>
-				<collection name="voices" xpath="./table/tbody/tr/td[2]/ul/li">
-					<scalar name="title" xpath="./a"/>
-					<scalar name="location" xpath="./a/@href"/>
-				</collection>
-				<collection name="segments" xpath="./table/tbody/tr/td[2]/table[@class='video_list']/tbody//a">
-					<scalar name="title" xpath="."/>
-					<scalar name="location" xpath="./@href"/>
-				</collection>
+			<collection name="people" child_type="personnel_interview" xpath="./following::div[@class='item']">
+				<scalar name="title" label="name" navigates_to="location" xpath=".//h2"/>
+				<scalar name="location" xpath="./@id" hide="true">
+					<filter regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
+				</scalar>
 			</collection>
 		</collection>
+	</meta_metadata>
+	
+	<meta_metadata name="personnel_interview" extends="document" parser="xpath" comment="personnel interview">
+		<selector url_path_tree="http://www.tribunalvoices.org/voices/interview/"/>
+		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']" />
+		<scalar name="title" label="name" navigates_to="location" context_node="interview_table" xpath=".//h1"/>
+		<scalar name="location" hide="true"/>
+		<scalar name="role" scalar_type="String" context_node="interview_table" xpath=".//h2"/>
+		<scalar name="description" context_node="interview_table" xpath=".//p"/>
+		<scalar name="image" scalar_type="ParsedURL" context_node="interview_table" xpath=".//img[@class='interview_photo']/@src"/>
+		<collection name="speaks_on" child_type="video_interview" context_node="interview_table" xpath=".//li">
+			<scalar name="title" xpath="./a"/>
+			<scalar name="location" xpath="./a/@href" hide="true"/>
+		</collection>
+		<collection name="interview_segments" child_type="video_interview" 
+												context_node="interview_table" xpath=".//table[@class='video_list']//a">
+			<scalar name="title" xpath="."/>
+			<scalar name="location" xpath="./@href" hide="true"/>
+		</collection>				
 	</meta_metadata>
 	
 	<meta_metadata name="video_interview" extends="document" parser="xpath" comment="video interview">
 		<selector url_path_tree="http://www.tribunalvoices.org/voices/video/"/>
 		<selector url_path_tree="http://tribunalvoices.org/voices/video/"/>
-		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']/table/tbody" />
-		<scalar name="interviewee" scalar_type="String" context_node="interview_table" xpath="tr/td[1]/h1"/>
-		<scalar name="title" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/h2"/>
-		<scalar name="position" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[1]/td"/>
-		<scalar name="country_of_origin" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[2]/td"/>
-		<scalar name="interview_date" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[3]/td"/>
-		<scalar name="interviewers" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[4]/td"/>
-		<scalar name="part_or_timestamp" scalar_type="String" xpath="//div[@class='tv_voices_panel']//table[@class='video_credits']/tbody/tr[5]/td"/>
-		<scalar name="video_download_link" scalar_type="ParsedURL" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/small/a[1]/@href"/>
-		<scalar name="audio_download_link" scalar_type="ParsedURL" xpath="//div[@class='tv_voices_panel']/table/tbody/tr/td[1]/small/a[2]/@href"/>
+		<def_var name="interview_table" type="node" xpath="//div[@class='tv_voices_panel']" />
+		<def_var name="video_credits" type="node" xpath="//table[@class='video_credits']/tbody" />
+		<scalar name="interviewee" scalar_type="String" context_node="interview_table" xpath=".//h1"/>
+		<!-- url for topics and segments is same. couldn't be divided into 2 MMDs. 
+			only this xpath (for title) differs, so a small workaround -->
+		<scalar name="title" context_node="interview_table" xpath=".//h2">
+			<filter regex="Please help us index this " replace="" />
+		</scalar>
+		<scalar name="location" hide="true"/>
+		<scalar name="role" scalar_type="String" context_node="video_credits" xpath="./tr[1]/td"/>
+		<scalar name="country_of_origin" scalar_type="String" context_node="video_credits" xpath="./tr[2]/td"/>
+		<scalar name="interview_date" scalar_type="String" context_node="video_credits" xpath="./tr[3]/td"/>
+		<scalar name="interviewers" scalar_type="String" context_node="video_credits" xpath="./tr[4]/td"/>
+		<scalar name="part_or_timestamp" scalar_type="String" context_node="video_credits" xpath="./tr[5]/td"/>
+		<scalar name="video_download_link" scalar_type="ParsedURL" context_node="interview_table" xpath=".//small/a[1]/@href"/>
+		<scalar name="audio_download_link" scalar_type="ParsedURL" context_node="interview_table" xpath=".//small/a[2]/@href"/>
 	</meta_metadata>
 	
 </meta_metadata_repository>

@@ -9,17 +9,17 @@
 	<meta_metadata name="product" extends="compound_document" parser="xpath" schema_org_itemtype="http://schema.org/Product">
 		<scalar name="location" hide="true" />
 
-		<scalar name="price" scalar_type="String" schema_org_itemprop="price" xpath="//span[@itemprop='price']/text()"/>
+		<scalar name="price" scalar_type="String" schema_org_itemprop="price" xpath="//span[@itemprop='price']/text()" layer="3.0" style="topRight_div"/>
 		<scalar name="model" scalar_type="String" schema_org_itemprop="model" />
 
-		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" schema_org_itemprop="aggregateRating" />
-		<scalar name="num_reviews" scalar_type="integer" schema_org_itemprop="reviewCount" />
+		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" schema_org_itemprop="aggregateRating" layer="2.0" style="underTopRight_div"/>
+		<scalar name="num_reviews" scalar_type="integer" schema_org_itemprop="reviewCount" layer="2.0" style="reviewCount_div"/>
 		
-		<composite name="image" type="image" hide="true"/>
+		<composite name="image" type="image" hide="true" layer="3.0" style="mainImg_img"/>
 
 		<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
 
-		<collection name="reviews" child_type="product_review" layer="1.0"/>
+		<collection name="reviews" child_type="product_review" layer="0.8" style="reviews_div"/>
 
 	  <semantic_actions>
 	    <get_field name="image" />
@@ -35,7 +35,7 @@
 	<meta_metadata name="newegg_product" type="product" parser="xpath">
 		<selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
 		
-		<example_url location="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
+		<example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
 		
 		<scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']//img/@title" />
 		<scalar name="num_reviews" xpath="//span[@itemprop='reviewCount']" />
@@ -58,7 +58,7 @@
 	<meta_metadata name="amazon_wish_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/registry" />
 		<selector url_path_tree="http://www.amazon.co.uk//gp/registry" />
-		<example_url location="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
+		<example_url url="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
 		
 		<collection name="items" xpath="//td[@class='lineItemMainInfo']">
 			<scalar name="title" xpath=".//span[@class='small productTitle']"/>
@@ -67,10 +67,10 @@
 	</meta_metadata>
 	
 	<meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
-		<selector url_regex="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
-		<selector url_regex="http://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
-		<selector url_regex="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
-		<selector url_regex="http://www.amazon.co.uk/gp/product/[^/]*" domain="amazon.co.uk" />
+		<selector url_regex_fragment="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
+		<selector url_regex_fragment="http://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
+		<selector url_regex_fragment="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
+		<selector url_regex_fragment="http://www.amazon.co.uk/gp/product/[^/]*" domain="amazon.co.uk" />
 		
 		<example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C"/>
 		<example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY"/>
@@ -140,7 +140,7 @@
 		<selector url_path_tree="http://www.amazon.co.uk//gp/registry" />
 <!-- 		<selector url_regex="http://www.amazon.com/[^/]+/lm" domain="amazon.com"/> -->
 		
-		<example_url location="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
+		<example_url url="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
 		
 		<scalar name="title" xpath="//h1[@class='largeTitle']" />
 		
@@ -154,7 +154,7 @@
 
 	<meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
-		<example_url location="http://www.amazon.com/gp/bestsellers/books/6" />
+		<example_url url="http://www.amazon.com/gp/bestsellers/books/6" />
 		
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 	
@@ -172,7 +172,7 @@
 
 	<meta_metadata name="amazon_bestseller_list_uk" type="amazon_list" parser="xpath" user_agent_name="firefox">
 		<selector url_path_tree="http://www.amazon.co.uk/gp/bestsellers" />
-		<example_url location="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
+		<example_url url="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
 		
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 	

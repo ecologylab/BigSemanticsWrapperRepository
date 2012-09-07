@@ -19,7 +19,8 @@
 	  <generic_type_var name="SR" extends="document" />
 	  
 		<scalar name="query" scalar_type="String"/>
-		<collection name="search_results" child_type="SR" no_wrap="true" />
+		<collection name="search_results" child_type="SR" polymorphic_scope="repository_documents" no_wrap="true" />
+		<!--
 		<semantic_actions>
 			<get_field name="search_results" />
       <if>
@@ -36,18 +37,23 @@
   			</for_each>
 			<add_mixin object="result" mixin="metadata" /> 
       </if>
-		</semantic_actions>
+		</semantic_actions>	 -->
 	</meta_metadata>
 	
-	<meta_metadata name="social_media_search_1" type="search"><!-- SocialMediaSearch extends Search<SocialMediaSearchResult> -->
+	<meta_metadata name="social_media_search_1" extends="search"><!-- SocialMediaSearch1 extends Search<SocialMediaSearchResult> -->
 		  <generic_type_var name="SR" arg="social_media_search_result" />
 	</meta_metadata>
 
-	<meta_metadata name="social_media_search_2" type="search"><!-- SocialMediaSearch<SR extends SocialMediaSearchResult> extends Search<SR> -->
+	<meta_metadata name="social_media_search_2" extends="search"><!-- SocialMediaSearch2<SR extends SocialMediaSearchResult> extends Search<SR> -->
 	  <generic_type_var name="SR" extends="social_media_search_result" />
 	</meta_metadata>
+  
+  <meta_metadata name="image_search" extends="search">
+    <collection name="search_results" child_type="image_search_result" child_tag="image_search_result" />
+  </meta_metadata>
 
 	<meta_metadata name="google_search" type="search" comment="The google Search class" user_agent_name="firefox_5" parser="xpath">
+	  <generic_type_var name="SR" arg="document" />
 		<selector url_regex="http://www.google.com/search\?(?:(?!tbm=pts).)*" domain="google.com"/>
 
 		<collection name="search_results" xpath="//div[@id='res']//div//ol/li[@*]">
@@ -121,6 +127,7 @@
 	</meta_metadata>
 
 	<meta_metadata name="my_google_search" type="search" comment="The my_google Search class" user_agent_name="opera_9" parser="xpath">
+    <generic_type_var name="SR" arg="document" />
 		<selector url_stripped="http://staging.cs.tamu.edu:8080/my_google/search" />
     
 		<collection name="search_results" xpath="//div[@class='result']">
@@ -131,6 +138,7 @@
 	</meta_metadata>
 
 	<meta_metadata name="my_google_ecology0_search" type="search" comment="The my_google_ecology0 Search class" parser="xpath">
+    <generic_type_var name="SR" arg="document" />
 		<selector url_stripped="http://ecology0.csdl.tamu.edu/my_google/search" />
     
 		<collection name="search_results" xpath="//div[@class='result']">
@@ -234,14 +242,11 @@
 	</meta_metadata>
 
 	<!-- this definition of image might apply to many other XML-based search results. -->
-	<meta_metadata name="image_in_search_result" extends="image" comment="Def of an image in a Bing image search result.">
-		<scalar name="title" tag="mms:Title" /> <!-- shadows image.caption? -->
-		<scalar name="location" tag="mms:Url" /> <!-- shadows image.location? -->
-		<scalar name="width" tag="mms:Width" />
-		<scalar name="height" tag="mms:Height" />
-		<scalar name="content_type" scalar_type="String" tag="mms:ContentType" />
-		<scalar name="referrer_url" scalar_type="ParsedURL" />
-		<scalar name="file_size" scalar_type="Int" tag="mms:FileSize" />
+	<meta_metadata name="image_search_result" extends="image" comment="Def of an image in a Bing image search result.">
+		<scalar name="ref_location" scalar_type="ParsedURL" />
+		<scalar name="thumb_width" scalar_type="Int" />
+		<scalar name="thumb_height" scalar_type="Int" />
+		<scalar name="file_size" scalar_type="Int" />
 	</meta_metadata>
 
 	<!-- definitions of Bing search results from different sources. was extends document -->
@@ -276,7 +281,8 @@
 	</meta_metadata>
 		
 	
-	<meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search apie.">
+	<meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search api.">
+    <generic_type_var name="SR" arg="document" />
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
 		<scalar name="query" xpath="//searchterms/text()" ignore_in_term_vector="true"/>
 		
@@ -372,6 +378,7 @@
 	-->
 
 	<meta_metadata name="bing_search_xpath" type="search" parser="xpath" user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">
+	  <generic_type_var name="SR" arg="document" />
 		<selector url_stripped="http://www.bing.com/search" />
 		<scalar name="query" xpath="//title/text()">
 						<filter regex=" - Bing$" replace="" />

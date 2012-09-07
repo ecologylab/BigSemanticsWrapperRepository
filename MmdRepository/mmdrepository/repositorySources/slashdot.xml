@@ -31,7 +31,7 @@
 	</meta_metadata>
 	
 	<meta_metadata name="slashdot_article" extends="compound_document" parser="xpath">
-		<selector domain="slashdot.org" url_regex="http://[a-zA-Z]*.slashdot.org/story/" />
+		<selector domain="slashdot.org" url_regex_fragment="http://[a-zA-Z]*.slashdot.org/story/" />
 		<def_var name="poster_node" xpath="//div[starts-with(@id, 'details-')]/small/a/.." type="node" />
 		<def_var name="description_node" xpath="//div[starts-with(@id, 'text-')]/i/.." type="node" />
 		<scalar name="poster" scalar_type="String" navigates_to="poster_url" context_node="poster_node" xpath="." />
