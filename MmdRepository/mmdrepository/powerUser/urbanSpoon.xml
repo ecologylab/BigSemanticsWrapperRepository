@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta_metadata_repository name="urbanSpoon"
-	package="ecologylab.semantics.generated.library.urbanspoon">
+                          package="ecologylab.semantics.generated.library.urbanspoon"
+                          default_user_agent_name="firefox">
 	
-	<meta_metadata name="urban_spoon_restaurant" type="restaurant"
-		parser="xpath" comment="UrbanSpoon restaurant description page" user_agent_string="firefox">
+	<meta_metadata name="urban_spoon_restaurant" type="restaurant" parser="xpath"
+                 comment="UrbanSpoon restaurant description page">
 		
 		<selector url_path_tree="http://www.urbanspoon.com/r/" />
-		
 		<example_url url="http://www.urbanspoon.com/r/114/875031/restaurant/College-Station/Christophers-World-Grill-Bryan" />
 		
 		<def_var name="main_block" type="node" xpath="//div[@id='directory']" />
 		<def_var name="primary" type="node" xpath="//div[@id='primary']" />
 		
 		<scalar name="title" context_node="main_block" xpath="./div/h1"/>
-		<scalar name="link" context_node="primary" xpath="./p[@class='website']/a[@class='ext']/@href" />
+		<scalar name="link" context_node="primary"
+            xpath="./p[@class='website']/a[@class='ext']/@href" />
 		<scalar name="rating" xpath="//div[@id='vote_block']/div[@class='score up']/div[@class='number']/span[@class='digits percent-text rating average']" />
 		<scalar name="price_range" xpath="//div[@id='secondary']/div[@class='menu']/fieldset/div[@class='price']/span[@class='pricerange']" />
 
-		
 		<composite name="image" >
 			<scalar name="location" xpath="//div[@id='aside']//ul[contains(@id,'_collection')]/li[contains(@id,'restaurant_photo')][1]//img/@srcd" />
 		</composite>
@@ -43,9 +43,11 @@
 		</collection>
 	</meta_metadata>
 
-	<meta_metadata name="urban_spoon_genre" type="restaurant_genre" comment="UrbanSpoon Restaurants Genre"  parser="xpath">
+
+	<meta_metadata name="urban_spoon_genre" type="restaurant_genre" parser="xpath"
+                 comment="UrbanSpoon Restaurants Genre" >
+                 
 		<selector url_path_tree="http://www.urbanspoon.com/f"/>
-		
 		<example_url url="http://www.urbanspoon.com/f/114/11800/College-Station/American-Restaurants" />
 		
 		<scalar name="title" xpath="/html/head/title"/>
@@ -59,9 +61,13 @@
 		</semantic_actions>
 	</meta_metadata>
 	
-	<meta_metadata name="urban_spoon_search" comment="UrbanSpoon Search Class" type="search" parser="xpath">
-		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/"/>
-		<collection name="search_results" xpath="//div[@class = 't']/a[text() != '']" child_type="document">
+  
+	<meta_metadata name="urban_spoon_search" type="search" parser="xpath"
+                 comment="UrbanSpoon Search Class">
+		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/" />
+    
+		<collection name="search_results" child_type="document"
+                xpath="//div[@class = 't']/a[text() != '']">
 			<scalar name="title" xpath="./text()" />
 			<scalar name="location" xpath="./@href" />
 		</collection>

@@ -11,7 +11,8 @@
 			<collection name="results" child_type="nsdl_document" />
 		</composite>
 	
-		<!-- semantic actions: set resource_identifier value to location inside dc. then pass that dc extends document to parse document -->
+		<!-- semantic actions: set resource_identifier value to location inside dc.
+         then pass that dc extends document to parse document -->
 	</meta_metadata>
 
 </meta_metadata_repository>

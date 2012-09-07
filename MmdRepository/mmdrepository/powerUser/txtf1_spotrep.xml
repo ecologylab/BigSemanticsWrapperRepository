@@ -1,39 +1,34 @@
 <meta_metadata_repository name="field_report"
-	package="crit.semantics.generated.txtf1.fieldreports.spotrep">
+                        	package="crit.semantics.generated.txtf1.fieldreports.spotrep">
 
-	<meta_metadata extends="document" name="spotrep"
-		comment="A 9-line report from the field.">
-		<scalar name="time_date" scalar_type="Date"
-			comment="Timestamp for the report." />
-		<scalar name="reporting_unit" scalar_type="String"
-			comment="Unit making the report." />
-		<scalar name="damage_extent" scalar_type="String"
-			comment="Extent of damage at location." />
+	<meta_metadata extends="document" name="spotrep" comment="A 9-line report from the field.">
+		<scalar name="time_date" scalar_type="Date" comment="Timestamp for the report." />
+		<scalar name="reporting_unit" scalar_type="String" comment="Unit making the report." />
+		<scalar name="damage_extent" scalar_type="String" comment="Extent of damage at location." />
 		<scalar name="observed_activity" scalar_type="String"
-			comment="Deployed unit activity observed at the location." />
+            comment="Deployed unit activity observed at the location." />
 		<scalar name="observed_equipment" scalar_type="String"
-			comment="Equipment observed at the location." />
+            comment="Equipment observed at the location." />
 
 		<scalar name="raw_place" scalar_type="String"
-			comment="Raw place data, including Google maps URL." />
+            comment="Raw place data, including Google maps URL." />
 		<composite name="place" type="gis_location" comment="Location of report." />
 
-		<scalar name="observed_units" scalar_type="String"
-			comment="Units observed at location." />
+		<scalar name="observed_units" scalar_type="String" comment="Units observed at location." />
 		<scalar name="observed_equipment" scalar_type="String"
-			comment="Equipment observed at location." />
+            comment="Equipment observed at location." />
 		<scalar name="assessment" scalar_type="String"
-			comment="Sender's assessment of the situation at the location, including recommended resources." />
+      			comment="Sender's assessment of the situation at the location, including recommended resources." />
 		<scalar name="additional_narrative" scalar_type="String"
-			comment="Additional comments by the observer." />
+            comment="Additional comments by the observer." />
 		<scalar name="photograph_file" scalar_type="String"
-			comment="File containing photograph of the situation." />
+            comment="File containing photograph of the situation." />
 		<scalar name="photograph_data" scalar_type="BufferedImage"
-			comment="Photograph of the situation." />
+            comment="Photograph of the situation." />
 	</meta_metadata>
 
-	<meta_metadata name="tap_form_spotrep" type="spotrep"
-		parser="xpath" comment="Reads properly formatted spotreps produced by TapForms.">
+	<meta_metadata name="tap_form_spotrep" type="spotrep" parser="xpath"
+                 comment="Reads properly formatted spotreps produced by TapForms.">
 
 		<selector name="tap_form_spotrep">
 			<suffix>tap_form_spotrep</suffix>
