@@ -45,7 +45,7 @@
   	</scalar>
   </meta_metadata>
   
-  <meta_metadata name="overstock.com_product" type="product" parser="xpath">
+  <meta_metadata name="overstock_com_product" type="product" parser="xpath">
   	<selector url_regex="http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html"
               domain="overstock.com" />
   	

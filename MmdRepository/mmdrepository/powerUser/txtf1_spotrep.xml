@@ -23,8 +23,12 @@
             comment="Additional comments by the observer." />
 		<scalar name="photograph_file" scalar_type="String"
             comment="File containing photograph of the situation." />
-		<scalar name="photograph_data" scalar_type="BufferedImage"
-            comment="Photograph of the situation." />
+<!-- 		<scalar name="photograph_data" scalar_type="BufferedImage" -->
+<!--             comment="Photograph of the situation." /> -->
+
+		<scalar name="creation_time" scalar_type="Date" />
+		<scalar name="author" scalar_type="String" />
+		<scalar name="text" scalar_type="String" />
 	</meta_metadata>
 
 	<meta_metadata name="tap_form_spotrep" type="spotrep" parser="xpath"

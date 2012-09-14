@@ -4,8 +4,7 @@
                           default_user_agent_name="firefox">
 	
 	<meta_metadata name="urban_spoon_restaurant" type="restaurant" parser="xpath"
-                 comment="UrbanSpoon restaurant description page">
-		
+                 comment="UrbanSpoon restaurant description page.">
 		<selector url_path_tree="http://www.urbanspoon.com/r" />
 		<example_url url="http://www.urbanspoon.com/r/114/875031/restaurant/College-Station/Christophers-World-Grill-Bryan" />
 		
@@ -13,31 +12,23 @@
 		<def_var name="primary" type="node" xpath="//div[@id='primary']" />
 		
 		<scalar name="title" context_node="main_block" xpath="./div/h1"/>
-		<scalar name="link" context_node="primary"
+		<scalar name="location" context_node="primary"
             xpath="./p[@class='website']/a[@class='ext']/@href" />
-		<scalar name="rating" xpath="//div[@id='vote_block']/div[@class='score up']/div[@class='number']/span[@class='digits percent-text rating average']" />
-		<scalar name="price_range" xpath="//div[@id='secondary']/div[@class='menu']/fieldset/div[@class='price']/span[@class='pricerange']" />
-		<composite name="website">
-			<scalar name="location" context_node="primary" xpath="./p[@class='website']/a[@class='ext']/@href" />
-		</composite>
-		
 		<composite name="image" >
 			<scalar name="location" xpath="//div[@id='aside']//ul[contains(@id,'_collection')]/li[contains(@id,'restaurant_photo')][1]//img/@srcd" />
 		</composite>
-		
-
-<!-- 		<composite name="restaurant_site"  xpath="//p[@class='website']"> -->
-<!-- 			<scalar name="location" xpath="./a[@class='ext']/@href" />		 -->
-<!-- 		</composite> -->
-		
-		<composite name="place" xpath="//div[@id='primary']">
-<!-- 			<scalar name="location" xpath="./div[@class='address adr']/a[1]/@href" /> -->
+		<scalar name="overall_rating" xpath="//div[@id='vote_block']/div[@class='score up']/div[@class='number']/span[@class='digits percent-text rating average']" />
+    
+		<composite name="seller_website">
+			<scalar name="location" context_node="primary"
+              xpath="./p[@class='website']/a[@class='ext']/@href" />
+		</composite>
+		<composite name="seller_address" xpath="//div[@id='primary']">
 			<scalar name="telephone" xpath="./h3" />
 			<scalar name="street_address" xpath=".//span[@class='street-address']" />
 			<scalar name="locality" xpath=".//span[@class='locality']" />
 			<scalar name="postal_code" xpath=".//a[@class='postal-code']" />
 			<scalar name="region" xpath=".//span[@class='region']" />
-			
 			<scalar name="location" >
 				<concatenate_values>
 					<value>http://maps.google.com/maps?q=</value>
@@ -48,6 +39,7 @@
 	 		</scalar>
 		</composite>
 		
+		<scalar name="price_range" xpath="//div[@id='secondary']/div[@class='menu']/fieldset/div[@class='price']/span[@class='pricerange']" />
 		<collection name="genres" xpath="//div[@id='secondary']/div[@class='cuisines']/fieldset/a">
 			<scalar name="title" xpath="./text()" />
 			<scalar name="description" xpath="./@href" />
@@ -61,33 +53,27 @@
 	</meta_metadata>
 
 
-	<meta_metadata name="urban_spoon_genre" type="restaurant_genre" parser="xpath"
-                 comment="UrbanSpoon Restaurants Genre" >
-                 
+	<meta_metadata name="urban_spoon_genre" type="restaurant_genre" parser="xpath">
 		<selector url_path_tree="http://www.urbanspoon.com/f"/>
 		<example_url url="http://www.urbanspoon.com/f/114/11800/College-Station/American-Restaurants" />
 		
 		<scalar name="title" xpath="/html/head/title"/>
-		
 		<collection name="restaurants" xpath="//li[@class='row restaurant']//div[@class='title']/a" >
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="." />
 		</collection>
-		
-		<semantic_actions>
-		</semantic_actions>
 	</meta_metadata>
 	
   
-	<meta_metadata name="urban_spoon_search" type="search" parser="xpath"
-                 comment="UrbanSpoon Search Class">
+	<meta_metadata name="urban_spoon_search" type="search" parser="xpath">
 		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/" />
     
 		<collection name="search_results" child_type="document"
                 xpath="//div[@class = 't']/a[text() != '']">
-			<scalar name="title" xpath="./text()" />
+			<scalar name="title" xpath="." />
 			<scalar name="location" xpath="./@href" />
 		</collection>
+    
 		<semantic_actions>
 			<get_field name="search_results" />
 			<for_each collection="search_results" as="res">
