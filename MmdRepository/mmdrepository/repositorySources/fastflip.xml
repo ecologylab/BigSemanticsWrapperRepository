@@ -11,7 +11,7 @@
 		<!-- <scalar name="link" hide="true" scalar_type="ParsedURL" /> -->
 	</meta_metadata>
 
-	<meta_metadata name="fastflip_search" extends="compound_document" Flip Search" parser="xpath"
+	<meta_metadata name="fastflip_search" extends="compound_document" parser="xpath"
                  comment="Fast Flip Search">
   	<selector name="fastflip_search_selector"/>
   	<collection name="thumbnails" xpath="//div[@class='thumb']" child_type="thumbnail" >

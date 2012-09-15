@@ -92,7 +92,8 @@
       <scalar name="title" xpath="./text()"/>
     </composite>
          
-    <collection name="publications" label="recent" ignore_in_term_vector="true"
+    <collection name="creative_works" other_tags="publications"
+                label="recent" ignore_in_term_vector="true"
                 xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />
 			<scalar name="description" xpath="./tr[5]" />

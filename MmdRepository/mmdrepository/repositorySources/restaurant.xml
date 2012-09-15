@@ -1,33 +1,15 @@
-<meta_metadata_repository name="restaurant" package="ecologylab.semantics.generated.library.restaurant" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="restaurant"
+                          package="ecologylab.semantics.generated.library.restaurant"
+                          default_user_agent_name="chrome_2">
 
-	<meta_metadata name="restaurant" extends="compound_document"
-		comment="The restaurant class.">
-
-		<composite name="place" type="postal_address" />
-		
-		<composite name="image" type="image" comment="picture of food or place" />
-
-		<composite name="website" type="compound_document" />
-<!-- 		<scalar name="link" scalar_type="ParsedURL" -->
-<!-- 			comment="Link to the restaurant's website" /> -->
-		<scalar name="rating" scalar_type="String" comment="Rating of the restaurant" />
-		<scalar name="price_range" scalar_type="String"
-			comment="Price range of the restaurant" />
-
-		<collection name="genres" child_type="restaurant_genre" comment="The genres of food offered" />
-
-	  <semantic_actions>
-	    <get_field name="image" />
-	    <create_and_visualize_img_surrogate>
-	      <arg name="metadata" value="image" />
-	    </create_and_visualize_img_surrogate>
-	  </semantic_actions>
-
+	<meta_metadata name="restaurant" extends="service">
+		<scalar name="price_range" scalar_type="String" comment="Price range of the restaurant" />
+		<collection name="genres" child_type="restaurant_genre" comment="The genres of food offered." />
 	</meta_metadata>
 
-	<meta_metadata name="restaurant_genre" extends="document" comment="Restaurants Genre" >
-		<collection name="restaurants" child_type="restaurant" />
+
+	<meta_metadata name="restaurant_genre" extends="document" comment="Restaurants genre." >
+		<collection name="restaurants" child_type="restaurant" child_tag="restaurant" />
 	</meta_metadata>
-	
 
 </meta_metadata_repository>

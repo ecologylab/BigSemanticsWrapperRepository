@@ -1,28 +1,39 @@
-<meta_metadata_repository name="scholarlyPublication" package="ecologylab.semantics.generated.library.scholarlyPublication">
+<meta_metadata_repository name="scholarly_article"
+                          package="ecologylab.semantics.generated.library.scholarlyArticle">
 
-	<meta_metadata name="scholarly_article" extends="creative_work" schema_org_itemtype="http://schema.org/ScholarlyArticle">
-<!-- 		<scalar name="metadata_page" shadows="location" comment="citation.cfm" scalar_type="ParsedURL" /> -->
+	<meta_metadata name="scholarly_article" extends="creative_work"
+                 schema_org_itemtype="http://schema.org/ScholarlyArticle">
     <collection name="authors" child_type="author">
       <generic_type_var name="CW" arg="scholarly_article" />
     </collection>
-		<composite name="source" comment="Metadata related to where this article was published." type="periodical" layer="7.0" />
-		<collection name="references" comment="Papers cited by this paper." child_tag="reference" child_type="scholarly_article" />
-		<collection name="citations" comment="Papers that cite this paper." child_tag="citation" child_type="scholarly_article" />
-		<collection name="classifications" comment="The Classifications of this paper." child_type="tag" />
-		<collection name="keywords" comment="Key Terms of the paper." child_type="tag" schema_org_itemprop="keywords" />
+		<composite name="source" type="periodical" layer="7.0"
+               comment="Metadata related to where this article was published." />
+		<collection name="references" child_tag="reference" child_type="scholarly_article"
+                comment="Papers cited by this paper." />
+		<collection name="citations" child_tag="citation" child_type="scholarly_article"
+                comment="Papers that cite this paper." />
+		<collection name="classifications" child_type="document"
+                comment="The Classifications of this paper." />
+		<collection name="keywords" child_type="document" schema_org_itemprop="keywords"
+                comment="Key Terms of the paper." />
 		<scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
+    
 		<composite name="rich_media" label="article"/>
-		
 	</meta_metadata>
 	
-	<meta_metadata name="dx_doi" type="document" redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
+  
+	<meta_metadata name="dx_doi" type="document"
+                 redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
 		<selector url_path_tree="http://dx.doi.org"/>
 	</meta_metadata>
 	
-	<meta_metadata name="ingeta_connect" type="document"  redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
+  
+	<meta_metadata name="ingeta_connect" type="document"
+                 redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
 		<selector url_path_tree="http://www.ingentaconnect.com"/>
 	</meta_metadata>
 	
+  
 	<meta_metadata name="informa_world" type="scholarly_article"  parser="xpath">
 		<selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />
 		
@@ -35,4 +46,5 @@
 			<scalar name="location"  xpath="//div[@id='breadcrumb']/a[2]/@href" />
 		</composite>
 	</meta_metadata>
+  
 </meta_metadata_repository>

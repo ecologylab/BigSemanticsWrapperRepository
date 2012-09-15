@@ -20,6 +20,7 @@
 	  
 		<scalar name="query" scalar_type="String"/>
 		<collection name="search_results" child_type="SR" polymorphic_scope="repository_documents" no_wrap="true" />
+<!--     <scalar name="next_page" scalar_type="ParsedURL" /> -->
 		<!--
 		<semantic_actions>
 			<get_field name="search_results" />
@@ -392,7 +393,8 @@
 
 	<meta_metadata name="social_media_search_result" extends="document" comment="A result from a social media search.">
 		<scalar name="author" scalar_type="String" comment="The author of this item." />
-		<collection name="tags" child_type="tag" comment="Associated tags from the search engine, if exist." />
+		<collection name="tags" child_type="document"
+                comment="Associated tags from the search engine, if exist." />
 	</meta_metadata>
 
 	<meta_metadata name="slashdot_search" extends="search" comment="The slashdot search class" user_agent_name="opera_9" parser="xpath">

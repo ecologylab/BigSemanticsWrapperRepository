@@ -1,9 +1,56 @@
-<meta_metadata_repository name="slashdot" package="ecologylab.semantics.generated.library.slashdot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<meta_metadata_repository name="slashdot" package="ecologylab.semantics.generated.library.slashdot">
 
-	<meta_metadata name="slashdot_item" extends="item" comment="One item in a feed." parser="direct">
+	<meta_metadata name="slashdot_article" extends="post" parser="xpath">
+		<selector domain="slashdot.org" url_regex_fragment="http://[a-zA-Z]*.slashdot.org/story/" />
+    <example_url url="http://science.slashdot.org/story/12/09/14/1834239/smooth-high-definition-video-of-curiositys-landing-on-mars" />
+    
+		<def_var name="poster_node" xpath="//div[starts-with(@id, 'details-')]" type="node" />
+		<def_var name="description_node" xpath="//div[starts-with(@id, 'text-')]" type="node" />
+    
+    <collection name="authors" context_node="poster_node" xpath="./a">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </collection>
+		<scalar name="description" context_node="description_node" xpath="." />
+    <scalar name="post_date" context_node="poster_node" xpath="./time">
+      <filter regex="on ([^,]*)," group="1" />
+    </scalar>
+    
+		<collection name="anchors" child_type="document" context_node="description_node" xpath=".//a">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		<collection name="related_stories" child_type="slashdot_article"
+                xpath="//*[@id='newa2footerv2']/div[@class='grid_12']//h3/a">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+    
+		<semantic_actions>
+			<get_field name="description" />
+			<get_field name="anchors" />
+			<for_each collection="anchors" as="anch">
+				<get_field object="anch" name="title" />
+				<get_field object="anch" name="location" />
+				<if>
+					<not_null value="title" />
+					<not_null value="location" />
+					<parse_document>
+						<arg value="title" name="anchor_text" />
+						<arg value="description" name="anchor_context" />
+						<arg value="location" name="location" />
+					</parse_document>
+				</if>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+  
+  
+  <meta_metadata name="slashdot_item" extends="item" comment="One item in a feed." parser="direct">
 			<scalar name="department" scalar_type="String" tag="slash:department" hint="XML_LEAF" />
 			<scalar name="section" scalar_type="String" tag="slash:section" hint="XML_LEAF" />
 	</meta_metadata>
+
 
 	<meta_metadata name="slashdot_rss" extends="compound_document" tag="rdf:RDF" parser="direct">
 		<selector url_stripped="http://rss.slashdot.org/Slashdot/slashdot" />
@@ -25,43 +72,4 @@
 		</semantic_actions>
 	</meta_metadata> 
 	
-	<meta_metadata name="slashdot_tag" extends="metadata">
-		<scalar name="name" scalar_type="String" />
-		<scalar name="link" scalar_type="ParsedURL" />
-	</meta_metadata>
-	
-	<meta_metadata name="slashdot_article" extends="compound_document" parser="xpath">
-		<selector domain="slashdot.org" url_regex_fragment="http://[a-zA-Z]*.slashdot.org/story/" />
-		<def_var name="poster_node" xpath="//div[starts-with(@id, 'details-')]/small/a/.." type="node" />
-		<def_var name="description_node" xpath="//div[starts-with(@id, 'text-')]/i/.." type="node" />
-		<scalar name="poster" scalar_type="String" navigates_to="poster_url" context_node="poster_node" xpath="." />
-		<scalar name="poster_url" scalar_type="ParsedURL" hide="true" context_node="poster_node" xpath="./small/a" />
-		<scalar name="description" scalar_type="String" context_node="description_node" xpath="." />
-		<collection name="anchors" child_type="anchor" child_extends="metadata" xpath = "//div[starts-with(@id, 'text-')]//a" >
-			<scalar name="link"  scalar_type="ParsedURL" xpath="./@href" />
-			<scalar name="anchor_text" scalar_type="String" xpath="string(.)" />
-		</collection>
-		<!-- <collection name="related_stories" child_type="slashdot_article" xpath="">
-			<scalar name="title" xpath="" />
-			<scalar name="location" xpath="" />
-		</collection>-->
-		<semantic_actions>
-			<get_field name="anchors" />
-			<get_field name="description" />
-			<for_each collection="anchors" as="anch">
-				<get_field object="anch" name="link" />
-				<get_field object="anch" name="anchor_text" />
-				<if>
-					<not_null value="anchor_text" />
-					<not_null value="link" />
-					<parse_document>
-						<arg value="anchor_text" name="anchor_text" />
-						<arg value="description" name="anchor_context" />
-						<arg value="link" name="location" />
-					</parse_document>
-				</if>
-			</for_each>
-		</semantic_actions>
-	</meta_metadata>
-
 </meta_metadata_repository>

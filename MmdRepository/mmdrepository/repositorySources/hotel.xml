@@ -1,146 +1,137 @@
-<meta_metadata_repository name="hotel" package="ecologylab.semantics.generated.library.hotel" default_user_agent_name="chrome">
+<meta_metadata_repository name="hotel"
+                          package="ecologylab.semantics.generated.library.hotel"
+                          default_user_agent_name="chrome">
 
-<meta_metadata name="hotel" extends="document">
-	<collection name="reviews" child_type="product_review"/>
-
- 	<composite name="place" type="postal_address" layer="0.8" style="reviews_div"/> 
-	
-	<scalar name="price" scalar_type="String" layer="0.8" style="reviews_div"/>
-	
-	<scalar name="space_size" label="size" scalar_type="String" />
-	
-	<scalar name="bedrooms" scalar_type="String" />
-	<scalar name="sleeps" scalar_type="String" />
-	
-	<scalar name="check_in" scalar_type="string" />
-	<scalar name="check_out" scalar_type="string" />
-	
-<!-- 	<scalar name="temp" label="address" scalar_type="string"/> -->
-	<scalar name="location" hide="true" layer="-10"/>
-	
-</meta_metadata>
-
-<meta_metadata name="airbnb" type="hotel" parser="xpath">
-	<selector url_path_tree="http://www.airbnb.com/rooms" />
-	
-	<example_url url="http://www.airbnb.com/rooms/72247"/>
-	
-	<scalar name="title" xpath="//div[@class='overflow']" />
-<!-- 	<scalar name="temp" xpath="//span[@id='display_address']/text()"/> -->
-<!-- 	<scalar name="temp" xpath="//span[@id='display_address']/@data-location"/>just a test to show that this xpath works when extracting directly -->
-	<scalar name="description" xpath="//div[@id='description_text_wrapper']/p/text()"/>
-	<scalar name="price" xpath="//h2[@id='price_amount']"  style="metadata_h1"/>
-	<scalar name="space_size" xpath="//span[@id='size_val']" />
-	<scalar name="bedrooms" xpath="//span[@id='bedrooms_val']" />
-	<scalar name="sleeps" xpath="//span[@id='accommodates_val']" />
-	<scalar name="check_in" xpath="//span[@id='check in_val']" />
-	<scalar name="check_out" xpath="//span[@id='check out_val']" />
-	
-	<composite name="place" xpath="//span[@id='display_address']">
-		<scalar name="street_address" xpath="."/>
-		<composite name="map" xpath="//div[@id='map']">
-			<scalar name="latitude" xpath="./@data-lat"/>
-			<scalar name="longitude" xpath="./@data-lng"/>
-					
-			<scalar name="location">
-				<concatenate_values>
-					<value>http://maps.google.com/maps?q=</value>
-					<value from_scalar="latitude" />
-					<value>,</value>
-					<value from_scalar="longitude" />
-				</concatenate_values>
-			</scalar>			
-			
-			
-<!-- 			<scalar name="location" value="http://maps.google.com/maps?q=" latitudue,longitude /> -->
-		</composite>
-	</composite>
-</meta_metadata>
-
-<meta_metadata name="trip_advisor" extends="hotel" parser="xpath">
-	<selector url_regex_fragment="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com"/>
-	
-	<example_url url="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html"/>
-
-	<scalar name="title" xpath="//h1[@id='HEADING']" />
-	
-	<scalar name="overall_rating" scalar_type="string" xpath="//div[@class='slim_ranking']" layer="1.6" style="topRight_div"/>
-
-	<composite name="place" xpath="//span[@rel='v:address']/span/span[@class='locality']">
-		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
-		<scalar name="locality" xpath="./span[@property='v:locality']"/>
-		<scalar name="region" xpath="./span[@property='v:region']"/>
-		<scalar name="postal_code" xpath="./span[@property='v:postal-code']" />
-
-		<scalar name="location">
-			<concatenate_values>
-				<value>http://maps.google.com/maps?q=</value>
-				<value from_scalar="street_address" />
-				<value>,</value>
-				<value from_scalar="postal_code" />
-			</concatenate_values>
-		</scalar>			
-	</composite>
-	
-	<collection name="reviews" xpath="//div[contains(@id, 'review_')]">
-		<scalar name="rating" xpath="./div/div[@class='col2of2']//img/@alt" layer="20.0" />
-		<scalar name="description" xpath="./div/div[@class='col2of2']/div[@class='entry']/p" layer="10.0" />
-	</collection>
-	
-	<collection name="similar_hotels" xpath="//div[@class='carouselHotel']" child_type="trip_advisor">
-		<scalar name="location" xpath="./div[@class='name']/a/@href" />
-		<scalar name="title" xpath="./div[@class='name']/a" />
-		<scalar name="overall_rating" xpath="./div[@class='ranking']" />
-		
-	</collection>
-</meta_metadata>
-
-<meta_metadata name="homeaway" type="hotel" parser="xpath">
-	<selector url_path_tree="http://www.homeaway.com/vacation-rental" />
-	
-	<example_url url="http://www.homeaway.com/vacation-rental/p100000"/>
-
-	<scalar name="title" xpath="//h1[@class='newHeader']" />
-	<scalar name="description" xpath="//div[@class='prop-desc-txt']"/>
-
-	<scalar name="price" xpath="//div[@id='summary-rates']/div[@class='rates']/ul/li[1]/span[@class='rate']"  style="metadata_h1"/>
-	
-	<scalar name="space_size" xpath="//div[@id='summary-description']/text()" />
-	<scalar name="bedrooms" xpath="//div[@id='summary-amenities']/ul/li[1]/span[@class='count']" />
-	<scalar name="sleeps" xpath="//div[@id='summary-amenities']/ul/li[2]/span[@class='count']" />
-	
-<!-- 	<scalar name="check_in" xpath="//span[@id='check in_val']" /> //div[@class='tel']-->
-<!-- 	<scalar name="check_out" xpath="//span[@id='check out_val']" /> -->
-	
-	<composite name="place">
-		<scalar name="telephone" xpath="//div[@class='tel']" />
-<!-- 		<scalar name="street_address" xpath="."/> -->
-		<composite name="map" xpath="//script[contains(.,'mapData')]">
-<!-- 			<scalar name="latitude" xpath="./@data-lat"/> -->
-<!-- 			<scalar name="longitude" xpath="./@data-lng"/> -->
-			<scalar name="satellites" xpath="."/>
-		</composite>
-	</composite>
-	
+  <meta_metadata name="hotel" extends="service">
+  	<scalar name="location" layer="-10"/>
+    
+  	<scalar name="price" layer="0.8" />
+   	<composite name="seller_address" layer="0.8" />
+  	
+  	<scalar name="space_size" label="size" scalar_type="String" />
+  	
+  	<scalar name="bedrooms" scalar_type="String" />
+  	<scalar name="sleeps" scalar_type="String" />
+  	
+  	<scalar name="check_in" scalar_type="String" />
+  	<scalar name="check_out" scalar_type="String" />
+    
+    <collection name="similar_hotels" child_type="hotel" />
+  </meta_metadata>
+  
+  
+  <meta_metadata name="airbnb" type="hotel" parser="xpath">
+  	<selector url_path_tree="http://www.airbnb.com/rooms" />
+  	<example_url url="http://www.airbnb.com/rooms/72247"/>
+  	
+  	<scalar name="title" xpath="//div[@class='overflow']" />
+  	<scalar name="description" xpath="//div[@id='description_text_wrapper']/p/text()"/>
+  	<scalar name="price" xpath="//h2[@id='price_amount']"  style="metadata_h1"/>
+  	<scalar name="space_size" xpath="//span[@id='size_val']" />
+  	<scalar name="bedrooms" xpath="//span[@id='bedrooms_val']" />
+  	<scalar name="sleeps" xpath="//span[@id='accommodates_val']" />
+  	<scalar name="check_in" xpath="//span[@id='check in_val']" />
+  	<scalar name="check_out" xpath="//span[@id='check out_val']" />
+  	
+  	<composite name="seller_address" xpath="//span[@id='display_address']">
+  		<scalar name="street_address" xpath="."/>
+  		<composite name="map" xpath="//div[@id='map']">
+  			<scalar name="latitude" xpath="./@data-lat"/>
+  			<scalar name="longitude" xpath="./@data-lng"/>
+  			<scalar name="location">
+  				<concatenate_values>
+  					<value>http://maps.google.com/maps?q=</value>
+  					<value from_scalar="latitude" />
+  					<value>,</value>
+  					<value from_scalar="longitude" />
+  				</concatenate_values>
+  			</scalar>			
+  		</composite>
+  	</composite>
+  </meta_metadata>
+  
+  
+  <meta_metadata name="trip_advisor" type="hotel" parser="xpath">
+  	<selector url_regex_fragment="http://www.tripadvisor.com/Hotel_Review"
+              domain="tripadvisor.com" />
+  	<example_url url="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html" />
+  
+  	<scalar name="title" xpath="//h1[@id='HEADING']" />
+  	<scalar name="overall_rating" xpath="//div[@class='slim_ranking']"
+            layer="1.6" style="topRight_div" />
+  	<composite name="seller_address" xpath="//span[@rel='v:address']/span/span[@class='locality']">
+  		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
+  		<scalar name="locality" xpath="./span[@property='v:locality']"/>
+  		<scalar name="region" xpath="./span[@property='v:region']"/>
+  		<scalar name="postal_code" xpath="./span[@property='v:postal-code']" />
+  		<scalar name="location">
+  			<concatenate_values>
+  				<value>http://maps.google.com/maps?q=</value>
+  				<value from_scalar="street_address" />
+  				<value>,</value>
+  				<value from_scalar="postal_code" />
+  			</concatenate_values>
+  		</scalar>			
+  	</composite>
+  	
+  	<collection name="reviews" xpath="//div[contains(@id, 'review_')]">
+  		<scalar name="rating" xpath="./div/div[@class='col2of2']//img/@alt" layer="20.0" />
+  		<scalar name="description" xpath="./div/div[@class='col2of2']/div[@class='entry']/p"
+              layer="10.0" />
+  	</collection>
+  	
+  	<collection name="similar_hotels" xpath="//div[@class='carouselHotel']">
+  		<scalar name="location" xpath="./div[@class='name']/a/@href" />
+  		<scalar name="title" xpath="./div[@class='name']/a" />
+  		<scalar name="overall_rating" xpath="./div[@class='ranking']" />
+  	</collection>
+  </meta_metadata>
+  
+  
+  <meta_metadata name="homeaway" type="hotel" parser="xpath">
+  	<selector url_path_tree="http://www.homeaway.com/vacation-rental" />
+  	<example_url url="http://www.homeaway.com/vacation-rental/p100000" />
+  
+  	<scalar name="title" xpath="//h1[@class='newHeader']" />
+  	<scalar name="description" xpath="//div[@class='prop-desc-txt']" />
+  	<scalar name="price"
+            xpath="//div[@id='summary-rates']/div[@class='rates']/ul/li[1]/span[@class='rate']"
+            style="metadata_h1" />
+  	<scalar name="space_size" xpath="//div[@id='summary-description']/text()" />
+  	<scalar name="bedrooms" xpath="//div[@id='summary-amenities']/ul/li[1]/span[@class='count']" />
+  	<scalar name="sleeps" xpath="//div[@id='summary-amenities']/ul/li[2]/span[@class='count']" />
+  	
+<!--   	<scalar name="check_in" xpath="//span[@id='check in_val']" /> //div[@class='tel'] -->
+<!--   	<scalar name="check_out" xpath="//span[@id='check out_val']" /> -->
+  	
+  	<composite name="seller_address">
+<!--   		<scalar name="street_address" xpath="."/> -->
+  		<scalar name="telephone" xpath="//div[@class='tel']" />
+  		<composite name="map" xpath="//script[contains(.,'mapData')]">
+<!--   			<scalar name="latitude" xpath="./@data-lat"/> -->
+<!--   			<scalar name="longitude" xpath="./@data-lng"/> -->
+  			<scalar name="satellites" xpath="."/>
+  		</composite>
+  	</composite>
+  	
 		<collection name="reviews" xpath="//div[@id='propertyReviews']//div[starts-with(@class,'hreview review-box')]">
-			<scalar name="rating" xpath=".//div[@class='rating-txt']" layer="20.0" />
-<!-- 			<scalar name="content" xpath=".//div[@class='description review-txt']" layer="10.0" /> -->
+ 			<scalar name="rating" xpath=".//div[@class='rating-txt']" layer="20.0" />
+<!--  			<scalar name="description" xpath=".//div[@class='description review-txt']" layer="10.0" /> -->
 		</collection>
-			
-</meta_metadata>
-<meta_metadata name="hilton" type="hotel" parser="xpath">
-	<selector url_path_tree="http://www1.hilton.com/en_US/hi/hotel" />
-	
-	<example_url url="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42"/>
-
-	<scalar name="title" xpath="//html/head/title" />
-	<scalar name="description" xpath="/html/head/meta[@name='description']/@content"/>
-
-	<composite name="place" xpath="//div[@id='hotelAddress']">
-		<scalar name="street_address" xpath="./text()[(preceding::br)]"/>
-		<scalar name="telephone" xpath="./br/following-sibling::text()" />
-	</composite>
-
-</meta_metadata>
+  </meta_metadata>
+  
+  
+  <meta_metadata name="hilton" type="hotel" parser="xpath">
+  	<selector url_path_tree="http://www1.hilton.com/en_US/hi/hotel" />
+  	<example_url url="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42"/>
+  
+  	<scalar name="title" xpath="//html/head/title" />
+  	<scalar name="description" xpath="/html/head/meta[@name='description']/@content"/>
+  
+  	<composite name="seller_address" xpath="//div[@id='hotelAddress']">
+  		<scalar name="street_address" xpath="./text()[(preceding::br)]"/>
+  		<scalar name="telephone" xpath="./br/following-sibling::text()" />
+  	</composite>
+  </meta_metadata>
 
 </meta_metadata_repository>

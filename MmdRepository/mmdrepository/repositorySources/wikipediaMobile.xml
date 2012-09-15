@@ -1,0 +1,47 @@
+<meta_metadata_repository name="wikipedia_mobile"
+	package="ecologylab.semantics.generated.library.wikipedia" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="wikipedia_mobile_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia mobile site"
+	user_agent_name="firefox_3_6_8">
+		<selector url_regex="http://en.m.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
+		<def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[1]" type="node" />
+		
+		<scalar name="title" xpath="//caption" />
+		
+		<scalar name="main_image_src" xpath="//*[starts-with(@class,'infobox')]//@src[1]" context_node="main_image" scalar_type="ParsedURL" />
+		<scalar name="main_image_caption" scalar_type="String" xpath="//*[starts-with(@class,'infobox')]//span[1]"/>
+		
+		<composite name="description_section" type="section" extends="metadata">
+			<scalar name="section_title" scalar_type="String" />  
+			<collection name="paragraphs" xpath="//div[@id='content']/p" child_type="paragraph">
+				<scalar name="paragraph_text" xpath="." />
+				<collection name="anchors" xpath="./a[@title]">
+					<scalar name="link" xpath="./@href" />
+					<scalar name="anchor_text" xpath="." />
+					<scalar name="target_title" xpath="./@title" />
+				</collection>
+			</collection>
+		</composite>
+
+		<collection name="sections" child_type="section" comment="Sections in the article." xpath="//h2" >
+			<scalar name="section_title" xpath="." >
+				<filter regex="ShowHide" replace="" />
+			</scalar>  
+			<collection name="paragraphs" xpath="./following-sibling::div[1]/p" child_type="paragraph">
+				<scalar name="paragraph_text" xpath="." />
+				<collection name="anchors" xpath="./a[@title]">
+					<scalar name="link" xpath="./@href" />
+					<scalar name="anchor_text" xpath="." />
+					<scalar name="target_title" xpath="./@title" />
+				</collection>
+			</collection>
+		</collection>
+		
+		<collection name="thumbinners" xpath="//*[@class='thumbinner']" child_type="thumbinner">
+			<scalar name="thumb_img_src" xpath="./a/img/@src" />
+			<scalar name="thumb_img_caption" xpath="." />
+		</collection>		
+    
+	</meta_metadata>	
+	
+</meta_metadata_repository>  
