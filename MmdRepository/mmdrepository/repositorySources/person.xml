@@ -1,4 +1,4 @@
-<meta_metadata_repository name="person" package="ecologylab.generated.library.person">
+<meta_metadata_repository name="person" package="ecologylab.semantics.generated.library.person">
 
 	<meta_metadata name="birth_detail" extends="document"
                  comment="Date and place of birth for a person">
