@@ -8,9 +8,12 @@ package ecologylab.semantics.generated.library.movie;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.generated.library.person.Person;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
+import ecologylab.semantics.generated.library.movie.Actor;
 import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -26,14 +29,14 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *The movie class
+ *The movie class.
  */ 
 @simpl_inherit
 public class Movie extends CreativeWork
 {
-	/** 
-	 *Storyline of the movie
-	 */ 
+	@simpl_scalar
+	private MetadataString tagline;
+
 	@simpl_scalar
 	private MetadataString storyline;
 
@@ -56,24 +59,25 @@ public class Movie extends CreativeWork
 	private MetadataString theaterRelease;
 
 	/** 
-	 *Who directed the movie
+	 *Who wrote the movie.
 	 */ 
-	@simpl_collection("document")
-	@mm_name("directors")
-	private List<Document> directors;
-
-	/** 
-	 *Who wrote the movie
-	 */ 
-	@simpl_collection("document")
+	@simpl_collection("person")
 	@mm_name("writers")
-	private List<Document> writers;
+	private List<Person> writers;
 
 	/** 
 	 *Movie Poster or other image
 	 */ 
 	@simpl_scalar
 	private MetadataParsedURL pic;
+
+	@simpl_collection("image")
+	@mm_name("photos")
+	private List<Image> photos;
+
+	@simpl_collection("actor")
+	@mm_name("cast")
+	private List<Actor> cast;
 
 	/** 
 	 *Movie genres
@@ -89,6 +93,38 @@ public class Movie extends CreativeWork
 		super(mmd);
 	}
 
+
+	public MetadataString	tagline()
+	{
+		MetadataString	result = this.tagline;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.tagline = result;
+		}
+		return result;
+	}
+
+	public String getTagline()
+	{
+		return this.tagline == null ? null : tagline().getValue();
+	}
+
+	public MetadataString getTaglineMetadata()
+	{
+		return tagline;
+	}
+
+	public void setTagline(String tagline)
+	{
+		if (tagline != null)
+			this.tagline().setValue(tagline);
+	}
+
+	public void setTaglineMetadata(MetadataString tagline)
+	{
+		this.tagline = tagline;
+	}
 
 	public MetadataString	storyline()
 	{
@@ -218,51 +254,21 @@ public class Movie extends CreativeWork
 		this.theaterRelease = theaterRelease;
 	}
 
-	public List<Document> getDirectors()
-	{
-		return directors;
-	}
-
-  // lazy evaluation:
-  public List<Document> directors()
-  {
-    if (directors == null)
-      directors = new ArrayList<Document>();
-    return directors;
-  }
-
-  // addTo:
-  public void addToDirectors(Document element)
-  {
-    directors().add(element);
-  }
-
-  // size:
-  public int directorsSize()
-  {
-    return directors == null ? 0 : directors.size();
-  }
-
-	public void setDirectors(List<Document> directors)
-	{
-		this.directors = directors;
-	}
-
-	public List<Document> getWriters()
+	public List<Person> getWriters()
 	{
 		return writers;
 	}
 
   // lazy evaluation:
-  public List<Document> writers()
+  public List<Person> writers()
   {
     if (writers == null)
-      writers = new ArrayList<Document>();
+      writers = new ArrayList<Person>();
     return writers;
   }
 
   // addTo:
-  public void addToWriters(Document element)
+  public void addToWriters(Person element)
   {
     writers().add(element);
   }
@@ -273,7 +279,7 @@ public class Movie extends CreativeWork
     return writers == null ? 0 : writers.size();
   }
 
-	public void setWriters(List<Document> writers)
+	public void setWriters(List<Person> writers)
 	{
 		this.writers = writers;
 	}
@@ -308,6 +314,66 @@ public class Movie extends CreativeWork
 	public void setPicMetadata(MetadataParsedURL pic)
 	{
 		this.pic = pic;
+	}
+
+	public List<Image> getPhotos()
+	{
+		return photos;
+	}
+
+  // lazy evaluation:
+  public List<Image> photos()
+  {
+    if (photos == null)
+      photos = new ArrayList<Image>();
+    return photos;
+  }
+
+  // addTo:
+  public void addToPhotos(Image element)
+  {
+    photos().add(element);
+  }
+
+  // size:
+  public int photosSize()
+  {
+    return photos == null ? 0 : photos.size();
+  }
+
+	public void setPhotos(List<Image> photos)
+	{
+		this.photos = photos;
+	}
+
+	public List<Actor> getCast()
+	{
+		return cast;
+	}
+
+  // lazy evaluation:
+  public List<Actor> cast()
+  {
+    if (cast == null)
+      cast = new ArrayList<Actor>();
+    return cast;
+  }
+
+  // addTo:
+  public void addToCast(Actor element)
+  {
+    cast().add(element);
+  }
+
+  // size:
+  public int castSize()
+  {
+    return cast == null ? 0 : cast.size();
+  }
+
+	public void setCast(List<Actor> cast)
+	{
+		this.cast = cast;
 	}
 
 	public List<Document> getGenres()

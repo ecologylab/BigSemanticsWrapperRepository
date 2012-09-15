@@ -8,7 +8,7 @@ package crit.semantics.generated.txtf1.fieldreports.emergent_event;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gps.GisLocation;
+import ecologylab.semantics.generated.library.gis.GisLocation;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;

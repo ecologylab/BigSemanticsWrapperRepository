@@ -8,19 +8,14 @@ package ecologylab.semantics.generated.library.artwork;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.artwork.Artist;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,33 +23,13 @@ import java.util.Map;
  *Artwork class
  */ 
 @simpl_inherit
-public class Artwork extends CompoundDocument
+public class Artwork extends CreativeWork
 {
-	/** 
-	 *Set of artists.
-	 */ 
-	@simpl_collection("artist")
-	@mm_name("artists")
-	private List<Artist> artists;
-
 	/** 
 	 *Medium on which the work is done.
 	 */ 
 	@simpl_scalar
 	private MetadataString medium;
-
-	/** 
-	 *Abstract of the work.
-	 */ 
-	@simpl_scalar
-	@simpl_tag("abstract")
-	private MetadataString abstractField;
-
-	/** 
-	 *Year the work was created.
-	 */ 
-	@simpl_scalar
-	private MetadataString year;
 
 	@simpl_scalar
 	private MetadataString dimensions;
@@ -66,36 +41,6 @@ public class Artwork extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public List<Artist> getArtists()
-	{
-		return artists;
-	}
-
-  // lazy evaluation:
-  public List<Artist> artists()
-  {
-    if (artists == null)
-      artists = new ArrayList<Artist>();
-    return artists;
-  }
-
-  // addTo:
-  public void addToArtists(Artist element)
-  {
-    artists().add(element);
-  }
-
-  // size:
-  public int artistsSize()
-  {
-    return artists == null ? 0 : artists.size();
-  }
-
-	public void setArtists(List<Artist> artists)
-	{
-		this.artists = artists;
-	}
 
 	public MetadataString	medium()
 	{
@@ -127,70 +72,6 @@ public class Artwork extends CompoundDocument
 	public void setMediumMetadata(MetadataString medium)
 	{
 		this.medium = medium;
-	}
-
-	public MetadataString	abstractField()
-	{
-		MetadataString	result = this.abstractField;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.abstractField = result;
-		}
-		return result;
-	}
-
-	public String getAbstractField()
-	{
-		return this.abstractField == null ? null : abstractField().getValue();
-	}
-
-	public MetadataString getAbstractFieldMetadata()
-	{
-		return abstractField;
-	}
-
-	public void setAbstractField(String abstractField)
-	{
-		if (abstractField != null)
-			this.abstractField().setValue(abstractField);
-	}
-
-	public void setAbstractFieldMetadata(MetadataString abstractField)
-	{
-		this.abstractField = abstractField;
-	}
-
-	public MetadataString	year()
-	{
-		MetadataString	result = this.year;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.year = result;
-		}
-		return result;
-	}
-
-	public String getYear()
-	{
-		return this.year == null ? null : year().getValue();
-	}
-
-	public MetadataString getYearMetadata()
-	{
-		return year;
-	}
-
-	public void setYear(String year)
-	{
-		if (year != null)
-			this.year().setValue(year);
-	}
-
-	public void setYearMetadata(MetadataString year)
-	{
-		this.year = year;
 	}
 
 	public MetadataString	dimensions()

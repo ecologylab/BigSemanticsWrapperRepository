@@ -8,35 +8,29 @@ package ecologylab.semantics.generated.library.slashdot;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.slashdot.Anchor;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.generated.library.post.Post;
+import ecologylab.semantics.generated.library.slashdot.SlashdotArticle;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class SlashdotArticle extends CompoundDocument
+public class SlashdotArticle extends Post
 {
-	@simpl_scalar
-	private MetadataString poster;
-
-	@simpl_scalar
-	private MetadataParsedURL posterUrl;
-
-	@simpl_collection("anchor")
+	@simpl_collection("document")
 	@mm_name("anchors")
-	private List<Anchor> anchors;
+	private List<Document> anchors;
+
+	@simpl_collection("slashdot_article")
+	@mm_name("related_stories")
+	private List<SlashdotArticle> relatedStories;
 
 	public SlashdotArticle()
 	{ super(); }
@@ -46,85 +40,21 @@ public class SlashdotArticle extends CompoundDocument
 	}
 
 
-	public MetadataString	poster()
-	{
-		MetadataString	result = this.poster;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.poster = result;
-		}
-		return result;
-	}
-
-	public String getPoster()
-	{
-		return this.poster == null ? null : poster().getValue();
-	}
-
-	public MetadataString getPosterMetadata()
-	{
-		return poster;
-	}
-
-	public void setPoster(String poster)
-	{
-		if (poster != null)
-			this.poster().setValue(poster);
-	}
-
-	public void setPosterMetadata(MetadataString poster)
-	{
-		this.poster = poster;
-	}
-
-	public MetadataParsedURL	posterUrl()
-	{
-		MetadataParsedURL	result = this.posterUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.posterUrl = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getPosterUrl()
-	{
-		return this.posterUrl == null ? null : posterUrl().getValue();
-	}
-
-	public MetadataParsedURL getPosterUrlMetadata()
-	{
-		return posterUrl;
-	}
-
-	public void setPosterUrl(ParsedURL posterUrl)
-	{
-		if (posterUrl != null)
-			this.posterUrl().setValue(posterUrl);
-	}
-
-	public void setPosterUrlMetadata(MetadataParsedURL posterUrl)
-	{
-		this.posterUrl = posterUrl;
-	}
-
-	public List<Anchor> getAnchors()
+	public List<Document> getAnchors()
 	{
 		return anchors;
 	}
 
   // lazy evaluation:
-  public List<Anchor> anchors()
+  public List<Document> anchors()
   {
     if (anchors == null)
-      anchors = new ArrayList<Anchor>();
+      anchors = new ArrayList<Document>();
     return anchors;
   }
 
   // addTo:
-  public void addToAnchors(Anchor element)
+  public void addToAnchors(Document element)
   {
     anchors().add(element);
   }
@@ -135,8 +65,38 @@ public class SlashdotArticle extends CompoundDocument
     return anchors == null ? 0 : anchors.size();
   }
 
-	public void setAnchors(List<Anchor> anchors)
+	public void setAnchors(List<Document> anchors)
 	{
 		this.anchors = anchors;
+	}
+
+	public List<SlashdotArticle> getRelatedStories()
+	{
+		return relatedStories;
+	}
+
+  // lazy evaluation:
+  public List<SlashdotArticle> relatedStories()
+  {
+    if (relatedStories == null)
+      relatedStories = new ArrayList<SlashdotArticle>();
+    return relatedStories;
+  }
+
+  // addTo:
+  public void addToRelatedStories(SlashdotArticle element)
+  {
+    relatedStories().add(element);
+  }
+
+  // size:
+  public int relatedStoriesSize()
+  {
+    return relatedStories == null ? 0 : relatedStories.size();
+  }
+
+	public void setRelatedStories(List<SlashdotArticle> relatedStories)
+	{
+		this.relatedStories = relatedStories;
 	}
 }

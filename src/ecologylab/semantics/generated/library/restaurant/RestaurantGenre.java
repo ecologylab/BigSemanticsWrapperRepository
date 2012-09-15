@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *Restaurants Genre
+ *Restaurants genre.
  */ 
 @simpl_inherit
 public class RestaurantGenre extends Document

@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.bibManaging;
  */
 
 import ecologylab.semantics.generated.library.bibManaging.CitationInfo;
-import ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle;
+import ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

@@ -26,19 +26,17 @@ public class RepositoryMetadataTranslationScope
 
 		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
 
+		ecologylab.generated.library.person.BirthDetail.class,
+
+		ecologylab.generated.library.person.Person.class,
+
 		ecologylab.semantics.generated.library.Bookmark.class,
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,
 
-		ecologylab.semantics.generated.library.Lolz.class,
-
 		ecologylab.semantics.generated.library.PdfMixin.class,
 
 		ecologylab.semantics.generated.library.PubmedArticle.class,
-
-		ecologylab.semantics.generated.library.Tag.class,
-
-		ecologylab.semantics.generated.library.Tumblr.class,
 
 		ecologylab.semantics.generated.library.WeatherReport.class,
 
@@ -62,13 +60,25 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary.class,
 
-		ecologylab.semantics.generated.library.british_cartoon_archive.BritishCartoonArchive.class,
-
 		ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
 
 		ecologylab.semantics.generated.library.buzz.HotSearch.class,
 
 		ecologylab.semantics.generated.library.camera.CameraSettings.class,
+
+		ecologylab.semantics.generated.library.cartoon.BritishCartoonArchive.class,
+
+		ecologylab.semantics.generated.library.cartoon.Cartoon.class,
+
+		ecologylab.semantics.generated.library.cartoon.GaurdianComic.class,
+
+		ecologylab.semantics.generated.library.cartoon.GlobeCartoon.class,
+
+		ecologylab.semantics.generated.library.cartoon.PoliticalCartoon.class,
+
+		ecologylab.semantics.generated.library.cartoon.SfuCartoonArchive.class,
+
+		ecologylab.semantics.generated.library.cartoon.TrumanLibrary1948CampaignCartoons.class,
 
 		ecologylab.semantics.generated.library.creative_work.Author.class,
 
@@ -140,23 +150,25 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.flickr.FlickrTagPage.class,
 
-		ecologylab.semantics.generated.library.gaurdian_comic.GaurdianComic.class,
+		ecologylab.semantics.generated.library.gis.ContactPoint.class,
 
-		ecologylab.semantics.generated.library.globe_cartoon.GlobeCartoon.class,
+		ecologylab.semantics.generated.library.gis.GisLocation.class,
 
-		ecologylab.semantics.generated.library.googleBooks.GoogleBook.class,
+		ecologylab.semantics.generated.library.gis.PostalAddress.class,
 
-		ecologylab.semantics.generated.library.googleBooks.Page.class,
+		ecologylab.semantics.generated.library.googleBook.GoogleBook.class,
 
-		ecologylab.semantics.generated.library.gps.ContactPoint.class,
+		ecologylab.semantics.generated.library.googleBook.Page.class,
 
-		ecologylab.semantics.generated.library.gps.GisLocation.class,
+		ecologylab.semantics.generated.library.grant.Grant.class,
 
-		ecologylab.semantics.generated.library.gps.PostalAddress.class,
+		ecologylab.semantics.generated.library.grant.GrantProgram.class,
+
+		ecologylab.semantics.generated.library.grant.GrantStaff.class,
+
+		ecologylab.semantics.generated.library.grant.Investigator.class,
 
 		ecologylab.semantics.generated.library.hotel.Hotel.class,
-
-		ecologylab.semantics.generated.library.hotel.TripAdvisor.class,
 
 		ecologylab.semantics.generated.library.icdl.IcdlBook.class,
 
@@ -164,9 +176,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.icdl.IcdlImageResult.class,
 
-		ecologylab.semantics.generated.library.imdb.BirthDetail.class,
+		ecologylab.semantics.generated.library.lolz.Lolz.class,
 
-		ecologylab.semantics.generated.library.imdb.ImdbTitle.class,
+		ecologylab.semantics.generated.library.misc.Comment.class,
 
 		ecologylab.semantics.generated.library.misc.DcDocument.class,
 
@@ -176,11 +188,13 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.misc.Nsdl.class,
 
-		ecologylab.semantics.generated.library.movie.Cast.class,
+		ecologylab.semantics.generated.library.misc.Rating.class,
+
+		ecologylab.semantics.generated.library.misc.Review.class,
+
+		ecologylab.semantics.generated.library.movie.Actor.class,
 
 		ecologylab.semantics.generated.library.movie.Movie.class,
-
-		ecologylab.semantics.generated.library.movie.Netflix.class,
 
 		ecologylab.semantics.generated.library.nsdl.Header.class,
 
@@ -189,14 +203,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.nsdl.NsdlService.class,
 
 		ecologylab.semantics.generated.library.nsdl.SearchResults.class,
-
-		ecologylab.semantics.generated.library.nsf.Grant.class,
-
-		ecologylab.semantics.generated.library.nsf.GrantProgram.class,
-
-		ecologylab.semantics.generated.library.nsf.GrantStaff.class,
-
-		ecologylab.semantics.generated.library.nsf.Investigator.class,
 
 		ecologylab.semantics.generated.library.nsf.NsfAward.class,
 
@@ -222,25 +228,27 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.opml.Outline.class,
 
-		ecologylab.semantics.generated.library.patents.GooglePatent.class,
+		ecologylab.semantics.generated.library.patent.GooglePatent.class,
 
-		ecologylab.semantics.generated.library.patents.GoogleSorry.class,
+		ecologylab.semantics.generated.library.patent.GoogleSorry.class,
 
-		ecologylab.semantics.generated.library.patents.Patent.class,
+		ecologylab.semantics.generated.library.patent.Patent.class,
 
-		ecologylab.semantics.generated.library.patents.PatentAuthor.class,
+		ecologylab.semantics.generated.library.patent.PatentAuthor.class,
 
-		ecologylab.semantics.generated.library.patents.PatentClassification.class,
+		ecologylab.semantics.generated.library.patent.PatentClassification.class,
 
-		ecologylab.semantics.generated.library.political_cartoon.PoliticalCartoon.class,
+		ecologylab.semantics.generated.library.post.Post.class,
 
-		ecologylab.semantics.generated.library.products.AmazonList.class,
+		ecologylab.semantics.generated.library.product_and_service.AmazonList.class,
 
-		ecologylab.semantics.generated.library.products.AmazonProduct.class,
+		ecologylab.semantics.generated.library.product_and_service.AmazonProduct.class,
 
-		ecologylab.semantics.generated.library.products.Product.class,
+		ecologylab.semantics.generated.library.product_and_service.Commodity.class,
 
-		ecologylab.semantics.generated.library.products.ProductReview.class,
+		ecologylab.semantics.generated.library.product_and_service.Product.class,
+
+		ecologylab.semantics.generated.library.product_and_service.Service.class,
 
 		ecologylab.semantics.generated.library.publication.AmazonBook.class,
 
@@ -284,6 +292,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rwandatribunal.VideoInterview.class,
 
+		ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle.class,
+
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortal.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalAuthor.class,
@@ -301,8 +311,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetail.class,
 
 		ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetailInstitution.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.ScholarlyArticle.class,
 
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
 
@@ -344,27 +352,17 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.YahooThumbnail.class,
 
-		ecologylab.semantics.generated.library.sfu_cartoon_archive.SfuCartoonArchive.class,
-
-		ecologylab.semantics.generated.library.slashdot.Anchor.class,
-
 		ecologylab.semantics.generated.library.slashdot.SlashdotArticle.class,
 
 		ecologylab.semantics.generated.library.slashdot.SlashdotItem.class,
 
 		ecologylab.semantics.generated.library.slashdot.SlashdotRss.class,
 
-		ecologylab.semantics.generated.library.slashdot.SlashdotTag.class,
+		ecologylab.semantics.generated.library.tumblr.Tumblr.class,
 
-		ecologylab.semantics.generated.library.truman_library_1948_campaign_cartoons.TrumanLibrary1948CampaignCartoons.class,
+		ecologylab.semantics.generated.library.tvShow.TvShow.class,
 
-		ecologylab.semantics.generated.library.tvshow.Tvshow.class,
-
-		ecologylab.semantics.generated.library.tvshow.TvshowActor.class,
-
-		ecologylab.semantics.generated.library.tvshow.TvshowEpisode.class,
-
-		ecologylab.semantics.generated.library.tvshow.TvshowRating.class,
+		ecologylab.semantics.generated.library.tvShow.TvShowEpisode.class,
 
 		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonSearch.class,
 
@@ -378,9 +376,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.uva.TopicCluster.class,
 
-		ecologylab.semantics.generated.library.videos.CommentResult.class,
-
-		ecologylab.semantics.generated.library.videos.Watchyoutubevideo.class,
+		ecologylab.semantics.generated.library.video.Video.class,
 
 		ecologylab.semantics.generated.library.wikipedia.Category.class,
 

@@ -32,8 +32,8 @@ public class MomaArtwork extends Artwork
 	private MetadataString status;
 
 	@simpl_composite
-	@mm_name("moma_deparment")
-	private CompoundDocument momaDeparment;
+	@mm_name("moma_department")
+	private CompoundDocument momaDepartment;
 
 	@simpl_composite
 	@mm_name("moma_classification")
@@ -95,14 +95,14 @@ public class MomaArtwork extends Artwork
 		this.status = status;
 	}
 
-	public CompoundDocument getMomaDeparment()
+	public CompoundDocument getMomaDepartment()
 	{
-		return momaDeparment;
+		return momaDepartment;
 	}
 
-	public void setMomaDeparment(CompoundDocument momaDeparment)
+	public void setMomaDepartment(CompoundDocument momaDepartment)
 	{
-		this.momaDeparment = momaDeparment;
+		this.momaDepartment = momaDepartment;
 	}
 
 	public CompoundDocument getMomaClassification()

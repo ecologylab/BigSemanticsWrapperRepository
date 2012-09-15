@@ -8,7 +8,6 @@ package ecologylab.semantics.generated.library.search;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.Tag;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -38,9 +37,9 @@ public class SocialMediaSearchResult extends Document
 	/** 
 	 *Associated tags from the search engine, if exist.
 	 */ 
-	@simpl_collection("tag")
+	@simpl_collection("document")
 	@mm_name("tags")
-	private List<Tag> tags;
+	private List<Document> tags;
 
 	public SocialMediaSearchResult()
 	{ super(); }
@@ -82,21 +81,21 @@ public class SocialMediaSearchResult extends Document
 		this.author = author;
 	}
 
-	public List<Tag> getTags()
+	public List<Document> getTags()
 	{
 		return tags;
 	}
 
   // lazy evaluation:
-  public List<Tag> tags()
+  public List<Document> tags()
   {
     if (tags == null)
-      tags = new ArrayList<Tag>();
+      tags = new ArrayList<Document>();
     return tags;
   }
 
   // addTo:
-  public void addToTags(Tag element)
+  public void addToTags(Document element)
   {
     tags().add(element);
   }
@@ -107,7 +106,7 @@ public class SocialMediaSearchResult extends Document
     return tags == null ? 0 : tags.size();
   }
 
-	public void setTags(List<Tag> tags)
+	public void setTags(List<Document> tags)
 	{
 		this.tags = tags;
 	}

@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.creative_work;
  */
 
 import ecologylab.semantics.generated.library.creative_work.Author;
+import ecologylab.semantics.generated.library.misc.Rating;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -30,9 +31,6 @@ import java.util.Map;
 @simpl_inherit
 public class CreativeWork extends CompoundDocument
 {
-	/** 
-	 *Set of authors.
-	 */ 
 	@simpl_collection("author")
 	@mm_name("authors")
 	private List<Author> authors;
@@ -46,6 +44,10 @@ public class CreativeWork extends CompoundDocument
 	 */ 
 	@simpl_scalar
 	private MetadataString overallRating;
+
+	@simpl_composite
+	@mm_name("rating")
+	private Rating rating;
 
 	@simpl_composite
 	@mm_name("rich_media")
@@ -151,6 +153,16 @@ public class CreativeWork extends CompoundDocument
 	public void setOverallRatingMetadata(MetadataString overallRating)
 	{
 		this.overallRating = overallRating;
+	}
+
+	public Rating getRating()
+	{
+		return rating;
+	}
+
+	public void setRating(Rating rating)
+	{
+		this.rating = rating;
 	}
 
 	public CompoundDocument getRichMedia()

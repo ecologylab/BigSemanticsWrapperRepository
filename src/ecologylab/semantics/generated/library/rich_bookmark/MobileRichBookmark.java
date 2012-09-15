@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.rich_bookmark;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gps.GisLocation;
+import ecologylab.semantics.generated.library.gis.GisLocation;
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.Clipping;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;

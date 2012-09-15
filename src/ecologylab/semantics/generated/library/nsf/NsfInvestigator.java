@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.nsf;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.nsf.Investigator;
+import ecologylab.semantics.generated.library.grant.Investigator;
 import ecologylab.semantics.generated.library.nsf.NsfAward;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataString;

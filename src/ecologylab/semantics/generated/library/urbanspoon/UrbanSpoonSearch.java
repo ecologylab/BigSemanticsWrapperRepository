@@ -16,9 +16,6 @@ import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
 
-/** 
- *UrbanSpoon Search Class
- */ 
 @simpl_inherit
 public class UrbanSpoonSearch extends Search
 {

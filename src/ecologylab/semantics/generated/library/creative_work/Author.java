@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.creative_work;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.generated.library.person.Person;
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
@@ -27,7 +27,7 @@ import java.util.Map;
  *An author of an article or creative work.
  */ 
 @simpl_inherit
-public class Author<CW extends CreativeWork> extends Document
+public class Author<CW extends CreativeWork> extends Person
 {
 	@simpl_scalar
 	private MetadataString affiliation;
@@ -35,9 +35,9 @@ public class Author<CW extends CreativeWork> extends Document
 	@simpl_scalar
 	private MetadataString city;
 
-	@simpl_collection("publication")
-	@mm_name("publications")
-	private List<CW> publications;
+	@simpl_collection("creative_work")
+	@mm_name("creative_works")
+	private List<CW> creativeWorks;
 
 	public Author()
 	{ super(); }
@@ -111,33 +111,33 @@ public class Author<CW extends CreativeWork> extends Document
 		this.city = city;
 	}
 
-	public List<CW> getPublications()
+	public List<CW> getCreativeWorks()
 	{
-		return publications;
+		return creativeWorks;
 	}
 
   // lazy evaluation:
-  public List<CW> publications()
+  public List<CW> creativeWorks()
   {
-    if (publications == null)
-      publications = new ArrayList<CW>();
-    return publications;
+    if (creativeWorks == null)
+      creativeWorks = new ArrayList<CW>();
+    return creativeWorks;
   }
 
   // addTo:
-  public void addToPublications(CW element)
+  public void addToCreativeWorks(CW element)
   {
-    publications().add(element);
+    creativeWorks().add(element);
   }
 
   // size:
-  public int publicationsSize()
+  public int creativeWorksSize()
   {
-    return publications == null ? 0 : publications.size();
+    return creativeWorks == null ? 0 : creativeWorks.size();
   }
 
-	public void setPublications(List<CW> publications)
+	public void setCreativeWorks(List<CW> creativeWorks)
 	{
-		this.publications = publications;
+		this.creativeWorks = creativeWorks;
 	}
 }

@@ -10,12 +10,15 @@ package ecologylab.semantics.generated.library.uva;
 
 import ecologylab.semantics.metadata.Metadata;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +27,10 @@ public class KeywordSet extends Metadata
 {
 	@simpl_scalar
 	private MetadataString type;
+
+	@simpl_collection("keyword")
+	@mm_name("keywords")
+	private List<MetadataString> keywords;
 
 	public KeywordSet()
 	{ super(); }
@@ -63,5 +70,35 @@ public class KeywordSet extends Metadata
 	public void setTypeMetadata(MetadataString type)
 	{
 		this.type = type;
+	}
+
+	public List<MetadataString> getKeywords()
+	{
+		return keywords;
+	}
+
+  // lazy evaluation:
+  public List<MetadataString> keywords()
+  {
+    if (keywords == null)
+      keywords = new ArrayList<MetadataString>();
+    return keywords;
+  }
+
+  // addTo:
+  public void addToKeywords(MetadataString element)
+  {
+    keywords().add(element);
+  }
+
+  // size:
+  public int keywordsSize()
+  {
+    return keywords == null ? 0 : keywords.size();
+  }
+
+	public void setKeywords(List<MetadataString> keywords)
+	{
+		this.keywords = keywords;
 	}
 }

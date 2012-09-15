@@ -8,17 +8,14 @@ package ecologylab.semantics.generated.library.restaurant;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gps.PostalAddress;
+import ecologylab.semantics.generated.library.product_and_service.Service;
 import ecologylab.semantics.generated.library.restaurant.RestaurantGenre;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -26,33 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/** 
- *The restaurant class.
- */ 
 @simpl_inherit
-public class Restaurant extends CompoundDocument
+public class Restaurant extends Service
 {
-	@simpl_composite
-	@mm_name("place")
-	private PostalAddress place;
-
-	/** 
-	 *picture of food or place
-	 */ 
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
-	@simpl_composite
-	@mm_name("website")
-	private CompoundDocument website;
-
-	/** 
-	 *Rating of the restaurant
-	 */ 
-	@simpl_scalar
-	private MetadataString rating;
-
 	/** 
 	 *Price range of the restaurant
 	 */ 
@@ -60,7 +33,7 @@ public class Restaurant extends CompoundDocument
 	private MetadataString priceRange;
 
 	/** 
-	 *The genres of food offered
+	 *The genres of food offered.
 	 */ 
 	@simpl_collection("restaurant_genre")
 	@mm_name("genres")
@@ -73,68 +46,6 @@ public class Restaurant extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public PostalAddress getPlace()
-	{
-		return place;
-	}
-
-	public void setPlace(PostalAddress place)
-	{
-		this.place = place;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
-
-	public CompoundDocument getWebsite()
-	{
-		return website;
-	}
-
-	public void setWebsite(CompoundDocument website)
-	{
-		this.website = website;
-	}
-
-	public MetadataString	rating()
-	{
-		MetadataString	result = this.rating;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.rating = result;
-		}
-		return result;
-	}
-
-	public String getRating()
-	{
-		return this.rating == null ? null : rating().getValue();
-	}
-
-	public MetadataString getRatingMetadata()
-	{
-		return rating;
-	}
-
-	public void setRating(String rating)
-	{
-		if (rating != null)
-			this.rating().setValue(rating);
-	}
-
-	public void setRatingMetadata(MetadataString rating)
-	{
-		this.rating = rating;
-	}
 
 	public MetadataString	priceRange()
 	{

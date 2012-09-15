@@ -8,16 +8,14 @@ package ecologylab.semantics.generated.library.hotel;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gps.PostalAddress;
-import ecologylab.semantics.generated.library.products.ProductReview;
-import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.generated.library.hotel.Hotel;
+import ecologylab.semantics.generated.library.product_and_service.Service;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -26,19 +24,8 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Hotel extends Document
+public class Hotel extends Service
 {
-	@simpl_composite
-	@mm_name("place")
-	private PostalAddress place;
-
-	@simpl_scalar
-	private MetadataString price;
-
-	@simpl_collection("product_review")
-	@mm_name("reviews")
-	private List<ProductReview> reviews;
-
 	@simpl_scalar
 	private MetadataString spaceSize;
 
@@ -54,6 +41,10 @@ public class Hotel extends Document
 	@simpl_scalar
 	private MetadataString checkOut;
 
+	@simpl_collection("hotel")
+	@mm_name("similar_hotels")
+	private List<Hotel> similarHotels;
+
 	public Hotel()
 	{ super(); }
 
@@ -61,78 +52,6 @@ public class Hotel extends Document
 		super(mmd);
 	}
 
-
-	public PostalAddress getPlace()
-	{
-		return place;
-	}
-
-	public void setPlace(PostalAddress place)
-	{
-		this.place = place;
-	}
-
-	public MetadataString	price()
-	{
-		MetadataString	result = this.price;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.price = result;
-		}
-		return result;
-	}
-
-	public String getPrice()
-	{
-		return this.price == null ? null : price().getValue();
-	}
-
-	public MetadataString getPriceMetadata()
-	{
-		return price;
-	}
-
-	public void setPrice(String price)
-	{
-		if (price != null)
-			this.price().setValue(price);
-	}
-
-	public void setPriceMetadata(MetadataString price)
-	{
-		this.price = price;
-	}
-
-	public List<ProductReview> getReviews()
-	{
-		return reviews;
-	}
-
-  // lazy evaluation:
-  public List<ProductReview> reviews()
-  {
-    if (reviews == null)
-      reviews = new ArrayList<ProductReview>();
-    return reviews;
-  }
-
-  // addTo:
-  public void addToReviews(ProductReview element)
-  {
-    reviews().add(element);
-  }
-
-  // size:
-  public int reviewsSize()
-  {
-    return reviews == null ? 0 : reviews.size();
-  }
-
-	public void setReviews(List<ProductReview> reviews)
-	{
-		this.reviews = reviews;
-	}
 
 	public MetadataString	spaceSize()
 	{
@@ -292,5 +211,35 @@ public class Hotel extends Document
 	public void setCheckOutMetadata(MetadataString checkOut)
 	{
 		this.checkOut = checkOut;
+	}
+
+	public List<Hotel> getSimilarHotels()
+	{
+		return similarHotels;
+	}
+
+  // lazy evaluation:
+  public List<Hotel> similarHotels()
+  {
+    if (similarHotels == null)
+      similarHotels = new ArrayList<Hotel>();
+    return similarHotels;
+  }
+
+  // addTo:
+  public void addToSimilarHotels(Hotel element)
+  {
+    similarHotels().add(element);
+  }
+
+  // size:
+  public int similarHotelsSize()
+  {
+    return similarHotels == null ? 0 : similarHotels.size();
+  }
+
+	public void setSimilarHotels(List<Hotel> similarHotels)
+	{
+		this.similarHotels = similarHotels;
 	}
 }
