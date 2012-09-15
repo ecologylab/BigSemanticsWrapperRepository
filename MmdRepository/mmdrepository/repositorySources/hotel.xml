@@ -80,10 +80,10 @@
               layer="10.0" />
   	</collection>
   	
-  	<collection name="similar_hotels" xpath="//div[@class='carouselHotel']">
-  		<scalar name="location" xpath="./div[@class='name']/a/@href" />
-  		<scalar name="title" xpath="./div[@class='name']/a" />
-  		<scalar name="overall_rating" xpath="./div[@class='ranking']" />
+  	<collection name="similar_hotels" xpath="//div[starts-with(text(), 'Travelers also viewed')]/following-sibling::table[@class='recTbl']//tr[1]/td">
+  		<scalar name="location" xpath=".//a[@class='propName ']/@href" />
+  		<scalar name="title" xpath=".//a[@class='propName ']" />
+  		<scalar name="overall_rating" xpath=".//img[@class='sprite-ratings']/@alt" />
   	</collection>
   </meta_metadata>
   
