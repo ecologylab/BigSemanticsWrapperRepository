@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.movie;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.generated.library.person.Person;
+import ecologylab.semantics.generated.library.person.Person;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

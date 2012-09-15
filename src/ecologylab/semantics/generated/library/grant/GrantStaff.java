@@ -8,9 +8,9 @@ package ecologylab.semantics.generated.library.grant;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.generated.library.person.Person;
 import ecologylab.semantics.generated.library.grant.Grant;
 import ecologylab.semantics.generated.library.grant.GrantProgram;
+import ecologylab.semantics.generated.library.person.Person;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;

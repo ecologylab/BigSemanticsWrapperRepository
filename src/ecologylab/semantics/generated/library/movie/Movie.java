@@ -8,10 +8,10 @@ package ecologylab.semantics.generated.library.movie;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.generated.library.person.Person;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.generated.library.movie.Actor;
+import ecologylab.semantics.generated.library.person.Person;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;

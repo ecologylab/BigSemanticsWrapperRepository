@@ -26,10 +26,6 @@ public class RepositoryMetadataTranslationScope
 
 		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
 
-		ecologylab.generated.library.person.BirthDetail.class,
-
-		ecologylab.generated.library.person.Person.class,
-
 		ecologylab.semantics.generated.library.Bookmark.class,
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,
@@ -237,6 +233,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.patent.PatentAuthor.class,
 
 		ecologylab.semantics.generated.library.patent.PatentClassification.class,
+
+		ecologylab.semantics.generated.library.person.BirthDetail.class,
+
+		ecologylab.semantics.generated.library.person.Person.class,
 
 		ecologylab.semantics.generated.library.post.Post.class,
 
