@@ -1,5 +1,5 @@
 <meta_metadata_repository name="wordpress" package="ecologylab.semantics.generated.library.wordpress" default_user_agent_name="chrome_2">
-	<meta_metadata name="post" extends="creative_work" comment="Wordpress post class" parser="xpath">
+	<meta_metadata name="wordpress_post" extends="post" comment="Wordpress post class" parser="xpath">
 	
 		<example_url url="http://babydot74.wordpress.com/2012/09/17/whats-for-dinner/" />
 		<example_url url="http://chocolatebottle.wordpress.com/2012/09/13/disney-social-media-moms-on-the-road-charlotte/" />
@@ -16,9 +16,9 @@
 			<scalar name="title" xpath="./text()" />
 		</collection>
 		
-		<scalar name="date" scalar_type="String" comment="Publication Date" xpath="//div[@class='post-info']/div[@class='timestamp']"/>
+		<scalar name="post_date" scalar_type="String" comment="Publication Date" xpath="//div[@class='post-info']/div[@class='timestamp']"/>
 		
-		<scalar name="content" scalar_type="String" xpath="//meta[@name='description']/@content" />
+		<scalar name="description" scalar_type="String" xpath="//meta[@name='description']/@content" />
 		
 		<semantic_actions>
 			<get_field name="title" />
