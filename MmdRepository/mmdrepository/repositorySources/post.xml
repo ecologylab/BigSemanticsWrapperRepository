@@ -1,7 +1,7 @@
 <meta_metadata_repository name="post" package="ecologylab.semantics.generated.library.post">
 
   <meta_metadata name="post" extends="creative_work">
-    <scalar name="description" tag="content" other_tags="description" />
+    <scalar name="description" label="content" tag="content" other_tags="description" />
     <scalar name="post_date" scalar_type="Date" />
   </meta_metadata>
 

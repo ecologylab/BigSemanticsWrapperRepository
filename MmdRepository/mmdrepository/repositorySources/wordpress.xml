@@ -16,9 +16,9 @@
 			<scalar name="title" xpath="./text()" />
 		</collection>
 		
-		<scalar name="post_date" scalar_type="String" comment="Publication Date" xpath="//div[@class='post-info']/div[@class='timestamp']"/>
+		<scalar name="post_date" comment="Publication Date" xpath="//div[@class='post-info']/div[@class='timestamp']"/>
 		
-		<scalar name="description" scalar_type="String" xpath="//meta[@name='description']/@content" />
+		<scalar name="description" xpath="//meta[@name='description']/@content" />
 		
 		<semantic_actions>
 			<get_field name="title" />
