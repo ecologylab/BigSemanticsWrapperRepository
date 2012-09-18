@@ -16,7 +16,7 @@
 			<scalar name="title" xpath="./text()" />
 		</collection>
 		
-		<scalar name="post_date" comment="Publication Date" xpath="//div[@class='post-info']/div[@class='timestamp']"/>
+		<scalar name="post_date" xpath="//*[self::time or self::span or self::div][@class='entry-date' or @class='post-date' or @class='timestamp']" />
 		
 		<scalar name="description" xpath="//meta[@name='description']/@content" />
 		
