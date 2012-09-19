@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.wikipedia;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.wikipedia.WikiAnchor;
 import ecologylab.semantics.metadata.Metadata;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
@@ -26,15 +26,12 @@ import java.util.Map;
 @simpl_inherit
 public class Paragraph extends Metadata
 {
-	/** 
-	 *Anchors (links) in the paragraph, typically links to another Wikipedia article.
-	 */ 
-	@simpl_collection("wiki_anchor")
-	@mm_name("anchors")
-	private List<WikiAnchor> anchors;
-
 	@simpl_scalar
-	private MetadataString paragraphText;
+	private MetadataString text;
+
+	@simpl_collection("anchor")
+	@mm_name("anchors")
+	private List<Document> anchors;
 
 	public Paragraph()
 	{ super(); }
@@ -44,21 +41,53 @@ public class Paragraph extends Metadata
 	}
 
 
-	public List<WikiAnchor> getAnchors()
+	public MetadataString	text()
+	{
+		MetadataString	result = this.text;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.text = result;
+		}
+		return result;
+	}
+
+	public String getText()
+	{
+		return this.text == null ? null : text().getValue();
+	}
+
+	public MetadataString getTextMetadata()
+	{
+		return text;
+	}
+
+	public void setText(String text)
+	{
+		if (text != null)
+			this.text().setValue(text);
+	}
+
+	public void setTextMetadata(MetadataString text)
+	{
+		this.text = text;
+	}
+
+	public List<Document> getAnchors()
 	{
 		return anchors;
 	}
 
   // lazy evaluation:
-  public List<WikiAnchor> anchors()
+  public List<Document> anchors()
   {
     if (anchors == null)
-      anchors = new ArrayList<WikiAnchor>();
+      anchors = new ArrayList<Document>();
     return anchors;
   }
 
   // addTo:
-  public void addToAnchors(WikiAnchor element)
+  public void addToAnchors(Document element)
   {
     anchors().add(element);
   }
@@ -69,40 +98,8 @@ public class Paragraph extends Metadata
     return anchors == null ? 0 : anchors.size();
   }
 
-	public void setAnchors(List<WikiAnchor> anchors)
+	public void setAnchors(List<Document> anchors)
 	{
 		this.anchors = anchors;
-	}
-
-	public MetadataString	paragraphText()
-	{
-		MetadataString	result = this.paragraphText;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.paragraphText = result;
-		}
-		return result;
-	}
-
-	public String getParagraphText()
-	{
-		return this.paragraphText == null ? null : paragraphText().getValue();
-	}
-
-	public MetadataString getParagraphTextMetadata()
-	{
-		return paragraphText;
-	}
-
-	public void setParagraphText(String paragraphText)
-	{
-		if (paragraphText != null)
-			this.paragraphText().setValue(paragraphText);
-	}
-
-	public void setParagraphTextMetadata(MetadataString paragraphText)
-	{
-		this.paragraphText = paragraphText;
 	}
 }

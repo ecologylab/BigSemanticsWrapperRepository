@@ -8,16 +8,21 @@ package ecologylab.semantics.generated.library.wikipedia;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.wikipedia.Category;
-import ecologylab.semantics.generated.library.wikipedia.Paragraph;
-import ecologylab.semantics.generated.library.wikipedia.Thumbinner;
+import ecologylab.net.ParsedURL;
+import ecologylab.semantics.generated.library.wikipedia.Section;
+import ecologylab.semantics.generated.library.wikipedia.WikipediaCategoryType;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.builtins.Document;
+import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
+import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,23 +33,27 @@ import java.util.Map;
 @simpl_inherit
 public class WikipediaPageType extends CompoundDocument
 {
-	/** 
-	 *Paragraphs in the article.
-	 */ 
-	@simpl_collection("paragraph")
-	@mm_name("paragraphs")
-	private List<Paragraph> paragraphs;
+	@simpl_composite
+	@mm_name("main_image")
+	private Image mainImage;
 
 	/** 
-	 *Wikipedia Categories
+	 *(For compatibility.)
 	 */ 
-	@simpl_collection("category")
-	@mm_name("categories")
-	private List<Category> categories;
+	@simpl_scalar
+	private MetadataParsedURL mainImageSrc;
+
+	@simpl_collection("section")
+	@mm_name("sections")
+	private List<Section> sections;
 
 	@simpl_collection("thumbinner")
 	@mm_name("thumbinners")
-	private List<Thumbinner> thumbinners;
+	private List<Document> thumbinners;
+
+	@simpl_collection("category")
+	@mm_name("categories")
+	private List<WikipediaCategoryType> categories;
 
 	public WikipediaPageType()
 	{ super(); }
@@ -54,81 +63,93 @@ public class WikipediaPageType extends CompoundDocument
 	}
 
 
-	public List<Paragraph> getParagraphs()
+	public Image getMainImage()
 	{
-		return paragraphs;
+		return mainImage;
+	}
+
+	public void setMainImage(Image mainImage)
+	{
+		this.mainImage = mainImage;
+	}
+
+	public MetadataParsedURL	mainImageSrc()
+	{
+		MetadataParsedURL	result = this.mainImageSrc;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.mainImageSrc = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getMainImageSrc()
+	{
+		return this.mainImageSrc == null ? null : mainImageSrc().getValue();
+	}
+
+	public MetadataParsedURL getMainImageSrcMetadata()
+	{
+		return mainImageSrc;
+	}
+
+	public void setMainImageSrc(ParsedURL mainImageSrc)
+	{
+		if (mainImageSrc != null)
+			this.mainImageSrc().setValue(mainImageSrc);
+	}
+
+	public void setMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
+	{
+		this.mainImageSrc = mainImageSrc;
+	}
+
+	public List<Section> getSections()
+	{
+		return sections;
 	}
 
   // lazy evaluation:
-  public List<Paragraph> paragraphs()
+  public List<Section> sections()
   {
-    if (paragraphs == null)
-      paragraphs = new ArrayList<Paragraph>();
-    return paragraphs;
+    if (sections == null)
+      sections = new ArrayList<Section>();
+    return sections;
   }
 
   // addTo:
-  public void addToParagraphs(Paragraph element)
+  public void addToSections(Section element)
   {
-    paragraphs().add(element);
+    sections().add(element);
   }
 
   // size:
-  public int paragraphsSize()
+  public int sectionsSize()
   {
-    return paragraphs == null ? 0 : paragraphs.size();
+    return sections == null ? 0 : sections.size();
   }
 
-	public void setParagraphs(List<Paragraph> paragraphs)
+	public void setSections(List<Section> sections)
 	{
-		this.paragraphs = paragraphs;
+		this.sections = sections;
 	}
 
-	public List<Category> getCategories()
-	{
-		return categories;
-	}
-
-  // lazy evaluation:
-  public List<Category> categories()
-  {
-    if (categories == null)
-      categories = new ArrayList<Category>();
-    return categories;
-  }
-
-  // addTo:
-  public void addToCategories(Category element)
-  {
-    categories().add(element);
-  }
-
-  // size:
-  public int categoriesSize()
-  {
-    return categories == null ? 0 : categories.size();
-  }
-
-	public void setCategories(List<Category> categories)
-	{
-		this.categories = categories;
-	}
-
-	public List<Thumbinner> getThumbinners()
+	public List<Document> getThumbinners()
 	{
 		return thumbinners;
 	}
 
   // lazy evaluation:
-  public List<Thumbinner> thumbinners()
+  public List<Document> thumbinners()
   {
     if (thumbinners == null)
-      thumbinners = new ArrayList<Thumbinner>();
+      thumbinners = new ArrayList<Document>();
     return thumbinners;
   }
 
   // addTo:
-  public void addToThumbinners(Thumbinner element)
+  public void addToThumbinners(Document element)
   {
     thumbinners().add(element);
   }
@@ -139,8 +160,38 @@ public class WikipediaPageType extends CompoundDocument
     return thumbinners == null ? 0 : thumbinners.size();
   }
 
-	public void setThumbinners(List<Thumbinner> thumbinners)
+	public void setThumbinners(List<Document> thumbinners)
 	{
 		this.thumbinners = thumbinners;
+	}
+
+	public List<WikipediaCategoryType> getCategories()
+	{
+		return categories;
+	}
+
+  // lazy evaluation:
+  public List<WikipediaCategoryType> categories()
+  {
+    if (categories == null)
+      categories = new ArrayList<WikipediaCategoryType>();
+    return categories;
+  }
+
+  // addTo:
+  public void addToCategories(WikipediaCategoryType element)
+  {
+    categories().add(element);
+  }
+
+  // size:
+  public int categoriesSize()
+  {
+    return categories == null ? 0 : categories.size();
+  }
+
+	public void setCategories(List<WikipediaCategoryType> categories)
+	{
+		this.categories = categories;
 	}
 }

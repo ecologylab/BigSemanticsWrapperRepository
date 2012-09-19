@@ -8,22 +8,17 @@ package ecologylab.semantics.generated.library.wikipedia;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.wikipedia.Section;
 import ecologylab.semantics.generated.library.wikipedia.WikipediaPageType;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,22 +29,11 @@ import java.util.Map;
 public class WikipediaMobilePage extends WikipediaPageType
 {
 	@simpl_scalar
-	private MetadataParsedURL mainImageSrc;
-
-	@simpl_scalar
 	private MetadataString mainImageCaption;
 
 	@simpl_composite
-	@simpl_tag("section")
 	@mm_name("description_section")
 	private Section descriptionSection;
-
-	/** 
-	 *Sections in the article.
-	 */ 
-	@simpl_collection("section")
-	@mm_name("sections")
-	private List<Section> sections;
 
 	public WikipediaMobilePage()
 	{ super(); }
@@ -58,38 +42,6 @@ public class WikipediaMobilePage extends WikipediaPageType
 		super(mmd);
 	}
 
-
-	public MetadataParsedURL	mainImageSrc()
-	{
-		MetadataParsedURL	result = this.mainImageSrc;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.mainImageSrc = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getMainImageSrc()
-	{
-		return this.mainImageSrc == null ? null : mainImageSrc().getValue();
-	}
-
-	public MetadataParsedURL getMainImageSrcMetadata()
-	{
-		return mainImageSrc;
-	}
-
-	public void setMainImageSrc(ParsedURL mainImageSrc)
-	{
-		if (mainImageSrc != null)
-			this.mainImageSrc().setValue(mainImageSrc);
-	}
-
-	public void setMainImageSrcMetadata(MetadataParsedURL mainImageSrc)
-	{
-		this.mainImageSrc = mainImageSrc;
-	}
 
 	public MetadataString	mainImageCaption()
 	{
@@ -131,35 +83,5 @@ public class WikipediaMobilePage extends WikipediaPageType
 	public void setDescriptionSection(Section descriptionSection)
 	{
 		this.descriptionSection = descriptionSection;
-	}
-
-	public List<Section> getSections()
-	{
-		return sections;
-	}
-
-  // lazy evaluation:
-  public List<Section> sections()
-  {
-    if (sections == null)
-      sections = new ArrayList<Section>();
-    return sections;
-  }
-
-  // addTo:
-  public void addToSections(Section element)
-  {
-    sections().add(element);
-  }
-
-  // size:
-  public int sectionsSize()
-  {
-    return sections == null ? 0 : sections.size();
-  }
-
-	public void setSections(List<Section> sections)
-	{
-		this.sections = sections;
 	}
 }

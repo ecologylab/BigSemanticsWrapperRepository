@@ -378,21 +378,19 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.video.Video.class,
 
-		ecologylab.semantics.generated.library.wikipedia.Category.class,
-
 		ecologylab.semantics.generated.library.wikipedia.Paragraph.class,
 
 		ecologylab.semantics.generated.library.wikipedia.Section.class,
 
-		ecologylab.semantics.generated.library.wikipedia.Thumbinner.class,
-
-		ecologylab.semantics.generated.library.wikipedia.WikiAnchor.class,
+		ecologylab.semantics.generated.library.wikipedia.WikipediaCategoryType.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaMobilePage.class,
 
-		ecologylab.semantics.generated.library.wikipedia.WikipediaPage.class,
-
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPageType.class,
+
+		ecologylab.semantics.generated.library.wordpress.Wordpress.class,
+
+		ecologylab.semantics.generated.library.wordpress.WordpressPost.class,
 
 	};
 
