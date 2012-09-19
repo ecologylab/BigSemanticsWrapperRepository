@@ -11,35 +11,34 @@
 		<scalar name="main_image_src" xpath="//*[starts-with(@class,'infobox')]//@src[1]" context_node="main_image" scalar_type="ParsedURL" />
 		<scalar name="main_image_caption" scalar_type="String" xpath="//*[starts-with(@class,'infobox')]//span[1]"/>
 		
-		<composite name="description_section" type="section" extends="metadata">
-			<scalar name="section_title" scalar_type="String" />  
+		<composite name="description_section" type="section">
 			<collection name="paragraphs" xpath="//div[@id='content']/p" child_type="paragraph">
-				<scalar name="paragraph_text" xpath="." />
+				<scalar name="text" xpath="." />
 				<collection name="anchors" xpath="./a[@title]">
-					<scalar name="link" xpath="./@href" />
-					<scalar name="anchor_text" xpath="." />
-					<scalar name="target_title" xpath="./@title" />
+					<scalar name="location" xpath="./@href" />
+					<scalar name="description" xpath="." />
+					<scalar name="title" xpath="./@title" />
 				</collection>
 			</collection>
 		</composite>
 
 		<collection name="sections" child_type="section" comment="Sections in the article." xpath="//h2" >
-			<scalar name="section_title" xpath="." >
+			<scalar name="title" xpath="." >
 				<filter regex="ShowHide" replace="" />
 			</scalar>  
 			<collection name="paragraphs" xpath="./following-sibling::div[1]/p" child_type="paragraph">
-				<scalar name="paragraph_text" xpath="." />
+				<scalar name="text" xpath="." />
 				<collection name="anchors" xpath="./a[@title]">
-					<scalar name="link" xpath="./@href" />
-					<scalar name="anchor_text" xpath="." />
-					<scalar name="target_title" xpath="./@title" />
+					<scalar name="location" xpath="./@href" />
+					<scalar name="description" xpath="." />
+					<scalar name="title" xpath="./@title" />
 				</collection>
 			</collection>
 		</collection>
 		
-		<collection name="thumbinners" xpath="//*[@class='thumbinner']" child_type="thumbinner">
-			<scalar name="thumb_img_src" xpath="./a/img/@src" />
-			<scalar name="thumb_img_caption" xpath="." />
+		<collection name="thumbinners" xpath="//*[@class='thumbinner']">
+			<scalar name="location" xpath="./a/img/@src" />
+			<scalar name="title" xpath="." />
 		</collection>		
     
 	</meta_metadata>	

@@ -1,7 +1,9 @@
 <meta_metadata_repository name="wikipedia"
-  package="ecologylab.semantics.generated.library.wikipedia" default_user_agent_name="chrome_2">
+                          package="ecologylab.semantics.generated.library.wikipedia"
+                          default_user_agent_name="chrome_2">
 
-  <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search" user_agent_name="firefox_2" parser="xpath">
+  <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search"
+                 parser="xpath" user_agent_name="firefox_2">
     <generic_type_var name="SR" arg="wikipedia_page" />
     
     <selector url_stripped="http://en.wikipedia.org/w/index.php?title=Special%3ASearch" />
@@ -12,119 +14,212 @@
       <scalar name="description" xpath="./div[@class='searchresult']" />
     </collection>
   </meta_metadata>
-
-  <meta_metadata name="wikipedia_page_type" extends="compound_document" comment="An article on wikipedia">
-    <collection name="paragraphs" child_type="paragraph" child_extends="metadata" comment="Paragraphs in the article.">
-      <scalar name="paragraph_text" scalar_type="String" />
-      <collection name="anchors" child_type="wiki_anchor" child_extends="metadata" comment="Anchors (links) in the paragraph, typically links to another Wikipedia article.">
-        <scalar name="link" scalar_type="ParsedURL" />
-        <scalar name="anchor_text" scalar_type="String" />
-        <scalar name="target_title" scalar_type="String" />
-      </collection>
-    </collection>
-
-    <collection name="categories" child_type="category" child_extends="metadata" comment="Wikipedia Categories">
-      <scalar name="name" scalar_type="String" navigates_to="cat_link" />
-      <scalar name="cat_link" hide="true" scalar_type="ParsedURL" />
-    </collection>
-
-    <collection name="thumbinners" hide="true" child_type="thumbinner" child_extends="metadata">
-      <scalar name="thumb_img_src" scalar_type="ParsedURL" />
-      <scalar name="thumb_img_caption" scalar_type="String" />
+  
+  
+  <meta_metadata name="paragraph" extends="metadata">
+    <scalar name="text" scalar_type="String" />
+    <collection name="anchors" child_type="document" child_tag="anchor">
+      <scalar name="location" hide="true" />
+	    <!-- For each anchor: -->
+	    <!--   title: the target Wikipedia article title, or target page title if not Wikipeida. -->
+	    <!--   description: the anchor text. -->
+	    <!--   location: the target page URL. -->
     </collection>
   </meta_metadata>
+  
+  
+  <meta_metadata name="section" extends="document">
+    <scalar name="title" other_tags="section_title" navigates_to="section_url" />
+    <scalar name="section_id" scalar_type="String" hide="true" />
+    <scalar name="section_url" scalar_type="ParsedURL" hide="true">
+	    <!-- We cannot use location here since it breaks expansion: -->
+    </scalar>
+    <collection name="paragraphs" child_type="paragraph" child_tag="paragraph" />
+    <collection name="subsections" child_type="section" child_tag="section" />
+  </meta_metadata>
 
-  <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath" comment="An article on wikipedia" user_agent_name="chrome_12">
+
+  <meta_metadata name="wikipedia_page_type" extends="compound_document"
+                 comment="An article on wikipedia">
+    <composite name="main_image" type="image" hide="true" />
+    <scalar name="main_image_src" scalar_type="ParsedURL" hide="true"
+            comment="(For compatibility.)" />
+    
+    <!-- TODO infoboxes! -->
+    
+    <collection name="sections" child_type="section" child_tag="section" />
+
+    <collection name="thumbinners" hide="true" child_type="document" child_tag="thumbinner">
+      <scalar name="location" other_tags="thumb_img_src" />
+      <scalar name="title" other_tags="thumb_img_caption" />
+    </collection>
+    
+    <collection name="categories" child_type="wikipedia_category_type" child_tag="category"
+                label="categories" />
+    
+    <!-- TODO translations -->
+  </meta_metadata>
+  
+  
+  <meta_metadata name="wikipedia_category_type" extends="compound_document">
+    <collection name="subcategories" child_type="wikipedia_category_type" child_tag="subcategory" />
+    <collection name="articles" child_type="wikipedia_page_type" child_tag="article" />
+    <scalar name="next_page_url" scalar_type="ParsedURL" hide="true" />
+    <collection name="supercategories" child_type="wikipedia_category_type" child_tag="supercategory" />
+    <!-- TODO -->
+  </meta_metadata>
+
+
+  <meta_metadata name="wikipedia_page" type="wikipedia_page_type" parser="xpath"
+                 user_agent_name="chrome_12" comment="An article on wikipedia">
     <selector url_regex="http://en.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
     
     <example_url url="http://en.wikipedia.org/wiki/Type_system" />
+    <example_url url="http://en.wikipedia.org/wiki/Velcro" />
    
-    <def_var name="main_image" xpath="//*[starts-with(@class,'infobox')]//img[@width>50][1]" type="node" />
+    <def_var name="main_image" type="node"
+             xpath="//*[starts-with(@class,'infobox')]//img[@width>50][1]" />
     
     <scalar name="title" xpath="//*[@id='firstHeading']" />
     <scalar name="description" xpath="//*[@id='mw-content-text']/p[1]" />
-    <scalar name="main_image_src" hide="true" xpath="./@src" context_node="main_image" scalar_type="ParsedURL" />
-    <collection name="paragraphs" hide="true" xpath="//*[@id='bodyContent']//p[string-length(text()) > 0]" child_type="paragraph">
-      <scalar name="paragraph_text" xpath="." />
-      <collection name="anchors" xpath="./a[@title]">
-        <scalar name="link" xpath="./@href" />
-        <scalar name="anchor_text" xpath="." />
-        <scalar name="target_title" xpath="./@title" />
+    
+    <composite name="main_image" xpath="." context_node="main_image">
+      <scalar name="location" xpath="./@src" />
+    </composite>
+    <scalar name="main_image_src" xpath="./@src" context_node="main_image" />
+    
+    <collection name="sections" xpath="//div[@id='mw-content-text']/h2">
+      <scalar name="title" xpath="./span[@id]" />
+      <scalar name="section_id" xpath="./span[@id]/@id" />
+      <scalar name="section_url">
+        <concatenate_values>
+          <value>#</value>
+          <value from_scalar="section_id" />
+        </concatenate_values>
+        <!-- TODO ParsedURL doesn't support #section_id .. -->
+      </scalar>
+      <collection name="paragraphs" xpath="./following-sibling::p[1]">
+        <scalar name="text" xpath="." />
+        <collection name="anchors" xpath=".//a[@title]">
+          <scalar name="title" xpath="./@title" />
+          <scalar name="description" xpath="." />
+          <scalar name="location" xpath="./@href" />
+        </collection>
       </collection>
+<!--       <collection name="subsections" field_parser_key="$subsections"> -->
+<!--         TODO -->
+<!--       </collection> -->
     </collection>
-    <collection name="categories" xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]" child_type="category" promote_children="true">
-      <scalar name="name" xpath="." />
-      <scalar name="cat_link" xpath="./@href" />
-    </collection>
-    <collection name="thumbinners" xpath="//*[@class='thumbinner']" child_type="thumbinner">
-      <scalar name="thumb_img_src" xpath="./a/img/@src" />
-      <scalar name="thumb_img_caption" xpath="." />
+    
+<!--     <collection name="paragraphs" hide="true" -->
+<!--                 xpath="//*[@id='bodyContent']//p[string-length(text()) > 0]"> -->
+<!--       <scalar name="paragraph_text" xpath="." /> -->
+<!--       <collection name="anchors" xpath="./a[@title]"> -->
+<!--         <scalar name="link" xpath="./@href" /> -->
+<!--         <scalar name="anchor_text" xpath="." /> -->
+<!--         <scalar name="target_title" xpath="./@title" /> -->
+<!--       </collection> -->
+<!--     </collection> -->
+
+    <collection name="thumbinners" xpath="//div[@class='thumbinner']">
+      <scalar name="location" xpath=".//a/img/@src" />
+      <scalar name="title" xpath="." />
     </collection>
 
+    <collection name="categories" promote_children="true"
+                xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </collection>
+    
     <semantic_actions>
       <get_field name="main_image_src" />
-      <if>
-        <not_null value="main_image_src" />
-        <create_and_visualize_img_surrogate>
-          <arg value="main_image_src" name="image_purl" />
-        </create_and_visualize_img_surrogate>
-      </if>
-      <get_field name="paragraphs" />
-      <for_each collection="paragraphs" as="para" current_index="para_index" size="para_list_size">
-        <get_field object="para" name="paragraph_text" />
-        <get_field object="para" name="anchors" />
-        <for_each collection="anchors" as="anch" current_index="cur_anchor_index" size="anchor_list_size">
-          <get_field object="anch" name="link" />
-          <get_field object="anch" name="anchor_text" />
-          <if>
-            <not_null value="anchor_text" />
-            <not_null value="link" />
+      <create_and_visualize_img_surrogate>
+        <not_null value="main_image_src" /><!-- Prerequisite check -->
+        <arg value="main_image_src" name="image_purl" />
+      </create_and_visualize_img_surrogate>
+      
+      <get_field name="sections" />
+      <for_each collection="sections" as="section">
+        <not_null value="sections" /><!-- Prerequisite check -->
+        <get_field object="section" name="paragraphs">
+          <not_null value="section" /><!-- Prerequisite check -->
+        </get_field>
+        <for_each collection="paragraphs" as="para" current_index="para_index" size="para_count">
+          <not_null value="paragraphs" /><!-- Prerequisite check -->
+          <get_field object="para" name="text" />
+          <get_field object="para" name="anchors" />
+          <for_each collection="anchors" as="anch" current_index="anchor_index" size="anchor_count">
+            <not_null value="anchors" /><!-- Prerequisite check -->
+            <get_field object="anch" name="location" />
+            <get_field object="anch" name="description" />
             <parse_document only_pick_top_documents="true" number_of_top_documents="5">
-              <arg name="anchor_text" value="anchor_text" />
-              <!-- <arg value="paragraph_text" name="anchor_context" /> -->
-              <arg name="location" value="link" />
+              <not_null value="description" /><!-- Prerequisite check -->
+              <not_null value="location" /><!-- Prerequisite check -->
+              <arg name="anchor_text" value="description" />
+              <arg name="location" value="location" />
               <arg name="ignore_context_for_tv" value="true" />
-              <arg name="current_index" value="cur_anchor_index" />
-              <arg name="size" value="anchor_list_size" />
+              <arg name="current_index" value="anchor_index" />
+              <arg name="size" value="anchor_count" />
               <arg name="outer_loop_index" value="para_index" />
-              <arg name="outer_loop_size" value="para_list_size" />
+              <arg name="outer_loop_size" value="para_count" />
             </parse_document>
-          </if>
+          </for_each>
+          <create_and_visualize_text_surrogate>
+            <not_null value="text" /><!-- Prerequisite check -->
+            <arg name="text" value="text" />
+          </create_and_visualize_text_surrogate>
         </for_each>
-        <create_and_visualize_text_surrogate>
-          <arg value="paragraph_text" name="text" />
-        </create_and_visualize_text_surrogate>
       </for_each>
       
       <get_field name="thumbinners" />
-      <if>
-      	<not_null value="thumbinners"/>
-	      <for_each collection="thumbinners" as="thumbinner">
-	        <get_field object="thumbinner" name="thumb_img_src" />
-	        <get_field object="thumbinner" name="thumb_img_caption" />
-	        <if>
-	          <not_null value="thumb_img_src" />
-	          <not_null value="thumb_img_caption" />
-	          <create_and_visualize_img_surrogate>
-	            <arg value="thumb_img_caption" name="caption" />
-	            <arg value="thumb_img_src" name="image_purl" />
-	          </create_and_visualize_img_surrogate>
-	        </if>
-	      </for_each>
-      </if>
+      <for_each collection="thumbinners" as="thumbinner">
+      	<not_null value="thumbinners"/><!-- Prerequisite check -->
+        <get_field object="thumbinner" name="location" />
+        <get_field object="thumbinner" name="title" />
+        <create_and_visualize_img_surrogate>
+          <not_null value="location" /><!-- Prerequisite check -->
+          <not_null value="title" /><!-- Prerequisite check -->
+          <arg name="caption" value="title" />
+          <arg name="image_purl" value="location" />
+        </create_and_visualize_img_surrogate>
+      </for_each>
     </semantic_actions>
   </meta_metadata>
 
-  <!-- this type uses a local dump of Wikipedia, so the xpath might be different from http://en.wikipedia.org -->
-  <meta_metadata name="wikipedia_page_for_parsing" type="wikipedia_page_type" parser="xpath" comment="Used to parse wikipedia pages for concept mapping project.">
-    <collection name="paragraphs" xpath="//p[string-length(.)>1]">
-      <scalar name="paragraph_text" xpath="." />
-      <collection name="anchors" xpath="./a[string-length(@title)>0]">
-        <scalar name="link" xpath="./@href" /> <!-- not used -->
-        <scalar name="anchor_text" xpath="." /> <!-- surface -->
-        <scalar name="target_title" xpath="./@title" />
-      </collection>
+
+  <meta_metadata name="wikipedia_category" type="wikipedia_category_type" parser="xpath">
+    <selector domain="wikipedia.org" url_regex="http://en.wikipedia.org/wiki/Category:.*" />
+    <example_url url="http://en.wikipedia.org/wiki/Category:Brand_name_materials" />
+    <example_url url="http://en.wikipedia.org/wiki/Category:Theoretical_physicists" />
+    
+    <collection name="subcategories" xpath="//div[@id='mw-subcategories']//a">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </collection>
+    <collection name="articles" xpath="//div[@id='mw-pages']//li/a[@title]">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </collection>
+    <collection name="supercategories" xpath="//div[@id='mw-normal-catlinks']//li/a[@title]">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
     </collection>
   </meta_metadata>
+  
+  
+  <!-- this type uses a local dump of Wikipedia, so the xpath might be different from -->
+  <!-- http://en.wikipedia.org -->
+<!--   <meta_metadata name="wikipedia_page_for_parsing" type="wikipedia_page_type" parser="xpath" -->
+<!--                  comment="Used to parse wikipedia pages for the concept mapping project."> -->
+<!--     <collection name="paragraphs" xpath="//p[string-length(.)>1]"> -->
+<!--       <scalar name="paragraph_text" xpath="." /> -->
+<!--       <collection name="anchors" xpath="./a[string-length(@title)>0]"> -->
+<!--         <scalar name="link" xpath="./@href" /> not used -->
+<!--         <scalar name="anchor_text" xpath="." /> surface -->
+<!--         <scalar name="target_title" xpath="./@title" /> -->
+<!--       </collection> -->
+<!--     </collection> -->
+<!--   </meta_metadata> -->
 
 </meta_metadata_repository>
