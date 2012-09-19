@@ -39,7 +39,7 @@
   </meta_metadata>
 
 
-  <meta_metadata name="wikipedia_page_type" extends="compound_document"
+  <meta_metadata name="wikipedia_page_type" extends="compound_document" other_tags="wikipedia_page"
                  comment="An article on wikipedia">
     <composite name="main_image" type="image" hide="true" />
     <scalar name="main_image_src" scalar_type="ParsedURL" hide="true"
@@ -62,6 +62,8 @@
   
   
   <meta_metadata name="wikipedia_category_type" extends="compound_document">
+    <scalar name="title" other_tags="name" />
+    <scalar name="location" other_tags="cat_link" />
     <collection name="subcategories" child_type="wikipedia_category_type" child_tag="subcategory" />
     <collection name="articles" child_type="wikipedia_page_type" child_tag="article" />
     <scalar name="next_page_url" scalar_type="ParsedURL" hide="true" />
