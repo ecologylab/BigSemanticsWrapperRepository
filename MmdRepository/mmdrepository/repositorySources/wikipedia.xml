@@ -72,7 +72,7 @@
   </meta_metadata>
 
 
-  <meta_metadata name="wikipedia_page" type="wikipedia_page_type" parser="xpath"
+  <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath"
                  user_agent_name="chrome_12" comment="An article on wikipedia">
     <selector url_regex="http://en.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
     

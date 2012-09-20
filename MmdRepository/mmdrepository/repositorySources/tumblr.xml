@@ -4,7 +4,7 @@
   <!-- This is not working now. We should transit to use Tumblr API. -->
   
   <meta_metadata name="tumblr" extends="post" parser="xpath">
-    <selector url_regex_fragment="tumblr" domain="tumblr.com" />
+<!--     <selector url_regex_fragment="tumblr" domain="tumblr.com" /> -->
     
     <scalar name="title" xpath="//div[@id='header']" />
     <scalar name="post" scalar_type="String"
