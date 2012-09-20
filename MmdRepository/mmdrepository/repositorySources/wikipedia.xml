@@ -30,6 +30,7 @@
   
   <meta_metadata name="section" extends="document">
     <scalar name="title" other_tags="section_title" navigates_to="section_url" />
+    <scalar name="location" hide="true" />
     <scalar name="section_id" scalar_type="String" hide="true" />
     <scalar name="section_url" scalar_type="ParsedURL" hide="true">
 	    <!-- We cannot use location here since it breaks expansion: -->
@@ -128,7 +129,9 @@
       <scalar name="title" xpath="." />
     </collection>
 
-    <collection name="categories" promote_children="true"
+<!--     <collection name="categories" promote_children="true" -->
+<!--                 xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]"> -->
+    <collection name="categories"
                 xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]">
       <scalar name="title" xpath="." />
       <scalar name="location" xpath="./@href" />
