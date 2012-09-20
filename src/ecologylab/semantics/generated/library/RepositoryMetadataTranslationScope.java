@@ -358,8 +358,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.slashdot.SlashdotRss.class,
 
-		ecologylab.semantics.generated.library.tumblr.Tumblr.class,
-
 		ecologylab.semantics.generated.library.tvShow.TvShow.class,
 
 		ecologylab.semantics.generated.library.tvShow.TvShowEpisode.class,
@@ -385,6 +383,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.wikipedia.WikipediaCategoryType.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaMobilePage.class,
+
+		ecologylab.semantics.generated.library.wikipedia.WikipediaPage.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPageType.class,
 
