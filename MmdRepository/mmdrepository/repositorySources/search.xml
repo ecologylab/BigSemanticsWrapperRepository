@@ -407,8 +407,8 @@
 			<scalar name="description" xpath="./div[@class='hide']/div/i" />
 			<scalar name="author" xpath="./header/div[@class='details']/a" />
 			<collection name="tags" xpath="./footer//div[@class='grid_14']//a[@class='popular tag']">
-				<scalar name="tag_name" xpath="." />
-				<scalar name="link" xpath="./@href" />
+				<scalar name="title" xpath="." />
+				<scalar name="location" xpath="./@href" />
 			</collection>
 		</collection>
 	</meta_metadata>
@@ -420,8 +420,8 @@
 			<scalar name="location" xpath=".//div/h4/a/@href" />
 			<scalar name="author" xpath="./div/div[@class='meta']//span[1]" />
 			<collection name="tags" xpath="./div/div[@class='tagdisplay']//a">
-				<scalar name="tag_name" xpath="." />
-				<scalar name="link" xpath="./@href" />
+				<scalar name="title" xpath="." />
+				<scalar name="location" xpath="./@href" />
 			</collection>
 		</collection>
 	</meta_metadata>
@@ -433,8 +433,8 @@
 			<scalar name="description" xpath=".//div[@class='post_content']" />
 			<scalar name="author" xpath="./div[@class='post_info']" />
 			<collection name="tags" xpath="./div[@class='footer_links with_tags']//a">
-				<scalar name="tag_name" xpath="." />
-				<scalar name="link" xpath="./@href" />
+				<scalar name="title" xpath="." />
+				<scalar name="location" xpath="./@href" />
 			</collection>
 		</collection>
 	</meta_metadata>
