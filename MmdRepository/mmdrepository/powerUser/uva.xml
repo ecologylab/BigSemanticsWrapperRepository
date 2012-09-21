@@ -33,7 +33,7 @@
   	<scalar name="id" scalar_type="Int" />
   </meta_metadata>
   
-  <meta_metadata name="model" extends="metadata" parser="direct">
+  <meta_metadata name="uva_model" extends="metadata" parser="direct">
   	<collection name="topic_clusters" child_type="topic_cluster" />
   	<!-- 
   		public void parse(Model model)
