@@ -358,6 +358,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.slashdot.SlashdotRss.class,
 
+		ecologylab.semantics.generated.library.tumblr.Tumblr.class,
+
 		ecologylab.semantics.generated.library.tvShow.TvShow.class,
 
 		ecologylab.semantics.generated.library.tvShow.TvShowEpisode.class,
@@ -368,11 +370,11 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.uva.KeywordSet.class,
 
-		ecologylab.semantics.generated.library.uva.Model.class,
-
 		ecologylab.semantics.generated.library.uva.Topic.class,
 
 		ecologylab.semantics.generated.library.uva.TopicCluster.class,
+
+		ecologylab.semantics.generated.library.uva.UvaModel.class,
 
 		ecologylab.semantics.generated.library.video.Video.class,
 

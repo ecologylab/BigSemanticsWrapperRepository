@@ -12,7 +12,6 @@ import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.wikipedia.Section;
 import ecologylab.semantics.generated.library.wikipedia.WikipediaCategoryType;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -49,7 +48,7 @@ public class WikipediaPageType extends CompoundDocument
 
 	@simpl_collection("thumbinner")
 	@mm_name("thumbinners")
-	private List<Document> thumbinners;
+	private List<Image> thumbinners;
 
 	@simpl_collection("category")
 	@mm_name("categories")
@@ -135,21 +134,21 @@ public class WikipediaPageType extends CompoundDocument
 		this.sections = sections;
 	}
 
-	public List<Document> getThumbinners()
+	public List<Image> getThumbinners()
 	{
 		return thumbinners;
 	}
 
   // lazy evaluation:
-  public List<Document> thumbinners()
+  public List<Image> thumbinners()
   {
     if (thumbinners == null)
-      thumbinners = new ArrayList<Document>();
+      thumbinners = new ArrayList<Image>();
     return thumbinners;
   }
 
   // addTo:
-  public void addToThumbinners(Document element)
+  public void addToThumbinners(Image element)
   {
     thumbinners().add(element);
   }
@@ -160,7 +159,7 @@ public class WikipediaPageType extends CompoundDocument
     return thumbinners == null ? 0 : thumbinners.size();
   }
 
-	public void setThumbinners(List<Document> thumbinners)
+	public void setThumbinners(List<Image> thumbinners)
 	{
 		this.thumbinners = thumbinners;
 	}
