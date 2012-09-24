@@ -1,11 +1,11 @@
 <meta_metadata_repository name="wordpress" package="ecologylab.semantics.generated.library.wordpress" default_user_agent_name="chrome_2">
-	<meta_metadata name="wordpress_post" extends="post" comment="Wordpress post class" parser="xpath">
+	<meta_metadata name="wordpress_post" type="post" comment="Wordpress post class" parser="xpath">
 	
 		<example_url url="http://babydot74.wordpress.com/2012/09/17/whats-for-dinner/" />
 		<example_url url="http://chocolatebottle.wordpress.com/2012/09/13/disney-social-media-moms-on-the-road-charlotte/" />
 		<example_url url="http://ohnaturelle.wordpress.com/2012/09/11/the-waterfront-restaurant/" />
 	
-		<selector url_regex="http://\w+.wordpress.com/\S+" domain="wordpress.com"/>
+		<selector url_regex="http://\w+.wordpress.com/[0-9]+/[0-9]+/\S+" domain="wordpress.com"/>
 		
 		<scalar name="title" xpath="//meta[@name='title']/@content">
 			<filter regex=" \|.+" replace="" />
@@ -42,7 +42,7 @@
 		<selector url_regex="http://\w+.wordpress.com/" domain="wordpress.com" />
 		
 		<scalar name="title" xpath="//meta[@name='application-name']/@content" comment="Name of the Wordpress blog" />
-		<collection name="posts" child_type="post" xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]">
+		<collection name="posts" child_type="wordpress_post" xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]">
 			<scalar name="title" xpath=".//a/@title">
 				<filter regex="Permalink to " replace="" />
 			</scalar>
