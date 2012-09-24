@@ -316,44 +316,45 @@
   </meta_metadata>
 
 
-<!--	<meta_metadata name="acm_proceeding" extends="compound_document" parser="xpath">-->
-<!--		<selector url_stripped="http://portal.acm.org/toc.cfm" />-->
-<!--		<collection name="proceedings" hide="true" xpath="//tr[@valign='top']/td[@class='small-text']/strong" child_type="search_result">-->
-<!--			<scalar name="link" xpath="./a/@href" />-->
-<!--			<scalar name="heading" xpath="./a/text()" />-->
-<!--		</collection>-->
-<!--		<collection name="papers" xpath="//div[@id='prox']/div/table/tr" child_type="search_result">-->
-<!--			<scalar name="link" xpath=".//@href" />-->
-<!--			<scalar name="heading" xpath=".//a" />-->
-<!--		</collection>-->
-<!--		<semantic_actions>-->
-<!--			<get_field name="proceedings" />-->
-<!--			<if>-->
-<!--				<not_null value="proceedings" />-->
-<!--				<for_each collection="proceedings" as="proceeding">-->
-<!--					<get_field object="proceeding" name="link" />-->
-<!--					<get_field object="proceeding" name="heading" />-->
-<!--					<parse_document link_type="TRUSTED_SEMANTICS">-->
-<!--						<arg value="heading" name="anchor_text" />-->
-<!--						<arg value="link" name="location" />-->
-<!--					</parse_document>-->
-<!--				</for_each>-->
-<!--			</if>-->
-<!--			<get_field name="papers" />-->
-<!--			<if>-->
-<!--				<not_null value="papers" />-->
-<!--				<for_each collection="papers" as="paper">-->
-<!--					<get_field object="paper" name="link" />-->
-<!--					<get_field object="paper" name="heading" />-->
-<!--					<parse_document link_type="TRUSTED_SEMANTICS">-->
-<!--						<arg value="heading" name="anchor_text" />-->
-<!--						<arg value="link" name="location" />-->
-<!--					</parse_document>-->
-<!--				</for_each>-->
-<!--			</if>-->
-<!--		</semantic_actions>-->
-<!--	</meta_metadata>-->
-
+<!--
+	<meta_metadata name="acm_proceeding" extends="compound_document" parser="xpath">
+		<selector url_stripped="http://portal.acm.org/toc.cfm" />
+		<collection name="proceedings" hide="true" xpath="//tr[@valign='top']/td[@class='small-text']/strong" child_type="search_result">
+			<scalar name="link" xpath="./a/@href" />
+			<scalar name="heading" xpath="./a/text()" />
+		</collection>
+		<collection name="papers" xpath="//div[@id='prox']/div/table/tr" child_type="search_result">
+			<scalar name="link" xpath=".//@href" />
+			<scalar name="heading" xpath=".//a" />
+		</collection>
+		<semantic_actions>
+			<get_field name="proceedings" />
+			<if>
+				<not_null value="proceedings" />
+				<for_each collection="proceedings" as="proceeding">
+					<get_field object="proceeding" name="link" />
+					<get_field object="proceeding" name="heading" />
+					<parse_document link_type="TRUSTED_SEMANTICS">
+						<arg value="heading" name="anchor_text" />
+						<arg value="link" name="location" />
+					</parse_document>
+				</for_each>
+			</if>
+			<get_field name="papers" />
+			<if>
+				<not_null value="papers" />
+				<for_each collection="papers" as="paper">
+					<get_field object="paper" name="link" />
+					<get_field object="paper" name="heading" />
+					<parse_document link_type="TRUSTED_SEMANTICS">
+						<arg value="heading" name="anchor_text" />
+						<arg value="link" name="location" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+-->
 
 
 <!--  maybe add scholarly article author and extend it???? -->
