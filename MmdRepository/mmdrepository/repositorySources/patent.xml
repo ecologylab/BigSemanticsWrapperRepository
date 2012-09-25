@@ -42,8 +42,10 @@
 	
 	
 	<meta_metadata name="google_patent_image" type="image" parser="image">
-		<example_url url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&amp;printsec=abstract&amp;img=1&amp;zoom=1&amp;sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
 		<selector url_regex_fragment="http://bks[0-9].books.google.com/patents" domain="google.com" />
+		<selector url_regex_fragment="http://www.google.com/patents?.*&amp;img=1" domain="google.com" />
+		<example_url url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&amp;printsec=abstract&amp;img=1&amp;zoom=1&amp;sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
+		<example_url url="http://www.google.com/patents?id=dtIXAAAAEBAJ&amp;output=text&amp;pg=PA3&amp;img=1&amp;zoom=3&amp;hl=en&amp;q=fire+pit&amp;cds=1&amp;sig=ACfU3U11rwTzwz4BhgQj0ywkgkm6T6DKaQ&amp;edge=0&amp;edge=stretch&amp;ci=108,127,774,1199" />
 
 <!-- 		<before_semantic_actions> -->
 <!-- 			<filter_location> -->
@@ -56,8 +58,7 @@
 
 	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" parser="xpath">
 		<selector url_stripped="http://www.google.com/patents/about" />
-		<selector url_stripped="http://www.google.com/patents" />
-		<selector domain="google.com" url_path_tree="http://www.google.com/patents/" />
+		<selector url_path_tree="http://www.google.com/patents/*" domain="google.com" />
 
 		<example_url url="http://www.google.com/patents/US20100045705" />
 		<example_url url="http://www.google.com/patents/US7953462" />
