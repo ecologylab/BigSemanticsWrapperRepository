@@ -59,6 +59,7 @@
 	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" parser="xpath">
 		<selector url_stripped="http://www.google.com/patents/about" />
 		<selector url_path_tree="http://www.google.com/patents/*" domain="google.com" />
+		<selector url_regex="http://www.google.com/patents/[A-Z0-9]*?.*" domain="google.com" />
 
 		<example_url url="http://www.google.com/patents/US20100045705" />
 		<example_url url="http://www.google.com/patents/US7953462" />
