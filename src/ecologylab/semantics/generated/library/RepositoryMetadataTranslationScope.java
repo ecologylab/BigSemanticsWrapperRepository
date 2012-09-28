@@ -36,6 +36,22 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.WeatherReport.class,
 
+		ecologylab.semantics.generated.library.acm.AcmPortal.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalAuthor.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalAuthorCollaborators.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalAuthorPublicationDetail.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalInstitutionProfile.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalPeriodical.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalSearch.class,
+
+		ecologylab.semantics.generated.library.acm.AcmPortalSearchResult.class,
+
 		ecologylab.semantics.generated.library.artwork.Artist.class,
 
 		ecologylab.semantics.generated.library.artwork.Artwork.class,
@@ -55,6 +71,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary.class,
+
+		ecologylab.semantics.generated.library.blog.Post.class,
 
 		ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
 
@@ -238,8 +256,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.person.Person.class,
 
-		ecologylab.semantics.generated.library.post.Post.class,
-
 		ecologylab.semantics.generated.library.product_and_service.AmazonList.class,
 
 		ecologylab.semantics.generated.library.product_and_service.AmazonProduct.class,
@@ -292,25 +308,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.rwandatribunal.VideoInterview.class,
 
+		ecologylab.semantics.generated.library.scholarlyArticle.InformaWorld.class,
+
 		ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortal.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalAuthor.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalAuthorCollaborators.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalInstitutionProfile.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalPeriodical.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearch.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.AcmPortalSearchResult.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetail.class,
-
-		ecologylab.semantics.generated.library.scholarlyPublication.PublicationDetailInstitution.class,
 
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
 
@@ -391,8 +391,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPageType.class,
 
 		ecologylab.semantics.generated.library.wordpress.Wordpress.class,
-
-		ecologylab.semantics.generated.library.wordpress.WordpressPost.class,
 
 	};
 

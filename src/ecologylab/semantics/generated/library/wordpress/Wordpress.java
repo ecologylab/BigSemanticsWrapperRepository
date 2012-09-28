@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.wordpress;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.post.Post;
+import ecologylab.semantics.generated.library.blog.Post;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -26,7 +26,7 @@ import java.util.Map;
 @simpl_inherit
 public class Wordpress extends CompoundDocument
 {
-	@simpl_collection("post")
+	@simpl_collection("wordpress_post")
 	@mm_name("posts")
 	private List<Post> posts;
 

@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.creative_work;
  */
 
 import ecologylab.semantics.generated.library.creative_work.Author;
+import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.generated.library.misc.Rating;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -29,11 +30,11 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class CreativeWork extends CompoundDocument
+public class CreativeWork<T extends CreativeWork> extends CompoundDocument
 {
 	@simpl_collection("author")
 	@mm_name("authors")
-	private List<Author> authors;
+	private List<Author<T>> authors;
 
 	@simpl_scalar
 	@simpl_other_tags({"year_of_publication"})
@@ -49,6 +50,20 @@ public class CreativeWork extends CompoundDocument
 	@mm_name("rating")
 	private Rating rating;
 
+	/** 
+	 *Creatives that are cited by this work.
+	 */ 
+	@simpl_collection("reference")
+	@mm_name("references")
+	private List<T> references;
+
+	/** 
+	 *Creatives that cite this work.
+	 */ 
+	@simpl_collection("citation")
+	@mm_name("citations")
+	private List<T> citations;
+
 	@simpl_composite
 	@mm_name("rich_media")
 	private CompoundDocument richMedia;
@@ -61,21 +76,21 @@ public class CreativeWork extends CompoundDocument
 	}
 
 
-	public List<Author> getAuthors()
+	public List<Author<T>> getAuthors()
 	{
 		return authors;
 	}
 
   // lazy evaluation:
-  public List<Author> authors()
+  public List<Author<T>> authors()
   {
     if (authors == null)
-      authors = new ArrayList<Author>();
+      authors = new ArrayList<Author<T>>();
     return authors;
   }
 
   // addTo:
-  public void addToAuthors(Author element)
+  public void addToAuthors(Author<T> element)
   {
     authors().add(element);
   }
@@ -86,7 +101,7 @@ public class CreativeWork extends CompoundDocument
     return authors == null ? 0 : authors.size();
   }
 
-	public void setAuthors(List<Author> authors)
+	public void setAuthors(List<Author<T>> authors)
 	{
 		this.authors = authors;
 	}
@@ -163,6 +178,66 @@ public class CreativeWork extends CompoundDocument
 	public void setRating(Rating rating)
 	{
 		this.rating = rating;
+	}
+
+	public List<T> getReferences()
+	{
+		return references;
+	}
+
+  // lazy evaluation:
+  public List<T> references()
+  {
+    if (references == null)
+      references = new ArrayList<T>();
+    return references;
+  }
+
+  // addTo:
+  public void addToReferences(T element)
+  {
+    references().add(element);
+  }
+
+  // size:
+  public int referencesSize()
+  {
+    return references == null ? 0 : references.size();
+  }
+
+	public void setReferences(List<T> references)
+	{
+		this.references = references;
+	}
+
+	public List<T> getCitations()
+	{
+		return citations;
+	}
+
+  // lazy evaluation:
+  public List<T> citations()
+  {
+    if (citations == null)
+      citations = new ArrayList<T>();
+    return citations;
+  }
+
+  // addTo:
+  public void addToCitations(T element)
+  {
+    citations().add(element);
+  }
+
+  // size:
+  public int citationsSize()
+  {
+    return citations == null ? 0 : citations.size();
+  }
+
+	public void setCitations(List<T> citations)
+	{
+		this.citations = citations;
 	}
 
 	public CompoundDocument getRichMedia()

@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.tumblr;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.post.Post;
+import ecologylab.semantics.generated.library.blog.Post;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;

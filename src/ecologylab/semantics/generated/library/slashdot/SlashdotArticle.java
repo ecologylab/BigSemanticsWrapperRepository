@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.slashdot;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.post.Post;
+import ecologylab.semantics.generated.library.blog.Post;
 import ecologylab.semantics.generated.library.slashdot.SlashdotArticle;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;

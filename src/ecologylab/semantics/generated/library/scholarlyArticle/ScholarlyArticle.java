@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class ScholarlyArticle extends CreativeWork
+public class ScholarlyArticle<T extends ScholarlyArticle> extends CreativeWork
 {
 	/** 
 	 *Metadata related to where this article was published.
@@ -35,20 +35,6 @@ public class ScholarlyArticle extends CreativeWork
 	@simpl_composite
 	@mm_name("source")
 	private Periodical source;
-
-	/** 
-	 *Papers cited by this paper.
-	 */ 
-	@simpl_collection("reference")
-	@mm_name("references")
-	private List<ScholarlyArticle> references;
-
-	/** 
-	 *Papers that cite this paper.
-	 */ 
-	@simpl_collection("citation")
-	@mm_name("citations")
-	private List<ScholarlyArticle> citations;
 
 	/** 
 	 *The Classifications of this paper.
@@ -83,66 +69,6 @@ public class ScholarlyArticle extends CreativeWork
 	public void setSource(Periodical source)
 	{
 		this.source = source;
-	}
-
-	public List<ScholarlyArticle> getReferences()
-	{
-		return references;
-	}
-
-  // lazy evaluation:
-  public List<ScholarlyArticle> references()
-  {
-    if (references == null)
-      references = new ArrayList<ScholarlyArticle>();
-    return references;
-  }
-
-  // addTo:
-  public void addToReferences(ScholarlyArticle element)
-  {
-    references().add(element);
-  }
-
-  // size:
-  public int referencesSize()
-  {
-    return references == null ? 0 : references.size();
-  }
-
-	public void setReferences(List<ScholarlyArticle> references)
-	{
-		this.references = references;
-	}
-
-	public List<ScholarlyArticle> getCitations()
-	{
-		return citations;
-	}
-
-  // lazy evaluation:
-  public List<ScholarlyArticle> citations()
-  {
-    if (citations == null)
-      citations = new ArrayList<ScholarlyArticle>();
-    return citations;
-  }
-
-  // addTo:
-  public void addToCitations(ScholarlyArticle element)
-  {
-    citations().add(element);
-  }
-
-  // size:
-  public int citationsSize()
-  {
-    return citations == null ? 0 : citations.size();
-  }
-
-	public void setCitations(List<ScholarlyArticle> citations)
-	{
-		this.citations = citations;
 	}
 
 	public List<Document> getClassifications()

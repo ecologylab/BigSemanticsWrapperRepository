@@ -11,7 +11,6 @@ package ecologylab.semantics.generated.library.googleBook;
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.googleBook.Page;
 import ecologylab.semantics.generated.library.publication.Book;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
@@ -21,7 +20,6 @@ import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_scope;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +37,6 @@ public class GoogleBook extends Book
 	@simpl_collection("page")
 	@mm_name("selected_pages")
 	private List<Page> selectedPages;
-
-	@simpl_collection
-	@simpl_scope("repository_documents")
-	@mm_name("citations")
-	private List<Document> citations;
 
 	public GoogleBook()
 	{ super(); }
@@ -145,35 +138,5 @@ public class GoogleBook extends Book
 	public void setSelectedPages(List<Page> selectedPages)
 	{
 		this.selectedPages = selectedPages;
-	}
-
-	public List<Document> getCitations()
-	{
-		return citations;
-	}
-
-  // lazy evaluation:
-  public List<Document> citations()
-  {
-    if (citations == null)
-      citations = new ArrayList<Document>();
-    return citations;
-  }
-
-  // addTo:
-  public void addToCitations(Document element)
-  {
-    citations().add(element);
-  }
-
-  // size:
-  public int citationsSize()
-  {
-    return citations == null ? 0 : citations.size();
-  }
-
-	public void setCitations(List<Document> citations)
-	{
-		this.citations = citations;
 	}
 }

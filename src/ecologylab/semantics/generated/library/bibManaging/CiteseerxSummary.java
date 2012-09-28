@@ -8,14 +8,15 @@ package ecologylab.semantics.generated.library.bibManaging;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord;
+import ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
 import java.util.List;
 import java.util.Map;
 
@@ -23,22 +24,19 @@ import java.util.Map;
  *Summary page from CiteSeerX.
  */ 
 @simpl_inherit
-public class CiteseerxSummary extends CiteseerxRecord
+public class CiteseerxSummary<T extends CiteseerxSummary> extends CiteseerxRecord
 {
-	@simpl_scalar
-	private MetadataParsedURL citationPage;
+	@simpl_composite
+	@mm_name("citation_records")
+	private Document citationRecords;
 
-	/** 
-	 *Papers that cite the same works.
-	 */ 
-	@simpl_scalar
-	private MetadataParsedURL activeBibliographyPage;
+	@simpl_composite
+	@mm_name("active_bibliography_records")
+	private Document activeBibliographyRecords;
 
-	/** 
-	 *Papers that are cited by the same works.
-	 */ 
-	@simpl_scalar
-	private MetadataParsedURL cocitationPage;
+	@simpl_composite
+	@mm_name("cocitation_records")
+	private Document cocitationRecords;
 
 	public CiteseerxSummary()
 	{ super(); }
@@ -48,99 +46,33 @@ public class CiteseerxSummary extends CiteseerxRecord
 	}
 
 
-	public MetadataParsedURL	citationPage()
+	public Document getCitationRecords()
 	{
-		MetadataParsedURL	result = this.citationPage;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.citationPage = result;
-		}
-		return result;
+		return citationRecords;
 	}
 
-	public ParsedURL getCitationPage()
+	public void setCitationRecords(Document citationRecords)
 	{
-		return this.citationPage == null ? null : citationPage().getValue();
+		this.citationRecords = citationRecords;
 	}
 
-	public MetadataParsedURL getCitationPageMetadata()
+	public Document getActiveBibliographyRecords()
 	{
-		return citationPage;
+		return activeBibliographyRecords;
 	}
 
-	public void setCitationPage(ParsedURL citationPage)
+	public void setActiveBibliographyRecords(Document activeBibliographyRecords)
 	{
-		if (citationPage != null)
-			this.citationPage().setValue(citationPage);
+		this.activeBibliographyRecords = activeBibliographyRecords;
 	}
 
-	public void setCitationPageMetadata(MetadataParsedURL citationPage)
+	public Document getCocitationRecords()
 	{
-		this.citationPage = citationPage;
+		return cocitationRecords;
 	}
 
-	public MetadataParsedURL	activeBibliographyPage()
+	public void setCocitationRecords(Document cocitationRecords)
 	{
-		MetadataParsedURL	result = this.activeBibliographyPage;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.activeBibliographyPage = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getActiveBibliographyPage()
-	{
-		return this.activeBibliographyPage == null ? null : activeBibliographyPage().getValue();
-	}
-
-	public MetadataParsedURL getActiveBibliographyPageMetadata()
-	{
-		return activeBibliographyPage;
-	}
-
-	public void setActiveBibliographyPage(ParsedURL activeBibliographyPage)
-	{
-		if (activeBibliographyPage != null)
-			this.activeBibliographyPage().setValue(activeBibliographyPage);
-	}
-
-	public void setActiveBibliographyPageMetadata(MetadataParsedURL activeBibliographyPage)
-	{
-		this.activeBibliographyPage = activeBibliographyPage;
-	}
-
-	public MetadataParsedURL	cocitationPage()
-	{
-		MetadataParsedURL	result = this.cocitationPage;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.cocitationPage = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getCocitationPage()
-	{
-		return this.cocitationPage == null ? null : cocitationPage().getValue();
-	}
-
-	public MetadataParsedURL getCocitationPageMetadata()
-	{
-		return cocitationPage;
-	}
-
-	public void setCocitationPage(ParsedURL cocitationPage)
-	{
-		if (cocitationPage != null)
-			this.cocitationPage().setValue(cocitationPage);
-	}
-
-	public void setCocitationPageMetadata(MetadataParsedURL cocitationPage)
-	{
-		this.cocitationPage = cocitationPage;
+		this.cocitationRecords = cocitationRecords;
 	}
 }

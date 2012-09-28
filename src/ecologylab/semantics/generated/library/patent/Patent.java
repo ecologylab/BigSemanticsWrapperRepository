@@ -9,7 +9,6 @@ package ecologylab.semantics.generated.library.patent;
  */
 
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
-import ecologylab.semantics.generated.library.patent.Patent;
 import ecologylab.semantics.generated.library.patent.PatentClassification;
 import ecologylab.semantics.metadata.builtins.Image;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -20,7 +19,6 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
 import java.util.ArrayList;
@@ -47,21 +45,6 @@ public class Patent extends CreativeWork
 	@simpl_collection("claim")
 	@mm_name("claims")
 	private List<MetadataString> claims;
-
-	/** 
-	 *subsequent patents that cite this
-	 */ 
-	@simpl_collection("patent")
-	@simpl_other_tags({"referenced_bys"})
-	@mm_name("citations")
-	private List<Patent> citations;
-
-	/** 
-	 *prior patents that this references
-	 */ 
-	@simpl_collection("patent")
-	@mm_name("references")
-	private List<Patent> references;
 
 	@simpl_collection("image")
 	@mm_name("drawings")
@@ -197,66 +180,6 @@ public class Patent extends CreativeWork
 	public void setClaims(List<MetadataString> claims)
 	{
 		this.claims = claims;
-	}
-
-	public List<Patent> getCitations()
-	{
-		return citations;
-	}
-
-  // lazy evaluation:
-  public List<Patent> citations()
-  {
-    if (citations == null)
-      citations = new ArrayList<Patent>();
-    return citations;
-  }
-
-  // addTo:
-  public void addToCitations(Patent element)
-  {
-    citations().add(element);
-  }
-
-  // size:
-  public int citationsSize()
-  {
-    return citations == null ? 0 : citations.size();
-  }
-
-	public void setCitations(List<Patent> citations)
-	{
-		this.citations = citations;
-	}
-
-	public List<Patent> getReferences()
-	{
-		return references;
-	}
-
-  // lazy evaluation:
-  public List<Patent> references()
-  {
-    if (references == null)
-      references = new ArrayList<Patent>();
-    return references;
-  }
-
-  // addTo:
-  public void addToReferences(Patent element)
-  {
-    references().add(element);
-  }
-
-  // size:
-  public int referencesSize()
-  {
-    return references == null ? 0 : references.size();
-  }
-
-	public void setReferences(List<Patent> references)
-	{
-		this.references = references;
 	}
 
 	public List<Image> getDrawings()

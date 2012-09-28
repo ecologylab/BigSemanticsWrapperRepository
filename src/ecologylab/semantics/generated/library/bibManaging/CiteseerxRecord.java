@@ -9,6 +9,7 @@ package ecologylab.semantics.generated.library.bibManaging;
  */
 
 import ecologylab.semantics.generated.library.bibManaging.CitationInfo;
+import ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord;
 import ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -23,7 +24,7 @@ import java.util.Map;
  *CiteSeerX record for an article.
  */ 
 @simpl_inherit
-public class CiteseerxRecord extends ScholarlyArticle
+public class CiteseerxRecord<T extends CiteseerxRecord> extends ScholarlyArticle
 {
 	@simpl_composite
 	@mm_name("citation_info")
