@@ -42,8 +42,8 @@
 		<selector url_regex="http://\w+.wordpress.com/" domain="wordpress.com" />
 		
 		<scalar name="title" xpath="//meta[@name='application-name']/@content" comment="Name of the Wordpress blog" />
-		<collection name="posts" child_type="wordpress_post"
-                xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]">
+		<collection name="posts" child_type="post" 
+				xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]">
 			<scalar name="title" xpath=".//a/@title">
 				<filter regex="Permalink to " replace="" />
 			</scalar>
