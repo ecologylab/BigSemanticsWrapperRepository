@@ -1,17 +1,14 @@
 <meta_metadata_repository name="scholarly_article"
                           package="ecologylab.semantics.generated.library.scholarlyArticle">
+                          
+  <!-- scholarly_article_author? -->
 
 	<meta_metadata name="scholarly_article" extends="creative_work"
                  schema_org_itemtype="http://schema.org/ScholarlyArticle">
-    <collection name="authors" child_type="author">
-      <generic_type_var name="CW" arg="scholarly_article" />
-    </collection>
+    <generic_type_var name="T" extends="scholarly_article" />
+    
 		<composite name="source" type="periodical" layer="7.0"
                comment="Metadata related to where this article was published." />
-		<collection name="references" child_tag="reference" child_type="scholarly_article"
-                comment="Papers cited by this paper." />
-		<collection name="citations" child_tag="citation" child_type="scholarly_article"
-                comment="Papers that cite this paper." />
 		<collection name="classifications" child_type="document"
                 comment="The Classifications of this paper." />
 		<collection name="keywords" child_type="document" schema_org_itemprop="keywords"
@@ -21,7 +18,7 @@
 		<composite name="rich_media" label="article"/>
 	</meta_metadata>
 	
-  
+	
 	<meta_metadata name="dx_doi" type="document"
                  redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
 		<selector url_path_tree="http://dx.doi.org"/>
@@ -34,14 +31,18 @@
 	</meta_metadata>
 	
   
-	<meta_metadata name="informa_world" type="scholarly_article"  parser="xpath">
+	<meta_metadata name="informa_world" extends="scholarly_article"  parser="xpath">
+	  <generic_type_var name="T" arg="scholarly_article" />
+	  
 		<selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />
+		<selector url_path_tree="http://tandfonline.com/doi/full/*/*" />
+		<example_url url="http://www.tandfonline.com/doi/ref/10.1080/15332861.2012.689565" />
 		
-		<scalar name="title" xpath="//div[@id='breadcrumb']/text()[5]" />
-		<scalar name="description" xpath="//div[@class='abstract']/text()[1]"/>
+		<scalar name="title" xpath="//h1" />
+		<scalar name="description" xpath="//div[contains(@class, 'abstract')]//h3/preceding-sibling::p[string-length(text()) > 50]"/>
 		<composite name="source">
 			<composite name="archive" >
-				<scalar name="title" xpath="//div[@id='breadcrumb']/a[2]/text()" />
+				<scalar name="title" xpath="//div[contains(@class, 'issue')]//h2" />
 			</composite>
 			<scalar name="location"  xpath="//div[@id='breadcrumb']/a[2]/@href" />
 		</composite>

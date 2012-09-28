@@ -61,7 +61,7 @@
 			</scalar>
 		</collection>
 		
-		<collection name="citations" xpath="//h5[@class='cresbdy']/a | //p[@class='resbdy']/a" child_type="document" polymorphic_scope="repository_documents">
+		<collection name="citations" xpath="//h5[@class='cresbdy']/a | //p[@class='resbdy']/a" child_type="creative_work" polymorphic_scope="repository_documents">
 			<scalar name="title" xpath="./text()" />
 			<scalar name="location" xpath="./@href" />
 		</collection>
