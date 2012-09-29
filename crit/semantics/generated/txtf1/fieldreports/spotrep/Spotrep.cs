@@ -7,27 +7,39 @@
 //
 
 
+using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.GisNS;
+using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
+using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using ecologylab.collections;
-using ecologylab.semantics.generated.library.gps;
-using ecologylab.semantics.metadata;
-using ecologylab.semantics.metadata.builtins;
-using ecologylab.semantics.metadata.scalar;
-using ecologylab.semantics.metametadata;
 
-namespace crit.semantics.generated.txtf1.fieldreports.spotrep 
+namespace Crit.Semantics.Generated.Txtf1.Fieldreports.Spotrep 
 {
 	/// <summary>
 	/// A 9-line report from the field.
 	/// </summary>
 	[SimplInherit]
-	public class Spotrep : Annotation
+	public class Spotrep : Document
 	{
+		/// <summary>
+		/// Timestamp for the report.
+		/// </summary>
+		[SimplScalar]
+		private MetadataDate timeDate;
+
+		/// <summary>
+		/// Unit making the report.
+		/// </summary>
+		[SimplScalar]
+		private MetadataString reportingUnit;
+
 		/// <summary>
 		/// Extent of damage at location.
 		/// </summary>
@@ -72,16 +84,57 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 		private MetadataString assessment;
 
 		/// <summary>
+		/// Additional comments by the observer.
+		/// </summary>
+		[SimplScalar]
+		private MetadataString additionalNarrative;
+
+		/// <summary>
 		/// File containing photograph of the situation.
 		/// </summary>
 		[SimplScalar]
 		private MetadataString photographFile;
+
+		[SimplScalar]
+		private MetadataDate creationTime;
+
+		[SimplScalar]
+		private MetadataString author;
+
+		[SimplScalar]
+		private MetadataString text;
 
 		public Spotrep()
 		{ }
 
 		public Spotrep(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataDate TimeDate
+		{
+			get{return timeDate;}
+			set
+			{
+				if (this.timeDate != value)
+				{
+					this.timeDate = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString ReportingUnit
+		{
+			get{return reportingUnit;}
+			set
+			{
+				if (this.reportingUnit != value)
+				{
+					this.reportingUnit = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString DamageExtent
 		{
@@ -91,7 +144,7 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.damageExtent != value)
 				{
 					this.damageExtent = value;
-					this.RaisePropertyChanged( () => this.DamageExtent );
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -104,7 +157,7 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.observedActivity != value)
 				{
 					this.observedActivity = value;
-					this.RaisePropertyChanged( () => this.ObservedActivity );
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -117,7 +170,7 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.rawPlace != value)
 				{
 					this.rawPlace = value;
-					this.RaisePropertyChanged( () => this.RawPlace );
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -130,7 +183,7 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.place != value)
 				{
 					this.place = value;
-					this.RaisePropertyChanged( () => this.Place );
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -143,7 +196,7 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.observedUnits != value)
 				{
 					this.observedUnits = value;
-					this.RaisePropertyChanged( () => this.ObservedUnits );
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -156,7 +209,7 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.observedEquipment != value)
 				{
 					this.observedEquipment = value;
-					this.RaisePropertyChanged( () => this.ObservedEquipment );
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -169,7 +222,20 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.assessment != value)
 				{
 					this.assessment = value;
-					this.RaisePropertyChanged( () => this.Assessment );
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString AdditionalNarrative
+		{
+			get{return additionalNarrative;}
+			set
+			{
+				if (this.additionalNarrative != value)
+				{
+					this.additionalNarrative = value;
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
@@ -182,7 +248,46 @@ namespace crit.semantics.generated.txtf1.fieldreports.spotrep
 				if (this.photographFile != value)
 				{
 					this.photographFile = value;
-					this.RaisePropertyChanged( () => this.PhotographFile );
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataDate CreationTime
+		{
+			get{return creationTime;}
+			set
+			{
+				if (this.creationTime != value)
+				{
+					this.creationTime = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Author
+		{
+			get{return author;}
+			set
+			{
+				if (this.author != value)
+				{
+					this.author = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Text
+		{
+			get{return text;}
+			set
+			{
+				if (this.text != value)
+				{
+					this.text = value;
+					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}

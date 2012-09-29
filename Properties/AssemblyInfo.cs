@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -8,19 +9,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ecologylabGeneratedSemantics")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Interface Ecology Lab")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ecologylabGeneratedSemantics")]
-[assembly: AssemblyCopyright("Copyright © Interface Ecology Lab 2010")]
+[assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
-// COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
-
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1f5ddb71-22cb-4048-a66d-6e8cb12b41ff")]
+[assembly: NeutralResourcesLanguage("en")]
 
 // Version information for an assembly consists of the following four values:
 //
