@@ -11,7 +11,7 @@
 			<filter regex=" \|.+" replace="" />
 		</scalar>
 		
-		<collection name="authors" xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]//a[@title[contains(., 'View all posts by')]]">
+		<collection name="authors" label="authors" xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]//a[@title[contains(., 'View all posts by')]]">
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./text()" />
 		</collection>
@@ -29,7 +29,7 @@
 	</meta_metadata>
 
 
-	<meta_metadata name="wordpress" extends="compound_document" comment="Wordpress blog class" parser="xpath">
+	<meta_metadata name="wordpress_blog" type="blog" comment="Wordpress blog class" parser="xpath">
 		<example_url url="http://thingswemake.wordpress.com/" />
 		<example_url url="http://babydot74.wordpress.com/" />
 		<example_url url="http://chocolatebottle.wordpress.com/" />
@@ -42,6 +42,7 @@
 		<selector url_regex="http://\w+.wordpress.com/" domain="wordpress.com" />
 		
 		<scalar name="title" xpath="//meta[@name='application-name']/@content" comment="Name of the Wordpress blog" />
+		
 		<collection name="posts" child_type="post" 
 				xpath="//div//*[self::article or self::div][@class[contains(.,'status-publish')]]">
 			<scalar name="title" xpath=".//a/@title">
@@ -56,5 +57,6 @@
 				<arg value="title" name="text" />
 			</create_and_visualize_text_surrogate>
 		</semantic_actions>
+		
 	</meta_metadata>
 </meta_metadata_repository>
