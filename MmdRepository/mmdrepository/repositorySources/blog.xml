@@ -3,12 +3,11 @@
   <meta_metadata name="post" extends="creative_work">
     <scalar name="description" label="content" tag="content" other_tags="description" />
     <scalar name="post_date" scalar_type="Date" />
+    <collection name="tags" child_type="document"/> 
   </meta_metadata>
   
   <meta_metadata name="blog" extends="creative_work">
-  
 		<collection name="posts" child_type="post" />
-
   </meta_metadata>
 
 </meta_metadata_repository>

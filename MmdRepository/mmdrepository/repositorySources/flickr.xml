@@ -1,63 +1,49 @@
 
 <meta_metadata_repository name="flickr" package="ecologylab.semantics.generated.library.flickr">
 
-
-
-	<meta_metadata name="flickr_photo" extends="compound_document" parser="xpath" comment="A Flickr Image result page">
-		<selector url_regex="http://www.flickr.com/photos/(?!tags)[A-z0-9_@-]+/[0-9]+($|/.*$)" domain="flickr.com" />
-		
-		<def_var name="photoTD" xpath="//div[@id='meta']" type="node" />
-
-		<scalar name="title" xpath="//div[@id='meta']/h1" scalar_type="String" navigates_to="location"/>
-		<scalar name="description" xpath="//div[@id='meta']/div[@class='photo-desc']" ignore_in_term_vector="true" scalar_type="String"/>
-		<scalar name="image_location" xpath="//link[@rel='image_src']/@href" hide="true" scalar_type="ParsedURL"/>
-		
-		<scalar name="views" xpath="//span[@id='view-count']" scalar_type="String">
+	<meta_metadata name="flickr_photo" extends="post" parser="xpath"
+		comment="A Flickr image post page">
+		<selector url_regex="http://www.flickr.com/photos/(?!tags[0-9]+($|/.*$)"
+			domain="flickr.com" />
+		<example_url url="www.flickr.com/photos/kali-kold/map/?photo=5756890544" />
+		<scalar name="title" xpath="//div[@id='meta']/h1" scalar_type="String"
+			navigates_to="location" />
+		<scalar name="description" xpath="//div[@id='meta']/div[@class='photo-desc']"
+			ignore_in_term_vector="true" scalar_type="String" />
+		<scalar name="image_location" xpath="//link[@rel='image_src']/@href"
+			hide="true" scalar_type="ParsedURL" />
+		<scalar name="year"
+			xpath="//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()">
+			<filter regex="\w+ [0-9]+," replace="" />
+		</scalar>
+		<scalar name="views" xpath="//span[@id='view-count']"
+			scalar_type="String">
 			<filter regex=" views$" replace="" />
 		</scalar>
 
-
-		<!--  document... -->
 		<composite name="place" type="document">
-		  <scalar name="title" xpath=".//a[@id='photoGeolocation-storylink']" />
-		  <scalar name="location" xpath="//html/head/link[2]/@href">
-			<filter regex="$" replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
-		  </scalar>
+			<scalar name="title" xpath=".//a[@id='photoGeolocation-storylink']" />
+			<scalar name="location" xpath=".//a[@id='photoGeolocation-storylink']/@href">
+				<filter regex="$"
+					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
+			</scalar>
 		</composite>
 
-		<collection name="tags" child_type="flickr_tag_page" xpath="//a[@class='tag-item ywa-track']">
+		<collection name="tags" child_type="flickr_tag"
+			xpath="//a[@class='tag-item ywa-track']">
 			<scalar name="title" xpath="." />
 			<scalar name="location" xpath="./@href" />
 		</collection>
 
-
-		<composite name="author_photos" xpath="//div[@id='photo-story']" type="author_photos">
-			<scalar name="author_photostream_link" xpath="./p[@id='photo-story-story']/a[1]/@href" ignore_in_term_vector="true">
-				<filter regex="archives/date-taken/[0-9]+/[0-9]+/[0-9]+/$" replace="" />
-			</scalar>
-			<scalar name="author_photostream" xpath=".//div[@id='photo-story-attribution']/p/span/a/@href">
-				<filter regex="/photos" replace="" />
-			</scalar>
-
-			<scalar name="photos_that_day_link" xpath="./p[@id='photo-story-story']/a[1]/@href" ignore_in_term_vector="true" />
-			<scalar name="photos_that_month_link" xpath="./p[@id='photo-story-story']/a[1]/@href" ignore_in_term_vector="true">
-				<filter regex="[0-9]+/$" replace="" />
-			</scalar>
-			<scalar name="photos_that_year_link" xpath="./p[@id='photo-story-story']/a[1]/@href" ignore_in_term_vector="true">
-				<filter regex="[0-9]+/[0-9]+/$" replace="" />
-			</scalar>
-			<scalar name="photos_that_day" xpath="./p[@id='photo-story-story']/a[1]" ignore_in_term_vector="true"></scalar>
-			<scalar name="photos_that_month" xpath="./p[@id='photo-story-story']/a[1]" ignore_in_term_vector="true">
-				<filter regex="[0-9]+," replace="" />
-			</scalar>
-			<scalar name="photos_that_year" xpath="./p[@id='photo-story-story']/a[1]" ignore_in_term_vector="true">
-				<filter regex="\w+ [0-9]+," replace="" />
-			</scalar>
-		</composite>
+		<collection name="authors" label="authors" xpath=".">
+			<scalar name="location" xpath="//meta[@property='flickr_photos:by']/@content" /><!--TBD 
+				ad author page... -->
+			<scalar name="title" xpath=".//strong[@class='username']/a/text()" />
+		</collection>
 
 		<semantic_actions>
-			<get_field name="image_location"/>
-			<get_field name="title"/>
+			<get_field name="image_location" />
+			<get_field name="title" />
 			<create_and_visualize_img_surrogate>
 				<arg value="image_location" name="image_purl" />
 				<arg value="title" name="caption" />
@@ -65,134 +51,65 @@
 		</semantic_actions>
 	</meta_metadata>
 
-	<meta_metadata name="author_photos" extends="metadata">
 
-		<scalar name="author_photostream_link" scalar_type="ParsedURL" hide="true" />
-		<scalar name="author_photostream" scalar_type="String" hide="false" navigates_to="author_photostream_link" />
+	<meta_metadata name="flickr_tag" extends="compound_document"
+		parser="xpath" comment="For flickr crawled tags">
+		<selector url_regex="http://www.flickr.com/photos/.*tags/.*"
+			domain="flickr.com" />
+		<example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />
 
-		<scalar name="photos_that_day_link" scalar_type="ParsedURL"	hide="true" />
-		<scalar name="photos_that_month_link" scalar_type="ParsedURL" hide="true" />
-		<scalar name="photos_that_year_link" scalar_type="ParsedURL" hide="true" />
-
-		<scalar name="photos_that_day" scalar_type="String" hide="false" navigates_to="photos_that_day_link" />
-		<scalar name="photos_that_month" scalar_type="String" hide="false" navigates_to="photos_that_month_link" />
-		<scalar name="photos_that_year" scalar_type="String" hide="false" navigates_to="photos_that_year_link" />
-	</meta_metadata>
-
-	<meta_metadata name="flickr_tag_page" extends="compound_document" parser="xpath" comment="For flickr crawled tags">
-		<selector url_regex="http://www.flickr.com/photos/.*tags/.*" domain="flickr.com" />
-
-		<collection name="photos" xpath="//span[@class='photo_container pc_t']" comment="Collection of all images of a user" child_type="flickr_photo">
+		<scalar name="title" label="tag" />
+		<collection name="photos" xpath="//span[@class='photo_container pc_t']"
+			comment="Collection of all images of a user" child_type="flickr_photo">
 			<scalar name="title" xpath="./a/@title" />
 			<scalar name="location" xpath="./a/@href" />
 		</collection>
-		
-		<composite name="public_tags" type="flickr_tag_page" xpath="//a[starts-with(@href, '/photos/tags')]/b/..">
+
+		<composite name="public_tags" type="flickr_tag"
+			xpath="//a[starts-with(@href, '/photos/tags')]/b/..">
 			<scalar name="title" xpath="./b/text()" />
 			<scalar name="location" xpath="./@href" />
 		</composite>
 	</meta_metadata>
 
+	<meta_metadata name="flickr_author" extends="author"
+		parser="xpath" comment="Author on flickr">
+		<example_url url="http://www.flickr.com/people/maxfined/" />
+		<scalar name="title" xpath="//title/text()">
+			<filter regex="Flickr: " replace="" />
+		</scalar>
 
-	<meta_metadata name="flickr_author" extends="compound_document" comment="All flickr photos of a particular user" parser="xpath">
-		<selector url_regex="http://www.flickr.com/photos/[A-z0-9_@-]+/$" domain="flickr.com" />
-		<collection name="stream" xpath="//img[@class='pc_img']" comment="Collection of all images of a user" child_type="flickr_photo">
-			<scalar name="title" xpath="./@alt"/>
-			<scalar name="location" xpath="./../a/@href" />
-		</collection>
-	</meta_metadata>
+		<selector url_regex="http://www.flickr.com/people/[A-z0-9_@-]+/"
+			domain="flickr.com" />
+		<example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />
 
-<!-- 
+		<scalar name="description"
+			xpath="//div[@class='profile-section profile-section-desc']/p" />
+		<scalar name="city" xpath="//span[@class='locality']/text()" />
 
-	<meta_metadata name="flickr_author" extends="compound_document" comment="All flickr photos of a particular user" parser="xpath">
-		<selector url_regex="http://www.flickr.com/photos/(?!tags)[A-z0-9_@-]+/$" domain="flickr.com" />
-		<collection name="flickr_link_set" xpath="//div[@class=&#39;Photo&#39;]" comment="Collection of all images of a user" child_type="document">
-			<scalar name="title" xpath="./span/a/@title">
-				<filter regex="by \w*" replace="" />
-			</scalar>
-			<scalar name="location" xpath="./span/a/@href" />
-		</collection>
-	</meta_metadata>
-  
-	<meta_metadata name="flickr_tags_interesting" extends="search" comment="Used for flickr search results" parser="xpath">
-		<selector url_regex="http://www.flickr.com/photos/tags/[a-z0-9]+/interesting/*$" domain="flickr.com" />
-		<collection name="flickr_link_set" xpath="//span[@class='photo_container pc_t']" comment="Collection of all images of a user" child_type="document">
-			<scalar name="title" xpath="./a" />
-			<scalar name="link" xpath="./a/@href" />
-		</collection>
-	</meta_metadata>
-
-
-	<meta_metadata name="flickr_tags" extends="compound_document" comment="For flickr crawled tags" parser="xpath">
-		<selector url_regex="http://www.flickr.com/photos.*/tags/[a-z0-9]+/*$" domain="flickr.com" />
-		<collection name="flickr_link_set" xpath="//span[@class='photo_container pc_t']" comment="Collection of all images of a user" child_type="document">
-			<scalar name="title" xpath="./a" />
+		<collection name="favorites" xpath="//span[@class='photo_container pc_s']"
+			comment="Image favorites" child_type="flickr_photo">
+			<scalar name="title" xpath="./a/@title" />
 			<scalar name="location" xpath="./a/@href" />
 		</collection>
+
+		<composite name="photostream" type="photostream">
+			<scalar name="title" xpath="//div[@class='overflow-shim']/h1/a" />
+			<scalar name="location" xpath="//div[@class='overflow-shim']/h1/a/@href" />
+		</composite>
 	</meta_metadata>
 
-	<meta_metadata name="flickr_search" extends="search" comment="The flickr search class" parser="xpath">
-		<selector name="flickr_search_selector" />
-		
-		<collection name="search_results" xpath="//div[@class='DetailResults']//div[@class='box']" child_type="flickr_photo">
-			<scalar name="title" xpath=".//h3[@class='PicTitle']" />
-			<scalar name="thumbnail_kludge" xpath=".//span//img/@src"/>
-			<scalar name="location" xpath=".//span//a/@href" />
-			<collection name="flickr_tags" xpath=".//div[@class='ListThings']//a[starts-with(@href,'/photos/tag')]" child_type="document">
-				<scalar name="tag_name" xpath="." />
-				<scalar name="tag_link" xpath="./@href">
-					<filter regex="/clusters/" replace="" />
-				</scalar>
-			</collection>
-		</collection>
-	</meta_metadata>
-
-	
-
-	<meta_metadata name="flickr_nearby" extends="search" comment="Searching from a photo for nearby photos" parser="xpath">
-		<selector name="flickr_nearby_selector" />
-		<collection name="search_results" child_type="flickr_nearby_search_result" child_extends="document" xpath="//span[@class='photo_container pc_m']">
-			<scalar name="location" xpath="./a/@href">
-				<filter regex="nearby.+detail$"	replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
-			</scalar>
-			<scalar name="title" xpath="./a" />
-			<scalar name="description" xpath="./a/@title" />
-			<scalar name="link_other" scalar_type="ParsedURL" xpath="./a/@href">
-				<filter regex="nearby.+detail$" replace="" />
+	<meta_metadata name="photostream" extends="compound_document"
+		comment="All flickr photos of a particular user" parser="xpath">
+		<example_url url="http://www.flickr.com/photos/kali-kold/" />
+		<selector url_regex="http://www.flickr.com/photos/[A-z0-9_@-]+/$"
+			domain="flickr.com" />
+		<collection name="stream" xpath="//img[@class='pc_img']"
+			comment="Collection of all images of a user" child_type="flickr_photo">
+			<scalar name="title" xpath="./@alt" />
+			<scalar name="location" xpath="./../@href">
+				<filter regex="in/photostream" replace="" />
 			</scalar>
 		</collection>
-
-		<semantic_actions>
-			<get_field name="search_results" />
-			<for_each collection="search_results" as="res">
-				<get_field object="res" name="location" />
-				<parse_document now="true">
-					<arg value="location" name="location" />
-				</parse_document>
-				<get_field object="res" name="link_other" />
-				<parse_document now="true">
-					<arg value="link_other" name="location" />
-				</parse_document>
-			</for_each>
-		</semantic_actions>
 	</meta_metadata>
-
-	<meta_metadata name="flickr_groups" extends="search" comment="Searching from a photo for nearby photos" parser="xpath">
-		<selector url_regex="^http://www.flickr.com/groups/[A-z0-9_@-]+/pool" domain="flickr.com" />
-		<collection name="flickr_tags" xpath="//div[@class='Paginator']/a/@href" child_type="document" hide="true">
-				<scalar name="title" xpath="." />
-				<scalar name="location" xpath="." />
-		</collection>
-		
-		<collection name="search_results" xpath="//p[@class='PoolList']">
-			<scalar name="location" xpath="./span/a/@href">
-				<filter regex="/in/.*$" replace="/" />
-			</scalar>
-			<scalar name="title" xpath="./span/a" />
-			<scalar name="description" xpath="./span/a/@title" />
-		</collection>
-	</meta_metadata>
-	 
--->
-
 </meta_metadata_repository>
