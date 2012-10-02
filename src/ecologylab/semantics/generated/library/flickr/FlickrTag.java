@@ -8,9 +8,9 @@ package ecologylab.semantics.generated.library.flickr;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.creative_work.Author;
 import ecologylab.semantics.generated.library.flickr.FlickrPhoto;
-import ecologylab.semantics.generated.library.flickr.Photostream;
+import ecologylab.semantics.generated.library.flickr.FlickrTag;
+import ecologylab.semantics.metadata.builtins.CompoundDocument;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -23,67 +23,67 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *Author on flickr
+ *For flickr crawled tags
  */ 
 @simpl_inherit
-public class FlickrAuthor extends Author
+public class FlickrTag extends CompoundDocument
 {
 	/** 
-	 *Image favorites
+	 *Collection of all images of a user
 	 */ 
 	@simpl_collection("flickr_photo")
-	@mm_name("favorites")
-	private List<FlickrPhoto> favorites;
+	@mm_name("photos")
+	private List<FlickrPhoto> photos;
 
 	@simpl_composite
-	@mm_name("photostream")
-	private Photostream photostream;
+	@mm_name("public_tags")
+	private FlickrTag publicTags;
 
-	public FlickrAuthor()
+	public FlickrTag()
 	{ super(); }
 
-	public FlickrAuthor(MetaMetadataCompositeField mmd) {
+	public FlickrTag(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<FlickrPhoto> getFavorites()
+	public List<FlickrPhoto> getPhotos()
 	{
-		return favorites;
+		return photos;
 	}
 
   // lazy evaluation:
-  public List<FlickrPhoto> favorites()
+  public List<FlickrPhoto> photos()
   {
-    if (favorites == null)
-      favorites = new ArrayList<FlickrPhoto>();
-    return favorites;
+    if (photos == null)
+      photos = new ArrayList<FlickrPhoto>();
+    return photos;
   }
 
   // addTo:
-  public void addToFavorites(FlickrPhoto element)
+  public void addToPhotos(FlickrPhoto element)
   {
-    favorites().add(element);
+    photos().add(element);
   }
 
   // size:
-  public int favoritesSize()
+  public int photosSize()
   {
-    return favorites == null ? 0 : favorites.size();
+    return photos == null ? 0 : photos.size();
   }
 
-	public void setFavorites(List<FlickrPhoto> favorites)
+	public void setPhotos(List<FlickrPhoto> photos)
 	{
-		this.favorites = favorites;
+		this.photos = photos;
 	}
 
-	public Photostream getPhotostream()
+	public FlickrTag getPublicTags()
 	{
-		return photostream;
+		return publicTags;
 	}
 
-	public void setPhotostream(Photostream photostream)
+	public void setPublicTags(FlickrTag publicTags)
 	{
-		this.photostream = photostream;
+		this.publicTags = publicTags;
 	}
 }

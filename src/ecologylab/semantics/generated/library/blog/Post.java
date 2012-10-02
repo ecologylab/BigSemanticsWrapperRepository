@@ -9,12 +9,16 @@ package ecologylab.semantics.generated.library.blog;
  */
 
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataDate;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +28,10 @@ public class Post extends CreativeWork
 {
 	@simpl_scalar
 	private MetadataDate postDate;
+
+	@simpl_collection("document")
+	@mm_name("tags")
+	private List<Document> tags;
 
 	public Post()
 	{ super(); }
@@ -63,5 +71,35 @@ public class Post extends CreativeWork
 	public void setPostDateMetadata(MetadataDate postDate)
 	{
 		this.postDate = postDate;
+	}
+
+	public List<Document> getTags()
+	{
+		return tags;
+	}
+
+  // lazy evaluation:
+  public List<Document> tags()
+  {
+    if (tags == null)
+      tags = new ArrayList<Document>();
+    return tags;
+  }
+
+  // addTo:
+  public void addToTags(Document element)
+  {
+    tags().add(element);
+  }
+
+  // size:
+  public int tagsSize()
+  {
+    return tags == null ? 0 : tags.size();
+  }
+
+	public void setTags(List<Document> tags)
+	{
+		this.tags = tags;
 	}
 }

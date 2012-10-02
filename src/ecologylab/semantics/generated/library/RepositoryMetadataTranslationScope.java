@@ -72,6 +72,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary.class,
 
+		ecologylab.semantics.generated.library.blog.Blog.class,
+
 		ecologylab.semantics.generated.library.blog.Post.class,
 
 		ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
@@ -156,13 +158,13 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.fastflip.Thumbnail.class,
 
-		ecologylab.semantics.generated.library.flickr.AuthorPhotos.class,
-
 		ecologylab.semantics.generated.library.flickr.FlickrAuthor.class,
 
 		ecologylab.semantics.generated.library.flickr.FlickrPhoto.class,
 
-		ecologylab.semantics.generated.library.flickr.FlickrTagPage.class,
+		ecologylab.semantics.generated.library.flickr.FlickrTag.class,
+
+		ecologylab.semantics.generated.library.flickr.Photostream.class,
 
 		ecologylab.semantics.generated.library.gis.ContactPoint.class,
 
@@ -389,8 +391,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPage.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPageType.class,
-
-		ecologylab.semantics.generated.library.wordpress.Wordpress.class,
 
 	};
 

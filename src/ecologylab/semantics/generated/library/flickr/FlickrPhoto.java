@@ -9,9 +9,7 @@ package ecologylab.semantics.generated.library.flickr;
  */
 
 import ecologylab.net.ParsedURL;
-import ecologylab.semantics.generated.library.flickr.AuthorPhotos;
-import ecologylab.semantics.generated.library.flickr.FlickrTagPage;
-import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.generated.library.blog.Post;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -19,20 +17,18 @@ import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metadata.scalar.MetadataString;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /** 
- *A Flickr Image result page
+ *A Flickr image post page
  */ 
 @simpl_inherit
-public class FlickrPhoto extends CompoundDocument
+public class FlickrPhoto extends Post
 {
 	@simpl_scalar
 	private MetadataParsedURL imageLocation;
@@ -43,14 +39,6 @@ public class FlickrPhoto extends CompoundDocument
 	@simpl_composite
 	@mm_name("place")
 	private Document place;
-
-	@simpl_collection("flickr_tag_page")
-	@mm_name("tags")
-	private List<FlickrTagPage> tags;
-
-	@simpl_composite
-	@mm_name("author_photos")
-	private AuthorPhotos authorPhotos;
 
 	public FlickrPhoto()
 	{ super(); }
@@ -132,45 +120,5 @@ public class FlickrPhoto extends CompoundDocument
 	public void setPlace(Document place)
 	{
 		this.place = place;
-	}
-
-	public List<FlickrTagPage> getTags()
-	{
-		return tags;
-	}
-
-  // lazy evaluation:
-  public List<FlickrTagPage> tags()
-  {
-    if (tags == null)
-      tags = new ArrayList<FlickrTagPage>();
-    return tags;
-  }
-
-  // addTo:
-  public void addToTags(FlickrTagPage element)
-  {
-    tags().add(element);
-  }
-
-  // size:
-  public int tagsSize()
-  {
-    return tags == null ? 0 : tags.size();
-  }
-
-	public void setTags(List<FlickrTagPage> tags)
-	{
-		this.tags = tags;
-	}
-
-	public AuthorPhotos getAuthorPhotos()
-	{
-		return authorPhotos;
-	}
-
-	public void setAuthorPhotos(AuthorPhotos authorPhotos)
-	{
-		this.authorPhotos = authorPhotos;
 	}
 }
