@@ -64,6 +64,15 @@
 		<example_url url="http://www.google.com/patents/US20100045705" />
 		<example_url url="http://www.google.com/patents/US7953462" />
 
+		<filter_location>
+			<strip_param name="printsec" />
+			<strip_param name="zoom" />
+			<strip_param name="v" />
+			<strip_param name="q" />
+			<strip_param name="f" />
+			<strip_param name="pg" />
+		</filter_location>
+
 		<collection name="authors" child_type="google_patent_author" xpath="//div[@class='patent_bibdata']/a[contains(@href,'inventor')]">
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./text()" />
@@ -100,17 +109,6 @@
 		<collection name="drawings" xpath="//div[@id='selected_pages_v']/div/a/img">
 			<scalar name="location" xpath="./@src" />
 		</collection>
-
-		<before_semantic_actions>
-			<filter_location>
-				<strip_param name="printsec" />
-				<strip_param name="zoom" />
-				<strip_param name="v" />
-				<strip_param name="q" />
-				<strip_param name="f" />
-				<strip_param name="pg" />
-			</filter_location>
-		</before_semantic_actions>
 
 		<semantic_actions>
 			<if>

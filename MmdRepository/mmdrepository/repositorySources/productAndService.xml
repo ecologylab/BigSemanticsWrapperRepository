@@ -167,6 +167,8 @@
 		<selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
 		<example_url url="http://www.amazon.com/gp/bestsellers/books/6" />
 		
+		<filter_location strip_prefix="/ref=" />
+    
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 		<collection name="items" xpath="//div[@class='zg_itemRightDiv_normal']">
 			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
@@ -174,10 +176,6 @@
 			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock_normal']//span[@class='price']/b"/>
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
-	
-		<before_semantic_actions>
-			<filter_location strip_prefix="/ref=" />
-		</before_semantic_actions>
 	</meta_metadata>
 
 
@@ -185,6 +183,8 @@
 		<selector url_path_tree="http://www.amazon.co.uk/gp/bestsellers" />
 		<example_url url="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
 		
+		<filter_location strip_prefix="/ref=" />
+      
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
 		<collection name="items" xpath="//div[@class='zg_item zg_sparseListItem']">
 			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
@@ -192,10 +192,6 @@
 			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock zg_isPaid']//span[@class='price']/b"/>
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
-	
-		<before_semantic_actions>
-			<filter_location strip_prefix="/ref=" />
-		</before_semantic_actions>
 	</meta_metadata>
 
 </meta_metadata_repository>
