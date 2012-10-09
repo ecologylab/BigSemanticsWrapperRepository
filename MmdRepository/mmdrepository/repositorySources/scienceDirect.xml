@@ -2,12 +2,11 @@
 
 	<meta_metadata name="science_direct_article" extends="scholarly_article" parser="xpath"
                  comment="Information about the article">
-    <generic_type_var name="T" arg="science_direct_article" />
-  
 		<selector url_path_tree="http://www.sciencedirect.com/science/article" />
+    <example_url url="http://www.sciencedirect.com/science/article/pii/S1570826808000693" />
     
 		<scalar name="title" xpath="//h1[@class='svTitle']"/>
-		<collection name="authors"  xpath="//ul[@class='authorGroup']/li" comment="All authors">
+		<collection name="authors" xpath="//ul[@class='authorGroup']/li" comment="All authors">
 			<scalar name="title" xpath="a[1]" />
 			<scalar name="location" xpath="a[1]/@href" />
 		</collection>		
@@ -25,7 +24,8 @@
 				<filter regex=";" replace="" />
 			</scalar>
 		</collection>
-		<collection name="references" xpath="//ol[@class='references']/li">
+		<collection name="references" child_type="scholarly_article"
+                xpath="//ol[@class='references']/li">
 			<scalar name="title" xpath="ul/li[@class='title']" />
 			<collection name="authors" xpath="ul/li[@class='author']">
 		        <field_parser name="regex_split" regex=",\s" trim="true" />

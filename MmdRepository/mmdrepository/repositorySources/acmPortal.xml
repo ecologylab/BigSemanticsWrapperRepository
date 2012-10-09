@@ -4,8 +4,6 @@
 
   <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath"
                  user_agent_name="google_bot_2">
-    <generic_type_var name="T" arg="acm_portal" />
-    
 		<selector url_stripped="http://portal.acm.org/citation.cfm" />
 		<selector url_stripped="http://dl.acm.org/citation.cfm" />
 		<example_url url="http://dl.acm.org/citation.cfm?id=2063231.2063237&amp;preflayout=flat" />
@@ -47,7 +45,7 @@
                xpath="//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]">
 			<scalar name="location" xpath=".//td[text()='Title']/following-sibling::td/a[1]" />
 			<scalar name="title" xpath=".//td[text()='Title']/following-sibling::td[1]" />
-			<collection name="authors" child_type="acm_portal_author" label="chairs"
+			<collection name="authors" label="chairs" child_type="acm_portal_author"
                   xpath=".//td[contains(text(), 'Chairs')]/following-sibling::td/a"
                   comment="Publication general/program chairs.">
 				<scalar name="location" xpath="./../a[starts-with(@href, 'author_page.cfm')]/@href" />
@@ -82,7 +80,8 @@
 		<scalar name="description"
             xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
 
-		<collection name="references" xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">
+		<collection name="references" child_type="acm_portal"
+                xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
 			<scalar name="location" xpath=".//a[1]/@href" />
@@ -108,7 +107,8 @@
 	  </collection>
 	  -->
 	
-	  <collection name="citations" xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
+	  <collection name="citations" child_type="acm_portal"
+                xpath="//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]">
 	   	<field_parser name="acm_reference" for_each_element="true" />
 	   	<scalar name="title" layer="20.0" field_parser_key="$title" />
 			<scalar name="location" xpath=".//a[1]/@href" />
@@ -198,8 +198,6 @@
 
   <meta_metadata name="acm_portal_author" extends="author" parser="xpath"
                  ignore_in_term_vector="true" user_agent_name="firefox_3_6_8">
-    <generic_type_var name="CW" arg="acm_portal" />
-  
 		<selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
 		<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
          
@@ -218,7 +216,7 @@
       <scalar name="title" xpath="./text()"/>
     </composite>
          
-    <collection name="creative_works" other_tags="publications"
+    <collection name="creative_works" other_tags="publications" child_type="acm_portal"
                 label="recent_publications" ignore_in_term_vector="true"
                 xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />

@@ -2,32 +2,29 @@
 
 	<meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
                  comment="An author of an article or creative work.">
-    <generic_type_var name="CW" extends="creative_work" />
-    
 		<scalar name="location" hide="true" schema_org_itemprop="url"/>
 		<scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation"/>
 		<scalar name="city" scalar_type="String" />
     
-		<collection name="creative_works" child_type="CW" child_tag="creative_work" />
+		<collection name="creative_works" child_type="creative_work" child_tag="creative_work" />
 	</meta_metadata>
 	
   
 	<meta_metadata name="creative_work" extends="compound_document"
                  schema_org_itemtype="http://schema.org/CreativeWork">
-    <generic_type_var name="T" extends="creative_work" />
-    
 		<collection name="authors" child_type="author" child_tag="author" layer="8.0"
-                schema_org_itemprop="author">
-	    <generic_type_var name="CW" arg="T" />
-    </collection>
+                schema_org_itemprop="author" />
 		<scalar name="description" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
 		<scalar name="year" other_tags="year_of_publication" scalar_type="Int" is_facet="true" />
 		<scalar name="overall_rating" scalar_type="string" comment="rating in some context" />
     <composite name="rating" type="rating" />
     
-    <collection name="references" child_tag="reference" child_type="T"
-                comment="Creatives that are cited by this work." />
-    <collection name="citations" child_tag="citation" child_type="T"
+    <collection name="references" child_tag="reference" child_type="document"
+                polymorphic_scope="repository_documents"
+                comment="Documents that are cited by this work." />
+    <!-- citations should use a polymorphic scope of creative_work subtypes -->
+    <collection name="citations" child_tag="citation" child_type="creative_work"
+                polymorphic_scope="repository_documents"
                 comment="Creatives that cite this work." />
 		
 		<composite name="rich_media" type="compound_document"/>
@@ -35,7 +32,7 @@
 
 
 	<meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
-		<scalar name="isbn" scalar_type="String" schema_org_itemprop="author" />
+		<scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />
 		<composite name="publisher" type="publisher" schema_org_itemprop="publisher"/>
 	</meta_metadata>
 	

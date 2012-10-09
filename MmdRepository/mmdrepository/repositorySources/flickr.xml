@@ -3,7 +3,7 @@
 
 	<meta_metadata name="flickr_photo" extends="post" parser="xpath"
 		comment="A Flickr image post page">
-		<selector url_regex="http://www.flickr.com/photos/(?!tags[0-9]+($|/.*$)"
+		<selector url_regex="http://www.flickr.com/photos/(?!tags[0-9]+($|/.*$))"
 			domain="flickr.com" />
 		<example_url url="www.flickr.com/photos/kali-kold/map/?photo=5756890544" />
 		<scalar name="title" xpath="//div[@id='meta']/h1" scalar_type="String"

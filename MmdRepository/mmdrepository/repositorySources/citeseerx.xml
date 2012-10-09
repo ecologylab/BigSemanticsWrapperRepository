@@ -8,8 +8,6 @@
 
 	<meta_metadata name="citeseerx_record" extends="scholarly_article"
                  comment="CiteSeerX record for an article.">
-    <generic_type_var name="T" extends="citeseerx_record" />
-    
 		<scalar name="title" xpath="//h2" as_natural_id="title" format="text">
 			<filter regex="(\(.*\))|(\[.*\])" replace="" />
 		</scalar>
@@ -40,8 +38,6 @@
 
 	<meta_metadata name="citeseerx_summary" extends="citeseerx_record" parser="xpath"
                  comment="Summary page from CiteSeerX.">
-    <generic_type_var name="T" extends="citeseerx_summary" />
-    
 		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/summary" />
 		<example_url url="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.167.1350" />
     
@@ -119,8 +115,6 @@
 
 	<meta_metadata name="citeseerx_similar" type="citeseerx_record" parser="xpath"
                  comment="Citation or co-citation page from CiteSeerX.">
-    <generic_type_var name="T" extends="citeseerx_similar" />
-    
 		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
 		<example_url url="http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&amp;type=sc" />
 

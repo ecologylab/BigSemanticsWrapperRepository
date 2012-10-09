@@ -5,8 +5,6 @@
 
 	<meta_metadata name="scholarly_article" extends="creative_work"
                  schema_org_itemtype="http://schema.org/ScholarlyArticle">
-    <generic_type_var name="T" extends="scholarly_article" />
-    
 		<composite name="source" type="periodical" layer="7.0"
                comment="Metadata related to where this article was published." />
 		<collection name="classifications" child_type="document"
@@ -32,8 +30,6 @@
 	
   
 	<meta_metadata name="informa_world" extends="scholarly_article"  parser="xpath">
-	  <generic_type_var name="T" arg="scholarly_article" />
-	  
 		<selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />
 		<selector url_path_tree="http://tandfonline.com/doi/full/*/*" />
 		<example_url url="http://www.tandfonline.com/doi/ref/10.1080/15332861.2012.689565" />
