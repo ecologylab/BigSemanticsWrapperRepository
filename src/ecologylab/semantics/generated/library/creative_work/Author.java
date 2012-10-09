@@ -27,7 +27,7 @@ import java.util.Map;
  *An author of an article or creative work.
  */ 
 @simpl_inherit
-public class Author<CW extends CreativeWork> extends Person
+public class Author extends Person
 {
 	@simpl_scalar
 	private MetadataString affiliation;
@@ -37,7 +37,7 @@ public class Author<CW extends CreativeWork> extends Person
 
 	@simpl_collection("creative_work")
 	@mm_name("creative_works")
-	private List<CW> creativeWorks;
+	private List<CreativeWork> creativeWorks;
 
 	public Author()
 	{ super(); }
@@ -111,21 +111,21 @@ public class Author<CW extends CreativeWork> extends Person
 		this.city = city;
 	}
 
-	public List<CW> getCreativeWorks()
+	public List<CreativeWork> getCreativeWorks()
 	{
 		return creativeWorks;
 	}
 
   // lazy evaluation:
-  public List<CW> creativeWorks()
+  public List<CreativeWork> creativeWorks()
   {
     if (creativeWorks == null)
-      creativeWorks = new ArrayList<CW>();
+      creativeWorks = new ArrayList<CreativeWork>();
     return creativeWorks;
   }
 
   // addTo:
-  public void addToCreativeWorks(CW element)
+  public void addToCreativeWorks(CreativeWork element)
   {
     creativeWorks().add(element);
   }
@@ -136,7 +136,7 @@ public class Author<CW extends CreativeWork> extends Person
     return creativeWorks == null ? 0 : creativeWorks.size();
   }
 
-	public void setCreativeWorks(List<CW> creativeWorks)
+	public void setCreativeWorks(List<CreativeWork> creativeWorks)
 	{
 		this.creativeWorks = creativeWorks;
 	}

@@ -10,7 +10,6 @@ package ecologylab.semantics.generated.library.scholarlyArticle;
 
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.generated.library.creative_work.Periodical;
-import ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -27,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class ScholarlyArticle<T extends ScholarlyArticle> extends CreativeWork
+public class ScholarlyArticle extends CreativeWork
 {
 	/** 
 	 *Metadata related to where this article was published.

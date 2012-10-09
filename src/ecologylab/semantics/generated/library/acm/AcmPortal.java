@@ -8,7 +8,6 @@ package ecologylab.semantics.generated.library.acm;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.acm.AcmPortal;
 import ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -18,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AcmPortal extends ScholarlyArticle<AcmPortal>
+public class AcmPortal extends ScholarlyArticle
 {
 	public AcmPortal()
 	{ super(); }

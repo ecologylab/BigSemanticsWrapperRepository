@@ -8,7 +8,6 @@ package ecologylab.semantics.generated.library.acm;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.acm.AcmPortal;
 import ecologylab.semantics.generated.library.acm.AcmPortalAuthorCollaborators;
 import ecologylab.semantics.generated.library.acm.AcmPortalAuthorPublicationDetail;
 import ecologylab.semantics.generated.library.acm.AcmPortalInstitutionProfile;
@@ -25,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AcmPortalAuthor extends Author<AcmPortal>
+public class AcmPortalAuthor extends Author
 {
 	@simpl_composite
 	@mm_name("publication_detail")

@@ -9,7 +9,6 @@ package ecologylab.semantics.generated.library.bibManaging;
  */
 
 import ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord;
-import ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary;
 import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
@@ -24,7 +23,7 @@ import java.util.Map;
  *Summary page from CiteSeerX.
  */ 
 @simpl_inherit
-public class CiteseerxSummary<T extends CiteseerxSummary> extends CiteseerxRecord
+public class CiteseerxSummary extends CiteseerxRecord
 {
 	@simpl_composite
 	@mm_name("citation_records")

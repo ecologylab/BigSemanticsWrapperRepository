@@ -12,6 +12,7 @@ import ecologylab.semantics.generated.library.creative_work.Author;
 import ecologylab.semantics.generated.library.creative_work.CreativeWork;
 import ecologylab.semantics.generated.library.misc.Rating;
 import ecologylab.semantics.metadata.builtins.CompoundDocument;
+import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataInteger;
@@ -23,6 +24,7 @@ import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_scope;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.ArrayList;
@@ -30,11 +32,11 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class CreativeWork<T extends CreativeWork> extends CompoundDocument
+public class CreativeWork extends CompoundDocument
 {
 	@simpl_collection("author")
 	@mm_name("authors")
-	private List<Author<T>> authors;
+	private List<Author> authors;
 
 	@simpl_scalar
 	@simpl_other_tags({"year_of_publication"})
@@ -51,18 +53,20 @@ public class CreativeWork<T extends CreativeWork> extends CompoundDocument
 	private Rating rating;
 
 	/** 
-	 *Creatives that are cited by this work.
+	 *Documents that are cited by this work.
 	 */ 
-	@simpl_collection("reference")
+	@simpl_collection
+	@simpl_scope("repository_documents")
 	@mm_name("references")
-	private List<T> references;
+	private List<Document> references;
 
 	/** 
 	 *Creatives that cite this work.
 	 */ 
-	@simpl_collection("citation")
+	@simpl_collection
+	@simpl_scope("repository_documents")
 	@mm_name("citations")
-	private List<T> citations;
+	private List<CreativeWork> citations;
 
 	@simpl_composite
 	@mm_name("rich_media")
@@ -76,21 +80,21 @@ public class CreativeWork<T extends CreativeWork> extends CompoundDocument
 	}
 
 
-	public List<Author<T>> getAuthors()
+	public List<Author> getAuthors()
 	{
 		return authors;
 	}
 
   // lazy evaluation:
-  public List<Author<T>> authors()
+  public List<Author> authors()
   {
     if (authors == null)
-      authors = new ArrayList<Author<T>>();
+      authors = new ArrayList<Author>();
     return authors;
   }
 
   // addTo:
-  public void addToAuthors(Author<T> element)
+  public void addToAuthors(Author element)
   {
     authors().add(element);
   }
@@ -101,7 +105,7 @@ public class CreativeWork<T extends CreativeWork> extends CompoundDocument
     return authors == null ? 0 : authors.size();
   }
 
-	public void setAuthors(List<Author<T>> authors)
+	public void setAuthors(List<Author> authors)
 	{
 		this.authors = authors;
 	}
@@ -180,21 +184,21 @@ public class CreativeWork<T extends CreativeWork> extends CompoundDocument
 		this.rating = rating;
 	}
 
-	public List<T> getReferences()
+	public List<Document> getReferences()
 	{
 		return references;
 	}
 
   // lazy evaluation:
-  public List<T> references()
+  public List<Document> references()
   {
     if (references == null)
-      references = new ArrayList<T>();
+      references = new ArrayList<Document>();
     return references;
   }
 
   // addTo:
-  public void addToReferences(T element)
+  public void addToReferences(Document element)
   {
     references().add(element);
   }
@@ -205,26 +209,26 @@ public class CreativeWork<T extends CreativeWork> extends CompoundDocument
     return references == null ? 0 : references.size();
   }
 
-	public void setReferences(List<T> references)
+	public void setReferences(List<Document> references)
 	{
 		this.references = references;
 	}
 
-	public List<T> getCitations()
+	public List<CreativeWork> getCitations()
 	{
 		return citations;
 	}
 
   // lazy evaluation:
-  public List<T> citations()
+  public List<CreativeWork> citations()
   {
     if (citations == null)
-      citations = new ArrayList<T>();
+      citations = new ArrayList<CreativeWork>();
     return citations;
   }
 
   // addTo:
-  public void addToCitations(T element)
+  public void addToCitations(CreativeWork element)
   {
     citations().add(element);
   }
@@ -235,7 +239,7 @@ public class CreativeWork<T extends CreativeWork> extends CompoundDocument
     return citations == null ? 0 : citations.size();
   }
 
-	public void setCitations(List<T> citations)
+	public void setCitations(List<CreativeWork> citations)
 	{
 		this.citations = citations;
 	}

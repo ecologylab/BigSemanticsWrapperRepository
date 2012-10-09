@@ -10,7 +10,6 @@ package ecologylab.semantics.generated.library.scienceDirect;
 
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle;
-import ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -24,7 +23,7 @@ import java.util.Map;
  *Information about the article
  */ 
 @simpl_inherit
-public class ScienceDirectArticle extends ScholarlyArticle<ScienceDirectArticle>
+public class ScienceDirectArticle extends ScholarlyArticle
 {
 	/** 
 	 *The digital object identifier of the article

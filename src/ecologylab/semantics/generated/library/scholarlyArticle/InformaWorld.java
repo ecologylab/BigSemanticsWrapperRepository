@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class InformaWorld extends ScholarlyArticle<ScholarlyArticle>
+public class InformaWorld extends ScholarlyArticle
 {
 	public InformaWorld()
 	{ super(); }
