@@ -12,8 +12,10 @@ using System.Collections.Generic;
 
 using Crit.Semantics.Generated.Txtf1.Fieldreports.EmergentEvent;
 using Crit.Semantics.Generated.Txtf1.Fieldreports.Spotrep;
+using Ecologylab.Semantics.Generated.Library.AcmNS;
 using Ecologylab.Semantics.Generated.Library.ArtworkNS;
 using Ecologylab.Semantics.Generated.Library.BibManagingNS;
+using Ecologylab.Semantics.Generated.Library.BlogNS;
 using Ecologylab.Semantics.Generated.Library.BuzzNS;
 using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
@@ -34,7 +36,6 @@ using Ecologylab.Semantics.Generated.Library.NsfNS;
 using Ecologylab.Semantics.Generated.Library.OpmlNS;
 using Ecologylab.Semantics.Generated.Library.PatentNS;
 using Ecologylab.Semantics.Generated.Library.PersonNS;
-using Ecologylab.Semantics.Generated.Library.PostNS;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
@@ -42,7 +43,6 @@ using Ecologylab.Semantics.Generated.Library.RichBookmarkNS;
 using Ecologylab.Semantics.Generated.Library.RssNS;
 using Ecologylab.Semantics.Generated.Library.RwandatribunalNS;
 using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.Semantics.Generated.Library.ScholarlyPublicationNS;
 using Ecologylab.Semantics.Generated.Library.ScienceDirectNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.Generated.Library.SlashdotNS;
@@ -52,7 +52,6 @@ using Ecologylab.Semantics.Generated.Library.UrbanspoonNS;
 using Ecologylab.Semantics.Generated.Library.UvaNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaNS;
-using Ecologylab.Semantics.Generated.Library.WordpressNS;
 using Ecologylab.Semantics.MetadataNS.Builtins.Declarations;
 
 // Developer should proof-read this TranslationScope before using it for production.
@@ -69,6 +68,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AcmPortal),
 				typeof(AcmPortalAuthor),
 				typeof(AcmPortalAuthorCollaborators),
+				typeof(AcmPortalAuthorPublicationDetail),
 				typeof(AcmPortalInstitutionProfile),
 				typeof(AcmPortalPeriodical),
 				typeof(AcmPortalSearch),
@@ -81,11 +81,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Artist),
 				typeof(Artwork),
 				typeof(Audience),
-				typeof(Author<>),
-				typeof(AuthorPhotos),
+				typeof(Author),
 				typeof(BasicPublication),
 				typeof(BingSearchApi),
 				typeof(BirthDetail),
+				typeof(Blog),
 				typeof(Body),
 				typeof(Book),
 				typeof(Bookmark),
@@ -124,7 +124,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(FastflipSearch),
 				typeof(FlickrAuthor),
 				typeof(FlickrPhoto),
-				typeof(FlickrTagPage),
+				typeof(FlickrTag),
 				typeof(GaurdianComic),
 				typeof(General),
 				typeof(GetRecordAdditionalMetadata),
@@ -151,6 +151,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IcdlImageResult),
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
+				typeof(InformaWorld),
 				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
@@ -186,13 +187,12 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Periodical),
 				typeof(Person),
 				typeof(PersonnelInterview),
+				typeof(Photostream),
 				typeof(PoliticalCartoon),
 				typeof(Post),
 				typeof(PostalAddress),
 				typeof(Product),
 				typeof(Publication),
-				typeof(PublicationDetail),
-				typeof(PublicationDetailInstitution),
 				typeof(Publisher),
 				typeof(PubmedArticle),
 				typeof(Rating),
@@ -245,8 +245,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(WikipediaMobilePage),
 				typeof(WikipediaPage),
 				typeof(WikipediaPageType),
-				typeof(Wordpress),
-				typeof(WordpressPost),
 				typeof(YahooGeoCode),
 				typeof(YahooGeoCodeResult),
 				typeof(YahooMediaRss),

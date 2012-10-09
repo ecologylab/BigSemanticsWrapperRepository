@@ -8,7 +8,7 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.FlickrNS;
+using Ecologylab.Semantics.Generated.Library.BlogNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -24,10 +24,10 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.FlickrNS 
 {
 	/// <summary>
-	/// A Flickr Image result page
+	/// A Flickr image post page
 	/// </summary>
 	[SimplInherit]
-	public class FlickrPhoto : CompoundDocument
+	public class FlickrPhoto : Post
 	{
 		[SimplScalar]
 		private MetadataParsedURL imageLocation;
@@ -38,14 +38,6 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 		[SimplComposite]
 		[MmName("place")]
 		private Document place;
-
-		[SimplCollection("flickr_tag_page")]
-		[MmName("tags")]
-		private List<FlickrTagPage> tags;
-
-		[SimplComposite]
-		[MmName("author_photos")]
-		private AuthorPhotos authorPhotos;
 
 		public FlickrPhoto()
 		{ }
@@ -87,32 +79,6 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 				if (this.place != value)
 				{
 					this.place = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<FlickrTagPage> Tags
-		{
-			get{return tags;}
-			set
-			{
-				if (this.tags != value)
-				{
-					this.tags = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public AuthorPhotos AuthorPhotos
-		{
-			get{return authorPhotos;}
-			set
-			{
-				if (this.authorPhotos != value)
-				{
-					this.authorPhotos = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

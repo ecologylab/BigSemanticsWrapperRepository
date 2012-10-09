@@ -37,11 +37,6 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleBookNS
 		[MmName("selected_pages")]
 		private List<Page> selectedPages;
 
-		[SimplCollection]
-		[SimplScope("repository_documents")]
-		[MmName("citations")]
-		private List<Document> citations;
-
 		public GoogleBook()
 		{ }
 
@@ -82,19 +77,6 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleBookNS
 				if (this.selectedPages != value)
 				{
 					this.selectedPages = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Document> Citations
-		{
-			get{return citations;}
-			set
-			{
-				if (this.citations != value)
-				{
-					this.citations = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

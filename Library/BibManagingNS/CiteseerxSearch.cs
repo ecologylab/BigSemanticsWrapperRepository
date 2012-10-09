@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.BibManagingNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -24,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.BibManagingNS
 	/// CiteSeerX search using keywords.
 	/// </summary>
 	[SimplInherit]
-	public class CiteseerxSearch : Search<Document>
+	public class CiteseerxSearch : Search<CiteseerxSearchResult>
 	{
 		public CiteseerxSearch()
 		{ }

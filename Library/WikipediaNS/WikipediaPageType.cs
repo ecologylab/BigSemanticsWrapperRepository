@@ -45,7 +45,7 @@ namespace Ecologylab.Semantics.Generated.Library.WikipediaNS
 
 		[SimplCollection("thumbinner")]
 		[MmName("thumbinners")]
-		private List<Document> thumbinners;
+		private List<Image> thumbinners;
 
 		[SimplCollection("category")]
 		[MmName("categories")]
@@ -96,7 +96,7 @@ namespace Ecologylab.Semantics.Generated.Library.WikipediaNS
 			}
 		}
 
-		public List<Document> Thumbinners
+		public List<Image> Thumbinners
 		{
 			get{return thumbinners;}
 			set

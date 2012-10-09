@@ -27,7 +27,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 	/// An author of an article or creative work.
 	/// </summary>
 	[SimplInherit]
-	public class Author<CW> : Person where CW : CreativeWork
+	public class Author : Person
 	{
 		[SimplScalar]
 		private MetadataString affiliation;

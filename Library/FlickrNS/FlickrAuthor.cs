@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.Generated.Library.FlickrNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
@@ -22,17 +23,21 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.FlickrNS 
 {
 	/// <summary>
-	/// All flickr photos of a particular user
+	/// Author on flickr
 	/// </summary>
 	[SimplInherit]
-	public class FlickrAuthor : CompoundDocument
+	public class FlickrAuthor : Author
 	{
 		/// <summary>
-		/// Collection of all images of a user
+		/// Image favorites
 		/// </summary>
 		[SimplCollection("flickr_photo")]
-		[MmName("stream")]
-		private List<FlickrPhoto> stream;
+		[MmName("favorites")]
+		private List<FlickrPhoto> favorites;
+
+		[SimplComposite]
+		[MmName("photostream")]
+		private Photostream photostream;
 
 		public FlickrAuthor()
 		{ }
@@ -40,14 +45,27 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 		public FlickrAuthor(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<FlickrPhoto> Stream
+		public List<FlickrPhoto> Favorites
 		{
-			get{return stream;}
+			get{return favorites;}
 			set
 			{
-				if (this.stream != value)
+				if (this.favorites != value)
 				{
-					this.stream = value;
+					this.favorites = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public Photostream Photostream
+		{
+			get{return photostream;}
+			set
+			{
+				if (this.photostream != value)
+				{
+					this.photostream = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

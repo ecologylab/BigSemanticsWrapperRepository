@@ -9,7 +9,6 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -32,20 +31,6 @@ namespace Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS
 		[SimplComposite]
 		[MmName("source")]
 		private Periodical source;
-
-		/// <summary>
-		/// Papers cited by this paper.
-		/// </summary>
-		[SimplCollection("reference")]
-		[MmName("references")]
-		private List<ScholarlyArticle> references;
-
-		/// <summary>
-		/// Papers that cite this paper.
-		/// </summary>
-		[SimplCollection("citation")]
-		[MmName("citations")]
-		private List<ScholarlyArticle> citations;
 
 		/// <summary>
 		/// The Classifications of this paper.
@@ -78,32 +63,6 @@ namespace Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS
 				if (this.source != value)
 				{
 					this.source = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<ScholarlyArticle> References
-		{
-			get{return references;}
-			set
-			{
-				if (this.references != value)
-				{
-					this.references = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<ScholarlyArticle> Citations
-		{
-			get{return citations;}
-			set
-			{
-				if (this.citations != value)
-				{
-					this.citations = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

@@ -30,11 +30,11 @@ namespace Ecologylab.Semantics.Generated.Library.IcdlNS
 	{
 		[SimplComposite]
 		[MmName("author")]
-		private Author<CreativeWork> author;
+		private Author author;
 
 		[SimplComposite]
 		[MmName("illustrator")]
-		private Author<CreativeWork> illustrator;
+		private Author illustrator;
 
 		[SimplScalar]
 		private MetadataString summary;
@@ -60,7 +60,7 @@ namespace Ecologylab.Semantics.Generated.Library.IcdlNS
 		public IcdlBookPreview(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Author<CreativeWork> Author
+		public Author Author
 		{
 			get{return author;}
 			set
@@ -73,7 +73,7 @@ namespace Ecologylab.Semantics.Generated.Library.IcdlNS
 			}
 		}
 
-		public Author<CreativeWork> Illustrator
+		public Author Illustrator
 		{
 			get{return illustrator;}
 			set

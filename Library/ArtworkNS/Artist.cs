@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ArtworkNS 
 {
 	[SimplInherit]
-	public class Artist : Author<CreativeWork>
+	public class Artist : Author
 	{
 		public Artist()
 		{ }

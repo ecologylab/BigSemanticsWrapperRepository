@@ -43,21 +43,6 @@ namespace Ecologylab.Semantics.Generated.Library.PatentNS
 		[MmName("claims")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> claims;
 
-		/// <summary>
-		/// subsequent patents that cite this
-		/// </summary>
-		[SimplCollection("patent")]
-		[SimplOtherTags(new String[] {"referenced_bys"})]
-		[MmName("citations")]
-		private List<Patent> citations;
-
-		/// <summary>
-		/// prior patents that this references
-		/// </summary>
-		[SimplCollection("patent")]
-		[MmName("references")]
-		private List<Patent> references;
-
 		[SimplCollection("image")]
 		[MmName("drawings")]
 		private List<Image> drawings;
@@ -115,32 +100,6 @@ namespace Ecologylab.Semantics.Generated.Library.PatentNS
 				if (this.claims != value)
 				{
 					this.claims = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Patent> Citations
-		{
-			get{return citations;}
-			set
-			{
-				if (this.citations != value)
-				{
-					this.citations = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Patent> References
-		{
-			get{return references;}
-			set
-			{
-				if (this.references != value)
-				{
-					this.references = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

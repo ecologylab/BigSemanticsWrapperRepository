@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.PatentNS
 	/// Authors of Patents; really this should be a mix-in to author
 	/// </summary>
 	[SimplInherit]
-	public class PatentAuthor<CW> : Author<CreativeWork> where CW : Patent
+	public class PatentAuthor<CW> : Author where CW : Patent
 	{
 		public PatentAuthor()
 		{ }

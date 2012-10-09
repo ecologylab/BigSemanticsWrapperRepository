@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GrantNS 
 {
 	[SimplInherit]
-	public class Investigator<CW> : Author<CreativeWork> where CW : Grant
+	public class Investigator<CW> : Author where CW : Grant
 	{
 		[SimplScalar]
 		private MetadataString email;

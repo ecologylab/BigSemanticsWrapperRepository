@@ -10,10 +10,9 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.BibManagingNS;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -28,20 +27,17 @@ namespace Ecologylab.Semantics.Generated.Library.BibManagingNS
 	[SimplInherit]
 	public class CiteseerxSummary : CiteseerxRecord
 	{
-		[SimplScalar]
-		private MetadataParsedURL citationPage;
+		[SimplComposite]
+		[MmName("citation_records")]
+		private Document citationRecords;
 
-		/// <summary>
-		/// Papers that cite the same works.
-		/// </summary>
-		[SimplScalar]
-		private MetadataParsedURL activeBibliographyPage;
+		[SimplComposite]
+		[MmName("active_bibliography_records")]
+		private Document activeBibliographyRecords;
 
-		/// <summary>
-		/// Papers that are cited by the same works.
-		/// </summary>
-		[SimplScalar]
-		private MetadataParsedURL cocitationPage;
+		[SimplComposite]
+		[MmName("cocitation_records")]
+		private Document cocitationRecords;
 
 		public CiteseerxSummary()
 		{ }
@@ -49,40 +45,40 @@ namespace Ecologylab.Semantics.Generated.Library.BibManagingNS
 		public CiteseerxSummary(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataParsedURL CitationPage
+		public Document CitationRecords
 		{
-			get{return citationPage;}
+			get{return citationRecords;}
 			set
 			{
-				if (this.citationPage != value)
+				if (this.citationRecords != value)
 				{
-					this.citationPage = value;
+					this.citationRecords = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
 
-		public MetadataParsedURL ActiveBibliographyPage
+		public Document ActiveBibliographyRecords
 		{
-			get{return activeBibliographyPage;}
+			get{return activeBibliographyRecords;}
 			set
 			{
-				if (this.activeBibliographyPage != value)
+				if (this.activeBibliographyRecords != value)
 				{
-					this.activeBibliographyPage = value;
+					this.activeBibliographyRecords = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
 
-		public MetadataParsedURL CocitationPage
+		public Document CocitationRecords
 		{
-			get{return cocitationPage;}
+			get{return cocitationRecords;}
 			set
 			{
-				if (this.cocitationPage != value)
+				if (this.cocitationRecords != value)
 				{
-					this.cocitationPage = value;
+					this.cocitationRecords = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

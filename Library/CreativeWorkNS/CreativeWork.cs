@@ -28,7 +28,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 	{
 		[SimplCollection("author")]
 		[MmName("authors")]
-		private List<Author<CreativeWork>> authors;
+		private List<Author> authors;
 
 		[SimplScalar]
 		[SimplOtherTags(new String[] {"year_of_publication"})]
@@ -44,6 +44,22 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		[MmName("rating")]
 		private Rating rating;
 
+		/// <summary>
+		/// Documents that are cited by this work.
+		/// </summary>
+		[SimplCollection]
+		[SimplScope("repository_documents")]
+		[MmName("references")]
+		private List<Document> references;
+
+		/// <summary>
+		/// Creatives that cite this work.
+		/// </summary>
+		[SimplCollection]
+		[SimplScope("repository_documents")]
+		[MmName("citations")]
+		private List<CreativeWork> citations;
+
 		[SimplComposite]
 		[MmName("rich_media")]
 		private CompoundDocument richMedia;
@@ -54,7 +70,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		public CreativeWork(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Author<CreativeWork>> Authors
+		public List<Author> Authors
 		{
 			get{return authors;}
 			set
@@ -101,6 +117,32 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 				if (this.rating != value)
 				{
 					this.rating = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Document> References
+		{
+			get{return references;}
+			set
+			{
+				if (this.references != value)
+				{
+					this.references = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<CreativeWork> Citations
+		{
+			get{return citations;}
+			set
+			{
+				if (this.citations != value)
+				{
+					this.citations = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
