@@ -96,6 +96,16 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.cartoon.TrumanLibrary1948CampaignCartoons.class,
 
+		ecologylab.semantics.generated.library.citeulike.CiteulikeAuthor.class,
+
+		ecologylab.semantics.generated.library.citeulike.CiteulikePaper.class,
+
+		ecologylab.semantics.generated.library.citeulike.CiteulikeSearch.class,
+
+		ecologylab.semantics.generated.library.citeulike.CiteulikeTag.class,
+
+		ecologylab.semantics.generated.library.citeulike.CiteulikeUser.class,
+
 		ecologylab.semantics.generated.library.creative_work.Author.class,
 
 		ecologylab.semantics.generated.library.creative_work.BasicPublication.class,
