@@ -49,7 +49,6 @@
 				<scalar name="title" field_parser_key="booktitle|journal" />
 			</composite>
 			<scalar name="year" field_parser_key="year" />
-			<scalar name="pages" field_parser_key="pages" />
 			<scalar name="isbn" field_parser_key="isbn" />
 		</composite>
 

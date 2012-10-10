@@ -17,10 +17,10 @@
 	</meta_metadata>
 	
 	
-	<meta_metadata name="dx_doi" type="document"
-                 redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
-		<selector url_path_tree="http://dx.doi.org"/>
-	</meta_metadata>
+<!-- 	<meta_metadata name="dx_doi" type="document" -->
+<!--                  redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION"> -->
+<!-- 		<selector url_path_tree="http://dx.doi.org"/> -->
+<!-- 	</meta_metadata> -->
 	
   
 	<meta_metadata name="ingeta_connect" type="document"

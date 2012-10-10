@@ -221,16 +221,10 @@
                 xpath="//a[starts-with(@href, 'citation.cfm')]/../../..">
 			<scalar name="title" xpath="./tr[1]/td/a" />
 			<scalar name="description" xpath="./tr[5]" />
-			<scalar name="location" xpath="./tr[1]/td/a/@href">
-			  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)"
-			          replace="" />
-			</scalar>
+			<scalar name="location" xpath="./tr[1]/td/a/@href" />
 			<collection name="authors" ignore_in_term_vector="true" xpath=".//div[@class='authors']/a">
 			  <scalar name="title" xpath="." />
-		    <scalar name="location" xpath="./@href">
-				  <filter regex="(&amp;coll=DL)|(&amp;dl=ACM)|(&amp;trk=\d+)|(&amp;cfid=\d+)|(&amp;cftoken=\d+)|(&amp;CFID=\d+)|(&amp;CFTOKEN=\d+)"
-				          replace="" />
-			  </scalar>
+		    <scalar name="location" xpath="./@href" />
 			</collection>
 		</collection>
     
