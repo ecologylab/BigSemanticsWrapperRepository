@@ -82,6 +82,11 @@
     <Compile Include="Library\CartoonNS\PoliticalCartoon.cs" />
     <Compile Include="Library\CartoonNS\SfuCartoonArchive.cs" />
     <Compile Include="Library\CartoonNS\TrumanLibrary1948CampaignCartoons.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeAuthor.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikePaper.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeSearch.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeTag.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeUser.cs" />
     <Compile Include="Library\CreativeWorkNS\Author.cs" />
     <Compile Include="Library\CreativeWorkNS\BasicPublication.cs" />
     <Compile Include="Library\CreativeWorkNS\CreativeWork.cs" />

@@ -19,6 +19,7 @@ using Ecologylab.Semantics.Generated.Library.BlogNS;
 using Ecologylab.Semantics.Generated.Library.BuzzNS;
 using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
+using Ecologylab.Semantics.Generated.Library.CiteulikeNS;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.Generated.Library.DleseNS;
 using Ecologylab.Semantics.Generated.Library.FastflipNS;
@@ -99,6 +100,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CiteseerxSearch),
 				typeof(CiteseerxSearchResult),
 				typeof(CiteseerxSummary),
+				typeof(CiteulikeAuthor),
+				typeof(CiteulikePaper),
+				typeof(CiteulikeSearch),
+				typeof(CiteulikeTag),
+				typeof(CiteulikeUser),
 				typeof(Collection),
 				typeof(Comment),
 				typeof(Commodity),
