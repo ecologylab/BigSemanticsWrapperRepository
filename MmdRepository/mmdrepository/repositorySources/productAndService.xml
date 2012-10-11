@@ -54,6 +54,8 @@
 		<example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C" />
 		<example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY" />
 		<example_url url="http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y" />
+    
+    <filter_location strip_prefix="/ref=" />
 
 		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
 		<scalar name="description" xpath="//div[@class='productDescriptionWrapper']" />
@@ -131,6 +133,8 @@
   
   
   <meta_metadata name="amazon_list" extends="creative_work" >
+    <filter_location strip_prefix="/ref=" />
+
 		<collection name="items" child_type="amazon_product" />
 	</meta_metadata>
 
