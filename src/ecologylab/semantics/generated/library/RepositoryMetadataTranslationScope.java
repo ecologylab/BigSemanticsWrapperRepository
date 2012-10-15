@@ -64,11 +64,13 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
 
+		ecologylab.semantics.generated.library.bibManaging.CiteseerxCiting.class,
+
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxRecord.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearch.class,
 
-		ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult.class,
+		ecologylab.semantics.generated.library.bibManaging.CiteseerxSimilar.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary.class,
 
@@ -202,6 +204,14 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.icdl.IcdlImageResult.class,
 
+		ecologylab.semantics.generated.library.ieeeXplore.IeeeXploreArticle.class,
+
+		ecologylab.semantics.generated.library.ieeeXplore.IeeeXploreCitations.class,
+
+		ecologylab.semantics.generated.library.ieeeXplore.IeeeXploreReferences.class,
+
+		ecologylab.semantics.generated.library.ieeeXplore.IeeeXploreSearch.class,
+
 		ecologylab.semantics.generated.library.lolz.Lolz.class,
 
 		ecologylab.semantics.generated.library.misc.Comment.class,
@@ -325,6 +335,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle.class,
 
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
+
+		ecologylab.semantics.generated.library.scienceDirect.ScopusArticle.class,
+
+		ecologylab.semantics.generated.library.scienceDirect.ScopusAuthor.class,
+
+		ecologylab.semantics.generated.library.scienceDirect.ScopusSearch.class,
 
 		ecologylab.semantics.generated.library.search.BingSearchApi.class,
 

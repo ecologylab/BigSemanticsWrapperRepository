@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.bibManaging;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.bibManaging.CiteseerxSearchResult;
+import ecologylab.semantics.generated.library.bibManaging.CiteseerxSummary;
 import ecologylab.semantics.generated.library.search.Search;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
@@ -21,7 +21,7 @@ import java.util.Map;
  *CiteSeerX search using keywords.
  */ 
 @simpl_inherit
-public class CiteseerxSearch extends Search<CiteseerxSearchResult>
+public class CiteseerxSearch extends Search<CiteseerxSummary>
 {
 	public CiteseerxSearch()
 	{ super(); }

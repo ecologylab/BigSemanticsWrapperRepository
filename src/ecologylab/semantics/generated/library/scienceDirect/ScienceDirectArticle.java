@@ -10,10 +10,13 @@ package ecologylab.semantics.generated.library.scienceDirect;
 
 import ecologylab.net.ParsedURL;
 import ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle;
+import ecologylab.semantics.generated.library.scienceDirect.ScopusSearch;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.util.List;
@@ -25,6 +28,10 @@ import java.util.Map;
 @simpl_inherit
 public class ScienceDirectArticle extends ScholarlyArticle
 {
+	@simpl_composite
+	@mm_name("citations_page")
+	private ScopusSearch citationsPage;
+
 	/** 
 	 *The digital object identifier of the article
 	 */ 
@@ -38,6 +45,16 @@ public class ScienceDirectArticle extends ScholarlyArticle
 		super(mmd);
 	}
 
+
+	public ScopusSearch getCitationsPage()
+	{
+		return citationsPage;
+	}
+
+	public void setCitationsPage(ScopusSearch citationsPage)
+	{
+		this.citationsPage = citationsPage;
+	}
 
 	public MetadataParsedURL	doi()
 	{

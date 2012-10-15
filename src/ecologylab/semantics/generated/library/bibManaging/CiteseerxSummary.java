@@ -16,6 +16,7 @@ import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
 import java.util.List;
 import java.util.Map;
 
@@ -26,16 +27,19 @@ import java.util.Map;
 public class CiteseerxSummary extends CiteseerxRecord
 {
 	@simpl_composite
-	@mm_name("citation_records")
-	private Document citationRecords;
+	@simpl_other_tags({"citation_records"})
+	@mm_name("cited_articles")
+	private Document citedArticles;
 
 	@simpl_composite
-	@mm_name("active_bibliography_records")
-	private Document activeBibliographyRecords;
+	@simpl_other_tags({"active_bibliography_records"})
+	@mm_name("articles_that_cite_the_same_works")
+	private Document articlesThatCiteTheSameWorks;
 
 	@simpl_composite
-	@mm_name("cocitation_records")
-	private Document cocitationRecords;
+	@simpl_other_tags({"cocitation_records"})
+	@mm_name("articles_cited_by_the_same_works")
+	private Document articlesCitedByTheSameWorks;
 
 	public CiteseerxSummary()
 	{ super(); }
@@ -45,33 +49,33 @@ public class CiteseerxSummary extends CiteseerxRecord
 	}
 
 
-	public Document getCitationRecords()
+	public Document getCitedArticles()
 	{
-		return citationRecords;
+		return citedArticles;
 	}
 
-	public void setCitationRecords(Document citationRecords)
+	public void setCitedArticles(Document citedArticles)
 	{
-		this.citationRecords = citationRecords;
+		this.citedArticles = citedArticles;
 	}
 
-	public Document getActiveBibliographyRecords()
+	public Document getArticlesThatCiteTheSameWorks()
 	{
-		return activeBibliographyRecords;
+		return articlesThatCiteTheSameWorks;
 	}
 
-	public void setActiveBibliographyRecords(Document activeBibliographyRecords)
+	public void setArticlesThatCiteTheSameWorks(Document articlesThatCiteTheSameWorks)
 	{
-		this.activeBibliographyRecords = activeBibliographyRecords;
+		this.articlesThatCiteTheSameWorks = articlesThatCiteTheSameWorks;
 	}
 
-	public Document getCocitationRecords()
+	public Document getArticlesCitedByTheSameWorks()
 	{
-		return cocitationRecords;
+		return articlesCitedByTheSameWorks;
 	}
 
-	public void setCocitationRecords(Document cocitationRecords)
+	public void setArticlesCitedByTheSameWorks(Document articlesCitedByTheSameWorks)
 	{
-		this.cocitationRecords = cocitationRecords;
+		this.articlesCitedByTheSameWorks = articlesCitedByTheSameWorks;
 	}
 }
