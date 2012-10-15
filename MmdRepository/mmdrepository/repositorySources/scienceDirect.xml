@@ -6,44 +6,121 @@
     <example_url url="http://www.sciencedirect.com/science/article/pii/S1570826808000693" />
     
 		<scalar name="title" xpath="//h1[@class='svTitle']"/>
-		<collection name="authors" xpath="//ul[@class='authorGroup']/li" comment="All authors">
+		
+		<collection name="authors" child_type="scopus_author" label="authors"
+		            xpath="//ul[@class='authorGroup']/li" comment="All authors">
 			<scalar name="title" xpath="a[1]" />
-			<scalar name="location" xpath="a[1]/@href" />
+			<scalar name="scopus_author_id" xpath="a[1]/@data-authurl">
+			  <filter regex="ScopusAuthorCountsURL/(\d+)" group="1" />
+			</scalar>
+			<scalar name="location">
+        <concatenate_values>
+          <value>http://www.scopus.com/authid/detail.url?authorId=</value>
+          <value from_scalar="scopus_author_id" />
+        </concatenate_values>
+      </scalar>
 		</collection>		
-		<scalar name="description" xpath="//div[@class='svAbstract']/p" />
+		
+		<scalar name="description" xpath="//div[contains(@class, 'svAbstract')]/p" />
+    
 		<composite name="source" xpath="//div[@class='publicationHead']">
-			<scalar name="title" xpath="div[@class='title']/a/span/text()" />
-			<scalar name="location" xpath="p/a/@href" />
-			<scalar name="volume_and_issue" xpath="p/a/text()" />
-			<scalar name="date" xpath="p/text()">
-				<filter regex=",\s[Pages \d*–\d*]*" replace="" />
+			<scalar name="title" xpath="./div[@class='title']/a" />
+			<scalar name="location" xpath="./div[@class='title']/a/@href" />
+			<scalar name="volume_and_issue" xpath="./p[1]/a" />
+			<scalar name="date" xpath="./p[1]">
+				<filter regex="Volume \d+, Issue \d+, ([^,]+)," group="1" />
 			</scalar>
 		</composite>
+    
 		<collection name="keywords" xpath="//ul[@class='keyword']/li">
-			<scalar name="tag_name" xpath=".">
+			<scalar name="title" xpath=".">
 				<filter regex=";" replace="" />
 			</scalar>
 		</collection>
+    
 		<collection name="references" child_type="scholarly_article"
                 xpath="//ol[@class='references']/li">
 			<scalar name="title" xpath="ul/li[@class='title']" />
-			<collection name="authors" xpath="ul/li[@class='author']">
-		        <field_parser name="regex_split" regex=",\s" trim="true" />
-		        <scalar name="title" field_parser_key="$0" />
-	      	</collection>
-	      	<composite name="source" xpath="ul/li[@class='source']/p">
-	      		<scalar name="title">
-	      			<filter regex=",\s.*" replace="" />
-	      		</scalar>
-	      	</composite>
+			<collection name="authors" label="authors" xpath="ul/li[@class='author']">
+        <field_parser name="regex_split" regex=",\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+    	</collection>
+    	<composite name="source" xpath="ul/li[@class='source']/p">
+    		<scalar name="title">
+    			<filter regex=",\s.*" replace="" />
+    		</scalar>
+    	</composite>
 <!-- 	      	<scalar name="location" xpath="ul/li/[@class='refPlaceHolder']/div[2]/a/@href" /> -->
 		</collection>
-		<collection name="citations" xpath="//div[contains(@id, 'mlktCiteTD')]">
-			<scalar name="title" xpath="text()" />
-			<scalar name="location" xpath="a/@href" />
-		</collection>
-		
-		<scalar name="doi" xpath="//a[@id='ddDoi']/@href" hide="true" comment="The digital object identifier of the article" scalar_type="ParsedURL" />
+    
+    <composite name="citations_page" type="scopus_search" xpath="//ol[@class='citedByLink']//a">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </composite>
+    
+		<scalar name="doi" scalar_type="ParsedURL" hide="true" xpath="//a[@id='ddDoi']/@href"
+            comment="The digital object identifier of the article" />
 	</meta_metadata>
+  
+  
+  <meta_metadata name="scopus_article" extends="scholarly_article" parser="xpath">
+		<selector url_stripped="http://www.scopus.com/record/display.url" />
+    <example_url url="http://www.scopus.com/record/display.url?eid=2-s2.0-49949098043&amp;origin=resultslist&amp;sort=plf-f&amp;src=s&amp;sot=aut&amp;sdt=a&amp;sl=35&amp;s=AU-ID%28%22Huynh%2c+David+F.%22+7005439892%29" />
+    <example_url url="http://www.scopus.com/record/display.url?eid=2-s2.0-35348863146&amp;origin=resultslist&amp;sort=plf-f&amp;src=s&amp;sot=aut&amp;sdt=a&amp;sl=35&amp;s=AU-ID%28%22Huynh%2c+David+F.%22+7005439892%29" />
+    
+    <filter_location>
+      <strip_param name="sid" />
+      <strip_param name="src" />
+      <strip_param name="relpos" />
+      <strip_param name="searchTerm" />
+    </filter_location>
+    
+    <composite name="source_article" type="scholarly_article" xpath="//li[contains(@class, 'publisherLink')]//a[text()='View at publisher']">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </composite>
+  </meta_metadata>
+	
+	
+	<meta_metadata name="scopus_author" extends="author" parser="xpath">
+	  <selector url_stripped="http://www.scopus.com/authid/detail.url" />
+	  <example_url url="http://www.scopus.com/authid/detail.url?authorId=7005439892" />
+    
+    <filter_location>
+      <strip_param name="eid" />
+    </filter_location>
+	  
+	  <scalar name="scopus_author_id" scalar_type="String" hide="true" />
+    
+    <scalar name="title" xpath="//td[text()='Name']/following-sibling::td[@width]" />
+    <scalar name="affiliation" xpath="//td[text()='Affiliation']/following-sibling::td[@width]" />
+    
+    <composite name="articles_by_author_page" type="scopus_search" xpath="//td[text()='Documents']/following-sibling::td/table//a">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </composite>
+	</meta_metadata>
+  
+  
+  <meta_metadata name="scopus_search" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="scopus_article" />
+    
+    <selector url_stripped="http://www.scopus.com/results/citedbyresults.url" />
+    <selector url_stripped="http://www.scopus.com/results/results.url" />
+    <example_url url="http://www.scopus.com/results/citedbyresults.url?sort=plf-f&amp;cite=2-s2.0-56049084874&amp;src=s&amp;imp=t&amp;sot=cite&amp;sdt=a&amp;sl=0&amp;origin=inward" />
+    <example_url url="http://www.scopus.com/results/results.url?sort=plf-f&amp;src=s&amp;sot=aut&amp;sdt=a&amp;sl=17&amp;s=AU-ID%287005439892%29&amp;origin=AuthorProfile&amp;reselectAuthorsLinkName=Huynh%2c+David+F." />
+    
+    <filter_location>
+      <strip_param name="sid" />
+      <strip_param name="origin" />
+      <strip_param name="txGid" />
+    </filter_location>
+    
+    <collection name="search_results"
+                xpath="//div[@id='srchResultsList']/ul[contains(@class, 'documentListData docMain')]//span[@class='Bold']/a">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </collection>
+  </meta_metadata>
   
 </meta_metadata_repository>	

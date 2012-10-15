@@ -8,10 +8,6 @@
 
 	<meta_metadata name="citeseerx_record" extends="scholarly_article"
                  comment="CiteSeerX record for an article.">
-		<scalar name="title" xpath="//h2" as_natural_id="title" format="text">
-			<filter regex="(\(.*\))|(\[.*\])" replace="" />
-		</scalar>
-		
 		<collection name="authors" xpath="//div[@id='docAuthors']">
 			<field_parser name="regex_split" regex="\s*,\s*" />
 			<scalar name="title" field_parser_key="$0">
@@ -43,9 +39,13 @@
     
     <url_generator type="search" engine="citeseerx" use_id="title" />
     
+		<scalar name="title" xpath="//h2" navigate_to="location" as_natural_id="title" format="text">
+			<filter regex="\(\d+\)$" replace="" />
+		</scalar>
+		
 		<composite name="source" xpath="//div[@id='viewSidebar']//p">
 			<field_parser name="bibtex" />
-			<composite name="archive" >
+			<composite name="archive">
 				<scalar name="title" field_parser_key="booktitle|journal" />
 			</composite>
 			<scalar name="year" field_parser_key="year" />
@@ -62,20 +62,23 @@
 			</scalar>
 		</collection>
 
-    <composite name="citation_records" type="document" xpath="//a[@title='number of citations']">
+    <composite name="cited_articles" other_tags="citation_records" type="document"
+               xpath="//a[@title='number of citations']">
       <scalar name="title" xpath="." navigates_to="location" />
       <scalar name="location" xpath="./@href" hide="true">
   			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </composite>
-    <composite name="active_bibliography_records" type="document" xpath="//a[@title='Documents that cite the same works']">
-      <scalar name="title" xpath="./@title" navigates_to="location" />
+    <composite name="articles_that_cite_the_same_works" other_tags="active_bibliography_records" type="document"
+               xpath="//a[@title='Documents that cite the same works']">
+      <scalar name="title" xpath="." navigates_to="location" />
       <scalar name="location" xpath="./@href" hide="true">
   			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </composite>
-    <composite name="cocitation_records" type="document" xpath="//a[@title='Documents cited by the same works']">
-      <scalar name="title" xpath="./@title" navigates_to="location" />
+    <composite name="articles_cited_by_the_same_works" other_tags="cocitation_records" type="document"
+               xpath="//a[@title='Documents cited by the same works']">
+      <scalar name="title" xpath="." navigates_to="location" />
       <scalar name="location" xpath="./@href" hide="true">
   			<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
@@ -112,12 +115,18 @@
 	</meta_metadata>
 
 
-	<meta_metadata name="citeseerx_similar" type="citeseerx_record" parser="xpath"
+	<meta_metadata name="citeseerx_similar" extends="citeseerx_record" parser="xpath"
                  comment="Citation or co-citation page from CiteSeerX.">
 		<selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
 		<example_url url="http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&amp;type=sc" />
 
-		<collection name="citations" xpath="//table[@class='citelist']//a">
+		<scalar name="title" xpath="//h2" navigate_to="location" as_natural_id="title" format="text">
+			<filter regex="\(\d+\)$" replace="" />
+		</scalar>
+		
+		<collection name="citations" child_type="citeseerx_summary"
+		            xpath="//h3/following-sibling::table[@class='refs']//a">
+		  <scalar name="title" xpath="." />
 			<scalar name="location" xpath="./@href">
 				<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
 			</scalar>
@@ -126,31 +135,55 @@
 
 		<semantic_actions>
 			<get_field name="citations" />
-			<if>
+			<for_each collection="citations" as="cite">
 				<not_null value="citations" />
-				<for_each collection="citations" as="cite">
-					<get_field object="cite" name="description" />
-					<parse_document>
-						<arg value="true" name="citation_sig" />
-						<arg value="description" name="anchor_text" />
-						<arg value="cite" name="entity" />
-					</parse_document>
-				</for_each>
-			</if>
+				<get_field object="cite" name="description" />
+				<parse_document>
+				  <not_null value="cite" />
+					<arg value="true" name="citation_sig" />
+					<arg value="description" name="anchor_text" />
+					<arg value="cite" name="entity" />
+				</parse_document>
+			</for_each>
 		</semantic_actions>
 	</meta_metadata>
 
 
-	<meta_metadata name="citeseerx_search_result" extends="document">
-		<scalar name="citation_info" scalar_type="String" />
-	</meta_metadata>
-
 	<meta_metadata name="citeseerx_search" extends="search" parser="xpath"
                  comment="CiteSeerX search using keywords.">
-    <generic_type_var name="SR" arg="citeseerx_search_result" />
+    <generic_type_var name="SR" arg="citeseerx_summary" />
     
 		<selector url_stripped="http://citeseerx.ist.psu.edu/search" />
-		<example_url url="http://citeseerx.ist.psu.edu/search?q=pad+zooming+graphical+interface&amp;submit=Search&amp;sort=rlv&amp;t=doc" />
+		<example_url url="http://citeseerx.ist.psu.edu/search?q=pad+zooming+graphical+interface" />
+
+		<collection name="search_results" xpath="//div[@id='result_list']/div[@class='result']">
+			<scalar name="title" xpath=".//h3" />
+			<scalar name="description" xpath=".//div[@class='snippet']" />
+			<scalar name="location" xpath=".//h3/a/@href">
+				<filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+			</scalar>
+		</collection>
+
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+			  <not_null value="search_results" />
+				<get_field name="location" object="res" />
+				<parse_document now="true">
+				  <not_null value="location" />
+					<arg name="location" value="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+
+
+	<meta_metadata name="citeseerx_citing" extends="search" parser="xpath"
+                 comment="CiteSeerX citing results.">
+    <generic_type_var name="SR" arg="citeseerx_summary" />
+    
+		<selector url_stripped="http://citeseerx.ist.psu.edu/showciting" />
+		<example_url url="http://citeseerx.ist.psu.edu/showciting?doi=10.1.1.31.1768" />
 
 		<collection name="search_results" xpath="//div[@id='result_list']/div[@class='result']">
 			<scalar name="title" xpath=".//h3" />
@@ -164,24 +197,10 @@
 		<semantic_actions>
 			<get_field name="search_results" />
 			<for_each collection="search_results" as="res">
-				<get_field name="location" object="res" />
-				<parse_document now="true">
-					<arg name="location" value="location" />
-				</parse_document>
-			</for_each>
-		</semantic_actions>
-	</meta_metadata>
-
-
-	<meta_metadata name="citeseerx_citing" type="citeseerx_search" parser="xpath"
-                 comment="CiteSeerX citing results.">
-		<selector url_stripped="http://citeseerx.ist.psu.edu/showciting" />
-
-		<semantic_actions>
-			<get_field name="search_results" />
-			<for_each collection="search_results" as="res">
+			  <not_null value="search_results" />
 				<get_field name="location" object="res" />
 				<parse_document>
+				  <not_null value="location" />
 					<arg name="location" value="location" />
 				</parse_document>
 			</for_each>

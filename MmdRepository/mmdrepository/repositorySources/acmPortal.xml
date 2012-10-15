@@ -201,6 +201,16 @@
 		<selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
 		<example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
          
+		<filter_location>
+			<strip_param name="coll" />
+			<strip_param name="dl" />
+			<strip_param name="trk" />
+			<strip_param name="cfid" />
+			<strip_param name="cftoken" />
+			<strip_param name="CFID" />
+			<strip_param name="CFTOKEN" />
+		</filter_location>
+		
     <scalar name="title" xpath="//span/strong/text()"/>
     <scalar name="location" hidden="true"/>
   
