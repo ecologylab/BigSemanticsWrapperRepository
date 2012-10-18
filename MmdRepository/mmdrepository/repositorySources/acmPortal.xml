@@ -22,14 +22,18 @@
     
 		<url_generator type="search" engine="acm_portal" use_id="title" />
 	
-		<composite name="rich_media">
-			<scalar name="location"
-              xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
-		</composite>
-		
 		<scalar name="title" xpath="//div[@class='large-text']/h1" navigates_to="location"
             as_natural_id="title" format="text" />
-
+            
+		<composite name="rich_media">
+		  <scalar name="title" xpath="">
+        <concatenate_values>
+          <value>PDF full text</value>
+        </concatenate_values>
+		  </scalar>
+			<scalar name="location" xpath="//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href" />
+		</composite>
+		
 		<collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true"
                 xpath="//div[@id='divmain']//a[@title='Author Profile Page']">
 			<scalar name="title" xpath="." />

@@ -23,6 +23,15 @@
 			<filter regex="\(\d+\)$" replace="" />
 		</scalar>
 		
+		<composite name="rich_media">
+		  <scalar name="title" xpath="">
+		    <concatenate_values>
+		      <value>PDF full text</value>
+		    </concatenate_values>
+		  </scalar>
+		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
+		</composite>
+	  
 		<collection name="authors" xpath="//div[@id='docAuthors']">
 			<field_parser name="regex_split" regex="\s*,\s*" />
 			<scalar name="title" field_parser_key="$0">
@@ -46,15 +55,6 @@
 		</composite>
 
 		<scalar name="description" xpath="//div[@id='abstract']/p" />
-		
-		<composite name="rich_media">
-		  <scalar name="title">
-		    <concatenate_values>
-		      <value>PDF</value>
-		    </concatenate_values>
-		  </scalar>
-		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
-		</composite>
 		
     <!-- CiteSeerX web page says these are citations, but actually they are references! -->
 		<collection name="references" xpath="//h3[text()='Citations']/../table//a">
@@ -126,6 +126,15 @@
 			<filter regex="\(\d+\)$" replace="" />
 		</scalar>
 		
+		<composite name="rich_media">
+		  <scalar name="title" xpath="">
+		    <concatenate_values>
+		      <value>PDF full text</value>
+		    </concatenate_values>
+		  </scalar>
+		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
+		</composite>
+		
 		<collection name="authors" xpath="//div[@id='docAuthors']">
 			<field_parser name="regex_split" regex="\s*,\s*" />
 			<scalar name="title" field_parser_key="$0">
@@ -137,15 +146,6 @@
 			<field_parser name="regex_find" regex="(\d+) - (\d+) self" />
 			<scalar name="total_citation" field_parser_key="$1" />
 			<scalar name="self_citation" field_parser_key="$2" />
-		</composite>
-		
-		<composite name="rich_media">
-		  <scalar name="title">
-		    <concatenate_values>
-		      <value>PDF</value>
-		    </concatenate_values>
-		  </scalar>
-		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
 		</composite>
 		
 		<collection name="citations" child_type="citeseerx_summary"

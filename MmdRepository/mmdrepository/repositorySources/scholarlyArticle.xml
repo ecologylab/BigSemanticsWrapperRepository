@@ -13,7 +13,7 @@
                 comment="Key Terms of the paper." />
 		<scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
     
-		<composite name="rich_media" label="article"/>
+		<composite name="rich_media" label="full text"/>
 	</meta_metadata>
 	
 	

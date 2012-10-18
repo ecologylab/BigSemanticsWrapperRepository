@@ -9,6 +9,15 @@
     
 		<scalar name="title" xpath="//h1[@class='svTitle']"/>
 		
+		<composite name="rich_media">
+		  <scalar name="title" xpath="">
+		    <concatenate_values>
+		      <value>PDF full text</value>
+		    </concatenate_values>
+		  </scalar>
+		  <scalar name="location" xpath="//a[@id='pdfLink']/@href" />
+		</composite>
+	  
 		<collection name="authors" child_type="scopus_author" label="authors"
 		            xpath="//ul[@class='authorGroup']/li" comment="All authors">
 			<scalar name="title" xpath="a[1]" />
