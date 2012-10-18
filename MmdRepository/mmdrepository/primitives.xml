@@ -6,9 +6,7 @@
 		<scalar name="meta_metadata_name" scalar_type="String" tag="mm_name" hide="true"
             ignore_in_term_vector="true"
             comment="Stores the name of the meta-metadata, and is used on restoring from XML." />
-      <!-- we don't hide mixins in InfoComposer; this is a temp workaround for in-context expander -->
-<!-- 		<collection name="mixins" child_type="metadata" promote_children="true" polymorphic_scope="repository_metadata"/> -->
-		<collection name="mixins" child_type="metadata" promote_children="true" hide="true" polymorphic_scope="repository_metadata"/>
+		<collection name="mixins" child_type="metadata" promote_children="true" polymorphic_scope="repository_metadata"/>
 		<collection name="linked_metadata_list" child_type="metadata"
                 polymorphic_scope="repository_metadata"/>
 <!-- 		<collection name="visuals" child_type="serializable_gui" ignore_completely="true"/> -->
