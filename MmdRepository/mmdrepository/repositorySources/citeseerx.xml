@@ -8,27 +8,7 @@
 
 	<meta_metadata name="citeseerx_record" extends="scholarly_article"
                  comment="CiteSeerX record for an article.">
-		<collection name="authors" xpath="//div[@id='docAuthors']">
-			<field_parser name="regex_split" regex="\s*,\s*" />
-			<scalar name="title" field_parser_key="$0">
-				<filter regex="^by\s+" replace="" />
-			</scalar>
-		</collection>
-		
-		<composite name="citation_info" type="citation_info" xpath="//a[@title='number of citations']">
-			<field_parser name="regex_find" regex="(\d+) - (\d+) self" />
-			<scalar name="total_citation" field_parser_key="$1" />
-			<scalar name="self_citation" field_parser_key="$2" />
-		</composite>
-		
-		<composite name="rich_media">
-		  <scalar name="title">
-		    <concatenate_values>
-		      <value>PDF</value>
-		    </concatenate_values>
-		  </scalar>
-		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
-		</composite>
+		<composite name="citation_info" type="citation_info" />
 	</meta_metadata>
 
 
@@ -43,6 +23,19 @@
 			<filter regex="\(\d+\)$" replace="" />
 		</scalar>
 		
+		<collection name="authors" xpath="//div[@id='docAuthors']">
+			<field_parser name="regex_split" regex="\s*,\s*" />
+			<scalar name="title" field_parser_key="$0">
+				<filter regex="^by\s+" replace="" />
+			</scalar>
+		</collection>
+		
+		<composite name="citation_info" xpath="//a[@title='number of citations']">
+			<field_parser name="regex_find" regex="(\d+) - (\d+) self" />
+			<scalar name="total_citation" field_parser_key="$1" />
+			<scalar name="self_citation" field_parser_key="$2" />
+		</composite>
+		
 		<composite name="source" xpath="//div[@id='viewSidebar']//p">
 			<field_parser name="bibtex" />
 			<composite name="archive">
@@ -53,6 +46,15 @@
 		</composite>
 
 		<scalar name="description" xpath="//div[@id='abstract']/p" />
+		
+		<composite name="rich_media">
+		  <scalar name="title">
+		    <concatenate_values>
+		      <value>PDF</value>
+		    </concatenate_values>
+		  </scalar>
+		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
+		</composite>
 		
     <!-- CiteSeerX web page says these are citations, but actually they are references! -->
 		<collection name="references" xpath="//h3[text()='Citations']/../table//a">
@@ -123,6 +125,28 @@
 		<scalar name="title" xpath="//h2" navigate_to="location" as_natural_id="title" format="text">
 			<filter regex="\(\d+\)$" replace="" />
 		</scalar>
+		
+		<collection name="authors" xpath="//div[@id='docAuthors']">
+			<field_parser name="regex_split" regex="\s*,\s*" />
+			<scalar name="title" field_parser_key="$0">
+				<filter regex="^by\s+" replace="" />
+			</scalar>
+		</collection>
+		
+		<composite name="citation_info" xpath="//a[@title='number of citations']">
+			<field_parser name="regex_find" regex="(\d+) - (\d+) self" />
+			<scalar name="total_citation" field_parser_key="$1" />
+			<scalar name="self_citation" field_parser_key="$2" />
+		</composite>
+		
+		<composite name="rich_media">
+		  <scalar name="title">
+		    <concatenate_values>
+		      <value>PDF</value>
+		    </concatenate_values>
+		  </scalar>
+		  <scalar name="location" xpath="//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href" />
+		</composite>
 		
 		<collection name="citations" child_type="citeseerx_summary"
 		            xpath="//h3/following-sibling::table[@class='refs']//a">
