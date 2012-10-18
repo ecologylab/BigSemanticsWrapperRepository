@@ -7,6 +7,7 @@
     
     <filter_location>
       <strip_param name="navigation" />
+      <strip_param name="reload" />
     </filter_location>
     
 		<scalar name="title" xpath="//h1"/>
@@ -20,7 +21,7 @@
         <concatenate_values>
           <value>http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Authors:.QT.</value>
           <value from_scalar="title" />
-          <value>..QT.</value>
+          <value>.QT.</value>
         </concatenate_values>
       </scalar>
 		</collection>		
@@ -71,6 +72,7 @@
   
   <meta_metadata name="ieee_xplore_references" extends="compound_document" parser="xpath">
     <selector url_stripped="http://ieeexplore.ieee.org/xpl/references.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/references.jsp" />
     
     <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
     
@@ -83,6 +85,7 @@
   
   <meta_metadata name="ieee_xplore_citations" extends="compound_document" parser="xpath">
     <selector url_stripped="http://ieeexplore.ieee.org/xpl/citations.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/citations.jsp" />
     
     <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
     
@@ -97,6 +100,7 @@
     <generic_type_var name="SR" arg="ieee_xplore_article" />
     
     <selector url_stripped="http://ieeexplore.ieee.org/search/searchresult.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/search/searchresult.jsp" />
     
     <filter_location>
       <strip_param name="newSearch" />
