@@ -18,7 +18,7 @@
   
   <meta_metadata name="paragraph" extends="metadata">
     <scalar name="text" scalar_type="String" />
-    <collection name="anchors" child_type="document" child_tag="anchor">
+    <collection name="anchors" child_type="wikipedia_page" child_tag="anchor">
       <scalar name="location" hide="true" />
 	    <!-- For each anchor: -->
 	    <!--   title: the target Wikipedia article title, or target page title if not Wikipeida. -->
