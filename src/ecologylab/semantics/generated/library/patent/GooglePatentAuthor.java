@@ -8,7 +8,7 @@ package ecologylab.semantics.generated.library.patent;
  * Copyright (2012) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.creative_work.Author;
+import ecologylab.semantics.generated.library.patent.PatentAuthor;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
@@ -16,16 +16,13 @@ import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
 
-/** 
- *Authors of Patents; really this should be a mix-in to author
- */ 
 @simpl_inherit
-public class PatentAuthor extends Author
+public class GooglePatentAuthor extends PatentAuthor
 {
-	public PatentAuthor()
+	public GooglePatentAuthor()
 	{ super(); }
 
-	public PatentAuthor(MetaMetadataCompositeField mmd) {
+	public GooglePatentAuthor(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

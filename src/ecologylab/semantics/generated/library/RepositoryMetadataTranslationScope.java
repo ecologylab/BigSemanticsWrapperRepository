@@ -26,15 +26,17 @@ public class RepositoryMetadataTranslationScope
 
 		crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep.class,
 
+		crit.semantics.generated.txtf1.fieldreports.spotrep.TapFormSpotrep.class,
+
 		ecologylab.semantics.generated.library.Bookmark.class,
 
 		ecologylab.semantics.generated.library.DeliciousHomepage.class,
 
 		ecologylab.semantics.generated.library.PdfMixin.class,
 
-		ecologylab.semantics.generated.library.PubmedArticle.class,
-
 		ecologylab.semantics.generated.library.WeatherReport.class,
+
+		ecologylab.semantics.generated.library.WuWeatherReport.class,
 
 		ecologylab.semantics.generated.library.acm.AcmPortal.class,
 
@@ -60,6 +62,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.artwork.MomaArtwork.class,
 
+		ecologylab.semantics.generated.library.artwork.MomaList.class,
+
 		ecologylab.semantics.generated.library.artwork.TempFieldValueHolder.class,
 
 		ecologylab.semantics.generated.library.bibManaging.CitationInfo.class,
@@ -81,6 +85,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.buzz.GoogleTrends.class,
 
 		ecologylab.semantics.generated.library.buzz.HotSearch.class,
+
+		ecologylab.semantics.generated.library.buzz.YahooBuzz.class,
+
+		ecologylab.semantics.generated.library.buzz.YahooBuzzSearch.class,
 
 		ecologylab.semantics.generated.library.camera.CameraSettings.class,
 
@@ -166,6 +174,16 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.dlese.UserSearchAdditionalMetadata.class,
 
+		ecologylab.semantics.generated.library.dreamHouse.GlassTileStoreProduct.class,
+
+		ecologylab.semantics.generated.library.dreamHouse.HomeDepotProduct.class,
+
+		ecologylab.semantics.generated.library.dreamHouse.OverstockComProduct.class,
+
+		ecologylab.semantics.generated.library.dreamHouse.RemodelistaProduct.class,
+
+		ecologylab.semantics.generated.library.dreamHouse.UrbanHardwoodsProduct.class,
+
 		ecologylab.semantics.generated.library.fastflip.FastflipSearch.class,
 
 		ecologylab.semantics.generated.library.fastflip.Thumbnail.class,
@@ -188,6 +206,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.googleBook.Page.class,
 
+		ecologylab.semantics.generated.library.google_image.GoogleImage.class,
+
+		ecologylab.semantics.generated.library.google_image.GoogleImageSearch.class,
+
 		ecologylab.semantics.generated.library.grant.Grant.class,
 
 		ecologylab.semantics.generated.library.grant.GrantProgram.class,
@@ -196,7 +218,15 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.grant.Investigator.class,
 
+		ecologylab.semantics.generated.library.hotel.Airbnb.class,
+
+		ecologylab.semantics.generated.library.hotel.Hilton.class,
+
+		ecologylab.semantics.generated.library.hotel.Homeaway.class,
+
 		ecologylab.semantics.generated.library.hotel.Hotel.class,
+
+		ecologylab.semantics.generated.library.hotel.TripAdvisor.class,
 
 		ecologylab.semantics.generated.library.icdl.IcdlBook.class,
 
@@ -212,7 +242,31 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.ieeeXplore.IeeeXploreSearch.class,
 
+		ecologylab.semantics.generated.library.imdb.ImdbMovie.class,
+
+		ecologylab.semantics.generated.library.lolz.Cats.class,
+
+		ecologylab.semantics.generated.library.lolz.Celebs.class,
+
+		ecologylab.semantics.generated.library.lolz.Dogs.class,
+
+		ecologylab.semantics.generated.library.lolz.Engrish.class,
+
+		ecologylab.semantics.generated.library.lolz.Facebooks.class,
+
+		ecologylab.semantics.generated.library.lolz.Fails.class,
+
+		ecologylab.semantics.generated.library.lolz.Fixes.class,
+
+		ecologylab.semantics.generated.library.lolz.Graphs.class,
+
 		ecologylab.semantics.generated.library.lolz.Lolz.class,
+
+		ecologylab.semantics.generated.library.lolz.Lookalikes.class,
+
+		ecologylab.semantics.generated.library.lolz.Politics.class,
+
+		ecologylab.semantics.generated.library.lolz.Sports.class,
 
 		ecologylab.semantics.generated.library.misc.Comment.class,
 
@@ -231,6 +285,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.movie.Actor.class,
 
 		ecologylab.semantics.generated.library.movie.Movie.class,
+
+		ecologylab.semantics.generated.library.movie.NetflixMovie.class,
+
+		ecologylab.semantics.generated.library.movie.RottenMovie.class,
+
+		ecologylab.semantics.generated.library.news.Nytimes.class,
 
 		ecologylab.semantics.generated.library.nsdl.Header.class,
 
@@ -266,6 +326,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.patent.GooglePatent.class,
 
+		ecologylab.semantics.generated.library.patent.GooglePatentAuthor.class,
+
+		ecologylab.semantics.generated.library.patent.GooglePatentImage.class,
+
 		ecologylab.semantics.generated.library.patent.GoogleSorry.class,
 
 		ecologylab.semantics.generated.library.patent.Patent.class,
@@ -278,11 +342,21 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.person.Person.class,
 
+		ecologylab.semantics.generated.library.product_and_service.AmazonBestsellerList.class,
+
+		ecologylab.semantics.generated.library.product_and_service.AmazonBestsellerListUk.class,
+
 		ecologylab.semantics.generated.library.product_and_service.AmazonList.class,
+
+		ecologylab.semantics.generated.library.product_and_service.AmazonListMania.class,
 
 		ecologylab.semantics.generated.library.product_and_service.AmazonProduct.class,
 
+		ecologylab.semantics.generated.library.product_and_service.AmazonWishList.class,
+
 		ecologylab.semantics.generated.library.product_and_service.Commodity.class,
+
+		ecologylab.semantics.generated.library.product_and_service.NeweggProduct.class,
 
 		ecologylab.semantics.generated.library.product_and_service.Product.class,
 
@@ -299,6 +373,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.publication.Subject.class,
 
 		ecologylab.semantics.generated.library.publication.TermType.class,
+
+		ecologylab.semantics.generated.library.pubmed.PubmedArticle.class,
+
+		ecologylab.semantics.generated.library.pubmed.PubmedAuthor.class,
+
+		ecologylab.semantics.generated.library.pubmed.PubmedJournal.class,
 
 		ecologylab.semantics.generated.library.restaurant.Restaurant.class,
 
@@ -332,6 +412,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.scholarlyArticle.InformaWorld.class,
 
+		ecologylab.semantics.generated.library.scholarlyArticle.IngetaConnect.class,
+
 		ecologylab.semantics.generated.library.scholarlyArticle.ScholarlyArticle.class,
 
 		ecologylab.semantics.generated.library.scienceDirect.ScienceDirectArticle.class,
@@ -344,15 +426,23 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.BingSearchApi.class,
 
+		ecologylab.semantics.generated.library.search.BingSearchXpath.class,
+
 		ecologylab.semantics.generated.library.search.DeliciousSearch.class,
 
 		ecologylab.semantics.generated.library.search.GoogleScholarSearch.class,
 
 		ecologylab.semantics.generated.library.search.GoogleScholarSearchResult.class,
 
+		ecologylab.semantics.generated.library.search.GoogleSearch.class,
+
 		ecologylab.semantics.generated.library.search.ImageSearch.class,
 
 		ecologylab.semantics.generated.library.search.ImageSearchResult.class,
+
+		ecologylab.semantics.generated.library.search.MyGoogleEcology0Search.class,
+
+		ecologylab.semantics.generated.library.search.MyGoogleSearch.class,
 
 		ecologylab.semantics.generated.library.search.Search.class,
 
@@ -374,11 +464,17 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.search.YahooGeoCodeResult.class,
 
+		ecologylab.semantics.generated.library.search.YahooImageSearch.class,
+
+		ecologylab.semantics.generated.library.search.YahooNewsSearch.class,
+
 		ecologylab.semantics.generated.library.search.YahooResult.class,
 
 		ecologylab.semantics.generated.library.search.YahooResultSet.class,
 
 		ecologylab.semantics.generated.library.search.YahooThumbnail.class,
+
+		ecologylab.semantics.generated.library.search.YahooWebSearch.class,
 
 		ecologylab.semantics.generated.library.slashdot.SlashdotArticle.class,
 
@@ -386,11 +482,27 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.slashdot.SlashdotRss.class,
 
+		ecologylab.semantics.generated.library.socialMedia.ImgurSearchResults.class,
+
+		ecologylab.semantics.generated.library.socialMedia.PinterestSearchResults.class,
+
+		ecologylab.semantics.generated.library.socialMedia.RedditGifSearchResults.class,
+
+		ecologylab.semantics.generated.library.socialMedia.RedditSearchResults.class,
+
+		ecologylab.semantics.generated.library.socialMedia.TumblrTagResults.class,
+
 		ecologylab.semantics.generated.library.tumblr.Tumblr.class,
+
+		ecologylab.semantics.generated.library.tvShow.TvComShow.class,
 
 		ecologylab.semantics.generated.library.tvShow.TvShow.class,
 
 		ecologylab.semantics.generated.library.tvShow.TvShowEpisode.class,
+
+		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonGenre.class,
+
+		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonRestaurant.class,
 
 		ecologylab.semantics.generated.library.urbanspoon.UrbanSpoonSearch.class,
 
@@ -406,9 +518,15 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.semantics.generated.library.video.Video.class,
 
+		ecologylab.semantics.generated.library.video.YoutubeSearchResults.class,
+
+		ecologylab.semantics.generated.library.video.YoutubeVideo.class,
+
 		ecologylab.semantics.generated.library.wikipedia.Paragraph.class,
 
 		ecologylab.semantics.generated.library.wikipedia.Section.class,
+
+		ecologylab.semantics.generated.library.wikipedia.WikipediaCategory.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaCategoryType.class,
 
@@ -417,6 +535,18 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPage.class,
 
 		ecologylab.semantics.generated.library.wikipedia.WikipediaPageType.class,
+
+		ecologylab.semantics.generated.library.wikipedia.WikipediaSearch.class,
+
+		ecologylab.semantics.generated.library.wordpress.WordpressBlog.class,
+
+		ecologylab.semantics.generated.library.wordpress.WordpressPost.class,
+
+		ecologylab.semantics.metadata.builtins.Html.class,
+
+		ecologylab.semantics.metadata.builtins.Pdf.class,
+
+		ecologylab.semantics.metadata.builtins.Xml.class,
 
 	};
 

@@ -8,8 +8,8 @@ package ecologylab.semantics.generated.library.wikipedia;
  * Copyright (2012) Interface Ecology Lab.
  */
 
+import ecologylab.semantics.generated.library.wikipedia.WikipediaPage;
 import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.builtins.Document;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metadata.mm_name;
 import ecologylab.semantics.metadata.scalar.MetadataString;
@@ -31,7 +31,7 @@ public class Paragraph extends Metadata
 
 	@simpl_collection("anchor")
 	@mm_name("anchors")
-	private List<Document> anchors;
+	private List<WikipediaPage> anchors;
 
 	public Paragraph()
 	{ super(); }
@@ -73,21 +73,21 @@ public class Paragraph extends Metadata
 		this.text = text;
 	}
 
-	public List<Document> getAnchors()
+	public List<WikipediaPage> getAnchors()
 	{
 		return anchors;
 	}
 
   // lazy evaluation:
-  public List<Document> anchors()
+  public List<WikipediaPage> anchors()
   {
     if (anchors == null)
-      anchors = new ArrayList<Document>();
+      anchors = new ArrayList<WikipediaPage>();
     return anchors;
   }
 
   // addTo:
-  public void addToAnchors(Document element)
+  public void addToAnchors(WikipediaPage element)
   {
     anchors().add(element);
   }
@@ -98,7 +98,7 @@ public class Paragraph extends Metadata
     return anchors == null ? 0 : anchors.size();
   }
 
-	public void setAnchors(List<Document> anchors)
+	public void setAnchors(List<WikipediaPage> anchors)
 	{
 		this.anchors = anchors;
 	}
