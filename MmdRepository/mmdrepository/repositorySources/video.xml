@@ -60,9 +60,10 @@
 	</meta_metadata>
 	
 	<meta_metadata name="youtube_search_results" extends="search" parser="xpath" comment="youtube video search results page">
+	  <generic_type_var name="SR" arg="youtube_video" />
   	<selector url_stripped="http://www.youtube.com/results?"/>
     
-    <collection name="videos" child_type="youtube_video" xpath="//h3/a[@class='yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link result-item-translation-title']">
+    <collection name="search_results" xpath="//h3/a[@class='yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link result-item-translation-title']">
       <scalar name="title" xpath="." />
       <scalar name="location" xpath="./@href" />
     </collection>

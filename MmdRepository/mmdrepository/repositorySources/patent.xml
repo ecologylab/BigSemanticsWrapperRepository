@@ -34,9 +34,10 @@
 
 
 
-	<meta_metadata name="patent_author" extends="author" comment="Authors of Patents; really this should be a mix-in to author" parser="xpath">
-    <generic_type_var name="CW" extends="patent" />
-		<collection name="creative_works" tag="patents" other_tags="creative_works,publications" label="patents" />
+	<meta_metadata name="patent_author" extends="author" parser="xpath"
+	               comment="Authors of Patents; really this should be a mix-in to author">
+		<collection name="creative_works" tag="patents" other_tags="creative_works,publications" label="patents"
+		            child_type="patent" />
 	</meta_metadata>
 	
 	
@@ -125,14 +126,13 @@
 	
 	
 	
-	<meta_metadata name="google_patent_author" type="patent_author" parser="xpath" user_agent_name="chrome">
-    <generic_type_var name="CW" arg="google_patent" />
+	<meta_metadata name="google_patent_author" extends="patent_author" parser="xpath" user_agent_name="chrome">
 		<selector url_regex_fragment="q=ininventor:" domain="google.com" />
 
 		<example_url url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
 		<example_url url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
 
-		<collection name="creative_works" xpath="//li[@class='g']//h3[@class='r']">
+		<collection name="creative_works" child_type="google_patent" xpath="//li[@class='g']//h3[@class='r']">
 			<scalar name="title" xpath="./a" />
 			<scalar name="location" xpath="./a/@href" />
 		</collection>
