@@ -9,7 +9,7 @@ package ecologylab.semantics.generated.library.video;
  */
 
 import ecologylab.semantics.generated.library.search.Search;
-import ecologylab.semantics.generated.library.video.YoutubeVideo;
+import ecologylab.semantics.generated.library.video.Video;
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.semantics.namesandnums.SemanticsNames;
@@ -21,7 +21,7 @@ import java.util.Map;
  *youtube video search results page
  */ 
 @simpl_inherit
-public class YoutubeSearchResults extends Search<YoutubeVideo>
+public class YoutubeSearchResults extends Search<Video>
 {
 	public YoutubeSearchResults()
 	{ super(); }
