@@ -12,7 +12,7 @@
   		</collection>    
 	</meta_metadata>	
 	
-	<meta_metadata name="pinterest_search_results" type="image_search" parser="xpath" comment="pinterest search results page">
+	<meta_metadata name="pinterest_search_results" type="image_search" parser="xpath" comment="pinterest search results page" no_cache="true">
   		<selector url_stripped="http://pinterest.com/search/?"/>
     	
     	<collection name="search_results" xpath="//img[@class='PinImageImg']">
