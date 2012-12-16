@@ -1,7 +1,7 @@
 <meta_metadata_repository name="social_media" package="ecologylab.semantics.generated.library.socialMedia"
                           default_user_agent_name="firefox_3_6_8">
 
-	<meta_metadata name="reddit_search_results" type="search" parser="xpath" comment="reddit search results page">
+	<meta_metadata name="reddit_search_results" type="search" parser="xpath" comment="reddit search results page" no_cache="true">
   		<selector url_stripped="http://www.reddit.com/search?"/>
     
     	<generic_type_var name="SR" arg="document" />
@@ -21,7 +21,7 @@
   		</collection>    
 	</meta_metadata>
 	
-	<meta_metadata name="imgur_search_results" type="image_search" parser="xpath" comment="imgur hot search results page">
+	<meta_metadata name="imgur_search_results" type="image_search" parser="xpath" comment="imgur hot search results page" no_cache="true">
   		<selector url_stripped="http://imgur.com/hot/time?"/>
     	
     	<collection name="search_results" xpath="//div[@class='post']/a/img">
@@ -30,7 +30,7 @@
   		</collection>    
 	</meta_metadata>
 	
-	<meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath" comment="tumblr tag results page">
+	<meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath" comment="tumblr tag results page" no_cache="true">
   		<selector url_stripped="http://twitter.com/search?"/>
     	
     	<collection name="search_results" xpath="//a[@class='high_res_link' or 'high_res_link no_pop']/img">
@@ -39,7 +39,7 @@
   		</collection>    
 	</meta_metadata>
 	
-	<meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath" comment="reddit gif image search results page">
+	<meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath" comment="reddit gif image search results page" no_cache="true">
   		<selector url_stripped="http://www.reddit.com/r/gifs/search?"/>
     	
     	<collection name="search_results" xpath="//a[@class='title ']">
