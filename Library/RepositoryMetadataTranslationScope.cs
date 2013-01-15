@@ -29,6 +29,7 @@ using Ecologylab.Semantics.Generated.Library.GoogleBookNS;
 using Ecologylab.Semantics.Generated.Library.GrantNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
 using Ecologylab.Semantics.Generated.Library.IcdlNS;
+using Ecologylab.Semantics.Generated.Library.IeeeXploreNS;
 using Ecologylab.Semantics.Generated.Library.LolzNS;
 using Ecologylab.Semantics.Generated.Library.MiscNS;
 using Ecologylab.Semantics.Generated.Library.MovieNS;
@@ -39,6 +40,7 @@ using Ecologylab.Semantics.Generated.Library.PatentNS;
 using Ecologylab.Semantics.Generated.Library.PersonNS;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
+using Ecologylab.Semantics.Generated.Library.PubmedNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
 using Ecologylab.Semantics.Generated.Library.RichBookmarkNS;
 using Ecologylab.Semantics.Generated.Library.RssNS;
@@ -47,6 +49,7 @@ using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
 using Ecologylab.Semantics.Generated.Library.ScienceDirectNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.Generated.Library.SlashdotNS;
+using Ecologylab.Semantics.Generated.Library.SocialMediaNS;
 using Ecologylab.Semantics.Generated.Library.TumblrNS;
 using Ecologylab.Semantics.Generated.Library.TvShowNS;
 using Ecologylab.Semantics.Generated.Library.UrbanspoonNS;
@@ -96,9 +99,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CategoryInterviews),
 				typeof(Channel),
 				typeof(CitationInfo),
+				typeof(CiteseerxCiting),
 				typeof(CiteseerxRecord),
 				typeof(CiteseerxSearch),
-				typeof(CiteseerxSearchResult),
+				typeof(CiteseerxSimilar),
 				typeof(CiteseerxSummary),
 				typeof(CiteulikeAuthor),
 				typeof(CiteulikePaper),
@@ -138,6 +142,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
 				typeof(GooglePatent),
+				typeof(GooglePatentAuthor),
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
 				typeof(GoogleSorry),
@@ -155,6 +160,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
 				typeof(IcdlImageResult),
+				typeof(IeeeXploreArticle),
+				typeof(IeeeXploreCitations),
+				typeof(IeeeXploreReferences),
+				typeof(IeeeXploreSearch),
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
 				typeof(InformaWorld),
@@ -187,7 +196,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Page),
 				typeof(Paragraph),
 				typeof(Patent),
-				typeof(PatentAuthor<>),
+				typeof(PatentAuthor),
 				typeof(PatentClassification),
 				typeof(PdfMixin),
 				typeof(Periodical),
@@ -201,9 +210,12 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Publication),
 				typeof(Publisher),
 				typeof(PubmedArticle),
+				typeof(PubmedAuthor),
+				typeof(PubmedJournal),
 				typeof(Rating),
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
+				typeof(RedditSearchResults),
 				typeof(Restaurant),
 				typeof(RestaurantGenre),
 				typeof(ResultInfo),
@@ -212,6 +224,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Rss22),
 				typeof(ScholarlyArticle),
 				typeof(ScienceDirectArticle),
+				typeof(ScopusArticle),
+				typeof(ScopusAuthor),
+				typeof(ScopusSearch),
 				typeof(Search<>),
 				typeof(SearchAdditionalMetadataAdn),
 				typeof(SearchCrumb),
@@ -256,7 +271,8 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(YahooMediaRss),
 				typeof(YahooResult),
 				typeof(YahooResultSet),
-				typeof(YahooThumbnail));
+				typeof(YahooThumbnail),
+				typeof(YoutubeSearchResults));
 		}
 	}
 }

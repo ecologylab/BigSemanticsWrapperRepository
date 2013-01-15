@@ -101,9 +101,11 @@
     <Compile Include="Library\ArtworkNS\MomaArtwork.cs" />
     <Compile Include="Library\ArtworkNS\TempFieldValueHolder.cs" />
     <Compile Include="Library\BibManagingNS\CitationInfo.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxCiting.cs" />
     <Compile Include="Library\BibManagingNS\CiteseerxRecord.cs" />
     <Compile Include="Library\BibManagingNS\CiteseerxSearch.cs" />
     <Compile Include="Library\BibManagingNS\CiteseerxSearchResult.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxSimilar.cs" />
     <Compile Include="Library\BibManagingNS\CiteseerxSummary.cs" />
     <Compile Include="Library\BlogNS\Blog.cs" />
     <Compile Include="Library\BlogNS\Post.cs" />
@@ -174,6 +176,10 @@
     <Compile Include="Library\IcdlNS\IcdlBook.cs" />
     <Compile Include="Library\IcdlNS\IcdlBookPreview.cs" />
     <Compile Include="Library\IcdlNS\IcdlImageResult.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreArticle.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreCitations.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreReferences.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreSearch.cs" />
     <Compile Include="Library\LolzNS\Lolz.cs" />
     <Compile Include="Library\MiscNS\Comment.cs" />
     <Compile Include="Library\MiscNS\DcDocument.cs" />
@@ -201,6 +207,7 @@
     <Compile Include="Library\OpmlNS\Opml.cs" />
     <Compile Include="Library\OpmlNS\Outline.cs" />
     <Compile Include="Library\PatentNS\GooglePatent.cs" />
+    <Compile Include="Library\PatentNS\GooglePatentAuthor.cs" />
     <Compile Include="Library\PatentNS\GoogleSorry.cs" />
     <Compile Include="Library\PatentNS\Patent.cs" />
     <Compile Include="Library\PatentNS\PatentAuthor.cs" />
@@ -221,6 +228,9 @@
     <Compile Include="Library\PublicationNS\Subject.cs" />
     <Compile Include="Library\PublicationNS\TermType.cs" />
     <Compile Include="Library\PubmedArticle.cs" />
+    <Compile Include="Library\PubmedNS\PubmedArticle.cs" />
+    <Compile Include="Library\PubmedNS\PubmedAuthor.cs" />
+    <Compile Include="Library\PubmedNS\PubmedJournal.cs" />
     <Compile Include="Library\RepositoryMetadataTranslationScope.cs" />
     <Compile Include="Library\RestaurantNS\Restaurant.cs" />
     <Compile Include="Library\RestaurantNS\RestaurantGenre.cs" />
@@ -240,6 +250,9 @@
     <Compile Include="Library\ScholarlyArticleNS\InformaWorld.cs" />
     <Compile Include="Library\ScholarlyArticleNS\ScholarlyArticle.cs" />
     <Compile Include="Library\ScienceDirectNS\ScienceDirectArticle.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScopusArticle.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScopusAuthor.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScopusSearch.cs" />
     <Compile Include="Library\SearchNS\BingSearchApi.cs" />
     <Compile Include="Library\SearchNS\DeliciousSearch.cs" />
     <Compile Include="Library\SearchNS\GoogleScholarSearch.cs" />
@@ -262,6 +275,7 @@
     <Compile Include="Library\SlashdotNS\SlashdotArticle.cs" />
     <Compile Include="Library\SlashdotNS\SlashdotItem.cs" />
     <Compile Include="Library\SlashdotNS\SlashdotRss.cs" />
+    <Compile Include="Library\SocialMediaNS\RedditSearchResults.cs" />
     <Compile Include="Library\TumblrNS\Tumblr.cs" />
     <Compile Include="Library\TvShowNS\TvShow.cs" />
     <Compile Include="Library\TvShowNS\TvShowEpisode.cs" />
@@ -272,6 +286,7 @@
     <Compile Include="Library\UvaNS\TopicCluster.cs" />
     <Compile Include="Library\UvaNS\UvaModel.cs" />
     <Compile Include="Library\VideoNS\Video.cs" />
+    <Compile Include="Library\VideoNS\YoutubeSearchResults.cs" />
     <Compile Include="Library\WeatherReport.cs" />
     <Compile Include="Library\WikipediaNS\Paragraph.cs" />
     <Compile Include="Library\WikipediaNS\Section.cs" />
