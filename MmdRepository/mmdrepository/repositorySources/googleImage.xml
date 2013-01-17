@@ -9,11 +9,21 @@
   </meta_metadata>
 
 	<meta_metadata name="google_image_search" type="image_search" comment="Google image search." parser="xpath" user_agent_name="chrome_12">
-  	<selector url_regex="https?://www.google.com/search\?tbm=isch.*" domain="google.com" />
+  	<selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
+      <param name="tbm" value="isch" />
+    </selector>
     <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
+    <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
     
-		<collection name="search_results" xpath="//div[@id='ires']//li[@class='rg_li']">
-      <def_var name="href_node" xpath="./a/@href" type="node" />
+    <filter_location>
+      <regex match="^https://" replace="http://" />
+      <set_param name="hl" value="en" />
+      <set_param name="gbv" value="1" />
+      <set_param name="sei" value="1" />
+    </filter_location>
+    
+		<collection name="search_results" xpath="//div[@id='ires']//td/a">
+      <def_var name="href_node" xpath="./@href" type="node" />
       <scalar name="location" xpath="." context_node="href_node">
         <filter regex="imgurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
       </scalar>
