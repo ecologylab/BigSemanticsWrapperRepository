@@ -1,0 +1,51 @@
+<meta_metadata_repository name="social_media" package="ecologylab.semantics.generated.library.socialMedia"
+                          default_user_agent_name="firefox_3_6_8">
+
+	<meta_metadata name="reddit_search_results" type="search" parser="xpath" comment="reddit search results page" no_cache="true">
+  		<selector url_stripped="http://www.reddit.com/search?"/>
+    
+    	<generic_type_var name="SR" arg="document" />
+    	
+    	<collection name="search_results" child_type="document" xpath="//a[@class='title ']">
+    	  	<scalar name="title" xpath="." />
+  	    	<scalar name="location" xpath="./@href" />
+  		</collection>    
+	</meta_metadata>	
+	
+	<meta_metadata name="pinterest_search_results" type="image_search" parser="xpath" comment="pinterest search results page" no_cache="true">
+  		<selector url_stripped="http://pinterest.com/search/?"/>
+    	
+    	<collection name="search_results" xpath="//img[@class='PinImageImg']">
+    		<scalar name="title" xpath="./@src" />
+  	    	<scalar name="location" xpath="./@src" />
+  		</collection>    
+	</meta_metadata>
+	
+	<meta_metadata name="imgur_search_results" type="image_search" parser="xpath" comment="imgur hot search results page" no_cache="true">
+  		<selector url_stripped="http://imgur.com/hot/time?"/>
+    	
+    	<collection name="search_results" xpath="//div[@class='post']/a/img">
+  	    	<scalar name="title" xpath="./@src" />
+  	    	<scalar name="location" xpath="./@src" />
+  		</collection>    
+	</meta_metadata>
+	
+	<meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath" comment="tumblr tag results page" no_cache="true">
+  		<selector url_stripped="http://twitter.com/search?"/>
+    	
+    	<collection name="search_results" xpath="//a[@class='high_res_link' or 'high_res_link no_pop']/img">
+  	    	<scalar name="title" xpath="./@src" />
+  	    	<scalar name="location" xpath="./@src" />
+  		</collection>    
+	</meta_metadata>
+	
+	<meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath" comment="reddit gif image search results page" no_cache="true">
+  		<selector url_stripped="http://www.reddit.com/r/gifs/search?"/>
+    	
+    	<collection name="search_results" xpath="//a[@class='title ']">
+    	  	<scalar name="title" xpath="." />
+  	    	<scalar name="location" xpath="./@href" />
+  		</collection>    
+	</meta_metadata>
+	
+</meta_metadata_repository>

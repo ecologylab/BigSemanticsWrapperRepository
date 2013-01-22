@@ -1,0 +1,36 @@
+<meta_metadata_repository name="weather" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+
+	<!-- data structure definition for (general) weather report -->
+	<meta_metadata name="weather_report" extends="compound_document" comment="The definition of weather report class.">
+		<scalar name="city" comment="The name of the city." scalar_type="String" />
+		<scalar name="weather" comment="The weather condition of the city, like sunny or cloudy." scalar_type="String" />
+		<scalar name="pic_url" comment="The URL of the picture indicating weather condition." scalar_type="ParsedURL" />
+		<scalar name="temperature" comment="The temperature." scalar_type="String" />
+		<scalar name="humidity" comment="The humidity of the air." scalar_type="String" />
+		<scalar name="wind" comment="The wind speed." scalar_type="String" />
+		<scalar name="dew_point" comment="The dew point." scalar_type="String" />
+	</meta_metadata>
+	
+	<!-- a (specific) weather report meta-metadata definition for wunderground.com -->
+	<meta_metadata name="wu_weather_report" type="weather_report" parser="xpath">
+		<selector url_path_tree="http://www.wunderground.com/US/*/" domain="wunderground.com"/>
+		<scalar name="city" xpath="//h1[@id='locationName']">
+		  <filter regex=", TX" replace="" />
+		</scalar>
+		<scalar name="weather" xpath="//div[@id='curCond']" />
+		<scalar name="pic_url" xpath="//div[@id='curIcon']//img[@class='condIcon']/@src" />
+		<scalar name="temperature" xpath="//div[@id='tempActual']" />
+		<scalar name="humidity" xpath="//div[@id='conds_details_moisture']//span[@pwsvariable='humidity']" />
+		<scalar name="wind" xpath="//div[@id='nowWind']//span[@id='windCompassSpeed']" />
+		<scalar name="dew_point" xpath="//div[@id='conds_details_temp']//span[@pwsvariable='dewptf']" />
+		
+		<semantic_actions>
+			<get_field name="city" />
+			<get_field name="pic_url" />
+			<create_and_visualize_img_surrogate>
+				<arg name="title" value="city" />
+				<arg name="image_url" value="pic_url" />
+			</create_and_visualize_img_surrogate>
+		</semantic_actions>
+	</meta_metadata>
+</meta_metadata_repository>

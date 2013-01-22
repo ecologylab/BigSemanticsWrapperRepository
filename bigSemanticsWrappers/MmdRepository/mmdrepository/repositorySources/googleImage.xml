@@ -1,0 +1,54 @@
+<meta_metadata_repository name="google_image" package="ecologylab.semantics.generated.library.google_image" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="google_image" type="image" parser="image">
+    <selector url_regex_fragment="https://encrypted-tbn[0-9]+\.google\.com/images" domain="google.com" />
+    
+    <filter_location>
+      <regex match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
+    </filter_location>
+  </meta_metadata>
+
+	<meta_metadata name="google_image_search" type="image_search" comment="Google image search." parser="xpath" user_agent_name="chrome_12">
+  	<selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
+      <param name="tbm" value="isch" />
+    </selector>
+    <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
+    <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
+    
+    <filter_location>
+      <regex match="^https://" replace="http://" />
+      <set_param name="hl" value="en" />
+      <set_param name="gbv" value="1" />
+      <set_param name="sei" value="1" />
+    </filter_location>
+    
+		<collection name="search_results" xpath="//div[@id='ires']//td/a">
+      <def_var name="href_node" xpath="./@href" type="node" />
+      <scalar name="location" xpath="." context_node="href_node">
+        <filter regex="imgurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
+      </scalar>
+      <scalar name="thumb_width" xpath="./a/img/@width" />
+      <scalar name="thumb_height" xpath="./a/img/@height" />
+      <scalar name="ref_location" xpath="." context_node="href_node">
+        <filter regex="imgrefurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
+      </scalar>
+		</collection> 
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="result">
+				<get_field object="result" name="location" />
+        <parse_document>
+          <arg name="location" value="location" />
+        </parse_document>
+<!-- 				<create_and_visualize_img_surrogate> -->
+<!-- 					<arg name="image_purl" value="location" /> -->
+<!-- 				</create_and_visualize_img_surrogate> -->
+				<get_field object="result" name="ref_location" />
+        <parse_document>
+          <arg name="location" value="ref_location" />
+        </parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+</meta_metadata_repository>

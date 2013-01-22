@@ -1,0 +1,47 @@
+<meta_metadata_repository name="scholarly_article"
+                          package="ecologylab.semantics.generated.library.scholarlyArticle">
+                          
+  <!-- scholarly_article_author? -->
+
+	<meta_metadata name="scholarly_article" extends="creative_work"
+                 schema_org_itemtype="http://schema.org/ScholarlyArticle">
+		<composite name="source" type="periodical" layer="7.0"
+               comment="Metadata related to where this article was published." />
+		<collection name="classifications" child_type="document"
+                comment="The Classifications of this paper." />
+		<collection name="keywords" child_type="document" schema_org_itemprop="keywords"
+                comment="Key Terms of the paper." />
+		<scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
+    
+		<composite name="rich_media" label="full text"/>
+	</meta_metadata>
+	
+	
+<!-- 	<meta_metadata name="dx_doi" type="document" -->
+<!--                  redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION"> -->
+<!-- 		<selector url_path_tree="http://dx.doi.org"/> -->
+<!-- 	</meta_metadata> -->
+	
+  
+	<meta_metadata name="ingeta_connect" type="document"
+                 redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
+		<selector url_path_tree="http://www.ingentaconnect.com"/>
+	</meta_metadata>
+	
+  
+	<meta_metadata name="informa_world" extends="scholarly_article"  parser="xpath">
+		<selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />
+		<selector url_path_tree="http://tandfonline.com/doi/full/*/*" />
+		<example_url url="http://www.tandfonline.com/doi/ref/10.1080/15332861.2012.689565" />
+		
+		<scalar name="title" xpath="//h1" />
+		<scalar name="description" xpath="//div[contains(@class, 'abstract')]//h3/preceding-sibling::p[string-length(text()) > 50]"/>
+		<composite name="source">
+			<composite name="archive" >
+				<scalar name="title" xpath="//div[contains(@class, 'issue')]//h2" />
+			</composite>
+			<scalar name="location"  xpath="//div[@id='breadcrumb']/a[2]/@href" />
+		</composite>
+	</meta_metadata>
+  
+</meta_metadata_repository>

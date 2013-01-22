@@ -1,0 +1,75 @@
+<meta_metadata_repository name="slashdot" package="ecologylab.semantics.generated.library.slashdot">
+
+	<meta_metadata name="slashdot_article" extends="post" parser="xpath">
+		<selector domain="slashdot.org" url_regex_fragment="http://[a-zA-Z]*.slashdot.org/story/" />
+    <example_url url="http://science.slashdot.org/story/12/09/14/1834239/smooth-high-definition-video-of-curiositys-landing-on-mars" />
+    
+		<def_var name="poster_node" xpath="//div[starts-with(@id, 'details-')]" type="node" />
+		<def_var name="description_node" xpath="//div[starts-with(@id, 'text-')]" type="node" />
+    
+    <collection name="authors" context_node="poster_node" xpath="./a">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+    </collection>
+		<scalar name="description" context_node="description_node" xpath="." />
+    <scalar name="post_date" context_node="poster_node" xpath="./time">
+      <filter regex="on ([^,]*)," group="1" />
+    </scalar>
+    
+		<collection name="anchors" child_type="document" context_node="description_node" xpath=".//a">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		<collection name="related_stories" child_type="slashdot_article"
+                xpath="//*[@id='newa2footerv2']/div[@class='grid_12']//h3/a">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+    
+		<semantic_actions>
+			<get_field name="description" />
+			<get_field name="anchors" />
+			<for_each collection="anchors" as="anch">
+				<get_field object="anch" name="title" />
+				<get_field object="anch" name="location" />
+				<if>
+					<not_null value="title" />
+					<not_null value="location" />
+					<parse_document>
+						<arg value="title" name="anchor_text" />
+						<arg value="description" name="anchor_context" />
+						<arg value="location" name="location" />
+					</parse_document>
+				</if>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+  
+  
+  <meta_metadata name="slashdot_item" extends="item" comment="One item in a feed." parser="direct">
+			<scalar name="department" scalar_type="String" tag="slash:department" hint="XML_LEAF" />
+			<scalar name="section" scalar_type="String" tag="slash:section" hint="XML_LEAF" />
+	</meta_metadata>
+
+
+	<meta_metadata name="slashdot_rss" extends="compound_document" tag="rdf:RDF" parser="direct">
+		<selector url_stripped="http://rss.slashdot.org/Slashdot/slashdot" />
+		<collection name="items" child_type="slashdot_item" no_wrap="true" child_tag="item"/>
+		<semantic_actions>
+			<get_field name="items" />
+			<if>
+				<not_null value="items"/>
+				<for_each collection="items" as="i">
+					<get_field object="i" name="link" />
+					<get_field object="i" name="title" />
+					<parse_document>
+						<not_null value="link" />
+						<arg value="link" name="location" />
+						<arg value="title" name="anchor_text" />
+					</parse_document>
+				</for_each>
+			</if>
+		</semantic_actions>
+	</meta_metadata> 
+	
+</meta_metadata_repository>

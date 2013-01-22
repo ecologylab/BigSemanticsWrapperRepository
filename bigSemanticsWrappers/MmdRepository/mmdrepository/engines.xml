@@ -1,0 +1,37 @@
+<meta_metadata_repository name="agents_engines_styles_sites" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">  
+  <search_engines default_engine="bing">
+    <search_engine name="google" favicon="http://google.com/favicon.ico" description="" group="search_engines" show="true" url_prefix="http://www.google.com/search?hl=en&amp;q=" num_result_string="&amp;num=" start_string="&amp;start=" />
+    <search_engine name="google_site_specific" favicon="http://google.com/favicon.ico" description="" group="" show="false" homogeneous="true" url_prefix="http://www.google.com/search?hl=en&amp;q=" num_result_string="&amp;num=" start_string="&amp;start=" />
+    <search_engine name="google_image" favicon="http://google.com/favicon.ico" description="" group="" show="false" url_prefix="http://www.google.com/images?sout=1&amp;q=" num_result_string="&amp;num=" start_string="&amp;start=" />
+    <search_engine name="google_patents" favicon="http://google.com/favicon.ico" description="" group="" show="false" url_prefix="http://www.google.com/patents?q=" num_result_string="&amp;num=" start_string="&amp;start=" />
+    <search_engine name="google_scholar" favicon="http://google.com/favicon.ico" description="" group="" show="false" url_prefix="http://scholar.google.com/scholar?q=" num_result_string="&amp;num=" start_string="&amp;start=" />
+  	<search_engine name="google_books" favicon="http://google.com/favicon.ico" description="" group="" show="false" url_prefix="http://www.google.com/search?tbm=bks&amp;q=" num_result_string="&amp;num=" start_string="&amp;start=" />
+   
+    <search_engine name="my_google_ecology0" favicon="http://google.com/favicon.ico" description="" group="" show="false" url_prefix="http://ecology0.csdl.tamu.edu/my_google/search?query=" num_result_string="&amp;resultsPerPage=" start_string="&amp;startIndex=" />
+    <search_engine name="my_google" favicon="http://google.com/favicon.ico" description="" group="" show="false" url_prefix="http://staging.cs.tamu.edu:8080/my_google/search?query=" num_result_string="&amp;resultsPerPage=" start_string="&amp;startIndex=" />
+    
+  
+    <search_engine name="flickr" favicon="http://www.flickr.com/favicon.ico" description="" group="photos" show="true" homogeneous="true" url_prefix="http://www.flickr.com/search/?q=" url_suffix="&amp;z=m" />
+    <search_engine name="flickr_tag" favicon="http://www.flickr.com/favicon.ico" description="" group="photos" show="true" url_prefix="http://www.flickr.com/photos/tags/" url_suffix="/interesting/" />
+    <search_engine name="flickr_author" favicon="http://www.flickr.com/favicon.ico" description="" group="" show="false" homogeneous="true" url_prefix="http://www.flickr.com/photos/" url_suffix="/" />
+    <search_engine name="flickr_nearby" favicon="http://www.flickr.com/favicon.ico" description="" group="photos" show="false" url_prefix="http://www.flickr.com/photos/" url_suffix="/nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
+    <search_engine name="flickr_groups" favicon="http://www.flickr.com/favicon.ico" description="" group="photos" show="true" url_prefix="http://www.flickr.com/groups/" url_suffix="/pool" />
+    
+           
+    <search_engine name="bing" favicon="http://www.bing.com/favicon.ico" description="" group="search_engines" show="true" url_prefix="http://api.bing.net/xml.aspx?appid=41793F369AD63C9CD9D6C27BB2E72EB5AB4C9234&amp;sources=web&amp;query=" num_result_string="&amp;Web.Count=" start_string="&amp;Web.Offset=" />
+    <search_engine name="bing_site_specific" favicon="http://www.bing.com/favicon.ico" description="" group="" show="false" homogeneous="true" url_prefix="http://api.bing.net/xml.aspx?appid=41793F369AD63C9CD9D6C27BB2E72EB5AB4C9234&amp;sources=web&amp;query=" num_result_string="&amp;Web.Count=" start_string="&amp;Web.Offset=" />
+    <search_engine name="bing_image" favicon="http://www.bing.com/favicon.ico" description="" group="" show="false" url_prefix="http://api.bing.net/xml.aspx?appid=41793F369AD63C9CD9D6C27BB2E72EB5AB4C9234&amp;sources=image&amp;query=" num_result_string="&amp;Web.Count=" start_string="&amp;Web.Offset=" />
+    <search_engine name="bing_xpath" favicon="http://www.bing.com/favicon.ico" description="" group="" show="false" url_prefix="http://www.bing.com/search?q=" url_suffix="&amp;go=&amp;form=QBLH&amp;qs=n&amp;sk=&amp;sc=8-5" start_string="&amp;first=" num_result_string="&amp;count=" />
+    
+    <search_engine name="wikipedia" favicon="http://en.wikipedia.org/favicon.ico" description="" group="other" show="true" homogeneous="true" url_prefix="http://en.wikipedia.org/w/index.php?title=Special%3ASearch&amp;redirs=1&amp;search=" url_suffix="&amp;fulltext=Search&amp;ns0=1" num_result_string="&amp;limit=" start_string="&amp;offset=" />
+    
+    <search_engine name="yahoo_image" favicon="http://www.yahoo.com/favicon.ico" description="" group="photos" show="true" url_prefix="http://api.search.yahoo.com/ImageSearchService/V1/imageSearch?appid=yahoosearchwebrss&amp;query=" num_result_string="&amp;result=" start_string="&amp;start=" />
+    <search_engine name="yahoo_news" favicon="http://www.yahoo.com/favicon.ico" description="" group="" show="false" url_prefix="http://api.search.yahoo.com/NewsSearchService/V1/newsSearch?appid=yahoosearchwebrss&amp;query=" num_result_string="&amp;result=" start_string="&amp;start=" />
+    <search_engine name="yahoo" favicon="http://www.yahoo.com/favicon.ico" description="" group="search_engines" show="true" url_prefix="http://api.search.yahoo.com/WebSearchService/V1/webSearch?appid=yahoosearchwebrss&amp;query=" num_result_string="&amp;result=" start_string="&amp;start=" />
+  	<search_engine name="yahoo_site_specific" favicon="http://www.yahoo.com/favicon.ico" description="" group="" show="false" url_prefix="http://api.search.yahoo.com/WebSearchService/V1/webSearch?appid=yahoosearchwebrss&amp;query=" num_result_string="&amp;result=" start_string="&amp;start=" />
+    
+    <search_engine name="citeseerx" favicon="http://citeseer.ist.psu.edu/favicon.ico" description="" group="other" show="true" url_prefix="http://citeseerx.ist.psu.edu/search?q=" start_string="&amp;start=" />
+    
+    <search_engine name="acm_portal" favicon="http://portal.acm.org/favicon.ico" group="other" show="false" url_prefix="http://portal.acm.org/results.cfm?query=" start_string="&amp;start=" />
+  </search_engines>
+</meta_metadata_repository>

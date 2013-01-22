@@ -1,0 +1,6 @@
+<meta_metadata_repository name="agents_engines_styles_sites" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+  <named_styles>
+    <named_style name="default" font_size="10" />
+    <named_style name="metadata_h1" font_size="11" font_style="1" />
+  </named_styles>
+</meta_metadata_repository>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta_metadata_repository name="urbanSpoon"
+                          package="ecologylab.semantics.generated.library.urbanspoon"
+                          default_user_agent_name="firefox">
+	
+	<meta_metadata name="urban_spoon_restaurant" type="restaurant" parser="xpath"
+                 comment="UrbanSpoon restaurant description page.">
+		<selector url_path_tree="http://www.urbanspoon.com/r" />
+		<example_url url="http://www.urbanspoon.com/r/114/875031/restaurant/College-Station/Christophers-World-Grill-Bryan" />
+		
+		<def_var name="main_block" type="node" xpath="//div[@id='directory']" />
+		<def_var name="primary" type="node" xpath="//div[@id='primary']" />
+		
+		<scalar name="title" context_node="main_block" xpath="./div/h1"/>
+		<scalar name="location" context_node="primary"
+            xpath="./p[@class='website']/a[@class='ext']/@href" />
+		<composite name="image" >
+			<scalar name="location" xpath="//div[@id='aside']//ul[contains(@id,'_collection')]/li[contains(@id,'restaurant_photo')][1]//img/@srcd" />
+		</composite>
+		<scalar name="overall_rating" xpath="//div[@id='vote_block']/div[@class='score up']/div[@class='number']/span[@class='digits percent-text rating average']" />
+    
+		<composite name="seller_website">
+			<scalar name="location" context_node="primary"
+              xpath="./p[@class='website']/a[@class='ext']/@href" />
+		</composite>
+		<composite name="seller_address" xpath="//div[@id='primary']">
+			<scalar name="telephone" xpath="./h3" />
+			<scalar name="street_address" xpath=".//span[@class='street-address']" />
+			<scalar name="locality" xpath=".//span[@class='locality']" />
+			<scalar name="postal_code" xpath=".//a[@class='postal-code']" />
+			<scalar name="region" xpath=".//span[@class='region']" />
+			<scalar name="location" >
+				<concatenate_values>
+					<value>http://maps.google.com/maps?q=</value>
+					<value from_scalar="street_address" />
+					<value>,</value>
+					<value from_scalar="postal_code" />
+	 			</concatenate_values>
+	 		</scalar>
+		</composite>
+		
+		<scalar name="price_range" xpath="//div[@id='secondary']/div[@class='menu']/fieldset/div[@class='price']/span[@class='pricerange']" />
+		<collection name="genres" xpath="//div[@id='secondary']/div[@class='cuisines']/fieldset/a">
+			<scalar name="title" xpath="./text()" />
+			<scalar name="description" xpath="./@href" />
+			<scalar name="location" >
+			<concatenate_values>
+				<value>http://www.urbanspoon.com</value>
+				<value from_scalar="description" />
+ 			</concatenate_values>
+			</scalar>
+		</collection>
+	</meta_metadata>
+
+
+	<meta_metadata name="urban_spoon_genre" type="restaurant_genre" parser="xpath">
+		<selector url_path_tree="http://www.urbanspoon.com/f"/>
+		<example_url url="http://www.urbanspoon.com/f/114/11800/College-Station/American-Restaurants" />
+		
+		<scalar name="title" xpath="/html/head/title"/>
+		<collection name="restaurants" xpath="//li[@class='row restaurant']//div[@class='title']/a" >
+			<scalar name="location" xpath="./@href" />
+			<scalar name="title" xpath="." />
+		</collection>
+	</meta_metadata>
+	
+  
+	<meta_metadata name="urban_spoon_search" type="search" parser="xpath">
+		<selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/" />
+    
+		<collection name="search_results" child_type="document"
+                xpath="//div[@class = 't']/a[text() != '']">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+    
+		<semantic_actions>
+			<get_field name="search_results" />
+			<for_each collection="search_results" as="res">
+				<get_field object="res" name="location" />
+				<get_field object="res" name="title" />
+				<parse_document>
+					<arg value="title" name="anchor_text" />
+					<arg value="location" name="location" />
+				</parse_document>
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+
+</meta_metadata_repository>

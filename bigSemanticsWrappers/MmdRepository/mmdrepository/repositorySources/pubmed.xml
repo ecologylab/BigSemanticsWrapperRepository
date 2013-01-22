@@ -1,0 +1,69 @@
+<meta_metadata_repository name="pubmed" package="ecologylab.semantics.generated.library.pubmed"
+                          default_user_agent_name="firefox">
+
+	<meta_metadata name="pubmed_article" extends="scholarly_article" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://www.ncbi.nlm.nih.gov/pubmed/" />
+		
+		<example_url url="http://www.ncbi.nlm.nih.gov/pubmed/22439083" />
+		<example_url url="http://www.ncbi.nlm.nih.gov/pubmed/23180662" />
+		
+	<!-- 	<scalar name="title" xpath="//div[@class='rprt abstract']/h1/text()"/> -->
+	
+		<scalar name="title" xpath="//div[@id='maincontent']//h1"/>
+		<scalar name="description" xpath="//div[@class='abstr']"/>
+		
+		<collection name="authors" child_type="pubmed_author" xpath="//div[@class='auths']/a" >
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		
+		<composite name="source" xpath="//a[@alterm and @alsec]">
+			<scalar name="title" xpath="./@title" />
+<!-- 			<scalar name="location" xpath="" /> -->
+			<scalar name="year" xpath="./..">
+			  <filter regex="(\d\d\d\d) " group="1"/>
+			</scalar>
+		</composite>
+		
+		<collection name="citations" child_type="pubmed_article" xpath="//a[@class='brieflinkpopperctrl']">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</collection>
+		
+		<!--
+	 	<scalar name="study_design" scalar_type="string" xpath=""/>
+		<scalar name="purpose" scalar_type="string" xpath=""/>
+		<scalar name="methods" scalar_type="string" xpath=""/>
+		<scalar name="results" scalar_type="string" xpath=""/>
+		<scalar name="conclusions" scalar_type="string" xpath=""/>
+		-->
+	</meta_metadata>
+
+
+	<meta_metadata name="pubmed_author" extends="author" parser="xpath" user_agent_name="firefox">
+	  <selector url_regex="http://www.ncbi.nlm.nih.gov/pubmed\?term=[^&amp;\[]+\[Author\]&amp;cauthor=true&amp;cauthor_uid=\d+" domain="nih.gov" />
+	  <example_url url="http://www.ncbi.nlm.nih.gov/pubmed?term=Shameli%20A[Author]&amp;cauthor=true&amp;cauthor_uid=23180662"/>
+	  
+	  <scalar name="title" xpath="//textarea[@class='searchdetails_term']"/>
+	  
+	  <collection name="creative_works" other_tags="publications" child_type="pubmed_article"
+	              xpath="//div[@class='rslt']/p/a">
+	    <scalar name="title" xpath="."/>
+	    <scalar name="location" xpath="./@href"/>
+	  </collection>
+	</meta_metadata>
+	
+	
+	<meta_metadata name="pubmed_journal" extends="periodical" parser="xpath" user_agent_name="firefox">
+	  <selector url_regex="http://www.ncbi.nlm.nih.gov/pubmed\?term=[^&amp;\[]+\[jour\]" domain="nih.gov"/>
+	  <example_url url="http://www.ncbi.nlm.nih.gov/pubmed?term=%22Eur+J+Immunol%22[jour]"/>
+	  
+	  <scalar name="title" xpath="//textarea[@class='searchdetails_term']"/>
+	  
+	  <collection name="articles" child_type="pubmed_article" xpath="//div[@class='rslt']/p/a">
+	    <scalar name="title" xpath="."/>
+	    <scalar name="location" xpath="./@href"/>
+	  </collection>
+	</meta_metadata>
+
+</meta_metadata_repository>

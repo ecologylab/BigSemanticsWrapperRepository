@@ -1,0 +1,72 @@
+<meta_metadata_repository name="default"
+	package="ecologylab.semantics.generated.library.icdl">
+
+	<meta_metadata name="icdl_image_result" extends="document"
+		comment="Thumbnail Image" tag="response"
+		package="ecologylab.semantics.generated.library.icdl" parser="direct">
+		<selector url_stripped="http://www.childrenslibrary.org/BookXMLResults" />
+		<!--
+			For safety we'd like to add additional selectors: <selector>
+			<mime_type>xml/rss</mime_type> <mime_type>application/rss</mime_type>
+			</selector> <scalar name="pnum" scalar_type="Int" /> <scalar
+			name="total" scalar_type="Int" />
+		-->
+		<collection name="books" no_wrap="true" child_type="icdl_book" child_extends="document" child_tag="book" >
+			<scalar name="id" scalar_type="String" hide="true" />
+			<scalar name="bookurl" scalar_type="ParsedURL" hide="true" />
+			<scalar name="booktitle" scalar_type="String" />
+			<scalar name="languages" scalar_type="String" />
+			<scalar name="cover" scalar_type="ParsedURL" />
+			<scalar name="width" scalar_type="Int" hide="true" />
+			<scalar name="height" scalar_type="Int" hide="true" />
+		</collection>
+		<semantic_actions>
+			<get_field name="books" />
+			<if>
+				<not_null value="books" />
+				<for_each collection="books" as="book">
+					<get_field name="cover" object="book" />
+					<get_field name="bookurl" object="book" />
+					<get_field name="booktitle" object="book" />
+					<get_field name="width" object="book" />
+					<get_field name="height" object="book" />
+					<create_and_visualize_img_surrogate
+						name="cover_page_surrogate">
+						<arg name="image_purl" value="cover" />
+						<arg name="location" value="bookurl" />
+						<arg name="caption" value="booktitle" />
+						<arg name="width" value="width" />
+						<arg name="height" value="height" />
+					</create_and_visualize_img_surrogate>
+				</for_each>
+			</if>
+		</semantic_actions>
+	</meta_metadata>
+
+	<meta_metadata name="icdl_book_preview"  parser="xpath" extends="metadata"
+		comment="ICDL About This Book Page">
+		<selector url_stripped="http://www.childrenslibrary.org/icdl/BookPreview" />
+
+		<composite name="author" type="author"
+			xpath="//td/span[@class='textsize4']/../a[1]">
+			<scalar name="title" xpath="./span" />
+			<scalar name="location" xpath="./@href" />
+		</composite>
+		
+		<composite name="illustrator" type="author"
+			xpath="//td/span[@class='textsize4']/../a[2]">
+			<scalar name="title" xpath="./span" />
+			<scalar name="location" xpath="./@href" />
+		</composite>
+		
+		<scalar name="summary" scalar_type="String" xpath="//td/div/span[3]"/>
+		<scalar name="year" scalar_type="String" xpath="//td/div/span[7]"/>
+		<scalar name="languages" scalar_type="String" xpath="//td/div/span[13]"/>
+		<scalar name="publisher" scalar_type="String" xpath="//td/div/span[21]"/>
+		<scalar name="isbn" scalar_type="String" xpath="//td/div/span[26]"/>
+		<scalar name="awards" scalar_type="String" xpath="//td/div/span[30]"/>
+	</meta_metadata>
+
+
+
+</meta_metadata_repository>

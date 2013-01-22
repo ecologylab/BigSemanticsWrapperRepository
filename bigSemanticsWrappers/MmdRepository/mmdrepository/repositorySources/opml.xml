@@ -1,0 +1,49 @@
+<meta_metadata_repository  name="default" package="ecologylab.semantics.generated.library.opml">
+	<meta_metadata  name="opml" extends="compound_document" parser="direct" >
+		<composite name="head" extends="metadata">
+			<scalar name="title" scalar_type="String"/>
+		</composite>
+		<composite name="body" extends="metadata">
+			<collection name="outline" no_wrap="true" child_type="outline" child_extends="metadata"> 
+				<scalar name="text" scalar_type="String"/>
+				<scalar name="title" scalar_type="String"/>
+				<scalar name="type" scalar_type="String"/>
+				<scalar name="xmlUrl" scalar_type="ParsedURL" tag="xmlUrl" />
+				<scalar name="htmlUrl" scalar_type="ParsedURL" tag="htmlUrl" />
+				<collection name="outlines" child_type="outline" no_wrap="true"/>
+			</collection>
+		</composite>
+		<semantic_actions >
+			<!-- Iterate recursively through outlines and add xmlUrl as seed -->
+			<get_field name="outline" object="body"/>
+			<for_each collection="outline" as="feed" name="recursiveForLoop">
+				<get_field name="xmlUrl" object="outline"/>
+				<get_field name="title" object="outline"/>
+				<choose>
+					<case>
+						<not_null value="xmlUrl"/>
+						
+						<parse_document>
+							<arg value="title" name="anchor_text"/>
+							<arg value="xmlUrl" name="location"/>
+						</parse_document>
+					</case>
+					<case>
+						<!-- Overriding the collection on which the for loop action acts, 
+								keeping the other attributes-->
+						<get_field name="outlines" object="outline"/>
+						<not_null value="outlines"/>
+						<!--
+						<call_action name="recursiveForLoop" >
+							<arg value="outlines" name="collection"/>
+
+						</call_action> 
+						-->
+					</case>
+				</choose>
+				
+			</for_each>
+		</semantic_actions>
+	</meta_metadata>
+	
+</meta_metadata_repository>

@@ -1,0 +1,126 @@
+<meta_metadata_repository name="scienceDirect" package="ecologylab.semantics.generated.library.ieeeXplore">
+
+	<meta_metadata name="ieee_xplore_article" extends="scholarly_article" parser="xpath">
+		<selector url_stripped="http://ieeexplore.ieee.org/xpl/articleDetails.jsp" />
+		<selector url_stripped="http://ieeexplore.ieee.org:80/xpl/articleDetails.jsp" />
+    <example_url url="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1532126" />
+    
+    <filter_location>
+      <strip_param name="navigation" />
+      <strip_param name="reload" />
+    </filter_location>
+    
+		<scalar name="title" xpath="//h1"/>
+		
+		<composite name="rich_media">
+		  <scalar name="title" xpath="">
+		    <concatenate_values>
+		      <value>PDF full text</value>
+		    </concatenate_values>
+		  </scalar>
+		  <scalar name="location" xpath="//ul[@id='subscription-content-controls']/li/a/@href" />
+		</composite>
+	  
+		<collection name="articles_by_authors" child_type="ieee_xplore_search"
+		            xpath="//div[@id='product-vitals']//script[contains(text(), 'authorLink(')]">
+			<scalar name="title" xpath=".">
+        <filter regex="authorLink\(&quot;([^&quot;]+)&quot;\)" group="1" />
+      </scalar>
+			<scalar name="location" hide="true">
+        <concatenate_values>
+          <value>http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Authors:.QT.</value>
+          <value from_scalar="title" />
+          <value>.QT.</value>
+        </concatenate_values>
+      </scalar>
+		</collection>		
+		
+		<scalar name="description" xpath="//a[@name='Abstract']/following-sibling::p" />
+    
+		<composite name="source" xpath="//a[starts-with(@href, '../xpl/mostRecentIssue.jsp')]">
+			<scalar name="title" xpath="." />
+			<scalar name="location" xpath="./@href" />
+		</composite>
+    
+		<collection name="keywords" xpath="//div[@id='index-terms']/following-sibling::ul//a">
+			<scalar name="title" xpath="." />
+      <scalar name="location" xpath="./@href" />
+		</collection>
+    
+    <composite name="references_page" type="ieee_xplore_references">
+      <scalar name="title" xpath="//h1" />
+      <scalar name="ieee_xplore_id" xpath="//meta[@property='og:url']/@content" hide="true">
+        <filter regex="arnumber=(\d+)" group="1" />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://ieeexplore.ieee.org/xpl/references.jsp?arnumber=</value>
+          <value from_scalar="ieee_xplore_id" />
+        </concatenate_values>
+      </scalar>
+    </composite>
+    
+    <composite name="citations_page" type="ieee_xplore_citations">
+      <scalar name="title" xpath="//h1" />
+      <scalar name="ieee_xplore_id" xpath="//meta[@property='og:url']/@content" hide="true">
+        <filter regex="arnumber=(\d+)" group="1" />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://ieeexplore.ieee.org/xpl/citations.jsp?arnumber=</value>
+          <value from_scalar="ieee_xplore_id" />
+        </concatenate_values>
+      </scalar>
+    </composite>
+    
+		<scalar name="doi" scalar_type="ParsedURL" hide="true"
+            xpath="//a[starts-with(@href, 'http://dx.doi.org/10.1109/')]/@href"
+            comment="The digital object identifier of the article" />
+	</meta_metadata>
+  
+  
+  <meta_metadata name="ieee_xplore_references" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/references.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/references.jsp" />
+    
+    <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
+    
+    <collection name="references" child_type="scholarly_article" xpath="//div[@id='referenceContent']//li">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./a/@href" />
+    </collection>
+  </meta_metadata>
+  
+  
+  <meta_metadata name="ieee_xplore_citations" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/citations.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/citations.jsp" />
+    
+    <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
+    
+    <collection name="citations" child_type="scholarly_article" xpath="//div[@id='citationContent']//li">
+      <scalar name="title" xpath="." />
+      <scalar name="location" xpath="./a/@href" />
+    </collection>
+  </meta_metadata>
+  
+  
+  <meta_metadata name="ieee_xplore_search" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="ieee_xplore_article" />
+    
+    <selector url_stripped="http://ieeexplore.ieee.org/search/searchresult.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/search/searchresult.jsp" />
+    
+    <filter_location>
+      <strip_param name="newSearch" />
+      <strip_param name="x" />
+      <strip_param name="y" />
+    </filter_location>
+    
+    <collection name="search_results" xpath="//ul[@class='Results']/li">
+      <scalar name="title" xpath=".//h3" />
+      <scalar name="location" xpath=".//h3/a/@href" />
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>	
