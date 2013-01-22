@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3121E696-14DE-4987-BCED-588E4AB9259F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecologylab.Semantics.Generated</RootNamespace>
+    <AssemblyName>Ecologylab.Semantics.Generated</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\ecologylabFundamental\Simpl.Fundamental\Simpl.Fundamental.csproj">
+      <Project>{10287dd6-0c07-4737-9469-0aa21b7723bf}</Project>
+      <Name>Simpl.Fundamental</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ecologylabFundamental\Simpl.Serialization\Simpl.Serialization.csproj">
+      <Project>{16c61dd8-68b1-4509-8e18-6f7e80b605a3}</Project>
+      <Name>Simpl.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ecologylabSemantics\Ecologylab.Semantics\Ecologylab.Semantics.csproj">
+      <Project>{baf3d6df-9c6f-4352-a396-c7901954b24c}</Project>
+      <Name>Ecologylab.Semantics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="crit\semantics\generated\txtf1\fieldreports\emergent_event\EmergentEvent.cs" />
+    <Compile Include="crit\semantics\generated\txtf1\fieldreports\emergent_event\EmergentEventCollection.cs" />
+    <Compile Include="crit\semantics\generated\txtf1\fieldreports\spotrep\Spotrep.cs" />
+    <Compile Include="Library\AcmNS\AcmPortal.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalAuthor.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalAuthorCollaborators.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalAuthorPublicationDetail.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalInstitutionProfile.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalPeriodical.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalSearch.cs" />
+    <Compile Include="Library\AcmNS\AcmPortalSearchResult.cs" />
+    <Compile Include="Library\ArtworkNS\Artist.cs" />
+    <Compile Include="Library\ArtworkNS\Artwork.cs" />
+    <Compile Include="Library\ArtworkNS\MmArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\MomaArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\TempFieldValueHolder.cs" />
+    <Compile Include="Library\BibManagingNS\CitationInfo.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxCiting.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxRecord.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxSearch.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxSearchResult.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxSimilar.cs" />
+    <Compile Include="Library\BibManagingNS\CiteseerxSummary.cs" />
+    <Compile Include="Library\BlogNS\Blog.cs" />
+    <Compile Include="Library\BlogNS\Post.cs" />
+    <Compile Include="Library\Bookmark.cs" />
+    <Compile Include="Library\BuzzNS\GoogleTrends.cs" />
+    <Compile Include="Library\BuzzNS\HotSearch.cs" />
+    <Compile Include="Library\CameraNS\CameraSettings.cs" />
+    <Compile Include="Library\CartoonNS\BritishCartoonArchive.cs" />
+    <Compile Include="Library\CartoonNS\Cartoon.cs" />
+    <Compile Include="Library\CartoonNS\GaurdianComic.cs" />
+    <Compile Include="Library\CartoonNS\GlobeCartoon.cs" />
+    <Compile Include="Library\CartoonNS\PoliticalCartoon.cs" />
+    <Compile Include="Library\CartoonNS\SfuCartoonArchive.cs" />
+    <Compile Include="Library\CartoonNS\TrumanLibrary1948CampaignCartoons.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeAuthor.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikePaper.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeSearch.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeTag.cs" />
+    <Compile Include="Library\CiteulikeNS\CiteulikeUser.cs" />
+    <Compile Include="Library\CreativeWorkNS\Author.cs" />
+    <Compile Include="Library\CreativeWorkNS\BasicPublication.cs" />
+    <Compile Include="Library\CreativeWorkNS\CreativeWork.cs" />
+    <Compile Include="Library\CreativeWorkNS\Periodical.cs" />
+    <Compile Include="Library\DeliciousHomepage.cs" />
+    <Compile Include="Library\DleseNS\AdditionalMetadata.cs" />
+    <Compile Include="Library\DleseNS\Audience.cs" />
+    <Compile Include="Library\DleseNS\Collection.cs" />
+    <Compile Include="Library\DleseNS\Contributor.cs" />
+    <Compile Include="Library\DleseNS\DateInfo.cs" />
+    <Compile Include="Library\DleseNS\DleseGetRecord.cs" />
+    <Compile Include="Library\DleseNS\DleseRecord.cs" />
+    <Compile Include="Library\DleseNS\DleseRecord1.cs" />
+    <Compile Include="Library\DleseNS\DleseRecord2.cs" />
+    <Compile Include="Library\DleseNS\DleseRecordHead.cs" />
+    <Compile Include="Library\DleseNS\DleseUserSearch.cs" />
+    <Compile Include="Library\DleseNS\Educational.cs" />
+    <Compile Include="Library\DleseNS\General.cs" />
+    <Compile Include="Library\DleseNS\GetRecordAdditionalMetadata.cs" />
+    <Compile Include="Library\DleseNS\Head1.cs" />
+    <Compile Include="Library\DleseNS\Head2.cs" />
+    <Compile Include="Library\DleseNS\ItemRecord.cs" />
+    <Compile Include="Library\DleseNS\Lifecycle.cs" />
+    <Compile Include="Library\DleseNS\Organization.cs" />
+    <Compile Include="Library\DleseNS\RecordMetadata.cs" />
+    <Compile Include="Library\DleseNS\RecordMetaMetadata.cs" />
+    <Compile Include="Library\DleseNS\ResultInfo.cs" />
+    <Compile Include="Library\DleseNS\SearchAdditionalMetadataAdn.cs" />
+    <Compile Include="Library\DleseNS\SearchSection.cs" />
+    <Compile Include="Library\DleseNS\UserSearchAdditionalMetadata.cs" />
+    <Compile Include="Library\FastflipNS\FastflipSearch.cs" />
+    <Compile Include="Library\FastflipNS\Thumbnail.cs" />
+    <Compile Include="Library\FlickrNS\AuthorPhotos.cs" />
+    <Compile Include="Library\FlickrNS\FlickrAuthor.cs" />
+    <Compile Include="Library\FlickrNS\FlickrPhoto.cs" />
+    <Compile Include="Library\FlickrNS\FlickrTag.cs" />
+    <Compile Include="Library\FlickrNS\FlickrTagPage.cs" />
+    <Compile Include="Library\FlickrNS\Photostream.cs" />
+    <Compile Include="Library\GisNS\ContactPoint.cs" />
+    <Compile Include="Library\GisNS\GisLocation.cs" />
+    <Compile Include="Library\GisNS\PostalAddress.cs" />
+    <Compile Include="Library\GoogleBookNS\GoogleBook.cs" />
+    <Compile Include="Library\GoogleBookNS\Page.cs" />
+    <Compile Include="Library\GrantNS\Grant.cs" />
+    <Compile Include="Library\GrantNS\GrantProgram.cs" />
+    <Compile Include="Library\GrantNS\GrantStaff.cs" />
+    <Compile Include="Library\GrantNS\Investigator.cs" />
+    <Compile Include="Library\HotelNS\Hotel.cs" />
+    <Compile Include="Library\IcdlNS\IcdlBook.cs" />
+    <Compile Include="Library\IcdlNS\IcdlBookPreview.cs" />
+    <Compile Include="Library\IcdlNS\IcdlImageResult.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreArticle.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreCitations.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreReferences.cs" />
+    <Compile Include="Library\IeeeXploreNS\IeeeXploreSearch.cs" />
+    <Compile Include="Library\LolzNS\Lolz.cs" />
+    <Compile Include="Library\MiscNS\Comment.cs" />
+    <Compile Include="Library\MiscNS\DcDocument.cs" />
+    <Compile Include="Library\MiscNS\Dlms.cs" />
+    <Compile Include="Library\MiscNS\IcdlImage.cs" />
+    <Compile Include="Library\MiscNS\Nsdl.cs" />
+    <Compile Include="Library\MiscNS\Rating.cs" />
+    <Compile Include="Library\MiscNS\Review.cs" />
+    <Compile Include="Library\MovieNS\Actor.cs" />
+    <Compile Include="Library\MovieNS\Movie.cs" />
+    <Compile Include="Library\NsdlNS\Header.cs" />
+    <Compile Include="Library\NsdlNS\NsdlDocument.cs" />
+    <Compile Include="Library\NsdlNS\NsdlService.cs" />
+    <Compile Include="Library\NsdlNS\SearchResults.cs" />
+    <Compile Include="Library\NsfNS\NsfAward.cs" />
+    <Compile Include="Library\NsfNS\NsfDivision.cs" />
+    <Compile Include="Library\NsfNS\NsfDivisionStaffList.cs" />
+    <Compile Include="Library\NsfNS\NsfInvestigator.cs" />
+    <Compile Include="Library\NsfNS\NsfProgram.cs" />
+    <Compile Include="Library\NsfNS\NsfProgramStaffList.cs" />
+    <Compile Include="Library\NsfNS\NsfSearch.cs" />
+    <Compile Include="Library\NsfNS\NsfStaff.cs" />
+    <Compile Include="Library\OpmlNS\Body.cs" />
+    <Compile Include="Library\OpmlNS\Head.cs" />
+    <Compile Include="Library\OpmlNS\Opml.cs" />
+    <Compile Include="Library\OpmlNS\Outline.cs" />
+    <Compile Include="Library\PatentNS\GooglePatent.cs" />
+    <Compile Include="Library\PatentNS\GooglePatentAuthor.cs" />
+    <Compile Include="Library\PatentNS\GoogleSorry.cs" />
+    <Compile Include="Library\PatentNS\Patent.cs" />
+    <Compile Include="Library\PatentNS\PatentAuthor.cs" />
+    <Compile Include="Library\PatentNS\PatentClassification.cs" />
+    <Compile Include="Library\PdfMixin.cs" />
+    <Compile Include="Library\PersonNS\BirthDetail.cs" />
+    <Compile Include="Library\PersonNS\Person.cs" />
+    <Compile Include="Library\PostNS\Post.cs" />
+    <Compile Include="Library\ProductAndServiceNS\AmazonList.cs" />
+    <Compile Include="Library\ProductAndServiceNS\AmazonProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\Commodity.cs" />
+    <Compile Include="Library\ProductAndServiceNS\Product.cs" />
+    <Compile Include="Library\ProductAndServiceNS\Service.cs" />
+    <Compile Include="Library\PublicationNS\AmazonBook.cs" />
+    <Compile Include="Library\PublicationNS\Book.cs" />
+    <Compile Include="Library\PublicationNS\Publication.cs" />
+    <Compile Include="Library\PublicationNS\Publisher.cs" />
+    <Compile Include="Library\PublicationNS\Subject.cs" />
+    <Compile Include="Library\PublicationNS\TermType.cs" />
+    <Compile Include="Library\PubmedArticle.cs" />
+    <Compile Include="Library\PubmedNS\PubmedArticle.cs" />
+    <Compile Include="Library\PubmedNS\PubmedAuthor.cs" />
+    <Compile Include="Library\PubmedNS\PubmedJournal.cs" />
+    <Compile Include="Library\RepositoryMetadataTranslationScope.cs" />
+    <Compile Include="Library\RestaurantNS\Restaurant.cs" />
+    <Compile Include="Library\RestaurantNS\RestaurantGenre.cs" />
+    <Compile Include="Library\RichBookmarkNS\MobileRichBookmark.cs" />
+    <Compile Include="Library\RichBookmarkNS\MobileRichBookmarkCollection.cs" />
+    <Compile Include="Library\RssNS\Channel.cs" />
+    <Compile Include="Library\RssNS\Dc.cs" />
+    <Compile Include="Library\RssNS\Item.cs" />
+    <Compile Include="Library\RssNS\MediaContent.cs" />
+    <Compile Include="Library\RssNS\Rss.cs" />
+    <Compile Include="Library\RssNS\Rss22.cs" />
+    <Compile Include="Library\RssNS\YahooMediaRss.cs" />
+    <Compile Include="Library\RwandatribunalNS\CategoryInterviews.cs" />
+    <Compile Include="Library\RwandatribunalNS\PersonnelInterview.cs" />
+    <Compile Include="Library\RwandatribunalNS\TribunalVoices.cs" />
+    <Compile Include="Library\RwandatribunalNS\VideoInterview.cs" />
+    <Compile Include="Library\ScholarlyArticleNS\InformaWorld.cs" />
+    <Compile Include="Library\ScholarlyArticleNS\ScholarlyArticle.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScienceDirectArticle.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScopusArticle.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScopusAuthor.cs" />
+    <Compile Include="Library\ScienceDirectNS\ScopusSearch.cs" />
+    <Compile Include="Library\SearchNS\BingSearchApi.cs" />
+    <Compile Include="Library\SearchNS\DeliciousSearch.cs" />
+    <Compile Include="Library\SearchNS\GoogleScholarSearch.cs" />
+    <Compile Include="Library\SearchNS\GoogleScholarSearchResult.cs" />
+    <Compile Include="Library\SearchNS\ImageSearch.cs" />
+    <Compile Include="Library\SearchNS\ImageSearchResult.cs" />
+    <Compile Include="Library\SearchNS\Search.cs" />
+    <Compile Include="Library\SearchNS\SearchCrumb.cs" />
+    <Compile Include="Library\SearchNS\SearchMeta.cs" />
+    <Compile Include="Library\SearchNS\SlashdotSearch.cs" />
+    <Compile Include="Library\SearchNS\SocialMediaSearch1.cs" />
+    <Compile Include="Library\SearchNS\SocialMediaSearch2.cs" />
+    <Compile Include="Library\SearchNS\SocialMediaSearchResult.cs" />
+    <Compile Include="Library\SearchNS\TumblrSearch.cs" />
+    <Compile Include="Library\SearchNS\YahooGeoCode.cs" />
+    <Compile Include="Library\SearchNS\YahooGeoCodeResult.cs" />
+    <Compile Include="Library\SearchNS\YahooResult.cs" />
+    <Compile Include="Library\SearchNS\YahooResultSet.cs" />
+    <Compile Include="Library\SearchNS\YahooThumbnail.cs" />
+    <Compile Include="Library\SlashdotNS\SlashdotArticle.cs" />
+    <Compile Include="Library\SlashdotNS\SlashdotItem.cs" />
+    <Compile Include="Library\SlashdotNS\SlashdotRss.cs" />
+    <Compile Include="Library\SocialMediaNS\RedditSearchResults.cs" />
+    <Compile Include="Library\TumblrNS\Tumblr.cs" />
+    <Compile Include="Library\TvShowNS\TvShow.cs" />
+    <Compile Include="Library\TvShowNS\TvShowEpisode.cs" />
+    <Compile Include="Library\UrbanspoonNS\UrbanSpoonSearch.cs" />
+    <Compile Include="Library\UvaNS\DocumentSet.cs" />
+    <Compile Include="Library\UvaNS\KeywordSet.cs" />
+    <Compile Include="Library\UvaNS\Topic.cs" />
+    <Compile Include="Library\UvaNS\TopicCluster.cs" />
+    <Compile Include="Library\UvaNS\UvaModel.cs" />
+    <Compile Include="Library\VideoNS\Video.cs" />
+    <Compile Include="Library\VideoNS\YoutubeSearchResults.cs" />
+    <Compile Include="Library\WeatherReport.cs" />
+    <Compile Include="Library\WikipediaNS\Paragraph.cs" />
+    <Compile Include="Library\WikipediaNS\Section.cs" />
+    <Compile Include="Library\WikipediaNS\WikipediaCategoryType.cs" />
+    <Compile Include="Library\WikipediaNS\WikipediaMobilePage.cs" />
+    <Compile Include="Library\WikipediaNS\WikipediaPage.cs" />
+    <Compile Include="Library\WikipediaNS\WikipediaPageType.cs" />
+    <Compile Include="Library\WordpressNS\Wordpress.cs" />
+    <Compile Include="Library\WordpressNS\WordpressPost.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
