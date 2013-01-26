@@ -5,7 +5,7 @@ package ecologylab.semantics.generated.library.dlese;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2012) Interface Ecology Lab.
+ * Copyright (2013) Interface Ecology Lab.
  */
 
 import ecologylab.semantics.generated.library.dlese.DleseRecordHead;

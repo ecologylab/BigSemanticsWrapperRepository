@@ -5,7 +5,7 @@ package crit.semantics.generated.txtf1.fieldreports.emergent_event;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2012) Interface Ecology Lab.
+ * Copyright (2013) Interface Ecology Lab.
  */
 
 import crit.semantics.generated.txtf1.fieldreports.emergent_event.EmergentEvent;

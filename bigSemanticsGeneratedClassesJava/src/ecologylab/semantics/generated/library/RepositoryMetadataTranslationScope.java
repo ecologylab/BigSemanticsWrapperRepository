@@ -5,7 +5,7 @@ package ecologylab.semantics.generated.library;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2012) Interface Ecology Lab.
+ * Copyright (2013) Interface Ecology Lab.
  */
 
 import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -113,10 +113,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.semantics.generated.library.creative_work.CreativeWork.class,
 
 		ecologylab.semantics.generated.library.creative_work.Periodical.class,
-
-		ecologylab.semantics.generated.library.curated.CurationRecord.class,
-
-		ecologylab.semantics.generated.library.curated.Curator.class,
 
 		ecologylab.semantics.generated.library.dlese.AdditionalMetadata.class,
 
