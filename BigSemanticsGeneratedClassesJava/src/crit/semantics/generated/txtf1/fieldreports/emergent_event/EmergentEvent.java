@@ -8,14 +8,14 @@ package crit.semantics.generated.txtf1.fieldreports.emergent_event;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.semantics.generated.library.gis.GisLocation;
-import ecologylab.semantics.metadata.Metadata;
-import ecologylab.semantics.metadata.builtins.Image;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.semantics.metadata.mm_name;
-import ecologylab.semantics.metadata.scalar.MetadataDate;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.bigsemantics.generated.library.gis.GisLocation;
+import ecologylab.bigsemantics.metadata.Metadata;
+import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.builtins.Image;
+import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
+import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;

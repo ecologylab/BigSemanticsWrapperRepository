@@ -9,9 +9,9 @@ package crit.semantics.generated.txtf1.fieldreports.spotrep;
  */
 
 import crit.semantics.generated.txtf1.fieldreports.spotrep.Spotrep;
-import ecologylab.semantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.semantics.metametadata.MetaMetadataCompositeField;
-import ecologylab.semantics.namesandnums.SemanticsNames;
+import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
+import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
