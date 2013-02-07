@@ -133,6 +133,7 @@
   
   <meta_metadata name="nsf_staff" extends="grant_staff" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/staff/staff_bio.jsp" />
+    <example url="http://www.nsf.gov/staff/staff_bio.jsp?lan=sspengle&amp;org=IIS" />
     
     <scalar name="title" xpath="//*[@class='pageheadline']/following::strong[1]">
       <filter regex="\s+" replace=" " />
@@ -209,7 +210,15 @@
 
   <meta_metadata name="nsf_investigator" extends="investigator" parser="xpath">
     <generic_type_var name="CW" arg="nsf_award" />
+    
+    <selector url_stripped="http://nsf.gov/awardsearch/piSearch.do" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
+      <param name="PILastName" />
+    </selector>
+    
     <example_url url="http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;IncludeCOPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne#results" />
+    <example_url url="http://www.nsf.gov/awardsearch/advancedSearchResult?IncludeCoPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne" />
   
     <!-- first/last name helps form location: -->
     <scalar name="first_name" hide="true" scalar_type="String" />
@@ -254,11 +263,14 @@
   <meta_metadata name="nsf_award" extends="grant" comment="NSF award details." parser="xpath">
     <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
     <selector url_stripped="http://nsf.gov/awardsearch/showAward.do" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/showAward" />
+    <selector url_stripped="http://nsf.gov/awardsearch/showAward" />
     
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428" />
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854" />
     <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1123972"
                  comment="this has two PIs, good for testing splitting and parsing PI names." />
+    <example_url url="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1247637&amp;HistoricalAwards=false" />
 
     <scalar name="title" xpath="//span[@class='pageheadline']/strong" />
     <scalar name="description" xpath="//strong[@class='greybold' and starts-with(text(), 'ABSTRACT')]/parent::p" />
@@ -398,6 +410,8 @@
 <!--     <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" /> -->
 <!--     <selector url_stripped="http://www.nsf.gov/awardsearch/progSearch.do" /> -->
 <!--     <selector url_stripped="http://www.nsf.gov/awardsearch/afSearch.do" /> -->
+
+    <selector url_stripped="http://www.nsf.gov/awardsearch/simpleSearchResult" />
 
     <collection name="search_results" label="nsf_awards" child_type="nsf_award"
                 xpath="//table[@class='resultTable']/tbody//tr">

@@ -32,6 +32,7 @@
 	<meta_metadata name="informa_world" extends="scholarly_article"  parser="xpath">
 		<selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />
 		<selector url_path_tree="http://tandfonline.com/doi/full/*/*" />
+		<selector url_path_tree="http://tandfonline.com/doi/ref/*/*" />
 		<example_url url="http://www.tandfonline.com/doi/ref/10.1080/15332861.2012.689565" />
 		
 		<scalar name="title" xpath="//h1" />

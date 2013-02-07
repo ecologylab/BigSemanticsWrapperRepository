@@ -46,7 +46,7 @@
   </meta_metadata>
   
   <meta_metadata name="overstock_com_product" type="product" parser="xpath">
-  	<selector url_regex="http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html"
+  	<selector url_regex="http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html.*"
               domain="overstock.com" />
   	
   	<example_url url="http://www.overstock.com/Home-Garden/Bodipedic-Essentials-8-inch-Queen-size-Memory-Foam-Mattress/6153386/product.html?rcmndsrc=4" />

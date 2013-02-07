@@ -39,7 +39,7 @@
 
 
   <meta_metadata name="citeulike_author" extends="author" parser="xpath" ignore_in_term_vector="true">
-		<selector url_regex="http://www.citeulike.org/author/*" domain="citeulike.org" />
+		<selector url_regex="http://www.citeulike.org/author/[^/]*" domain="citeulike.org" />
 		<selector url_regex="http://www.citeulike.org/user/[^/]*/author/[^/]*" domain="citeulike.org" />
 		<example_url url="http://www.citeulike.org/author/Hearst:MA" />
 		<example_url url="http://www.citeulike.org/user/jsun/author/Hofmann:T" />
