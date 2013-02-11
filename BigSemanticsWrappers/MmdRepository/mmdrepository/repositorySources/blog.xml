@@ -1,4 +1,4 @@
-<meta_metadata_repository name="blog" package="ecologylab.semantics.generated.library.blog">
+<meta_metadata_repository name="blog" package="ecologylab.bigsemantics.generated.library.blog">
 
   <meta_metadata name="post" extends="creative_work">
     <scalar name="description" label="content" tag="content" other_tags="description" />

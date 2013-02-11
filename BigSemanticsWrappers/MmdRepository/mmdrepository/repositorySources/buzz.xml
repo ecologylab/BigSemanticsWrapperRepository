@@ -1,4 +1,4 @@
-<meta_metadata_repository name="yahoo_buzz" package="ecologylab.semantics.generated.library.buzz">
+<meta_metadata_repository name="yahoo_buzz" package="ecologylab.bigsemantics.generated.library.buzz">
 
 	<meta_metadata name="yahoo_buzz" comment="Yahoo Buzz." type="rss" parser="direct">
 		<selector url_path_tree="http://buzzlog.buzz.yahoo.com/feeds/"/>

@@ -1,4 +1,4 @@
-<meta_metadata_repository name="nsdl" package="ecologylab.semantics.generated.library.nsdl">
+<meta_metadata_repository name="nsdl" package="ecologylab.bigsemantics.generated.library.nsdl">
 
 	<meta_metadata name="nsdl_document" extends="dc">
 		<composite name="header" extends="metadata">

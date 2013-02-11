@@ -1,4 +1,4 @@
-<meta_metadata_repository name="slashdot" package="ecologylab.semantics.generated.library.slashdot">
+<meta_metadata_repository name="slashdot" package="ecologylab.bigsemantics.generated.library.slashdot">
 
 	<meta_metadata name="slashdot_article" extends="post" parser="xpath">
 		<selector domain="slashdot.org" url_regex_fragment="http://[a-zA-Z]*.slashdot.org/story/" />

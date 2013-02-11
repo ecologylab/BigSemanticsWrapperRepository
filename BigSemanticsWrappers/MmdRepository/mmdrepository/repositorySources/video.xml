@@ -1,4 +1,4 @@
-<meta_metadata_repository name="video" package="ecologylab.semantics.generated.library.video"
+<meta_metadata_repository name="video" package="ecologylab.bigsemantics.generated.library.video"
                           default_user_agent_name="firefox_3_6_8">
 
 	<meta_metadata name="video" extends="creative_work"  parser="xpath">

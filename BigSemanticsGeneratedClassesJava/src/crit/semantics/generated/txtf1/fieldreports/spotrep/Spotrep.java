@@ -9,9 +9,9 @@ package crit.semantics.generated.txtf1.fieldreports.spotrep;
  */
 
 import ecologylab.bigsemantics.generated.library.gis.GisLocation;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

@@ -1,4 +1,4 @@
-<meta_metadata_repository name="delicious" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="delicious" package="ecologylab.bigsemantics.generated.library" default_user_agent_name="chrome_2">
 
 	<meta_metadata name="delicious_homepage" extends="compound_document" parser="xpath"
                  comment="Delicious home page class">

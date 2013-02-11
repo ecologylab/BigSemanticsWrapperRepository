@@ -1,4 +1,4 @@
-<meta_metadata_repository name="imdb" package="ecologylab.semantics.generated.library.imdb" 
+<meta_metadata_repository name="imdb" package="ecologylab.bigsemantics.generated.library.imdb" 
                           default_user_agent_name="chrome_2">
 	
 	<cookie_processing domain="imdb.com" ignore_all_cookies="true" />

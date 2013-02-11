@@ -1,4 +1,4 @@
-<meta_metadata_repository name="pubmed" package="ecologylab.semantics.generated.library.pubmed"
+<meta_metadata_repository name="pubmed" package="ecologylab.bigsemantics.generated.library.pubmed"
                           default_user_agent_name="firefox">
 
 	<meta_metadata name="pubmed_article" extends="scholarly_article" parser="xpath" user_agent_name="firefox">

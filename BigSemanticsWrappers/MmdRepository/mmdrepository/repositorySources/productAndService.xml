@@ -1,5 +1,5 @@
 <meta_metadata_repository name="product_and_service"
-                          package="ecologylab.semantics.generated.library.product_and_service">
+                          package="ecologylab.bigsemantics.generated.library.product_and_service">
 
   <meta_metadata name="commodity" extends="compound_document">
     <scalar name="location" hide="true" />

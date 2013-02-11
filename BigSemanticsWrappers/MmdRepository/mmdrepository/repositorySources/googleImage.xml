@@ -1,4 +1,4 @@
-<meta_metadata_repository name="google_image" package="ecologylab.semantics.generated.library.google_image" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="google_image" package="ecologylab.bigsemantics.generated.library.google_image" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default_user_agent_name="chrome_2">
 
   <meta_metadata name="google_image" type="image" parser="image">
     <selector url_regex_fragment="https://encrypted-tbn[0-9]+\.google\.com/images" domain="google.com" />

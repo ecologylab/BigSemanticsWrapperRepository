@@ -1,4 +1,4 @@
-<meta_metadata_repository name="information_composition" package="ecologylab.semantics.generated.library.infocomp" >
+<meta_metadata_repository name="information_composition" package="ecologylab.bigsemantics.generated.library.infocomp" >
 
 <!--	<meta_metadata name="information_composition_base" extends="document">-->
 <!--		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings" />-->

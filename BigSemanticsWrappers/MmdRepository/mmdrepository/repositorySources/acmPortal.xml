@@ -1,7 +1,7 @@
 <!-- This file defines a wrapper that allows for extraction of meta-data for scholarly articles from ACM portal web-pages. --> 
 
 <meta_metadata_repository name="acm_portal"
-                          package="ecologylab.semantics.generated.library.acm"
+                          package="ecologylab.bigsemantics.generated.library.acm"
                           default_user_agent_name="chrome_2">
 						  
 <!-- An ACM portal object will extend scholarly_article, will use Xpaths for parsing webpage data, and will use

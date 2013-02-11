@@ -1,4 +1,4 @@
-<meta_metadata_repository name="default" package="ecologylab.semantics.generated.library.misc">
+<meta_metadata_repository name="default" package="ecologylab.bigsemantics.generated.library.misc">
 
 	<meta_metadata name="comment" extends="metadata" >
 		<scalar name="description" scalar_type="String" tag="content" other_tags="description" />

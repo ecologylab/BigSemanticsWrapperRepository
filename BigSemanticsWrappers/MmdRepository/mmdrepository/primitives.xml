@@ -1,8 +1,8 @@
-<meta_metadata_repository name="primitives" package="ecologylab.semantics.metadata.builtins"
+<meta_metadata_repository name="primitives" package="ecologylab.bigsemantics.metadata.builtins"
                           default_user_agent_name="firefox_3_5">
 
 	<meta_metadata name="metadata" comment="The Metadata Class" built_in="true"
-                 package="ecologylab.semantics.metadata">
+                 package="ecologylab.bigsemantics.metadata">
 		<scalar name="meta_metadata_name" scalar_type="String" tag="mm_name" hide="true"
             ignore_in_term_vector="true"
             comment="Stores the name of the meta-metadata, and is used on restoring from XML." />
@@ -149,7 +149,7 @@
 	
 	<meta_metadata name="pdf_mixin" label="pdf" extends="metadata"
                  comment="For metadata fields extracted by the PDF parser"
-                 package="ecologylab.semantics.generated.library">
+                 package="ecologylab.bigsemantics.generated.library">
 		<scalar name="author" comment="The author of the pdf document" scalar_type="String" />
 		<scalar name="summary" comment="Summary of the pdf document" scalar_type="String" />
 		<scalar name="pdf_keywords_string" comment="Key Words of the document" scalar_type="String" />

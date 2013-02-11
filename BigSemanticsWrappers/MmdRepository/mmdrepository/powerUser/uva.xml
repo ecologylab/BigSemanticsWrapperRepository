@@ -1,4 +1,4 @@
-<meta_metadata_repository name="uva" package="ecologylab.semantics.generated.library.uva">
+<meta_metadata_repository name="uva" package="ecologylab.bigsemantics.generated.library.uva">
 
   <meta_metadata name="keyword_set" extends="metadata" parser="direct">
   	<scalar name="type" scalar_type="String"/>
@@ -73,7 +73,7 @@
   				container.setJustMedia(true);
   				
   				// populate metadata
-  				ecologylab.semantics.metadata.builtins.Document containterMetadata	= container.metadata();
+  				ecologylab.bigsemantics.metadata.builtins.Document containterMetadata	= container.metadata();
   				Topic topicMetadata;
   				if (containterMetadata instanceof Topic)
   					topicMetadata	= (Topic) containterMetadata;

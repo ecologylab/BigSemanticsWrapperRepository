@@ -10,8 +10,8 @@ package crit.semantics.generated.txtf1.fieldreports.emergent_event;
 
 import crit.semantics.generated.txtf1.fieldreports.emergent_event.EmergentEvent;
 import ecologylab.bigsemantics.metadata.Metadata;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataFloat;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;

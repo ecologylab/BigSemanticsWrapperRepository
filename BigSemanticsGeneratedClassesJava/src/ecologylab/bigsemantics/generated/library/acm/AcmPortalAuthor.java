@@ -12,8 +12,8 @@ import ecologylab.bigsemantics.generated.library.acm.AcmPortalAuthorCollaborator
 import ecologylab.bigsemantics.generated.library.acm.AcmPortalAuthorPublicationDetail;
 import ecologylab.bigsemantics.generated.library.acm.AcmPortalInstitutionProfile;
 import ecologylab.bigsemantics.generated.library.creative_work.Author;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;

@@ -1,4 +1,4 @@
-<meta_metadata_repository name="wordpress" package="ecologylab.semantics.generated.library.wordpress" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="wordpress" package="ecologylab.bigsemantics.generated.library.wordpress" default_user_agent_name="chrome_2">
 
 	<meta_metadata name="wordpress_post" type="post" comment="Wordpress post class" parser="xpath">
 		<example_url url="http://babydot74.wordpress.com/2012/09/17/whats-for-dinner/" />

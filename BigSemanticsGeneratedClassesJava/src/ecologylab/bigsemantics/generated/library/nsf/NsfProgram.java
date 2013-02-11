@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.nsf;
 
 import ecologylab.bigsemantics.generated.library.grant.GrantProgram;
 import ecologylab.bigsemantics.generated.library.nsf.NsfSearch;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;

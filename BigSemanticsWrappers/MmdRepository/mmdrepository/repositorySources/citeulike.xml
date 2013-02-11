@@ -1,5 +1,5 @@
 <meta_metadata_repository name="citeulike"
-                          package="ecologylab.semantics.generated.library.citeulike"
+                          package="ecologylab.bigsemantics.generated.library.citeulike"
                           default_user_agent_name="chrome">
 
   <meta_metadata name="citeulike_paper" extends="scholarly_article" parser="xpath">

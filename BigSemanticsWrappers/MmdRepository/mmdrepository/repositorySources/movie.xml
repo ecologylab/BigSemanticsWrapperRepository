@@ -1,4 +1,4 @@
-<meta_metadata_repository name="movie" package="ecologylab.semantics.generated.library.movie"
+<meta_metadata_repository name="movie" package="ecologylab.bigsemantics.generated.library.movie"
                           default_user_agent_name="chrome_2">
 	
 	<meta_metadata name="movie" extends="creative_work" comment="The movie class.">

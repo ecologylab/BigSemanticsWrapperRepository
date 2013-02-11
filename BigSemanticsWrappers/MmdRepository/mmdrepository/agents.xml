@@ -1,4 +1,4 @@
-<meta_metadata_repository name="agents_engines_styles_sites" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="agents_engines_styles_sites" package="ecologylab.bigsemantics.generated.library" default_user_agent_name="chrome_2">
   <user_agents>
     <user_agent name="google_bot_2" string="Googlebot/2.1 (+http://www.googlebot.com/bot.html)" />
     <user_agent name="opera_9" string="Opera/9.25 (Windows NT 6.0; U; en)" />

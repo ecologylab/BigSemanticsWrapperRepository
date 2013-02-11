@@ -10,9 +10,9 @@ package ecologylab.bigsemantics.generated.library.uva;
 
 import ecologylab.bigsemantics.generated.library.uva.KeywordSet;
 import ecologylab.bigsemantics.metadata.Metadata;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;

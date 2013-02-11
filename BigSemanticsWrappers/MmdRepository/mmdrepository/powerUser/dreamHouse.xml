@@ -1,5 +1,5 @@
 <meta_metadata_repository name="dream_house"
-                          package="ecologylab.semantics.generated.library.dreamHouse"
+                          package="ecologylab.bigsemantics.generated.library.dreamHouse"
                           default_user_agent_name="firefox_3_6_8">
 
   <meta_metadata name="glass_tile_store_product" type="product" parser="xpath">

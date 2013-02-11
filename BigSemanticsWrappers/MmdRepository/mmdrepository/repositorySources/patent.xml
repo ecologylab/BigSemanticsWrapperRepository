@@ -1,4 +1,4 @@
-<meta_metadata_repository name="patent" package="ecologylab.semantics.generated.library.patent" default_user_agent_name="chrome">
+<meta_metadata_repository name="patent" package="ecologylab.bigsemantics.generated.library.patent" default_user_agent_name="chrome">
 
 	<meta_metadata name="patent_classification" extends="document" parser="xpath">
 		<selector url_path_tree="http://www.uspto.gov/web/patents/classification" />

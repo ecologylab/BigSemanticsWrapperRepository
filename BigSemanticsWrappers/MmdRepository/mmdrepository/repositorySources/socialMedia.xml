@@ -1,4 +1,4 @@
-<meta_metadata_repository name="social_media" package="ecologylab.semantics.generated.library.socialMedia"
+<meta_metadata_repository name="social_media" package="ecologylab.bigsemantics.generated.library.socialMedia"
                           default_user_agent_name="firefox_3_6_8">
 
 	<meta_metadata name="reddit_search_results" type="search" parser="xpath" comment="reddit search results page" no_cache="true">

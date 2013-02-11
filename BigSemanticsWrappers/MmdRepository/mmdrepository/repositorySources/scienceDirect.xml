@@ -1,5 +1,5 @@
 <meta_metadata_repository name="scienceDirect"
-                          package="ecologylab.semantics.generated.library.scienceDirect"
+                          package="ecologylab.bigsemantics.generated.library.scienceDirect"
                           default_user_agent_name="chrome">
 
 	<meta_metadata name="science_direct_article" extends="scholarly_article" parser="xpath"

@@ -1,4 +1,4 @@
-<meta_metadata_repository name="lolz" package="ecologylab.semantics.generated.library.lolz"
+<meta_metadata_repository name="lolz" package="ecologylab.bigsemantics.generated.library.lolz"
                           default_user_agent_name="chrome_2">
                           
 	<meta_metadata name="lolz" extends="creative_work" parser="xpath"

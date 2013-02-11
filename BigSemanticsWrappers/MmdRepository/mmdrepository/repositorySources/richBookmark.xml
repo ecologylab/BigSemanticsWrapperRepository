@@ -1,4 +1,4 @@
-<meta_metadata_repository name="mobile_rich_bookmark" package="ecologylab.semantics.generated.library.rich_bookmark">
+<meta_metadata_repository name="mobile_rich_bookmark" package="ecologylab.bigsemantics.generated.library.rich_bookmark">
 
 	<meta_metadata name="mobile_rich_bookmark" extends="metadata">
 		<composite name="clipping" type="clipping" polymorphic_scope="repository_clippings" />

@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.googleBook;
 
 import ecologylab.bigsemantics.generated.library.googleBook.Page;
 import ecologylab.bigsemantics.generated.library.publication.Book;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

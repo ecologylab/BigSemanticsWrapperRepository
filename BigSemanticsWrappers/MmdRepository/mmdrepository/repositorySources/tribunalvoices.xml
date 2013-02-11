@@ -1,4 +1,4 @@
-<meta_metadata_repository name="rwanda_tribunal" package="ecologylab.semantics.generated.library.rwandatribunal">
+<meta_metadata_repository name="rwanda_tribunal" package="ecologylab.bigsemantics.generated.library.rwandatribunal">
 	
 <!-- 	<meta_metadata name="interview" extends="metadata" comment="personnel interview"> -->
 <!-- 		<scalar name="interviewee" scalar_type="String"/> -->

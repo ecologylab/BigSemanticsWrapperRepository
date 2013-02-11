@@ -1,4 +1,4 @@
-<meta_metadata_repository name="google_book" package="ecologylab.semantics.generated.library.googleBook" >
+<meta_metadata_repository name="google_book" package="ecologylab.bigsemantics.generated.library.googleBook" >
 
 	<meta_metadata name="google_book" extends="book" parser="xpath" user_agent_name="chrome_12">
 		<selector url_stripped="http://books.google.com/books" />

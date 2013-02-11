@@ -1,4 +1,4 @@
-<meta_metadata_repository name="creative_work" package="ecologylab.semantics.generated.library.creative_work">
+<meta_metadata_repository name="creative_work" package="ecologylab.bigsemantics.generated.library.creative_work">
 
 	<meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
                  comment="An author of an article or creative work.">

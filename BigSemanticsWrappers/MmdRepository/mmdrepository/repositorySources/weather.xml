@@ -1,4 +1,4 @@
-<meta_metadata_repository name="weather" package="ecologylab.semantics.generated.library" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="weather" package="ecologylab.bigsemantics.generated.library" default_user_agent_name="chrome_2">
 
 	<!-- data structure definition for (general) weather report -->
 	<meta_metadata name="weather_report" extends="compound_document" comment="The definition of weather report class.">

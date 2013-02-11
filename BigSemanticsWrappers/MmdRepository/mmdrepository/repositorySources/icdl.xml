@@ -1,9 +1,9 @@
 <meta_metadata_repository name="default"
-	package="ecologylab.semantics.generated.library.icdl">
+	package="ecologylab.bigsemantics.generated.library.icdl">
 
 	<meta_metadata name="icdl_image_result" extends="document"
 		comment="Thumbnail Image" tag="response"
-		package="ecologylab.semantics.generated.library.icdl" parser="direct">
+		package="ecologylab.bigsemantics.generated.library.icdl" parser="direct">
 		<selector url_stripped="http://www.childrenslibrary.org/BookXMLResults" />
 		<!--
 			For safety we'd like to add additional selectors: <selector>

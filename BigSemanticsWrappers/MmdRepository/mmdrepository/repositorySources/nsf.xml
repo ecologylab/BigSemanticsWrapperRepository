@@ -1,4 +1,4 @@
-<meta_metadata_repository name="nsf" package="ecologylab.semantics.generated.library.nsf">
+<meta_metadata_repository name="nsf" package="ecologylab.bigsemantics.generated.library.nsf">
 
   <meta_metadata name="nsf_division" extends="compound_document" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/div/index.jsp" />

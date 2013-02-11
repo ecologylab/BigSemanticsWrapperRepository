@@ -10,9 +10,9 @@ package ecologylab.bigsemantics.generated.library.artwork;
 
 import ecologylab.bigsemantics.generated.library.artwork.Artwork;
 import ecologylab.bigsemantics.generated.library.artwork.TempFieldValueHolder;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

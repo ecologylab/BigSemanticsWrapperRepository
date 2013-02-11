@@ -1,4 +1,4 @@
-<meta_metadata_repository name="artwork" package="ecologylab.semantics.generated.library.artwork"
+<meta_metadata_repository name="artwork" package="ecologylab.bigsemantics.generated.library.artwork"
                           default_user_agent_name="chrome_2">
 
 	<meta_metadata name="artist" extends="author">

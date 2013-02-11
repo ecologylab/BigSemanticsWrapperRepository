@@ -1,4 +1,4 @@
-<meta_metadata_repository name="news" package="ecologylab.semantics.generated.library.news"
+<meta_metadata_repository name="news" package="ecologylab.bigsemantics.generated.library.news"
                           default_user_agent_name="chrome_2">
 
 	<meta_metadata name="nytimes" type="post" iparser="xpath" parser="html_dom_image_text">

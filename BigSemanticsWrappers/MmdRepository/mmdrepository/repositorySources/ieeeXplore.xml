@@ -1,4 +1,4 @@
-<meta_metadata_repository name="scienceDirect" package="ecologylab.semantics.generated.library.ieeeXplore">
+<meta_metadata_repository name="scienceDirect" package="ecologylab.bigsemantics.generated.library.ieeeXplore">
 
 	<meta_metadata name="ieee_xplore_article" extends="scholarly_article" parser="xpath">
 		<selector url_stripped="http://ieeexplore.ieee.org/xpl/articleDetails.jsp" />

@@ -1,4 +1,4 @@
-<meta_metadata_repository name="fastflip" package="ecologylab.semantics.generated.library.fastflip">
+<meta_metadata_repository name="fastflip" package="ecologylab.bigsemantics.generated.library.fastflip">
 
   <selector name="fastflip_search_selector"
             url_stripped="http://fastflip.googlelabs.com/search"

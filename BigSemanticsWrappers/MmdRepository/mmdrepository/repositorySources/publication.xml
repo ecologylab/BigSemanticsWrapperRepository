@@ -1,4 +1,4 @@
-<meta_metadata_repository name="publication" package="ecologylab.semantics.generated.library.publication">
+<meta_metadata_repository name="publication" package="ecologylab.bigsemantics.generated.library.publication">
 
 	<meta_metadata name="publication" extends="basic_publication" comment="A publication.">
 		<scalar name="pages" scalar_type="String" />

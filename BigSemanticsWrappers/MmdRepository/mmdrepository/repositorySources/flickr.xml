@@ -1,5 +1,5 @@
 
-<meta_metadata_repository name="flickr" package="ecologylab.semantics.generated.library.flickr">
+<meta_metadata_repository name="flickr" package="ecologylab.bigsemantics.generated.library.flickr">
 
 	<meta_metadata name="flickr_photo" extends="post" parser="xpath"
 		comment="A Flickr image post page">

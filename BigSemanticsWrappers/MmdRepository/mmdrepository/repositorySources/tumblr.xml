@@ -1,4 +1,4 @@
-<meta_metadata_repository name="tumblr" package="ecologylab.semantics.generated.library.tumblr"
+<meta_metadata_repository name="tumblr" package="ecologylab.bigsemantics.generated.library.tumblr"
                           default_user_agent_name="chrome_2">
                           
   <!-- This is not working now. We should transit to use Tumblr API. -->

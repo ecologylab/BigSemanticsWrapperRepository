@@ -1,5 +1,5 @@
 <meta_metadata_repository name="restaurant"
-                          package="ecologylab.semantics.generated.library.restaurant"
+                          package="ecologylab.bigsemantics.generated.library.restaurant"
                           default_user_agent_name="chrome_2">
 
 	<meta_metadata name="restaurant" extends="service">
