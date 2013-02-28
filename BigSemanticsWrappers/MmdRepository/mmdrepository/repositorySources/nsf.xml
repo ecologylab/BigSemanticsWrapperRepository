@@ -216,6 +216,13 @@
     <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
       <param name="PILastName" />
     </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
+      <param name="PILastName" />
+    </selector>
+    
+    <filter_location>
+      <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
+    </filter_location>
     
     <example_url url="http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;IncludeCOPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne#results" />
     <example_url url="http://www.nsf.gov/awardsearch/advancedSearchResult?IncludeCoPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne" />
@@ -225,9 +232,9 @@
     <scalar name="last_name" hide="true" scalar_type="String" />
     
     <collection name="creative_works" child_type="nsf_award"
-                xpath="//div[@id='viewId']//td/div/div">
-      <scalar name="title" xpath="./a" />
-      <scalar name="location" xpath="./a/@href" />
+                xpath="//table[@id='displayTagResults']//tr[@class]">
+      <scalar name="title" xpath="./td[2]/a" />
+      <scalar name="location" xpath="./td[2]/a/@href" />
 <!--       <composite name="division" type="nsf_division" xpath="./td[3]/a"> -->
 <!--         <scalar name="title" xpath="." /> -->
 <!--         <scalar name="location" xpath="./@href" /> -->
@@ -418,9 +425,19 @@
     <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
       <param name="ProgOfficer" />
     </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
+      <param name="Keyword" />
+    </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
+      <param name="ProgOfficer" />
+    </selector>
+    
+    <filter_location>
+      <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
+    </filter_location>
 
     <collection name="search_results" label="nsf_awards" child_type="nsf_award"
-                xpath="//div[@id='viewId']//td/div/div">
+                xpath="//table[@id='displayTagResults']//tr[@class]">
       <scalar name="title" xpath="./a" />
       <scalar name="location" xpath="./a/@href" />
 <!--       <composite name="division" type="nsf_division" xpath="./td[3]/a"> -->
