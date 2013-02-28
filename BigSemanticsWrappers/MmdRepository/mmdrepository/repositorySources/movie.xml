@@ -13,19 +13,25 @@
 		<scalar name="runtime" layer="6.0" comment="How long the movie runs" scalar_type="String" />
 		<scalar name="theater_release" scalar_type="String" layer="5.0"
             comment="When the movie was released in theaters" />
-		<collection name="authors" tag="directors" other_tags="authors" child_tag="director"
-                label="directors" layer="4.0" comment="Who directed the movie." />
-		<collection name="writers" layer="4.0" comment="Who wrote the movie." child_type="person" />
-		<collection name="cast" child_type="actor" />
+            
+<!-- 		<collection name="authors" tag="directors" other_tags="authors" child_tag="director" -->
+<!--                 label="directors" layer="4.0" comment="Who directed the movie." /> -->
+    <collection name="directors" child_tag="director" child_type="movie_person" layer="4.0"
+                comment="Who directed the movie." />
+		<collection name="writers" child_type="movie_person" layer="4.0" comment="Who wrote the movie." />
+		<collection name="cast" child_type="movie_person" />
 		<collection name="genres" comment="Movie genres" child_type="document" />
 	</meta_metadata>
   
   
-	<meta_metadata name="actor" extends="person">
-		<scalar name="role" scalar_type="String" />
-		<scalar name="rating" scalar_type="String" />
-	</meta_metadata>
-	
+  <meta_metadata name="movie_person" extends="person">
+    <collection name="movies" child_type="movie" comment="Movies that relate to this person." />
+    <collection name="awards" child_scalar_type="String" comment="The awards this person has won."/>
+    <!-- the following fields are for backwards compatibility -->
+    <scalar name="role" scalar_type="String" />
+    <scalar name="rating" scalar_type="String" />
+  </meta_metadata>
+
   
   <!-- alas, this will not work until we get login / state stuff working -->
 	<meta_metadata name="netflix_movie" type="movie" parser="xpath">

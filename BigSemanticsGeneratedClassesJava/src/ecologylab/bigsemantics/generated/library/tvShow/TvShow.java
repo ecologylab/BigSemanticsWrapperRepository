@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.tvShow;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.movie.Actor;
+import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
 import ecologylab.bigsemantics.generated.library.tvShow.TvShow;
 import ecologylab.bigsemantics.generated.library.tvShow.TvShowEpisode;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -45,9 +45,9 @@ public class TvShow extends CreativeWork
 	@simpl_scalar
 	private MetadataParsedURL pic;
 
-	@simpl_collection("actor")
+	@simpl_collection("movie_person")
 	@mm_name("cast")
-	private List<Actor> cast;
+	private List<MoviePerson> cast;
 
 	@simpl_collection("tv_show_episode")
 	@mm_name("episode_list")
@@ -161,21 +161,21 @@ public class TvShow extends CreativeWork
 		this.pic = pic;
 	}
 
-	public List<Actor> getCast()
+	public List<MoviePerson> getCast()
 	{
 		return cast;
 	}
 
   // lazy evaluation:
-  public List<Actor> cast()
+  public List<MoviePerson> cast()
   {
     if (cast == null)
-      cast = new ArrayList<Actor>();
+      cast = new ArrayList<MoviePerson>();
     return cast;
   }
 
   // addTo:
-  public void addToCast(Actor element)
+  public void addToCast(MoviePerson element)
   {
     cast().add(element);
   }
@@ -186,7 +186,7 @@ public class TvShow extends CreativeWork
     return cast == null ? 0 : cast.size();
   }
 
-	public void setCast(List<Actor> cast)
+	public void setCast(List<MoviePerson> cast)
 	{
 		this.cast = cast;
 	}

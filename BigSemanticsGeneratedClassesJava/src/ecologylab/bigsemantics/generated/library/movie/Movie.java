@@ -9,8 +9,7 @@ package ecologylab.bigsemantics.generated.library.movie;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.movie.Actor;
-import ecologylab.bigsemantics.generated.library.person.Person;
+import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -59,11 +58,18 @@ public class Movie extends CreativeWork
 	private MetadataString theaterRelease;
 
 	/** 
+	 *Who directed the movie.
+	 */ 
+	@simpl_collection("director")
+	@mm_name("directors")
+	private List<MoviePerson> directors;
+
+	/** 
 	 *Who wrote the movie.
 	 */ 
-	@simpl_collection("person")
+	@simpl_collection("movie_person")
 	@mm_name("writers")
-	private List<Person> writers;
+	private List<MoviePerson> writers;
 
 	/** 
 	 *Movie Poster or other image
@@ -75,9 +81,9 @@ public class Movie extends CreativeWork
 	@mm_name("photos")
 	private List<Image> photos;
 
-	@simpl_collection("actor")
+	@simpl_collection("movie_person")
 	@mm_name("cast")
-	private List<Actor> cast;
+	private List<MoviePerson> cast;
 
 	/** 
 	 *Movie genres
@@ -254,21 +260,51 @@ public class Movie extends CreativeWork
 		this.theaterRelease = theaterRelease;
 	}
 
-	public List<Person> getWriters()
+	public List<MoviePerson> getDirectors()
+	{
+		return directors;
+	}
+
+  // lazy evaluation:
+  public List<MoviePerson> directors()
+  {
+    if (directors == null)
+      directors = new ArrayList<MoviePerson>();
+    return directors;
+  }
+
+  // addTo:
+  public void addToDirectors(MoviePerson element)
+  {
+    directors().add(element);
+  }
+
+  // size:
+  public int directorsSize()
+  {
+    return directors == null ? 0 : directors.size();
+  }
+
+	public void setDirectors(List<MoviePerson> directors)
+	{
+		this.directors = directors;
+	}
+
+	public List<MoviePerson> getWriters()
 	{
 		return writers;
 	}
 
   // lazy evaluation:
-  public List<Person> writers()
+  public List<MoviePerson> writers()
   {
     if (writers == null)
-      writers = new ArrayList<Person>();
+      writers = new ArrayList<MoviePerson>();
     return writers;
   }
 
   // addTo:
-  public void addToWriters(Person element)
+  public void addToWriters(MoviePerson element)
   {
     writers().add(element);
   }
@@ -279,7 +315,7 @@ public class Movie extends CreativeWork
     return writers == null ? 0 : writers.size();
   }
 
-	public void setWriters(List<Person> writers)
+	public void setWriters(List<MoviePerson> writers)
 	{
 		this.writers = writers;
 	}
@@ -346,21 +382,21 @@ public class Movie extends CreativeWork
 		this.photos = photos;
 	}
 
-	public List<Actor> getCast()
+	public List<MoviePerson> getCast()
 	{
 		return cast;
 	}
 
   // lazy evaluation:
-  public List<Actor> cast()
+  public List<MoviePerson> cast()
   {
     if (cast == null)
-      cast = new ArrayList<Actor>();
+      cast = new ArrayList<MoviePerson>();
     return cast;
   }
 
   // addTo:
-  public void addToCast(Actor element)
+  public void addToCast(MoviePerson element)
   {
     cast().add(element);
   }
@@ -371,7 +407,7 @@ public class Movie extends CreativeWork
     return cast == null ? 0 : cast.size();
   }
 
-	public void setCast(List<Actor> cast)
+	public void setCast(List<MoviePerson> cast)
 	{
 		this.cast = cast;
 	}

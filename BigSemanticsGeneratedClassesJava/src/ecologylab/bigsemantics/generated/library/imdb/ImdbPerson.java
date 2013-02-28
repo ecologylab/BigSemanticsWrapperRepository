@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.imdb;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.movie.Movie;
+import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -16,16 +16,13 @@ import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
 
-/** 
- *A movie in IMDB.
- */ 
 @simpl_inherit
-public class ImdbMovie extends Movie
+public class ImdbPerson extends MoviePerson
 {
-	public ImdbMovie()
+	public ImdbPerson()
 	{ super(); }
 
-	public ImdbMovie(MetaMetadataCompositeField mmd) {
+	public ImdbPerson(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

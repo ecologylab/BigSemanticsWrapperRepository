@@ -10,7 +10,7 @@
 		<scalar name="status" scalar_type="String" />
 		<scalar name="pic" scalar_type="ParsedURL" hide="true" comment="A picture of this show." />
     
-		<collection name="cast" child_type="actor" />
+		<collection name="cast" child_type="movie_person" />
 		<collection name="episode_list" child_type="tv_show_episode" />
 		
 		<collection name="similar_shows" child_type="tv_show" />

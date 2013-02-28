@@ -123,6 +123,7 @@ META-INF/
 .settings/
 bin/
 target/
+build/
 
 # Package Files #
 # *.jar

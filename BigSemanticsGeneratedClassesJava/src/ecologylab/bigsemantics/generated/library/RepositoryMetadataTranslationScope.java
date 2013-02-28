@@ -210,6 +210,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreSearch.class,
 
+		ecologylab.bigsemantics.generated.library.imdb.ImdbMovie.class,
+
+		ecologylab.bigsemantics.generated.library.imdb.ImdbPerson.class,
+
 		ecologylab.bigsemantics.generated.library.lolz.Lolz.class,
 
 		ecologylab.bigsemantics.generated.library.misc.Comment.class,
@@ -226,9 +230,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.misc.Review.class,
 
-		ecologylab.bigsemantics.generated.library.movie.Actor.class,
-
 		ecologylab.bigsemantics.generated.library.movie.Movie.class,
+
+		ecologylab.bigsemantics.generated.library.movie.MoviePerson.class,
 
 		ecologylab.bigsemantics.generated.library.nsdl.Header.class,
 

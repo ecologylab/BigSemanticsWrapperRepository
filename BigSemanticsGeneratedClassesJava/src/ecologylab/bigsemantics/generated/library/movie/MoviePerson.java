@@ -8,33 +8,111 @@ package ecologylab.bigsemantics.generated.library.movie;
  * Copyright (2013) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.movie.Movie;
 import ecologylab.bigsemantics.generated.library.person.Person;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Actor extends Person
+public class MoviePerson extends Person
 {
+	/** 
+	 *Movies that relate to this person.
+	 */ 
+	@simpl_collection("movie")
+	@mm_name("movies")
+	private List<Movie> movies;
+
+	/** 
+	 *The awards this person has won.
+	 */ 
+	@simpl_collection("award")
+	@mm_name("awards")
+	private List<MetadataString> awards;
+
 	@simpl_scalar
 	private MetadataString role;
 
 	@simpl_scalar
 	private MetadataString rating;
 
-	public Actor()
+	public MoviePerson()
 	{ super(); }
 
-	public Actor(MetaMetadataCompositeField mmd) {
+	public MoviePerson(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
+
+	public List<Movie> getMovies()
+	{
+		return movies;
+	}
+
+  // lazy evaluation:
+  public List<Movie> movies()
+  {
+    if (movies == null)
+      movies = new ArrayList<Movie>();
+    return movies;
+  }
+
+  // addTo:
+  public void addToMovies(Movie element)
+  {
+    movies().add(element);
+  }
+
+  // size:
+  public int moviesSize()
+  {
+    return movies == null ? 0 : movies.size();
+  }
+
+	public void setMovies(List<Movie> movies)
+	{
+		this.movies = movies;
+	}
+
+	public List<MetadataString> getAwards()
+	{
+		return awards;
+	}
+
+  // lazy evaluation:
+  public List<MetadataString> awards()
+  {
+    if (awards == null)
+      awards = new ArrayList<MetadataString>();
+    return awards;
+  }
+
+  // addTo:
+  public void addToAwards(MetadataString element)
+  {
+    awards().add(element);
+  }
+
+  // size:
+  public int awardsSize()
+  {
+    return awards == null ? 0 : awards.size();
+  }
+
+	public void setAwards(List<MetadataString> awards)
+	{
+		this.awards = awards;
+	}
 
 	public MetadataString	role()
 	{
