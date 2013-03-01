@@ -55,8 +55,7 @@
   	</collection>
 	</meta_metadata>
 	
-  
-  	<meta_metadata name="rotten_person" extends="movie_person" parser="xpath"
+  	<meta_metadata name="rotten_person" type="movie_person" parser="xpath"
   					comment="RottenTomatoes celebrity page">
   		<selector url_path_tree="http://www.rottentomatoes.com/celebrity/" />
   		
@@ -65,7 +64,7 @@
   		<scalar name="title" xpath="//div[@class='media_block_content celeb_bio']/h1" />
   		<scalar name="description" xpath="//div[@class='media_block_content celeb_bio']/dl[@class='bottom_divider']/dd[3]" />
   		
-  		<composite name="photo" xpath="//div[@class='media_block_image big']/a/">
+  		<composite name="photo" xpath="./div[@class='media_block_image big']/a">
         	<scalar name="location" xpath=".//img/@src" />
      	</composite>
     	<collection name="movies" child_type="rotten_movie"
@@ -106,6 +105,7 @@
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./span" />
 		</collection>
+		
  		<collection name="genres" xpath="//div[@class='left_col']/p[2]/span[@class='content']/a">
 			<scalar name="location" hide="true" xpath="./@href" />
 			<scalar name="title" xpath="./span" label="genre" />			
