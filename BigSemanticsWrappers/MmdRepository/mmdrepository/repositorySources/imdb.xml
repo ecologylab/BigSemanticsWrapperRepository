@@ -1,5 +1,5 @@
 <meta_metadata_repository name="imdb" package="ecologylab.bigsemantics.generated.library.imdb" 
-                          default_user_agent_name="chrome_2">
+                          default_user_agent_name="chrome">
 	
 	<cookie_processing domain="imdb.com" ignore_all_cookies="true" />
 
@@ -7,7 +7,7 @@
 		<selector url_path_tree="http://www.imdb.com/title/" />
 		
     <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club." />
-    <example_url url="http://www.imdb.com/title/tt0110912/" comment="Puplp fiction." />
+    <example_url url="http://www.imdb.com/title/tt0110912/" comment="Pulp fiction." />
     
 		<scalar name="title" xpath="//h1[@class='header']" />
 		<scalar name="description" xpath="//p[@itemprop='description']">
@@ -31,11 +31,11 @@
       <scalar name="location" xpath="./@src" />
     </collection>
                 
-		<collection name="directors" child_type="imdb_person" xpath="//h4[contains(.,'Director:')]/../a">
+		<collection name="directors" child_type="imdb_person" xpath="//h4[contains(.,'Director')]/../a[@itemprop]">
 			<scalar name="location" hide="true" xpath="./@href" />
 			<scalar name="title" xpath="." label="name" />	
 		</collection>
-		<collection name="writers" child_type="imdb_person" xpath="//h4[contains(.,'Writers:')]/../a[@itemprop]">
+		<collection name="writers" child_type="imdb_person" xpath="//h4[contains(.,'Writer')]/../a[@itemprop]">
 			<scalar name="location" hide="true" xpath="./@href" />
 			<scalar name="title" xpath="." label="name" />	
 		</collection>

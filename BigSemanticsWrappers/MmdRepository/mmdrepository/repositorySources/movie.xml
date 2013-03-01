@@ -18,14 +18,14 @@
 <!--                 label="directors" layer="4.0" comment="Who directed the movie." /> -->
     <collection name="directors" child_tag="director" child_type="movie_person" layer="4.0"
                 comment="Who directed the movie." />
-		<collection name="writers" child_type="movie_person" layer="4.0" comment="Who wrote the movie." />
-		<collection name="cast" child_type="movie_person" />
+		<collection name="writers" child_tag="writer" child_type="movie_person" layer="4.0" comment="Who wrote the movie." />
+		<collection name="cast" child_tag="star" child_type="movie_person" />
 		<collection name="genres" comment="Movie genres" child_type="document" />
 	</meta_metadata>
   
   
   <meta_metadata name="movie_person" extends="person">
-    <collection name="movies" child_type="movie" comment="Movies that relate to this person." />
+    <collection name="movies" child_tag="movie" child_type="movie" comment="Movies that relate to this person." />
     <collection name="awards" child_scalar_type="String" comment="The awards this person has won."/>
     <!-- the following fields are for backwards compatibility -->
     <scalar name="role" scalar_type="String" />
