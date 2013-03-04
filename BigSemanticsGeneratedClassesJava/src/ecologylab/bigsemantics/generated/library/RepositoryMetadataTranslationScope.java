@@ -234,6 +234,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.movie.MoviePerson.class,
 
+		ecologylab.bigsemantics.generated.library.movie.NetflixMovie.class,
+
+		ecologylab.bigsemantics.generated.library.movie.RottenMovie.class,
+
+		ecologylab.bigsemantics.generated.library.movie.RottenPerson.class,
+
 		ecologylab.bigsemantics.generated.library.nsdl.Header.class,
 
 		ecologylab.bigsemantics.generated.library.nsdl.NsdlDocument.class,

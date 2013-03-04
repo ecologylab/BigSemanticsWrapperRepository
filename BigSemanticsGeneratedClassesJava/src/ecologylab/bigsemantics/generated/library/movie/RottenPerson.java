@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.movie;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.movie.Movie;
+import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -16,13 +16,16 @@ import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
 
+/** 
+ *RottenTomatoes celebrity page
+ */ 
 @simpl_inherit
-public class NetflixMovie extends Movie
+public class RottenPerson extends MoviePerson
 {
-	public NetflixMovie()
+	public RottenPerson()
 	{ super(); }
 
-	public NetflixMovie(MetaMetadataCompositeField mmd) {
+	public RottenPerson(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

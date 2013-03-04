@@ -6,6 +6,7 @@
 	<property name="classes.dir" value="${build.dir}/classes" />
 	<property name="jar.dir" value="${build.dir}/jar" />
 	<property name="jar.file" value="${jar.dir}/${ant.project.name}.jar" />
+	<property name="jar.file.in-sdk" value="../../BigSemanticsJava/BigSemanticsSDK/lib/${ant.project.name}.jar" />
 	
   <target name="clean">
     <delete dir="${build.dir}" />
@@ -21,6 +22,7 @@
 	<target name="jar" depends="compile">
 	  <mkdir dir="${jar.dir}" />
 		<jar destfile="${jar.file}" basedir="${classes.dir}" />
+		<copy file="${jar.file}" tofile="${jar.file.in-sdk}" />
 	</target>
 	
 	<target name="main" depends="clean,jar" />

@@ -35,7 +35,7 @@
 
   
   <!-- alas, this will not work until we get login / state stuff working -->
-	<meta_metadata name="netflix_movie" type="movie" parser="xpath">
+	<meta_metadata name="netflix_movie" extends="movie" parser="xpath">
 		<selector url_path_tree="http://movies.netflix.com/Movie" />
 		
 		<example_url url="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
@@ -55,7 +55,7 @@
   	</collection>
 	</meta_metadata>
 	
-  	<meta_metadata name="rotten_person" type="movie_person" parser="xpath"
+  	<meta_metadata name="rotten_person" extends="movie_person" parser="xpath"
   					comment="RottenTomatoes celebrity page">
   		<selector url_path_tree="http://www.rottentomatoes.com/celebrity/" />
   		
@@ -74,7 +74,7 @@
     	</collection>
   	</meta_metadata>
 	
-	<meta_metadata name="rotten_movie" type="movie" parser="xpath"
+	<meta_metadata name="rotten_movie" extends="movie" parser="xpath"
                  comment="RottenTomatoes movie description page">
 		<selector url_path_tree="http://www.rottentomatoes.com/m/" /> 
     	
@@ -93,15 +93,15 @@
 		<scalar name="runtime" xpath="//div[@class='left_col']/p[1]/span[@class='content'][2]" /> 
 		<scalar name="theater_release"
             xpath="//div[@class='right_col']/p[1]/span[@class='content']/span" /> 
-		<collection name="authors" xpath="//div[@class='left_col']/p[3]/span[@class='content']/a">
+		<collection name="directors" child_type="rotten_person" xpath="//div[@class='left_col']/p[3]/span[@class='content']/a">
 			<scalar name="location" hide="true" xpath="./@href" />
 			<scalar name="title" xpath="./span" label="name" />	
 		</collection>
-		<collection name="writers" xpath="//div[@class='left_col']/p[4]/a">
+		<collection name="writers" child_type="rotten_person" xpath="//div[@class='left_col']/p[4]/a">
 			<scalar name="location" hide="true" xpath="./@href" />
 			<scalar name="title" xpath="." label="name" />	
 		</collection>
-  	<collection name="cast" xpath="//div[@id='cast-info']//ul/li//a[@itemprop='url']">
+  	<collection name="cast" child_type="rotten_person" xpath="//div[@id='cast-info']//ul/li//a[@itemprop='url']">
 			<scalar name="location" xpath="./@href" />
 			<scalar name="title" xpath="./span" />
 		</collection>
