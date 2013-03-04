@@ -76,7 +76,8 @@
 	
 	<meta_metadata name="rotten_movie" extends="movie" parser="xpath"
                  comment="RottenTomatoes movie description page">
-		<selector url_path_tree="http://www.rottentomatoes.com/m/" /> 
+		<!-- <selector url_path_tree="http://www.rottentomatoes.com/m/" /> --> 
+		<selector url_regex="http://www.rottentomatoes.com/m/[^/]*/" domain="rottentomatoes.com"/> 
     	
     <example_url url="http://www.rottentomatoes.com/m/inglourious_basterds/" />
 		
