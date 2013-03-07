@@ -10,7 +10,6 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.Generated.Library.MovieNS;
-using Ecologylab.Semantics.Generated.Library.PersonNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -56,11 +55,18 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 		private MetadataString theaterRelease;
 
 		/// <summary>
+		/// Who directed the movie.
+		/// </summary>
+		[SimplCollection("director")]
+		[MmName("directors")]
+		private List<MoviePerson> directors;
+
+		/// <summary>
 		/// Who wrote the movie.
 		/// </summary>
-		[SimplCollection("person")]
+		[SimplCollection("writer")]
 		[MmName("writers")]
-		private List<Person> writers;
+		private List<MoviePerson> writers;
 
 		/// <summary>
 		/// Movie Poster or other image
@@ -72,9 +78,9 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 		[MmName("photos")]
 		private List<Image> photos;
 
-		[SimplCollection("actor")]
+		[SimplCollection("star")]
 		[MmName("cast")]
-		private List<Actor> cast;
+		private List<MoviePerson> cast;
 
 		/// <summary>
 		/// Movie genres
@@ -154,7 +160,20 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 			}
 		}
 
-		public List<Person> Writers
+		public List<MoviePerson> Directors
+		{
+			get{return directors;}
+			set
+			{
+				if (this.directors != value)
+				{
+					this.directors = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<MoviePerson> Writers
 		{
 			get{return writers;}
 			set
@@ -193,7 +212,7 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 			}
 		}
 
-		public List<Actor> Cast
+		public List<MoviePerson> Cast
 		{
 			get{return cast;}
 			set

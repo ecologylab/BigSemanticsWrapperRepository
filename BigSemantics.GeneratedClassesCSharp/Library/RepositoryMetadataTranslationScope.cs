@@ -30,6 +30,7 @@ using Ecologylab.Semantics.Generated.Library.GrantNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
 using Ecologylab.Semantics.Generated.Library.IcdlNS;
 using Ecologylab.Semantics.Generated.Library.IeeeXploreNS;
+using Ecologylab.Semantics.Generated.Library.ImdbNS;
 using Ecologylab.Semantics.Generated.Library.LolzNS;
 using Ecologylab.Semantics.Generated.Library.MiscNS;
 using Ecologylab.Semantics.Generated.Library.MovieNS;
@@ -77,7 +78,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AcmPortalPeriodical),
 				typeof(AcmPortalSearch),
 				typeof(AcmPortalSearchResult),
-				typeof(Actor),
 				typeof(AdditionalMetadata),
 				typeof(AmazonBook),
 				typeof(AmazonList),
@@ -166,6 +166,8 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IeeeXploreSearch),
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
+				typeof(ImdbMovie),
+				typeof(ImdbPerson),
 				typeof(InformaWorld),
 				typeof(Investigator<>),
 				typeof(Item),
@@ -179,6 +181,8 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(MobileRichBookmarkCollection),
 				typeof(MomaArtwork),
 				typeof(Movie),
+				typeof(MoviePerson),
+				typeof(NetflixMovie),
 				typeof(Nsdl),
 				typeof(NsdlDocument),
 				typeof(NsdlService),
@@ -220,6 +224,8 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(RestaurantGenre),
 				typeof(ResultInfo),
 				typeof(Review),
+				typeof(RottenMovie),
+				typeof(RottenPerson),
 				typeof(Rss),
 				typeof(Rss22),
 				typeof(ScholarlyArticle),

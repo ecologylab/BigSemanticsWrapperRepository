@@ -43,9 +43,9 @@ namespace Ecologylab.Semantics.Generated.Library.TvShowNS
 		[SimplScalar]
 		private MetadataParsedURL pic;
 
-		[SimplCollection("actor")]
+		[SimplCollection("movie_person")]
 		[MmName("cast")]
-		private List<Actor> cast;
+		private List<MoviePerson> cast;
 
 		[SimplCollection("tv_show_episode")]
 		[MmName("episode_list")]
@@ -100,7 +100,7 @@ namespace Ecologylab.Semantics.Generated.Library.TvShowNS
 			}
 		}
 
-		public List<Actor> Cast
+		public List<MoviePerson> Cast
 		{
 			get{return cast;}
 			set
