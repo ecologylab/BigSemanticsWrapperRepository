@@ -27,7 +27,28 @@ import java.util.Map;
 public class MoviePerson extends Person
 {
 	/** 
-	 *Movies that relate to this person.
+	 *Movies directed by this person.
+	 */ 
+	@simpl_collection("movie")
+	@mm_name("movies_directed")
+	private List<Movie> moviesDirected;
+
+	/** 
+	 *Movies written by this person.
+	 */ 
+	@simpl_collection("movie")
+	@mm_name("movies_written")
+	private List<Movie> moviesWritten;
+
+	/** 
+	 *Movies this person acted in.
+	 */ 
+	@simpl_collection("movie")
+	@mm_name("movies_acted_in")
+	private List<Movie> moviesActedIn;
+
+	/** 
+	 *Movies related to this person.
 	 */ 
 	@simpl_collection("movie")
 	@mm_name("movies")
@@ -53,6 +74,96 @@ public class MoviePerson extends Person
 		super(mmd);
 	}
 
+
+	public List<Movie> getMoviesDirected()
+	{
+		return moviesDirected;
+	}
+
+  // lazy evaluation:
+  public List<Movie> moviesDirected()
+  {
+    if (moviesDirected == null)
+      moviesDirected = new ArrayList<Movie>();
+    return moviesDirected;
+  }
+
+  // addTo:
+  public void addToMoviesDirected(Movie element)
+  {
+    moviesDirected().add(element);
+  }
+
+  // size:
+  public int moviesDirectedSize()
+  {
+    return moviesDirected == null ? 0 : moviesDirected.size();
+  }
+
+	public void setMoviesDirected(List<Movie> moviesDirected)
+	{
+		this.moviesDirected = moviesDirected;
+	}
+
+	public List<Movie> getMoviesWritten()
+	{
+		return moviesWritten;
+	}
+
+  // lazy evaluation:
+  public List<Movie> moviesWritten()
+  {
+    if (moviesWritten == null)
+      moviesWritten = new ArrayList<Movie>();
+    return moviesWritten;
+  }
+
+  // addTo:
+  public void addToMoviesWritten(Movie element)
+  {
+    moviesWritten().add(element);
+  }
+
+  // size:
+  public int moviesWrittenSize()
+  {
+    return moviesWritten == null ? 0 : moviesWritten.size();
+  }
+
+	public void setMoviesWritten(List<Movie> moviesWritten)
+	{
+		this.moviesWritten = moviesWritten;
+	}
+
+	public List<Movie> getMoviesActedIn()
+	{
+		return moviesActedIn;
+	}
+
+  // lazy evaluation:
+  public List<Movie> moviesActedIn()
+  {
+    if (moviesActedIn == null)
+      moviesActedIn = new ArrayList<Movie>();
+    return moviesActedIn;
+  }
+
+  // addTo:
+  public void addToMoviesActedIn(Movie element)
+  {
+    moviesActedIn().add(element);
+  }
+
+  // size:
+  public int moviesActedInSize()
+  {
+    return moviesActedIn == null ? 0 : moviesActedIn.size();
+  }
+
+	public void setMoviesActedIn(List<Movie> moviesActedIn)
+	{
+		this.moviesActedIn = moviesActedIn;
+	}
 
 	public List<Movie> getMovies()
 	{

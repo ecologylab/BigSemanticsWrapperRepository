@@ -63,14 +63,29 @@
   <meta_metadata name="imdb_person" extends="movie_person" parser="xpath">
     <selector url_path_tree="http://www.imdb.com/name/" />
     <example_url url="http://www.imdb.com/name/nm0000487/" />
+    <example_url url="http://www.imdb.com/name/nm0000199/" />
+    <example_url url="http://www.imdb.com/name/nm0004266/" />
     <filter_location>
       <strip_param name="ref_" />
     </filter_location>
    
     <scalar name="title" xpath="//*[@itemprop='name']" />
     <scalar name="description" xpath="//*[@itemprop='description']" />
-    <collection name="movies" child_type="imdb_movie"
-                xpath="//div[@id='filmography']//div[contains(@class, 'filmo-row')]">
+    
+    <composite name="birth_detail">
+      <scalar name="birth_date" xpath="//*[@itemprop='birthDate']/@datetime" />
+      <scalar name="birth_place" xpath="//*[@itemprop='birthDate']/following-sibling::a" />
+    </composite>
+    
+    <collection name="movies_directed" xpath="//div[@id='filmography']//div[@id='filmo-head-Director']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
+      <scalar name="title" xpath=".//a" />
+      <scalar name="location" xpath=".//a/@href" />
+    </collection>
+    <collection name="movies_written" xpath="//div[@id='filmography']//div[@id='filmo-head-Writer']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
+      <scalar name="title" xpath=".//a" />
+      <scalar name="location" xpath=".//a/@href" />
+    </collection>
+    <collection name="movies_acted_in" xpath="//div[@id='filmography']//div[@id='filmo-head-Actor' or @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
       <scalar name="title" xpath=".//a" />
       <scalar name="location" xpath=".//a/@href" />
     </collection>

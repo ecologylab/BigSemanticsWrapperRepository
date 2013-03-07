@@ -290,7 +290,7 @@
                     trim="true" />
       <scalar name="first_name" field_parser_key="$1" />
       <scalar name="last_name" field_parser_key="$3" />
-      <scalar name="title">
+      <scalar name="title" required="true">
         <concatenate_values>
           <value from_scalar="first_name" />
           <value> </value>
@@ -317,8 +317,10 @@
       <scalar name="title" xpath="." />
       <scalar name="location">
         <concatenate_values>
-          <value>http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;QueryText=&amp;PIFirstName=&amp;PILastName=&amp;PIInstitution=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgOfficer=&amp;ProgEleCode=0&amp;BooleanElement=false&amp;ProgRefCode=&amp;BooleanRef=false&amp;ProgProgram=&amp;ProgFoaCode=&amp;OriginalAwardDateOperator=&amp;OriginalAwardDateFrom=&amp;OriginalAwardDateTo=&amp;StartDateOperator=&amp;StartDateFrom=&amp;StartDateTo=&amp;ExpDateOperator=&amp;ExpDateFrom=&amp;ExpDateTo=&amp;AwardNumberOperator=&amp;AwardNumberFrom=&amp;AwardNumberTo=&amp;AwardAmount=&amp;AwardInstrument=&amp;Restriction=0&amp;Search=Search</value>
+          <value>http://www.nsf.gov/awardsearch/advancedSearchNoScript?PIId=&amp;PIFirstName=&amp;PILastName=&amp;PIOrganization=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=All&amp;ProgRefCode=&amp;BooleanRef=All&amp;&amp;ProgOfficer=&amp;Keyword=&amp;AwardNumberOperator=&amp;AwardAmount=&amp;AwardInstrument=&amp;ActiveAwards=true&amp;OriginalAwardDateOperator=&amp;StartDateOperator=&amp;ExpDateOperator=&amp;Program=</value>
+          <value from_scalar="title" />
         </concatenate_values>
+        <filter regex="\s+" replace="+" />
       </scalar>
     </collection>
     <scalar name="grant_number" xpath="//td[@class='tabletext2']/strong[starts-with(text(), 'Award Number:')]/following::td[@class='tabletext2'][1]" />
