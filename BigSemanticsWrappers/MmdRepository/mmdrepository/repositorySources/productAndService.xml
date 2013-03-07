@@ -67,7 +67,6 @@
 		<composite name="image" xpath="//img[@class='prod_image_selector' or @id='prodImage']">
 			<scalar name="location" xpath="./@src" />
 		</composite>
-		<scalar name="model" xpath="//img[@id='prodImage']/@src" />
 
 		<def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
 		<scalar name="overall_rating" context_node="reviews_span" xpath=".//span[1]/@title" />
