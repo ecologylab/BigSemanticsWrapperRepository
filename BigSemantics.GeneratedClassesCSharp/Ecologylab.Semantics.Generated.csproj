@@ -70,17 +70,17 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\..\BigSemanticsCSharp\Ecologylab.Semantics\Ecologylab.Semantics.csproj">
-      <Project>{3a67f507-1e77-4ed6-bd46-981e66d15f92}</Project>
-      <Name>Ecologylab.Semantics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CSharp\ecologylabFundamental\Simpl.Fundamental\Simpl.Fundamental.csproj">
+    <ProjectReference Include="..\..\..\Simpl\ecologylabFundamental.NET\Simpl.Fundamental\Simpl.Fundamental.csproj">
       <Project>{10287dd6-0c07-4737-9469-0aa21b7723bf}</Project>
       <Name>Simpl.Fundamental</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CSharp\ecologylabFundamental\Simpl.Serialization\Simpl.Serialization.csproj">
+    <ProjectReference Include="..\..\..\Simpl\ecologylabFundamental.NET\Simpl.Serialization\Simpl.Serialization.csproj">
       <Project>{16c61dd8-68b1-4509-8e18-6f7e80b605a3}</Project>
       <Name>Simpl.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BigSemanticsCSharp\Ecologylab.Semantics\Ecologylab.Semantics.csproj">
+      <Project>{3a67f507-1e77-4ed6-bd46-981e66d15f92}</Project>
+      <Name>Ecologylab.Semantics</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
