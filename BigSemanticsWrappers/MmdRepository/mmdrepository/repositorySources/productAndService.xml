@@ -113,7 +113,7 @@
 	</meta_metadata>
   
   
-  <meta_metadata name="newegg_product" type="product" parser="xpath">
+  <meta_metadata name="newegg_product" type="product" parser="xpath" user_agent_name="chrome">
 		<selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
 		<example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
 		
@@ -121,6 +121,7 @@
 			<scalar name="location" xpath="//span[@class='mainSlide']/img/@src" />
 		</composite>
 		
+		<scalar name="price" xpath="//div[@class='detailMainSell']//li[@class='price-current ']//strong" />
 		<scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']//img/@title" />
 		<scalar name="num_reviews" xpath="//span[@itemprop='reviewCount']" />
 		<collection name="reviews" xpath="//table[@class='grpReviews']//tr/th[@class='reviewer']/..">
@@ -129,8 +130,60 @@
 			<scalar name="description" xpath=".//div[@class='details']" />
 		</collection>
 	</meta_metadata>
-  
-  
+	
+	<meta_metadata name="walmart_product" type="product" parser="xpath" user_agent_name="chrome">
+		<selector url_path_tree="http://www.walmart.com/ip/" />
+		<example_url url="http://www.walmart.com/ip/The-Hobbit-An-Unexpected-Journey-DVD-UltraViolet-Widescreen/23263613" />
+		<example_url url="http://www.walmart.com/ip/Twister-Dance/21097609" />
+		
+		<scalar name="title" xpath="//h1[@class='productTitle']" />
+		<scalar name="description" xpath="//div[@id='SITCC_1column']" />
+		<scalar name="price" xpath="//div[@id='WM_PRICE']//span[@class='clearfix camelPrice ']" />
+		
+		<composite name="image" >
+			<scalar name="location" xpath="//div[@class='LargeItemPhoto215']//img/@src" />
+		</composite>
+		
+		<def_var name="rating_summary" xpath="//div[@class='CustomerRatings']" type="node" />
+		<scalar name="overall_rating" context_node="rating_summary" xpath=".//div[@class='BVRROverallRatingContainer']//img/@alt" />
+		<scalar name="num_reviews" context_node="rating_summary" xpath=".//div[@class='BVRRRatingSummaryLinks']//span[@class='BVRRNumber']" />
+		<scalar name="reviews_location" context_node="rating_summary" xpath=".//span[@class='BVRRRatingSummaryLinkReadWithCountID']/a/@href" />
+		
+		<collection name="reviews" xpath="//div[@class='BVRRReviewDisplayStyle3Main']">
+			<scalar name="rating" xpath=".//div[@class='BVRROverallRatingContainer']//img/@alt" />
+			<scalar name="title" xpath=".//span[@class='BVRRValue BVRRReviewTitle']" />
+			<scalar name="time" xpath=".//span[@class='BVRRValue BVRRReviewDate']" />
+			<scalar name="description" xpath=".//span[@class='BVRRReviewText']" />
+		</collection>
+	</meta_metadata>
+	
+	
+	<meta_metadata name="target_product" type="product" parser="xpath" user_agent_name="chrome">
+		<selector url_path_tree="http://www.target.com/p/" />
+		<example_url url="http://www.target.com/p/threshold-windham-coffee-table-with-shelf-black/-/A-14122476#prodSlot=medium_1_1" />
+		<example_url url="http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1" />
+		
+		<scalar name="title" xpath="//h2[@class='product-name item']/span[@class='fn']" />
+		<scalar name="description" xpath="//p[@class='context-buttom-gap tabtextfont'] | //ul[@class='context-buttom-gap innerlistings']" />
+		<scalar name="price" xpath="//p[@class='price']/span[@class='offerPrice']" />
+		
+		<composite name="image" >
+			<scalar name="location" xpath="//img[@id='heroImage']/@src" />
+		</composite>
+		
+		<def_var name="rating_summary" xpath="//div[@class='ratings']" type="node" />
+		<scalar name="overall_rating" context_node="rating_summary" xpath=".//span[@class='rating']" />
+		<scalar name="num_reviews" context_node="rating_summary" xpath=".//a[@class='rating-count']/span" />
+		<scalar name="reviews_location" context_node="rating_summary" xpath=".//a[@class='rating-count']/@href" />
+		
+		<collection name="reviews" xpath="//div[@id='ReviewsSection']//div[@class='review-srch-list']">
+			<scalar name="rating" xpath=".//div[@class='pro-overall-stars']//div[@class='rating-small fivestar']" />
+			<scalar name="title" xpath=".//div[@class='review-heading']" />
+			<scalar name="description" xpath=".//p[@class='review-text']" />
+		</collection>
+	</meta_metadata>
+
+	
   <meta_metadata name="amazon_list" extends="creative_work" >
     <filter_location strip_prefix="/ref=" />
 
@@ -195,5 +248,5 @@
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	</meta_metadata>
-
+	
 </meta_metadata_repository>
