@@ -24,6 +24,7 @@ import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
 import java.lang.String;
@@ -55,16 +56,19 @@ public class Commodity extends CompoundDocument
 	private MetadataParsedURL reviewsLocation;
 
 	@simpl_composite
-	@mm_name("seller_website")
-	private CompoundDocument sellerWebsite;
+	@simpl_other_tags({"seller_website"})
+	@mm_name("business_website")
+	private CompoundDocument businessWebsite;
 
 	@simpl_composite
-	@mm_name("seller_address")
-	private PostalAddress sellerAddress;
+	@simpl_other_tags({"seller_address"})
+	@mm_name("business_address")
+	private PostalAddress businessAddress;
 
 	@simpl_composite
-	@mm_name("seller_gis_location")
-	private GisLocation sellerGisLocation;
+	@simpl_other_tags({"seller_gis_location"})
+	@mm_name("business_gis_location")
+	private GisLocation businessGisLocation;
 
 	public Commodity()
 	{ super(); }
@@ -242,33 +246,33 @@ public class Commodity extends CompoundDocument
 		this.reviewsLocation = reviewsLocation;
 	}
 
-	public CompoundDocument getSellerWebsite()
+	public CompoundDocument getBusinessWebsite()
 	{
-		return sellerWebsite;
+		return businessWebsite;
 	}
 
-	public void setSellerWebsite(CompoundDocument sellerWebsite)
+	public void setBusinessWebsite(CompoundDocument businessWebsite)
 	{
-		this.sellerWebsite = sellerWebsite;
+		this.businessWebsite = businessWebsite;
 	}
 
-	public PostalAddress getSellerAddress()
+	public PostalAddress getBusinessAddress()
 	{
-		return sellerAddress;
+		return businessAddress;
 	}
 
-	public void setSellerAddress(PostalAddress sellerAddress)
+	public void setBusinessAddress(PostalAddress businessAddress)
 	{
-		this.sellerAddress = sellerAddress;
+		this.businessAddress = businessAddress;
 	}
 
-	public GisLocation getSellerGisLocation()
+	public GisLocation getBusinessGisLocation()
 	{
-		return sellerGisLocation;
+		return businessGisLocation;
 	}
 
-	public void setSellerGisLocation(GisLocation sellerGisLocation)
+	public void setBusinessGisLocation(GisLocation businessGisLocation)
 	{
-		this.sellerGisLocation = sellerGisLocation;
+		this.businessGisLocation = businessGisLocation;
 	}
 }

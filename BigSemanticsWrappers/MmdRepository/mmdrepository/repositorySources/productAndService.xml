@@ -15,9 +15,9 @@
             schema_org_itemprop="reviewCount" />
 		<collection name="reviews" child_type="review" layer="0.8" style="reviews_div" />
     
-    <composite name="seller_website" type="compound_document" />
-    <composite name="seller_address" type="postal_address" />
-    <composite name="seller_gis_location" type="gis_location" />
+    <composite name="business_website" other_tags="seller_website" type="compound_document" />
+    <composite name="business_address" other_tags="seller_address" type="postal_address" />
+    <composite name="business_gis_location" other_tags="seller_gis_location" type="gis_location" />
     
 	  <semantic_actions>
 	    <get_field name="image" />
@@ -37,9 +37,9 @@
   
   
   <meta_metadata name="service" extends="commodity">
-    <composite name="seller_website" tag="website" other_tags="seller_website" label="website" />
-    <composite name="seller_address" tag="address" other_tags="seller_address" label="address" />
-    <composite name="seller_gis_location" tag="gis_location" other_tags="seller_gis_location"
+    <composite name="business_website" tag="website" other_tags="seller_website" label="website" />
+    <composite name="business_address" tag="address" other_tags="seller_address" label="address" />
+    <composite name="business_gis_location" tag="gis_location" other_tags="seller_gis_location"
                label="gis_location" />
     <scalar name="hours" scalar_type="String" schema_org_itemprop="openingHours" />
   </meta_metadata>

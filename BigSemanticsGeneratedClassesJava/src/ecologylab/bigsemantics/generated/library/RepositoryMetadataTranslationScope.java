@@ -438,6 +438,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.wikipedia.WikipediaPageType.class,
 
+		ecologylab.bigsemantics.generated.library.yelp.YelpBusiness.class,
+
 	};
 
 	public static SimplTypesScope get()
