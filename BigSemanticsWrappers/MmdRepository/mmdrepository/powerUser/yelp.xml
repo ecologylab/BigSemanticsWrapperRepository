@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta_metadata_repository name="yelp"
+                          package="ecologylab.bigsemantics.generated.library.yelp"
+                          default_user_agent_name="firefox">
+	<meta_metadata name="yelp_business" type="service" parser="xpath"
+			comment="Yelp local business description page">
+		<selector url_path_tree="http://www.yelp.com/biz" />
+		<example_url url="http://www.yelp.com/biz/the-republic-college-station" />
+		
+		<def_var name="bizBox" type="node" xpath="//div[@id='bizBox']" />
+		<def_var name="bizReviews" type="node" xpath="//div[@id='bizReviews']" />
+		
+		<scalar name="title" xpath="//h1" />
+		<composite name="image" >
+			<scalar name="location" context_node="bizBox" xpath="//div[@id='bizPhotos']/div/a/img/@src" />
+		</composite>
+		<scalar name="overall_rating" context_node="bizBox" xpath="//div[@id='bizRating']//meta/@content" />
+		<scalar name="num_reviews" context_node="bizBox" xpath="//span[@itemprop='reviewCount']" />
+		<collection name="reviews" context_nod="bizReviews" xpath="//div[@id='reviews-other']/ul/li">
+			<scalar name="description" xpath="//p[@itemprop='description']" />
+		</collection>
+		
+		<composite name="business_address">
+			<scalar name="telephone" context_node="bizBox" xpath="//span[@id='bizPhone']" />
+			<scalar name="street_address" context_node="bizBox" xpath="//span[@itemprop='streetAddress']" />
+			<scalar name="locality" context_node="bizBox" xpath="//span[@itemprop='addressLocality']" />
+			<scalar name="postal_code" context_node="bizBox" xpath="//span[@itemprop='postalCode']" />
+			<scalar name="region" context_node="bizBox" xpath="//span[@itemprop='addressRegion']" />
+			<scalar name="location">
+				<concatenate_values>
+					<value>http://maps.google.com/maps?q=</value>
+					<value from_scalar="street_address" />
+					<value>,</value>
+					<value from_scalar="postal_code" />
+				</concatenate_values>
+			</scalar>
+		</composite>
+		
+		<composite name="business_website">
+			<scalar name="location" context_node="bizBox" xpath="//div[@id='bizUrl']" />
+		</composite>
+		
+		<composite name="business_gis_location">
+		</composite>
+		
+		<scalar name="price_range" scalar_type="String" xpath="" />
+		<scalar name="hours" xpath="" />
+	</meta_metadata>
+</meta_metadata_repository>

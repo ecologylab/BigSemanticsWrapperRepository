@@ -6,7 +6,7 @@
   	<scalar name="location" layer="-10"/>
     
   	<scalar name="price" layer="0.8" />
-   	<composite name="seller_address" layer="0.8" />
+   	<composite name="business_address" layer="0.8" />
   	
   	<scalar name="space_size" label="size" scalar_type="String" />
   	
@@ -33,7 +33,7 @@
   	<scalar name="check_in" xpath="//span[@id='check in_val']" />
   	<scalar name="check_out" xpath="//span[@id='check out_val']" />
   	
-  	<composite name="seller_address" xpath="//span[@id='display_address']">
+  	<composite name="business_address" xpath="//span[@id='display_address']">
   		<scalar name="street_address" xpath="."/>
   		<composite name="map" xpath="//div[@id='map']">
   			<scalar name="latitude" xpath="./@data-lat"/>
@@ -59,7 +59,7 @@
   	<scalar name="title" xpath="//h1[@id='HEADING']" />
   	<scalar name="overall_rating" xpath="//div[@class='slim_ranking']"
             layer="1.6" style="topRight_div" />
-  	<composite name="seller_address" xpath="//span[@rel='v:address']/span/span[@class='locality']">
+  	<composite name="business_address" xpath="//span[@rel='v:address']/span/span[@class='locality']">
   		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
   		<scalar name="locality" xpath="./span[@property='v:locality']"/>
   		<scalar name="region" xpath="./span[@property='v:region']"/>
@@ -104,7 +104,7 @@
 <!--   	<scalar name="check_in" xpath="//span[@id='check in_val']" /> //div[@class='tel'] -->
 <!--   	<scalar name="check_out" xpath="//span[@id='check out_val']" /> -->
   	
-  	<composite name="seller_address">
+  	<composite name="business_address">
 <!--   		<scalar name="street_address" xpath="."/> -->
   		<scalar name="telephone" xpath="//div[@class='tel']" />
   		<composite name="map" xpath="//script[contains(.,'mapData')]">
@@ -128,7 +128,7 @@
   	<scalar name="title" xpath="//html/head/title" />
   	<scalar name="description" xpath="/html/head/meta[@name='description']/@content"/>
   
-  	<composite name="seller_address" xpath="//div[@id='hotelAddress']">
+  	<composite name="business_address" xpath="//div[@id='hotelAddress']">
   		<scalar name="street_address" xpath="./text()[(preceding::br)]"/>
   		<scalar name="telephone" xpath="./br/following-sibling::text()" />
   	</composite>
