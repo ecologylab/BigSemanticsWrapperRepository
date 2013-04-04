@@ -48,16 +48,16 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		private MetadataParsedURL reviewsLocation;
 
 		[SimplComposite]
-		[MmName("seller_website")]
-		private CompoundDocument sellerWebsite;
+		[MmName("business_website")]
+		private CompoundDocument businessWebsite;
 
 		[SimplComposite]
-		[MmName("seller_address")]
-		private PostalAddress sellerAddress;
+		[MmName("business_address")]
+		private PostalAddress businessAddress;
 
 		[SimplComposite]
-		[MmName("seller_gis_location")]
-		private GisLocation sellerGisLocation;
+		[MmName("business_gis_location")]
+		private GisLocation businessGisLocation;
 
 		public Commodity()
 		{ }
@@ -143,40 +143,40 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public CompoundDocument SellerWebsite
+		public CompoundDocument BusinessWebsite
 		{
-			get{return sellerWebsite;}
+			get{return businessWebsite;}
 			set
 			{
-				if (this.sellerWebsite != value)
+				if (this.businessWebsite != value)
 				{
-					this.sellerWebsite = value;
+					this.businessWebsite = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
 
-		public PostalAddress SellerAddress
+		public PostalAddress BusinessAddress
 		{
-			get{return sellerAddress;}
+			get{return businessAddress;}
 			set
 			{
-				if (this.sellerAddress != value)
+				if (this.businessAddress != value)
 				{
-					this.sellerAddress = value;
+					this.businessAddress = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
 
-		public GisLocation SellerGisLocation
+		public GisLocation BusinessGisLocation
 		{
-			get{return sellerGisLocation;}
+			get{return businessGisLocation;}
 			set
 			{
-				if (this.sellerGisLocation != value)
+				if (this.businessGisLocation != value)
 				{
-					this.sellerGisLocation = value;
+					this.businessGisLocation = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

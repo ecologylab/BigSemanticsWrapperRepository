@@ -22,6 +22,9 @@
 		</composite>
   		<scalar name="overall_rating" xpath="//div[@class='slim_ranking']"
             layer="1.6" style="topRight_div" />
+        <scalar name="attraction_type" xpath="//div[@class='listing_details']/div[1]" />
+        <scalar name="fee" xpath="//div[@class='listing_details']/div[3]" />
+        <scalar name="description" xpath="//div[@class='listing_description']" />
   		<composite name="attraction_address" xpath="//span[@rel='v:address']/span/span[@class='locality']" >
 	  		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
 	  		<scalar name="locality" xpath="./span[@property='v:locality']"/>
