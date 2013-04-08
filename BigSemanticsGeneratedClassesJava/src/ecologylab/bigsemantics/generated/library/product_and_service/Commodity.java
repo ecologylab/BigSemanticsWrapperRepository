@@ -24,7 +24,6 @@ import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
 import java.lang.String;
@@ -56,17 +55,14 @@ public class Commodity extends CompoundDocument
 	private MetadataParsedURL reviewsLocation;
 
 	@simpl_composite
-	@simpl_other_tags({"seller_website"})
 	@mm_name("business_website")
 	private CompoundDocument businessWebsite;
 
 	@simpl_composite
-	@simpl_other_tags({"seller_address"})
 	@mm_name("business_address")
 	private PostalAddress businessAddress;
 
 	@simpl_composite
-	@simpl_other_tags({"seller_gis_location"})
 	@mm_name("business_gis_location")
 	private GisLocation businessGisLocation;
 

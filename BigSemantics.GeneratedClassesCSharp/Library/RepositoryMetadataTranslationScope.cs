@@ -51,12 +51,15 @@ using Ecologylab.Semantics.Generated.Library.ScienceDirectNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.Generated.Library.SlashdotNS;
 using Ecologylab.Semantics.Generated.Library.SocialMediaNS;
+using Ecologylab.Semantics.Generated.Library.TravelNS;
+using Ecologylab.Semantics.Generated.Library.TripAdvisorNS;
 using Ecologylab.Semantics.Generated.Library.TumblrNS;
 using Ecologylab.Semantics.Generated.Library.TvShowNS;
 using Ecologylab.Semantics.Generated.Library.UrbanspoonNS;
 using Ecologylab.Semantics.Generated.Library.UvaNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaNS;
+using Ecologylab.Semantics.Generated.Library.YelpNS;
 using Ecologylab.Semantics.MetadataNS.Builtins.Declarations;
 
 // Developer should proof-read this TranslationScope before using it for production.
@@ -84,6 +87,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AmazonProduct),
 				typeof(Artist),
 				typeof(Artwork),
+				typeof(Attraction),
 				typeof(Audience),
 				typeof(Author),
 				typeof(BasicPublication),
@@ -257,6 +261,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Topic),
 				typeof(TopicCluster),
 				typeof(TribunalVoices),
+				typeof(TripAdvisorThingsToDo),
 				typeof(TrumanLibrary1948CampaignCartoons),
 				typeof(Tumblr),
 				typeof(TumblrSearch),
@@ -278,6 +283,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(YahooResult),
 				typeof(YahooResultSet),
 				typeof(YahooThumbnail),
+				typeof(YelpBusiness),
 				typeof(YoutubeSearchResults));
 		}
 	}
