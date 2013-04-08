@@ -7,7 +7,7 @@
                  schema_org_itemtype="http://schema.org/ScholarlyArticle">
 		<composite name="source" type="periodical" layer="7.0"
                comment="Metadata related to where this article was published." />
-		<collection name="classifications" child_type="document"
+		<collection name="classifications" child_type="document" polymorphic_scope="repository_document"
                 comment="The Classifications of this paper." />
 		<collection name="keywords" child_type="document" schema_org_itemprop="keywords"
                 comment="Key Terms of the paper." />
