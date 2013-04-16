@@ -43,7 +43,7 @@
   	<!-- run mmtest with a URL -->
 		<java classname="ecologylab.bigsemantics.tools.MmTest"
 			    classpathref="jars_classpath" fork="yes">
-			<arg value="http://www.amazon.com/Canon-21-1MP-Frame-Digital-Camera/dp/B001G5ZTLS/" />
+			<arg line="-f MmTestURLs.lst" />
 		  <jvmarg value="-Xms512m" />
 		</java>
 	</target>
@@ -54,10 +54,9 @@
 		
   	<!-- run the compiler. -->
 		<java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
-			    classpathref="jars_classpath" fork="yes">
+			    classpathref="jars_classpath" fork="yes" failonerror="true">
 			<arg value="java" />
 			<arg value="../BigSemanticsGeneratedClassesJava/src" />
-			<arg value="../../BigSemanticsJava/BigSemanticsCore/src" />
 		  <jvmarg value="-Xms512m" />
 		</java>
 		
