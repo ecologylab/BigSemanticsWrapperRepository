@@ -20,6 +20,7 @@ import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_scope;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,8 @@ public class ScholarlyArticle extends CreativeWork
 	/** 
 	 *The Classifications of this paper.
 	 */ 
-	@simpl_collection("document")
+	@simpl_collection
+	@simpl_scope("repository_document")
 	@mm_name("classifications")
 	private List<Document> classifications;
 

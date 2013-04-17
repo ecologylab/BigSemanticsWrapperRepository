@@ -20,6 +20,10 @@
 			<scalar name="description" xpath="//p[@itemprop='description']" />
 		</collection>
 		
+		<scalar name="category" scalar_type="String" comment="the type of business" xpath="//span[@id='cat_display']" />
+		<scalar name="open_hours" scalar_type="String" comment="the hours that the attraction is open" xpath="//p[@class='hours']" />
+		<scalar name="price_range" scalar_type="String" comment="price range" xpath="//span[@id='price_tip']" />
+		
 		<composite name="business_address">
 			<scalar name="telephone" context_node="bizBox" xpath="//span[@id='bizPhone']" />
 			<scalar name="street_address" context_node="bizBox" xpath="//span[@itemprop='streetAddress']" />

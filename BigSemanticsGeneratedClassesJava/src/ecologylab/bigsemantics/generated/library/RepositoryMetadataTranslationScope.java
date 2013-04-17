@@ -404,6 +404,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.socialMedia.RedditSearchResults.class,
 
+		ecologylab.bigsemantics.generated.library.travel.Attraction.class,
+
+		ecologylab.bigsemantics.generated.library.tripAdvisor.TripAdvisorThingsToDo.class,
+
 		ecologylab.bigsemantics.generated.library.tumblr.Tumblr.class,
 
 		ecologylab.bigsemantics.generated.library.tvShow.TvShow.class,

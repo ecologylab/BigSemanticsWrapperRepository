@@ -276,6 +276,8 @@
     <Compile Include="Library\SlashdotNS\SlashdotItem.cs" />
     <Compile Include="Library\SlashdotNS\SlashdotRss.cs" />
     <Compile Include="Library\SocialMediaNS\RedditSearchResults.cs" />
+    <Compile Include="Library\TravelNS\Attraction.cs" />
+    <Compile Include="Library\TripAdvisorNS\TripAdvisorThingsToDo.cs" />
     <Compile Include="Library\TumblrNS\Tumblr.cs" />
     <Compile Include="Library\TvShowNS\TvShow.cs" />
     <Compile Include="Library\TvShowNS\TvShowEpisode.cs" />
@@ -294,6 +296,7 @@
     <Compile Include="Library\WikipediaNS\WikipediaMobilePage.cs" />
     <Compile Include="Library\WikipediaNS\WikipediaPage.cs" />
     <Compile Include="Library\WikipediaNS\WikipediaPageType.cs" />
+    <Compile Include="Library\YelpNS\YelpBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
