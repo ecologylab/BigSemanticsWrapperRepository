@@ -32,7 +32,11 @@
 	<!-- classpath using jars -->
 	<path id="jars_classpath">
 		<fileset dir="${lib.dir}">
-		  <include name="**/*.jar" />
+		  <include name="json-simple-1.1.1.jar" />
+		  <include name="xercesMinimal.jar" />
+		  <include name="ST-4.0.7.jar" />
+		  <include name="antlr-3.5-complete.jar" />
+		  <include name="*.jar" />
 	  </fileset>
   </path>
 	
