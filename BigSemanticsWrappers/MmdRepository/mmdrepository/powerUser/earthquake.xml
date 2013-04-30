@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta_metadata_repository name="earthquake"
+                          package="ecologylab.bigsemantics.generated.library.disaster"
+                          default_user_agent_name="firefox">
+                          
+     <meta_metadata name="event" extends="compound_document"
+			comment="Generalized Event Object">
+     	<scalar name="start_time" scalar_type="Date" />
+     	<scalar name="end_time" scalar_type="Date" />
+     	
+		<composite name="gis_location" type="gis_location" />
+     </meta_metadata> 
+         
+    <meta_metadata name="disaster"     extends="event"
+			comment="Generalized Disaster Object">
+		<scalar name="magnitude" label="magnitude richter" scalar_type="float" />
+		<composite name="map_image" type="image"/>
+		
+		<composite name="map" type="document"/>
+		<composite name="source" type="compound_document"/>
+
+	</meta_metadata>
+	         
+	<meta_metadata name="earthquake" extends="disaster"
+			comment="Generalized Earthquake Object">
+		
+		<scalar name="depth" label="magnitude km" scalar_type="float" />
+		
+	</meta_metadata>
+	
+	<meta_metadata name="gdacs_earthquake" type="earthquake" parser="xpath"
+			comment="Global Disaster Alert and Coordination System">
+		<selector url_stripped="http://www.gdacs.org/Earthquakes/report.aspx" />
+		<example_url url="http://www.gdacs.org/Earthquakes/report.aspx?eventid=123892&amp;episodeid=123892&amp;eventtype=EQ" />
+
+		<scalar name="title" xpath="//span[@id='ctl00_ReportTitle']" />
+		
+		<def_var name="details_ul" xpath="//span[@id='ctl00_cph_earthquake_details']/ul" type="node" />
+		
+		<scalar name="magnitude" context_node="details_ul" xpath="./li[1]/b" />
+		<scalar name="depth" context_node="details_ul" xpath="./li[2]/b" />
+		
+		<composite name="gis_location">
+			<scalar name="latitude" context_node="details_ul" xpath="./li[4]/b[1]" />
+			<scalar name="longitude" context_node="details_ul" xpath="./li[4]/b[2]" />
+		</composite>
+		
+		<composite name="map_image">
+			<scalar name="location" xpath="//div[@id='populationmap']/img/@src" />
+		</composite>
+		
+<!-- 		<composite name="map">
+			<scalar name="location" context_node="details_ul" xpath="./li[4]/b[1]" />
+		</composite>
+ -->		
+		<composite name="source">
+			<scalar name="location" context_node="details_ul" xpath="./li[3]/a/@href" />
+		</composite>
+	</meta_metadata>
+
+</meta_metadata_repository>
