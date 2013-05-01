@@ -81,7 +81,7 @@
 		<java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
 			    classpathref="jars_classpath" fork="yes" failonerror="true">
 			<arg value="csharp" />
-			<arg value="../BigSemanticsWrapperRepository/BigSemantics.GeneratedClassesCSharp" />
+			<arg value="../BigSemantics.GeneratedClassesCSharp" />
 		  <jvmarg value="-Xms512m" />
 		</java>
 		

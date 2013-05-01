@@ -114,6 +114,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.creative_work.Periodical.class,
 
+		ecologylab.bigsemantics.generated.library.disaster.Disaster.class,
+
+		ecologylab.bigsemantics.generated.library.disaster.Earthquake.class,
+
+		ecologylab.bigsemantics.generated.library.disaster.Event.class,
+
 		ecologylab.bigsemantics.generated.library.dlese.AdditionalMetadata.class,
 
 		ecologylab.bigsemantics.generated.library.dlese.Audience.class,

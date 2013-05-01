@@ -21,6 +21,7 @@ using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
 using Ecologylab.Semantics.Generated.Library.CiteulikeNS;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
+using Ecologylab.Semantics.Generated.Library.DisasterNS;
 using Ecologylab.Semantics.Generated.Library.DleseNS;
 using Ecologylab.Semantics.Generated.Library.FastflipNS;
 using Ecologylab.Semantics.Generated.Library.FlickrNS;
@@ -60,7 +61,6 @@ using Ecologylab.Semantics.Generated.Library.UvaNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaNS;
 using Ecologylab.Semantics.Generated.Library.YelpNS;
-using Ecologylab.Semantics.MetadataNS.Builtins.Declarations;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.Semantics.Generated.Library 
@@ -124,6 +124,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(DcDocument),
 				typeof(DeliciousHomepage),
 				typeof(DeliciousSearch),
+				typeof(Disaster),
 				typeof(DleseGetRecord),
 				typeof(DleseRecord),
 				typeof(DleseRecord1),
@@ -132,9 +133,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(DleseUserSearch),
 				typeof(Dlms),
 				typeof(DocumentSet),
+				typeof(Earthquake),
 				typeof(Educational),
 				typeof(EmergentEvent),
 				typeof(EmergentEventCollection),
+				typeof(Event),
 				typeof(FastflipSearch),
 				typeof(FlickrAuthor),
 				typeof(FlickrPhoto),
