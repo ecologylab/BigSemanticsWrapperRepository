@@ -129,6 +129,9 @@
     <Compile Include="Library\CreativeWorkNS\CreativeWork.cs" />
     <Compile Include="Library\CreativeWorkNS\Periodical.cs" />
     <Compile Include="Library\DeliciousHomepage.cs" />
+    <Compile Include="Library\DisasterNS\Disaster.cs" />
+    <Compile Include="Library\DisasterNS\Earthquake.cs" />
+    <Compile Include="Library\DisasterNS\Event.cs" />
     <Compile Include="Library\DleseNS\AdditionalMetadata.cs" />
     <Compile Include="Library\DleseNS\Audience.cs" />
     <Compile Include="Library\DleseNS\Collection.cs" />
