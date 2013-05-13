@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct;
+import ecologylab.bigsemantics.generated.library.dreamHouse.LowesProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -21,47 +21,47 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class HomeDepotProduct extends Product
+public class LowesProduct extends Product
 {
-	@simpl_collection("home_depot_product")
-	@mm_name("people_also_buy")
-	private List<HomeDepotProduct> peopleAlsoBuy;
+	@simpl_collection("lowes_product")
+	@mm_name("related_items")
+	private List<LowesProduct> relatedItems;
 
-	public HomeDepotProduct()
+	public LowesProduct()
 	{ super(); }
 
-	public HomeDepotProduct(MetaMetadataCompositeField mmd) {
+	public LowesProduct(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<HomeDepotProduct> getPeopleAlsoBuy()
+	public List<LowesProduct> getRelatedItems()
 	{
-		return peopleAlsoBuy;
+		return relatedItems;
 	}
 
   // lazy evaluation:
-  public List<HomeDepotProduct> peopleAlsoBuy()
+  public List<LowesProduct> relatedItems()
   {
-    if (peopleAlsoBuy == null)
-      peopleAlsoBuy = new ArrayList<HomeDepotProduct>();
-    return peopleAlsoBuy;
+    if (relatedItems == null)
+      relatedItems = new ArrayList<LowesProduct>();
+    return relatedItems;
   }
 
   // addTo:
-  public void addToPeopleAlsoBuy(HomeDepotProduct element)
+  public void addToRelatedItems(LowesProduct element)
   {
-    peopleAlsoBuy().add(element);
+    relatedItems().add(element);
   }
 
   // size:
-  public int peopleAlsoBuySize()
+  public int relatedItemsSize()
   {
-    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
+    return relatedItems == null ? 0 : relatedItems.size();
   }
 
-	public void setPeopleAlsoBuy(List<HomeDepotProduct> peopleAlsoBuy)
+	public void setRelatedItems(List<LowesProduct> relatedItems)
 	{
-		this.peopleAlsoBuy = peopleAlsoBuy;
+		this.relatedItems = relatedItems;
 	}
 }

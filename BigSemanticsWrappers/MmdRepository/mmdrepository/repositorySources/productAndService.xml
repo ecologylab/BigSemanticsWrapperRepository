@@ -63,7 +63,7 @@
 			<scalar name="title" xpath="." />
 			<scalar name="location" hide="true" xpath="./@href" />
 		</composite>
-		<composite name="image" xpath="//img[@class='prod_image_selector' or @id='prodImage']">
+		<composite name="image" xpath="//img[@id='main-image']">
 			<scalar name="location" xpath="./@src" />
 		</composite>
 
@@ -71,9 +71,9 @@
 		<scalar name="overall_rating" context_node="reviews_span" xpath=".//span[1]/@title" />
 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" />  
 
-		<collection name="reviews" xpath="//div[@class='content']/table/tbody/tr[2]/td[1]/div[position() &lt; last()-1]">
-			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" />
-			<scalar name="description" xpath="." />
+		<collection name="reviews" xpath="//div[@id='revMHRL']/div[@class='reviews']">
+			<scalar name="rating" xpath="./div[3]/span[1]/@title" />
+			<scalar name="description" xpath="./div[6]/div" />
 		</collection>
 		
 		<composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list"
@@ -156,10 +156,8 @@
 		</collection>
 	</meta_metadata>
 	
-	
 	<meta_metadata name="target_product" type="product" parser="xpath" user_agent_name="chrome">
 		<selector url_path_tree="http://www.target.com/p/" />
-		<example_url url="http://www.target.com/p/threshold-windham-coffee-table-with-shelf-black/-/A-14122476#prodSlot=medium_1_1" />
 		<example_url url="http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1" />
 		
 		<scalar name="title" xpath="//h2[@class='product-name item']/span[@class='fn']" />
@@ -247,5 +245,35 @@
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	</meta_metadata>
+	
+  <meta_metadata name="etsy_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.etsy.com/listing/" domain="etsy.com" />
+  	
+  	<example_url location="http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8" />
+  	
+  	<scalar name="title" xpath="//div[@id='item-title']/h1"/>
+  	<scalar name="description" xpath="//span[@class='description-content']"/>
+  	<scalar name="price" xpath="//div[@class='secondary ']/div[1]//div[@class='item-amount']" />
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//div[@id='fullimage_link1']/a/@href"/>
+  	</composite>
+
+  </meta_metadata> 
+	
+  <meta_metadata name="samsclub_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.samsclub.com/sams/" domain="samsclub.com" />
+  	
+  	<example_url location="http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push" />
+  	
+  	<scalar name="title" xpath="//span[@itemprop='name']" />
+  	<scalar name="description" xpath="//div[@itemprop='description']/p"/>
+  	<scalar name="price" xpath="//span[@class='leftVal  onlinePrice']" />
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//div[@id='plImageHolder']/img/@src"/>
+  	</composite>
+
+  </meta_metadata> 	
 	
 </meta_metadata_repository>

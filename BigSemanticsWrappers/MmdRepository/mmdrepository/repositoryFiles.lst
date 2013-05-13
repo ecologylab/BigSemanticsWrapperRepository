@@ -32,6 +32,7 @@ repositorySources/nsf.xml
 repositorySources/opml.xml
 repositorySources/patent.xml
 repositorySources/person.xml
+repositorySources/pinterest.xml
 repositorySources/productAndService.xml
 repositorySources/publication.xml
 repositorySources/pubmed.xml
