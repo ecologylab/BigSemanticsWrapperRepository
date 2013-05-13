@@ -24,20 +24,20 @@ import java.util.Map;
 public class PinterestPin extends CreativeWork
 {
 	@simpl_composite
-	@mm_name("likes")
-	private CompoundDocument likes;
-
-	@simpl_composite
-	@mm_name("repins")
-	private CompoundDocument repins;
+	@mm_name("pinner")
+	private CompoundDocument pinner;
 
 	@simpl_composite
 	@mm_name("pinboard")
 	private CompoundDocument pinboard;
 
 	@simpl_composite
-	@mm_name("pinner")
-	private CompoundDocument pinner;
+	@mm_name("repins")
+	private CompoundDocument repins;
+
+	@simpl_composite
+	@mm_name("likes")
+	private CompoundDocument likes;
 
 	@simpl_composite
 	@mm_name("repinned_from_pinner")
@@ -71,24 +71,14 @@ public class PinterestPin extends CreativeWork
 	}
 
 
-	public CompoundDocument getLikes()
+	public CompoundDocument getPinner()
 	{
-		return likes;
+		return pinner;
 	}
 
-	public void setLikes(CompoundDocument likes)
+	public void setPinner(CompoundDocument pinner)
 	{
-		this.likes = likes;
-	}
-
-	public CompoundDocument getRepins()
-	{
-		return repins;
-	}
-
-	public void setRepins(CompoundDocument repins)
-	{
-		this.repins = repins;
+		this.pinner = pinner;
 	}
 
 	public CompoundDocument getPinboard()
@@ -101,14 +91,24 @@ public class PinterestPin extends CreativeWork
 		this.pinboard = pinboard;
 	}
 
-	public CompoundDocument getPinner()
+	public CompoundDocument getRepins()
 	{
-		return pinner;
+		return repins;
 	}
 
-	public void setPinner(CompoundDocument pinner)
+	public void setRepins(CompoundDocument repins)
 	{
-		this.pinner = pinner;
+		this.repins = repins;
+	}
+
+	public CompoundDocument getLikes()
+	{
+		return likes;
+	}
+
+	public void setLikes(CompoundDocument likes)
+	{
+		this.likes = likes;
 	}
 
 	public CompoundDocument getRepinnedFromPinner()

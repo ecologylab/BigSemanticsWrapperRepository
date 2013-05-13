@@ -25,20 +25,20 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 	public class PinterestPin : CreativeWork
 	{
 		[SimplComposite]
-		[MmName("likes")]
-		private CompoundDocument likes;
-
-		[SimplComposite]
-		[MmName("repins")]
-		private CompoundDocument repins;
+		[MmName("pinner")]
+		private CompoundDocument pinner;
 
 		[SimplComposite]
 		[MmName("pinboard")]
 		private CompoundDocument pinboard;
 
 		[SimplComposite]
-		[MmName("pinner")]
-		private CompoundDocument pinner;
+		[MmName("repins")]
+		private CompoundDocument repins;
+
+		[SimplComposite]
+		[MmName("likes")]
+		private CompoundDocument likes;
 
 		[SimplComposite]
 		[MmName("repinned_from_pinner")]
@@ -70,27 +70,14 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 		public PinterestPin(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public CompoundDocument Likes
+		public CompoundDocument Pinner
 		{
-			get{return likes;}
+			get{return pinner;}
 			set
 			{
-				if (this.likes != value)
+				if (this.pinner != value)
 				{
-					this.likes = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public CompoundDocument Repins
-		{
-			get{return repins;}
-			set
-			{
-				if (this.repins != value)
-				{
-					this.repins = value;
+					this.pinner = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -109,14 +96,27 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument Pinner
+		public CompoundDocument Repins
 		{
-			get{return pinner;}
+			get{return repins;}
 			set
 			{
-				if (this.pinner != value)
+				if (this.repins != value)
 				{
-					this.pinner = value;
+					this.repins = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public CompoundDocument Likes
+		{
+			get{return likes;}
+			set
+			{
+				if (this.likes != value)
+				{
+					this.likes = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

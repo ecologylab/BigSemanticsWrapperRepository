@@ -43,31 +43,34 @@
 		
 		<scalar name="title" xpath="//meta[@property='og:title']/@content" />
 		<scalar name="description" xpath="//meta[@property='og:description']/@content" />
+
 		
-		<composite name="likes" type="compound_document" >
-			<scalar name="title" xpath="//meta[@property='pinterestapp:likes']/@content" />
-<!-- 			<collection name="liked_by_pinners" child_type="compound_document" > -->
-				
-<!-- 			</collection> -->
+		<composite name="pinboard" layer="2.5" type="compound_document" >
+			<scalar name="title" xpath="//meta[@property='og:title']/@content" />
+			<scalar name="location" xpath="//meta[@property='pinterestapp:pinboard']/@content" />
 		</composite>
 		
-		<composite name="repins" type="compound_document" >
+		<composite name="pinner" layer="3.0" type="compound_document" >
+			<scalar name="title" xpath="//div[@id='PinPinner']/p[@id='PinnerName']/a[1]" />
+			<scalar name="location" xpath="//meta[@property='pinterestapp:pinner']/@content" />
+		</composite>
+		
+		<composite name="repins" layer="2.0" type="compound_document" >
 			<scalar name="title" xpath="//meta[@property='pinterestapp:repins']/@content" />
 <!-- 			<collection name="repinned_by_pinners" child_type="compound_document" > -->
 				
 <!-- 			</collection> -->
 		</composite>
 		
-		<composite name="pinboard" type="compound_document" >
-			<scalar name="title" xpath="//meta[@property='og:title']/@content" />
-			<scalar name="location" xpath="//meta[@property='pinterestapp:pinboard']/@content" />
+				
+		<composite name="likes" layer="1.0" type="compound_document" >
+			<scalar name="title" xpath="//meta[@property='pinterestapp:likes']/@content" />
+<!-- 			<collection name="liked_by_pinners" child_type="compound_document" > -->
+				
+<!-- 			</collection> -->
 		</composite>
 		
-		<composite name="pinner" type="compound_document" >
-			<scalar name="title" xpath="//div[@id='PinPinner']/p[@id='PinnerName']/a[1]" />
-			<scalar name="location" xpath="//meta[@property='pinterestapp:pinner']/@content" />
-		</composite>
-		
+
 		<composite name="repinned_from_pinner" type="compound_document" xpath="//p[@id='PinOrigin']/a[2]">
 			<scalar name="title" xpath="." />
 			<scalar name="location" xpath="./@href" />
