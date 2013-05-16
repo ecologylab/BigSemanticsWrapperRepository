@@ -109,7 +109,7 @@
   	
   	<example_url location="http://www.lowes.com/pd_331470-817-235159_4294703024%2B4294934373" />
   	
-  	<scalar name="title" xpath="//h1[@class='title']"/>
+  	<scalar name="title" xpath="//div[@class='itemInfo']/h1"/>
   	<scalar name="description" xpath="//div[@id='description-tab']/p"/>
   	<scalar name="price" xpath="//div[@id='pricing']/span[@class='price']" />
 
@@ -179,28 +179,7 @@
   	</collection>
      	
   	<composite name="image">
-  		<scalar name="location" xpath="//div[@class='detailImage']//a/@href"/>
-  	</composite>
-  	
-  </meta_metadata> 
-  
-  <meta_metadata name="worldmarket_product" extends="product" parser="xpath" user_agent_name="firefox">
-  	<selector url_regex_fragment="http://www.worldmarket.com/product/[^/]*" domain="worldmarket.com" />
-  	
-  	<example_url location="http://www.worldmarket.com/product/solid+cranberry+crinkle+voile+curtain.do" />
-  	
-  	<scalar name="title" xpath="//h1"/>
-  	<scalar name="description" xpath="//div[@class='pqveMainContent']/div[2]"/>
-  	<scalar name="price" xpath="//div[@class='pdpProductInfoSection']//div[@class='singlePrice']" />
-
-  	<collection name="you_may_also_like" child_type="worldmarket_product" xpath="//div[@id='mybuyspagezone1']//ul/li" >
-  		<scalar name="location" xpath=".//span[@class='mbnamerowspan']/a/@href]" />
-  		<scalar name="title" xpath=".//span[@class='mbnamerowspan']/a" />
-  		<scalar name="price" xpath=".//span[@class='mbpricerowspan']/a[2]" />
-  	</collection>
-     	
-  	<composite name="image">
-  		<scalar name="location" xpath="//div[@class='detailImage']//a/@href"/>
+  		<scalar name="location" xpath="//img[@id='mainimage']/@src"/>
   	</composite>
   	
   </meta_metadata> 
@@ -238,7 +217,7 @@
   	<example_url location="http://www.restorationhardware.com/catalog/product/product.jsp?productId=prod2140452&amp;categoryId=cat80006" />
   	
   	<scalar name="title" xpath="//h1"/>
-  	<scalar name="description" xpath="//p[@class='product-desc']"/>
+  	<scalar name="description" xpath="//div[@id='product-info-pane']/p[1]"/>
   	<scalar name="price" xpath="//div[@class='price']" />
    	  	
   	<composite name="image">
@@ -307,7 +286,7 @@
   	
   	<scalar name="title" xpath="//h1[@itemprop='name']/div[1]"/>
   	<scalar name="description" xpath="//div[@id='tab1']"/>
-  	<scalar name="price" xpath="//h1[@itemprop='name']//span[@class='price-standard']" />
+  	<scalar name="price" xpath="//h1[@itemprop='name']/div[@class='product-price']/span[last()]" />
 
   	<composite name="image">
   		<scalar name="location" xpath="//div[@class='product-primary-image']//img[@class='primary-image']/@src"/>
