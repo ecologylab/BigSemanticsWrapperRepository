@@ -83,7 +83,7 @@
     </collection>
     
     <composite name="image">
-  		<scalar name="location" xpath="//div[@id='proImageHero']/img/@src"/>
+  		<scalar name="location" xpath="//div[@id='proImageHero' or @id='galleryImage']//img/@src"/>
   	</composite>
     
   </meta_metadata>
