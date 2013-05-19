@@ -179,6 +179,22 @@
 			<scalar name="description" xpath=".//p[@class='review-text']" />
 		</collection>
 	</meta_metadata>
+	
+	<meta_metadata name="target_mobile_product" type="product" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://m.target.com/p/" />
+		<example_url url="http://m.target.com/p/threshold-farrah-fretwork-window-panel/-/A-13976559" />
+		
+		<scalar name="title" xpath="//h2" />
+		<scalar name="price" xpath="//small[@id='pdpPriceSpan']" />
+		
+		<composite name="image" >
+			<scalar name="location" xpath="//div[@class='product-img']/img/@src" />
+		</composite>
+		
+		<scalar name="overall_rating" xpath="//a[@class='group ratings-reviews']/span[1]/@class" >
+			<filter regex="rating stars-" replace="" />
+		</scalar>
+	</meta_metadata>
 
 	
   <meta_metadata name="amazon_list" extends="creative_work" >
@@ -275,5 +291,18 @@
   	</composite>
 
   </meta_metadata> 	
+  
+  <meta_metadata name="samsclub_mobile_product" type="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://m.samsclub.com/ip/" />
+  	<example_url location="http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248" />
+  	<scalar name="title" xpath="//h1[@itemprop='name']" />
+  	<scalar name="price" xpath="//div[@itemprop='price']" />
+  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//img[@itemprop='image']/@src"/>
+  	</composite>
+  	
+  </meta_metadata>
+  
 	
 </meta_metadata_repository>
