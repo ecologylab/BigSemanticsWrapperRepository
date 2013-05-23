@@ -304,5 +304,24 @@
   	
   </meta_metadata>
   
+  <meta_metadata name="ebay_product" extends="product" parser="xpath" user_agent_name="firefox" >
+  	<selector url_path_tree="http://www.ebay.com/itm/" />
+  	<example_url location="http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834" />
+  	<scalar name="title" xpath="//meta[@property='og:title']/@content" />
+  	<scalar name="item_condition" scalar_type="String" xpath="//div[@class='u-flL condText']" />
+  	<scalar name="availability" scalar_type="String" xpath="//span[@id='qtySubTxt']/span" />
+  	<scalar name="price" xpath="//span[@itemprop='price']" />
+  	
+  	<composite name="seller" type="document">
+  		<scalar name="name" type="String" xpath="//span[@class='mbg-nw']" />
+  		<scalar name="feedback" type="Integer" xpath="//span[@class='mbg-l']/a" />
+  		<scalar name="positive_feedback" type="String" xpath="//div[@id='si-fb']" />
+  	</composite>
+  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//meta[@property='og:image']/@content"/>
+  	</composite>
+  </meta_metadata>
+  
 	
 </meta_metadata_repository>

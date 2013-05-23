@@ -267,7 +267,7 @@
   	
   	<example_url location="http://www.roomandboard.com/rnb/product/detail.do?productGroup=3047&amp;catalog=filter&amp;menuCatalog=room&amp;menuCategory=201&amp;menuSubcategory=198" />
   	
-  	<scalar name="title" xpath="//h2[@itemprop='name']/span"/>
+  	<scalar name="title" xpath="//meta[@name='title']/@content"/>
   	<scalar name="description" xpath="//div[@itemprop='description']/p"/>
   	<scalar name="price" xpath="//div[@itemprop='price']" />
 
@@ -322,5 +322,39 @@
   	
   </meta_metadata>
   
+  <meta_metadata name="houzz_product" type="product" parser="xpath" user_agent_name="firefox" >
+  	<selector url_path_tree="http://www.houzz.com/photos/" />
+  	<example_url location="http://www.houzz.com/photos/329895/Cloud-Couch--sofas-" />
+  	
+  	<scalar name="title" xpath="//meta[@property='og:title']/@content" />
+  	<scalar name="description" xpath="//meta[@property='og:description']/@content" />
+  	<scalar name="price" xpath="//td[@class='price']" />
+  	
+  	<composite name="image" >
+  		<scalar name="location" xpath="//meta[@property='og:image']/@content" />
+  	</composite>
+  	 
+  </meta_metadata>
+
+	<meta_metadata name="wayfair_product" type="product" parser="xpath" user_agent_name="firefox" >
+		<selector url_path_tree="http://www.wayfair.com/" />
+	  	<example_url location="http://www.wayfair.com/Learning-Carpets-Ride-the-Train-Kids-Rug-LC142-LNC1009.html" />
+	  	
+	  	<scalar name="title" xpath="//meta[@property='og:title']/@content" />
+	  	<scalar name="description" xpath="//meta[@property='og:description']/@content" />
+	  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content" />
+	  	
+		<scalar name="overall_rating" xpath="//span[@itemprop='ratingValue']" />
+	    
+	    <collection name="reviews" xpath="//table[@class='review_table']/tbody/tr">
+	      <scalar name="rating" xpath=".//div[@itemprop='ratingValue']" />
+	      <scalar name="title" xpath=".//p[@itemprop='reviewBody']" />
+	      <scalar name="description" xpath=".//div[@class='bodytext']/p" />
+	    </collection>
+	  	
+	  	<composite name="image" >
+	  		<scalar name="location" xpath="//meta[@property='og:image']/@content" />
+	  	</composite>
+	</meta_metadata>
 
 </meta_metadata_repository>
