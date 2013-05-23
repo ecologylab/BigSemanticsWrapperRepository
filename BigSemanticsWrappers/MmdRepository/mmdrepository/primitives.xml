@@ -40,7 +40,7 @@
 		<scalar name="xpath" scalar_type="String" hide="true"/>
 		<composite name="source_doc" label="source" type="document" wrap="true"
                polymorphic_scope="repository_documents" show_expanded_initially="true" />
-		<composite name="outlink" type="document" wrap="true"
+		<collection name="outlinks" child_type="document" wrap="true"
                polymorphic_scope="repository_documents" />
 	</meta_metadata>
 
