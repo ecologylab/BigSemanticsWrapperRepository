@@ -32,6 +32,7 @@ repositorySources/nsf.xml
 repositorySources/opml.xml
 repositorySources/patent.xml
 repositorySources/person.xml
+repositorySources/pinterest.xml
 repositorySources/productAndService.xml
 repositorySources/publication.xml
 repositorySources/pubmed.xml
@@ -53,6 +54,7 @@ repositorySources/wikipediaMobile.xml
 repositorySources/wordpress.xml
 powerUser/dlese.xml
 powerUser/dreamHouse.xml
+powerUser/earthquake.xml
 powerUser/nsdl.xml
 powerUser/travel.xml
 powerUser/tripAdvisor.xml

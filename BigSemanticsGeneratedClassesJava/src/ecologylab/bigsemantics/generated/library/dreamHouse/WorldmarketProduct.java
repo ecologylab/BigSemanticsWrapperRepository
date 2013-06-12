@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct;
+import ecologylab.bigsemantics.generated.library.dreamHouse.WorldmarketProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -21,47 +21,47 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class HomeDepotProduct extends Product
+public class WorldmarketProduct extends Product
 {
-	@simpl_collection("home_depot_product")
-	@mm_name("people_also_buy")
-	private List<HomeDepotProduct> peopleAlsoBuy;
+	@simpl_collection("worldmarket_product")
+	@mm_name("you_may_also_like")
+	private List<WorldmarketProduct> youMayAlsoLike;
 
-	public HomeDepotProduct()
+	public WorldmarketProduct()
 	{ super(); }
 
-	public HomeDepotProduct(MetaMetadataCompositeField mmd) {
+	public WorldmarketProduct(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<HomeDepotProduct> getPeopleAlsoBuy()
+	public List<WorldmarketProduct> getYouMayAlsoLike()
 	{
-		return peopleAlsoBuy;
+		return youMayAlsoLike;
 	}
 
   // lazy evaluation:
-  public List<HomeDepotProduct> peopleAlsoBuy()
+  public List<WorldmarketProduct> youMayAlsoLike()
   {
-    if (peopleAlsoBuy == null)
-      peopleAlsoBuy = new ArrayList<HomeDepotProduct>();
-    return peopleAlsoBuy;
+    if (youMayAlsoLike == null)
+      youMayAlsoLike = new ArrayList<WorldmarketProduct>();
+    return youMayAlsoLike;
   }
 
   // addTo:
-  public void addToPeopleAlsoBuy(HomeDepotProduct element)
+  public void addToYouMayAlsoLike(WorldmarketProduct element)
   {
-    peopleAlsoBuy().add(element);
+    youMayAlsoLike().add(element);
   }
 
   // size:
-  public int peopleAlsoBuySize()
+  public int youMayAlsoLikeSize()
   {
-    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
+    return youMayAlsoLike == null ? 0 : youMayAlsoLike.size();
   }
 
-	public void setPeopleAlsoBuy(List<HomeDepotProduct> peopleAlsoBuy)
+	public void setYouMayAlsoLike(List<WorldmarketProduct> youMayAlsoLike)
 	{
-		this.peopleAlsoBuy = peopleAlsoBuy;
+		this.youMayAlsoLike = youMayAlsoLike;
 	}
 }

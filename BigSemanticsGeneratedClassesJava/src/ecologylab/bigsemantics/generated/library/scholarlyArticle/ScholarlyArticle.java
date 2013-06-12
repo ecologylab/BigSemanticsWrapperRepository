@@ -40,7 +40,7 @@ public class ScholarlyArticle extends CreativeWork
 	 *The Classifications of this paper.
 	 */ 
 	@simpl_collection
-	@simpl_scope("repository_document")
+	@simpl_scope("repository_documents")
 	@mm_name("classifications")
 	private List<Document> classifications;
 

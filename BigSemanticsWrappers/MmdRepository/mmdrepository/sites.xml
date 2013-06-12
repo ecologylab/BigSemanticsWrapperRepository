@@ -3,7 +3,7 @@
     <site domain="google.com" min_download_interval="5" />
     <site domain="scholar.google.com" min_download_interval="15" />
     <site domain="nytimes.com" min_download_interval="1" />
-    <site domain="acm.org" min_download_interval="9" />
+    <site domain="acm.org" min_download_interval="30" />
     <site domain="bing.net" min_download_interval=".125" />
     <site domain="wikipedia.org" min_download_interval="5" ignore_semantic_boost="true" />
     <site domain="moma.org" min_download_interval="1" />

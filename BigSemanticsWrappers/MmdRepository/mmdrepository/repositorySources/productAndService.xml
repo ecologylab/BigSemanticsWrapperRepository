@@ -63,7 +63,7 @@
 			<scalar name="title" xpath="." />
 			<scalar name="location" hide="true" xpath="./@href" />
 		</composite>
-		<composite name="image" xpath="//img[@class='prod_image_selector' or @id='prodImage']">
+		<composite name="image" xpath="//img[@id='main-image']">
 			<scalar name="location" xpath="./@src" />
 		</composite>
 
@@ -71,9 +71,9 @@
 		<scalar name="overall_rating" context_node="reviews_span" xpath=".//span[1]/@title" />
 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" />  
 
-		<collection name="reviews" xpath="//div[@class='content']/table/tbody/tr[2]/td[1]/div[position() &lt; last()-1]">
-			<scalar name="rating" xpath="./div[2]/span/span[1]/@title" />
-			<scalar name="description" xpath="." />
+		<collection name="reviews" xpath="//div[@id='revMHRL']/div[@class='reviews']">
+			<scalar name="rating" xpath="./div[3]/span[1]/@title" />
+			<scalar name="description" xpath="./div[6]/div" />
 		</collection>
 		
 		<composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list"
@@ -169,10 +169,8 @@
 		</collection>
 	</meta_metadata>
 	
-	
 	<meta_metadata name="target_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_path_tree="http://www.target.com/p/" />
-		<example_url url="http://www.target.com/p/threshold-windham-coffee-table-with-shelf-black/-/A-14122476#prodSlot=medium_1_1" />
 		<example_url url="http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1" />
 		
 		<scalar name="title" xpath="//h2[@class='product-name item']/span[@class='fn']" />
@@ -200,6 +198,22 @@
 			<scalar name="overall_rating" xpath=".//div[@class='rating-container']//div[@class='rating-small fivestar']" />
 			<scalar name="price" xpath=".//p[@class='price-container']" />
 		</collection>
+	</meta_metadata>
+	
+	<meta_metadata name="target_mobile_product" type="product" parser="xpath" user_agent_name="firefox">
+		<selector url_path_tree="http://m.target.com/p/" />
+		<example_url url="http://m.target.com/p/threshold-farrah-fretwork-window-panel/-/A-13976559" />
+		
+		<scalar name="title" xpath="//h2" />
+		<scalar name="price" xpath="//small[@id='pdpPriceSpan']" />
+		
+		<composite name="image" >
+			<scalar name="location" xpath="//div[@class='product-img']/img/@src" />
+		</composite>
+		
+		<scalar name="overall_rating" xpath="//a[@class='group ratings-reviews']/span[1]/@class" >
+			<filter regex="rating stars-" replace="" />
+		</scalar>
 	</meta_metadata>
 
 	
@@ -267,5 +281,67 @@
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	</meta_metadata>
+	
+  <meta_metadata name="etsy_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.etsy.com/listing/" domain="etsy.com" />
+  	
+  	<example_url location="http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8" />
+  	
+  	<scalar name="title" xpath="//div[@id='item-title']/h1"/>
+  	<scalar name="description" xpath="//span[@class='description-content']"/>
+  	<scalar name="price" xpath="//div[@class='secondary ']/div[1]//div[@class='item-amount']" />
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//div[@id='fullimage_link1']/a/@href"/>
+  	</composite>
+
+  </meta_metadata> 
+	
+  <meta_metadata name="samsclub_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.samsclub.com/sams/" domain="samsclub.com" />
+  	
+  	<example_url location="http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push" />
+  	
+  	<scalar name="title" xpath="//span[@itemprop='name']" />
+  	<scalar name="description" xpath="//div[@itemprop='description']/p"/>
+  	<scalar name="price" xpath="//span[@class='leftVal  onlinePrice']" />
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//div[@id='plImageHolder']/img/@src"/>
+  	</composite>
+
+  </meta_metadata> 	
+  
+  <meta_metadata name="samsclub_mobile_product" type="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://m.samsclub.com/ip/" />
+  	<example_url location="http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248" />
+  	<scalar name="title" xpath="//h1[@itemprop='name']" />
+  	<scalar name="price" xpath="//div[@itemprop='price']" />
+  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//img[@itemprop='image']/@src"/>
+  	</composite>
+  	
+  </meta_metadata>
+  
+  <meta_metadata name="ebay_product" extends="product" parser="xpath" user_agent_name="firefox" >
+  	<selector url_path_tree="http://www.ebay.com/itm/" />
+  	<example_url location="http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834" />
+  	<scalar name="title" xpath="//meta[@property='og:title']/@content" />
+  	<scalar name="item_condition" scalar_type="String" xpath="//div[@class='u-flL condText']" />
+  	<scalar name="availability" scalar_type="String" xpath="//span[@id='qtySubTxt']/span" />
+  	<scalar name="price" xpath="//span[@itemprop='price']" />
+  	
+  	<composite name="seller" type="document">
+  		<scalar name="name" type="String" xpath="//span[@class='mbg-nw']" />
+  		<scalar name="feedback" type="Integer" xpath="//span[@class='mbg-l']/a" />
+  		<scalar name="positive_feedback" type="String" xpath="//div[@id='si-fb']" />
+  	</composite>
+  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//meta[@property='og:image']/@content"/>
+  	</composite>
+  </meta_metadata>
+  
 	
 </meta_metadata_repository>

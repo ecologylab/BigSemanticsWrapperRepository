@@ -114,6 +114,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.creative_work.Periodical.class,
 
+		ecologylab.bigsemantics.generated.library.disaster.Disaster.class,
+
+		ecologylab.bigsemantics.generated.library.disaster.Earthquake.class,
+
+		ecologylab.bigsemantics.generated.library.disaster.Event.class,
+
 		ecologylab.bigsemantics.generated.library.dlese.AdditionalMetadata.class,
 
 		ecologylab.bigsemantics.generated.library.dlese.Audience.class,
@@ -163,6 +169,32 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.dlese.SearchSection.class,
 
 		ecologylab.bigsemantics.generated.library.dlese.UserSearchAdditionalMetadata.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.BedbathandbeyondProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.CrateandbarrelProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.IkeaProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.LowesProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.OnekingslaneProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.OverstockComProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.PieroneProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.PotterybarnProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.RestorationhardwareProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.RoomandboardProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.WestelmProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.WorldmarketProduct.class,
 
 		ecologylab.bigsemantics.generated.library.fastflip.FastflipSearch.class,
 
@@ -288,13 +320,21 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.person.Person.class,
 
+		ecologylab.bigsemantics.generated.library.pinterest.PinterestPin.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonList.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Commodity.class,
 
+		ecologylab.bigsemantics.generated.library.product_and_service.EbayProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.Product.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.SamsclubProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Service.class,
 

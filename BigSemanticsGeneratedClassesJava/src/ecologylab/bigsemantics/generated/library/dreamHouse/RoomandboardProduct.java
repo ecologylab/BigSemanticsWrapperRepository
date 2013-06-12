@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class OverstockComProduct extends Product
+public class RoomandboardProduct extends Product
 {
-	public OverstockComProduct()
+	public RoomandboardProduct()
 	{ super(); }
 
-	public OverstockComProduct(MetaMetadataCompositeField mmd) {
+	public RoomandboardProduct(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

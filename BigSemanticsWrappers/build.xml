@@ -32,7 +32,11 @@
 	<!-- classpath using jars -->
 	<path id="jars_classpath">
 		<fileset dir="${lib.dir}">
-		  <include name="**/*.jar" />
+		  <include name="json-simple-1.1.1.jar" />
+		  <include name="xercesMinimal.jar" />
+		  <include name="ST-4.0.7.jar" />
+		  <include name="antlr-3.5-complete.jar" />
+		  <include name="*.jar" />
 	  </fileset>
   </path>
 	
@@ -48,7 +52,7 @@
 		</java>
 	</target>
 	
-	<target name="compile-wrappers" depends="jar">
+	<target name="compile-wrappers-java" depends="jar">
   	<!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
 		<copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
 		
@@ -69,4 +73,19 @@
 		      tofile="lib/BigSemanticsGeneratedClassesJava.jar" />
 	</target>
 	
+	<target name="compile-wrappers-csharp" depends="jar">
+  	<!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
+		<copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
+		
+  	<!-- run the compiler. -->
+		<java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
+			    classpathref="jars_classpath" fork="yes" failonerror="true">
+			<arg value="csharp" />
+			<arg value="../BigSemantics.GeneratedClassesCSharp" />
+		  <jvmarg value="-Xms512m" />
+		</java>
+		
+		<echo message="Metadata classes have been generated in C#. You still need to run a C# compiler to compile them into an assembly!" /> 
+	</target>
+		
 </project>
