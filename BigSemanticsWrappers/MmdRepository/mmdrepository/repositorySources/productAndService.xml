@@ -112,7 +112,7 @@
 	</meta_metadata>
   
   
-  <meta_metadata name="newegg_product" type="product" parser="xpath" user_agent_name="chrome">
+  <meta_metadata name="newegg_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
 		<example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
 		
@@ -120,7 +120,7 @@
 			<scalar name="location" xpath="//span[@class='mainSlide']/img/@src" />
 		</composite>
 		
-		<scalar name="price" xpath="//div[@class='detailMainSell']//li[@class='price-current ']//strong" />
+		<scalar name="price" xpath="//div[@class='detailMainSell']//strong" />
 		<scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']//img/@title" />
 		<scalar name="num_reviews" xpath="//span[@itemprop='reviewCount']" />
 		<collection name="reviews" xpath="//table[@class='grpReviews']//tr/th[@class='reviewer']/..">
@@ -128,9 +128,15 @@
 			<scalar name="title" xpath=".//h3/text()" />
 			<scalar name="description" xpath=".//div[@class='details']" />
 		</collection>
+		
+		<collection name="suggested_products" child_type="newegg_product" xpath="//div[@class='wrapSideSell ']/div[@class='itmSideSell' | @class='itmSideSell first']">
+			<scalar name="location" xpath=".//a/@href" />
+			<scalar name="title" xpath=".//a" />
+			<scalar name="price" xpath=".//li[@class='price-current ']" />
+		</collection>
 	</meta_metadata>
 	
-	<meta_metadata name="walmart_product" type="product" parser="xpath" user_agent_name="chrome">
+	<meta_metadata name="walmart_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_path_tree="http://www.walmart.com/ip/" />
 		<example_url url="http://www.walmart.com/ip/The-Hobbit-An-Unexpected-Journey-DVD-UltraViolet-Widescreen/23263613" />
 		<example_url url="http://www.walmart.com/ip/Twister-Dance/21097609" />
@@ -154,9 +160,16 @@
 			<scalar name="time" xpath=".//span[@class='BVRRValue BVRRReviewDate']" />
 			<scalar name="description" xpath=".//span[@class='BVRRReviewText']" />
 		</collection>
+		
+		<collection name="people_also_buy" child_type="walmart_product" xpath="//div[@class='prtHid']//div[@id='rr_placement_2']">
+			<scalar name="location" xpath=".//a/@href" />
+			<scalar name="title" xpath=".//a" />
+			<scalar name="overall_rating" xpath="./div[@class='wmStars rrStars']/div/@title" />
+			<!-- <scalar name="price" xpath=".//div[@class='price']" /> -->
+		</collection>
 	</meta_metadata>
 	
-	<meta_metadata name="target_product" type="product" parser="xpath" user_agent_name="chrome">
+	<meta_metadata name="target_product" extends="product" parser="xpath" user_agent_name="chrome">
 		<selector url_path_tree="http://www.target.com/p/" />
 		<example_url url="http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1" />
 		
@@ -177,6 +190,13 @@
 			<scalar name="rating" xpath=".//div[@class='pro-overall-stars']//div[@class='rating-small fivestar']" />
 			<scalar name="title" xpath=".//div[@class='review-heading']" />
 			<scalar name="description" xpath=".//p[@class='review-text']" />
+		</collection>
+		
+		<collection name="people_also_viewed" child_type="target_product" xpath="//ul[@class='borderContainer']//div[@class='product-container']">
+			<scalar name="location" xpath=".//p[@class='productLink-container']/a[@class='waRRtag']/@href" />
+			<scalar name="title" xpath=".//p[@class='productLink-container']/a[@class='waRRtag']" />
+			<scalar name="overall_rating" xpath=".//div[@class='rating-container']//div[@class='rating-small fivestar']" />
+			<scalar name="price" xpath=".//p[@class='price-container']" />
 		</collection>
 	</meta_metadata>
 	

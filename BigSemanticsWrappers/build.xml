@@ -42,7 +42,7 @@
 	
 	<target name="mmtest" depends="jar">
   	<!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
-		<copy file="${jar.file}" tofile="{lib.dir}/${jar.filename}" />
+		<copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
 		
   	<!-- run mmtest with a URL -->
 		<java classname="ecologylab.bigsemantics.tools.MmTest"
