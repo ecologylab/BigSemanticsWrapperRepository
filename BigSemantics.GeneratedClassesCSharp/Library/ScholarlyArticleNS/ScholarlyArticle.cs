@@ -36,7 +36,7 @@ namespace Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS
 		/// The Classifications of this paper.
 		/// </summary>
 		[SimplCollection]
-		[SimplScope("repository_document")]
+		[SimplScope("repository_documents")]
 		[MmName("classifications")]
 		private List<Document> classifications;
 

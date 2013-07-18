@@ -132,6 +132,7 @@
     <Compile Include="Library\DisasterNS\Disaster.cs" />
     <Compile Include="Library\DisasterNS\Earthquake.cs" />
     <Compile Include="Library\DisasterNS\Event.cs" />
+    <Compile Include="Library\DisasterNS\Icsmd.cs" />
     <Compile Include="Library\DleseNS\AdditionalMetadata.cs" />
     <Compile Include="Library\DleseNS\Audience.cs" />
     <Compile Include="Library\DleseNS\Collection.cs" />
@@ -237,10 +238,14 @@
     <Compile Include="Library\ProductAndServiceNS\AmazonList.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Commodity.cs" />
+    <Compile Include="Library\ProductAndServiceNS\EbayProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\EtsyProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\NeweggProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Product.cs" />
     <Compile Include="Library\ProductAndServiceNS\SamsclubProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Service.cs" />
+    <Compile Include="Library\ProductAndServiceNS\TargetProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\WalmartProduct.cs" />
     <Compile Include="Library\PublicationNS\AmazonBook.cs" />
     <Compile Include="Library\PublicationNS\Book.cs" />
     <Compile Include="Library\PublicationNS\Publication.cs" />

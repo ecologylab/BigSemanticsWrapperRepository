@@ -9,10 +9,10 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -42,8 +42,9 @@ namespace Ecologylab.Semantics.Generated.Library
 		/// <summary>
 		/// The URL of the picture indicating weather condition.
 		/// </summary>
-		[SimplScalar]
-		private MetadataParsedURL picUrl;
+		[SimplComposite]
+		[MmName("weather_image")]
+		private Image weatherImage;
 
 		/// <summary>
 		/// The temperature.
@@ -68,6 +69,24 @@ namespace Ecologylab.Semantics.Generated.Library
 		/// </summary>
 		[SimplScalar]
 		private MetadataString dewPoint;
+
+		/// <summary>
+		/// chances of rain in percentage
+		/// </summary>
+		[SimplScalar]
+		private MetadataString chanceOfRain;
+
+		/// <summary>
+		/// the size of the rain
+		/// </summary>
+		[SimplScalar]
+		private MetadataString rainfall;
+
+		/// <summary>
+		/// forecast of today's condition
+		/// </summary>
+		[SimplScalar]
+		private MetadataString forecast;
 
 		public WeatherReport()
 		{ }
@@ -101,14 +120,14 @@ namespace Ecologylab.Semantics.Generated.Library
 			}
 		}
 
-		public MetadataParsedURL PicUrl
+		public Image WeatherImage
 		{
-			get{return picUrl;}
+			get{return weatherImage;}
 			set
 			{
-				if (this.picUrl != value)
+				if (this.weatherImage != value)
 				{
-					this.picUrl = value;
+					this.weatherImage = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -161,6 +180,45 @@ namespace Ecologylab.Semantics.Generated.Library
 				if (this.dewPoint != value)
 				{
 					this.dewPoint = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString ChanceOfRain
+		{
+			get{return chanceOfRain;}
+			set
+			{
+				if (this.chanceOfRain != value)
+				{
+					this.chanceOfRain = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Rainfall
+		{
+			get{return rainfall;}
+			set
+			{
+				if (this.rainfall != value)
+				{
+					this.rainfall = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Forecast
+		{
+			get{return forecast;}
+			set
+			{
+				if (this.forecast != value)
+				{
+					this.forecast = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
