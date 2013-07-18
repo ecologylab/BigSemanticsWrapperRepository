@@ -30,6 +30,7 @@
 	<meta_metadata name="wu_weather_report" type="weather_report" parser="xpath">
 		<selector url_path_tree="http://www.wunderground.com/US/" domain="wunderground.com"/>
 		<selector url_path_tree="http://www.wunderground.com/cgi-bin/findweather/" domain="wunderground.com" />
+		<example_url url="http://www.wunderground.com/US/77840?MR=1" />
 		<scalar name="city" xpath="//h1[@id='locationName']" />
 		<scalar name="weather" xpath="//div[@id='curCond']" />
 		<composite name="weather_image" >
@@ -48,4 +49,5 @@
 		
 		<scalar name="forecast" xpath="//div[@class='foreCondition'][1]" />
 	</meta_metadata>
+	
 </meta_metadata_repository>

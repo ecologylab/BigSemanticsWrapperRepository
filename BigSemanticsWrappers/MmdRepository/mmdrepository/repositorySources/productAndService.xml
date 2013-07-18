@@ -292,7 +292,7 @@
   	<scalar name="price" xpath="//meta[@property='etsymarketplace:price']/@content" />
    	  	
   	<composite name="image">
-  		<scalar name="location" xpath="//div[@id='fullimage_link1']/a/@href"/>
+  		<scalar name="location" xpath="//meta[@property='og:image']/@content"/>
   	</composite>
 
   </meta_metadata> 
