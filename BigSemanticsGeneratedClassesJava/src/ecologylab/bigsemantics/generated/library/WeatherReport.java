@@ -9,12 +9,13 @@ package ecologylab.bigsemantics.generated.library;
  */
 
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -42,8 +43,9 @@ public class WeatherReport extends CompoundDocument
 	/** 
 	 *The URL of the picture indicating weather condition.
 	 */ 
-	@simpl_scalar
-	private MetadataParsedURL picUrl;
+	@simpl_composite
+	@mm_name("weather_image")
+	private Image weatherImage;
 
 	/** 
 	 *The temperature.
@@ -68,6 +70,24 @@ public class WeatherReport extends CompoundDocument
 	 */ 
 	@simpl_scalar
 	private MetadataString dewPoint;
+
+	/** 
+	 *chances of rain in percentage
+	 */ 
+	@simpl_scalar
+	private MetadataString chanceOfRain;
+
+	/** 
+	 *the size of the rain
+	 */ 
+	@simpl_scalar
+	private MetadataString rainfall;
+
+	/** 
+	 *forecast of today's condition
+	 */ 
+	@simpl_scalar
+	private MetadataString forecast;
 
 	public WeatherReport()
 	{ super(); }
@@ -141,36 +161,14 @@ public class WeatherReport extends CompoundDocument
 		this.weather = weather;
 	}
 
-	public MetadataParsedURL	picUrl()
+	public Image getWeatherImage()
 	{
-		MetadataParsedURL	result = this.picUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.picUrl = result;
-		}
-		return result;
+		return weatherImage;
 	}
 
-	public ParsedURL getPicUrl()
+	public void setWeatherImage(Image weatherImage)
 	{
-		return this.picUrl == null ? null : picUrl().getValue();
-	}
-
-	public MetadataParsedURL getPicUrlMetadata()
-	{
-		return picUrl;
-	}
-
-	public void setPicUrl(ParsedURL picUrl)
-	{
-		if (picUrl != null)
-			this.picUrl().setValue(picUrl);
-	}
-
-	public void setPicUrlMetadata(MetadataParsedURL picUrl)
-	{
-		this.picUrl = picUrl;
+		this.weatherImage = weatherImage;
 	}
 
 	public MetadataString	temperature()
@@ -299,5 +297,101 @@ public class WeatherReport extends CompoundDocument
 	public void setDewPointMetadata(MetadataString dewPoint)
 	{
 		this.dewPoint = dewPoint;
+	}
+
+	public MetadataString	chanceOfRain()
+	{
+		MetadataString	result = this.chanceOfRain;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.chanceOfRain = result;
+		}
+		return result;
+	}
+
+	public String getChanceOfRain()
+	{
+		return this.chanceOfRain == null ? null : chanceOfRain().getValue();
+	}
+
+	public MetadataString getChanceOfRainMetadata()
+	{
+		return chanceOfRain;
+	}
+
+	public void setChanceOfRain(String chanceOfRain)
+	{
+		if (chanceOfRain != null)
+			this.chanceOfRain().setValue(chanceOfRain);
+	}
+
+	public void setChanceOfRainMetadata(MetadataString chanceOfRain)
+	{
+		this.chanceOfRain = chanceOfRain;
+	}
+
+	public MetadataString	rainfall()
+	{
+		MetadataString	result = this.rainfall;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.rainfall = result;
+		}
+		return result;
+	}
+
+	public String getRainfall()
+	{
+		return this.rainfall == null ? null : rainfall().getValue();
+	}
+
+	public MetadataString getRainfallMetadata()
+	{
+		return rainfall;
+	}
+
+	public void setRainfall(String rainfall)
+	{
+		if (rainfall != null)
+			this.rainfall().setValue(rainfall);
+	}
+
+	public void setRainfallMetadata(MetadataString rainfall)
+	{
+		this.rainfall = rainfall;
+	}
+
+	public MetadataString	forecast()
+	{
+		MetadataString	result = this.forecast;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.forecast = result;
+		}
+		return result;
+	}
+
+	public String getForecast()
+	{
+		return this.forecast == null ? null : forecast().getValue();
+	}
+
+	public MetadataString getForecastMetadata()
+	{
+		return forecast;
+	}
+
+	public void setForecast(String forecast)
+	{
+		if (forecast != null)
+			this.forecast().setValue(forecast);
+	}
+
+	public void setForecastMetadata(MetadataString forecast)
+	{
+		this.forecast = forecast;
 	}
 }

@@ -4,33 +4,48 @@
 	<meta_metadata name="weather_report" extends="compound_document" comment="The definition of weather report class.">
 		<scalar name="city" comment="The name of the city." scalar_type="String" />
 		<scalar name="weather" comment="The weather condition of the city, like sunny or cloudy." scalar_type="String" />
-		<scalar name="pic_url" comment="The URL of the picture indicating weather condition." scalar_type="ParsedURL" />
+		<composite name="weather_image" comment="The URL of the picture indicating weather condition." type="image" hide="true"/>
 		<scalar name="temperature" comment="The temperature." scalar_type="String" />
 		<scalar name="humidity" comment="The humidity of the air." scalar_type="String" />
 		<scalar name="wind" comment="The wind speed." scalar_type="String" />
 		<scalar name="dew_point" comment="The dew point." scalar_type="String" />
+		<scalar name="chance_of_rain" comment="chances of rain in percentage" scalar_type="String" />
+		<scalar name="rainfall" comment="the size of the rain" scalar_type="String" />
+		
+		<scalar name="forecast" comment="forecast of today's condition" scalar_type="String" />
+		
+		<semantic_actions>
+		    <get_field name="weather_image" />
+	  		<if>
+	  			<not_null value="weather_image" />
+			    <create_and_visualize_img_surrogate>
+			    	<arg name="metadata" value="weather_image" />
+			    </create_and_visualize_img_surrogate>
+	  		</if>
+		</semantic_actions>
+
 	</meta_metadata>
 	
 	<!-- a (specific) weather report meta-metadata definition for wunderground.com -->
 	<meta_metadata name="wu_weather_report" type="weather_report" parser="xpath">
-		<selector url_path_tree="http://www.wunderground.com/US/*/" domain="wunderground.com"/>
-		<scalar name="city" xpath="//h1[@id='locationName']">
-		  <filter regex=", TX" replace="" />
-		</scalar>
+		<selector url_path_tree="http://www.wunderground.com/US/" domain="wunderground.com"/>
+		<selector url_path_tree="http://www.wunderground.com/cgi-bin/findweather/" domain="wunderground.com" />
+		<scalar name="city" xpath="//h1[@id='locationName']" />
 		<scalar name="weather" xpath="//div[@id='curCond']" />
-		<scalar name="pic_url" xpath="//div[@id='curIcon']//img[@class='condIcon']/@src" />
+		<composite name="weather_image" >
+			<scalar name="location" xpath="//div[@id='curIcon']//img[@class='condIcon']/@src" />
+		</composite>
+		
 		<scalar name="temperature" xpath="//div[@id='tempActual']" />
 		<scalar name="humidity" xpath="//div[@id='conds_details_moisture']//span[@pwsvariable='humidity']" />
 		<scalar name="wind" xpath="//div[@id='nowWind']//span[@id='windCompassSpeed']" />
 		<scalar name="dew_point" xpath="//div[@id='conds_details_temp']//span[@pwsvariable='dewptf']" />
 		
-		<semantic_actions>
-			<get_field name="city" />
-			<get_field name="pic_url" />
-			<create_and_visualize_img_surrogate>
-				<arg name="title" value="city" />
-				<arg name="image_url" value="pic_url" />
-			</create_and_visualize_img_surrogate>
-		</semantic_actions>
+		<scalar name="chance_of_rain" xpath="//div[@class='foreCondition'][1]/div" >
+			<filter regex=" chance of precipitation" replace="" />
+		</scalar>
+		<scalar name="rainfall" xpath="//div[@id='conds_details_moisture']//div[@class='dataCol2']" />
+		
+		<scalar name="forecast" xpath="//div[@class='foreCondition'][1]" />
 	</meta_metadata>
 </meta_metadata_repository>

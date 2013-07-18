@@ -10,13 +10,11 @@ package ecologylab.bigsemantics.generated.library.flickr;
 
 import ecologylab.bigsemantics.generated.library.creative_work.Author;
 import ecologylab.bigsemantics.generated.library.flickr.FlickrPhoto;
-import ecologylab.bigsemantics.generated.library.flickr.Photostream;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +32,6 @@ public class FlickrAuthor extends Author
 	@simpl_collection("flickr_photo")
 	@mm_name("favorites")
 	private List<FlickrPhoto> favorites;
-
-	@simpl_composite
-	@mm_name("photostream")
-	private Photostream photostream;
 
 	public FlickrAuthor()
 	{ super(); }
@@ -75,15 +69,5 @@ public class FlickrAuthor extends Author
 	public void setFavorites(List<FlickrPhoto> favorites)
 	{
 		this.favorites = favorites;
-	}
-
-	public Photostream getPhotostream()
-	{
-		return photostream;
-	}
-
-	public void setPhotostream(Photostream photostream)
-	{
-		this.photostream = photostream;
 	}
 }

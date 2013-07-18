@@ -120,6 +120,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.disaster.Event.class,
 
+		ecologylab.bigsemantics.generated.library.disaster.Icsmd.class,
+
 		ecologylab.bigsemantics.generated.library.dlese.AdditionalMetadata.class,
 
 		ecologylab.bigsemantics.generated.library.dlese.Audience.class,
@@ -332,11 +334,17 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
 
+		ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.Product.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.SamsclubProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Service.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.TargetProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.WalmartProduct.class,
 
 		ecologylab.bigsemantics.generated.library.publication.AmazonBook.class,
 
