@@ -267,9 +267,9 @@
   	
   	<example_url location="http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8" />
   	
-  	<scalar name="title" xpath="//div[@id='item-title']/h1"/>
-  	<scalar name="description" xpath="//span[@class='description-content']"/>
-  	<scalar name="price" xpath="//div[@class='secondary ']/div[1]//div[@class='item-amount']" />
+  	<scalar name="title" xpath="//span[@itemprop='name']"/>
+  	<scalar name="description" xpath="//meta[@property='og:description']/@content"/>
+  	<scalar name="price" xpath="//meta[@property='etsymarketplace:price']/@content" />
    	  	
   	<composite name="image">
   		<scalar name="location" xpath="//div[@id='fullimage_link1']/a/@href"/>
