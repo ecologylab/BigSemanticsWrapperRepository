@@ -50,4 +50,21 @@
 		<scalar name="forecast" xpath="//div[@class='foreCondition'][1]" />
 	</meta_metadata>
 	
+	<meta_metadata name="wu_weather_mobile" type="weather_report" parser="xpath">
+		<selector url_path_tree="http://i.wund.com/US/" domain="wund.com" />
+		<selector url_path_tree="http://i.wund.com/cgi-bin/findweather/" domain="wund.com" />
+		<example_url url="http://i.wund.com/US/TX/College_Station.html#conditions" />
+		
+		<scalar name="city" xpath="//h2[1]" />
+		<scalar name="weather" xpath="//td[@id='current']/div[2]" />
+		<composite name="weather_image" >
+			<scalar name="location" xpath="//td[@class='taR']//img[@class='condIcon']/@src" />
+		</composite>
+		
+		<scalar name="temperature" xpath="//td[@id='current']/div[1]" />
+		<scalar name="humidity" xpath="//tr[@class='noRow'][2]/td[2]" />
+		<scalar name="wind" xpath="//tr[@class='noRow vaT'][1]/td[2]" />
+		<scalar name="dew_point" xpath="//tr[@class='noRow'][3]/td[2]" />
+	</meta_metadata>
+
 </meta_metadata_repository>
