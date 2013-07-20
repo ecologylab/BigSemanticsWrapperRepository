@@ -32,7 +32,7 @@
 			navigates_to="location" />
 		<scalar name="description" xpath="//meta[@property='og:description']/@content"
 			ignore_in_term_vector="true" scalar_type="String" />
-		<scalar name="image_location" xpath="//link[@rel='image_src']/@href"
+		<scalar name="image_location" xpath="//meta[@property='og:image']/@content"
 			hide="true" scalar_type="ParsedURL" />
 		<scalar name="year"
 			xpath="//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()">
@@ -45,10 +45,15 @@
 
 		<composite name="place" type="document">
 			<scalar name="title" xpath=".//a[@id='photoGeolocation-storylink']" />
-			<scalar name="location" xpath=".//a[@id='photoGeolocation-storylink']/@href">
-				<filter regex="$"
-					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
+			<scalar name="location" xpath=".//a[@id='photoGeolocation-storylink']/@href" hide="true">
+			<!--  <filter regex="$"
+					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" /> -->	
 			</scalar>
+		</composite>
+
+		<composite name="geo_location" type="gis_location">
+			<scalar name="latitude" xpath="//meta[@property='flickr_photos:location:latitude']/@content" />
+			<scalar name="longitude" xpath="//meta[@property='flickr_photos:location:longitude']/@content" />
 		</composite>
 
 		<collection name="tags" child_type="flickr_tag"

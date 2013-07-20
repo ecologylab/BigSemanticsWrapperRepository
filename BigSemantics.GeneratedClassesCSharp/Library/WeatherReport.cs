@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -32,6 +33,12 @@ namespace Ecologylab.Semantics.Generated.Library
 		/// </summary>
 		[SimplScalar]
 		private MetadataString city;
+
+		/// <summary>
+		/// The time of this weather
+		/// </summary>
+		[SimplScalar]
+		private MetadataString time;
 
 		/// <summary>
 		/// The weather condition of the city, like sunny or cloudy.
@@ -83,10 +90,11 @@ namespace Ecologylab.Semantics.Generated.Library
 		private MetadataString rainfall;
 
 		/// <summary>
-		/// forecast of today's condition
+		/// weather forecasts for the near future
 		/// </summary>
-		[SimplScalar]
-		private MetadataString forecast;
+		[SimplCollection("weather_report")]
+		[MmName("forecasts")]
+		private List<WeatherReport> forecasts;
 
 		public WeatherReport()
 		{ }
@@ -102,6 +110,19 @@ namespace Ecologylab.Semantics.Generated.Library
 				if (this.city != value)
 				{
 					this.city = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Time
+		{
+			get{return time;}
+			set
+			{
+				if (this.time != value)
+				{
+					this.time = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -211,14 +232,14 @@ namespace Ecologylab.Semantics.Generated.Library
 			}
 		}
 
-		public MetadataString Forecast
+		public List<WeatherReport> Forecasts
 		{
-			get{return forecast;}
+			get{return forecasts;}
 			set
 			{
-				if (this.forecast != value)
+				if (this.forecasts != value)
 				{
-					this.forecast = value;
+					this.forecasts = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

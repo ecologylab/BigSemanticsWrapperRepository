@@ -9,6 +9,7 @@ package ecologylab.bigsemantics.generated.library.flickr;
  */
 
 import ecologylab.bigsemantics.generated.library.blog.Post;
+import ecologylab.bigsemantics.generated.library.gis.GisLocation;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -39,6 +40,10 @@ public class FlickrPhoto extends Post
 	@simpl_composite
 	@mm_name("place")
 	private Document place;
+
+	@simpl_composite
+	@mm_name("geo_location")
+	private GisLocation geoLocation;
 
 	public FlickrPhoto()
 	{ super(); }
@@ -120,5 +125,15 @@ public class FlickrPhoto extends Post
 	public void setPlace(Document place)
 	{
 		this.place = place;
+	}
+
+	public GisLocation getGeoLocation()
+	{
+		return geoLocation;
+	}
+
+	public void setGeoLocation(GisLocation geoLocation)
+	{
+		this.geoLocation = geoLocation;
 	}
 }
