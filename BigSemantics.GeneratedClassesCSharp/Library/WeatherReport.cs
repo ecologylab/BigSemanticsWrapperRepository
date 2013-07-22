@@ -29,12 +29,6 @@ namespace Ecologylab.Semantics.Generated.Library
 	public class WeatherReport : CompoundDocument
 	{
 		/// <summary>
-		/// The name of the city.
-		/// </summary>
-		[SimplScalar]
-		private MetadataString city;
-
-		/// <summary>
 		/// The time of this weather
 		/// </summary>
 		[SimplScalar]
@@ -101,19 +95,6 @@ namespace Ecologylab.Semantics.Generated.Library
 
 		public WeatherReport(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString City
-		{
-			get{return city;}
-			set
-			{
-				if (this.city != value)
-				{
-					this.city = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString Time
 		{

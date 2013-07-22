@@ -2,7 +2,7 @@
 
 	<!-- data structure definition for (general) weather report -->
 	<meta_metadata name="weather_report" extends="compound_document" comment="The definition of weather report class.">
-		<scalar name="city" comment="The name of the city." scalar_type="String" />
+		<scalar name="title" label="city" comment="The name of the city." />
 		<scalar name="time" comment="The time of this weather" scalar_type="String" />
 		<scalar name="weather" comment="The weather condition of the city, like sunny or cloudy." scalar_type="String" />
 		<composite name="weather_image" comment="The URL of the picture indicating weather condition." type="image" hide="true"/>
@@ -32,7 +32,7 @@
 		<selector url_path_tree="http://www.wunderground.com/US/" domain="wunderground.com"/>
 		<selector url_path_tree="http://www.wunderground.com/cgi-bin/findweather/" domain="wunderground.com" />
 		<example_url url="http://www.wunderground.com/US/77840?MR=1" />
-		<scalar name="city" xpath="//h1[@id='locationName']" />
+		<scalar name="title" xpath="//h1[@id='locationName']" />
 		<scalar name="weather" xpath="//div[@id='curCond']" />
 		<composite name="weather_image" >
 			<scalar name="location" xpath="//div[@id='curIcon']//img[@class='condIcon']/@src" />
@@ -51,11 +51,10 @@
 	</meta_metadata>
 	
 	<meta_metadata name="wu_weather_mobile" type="weather_report" parser="xpath">
-		<selector url_path_tree="http://i.wund.com/US/" domain="wund.com" />
-		<selector url_path_tree="http://i.wund.com/cgi-bin/findweather/" domain="wund.com" />
+		<selector url_path_tree="http://i.wund.com/" domain="wund.com" />
 		<example_url url="http://i.wund.com/US/TX/College_Station.html" />
 		
-		<scalar name="city" xpath="//h2[1]" />
+		<scalar name="title" xpath="//h2[1]" />
 		<scalar name="weather" xpath="//td[@id='current']/div[2]" />
 		<composite name="weather_image" >
 			<scalar name="location" xpath="//td[@class='taR']//img[@class='condIcon']/@src" />
