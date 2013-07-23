@@ -52,7 +52,7 @@
 		</composite>
 		
 		<composite name="pinner" layer="3.0" type="compound_document" >
-			<scalar name="title" xpath="//div[@id='PinPinner']/p[@id='PinnerName']/a[1]" />
+			<scalar name="title" xpath="//div[@class='pinDescription']//a[@class='commentDescriptionCreator']" />
 			<scalar name="location" xpath="//meta[@property='pinterestapp:pinner']/@content" />
 		</composite>
 		
