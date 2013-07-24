@@ -136,10 +136,10 @@
 	</semantic_actions>
   </meta_metadata> 
   
-    <meta_metadata name="crateandbarrel_product" extends="product" parser="xpath" user_agent_name="firefox">
+  <meta_metadata name="crateandbarrel_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.crateandbarrel.com/[^/]*/[^/]*" domain="crateandbarrel.com" />
   	
-  	<example_url location="http://www.crateandbarrel.com/petrie-leather-chair/s165967" />
+  	<example_url location="http://www.cb2.com/parlour-atomic-orange-chair/f7238" />
   	
   	<scalar name="title" xpath="//h1[@itemprop='name']"/>
   	<scalar name="description" xpath="//div[@itemprop='description']/p[1]"/>
@@ -162,6 +162,64 @@
   	</composite>
   	
   </meta_metadata> 
+  
+  <meta_metadata name="cb2_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.cb2.com/" domain="cb2.com" />
+  	<example_url location="http://www.cb2.com/parlour-atomic-orange-chair/f7238" />
+  	
+  	<scalar name="title" xpath="//h1[@itemprop='name']"/>
+  	<scalar name="description" xpath="//div[@id='familyDetails']"/>
+  	<scalar name="price" xpath="//span[@itemprop='price'][1]" />
+
+  	<collection name="reviews" xpath="//div[@class='BVRRDisplayContentBody']/div">
+		<scalar name="title" xpath=".//div[@class='BVRRReviewTitleContainer']/span[2]" />
+		<scalar name="rating" xpath=".//div[@class='BVRRRatingNormalImage']/img/@title" />
+		<scalar name="description" xpath=".//div[@class='BVRRReviewTextContainer']//span[2]" />
+	</collection>
+
+  	<collection name="works_with" child_type="cb2_product" xpath="//div[@id='coordinatingItems']//a[@class='productNameLink']" >
+  		<scalar name="location" xpath="./@href" />
+  		<scalar name="title" xpath=".//span[@class='productName']" />
+  		<scalar name="price" xpath=".//span[@class='salePrice' or @class='regPrice']" />
+  	</collection>
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//img[@itemprop='image']/@src"/>
+  	</composite>
+  
+  </meta_metadata>
+  
+  <meta_metadata name="landofnod_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.landofnod.com/" domain="landofnod.com" />
+  	<example_url location="http://www.landofnod.com/oak-park-elementary-bed/f4732" />
+  	
+  	<scalar name="title" xpath="//h1[@itemprop='name']"/>
+  	<scalar name="description" xpath="//meta[@property='og:description']/@content"/>
+  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content" />
+
+  	<collection name="reviews" xpath="//div[@class='BVRRDisplayContentBody']/div">
+		<scalar name="title" xpath=".//div[@class='BVRRReviewTitleContainer']/span[2]" />
+		<scalar name="rating" xpath=".//div[@class='BVRRRatingNormalImage']/img/@title" />
+		<scalar name="description" xpath=".//div[@class='BVRRReviewTextContainer']//span[2]" />
+	</collection>
+
+	<collection name="customers_also_viewed" child_type="landofnod_product" xpath="//div[@id='coordinatingItems']//ul[@id='carouselCoordinating']//li" >
+  		<scalar name="location" xpath=".//a[@class='productImgLink']/@href" />
+  		<scalar name="title" xpath=".//span[@class='title']" />
+  		<scalar name="price" xpath=".//span[@class='salePrice' or @class='regPrice']" />
+  	</collection>
+
+  	<collection name="accessories" child_type="landofnod_product" xpath="//div[@id='accessoryItems']//ul[@id='carouselCoordinating']//li" >
+  		<scalar name="location" xpath=".//a[@class='productImgLink']/@href" />
+  		<scalar name="title" xpath=".//span[@class='title']" />
+  		<scalar name="price" xpath=".//span[@class='salePrice' or @class='regPrice']" />
+  	</collection>
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//img[@itemprop='image']/@src"/>
+  	</composite>
+  
+  </meta_metadata>
   
   <meta_metadata name="worldmarket_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.worldmarket.com/product/[^/]*" domain="worldmarket.com" />

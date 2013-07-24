@@ -32,12 +32,6 @@ import java.util.Map;
 public class WeatherReport extends CompoundDocument
 {
 	/** 
-	 *The name of the city.
-	 */ 
-	@simpl_scalar
-	private MetadataString city;
-
-	/** 
 	 *The time of this weather
 	 */ 
 	@simpl_scalar
@@ -106,38 +100,6 @@ public class WeatherReport extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public MetadataString	city()
-	{
-		MetadataString	result = this.city;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.city = result;
-		}
-		return result;
-	}
-
-	public String getCity()
-	{
-		return this.city == null ? null : city().getValue();
-	}
-
-	public MetadataString getCityMetadata()
-	{
-		return city;
-	}
-
-	public void setCity(String city)
-	{
-		if (city != null)
-			this.city().setValue(city);
-	}
-
-	public void setCityMetadata(MetadataString city)
-	{
-		this.city = city;
-	}
 
 	public MetadataString	time()
 	{
