@@ -159,9 +159,11 @@
     <Compile Include="Library\DleseNS\SearchSection.cs" />
     <Compile Include="Library\DleseNS\UserSearchAdditionalMetadata.cs" />
     <Compile Include="Library\DreamHouseNS\BedbathandbeyondProduct.cs" />
+    <Compile Include="Library\DreamHouseNS\Cb2Product.cs" />
     <Compile Include="Library\DreamHouseNS\CrateandbarrelProduct.cs" />
     <Compile Include="Library\DreamHouseNS\HomeDepotProduct.cs" />
     <Compile Include="Library\DreamHouseNS\IkeaProduct.cs" />
+    <Compile Include="Library\DreamHouseNS\LandofnodProduct.cs" />
     <Compile Include="Library\DreamHouseNS\LowesProduct.cs" />
     <Compile Include="Library\DreamHouseNS\OnekingslaneProduct.cs" />
     <Compile Include="Library\DreamHouseNS\OverstockComProduct.cs" />
