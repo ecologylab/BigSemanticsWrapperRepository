@@ -139,7 +139,7 @@
   <meta_metadata name="crateandbarrel_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.crateandbarrel.com/[^/]*/[^/]*" domain="crateandbarrel.com" />
   	
-  	<example_url location="http://www.cb2.com/parlour-atomic-orange-chair/f7238" />
+  	<example_url location="http://www.crateandbarrel.com/davis-twin-sleeper/s613452" />
   	
   	<scalar name="title" xpath="//h1[@itemprop='name']"/>
   	<scalar name="description" xpath="//div[@itemprop='description']/p[1]"/>
@@ -398,9 +398,9 @@
 		<selector url_path_tree="http://www.wayfair.com/" />
 	  	<example_url location="http://www.wayfair.com/Learning-Carpets-Ride-the-Train-Kids-Rug-LC142-LNC1009.html" />
 	  	
-	  	<scalar name="title" xpath="//meta[@property='og:title']/@content" />
+	  	<scalar name="title" xpath="//meta[@property='og:title']/@content|//title" />
 	  	<scalar name="description" xpath="//div[@class='prodbullets pdbulletswrap']" />
-	  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content" />
+	  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content|//span[@data-id='dynamic-sku-price']" />
 	  	
 		<scalar name="overall_rating" xpath="//span[@itemprop='ratingValue']" />
 	    
@@ -411,7 +411,7 @@
 	    </collection>
 	  	
 	  	<composite name="image" >
-	  		<scalar name="location" xpath="//meta[@property='og:image']/@content" />
+	  		<scalar name="location" xpath="//meta[@property='og:image']/@content|//div[@class='zoomimgwrap']//img/@src" />
 	  	</composite>
 	</meta_metadata>
 
