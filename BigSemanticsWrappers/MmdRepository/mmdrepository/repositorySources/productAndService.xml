@@ -205,6 +205,7 @@
 		<example_url url="http://m.target.com/p/threshold-farrah-fretwork-window-panel/-/A-13976559" />
 		
 		<scalar name="title" xpath="//h2" />
+		<scalar name="description" xpath="//ul[@class='feature-details']" />
 		<scalar name="price" xpath="//small[@id='pdpPriceSpan']" />
 		
 		<composite name="image" >
