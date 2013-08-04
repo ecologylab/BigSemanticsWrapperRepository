@@ -168,7 +168,7 @@
   	<example_url location="http://www.cb2.com/parlour-atomic-orange-chair/f7238" />
   	
   	<scalar name="title" xpath="//h1[@itemprop='name']|//title"/>
-  	<scalar name="description" xpath="//div[@id='familyDetails']"/>
+  	<scalar name="description" xpath="//meta[@property='og:description']/@content"/>
   	<scalar name="price" xpath="//span[@itemprop='price'][1]" />
 
   	<collection name="reviews" xpath="//div[@class='BVRRDisplayContentBody']/div">
