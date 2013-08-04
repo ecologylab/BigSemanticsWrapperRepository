@@ -105,8 +105,8 @@
   
   
   <meta_metadata name="lowes_product" extends="product" parser="xpath" user_agent_name="firefox">
-  	<selector url_regex_fragment="http://www.lowes.com/*" domain="lowes.com" />
-  	
+  	<selector url_regex_fragment="http://www.lowes.com/pd*" domain="lowes.com" />
+  	<selector url_regex_fragment="http://www.lowes.com/ProductDisplay*" domain="lowes.com" />
   	<example_url location="http://www.lowes.com/pd_331470-817-235159_4294703024%2B4294934373" />
   	
   	<scalar name="title" xpath="//div[@class='itemInfo']/h1"/>
