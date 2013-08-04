@@ -275,7 +275,7 @@
   	<example_url location="http://www.restorationhardware.com/catalog/product/product.jsp?productId=prod2140452&amp;categoryId=cat80006" />
   	
   	<scalar name="title" xpath="//h1"/>
-  	<scalar name="description" xpath="//div[@id='product-info-pane']/p[1]"/>
+  	<scalar name="description" xpath="//div[@class='product-description']"/>
   	<scalar name="price" xpath="//div[@class='price']" />
    	  	
   	<composite name="image">
