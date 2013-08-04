@@ -103,6 +103,19 @@
 
   </meta_metadata>
   
+  <meta_metadata name="ikea_mobile_product" type="product" parser="xpath" user_agent_name="chrome">
+  	<selector url_path_tree="m.ikea.com/us/en/catalog/products/" domain="ikea.com" />
+  	<example location="http://m.ikea.com/us/en/catalog/products/art/50058376/" />
+  	
+  	<scalar name="title" xpath="//title" />
+  	<scalar name="description" xpath="//div[@class='ikea-pip ui-content']/ul[1]/li[5]/div/" />
+  	<scalar name="price" xpath="//span[@itemprop='price']/span" />
+  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//div[@class='ikea-pip-fullImageWrapper']/img/@src"/>
+  	</composite>
+  	
+  </meta_metadata>
   
   <meta_metadata name="lowes_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.lowes.com/pd*" domain="lowes.com" />
