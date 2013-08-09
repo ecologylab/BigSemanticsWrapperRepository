@@ -103,10 +103,23 @@
 
   </meta_metadata>
   
+  <meta_metadata name="ikea_mobile_product" type="product" parser="xpath" user_agent_name="chrome">
+  	<selector url_path_tree="m.ikea.com/us/en/catalog/products/" domain="ikea.com" />
+  	<example location="http://m.ikea.com/us/en/catalog/products/art/50058376/" />
+  	
+  	<scalar name="title" xpath="//title" />
+  	<scalar name="description" xpath="//div[@class='ikea-pip ui-content']/ul[1]/li[5]/div/" />
+  	<scalar name="price" xpath="//span[@itemprop='price']/span" />
+  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//div[@class='ikea-pip-fullImageWrapper']/img/@src"/>
+  	</composite>
+  	
+  </meta_metadata>
   
   <meta_metadata name="lowes_product" extends="product" parser="xpath" user_agent_name="firefox">
-  	<selector url_regex_fragment="http://www.lowes.com/*" domain="lowes.com" />
-  	
+  	<selector url_regex_fragment="http://www.lowes.com/pd*" domain="lowes.com" />
+  	<selector url_regex_fragment="http://www.lowes.com/ProductDisplay*" domain="lowes.com" />
   	<example_url location="http://www.lowes.com/pd_331470-817-235159_4294703024%2B4294934373" />
   	
   	<scalar name="title" xpath="//div[@class='itemInfo']/h1"/>
@@ -136,12 +149,12 @@
 	</semantic_actions>
   </meta_metadata> 
   
-    <meta_metadata name="crateandbarrel_product" extends="product" parser="xpath" user_agent_name="firefox">
+  <meta_metadata name="crateandbarrel_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.crateandbarrel.com/[^/]*/[^/]*" domain="crateandbarrel.com" />
   	
-  	<example_url location="http://www.crateandbarrel.com/petrie-leather-chair/s165967" />
+  	<example_url location="http://www.crateandbarrel.com/davis-twin-sleeper/s613452" />
   	
-  	<scalar name="title" xpath="//h1[@itemprop='name']"/>
+  	<scalar name="title" xpath="//h1[@itemprop='name']|//title"/>
   	<scalar name="description" xpath="//div[@itemprop='description']/p[1]"/>
   	<scalar name="price" xpath="//span[@itemprop='price']" />
 
@@ -162,6 +175,64 @@
   	</composite>
   	
   </meta_metadata> 
+  
+  <meta_metadata name="cb2_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.cb2.com/" domain="cb2.com" />
+  	<example_url location="http://www.cb2.com/parlour-atomic-orange-chair/f7238" />
+  	
+  	<scalar name="title" xpath="//h1[@itemprop='name']|//title"/>
+  	<scalar name="description" xpath="//meta[@property='og:description']/@content"/>
+  	<scalar name="price" xpath="//span[@itemprop='price'][1]" />
+
+  	<collection name="reviews" xpath="//div[@class='BVRRDisplayContentBody']/div">
+		<scalar name="title" xpath=".//div[@class='BVRRReviewTitleContainer']/span[2]" />
+		<scalar name="rating" xpath=".//div[@class='BVRRRatingNormalImage']/img/@title" />
+		<scalar name="description" xpath=".//div[@class='BVRRReviewTextContainer']//span[2]" />
+	</collection>
+
+  	<collection name="works_with" child_type="cb2_product" xpath="//div[@id='coordinatingItems']//a[@class='productNameLink']" >
+  		<scalar name="location" xpath="./@href" />
+  		<scalar name="title" xpath=".//span[@class='productName']" />
+  		<scalar name="price" xpath=".//span[@class='salePrice' or @class='regPrice']" />
+  	</collection>
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//img[@itemprop='image']/@src"/>
+  	</composite>
+  
+  </meta_metadata>
+  
+  <meta_metadata name="landofnod_product" extends="product" parser="xpath" user_agent_name="firefox">
+  	<selector url_path_tree="http://www.landofnod.com/" domain="landofnod.com" />
+  	<example_url location="http://www.landofnod.com/oak-park-elementary-bed/f4732" />
+  	
+  	<scalar name="title" xpath="//h1[@itemprop='name']|//title"/>
+  	<scalar name="description" xpath="//meta[@property='og:description']/@content"/>
+  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content" />
+
+  	<collection name="reviews" xpath="//div[@class='BVRRDisplayContentBody']/div">
+		<scalar name="title" xpath=".//div[@class='BVRRReviewTitleContainer']/span[2]" />
+		<scalar name="rating" xpath=".//div[@class='BVRRRatingNormalImage']/img/@title" />
+		<scalar name="description" xpath=".//div[@class='BVRRReviewTextContainer']//span[2]" />
+	</collection>
+
+	<collection name="customers_also_viewed" child_type="landofnod_product" xpath="//div[@id='coordinatingItems']//ul[@id='carouselCoordinating']//li" >
+  		<scalar name="location" xpath=".//a[@class='productImgLink']/@href" />
+  		<scalar name="title" xpath=".//span[@class='title']" />
+  		<scalar name="price" xpath=".//span[@class='salePrice' or @class='regPrice']" />
+  	</collection>
+
+  	<collection name="accessories" child_type="landofnod_product" xpath="//div[@id='accessoryItems']//ul[@id='carouselCoordinating']//li" >
+  		<scalar name="location" xpath=".//a[@class='productImgLink']/@href" />
+  		<scalar name="title" xpath=".//span[@class='title']" />
+  		<scalar name="price" xpath=".//span[@class='salePrice' or @class='regPrice']" />
+  	</collection>
+   	  	
+  	<composite name="image">
+  		<scalar name="location" xpath="//img[@itemprop='image']/@src"/>
+  	</composite>
+  
+  </meta_metadata>
   
   <meta_metadata name="worldmarket_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.worldmarket.com/product/[^/]*" domain="worldmarket.com" />
@@ -187,10 +258,10 @@
   <meta_metadata name="westelm_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.westelm.com/products/*" domain="westelm.com" />
   	
-  	<example_url location="http://www.westelm.com/products/parsons-wall-mirror-bone-inlay-d127" />
+  	<example_url location="http://www.westelm.com/products/paidge-sofa-h211" />
   	
-  	<scalar name="title" xpath="//div[@id='main-content']//h1"/>
-  	<scalar name="description" xpath="//li[@id='overview']/div"/>
+  	<scalar name="title" xpath="//meta[@property='og:title']/@content"/>
+  	<scalar name="description" xpath="//div[@class='accordion-contents'][1]"/>
   	<scalar name="price" xpath="//div[@class='price-container']" />
 
 	<collection name="also_in_this_collection" child_type="westelm_product" xpath="//div[@class='you-may-also-like con']/div[1]//ul/li" >
@@ -206,7 +277,7 @@
   	</collection>
      	
   	<composite name="image">
-  		<scalar name="location" xpath="//img[@id='hero']/@src"/>
+  		<scalar name="location" xpath="//meta[@property='og:image']/@content" />
   	</composite>
 
   </meta_metadata> 
@@ -217,7 +288,7 @@
   	<example_url location="http://www.restorationhardware.com/catalog/product/product.jsp?productId=prod2140452&amp;categoryId=cat80006" />
   	
   	<scalar name="title" xpath="//h1"/>
-  	<scalar name="description" xpath="//div[@id='product-info-pane']/p[1]"/>
+  	<scalar name="description" xpath="//div[@class='product-description']"/>
   	<scalar name="price" xpath="//div[@class='price']" />
    	  	
   	<composite name="image">
@@ -247,7 +318,7 @@
   	<example_url location="http://www.potterybarn.com/products/pb-comfort-armchair/" />
   	
   	<scalar name="title" xpath="//div[@class='pip-summary']//h1"/>
-  	<scalar name="description" xpath="//li[@id='overview']/div"/>
+  	<scalar name="description" xpath="//div[@class='accordion-contents']"/>
   	<scalar name="price" xpath="//div[@class='price-container']" />
 
   	<collection name="customers_also_viewed" child_type="potterybarn_product" xpath="//div[@class='you-may-also-like con']//ul/li" >
@@ -284,8 +355,8 @@
   	
   	<example_url location="http://www.pier1.com/Grandiose-Wall-Clock/2495749,default,pd.html" />
   	
-  	<scalar name="title" xpath="//h1[@itemprop='name']/div[1]"/>
-  	<scalar name="description" xpath="//div[@id='tab1']"/>
+  	<scalar name="title" xpath="//h1[@itemprop='name']/div[1]|//title"/>
+  	<scalar name="description" xpath="//meta[@name='description']/@content"/>
   	<scalar name="price" xpath="//h1[@itemprop='name']/div[@class='product-price']/span[last()]" />
 
   	<composite name="image">
@@ -297,13 +368,13 @@
   <meta_metadata name="bedbathandbeyond_product" extends="product" parser="xpath" user_agent_name="firefox">
   	<selector url_regex_fragment="http://www.bedbathandbeyond.com/[^/]*" domain="bedbathandbeyond.com" />
   	
-  	<example_url location="http://www.bedbathandbeyond.com/product.asp?SKU=40041827&amp;RN=700&amp;" />
+  	<example_url location="http://www.bedbathandbeyond.com/product.asp?SKU=41425404&amp;RN=2031&amp;" />
   	
-  	<scalar name="title" xpath="//h1"/>
-  	<scalar name="description" xpath="//div[@class='ppprodinfo']"/>
+  	<scalar name="title" xpath="//meta[@name='title']/@content"/>
+  	<scalar name="description" xpath="//meta[@name='description']/@content"/>
   	
   	<composite name="image">
-  		<scalar name="location" xpath="//div[@class='ppprodimageline'][2]//img/@src"/>
+  		<scalar name="location" xpath="//link[@rel='image_src']/@href"/>
   	</composite>
 
   </meta_metadata> 
@@ -340,9 +411,9 @@
 		<selector url_path_tree="http://www.wayfair.com/" />
 	  	<example_url location="http://www.wayfair.com/Learning-Carpets-Ride-the-Train-Kids-Rug-LC142-LNC1009.html" />
 	  	
-	  	<scalar name="title" xpath="//meta[@property='og:title']/@content" />
-	  	<scalar name="description" xpath="//meta[@property='og:description']/@content" />
-	  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content" />
+	  	<scalar name="title" xpath="//meta[@property='og:title']/@content|//title" />
+	  	<scalar name="description" xpath="//div[@class='prodbullets pdbulletswrap']" />
+	  	<scalar name="price" xpath="//meta[@property='og:price:amount']/@content|//span[@data-id='dynamic-sku-price']" />
 	  	
 		<scalar name="overall_rating" xpath="//span[@itemprop='ratingValue']" />
 	    
@@ -353,7 +424,7 @@
 	    </collection>
 	  	
 	  	<composite name="image" >
-	  		<scalar name="location" xpath="//meta[@property='og:image']/@content" />
+	  		<scalar name="location" xpath="//meta[@property='og:image']/@content|//div[@class='zoomimgwrap']//img/@src" />
 	  	</composite>
 	</meta_metadata>
 

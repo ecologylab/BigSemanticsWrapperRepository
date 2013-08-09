@@ -1,64 +1,13 @@
 
 <meta_metadata_repository name="flickr" package="ecologylab.bigsemantics.generated.library.flickr">
 
-	<meta_metadata name="flickr_photo" extends="post" parser="xpath"
-		comment="A Flickr image post page">
-		<selector url_regex="http://www.flickr.com/photos/(?!tags[0-9]+($|/.*$))"
-			domain="flickr.com" />
-		<example_url url="www.flickr.com/photos/kali-kold/map/?photo=5756890544" />
-		<scalar name="title" xpath="//div[@id='meta']/h1" scalar_type="String"
-			navigates_to="location" />
-		<scalar name="description" xpath="//div[@id='meta']/div[@class='photo-desc']"
-			ignore_in_term_vector="true" scalar_type="String" />
-		<scalar name="image_location" xpath="//link[@rel='image_src']/@href"
-			hide="true" scalar_type="ParsedURL" />
-		<scalar name="year"
-			xpath="//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()">
-			<filter regex="\w+ [0-9]+," replace="" />
-		</scalar>
-		<scalar name="views" xpath="//span[@id='view-count']"
-			scalar_type="String">
-			<filter regex=" views$" replace="" />
-		</scalar>
-
-		<composite name="place" type="document">
-			<scalar name="title" xpath=".//a[@id='photoGeolocation-storylink']" />
-			<scalar name="location" xpath=".//a[@id='photoGeolocation-storylink']/@href">
-				<filter regex="$"
-					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" />
-			</scalar>
-		</composite>
-
-		<collection name="tags" child_type="flickr_tag"
-			xpath="//a[@class='tag-item ywa-track']">
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>
-
-		<collection name="authors" label="authors" xpath=".">
-			<scalar name="location" xpath="//meta[@property='flickr_photos:by']/@content" /><!--TBD 
-				ad author page... -->
-			<scalar name="title" xpath=".//strong[@class='username']/a/text()" />
-		</collection>
-
-		<semantic_actions>
-			<get_field name="image_location" />
-			<get_field name="title" />
-			<create_and_visualize_img_surrogate>
-				<arg value="image_location" name="image_purl" />
-				<arg value="title" name="caption" />
-			</create_and_visualize_img_surrogate>
-		</semantic_actions>
-	</meta_metadata>
-
-
 	<meta_metadata name="flickr_tag" extends="compound_document"
 		parser="xpath" comment="For flickr crawled tags">
 		<selector url_regex="http://www.flickr.com/photos/[^/]*/tags/.*/?"
 			domain="flickr.com" />
 		<example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />
 
-		<scalar name="title" label="tag" />
+		<scalar name="title" xpath="//meta[@name='application-name']/@content" />
 		<collection name="photos" xpath="//span[@class='photo_container pc_t']"
 			comment="Collection of all images of a user" child_type="flickr_photo">
 			<scalar name="title" xpath="./a/@title" />
@@ -72,6 +21,63 @@
 		</composite>
 	</meta_metadata>
 
+	<meta_metadata name="flickr_photo" extends="post" parser="xpath"
+		comment="A Flickr image post page">
+		<selector url_regex_fragment="http://www.flickr.com/photos/[^/]*/[0-9]"
+			domain="flickr.com" />
+		<!--  <example_url url="http://www.flickr.com/photos/kali-kold/map/?photo=5756890544" /> -->
+		<example_url url="http://www.flickr.com/photos/kali-kold/8345182714/" />
+		<example_url url="http://www.flickr.com/photos/sobrido/8137315867/" />
+		<scalar name="title" xpath="//meta[@property='og:title']/@content" scalar_type="String"
+			navigates_to="location" />
+		<scalar name="description" xpath="//meta[@property='og:description']/@content"
+			ignore_in_term_vector="true" scalar_type="String" />
+		<scalar name="image_location" xpath="//meta[@property='og:image']/@content"
+			hide="true" scalar_type="ParsedURL" />
+		<scalar name="year"
+			xpath="//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()">
+			<filter regex="\w+ [0-9]+," replace="" />
+		</scalar>
+		<scalar name="views" xpath="//span[@id='view-count']"
+			scalar_type="String">
+			<filter regex=" views$" replace="" />
+		</scalar>
+
+		<composite name="place" type="document">
+			<scalar name="title" xpath=".//a[@id='photoGeolocation-storylink']" />
+			<scalar name="location" xpath=".//a[@id='photoGeolocation-storylink']/@href" hide="true">
+			<!--  <filter regex="$"
+					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" /> -->	
+			</scalar>
+		</composite>
+
+		<composite name="geo_location" type="gis_location">
+			<scalar name="latitude" xpath="//meta[@property='flickr_photos:location:latitude']/@content" />
+			<scalar name="longitude" xpath="//meta[@property='flickr_photos:location:longitude']/@content" />
+		</composite>
+
+		<collection name="tags" child_type="flickr_tag"
+			xpath="//div[@class='tag-list']//ul[@class='sidecar-list']/li">
+			<scalar name="title" xpath="./span/a" />
+			<scalar name="location" xpath="./span/a/@href" />
+		</collection>
+
+		<collection name="authors" label="authors" xpath=".">
+			<scalar name="location" xpath="//meta[@property='flickr_photos:by']/@content" /><!--TBD 
+				ad author page... -->
+			<scalar name="title" xpath="//span[@class='photo-name-line-1']/a" />
+		</collection>
+
+		<semantic_actions>
+			<get_field name="image_location" />
+			<get_field name="title" />
+			<create_and_visualize_img_surrogate>
+				<arg value="image_location" name="image_purl" />
+				<arg value="title" name="caption" />
+			</create_and_visualize_img_surrogate>
+		</semantic_actions>
+	</meta_metadata>
+
 	<meta_metadata name="flickr_author" extends="author"
 		parser="xpath" comment="Author on flickr">
 		<selector url_regex="http://www.flickr.com/people/[A-z0-9_@-]+/" domain="flickr.com" />
@@ -83,7 +89,7 @@
 		
 		<scalar name="description"
 			xpath="//div[@class='profile-section profile-section-desc']/p" />
-		<scalar name="city" xpath="//span[@class='locality']/text()" />
+		<scalar name="city" xpath="//div[@id='a-bit-more-about']/dl[3]/dd" />
 
 		<collection name="favorites" xpath="//span[@class='photo_container pc_s']"
 			comment="Image favorites" child_type="flickr_photo">
@@ -91,10 +97,10 @@
 			<scalar name="location" xpath="./a/@href" />
 		</collection>
 
-		<composite name="photostream" type="photostream">
+<!--  		<composite name="photostream" type="photostream">
 			<scalar name="title" xpath="//div[@class='overflow-shim']/h1/a" />
 			<scalar name="location" xpath="//div[@class='overflow-shim']/h1/a/@href" />
-		</composite>
+		</composite>     -->
 	</meta_metadata>
 
 	<meta_metadata name="photostream" extends="compound_document"
@@ -102,11 +108,11 @@
 		<example_url url="http://www.flickr.com/photos/kali-kold/" />
 		<selector url_regex="http://www.flickr.com/photos/[A-z0-9_@-]+/$"
 			domain="flickr.com" />
-		<collection name="stream" xpath="//img[@class='pc_img']"
+		<collection name="stream" xpath="//img[contains(@class,'pc_img')]"
 			comment="Collection of all images of a user" child_type="flickr_photo">
 			<scalar name="title" xpath="./@alt" />
 			<scalar name="location" xpath="./../@href">
-				<filter regex="in/photostream" replace="" />
+			<!--  	<filter regex="in/photostream" replace="" /> -->
 			</scalar>
 		</collection>
 	</meta_metadata>

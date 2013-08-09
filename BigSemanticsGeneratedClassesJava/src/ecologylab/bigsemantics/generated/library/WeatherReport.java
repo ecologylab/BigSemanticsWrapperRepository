@@ -8,16 +8,20 @@ package ecologylab.bigsemantics.generated.library;
  * Copyright (2013) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.WeatherReport;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,10 +32,10 @@ import java.util.Map;
 public class WeatherReport extends CompoundDocument
 {
 	/** 
-	 *The name of the city.
+	 *The time of this weather
 	 */ 
 	@simpl_scalar
-	private MetadataString city;
+	private MetadataString time;
 
 	/** 
 	 *The weather condition of the city, like sunny or cloudy.
@@ -42,8 +46,9 @@ public class WeatherReport extends CompoundDocument
 	/** 
 	 *The URL of the picture indicating weather condition.
 	 */ 
-	@simpl_scalar
-	private MetadataParsedURL picUrl;
+	@simpl_composite
+	@mm_name("weather_image")
+	private Image weatherImage;
 
 	/** 
 	 *The temperature.
@@ -69,6 +74,25 @@ public class WeatherReport extends CompoundDocument
 	@simpl_scalar
 	private MetadataString dewPoint;
 
+	/** 
+	 *chances of rain in percentage
+	 */ 
+	@simpl_scalar
+	private MetadataString chanceOfRain;
+
+	/** 
+	 *the size of the rain
+	 */ 
+	@simpl_scalar
+	private MetadataString rainfall;
+
+	/** 
+	 *weather forecasts for the near future
+	 */ 
+	@simpl_collection("weather_report")
+	@mm_name("forecasts")
+	private List<WeatherReport> forecasts;
+
 	public WeatherReport()
 	{ super(); }
 
@@ -77,36 +101,36 @@ public class WeatherReport extends CompoundDocument
 	}
 
 
-	public MetadataString	city()
+	public MetadataString	time()
 	{
-		MetadataString	result = this.city;
+		MetadataString	result = this.time;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.city = result;
+			this.time = result;
 		}
 		return result;
 	}
 
-	public String getCity()
+	public String getTime()
 	{
-		return this.city == null ? null : city().getValue();
+		return this.time == null ? null : time().getValue();
 	}
 
-	public MetadataString getCityMetadata()
+	public MetadataString getTimeMetadata()
 	{
-		return city;
+		return time;
 	}
 
-	public void setCity(String city)
+	public void setTime(String time)
 	{
-		if (city != null)
-			this.city().setValue(city);
+		if (time != null)
+			this.time().setValue(time);
 	}
 
-	public void setCityMetadata(MetadataString city)
+	public void setTimeMetadata(MetadataString time)
 	{
-		this.city = city;
+		this.time = time;
 	}
 
 	public MetadataString	weather()
@@ -141,36 +165,14 @@ public class WeatherReport extends CompoundDocument
 		this.weather = weather;
 	}
 
-	public MetadataParsedURL	picUrl()
+	public Image getWeatherImage()
 	{
-		MetadataParsedURL	result = this.picUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.picUrl = result;
-		}
-		return result;
+		return weatherImage;
 	}
 
-	public ParsedURL getPicUrl()
+	public void setWeatherImage(Image weatherImage)
 	{
-		return this.picUrl == null ? null : picUrl().getValue();
-	}
-
-	public MetadataParsedURL getPicUrlMetadata()
-	{
-		return picUrl;
-	}
-
-	public void setPicUrl(ParsedURL picUrl)
-	{
-		if (picUrl != null)
-			this.picUrl().setValue(picUrl);
-	}
-
-	public void setPicUrlMetadata(MetadataParsedURL picUrl)
-	{
-		this.picUrl = picUrl;
+		this.weatherImage = weatherImage;
 	}
 
 	public MetadataString	temperature()
@@ -299,5 +301,99 @@ public class WeatherReport extends CompoundDocument
 	public void setDewPointMetadata(MetadataString dewPoint)
 	{
 		this.dewPoint = dewPoint;
+	}
+
+	public MetadataString	chanceOfRain()
+	{
+		MetadataString	result = this.chanceOfRain;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.chanceOfRain = result;
+		}
+		return result;
+	}
+
+	public String getChanceOfRain()
+	{
+		return this.chanceOfRain == null ? null : chanceOfRain().getValue();
+	}
+
+	public MetadataString getChanceOfRainMetadata()
+	{
+		return chanceOfRain;
+	}
+
+	public void setChanceOfRain(String chanceOfRain)
+	{
+		if (chanceOfRain != null)
+			this.chanceOfRain().setValue(chanceOfRain);
+	}
+
+	public void setChanceOfRainMetadata(MetadataString chanceOfRain)
+	{
+		this.chanceOfRain = chanceOfRain;
+	}
+
+	public MetadataString	rainfall()
+	{
+		MetadataString	result = this.rainfall;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.rainfall = result;
+		}
+		return result;
+	}
+
+	public String getRainfall()
+	{
+		return this.rainfall == null ? null : rainfall().getValue();
+	}
+
+	public MetadataString getRainfallMetadata()
+	{
+		return rainfall;
+	}
+
+	public void setRainfall(String rainfall)
+	{
+		if (rainfall != null)
+			this.rainfall().setValue(rainfall);
+	}
+
+	public void setRainfallMetadata(MetadataString rainfall)
+	{
+		this.rainfall = rainfall;
+	}
+
+	public List<WeatherReport> getForecasts()
+	{
+		return forecasts;
+	}
+
+  // lazy evaluation:
+  public List<WeatherReport> forecasts()
+  {
+    if (forecasts == null)
+      forecasts = new ArrayList<WeatherReport>();
+    return forecasts;
+  }
+
+  // addTo:
+  public void addToForecasts(WeatherReport element)
+  {
+    forecasts().add(element);
+  }
+
+  // size:
+  public int forecastsSize()
+  {
+    return forecasts == null ? 0 : forecasts.size();
+  }
+
+	public void setForecasts(List<WeatherReport> forecasts)
+	{
+		this.forecasts = forecasts;
 	}
 }

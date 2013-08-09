@@ -174,11 +174,15 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.BedbathandbeyondProduct.class,
 
+		ecologylab.bigsemantics.generated.library.dreamHouse.Cb2Product.class,
+
 		ecologylab.bigsemantics.generated.library.dreamHouse.CrateandbarrelProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.IkeaProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.LandofnodProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.LowesProduct.class,
 
