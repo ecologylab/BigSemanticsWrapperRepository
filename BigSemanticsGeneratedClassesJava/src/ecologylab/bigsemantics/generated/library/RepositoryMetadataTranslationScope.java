@@ -120,6 +120,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.disaster.Event.class,
 
+		ecologylab.bigsemantics.generated.library.disaster.Icsmd.class,
+
 		ecologylab.bigsemantics.generated.library.dlese.AdditionalMetadata.class,
 
 		ecologylab.bigsemantics.generated.library.dlese.Audience.class,
@@ -322,6 +324,24 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.pinterest.PinterestPin.class,
 
+		ecologylab.bigsemantics.generated.library.primitives.Audio.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.AudioClipping.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.AudioSelfmade.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.MediaProvider.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.SequencedClippableDocument.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.Video.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.VideoClipping.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.VideoSelfmade.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.WebVideo.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonList.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonProduct.class,
@@ -332,11 +352,17 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
 
+		ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.Product.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.SamsclubProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Service.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.TargetProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.WalmartProduct.class,
 
 		ecologylab.bigsemantics.generated.library.publication.AmazonBook.class,
 
@@ -466,7 +492,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.uva.UvaModel.class,
 
-		ecologylab.bigsemantics.generated.library.video.Video.class,
+		ecologylab.bigsemantics.generated.library.video.SocialVideo.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeSearchResults.class,
 

@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.generated.library.product_and_service.TargetProduct;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -21,47 +21,47 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class NeweggProduct extends Product
+public class TargetProduct extends Product
 {
-	@simpl_collection("newegg_product")
-	@mm_name("suggested_products")
-	private List<NeweggProduct> suggestedProducts;
+	@simpl_collection("target_product")
+	@mm_name("people_also_viewed")
+	private List<TargetProduct> peopleAlsoViewed;
 
-	public NeweggProduct()
+	public TargetProduct()
 	{ super(); }
 
-	public NeweggProduct(MetaMetadataCompositeField mmd) {
+	public TargetProduct(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<NeweggProduct> getSuggestedProducts()
+	public List<TargetProduct> getPeopleAlsoViewed()
 	{
-		return suggestedProducts;
+		return peopleAlsoViewed;
 	}
 
   // lazy evaluation:
-  public List<NeweggProduct> suggestedProducts()
+  public List<TargetProduct> peopleAlsoViewed()
   {
-    if (suggestedProducts == null)
-      suggestedProducts = new ArrayList<NeweggProduct>();
-    return suggestedProducts;
+    if (peopleAlsoViewed == null)
+      peopleAlsoViewed = new ArrayList<TargetProduct>();
+    return peopleAlsoViewed;
   }
 
   // addTo:
-  public void addToSuggestedProducts(NeweggProduct element)
+  public void addToPeopleAlsoViewed(TargetProduct element)
   {
-    suggestedProducts().add(element);
+    peopleAlsoViewed().add(element);
   }
 
   // size:
-  public int suggestedProductsSize()
+  public int peopleAlsoViewedSize()
   {
-    return suggestedProducts == null ? 0 : suggestedProducts.size();
+    return peopleAlsoViewed == null ? 0 : peopleAlsoViewed.size();
   }
 
-	public void setSuggestedProducts(List<NeweggProduct> suggestedProducts)
+	public void setPeopleAlsoViewed(List<TargetProduct> peopleAlsoViewed)
 	{
-		this.suggestedProducts = suggestedProducts;
+		this.peopleAlsoViewed = peopleAlsoViewed;
 	}
 }

@@ -44,8 +44,7 @@
 			<scalar name="location" context_node="bizBox" xpath="//div[@id='bizUrl']" />
 		</composite>
 		
-		<composite name="business_gis_location">
-		</composite>
+		<composite name="business_gis_location" />
 		
 		<scalar name="price_range" scalar_type="String" xpath="" />
 		<scalar name="hours" xpath="" />
