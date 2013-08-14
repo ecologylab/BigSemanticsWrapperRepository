@@ -514,6 +514,18 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.yelp.YelpBusiness.class,
 
+		ecologylab.bigsemantics.test.library.generics.GeneralSearch.class,
+
+		ecologylab.bigsemantics.test.library.generics.SocialMediaSearchOne.class,
+
+		ecologylab.bigsemantics.test.library.generics.SocialMediaSearchResultForTest.class,
+
+		ecologylab.bigsemantics.test.library.generics.SocialMediaSearchTwo.class,
+
+		ecologylab.bigsemantics.test.library.generics.WikiSearch.class,
+
+		ecologylab.bigsemantics.test.library.generics.WikipediaForTest.class,
+
 	};
 
 	public static SimplTypesScope get()
