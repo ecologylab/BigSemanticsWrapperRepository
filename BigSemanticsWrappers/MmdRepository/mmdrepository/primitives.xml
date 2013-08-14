@@ -43,7 +43,8 @@
             	4: note (create_text_selfmade)
             	5: sketch (create sketch)
             	6: upload (create image_selfmade, audio_selfmade, video_selfmade for photo/audio/video)
-							7: edit / modify -->
+							7: edit / modify 
+							8: assign_primary_link -->
         <composite name="creator" type="document">
         	<scalar name="title" label="name" />
         </composite>
@@ -58,10 +59,15 @@
 		<scalar name="text" scalar_type="string" />
 	</meta_metadata>
 	
+	<meta_metadata name="assign_primary_link" extends="creative_act" built_in="true">
+		<scalar name="location" scalar_type="ParsedURL" />
+	</meta_metadata>
+	
 	<meta_metadata name="rich_artifact" extends="metadata" built_in="true">
 		<generic_type_var name="M" extends="metadata" />
 		<composite name="media" type="M" polymorphic_scope="repository_media" promote_children="true" wrap="true" />
     <collection name="creative_acts" child_type="creative_act" polymorphic_scope="creative_acts_scope" />
+    <collection name="outlinks" child_type="document" wrap="true" polymorphic_socpe="repository_documents" />
 	</meta_metadata>
 	
 	<meta_metadata name="text_selfmade" extends="rich_artifact" built_in="true">
@@ -84,8 +90,8 @@
 		<generic_type_var name="M" extends="metadata" />
         <composite name="source_doc" type="document" label="source" wrap="true"
                polymorphic_scope="repository_documents" show_expanded_initially="true" />
-        <scalar name="context" scalar_type="String" />
-        <scalar name="context_html" scalar_type="String" />
+<!--         <scalar name="context" scalar_type="String" />
+        <scalar name="context_html" scalar_type="String" /> -->
         <scalar name="xpath" scalar_type="String" />
         <scalar name="caption" scalar_type="String" />
 	</meta_metadata>	
