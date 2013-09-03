@@ -70,11 +70,11 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\..\..\Simpl\ecologylabFundamental.NET\Simpl.Fundamental\Simpl.Fundamental.csproj">
+    <ProjectReference Include="..\..\..\Simpl\simplCSharp\Simpl.Fundamental\Simpl.Fundamental.csproj">
       <Project>{10287dd6-0c07-4737-9469-0aa21b7723bf}</Project>
       <Name>Simpl.Fundamental</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Simpl\ecologylabFundamental.NET\Simpl.Serialization\Simpl.Serialization.csproj">
+    <ProjectReference Include="..\..\..\Simpl\simplCSharp\Simpl.Serialization\Simpl.Serialization.csproj">
       <Project>{16c61dd8-68b1-4509-8e18-6f7e80b605a3}</Project>
       <Name>Simpl.Serialization</Name>
     </ProjectReference>
@@ -132,7 +132,6 @@
     <Compile Include="Library\DisasterNS\Disaster.cs" />
     <Compile Include="Library\DisasterNS\Earthquake.cs" />
     <Compile Include="Library\DisasterNS\Event.cs" />
-    <Compile Include="Library\DisasterNS\Icsmd.cs" />
     <Compile Include="Library\DleseNS\AdditionalMetadata.cs" />
     <Compile Include="Library\DleseNS\Audience.cs" />
     <Compile Include="Library\DleseNS\Collection.cs" />
@@ -159,11 +158,9 @@
     <Compile Include="Library\DleseNS\SearchSection.cs" />
     <Compile Include="Library\DleseNS\UserSearchAdditionalMetadata.cs" />
     <Compile Include="Library\DreamHouseNS\BedbathandbeyondProduct.cs" />
-    <Compile Include="Library\DreamHouseNS\Cb2Product.cs" />
     <Compile Include="Library\DreamHouseNS\CrateandbarrelProduct.cs" />
     <Compile Include="Library\DreamHouseNS\HomeDepotProduct.cs" />
     <Compile Include="Library\DreamHouseNS\IkeaProduct.cs" />
-    <Compile Include="Library\DreamHouseNS\LandofnodProduct.cs" />
     <Compile Include="Library\DreamHouseNS\LowesProduct.cs" />
     <Compile Include="Library\DreamHouseNS\OnekingslaneProduct.cs" />
     <Compile Include="Library\DreamHouseNS\OverstockComProduct.cs" />
@@ -237,17 +234,14 @@
     <Compile Include="Library\PersonNS\BirthDetail.cs" />
     <Compile Include="Library\PersonNS\Person.cs" />
     <Compile Include="Library\PinterestNS\PinterestPin.cs" />
+    <Compile Include="Library\PrimitivesNS\VideoClipping.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonList.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Commodity.cs" />
-    <Compile Include="Library\ProductAndServiceNS\EbayProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\EtsyProduct.cs" />
-    <Compile Include="Library\ProductAndServiceNS\NeweggProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Product.cs" />
     <Compile Include="Library\ProductAndServiceNS\SamsclubProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Service.cs" />
-    <Compile Include="Library\ProductAndServiceNS\TargetProduct.cs" />
-    <Compile Include="Library\ProductAndServiceNS\WalmartProduct.cs" />
     <Compile Include="Library\PublicationNS\AmazonBook.cs" />
     <Compile Include="Library\PublicationNS\Book.cs" />
     <Compile Include="Library\PublicationNS\Publication.cs" />
@@ -313,6 +307,7 @@
     <Compile Include="Library\UvaNS\Topic.cs" />
     <Compile Include="Library\UvaNS\TopicCluster.cs" />
     <Compile Include="Library\UvaNS\UvaModel.cs" />
+    <Compile Include="Library\VideoNS\SocialVideo.cs" />
     <Compile Include="Library\VideoNS\Video.cs" />
     <Compile Include="Library\VideoNS\YoutubeSearchResults.cs" />
     <Compile Include="Library\WeatherReport.cs" />

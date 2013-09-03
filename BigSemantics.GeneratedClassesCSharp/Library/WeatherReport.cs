@@ -8,12 +8,11 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library;
 using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
+using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -29,10 +28,10 @@ namespace Ecologylab.Semantics.Generated.Library
 	public class WeatherReport : CompoundDocument
 	{
 		/// <summary>
-		/// The time of this weather
+		/// The name of the city.
 		/// </summary>
 		[SimplScalar]
-		private MetadataString time;
+		private MetadataString city;
 
 		/// <summary>
 		/// The weather condition of the city, like sunny or cloudy.
@@ -43,9 +42,8 @@ namespace Ecologylab.Semantics.Generated.Library
 		/// <summary>
 		/// The URL of the picture indicating weather condition.
 		/// </summary>
-		[SimplComposite]
-		[MmName("weather_image")]
-		private Image weatherImage;
+		[SimplScalar]
+		private MetadataParsedURL picUrl;
 
 		/// <summary>
 		/// The temperature.
@@ -71,39 +69,20 @@ namespace Ecologylab.Semantics.Generated.Library
 		[SimplScalar]
 		private MetadataString dewPoint;
 
-		/// <summary>
-		/// chances of rain in percentage
-		/// </summary>
-		[SimplScalar]
-		private MetadataString chanceOfRain;
-
-		/// <summary>
-		/// the size of the rain
-		/// </summary>
-		[SimplScalar]
-		private MetadataString rainfall;
-
-		/// <summary>
-		/// weather forecasts for the near future
-		/// </summary>
-		[SimplCollection("weather_report")]
-		[MmName("forecasts")]
-		private List<WeatherReport> forecasts;
-
 		public WeatherReport()
 		{ }
 
 		public WeatherReport(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString Time
+		public MetadataString City
 		{
-			get{return time;}
+			get{return city;}
 			set
 			{
-				if (this.time != value)
+				if (this.city != value)
 				{
-					this.time = value;
+					this.city = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -122,14 +101,14 @@ namespace Ecologylab.Semantics.Generated.Library
 			}
 		}
 
-		public Image WeatherImage
+		public MetadataParsedURL PicUrl
 		{
-			get{return weatherImage;}
+			get{return picUrl;}
 			set
 			{
-				if (this.weatherImage != value)
+				if (this.picUrl != value)
 				{
-					this.weatherImage = value;
+					this.picUrl = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -182,45 +161,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				if (this.dewPoint != value)
 				{
 					this.dewPoint = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString ChanceOfRain
-		{
-			get{return chanceOfRain;}
-			set
-			{
-				if (this.chanceOfRain != value)
-				{
-					this.chanceOfRain = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Rainfall
-		{
-			get{return rainfall;}
-			set
-			{
-				if (this.rainfall != value)
-				{
-					this.rainfall = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<WeatherReport> Forecasts
-		{
-			get{return forecasts;}
-			set
-			{
-				if (this.forecasts != value)
-				{
-					this.forecasts = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

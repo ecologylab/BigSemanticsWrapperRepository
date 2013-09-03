@@ -9,7 +9,6 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.BlogNS;
-using Ecologylab.Semantics.Generated.Library.GisNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -39,10 +38,6 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 		[SimplComposite]
 		[MmName("place")]
 		private Document place;
-
-		[SimplComposite]
-		[MmName("geo_location")]
-		private GisLocation geoLocation;
 
 		public FlickrPhoto()
 		{ }
@@ -84,19 +79,6 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 				if (this.place != value)
 				{
 					this.place = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public GisLocation GeoLocation
-		{
-			get{return geoLocation;}
-			set
-			{
-				if (this.geoLocation != value)
-				{
-					this.geoLocation = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

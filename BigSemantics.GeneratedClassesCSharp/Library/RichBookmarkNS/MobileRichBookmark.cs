@@ -28,7 +28,7 @@ namespace Ecologylab.Semantics.Generated.Library.RichBookmarkNS
 		[SimplComposite]
 		[SimplScope("repository_clippings")]
 		[MmName("clipping")]
-		private Clipping clipping;
+		private IClipping<Metadata> clipping;
 
 		[SimplScalar]
 		private MetadataDate time;
@@ -43,7 +43,7 @@ namespace Ecologylab.Semantics.Generated.Library.RichBookmarkNS
 		public MobileRichBookmark(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Clipping Clipping
+		public IClipping<Metadata> Clipping
 		{
 			get{return clipping;}
 			set

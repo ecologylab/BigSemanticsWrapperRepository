@@ -1,5 +1,6 @@
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
@@ -105,7 +106,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CameraSettings),
 				typeof(Cartoon),
 				typeof(CategoryInterviews),
-				typeof(Cb2Product),
 				typeof(Channel),
 				typeof(CitationInfo),
 				typeof(CiteseerxCiting),
@@ -140,7 +140,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Dlms),
 				typeof(DocumentSet),
 				typeof(Earthquake),
-				typeof(EbayProduct),
 				typeof(Educational),
 				typeof(EmergentEvent),
 				typeof(EmergentEventCollection),
@@ -176,7 +175,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
 				typeof(IcdlImageResult),
-				typeof(Icsmd),
 				typeof(IeeeXploreArticle),
 				typeof(IeeeXploreCitations),
 				typeof(IeeeXploreReferences),
@@ -191,7 +189,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Item),
 				typeof(ItemRecord),
 				typeof(KeywordSet),
-				typeof(LandofnodProduct),
 				typeof(Lifecycle),
 				typeof(Lolz),
 				typeof(LowesProduct),
@@ -203,7 +200,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Movie),
 				typeof(MoviePerson),
 				typeof(NetflixMovie),
-				typeof(NeweggProduct),
 				typeof(Nsdl),
 				typeof(NsdlDocument),
 				typeof(NsdlService),
@@ -280,7 +276,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SocialMediaSearchResult),
 				typeof(Spotrep),
 				typeof(Subject),
-				typeof(TargetProduct),
 				typeof(TempFieldValueHolder),
 				typeof(TermType),
 				typeof(Thumbnail),
@@ -296,9 +291,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(UvaModel),
-				typeof(Video),
+				typeof(SocialVideo),
 				typeof(VideoInterview),
-				typeof(WalmartProduct),
+                typeof(VideoClipping),
 				typeof(WeatherReport),
 				typeof(WestelmProduct),
 				typeof(WikipediaCategoryType),
