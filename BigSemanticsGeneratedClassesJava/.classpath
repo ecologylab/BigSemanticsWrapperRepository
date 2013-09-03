@@ -4,5 +4,8 @@
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/BigSemanticsCore"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/BigSemanticsWrappers/lib/BigSemanticsCore.jar"/>
+	<classpathentry kind="lib" path="/BigSemanticsWrappers/lib/simplCore.jar"/>
+	<classpathentry kind="lib" path="/BigSemanticsWrappers/lib/simplSunSpecifics.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

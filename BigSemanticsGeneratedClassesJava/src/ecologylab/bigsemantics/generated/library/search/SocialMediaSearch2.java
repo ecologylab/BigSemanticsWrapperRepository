@@ -20,7 +20,7 @@ import java.util.Map;
 
 @simpl_inherit
 @simpl_tag("social_media_search_2")
-public class SocialMediaSearch2<SR extends SocialMediaSearchResult> extends Search
+public class SocialMediaSearch2<SR extends SocialMediaSearchResult> extends Search<SR>
 {
 	public SocialMediaSearch2()
 	{ super(); }

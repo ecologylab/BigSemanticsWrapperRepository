@@ -328,6 +328,24 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.pinterest.PinterestPin.class,
 
+		ecologylab.bigsemantics.generated.library.primitives.Audio.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.AudioClipping.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.AudioSelfmade.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.MediaProvider.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.SequencedClippableDocument.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.Video.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.VideoClipping.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.VideoSelfmade.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.WebVideo.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonList.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonProduct.class,
@@ -478,7 +496,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.uva.UvaModel.class,
 
-		ecologylab.bigsemantics.generated.library.video.Video.class,
+		ecologylab.bigsemantics.generated.library.video.SocialVideo.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeSearchResults.class,
 
@@ -495,6 +513,18 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.wikipedia.WikipediaPageType.class,
 
 		ecologylab.bigsemantics.generated.library.yelp.YelpBusiness.class,
+
+		ecologylab.bigsemantics.test.library.generics.GeneralSearch.class,
+
+		ecologylab.bigsemantics.test.library.generics.SocialMediaSearchOne.class,
+
+		ecologylab.bigsemantics.test.library.generics.SocialMediaSearchResultForTest.class,
+
+		ecologylab.bigsemantics.test.library.generics.SocialMediaSearchTwo.class,
+
+		ecologylab.bigsemantics.test.library.generics.WikiSearch.class,
+
+		ecologylab.bigsemantics.test.library.generics.WikipediaForTest.class,
 
 	};
 

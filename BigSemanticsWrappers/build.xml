@@ -7,7 +7,6 @@
 	<property name="jar.dir" value="${build.dir}/jar" />
 	<property name="jar.filename" value="${ant.project.name}.jar" />
 	<property name="jar.file" value="${jar.dir}/${jar.filename}" />
-	<property name="jar.file.in-sdk" value="../../BigSemanticsJava/BigSemanticsSDK/lib/${jar.filename}" />
 	<property name="lib.dir" value="lib" />
 	
   <target name="clean">
@@ -24,7 +23,7 @@
 	<target name="jar" depends="javac">
 	  <mkdir dir="${jar.dir}" />
 		<jar destfile="${jar.file}" basedir="${classes.dir}" />
-		<copy file="${jar.file}" tofile="${jar.file.in-sdk}" />
+		<copy file="${jar.file}" todir="${lib.dir}" />
 	</target>
 	
 	<target name="main" depends="clean,jar" />

@@ -1,0 +1,44 @@
+<meta_metadata_repository name="generics_test"
+  package="ecologylab.bigsemantics.test.library.generics">
+
+  <!-- GeneralSearch<SR extends Document> -->
+  <meta_metadata name="general_search" extends="document">
+    <generic_type_var name="SR" extends="document" />
+    <collection name="search_results" child_type="SR" no_wrap="true" />
+  </meta_metadata>
+  
+  <meta_metadata name="wikipedia_for_test" extends="document">
+  </meta_metadata>
+
+  <!-- WikiSearch extends GeneralSearch<Wikipedia> -->
+  <meta_metadata name="wiki_search" extends="general_search">
+    <generic_type_var name="SR" arg="wikipedia_for_test" />
+    <collection name="search_results" xpath="">
+      <scalar name="title" xpath="" />
+      <scalar name="location" xpath="" />
+      <scalar name="description" xpath="" />
+    </collection>
+  </meta_metadata>
+  
+  <meta_metadata name="social_media_search_result_for_test" extends="document">
+    <scalar name="author" scalar_type="String" />
+    <collection name="tags" child_scalar_type="String" />
+  </meta_metadata>
+
+  <!-- SocialMediaSearchOne extends GeneralSearch<SocialMediaSearchResultForTest> -->
+  <meta_metadata name="social_media_search_one" extends="general_search">
+    <generic_type_var name="SR" arg="social_media_search_result_for_test" />
+  </meta_metadata>
+
+  <!-- SocialMediaSearchTwo<SR extends SocialMediaSearchResultForTest> extends GeneralSearch<SR> -->
+  <meta_metadata name="social_media_search_two" extends="general_search">
+    <generic_type_var name="SR" extends="social_media_search_result_for_test" />
+    <collection name="search_results" xpath="">
+      <scalar name="author" xpath="" />
+      <collection name="tags" xpath="" />
+      <scalar name="title" xpath="" />
+      <scalar name="location" xpath="" />
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

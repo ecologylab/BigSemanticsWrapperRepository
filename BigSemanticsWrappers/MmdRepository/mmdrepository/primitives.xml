@@ -34,56 +34,100 @@
                polymorphic_scope="repository_documents" comment="polymorphic across documents" />
 	</meta_metadata>
 	
-	<meta_metadata name="clipping" extends="metadata" built_in="true">
-		<scalar name="context" layer="10.0" scalar_type="String" />
-		<scalar name="context_html" scalar_type="String" hint="XML_LEAF_CDATA" />
-		<scalar name="xpath" scalar_type="String" hide="true"/>
-		<composite name="source_doc" label="source" type="document" wrap="true"
-               polymorphic_scope="repository_documents" show_expanded_initially="true" />
-		<collection name="outlinks" child_type="document" wrap="true"
-               polymorphic_scope="repository_documents" />
-	</meta_metadata>
-
-	<meta_metadata name="media_clipping" extends="clipping" built_in="true">
-	  <generic_type_var name="ME" extends="clippable_document">
-	    <generic_type_var name="ME" arg="ME" />
-	  </generic_type_var>
-		<scalar name="caption" scalar_type="String" style="metadata_h1" layer="11.0" always_show="true"
-            comment="The caption of the image." />
-		<composite name="media" type="ME" promote_children="true" polymorphic_scope="repository_media"
-               wrap="true" />
+	<meta_metadata name="creative_act" extends="metadata" built_in="true">
+        <scalar name="action" scalar_type="int" />
+        <!-- type can be:
+            	1: curate_clipping (create clipping)
+							2: curate_link
+							3: annotate_artifact (applies to an
+            	4: note (create_text_selfmade)
+            	5: sketch (create sketch)
+            	6: upload (create image_selfmade, audio_selfmade, video_selfmade for photo/audio/video)
+							7: edit / modify 
+							8: assign_primary_link -->
+        <composite name="creator" type="document">
+        	<scalar name="title" label="name" />
+        </composite>
+        <scalar name="time" scalar_type="Date" />
 	</meta_metadata>
 	
-	<meta_metadata name="image_clipping" extends="media_clipping" built_in="true">
-	  <generic_type_var name="ME" arg="image" />
+	<meta_metadata name="curate_link" extends="creative_act" built_in="true">
+		<composite name="document" type="document" polymorphic_scope="repository_documents" wrap="true"/>
+	</meta_metadata>
+	
+	<meta_metadata name="annotate" extends="creative_act" built_in="true">
+		<scalar name="text" scalar_type="string" />
+	</meta_metadata>
+	
+	<meta_metadata name="assign_primary_link" extends="creative_act" built_in="true">
+		<scalar name="location" scalar_type="ParsedURL" />
+	</meta_metadata>
+	
+	<meta_metadata name="rich_artifact" extends="metadata" built_in="true">
+		<generic_type_var name="M" extends="metadata" />
+		<composite name="media" type="M" polymorphic_scope="repository_media" promote_children="true" wrap="true" />
+    <collection name="creative_acts" child_type="creative_act" polymorphic_scope="creative_acts_scope" />
+    <collection name="outlinks" child_type="document" wrap="true" polymorphic_socpe="repository_documents" />
+	</meta_metadata>
+	
+	<meta_metadata name="text_selfmade" extends="rich_artifact" built_in="true">
+		<generic_type_var name="M" arg="html_text" />
+	</meta_metadata>
+	
+	<meta_metadata name="image_selfmade" extends="rich_artifact" built_in="true">
+		<generic_type_var name="M" arg="image" />
+	</meta_metadata>
+	
+	<meta_metadata name="video_selfmade" extends="rich_artifact" package="ecologylab.bigsemantics.generated.library.primitives">
+		<generic_type_var name="M" arg="video" />
+	</meta_metadata>
+
+	<meta_metadata name="audio_selfmade" extends="rich_artifact" package="ecologylab.bigsemantics.generated.library.primitives">
+		<generic_type_var name="M" arg="audio" />
+	</meta_metadata>
+	
+	<meta_metadata name="clipping" extends="rich_artifact" built_in="true">
+		<generic_type_var name="M" extends="metadata" />
+        <composite name="source_doc" type="document" label="source" wrap="true"
+               polymorphic_scope="repository_documents" show_expanded_initially="true" />
+<!--         <scalar name="context" scalar_type="String" />
+        <scalar name="context_html" scalar_type="String" /> -->
+        <scalar name="xpath" scalar_type="String" />
+        <scalar name="caption" scalar_type="String" />
+	</meta_metadata>	
+	
+	<meta_metadata name="image_clipping" extends="clipping" built_in="true">
+	  <generic_type_var name="M" arg="image" />
 	</meta_metadata>
 	
 	<meta_metadata name="text_clipping" extends="clipping" built_in="true">
-		<scalar name="text" scalar_type="String" />
+	  <generic_type_var name="M" arg="html_text" />
 	</meta_metadata>
-	
-	<meta_metadata name="annotation" extends="metadata" built_in="true">
-		<scalar name="text" scalar_type="String"/>
-		<scalar name="author" scalar_type="String"/>
-		<scalar name="creation_time" scalar_type="Date"/>
+ 
+	<meta_metadata name="video_clipping" extends="clipping" package="ecologylab.bigsemantics.generated.library.primitives">
+  	<generic_type_var name="M" arg="web_video" />
+	</meta_metadata>
+ 
+	<meta_metadata name="audio_clipping" extends="clipping" package="ecologylab.bigsemantics.generated.library.primitives">
+  	<generic_type_var name="M" arg="audio" />
 	</meta_metadata>
 	
 	<meta_metadata name="clippable_document"  extends="document" built_in="true">
-	  <generic_type_var name="ME" extends="clippable_document">
-	    <generic_type_var name="ME" arg="ME" />
-	  </generic_type_var>
-		<collection name="clippings_this_is_in" other_tags="clippings" child_type="media_clipping"
+		<collection name="clippings_this_is_in" other_tags="clippings" child_type="clipping"
                 hide="true" polymorphic_scope="repository_clippings"
                 comment="Clippings based on this.">
-		  <generic_type_var name="ME" arg="ME" />
 		</collection>
 		<scalar name="width" scalar_type="Integer" hide="true" />
 		<scalar name="height" scalar_type="Integer" hide="true" />
 	</meta_metadata>
 	
+	<meta_metadata name="sequenced_clippable_document" extends="clippable_document" package="ecologylab.bigsemantics.generated.library.primitives">
+		<scalar name="duration" scalar_type="int" comment="duration of media in milliseconds." />
+      	<scalar name="file_format" scalar_type="String" hide="true" />
+	</meta_metadata>
+	
 	<meta_metadata name="image" extends="clippable_document" comment="The Image Base Class"
                  built_in="true" parser="image">
-	  <generic_type_var name="ME" arg="image" />
 		<selector>
 			<mime_type>image/jpeg</mime_type>
 			<mime_type>image/png</mime_type>
@@ -98,6 +142,39 @@
 		<scalar name="location" layer="9.0" comment="Location of the image."/>
 		<scalar name="local_location" hide="true" comment="Relative location of local copy of image."/>
 		<scalar name="creation_date" scalar_type="Date" />
+	</meta_metadata>
+	
+	<meta_metadata name="html_text" extends="metadata" built_in="true">
+		<scalar name="text" scalar_type="String" />
+    <scalar name="html_string" scalar_type="String" hide="true" />    
+ 	</meta_metadata>
+
+ 	<meta_metadata name="video" extends="sequenced_clippable_document" package="ecologylab.bigsemantics.generated.library.primitives">
+  		<selector>
+        	<mime_type>video/mp4</mime_type>
+        	<mime_type>video/x-flv</mime_type>
+        	<mime_type>video/ogg</mime_type>
+        	<mime_type>video/quicktime</mime_type>
+        	<mime_type>video/x-ms-wmv</mime_type>
+        	<suffix>mp4</suffix>
+        	<suffix>flv</suffix>
+        	<suffix>ogg</suffix>
+        	<suffix>m4v</suffix>
+        	<suffix>mov</suffix>
+        	<suffix>wmv</suffix>
+     	</selector>
+	</meta_metadata>
+
+	<meta_metadata name="media_provider" extends="metadata" package="ecologylab.bigsemantics.generated.library.primitives">
+		<scalar name="provider" scalar_type="String" />
+		<scalar name="provider_id" scalar_type="String" />
+	</meta_metadata>
+
+	<meta_metadata name="web_video" extends="video" package="ecologylab.bigsemantics.generated.library.primitives">
+		<composite name="provider" type="media_provider" hide="true"  />
+	</meta_metadata>
+ 
+	<meta_metadata name="audio" extends="sequenced_clippable_document" package="ecologylab.bigsemantics.generated.library.primitives">
 	</meta_metadata>
 	
 	
@@ -116,7 +193,7 @@
 		</after_semantic_actions>
 	</meta_metadata>
 	
-	<meta_metadata name="html" type="compound_document" parser="html_dom_image_text"
+	<meta_metadata name="html_document" type="compound_document" parser="html_dom_image_text"
                  user_agent_name="firefox_3_6_8" schema_org_itemtype="http://schema.org/WebPage">
 		<selector>
 			<mime_type>text/html</mime_type>
@@ -169,15 +246,8 @@
 			<suffix>icom</suffix>
 		</selector>
 		
-		<collection name="metadata" child_type="metadata"
-                polymorphic_scope="repository_no_annotations" />
-    <collection name="annotations" child_type="annotation" promote_children="true"
-                comment="User annotations." />
-		
-		<collection name="clippings" child_type="clipping" polymorphic_scope="repository_clippings"
-                comment="for compatability w old compositions -- do not use!"/>
-		<collection name="media" child_type="metadata" polymorphic_scope="repository_media"
-                comment="for compatability w old compositions -- do not use!"/>
+		<collection name="metadata_collection" child_type="metadata"
+                polymorphic_scope="repository_metadata" />
 		
 		<scalar name="version" scalar_type="Float" />
 		<scalar name="metadata_version" scalar_type="Float" />
