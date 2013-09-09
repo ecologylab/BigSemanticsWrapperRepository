@@ -47,7 +47,8 @@
 		<java classname="ecologylab.bigsemantics.tools.MmTest"
 			    classpathref="jars_classpath" fork="yes">
 			<arg line="-f MmTestURLs.lst" />
-		  <jvmarg value="-Xms512m" />
+			  <jvmarg value="-Xms512m" />
+			  <jvmarg value="-Xmx1024m" />
 		</java>
 	</target>
 	
