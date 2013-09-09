@@ -70,11 +70,11 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\..\..\Simpl\ecologylabFundamental.NET\Simpl.Fundamental\Simpl.Fundamental.csproj">
+    <ProjectReference Include="..\..\..\Simpl\simplCSharp\Simpl.Fundamental\Simpl.Fundamental.csproj">
       <Project>{10287dd6-0c07-4737-9469-0aa21b7723bf}</Project>
       <Name>Simpl.Fundamental</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Simpl\ecologylabFundamental.NET\Simpl.Serialization\Simpl.Serialization.csproj">
+    <ProjectReference Include="..\..\..\Simpl\simplCSharp\Simpl.Serialization\Simpl.Serialization.csproj">
       <Project>{16c61dd8-68b1-4509-8e18-6f7e80b605a3}</Project>
       <Name>Simpl.Serialization</Name>
     </ProjectReference>
@@ -234,6 +234,7 @@
     <Compile Include="Library\PersonNS\BirthDetail.cs" />
     <Compile Include="Library\PersonNS\Person.cs" />
     <Compile Include="Library\PinterestNS\PinterestPin.cs" />
+    <Compile Include="Library\PrimitivesNS\VideoClipping.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonList.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Commodity.cs" />
@@ -306,6 +307,7 @@
     <Compile Include="Library\UvaNS\Topic.cs" />
     <Compile Include="Library\UvaNS\TopicCluster.cs" />
     <Compile Include="Library\UvaNS\UvaModel.cs" />
+    <Compile Include="Library\VideoNS\SocialVideo.cs" />
     <Compile Include="Library\VideoNS\Video.cs" />
     <Compile Include="Library\VideoNS\YoutubeSearchResults.cs" />
     <Compile Include="Library\WeatherReport.cs" />

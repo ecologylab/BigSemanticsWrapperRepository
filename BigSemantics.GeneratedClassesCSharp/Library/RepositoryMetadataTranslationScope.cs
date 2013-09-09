@@ -1,5 +1,6 @@
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
@@ -290,8 +291,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(UvaModel),
-				typeof(Video),
+				typeof(SocialVideo),
 				typeof(VideoInterview),
+                typeof(VideoClipping),
 				typeof(WeatherReport),
 				typeof(WestelmProduct),
 				typeof(WikipediaCategoryType),
