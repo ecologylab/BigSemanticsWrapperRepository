@@ -77,15 +77,15 @@
       <scalar name="birth_place" xpath="//*[@itemprop='birthDate']/following-sibling::a" />
     </composite>
     
-    <collection name="movies_directed" xpath="//div[@id='filmography']//div[@id='filmo-head-Director']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
+    <collection name="movies_directed" xpath="//div[@id='filmography']//div[@id='filmo-head-director']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
       <scalar name="title" xpath=".//a" />
       <scalar name="location" xpath=".//a/@href" />
     </collection>
-    <collection name="movies_written" xpath="//div[@id='filmography']//div[@id='filmo-head-Writer']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
+    <collection name="movies_written" xpath="//div[@id='filmography']//div[@id='filmo-head-writer']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
       <scalar name="title" xpath=".//a" />
       <scalar name="location" xpath=".//a/@href" />
     </collection>
-    <collection name="movies_acted_in" xpath="//div[@id='filmography']//div[@id='filmo-head-Actor' or @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
+    <collection name="movies_acted_in" xpath="//div[@id='filmography']//div[@id='filmo-head-actor' or @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
       <scalar name="title" xpath=".//a" />
       <scalar name="location" xpath=".//a/@href" />
     </collection>
