@@ -35,10 +35,6 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 		[MmName("favorites")]
 		private List<FlickrPhoto> favorites;
 
-		[SimplComposite]
-		[MmName("photostream")]
-		private Photostream photostream;
-
 		public FlickrAuthor()
 		{ }
 
@@ -53,19 +49,6 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrNS
 				if (this.favorites != value)
 				{
 					this.favorites = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Photostream Photostream
-		{
-			get{return photostream;}
-			set
-			{
-				if (this.photostream != value)
-				{
-					this.photostream = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
