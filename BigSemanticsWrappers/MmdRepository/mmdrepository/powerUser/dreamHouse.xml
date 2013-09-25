@@ -262,7 +262,7 @@
   	
   	<scalar name="title" xpath="//meta[@property='og:title']/@content"/>
   	<scalar name="description" xpath="//div[@class='accordion-contents'][1]"/>
-  	<scalar name="price" xpath="//div[@class='price-container']" />
+  	<scalar name="price" xpath="//div[@class='subset-pricing']" />
 
 	<collection name="also_in_this_collection" child_type="westelm_product" xpath="//div[@class='you-may-also-like con']/div[1]//ul/li" >
   		<scalar name="location" xpath="./a/@href]" />
@@ -271,7 +271,7 @@
   	</collection>
 
   	<collection name="people_also_shopped_for" child_type="westelm_product" xpath="//div[@class='you-may-also-like con']/div[2]//ul/li" >
-  		<scalar name="location" xpath="./a/@href]" />
+  		<scalar name="location" xpath="./a/@href" />
   		<scalar name="title" xpath=".//span[@class='item']" />
   		<scalar name="price" xpath=".//span[@class='currency currency']" />
   	</collection>
