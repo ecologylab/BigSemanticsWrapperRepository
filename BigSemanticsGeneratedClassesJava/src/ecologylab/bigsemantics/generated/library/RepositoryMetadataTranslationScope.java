@@ -390,10 +390,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.restaurant.RestaurantGenre.class,
 
-		ecologylab.bigsemantics.generated.library.rich_bookmark.MobileRichBookmark.class,
-
-		ecologylab.bigsemantics.generated.library.rich_bookmark.MobileRichBookmarkCollection.class,
-
 		ecologylab.bigsemantics.generated.library.rss.Channel.class,
 
 		ecologylab.bigsemantics.generated.library.rss.Dc.class,
