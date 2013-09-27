@@ -127,11 +127,14 @@
     <Compile Include="Library\CreativeWorkNS\Author.cs" />
     <Compile Include="Library\CreativeWorkNS\BasicPublication.cs" />
     <Compile Include="Library\CreativeWorkNS\CreativeWork.cs" />
+    <Compile Include="Library\CreativeWorkNS\Curation.cs" />
+    <Compile Include="Library\CreativeWorkNS\InformationCompositionBase.cs" />
     <Compile Include="Library\CreativeWorkNS\Periodical.cs" />
     <Compile Include="Library\DeliciousHomepage.cs" />
     <Compile Include="Library\DisasterNS\Disaster.cs" />
     <Compile Include="Library\DisasterNS\Earthquake.cs" />
     <Compile Include="Library\DisasterNS\Event.cs" />
+    <Compile Include="Library\DisasterNS\Icsmd.cs" />
     <Compile Include="Library\DleseNS\AdditionalMetadata.cs" />
     <Compile Include="Library\DleseNS\Audience.cs" />
     <Compile Include="Library\DleseNS\Collection.cs" />
@@ -158,9 +161,11 @@
     <Compile Include="Library\DleseNS\SearchSection.cs" />
     <Compile Include="Library\DleseNS\UserSearchAdditionalMetadata.cs" />
     <Compile Include="Library\DreamHouseNS\BedbathandbeyondProduct.cs" />
+    <Compile Include="Library\DreamHouseNS\Cb2Product.cs" />
     <Compile Include="Library\DreamHouseNS\CrateandbarrelProduct.cs" />
     <Compile Include="Library\DreamHouseNS\HomeDepotProduct.cs" />
     <Compile Include="Library\DreamHouseNS\IkeaProduct.cs" />
+    <Compile Include="Library\DreamHouseNS\LandofnodProduct.cs" />
     <Compile Include="Library\DreamHouseNS\LowesProduct.cs" />
     <Compile Include="Library\DreamHouseNS\OnekingslaneProduct.cs" />
     <Compile Include="Library\DreamHouseNS\OverstockComProduct.cs" />
@@ -234,14 +239,26 @@
     <Compile Include="Library\PersonNS\BirthDetail.cs" />
     <Compile Include="Library\PersonNS\Person.cs" />
     <Compile Include="Library\PinterestNS\PinterestPin.cs" />
+    <Compile Include="Library\PrimitivesNS\Audio.cs" />
+    <Compile Include="Library\PrimitivesNS\AudioClipping.cs" />
+    <Compile Include="Library\PrimitivesNS\AudioSelfmade.cs" />
+    <Compile Include="Library\PrimitivesNS\MediaProvider.cs" />
+    <Compile Include="Library\PrimitivesNS\SequencedClippableDocument.cs" />
+    <Compile Include="Library\PrimitivesNS\Video.cs" />
     <Compile Include="Library\PrimitivesNS\VideoClipping.cs" />
+    <Compile Include="Library\PrimitivesNS\VideoSelfmade.cs" />
+    <Compile Include="Library\PrimitivesNS\WebVideo.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonList.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Commodity.cs" />
+    <Compile Include="Library\ProductAndServiceNS\EbayProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\EtsyProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\NeweggProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Product.cs" />
     <Compile Include="Library\ProductAndServiceNS\SamsclubProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Service.cs" />
+    <Compile Include="Library\ProductAndServiceNS\TargetProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\WalmartProduct.cs" />
     <Compile Include="Library\PublicationNS\AmazonBook.cs" />
     <Compile Include="Library\PublicationNS\Book.cs" />
     <Compile Include="Library\PublicationNS\Publication.cs" />
@@ -308,7 +325,6 @@
     <Compile Include="Library\UvaNS\TopicCluster.cs" />
     <Compile Include="Library\UvaNS\UvaModel.cs" />
     <Compile Include="Library\VideoNS\SocialVideo.cs" />
-    <Compile Include="Library\VideoNS\Video.cs" />
     <Compile Include="Library\VideoNS\YoutubeSearchResults.cs" />
     <Compile Include="Library\WeatherReport.cs" />
     <Compile Include="Library\WikipediaNS\Paragraph.cs" />
@@ -319,6 +335,12 @@
     <Compile Include="Library\WikipediaNS\WikipediaPageType.cs" />
     <Compile Include="Library\YelpNS\YelpBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\Library\Generics\GeneralSearch.cs" />
+    <Compile Include="Test\Library\Generics\SocialMediaSearchOne.cs" />
+    <Compile Include="Test\Library\Generics\SocialMediaSearchResultForTest.cs" />
+    <Compile Include="Test\Library\Generics\SocialMediaSearchTwo.cs" />
+    <Compile Include="Test\Library\Generics\WikipediaForTest.cs" />
+    <Compile Include="Test\Library\Generics\WikiSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Library\WordpressNS\" />

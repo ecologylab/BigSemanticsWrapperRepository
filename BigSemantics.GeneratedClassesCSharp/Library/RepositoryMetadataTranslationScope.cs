@@ -1,6 +1,5 @@
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
@@ -43,11 +42,11 @@ using Ecologylab.Semantics.Generated.Library.OpmlNS;
 using Ecologylab.Semantics.Generated.Library.PatentNS;
 using Ecologylab.Semantics.Generated.Library.PersonNS;
 using Ecologylab.Semantics.Generated.Library.PinterestNS;
+using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
 using Ecologylab.Semantics.Generated.Library.PubmedNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
-using Ecologylab.Semantics.Generated.Library.RichBookmarkNS;
 using Ecologylab.Semantics.Generated.Library.RssNS;
 using Ecologylab.Semantics.Generated.Library.RwandatribunalNS;
 using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
@@ -93,6 +92,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Artwork),
 				typeof(Attraction),
 				typeof(Audience),
+				typeof(Audio),
+				typeof(AudioClipping),
+				typeof(AudioSelfmade),
 				typeof(Author),
 				typeof(BasicPublication),
 				typeof(BedbathandbeyondProduct),
@@ -106,6 +108,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CameraSettings),
 				typeof(Cartoon),
 				typeof(CategoryInterviews),
+				typeof(Cb2Product),
 				typeof(Channel),
 				typeof(CitationInfo),
 				typeof(CiteseerxCiting),
@@ -125,6 +128,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Contributor),
 				typeof(CrateandbarrelProduct),
 				typeof(CreativeWork),
+				typeof(Curation),
 				typeof(DateInfo),
 				typeof(Dc),
 				typeof(DcDocument),
@@ -140,6 +144,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Dlms),
 				typeof(DocumentSet),
 				typeof(Earthquake),
+				typeof(EbayProduct),
 				typeof(Educational),
 				typeof(EmergentEvent),
 				typeof(EmergentEventCollection),
@@ -175,6 +180,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
 				typeof(IcdlImageResult),
+				typeof(Icsmd),
 				typeof(IeeeXploreArticle),
 				typeof(IeeeXploreCitations),
 				typeof(IeeeXploreReferences),
@@ -185,21 +191,23 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(ImdbMovie),
 				typeof(ImdbPerson),
 				typeof(InformaWorld),
+				typeof(InformationCompositionBase),
 				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
 				typeof(KeywordSet),
+				typeof(LandofnodProduct),
 				typeof(Lifecycle),
 				typeof(Lolz),
 				typeof(LowesProduct),
 				typeof(MediaContent),
+				typeof(MediaProvider),
 				typeof(MmArtwork),
-				typeof(MobileRichBookmark),
-				typeof(MobileRichBookmarkCollection),
 				typeof(MomaArtwork),
 				typeof(Movie),
 				typeof(MoviePerson),
 				typeof(NetflixMovie),
+				typeof(NeweggProduct),
 				typeof(Nsdl),
 				typeof(NsdlDocument),
 				typeof(NsdlService),
@@ -265,6 +273,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SearchResults),
 				typeof(SearchSection),
 				typeof(Section),
+				typeof(SequencedClippableDocument),
 				typeof(Service),
 				typeof(SfuCartoonArchive),
 				typeof(SlashdotArticle),
@@ -274,8 +283,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SocialMediaSearch1),
 				typeof(SocialMediaSearch2<>),
 				typeof(SocialMediaSearchResult),
+				typeof(SocialVideo),
 				typeof(Spotrep),
 				typeof(Subject),
+				typeof(TargetProduct),
 				typeof(TempFieldValueHolder),
 				typeof(TermType),
 				typeof(Thumbnail),
@@ -291,10 +302,13 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(UvaModel),
-				typeof(SocialVideo),
+				typeof(Video),
+				typeof(VideoClipping),
 				typeof(VideoInterview),
-                typeof(VideoClipping),
+				typeof(VideoSelfmade),
+				typeof(WalmartProduct),
 				typeof(WeatherReport),
+				typeof(WebVideo),
 				typeof(WestelmProduct),
 				typeof(WikipediaCategoryType),
 				typeof(WikipediaMobilePage),
