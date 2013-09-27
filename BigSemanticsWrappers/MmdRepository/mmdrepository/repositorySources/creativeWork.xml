@@ -46,4 +46,13 @@
             schema_org_itemprop="datePublished" />
 	</meta_metadata>
 	
+	<meta_metadata name="curation" extends="creative_work">
+		<collection name="metadata_collection" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope" />
+	</meta_metadata>
+	
+	<meta_metadata name="information_composition_base" extends="curation">
+		<scalar name="version" scalar_type="String" hide="true" />
+		<scalar name="metadata_version" scalar_type="String" hide="true" />
+	</meta_metadata>
+	
 </meta_metadata_repository>
