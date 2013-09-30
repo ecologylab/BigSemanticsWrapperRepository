@@ -12,11 +12,16 @@ import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichArtifact;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataFloat;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
+import java.lang.Float;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +33,15 @@ public class Curation extends CreativeWork
 	@simpl_scope("rich_artifacts_scope")
 	@mm_name("metadata_collection")
 	private List<RichArtifact> metadataCollection;
+
+	@simpl_scalar
+	private MetadataString curationAppVersion;
+
+	@simpl_scalar
+	private MetadataString curationApp;
+
+	@simpl_scalar
+	private MetadataFloat crossPlatformVersion;
 
 	public Curation()
 	{ super(); }
@@ -65,5 +79,101 @@ public class Curation extends CreativeWork
 	public void setMetadataCollection(List<RichArtifact> metadataCollection)
 	{
 		this.metadataCollection = metadataCollection;
+	}
+
+	public MetadataString	curationAppVersion()
+	{
+		MetadataString	result = this.curationAppVersion;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.curationAppVersion = result;
+		}
+		return result;
+	}
+
+	public String getCurationAppVersion()
+	{
+		return this.curationAppVersion == null ? null : curationAppVersion().getValue();
+	}
+
+	public MetadataString getCurationAppVersionMetadata()
+	{
+		return curationAppVersion;
+	}
+
+	public void setCurationAppVersion(String curationAppVersion)
+	{
+		if (curationAppVersion != null)
+			this.curationAppVersion().setValue(curationAppVersion);
+	}
+
+	public void setCurationAppVersionMetadata(MetadataString curationAppVersion)
+	{
+		this.curationAppVersion = curationAppVersion;
+	}
+
+	public MetadataString	curationApp()
+	{
+		MetadataString	result = this.curationApp;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.curationApp = result;
+		}
+		return result;
+	}
+
+	public String getCurationApp()
+	{
+		return this.curationApp == null ? null : curationApp().getValue();
+	}
+
+	public MetadataString getCurationAppMetadata()
+	{
+		return curationApp;
+	}
+
+	public void setCurationApp(String curationApp)
+	{
+		if (curationApp != null)
+			this.curationApp().setValue(curationApp);
+	}
+
+	public void setCurationAppMetadata(MetadataString curationApp)
+	{
+		this.curationApp = curationApp;
+	}
+
+	public MetadataFloat	crossPlatformVersion()
+	{
+		MetadataFloat	result = this.crossPlatformVersion;
+		if (result == null)
+		{
+			result = new MetadataFloat();
+			this.crossPlatformVersion = result;
+		}
+		return result;
+	}
+
+	public Float getCrossPlatformVersion()
+	{
+		return this.crossPlatformVersion == null ? 0 : crossPlatformVersion().getValue();
+	}
+
+	public MetadataFloat getCrossPlatformVersionMetadata()
+	{
+		return crossPlatformVersion;
+	}
+
+	public void setCrossPlatformVersion(Float crossPlatformVersion)
+	{
+		if (crossPlatformVersion != 0)
+			this.crossPlatformVersion().setValue(crossPlatformVersion);
+	}
+
+	public void setCrossPlatformVersionMetadata(MetadataFloat crossPlatformVersion)
+	{
+		this.crossPlatformVersion = crossPlatformVersion;
 	}
 }

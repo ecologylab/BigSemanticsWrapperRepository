@@ -114,8 +114,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.creative_work.Curation.class,
 
-		ecologylab.bigsemantics.generated.library.creative_work.InformationCompositionBase.class,
-
 		ecologylab.bigsemantics.generated.library.creative_work.Periodical.class,
 
 		ecologylab.bigsemantics.generated.library.disaster.Disaster.class,
