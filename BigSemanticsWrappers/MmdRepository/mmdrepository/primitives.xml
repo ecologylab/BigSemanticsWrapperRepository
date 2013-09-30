@@ -35,7 +35,7 @@
 	</meta_metadata>
 	
 	<meta_metadata name="creative_act" extends="metadata" built_in="true">
-        <scalar name="action" scalar_type="int" />
+        <scalar name="action" scalar_type="int" hide="true"/>
         <!-- type can be:
             	1: curate_clipping (create clipping)
 							2: curate_link
@@ -45,7 +45,7 @@
             	6: upload (create image_selfmade, audio_selfmade, video_selfmade for photo/audio/video)
 							7: edit / modify 
 							8: assign_primary_link -->
-        <composite name="creator" type="document">
+        <composite name="creator" type="document" polymorphic_scope="repository_documents" wrap="true">
         	<scalar name="title" label="name" />
         </composite>
         <scalar name="time" scalar_type="Date" />
