@@ -64,6 +64,7 @@ using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaNS;
 using Ecologylab.Semantics.Generated.Library.YelpNS;
 using Ecologylab.Semantics.MetadataNS.Builtins.Declarations;
+using Ecologylab.Semantics.Test.Library.Generics;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.Semantics.Generated.Library 
@@ -156,6 +157,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(FlickrTag),
 				typeof(GaurdianComic),
 				typeof(General),
+				typeof(GeneralSearch<>),
 				typeof(GetRecordAdditionalMetadata),
 				typeof(GisLocation),
 				typeof(GlobeCartoon),
@@ -191,7 +193,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(ImdbMovie),
 				typeof(ImdbPerson),
 				typeof(InformaWorld),
-				typeof(InformationCompositionBase),
 				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
@@ -282,7 +283,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SlashdotSearch),
 				typeof(SocialMediaSearch1),
 				typeof(SocialMediaSearch2<>),
+				typeof(SocialMediaSearchOne),
 				typeof(SocialMediaSearchResult),
+				typeof(SocialMediaSearchResultForTest),
+				typeof(SocialMediaSearchTwo<>),
 				typeof(SocialVideo),
 				typeof(Spotrep),
 				typeof(Subject),
@@ -310,7 +314,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(WeatherReport),
 				typeof(WebVideo),
 				typeof(WestelmProduct),
+				typeof(WikiSearch),
 				typeof(WikipediaCategoryType),
+				typeof(WikipediaForTest),
 				typeof(WikipediaMobilePage),
 				typeof(WikipediaPage),
 				typeof(WikipediaPageType),

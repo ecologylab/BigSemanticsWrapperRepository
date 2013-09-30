@@ -128,7 +128,6 @@
     <Compile Include="Library\CreativeWorkNS\BasicPublication.cs" />
     <Compile Include="Library\CreativeWorkNS\CreativeWork.cs" />
     <Compile Include="Library\CreativeWorkNS\Curation.cs" />
-    <Compile Include="Library\CreativeWorkNS\InformationCompositionBase.cs" />
     <Compile Include="Library\CreativeWorkNS\Periodical.cs" />
     <Compile Include="Library\DeliciousHomepage.cs" />
     <Compile Include="Library\DisasterNS\Disaster.cs" />

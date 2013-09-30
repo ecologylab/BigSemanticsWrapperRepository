@@ -12,6 +12,7 @@ using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -29,6 +30,15 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		[MmName("metadata_collection")]
 		private List<IRichArtifact<Metadata>> metadataCollection;
 
+		[SimplScalar]
+		private MetadataString curationAppVersion;
+
+		[SimplScalar]
+		private MetadataString curationApp;
+
+		[SimplScalar]
+		private MetadataFloat crossPlatformVersion;
+
 		public Curation()
 		{ }
 
@@ -43,6 +53,45 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 				if (this.metadataCollection != value)
 				{
 					this.metadataCollection = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString CurationAppVersion
+		{
+			get{return curationAppVersion;}
+			set
+			{
+				if (this.curationAppVersion != value)
+				{
+					this.curationAppVersion = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString CurationApp
+		{
+			get{return curationApp;}
+			set
+			{
+				if (this.curationApp != value)
+				{
+					this.curationApp = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataFloat CrossPlatformVersion
+		{
+			get{return crossPlatformVersion;}
+			set
+			{
+				if (this.crossPlatformVersion != value)
+				{
+					this.crossPlatformVersion = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
