@@ -205,7 +205,7 @@
 			<suffix>ssi</suffix>
 			<suffix>acgi</suffix>
 		</selector>
-        <scalar name="title" xpath="/head/title" />
+        <scalar name="title" xpath="//head/title" />
 	</meta_metadata>
 
     <meta_metadata name="cached_html" extends="document"
