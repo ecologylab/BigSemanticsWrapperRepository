@@ -62,6 +62,7 @@
 			<arg value="java" />
 			<arg value="../BigSemanticsGeneratedClassesJava/src" />
 		  <jvmarg value="-Xms512m" />
+		  <jvmarg value="-Xmx512m" />
 		</java>
 		
   	<!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
@@ -83,6 +84,7 @@
 			<arg value="csharp" />
 			<arg value="../BigSemantics.GeneratedClassesCSharp" />
 		  <jvmarg value="-Xms512m" />
+		  <jvmarg value="-Xmx512m" />
 		</java>
 		
 		<echo message="Metadata classes have been generated in C#. You still need to run a C# compiler to compile them into an assembly!" /> 

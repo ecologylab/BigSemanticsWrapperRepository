@@ -336,6 +336,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.primitives.AudioSelfmade.class,
 
+		ecologylab.bigsemantics.generated.library.primitives.CachedHtml.class,
+
 		ecologylab.bigsemantics.generated.library.primitives.MediaProvider.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.SequencedClippableDocument.class,
