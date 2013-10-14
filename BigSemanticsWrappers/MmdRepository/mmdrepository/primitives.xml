@@ -205,8 +205,20 @@
 			<suffix>ssi</suffix>
 			<suffix>acgi</suffix>
 		</selector>
+        <scalar name="title" xpath="/head/title" />
 	</meta_metadata>
-	
+
+    <meta_metadata name="cached_html" extends="document"
+                   comment="The data structure for cached HTML pages.">
+      <scalar name="user_agent" scalar_type="String" />
+      <scalar name="access_time" scalar_type="Date" />
+      <scalar name="http_response_code" scalar_type="Int" />
+      <scalar name="http_response_message" scalar_type="String" />
+      <scalar name="mime_type" scalar_type="String" />
+      <scalar name="content" scalar_type="String" comment="UTF8 encoded."/>
+      <scalar name="parser" scalar_type="String" />
+    </meta_metadata>
+
 	<meta_metadata name="xml" type="document"  parser="direct" user_agent_name="firefox_3_6_8">
 		<selector>
 			<mime_type>text/xml</mime_type>
