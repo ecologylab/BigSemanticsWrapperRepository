@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="BigSemanticsWrappers" basedir="." default="main">
-	<property name="repo.dir" value="MmdRepository" />
-	<property name="build.dir" value="build" />
-	<property name="classes.dir" value="${build.dir}/classes" />
-	<property name="jar.dir" value="${build.dir}/jar" />
-	<property name="jar.filename" value="${ant.project.name}.jar" />
-	<property name="jar.file" value="${jar.dir}/${jar.filename}" />
-	<property name="lib.dir" value="lib" />
-	
+  <property name="repo.dir" value="MmdRepository" />
+  <property name="build.dir" value="build" />
+  <property name="classes.dir" value="${build.dir}/classes" />
+  <property name="jar.dir" value="${build.dir}/jar" />
+  <property name="jar.filename" value="${ant.project.name}.jar" />
+  <property name="jar.file" value="${jar.dir}/${jar.filename}" />
+  <property name="lib.dir" value="lib" />
+  
   <target name="clean">
     <delete dir="${build.dir}" />
   </target>
  
-	<target name="javac">
-		<mkdir dir="${classes.dir}" />
-		<copy todir="${classes.dir}">
-		  <fileset dir="${repo.dir}" />
-		</copy>
-	</target>
-		
-	<target name="jar" depends="javac">
-	  <mkdir dir="${jar.dir}" />
-		<jar destfile="${jar.file}" basedir="${classes.dir}" />
-		<copy file="${jar.file}" todir="${lib.dir}" />
-	</target>
-	
-	<target name="main" depends="clean,jar" />
-	
-	<!-- classpath using jars -->
-	<path id="jars_classpath">
-		<fileset dir="${lib.dir}">
-		  <include name="json-simple-1.1.1.jar" />
-		  <include name="xercesMinimal.jar" />
-		  <include name="ST-4.0.7.jar" />
-		  <include name="antlr-3.5-complete.jar" />
-		  <include name="*.jar" />
-	  </fileset>
+  <target name="javac">
+    <mkdir dir="${classes.dir}" />
+    <copy todir="${classes.dir}">
+      <fileset dir="${repo.dir}" />
+    </copy>
+  </target>
+    
+  <target name="jar" depends="javac">
+    <mkdir dir="${jar.dir}" />
+    <jar destfile="${jar.file}" basedir="${classes.dir}" />
+    <copy file="${jar.file}" todir="${lib.dir}" />
+  </target>
+  
+  <target name="main" depends="clean,jar" />
+  
+  <!-- classpath using jars -->
+  <path id="jars_classpath">
+    <fileset dir="${lib.dir}">
+      <include name="json-simple-1.1.1.jar" />
+      <include name="xercesMinimal.jar" />
+      <include name="ST-4.0.7.jar" />
+      <include name="antlr-3.5-complete.jar" />
+      <include name="*.jar" />
+    </fileset>
   </path>
-	
-	<target name="mmtest" depends="jar">
-  	<!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
-		<copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
-		
-  	<!-- run mmtest with a URL -->
-		<java classname="ecologylab.bigsemantics.tools.MmTest"
-			    classpathref="jars_classpath" fork="yes">
-			<arg line="-f MmTestURLs.lst" />
-			  <jvmarg value="-Xms512m" />
-			  <jvmarg value="-Xmx1024m" />
-		</java>
-	</target>
-	
-	<target name="compile-wrappers-java" depends="jar">
-  	<!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
-		<copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
-		
-  	<!-- run the compiler. -->
-		<java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
-			    classpathref="jars_classpath" fork="yes" failonerror="true">
-			<arg value="java" />
-			<arg value="../BigSemanticsGeneratedClassesJava/src" />
-		  <jvmarg value="-Xms512m" />
-		  <jvmarg value="-Xmx512m" />
-		</java>
-		
-  	<!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
-		<ant antfile="../BigSemanticsGeneratedClassesJava/build.xml"
-		     target="main" useNativeBasedir="yes" inheritAll="false" />
-		
-  	<!-- use the new jar of metadata classes. -->
-		<copy file="../BigSemanticsGeneratedClassesJava/build/jar/BigSemanticsGeneratedClassesJava.jar"
-		      tofile="lib/BigSemanticsGeneratedClassesJava.jar" />
-	</target>
-	
-	<target name="compile-wrappers-csharp" depends="jar">
-  	<!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
-		<copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
-		
-  	<!-- run the compiler. -->
-		<java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
-			    classpathref="jars_classpath" fork="yes" failonerror="true">
-			<arg value="csharp" />
-			<arg value="../BigSemantics.GeneratedClassesCSharp" />
-		  <jvmarg value="-Xms512m" />
-		  <jvmarg value="-Xmx512m" />
-		</java>
-		
-		<echo message="Metadata classes have been generated in C#. You still need to run a C# compiler to compile them into an assembly!" /> 
-	</target>
-		
+  
+  <target name="mmtest" depends="jar">
+    <!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
+    <copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
+    
+    <!-- run mmtest with a URL -->
+    <java classname="ecologylab.bigsemantics.tools.MmTest"
+          classpathref="jars_classpath" fork="yes">
+      <arg line="-f MmTestURLs.lst" />
+        <jvmarg value="-Xms512m" />
+        <jvmarg value="-Xmx1024m" />
+    </java>
+  </target>
+  
+  <target name="compile-wrappers-java" depends="jar">
+    <!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
+    <copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
+    
+    <!-- run the compiler. -->
+    <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
+          classpathref="jars_classpath" fork="yes" failonerror="true">
+      <arg value="java" />
+      <arg value="../BigSemanticsGeneratedClassesJava/src" />
+      <jvmarg value="-Xms512m" />
+      <jvmarg value="-Xmx512m" />
+    </java>
+    
+    <!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
+    <ant antfile="../BigSemanticsGeneratedClassesJava/build.xml"
+         target="main" useNativeBasedir="yes" inheritAll="false" />
+    
+    <!-- use the new jar of metadata classes. -->
+    <copy file="../BigSemanticsGeneratedClassesJava/build/jar/BigSemanticsGeneratedClassesJava.jar"
+          tofile="lib/BigSemanticsGeneratedClassesJava.jar" />
+  </target>
+  
+  <target name="compile-wrappers-csharp" depends="jar">
+    <!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
+    <copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
+    
+    <!-- run the compiler. -->
+    <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
+          classpathref="jars_classpath" fork="yes" failonerror="true">
+      <arg value="csharp" />
+      <arg value="../BigSemantics.GeneratedClassesCSharp" />
+      <jvmarg value="-Xms512m" />
+      <jvmarg value="-Xmx512m" />
+    </java>
+    
+    <echo message="Metadata classes have been generated in C#. You still need to run a C# compiler to compile them into an assembly!" /> 
+  </target>
+    
 </project>
