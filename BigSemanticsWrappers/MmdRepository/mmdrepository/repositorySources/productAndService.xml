@@ -56,9 +56,9 @@
     
     <filter_location strip_prefix="/ref=" />
 
-		<scalar name="title" xpath="//span[@id='btAsinTitle']" />
+		<scalar name="title" xpath="//h1[@id='title']" />
 		<scalar name="description" xpath="//div[@class='productDescriptionWrapper']" />
-		<scalar name="price" xpath="//b[@class='priceLarge']" />
+		<scalar name="price" xpath="//span[contains(@class, 'a-size-medium') and contains(@class, 'price')]" />
 		<composite name="department" type="document" xpath="//table[@id='navCatSubnav']//a[@class='navCatA']">
 			<scalar name="title" xpath="." />
 			<scalar name="location" hide="true" xpath="./@href" />
@@ -71,9 +71,9 @@
 		<scalar name="overall_rating" context_node="reviews_span" xpath=".//span[1]/@title" />
 		<scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" />  
 
-		<collection name="reviews" xpath="//div[@id='revMHRL']/div[@class='reviews']">
-			<scalar name="rating" xpath="./div[3]/span[1]/@title" />
-			<scalar name="description" xpath="./div[6]/div" />
+		<collection name="reviews" xpath="//div[@id='revMHRL']/div[@id]">
+			<scalar name="rating" xpath=".//a[@title]" />
+			<scalar name="description" xpath="./div[@id]/div" />
 		</collection>
 		
 		<composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list"
@@ -192,7 +192,8 @@
 			<scalar name="description" xpath=".//p[@class='review-text']" />
 		</collection>
 		
-		<collection name="people_also_viewed" child_type="target_product" xpath="//ul[@class='borderContainer']//div[@class='product-container']">
+		<collection name="people_also_viewed" child_type="target_product"
+		            xpath="//ul[@class='borderContainer']//div[@class='product-container']">
 			<scalar name="location" xpath=".//p[@class='productLink-container']/a[@class='waRRtag']/@href" />
 			<scalar name="title" xpath=".//p[@class='productLink-container']/a[@class='waRRtag']" />
 			<scalar name="overall_rating" xpath=".//div[@class='rating-container']//div[@class='rating-small fivestar']" />
@@ -259,10 +260,10 @@
 		<filter_location strip_prefix="/ref=" />
     
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
-		<collection name="items" xpath="//div[@class='zg_itemRightDiv_normal']">
+		<collection name="items" xpath="//div[@class='zg_itemImmersion']">
 			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
 			<scalar name="location" xpath=".//div[@class='zg_title']/a/@href"/>
-			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock_normal']//span[@class='price']/b"/>
+			<scalar name="price" xpath=".//div[@class='zg_price']//strong[@class='price']"/>
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	</meta_metadata>
@@ -275,10 +276,10 @@
 		<filter_location strip_prefix="/ref=" />
       
 		<scalar name="title" xpath="//h1[@id='zg_listTitle']/span" />
-		<collection name="items" xpath="//div[@class='zg_item zg_sparseListItem']">
+		<collection name="items" xpath="//div[@class='zg_itemImmersion']">
 			<scalar name="title" xpath=".//div[@class='zg_title']/a"/>
 			<scalar name="location" xpath=".//div[@class='zg_title']/a/@href"/>
-			<scalar name="price" xpath=".//div[@class='zg_itemPriceBlock zg_isPaid']//span[@class='price']/b"/>
+			<scalar name="price" xpath=".//div[@class='zg_price']//strong[@class='price']"/>
 			<scalar name="overall_rating" xpath=".//div[@class='zg_reviews']//span[contains(@class,'swSprite')]"/>
 		</collection>
 	</meta_metadata>
