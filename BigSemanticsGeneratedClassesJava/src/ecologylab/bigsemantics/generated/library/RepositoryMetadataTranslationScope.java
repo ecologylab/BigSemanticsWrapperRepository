@@ -436,6 +436,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.search.GoogleScholarSearchResult.class,
 
+		ecologylab.bigsemantics.generated.library.search.GoogleSearch.class,
+
 		ecologylab.bigsemantics.generated.library.search.ImageSearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.ImageSearchResult.class,
@@ -444,13 +446,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.search.SearchCrumb.class,
 
-		ecologylab.bigsemantics.generated.library.search.SearchMeta.class,
+		ecologylab.bigsemantics.generated.library.search.SearchResult.class,
 
 		ecologylab.bigsemantics.generated.library.search.SlashdotSearch.class,
-
-		ecologylab.bigsemantics.generated.library.search.SocialMediaSearch1.class,
-
-		ecologylab.bigsemantics.generated.library.search.SocialMediaSearch2.class,
 
 		ecologylab.bigsemantics.generated.library.search.SocialMediaSearchResult.class,
 
@@ -473,6 +471,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.slashdot.SlashdotRss.class,
 
 		ecologylab.bigsemantics.generated.library.socialMedia.RedditSearchResults.class,
+
+		ecologylab.bigsemantics.generated.library.socialMedia.TwitterTagResults.class,
+
+		ecologylab.bigsemantics.generated.library.socialMedia.TwitterUser.class,
 
 		ecologylab.bigsemantics.generated.library.travel.Attraction.class,
 

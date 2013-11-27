@@ -3,7 +3,7 @@
 
 	<meta_metadata name="nytimes" type="post" iparser="xpath" parser="html_dom_image_text">
 		<selector url_regex="http://www.nytimes.com/[A-z0-9_@-]+/$" domain="nytimes.com" />
-		<selector url_path_tree="http://www.nytimes.com/2011" />
+		<selector url_regex="http://www.nytimes.com/\d\d\d\d/\d\d/\d\d/.*\.html" />
     <example_url url="http://www.nytimes.com/2012/08/28/science/earth/sea-ice-in-arctic-measured-at-record-low.html" />
 		
 		<scalar name="description" xpath="/html/head/meta[@name='description']/@content"/>
