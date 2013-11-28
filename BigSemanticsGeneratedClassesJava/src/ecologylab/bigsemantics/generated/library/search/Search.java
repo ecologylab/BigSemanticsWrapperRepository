@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2013) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -15,6 +16,7 @@ import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
 import ecologylab.serialization.annotations.simpl_scalar;
@@ -24,6 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/** 
+ *A search.
+ */ 
 @simpl_inherit
 public class Search<SR extends Document> extends Document
 {
@@ -35,6 +40,10 @@ public class Search<SR extends Document> extends Document
 	@simpl_scope("repository_documents")
 	@mm_name("search_results")
 	private List<SR> searchResults;
+
+	@simpl_composite
+	@mm_name("next_page")
+	private Search nextPage;
 
 	public Search()
 	{ super(); }
@@ -104,5 +113,15 @@ public class Search<SR extends Document> extends Document
 	public void setSearchResults(List<SR> searchResults)
 	{
 		this.searchResults = searchResults;
+	}
+
+	public Search getNextPage()
+	{
+		return nextPage;
+	}
+
+	public void setNextPage(Search nextPage)
+	{
+		this.nextPage = nextPage;
 	}
 }

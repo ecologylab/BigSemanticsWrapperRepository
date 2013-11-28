@@ -72,7 +72,7 @@
     <scalar name="reviews_location" context_node="reviews_span" xpath="./a/@href" />  
 
     <collection name="reviews" xpath="//div[@id='revMHRL']/div[@id]">
-      <scalar name="rating" xpath=".//a[@title]" />
+      <scalar name="rating" xpath=".//*[contains(@title, '5 stars')]/@title" />
       <scalar name="description" xpath="./div[@id]/div" />
     </collection>
     

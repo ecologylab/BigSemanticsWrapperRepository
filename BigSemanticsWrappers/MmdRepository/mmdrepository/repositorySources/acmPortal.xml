@@ -104,7 +104,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
 		</composite>
 
 		<scalar name="description"
-            xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]" />
+            xpath="//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]/div[1]" />
 
 	<collection name="references" child_type="acm_portal"
                 xpath="//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]">

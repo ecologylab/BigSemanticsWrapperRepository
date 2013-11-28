@@ -8,26 +8,41 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2013) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.search.Search;
-import ecologylab.bigsemantics.generated.library.search.SearchResult;
+import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
 
 /** 
- *The Google search class
+ *A search result.
  */ 
 @simpl_inherit
-public class GoogleSearch extends Search<SearchResult>
+public class SearchResult extends Document
 {
-	public GoogleSearch()
+	@simpl_composite
+	@mm_name("destination_page")
+	private Document destinationPage;
+
+	public SearchResult()
 	{ super(); }
 
-	public GoogleSearch(MetaMetadataCompositeField mmd) {
+	public SearchResult(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
+
+	public Document getDestinationPage()
+	{
+		return destinationPage;
+	}
+
+	public void setDestinationPage(Document destinationPage)
+	{
+		this.destinationPage = destinationPage;
+	}
 }

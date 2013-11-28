@@ -1,70 +1,46 @@
-<meta_metadata_repository name="search" package="ecologylab.bigsemantics.generated.library.search" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<meta_metadata_repository name="search" package="ecologylab.bigsemantics.generated.library.search"
+  default_user_agent_name="chrome_32" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<!-- +++++++++++++++++++++++++++++++++ More Specific Types - Search & its Children +++++++++++++++++++++++++++++++++ -->
+  <meta_metadata name="search_result" extends="document" show_expanded_initially="true" comment="A search result.">
+    <scalar name="title" style="h1" />
+    <scalar name="description" label="snippet" />
+    <composite name="destination_page" type="document" />
+  </meta_metadata>
 
-<!-- 
-	<meta_metadata show_expanded_initially="true" name="search_result" extends="document" comment="A result from a search.">
-        <scalar always_show="true" name="title" label="heading" layer="10.0" navigates_to="location" comment="The heading of the search result." />
-		<scalar always_show="true" name="description" label="snippet" comment="The snippet of the search result." />
-		<scalar always_show="true" name="location" label="link" show="true" comment="The link of the search result." />
-		<scalar name="engine" scalar_type="String" layer="-20.0" comment="The search engine used for this result." />
-	</meta_metadata>
- -->
-
-	<meta_metadata show_expanded_initially="true" name="search_meta" extends="metadata" comment="">
-		<collection show_expanded_initially="true" name="search_results" always_show="true" child_type="document" no_wrap="true" />
-	</meta_metadata>
-
-	<meta_metadata name="search" extends="document" comment="">
+	<meta_metadata name="search" extends="document" comment="A search.">
 	  <generic_type_var name="SR" extends="document" />
 	  
-		<scalar name="query" scalar_type="String"/>
-		<collection name="search_results" child_type="SR" polymorphic_scope="repository_documents" no_wrap="true" />
-<!--     <scalar name="next_page" scalar_type="ParsedURL" /> -->
-		<!--
-		<semantic_actions>
-			<get_field name="search_results" />
-      <if>
-        <not_null value="search_results" />
-  			<for_each collection="search_results" as="result">
-          <if>
-            <not_null value="result" />
-    				<get_field object="result" name="location" />
-    				<parse_document now="true">
-    					<arg value="location" name="location" />
-    					<arg value="result" name="mixin" />
-    				</parse_document>
-          </if>
-  			</for_each>
-			<add_mixin object="result" mixin="metadata" /> 
-      </if>
-		</semantic_actions>	 -->
+		<scalar name="query" scalar_type="String" />
+		<collection name="search_results" child_type="SR" no_wrap="true" polymorphic_scope="repository_documents" />
+    <composite name="next_page" type="search" />
 	</meta_metadata>
 	
-	<meta_metadata name="social_media_search_1" extends="search"><!-- SocialMediaSearch1 extends Search<SocialMediaSearchResult> -->
-		  <generic_type_var name="SR" arg="social_media_search_result" />
-	</meta_metadata>
-
-	<meta_metadata name="social_media_search_2" extends="search"><!-- SocialMediaSearch2<SR extends SocialMediaSearchResult> extends Search<SR> -->
-	  <generic_type_var name="SR" extends="social_media_search_result" />
-	</meta_metadata>
-  
   <meta_metadata name="image_search" extends="search">
     <collection name="search_results" child_type="image_search_result" child_tag="image_search_result" />
   </meta_metadata>
 
-	<meta_metadata name="google_search" type="search" comment="The google Search class" user_agent_name="firefox_5" parser="xpath">
-	  <generic_type_var name="SR" arg="document" />
-		<selector url_regex="http://www.google.com/search\?(?:(?!tbm=pts).)*" domain="google.com"/>
+	<meta_metadata name="google_search" extends="search" parser="xpath" comment="The Google search class">
+	  <generic_type_var name="SR" arg="search_result" />
+		<selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
+    <example_url url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
 
+    <scalar name="query" xpath="//input[@name='q']/@value" />
 		<collection name="search_results" xpath="//div[@id='res']//div//ol/li[@*]">
 			<scalar name="title" xpath=".//h3/a" />
-			<scalar name="description" xpath=".//div[@class='s']" />
 			<scalar name="location" xpath=".//h3/a/@href" />
+			<scalar name="description" xpath=".//div[@class='s']//span[@class='st']" />
+      <composite name="destination_page" xpath=".">
+        <scalar name="title" xpath=".//h3/a" />
+        <scalar name="location" xpath=".//h3/a/@href" />
+      </composite>
 		</collection>
+    <composite name="next_page">
+      <scalar name="name" xpath="//td[@class='b navend'][2]/a" />
+      <scalar name="location" xpath="//td[@class='b navend'][2]/a/@href" />
+    </composite>
 	</meta_metadata>
 
-	<meta_metadata name="google_scholar_search_result" extends="document" comment="A google scholar search result" user_agent_name="opera_9" parser="xpath">
+	<meta_metadata name="google_scholar_search_result" extends="document" comment="A google scholar search result" parser="xpath">
 		<url_generator type="search" engine="google_scholar" use_id="title" />
 		<scalar name="title" as_natural_id="title" />
     <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
@@ -76,7 +52,7 @@
 		<scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
 	</meta_metadata>
 
-	<meta_metadata name="google_scholar_search" extends="document" comment="The google Search class" user_agent_name="opera_9" parser="xpath">
+	<meta_metadata name="google_scholar_search" extends="document" comment="The google Search class" parser="xpath">
 		<selector url_stripped="http://scholar.google.com/scholar" />
     
 		<collection name="search_results" xpath="//div[@class='gs_r']" child_type="google_scholar_search_result" no_wrap="true">
