@@ -10,14 +10,18 @@ package ecologylab.bigsemantics.generated.library.creative_work;
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.person.Person;
+import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
+import ecologylab.serialization.annotations.simpl_scope;
+import ecologylab.serialization.annotations.simpl_wrap;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +42,12 @@ public class Author extends Person
 	@simpl_collection("creative_work")
 	@mm_name("creative_works")
 	private List<CreativeWork> creativeWorks;
+
+	@simpl_composite
+	@simpl_wrap
+	@simpl_scope("repository_documents")
+	@mm_name("webpage")
+	private Document webpage;
 
 	public Author()
 	{ super(); }
@@ -139,5 +149,15 @@ public class Author extends Person
 	public void setCreativeWorks(List<CreativeWork> creativeWorks)
 	{
 		this.creativeWorks = creativeWorks;
+	}
+
+	public Document getWebpage()
+	{
+		return webpage;
+	}
+
+	public void setWebpage(Document webpage)
+	{
+		this.webpage = webpage;
 	}
 }

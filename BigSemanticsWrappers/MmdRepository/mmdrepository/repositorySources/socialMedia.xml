@@ -1,30 +1,38 @@
 <meta_metadata_repository name="social_media" package="ecologylab.bigsemantics.generated.library.socialMedia"
                           default_user_agent_name="firefox_3_6_8">
 
-	<!--<meta_metadata name="tweet_stream" type="blog"/>
-	<meta_metadata name="tweet" type="post"/>-->
-
-	<meta_metadata name="twitter_user" type="author" parser="xpath" no_cache="true">
+	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
 		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
 		<example_url url="https://twitter.com/nytimes" />
 		
-		<!-- label is "name" -->
-		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
+		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
 		
-		<composite name="photo" label="image" xpath="//a[@class='profile-picture media-thumbnail js-tooltip']/img">
-	      <scalar name="location" xpath="./@src" />
-	    </composite>
+		<!-- use collection label as child tag is not shown in mice for polymorphic collection -->
+		<!-- change mice to use child_tag when having only 1 child? or, change to composite? -->
+		<collection name="authors" xpath="." child_type="author">
+			
+			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
+			<scalar name="location" xpath="//h2[@class='username']/span">
+		    	<filter regex="@" replace="https://twitter.com/"/>
+		    </scalar>
+	    			
+			<composite name="photo" label="image" xpath="//a[@class='profile-picture media-thumbnail js-tooltip']/img">
+		      <scalar name="location" xpath="./@src" />
+		    </composite>
+		    
+		    <scalar name="description" xpath="//p[@class='bio profile-field']" />
+		    <scalar name="city" xpath="//p[@class='location-and-url']//span[@class='location profile-field']" />
+		    
+		    <composite name="webpage" xpath="//p[@class='location-and-url']//a[@class='js-tooltip']">
+		    	<scalar name="title" xpath="." hide_label="true"/>
+				<scalar name="location" xpath="./@href" />
+		    </composite>
+		</collection>
 	    
-	    <scalar name="location" xpath="//h2[@class='username']/span">
-	    	<filter regex="@" replace="https://twitter.com/"/>
-	    </scalar>
-	    
-	    <composite name="tweet_stream" type="blog" xpath="//ol[@id='stream-items-id']">
-	    	<collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="./li">
-	    		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" />
-	    		<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span"/>
-	    	</collection>
-	    </composite>
+	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li">
+	    	<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
+	    	<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>
+	    </collection>
 	    
 	</meta_metadata>
 	
@@ -43,8 +51,8 @@
 	    <generic_type_var name="SR" arg="post" />
 	    
 	    <collection name="search_results" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li">
-    		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" />
-    		<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span"/>
+    		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
+    		<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>
     	</collection>
 	</meta_metadata>
 
