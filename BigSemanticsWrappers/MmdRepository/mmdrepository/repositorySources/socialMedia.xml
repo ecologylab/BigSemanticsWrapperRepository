@@ -8,7 +8,7 @@
 		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
 		
 		<!-- change mice to use child_tag when having only 1 child? or, change to composite? or, a false collection label? -->
-		<collection name="authors" xpath="." child_type="author">
+		<collection name="authors" label="authors" xpath="." child_type="author">
 			
 			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
 			<scalar name="location" xpath="//h2[@class='username']/span">
