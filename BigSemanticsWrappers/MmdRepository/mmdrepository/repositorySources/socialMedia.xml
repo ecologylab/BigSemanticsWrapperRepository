@@ -29,10 +29,22 @@
 		</collection>
 	    
 	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li">
-	    	<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
-	    	<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>
-	    </collection>
+		    
+		    <collection name="authors" label="authors" xpath="." child_type="author">
+				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
+				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b">
+			    	<filter regex="^" replace="https://twitter.com/"/>
+			    </scalar>
+		    			
+				<composite name="photo" label="image" xpath="//div[@class='content']/div[@class='stream-item-header']/a/img">
+			      <scalar name="location" xpath="./@src" />
+			    </composite>			    			    
+			</collection>
+			
+			<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
+	    	<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>	    	
 	    
+	    </collection>	    	    
 	</meta_metadata>
 	
 	<meta_metadata name="twitter_search_results" type="search" parser="xpath" no_cache="true">
@@ -50,6 +62,18 @@
 	    <generic_type_var name="SR" arg="post" />
 	    
 	    <collection name="search_results" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li">
+	    	
+	    	<collection name="authors" label="authors" xpath="." child_type="author">
+				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
+				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b">
+			    	<filter regex="^" replace="https://twitter.com/"/>
+			    </scalar>
+		    			
+				<composite name="photo" label="image" xpath="//div[@class='content']/div[@class='stream-item-header']/a/img">
+			      <scalar name="location" xpath="./@src" />
+			    </composite>			    			    
+			</collection>
+	    
     		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
     		<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>
     	</collection>
