@@ -1,6 +1,12 @@
 <meta_metadata_repository name="social_media" package="ecologylab.bigsemantics.generated.library.socialMedia"
                           default_user_agent_name="firefox_3_6_8">
 
+	<meta_metadata name="tweeter" extends="author" parser="xpath" comment="an author of twitter microblog">
+		<scalar name="num_tweets" scalar_type="int"	/>
+	    <scalar name="num_following" scalar_type="int" />
+	    <scalar name="num_followers" scalar_type="int" />
+	</meta_metadata>	
+
 	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
 		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
 		<example_url url="https://twitter.com/nytimes" />
@@ -8,10 +14,10 @@
 		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
 		
 		<!-- change mice to use child_tag when having only 1 child? or, change to composite? or, a false collection label? -->
-		<collection name="authors" label="authors" xpath="." child_type="author">
+		<collection name="tweeters" xpath="." child_type="tweeter">
 			
 			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
-			<scalar name="location" xpath="//h2[@class='username']/span">
+			<scalar name="location" xpath="//h2[@class='username']/span" hide_label="true" concatenates_to="title">
 		    	<filter regex="@" replace="https://twitter.com/"/>
 		    </scalar>
 	    			
@@ -23,16 +29,22 @@
 		    <scalar name="city" xpath="//p[@class='location-and-url']//span[@class='location profile-field']" />
 		    
 		    <composite name="webpage" xpath="//p[@class='location-and-url']//a[@class='js-tooltip']">
-		    	<scalar name="title" xpath="." hide_label="true"/>
+		    	<scalar name="title" xpath="." hide_label="true" />
 				<scalar name="location" xpath="./@href" />
 		    </composite>
+		    
+		    <scalar name="num_tweets" xpath="//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong" label_at="bottom" />
+		    <scalar name="num_following" xpath="//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong" label_at="bottom" />
+		    <scalar name="num_followers" xpath="//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong" label_at="bottom" />
 		</collection>
 	    
-	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li">
+	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
+	    		use_value_as_label="posts.post_date">
 		    
-		    <collection name="authors" label="authors" xpath="." child_type="author">
-				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
-				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b">
+		    <collection name="tweeters" xpath="." child_type="tweeter">
+				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" hide_label="true" />
+				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
+						hide_label="true" concatenates_to="title">
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
 		    			
@@ -61,11 +73,13 @@
 	    
 	    <generic_type_var name="SR" arg="post" />
 	    
-	    <collection name="search_results" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li">
+	    <collection name="search_results" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
+	    	use_value_as_label="posts.post_date">
 	    	
-	    	<collection name="authors" label="authors" xpath="." child_type="author">
+	    	<collection name="tweeters" xpath="." child_type="tweeter">
 				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
-				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b">
+				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
+						hide_label="true" concatenates_to="title">
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
 		    			
