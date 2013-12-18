@@ -14,7 +14,7 @@
 		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
 		
 		<!-- change mice to use child_tag when having only 1 child? or, change to composite? or, a false collection label? -->
-		<collection name="tweeters" xpath="." child_type="tweeter">
+		<collection name="tweeters" child_type="tweeter" xpath=".">
 			
 			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
 			<scalar name="location" xpath="//h2[@class='username']/span" hide_label="true" concatenates_to="title">
@@ -34,14 +34,16 @@
 		    </composite>
 		    
 		    <scalar name="num_tweets" xpath="//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong" label_at="bottom" />
-		    <scalar name="num_following" xpath="//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong" label_at="bottom" />
-		    <scalar name="num_followers" xpath="//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong" label_at="bottom" />
+		    <scalar name="num_following" xpath="//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong" label_at="bottom" 
+		    																					concatenates_to="num_tweets" />
+		    <scalar name="num_followers" xpath="//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong" label_at="bottom" 
+		    																					concatenates_to="num_tweets" />
 		</collection>
 	    
 	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
-	    		use_value_as_label="posts.post_date">
+	    		child_use_value_as_label="post_date">
 		    
-		    <collection name="tweeters" xpath="." child_type="tweeter">
+		    <collection name="tweeters" child_type="tweeter" xpath=".">
 				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" hide_label="true" />
 				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
 						hide_label="true" concatenates_to="title">
@@ -74,9 +76,9 @@
 	    <generic_type_var name="SR" arg="post" />
 	    
 	    <collection name="search_results" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
-	    	use_value_as_label="posts.post_date">
+	    	child_use_value_as_label="post_date">
 	    	
-	    	<collection name="tweeters" xpath="." child_type="tweeter">
+	    	<collection name="tweeters" child_type="tweeter" xpath=".">
 				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
 				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
 						hide_label="true" concatenates_to="title">
