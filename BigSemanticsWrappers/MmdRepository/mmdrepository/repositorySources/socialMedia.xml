@@ -14,7 +14,7 @@
 		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
 		
 		<!-- change mice to use child_tag when having only 1 child? or, change to composite? or, a false collection label? -->
-		<collection name="tweeters" child_type="tweeter" xpath=".">
+		<collection name="tweeters" child_type="tweeter" xpath="." label_at="top">
 			
 			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
 			<scalar name="location" xpath="//h2[@class='username']/span" hide_label="true" concatenates_to="title">
@@ -41,7 +41,7 @@
 		</collection>
 	    
 	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
-	    		child_use_value_as_label="post_date">
+	    		child_use_value_as_label="post_date" label_at="top">
 		    
 		    <collection name="tweeters" child_type="tweeter" xpath=".">
 				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" hide_label="true" />
@@ -68,7 +68,7 @@
 		<!-- def_var currently do not seem to be working in js metadata extraction -->
 		<!--<def_var name="search" type="node" xpath="//h2[@id='content-main-heading']/strong"/>-->
 		
-		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" />
+		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" hide_label="true"/>
 		<scalar name="location" context_node="search" xpath="//h2[@id='content-main-heading']/strong" >
 	    	<filter regex="^" replace="https://twitter.com/search?q="/>
 	    </scalar>
