@@ -10,14 +10,12 @@ package ecologylab.bigsemantics.generated.library.wikipedia;
 
 import ecologylab.bigsemantics.generated.library.wikipedia.Paragraph;
 import ecologylab.bigsemantics.generated.library.wikipedia.Section;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.Metadata;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
@@ -27,13 +25,10 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Section extends Document
+public class Section extends Metadata
 {
 	@simpl_scalar
-	private MetadataString sectionId;
-
-	@simpl_scalar
-	private MetadataParsedURL sectionUrl;
+	private MetadataString title;
 
 	@simpl_collection("paragraph")
 	@mm_name("paragraphs")
@@ -51,68 +46,36 @@ public class Section extends Document
 	}
 
 
-	public MetadataString	sectionId()
+	public MetadataString	title()
 	{
-		MetadataString	result = this.sectionId;
+		MetadataString	result = this.title;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.sectionId = result;
+			this.title = result;
 		}
 		return result;
 	}
 
-	public String getSectionId()
+	public String getTitle()
 	{
-		return this.sectionId == null ? null : sectionId().getValue();
+		return this.title == null ? null : title().getValue();
 	}
 
-	public MetadataString getSectionIdMetadata()
+	public MetadataString getTitleMetadata()
 	{
-		return sectionId;
+		return title;
 	}
 
-	public void setSectionId(String sectionId)
+	public void setTitle(String title)
 	{
-		if (sectionId != null)
-			this.sectionId().setValue(sectionId);
+		if (title != null)
+			this.title().setValue(title);
 	}
 
-	public void setSectionIdMetadata(MetadataString sectionId)
+	public void setTitleMetadata(MetadataString title)
 	{
-		this.sectionId = sectionId;
-	}
-
-	public MetadataParsedURL	sectionUrl()
-	{
-		MetadataParsedURL	result = this.sectionUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.sectionUrl = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getSectionUrl()
-	{
-		return this.sectionUrl == null ? null : sectionUrl().getValue();
-	}
-
-	public MetadataParsedURL getSectionUrlMetadata()
-	{
-		return sectionUrl;
-	}
-
-	public void setSectionUrl(ParsedURL sectionUrl)
-	{
-		if (sectionUrl != null)
-			this.sectionUrl().setValue(sectionUrl);
-	}
-
-	public void setSectionUrlMetadata(MetadataParsedURL sectionUrl)
-	{
-		this.sectionUrl = sectionUrl;
+		this.title = title;
 	}
 
 	public List<Paragraph> getParagraphs()

@@ -53,10 +53,6 @@
     <!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
     <ant antfile="../BigSemanticsGeneratedClassesJava/build.xml"
          target="main" useNativeBasedir="yes" inheritAll="false" />
-    
-    <!-- FIXME: this should be removed! use the new jar of metadata classes. -->
-    <copy file="../BigSemanticsGeneratedClassesJava/build/jar/BigSemanticsGeneratedClassesJava.jar"
-          tofile="lib/BigSemanticsGeneratedClassesJava.jar" />
   </target>
   
   <target name="mmtest" depends="compile-wrappers-java">

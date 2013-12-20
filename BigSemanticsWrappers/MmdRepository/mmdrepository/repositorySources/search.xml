@@ -13,7 +13,8 @@
     <generic_type_var name="SR" extends="document"/>
 
     <scalar name="query" scalar_type="String"/>
-    <collection name="search_results" child_type="SR" no_wrap="true" polymorphic_scope="repository_documents"/>
+    <collection name="search_results" child_type="SR" no_wrap="true"
+      show_expanded_initially="true" polymorphic_scope="repository_documents"/>
     <composite name="next_page" type="search"/>
   </meta_metadata>
 
@@ -30,8 +31,7 @@
 
     <scalar name="query" xpath="//input[@name='q']/@value"/>
     <collection name="search_results" xpath="//div[@id='res']//div//ol/li[@*]">
-      <scalar name="title" xpath=".//h3/a"/>
-      <scalar name="location" xpath=".//h3/a/@href"/>
+      <scalar name="title" hide="true"/>
       <scalar name="description" xpath=".//div[@class='s']//span[@class='st']"/>
       <composite name="destination_page" xpath=".">
         <scalar name="title" xpath=".//h3/a"/>

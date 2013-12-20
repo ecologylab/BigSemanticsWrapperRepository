@@ -16,9 +16,9 @@
   </meta_metadata>
   
   
-  <meta_metadata name="paragraph" extends="metadata">
-    <scalar name="text" scalar_type="String" />
-    <collection name="anchors" child_type="wikipedia_page" child_tag="anchor">
+  <meta_metadata name="paragraph" extends="metadata" show_expanded_initially="true">
+    <scalar name="text" scalar_type="String" layer="9.0"/>
+    <collection name="anchors" child_type="wikipedia_page" child_tag="anchor" layer="7.0">
       <scalar name="location" hide="true" />
 	    <!-- For each anchor: -->
 	    <!--   title: the target Wikipedia article title, or target page title if not Wikipeida. -->
@@ -28,13 +28,14 @@
   </meta_metadata>
   
   
-  <meta_metadata name="section" extends="document">
-    <scalar name="title" other_tags="section_title" navigates_to="section_url" />
-    <scalar name="location" hide="true" />
-    <scalar name="section_id" scalar_type="String" hide="true" />
-    <scalar name="section_url" scalar_type="ParsedURL" hide="true">
-	    <!-- We cannot use location here since it breaks expansion: -->
-    </scalar>
+  <meta_metadata name="section" extends="metadata">
+    <scalar name="title" scalar_type="String" />
+<!--     <scalar name="title" scalar_type="String" other_tags="section_title" navigates_to="section_url" /> -->
+<!--     <scalar name="location" hide="true" /> -->
+<!--     <scalar name="section_id" scalar_type="String" hide="true" /> -->
+<!--     <scalar name="section_url" scalar_type="ParsedURL" hide="true"> -->
+<!-- 	    We cannot use location here since it breaks expansion: -->
+<!--     </scalar> -->
     <collection name="paragraphs" child_type="paragraph" child_tag="paragraph" />
     <collection name="subsections" child_type="section" child_tag="section" />
   </meta_metadata>
@@ -93,15 +94,15 @@
     
     <collection name="sections" xpath="//div[@id='mw-content-text']/h2">
       <scalar name="title" xpath="./span[@id]" />
-      <scalar name="section_id" xpath="./span[@id]/@id" />
-      <scalar name="section_url">
-        <concatenate_values>
-          <value>#</value>
-          <value from_scalar="section_id" />
-        </concatenate_values>
-        <!-- TODO ParsedURL doesn't support #section_id .. -->
-      </scalar>
-      <collection name="paragraphs" xpath="./following-sibling::p[1]">
+<!--       <scalar name="section_id" xpath="./span[@id]/@id" /> -->
+<!--       <scalar name="section_url"> -->
+<!--         <concatenate_values> -->
+<!--           <value>#</value> -->
+<!--           <value from_scalar="section_id" /> -->
+<!--         </concatenate_values> -->
+<!--         TODO ParsedURL doesn't support #section_id .. -->
+<!--       </scalar> -->
+      <collection name="paragraphs" xpath="./following-sibling::p[preceding-sibling::h2[1]=../h2[$i]]">
         <scalar name="text" xpath="." />
         <collection name="anchors" xpath=".//a[@title]">
           <scalar name="title" xpath="./@title" />
