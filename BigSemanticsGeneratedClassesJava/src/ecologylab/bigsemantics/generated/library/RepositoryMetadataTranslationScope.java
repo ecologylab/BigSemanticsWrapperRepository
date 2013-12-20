@@ -472,9 +472,11 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.socialMedia.RedditSearchResults.class,
 
-		ecologylab.bigsemantics.generated.library.socialMedia.TwitterTagResults.class,
+		ecologylab.bigsemantics.generated.library.socialMedia.Tweeter.class,
 
-		ecologylab.bigsemantics.generated.library.socialMedia.TwitterUser.class,
+		ecologylab.bigsemantics.generated.library.socialMedia.TwitterMicroblog.class,
+
+		ecologylab.bigsemantics.generated.library.socialMedia.TwitterSearchResults.class,
 
 		ecologylab.bigsemantics.generated.library.travel.Attraction.class,
 

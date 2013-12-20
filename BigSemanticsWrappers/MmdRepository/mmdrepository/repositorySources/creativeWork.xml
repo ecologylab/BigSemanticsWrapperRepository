@@ -7,6 +7,7 @@
 		<scalar name="city" scalar_type="String" />
     
 		<collection name="creative_works" child_type="creative_work" child_tag="creative_work" />
+		<composite name="webpage" type="document" polymorphic_scope="repository_documents" wrap="true"/>		
 	</meta_metadata>
 	
   
