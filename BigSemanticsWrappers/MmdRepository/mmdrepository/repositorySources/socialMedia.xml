@@ -1,6 +1,10 @@
 <meta_metadata_repository name="social_media" package="ecologylab.bigsemantics.generated.library.socialMedia"
                           default_user_agent_name="firefox_3_6_8">
 
+	<meta_metadata name="tweet" type="post" parser="xpath" show_expanded_initially="true" comment="tweet micropost">
+		<!--  <scalar name="content" scalar_type="String" hide_label="true" extract_as_html="true" /> -->
+	</meta_metadata>
+	
 	<meta_metadata name="tweeter" extends="author" parser="xpath" comment="an author of twitter microblog">
 		<scalar name="num_tweets" scalar_type="int"	/>
 	    <scalar name="num_following" scalar_type="int" />
@@ -8,15 +12,15 @@
 	</meta_metadata>	
 
 	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
+		
 		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
 		<example_url url="https://twitter.com/nytimes" />
 		
 		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
 		
-		<!-- change mice to use child_tag when having only 1 child? or, change to composite? or, a false collection label? -->
-		<collection name="tweeters" child_type="tweeter" xpath="." label_at="top">
+		<collection name="tweeters" child_type="tweeter" xpath="." label_at="top" hide_label="true">
 			
-			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" />
+			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
 			<scalar name="location" xpath="//h2[@class='username']/span" hide_label="true" concatenates_to="title">
 		    	<filter regex="@" replace="https://twitter.com/"/>
 		    </scalar>
@@ -40,22 +44,22 @@
 		    																					concatenates_to="num_tweets" />
 		</collection>
 	    
-	    <collection name="posts" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
-	    		child_use_value_as_label="post_date" label_at="top">
-		    
+	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li"	child_use_value_as_label="post_date" 
+	    																							label_at="top">		    
 		    <collection name="tweeters" child_type="tweeter" xpath=".">
 				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" hide_label="true" />
 				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
 						hide_label="true" concatenates_to="title">
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
-		    			
-				<composite name="photo" label="image" xpath="//div[@class='content']/div[@class='stream-item-header']/a/img">
+		    	
+		    	<composite name="photo" label="image" xpath="//div[@class='content']/div[@class='stream-item-header']/a/img">
 			      <scalar name="location" xpath="./@src" />
 			    </composite>			    			    
 			</collection>
 			
-			<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
+			<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true" 
+				extract_as_html="true" />
 	    	<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>	    	
 	    
 	    </collection>	    	    
@@ -65,18 +69,18 @@
 		<selector url_stripped="https://twitter.com/search"/>
 		<example_url url="https://twitter.com/search?q=%23socialinnovation" />
 		
-		<!-- def_var currently do not seem to be working in js metadata extraction -->
+		<!-- def_var doesn't currently seem to be working in js metadata extraction -->
 		<!--<def_var name="search" type="node" xpath="//h2[@id='content-main-heading']/strong"/>-->
 		
-		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" hide_label="true"/>
+		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" label_at="top" hide_label="true"/>
 		<scalar name="location" context_node="search" xpath="//h2[@id='content-main-heading']/strong" >
 	    	<filter regex="^" replace="https://twitter.com/search?q="/>
 	    </scalar>
 	    
 	    <generic_type_var name="SR" arg="post" />
 	    
-	    <collection name="search_results" label="tweets" child_type="post" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
-	    	child_use_value_as_label="post_date">
+	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
+	    	child_use_value_as_label="post_date" label_at="top">
 	    	
 	    	<collection name="tweeters" child_type="tweeter" xpath=".">
 				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
@@ -90,7 +94,8 @@
 			    </composite>			    			    
 			</collection>
 	    
-    		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true"/>
+    		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true" 
+    			extract_as_html="true" />
     		<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>
     	</collection>
 	</meta_metadata>
