@@ -1,16 +1,16 @@
 <meta_metadata_repository name="social_media" package="ecologylab.bigsemantics.generated.library.socialMedia"
                           default_user_agent_name="firefox_3_6_8">
 
-	<meta_metadata name="tweet" type="post" parser="xpath" show_expanded_initially="true" comment="tweet micropost">
-		<!--  <scalar name="content" scalar_type="String" hide_label="true" extract_as_html="true" /> -->
-	</meta_metadata>
-	
 	<meta_metadata name="tweeter" extends="author" parser="xpath" comment="an author of twitter microblog">
 		<scalar name="num_tweets" scalar_type="int"	/>
 	    <scalar name="num_following" scalar_type="int" />
 	    <scalar name="num_followers" scalar_type="int" />
 	</meta_metadata>	
 
+	<meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true" comment="twitter micropost">
+		<collection name="tweeters" child_type="tweeter" child_tag="tweeter" layer="8.0" />
+	</meta_metadata>
+		
 	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
 		
 		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
@@ -37,30 +37,30 @@
 				<scalar name="location" xpath="./@href" />
 		    </composite>
 		    
-		    <scalar name="num_tweets" xpath="//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong" label_at="bottom" />
-		    <scalar name="num_following" xpath="//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong" label_at="bottom" 
-		    																					concatenates_to="num_tweets" />
-		    <scalar name="num_followers" xpath="//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong" label_at="bottom" 
-		    																					concatenates_to="num_tweets" />
+		    <scalar name="num_tweets" label="tweets" xpath="//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong" 
+		    																label_at="bottom" />
+		    <scalar name="num_following" label="following" xpath="//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong" 
+		    																label_at="bottom" concatenates_to="num_tweets" />
+		    <scalar name="num_followers" label="followers" xpath="//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong" 
+		    																label_at="bottom" concatenates_to="num_tweets" />
 		</collection>
 	    
-	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li"	child_use_value_as_label="post_date" 
-	    																							label_at="top">		    
-		    <collection name="tweeters" child_type="tweeter" xpath=".">
-				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" hide_label="true" />
-				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
+	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li//div[@class='content']"	
+	    																child_use_value_as_label="post_date" label_at="top">		    
+		    <collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a">
+				<scalar name="title" xpath="./strong" hide_label="true" />
+				<scalar name="location" xpath="./span/b" 
 						hide_label="true" concatenates_to="title">
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
 		    	
-		    	<composite name="photo" label="image" xpath="//div[@class='content']/div[@class='stream-item-header']/a/img">
+		    	<composite name="photo" label="image" xpath="./img">
 			      <scalar name="location" xpath="./@src" />
 			    </composite>			    			    
 			</collection>
 			
-			<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true" 
-				extract_as_html="true" />
-	    	<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>	    	
+			<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
+	    	<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>	    	
 	    
 	    </collection>	    	    
 	</meta_metadata>
@@ -79,24 +79,23 @@
 	    
 	    <generic_type_var name="SR" arg="post" />
 	    
-	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" xpath="//ol[@id='stream-items-id']/li"
-	    	child_use_value_as_label="post_date" label_at="top">
+	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" 
+	    			xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="post_date" label_at="top">
 	    	
-	    	<collection name="tweeters" child_type="tweeter" xpath=".">
-				<scalar name="title" xpath="//div[@class='content']/div[@class='stream-item-header']/a/strong" />
-				<scalar name="location" xpath="//div[@class='content']/div[@class='stream-item-header']/a/span/b" 
+	    	<collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a">
+				<scalar name="title" xpath="./strong" />
+				<scalar name="location" xpath="./span/b" 
 						hide_label="true" concatenates_to="title">
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
 		    			
-				<composite name="photo" label="image" xpath="//div[@class='content']/div[@class='stream-item-header']/a/img">
+				<composite name="photo" label="image" xpath="./img">
 			      <scalar name="location" xpath="./@src" />
 			    </composite>			    			    
 			</collection>
 	    
-    		<scalar name="description" xpath=".//div[@class='content']/p[@class='js-tweet-text tweet-text']" hide_label="true" 
-    			extract_as_html="true" />
-    		<scalar name="post_date" xpath=".//div[@class='content']//small[@class='time']//span" hide_label="true"/>
+    		<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
+    		<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>
     	</collection>
 	</meta_metadata>
 
