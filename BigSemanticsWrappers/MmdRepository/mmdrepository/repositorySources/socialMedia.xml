@@ -47,7 +47,7 @@
 	    
 	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li//div[@class='content']"	
 	    																child_use_value_as_label="post_date" label_at="top">		    
-		    <collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a">
+		    <collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
 				<scalar name="title" xpath="./strong" hide_label="true" />
 				<scalar name="location" xpath="./span/b" 
 						hide_label="true" concatenates_to="title">
@@ -82,7 +82,7 @@
 	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" 
 	    			xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="post_date" label_at="top">
 	    	
-	    	<collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a">
+	    	<collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
 				<scalar name="title" xpath="./strong" />
 				<scalar name="location" xpath="./span/b" 
 						hide_label="true" concatenates_to="title">
