@@ -7,7 +7,10 @@ import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
+import org.eclipse.jetty.server.handler.HandlerCollection;
+import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,16 +96,23 @@ public class BSService
 
   private void runServer() throws Exception
   {
-    ContextHandlerCollection contexts = new ContextHandlerCollection();
+    HandlerCollection handlers = new ContextHandlerCollection();
 
-    WebAppContext context1 = new WebAppContext(contexts, dpoolWarPath, "/DownloaderPool");
-    contexts.addHandler(context1);
+    WebAppContext context1 = new WebAppContext(handlers, dpoolWarPath, "/DownloaderPool");
+    handlers.addHandler(context1);
 
-    WebAppContext context2 = new WebAppContext(contexts, bssWarPath, "/BigSemanticsService");
-    contexts.addHandler(context2);
-
+    WebAppContext context2 = new WebAppContext(handlers, bssWarPath, "/BigSemanticsService");
+    handlers.addHandler(context2);
+    
+    ContextHandler c = new ContextHandler("/");
+    ResourceHandler resourceHandler = new ResourceHandler();
+    resourceHandler.setResourceBase("../../BigSemanticsJavaScript/");
+    resourceHandler.setDirectoriesListed(true);
+    c.setHandler(resourceHandler);
+    handlers.addHandler(c);
+    
     server = new Server(servicePort);
-    server.setHandler(contexts);
+    server.setHandler(handlers);
     server.start();
     for (int i = 0; i < 30; ++i)
     {
@@ -170,9 +180,10 @@ public class BSService
   {
     BSService runner = new BSService();
     runner.start();
-    Thread.sleep(10000);
-    logger.info("requesting stop ...");
-    runner.stop();
+    runner.server.join();
+//    Thread.sleep(60000);
+//    logger.info("requesting stop ...");
+//    runner.stop();
   }
 
 }

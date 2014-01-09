@@ -67,7 +67,7 @@
 	<property name="bsservice.dir" value="../../BigSemanticsService" />
   <available property="bsservice.dir.exists" file="${bsservice.dir}" type="dir" />
 
-	<target name="build-required-jars" if="bsservice.dir.exists">
+	<target name="build-dpool" if="bsservice.dir.exists">
 		<ant antfile="../../BigSemanticsService/DownloaderPool/build.xml"
          target="main" useNativeBasedir="yes" inheritAll="false" />
 	</target>
