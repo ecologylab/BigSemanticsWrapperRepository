@@ -123,6 +123,11 @@ public class BSService
 
   private void stopServer() throws Exception
   {
+    if (server == null)
+    {
+      return;
+    }
+
     server.stop();
 
     for (int i = 0; i < 30; ++i)
@@ -142,7 +147,7 @@ public class BSService
     logger.info("BS web services stopped.");
   }
 
-  private void runDownloader() throws IOException
+  private void runDownloader() throws IOException, InterruptedException
   {
     stopDownloader();
     ProcessBuilder pb = new ProcessBuilder("java", "-jar", downloaderJarPath);
@@ -150,11 +155,12 @@ public class BSService
     logger.info("downloader started.");
   }
 
-  private void stopDownloader()
+  private void stopDownloader() throws InterruptedException
   {
     if (downloaderProc != null)
     {
       downloaderProc.destroy();
+      downloaderProc.waitFor();
       downloaderProc = null;
       logger.info("downloader stopped.");
     }
