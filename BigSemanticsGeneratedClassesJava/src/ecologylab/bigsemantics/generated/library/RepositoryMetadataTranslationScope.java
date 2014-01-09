@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2013) Interface Ecology Lab.
+ * Copyright (2014) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -471,6 +471,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.slashdot.SlashdotRss.class,
 
 		ecologylab.bigsemantics.generated.library.socialMedia.RedditSearchResults.class,
+
+		ecologylab.bigsemantics.generated.library.socialMedia.Tweet.class,
 
 		ecologylab.bigsemantics.generated.library.socialMedia.Tweeter.class,
 

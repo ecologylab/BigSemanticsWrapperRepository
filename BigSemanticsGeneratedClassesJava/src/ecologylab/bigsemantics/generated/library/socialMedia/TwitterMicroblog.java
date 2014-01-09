@@ -5,10 +5,11 @@ package ecologylab.bigsemantics.generated.library.socialMedia;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2013) Interface Ecology Lab.
+ * Copyright (2014) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.blog.Blog;
+import ecologylab.bigsemantics.generated.library.socialMedia.Tweet;
 import ecologylab.bigsemantics.generated.library.socialMedia.Tweeter;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -26,6 +27,10 @@ public class TwitterMicroblog extends Blog
 	@simpl_collection("tweeter")
 	@mm_name("tweeters")
 	private List<Tweeter> tweeters;
+
+	@simpl_collection("tweet")
+	@mm_name("tweets")
+	private List<Tweet> tweets;
 
 	public TwitterMicroblog()
 	{ super(); }
@@ -63,5 +68,35 @@ public class TwitterMicroblog extends Blog
 	public void setTweeters(List<Tweeter> tweeters)
 	{
 		this.tweeters = tweeters;
+	}
+
+	public List<Tweet> getTweets()
+	{
+		return tweets;
+	}
+
+  // lazy evaluation:
+  public List<Tweet> tweets()
+  {
+    if (tweets == null)
+      tweets = new ArrayList<Tweet>();
+    return tweets;
+  }
+
+  // addTo:
+  public void addToTweets(Tweet element)
+  {
+    tweets().add(element);
+  }
+
+  // size:
+  public int tweetsSize()
+  {
+    return tweets == null ? 0 : tweets.size();
+  }
+
+	public void setTweets(List<Tweet> tweets)
+	{
+		this.tweets = tweets;
 	}
 }

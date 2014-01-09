@@ -5,28 +5,30 @@ package ecologylab.bigsemantics.generated.library.socialMedia;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2013) Interface Ecology Lab.
+ * Copyright (2014) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.blog.Post;
+import ecologylab.bigsemantics.generated.library.socialMedia.Tweeter;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /** 
- *tweet micropost
+ *twitter micropost
  */ 
 @simpl_inherit
 public class Tweet extends Post
 {
-	@simpl_scalar
-	private MetadataString content;
+	@simpl_collection("tweeter")
+	@mm_name("tweeters")
+	private List<Tweeter> tweeters;
 
 	public Tweet()
 	{ super(); }
@@ -36,35 +38,33 @@ public class Tweet extends Post
 	}
 
 
-	public MetadataString	content()
+	public List<Tweeter> getTweeters()
 	{
-		MetadataString	result = this.content;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.content = result;
-		}
-		return result;
+		return tweeters;
 	}
 
-	public String getContent()
-	{
-		return this.content == null ? null : content().getValue();
-	}
+  // lazy evaluation:
+  public List<Tweeter> tweeters()
+  {
+    if (tweeters == null)
+      tweeters = new ArrayList<Tweeter>();
+    return tweeters;
+  }
 
-	public MetadataString getContentMetadata()
-	{
-		return content;
-	}
+  // addTo:
+  public void addToTweeters(Tweeter element)
+  {
+    tweeters().add(element);
+  }
 
-	public void setContent(String content)
-	{
-		if (content != null)
-			this.content().setValue(content);
-	}
+  // size:
+  public int tweetersSize()
+  {
+    return tweeters == null ? 0 : tweeters.size();
+  }
 
-	public void setContentMetadata(MetadataString content)
+	public void setTweeters(List<Tweeter> tweeters)
 	{
-		this.content = content;
+		this.tweeters = tweeters;
 	}
 }

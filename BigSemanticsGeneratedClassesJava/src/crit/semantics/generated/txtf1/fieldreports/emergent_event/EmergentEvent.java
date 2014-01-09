@@ -5,7 +5,7 @@ package crit.semantics.generated.txtf1.fieldreports.emergent_event;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2013) Interface Ecology Lab.
+ * Copyright (2014) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.gis.GisLocation;
