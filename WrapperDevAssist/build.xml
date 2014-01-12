@@ -52,6 +52,27 @@
     </copy>
   </target>
 	
+  <taskdef name="one-jar"
+           classname="com.simontuffs.onejar.ant.OneJarTask"
+           classpath="${lib.dir}/one-jar-ant-task-0.97.jar" />
+
+  <target name="jar" depends="compile">
+      <one-jar destfile="${build.dir}/WrapperDevAssist.jar">
+          <manifest>
+              <attribute
+                  name="One-Jar-Main-Class"
+                  value="ecologylab.bigsemantics.tools.AssistApp" />
+          </manifest>
+          <main>
+              <fileset dir="${classes.dir}" />
+          </main>
+          <lib>
+              <fileset refid="mavendeps" />
+          </lib>
+          <fileset dir="${resources.dir}" />
+      </one-jar>
+  </target>
+	
   <target name="run-app" depends="compile" if="bsservice.dir.exists">
   	<java classname="ecologylab.bigsemantics.tools.AssistApp" fork="yes" failonerror="true">
   		  <classpath>

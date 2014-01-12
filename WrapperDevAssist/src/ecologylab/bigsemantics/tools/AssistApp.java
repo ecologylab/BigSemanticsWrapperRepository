@@ -8,16 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
@@ -32,28 +26,33 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ecologylab.bigsemantics.tools.Forker.Result;
+
 public class AssistApp extends WindowAdapter
 {
 
-  static Logger   logger         = LoggerFactory.getLogger(AssistApp.class);
+  static Logger logger = LoggerFactory.getLogger(AssistApp.class);
 
-  JButton         btnUpdate;
+  JButton       btnUpdate;
 
-  JTextArea       textArea;
+  JTextArea     textArea;
 
-  BSService       service;
+  JFrame        frame;
 
-  JFrame          frame;
-  
+  Forker        forker;
+
+  BSService     service;
+
   public AssistApp()
   {
+    forker = new Forker();
     try
     {
       service = new BSService();
     }
     catch (ConfigurationException e)
     {
-      error("Error starting up the BS service.", e);
+      error("Error starting up the BS service.", null, e);
       return;
     }
 
@@ -63,10 +62,10 @@ public class AssistApp extends WindowAdapter
 
     if (!checkEnv())
     {
-      error("Failed to start up! Please check your environment.");
+      error("Failed to start up! Please check your environment.", null, null);
       return;
     }
-    
+
     btnUpdate.setEnabled(true);
     msg("Ready.");
   }
@@ -149,124 +148,12 @@ public class AssistApp extends WindowAdapter
         }
         catch (Exception e)
         {
-          error("Error stopping BS service.", e);
+          error("Error stopping BS service.", null, e);
         }
       }
 
     });
     frame.setContentPane(contentPanel);
-  }
-
-  private boolean checkEnv()
-  {
-    if (0 != fork(500, "ant", "-version"))
-    {
-      error("Error detecting Apache Ant which is needed.");
-      return false;
-    }
-
-    if (0 != fork(500, "mvn", "-version"))
-    {
-      error("Error detecting Apache Maven which is needed.");
-      return false;
-    }
-
-    if (0 != fork(15000, "ant", "build-dpool"))
-    {
-      error("Error building required WAR and JAR from DownloaderPool.");
-      return false;
-    }
-    
-    File f = new File("../../BigSemanticsJavaScript");
-    if (!f.exists())
-    {
-      error("Error locating project BigSemanticsJavaScript.");
-      return false;
-    }
-
-    return true;
-  }
-
-  private long fork(final long timeout, String... cmds)
-  {
-    ProcessBuilder pb = new ProcessBuilder(cmds);
-    pb.redirectErrorStream(true);
-    try
-    {
-      final Process p = pb.start();
-
-      ExecutorService executor = Executors.newSingleThreadExecutor();
-      Future<Integer> future = executor.submit(new Callable<Integer>()
-      {
-        @Override
-        public Integer call() throws Exception
-        {
-          BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-          while (true)
-          {
-            String line = br.readLine();
-            if (line == null)
-            {
-              break;
-            }
-            msg("  >> " + line);
-            SwingUtilities.invokeLater(new Runnable()
-            {
-              @Override
-              public void run()
-              {
-                frame.invalidate();
-              }
-            });
-          }
-          return p.waitFor();
-        }
-      });
-      executor.awaitTermination(timeout, TimeUnit.MILLISECONDS);
-      executor.shutdown();
-      return future.get();
-    }
-    catch (IOException e)
-    {
-      error("Error executing " + cmds, e);
-      return Long.MIN_VALUE + 1;
-    }
-    catch (InterruptedException e)
-    {
-      error("Error executing " + cmds, e);
-      return Long.MIN_VALUE + 2;
-    }
-    catch (ExecutionException e)
-    {
-      error("Error executing " + cmds, e);
-      return Long.MIN_VALUE + 3;
-    }
-  }
-
-  private void msg(String msg)
-  {
-    logger.info(msg);
-    textArea.append(msg + "\n");
-    textArea.setCaretPosition(textArea.getDocument().getLength());
-    SwingUtilities.invokeLater(new Runnable()
-    {
-      @Override
-      public void run()
-      {
-        frame.invalidate();
-      }
-    });
-  }
-
-  private void error(String msg, Throwable t)
-  {
-    logger.error(msg, t);
-    msg("ERROR: " + msg);
-  }
-  
-  private void error(String msg)
-  {
-    error(msg, null);
   }
 
   public void display()
@@ -281,30 +168,106 @@ public class AssistApp extends WindowAdapter
     });
   }
 
+  private void msgHelper(String msg)
+  {
+    logger.info(msg);
+    textArea.append(msg + "\n");
+    textArea.setCaretPosition(textArea.getDocument().getLength());
+  }
+
+  private void msg(String msg)
+  {
+    msgHelper(msg);
+    SwingUtilities.invokeLater(new Runnable()
+    {
+      @Override
+      public void run()
+      {
+        frame.invalidate();
+      }
+    });
+  }
+
+  private void error(String msg, String info, Throwable t)
+  {
+    if (t != null)
+    {
+      logger.error(msg, t);
+    }
+    if (info != null)
+    {
+      String[] lines = info.split("\n");
+      for (String line : lines)
+      {
+        msgHelper("    >> " + line);
+      }
+    }
+    msg("ERROR: " + msg);
+  }
+
+  private boolean checkEnv()
+  {
+    return forkAndCheck(500, "Error detecting Apache Ant which is needed.", "ant", "-version")
+        && forkAndCheck(500, "Error detecting Apache Maven which is needed.", "mvn", "-version")
+        && forkAndCheck(15000,
+                        "Error building required WAR and JAR from DownloaderPool.",
+                        "ant",
+                        "build-dpool")
+        && fileExists("../../BigSemanticsJavaScript",
+                      "Error locating project BigSemanticsJavaScript.");
+  }
+
+  private boolean forkAndCheck(long timeout, String errMsg, String... cmds)
+  {
+    Result result = forker.fork(timeout, cmds);
+    if (result.returnCode != 0)
+    {
+      error(errMsg, result.err, null);
+      return false;
+    }
+    return true;
+  }
+
+  private boolean fileExists(String path, String errMsg)
+  {
+    File f = new File(path);
+    if (!f.exists())
+    {
+      error(errMsg, null, null);
+      return false;
+    }
+    return true;
+  }
+
   private void updateBackend()
   {
     try
     {
       stopService();
       msg("Recompiling wrappers and updating service WAR...");
-      fork(60000, "ant", "compile-wrappers-and-update");
-      startService();
+      if (forkAndCheck(60000,
+                       "Error compiling wrappers or updating the service.",
+                       "ant",
+                       "compile-wrappers-and-update"))
+      {
+        startService();
+      }
     }
     catch (Exception e)
     {
-      error("Error relaunching BS service.", e);
+      error("Error relaunching BS service.", null, e);
       return;
     }
 
     msg("Service started, running.");
   }
-  
+
   private void stopService() throws Exception
   {
     msg("Stopping service...");
     service.stop();
   }
-  
+
   private void startService() throws Exception
   {
     msg("Starting service...");
