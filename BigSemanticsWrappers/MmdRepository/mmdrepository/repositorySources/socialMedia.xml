@@ -25,6 +25,7 @@
 		    	<filter regex="@" replace="https://twitter.com/"/>
 		    </scalar>
 	    			
+	    			
 			<composite name="photo" label="image" xpath="//a[@class='profile-picture media-thumbnail js-tooltip']/img">
 		      <scalar name="location" xpath="./@src" always_show="true" />
 		    </composite>
@@ -46,7 +47,7 @@
 		</collection>
 	    
 	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li//div[@class='content']"	
-	    																child_use_value_as_label="post_date" label_at="top">		    
+	    															child_use_value_as_label="tweeters.photo" label_at="top">		    
 		    <collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
 				<scalar name="title" xpath="./strong" hide_label="true" />
 				<scalar name="location" xpath="./span/b" 
@@ -80,7 +81,7 @@
 	    <generic_type_var name="SR" arg="post" />
 	    
 	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" 
-	    			xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="post_date" label_at="top">
+	    		xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="tweeters.photo" label_at="top">
 	    	
 	    	<collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
 				<scalar name="title" xpath="./strong" />
