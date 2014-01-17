@@ -299,6 +299,40 @@
 
   </meta_metadata> 
   
+   <meta_metadata name = "bestbuy_product" extends="product" parser="xpath" user_agentname="firefox">
+  	<selector url_path_tree="http://www.bestbuy.com/site/" domain="bestbuy.com" />
+  	<scalar name="title" xpath="//*[@id='sku-title']/h1" />
+  	<scalar name="price" xpath="//*[@class='item-price']/text()" />
+  	<scalar name="overall_rating" xpath="//*[@class='average-score' and @itemprop='ratingValue']/text()" />
+    <scalar name="description" xpath="//*[@id='long-description']/text()" />
+    
+  	<collection name="features" child_type="document" xpath="//*[@id='features']/div[@class='feature']">
+  		<scalar name="title" xpath="./h4/text()" label="feature"/>
+  		<scalar name="description" xpath="./p/text()" label="detail" />
+
+  	</collection>
+  	
+  
+  	<collection name="whats_included" child_type="document" xpath="//*[@id='included-items']/ul/li">	
+  		<scalar name="title" xpath="./text()" label="included_item"/>
+  	</collection>
+ 	
+ 	<collection name="specifications" child_type="document" xpath="//*[@id='specs-sample']/ul/li">
+  		<scalar name="title" xpath="./span[@class='spec-label']/text()" label="spec"/>
+  		<scalar name="description" xpath="./text()" label="deatail"/>
+  	</collection>
+  	
+  	<collection name="companion_products" child_type="bestbuy_product" xpath="(//*[@id='productList'])[1]/li">
+  		<scalar name="title" xpath="./a[2]/text()"/>
+  		<scalar name="location" xpath="./a[2]/@href"/>
+  	</collection>
+  	
+  	<collection name="comparative_products" child_type="bestbuy_product" xpath="(//*[@id='productList'])[2]/li">
+  		<scalar name="title" xpath="./a[2]/text()"/>
+  		<scalar name="location" xpath="./a[2]/@href"/>
+  	</collection>
+  </meta_metadata>
+  
   <meta_metadata name="samsclub_product" extends="product" parser="xpath" user_agent_name="firefox">
     <selector url_path_tree="http://www.samsclub.com/sams/" domain="samsclub.com" />
     
