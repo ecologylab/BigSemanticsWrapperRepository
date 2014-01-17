@@ -136,6 +136,30 @@
     </collection>
   </meta_metadata>
   
+  
+  <meta_metadata name="tigerdirect_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_stripped="http://www.tigerdirect.com/applications/SearchTools/item-details.asp" />
+    <example_url url="http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=8674056" />
+     
+    <composite name="image">
+      <scalar name="location" xpath="//img[@id='detailImg']/@src" />
+    </composite> 
+    
+    <scalar name="title" xpath="//h1" /> 
+    <scalar name="price" xpath="//span[@class='salePrice']" />
+    <scalar name="overall_rating" xpath="//span[@class='piRatingVal']" >
+    	<filter regex="$" replace=" out of 5" />
+    </scalar>	
+    <scalar name="description" xpath="//div[@id='WriteUp']/div" />
+
+    <collection name="reviews" xpath="//div[@id='customerReviews']/div[@class='review']">
+      <scalar name="title" xpath=".//h6" />
+      <scalar name="rating" xpath=".//div[@class='itemRating']/strong" />
+      <scalar name="description" xpath=".//p" />
+    </collection> 
+  </meta_metadata>
+  
+  
   <meta_metadata name="walmart_product" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_path_tree="http://www.walmart.com/ip/" />
     <example_url url="http://www.walmart.com/ip/The-Hobbit-An-Unexpected-Journey-DVD-UltraViolet-Widescreen/23263613" />
