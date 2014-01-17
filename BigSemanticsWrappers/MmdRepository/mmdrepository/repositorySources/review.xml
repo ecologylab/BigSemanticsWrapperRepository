@@ -7,7 +7,7 @@
           <scalar name="overall_rating" scalar_type="String"
             navigates_to="reviews_location" layer="2.0" style="underTopRight_div"
             schema_org_itemprop="aggregateRating" />
-          <scalar name="publication_date" scalar_type="String"/>s
+          <scalar name="publication_date" scalar_type="String"/>
 	</meta_metadata>
 
 </meta_metadata_repository>
