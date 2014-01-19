@@ -11,22 +11,24 @@
 	</meta_metadata>
 	
 		<meta_metadata name="anandtech_review" extends="tech_review" comment="anandtech.com review" parser="xpath">
-		<selector url_path_tree="http://www.anandtech.com/print" domain="anandtech.com" />
+		<selector url_path_tree="http://www.anandtech.com/print/" domain="anandtech.com" />
 		<scalar name="title" xpath="//div[@class='blog_top_left']//h2/text()" />
 		<scalar name="author" scalar_type="String" xpath="//*[@class='blog_top_left']/span/a[2]/text()"/>
 		<scalar name="publication_date" xpath="//div[@class='blog_top_left']//span/em/text()"/> 
 		
 		<scalar name="price" xpath="(//*[@class='articleContent']//table)[1]/tbody/tr[last()]/td[2]/text()"/>
+		
 		<collection name="sections" child_type="document" xpath="//*[@class='articleContent']/h2[position()>1]">
 			<scalar name="title" label="heading" xpath="./preceding-sibling::h2[1]"/>
 			<scalar name="description" label="conclusion" xpath="preceding-sibling::p[1]"/>
-			
+		 	
 		</collection>
-		 <collection name="specs" child_type="document" xpath="(//*[@class='articleContent']//table)[1]/tbody/tr[position() < last()]">
+		
+	    <collection name="specifications" child_type="document" xpath="(//*[@class='articleContent']//table)[1]/tbody/tr">
 			<scalar name="title" label="spec" xpath="./td[1]/text()"/>
-			<scalar name="description" label="detail" xpath="/td[2]/text()"/>
+			<scalar name="description" label="detail" xpath="./td[2]/text()"/>
 		</collection>
-		 
+		
 	</meta_metadata>
 	
 </meta_metadata_repository>
