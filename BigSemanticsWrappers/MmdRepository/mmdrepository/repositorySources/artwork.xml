@@ -31,18 +31,23 @@
 	
 	<meta_metadata name="moma_artwork" extends="artwork"  parser="xpath">
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
-		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />
+		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />  
+		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+" />
     
-		<scalar name="title" xpath="//div[@id='omniture_caption']/h3/i" />
+		<scalar name="title" xpath="//div[@id='omniture_caption']/h3" />
+		
 		<collection name="authors" xpath="//h4[@class='artist']/a">
-			<scalar name="location" xpath="./@href" hide="true" />
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="." />
 		</collection>
+		
 		<scalar name="status" scalar_type="String" xpath="//div[@class='status']/strong" />
 		<composite name="moma_department" type="compound_document" label="department"
                xpath="//div[@class='item']/h4[contains(text(), 'Department:')]/../div/a">
 			<scalar name="title" xpath="." label="name"/>
 			<scalar name="location" xpath="./@href" />
 		</composite>
+		
 		<composite name="moma_classification" type="compound_document" label="classification"
                xpath="//div[@class='item']/h4[contains(text(), 'Classification:')]/../div/a">
 			<scalar name="title" xpath="." label="name"/>
@@ -112,5 +117,16 @@
 			<scalar name="location" xpath="./a/@href" />
 		</collection>
   </meta_metadata>
+		
+	<meta_metadata name="moma_artist" extends="artist" parser="xpath">
+		<selector url_stripped="http://www.moma.org/collection/artist.php" />
+		<!-- add image -->
+		
+		<scalar name="title" xpath="//h2[@class='pagetitle']" />
+		<collection name="creative_works" xpath="//ul[@id='thumbnail-view-items']/li/div/div">
+			<scalar name="location" xpath="./a[2]/@href" hide="true"/>
+			<scalar name="title" xpath="./div/i"/>
+		</collection>
+	</meta_metadata>	
 		
 </meta_metadata_repository>
