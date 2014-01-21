@@ -18,13 +18,16 @@
 		
 		<scalar name="price" xpath="(//*[@class='articleContent']//table)[1]/tbody/tr[last()]/td[2]/text()"/>
 		
-		<collection name="sections" child_type="document" xpath="//*[@class='articleContent']/h2[position()>1]">
-			<scalar name="title" label="heading" xpath="./preceding-sibling::h2[1]"/>
-			<scalar name="description" label="conclusion" xpath="preceding-sibling::p[1]"/>
+		<collection name="sections" child_type="document" xpath="//*[@class='articleContent']/h2[position()>1 and ((preceding-sibling::h2[1])[text()])]">
+		<!-- Due to the common use of empty headers or headers that only contain whitespace to delineate
+			 some sections, this collection will occasionally return 'conclusions' without 'headings' -->	
+			<scalar name="title" label="heading" xpath="./preceding-sibling::h2[1]/text()"/>
+			<scalar name="description" label="conclusion" xpath="preceding-sibling::p[1]/text()"/>
 		 	
 		</collection>
 		
 	    <collection name="specifications" child_type="document" xpath="(//*[@class='articleContent']//table)[1]/tbody/tr">
+	    <!-- The first column of the first table usually has specs, but this is not guaranteed. -->
 			<scalar name="title" label="spec" xpath="./td[1]/text()"/>
 			<scalar name="description" label="detail" xpath="./td[2]/text()"/>
 		</collection>
