@@ -19,8 +19,7 @@
             comment="Medium on which the work is done." />
 		<scalar name="year" comment="Year the work was created." scalar_type="String" />
 		<scalar name="dimensions" scalar_type="String" />
-	</meta_metadata>
-	
+	</meta_metadata>	
 
 	<meta_metadata name="mm_artwork" extends="artwork"
                  comment="ACM Multimedia Interactive Artwork class">
@@ -28,6 +27,34 @@
 		<scalar name="extended_abstract" comment="Link the ACM Portal page." scalar_type="ParsedURL" />
 	</meta_metadata>
 
+
+	<meta_metadata name="rhizome_artwork" extends="artwork"  parser="xpath">
+		<selector domain="rhizome.org" url_regex_fragment="artwork" />
+		
+		<scalar name="title" xpath="//span[@class='artwork-title span-20']/a[1]" />
+		<scalar name="year" xpath="//div[@class]/ul/li[1]/span[2]"/>
+
+		<collection name="authors" xpath="//div[@id='artist-info']/span[2]/a">
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="." />
+		</collection>
+		
+		<collection name="related_works" child_type="artwork" label="related works" tag="related works" 
+		other_tags="creative_works" child_tag="artwork" xpath="//div[@id='artwork-similar-works']/div/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./img/@title"/>
+        </collection>		
+	</meta_metadata>
+	
+	<meta_metadata name="rhizome_artist" extends="artist" parser="xpath">
+		<selector domain="rhizome.org" url_regex_fragment="profile" />
+ 
+		<scalar name="title" xpath="//div[@class='user-name']" />
+		<collection name="creative_works" xpath="//div[@id='portfolio-no-scroll']/div">
+			<scalar name="location" xpath="./a/@href" hide="true"/>
+			<scalar name="title" xpath="./div/a"/>
+		</collection>
+	</meta_metadata>
 	
 	<meta_metadata name="moma_artwork" extends="artwork"  parser="xpath">
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
