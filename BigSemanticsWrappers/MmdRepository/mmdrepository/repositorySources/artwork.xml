@@ -39,18 +39,40 @@
 			<scalar name="title" xpath="." />
 		</collection>
 		
+		<scalar name="description" xpath="//div[@id='artwork-summary']"/>
+		
 		<collection name="related_works" child_type="artwork" label="related works" tag="related works" 
 		other_tags="creative_works" child_tag="artwork" xpath="//div[@id='artwork-similar-works']/div/a">       
             <scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="./img/@title"/>
         </collection>		
+        
+        <collection name="tags" child_type="rhizome_tag" label="tags" tag="tag" xpath="//div[@id='artwork-tags']/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>    
+	</meta_metadata>
+	
+	<meta_metadata name="rhizome_tag" extends="artist" parser="xpath">
+		<selector domain="rhizome.org" url_regex_fragment="tag" />
+ 
+		<collection name="creative_works" xpath="//div[@id='work']">
+			<scalar name="location" xpath="./a/@href" hide="true"/>
+			<scalar name="title" xpath="./div[1]"/>
+			<collection name="authors" xpath="./div[2]/a">
+				<scalar name="location" xpath="./@href" hide="true"/>
+				<scalar name="title" xpath="." />
+			</collection>		
+		</collection>
 	</meta_metadata>
 	
 	<meta_metadata name="rhizome_artist" extends="artist" parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="profile" />
  
 		<scalar name="title" xpath="//div[@class='user-name']" />
-		<collection name="creative_works" xpath="//div[@id='portfolio-no-scroll']/div">
+		<scalar name="bio" tag="abstract" label="artist bio" xpath="//div[@id='profile-bio']" scalar_type="String"/>
+		
+		<collection name="creative_works" xpath="//div[@class='section-content span-24']/div/div[@class='portfolio-work']">
 			<scalar name="location" xpath="./a/@href" hide="true"/>
 			<scalar name="title" xpath="./div/a"/>
 		</collection>
