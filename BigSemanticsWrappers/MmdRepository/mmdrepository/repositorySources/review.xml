@@ -39,10 +39,11 @@
 		<selector url_path_tree="http://reviews.cnet.com/" domain="cnet.com" />
 		<scalar name="title" xpath="//span[@class='productSpan']" />
 		
+		<!-- rating buggy -->
+		<scalar name="overall_rating" xpath="//*[@id='editorSubRating']/div[2]/div/ul/li[2]/div[1]/strong"/>
 		<scalar name="author" scalar_type="String" xpath="//span[@class='byline']/a"/>
 		<scalar name="publication_date" xpath="//div[@class='reviewDate']//span/time"/> 
 		<scalar name="price" label="msrp" xpath="(//span[@class='msrp']"/>
-		<!--  -->
 		
 		<scalar name="good" label="the good" scalar_type="String" xpath="//div[@id='reviewSummary']/p[1]"/>
 		<scalar name="bad" label="the bad" scalar_type="String" xpath="//div[@id='reviewSummary']/p[2]"/>
