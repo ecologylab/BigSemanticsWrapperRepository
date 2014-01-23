@@ -110,7 +110,80 @@
       </if>
     </semantic_actions>
   </meta_metadata>
+    <meta_metadata name="apple_iProduct" extends="product" parser="xpath" user_agent_name="chrome"> 
+  	<selector url_regex="http://store.apple.com/us/buy-[a-z]*/[a-z0-9-]*\?.*" domain="apple.com" >
+  		<param name="step" value="accessories" />
+  	</selector>		
+  	
+<!--  	<example_url url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&step=accessories" />
+  	<example_url url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&product=ME495LL/A&step=accessories" />  -->
+  	
+   	<scalar name="title" xpath="//div[@class='section section-product-title']/h3/text()" />	
+   	
+   	<scalar name="price" xpath="//ul[@class='purchase-info']/li[@class='total']//span[@itemprop='price']/text()" />	
   
+    <composite name="image" xpath="//img[@class='hero-img hero-img ir']">
+    	<scalar name="location" xpath="./@src" />
+    </composite>
+  </meta_metadata>     
+
+  
+  <meta_metadata name="apple_product_mac" extends="product" parser="xpath" user_agent_name="chrome">
+  	<selector url_regex="http://store.apple.com/us/buy-mac/[a-z-]*\?.*" domain="apple.com" >
+      <param name="step" value="config" />
+    </selector>		
+<!-- 	<example_url url="http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&step=config" /> -->
+  	
+  	<scalar name="title" xpath="//h1[@class='title']" >
+  		<filter regex="Configure your" replace="" />
+  	</scalar>
+ 	<scalar name="price" xpath="//p[@itemprop='price']" />
+ 	
+ 	<composite name="image" xpath="//img[@class='hero-img hero-img ir']">
+ 		<scalar name="location" xpath="./@src" />
+ 	</composite>		
+ 	
+ <!--  We currently don't have support for collections of strings  
+ 	<collection name="specifications" child_scalar_type="String" xpath="//div[@class='section']/ul[@class='specs-list']/li/text()" />    --> 
+  </meta_metadata> 
+  
+  
+  <meta_metadata name="apple_product_accessory" extends="product" parser="xpath" user_agent_name="chrome">
+  	<selector url_path_tree="http://store.apple.com/us/product/" />
+  	
+  	<scalar name="title" xpath="//div[@class='action-card']//div[@id='title']/h1[@itemprop='name']/text()" />
+  	<scalar name="price" xpath="//span[@itemprop='price']" />
+  	
+ 	<composite name="image" xpath="//div[@class='materializer draggable']/figure/img">
+  		<scalar name="location" xpath="./@src" />
+  	</composite> 
+  	
+  	<scalar name="overall_rating" xpath="//div[contains(@class, 'product-rating-wrapper')]//span[@itemprop='ratingValue']/text()" >
+  		<filter regex="$" replace=" out of 5" />
+  	</scalar>	    	 
+  	<scalar name="description" xpath="//li[@id='overview-applerecommends']//div[@class='bkg-none']/text()" />
+  	
+<!-- All of the other descriptions would require implementing collections of strings:
+	<collection name="overview" child_scalar_type="String" xpath="//div[@class='group-image-none clearfix']//p" />
+	<collection name="highlights" child_scalar_type="String" xpath="//li[@id='overview-highlights]//ul[@class='pbl bulleted']/li" />
+	<collection name="tech specs" child_scalar_type="String" xpath="//li[@id='overview-techspecs']//ul[@class='pbl bulleted']/li" />
+ -->  
+	<collection name="reviews" xpath="//div[@class='reviews']//div[@id='most-useful-reviews']/ul[@class='review-list']/li">
+		<scalar name="title" xpath=".//h3[@class='summary']/text()" />
+		<scalar name="rating" xpath=".//div[@itemprop='reviewRating']//span[@itemprop='ratingValue']/text()" >
+			<filter regex="$" replace=" out of 5" />
+		</scalar>
+		<scalar name="description" xpath=".//p[@itemprop='reviewBody']/span[@class='more-text']/text()" />
+	</collection>
+
+    <collection name="people_also_buy" child_type="apple_product_accessory" xpath="//div[@id='navigation']//div[@class='tile-body']">
+        <scalar name="location" xpath="./h3/a/@href" />  
+    	<scalar name="title" xpath="./h3/a/text()" />							
+      	<scalar name="price" xpath=".//div[@class='price']/span/text()" />	  		
+    </collection>
+  </meta_metadata>
+
+ 
   
   <meta_metadata name="newegg_product" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_stripped="http://www.newegg.com/Product/Product.aspx" />

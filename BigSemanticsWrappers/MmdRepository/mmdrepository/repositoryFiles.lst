@@ -37,6 +37,7 @@ repositorySources/productAndService.xml
 repositorySources/publication.xml
 repositorySources/pubmed.xml
 repositorySources/restaurant.xml
+repositorySources/review.xml
 repositorySources/rss.xml
 repositorySources/scholarlyArticle.xml
 repositorySources/scienceDirect.xml
