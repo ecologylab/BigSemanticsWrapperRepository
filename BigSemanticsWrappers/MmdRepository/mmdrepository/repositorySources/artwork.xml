@@ -178,4 +178,54 @@
 		</collection>
 	</meta_metadata>	
 		
+	<meta_metadata name="tate_artwork" extends="artwork"  parser="xpath">
+		<selector url_path_tree="http://www.tate.org.uk/art/artworks/" />
+	 
+		<scalar name="title" xpath="//span[@class='title']" />
+		<scalar name="year" xpath="//span[@class='datetext']"/>
+		<scalar name="medium" xpath="//span[@class='infoValue infoMedium']"/>
+		
+		<collection name="authors" xpath="//div[@class='infoWorkArtist infoValue']">
+			<scalar name="location" xpath="./a/@href" hide="true"/>
+			<scalar name="title" xpath=".//span[@class='infoWorkArtName']" />
+		</collection>
+		
+		<scalar name="description" xpath="//div[@class='texts_content']"/>
+		
+		<collection name="works_of_interest" child_type="artwork" label="works of interest" tag="related works" 
+		other_tags="creative_works" child_tag="artwork" xpath="//div[@class='carousel-clip']/div/div/div[2]/div[2]/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./span"/>
+        </collection>		
+        
+        <collection name="tags" child_type="tate_filter" label="tags" tag="tag" xpath="//span[@class='tag']/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>    
+	</meta_metadata>
+	
+	<meta_metadata name="tate_filter" extends="artist" parser="xpath">
+		<selector url_stripped="http://www.tate.org.uk/art/artworks" />
+ 
+		<collection name="creative_works" xpath="//div[@class='grid-work-text']">
+			<scalar name="location" xpath="./div[2]/a/@href" hide="true"/>
+			<scalar name="title" xpath="./div[2]/a/span"/>
+			<collection name="authors" xpath="./div[2]/a">
+				<scalar name="title" xpath="./div[1]" />
+			</collection>		
+		</collection>
+	</meta_metadata>
+	
+	<meta_metadata name="tate_artist" extends="artist" parser="xpath">
+		<selector domain="tate.org.uk" url_regex_fragment="artists" />
+ 
+		<scalar name="title" xpath="//div[@class='region-inner region-header-second-inner']/h1/span[1]" />
+		<scalar name="bio" tag="abstract" label="artist bio" xpath="//div[@class='texts_content']/p[1]" scalar_type="String"/>
+		
+		<collection name="creative_works" xpath="//div[@class='carousel-clip']/div/div/div[2]/div[2]/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./span"/>
+        </collection>	
+	</meta_metadata>
+		
 </meta_metadata_repository>
