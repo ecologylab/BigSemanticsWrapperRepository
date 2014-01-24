@@ -180,7 +180,9 @@
 		
 	<meta_metadata name="tate_artwork" extends="artwork"  parser="xpath">
 		<selector url_path_tree="http://www.tate.org.uk/art/artworks/" />
-	 
+		<example_url url="http://www.tate.org.uk/art/artworks/guerrilla-girls-no-title-p78793" />
+	 	<example_url url="http://www.tate.org.uk/art/artworks/fontana-spatial-concept-waiting-t00694" />
+		
 		<scalar name="title" xpath="//span[@class='title']" />
 		<scalar name="year" xpath="//span[@class='datetext']"/>
 		<scalar name="medium" xpath="//span[@class='infoValue infoMedium']"/>
@@ -206,6 +208,7 @@
 	
 	<meta_metadata name="tate_filter" extends="artist" parser="xpath">
 		<selector url_stripped="http://www.tate.org.uk/art/artworks" />
+ 		<example_url url="http://www.tate.org.uk/art/artworks?st=227" />
  
 		<collection name="creative_works" xpath="//div[@class='grid-work-text']">
 			<scalar name="location" xpath="./div[2]/a/@href" hide="true"/>
@@ -218,6 +221,8 @@
 	
 	<meta_metadata name="tate_artist" extends="artist" parser="xpath">
 		<selector domain="tate.org.uk" url_regex_fragment="artists" />
+ 		<example_url url="http://www.tate.org.uk/art/artists/cy-twombly-2079" />
+ 
  
 		<scalar name="title" xpath="//div[@class='region-inner region-header-second-inner']/h1/span[1]" />
 		<scalar name="bio" tag="abstract" label="artist bio" xpath="//div[@class='texts_content']/p[1]" scalar_type="String"/>
