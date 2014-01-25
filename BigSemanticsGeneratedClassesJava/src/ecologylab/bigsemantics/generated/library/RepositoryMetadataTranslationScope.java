@@ -56,7 +56,21 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.MmArtwork.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.MomaArtist.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.MomaArtwork.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.RhizomeArtist.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.RhizomeArtwork.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.RhizomeTag.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.TateArtist.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.TateArtwork.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.TateFilter.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.TempFieldValueHolder.class,
 
@@ -354,6 +368,14 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.AmazonProduct.class,
 
+		ecologylab.bigsemantics.generated.library.product_and_service.AppleIProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.AppleProductAccessory.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.AppleProductMac.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.BestbuyProduct.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.Commodity.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.EbayProduct.class,
@@ -369,6 +391,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.product_and_service.Service.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.TargetProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.TigerdirectProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.WalmartProduct.class,
 
@@ -393,6 +417,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.restaurant.Restaurant.class,
 
 		ecologylab.bigsemantics.generated.library.restaurant.RestaurantGenre.class,
+
+		ecologylab.bigsemantics.generated.library.review.AnandtechReview.class,
+
+		ecologylab.bigsemantics.generated.library.review.CnetReview.class,
+
+		ecologylab.bigsemantics.generated.library.review.TechReview.class,
 
 		ecologylab.bigsemantics.generated.library.rss.Channel.class,
 
@@ -504,7 +534,15 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.video.SocialVideo.class,
 
+		ecologylab.bigsemantics.generated.library.video.YoutubeChannel.class,
+
 		ecologylab.bigsemantics.generated.library.video.YoutubeSearchResults.class,
+
+		ecologylab.bigsemantics.generated.library.video.YoutubeVideo.class,
+
+		ecologylab.bigsemantics.generated.library.video.YoutubeVideoGrid.class,
+
+		ecologylab.bigsemantics.generated.library.video.YoutubeVideoList.class,
 
 		ecologylab.bigsemantics.generated.library.wikipedia.Paragraph.class,
 

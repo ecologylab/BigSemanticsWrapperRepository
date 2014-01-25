@@ -115,8 +115,8 @@
   		<param name="step" value="accessories" />
   	</selector>		
   	
-<!--  	<example_url url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&step=accessories" />
-  	<example_url url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&product=ME495LL/A&step=accessories" />  -->
+  	<example_url url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&amp;step=accessories" />
+  	<example_url url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&amp;product=ME495LL/A&amp;step=accessories" />
   	
    	<scalar name="title" xpath="//div[@class='section section-product-title']/h3/text()" />	
    	
@@ -132,7 +132,7 @@
   	<selector url_regex="http://store.apple.com/us/buy-mac/[a-z-]*\?.*" domain="apple.com" >
       <param name="step" value="config" />
     </selector>		
-<!-- 	<example_url url="http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&step=config" /> -->
+ 	<example_url url="http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&amp;step=config" />
   	
   	<scalar name="title" xpath="//h1[@class='title']" >
   		<filter regex="Configure your" replace="" />
@@ -143,8 +143,7 @@
  		<scalar name="location" xpath="./@src" />
  	</composite>		
  	
- <!--  We currently don't have support for collections of strings  
- 	<collection name="specifications" child_scalar_type="String" xpath="//div[@class='section']/ul[@class='specs-list']/li/text()" />    --> 
+ 	<collection name="specifications" child_scalar_type="String" xpath="//div[@class='section']/ul[@class='specs-list']/li" />
   </meta_metadata> 
   
   
@@ -163,11 +162,10 @@
   	</scalar>	    	 
   	<scalar name="description" xpath="//li[@id='overview-applerecommends']//div[@class='bkg-none']/text()" />
   	
-<!-- All of the other descriptions would require implementing collections of strings:
 	<collection name="overview" child_scalar_type="String" xpath="//div[@class='group-image-none clearfix']//p" />
 	<collection name="highlights" child_scalar_type="String" xpath="//li[@id='overview-highlights]//ul[@class='pbl bulleted']/li" />
-	<collection name="tech specs" child_scalar_type="String" xpath="//li[@id='overview-techspecs']//ul[@class='pbl bulleted']/li" />
- -->  
+	<collection name="tech_specs" child_scalar_type="String" xpath="//li[@id='overview-techspecs']//ul[@class='pbl bulleted']/li" />
+
 	<collection name="reviews" xpath="//div[@class='reviews']//div[@id='most-useful-reviews']/ul[@class='review-list']/li">
 		<scalar name="title" xpath=".//h3[@class='summary']/text()" />
 		<scalar name="rating" xpath=".//div[@itemprop='reviewRating']//span[@itemprop='ratingValue']/text()" >
