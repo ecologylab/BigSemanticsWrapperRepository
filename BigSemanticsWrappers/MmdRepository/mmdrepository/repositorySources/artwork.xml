@@ -86,9 +86,11 @@
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />  
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+" />
-		<example_url url="http://www.moma.org/collection/browse_results.php?criteria=O%3AAD%3AE%3A4675&page_number=2&template_id=1&sort_order=1" />
-    
+		<example_url url="http://www.moma.org/collection/object.php?object_id=78311" />
+		
 		<scalar name="title" xpath="//div[@id='omniture_caption']/h3" />
+
+		<!-- year breaks on non-digits -->
 		<scalar name="year" xpath="//dl[@class='caption']/dd[1]"/>
 		<scalar name="medium" xpath="//dl[@class='caption']/dd[2]"/> 
 	 
@@ -117,7 +119,8 @@
             xpath="//div[@class='item']/h4[contains(text(), 'Resources:')]/../div/a/@href" />
 		<scalar name="moma_id" scalar_type="String" xpath="//p[@class='caption'][2]" />
 		
-		<scalar name="image" scalar_type="ParsedURL" hide="true"
+		<!-- make image -->
+		<scalar name="image_url" scalar_type="ParsedURL" hide="true"
             xpath="//p[@id='mainImage']/img/@src" />
 		
 		<composite name="temp_field_value_holder" extends="metadata" hide="true"
