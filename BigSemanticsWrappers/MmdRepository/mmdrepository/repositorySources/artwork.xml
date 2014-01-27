@@ -30,6 +30,7 @@
 
 	<meta_metadata name="rhizome_artwork" extends="artwork"  parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="artwork" />
+		<example_url url="http://rhizome.org/artbase/artwork/3272/"/>
 		
 		<scalar name="title" xpath="//span[@class='artwork-title span-20']/a[1]" />
 		<scalar name="year" xpath="//div[@class]/ul/li[1]/span[2]"/>
@@ -55,6 +56,7 @@
 	
 	<meta_metadata name="rhizome_tag" extends="artist" parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="tag" />
+		<example_url url="http://rhizome.org/artbase/tag/animation/"/>
  
 		<collection name="creative_works" xpath="//div[@id='work']">
 			<scalar name="location" xpath="./a/@href" hide="true"/>
@@ -68,6 +70,8 @@
 	
 	<meta_metadata name="rhizome_artist" extends="artist" parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="profile" />
+		<example_url url="http://rhizome.org/profile/uiuuii/" />
+		
  
 		<scalar name="title" xpath="//div[@class='user-name']" />
 		<scalar name="bio" tag="abstract" label="artist bio" xpath="//div[@id='profile-bio']" scalar_type="String"/>
@@ -82,13 +86,16 @@
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />  
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+" />
+		<example_url url="http://www.moma.org/collection/browse_results.php?criteria=O%3AAD%3AE%3A4675&page_number=2&template_id=1&sort_order=1" />
     
 		<scalar name="title" xpath="//div[@id='omniture_caption']/h3" />
-		
+		<scalar name="year" xpath="//dl[@class='caption']/dd[1]"/>
+		<scalar name="medium" xpath="//dl[@class='caption']/dd[2]"/> 
+	 
 		<collection name="authors" xpath="//h4[@class='artist']/a">
 			<scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="." />
-		</collection>
+		</collection> 
 		
 		<scalar name="status" scalar_type="String" xpath="//div[@class='status']/strong" />
 		<composite name="moma_department" type="compound_document" label="department"
@@ -110,7 +117,7 @@
             xpath="//div[@class='item']/h4[contains(text(), 'Resources:')]/../div/a/@href" />
 		<scalar name="moma_id" scalar_type="String" xpath="//p[@class='caption'][2]" />
 		
-		<scalar name="image_url" scalar_type="ParsedURL" hide="true"
+		<scalar name="image" scalar_type="ParsedURL" hide="true"
             xpath="//p[@id='mainImage']/img/@src" />
 		
 		<composite name="temp_field_value_holder" extends="metadata" hide="true"
@@ -159,6 +166,7 @@
 	<meta_metadata name="moma_list" type="search" parser="xpath">
     <generic_type_var name="SR" arg="moma_artwork" />
     
+    
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" />
     
 		<collection name="search_results" xpath="//ul[@id='thumbnail-view-items']/li">
@@ -169,6 +177,7 @@
 		
 	<meta_metadata name="moma_artist" extends="artist" parser="xpath">
 		<selector url_stripped="http://www.moma.org/collection/artist.php" />
+		<example_url url="http://www.moma.org/collection/artist.php?artist_id=4675" />
 		<!-- add image -->
 		
 		<scalar name="title" xpath="//h2[@class='pagetitle']" />
@@ -205,7 +214,7 @@
 			<scalar name="title" xpath="."/>
         </collection>    
 	</meta_metadata>
-	
+ 
 	<meta_metadata name="tate_filter" extends="artist" parser="xpath">
 		<selector url_stripped="http://www.tate.org.uk/art/artworks" />
  		<example_url url="http://www.tate.org.uk/art/artworks?st=227" />
@@ -232,5 +241,6 @@
 			<scalar name="title" xpath="./span"/>
         </collection>	
 	</meta_metadata>
+
 		
 </meta_metadata_repository>
