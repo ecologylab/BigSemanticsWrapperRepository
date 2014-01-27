@@ -9,7 +9,7 @@
 
 <meta_metadata name="flamenco_object" extends="creative_work" parser="xpath">
 	<selector url_path_tree="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/" domain="orange.sims.berkely.edu"/>
-	
+	<example_url url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&amp;group=objects&amp;index=15"/>
 	<scalar name="title" xpath="//tr[@valign='top'][2]/td[2]" />
 	<scalar name="description" xpath="//tr[@valign='top'][3]/td[2]"/>
 	<!-- If the artist is unknown, this displays an (essentailly) random facet. The Unknown artist is reported in the "specific_facets" collection -->
