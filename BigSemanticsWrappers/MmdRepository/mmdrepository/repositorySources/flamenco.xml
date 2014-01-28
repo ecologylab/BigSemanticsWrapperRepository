@@ -1,34 +1,52 @@
 <meta_metadata_repository name="flamenco" package="ecologylab.bigsemantics.generated.library.flamenco" default_user_agent_name="chrome_2">
 
 
-<meta_metadata name="flamenco_facet" extends="compound_document" parser="xpath">
-	<scalar name="parent" scalar_type="String"/>
-	<scalar name="category" scalar_type="String"/>
-	<scalar name="object_count" scalar_type="String"/>
-</meta_metadata>
 
+<!-- 
+The 'flamenco_object' serves as an individual piece in the museum, but also as a facet (or category).
+
+
+ -->
 <meta_metadata name="flamenco_object" extends="creative_work" parser="xpath">
-	<selector url_path_tree="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/" domain="orange.sims.berkely.edu"/>
+    <selector url_path_tree="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/" domain="orange.sims.berkely.edu"/>
 	<example_url url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&amp;group=objects&amp;index=15"/>
 	<scalar name="title" xpath="//tr[@valign='top'][2]/td[2]" />
 	<scalar name="description" xpath="//tr[@valign='top'][3]/td[2]"/>
+	
+	
+	<scalar name="parent" scalar_type="String"/>
+	<scalar name="category" label="title" scalar_type="String" xpath="//table[@class='termbox']//tr/td[1]/span[position() = last()]/span"/>
+	
+	<collection name="flamenco_objects" child_type="flamenco_object" xpath="(//table[@cellpadding='2'])[last()]/tbody/tr/td">
+		<scalar name="title" xpath="./a/span"/>
+		<scalar name="location" xpath="./a/@href"/>
+	
+	</collection>
+	
+	<collection name="sub_facets" child_type="flamenco_object" xpath="//td[@class='itemcolumn']//td[@class='facetbox']">
+		<scalar name="title" xpath="./a/span"/>
+		<scalar name="location" xpath="./a/@href"/>
+	</collection>
 	<!-- If the artist is unknown, this displays an (essentailly) random facet. The Unknown artist is reported in the "specific_facets" collection -->
 	<collection name="authors" label="authors" xpath="//tr[@valign='top'][4]/td[2]">
 		<scalar name="title" xpath="./text()"/>
 	</collection>
 	<scalar name="media_type" scalar_type="String" xpath="//tr[@valign='top'][5]/td[2]"/>
 
-	<collection name="general_facets" child_type="flamenco_facet" xpath="//div[@class='endgame']/div/table/tbody/tr/td/form[2]/table/tbody//nobr/a">
+	<collection name="general_facets" child_type="flamenco_object" xpath="//div[@class='endgame']/div/table/tbody/tr/td/form[2]/table/tbody//nobr/a">
 		<scalar name="title" xpath="./span" label="facet_name"/>
 		<scalar name="object_count" xpath="./../span/text()"/>
+		<scalar name="location" xpath="./@href"/>
 		<scalar name="category" xpath="./../../../../../../../preceding-sibling::tr[1]//span[@class='facet']"/>
 	</collection>
-	<collection name="specific_facets" child_type="flamenco_facet" xpath="//div[@class='endgame']/div/table/tbody/tr//span[@class='sel']">
+	<collection name="specific_facets" child_type="flamenco_object" xpath="//div[@class='endgame']/div/table/tbody/tr//span[@class='sel']">
 		<scalar name="title" xpath="./a/span/text()" label="facet_name"/>
 		<scalar name="object_count" xpath="./span[@class='count']"/>
 		<scalar name="category" xpath="./../../preceding-sibling::tr[1]/td[@class='valuebox']/span/span"/>
-	
+		<scalar name="location" xpath="./a/@href"/>
 	</collection>
+	
+	
 </meta_metadata>
 
 </meta_metadata_repository>
