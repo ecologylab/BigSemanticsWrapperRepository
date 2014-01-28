@@ -260,6 +260,40 @@
 			<scalar name="title" xpath="./span"/>
         </collection>	
 	</meta_metadata>
+	
+	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">
+		<selector url_path_tree="http://www.metmuseum.org/Collections/search-the-collections/" />
+		<selector url_path_tree="http://www.metmuseum.org/collections/search-the-collections/" />
+		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/488690" />
+		
+		<scalar name="title" xpath="//div[@class='text-box first cleared ']/h2" />
+		
+		<!-- special characters (dash) get deleted -->
+		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
+		<scalar name="year" xpath="(//dd[preceding-sibling::dt[contains(text(),'Date:')]])[1]"/>
+		
+		<scalar name="medium" xpath="(//dd[preceding-sibling::dt[contains(text(),'Medium:')]])[1]"/>
+		
+		<collection name="authors" xpath="//dt[text()='Who']/../dd[1]/ul/li/a">
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="." />
+		</collection>
+		
+		<scalar name="description" xpath="//a[contains(text(),'Description')]/../div/div/p"/>
+		
+		<collection name="works_of_interest" child_type="met_artwork" label="related works" tag="related works" 
+		other_tags="creative_works" child_tag="artwork" xpath="//div[@class='object-info']/p/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>		
+        
+        <!-- TODO 
+        <collection name="tags" child_type="tate_filter" label="tags" tag="tag" xpath="//span[@class='tag']/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection> 
+         -->   
+	</meta_metadata>
 
 		
 </meta_metadata_repository>
