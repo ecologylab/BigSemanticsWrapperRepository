@@ -82,6 +82,23 @@
 		</collection>
 	</meta_metadata>
 	
+	<meta_metadata name="rhizome_collection" extends="artist" parser="xpath">
+		<selector domain="rhizome.org" url_regex_fragment="collections" />
+		<example_url url="http://rhizome.org/artbase/collections/6/" />
+		
+ 
+		<scalar name="title" xpath="//div[@id='collection-title-overlay-title']" />
+		<scalar name="bio" tag="abstract" label="about" xpath="//div[@class='statement-column-content']" scalar_type="String"/>
+		
+		<collection name="creative_works" xpath="//div[@class='focused']">
+			<!-- <scalar name="location" xpath=".//span[@class='artwork-title']/a/@href" hide="true"/>  -->
+			<scalar name="description" xpath=".//div[@class='focused-description']" />
+		    
+		    <scalar name="year" xpath=".//span[@class='created']"/>
+			<scalar name="title" xpath=".//span[@class='artwork-title']"/>
+		</collection>
+	</meta_metadata>	
+	
 	<meta_metadata name="moma_artwork" extends="artwork"  parser="xpath">
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />  
@@ -90,7 +107,6 @@
 		
 		<scalar name="title" xpath="//div[@id='omniture_caption']/h3" />
 
-		<!-- year breaks on non-digits -->
 		<scalar name="year" xpath="//dl[@class='caption']/dd[1]"/>
 		<scalar name="medium" xpath="//dl[@class='caption']/dd[2]"/> 
 	 
@@ -120,7 +136,7 @@
 		<scalar name="moma_id" scalar_type="String" xpath="//p[@class='caption'][2]" />
 		
 		<!-- make image -->
-		<scalar name="image_url" scalar_type="ParsedURL" hide="true"
+		<scalar name="image" scalar_type="ParsedURL" hide="true"
             xpath="//p[@id='mainImage']/img/@src" />
 		
 		<composite name="temp_field_value_holder" extends="metadata" hide="true"
