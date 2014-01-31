@@ -84,7 +84,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
 	</collection>
 	<collection name="footnotes" child_type="compound_document" xpath="//div[@id='editoFootNotes']/p">
 
-		<scalar name="description" xpath="./text()"/>
+		<scalar name="description" xpath="."/>
 	</collection>
 </meta_metadata>
  
