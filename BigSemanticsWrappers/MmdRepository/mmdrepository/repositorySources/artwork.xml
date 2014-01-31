@@ -329,5 +329,13 @@
 		</collection>
 	</meta_metadata>	
 		
+	<!-- supports very little due to url structure of site -->	
+	<meta_metadata name="whitney_art" extends="artwork"  parser="xpath">			
+		<selector url_path_tree="http://whitney.org/Collection/" />	
+		<example_url url="http://whitney.org/Collection/OscarBluemner/6766" />
+		
+		<scalar name="title" xpath="//title" />
+		<scalar name="year" xpath="//*[@class='artwork-dates']"/>
+	</meta_metadata>	
 		
 </meta_metadata_repository>
