@@ -262,8 +262,10 @@
 	</meta_metadata>
 	
 	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">
-		<selector url_path_tree="http://www.metmuseum.org/Collections/search-the-collections/" />
-		<selector url_path_tree="http://www.metmuseum.org/collections/search-the-collections/" />
+  				
+		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections/search-the-collections/\d+" />
+		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections/search-the-collections/\d+" />
+				
 		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/488690" />
 		
 		<scalar name="title" xpath="//div[@class='text-box first cleared ']/h2" />
@@ -286,14 +288,46 @@
             <scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="."/>
         </collection>		
-        
-        <!-- TODO 
-        <collection name="tags" child_type="tate_filter" label="tags" tag="tag" xpath="//span[@class='tag']/a">       
+         
+        <collection name="tags" child_type="met_filter" label="tags" tag="tag" xpath="(//div[@class='accordion-inner'])[last()]/dl/dd/ul/li/a">       
             <scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="."/>
         </collection> 
-         -->   
+            
 	</meta_metadata>
 
+	<meta_metadata name="met_filter" extends="artist" parser="xpath">		
+		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+  			<param name="who" />
+		</selector>	
+		
+		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">	
+		  	<param name="where" />
+		</selector>	
+  		
+  		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">			
+  			<param name="what" />
+  		</selector>
+  		
+  		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">		
+  			<param name="when" />
+  		</selector>
+  		
+  		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">		
+  			<param name="deptid" />
+ 		</selector>
+ 		<example_url url="http://www.metmuseum.org/collections/search-the-collections?what=Metal"/>
+ 
+		<collection name="creative_works" xpath="//div[@class='search-results-container cleared visible']/ul/li">
+			<scalar name="location" xpath="./div[2]/p/a/@href" hide="true"/>
+			<scalar name="title" xpath="./div[2]/p/a"/>
+			<!-- can't figure out
+			<collection name="authors" xpath="./div[2]/a">
+				<scalar name="title" xpath="./div[1]" />
+			</collection>
+			-->		
+		</collection>
+	</meta_metadata>	
+		
 		
 </meta_metadata_repository>
