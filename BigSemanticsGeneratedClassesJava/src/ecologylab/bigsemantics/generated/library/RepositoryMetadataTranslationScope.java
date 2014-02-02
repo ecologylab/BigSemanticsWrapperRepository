@@ -54,6 +54,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.Artwork.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.MetArtwork.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.MetFilter.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.MmArtwork.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.MomaArtist.class,
@@ -64,6 +68,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.RhizomeArtwork.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.RhizomeCollection.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.RhizomeTag.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.TateArtist.class,
@@ -73,6 +79,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.artwork.TateFilter.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.TempFieldValueHolder.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.WhitneyArt.class,
 
 		ecologylab.bigsemantics.generated.library.bibManaging.CitationInfo.class,
 
@@ -293,6 +301,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.movie.RottenMovie.class,
 
 		ecologylab.bigsemantics.generated.library.movie.RottenPerson.class,
+
+		ecologylab.bigsemantics.generated.library.museum.FlamencoObject.class,
+
+		ecologylab.bigsemantics.generated.library.museum.FondationArticle.class,
+
+		ecologylab.bigsemantics.generated.library.museum.FondationTag.class,
 
 		ecologylab.bigsemantics.generated.library.nsdl.Header.class,
 
