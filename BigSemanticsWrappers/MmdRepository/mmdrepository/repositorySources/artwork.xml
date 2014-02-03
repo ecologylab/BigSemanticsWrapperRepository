@@ -261,8 +261,7 @@
         </collection>	
 	</meta_metadata>
 	
-	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">
-  				
+	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">				
 		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections/search-the-collections/\d+" />
 		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections/search-the-collections/\d+" />
 				
@@ -292,8 +291,7 @@
         <collection name="tags" child_type="met_filter" label="tags" tag="tag" xpath="(//div[@class='accordion-inner'])[last()]/dl/dd/ul/li/a">       
             <scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="."/>
-        </collection> 
-            
+        </collection>    
 	</meta_metadata>
 
 	<meta_metadata name="met_filter" extends="artist" parser="xpath">		
@@ -329,7 +327,11 @@
 		</collection>
 	</meta_metadata>	
 		
-	<!-- supports very little due to url structure of site -->	
+	<!-- support these urls -->	
+	<!-- http://whitney.org/WatchAndListen/AudioGuides?play_id=208 -->
+	<!-- http://whitney.org/Search?query=Georgia+O%27Keeffe -->
+	<!-- http://whitney.org/Collection/AllanMcCollum/2000190abbbbbbbbbbbb -->
+	<!-- http://whitney.org/Collection/BobThompson/ -->
 	<meta_metadata name="whitney_art" extends="artwork"  parser="xpath">			
 		<selector url_path_tree="http://whitney.org/Collection/" />	
 		<example_url url="http://whitney.org/Collection/OscarBluemner/6766" />
@@ -337,5 +339,18 @@
 		<scalar name="title" xpath="//title" />
 		<scalar name="year" xpath="//*[@class='artwork-dates']"/>
 	</meta_metadata>	
+	
+	<meta_metadata name="guggen_artwork" extends="artwork"  parser="xpath">			
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />		
+		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
 		
+		<scalar name="title" xpath="//*[@id='caption']/i" />
+
+		<scalar name="year" xpath="//*[@id='caption']">
+			<filter regex="\,(.*?)\." />
+		</scalar>
+ 		
+		<scalar name="medium" xpath="(//dd[preceding-sibling::dt[contains(text(),'Medium:')]])[1]"/>
+	</meta_metadata>	
+	
 </meta_metadata_repository>
