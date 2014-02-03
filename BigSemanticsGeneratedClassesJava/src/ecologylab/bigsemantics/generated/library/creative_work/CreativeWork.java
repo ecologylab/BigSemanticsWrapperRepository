@@ -15,7 +15,6 @@ import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -25,7 +24,6 @@ import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +38,7 @@ public class CreativeWork extends CompoundDocument
 
 	@simpl_scalar
 	@simpl_other_tags({"year_of_publication"})
-	private MetadataInteger year;
+	private MetadataString year;
 
 	/** 
 	 *rating in some context
@@ -110,34 +108,34 @@ public class CreativeWork extends CompoundDocument
 		this.authors = authors;
 	}
 
-	public MetadataInteger	year()
+	public MetadataString	year()
 	{
-		MetadataInteger	result = this.year;
+		MetadataString	result = this.year;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new MetadataString();
 			this.year = result;
 		}
 		return result;
 	}
 
-	public Integer getYear()
+	public String getYear()
 	{
-		return this.year == null ? 0 : year().getValue();
+		return this.year == null ? null : year().getValue();
 	}
 
-	public MetadataInteger getYearMetadata()
+	public MetadataString getYearMetadata()
 	{
 		return year;
 	}
 
-	public void setYear(Integer year)
+	public void setYear(String year)
 	{
-		if (year != 0)
+		if (year != null)
 			this.year().setValue(year);
 	}
 
-	public void setYearMetadata(MetadataInteger year)
+	public void setYearMetadata(MetadataString year)
 	{
 		this.year = year;
 	}
