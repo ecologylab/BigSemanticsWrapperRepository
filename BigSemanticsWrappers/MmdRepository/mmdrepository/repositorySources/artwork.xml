@@ -318,39 +318,92 @@
  
 		<collection name="creative_works" xpath="//div[@class='search-results-container cleared visible']/ul/li">
 			<scalar name="location" xpath="./div[2]/p/a/@href" hide="true"/>
-			<scalar name="title" xpath="./div[2]/p/a"/>
-			<!-- can't figure out
-			<collection name="authors" xpath="./div[2]/a">
-				<scalar name="title" xpath="./div[1]" />
-			</collection>
-			-->		
+			<scalar name="title" xpath="./div[2]/p/a"/>	
 		</collection>
 	</meta_metadata>	
 		
-	<!-- support these urls -->	
-	<!-- http://whitney.org/WatchAndListen/AudioGuides?play_id=208 -->
-	<!-- http://whitney.org/Search?query=Georgia+O%27Keeffe -->
-	<!-- http://whitney.org/Collection/AllanMcCollum/2000190abbbbbbbbbbbb -->
-	<!-- http://whitney.org/Collection/BobThompson/ -->
+
 	<meta_metadata name="whitney_art" extends="artwork"  parser="xpath">			
 		<selector url_path_tree="http://whitney.org/Collection/" />	
 		<example_url url="http://whitney.org/Collection/OscarBluemner/6766" />
 		
-		<scalar name="title" xpath="//title" />
-		<scalar name="year" xpath="//*[@class='artwork-dates']"/>
+		<collection name="authors" xpath="//*[@id='mmi_5948']/div[1]/h1">
+			<scalar name="title" xpath="." />
+		</collection>  
+		
+		<scalar name="title" xpath="//*[@class='after-artist-title-module']" />
+		<scalar name="year" xpath="//*[@class='artwork-dates']"/>		
 	</meta_metadata>	
 	
+	
+	<meta_metadata name="whitney_watch_and_listen" extends="artwork"  parser="xpath">			
+		<selector url_path_tree="http://whitney.org/WatchAndListen/" />	
+		<example_url url="http://whitney.org/WatchAndListen/Artists?play_id=903" />
+		
+		<scalar name="title" xpath="//*[@class='watch-and-listen-title']" />
+		
+		<collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist" tag="audio_playlist" 
+		other_tags="audio_playlist" child_tag="audio" xpath="//div[@class='audio-guide-playlist-table-wrapper']/table/tbody">       
+			<!-- may be possible using substring  -->
+            <!-- <scalar name="location" xpath="substring-after(./tr[starts-with(@onclick, 'document.location = \'')]/@onclick)" hide="true"/>  -->
+			<scalar name="title" xpath="./tr/td[2]"/>
+        </collection>	
+	</meta_metadata>	
+
+	
+	<meta_metadata name="whitney_search" extends="artist"  parser="xpath">			
+		<selector url_stripped="http://whitney.org/Search" />	
+		<example_url url="http://whitney.org/Search?query=Georgia+O%27Keeffe" />  
+		
+		<scalar name="title" label="search term" xpath="//*[@id='search-result-field']/@value" />
+		
+		<collection name="creative_works" xpath="//div[@class='result artwork']/div[@class='title']">
+		 	 <scalar name="location" xpath="./a[2]/@href" hide="true"/>
+			<scalar name="title" xpath="./a[2]"/> 
+		</collection> 
+	</meta_metadata>
+	
+
 	<meta_metadata name="guggen_artwork" extends="artwork"  parser="xpath">			
 		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />		
 		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
 		
+		<collection name="authors" xpath="//div[@id='gallery']/h3">
+			<scalar name="title" xpath="." />
+		</collection>  
+		
 		<scalar name="title" xpath="//*[@id='caption']/i" />
+		<scalar name="description" xpath="//div[@id='essay']/p" />
 
 		<scalar name="year" xpath="//*[@id='caption']">
 			<filter regex="\,(.*?)\." />
+			<!-- filter   -->
 		</scalar>
  		
-		<scalar name="medium" xpath="(//dd[preceding-sibling::dt[contains(text(),'Medium:')]])[1]"/>
+		<scalar name="medium" xpath="//*[@id='caption']">
+			<filter regex="\.(.*?)\," />
+			<!-- filter   -->
+		</scalar>
+		
+		<collection name="tags" child_type="guggen_filter" label="tags" tag="tag" xpath="//*[@class='more-tags']/li/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection> 	
+	</meta_metadata>	
+	
+
+	<meta_metadata name="guggen_filter" extends="artist" parser="xpath">			
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artists/" />
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/" />
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/movements/" />
+ 		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artists/963/Jackson%20Pollock" />
+ 
+		<scalar name="title" xpath="//div[@id='main-three-center']/h3" />
+		
+		<collection name="creative_works" xpath="//div[@class='artworks-item']">       
+            <scalar name="location" xpath="./div/a/@href" hide="true"/>
+			<scalar name="title" xpath="./div/span[2]"/>
+        </collection>	
 	</meta_metadata>	
 	
 </meta_metadata_repository>
