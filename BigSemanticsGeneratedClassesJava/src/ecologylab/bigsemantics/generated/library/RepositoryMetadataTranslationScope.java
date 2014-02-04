@@ -54,6 +54,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.Artwork.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.GuggenArtwork.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.MetArtwork.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.MetFilter.class,
