@@ -8,10 +8,10 @@
 	</meta_metadata>	
 
 	<meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true" comment="twitter micropost">
-		<collection name="tweeters" child_type="tweeter" child_tag="tweeter" layer="8.0" />
+		<composite name="twitter_microblog" type="twitter_microblog" layer="8.0" />
 	</meta_metadata>
 		
-	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
+	<meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true">
 		
 		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
 		<example_url url="https://twitter.com/nytimes" />
@@ -47,8 +47,9 @@
 		</collection>
 	    
 	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li//div[@class='content']"	
-	    															child_use_value_as_label="tweeters.photo" label_at="top">		    
-		    <collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+	    															child_use_value_as_label="twitter_microblog.photo" label_at="top">		    
+		    <composite name="twitter_microblog" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+		    	<style is_child_metadata="true" hide="true"/>
 				<scalar name="title" xpath="./strong" hide_label="true" />
 				<scalar name="location" xpath="./span/b" 
 						hide_label="true" concatenates_to="title">
@@ -58,7 +59,7 @@
 		    	<composite name="photo" label="image" xpath="./img">
 			      <scalar name="location" xpath="./@src" always_show="true" />
 			    </composite>			    			    
-			</collection>
+			</composite>
 			
 			<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
 	    	<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>	    	
@@ -73,7 +74,7 @@
 		<!-- def_var doesn't currently seem to be working in js metadata extraction -->
 		<!--<def_var name="search" type="node" xpath="//h2[@id='content-main-heading']/strong"/>-->
 		
-		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" hide_label="true"/>
+		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" hide_label="true" />
 		<scalar name="location" context_node="search" xpath="//h2[@id='content-main-heading']/strong" >
 	    	<filter regex="^" replace="https://twitter.com/search?q="/>
 	    </scalar>
@@ -81,9 +82,10 @@
 	    <generic_type_var name="SR" arg="post" />
 	    
 	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" 
-	    		xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="tweeters.photo" label_at="top">
+	    		xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="twitter_microblog.photo" label_at="top">
 	    	
-	    	<collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+	    	<composite name="twitter_microblog" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+	    		<style is_child_metadata="true" hide="true"/>
 				<scalar name="title" xpath="./strong" />
 				<scalar name="location" xpath="./span/b" hide_label="true" concatenates_to="title">
 			    	<filter regex="^" replace="https://twitter.com/"/>
@@ -92,7 +94,7 @@
 				<composite name="photo" label="image" xpath="./img">
 			      <scalar name="location" xpath="./@src" always_show="true" />
 			    </composite>			    			    
-			</collection>
+			</composite>
 	    
     		<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
     		<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>
