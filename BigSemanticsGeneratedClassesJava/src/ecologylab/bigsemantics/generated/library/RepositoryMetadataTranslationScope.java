@@ -56,6 +56,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.GuggenArtwork.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.GuggenFilter.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.MetArtwork.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.MetFilter.class,
@@ -83,6 +85,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.artwork.TempFieldValueHolder.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.WhitneyArt.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.WhitneySearch.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.WhitneyWatchAndListen.class,
 
 		ecologylab.bigsemantics.generated.library.bibManaging.CitationInfo.class,
 

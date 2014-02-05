@@ -9,16 +9,26 @@ package ecologylab.bigsemantics.generated.library.artwork;
  */
 
 import ecologylab.bigsemantics.generated.library.artwork.Artwork;
+import ecologylab.bigsemantics.generated.library.artwork.GuggenFilter;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_tag;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class GuggenArtwork extends Artwork
 {
+	@simpl_collection("guggen_filter")
+	@simpl_tag("tag")
+	@mm_name("tags")
+	private List<GuggenFilter> tags;
+
 	public GuggenArtwork()
 	{ super(); }
 
@@ -26,4 +36,34 @@ public class GuggenArtwork extends Artwork
 		super(mmd);
 	}
 
+
+	public List<GuggenFilter> getTags()
+	{
+		return tags;
+	}
+
+  // lazy evaluation:
+  public List<GuggenFilter> tags()
+  {
+    if (tags == null)
+      tags = new ArrayList<GuggenFilter>();
+    return tags;
+  }
+
+  // addTo:
+  public void addToTags(GuggenFilter element)
+  {
+    tags().add(element);
+  }
+
+  // size:
+  public int tagsSize()
+  {
+    return tags == null ? 0 : tags.size();
+  }
+
+	public void setTags(List<GuggenFilter> tags)
+	{
+		this.tags = tags;
+	}
 }
