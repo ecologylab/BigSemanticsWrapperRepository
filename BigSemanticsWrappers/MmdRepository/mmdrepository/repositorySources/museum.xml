@@ -14,7 +14,10 @@
 
 <meta_metadata name="getty_object" extends="creative_work" parser="xpath">
 	<selector url_path_tree="http://www.getty.edu/art/gettyguide/"/>
+	<example_url url="http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=907" />
+    
 	<scalar name="title" xpath="//div[@class='header_redesign']/b"/>
+	
 	
 	<composite name="image" xpath="//a[@class='art'][1]/img">
       <scalar name="location" xpath="./@src" />
