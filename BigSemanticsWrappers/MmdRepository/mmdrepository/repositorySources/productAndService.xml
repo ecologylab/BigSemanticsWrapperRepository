@@ -382,7 +382,7 @@
   <meta_metadata name="etsy_product" extends="product" parser="xpath" user_agent_name="firefox">
     <selector url_path_tree="http://www.etsy.com/listing/" domain="etsy.com" />
     
-    <example_url location="http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8" />
+    <example_url url="http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8" />
     
     <scalar name="title" xpath="//span[@itemprop='name']"/>
     <scalar name="description" xpath="//meta[@property='og:description']/@content"/>
@@ -431,7 +431,7 @@
   <meta_metadata name="samsclub_product" extends="product" parser="xpath" user_agent_name="firefox">
     <selector url_path_tree="http://www.samsclub.com/sams/" domain="samsclub.com" />
     
-    <example_url location="http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push" />
+    <example_url url="http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push" />
     
     <scalar name="title" xpath="//span[@itemprop='name']" />
     <scalar name="description" xpath="//div[@itemprop='description']/p"/>
@@ -445,7 +445,7 @@
   
   <meta_metadata name="samsclub_mobile_product" type="product" parser="xpath" user_agent_name="firefox">
     <selector url_path_tree="http://m.samsclub.com/ip/" />
-    <example_url location="http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248" />
+    <example_url url="http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248" />
     <scalar name="title" xpath="//h1[@itemprop='name']" />
     <scalar name="price" xpath="//div[@itemprop='price']" />
     
@@ -457,7 +457,7 @@
   
   <meta_metadata name="ebay_product" extends="product" parser="xpath" user_agent_name="firefox" >
     <selector url_path_tree="http://www.ebay.com/itm/" />
-    <example_url location="http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834" />
+    <example_url url="http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834" />
     <scalar name="title" xpath="//meta[@property='og:title']/@content" />
     <scalar name="item_condition" scalar_type="String" xpath="//div[@class='u-flL condText']" />
     <scalar name="availability" scalar_type="String" xpath="//span[@id='qtySubTxt']/span" />
