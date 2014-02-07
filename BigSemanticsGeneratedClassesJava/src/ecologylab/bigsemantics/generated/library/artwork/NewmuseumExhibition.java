@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class RhizomeTag extends ArtworkCollection
+public class NewmuseumExhibition extends ArtworkCollection
 {
-	public RhizomeTag()
+	public NewmuseumExhibition()
 	{ super(); }
 
-	public RhizomeTag(MetaMetadataCompositeField mmd) {
+	public NewmuseumExhibition(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

@@ -54,6 +54,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.Artwork.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.ArtworkCollection.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.GuggenArtwork.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.GuggenFilter.class,
@@ -67,6 +69,14 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.artwork.MomaArtist.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.MomaArtwork.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.NewmuseumArtist.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.NewmuseumArtwork.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.NewmuseumExhibition.class,
+
+		ecologylab.bigsemantics.generated.library.artwork.NewmuseumFilter.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.RhizomeArtist.class,
 
@@ -315,6 +325,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.museum.FondationArticle.class,
 
 		ecologylab.bigsemantics.generated.library.museum.FondationTag.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettyInfo.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettyObject.class,
 
 		ecologylab.bigsemantics.generated.library.nsdl.Header.class,
 
