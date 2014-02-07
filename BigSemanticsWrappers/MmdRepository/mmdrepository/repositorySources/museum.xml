@@ -1,6 +1,66 @@
 <meta_metadata_repository name="museum" package="ecologylab.bigsemantics.generated.library.museum" default_user_agent_name="chrome_2">
 
 
+<meta_metadata name="getty_info" extends="compound_document">
+
+		<scalar name="author_name" scalar_type="String"/>
+		<scalar name="dimensions" scalar_type="String"/>
+		<scalar name="date_and_location" scalar_type="String"/>
+		<scalar name="medium" scalar_type="String"/>
+		<scalar name="dimensions" scalar_type="String"/>
+		<scalar name="museum_code" scalar_type="String"/>
+		
+</meta_metadata>
+
+<meta_metadata name="getty_object" extends="creative_work" parser="xpath">
+	<selector url_path_tree="http://www.getty.edu/art/gettyguide/"/>
+	<example_url url="http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=907" />
+    
+	<scalar name="title" xpath="//div[@class='header_redesign']/b"/>
+	
+	
+	<composite name="image" xpath="//a[@class='art'][1]/img">
+      <scalar name="location" xpath="./@src" />
+    </composite>
+	 <semantic_actions>
+      <get_field name="image" />
+      <if>
+        <not_null value="image" />
+          <create_and_visualize_img_surrogate>
+            <arg name="metadata" value="image" />
+          </create_and_visualize_img_surrogate>
+      </if>
+    </semantic_actions>
+  
+	
+	<!--<scalar name="testing_field" scalar_type="String" xpath="//form[@name='bookmarkobj']/p[1]"/>
+	-->
+	<composite name="work_info" type="getty_info" xpath="//form[@name='bookmarkobj']/p[1]">
+		
+		<field_parser name="regex_find" regex="(.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)"/>
+		<scalar name="author_name" field_parser_key="$1"/>
+		<scalar name="date_and_location" field_parser_key="$3"/>
+		<scalar name="medium" field_parser_key="$5"/>
+		<scalar name="dimensions" field_parser_key="$6"/>
+		<scalar name="museum_code" field_parser_key="$8"/>
+	</composite>
+	
+	<!--  -->
+	<scalar name="description" scalar_type="String" xpath="//comment()[.='Main Content Area']/following-sibling::tr[1]/td/p[1]"/>
+	
+	
+	
+	
+	
+	<!--  
+	
+	<scalar name="made_in" scalar_type="String" xpath="//form[@name='bookmarkobj']/p[1]/text()[3]"/>
+	<scalar name="dimensions" scalar_type="String" xpath="//form[@name='bookmarkobj']/p[1]/text()[4]"/>
+	<scalar name="catolog_address" scalar_type="String" xpath="//form[@name='bookmarkobj']/p[1]/text()[5]"/>
+	-->
+
+</meta_metadata>
+
 
 <!-- 
 The 'flamenco_object' serves as an individual piece in the museum, but also as a facet (or category).

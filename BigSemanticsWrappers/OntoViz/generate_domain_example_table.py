@@ -89,7 +89,8 @@ if __name__ == '__main__':
                 s_types.append(t)
                 for u in sorted(results[d][t]):
                     mice_url = mice_demo + '?' + urlencode({'url': u})
-                    a = '<a href="' + mice_url + '">' + u + '</a>'
+                    a = '<a href="' + mice_url + '" target="_blank">' +\
+                        u + '</a>'
                     s_urls.append(a)
             print "  <tr>" 
             print "    <td>" + d + "</td>"
