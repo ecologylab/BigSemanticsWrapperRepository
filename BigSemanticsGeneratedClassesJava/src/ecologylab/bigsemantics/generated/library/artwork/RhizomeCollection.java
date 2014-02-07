@@ -8,25 +8,17 @@ package ecologylab.bigsemantics.generated.library.artwork;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.artwork.Artist;
+import ecologylab.bigsemantics.generated.library.artwork.ArtworkCollection;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
-import java.lang.String;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class RhizomeCollection extends Artist
+public class RhizomeCollection extends ArtworkCollection
 {
-	@simpl_scalar
-	@simpl_tag("abstract")
-	private MetadataString bio;
-
 	public RhizomeCollection()
 	{ super(); }
 
@@ -34,36 +26,4 @@ public class RhizomeCollection extends Artist
 		super(mmd);
 	}
 
-
-	public MetadataString	bio()
-	{
-		MetadataString	result = this.bio;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.bio = result;
-		}
-		return result;
-	}
-
-	public String getBio()
-	{
-		return this.bio == null ? null : bio().getValue();
-	}
-
-	public MetadataString getBioMetadata()
-	{
-		return bio;
-	}
-
-	public void setBio(String bio)
-	{
-		if (bio != null)
-			this.bio().setValue(bio);
-	}
-
-	public void setBioMetadata(MetadataString bio)
-	{
-		this.bio = bio;
-	}
 }
