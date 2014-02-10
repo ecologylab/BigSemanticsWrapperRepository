@@ -96,6 +96,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.WhitneyArt.class,
 
+		ecologylab.bigsemantics.generated.library.artwork.WhitneyDecade.class,
+
 		ecologylab.bigsemantics.generated.library.artwork.WhitneySearch.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.WhitneyWatchAndListen.class,

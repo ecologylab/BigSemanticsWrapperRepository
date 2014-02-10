@@ -20,7 +20,7 @@
 	<target name="compile">
 		<mkdir dir="${classes.dir}" />
 		<javac srcdir="${src.dir}" destdir="${classes.dir}"
-			source="1.6" target="1.6" classpathref="classpath" />
+			source="1.6" target="1.6" classpathref="classpath" fork="yes" />
 	</target>
 
 	<target name="jar" depends="compile">

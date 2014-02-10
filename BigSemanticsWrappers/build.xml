@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="BigSemanticsWrappers" basedir="." default="main">
+<project name="BigSemanticsWrappers" basedir="." default="main"
+	xmlns:artifact="antlib:org.apache.maven.artifact.ant">
   <property name="repo.dir" value="MmdRepository" />
   <property name="build.dir" value="build" />
   <property name="classes.dir" value="${build.dir}/classes" />
@@ -8,6 +9,16 @@
   <property name="jar.file" value="${jar.dir}/${jar.filename}" />
   <property name="lib.dir" value="lib" />
   
+  <!-- declare maven -->
+  <path id="maven-ant-tasks.classpath" path="${lib.dir}/maven-ant-tasks-2.1.1.jar" />
+  <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+           uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+
+  <artifact:dependencies filesetId="mavendeps">
+  	<dependency groupId="org.slf4j" artifactId="slf4j-api" version="1.7.5" scope="compile" />
+  	<dependency groupId="com.google.guava" artifactId="guava" version="14.0.1" scope="compile" />
+	</artifact:dependencies>
+ 
   <!-- classpath using jars -->
   <path id="jars_classpath">
     <fileset dir="${lib.dir}">
@@ -17,6 +28,7 @@
       <include name="antlr-3.5-complete.jar" />
       <include name="*.jar" />
     </fileset>
+  	<fileset refid="mavendeps" />
   </path>
   
   <target name="main" depends="clean,update-deps" />
@@ -39,7 +51,7 @@
     <!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
     <copy file="${jar.file}" todir="${lib.dir}" />
   </target>
-  
+
   <target name="compile-wrappers-java" depends="jar">
     <!-- run the compiler. -->
     <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"

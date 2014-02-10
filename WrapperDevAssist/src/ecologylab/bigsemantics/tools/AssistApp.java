@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -22,16 +21,24 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ecologylab.bigsemantics.tools.Forker.Result;
+import com.google.common.io.Files;
 
 public class AssistApp extends WindowAdapter
 {
 
   static Logger logger = LoggerFactory.getLogger(AssistApp.class);
+
+  private File  bsWrappersDir;
+
+  private File  bsServiceDir;
+
+  private File  bsJsDir;
 
   JButton       btnUpdate;
 
@@ -39,38 +46,43 @@ public class AssistApp extends WindowAdapter
 
   JFrame        frame;
 
-  Forker        forker;
+  AntRunner     antRunner;
 
   BSService     service;
 
-  public AssistApp()
+  public AssistApp(Configuration configs)
   {
-    forker = new Forker();
-    try
-    {
-      service = new BSService();
-    }
-    catch (ConfigurationException e)
-    {
-      error("Error starting up the BS service.", null, e);
-      return;
-    }
+    createAndDisplayGUI();
+    info("Initializing...");
 
-    createGUI();
-    display();
-    msg("Initializing...");
-
-    if (!checkEnv())
+    while (bsWrappersDir == null)
     {
-      error("Failed to start up! Please check your environment.", null, null);
-      return;
+      bsWrappersDir = PathUtil.checkAndChooseDir(frame,
+                                                 configs.getString("bigsemantics_wrappers_dir"),
+                                                 "BigSemanticsWrappers directory");
     }
 
+    while (bsServiceDir == null)
+    {
+      bsServiceDir = PathUtil.checkAndChooseDir(frame,
+                                                configs.getString("bigsemantics_service_dir"),
+                                                "BigSemanticsService project directory");
+    }
+
+    while (bsJsDir == null)
+    {
+      bsJsDir = PathUtil.checkAndChooseDir(frame,
+                                           configs.getString("bigsemantics_javascript_dir"),
+                                           "BigSemanticsJavaScript project directory");
+    }
+
+    antRunner = new AntRunner();
+    service = new BSService(configs);
     btnUpdate.setEnabled(true);
-    msg("Ready.");
+    info("Ready.");
   }
 
-  public void createGUI()
+  public void createAndDisplayGUI()
   {
     JPanel contentPanel = new JPanel(new GridBagLayout());
     contentPanel.setOpaque(true);
@@ -141,7 +153,7 @@ public class AssistApp extends WindowAdapter
       @Override
       public void windowClosing(WindowEvent event)
       {
-        msg("Window is closing, cleaning up ...");
+        info("Window is closing, cleaning up ...");
         try
         {
           stopService();
@@ -154,10 +166,7 @@ public class AssistApp extends WindowAdapter
 
     });
     frame.setContentPane(contentPanel);
-  }
 
-  public void display()
-  {
     javax.swing.SwingUtilities.invokeLater(new Runnable()
     {
       public void run()
@@ -168,16 +177,67 @@ public class AssistApp extends WindowAdapter
     });
   }
 
-  private void msgHelper(String msg)
+  private void updateBackend()
+  {
+    try
+    {
+      stopService();
+
+      info("Recompiling wrappers...");
+      antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "compile-wrappers-java");
+
+      info("Updating dependencies in the service project...");
+      File wrappersJar =
+          PathUtil.subPath(bsWrappersDir, "build", "jar", "BigSemanticsWrappers.jar");
+      File destWrappersJar =
+          PathUtil.subPath(bsServiceDir, "lib", "BigSemanticsWrappers.jar");
+      Files.copy(wrappersJar, destWrappersJar);
+
+      File metadataJar =
+          PathUtil.subPath(bsWrappersDir.getParentFile(), "BigSemanticsGeneratedClassesJava",
+                           "build", "jar", "BigSemanticsGeneratedClassesJava.jar");
+      File destMetadataJar =
+          PathUtil.subPath(bsServiceDir, "lib", "BigSemanticsGeneratedClassesJava.jar");
+      Files.copy(metadataJar, destMetadataJar);
+
+      info("Rebuilding service war...");
+      File serviceBuildFile =
+          PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build", "build.xml");
+      antRunner.runAntTarget(serviceBuildFile, "buildwar");
+
+      startService();
+    }
+    catch (Exception e)
+    {
+      error("Error relaunching BS service.", null, e);
+      return;
+    }
+
+    info("Service started, running.");
+  }
+
+  private void stopService() throws Exception
+  {
+    info("Stopping service...");
+    service.stop();
+  }
+
+  private void startService() throws Exception
+  {
+    info("Starting service...");
+    service.start();
+  }
+
+  private void infoHelper(String msg)
   {
     logger.info(msg);
     textArea.append(msg + "\n");
     textArea.setCaretPosition(textArea.getDocument().getLength());
   }
 
-  private void msg(String msg)
+  private void info(String msg)
   {
-    msgHelper(msg);
+    infoHelper(msg);
     SwingUtilities.invokeLater(new Runnable()
     {
       @Override
@@ -199,84 +259,17 @@ public class AssistApp extends WindowAdapter
       String[] lines = info.split("\n");
       for (String line : lines)
       {
-        msgHelper("    >> " + line);
+        infoHelper("    >> " + line);
       }
     }
-    msg("ERROR: " + msg);
+    info("ERROR: " + msg);
+    info("Check for the log file for more details.");
   }
 
-  private boolean checkEnv()
+  public static void main(String[] args) throws ConfigurationException
   {
-    return forkAndCheck(500, "Error detecting Apache Ant which is needed.", "ant", "-version")
-        && forkAndCheck(500, "Error detecting Apache Maven which is needed.", "mvn", "-version")
-        && forkAndCheck(15000,
-                        "Error building required WAR and JAR from DownloaderPool.",
-                        "ant",
-                        "build-dpool")
-        && fileExists("../../BigSemanticsJavaScript",
-                      "Error locating project BigSemanticsJavaScript.");
-  }
-
-  private boolean forkAndCheck(long timeout, String errMsg, String... cmds)
-  {
-    Result result = forker.fork(timeout, cmds);
-    if (result.returnCode != 0)
-    {
-      error(errMsg, result.err, null);
-      return false;
-    }
-    return true;
-  }
-
-  private boolean fileExists(String path, String errMsg)
-  {
-    File f = new File(path);
-    if (!f.exists())
-    {
-      error(errMsg, null, null);
-      return false;
-    }
-    return true;
-  }
-
-  private void updateBackend()
-  {
-    try
-    {
-      stopService();
-      msg("Recompiling wrappers and updating service WAR...");
-      if (forkAndCheck(60000,
-                       "Error compiling wrappers or updating the service.",
-                       "ant",
-                       "compile-wrappers-and-update"))
-      {
-        startService();
-      }
-    }
-    catch (Exception e)
-    {
-      error("Error relaunching BS service.", null, e);
-      return;
-    }
-
-    msg("Service started, running.");
-  }
-
-  private void stopService() throws Exception
-  {
-    msg("Stopping service...");
-    service.stop();
-  }
-
-  private void startService() throws Exception
-  {
-    msg("Starting service...");
-    service.start();
-  }
-
-  public static void main(String[] args) throws IOException
-  {
-    new AssistApp();
+    Configuration configs = new PropertiesConfiguration("wrapper-dev-assist.conf");
+    new AssistApp(configs);
   }
 
 }
