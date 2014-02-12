@@ -1,6 +1,16 @@
 <meta_metadata_repository name="museum" package="ecologylab.bigsemantics.generated.library.museum" default_user_agent_name="chrome_2">
 
 
+<meta_metadata name="getty_search" extends="compound_document" parser="xpath">
+	<selector url_stripped="http://www.getty.edu/art/collectionSearch/collectionSearch"/>
+	<collection name="search_results" child_type="getty_object" 
+		xpath="//comment()[.=' START RESULTS ']/following-sibling::table/tbody/tr/td/a/img">
+		<scalar name="title" xpath="./../../following-sibling::td[2]/a/strong"/>
+		<scalar name="location" xpath="./../@href"/>
+	</collection>
+
+</meta_metadata>
+
 <meta_metadata name="getty_work_info" extends="compound_document">
 
 		<scalar name="author_name" scalar_type="String"/>
@@ -20,6 +30,8 @@
  
 <meta_metadata name="getty_artist" extends="compound_document" parser="xpath">
 	<selector url_stripped="http://www.getty.edu/art/gettyguide/artMakerDetails"/>
+	
+	
 	<scalar name="title" xpath="//span[@class='header_redesign']/b"/>
 	<scalar name="description" xpath="//p[@class='bio'][last()]"/>
 	
@@ -101,6 +113,11 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
 <meta_metadata name="fondation_article" extends="creative_work" parser="xpath">
 	<selector url_path_tree="http://www.fondation-langlois.org/html/e/" domain="fondation-langlois.org"/> 	
 	<!--  Consider replacing xpath logic with semantic actions once you learn those -->
+	
+	<composite name="image" xpath="//div[@id='editoGrand']//img">
+      <scalar name="location" xpath="./@src" />
+    </composite>
+	
 	<scalar name="collection_name" scalar_type="String" xpath="//div[@id='breadcrumbs']/ul/li[(position() = 3) and (not(position()=last()))]/a/text()"/>
 	<scalar name="title"  xpath="//div[@id='breadcrumbs']/ul/li[last()]"/>
 	
@@ -166,42 +183,58 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
 	</collection>
 </meta_metadata>
  
+<meta_metadata name="flamenco_facet" extends="compound_document" parser="xpath">
+	<selector url_regex="^(.(?!index))*$" domain="berkeley.edu"/>
+	<scalar name="title" scalar_type="String" xpath="//table[@class='termbox']//tr/td[1]/span[position() = last()]/span"/>
+	
+	<collection name="sub_facets" child_type="flamenco_object" xpath="//td[@class='itemcolumn']//td[@class='facetbox']">
+		<scalar name="title" xpath="./a/span"/>
+		<scalar name="location" xpath="./a/@href"/>
+	</collection>
+	<collection name="flamenco_objects" child_type="flamenco_object" xpath="(//table[@cellpadding='2'])[last()]/tbody/tr/td">
+		<scalar name="title" xpath="./a/span"/>
+		<scalar name="location" xpath="./a/@href"/>
+	
+	</collection>
+	<scalar name="object_count" scalar_type="String"/>
+	
+</meta_metadata>
  
 <meta_metadata name="flamenco_object" extends="creative_work" parser="xpath">
-    <selector url_path_tree="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/" domain="orange.sims.berkely.edu"/>
+    <selector url_regex=".*index=[0123456789]+" domain="berkeley.edu"/>
 	<example_url url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&amp;group=objects&amp;index=15"/>
+	
+	<composite name="image" xpath="//div[@class='endgame']/p/table/tbody/tr/td/img">
+      <scalar name="location" xpath="./@src" />
+    </composite>
+    
 	<scalar name="title" xpath="//tr[@valign='top'][2]/td[2]" />
 	<scalar name="description" xpath="//tr[@valign='top'][3]/td[2]"/>
 	
 	
 	<scalar name="category" scalar_type="String" xpath="//table[@class='termbox']//tr/td[1]/span[position() = last()]/span"/>
 	
-	<collection name="flamenco_objects" child_type="flamenco_object" xpath="(//table[@cellpadding='2'])[last()]/tbody/tr/td">
-		<scalar name="title" xpath="./a/span"/>
-		<scalar name="location" xpath="./a/@href"/>
 	
-	</collection>
 	
-	<collection name="sub_facets" child_type="flamenco_object" xpath="//td[@class='itemcolumn']//td[@class='facetbox']">
-		<scalar name="title" xpath="./a/span"/>
-		<scalar name="location" xpath="./a/@href"/>
-	</collection>
 	<!-- If the artist is unknown, this displays an (essentially) random facet. The Unknown artist is reported in the "specific_facets" collection -->
 	<collection name="authors" label="authors" xpath="//tr[@valign='top'][4]/td[2]">
 		<scalar name="title" xpath="./text()"/>
 	</collection>
 	<scalar name="media_type" scalar_type="String" xpath="//tr[@valign='top'][5]/td[2]"/>
 
-	<collection name="general_facets" child_type="flamenco_object" xpath="//div[@class='endgame']/div/table/tbody/tr/td/form[2]/table/tbody//nobr/a">
+	<collection name="general_facets" child_type="flamenco_facet" xpath="//div[@class='endgame']/div/table/tbody/tr/td/form[2]/table/tbody//nobr/a">
 		<scalar name="title" xpath="./span" label="facet_name"/>
 		<scalar name="object_count" xpath="./../span/text()"/>
 		<scalar name="location" xpath="./@href"/>
-		<scalar name="category" xpath="./../../../../../../../preceding-sibling::tr[1]//span[@class='facet']"/>
+		<!--  <scalar name="category" xpath="./../../../../../../../preceding-sibling::tr[1]//span[@class='facet']"/>
+		-->
 	</collection>
-	<collection name="specific_facets" child_type="flamenco_object" xpath="//div[@class='endgame']/div/table/tbody/tr//span[@class='sel']">
+	<collection name="specific_facets" child_type="flamenco_facet" xpath="//div[@class='endgame']/div/table/tbody/tr//span[@class='sel']">
 		<scalar name="title" xpath="./a/span/text()" label="facet_name"/>
 		<scalar name="object_count" xpath="./span[@class='count']"/>
+		<!--  
 		<scalar name="category" xpath="./../../preceding-sibling::tr[1]/td[@class='valuebox']/span/span"/>
+		-->
 		<scalar name="location" xpath="./a/@href"/>
 	</collection>
 	
