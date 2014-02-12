@@ -123,4 +123,84 @@
     </collection>
   </meta_metadata>
   
+  
+  <meta_metadata name="ask_nature_group" extends="compound_document" parser="xpath" user_agent_name="chrome" >
+  	<selector url_stripped="http://www.asknature.org/browse" domain="asknature.org" />
+  	<example_url url="http://www.asknature.org/browse?selected=strategy|1&amp;type=aof" />
+  	
+  	<scalar name="title" label="group" xpath="//a[@class='selected']" /> 
+  
+  	<collection name="subgroups" child_type="ask_nature_subgroup" child_tag="subgroup" 
+  				xpath="//ul[@id='accordion_list_2']/div/dt">
+  		<scalar name="title" xpath="./text()" />
+  		<collection name="functions" child_type="ask_nature_function" xpath="./following-sibling::dd[1]/a" />
+  	</collection>
+  </meta_metadata>
+     
+  <meta_metadata name="ask_nature_subgroup" extends="compound_document" parser="xpath" user_agent_name="chrome" >
+  	<scalar name="title" label="subgroup"  /> 
+  	<collection name="functions" child_type="ask_nature_function" child_tag="function"/>
+  </meta_metadata>
+  
+  <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath" user_agent_name="chrome" >
+  	<scalar name="title" label="function"  /> 
+  	<!-- <collection name="strategies" child_type="ask_nature_strategy" child_tag="strategy"  />    -->
+  </meta_metadata>
+
+ 
+
+  <meta_metadata name="ask_nature_strategy" extends="compound_document" parser="xpath" user_agent_name="chrome">
+	<selector url_path_tree="http://www.asknature.org/strategy/" domain="asknature.org" />
+	<example_url url="http://www.asknature.org/strategy/efd9f97ba5240b796b855c9bd5ee8397" />
+	<example_url url="http://www.asknature.org/strategy/b91cc7c16934434bb7c01ecbd8ad286c" />    
+  	
+	<scalar name="title" xpath="//div[@id='content_header']/h1[@id='content_title']" />
+	<scalar name="description" label="description" xpath="//div[@class='section_change']/h2[@class='headline']/text()" />
+	<scalar name="summary" scalar_type="String" xpath="//dd[@class='section_content'][2]" />
+<!--		<scalar name="group_name" scalar_type="String" xpath="//ul[@class='taxonomy-list']/li[1]/a" />   -->
+	
+	<composite name="image" xpath="//div[@id='slideshow']//img[@class='featured_image']">
+		<scalar name="location" xpath="./@src" />
+	</composite>    
+	<scalar name="inspiring_organism" scalar_type="String" xpath="//dd[@class='section_content sc_open'][1]/i" />
+	<scalar name="application_ideas" scalar_type="String" xpath="//dd[@class='section_content sc_open'][2]/p[1]" >
+		<filter regex="Application Ideas : " replace="" />
+		<filter regex="Application Ideas: " replace="" />																					<!-- combine these two -->
+	</scalar>
+	<scalar name="interested_indstrial_sectors" scalar_type="String" xpath="//dd[@class='section_content sc_open'][2]/p[2]" >
+		<filter regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
+	</scalar>
+	
+	<scalar name="expert_group" scalar_type="String" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div/a" />
+	<scalar name="experts" scalar_type="String" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div/text()[2]" />
+	<scalar name="universitys" scalar_type="String" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div/text()[3]" />
+<!--	<composite name="expert" type="ask_nature_expert" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div" >
+		<scalar name="group" xpath="./a" />
+		<scalar name="title" xpath="./text()[2]" />
+		<scalar name="affiliation" xpath="./text()[3]" />
+	</composite>
+	  -->
+	<composite name="biomimicry_taxonomy" type="ask_nature_group" xpath="//ul[@class='taxonomy-list']/li[1]/a" >
+		<scalar name="title" xpath="./text()"  />
+		<scalar name="location" xpath="./@href" />  
+	</composite>
+	
+	<!-- looking at the subgroups, you can follow the link on those and get that data separately
+	 -->
+	
+  </meta_metadata>
+
+<!-- currently does not have support if more than one expert is listed, but this doesn't happen often... -->
+ <meta_metadata name="ask_nature_expert" parser="xpath" extends="document" >
+ 	<scalar name="organization" scalar_type="String" />
+ 	<scalar name="expert" scalar_type="String" />
+    <scalar name="university" scalar_type="String" />   
+ </meta_metadata>   
+
+<!-- 
+	 image 
+     <scalar name="red list status" scalar_type="String" />
+     <scalar name="habitats" scalar_type="String" />   -->
+  
+  
 </meta_metadata_repository>	
