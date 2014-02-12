@@ -5,14 +5,22 @@ package ecologylab.bigsemantics.generated.library.video;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2012) Interface Ecology Lab.
+ * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.video.Video;
+import ecologylab.bigsemantics.generated.library.video.SocialVideo;
+import ecologylab.bigsemantics.generated.library.video.YoutubeChannel;
+import ecologylab.bigsemantics.generated.library.video.YoutubeVideo;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,8 +28,19 @@ import java.util.Map;
  *youtube video view page
  */ 
 @simpl_inherit
-public class YoutubeVideo extends Video
+public class YoutubeVideo extends SocialVideo
 {
+	@simpl_scalar
+	private MetadataString numberOfViews;
+
+	@simpl_collection("youtube_video")
+	@mm_name("suggested_videos")
+	private List<YoutubeVideo> suggestedVideos;
+
+	@simpl_collection("youtube_channel")
+	@mm_name("creator_channel")
+	private List<YoutubeChannel> creatorChannel;
+
 	public YoutubeVideo()
 	{ super(); }
 
@@ -29,4 +48,96 @@ public class YoutubeVideo extends Video
 		super(mmd);
 	}
 
+
+	public MetadataString	numberOfViews()
+	{
+		MetadataString	result = this.numberOfViews;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.numberOfViews = result;
+		}
+		return result;
+	}
+
+	public String getNumberOfViews()
+	{
+		return this.numberOfViews == null ? null : numberOfViews().getValue();
+	}
+
+	public MetadataString getNumberOfViewsMetadata()
+	{
+		return numberOfViews;
+	}
+
+	public void setNumberOfViews(String numberOfViews)
+	{
+		if (numberOfViews != null)
+			this.numberOfViews().setValue(numberOfViews);
+	}
+
+	public void setNumberOfViewsMetadata(MetadataString numberOfViews)
+	{
+		this.numberOfViews = numberOfViews;
+	}
+
+	public List<YoutubeVideo> getSuggestedVideos()
+	{
+		return suggestedVideos;
+	}
+
+  // lazy evaluation:
+  public List<YoutubeVideo> suggestedVideos()
+  {
+    if (suggestedVideos == null)
+      suggestedVideos = new ArrayList<YoutubeVideo>();
+    return suggestedVideos;
+  }
+
+  // addTo:
+  public void addToSuggestedVideos(YoutubeVideo element)
+  {
+    suggestedVideos().add(element);
+  }
+
+  // size:
+  public int suggestedVideosSize()
+  {
+    return suggestedVideos == null ? 0 : suggestedVideos.size();
+  }
+
+	public void setSuggestedVideos(List<YoutubeVideo> suggestedVideos)
+	{
+		this.suggestedVideos = suggestedVideos;
+	}
+
+	public List<YoutubeChannel> getCreatorChannel()
+	{
+		return creatorChannel;
+	}
+
+  // lazy evaluation:
+  public List<YoutubeChannel> creatorChannel()
+  {
+    if (creatorChannel == null)
+      creatorChannel = new ArrayList<YoutubeChannel>();
+    return creatorChannel;
+  }
+
+  // addTo:
+  public void addToCreatorChannel(YoutubeChannel element)
+  {
+    creatorChannel().add(element);
+  }
+
+  // size:
+  public int creatorChannelSize()
+  {
+    return creatorChannel == null ? 0 : creatorChannel.size();
+  }
+
+	public void setCreatorChannel(List<YoutubeChannel> creatorChannel)
+	{
+		this.creatorChannel = creatorChannel;
+	}
 }

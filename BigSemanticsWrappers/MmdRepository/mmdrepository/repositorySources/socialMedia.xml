@@ -8,7 +8,7 @@
 	</meta_metadata>	
 
 	<meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true" comment="twitter micropost">
-		<collection name="tweeters" child_type="tweeter" child_tag="tweeter" layer="8.0" />
+		<composite name="twitter_microblog" type="twitter_microblog" layer="8.0" />
 	</meta_metadata>
 		
 	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
@@ -16,24 +16,24 @@
 		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
 		<example_url url="https://twitter.com/nytimes" />
 		
-		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide="true" />
+		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
+		<!--<scalar name="username" scalar_type="String" xpath="//h2[@class='username']/span" hide_label="true" concatenates_to="title" />-->
 		
-		<collection name="tweeters" child_type="tweeter" xpath="." label_at="top" hide_label="true">
+		<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">
 			
-			<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
-			<scalar name="location" xpath="//h2[@class='username']/span" hide="false" hide_label="true" concatenates_to="title">
+			<!-- <scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
+			<scalar name="location" xpath="//h2[@class='username']/span" always_show="true" hide_label="true" concatenates_to="title">
 		    	<filter regex="@" replace="https://twitter.com/"/>
-		    </scalar>
+		 	</scalar> -->	    			
 	    			
-	    			
-			<composite name="photo" label="image" xpath="//a[@class='profile-picture media-thumbnail js-tooltip']/img">
+			<composite name="photo" hide_label="true" xpath="//a[@class='profile-picture media-thumbnail js-tooltip']/img">
 		      <scalar name="location" xpath="./@src" always_show="true" />
 		    </composite>
 		    
-		    <scalar name="description" xpath="//p[@class='bio profile-field']" />
-		    <scalar name="city" xpath="//p[@class='location-and-url']//span[@class='location profile-field']" />
+		    <scalar name="description" hide_label="true" xpath="//p[@class='bio profile-field']" />
+		    <scalar name="city" hide_label="true" xpath="//p[@class='location-and-url']//span[@class='location profile-field']" />
 		    
-		    <composite name="webpage" xpath="//p[@class='location-and-url']//a[@class='js-tooltip']">
+		    <composite name="webpage" hide_label="true" xpath="//p[@class='location-and-url']//a[@class='js-tooltip']">
 		    	<scalar name="title" xpath="." hide_label="true" />
 				<scalar name="location" xpath="./@href" />
 		    </composite>
@@ -47,18 +47,20 @@
 		</collection>
 	    
 	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li//div[@class='content']"	
-	    															child_use_value_as_label="tweeters.photo" label_at="top">		    
-		    <collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+	    													child_use_value_as_label="twitter_microblog.photo" label_at="top">		    
+		    <composite name="twitter_microblog" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+		    	<style is_child_metadata="true" hide="true"/>
 				<scalar name="title" xpath="./strong" hide_label="true" />
-				<scalar name="location" xpath="./span/b" 
-						hide_label="true" concatenates_to="title">
+				<scalar name="location" xpath="./span/b" >
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
 		    	
-		    	<composite name="photo" label="image" xpath="./img">
-			      <scalar name="location" xpath="./@src" always_show="true" />
-			    </composite>			    			    
-			</collection>
+		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
+			    	<composite name="photo" label="image" xpath="./img">
+				      <scalar name="location" xpath="./@src" always_show="true" />
+				    </composite>
+				<!--</collection>			    			    -->
+			</composite>
 			
 			<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
 	    	<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>	    	
@@ -73,27 +75,31 @@
 		<!-- def_var doesn't currently seem to be working in js metadata extraction -->
 		<!--<def_var name="search" type="node" xpath="//h2[@id='content-main-heading']/strong"/>-->
 		
-		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" label_at="top" hide_label="true"/>
+		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" hide_label="true" >
+			<filter regex="Twitter / Search - " replace=""/>
+		</scalar>
 		<scalar name="location" context_node="search" xpath="//h2[@id='content-main-heading']/strong" >
 	    	<filter regex="^" replace="https://twitter.com/search?q="/>
 	    </scalar>
 	    
 	    <generic_type_var name="SR" arg="post" />
 	    
-	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" 
-	    		xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="tweeters.photo" label_at="top">
+	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" label_at="top"
+	    		xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="twitter_microblog.photo" >
 	    	
-	    	<collection name="tweeters" child_type="tweeter" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+	    	<composite name="twitter_microblog" xpath="./div[@class='stream-item-header']/a" hide_label="true">
+	    		<style is_child_metadata="true" hide="true"/>
 				<scalar name="title" xpath="./strong" />
-				<scalar name="location" xpath="./span/b" 
-						hide_label="true" concatenates_to="title">
+				<scalar name="location" xpath="./span/b" >
 			    	<filter regex="^" replace="https://twitter.com/"/>
 			    </scalar>
-		    			
-				<composite name="photo" label="image" xpath="./img">
-			      <scalar name="location" xpath="./@src" always_show="true" />
-			    </composite>			    			    
-			</collection>
+		    	
+		    	<!-- <collection name="tweeters" child_type="tweeter" xpath="." hide_label="true"> -->		
+					<composite name="photo" label="image" xpath="./img">
+				      <scalar name="location" xpath="./@src" always_show="true" />
+				    </composite>
+				<!-- </collection>			    			    -->
+			</composite>
 	    
     		<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
     		<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>

@@ -20,6 +20,17 @@
 		<scalar name="year" comment="Year the work was created." scalar_type="String" />
 		<scalar name="dimensions" scalar_type="String" />
 	</meta_metadata>	
+		
+	<meta_metadata name="exhibition" extends="creative_work" comment="Artwork exhibition class">
+    <scalar name="location" hide="true" />
+		<scalar name="description" tag="abstract" label="abstract" comment="Abstract of the work." />
+		<collection name="contributors" child_type="artist" label="artists"
+                tag="artists" other_tags="contributors" child_tag="artist"
+                layer="9.5" comment="Set of contributors." />
+    
+		<collection name="creative_works" child_type="artwork" label="artworks"
+                tag="artworks" other_tags="creative_works" child_tag="artwork" />		
+	</meta_metadata>
 
 	<meta_metadata name="mm_artwork" extends="artwork"
                  comment="ACM Multimedia Interactive Artwork class">
@@ -30,6 +41,8 @@
 
 	<meta_metadata name="rhizome_artwork" extends="artwork"  parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="artwork" />
+		<example_url url="http://rhizome.org/artbase/artwork/30306/"/>
+		<example_url url="http://rhizome.org/portfolios/artwork/57882/"/>
 		
 		<scalar name="title" xpath="//span[@class='artwork-title span-20']/a[1]" />
 		<scalar name="year" xpath="//div[@class]/ul/li[1]/span[2]"/>
@@ -53,10 +66,12 @@
         </collection>    
 	</meta_metadata>
 	
-	<meta_metadata name="rhizome_tag" extends="artist" parser="xpath">
+	<meta_metadata name="rhizome_tag" extends="search" parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="tag" />
+		<example_url url="http://rhizome.org/artbase/tag/futurism/"/>
+		<example_url url="http://rhizome.org/artbase/tag/nostalgia/"/>
  
-		<collection name="creative_works" xpath="//div[@id='work']">
+		<collection name="search_results" child_type="rhizome_artwork" xpath="//div[@id='work']">
 			<scalar name="location" xpath="./a/@href" hide="true"/>
 			<scalar name="title" xpath="./div[1]"/>
 			<collection name="authors" xpath="./div[2]/a">
@@ -68,6 +83,7 @@
 	
 	<meta_metadata name="rhizome_artist" extends="artist" parser="xpath">
 		<selector domain="rhizome.org" url_regex_fragment="profile" />
+		<example_url url="http://rhizome.org/profile/uiuuii/" />
  
 		<scalar name="title" xpath="//div[@class='user-name']" />
 		<scalar name="bio" tag="abstract" label="artist bio" xpath="//div[@id='profile-bio']" scalar_type="String"/>
@@ -78,17 +94,39 @@
 		</collection>
 	</meta_metadata>
 	
+	<meta_metadata name="rhizome_collection" extends="exhibition" parser="xpath">
+		<selector domain="rhizome.org" url_regex_fragment="collections" />
+		<example_url url="http://rhizome.org/artbase/collections/6/" />
+		
+ 
+		<scalar name="title" xpath="//div[@id='collection-title-overlay-title']" />
+		<scalar name="description" tag="abstract" label="about" xpath="//div[@class='statement-column-content']" scalar_type="String"/>
+		
+		<collection name="creative_works" xpath="//div[@class='focused']">
+			<scalar name="description" xpath=".//div[@class='focused-description']" />	    
+		    <scalar name="year" xpath=".//span[@class='created']"/>
+			<scalar name="title" xpath=".//span[@class='artwork-title']"/>
+		</collection>
+	</meta_metadata>	
+	
+	
 	<meta_metadata name="moma_artwork" extends="artwork"  parser="xpath">
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />  
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+" />
-    
-		<scalar name="title" xpath="//div[@id='omniture_caption']/h3" />
+		<example_url url="http://www.moma.org/collection/browse_results.php?object_id=79211" />
+		<example_url url="http://www.moma.org/collection/browse_results.php?criteria=O%3ADE%3AI%3A3%7CG%3AHI%3AE%3A1&amp;page_number=3&amp;template_id=1&amp;sort_order=2" />  
 		
+		
+		<scalar name="title" xpath="//div[@id='omniture_caption']/h3" />
+
+		<scalar name="year" xpath="//dl[@class='caption']/dd[1]"/>
+		<scalar name="medium" xpath="//dl[@class='caption']/dd[2]"/> 
+	 
 		<collection name="authors" xpath="//h4[@class='artist']/a">
 			<scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="." />
-		</collection>
+		</collection> 
 		
 		<scalar name="status" scalar_type="String" xpath="//div[@class='status']/strong" />
 		<composite name="moma_department" type="compound_document" label="department"
@@ -110,7 +148,8 @@
             xpath="//div[@class='item']/h4[contains(text(), 'Resources:')]/../div/a/@href" />
 		<scalar name="moma_id" scalar_type="String" xpath="//p[@class='caption'][2]" />
 		
-		<scalar name="image_url" scalar_type="ParsedURL" hide="true"
+		<!-- make image -->
+		<scalar name="image" scalar_type="ParsedURL" hide="true"
             xpath="//p[@id='mainImage']/img/@src" />
 		
 		<composite name="temp_field_value_holder" extends="metadata" hide="true"
@@ -155,10 +194,8 @@
 		</semantic_actions>
 	</meta_metadata>
 
-
 	<meta_metadata name="moma_list" type="search" parser="xpath">
     <generic_type_var name="SR" arg="moma_artwork" />
-    
 		<selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" />
     
 		<collection name="search_results" xpath="//ul[@id='thumbnail-view-items']/li">
@@ -169,7 +206,7 @@
 		
 	<meta_metadata name="moma_artist" extends="artist" parser="xpath">
 		<selector url_stripped="http://www.moma.org/collection/artist.php" />
-		<!-- add image -->
+		<example_url url="http://www.moma.org/collection/artist.php?artist_id=28723" />
 		
 		<scalar name="title" xpath="//h2[@class='pagetitle']" />
 		<collection name="creative_works" xpath="//ul[@id='thumbnail-view-items']/li/div/div">
@@ -178,4 +215,296 @@
 		</collection>
 	</meta_metadata>	
 		
+		
+	<meta_metadata name="tate_artwork" extends="artwork"  parser="xpath">
+		<selector url_path_tree="http://www.tate.org.uk/art/artworks/" />
+		<example_url url="http://www.tate.org.uk/art/artworks/pollock-number-14-t03978" />
+	 	<example_url url="http://www.tate.org.uk/art/artworks/duchamp-fountain-t07573" />
+		
+		<scalar name="title" xpath="//span[@class='title']" />
+		<scalar name="year" xpath="//span[@class='datetext']"/>
+		<scalar name="medium" xpath="//span[@class='infoValue infoMedium']"/>
+		
+		<collection name="authors" xpath="//div[@class='infoWorkArtist infoValue']">
+			<scalar name="location" xpath="./a/@href" hide="true"/>
+			<scalar name="title" xpath=".//span[@class='infoWorkArtName']" />
+		</collection>
+		
+		<scalar name="description" xpath="//div[@class='texts_content']"/>
+		
+		<collection name="works_of_interest" child_type="artwork" label="works of interest" tag="related works" 
+		other_tags="creative_works" child_tag="artwork" xpath="//div[@class='carousel-clip']/div/div/div[2]/div[2]/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./span"/>
+        </collection>		
+        
+        <collection name="tags" child_type="tate_filter" label="tags" tag="tag" xpath="//span[@class='tag']/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>    
+	</meta_metadata>
+ 
+	<meta_metadata name="tate_filter" extends="search" parser="xpath">
+		<selector url_stripped="http://www.tate.org.uk/art/artworks" />
+ 		<example_url url="http://www.tate.org.uk/art/artworks?gm=416" />
+ 		<example_url url="http://www.tate.org.uk/art/artworks?gid=999999952" />
+ 		
+		<collection name="search_results" child_type="tate_artwork" xpath="//div[@class='grid-work-text']">
+			<scalar name="location" xpath="./div[2]/a/@href" hide="true"/>
+			<scalar name="title" xpath="./div[2]/a/span"/>
+			<collection name="authors" xpath="./div[2]/a">
+				<scalar name="title" xpath="./div[1]" />
+			</collection>		
+		</collection>
+	</meta_metadata>
+	
+	<meta_metadata name="tate_artist" extends="artist" parser="xpath">
+		<selector domain="tate.org.uk" url_regex_fragment="artists" />
+ 		<example_url url="http://www.tate.org.uk/art/artists/cy-twombly-2079" />
+ 
+ 
+		<scalar name="title" xpath="//div[@class='region-inner region-header-second-inner']/h1/span[1]" />
+		<scalar name="bio" tag="abstract" label="artist bio" xpath="//div[@class='texts_content']/p[1]" scalar_type="String"/>
+		
+		<collection name="creative_works" xpath="//div[@class='carousel-clip']/div/div/div[2]/div[2]/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./span"/>
+        </collection>	
+	</meta_metadata>
+	
+	
+	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">				
+		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections/search-the-collections/\d+" />
+		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections/search-the-collections/\d+" />			
+		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/503435?rpp=60&amp;pg=1&amp;rndkey=20140121&amp;ao=on&amp;ft=*&amp;what=Spruce&amp;pos=12" />
+		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/503647?rpp=60&amp;pg=1&amp;rndkey=20140121&amp;ao=on&amp;ft=*&amp;what=Spruce&amp;pos=10" />		
+		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/503932" />  	
+		
+		<scalar name="title" xpath="//div[@class='text-box first cleared ']/h2" />
+		
+		<!-- special characters (dash) get deleted -->
+		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
+		<scalar name="year" xpath="(//dd[preceding-sibling::dt[contains(text(),'Date:')]])[1]"/>
+		
+		<scalar name="medium" xpath="(//dd[preceding-sibling::dt[contains(text(),'Medium:')]])[1]"/>
+		
+		<collection name="authors" xpath="//dt[text()='Who']/../dd[1]/ul/li/a">
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="." />
+		</collection>
+		
+		<scalar name="description" xpath="//a[contains(text(),'Description')]/../div/div/p"/>
+		
+		<collection name="works_of_interest" child_type="met_artwork" label="related works" tag="related works" 
+		other_tags="creative_works" child_tag="artwork" xpath="//div[@class='object-info']/p/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>		
+         
+        <collection name="tags" child_type="met_filter" label="tags" tag="tag" xpath="(//div[@class='accordion-inner'])[last()]/dl/dd/ul/li/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>    
+	</meta_metadata>
+
+	<!-- &amp; is giving a problem -->
+	<meta_metadata name="met_filter" extends="search" parser="xpath">		
+		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+  			<param name="who" />
+		</selector>	
+		
+		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">	
+		  	<param name="where" />
+		</selector>	
+  		
+  		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">			
+  			<param name="what" />
+  		</selector>
+  		
+  		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">		
+  			<param name="when" />
+  		</selector>
+  		
+  		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">		
+  			<param name="deptid" />
+ 		</selector>
+ 		<example_url url="http://www.metmuseum.org/collections/search-the-collections?ft=*&amp;what=Spruce"/>
+ 
+		<collection name="search_results" child_type="met_artwork" xpath="//div[@class='search-results-container cleared visible']/ul/li">
+			<scalar name="location" xpath="./div[2]/p/a/@href" hide="true"/>
+			<scalar name="title" xpath="./div[2]/p/a"/>	
+		</collection>
+	</meta_metadata>	
+		
+
+	<meta_metadata name="whitney_artwork" extends="artwork"  parser="xpath">			
+		<selector url_path_tree="http://whitney.org/Collection/" />	
+		<example_url url="http://whitney.org/Collection/JohnChamberlain/701579aB/" />
+		<example_url url="http://whitney.org/Collection/BobThompson/" />
+		<example_url url="http://whitney.org/Collection/AndyWarhol" />
+
+		
+		<collection name="authors" xpath="//*[@id='mmi_5948']/div[1]/h1">
+			<scalar name="title" xpath="." />
+		</collection>  
+		
+		<scalar name="title" xpath="//*[@class='after-artist-title-module']" />
+		<scalar name="year" xpath="//*[@class='artwork-dates']"/>		
+	</meta_metadata>	
+	
+	<meta_metadata name="whitney_watch_and_listen" extends="artwork"  parser="xpath">			
+		<selector url_path_tree="http://whitney.org/WatchAndListen/" />	
+		<example_url url="http://whitney.org/WatchAndListen/Artists?play_id=903" />
+		
+		<scalar name="title" xpath="//*[@class='watch-and-listen-title']" />
+		
+		<collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist" tag="audio_playlist" 
+		other_tags="audio_playlist" child_tag="audio" xpath="//div[@class='audio-guide-playlist-table-wrapper']/table/tbody/tr">       
+			<!-- may be possible using substring  -->
+            <!-- <scalar name="location" xpath="substring-after(./tr[starts-with(@onclick, 'document.location = \'')]/@onclick)" hide="true"/>  -->
+			<scalar name="title" xpath="./td[2]"/>
+        </collection>	
+	</meta_metadata>	
+	
+	<!--  not working outside my local environment -->
+	<meta_metadata name="whitney_search" extends="search"  parser="xpath">			
+		<selector url_stripped="http://whitney.org/Search" />	
+		<example_url url="http://whitney.org/Search?query=Georgia+O%27Keeffe" />  
+		
+		<scalar name="title" label="search term" xpath="//*[@id='search-result-field']/@value" />
+		
+		<collection name="search_results" child_type="whitney_artwork" xpath="//div[@class='result artwork']/div[@class='title']">
+		 	 <scalar name="location" xpath="./a[2]/@href" hide="true"/>
+			<scalar name="title" xpath="./a[2]"/> 
+		</collection> 
+	</meta_metadata>
+	 
+ 
+	<meta_metadata name="whitney_decade" extends="search"  parser="xpath">			
+		<selector url_stripped="http://whitney.org/Collection" >
+			<param name="decade" />
+		</selector>	
+		<example_url url="http://whitney.org/Collection?decade=194" />  
+		
+		<scalar name="title" label="decade" xpath="//*[@class='selected']" />
+		
+		<collection name="search_results" child_type="whitney_artwork" xpath="//div[@class='collection-module-artwork']/div">
+		 	<scalar name="location" xpath="./a/@href" hide="true"/>
+			<scalar name="title" xpath="./a"/> 
+		</collection> 
+	</meta_metadata>
+	
+	<!--  check www and http vs https -->
+	<!-- http://www.guggenheim.org/new-york/collections/collection-online/artwork/4057 not working outside local environment -->
+	<meta_metadata name="guggen_artwork" extends="artwork"  parser="xpath">			
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />		
+		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
+		
+		<!-- expand option shows up when it should not -->
+		<collection name="authors" xpath="//div[@id='gallery']/h3">
+			<scalar name="title" xpath="." />
+		</collection>  
+		
+		<scalar name="title" xpath="//*[@id='caption']/i" />
+		<scalar name="description" xpath="//div[@id='essay']/p" />
+
+		<scalar name="year" xpath="//*[@id='caption']">
+			<filter regex="\d{4}" />
+		</scalar>
+ 		
+		<scalar name="medium" xpath="//*[@id='caption']">
+			<filter regex="\.(.*?)(?=\,)" />
+			<!-- filter   -->
+		</scalar>
+		
+		<collection name="tags" child_type="guggen_filter" label="tags" tag="tag" xpath="//*[@class='more-tags']/li/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection> 	
+	</meta_metadata>	
+	
+	<meta_metadata name="guggen_filter" extends="search" parser="xpath">			
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artists/" />
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/" />
+		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/movements/" />
+ 		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/movements/195203" />
+  		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/195198" />
+  		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artists/963/Jackson%20Pollock" />
+   		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artists/1529/Vito%20Acconci" />
+ 
+ 
+		<scalar name="title" xpath="//div[@id='main-three-center']/h3" />
+		
+		<collection name="search_results" child_type="guggen_artwork"  xpath="//div[@class='artworks-item']">       
+            <scalar name="location" xpath="./div/a/@href" hide="true"/>
+			<scalar name="title" xpath="./div/span[2]"/>
+        </collection>	
+	</meta_metadata>	
+	
+	
+	<meta_metadata name="newmuseum_artwork" extends="artwork"  parser="xpath">				
+		<selector url_path_tree="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/" />		
+		<example_url url="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/5215" />
+		<example_url url="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1840" />
+		<example_url url="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1445" />
+		
+		<scalar name="title" xpath="//div[@id='detailTitle']" />
+		
+		<scalar name="year" xpath="(//div[preceding-sibling::div[contains(text(),'Date')]])[1]"/>
+		
+		<collection name="authors" xpath="(//div[preceding-sibling::div[contains(text(),'Artist')]])[1]/a">
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="." />
+		</collection>
+		
+		<collection name="related_exhibitions" child_type="newmuseum_exhibition" label="related exhibition" tag="related exhibition" 
+		 child_tag="exhibition" xpath="(//div[preceding-sibling::div[contains(text(),'Related Exhibition')]])[1]/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>		    
+	</meta_metadata>
+	
+	<meta_metadata name="newmuseum_artist" extends="artist" parser="xpath">
+		<selector url_path_tree="http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/" />		
+ 		<example_url url="http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/1848" />
+ 
+		<scalar name="title" xpath="//div[@id='detailTitle']" />
+		
+		<collection name="related_exhibitions" child_type="newmuseum_exhibition" label="exhibitions" tag="related exhibition" 
+		 child_tag="exhibition" xpath="(//div[preceding-sibling::div[contains(text(),'Exhibition')]])/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="."/>
+        </collection>		
+	</meta_metadata>
+	
+	<meta_metadata name="newmuseum_exhibition" extends="exhibition" parser="xpath">
+		<selector url_path_tree="http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/" />		
+ 		<example_url url="http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/67" />
+ 
+		<scalar name="title" xpath="//div[@id='detailTitle']" />
+		<scalar name="description" xpath="//div[@id='occDescription']" />
+		
+		<collection name="contributors" xpath="(//div[preceding-sibling::div[contains(text(),'Artist')]])/a">
+			<scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="." />
+		</collection>	
+		
+		<collection name="creative_works" xpath="//*[@id='resultBox']/table/tbody/tr/td/div[2]/div/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./i"/>
+        </collection>			
+	</meta_metadata>
+	
+	<meta_metadata name="newmuseum_filter" extends="search" parser="xpath">
+		<selector url_path_tree="http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/" />		
+ 		<example_url url="http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/type_facet/id/12/mod_id/0" />
+ 
+		<scalar name="title" label="browsing for" xpath="//span[@id='browsingFor']" />
+			
+		<collection name="search_results" child_type="newmuseum_artwork" xpath="//*[@id='resultBox']/table/tbody/tr/td/div[2]/div/a">       
+            <scalar name="location" xpath="./@href" hide="true"/>
+			<scalar name="title" xpath="./i"/>
+        </collection>			
+	</meta_metadata>
+	
 </meta_metadata_repository>

@@ -49,7 +49,7 @@ public class MomaArtwork extends Artwork
 	private MetadataString momaId;
 
 	@simpl_scalar
-	private MetadataParsedURL imageUrl;
+	private MetadataParsedURL image;
 
 	@simpl_composite
 	@mm_name("temp_field_value_holder")
@@ -211,36 +211,36 @@ public class MomaArtwork extends Artwork
 		this.momaId = momaId;
 	}
 
-	public MetadataParsedURL	imageUrl()
+	public MetadataParsedURL	image()
 	{
-		MetadataParsedURL	result = this.imageUrl;
+		MetadataParsedURL	result = this.image;
 		if (result == null)
 		{
 			result = new MetadataParsedURL();
-			this.imageUrl = result;
+			this.image = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getImageUrl()
+	public ParsedURL getImage()
 	{
-		return this.imageUrl == null ? null : imageUrl().getValue();
+		return this.image == null ? null : image().getValue();
 	}
 
-	public MetadataParsedURL getImageUrlMetadata()
+	public MetadataParsedURL getImageMetadata()
 	{
-		return imageUrl;
+		return image;
 	}
 
-	public void setImageUrl(ParsedURL imageUrl)
+	public void setImage(ParsedURL image)
 	{
-		if (imageUrl != null)
-			this.imageUrl().setValue(imageUrl);
+		if (image != null)
+			this.image().setValue(image);
 	}
 
-	public void setImageUrlMetadata(MetadataParsedURL imageUrl)
+	public void setImageMetadata(MetadataParsedURL image)
 	{
-		this.imageUrl = imageUrl;
+		this.image = image;
 	}
 
 	public TempFieldValueHolder getTempFieldValueHolder()

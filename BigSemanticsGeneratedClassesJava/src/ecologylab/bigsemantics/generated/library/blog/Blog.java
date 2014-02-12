@@ -10,11 +10,13 @@ package ecologylab.bigsemantics.generated.library.blog;
 
 import ecologylab.bigsemantics.generated.library.blog.Post;
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,10 @@ import java.util.Map;
 @simpl_inherit
 public class Blog extends CreativeWork
 {
+	@simpl_composite
+	@mm_name("photo")
+	private Image photo;
+
 	@simpl_collection("post")
 	@mm_name("posts")
 	private List<Post> posts;
@@ -34,6 +40,16 @@ public class Blog extends CreativeWork
 		super(mmd);
 	}
 
+
+	public Image getPhoto()
+	{
+		return photo;
+	}
+
+	public void setPhoto(Image photo)
+	{
+		this.photo = photo;
+	}
 
 	public List<Post> getPosts()
 	{

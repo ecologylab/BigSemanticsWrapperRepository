@@ -9,14 +9,13 @@ package ecologylab.bigsemantics.generated.library.socialMedia;
  */
 
 import ecologylab.bigsemantics.generated.library.blog.Post;
-import ecologylab.bigsemantics.generated.library.socialMedia.Tweeter;
+import ecologylab.bigsemantics.generated.library.socialMedia.TwitterMicroblog;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -26,9 +25,9 @@ import java.util.Map;
 @simpl_inherit
 public class Tweet extends Post
 {
-	@simpl_collection("tweeter")
-	@mm_name("tweeters")
-	private List<Tweeter> tweeters;
+	@simpl_composite
+	@mm_name("twitter_microblog")
+	private TwitterMicroblog twitterMicroblog;
 
 	public Tweet()
 	{ super(); }
@@ -38,33 +37,13 @@ public class Tweet extends Post
 	}
 
 
-	public List<Tweeter> getTweeters()
+	public TwitterMicroblog getTwitterMicroblog()
 	{
-		return tweeters;
+		return twitterMicroblog;
 	}
 
-  // lazy evaluation:
-  public List<Tweeter> tweeters()
-  {
-    if (tweeters == null)
-      tweeters = new ArrayList<Tweeter>();
-    return tweeters;
-  }
-
-  // addTo:
-  public void addToTweeters(Tweeter element)
-  {
-    tweeters().add(element);
-  }
-
-  // size:
-  public int tweetersSize()
-  {
-    return tweeters == null ? 0 : tweeters.size();
-  }
-
-	public void setTweeters(List<Tweeter> tweeters)
+	public void setTwitterMicroblog(TwitterMicroblog twitterMicroblog)
 	{
-		this.tweeters = tweeters;
+		this.twitterMicroblog = twitterMicroblog;
 	}
 }

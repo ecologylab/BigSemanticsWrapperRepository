@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
@@ -24,51 +23,29 @@ import org.slf4j.LoggerFactory;
 public class BSService
 {
 
-  public static class ServiceOpException extends Exception
+  static Logger   logger = LoggerFactory.getLogger(BSService.class);
+
+  private File    serviceDir;
+
+  private File    bsJsDir;
+
+  private int     servicePort;
+
+  private Server  server;
+
+  private Process downloaderProc;
+
+  public BSService(Configuration configs)
   {
-
-    public ServiceOpException(String message)
-    {
-      super(message);
-    }
-
-  }
-
-  static Logger logger = LoggerFactory.getLogger(BSService.class);
-
-  int           servicePort;
-
-  String        dpoolWarPath;
-
-  String        bssWarPath;
-
-  String        downloaderJarPath;
-
-  Server        server;
-
-  Process       downloaderProc;
-
-  public BSService() throws ConfigurationException
-  {
-    this("resources/service-default.conf");
-  }
-
-  public BSService(String configFile) throws ConfigurationException
-  {
-    Configuration config = new PropertiesConfiguration(configFile);
-    servicePort = config.getInt("service_port");
-    dpoolWarPath = config.getString("dpool_war_path");
-    bssWarPath = config.getString("bsservice_war_path");
-    downloaderJarPath = config.getString("downloader_jar_path");
+    serviceDir = new File(configs.getString("bigsemantics_service_dir"));
+    bsJsDir = new File(configs.getString("bigsemantics_javascript_dir"));
+    servicePort = configs.getInt("service_port");
   }
 
   public void start() throws Exception
   {
-    if (checkRequiredArchives())
-    {
-      runServer();
-      runDownloader();
-    }
+    runServer();
+    runDownloader();
   }
 
   public void stop() throws Exception
@@ -77,42 +54,32 @@ public class BSService
     stopDownloader();
   }
 
-  private boolean checkRequiredArchives() throws ServiceOpException
-  {
-    isExistingOrThrowException(dpoolWarPath);
-    isExistingOrThrowException(bssWarPath);
-    isExistingOrThrowException(downloaderJarPath);
-    return true;
-  }
-
-  private void isExistingOrThrowException(String path) throws ServiceOpException
-  {
-    File f = new File(path);
-    if (!f.exists())
-    {
-      throw new ServiceOpException("Missing required archive: " + path);
-    }
-  }
-
   private void runServer() throws Exception
   {
     HandlerCollection handlers = new ContextHandlerCollection();
 
-    WebAppContext context1 = new WebAppContext(handlers, dpoolWarPath, "/DownloaderPool");
+    File dpoolWarPath =
+        PathUtil.subPath(serviceDir, "DownloaderPool", "build", "DownloaderPool.war");
+    WebAppContext context1 =
+        new WebAppContext(handlers, dpoolWarPath.getAbsolutePath(), "/DownloaderPool");
     handlers.addHandler(context1);
 
-    WebAppContext context2 = new WebAppContext(handlers, bssWarPath, "/BigSemanticsService");
+    File serviceWarPath =
+        PathUtil.subPath(serviceDir, "BigSemanticsService", "build", "BigSemanticsService.war");
+    WebAppContext context2 =
+        new WebAppContext(handlers, serviceWarPath.getAbsolutePath(), "/BigSemanticsService");
     handlers.addHandler(context2);
-    
+
     ContextHandler c = new ContextHandler("/");
     ResourceHandler resourceHandler = new ResourceHandler();
-    resourceHandler.setResourceBase("../../BigSemanticsJavaScript/");
+    resourceHandler.setResourceBase(bsJsDir.getAbsolutePath());
     resourceHandler.setDirectoriesListed(true);
     c.setHandler(resourceHandler);
     handlers.addHandler(c);
-    
+
     server = new Server(servicePort);
     server.setHandler(handlers);
+    logger.info("starting dpool+bigsemantics services...");
     server.start();
     for (int i = 0; i < 30; ++i)
     {
@@ -128,7 +95,7 @@ public class BSService
       throw new RuntimeException("Failed to start the BigSemantics web service(s).");
     }
 
-    logger.info("BS web services started.");
+    logger.info("dpool+bigsemantics services started.");
   }
 
   private void stopServer() throws Exception
@@ -138,6 +105,7 @@ public class BSService
       return;
     }
 
+    logger.info("stopping dpool+bigsemantics services...");
     server.stop();
 
     for (int i = 0; i < 30; ++i)
@@ -154,13 +122,16 @@ public class BSService
       throw new RuntimeException("Failed to stop the BigSemantics web service(s).");
     }
 
-    logger.info("BS web services stopped.");
+    logger.info("dpool+bigsemantics services stopped.");
   }
 
   private void runDownloader() throws IOException, InterruptedException
   {
     stopDownloader();
+    String downloaderJarPath =
+        PathUtil.subPath(serviceDir, "DownloaderPool", "build", "Downloader.jar").getAbsolutePath();
     ProcessBuilder pb = new ProcessBuilder("java", "-jar", downloaderJarPath);
+    logger.info("starting downloader...");
     downloaderProc = pb.start();
     logger.info("downloader started.");
   }
@@ -169,6 +140,7 @@ public class BSService
   {
     if (downloaderProc != null)
     {
+      logger.info("stopping downloader...");
       downloaderProc.destroy();
       downloaderProc.waitFor();
       downloaderProc = null;
@@ -178,12 +150,13 @@ public class BSService
 
   public static void main(String[] args) throws Exception
   {
-    BSService runner = new BSService();
+    Configuration configs = new PropertiesConfiguration("wrapper-dev-assist.conf");
+    BSService runner = new BSService(configs);
     runner.start();
     runner.server.join();
-//    Thread.sleep(60000);
-//    logger.info("requesting stop ...");
-//    runner.stop();
+    // Thread.sleep(60000);
+    // logger.info("requesting stop ...");
+    // runner.stop();
   }
 
 }
