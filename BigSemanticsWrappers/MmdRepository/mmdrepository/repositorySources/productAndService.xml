@@ -182,16 +182,19 @@
   </meta_metadata>
 
  
-  
+ <meta_metadata name="newegg_specs" extends="compound_document" parser="xpath">
+ 	<collection name="specifications" child_type="compound_document">
+ 	</collection>
+ </meta_metadata> 
   <meta_metadata name="newegg_product" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
     <example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
-    
+    <scalar name="title" xpath="//div[@class='wrapper']/h1/span"/>
     <composite name="image">
       <scalar name="location" xpath="//span[@class='mainSlide']/img/@src" />
     </composite>
-    
-    <scalar name="price" xpath="//div[@class='detailMainSell']//strong" />
+    <!-- This appears to be a newegg specific item number, not a general model number -->
+    <scalar name="item_number" scalar_type="String" xpath="//div[@id='bcaBreadcrumbTop']/dl/dd[position() = last()]/em"/>
     <scalar name="overall_rating" xpath="//div[@itemprop='aggregateRating']//img/@title" />
     <scalar name="num_reviews" xpath="//span[@itemprop='reviewCount']" />
     <collection name="reviews" xpath="//table[@class='grpReviews']//tr/th[@class='reviewer']/..">
@@ -199,15 +202,20 @@
       <scalar name="title" xpath=".//h3/text()" />
       <scalar name="description" xpath=".//div[@class='details']" />
     </collection>
-    
-    <collection name="suggested_products" child_type="newegg_product" xpath="//div[@class='wrapSideSell ']/div[@class='itmSideSell' | @class='itmSideSell first']">
-      <scalar name="location" xpath=".//a/@href" />
-      <scalar name="title" xpath=".//a" />
-      <scalar name="price" xpath=".//li[@class='price-current ']" />
-    </collection>
+    <collection name="headline_specs" child_type="compound_document" xpath="//ul[@id='grpBullet_']/li">
+		<scalar name="title" label="specification" xpath="./text()"/>
+	</collection>    
+	<!-- Detailed specs -->
+	<collection name="all_specs" child_type="newegg_specs" xpath="//div[@id='Specs']/fieldset">
+		<scalar name="title" label="type" xpath="./h3"/>
+		<collection name="specifications" xpath="./dl">
+			<scalar name="title" label="spec" xpath="./dt"/>
+			<scalar name="description" label="detail" xpath="./dd"/>
+		</collection>
+	</collection>
+	
+  
   </meta_metadata>
-  
-  
   <meta_metadata name="tigerdirect_product" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_stripped="http://www.tigerdirect.com/applications/SearchTools/item-details.asp" />
     <example_url url="http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=8674056" />
