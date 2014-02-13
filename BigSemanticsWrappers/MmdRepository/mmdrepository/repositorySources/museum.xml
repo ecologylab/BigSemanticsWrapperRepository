@@ -28,7 +28,7 @@
 	<scalar name="languages" scalar_type="String"/>
 </meta_metadata>
  
-<meta_metadata name="getty_artist" extends="compound_document" parser="xpath">
+<meta_metadata name="getty_artist" extends="artist" parser="xpath">
 	<selector url_stripped="http://www.getty.edu/art/gettyguide/artMakerDetails"/>
 	
 	
@@ -39,7 +39,8 @@
 		<scalar name="title" xpath="."/>
 		<scalar name="location" xpath="./@href"/>
 	</collection>
-	<scalar name="quick_test" scalar_type="String" xpath="//p[@class='bio'][1]"/>
+	<!-- <scalar name="quick_test" scalar_type="String" xpath="//p[@class='bio'][1]"/>
+	-->
 	<composite name="artist_info" type="getty_artist_info" xpath="//p[@class='bio'][1]">
 		
 		<field_parser name="regex_find" regex="(.*)(\n.*)(\n.*)(\n.*)(\n.*)"/>
@@ -51,7 +52,7 @@
 </meta_metadata>
 
 
-<meta_metadata name="getty_object" extends="creative_work" parser="xpath">
+<meta_metadata name="getty_object" extends="artwork" parser="xpath">
 	<selector url_stripped="http://www.getty.edu/art/gettyguide/artObjectDetails"/>
 	<example_url url="http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=907" />
     
@@ -74,8 +75,9 @@
           </create_and_visualize_img_surrogate>
       </if>
     </semantic_actions>
-  
+  	<!--  
 	<scalar name="work_info_test" scalar_type="String" xpath="//form[@name='bookmarkobj']/p[1]"/>
+	-->
 	<composite name="work_info" type="getty_work_info" xpath="//form[@name='bookmarkobj']/p[1]">
 		
 		<field_parser name="regex_find" regex="(.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)"/>
@@ -85,6 +87,7 @@
 		<scalar name="dimensions" field_parser_key="$6"/>
 		<scalar name="museum_code" field_parser_key="$8"/>
 	</composite>
+
 
 	<scalar name="description" scalar_type="String" xpath="//comment()[.='Main Content Area']/following-sibling::tr[1]/td/p[1]"/>
 	
@@ -200,7 +203,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
 	
 </meta_metadata>
  
-<meta_metadata name="flamenco_object" extends="creative_work" parser="xpath">
+<meta_metadata name="flamenco_object" extends="artwork" parser="xpath">
     <selector url_regex=".*index=[0123456789]+" domain="berkeley.edu"/>
 	<example_url url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&amp;group=objects&amp;index=15"/>
 	
@@ -217,10 +220,10 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
 	
 	
 	<!-- If the artist is unknown, this displays an (essentially) random facet. The Unknown artist is reported in the "specific_facets" collection -->
-	<collection name="authors" label="authors" xpath="//tr[@valign='top'][4]/td[2]">
+	<collection name="authors"  xpath="//tr[@valign='top'][4]/td[2]">
 		<scalar name="title" xpath="./text()"/>
 	</collection>
-	<scalar name="media_type" scalar_type="String" xpath="//tr[@valign='top'][5]/td[2]"/>
+	<scalar name="medium" xpath="//tr[@valign='top'][5]/td[2]"/>
 
 	<collection name="general_facets" child_type="flamenco_facet" xpath="//div[@class='endgame']/div/table/tbody/tr/td/form[2]/table/tbody//nobr/a">
 		<scalar name="title" xpath="./span" label="facet_name"/>
