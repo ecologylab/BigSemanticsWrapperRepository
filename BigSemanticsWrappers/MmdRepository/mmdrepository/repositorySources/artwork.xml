@@ -307,7 +307,7 @@
         </collection>    
 	</meta_metadata>
 
-	<!-- &amp; is giving a problem -->
+
 	<meta_metadata name="met_filter" extends="search" parser="xpath">		
 		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
   			<param name="who" />
@@ -360,13 +360,12 @@
 		
 		<collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist" tag="audio_playlist" 
 		other_tags="audio_playlist" child_tag="audio" xpath="//div[@class='audio-guide-playlist-table-wrapper']/table/tbody/tr">       
-			<!-- may be possible using substring  -->
-            <!-- <scalar name="location" xpath="substring-after(./tr[starts-with(@onclick, 'document.location = \'')]/@onclick)" hide="true"/>  -->
-			<scalar name="title" xpath="./td[2]"/>
+            <scalar name="location" xpath="substring(substring-after(./@onclick, '='), 3, string-length(substring-after(./@onclick, '='))-4 )" hide="true" />  
+			<scalar name="title" xpath="./td[2]" />
+			
         </collection>	
 	</meta_metadata>	
 	
-	<!--  not working outside my local environment -->
 	<meta_metadata name="whitney_search" extends="search"  parser="xpath">			
 		<selector url_stripped="http://whitney.org/Search" />	
 		<example_url url="http://whitney.org/Search?query=Georgia+O%27Keeffe" />  
@@ -394,8 +393,6 @@
 		</collection> 
 	</meta_metadata>
 	
-	<!--  check www and http vs https -->
-	<!-- http://www.guggenheim.org/new-york/collections/collection-online/artwork/4057 not working outside local environment -->
 	<meta_metadata name="guggen_artwork" extends="artwork"  parser="xpath">			
 		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />		
 		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
