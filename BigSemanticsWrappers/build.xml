@@ -24,6 +24,8 @@
     <fileset dir="${lib.dir}">
       <include name="json-simple-1.1.1.jar" />
       <include name="xercesMinimal.jar" />
+      <!-- we have changes in the ST lib, however antlr has ST in it too, thus
+           ST must be before antlr in the list. -->
       <include name="ST-4.0.7.jar" />
       <include name="antlr-3.5-complete.jar" />
       <include name="*.jar" />
@@ -37,22 +39,7 @@
     <delete dir="${build.dir}" />
   </target>
  
-  <target name="javac">
-    <mkdir dir="${classes.dir}" />
-    <copy todir="${classes.dir}">
-      <fileset dir="${repo.dir}" />
-    </copy>
-  </target>
-    
-  <target name="jar" depends="javac">
-    <mkdir dir="${jar.dir}" />
-    <jar destfile="${jar.file}" basedir="${classes.dir}" />
-
-    <!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
-    <copy file="${jar.file}" todir="${lib.dir}" />
-  </target>
-
-  <target name="compile-wrappers-java" depends="jar">
+  <target name="compile-wrappers-java">
     <!-- run the compiler. -->
     <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
           classpathref="jars_classpath" fork="yes" failonerror="true">
@@ -65,8 +52,22 @@
     <!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
     <ant antfile="../BigSemanticsGeneratedClassesJava/build.xml"
          target="main" useNativeBasedir="yes" inheritAll="false" />
+
+    <!-- repositoryFiles.lst will only be updated after compilation! -->
+    <mkdir dir="${classes.dir}" />
+    <copy todir="${classes.dir}">
+      <fileset dir="${repo.dir}" />
+    </copy>
   </target>
   
+  <target name="jar" depends="compile-wrappers-java">
+    <mkdir dir="${jar.dir}" />
+    <jar destfile="${jar.file}" basedir="${classes.dir}" />
+
+    <!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
+    <copy file="${jar.file}" todir="${lib.dir}" />
+  </target>
+
   <target name="mmtest" depends="compile-wrappers-java">
     <!-- run mmtest with a URL list -->
     <java classname="ecologylab.bigsemantics.tools.MmTest"
@@ -77,10 +78,7 @@
     </java>
   </target>
   
-  <target name="compile-wrappers-csharp" depends="jar">
-    <!-- update wrappers jar file. the compiler uses this jar file to load wrappers. -->
-    <copy file="${jar.file}" tofile="${lib.dir}/${jar.filename}" />
-    
+  <target name="compile-wrappers-csharp">
     <!-- run the compiler. -->
     <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
           classpathref="jars_classpath" fork="yes" failonerror="true">
@@ -98,11 +96,11 @@
   <available property="bsjava.lib.exists" file="${bsjava.lib}" type="dir" />
   <available property="bsservice.lib.exists" file="${bsservice.lib}" type="dir" />
 	
-	<target name="update-deps-bsjava" depends="compile-wrappers-java" if="bsjava.lib.exists">
+	<target name="update-deps-bsjava" depends="jar" if="bsjava.lib.exists">
 		<copy file="${jar.file}" todir="${bsjava.lib}" />
 	</target>
 	
-	<target name="update-deps-bsservice" depends="compile-wrappers-java" if="bsservice.lib.exists">
+	<target name="update-deps-bsservice" depends="jar" if="bsservice.lib.exists">
 		<copy file="${jar.file}" todir="${bsservice.lib}" />
 	</target>
 	
