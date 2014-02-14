@@ -1,0 +1,44 @@
+<meta_metadata_repository name="instructables" package="ecologylab.bigsemantics.generated.library.instructables" default_user_agent_name="chrome_2">
+
+
+<meta_metadata name="instructable_tag" extends="compound_document" parser="xpath">
+
+	<selector url_path_tree="http://www.instructables.com/tag"/>
+	<example_url url="http://www.instructables.com/tag/type-id/category-food/keyword-tomato/"/>
+	<scalar name="title" xpath="//a[@class='btn btn-mini']"/>
+	<collection name="items_with_tag" child_type="instructable" xpath="//div[@class='projects']/ul/li">
+		<scalar name="title" xpath="./div/a/@title"/>
+		<scalar name="location" xpath="./div/a/@href"/>
+	</collection>
+</meta_metadata>
+
+<meta_metadata name="instructable" extends="compound_document" parser="xpath">
+	<selector url_path_tree="http://www.instructables.com/id"/>
+	<example_url url="http://www.instructables.com/id/Tomato-Water-Bloody-Mary/"/>
+	<scalar name="title" xpath="//h1[@class='fn']"/>
+	<scalar name="instructor" scalar_type="String" xpath="//span[@class='author']"/>
+	<scalar name="number_of_steps" scalar_type="String" xpath="//a[@title='Go To Step']"/>
+	<scalar name="views" scalar_type="String" xpath="(//span[@class='count'])[1]"/>
+	<scalar name="favorites" scalar_type="String" xpath="(//span[@class='count'])[2]"/>
+	
+	<collection name="others_by_author" child_type="instructable" xpath="//ul[@class='h-list']/li">
+		<scalar name="title" xpath="./a/@title"/>
+		<scalar name="location" xpath="./a/@href"/>
+	</collection>
+	<collection name="related" child_type="instructable" xpath="//div[@id='related-instructables']/ul/li">
+		<scalar name="title" xpath="./div/a/@title"/>
+		<scalar name="location" xpath="./div/a/@href"/>
+	</collection>
+	<collection name="tags" child_type="instructable_tag" xpath="//div[@class='ible-tags']/div/a">
+		<scalar name="title" xpath="./@title"/>
+		<scalar name="location" xpath="./@href"/>
+	</collection>
+	 
+	 
+	<composite name="image" xpath="(//div[@class='photo-container'])[1]/img">
+      <scalar name="location" xpath="./@src" />
+    </composite>
+	
+</meta_metadata>
+
+</meta_metadata_repository>
