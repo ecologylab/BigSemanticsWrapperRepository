@@ -205,6 +205,11 @@ public class AssistApp extends WindowAdapter
           PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build", "build.xml");
       antRunner.runAntTarget(serviceBuildFile, "buildwar");
 
+      info("Rebuilding downloader pool war and downloader jar...");
+      File dpoolBuildFile =
+          PathUtil.subPath(bsServiceDir, "DownloaderPool", "build.xml");
+      antRunner.runAntTarget(dpoolBuildFile, "main");
+
       startService();
     }
     catch (Exception e)

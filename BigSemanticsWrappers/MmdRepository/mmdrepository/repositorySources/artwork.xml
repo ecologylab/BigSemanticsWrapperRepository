@@ -345,10 +345,9 @@
 
 		
 		<collection name="authors" xpath="//*[@id='mmi_5948']/div[1]/h1">
-			<scalar name="title" xpath="." />
+			<scalar name="title"  xpath="." />
 		</collection>  
-		
-		<scalar name="title" xpath="//*[@class='after-artist-title-module']" />
+		<scalar name="title" xpath="(//*[@class='title']/h1)[last()]" />
 		<scalar name="year" xpath="//*[@class='artwork-dates']"/>		
 	</meta_metadata>	
 	
@@ -361,9 +360,9 @@
 		<collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist" tag="audio_playlist" 
 		other_tags="audio_playlist" child_tag="audio" xpath="//div[@class='audio-guide-playlist-table-wrapper']/table/tbody/tr">       
             <scalar name="location" xpath="substring(substring-after(./@onclick, '='), 3, string-length(substring-after(./@onclick, '='))-4 )" hide="true" />  
-			<scalar name="title" xpath="./td[2]" />
-			
-        </collection>	
+			<scalar name="title" xpath="./td[2]" />	
+        </collection>
+        
 	</meta_metadata>	
 	
 	<meta_metadata name="whitney_search" extends="search"  parser="xpath">			
@@ -397,7 +396,6 @@
 		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />		
 		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
 		
-		<!-- expand option shows up when it should not -->
 		<collection name="authors" xpath="//div[@id='gallery']/h3">
 			<scalar name="title" xpath="." />
 		</collection>  
@@ -411,7 +409,6 @@
  		
 		<scalar name="medium" xpath="//*[@id='caption']">
 			<filter regex="\.(.*?)(?=\,)" />
-			<!-- filter   -->
 		</scalar>
 		
 		<collection name="tags" child_type="guggen_filter" label="tags" tag="tag" xpath="//*[@class='more-tags']/li/a">       
