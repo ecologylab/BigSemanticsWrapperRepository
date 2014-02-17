@@ -12,7 +12,7 @@
 		<collection name="keywords" child_type="document" schema_org_itemprop="keywords"
                 comment="Key Terms of the paper." />
 		<scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
-    
+    <scalar name="description" tag="abstract" label="abstract" comment="Abstract of the work." /> 
 		<composite name="rich_media" label="full text"/>
 	</meta_metadata>
 	
