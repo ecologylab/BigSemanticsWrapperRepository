@@ -2,13 +2,14 @@
                           default_user_agent_name="firefox_3_6_8">
 
 	<meta_metadata name="tweeter" extends="author" parser="xpath" comment="an author of twitter microblog">
-		<scalar name="num_tweets" scalar_type="int"	/>
-	    <scalar name="num_following" scalar_type="int" />
-	    <scalar name="num_followers" scalar_type="int" />
+		<scalar name="num_tweets" scalar_type="Int"	/>
+	    <scalar name="num_following" scalar_type="Int" />
+	    <scalar name="num_followers" scalar_type="Int" />
 	</meta_metadata>	
 
 	<meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true" comment="twitter micropost">
 		<composite name="twitter_microblog" type="twitter_microblog" layer="8.0" />
+		<scalar name="id" scalar_type="Int" />
 	</meta_metadata>
 		
 	<meta_metadata name="twitter_microblog" type="blog" parser="xpath" no_cache="true">
@@ -63,8 +64,11 @@
 			</composite>
 			
 			<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
-	    	<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>	    	
-	    
+	    	<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>
+	    	<scalar name="id" xpath=".//a[@class='details with-icn js-details']/@href" concatenates_to="post_date" hide_label="true" >
+	    		<filter regex="[^/]+$" />
+	    	</scalar>
+	    	
 	    </collection>	    	    
 	</meta_metadata>
 	
@@ -103,6 +107,10 @@
 	    
     		<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
     		<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>
+	    	<scalar name="id" xpath=".//a[@class='details with-icn js-details']/@href" concatenates_to="post_date" hide_label="true" >
+	    		<filter regex="[^/]+$" />
+	    	</scalar>	    	
+
     	</collection>
 	</meta_metadata>
 
