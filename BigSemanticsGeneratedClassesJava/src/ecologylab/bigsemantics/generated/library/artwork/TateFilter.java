@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.artwork;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.artwork.ArtworkCollection;
+import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class TateFilter extends ArtworkCollection
+public class TateFilter extends Search
 {
 	public TateFilter()
 	{ super(); }

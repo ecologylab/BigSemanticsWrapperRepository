@@ -8,14 +8,16 @@ package ecologylab.bigsemantics.generated.library.museum;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.museum.FlamencoObject;
+import ecologylab.bigsemantics.generated.library.artwork.Artwork;
+import ecologylab.bigsemantics.generated.library.museum.FlamencoFacet;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -24,32 +26,22 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class FlamencoObject extends CreativeWork
+public class FlamencoObject extends Artwork
 {
-	@simpl_scalar
-	private MetadataString parent;
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
 
 	@simpl_scalar
 	private MetadataString category;
 
-	@simpl_collection("flamenco_object")
-	@mm_name("flamenco_objects")
-	private List<FlamencoObject> flamencoObjects;
-
-	@simpl_collection("flamenco_object")
-	@mm_name("sub_facets")
-	private List<FlamencoObject> subFacets;
-
-	@simpl_scalar
-	private MetadataString mediaType;
-
-	@simpl_collection("flamenco_object")
+	@simpl_collection("flamenco_facet")
 	@mm_name("general_facets")
-	private List<FlamencoObject> generalFacets;
+	private List<FlamencoFacet> generalFacets;
 
-	@simpl_collection("flamenco_object")
+	@simpl_collection("flamenco_facet")
 	@mm_name("specific_facets")
-	private List<FlamencoObject> specificFacets;
+	private List<FlamencoFacet> specificFacets;
 
 	public FlamencoObject()
 	{ super(); }
@@ -59,36 +51,14 @@ public class FlamencoObject extends CreativeWork
 	}
 
 
-	public MetadataString	parent()
+	public Image getImage()
 	{
-		MetadataString	result = this.parent;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.parent = result;
-		}
-		return result;
+		return image;
 	}
 
-	public String getParent()
+	public void setImage(Image image)
 	{
-		return this.parent == null ? null : parent().getValue();
-	}
-
-	public MetadataString getParentMetadata()
-	{
-		return parent;
-	}
-
-	public void setParent(String parent)
-	{
-		if (parent != null)
-			this.parent().setValue(parent);
-	}
-
-	public void setParentMetadata(MetadataString parent)
-	{
-		this.parent = parent;
+		this.image = image;
 	}
 
 	public MetadataString	category()
@@ -123,113 +93,21 @@ public class FlamencoObject extends CreativeWork
 		this.category = category;
 	}
 
-	public List<FlamencoObject> getFlamencoObjects()
-	{
-		return flamencoObjects;
-	}
-
-  // lazy evaluation:
-  public List<FlamencoObject> flamencoObjects()
-  {
-    if (flamencoObjects == null)
-      flamencoObjects = new ArrayList<FlamencoObject>();
-    return flamencoObjects;
-  }
-
-  // addTo:
-  public void addToFlamencoObjects(FlamencoObject element)
-  {
-    flamencoObjects().add(element);
-  }
-
-  // size:
-  public int flamencoObjectsSize()
-  {
-    return flamencoObjects == null ? 0 : flamencoObjects.size();
-  }
-
-	public void setFlamencoObjects(List<FlamencoObject> flamencoObjects)
-	{
-		this.flamencoObjects = flamencoObjects;
-	}
-
-	public List<FlamencoObject> getSubFacets()
-	{
-		return subFacets;
-	}
-
-  // lazy evaluation:
-  public List<FlamencoObject> subFacets()
-  {
-    if (subFacets == null)
-      subFacets = new ArrayList<FlamencoObject>();
-    return subFacets;
-  }
-
-  // addTo:
-  public void addToSubFacets(FlamencoObject element)
-  {
-    subFacets().add(element);
-  }
-
-  // size:
-  public int subFacetsSize()
-  {
-    return subFacets == null ? 0 : subFacets.size();
-  }
-
-	public void setSubFacets(List<FlamencoObject> subFacets)
-	{
-		this.subFacets = subFacets;
-	}
-
-	public MetadataString	mediaType()
-	{
-		MetadataString	result = this.mediaType;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.mediaType = result;
-		}
-		return result;
-	}
-
-	public String getMediaType()
-	{
-		return this.mediaType == null ? null : mediaType().getValue();
-	}
-
-	public MetadataString getMediaTypeMetadata()
-	{
-		return mediaType;
-	}
-
-	public void setMediaType(String mediaType)
-	{
-		if (mediaType != null)
-			this.mediaType().setValue(mediaType);
-	}
-
-	public void setMediaTypeMetadata(MetadataString mediaType)
-	{
-		this.mediaType = mediaType;
-	}
-
-	public List<FlamencoObject> getGeneralFacets()
+	public List<FlamencoFacet> getGeneralFacets()
 	{
 		return generalFacets;
 	}
 
   // lazy evaluation:
-  public List<FlamencoObject> generalFacets()
+  public List<FlamencoFacet> generalFacets()
   {
     if (generalFacets == null)
-      generalFacets = new ArrayList<FlamencoObject>();
+      generalFacets = new ArrayList<FlamencoFacet>();
     return generalFacets;
   }
 
   // addTo:
-  public void addToGeneralFacets(FlamencoObject element)
+  public void addToGeneralFacets(FlamencoFacet element)
   {
     generalFacets().add(element);
   }
@@ -240,26 +118,26 @@ public class FlamencoObject extends CreativeWork
     return generalFacets == null ? 0 : generalFacets.size();
   }
 
-	public void setGeneralFacets(List<FlamencoObject> generalFacets)
+	public void setGeneralFacets(List<FlamencoFacet> generalFacets)
 	{
 		this.generalFacets = generalFacets;
 	}
 
-	public List<FlamencoObject> getSpecificFacets()
+	public List<FlamencoFacet> getSpecificFacets()
 	{
 		return specificFacets;
 	}
 
   // lazy evaluation:
-  public List<FlamencoObject> specificFacets()
+  public List<FlamencoFacet> specificFacets()
   {
     if (specificFacets == null)
-      specificFacets = new ArrayList<FlamencoObject>();
+      specificFacets = new ArrayList<FlamencoFacet>();
     return specificFacets;
   }
 
   // addTo:
-  public void addToSpecificFacets(FlamencoObject element)
+  public void addToSpecificFacets(FlamencoFacet element)
   {
     specificFacets().add(element);
   }
@@ -270,7 +148,7 @@ public class FlamencoObject extends CreativeWork
     return specificFacets == null ? 0 : specificFacets.size();
   }
 
-	public void setSpecificFacets(List<FlamencoObject> specificFacets)
+	public void setSpecificFacets(List<FlamencoFacet> specificFacets)
 	{
 		this.specificFacets = specificFacets;
 	}

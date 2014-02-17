@@ -8,14 +8,18 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct;
+import ecologylab.bigsemantics.generated.library.product_and_service.NeweggSpecs;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,9 +27,16 @@ import java.util.Map;
 @simpl_inherit
 public class NeweggProduct extends Product
 {
-	@simpl_collection("newegg_product")
-	@mm_name("suggested_products")
-	private List<NeweggProduct> suggestedProducts;
+	@simpl_scalar
+	private MetadataString itemNumber;
+
+	@simpl_collection("compound_document")
+	@mm_name("headline_specs")
+	private List<CompoundDocument> headlineSpecs;
+
+	@simpl_collection("newegg_specs")
+	@mm_name("all_specs")
+	private List<NeweggSpecs> allSpecs;
 
 	public NeweggProduct()
 	{ super(); }
@@ -35,33 +46,95 @@ public class NeweggProduct extends Product
 	}
 
 
-	public List<NeweggProduct> getSuggestedProducts()
+	public MetadataString	itemNumber()
 	{
-		return suggestedProducts;
+		MetadataString	result = this.itemNumber;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.itemNumber = result;
+		}
+		return result;
+	}
+
+	public String getItemNumber()
+	{
+		return this.itemNumber == null ? null : itemNumber().getValue();
+	}
+
+	public MetadataString getItemNumberMetadata()
+	{
+		return itemNumber;
+	}
+
+	public void setItemNumber(String itemNumber)
+	{
+		if (itemNumber != null)
+			this.itemNumber().setValue(itemNumber);
+	}
+
+	public void setItemNumberMetadata(MetadataString itemNumber)
+	{
+		this.itemNumber = itemNumber;
+	}
+
+	public List<CompoundDocument> getHeadlineSpecs()
+	{
+		return headlineSpecs;
 	}
 
   // lazy evaluation:
-  public List<NeweggProduct> suggestedProducts()
+  public List<CompoundDocument> headlineSpecs()
   {
-    if (suggestedProducts == null)
-      suggestedProducts = new ArrayList<NeweggProduct>();
-    return suggestedProducts;
+    if (headlineSpecs == null)
+      headlineSpecs = new ArrayList<CompoundDocument>();
+    return headlineSpecs;
   }
 
   // addTo:
-  public void addToSuggestedProducts(NeweggProduct element)
+  public void addToHeadlineSpecs(CompoundDocument element)
   {
-    suggestedProducts().add(element);
+    headlineSpecs().add(element);
   }
 
   // size:
-  public int suggestedProductsSize()
+  public int headlineSpecsSize()
   {
-    return suggestedProducts == null ? 0 : suggestedProducts.size();
+    return headlineSpecs == null ? 0 : headlineSpecs.size();
   }
 
-	public void setSuggestedProducts(List<NeweggProduct> suggestedProducts)
+	public void setHeadlineSpecs(List<CompoundDocument> headlineSpecs)
 	{
-		this.suggestedProducts = suggestedProducts;
+		this.headlineSpecs = headlineSpecs;
+	}
+
+	public List<NeweggSpecs> getAllSpecs()
+	{
+		return allSpecs;
+	}
+
+  // lazy evaluation:
+  public List<NeweggSpecs> allSpecs()
+  {
+    if (allSpecs == null)
+      allSpecs = new ArrayList<NeweggSpecs>();
+    return allSpecs;
+  }
+
+  // addTo:
+  public void addToAllSpecs(NeweggSpecs element)
+  {
+    allSpecs().add(element);
+  }
+
+  // size:
+  public int allSpecsSize()
+  {
+    return allSpecs == null ? 0 : allSpecs.size();
+  }
+
+	public void setAllSpecs(List<NeweggSpecs> allSpecs)
+	{
+		this.allSpecs = allSpecs;
 	}
 }

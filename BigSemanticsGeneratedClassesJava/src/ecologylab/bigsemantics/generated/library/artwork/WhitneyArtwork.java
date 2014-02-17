@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.artwork;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.search.Search;
+import ecologylab.bigsemantics.generated.library.artwork.Artwork;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class MetFilter extends Search
+public class WhitneyArtwork extends Artwork
 {
-	public MetFilter()
+	public WhitneyArtwork()
 	{ super(); }
 
-	public MetFilter(MetaMetadataCompositeField mmd) {
+	public WhitneyArtwork(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
