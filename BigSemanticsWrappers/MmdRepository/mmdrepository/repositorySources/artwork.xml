@@ -10,7 +10,7 @@
 
 	<meta_metadata name="artwork" extends="creative_work" comment="Artwork class">
     <scalar name="location" hide="true" />
-		<scalar name="description" tag="abstract" label="abstract" comment="Abstract of the work." />
+		<scalar name="description" comment="Abstract of the work." />
 		<collection name="authors" child_type="artist" label="artists"
                 tag="artists" other_tags="authors" child_tag="artist"
                 layer="9.5" comment="Set of artists." />
@@ -272,7 +272,7 @@
         </collection>	
 	</meta_metadata>
 	
-	
+	<!-- section of data about where artist is from -->
 	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">				
 		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections/search-the-collections/\d+" />
 		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections/search-the-collections/\d+" />			
@@ -281,7 +281,8 @@
 		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/503932" />  	
 		
 		<scalar name="title" xpath="//div[@class='text-box first cleared ']/h2" />
-		
+		<scalar name="geography" comment="Location of the work." label="geography" scalar_type="String" xpath="(//dd[preceding-sibling::dt[contains(text(),'Geography:')]])[1]" />
+				
 		<!-- special characters (dash) get deleted -->
 		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
 		<scalar name="year" xpath="(//dd[preceding-sibling::dt[contains(text(),'Date:')]])[1]"/>
@@ -292,7 +293,10 @@
 			<scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="." />
 		</collection>
-		
+		<scalar name="author_info" comment="Bit of info about author" label="artist info" scalar_type="String" xpath="//*[@id='content-container']/div[3]/div[1]/h3" >
+			<filter regex="\((.*?)\)"/>
+		</scalar>
+				
 		<scalar name="description" xpath="//a[contains(text(),'Description')]/../div/div/p"/>
 		
 		<collection name="works_of_interest" child_type="met_artwork" label="related works" tag="related works" 
@@ -343,6 +347,7 @@
 		<example_url url="http://whitney.org/Collection/BobThompson/" />
 		<example_url url="http://whitney.org/Collection/AndyWarhol" />
 
+		<scalar name="description" xpath="//div[@class='artwork-caption-basic']" />
 		
 		<collection name="authors" xpath="//*[@id='mmi_5948']/div[1]/h1">
 			<scalar name="title"  xpath="." />

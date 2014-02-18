@@ -1,11 +1,17 @@
 <meta_metadata_repository name="instructables" package="ecologylab.bigsemantics.generated.library.instructables" default_user_agent_name="chrome_2">
 
+<meta_metadata name="instructable_comment" extends="compound_document" parser="xpath">
+	
+	<composite name="comment_author" type="instructable_author"/>
+	<composite name="in_response_to" type="instructable_author"/>
+	<composite name="reply" type="instructable_comment"/>
+</meta_metadata>
 
 <meta_metadata name="instructable_author" extends="compound_document" parser="xpath">
 	<selector url_path_tree="http://www.instructables.com/member"/>
 	<example_url url="www.instructables.com/member/HollyMan"/>
-	
 	<scalar name="title" label="name" xpath="//h1[@id='member-profile-name']"/>
+	
 	<scalar name="description" label="about" xpath="//div[@class='member_sidebar_div_9']/text()"/>
 	<scalar name="instructor_location" scalar_type="String" xpath="(//div[@class='member_sidebar_div_11'])[1]/text()"/>
 	<scalar name="join_date" scalar_type="String" xpath="(//div[@class='member_sidebar_div_11'])[2]/text()"/>
@@ -59,7 +65,30 @@
 		<scalar name="location" xpath="./@href"/>
 	</collection>
 	 
+	 <collection name="comments" child_type="instructable_comment" xpath="//div[contains(concat(' ', @class, ' '), ' toplevel ')]">
 	 
+		
+	 	
+	 	<composite name="comment_author" xpath=".//span[@class='comment-author']">
+	 		<scalar name="title" xpath="./a"/>
+			<scalar name="location" xpath="./a/@href"/>
+	 	</composite>
+	  	<scalar name="description" label="comment" xpath="./div[@class='txt comment-txt']"/>
+	 
+	 	<composite name="reply" xpath="./following-sibling::div[1 and (not(contains(concat(' ', @class, ' '), ' toplevel ')))]">
+	 		<scalar name="title" value="TEST"/>
+	 		<composite name="comment_author" xpath=".//span[@class='comment-author']">
+	 			<scalar name="title" xpath="./a[1]"/>
+				<scalar name="location" xpath="./a[1]/@href"/>
+	 		</composite>
+	 		<composite name="in_response_to" xpath=".//[@class='comment-author']">
+	 			<scalar name="title" xpath="./a[2]"/>
+				<scalar name="location" xpath="./a[2]/@href"/>
+	 		</composite>
+	 		<scalar name="description" xpath="./div[@class='txt comment-txt']"/>
+	 		
+	 	</composite>
+	 </collection>
 	<composite name="image" xpath="(//div[@class='photo-container'])[1]/img">
       <scalar name="location" xpath="./@src" />
     </composite>

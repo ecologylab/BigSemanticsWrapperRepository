@@ -12,10 +12,13 @@ import ecologylab.bigsemantics.generated.library.blog.Post;
 import ecologylab.bigsemantics.generated.library.socialMedia.TwitterMicroblog;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.Integer;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +31,9 @@ public class Tweet extends Post
 	@simpl_composite
 	@mm_name("twitter_microblog")
 	private TwitterMicroblog twitterMicroblog;
+
+	@simpl_scalar
+	private MetadataInteger id;
 
 	public Tweet()
 	{ super(); }
@@ -45,5 +51,37 @@ public class Tweet extends Post
 	public void setTwitterMicroblog(TwitterMicroblog twitterMicroblog)
 	{
 		this.twitterMicroblog = twitterMicroblog;
+	}
+
+	public MetadataInteger	id()
+	{
+		MetadataInteger	result = this.id;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.id = result;
+		}
+		return result;
+	}
+
+	public Integer getId()
+	{
+		return this.id == null ? 0 : id().getValue();
+	}
+
+	public MetadataInteger getIdMetadata()
+	{
+		return id;
+	}
+
+	public void setId(Integer id)
+	{
+		if (id != 0)
+			this.id().setValue(id);
+	}
+
+	public void setIdMetadata(MetadataInteger id)
+	{
+		this.id = id;
 	}
 }

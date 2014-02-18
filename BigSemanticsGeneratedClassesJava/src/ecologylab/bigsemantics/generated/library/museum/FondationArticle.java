@@ -12,12 +12,14 @@ import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.museum.FondationArticle;
 import ecologylab.bigsemantics.generated.library.museum.FondationTag;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -28,6 +30,10 @@ import java.util.Map;
 @simpl_inherit
 public class FondationArticle extends CreativeWork
 {
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
+
 	@simpl_scalar
 	private MetadataString collectionName;
 
@@ -69,6 +75,16 @@ public class FondationArticle extends CreativeWork
 		super(mmd);
 	}
 
+
+	public Image getImage()
+	{
+		return image;
+	}
+
+	public void setImage(Image image)
+	{
+		this.image = image;
+	}
 
 	public MetadataString	collectionName()
 	{
