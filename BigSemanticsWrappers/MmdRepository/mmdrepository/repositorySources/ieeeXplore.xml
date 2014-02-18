@@ -123,17 +123,18 @@
     </collection>
   </meta_metadata>
   
-  
+
   <meta_metadata name="ask_nature_group" extends="compound_document" parser="xpath" user_agent_name="chrome" >
   	<selector url_stripped="http://www.asknature.org/browse" domain="asknature.org" />
   	<example_url url="http://www.asknature.org/browse?selected=strategy|1&amp;type=aof" />
   	
   	<scalar name="title" label="group" xpath="//a[@class='selected']" /> 
-  
-  	<collection name="subgroups" child_type="ask_nature_subgroup" child_tag="subgroup" 
-  				xpath="//ul[@id='accordion_list_2']/div/dt">
+  	<collection name="subgroups" child_type="ask_nature_subgroup" child_tag="subgroup" xpath="//ul[@id='accordion_list_2']/div/dt">
   		<scalar name="title" xpath="./text()" />
-  		<collection name="functions" child_type="ask_nature_function" xpath="./following-sibling::dd[1]/a" />
+  		<collection name="functions" child_type="ask_nature_function" xpath="./following-sibling::dd[1]/a" >
+  			<scalar name="title" xpath="./text()" />
+ 			<scalar name="id" xpath="./@*[name()='an:id']" />
+  		</collection>
   	</collection>
   </meta_metadata>
      
@@ -143,11 +144,9 @@
   </meta_metadata>
   
   <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath" user_agent_name="chrome" >
-  	<scalar name="title" label="function"  /> 
-  	<!-- <collection name="strategies" child_type="ask_nature_strategy" child_tag="strategy"  />    -->
+   <!-- <scalar name="id" scalar_type="String" />    -->
+  	<scalar name="title" label="function" />  
   </meta_metadata>
-
- 
 
   <meta_metadata name="ask_nature_strategy" extends="compound_document" parser="xpath" user_agent_name="chrome">
 	<selector url_path_tree="http://www.asknature.org/strategy/" domain="asknature.org" />
@@ -156,51 +155,56 @@
   	
 	<scalar name="title" xpath="//div[@id='content_header']/h1[@id='content_title']" />
 	<scalar name="description" label="description" xpath="//div[@class='section_change']/h2[@class='headline']/text()" />
-	<scalar name="summary" scalar_type="String" xpath="//dd[@class='section_content'][2]" />
-<!--		<scalar name="group_name" scalar_type="String" xpath="//ul[@class='taxonomy-list']/li[1]/a" />   -->
+	<scalar name="summary" scalar_type="String" xpath="//a[@name='Summary']/following-sibling::dd[1]" />
+	<scalar name="excerpt" scalar_type="String" xpath="//a[@name='Excerpt']/following-sibling::dd[1]" />
 	
 	<composite name="image" xpath="//div[@id='slideshow']//img[@class='featured_image']">
 		<scalar name="location" xpath="./@src" />
 	</composite>    
-	<scalar name="inspiring_organism" scalar_type="String" xpath="//dd[@class='section_content sc_open'][1]/i" />
-	<scalar name="application_ideas" scalar_type="String" xpath="//dd[@class='section_content sc_open'][2]/p[1]" >
-		<filter regex="Application Ideas : " replace="" />
-		<filter regex="Application Ideas: " replace="" />																					<!-- combine these two -->
+	
+	<composite name="inspiring_organism" type="ask_nature_organism" xpath="//a[@name='Organism']/following-sibling::dd[1]" >
+		<scalar name="scientific_name" xpath="./i" />
+		<scalar name="common_name" xpath="./text()[contains(., 'Common name')]" >
+			<filter regex="Common name[s]*:" replace="" />
+		</scalar>
+		<scalar name="habitat" xpath="./text()[contains(., 'Habitat')]" >
+			<filter regex="Habitat\(s\):" replace="" />
+		</scalar>
+		<scalar name="IUCN_red_list_status" xpath="./text()[contains(., 'IUCN')]" >
+			<filter regex="IUCN Red List Status:" replace=""/>
+		</scalar>
+	</composite>
+	
+	<scalar name="application_ideas" scalar_type="String" xpath="//a[@name='Products']/following-sibling::dd[1]/p[1]" >
+		<filter regex="Application Ideas[ ]*: " replace="" />
 	</scalar>
-	<scalar name="interested_indstrial_sectors" scalar_type="String" xpath="//dd[@class='section_content sc_open'][2]/p[2]" >
+	<scalar name="interested_indstrial_sectors" scalar_type="String" xpath="//a[@name='Products']/following-sibling::dd[1]/p[2]" >
 		<filter regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
 	</scalar>
 	
-	<scalar name="expert_group" scalar_type="String" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div/a" />
-	<scalar name="experts" scalar_type="String" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div/text()[2]" />
-	<scalar name="universitys" scalar_type="String" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div/text()[3]" />
-<!--	<composite name="expert" type="ask_nature_expert" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div" >
+	<composite name="expert" type="ask_nature_expert" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div" >
 		<scalar name="group" xpath="./a" />
-		<scalar name="title" xpath="./text()[2]" />
+		<scalar name="name" xpath="./text()[2]" />
 		<scalar name="affiliation" xpath="./text()[3]" />
 	</composite>
-	  -->
+	  
 	<composite name="biomimicry_taxonomy" type="ask_nature_group" xpath="//ul[@class='taxonomy-list']/li[1]/a" >
 		<scalar name="title" xpath="./text()"  />
 		<scalar name="location" xpath="./@href" />  
 	</composite>
-	
-	<!-- looking at the subgroups, you can follow the link on those and get that data separately
-	 -->
-	
   </meta_metadata>
-
-<!-- currently does not have support if more than one expert is listed, but this doesn't happen often... -->
- <meta_metadata name="ask_nature_expert" parser="xpath" extends="document" >
- 	<scalar name="organization" scalar_type="String" />
- 	<scalar name="expert" scalar_type="String" />
-    <scalar name="university" scalar_type="String" />   
- </meta_metadata>   
-
-<!-- 
-	 image 
-     <scalar name="red list status" scalar_type="String" />
-     <scalar name="habitats" scalar_type="String" />   -->
   
+<meta_metadata name="ask_nature_organism" parser="xpath" extends="document" >
+	<scalar name="scientific_name" scalar_type="String" />
+	<scalar name="common_name" scalar_type="String" />
+	<scalar name="habitat" scalar_type="String" />
+	<scalar name="IUCN_red_list_status" scalar_type="String" />
+</meta_metadata>
+
+ <meta_metadata name="ask_nature_expert" parser="xpath" extends="document" >
+ 	<scalar name="group" scalar_type="String" />
+ 	<scalar name="name" scalar_type="String" />
+    <scalar name="affiliation" scalar_type="String" />   
+ </meta_metadata>   
   
 </meta_metadata_repository>	
