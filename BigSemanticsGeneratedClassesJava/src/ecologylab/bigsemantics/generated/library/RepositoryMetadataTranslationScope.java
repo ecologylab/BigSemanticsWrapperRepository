@@ -118,6 +118,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.blog.Post.class,
 
+		ecologylab.bigsemantics.generated.library.boardGame.BggCategory.class,
+
+		ecologylab.bigsemantics.generated.library.boardGame.BggGame.class,
+
+		ecologylab.bigsemantics.generated.library.boardGame.BoardGame.class,
+
 		ecologylab.bigsemantics.generated.library.buzz.GoogleTrends.class,
 
 		ecologylab.bigsemantics.generated.library.buzz.HotSearch.class,
