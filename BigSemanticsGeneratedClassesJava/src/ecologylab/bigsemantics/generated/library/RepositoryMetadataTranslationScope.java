@@ -102,6 +102,22 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.WhitneyWatchAndListen.class,
 
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureExpert.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureFunction.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureGroup.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureOrganism.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureProduct.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureStrategy.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureSubgroup.class,
+
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureTaxonomy.class,
+
 		ecologylab.bigsemantics.generated.library.bibManaging.CitationInfo.class,
 
 		ecologylab.bigsemantics.generated.library.bibManaging.CiteseerxCiting.class,
@@ -309,6 +325,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.instructables.InstructableComment.class,
 
 		ecologylab.bigsemantics.generated.library.instructables.InstructableTag.class,
+
+		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueAbility.class,
+
+		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueChampion.class,
+
+		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueRelationshipList.class,
 
 		ecologylab.bigsemantics.generated.library.lolz.Lolz.class,
 

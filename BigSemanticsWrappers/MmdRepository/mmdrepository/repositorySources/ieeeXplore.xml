@@ -123,7 +123,7 @@
     </collection>
   </meta_metadata>
   
-
+  <!--
   <meta_metadata name="ask_nature_group" extends="compound_document" parser="xpath" user_agent_name="chrome" >
   	<selector url_stripped="http://www.asknature.org/browse" domain="asknature.org" />
   	<example_url url="http://www.asknature.org/browse?selected=strategy|1&amp;type=aof" />
@@ -144,7 +144,7 @@
   </meta_metadata>
   
   <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath" user_agent_name="chrome" >
-   <!-- <scalar name="id" scalar_type="String" />    -->
+   <!- - <scalar name="id" scalar_type="String" />    - ->
   	<scalar name="title" label="function" />  
   </meta_metadata>
 
@@ -206,5 +206,6 @@
  	<scalar name="name" scalar_type="String" />
     <scalar name="affiliation" scalar_type="String" />   
  </meta_metadata>   
-  
+ -->
+ 
 </meta_metadata_repository>	

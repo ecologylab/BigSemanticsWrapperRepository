@@ -9,7 +9,7 @@
 
 <meta_metadata name="instructable_author" extends="compound_document" parser="xpath">
 	<selector url_path_tree="http://www.instructables.com/member"/>
-	<example_url url="www.instructables.com/member/HollyMan"/>
+	<example_url url="http://www.instructables.com/member/HollyMan"/>
 	<scalar name="title" label="name" xpath="//h1[@id='member-profile-name']"/>
 	
 	<scalar name="description" label="about" xpath="//div[@class='member_sidebar_div_9']/text()"/>

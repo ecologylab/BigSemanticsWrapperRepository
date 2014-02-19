@@ -104,7 +104,7 @@
   </meta_metadata>
   
   <meta_metadata name="ikea_mobile_product" type="product" parser="xpath" user_agent_name="chrome">
-  	<selector url_path_tree="m.ikea.com/us/en/catalog/products/" domain="ikea.com" />
+  	<selector url_path_tree="http://m.ikea.com/us/en/catalog/products/" domain="ikea.com" />
   	<example location="http://m.ikea.com/us/en/catalog/products/art/50058376/" />
   	
   	<scalar name="title" xpath="//title" />
