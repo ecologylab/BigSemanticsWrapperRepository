@@ -5,6 +5,8 @@ from urllib import urlencode
 # install package tldextract by:
 #   $ pip install tldextract
 from tldextract import extract
+# argparse requires python 2.7
+import argparse
 
 mice_demo = 'http://ecologylab.net/mice'
 
@@ -37,9 +39,35 @@ def dfs(node, children, op):
         for child in children(node):
             dfs(child, children, op)
 
+def subtypes(node):
+    subtypes = node.get('subtype', [])
+    if subtypes is None:
+        subtypes = node.get('subtypes', [])
+    if subtypes is not None:
+        if isinstance(subtypes, list):
+            return subtypes
+        else:
+            subtypes = subtypes.get('subtype', [])
+            if isinstance(subtypes, list):
+                return subtypes
+    return None
+
+def all_example_urls(node):
+    all_example_urls = node.get('all_example_url', [])
+    if all_example_urls is None:
+        all_example_urls = node.get('all_example_urls', [])
+    if all_example_urls is not None:
+        if isinstance(all_example_urls, list):
+            return all_example_urls
+        else:
+            all_example_urls = all_example_urls.get('all_example_url', [])
+            if isinstance(all_example_urls, list):
+                return all_example_urls
+    return None
+
 def collect_example_urls(node, results):
     name = node['name']
-    urls = node.get('all_example_urls', None)
+    urls = all_example_urls(node)
     if urls is not None and len(urls) > 0:
         subdomain = None
         domain = None
@@ -66,15 +94,11 @@ def get_example_urls_by_domain_and_mmd(repo_json_file):
     root = repo['node']
     # {domain: {type: [urls]}}
     results = dict()
-    dfs(root,
-        lambda n: n.get('subtypes', []),
-        lambda n: collect_example_urls(n, results))
+    dfs(root, subtypes, lambda n: collect_example_urls(n, results))
     return results
 
-
-
-if __name__ == '__main__':
-    results = get_example_urls_by_domain_and_mmd('mmd_repo.json')
+def print_domain_example_table(repo_file, is_filter):
+    results = get_example_urls_by_domain_and_mmd(repo_file)
     print "<table>"
     print "  <tr>"
     print "    <th>Domain</th>"
@@ -82,7 +106,7 @@ if __name__ == '__main__':
     print "    <th>Examples in MICE</th>"
     print "  </tr>"
     for d in sorted(results.keys()):
-        if d in display_domain:
+        if not is_filter or d in display_domain:
             s_types = [] 
             s_urls = []
             for t in sorted(results[d].keys()):
@@ -98,4 +122,17 @@ if __name__ == '__main__':
             print "    <td>\n" + "<br/>\n".join(s_urls)+ "\n    </td>"
             print "  </tr>" 
     print "</table>"
+
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+        description="Generate domain-example table in HTML for meta-metadata.")
+    parser.add_argument('--repo', type = str, default = 'mmd_repo.json',
+                        help = 'The file containing the ontology for ' +
+                               'visualization, in JSON.')
+    parser.add_argument('--filter', type = bool, nargs = '?', const = True,
+                        default = False, help = 'Filter domains for output.')
+    args = parser.parse_args()
+    print_domain_example_table(args.repo, args.filter)
 
