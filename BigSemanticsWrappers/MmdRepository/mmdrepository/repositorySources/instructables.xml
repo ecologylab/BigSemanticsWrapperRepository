@@ -1,0 +1,98 @@
+<meta_metadata_repository name="instructables" package="ecologylab.bigsemantics.generated.library.instructables" default_user_agent_name="chrome_2">
+
+<meta_metadata name="instructable_comment" extends="compound_document" parser="xpath">
+	
+	<composite name="comment_author" type="instructable_author"/>
+	<composite name="in_response_to" type="instructable_author"/>
+	<composite name="reply" type="instructable_comment"/>
+</meta_metadata>
+
+<meta_metadata name="instructable_author" extends="compound_document" parser="xpath">
+	<selector url_path_tree="http://www.instructables.com/member"/>
+	<example_url url="www.instructables.com/member/HollyMan"/>
+	<scalar name="title" label="name" xpath="//h1[@id='member-profile-name']"/>
+	
+	<scalar name="description" label="about" xpath="//div[@class='member_sidebar_div_9']/text()"/>
+	<scalar name="instructor_location" scalar_type="String" xpath="(//div[@class='member_sidebar_div_11'])[1]/text()"/>
+	<scalar name="join_date" scalar_type="String" xpath="(//div[@class='member_sidebar_div_11'])[2]/text()"/>
+	<scalar name="favorite_percentage" scalar_type="String" xpath="//div[@id='member-profile-statbar']/ul/li[3]/text()"/>
+	<scalar name="followers" scalar_type="String" xpath="//span[@class='callout']"/>
+	<scalar name="views" scalar_type="String" xpath="//div[@id='member-profile-statbar']/ul/li[2]"/>
+	
+	<scalar name="best_answers" scalar_type="String" xpath="//div[@id='member-profile-statbar']/ul/li[4]/text()"/>
+	
+	<collection name="instructables" child_type="instructable" xpath="//div[@class='sortable-box member-recent-instructables']/div/ul/li">
+		<scalar name="title" xpath="./div/a/@title"/>
+		<scalar name="location" xpath="./div/a/@href"/>
+	</collection>
+</meta_metadata>
+
+<meta_metadata name="instructable_tag" extends="compound_document" parser="xpath">
+
+	<selector url_path_tree="http://www.instructables.com/tag"/>
+	<example_url url="http://www.instructables.com/tag/type-id/category-food/keyword-tomato/"/>
+	<scalar name="title" xpath="//a[@class='btn btn-mini']"/>
+	<collection name="items_with_tag" child_type="instructable" xpath="//div[@class='projects']/ul/li">
+		<scalar name="title" xpath="./div/a/@title"/>
+		<scalar name="location" xpath="./div/a/@href"/>
+	</collection>
+</meta_metadata>
+
+<meta_metadata name="instructable" extends="compound_document" parser="xpath">
+	<selector url_path_tree="http://www.instructables.com/id"/>
+	<example_url url="http://www.instructables.com/id/Tomato-Water-Bloody-Mary/"/>
+	<scalar name="title" xpath="//h1[@class='fn']"/>
+	
+	<composite name="instructor" type="instructable_author" xpath="//div[@class='author-details']/div[@class='byline']/a">
+		<scalar name="title" xpath="./@title"/>
+		<scalar name="location" xpath="./@href"/>
+	</composite>
+	
+	<scalar name="number_of_steps" scalar_type="String" xpath="//a[@title='Go To Step']"/>
+	<scalar name="views" scalar_type="String" xpath="(//span[@class='count'])[1]"/>
+	<scalar name="favorites" scalar_type="String" xpath="(//span[@class='count'])[2]"/>
+	
+	<collection name="others_by_author" child_type="instructable" xpath="//ul[@class='h-list']/li">
+		<scalar name="title" xpath="./a/@title"/>
+		<scalar name="location" xpath="./a/@href"/>
+	</collection>
+	<collection name="related" child_type="instructable" xpath="//div[@id='related-instructables']/ul/li">
+		<scalar name="title" xpath="./div/a/@title"/>
+		<scalar name="location" xpath="./div/a/@href"/>
+	</collection>
+	<collection name="tags" child_type="instructable_tag" xpath="//div[@class='ible-tags']/div/a">
+		<scalar name="title" xpath="./@title"/>
+		<scalar name="location" xpath="./@href"/>
+	</collection>
+	 
+	 <collection name="comments" child_type="instructable_comment" xpath="//div[contains(concat(' ', @class, ' '), ' toplevel ')]">
+	 
+		
+	 	
+	 	<composite name="comment_author" xpath=".//span[@class='comment-author']">
+	 		<scalar name="title" xpath="./a"/>
+			<scalar name="location" xpath="./a/@href"/>
+	 	</composite>
+	  	<scalar name="description" label="comment" xpath="./div[@class='txt comment-txt']"/>
+	 
+	 	<composite name="reply" xpath="./following-sibling::div[1 and (not(contains(concat(' ', @class, ' '), ' toplevel ')))]">
+	 		<scalar name="title" value="TEST"/>
+	 		<composite name="comment_author" xpath=".//span[@class='comment-author']">
+	 			<scalar name="title" xpath="./a[1]"/>
+				<scalar name="location" xpath="./a[1]/@href"/>
+	 		</composite>
+	 		<composite name="in_response_to" xpath=".//[@class='comment-author']">
+	 			<scalar name="title" xpath="./a[2]"/>
+				<scalar name="location" xpath="./a[2]/@href"/>
+	 		</composite>
+	 		<scalar name="description" xpath="./div[@class='txt comment-txt']"/>
+	 		
+	 	</composite>
+	 </collection>
+	<composite name="image" xpath="(//div[@class='photo-container'])[1]/img">
+      <scalar name="location" xpath="./@src" />
+    </composite>
+	
+</meta_metadata>
+
+</meta_metadata_repository>

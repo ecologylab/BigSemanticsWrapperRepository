@@ -13,12 +13,15 @@ import ecologylab.bigsemantics.generated.library.artwork.MetArtwork;
 import ecologylab.bigsemantics.generated.library.artwork.MetFilter;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
+import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_tag;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +29,18 @@ import java.util.Map;
 @simpl_inherit
 public class MetArtwork extends Artwork
 {
+	/** 
+	 *Location of the work.
+	 */ 
+	@simpl_scalar
+	private MetadataString geography;
+
+	/** 
+	 *Bit of info about author
+	 */ 
+	@simpl_scalar
+	private MetadataString authorInfo;
+
 	@simpl_collection("artwork")
 	@simpl_tag("related works")
 	@simpl_other_tags({"creative_works"})
@@ -44,6 +59,70 @@ public class MetArtwork extends Artwork
 		super(mmd);
 	}
 
+
+	public MetadataString	geography()
+	{
+		MetadataString	result = this.geography;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.geography = result;
+		}
+		return result;
+	}
+
+	public String getGeography()
+	{
+		return this.geography == null ? null : geography().getValue();
+	}
+
+	public MetadataString getGeographyMetadata()
+	{
+		return geography;
+	}
+
+	public void setGeography(String geography)
+	{
+		if (geography != null)
+			this.geography().setValue(geography);
+	}
+
+	public void setGeographyMetadata(MetadataString geography)
+	{
+		this.geography = geography;
+	}
+
+	public MetadataString	authorInfo()
+	{
+		MetadataString	result = this.authorInfo;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.authorInfo = result;
+		}
+		return result;
+	}
+
+	public String getAuthorInfo()
+	{
+		return this.authorInfo == null ? null : authorInfo().getValue();
+	}
+
+	public MetadataString getAuthorInfoMetadata()
+	{
+		return authorInfo;
+	}
+
+	public void setAuthorInfo(String authorInfo)
+	{
+		if (authorInfo != null)
+			this.authorInfo().setValue(authorInfo);
+	}
+
+	public void setAuthorInfoMetadata(MetadataString authorInfo)
+	{
+		this.authorInfo = authorInfo;
+	}
 
 	public List<MetArtwork> getWorksOfInterest()
 	{

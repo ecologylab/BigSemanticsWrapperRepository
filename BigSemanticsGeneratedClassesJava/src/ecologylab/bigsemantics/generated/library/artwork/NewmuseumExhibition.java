@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.artwork;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.artwork.ArtworkCollection;
+import ecologylab.bigsemantics.generated.library.artwork.Exhibition;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class NewmuseumExhibition extends ArtworkCollection
+public class NewmuseumExhibition extends Exhibition
 {
 	public NewmuseumExhibition()
 	{ super(); }

@@ -54,7 +54,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.Artwork.class,
 
-		ecologylab.bigsemantics.generated.library.artwork.ArtworkCollection.class,
+		ecologylab.bigsemantics.generated.library.artwork.Exhibition.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.GuggenArtwork.class,
 
@@ -94,7 +94,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.artwork.TempFieldValueHolder.class,
 
-		ecologylab.bigsemantics.generated.library.artwork.WhitneyArt.class,
+		ecologylab.bigsemantics.generated.library.artwork.WhitneyArtwork.class,
 
 		ecologylab.bigsemantics.generated.library.artwork.WhitneyDecade.class,
 
@@ -117,6 +117,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.blog.Blog.class,
 
 		ecologylab.bigsemantics.generated.library.blog.Post.class,
+
+		ecologylab.bigsemantics.generated.library.boardGame.BggCategory.class,
+
+		ecologylab.bigsemantics.generated.library.boardGame.BggGame.class,
+
+		ecologylab.bigsemantics.generated.library.boardGame.BoardGame.class,
 
 		ecologylab.bigsemantics.generated.library.buzz.GoogleTrends.class,
 
@@ -296,6 +302,14 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.imdb.ImdbPerson.class,
 
+		ecologylab.bigsemantics.generated.library.instructables.Instructable.class,
+
+		ecologylab.bigsemantics.generated.library.instructables.InstructableAuthor.class,
+
+		ecologylab.bigsemantics.generated.library.instructables.InstructableComment.class,
+
+		ecologylab.bigsemantics.generated.library.instructables.InstructableTag.class,
+
 		ecologylab.bigsemantics.generated.library.lolz.Lolz.class,
 
 		ecologylab.bigsemantics.generated.library.misc.Comment.class,
@@ -322,15 +336,23 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.movie.RottenPerson.class,
 
+		ecologylab.bigsemantics.generated.library.museum.FlamencoFacet.class,
+
 		ecologylab.bigsemantics.generated.library.museum.FlamencoObject.class,
 
 		ecologylab.bigsemantics.generated.library.museum.FondationArticle.class,
 
 		ecologylab.bigsemantics.generated.library.museum.FondationTag.class,
 
-		ecologylab.bigsemantics.generated.library.museum.GettyInfo.class,
+		ecologylab.bigsemantics.generated.library.museum.GettyArtist.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettyArtistInfo.class,
 
 		ecologylab.bigsemantics.generated.library.museum.GettyObject.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettySearch.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettyWorkInfo.class,
 
 		ecologylab.bigsemantics.generated.library.nsdl.Header.class,
 
@@ -421,6 +443,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.NeweggSpecs.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Product.class,
 

@@ -10,7 +10,7 @@
 
 	<meta_metadata name="artwork" extends="creative_work" comment="Artwork class">
     <scalar name="location" hide="true" />
-		<scalar name="description" tag="abstract" label="abstract" comment="Abstract of the work." />
+		<scalar name="description" comment="Abstract of the work." />
 		<collection name="authors" child_type="artist" label="artists"
                 tag="artists" other_tags="authors" child_tag="artist"
                 layer="9.5" comment="Set of artists." />
@@ -272,7 +272,7 @@
         </collection>	
 	</meta_metadata>
 	
-	
+	<!-- section of data about where artist is from -->
 	<meta_metadata name="met_artwork" extends="artwork"  parser="xpath">				
 		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections/search-the-collections/\d+" />
 		<selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections/search-the-collections/\d+" />			
@@ -281,7 +281,8 @@
 		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/503932" />  	
 		
 		<scalar name="title" xpath="//div[@class='text-box first cleared ']/h2" />
-		
+		<scalar name="geography" comment="Location of the work." label="geography" scalar_type="String" xpath="(//dd[preceding-sibling::dt[contains(text(),'Geography:')]])[1]" />
+				
 		<!-- special characters (dash) get deleted -->
 		<example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
 		<scalar name="year" xpath="(//dd[preceding-sibling::dt[contains(text(),'Date:')]])[1]"/>
@@ -292,7 +293,10 @@
 			<scalar name="location" xpath="./@href" hide="true"/>
 			<scalar name="title" xpath="." />
 		</collection>
-		
+		<scalar name="author_info" comment="Bit of info about author" label="artist info" scalar_type="String" xpath="//*[@id='content-container']/div[3]/div[1]/h3" >
+			<filter regex="\((.*?)\)"/>
+		</scalar>
+				
 		<scalar name="description" xpath="//a[contains(text(),'Description')]/../div/div/p"/>
 		
 		<collection name="works_of_interest" child_type="met_artwork" label="related works" tag="related works" 
@@ -307,7 +311,7 @@
         </collection>    
 	</meta_metadata>
 
-	<!-- &amp; is giving a problem -->
+
 	<meta_metadata name="met_filter" extends="search" parser="xpath">		
 		<selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
   			<param name="who" />
@@ -343,12 +347,12 @@
 		<example_url url="http://whitney.org/Collection/BobThompson/" />
 		<example_url url="http://whitney.org/Collection/AndyWarhol" />
 
+		<scalar name="description" xpath="//div[@class='artwork-caption-basic']" />
 		
 		<collection name="authors" xpath="//*[@id='mmi_5948']/div[1]/h1">
-			<scalar name="title" xpath="." />
+			<scalar name="title"  xpath="." />
 		</collection>  
-		
-		<scalar name="title" xpath="//*[@class='after-artist-title-module']" />
+		<scalar name="title" xpath="(//*[@class='title']/h1)[last()]" />
 		<scalar name="year" xpath="//*[@class='artwork-dates']"/>		
 	</meta_metadata>	
 	
@@ -360,13 +364,12 @@
 		
 		<collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist" tag="audio_playlist" 
 		other_tags="audio_playlist" child_tag="audio" xpath="//div[@class='audio-guide-playlist-table-wrapper']/table/tbody/tr">       
-			<!-- may be possible using substring  -->
-            <!-- <scalar name="location" xpath="substring-after(./tr[starts-with(@onclick, 'document.location = \'')]/@onclick)" hide="true"/>  -->
-			<scalar name="title" xpath="./td[2]"/>
-        </collection>	
+            <scalar name="location" xpath="substring(substring-after(./@onclick, '='), 3, string-length(substring-after(./@onclick, '='))-4 )" hide="true" />  
+			<scalar name="title" xpath="./td[2]" />	
+        </collection>
+        
 	</meta_metadata>	
 	
-	<!--  not working outside my local environment -->
 	<meta_metadata name="whitney_search" extends="search"  parser="xpath">			
 		<selector url_stripped="http://whitney.org/Search" />	
 		<example_url url="http://whitney.org/Search?query=Georgia+O%27Keeffe" />  
@@ -394,13 +397,10 @@
 		</collection> 
 	</meta_metadata>
 	
-	<!--  check www and http vs https -->
-	<!-- http://www.guggenheim.org/new-york/collections/collection-online/artwork/4057 not working outside local environment -->
 	<meta_metadata name="guggen_artwork" extends="artwork"  parser="xpath">			
 		<selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />		
 		<example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
 		
-		<!-- expand option shows up when it should not -->
 		<collection name="authors" xpath="//div[@id='gallery']/h3">
 			<scalar name="title" xpath="." />
 		</collection>  
@@ -414,7 +414,6 @@
  		
 		<scalar name="medium" xpath="//*[@id='caption']">
 			<filter regex="\.(.*?)(?=\,)" />
-			<!-- filter   -->
 		</scalar>
 		
 		<collection name="tags" child_type="guggen_filter" label="tags" tag="tag" xpath="//*[@class='more-tags']/li/a">       
