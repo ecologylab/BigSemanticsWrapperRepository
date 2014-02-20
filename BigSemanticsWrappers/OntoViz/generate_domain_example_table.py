@@ -65,7 +65,7 @@ def all_example_urls(node):
                 return all_example_urls
     return None
 
-def collect_example_urls(node, results):
+def collect_example_urls(node, is_filter, results):
     name = node['name']
     urls = all_example_urls(node)
     if urls is not None and len(urls) > 0:
@@ -80,13 +80,14 @@ def collect_example_urls(node, results):
         d = domain + '.' + suffix
         if d in retain_subdomain:
             d = subdomain + '.' + d
-        if not results.has_key(d):
-            results[d] = dict()
-        if not results[d].has_key(name):
-            results[d][name] = list()
-        results[d][name].extend(urls)
+        if not is_filter or d in display_domain:
+            if not results.has_key(d):
+                results[d] = dict()
+            if not results[d].has_key(name):
+                results[d][name] = list()
+            results[d][name].extend(urls)
 
-def get_example_urls_by_domain_and_mmd(repo_json_file):
+def example_urls_by_domain_type(repo_json_file, is_filter):
     f = open(repo_json_file, 'r')
     repo = json.load(f)
     f.close()
@@ -94,11 +95,22 @@ def get_example_urls_by_domain_and_mmd(repo_json_file):
     root = repo['node']
     # {domain: {type: [urls]}}
     results = dict()
-    dfs(root, subtypes, lambda n: collect_example_urls(n, results))
+    dfs(root, subtypes, lambda n: collect_example_urls(n, is_filter, results))
     return results
 
-def print_domain_example_table(repo_file, is_filter):
-    results = get_example_urls_by_domain_and_mmd(repo_file)
+def print_domain_example_json(results):
+    objs = []
+    for domain in sorted(results.keys()):
+        obj = {}
+        obj['domain'] = domain
+        obj['type'] = sorted(list(results[domain].keys()))
+        obj['urls'] = sorted([u for t in obj['type']
+                                for u in results[domain][t]])
+        objs.append(obj)
+    root = {'examples': objs}
+    print json.dumps(root)
+
+def print_domain_example_table(results):
     print "<table>"
     print "  <tr>"
     print "    <th>Domain</th>"
@@ -106,21 +118,20 @@ def print_domain_example_table(repo_file, is_filter):
     print "    <th>Examples in MICE</th>"
     print "  </tr>"
     for d in sorted(results.keys()):
-        if not is_filter or d in display_domain:
-            s_types = [] 
-            s_urls = []
-            for t in sorted(results[d].keys()):
-                s_types.append(t)
-                for u in sorted(results[d][t]):
-                    mice_url = mice_demo + '?' + urlencode({'url': u})
-                    a = '<a href="' + mice_url + '" target="_blank">' +\
-                        u + '</a>'
-                    s_urls.append(a)
-            print "  <tr>" 
-            print "    <td>" + d + "</td>"
-            print "    <td>\n" + "<br/>\n".join(s_types) + "\n    </td>"
-            print "    <td>\n" + "<br/>\n".join(s_urls)+ "\n    </td>"
-            print "  </tr>" 
+        s_types = [] 
+        s_urls = []
+        for t in sorted(results[d].keys()):
+            s_types.append(t)
+            for u in sorted(results[d][t]):
+                mice_url = mice_demo + '?' + urlencode({'url': u})
+                a = '<a href="' + mice_url + '" target="_blank">' +\
+                    u + '</a>'
+                s_urls.append(a)
+        print "  <tr>" 
+        print "    <td>" + d + "</td>"
+        print "    <td>\n" + "<br/>\n".join(s_types) + "\n    </td>"
+        print "    <td>\n" + "<br/>\n".join(s_urls)+ "\n    </td>"
+        print "  </tr>" 
     print "</table>"
 
 
@@ -131,8 +142,15 @@ if __name__ == '__main__':
     parser.add_argument('--repo', type = str, default = 'mmd_repo.json',
                         help = 'The file containing the ontology for ' +
                                'visualization, in JSON.')
+    parser.add_argument('--type', type = str, default = 'json',
+                        choices = ['json', 'html'],
+                        help = 'Output type.')
     parser.add_argument('--filter', type = bool, nargs = '?', const = True,
                         default = False, help = 'Filter domains for output.')
     args = parser.parse_args()
-    print_domain_example_table(args.repo, args.filter)
+    results = example_urls_by_domain_type(args.repo, args.filter)
+    if args.type == 'json':
+        print_domain_example_json(results)
+    else:
+        print_domain_example_table(results)
 
