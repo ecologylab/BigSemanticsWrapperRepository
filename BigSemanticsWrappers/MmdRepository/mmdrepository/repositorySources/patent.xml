@@ -82,10 +82,12 @@
 			<scalar name="title" xpath="." />
 		</collection>
 
-	<!-- location not working --> 	<!-- <filter regex="http://www.u(.*).htm" /> --> 
+	<!-- location not working -->  
 		<collection name="classifications" xpath="//span[@class='nested-value']/a[contains(@href,'classification')]">
-			<scalar name="location" xpath="./@href" hide="true"/>
-			<scalar name="patent_class" xpath="." />
+			<scalar name="location" xpath="./@href" hide="true">
+				<filter regex="http://www.u(.*).htm" />
+			</scalar>
+			<scalar name="patent_class" xpath="." navigates_to="location" />
 		</collection>
 
 		<scalar name="description" xpath="//abstract/div" />
@@ -106,7 +108,7 @@
 			<scalar name="location" xpath="./td[1]/a/@href" />
 		</collection>
 
-		<collection name="drawings" xpath="//img[@class='patent-thumbnail-image]">
+		<collection name="drawings" xpath="//img[@class='patent-thumbnail-image']">
 			<scalar name="location" xpath="./@src" />
 		</collection>
 
