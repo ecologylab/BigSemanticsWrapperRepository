@@ -106,6 +106,12 @@
 			<scalar name="location" xpath="./@href"/>
 			<scalar name="title" xpath="./@title"/>
 		</collection>	
+		
+		<collection name="video_feed" child_type="youtube_video" xpath="//ul[@id='channel-feed']/li//h3[@class='yt-lockup-title']">
+			<scalar name="location" xpath="./a/@href"/>
+			<scalar name="title" xpath="./a/@title"/>
+		
+		</collection>
 		<collection name="playlists" child_type="youtube_video_list" xpath="(//span[@class='shelf-title'])/ancestor::div[1]">
 			<scalar name="title" xpath=".//span[@class='shelf-title']/span/text()"/>
 			<scalar name="description" xpath=".//div[@class='shelf-description yt-ui-ellipsis yt-ui-ellipsis-2']/text()"/>
