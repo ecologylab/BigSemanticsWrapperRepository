@@ -184,7 +184,7 @@ public class AssistApp extends WindowAdapter
       stopService();
 
       info("Recompiling wrappers...");
-      antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "compile-wrappers-java");
+      antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "jar");
 
       info("Updating dependencies in the service project...");
       File wrappersJar =
@@ -218,7 +218,9 @@ public class AssistApp extends WindowAdapter
       return;
     }
 
-    info("Service started, running.");
+    info("Service started, running. Point to "
+         + "http://localhost:8080/interactiveSemantics/testLocal.html "
+         + "in your browser to view interactive semantics.");
   }
 
   private void stopService() throws Exception
