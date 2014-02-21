@@ -3,7 +3,7 @@
 
 <meta_metadata name="tvtrope_example" extends="compound_document" parser="xpath">
 	
-	<composite name="Trope" type="tvtrope"/>
+	<composite name="trope" type="tvtrope"/>
 	<collection name="example_tropes" child_type="tvtrope"/>
 	<collection name="comments" child_type="compound_document"/>
 </meta_metadata>
