@@ -604,6 +604,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.tvShow.TvShowEpisode.class,
 
+		ecologylab.bigsemantics.generated.library.tvtropes.Tvtrope.class,
+
+		ecologylab.bigsemantics.generated.library.tvtropes.TvtropeExample.class,
+
+		ecologylab.bigsemantics.generated.library.tvtropes.TvtropeFolder.class,
+
 		ecologylab.bigsemantics.generated.library.urbanspoon.UrbanSpoonSearch.class,
 
 		ecologylab.bigsemantics.generated.library.uva.DocumentSet.class,

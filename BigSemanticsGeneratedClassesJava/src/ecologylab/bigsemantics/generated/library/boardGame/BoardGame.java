@@ -33,6 +33,9 @@ public class BoardGame extends CreativeWork
 	@simpl_scalar
 	private MetadataString numberOfPlayers;
 
+	@simpl_scalar
+	private MetadataString numberOfRatings;
+
 	@simpl_collection("board_game")
 	@mm_name("similar_games")
 	private List<BoardGame> similarGames;
@@ -79,6 +82,38 @@ public class BoardGame extends CreativeWork
 	public void setNumberOfPlayersMetadata(MetadataString numberOfPlayers)
 	{
 		this.numberOfPlayers = numberOfPlayers;
+	}
+
+	public MetadataString	numberOfRatings()
+	{
+		MetadataString	result = this.numberOfRatings;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.numberOfRatings = result;
+		}
+		return result;
+	}
+
+	public String getNumberOfRatings()
+	{
+		return this.numberOfRatings == null ? null : numberOfRatings().getValue();
+	}
+
+	public MetadataString getNumberOfRatingsMetadata()
+	{
+		return numberOfRatings;
+	}
+
+	public void setNumberOfRatings(String numberOfRatings)
+	{
+		if (numberOfRatings != null)
+			this.numberOfRatings().setValue(numberOfRatings);
+	}
+
+	public void setNumberOfRatingsMetadata(MetadataString numberOfRatings)
+	{
+		this.numberOfRatings = numberOfRatings;
 	}
 
 	public List<BoardGame> getSimilarGames()

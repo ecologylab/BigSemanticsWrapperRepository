@@ -32,6 +32,10 @@ public class YoutubeChannel extends CompoundDocument
 	@mm_name("featured_video")
 	private List<YoutubeVideo> featuredVideo;
 
+	@simpl_collection("youtube_video")
+	@mm_name("video_feed")
+	private List<YoutubeVideo> videoFeed;
+
 	@simpl_collection("youtube_video_list")
 	@mm_name("playlists")
 	private List<YoutubeVideoList> playlists;
@@ -80,6 +84,36 @@ public class YoutubeChannel extends CompoundDocument
 	public void setFeaturedVideo(List<YoutubeVideo> featuredVideo)
 	{
 		this.featuredVideo = featuredVideo;
+	}
+
+	public List<YoutubeVideo> getVideoFeed()
+	{
+		return videoFeed;
+	}
+
+  // lazy evaluation:
+  public List<YoutubeVideo> videoFeed()
+  {
+    if (videoFeed == null)
+      videoFeed = new ArrayList<YoutubeVideo>();
+    return videoFeed;
+  }
+
+  // addTo:
+  public void addToVideoFeed(YoutubeVideo element)
+  {
+    videoFeed().add(element);
+  }
+
+  // size:
+  public int videoFeedSize()
+  {
+    return videoFeed == null ? 0 : videoFeed.size();
+  }
+
+	public void setVideoFeed(List<YoutubeVideo> videoFeed)
+	{
+		this.videoFeed = videoFeed;
 	}
 
 	public List<YoutubeVideoList> getPlaylists()
