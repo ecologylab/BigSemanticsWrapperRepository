@@ -3,13 +3,14 @@
 
 <meta_metadata name="tvtrope_example" extends="compound_document" parser="xpath">
 	
+	<composite name="trope" type="tvtrope"/>
 	<collection name="example_tropes" child_type="tvtrope"/>
 	<collection name="comments" child_type="compound_document"/>
 </meta_metadata>
 
 <meta_metadata name="tvtrope_folder" extends="compound_document" parser="xpath">
 	<collection name="examples" child_type="tvtrope_example"/>
-
+	<collection name="ordered_examples" child_type="tvtrope_example"/>
 </meta_metadata>
 <meta_metadata name="tvtrope" extends="compound_document" parser="xpath">
 	<selector url_path_tree="http://tvtropes.org/pmwiki/pmwiki.php/" domain="tvtropes.org"/>
@@ -30,7 +31,7 @@
 		<scalar name="location" xpath=".//a[1]/@href"/>
 	
 	</collection>
-	<collection name="examples_by_media" child_type="tvtrope_folder" xpath="//div[@class='folder']">
+	<collection name="examples_by_category" child_type="tvtrope_folder" xpath="//div[@class='folder']">
 		<scalar name="title" xpath="./preceding-sibling::div[1]"/>
 		<collection name="examples" xpath="./ul/li">
 			<scalar name="title" xpath=".//a[1]"/>
@@ -39,6 +40,18 @@
 				<scalar name="title" xpath="./text()"/>
 				<scalar name="location" xpath="./@href"/>
 			</collection>
+			<collection name="comments" child_type="compound_document" xpath="./ul/li">
+				
+				<scalar name="description" xpath="."/>
+			</collection>
+		</collection>
+		<collection name="ordered_examples" xpath="./ol/li">
+			<scalar name="title" xpath=".//a[1]"/>
+			<scalar name="description" xpath="."/>
+			<composite name="trope" xpath=".//a[1]">
+				<scalar name="title" xpath="./text()"/>
+				<scalar name="location" xpath="./@href"/>
+			</composite>
 			<collection name="comments" child_type="compound_document" xpath="./ul/li">
 				
 				<scalar name="description" xpath="."/>
