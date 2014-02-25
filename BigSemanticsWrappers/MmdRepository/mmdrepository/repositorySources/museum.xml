@@ -94,7 +94,28 @@
 	
 </meta_metadata>
  
+<meta_metadata name="getty_collection" extends="compound_document" parser="xpath">
+	<selector url_stripped="http://www.getty.edu/art/gettyguide/displayObjectList"/>
+	<example_url url="http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033763" />
+	
+	<scalar name="title" xpath="(//span[@class='header_redesign'])[2]"/>
+	
+	<collection name="artworks" child_type="getty_object" xpath="//comment()[.=' START CONTENT ']/following-sibling::tr//p/a">
+		<scalar name="title" xpath="./b/text()"/>
+		<scalar name="location" xpath="./@href"/>
+	</collection>
+</meta_metadata>
 
+<meta_metadata name="getty_exploration" extends="compound_document" parser="xpath">
+	<selector url_stripped="http://www.getty.edu/art/gettyguide/exploreArt"/>
+	<example_url url="http://www.getty.edu/art/gettyguide/exploreArt?typ=2033760" />
+	
+	<scalar name="title" xpath="(//span[@class='nav_on'])[3]/text()[4]"/>
+	<collection name="collections" child_type="getty_collection" xpath="//div[@class='bio']/a">
+		<scalar name="title" xpath="./text()"/>
+		<scalar name="location" xpath="./@href"/>
+	</collection>
+</meta_metadata>
 <!-- 
 The 'flamenco_object' serves as an individual piece in the museum, but also as a facet (or category).
 
