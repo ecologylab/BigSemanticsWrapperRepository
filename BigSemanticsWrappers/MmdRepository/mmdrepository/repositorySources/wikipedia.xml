@@ -199,6 +199,10 @@
     <example_url url="http://en.wikipedia.org/wiki/Category:Brand_name_materials" />
     <example_url url="http://en.wikipedia.org/wiki/Category:Theoretical_physicists" />
     
+   <scalar name="title" xpath="//span[@dir='auto']">
+   	<filter regex="Category:" replace=""/>
+   </scalar>
+   
     <collection name="subcategories" xpath="//div[@id='mw-subcategories']//a">
       <scalar name="title" xpath="." />
       <scalar name="location" xpath="./@href" />
