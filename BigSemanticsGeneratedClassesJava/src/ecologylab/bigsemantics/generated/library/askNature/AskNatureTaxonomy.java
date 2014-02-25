@@ -8,28 +8,33 @@ package ecologylab.bigsemantics.generated.library.askNature;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.askNature.AskNatureFunction;
+import ecologylab.bigsemantics.generated.library.askNature.AskNatureGroup;
+import ecologylab.bigsemantics.generated.library.askNature.AskNatureSubgroup;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class AskNatureTaxonomy extends Document
 {
-	@simpl_scalar
-	private MetadataString group;
+	@simpl_composite
+	@mm_name("group")
+	private AskNatureGroup group;
 
-	@simpl_scalar
-	private MetadataString subgroup;
+	@simpl_composite
+	@mm_name("subgroup")
+	private AskNatureSubgroup subgroup;
 
-	@simpl_scalar
-	private MetadataString function;
+	@simpl_composite
+	@mm_name("function")
+	private AskNatureFunction function;
 
 	public AskNatureTaxonomy()
 	{ super(); }
@@ -39,98 +44,32 @@ public class AskNatureTaxonomy extends Document
 	}
 
 
-	public MetadataString	group()
-	{
-		MetadataString	result = this.group;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.group = result;
-		}
-		return result;
-	}
-
-	public String getGroup()
-	{
-		return this.group == null ? null : group().getValue();
-	}
-
-	public MetadataString getGroupMetadata()
+	public AskNatureGroup getGroup()
 	{
 		return group;
 	}
 
-	public void setGroup(String group)
-	{
-		if (group != null)
-			this.group().setValue(group);
-	}
-
-	public void setGroupMetadata(MetadataString group)
+	public void setGroup(AskNatureGroup group)
 	{
 		this.group = group;
 	}
 
-	public MetadataString	subgroup()
-	{
-		MetadataString	result = this.subgroup;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.subgroup = result;
-		}
-		return result;
-	}
-
-	public String getSubgroup()
-	{
-		return this.subgroup == null ? null : subgroup().getValue();
-	}
-
-	public MetadataString getSubgroupMetadata()
+	public AskNatureSubgroup getSubgroup()
 	{
 		return subgroup;
 	}
 
-	public void setSubgroup(String subgroup)
-	{
-		if (subgroup != null)
-			this.subgroup().setValue(subgroup);
-	}
-
-	public void setSubgroupMetadata(MetadataString subgroup)
+	public void setSubgroup(AskNatureSubgroup subgroup)
 	{
 		this.subgroup = subgroup;
 	}
 
-	public MetadataString	function()
-	{
-		MetadataString	result = this.function;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.function = result;
-		}
-		return result;
-	}
-
-	public String getFunction()
-	{
-		return this.function == null ? null : function().getValue();
-	}
-
-	public MetadataString getFunctionMetadata()
+	public AskNatureFunction getFunction()
 	{
 		return function;
 	}
 
-	public void setFunction(String function)
-	{
-		if (function != null)
-			this.function().setValue(function);
-	}
-
-	public void setFunctionMetadata(MetadataString function)
+	public void setFunction(AskNatureFunction function)
 	{
 		this.function = function;
 	}

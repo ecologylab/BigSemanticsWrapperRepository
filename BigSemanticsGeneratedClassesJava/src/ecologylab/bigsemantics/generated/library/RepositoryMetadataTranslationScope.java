@@ -108,9 +108,9 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.askNature.AskNatureGroup.class,
 
-		ecologylab.bigsemantics.generated.library.askNature.AskNatureOrganism.class,
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureImage.class,
 
-		ecologylab.bigsemantics.generated.library.askNature.AskNatureProduct.class,
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureOrganism.class,
 
 		ecologylab.bigsemantics.generated.library.askNature.AskNatureStrategy.class,
 
@@ -369,6 +369,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.museum.GettyArtist.class,
 
 		ecologylab.bigsemantics.generated.library.museum.GettyArtistInfo.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettyCollection.class,
+
+		ecologylab.bigsemantics.generated.library.museum.GettyExploration.class,
 
 		ecologylab.bigsemantics.generated.library.museum.GettyObject.class,
 

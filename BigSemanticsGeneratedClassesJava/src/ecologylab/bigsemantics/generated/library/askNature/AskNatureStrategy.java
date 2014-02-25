@@ -9,7 +9,6 @@ package ecologylab.bigsemantics.generated.library.askNature;
  */
 
 import ecologylab.bigsemantics.generated.library.askNature.AskNatureExpert;
-import ecologylab.bigsemantics.generated.library.askNature.AskNatureGroup;
 import ecologylab.bigsemantics.generated.library.askNature.AskNatureOrganism;
 import ecologylab.bigsemantics.generated.library.askNature.AskNatureTaxonomy;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
@@ -56,10 +55,6 @@ public class AskNatureStrategy extends CompoundDocument
 	@simpl_composite
 	@mm_name("biomimicry_taxonomy")
 	private AskNatureTaxonomy biomimicryTaxonomy;
-
-	@simpl_composite
-	@mm_name("taxonomy_tree")
-	private AskNatureGroup taxonomyTree;
 
 	public AskNatureStrategy()
 	{ super(); }
@@ -235,15 +230,5 @@ public class AskNatureStrategy extends CompoundDocument
 	public void setBiomimicryTaxonomy(AskNatureTaxonomy biomimicryTaxonomy)
 	{
 		this.biomimicryTaxonomy = biomimicryTaxonomy;
-	}
-
-	public AskNatureGroup getTaxonomyTree()
-	{
-		return taxonomyTree;
-	}
-
-	public void setTaxonomyTree(AskNatureGroup taxonomyTree)
-	{
-		this.taxonomyTree = taxonomyTree;
 	}
 }
