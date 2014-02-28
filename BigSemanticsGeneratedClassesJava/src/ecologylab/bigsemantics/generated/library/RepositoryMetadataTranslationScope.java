@@ -268,6 +268,14 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.WorldmarketProduct.class,
 
+		ecologylab.bigsemantics.generated.library.fashion.FashionReviewer.class,
+
+		ecologylab.bigsemantics.generated.library.fashion.Forever21.class,
+
+		ecologylab.bigsemantics.generated.library.fashion.Modcloth.class,
+
+		ecologylab.bigsemantics.generated.library.fashion.ModclothRating.class,
+
 		ecologylab.bigsemantics.generated.library.fastflip.FastflipSearch.class,
 
 		ecologylab.bigsemantics.generated.library.fastflip.Thumbnail.class,
