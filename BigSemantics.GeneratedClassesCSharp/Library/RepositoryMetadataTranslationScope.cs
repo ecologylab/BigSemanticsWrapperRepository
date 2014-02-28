@@ -14,8 +14,10 @@ using Crit.Semantics.Generated.Txtf1.Fieldreports.EmergentEvent;
 using Crit.Semantics.Generated.Txtf1.Fieldreports.Spotrep;
 using Ecologylab.Semantics.Generated.Library.AcmNS;
 using Ecologylab.Semantics.Generated.Library.ArtworkNS;
+using Ecologylab.Semantics.Generated.Library.AskNatureNS;
 using Ecologylab.Semantics.Generated.Library.BibManagingNS;
 using Ecologylab.Semantics.Generated.Library.BlogNS;
+using Ecologylab.Semantics.Generated.Library.BoardGameNS;
 using Ecologylab.Semantics.Generated.Library.BuzzNS;
 using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
@@ -33,9 +35,12 @@ using Ecologylab.Semantics.Generated.Library.HotelNS;
 using Ecologylab.Semantics.Generated.Library.IcdlNS;
 using Ecologylab.Semantics.Generated.Library.IeeeXploreNS;
 using Ecologylab.Semantics.Generated.Library.ImdbNS;
+using Ecologylab.Semantics.Generated.Library.InstructablesNS;
+using Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS;
 using Ecologylab.Semantics.Generated.Library.LolzNS;
 using Ecologylab.Semantics.Generated.Library.MiscNS;
 using Ecologylab.Semantics.Generated.Library.MovieNS;
+using Ecologylab.Semantics.Generated.Library.MuseumNS;
 using Ecologylab.Semantics.Generated.Library.NsdlNS;
 using Ecologylab.Semantics.Generated.Library.NsfNS;
 using Ecologylab.Semantics.Generated.Library.OpmlNS;
@@ -47,6 +52,7 @@ using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
 using Ecologylab.Semantics.Generated.Library.PubmedNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
+using Ecologylab.Semantics.Generated.Library.ReviewNS;
 using Ecologylab.Semantics.Generated.Library.RssNS;
 using Ecologylab.Semantics.Generated.Library.RwandatribunalNS;
 using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
@@ -58,12 +64,12 @@ using Ecologylab.Semantics.Generated.Library.TravelNS;
 using Ecologylab.Semantics.Generated.Library.TripAdvisorNS;
 using Ecologylab.Semantics.Generated.Library.TumblrNS;
 using Ecologylab.Semantics.Generated.Library.TvShowNS;
+using Ecologylab.Semantics.Generated.Library.TvtropesNS;
 using Ecologylab.Semantics.Generated.Library.UrbanspoonNS;
 using Ecologylab.Semantics.Generated.Library.UvaNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaNS;
 using Ecologylab.Semantics.Generated.Library.YelpNS;
-using Ecologylab.Semantics.MetadataNS.Builtins.Declarations;
 using Ecologylab.Semantics.Test.Library.Generics;
 
 // Developer should proof-read this TranslationScope before using it for production.
@@ -89,8 +95,20 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AmazonBook),
 				typeof(AmazonList),
 				typeof(AmazonProduct),
+				typeof(AnandtechReview),
+				typeof(AppleIProduct),
+				typeof(AppleProductAccessory),
+				typeof(AppleProductMac),
 				typeof(Artist),
 				typeof(Artwork),
+				typeof(AskNatureExpert),
+				typeof(AskNatureFunction),
+				typeof(AskNatureGroup),
+				typeof(AskNatureImage),
+				typeof(AskNatureOrganism),
+				typeof(AskNatureStrategy),
+				typeof(AskNatureSubgroup),
+				typeof(AskNatureTaxonomy),
 				typeof(Attraction),
 				typeof(Audience),
 				typeof(Audio),
@@ -99,13 +117,18 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Author),
 				typeof(BasicPublication),
 				typeof(BedbathandbeyondProduct),
+				typeof(BestbuyProduct),
+				typeof(BggCategory),
+				typeof(BggGame),
 				typeof(BingSearchApi),
 				typeof(BirthDetail),
 				typeof(Blog),
+				typeof(BoardGame),
 				typeof(Body),
 				typeof(Book),
 				typeof(Bookmark),
 				typeof(BritishCartoonArchive),
+				typeof(CachedHtml),
 				typeof(CameraSettings),
 				typeof(Cartoon),
 				typeof(CategoryInterviews),
@@ -122,6 +145,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CiteulikeSearch),
 				typeof(CiteulikeTag),
 				typeof(CiteulikeUser),
+				typeof(CnetReview),
 				typeof(Collection),
 				typeof(Comment),
 				typeof(Commodity),
@@ -151,14 +175,28 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(EmergentEventCollection),
 				typeof(EtsyProduct),
 				typeof(Event),
+				typeof(Exhibition),
 				typeof(FastflipSearch),
+				typeof(FlamencoFacet),
+				typeof(FlamencoObject),
 				typeof(FlickrAuthor),
 				typeof(FlickrPhoto),
 				typeof(FlickrTag),
+				typeof(FondationArticle),
+				typeof(FondationCategoryCollection),
+				typeof(FondationCollection),
+				typeof(FondationTag),
 				typeof(GaurdianComic),
 				typeof(General),
 				typeof(GeneralSearch<>),
 				typeof(GetRecordAdditionalMetadata),
+				typeof(GettyArtist),
+				typeof(GettyArtistInfo),
+				typeof(GettyCollection),
+				typeof(GettyExploration),
+				typeof(GettyObject),
+				typeof(GettySearch),
+				typeof(GettyWorkInfo),
 				typeof(GisLocation),
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
@@ -166,11 +204,14 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(GooglePatentAuthor),
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
+				typeof(GoogleSearch),
 				typeof(GoogleSorry),
 				typeof(GoogleTrends),
 				typeof(Grant),
 				typeof(GrantProgram),
 				typeof(GrantStaff),
+				typeof(GuggenArtwork),
+				typeof(GuggenFilter),
 				typeof(Head),
 				typeof(Head1),
 				typeof(Head2),
@@ -193,22 +234,37 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(ImdbMovie),
 				typeof(ImdbPerson),
 				typeof(InformaWorld),
+				typeof(Instructable),
+				typeof(InstructableAuthor),
+				typeof(InstructableComment),
+				typeof(InstructableTag),
 				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
 				typeof(KeywordSet),
 				typeof(LandofnodProduct),
+				typeof(LeagueAbility),
+				typeof(LeagueChampion),
+				typeof(LeagueRelationshipList),
 				typeof(Lifecycle),
 				typeof(Lolz),
 				typeof(LowesProduct),
 				typeof(MediaContent),
 				typeof(MediaProvider),
+				typeof(MetArtwork),
+				typeof(MetFilter),
 				typeof(MmArtwork),
+				typeof(MomaArtist),
 				typeof(MomaArtwork),
 				typeof(Movie),
 				typeof(MoviePerson),
 				typeof(NetflixMovie),
 				typeof(NeweggProduct),
+				typeof(NeweggSpecs),
+				typeof(NewmuseumArtist),
+				typeof(NewmuseumArtwork),
+				typeof(NewmuseumExhibition),
+				typeof(NewmuseumFilter),
 				typeof(Nsdl),
 				typeof(NsdlDocument),
 				typeof(NsdlService),
@@ -256,6 +312,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(RestorationhardwareProduct),
 				typeof(ResultInfo),
 				typeof(Review),
+				typeof(RhizomeArtist),
+				typeof(RhizomeArtwork),
+				typeof(RhizomeCollection),
+				typeof(RhizomeTag),
 				typeof(RoomandboardProduct),
 				typeof(RottenMovie),
 				typeof(RottenPerson),
@@ -270,7 +330,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Search<>),
 				typeof(SearchAdditionalMetadataAdn),
 				typeof(SearchCrumb),
-				typeof(SearchMeta),
+				typeof(SearchResult),
 				typeof(SearchResults),
 				typeof(SearchSection),
 				typeof(Section),
@@ -281,8 +341,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SlashdotItem),
 				typeof(SlashdotRss),
 				typeof(SlashdotSearch),
-				typeof(SocialMediaSearch1),
-				typeof(SocialMediaSearch2<>),
 				typeof(SocialMediaSearchOne),
 				typeof(SocialMediaSearchResult),
 				typeof(SocialMediaSearchResultForTest),
@@ -291,9 +349,14 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Spotrep),
 				typeof(Subject),
 				typeof(TargetProduct),
+				typeof(TateArtist),
+				typeof(TateArtwork),
+				typeof(TateFilter),
+				typeof(TechReview),
 				typeof(TempFieldValueHolder),
 				typeof(TermType),
 				typeof(Thumbnail),
+				typeof(TigerdirectProduct),
 				typeof(Topic),
 				typeof(TopicCluster),
 				typeof(TribunalVoices),
@@ -303,6 +366,13 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(TumblrSearch),
 				typeof(TvShow),
 				typeof(TvShowEpisode),
+				typeof(Tvtrope),
+				typeof(TvtropeExample),
+				typeof(TvtropeFolder),
+				typeof(Tweet),
+				typeof(Tweeter),
+				typeof(TwitterMicroblog),
+				typeof(TwitterSearchResults),
 				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(UvaModel),
@@ -314,6 +384,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(WeatherReport),
 				typeof(WebVideo),
 				typeof(WestelmProduct),
+				typeof(WhitneyArtwork),
+				typeof(WhitneyDecade),
+				typeof(WhitneySearch),
+				typeof(WhitneyWatchAndListen),
 				typeof(WikiSearch),
 				typeof(WikipediaCategoryType),
 				typeof(WikipediaForTest),
@@ -328,7 +402,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(YahooResultSet),
 				typeof(YahooThumbnail),
 				typeof(YelpBusiness),
-				typeof(YoutubeSearchResults));
+				typeof(YoutubeChannel),
+				typeof(YoutubeSearchResults),
+				typeof(YoutubeVideo),
+				typeof(YoutubeVideoGrid),
+				typeof(YoutubeVideoList));
 		}
 	}
 }

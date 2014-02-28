@@ -99,7 +99,8 @@
 	</meta_metadata>
 	<meta_metadata name ="youtube_channel" extends="compound_document" comment="youtube channels" parser="xpath" user_agent_name="chrome">
 		
-		<selector url_regex="http://www.youtube.com/(user|channel)/.*" domain="youtube.com" />
+		<selector url_regex="http://www.youtube.com/(user|channel)/.*((?!videos).)$" domain="youtube.com" />
+		<selector url_regex="http://www.youtube.com/((?!/).)*" domain="youtube.com"/>
 		<scalar name="title" xpath="//a[@class='spf-link branded-page-header-title-link yt-uix-sessionlink']/@title"/>	
 		
 		<collection name="featured_video" child_type="youtube_video" xpath="//div[@class='video-player-view-component branded-page-box']//div[@class='video-detail']/h3/a">
