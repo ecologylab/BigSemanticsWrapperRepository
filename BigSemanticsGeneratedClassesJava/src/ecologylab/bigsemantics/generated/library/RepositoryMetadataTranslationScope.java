@@ -268,6 +268,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.WorldmarketProduct.class,
 
+		ecologylab.bigsemantics.generated.library.fashion.Anthropologie.class,
+
+		ecologylab.bigsemantics.generated.library.fashion.Asos.class,
+
 		ecologylab.bigsemantics.generated.library.fashion.FashionReviewer.class,
 
 		ecologylab.bigsemantics.generated.library.fashion.Forever21.class,
@@ -371,6 +375,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.museum.FlamencoObject.class,
 
 		ecologylab.bigsemantics.generated.library.museum.FondationArticle.class,
+
+		ecologylab.bigsemantics.generated.library.museum.FondationCategoryCollection.class,
+
+		ecologylab.bigsemantics.generated.library.museum.FondationCollection.class,
 
 		ecologylab.bigsemantics.generated.library.museum.FondationTag.class,
 
