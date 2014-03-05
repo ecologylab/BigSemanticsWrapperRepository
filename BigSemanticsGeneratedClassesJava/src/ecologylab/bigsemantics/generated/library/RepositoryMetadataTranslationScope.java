@@ -272,13 +272,17 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.fashion.Asos.class,
 
+		ecologylab.bigsemantics.generated.library.fashion.AsosPage.class,
+
+		ecologylab.bigsemantics.generated.library.fashion.Designer.class,
+
 		ecologylab.bigsemantics.generated.library.fashion.FashionReviewer.class,
 
 		ecologylab.bigsemantics.generated.library.fashion.Forever21.class,
 
 		ecologylab.bigsemantics.generated.library.fashion.Modcloth.class,
 
-		ecologylab.bigsemantics.generated.library.fashion.ModclothRating.class,
+		ecologylab.bigsemantics.generated.library.fashion.ModclothSearch.class,
 
 		ecologylab.bigsemantics.generated.library.fastflip.FastflipSearch.class,
 
