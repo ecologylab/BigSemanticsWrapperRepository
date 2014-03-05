@@ -95,11 +95,50 @@
     <Compile Include="Library\AcmNS\AcmPortalPeriodical.cs" />
     <Compile Include="Library\AcmNS\AcmPortalSearch.cs" />
     <Compile Include="Library\AcmNS\AcmPortalSearchResult.cs" />
-    <Compile Include="Library\ArtworkNS\Artist.cs" />
-    <Compile Include="Library\ArtworkNS\Artwork.cs" />
-    <Compile Include="Library\ArtworkNS\MmArtwork.cs" />
-    <Compile Include="Library\ArtworkNS\MomaArtwork.cs" />
-    <Compile Include="Library\ArtworkNS\TempFieldValueHolder.cs" />
+    <Compile Include="Library\ArtworkNS\Artist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ArtworkNS\Artwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ArtworkNS\Exhibition.cs" />
+    <Compile Include="Library\ArtworkNS\GuggenArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\GuggenFilter.cs" />
+    <Compile Include="Library\ArtworkNS\MetArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\MetFilter.cs" />
+    <Compile Include="Library\ArtworkNS\MmArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ArtworkNS\MomaArtist.cs" />
+    <Compile Include="Library\ArtworkNS\MomaArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ArtworkNS\NewmuseumArtist.cs" />
+    <Compile Include="Library\ArtworkNS\NewmuseumArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\NewmuseumExhibition.cs" />
+    <Compile Include="Library\ArtworkNS\NewmuseumFilter.cs" />
+    <Compile Include="Library\ArtworkNS\RhizomeArtist.cs" />
+    <Compile Include="Library\ArtworkNS\RhizomeArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\RhizomeCollection.cs" />
+    <Compile Include="Library\ArtworkNS\RhizomeTag.cs" />
+    <Compile Include="Library\ArtworkNS\TateArtist.cs" />
+    <Compile Include="Library\ArtworkNS\TateArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\TateFilter.cs" />
+    <Compile Include="Library\ArtworkNS\TempFieldValueHolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ArtworkNS\WhitneyArtwork.cs" />
+    <Compile Include="Library\ArtworkNS\WhitneyDecade.cs" />
+    <Compile Include="Library\ArtworkNS\WhitneySearch.cs" />
+    <Compile Include="Library\ArtworkNS\WhitneyWatchAndListen.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureExpert.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureFunction.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureGroup.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureImage.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureOrganism.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureStrategy.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureSubgroup.cs" />
+    <Compile Include="Library\AskNatureNS\AskNatureTaxonomy.cs" />
     <Compile Include="Library\BibManagingNS\CitationInfo.cs" />
     <Compile Include="Library\BibManagingNS\CiteseerxCiting.cs" />
     <Compile Include="Library\BibManagingNS\CiteseerxRecord.cs" />
@@ -108,6 +147,9 @@
     <Compile Include="Library\BibManagingNS\CiteseerxSummary.cs" />
     <Compile Include="Library\BlogNS\Blog.cs" />
     <Compile Include="Library\BlogNS\Post.cs" />
+    <Compile Include="Library\BoardGameNS\BggCategory.cs" />
+    <Compile Include="Library\BoardGameNS\BggGame.cs" />
+    <Compile Include="Library\BoardGameNS\BoardGame.cs" />
     <Compile Include="Library\Bookmark.cs" />
     <Compile Include="Library\BuzzNS\GoogleTrends.cs" />
     <Compile Include="Library\BuzzNS\HotSearch.cs" />
@@ -199,6 +241,13 @@
     <Compile Include="Library\IeeeXploreNS\IeeeXploreSearch.cs" />
     <Compile Include="Library\ImdbNS\ImdbMovie.cs" />
     <Compile Include="Library\ImdbNS\ImdbPerson.cs" />
+    <Compile Include="Library\InstructablesNS\Instructable.cs" />
+    <Compile Include="Library\InstructablesNS\InstructableAuthor.cs" />
+    <Compile Include="Library\InstructablesNS\InstructableComment.cs" />
+    <Compile Include="Library\InstructablesNS\InstructableTag.cs" />
+    <Compile Include="Library\LeagueoflegendsNS\LeagueAbility.cs" />
+    <Compile Include="Library\LeagueoflegendsNS\LeagueChampion.cs" />
+    <Compile Include="Library\LeagueoflegendsNS\LeagueRelationshipList.cs" />
     <Compile Include="Library\LolzNS\Lolz.cs" />
     <Compile Include="Library\MiscNS\Comment.cs" />
     <Compile Include="Library\MiscNS\DcDocument.cs" />
@@ -212,6 +261,19 @@
     <Compile Include="Library\MovieNS\NetflixMovie.cs" />
     <Compile Include="Library\MovieNS\RottenMovie.cs" />
     <Compile Include="Library\MovieNS\RottenPerson.cs" />
+    <Compile Include="Library\MuseumNS\FlamencoFacet.cs" />
+    <Compile Include="Library\MuseumNS\FlamencoObject.cs" />
+    <Compile Include="Library\MuseumNS\FondationArticle.cs" />
+    <Compile Include="Library\MuseumNS\FondationCategoryCollection.cs" />
+    <Compile Include="Library\MuseumNS\FondationCollection.cs" />
+    <Compile Include="Library\MuseumNS\FondationTag.cs" />
+    <Compile Include="Library\MuseumNS\GettyArtist.cs" />
+    <Compile Include="Library\MuseumNS\GettyArtistInfo.cs" />
+    <Compile Include="Library\MuseumNS\GettyCollection.cs" />
+    <Compile Include="Library\MuseumNS\GettyExploration.cs" />
+    <Compile Include="Library\MuseumNS\GettyObject.cs" />
+    <Compile Include="Library\MuseumNS\GettySearch.cs" />
+    <Compile Include="Library\MuseumNS\GettyWorkInfo.cs" />
     <Compile Include="Library\NsdlNS\Header.cs" />
     <Compile Include="Library\NsdlNS\NsdlDocument.cs" />
     <Compile Include="Library\NsdlNS\NsdlService.cs" />
@@ -241,6 +303,7 @@
     <Compile Include="Library\PrimitivesNS\Audio.cs" />
     <Compile Include="Library\PrimitivesNS\AudioClipping.cs" />
     <Compile Include="Library\PrimitivesNS\AudioSelfmade.cs" />
+    <Compile Include="Library\PrimitivesNS\CachedHtml.cs" />
     <Compile Include="Library\PrimitivesNS\MediaProvider.cs" />
     <Compile Include="Library\PrimitivesNS\SequencedClippableDocument.cs" />
     <Compile Include="Library\PrimitivesNS\Video.cs" />
@@ -249,14 +312,20 @@
     <Compile Include="Library\PrimitivesNS\WebVideo.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonList.cs" />
     <Compile Include="Library\ProductAndServiceNS\AmazonProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\AppleIProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\AppleProductAccessory.cs" />
+    <Compile Include="Library\ProductAndServiceNS\AppleProductMac.cs" />
+    <Compile Include="Library\ProductAndServiceNS\BestbuyProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Commodity.cs" />
     <Compile Include="Library\ProductAndServiceNS\EbayProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\EtsyProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\NeweggProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\NeweggSpecs.cs" />
     <Compile Include="Library\ProductAndServiceNS\Product.cs" />
     <Compile Include="Library\ProductAndServiceNS\SamsclubProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\Service.cs" />
     <Compile Include="Library\ProductAndServiceNS\TargetProduct.cs" />
+    <Compile Include="Library\ProductAndServiceNS\TigerdirectProduct.cs" />
     <Compile Include="Library\ProductAndServiceNS\WalmartProduct.cs" />
     <Compile Include="Library\PublicationNS\AmazonBook.cs" />
     <Compile Include="Library\PublicationNS\Book.cs" />
@@ -270,6 +339,9 @@
     <Compile Include="Library\RepositoryMetadataTranslationScope.cs" />
     <Compile Include="Library\RestaurantNS\Restaurant.cs" />
     <Compile Include="Library\RestaurantNS\RestaurantGenre.cs" />
+    <Compile Include="Library\ReviewNS\AnandtechReview.cs" />
+    <Compile Include="Library\ReviewNS\CnetReview.cs" />
+    <Compile Include="Library\ReviewNS\TechReview.cs" />
     <Compile Include="Library\RichBookmarkNS\MobileRichBookmark.cs" />
     <Compile Include="Library\RichBookmarkNS\MobileRichBookmarkCollection.cs" />
     <Compile Include="Library\RssNS\Channel.cs" />
@@ -293,11 +365,13 @@
     <Compile Include="Library\SearchNS\DeliciousSearch.cs" />
     <Compile Include="Library\SearchNS\GoogleScholarSearch.cs" />
     <Compile Include="Library\SearchNS\GoogleScholarSearchResult.cs" />
+    <Compile Include="Library\SearchNS\GoogleSearch.cs" />
     <Compile Include="Library\SearchNS\ImageSearch.cs" />
     <Compile Include="Library\SearchNS\ImageSearchResult.cs" />
     <Compile Include="Library\SearchNS\Search.cs" />
     <Compile Include="Library\SearchNS\SearchCrumb.cs" />
     <Compile Include="Library\SearchNS\SearchMeta.cs" />
+    <Compile Include="Library\SearchNS\SearchResult.cs" />
     <Compile Include="Library\SearchNS\SlashdotSearch.cs" />
     <Compile Include="Library\SearchNS\SocialMediaSearch1.cs" />
     <Compile Include="Library\SearchNS\SocialMediaSearch2.cs" />
@@ -312,11 +386,18 @@
     <Compile Include="Library\SlashdotNS\SlashdotItem.cs" />
     <Compile Include="Library\SlashdotNS\SlashdotRss.cs" />
     <Compile Include="Library\SocialMediaNS\RedditSearchResults.cs" />
+    <Compile Include="Library\SocialMediaNS\Tweet.cs" />
+    <Compile Include="Library\SocialMediaNS\Tweeter.cs" />
+    <Compile Include="Library\SocialMediaNS\TwitterMicroblog.cs" />
+    <Compile Include="Library\SocialMediaNS\TwitterSearchResults.cs" />
     <Compile Include="Library\TravelNS\Attraction.cs" />
     <Compile Include="Library\TripAdvisorNS\TripAdvisorThingsToDo.cs" />
     <Compile Include="Library\TumblrNS\Tumblr.cs" />
     <Compile Include="Library\TvShowNS\TvShow.cs" />
     <Compile Include="Library\TvShowNS\TvShowEpisode.cs" />
+    <Compile Include="Library\TvtropesNS\Tvtrope.cs" />
+    <Compile Include="Library\TvtropesNS\TvtropeExample.cs" />
+    <Compile Include="Library\TvtropesNS\TvtropeFolder.cs" />
     <Compile Include="Library\UrbanspoonNS\UrbanSpoonSearch.cs" />
     <Compile Include="Library\UvaNS\DocumentSet.cs" />
     <Compile Include="Library\UvaNS\KeywordSet.cs" />
@@ -324,7 +405,11 @@
     <Compile Include="Library\UvaNS\TopicCluster.cs" />
     <Compile Include="Library\UvaNS\UvaModel.cs" />
     <Compile Include="Library\VideoNS\SocialVideo.cs" />
+    <Compile Include="Library\VideoNS\YoutubeChannel.cs" />
     <Compile Include="Library\VideoNS\YoutubeSearchResults.cs" />
+    <Compile Include="Library\VideoNS\YoutubeVideo.cs" />
+    <Compile Include="Library\VideoNS\YoutubeVideoGrid.cs" />
+    <Compile Include="Library\VideoNS\YoutubeVideoList.cs" />
     <Compile Include="Library\WeatherReport.cs" />
     <Compile Include="Library\WikipediaNS\Paragraph.cs" />
     <Compile Include="Library\WikipediaNS\Section.cs" />
