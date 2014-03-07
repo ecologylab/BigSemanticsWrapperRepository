@@ -8,14 +8,20 @@ package ecologylab.bigsemantics.generated.library.fashion;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.fashion.Modcloth;
+import ecologylab.bigsemantics.generated.library.fashion.ModclothSearch;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +30,25 @@ public class Modcloth extends Product
 {
 	@simpl_scalar
 	private MetadataString designer;
+
+	@simpl_collection("document")
+	@mm_name("details")
+	private List<Document> details;
+
+	@simpl_collection("document")
+	@mm_name("avalailable_sizes")
+	private List<Document> avalailableSizes;
+
+	@simpl_scalar
+	private MetadataString sizingReccomendation;
+
+	@simpl_collection("modcloth")
+	@mm_name("similar_products")
+	private List<Modcloth> similarProducts;
+
+	@simpl_collection("modcloth_search")
+	@mm_name("tags")
+	private List<ModclothSearch> tags;
 
 	public Modcloth()
 	{ super(); }
@@ -63,5 +88,157 @@ public class Modcloth extends Product
 	public void setDesignerMetadata(MetadataString designer)
 	{
 		this.designer = designer;
+	}
+
+	public List<Document> getDetails()
+	{
+		return details;
+	}
+
+  // lazy evaluation:
+  public List<Document> details()
+  {
+    if (details == null)
+      details = new ArrayList<Document>();
+    return details;
+  }
+
+  // addTo:
+  public void addToDetails(Document element)
+  {
+    details().add(element);
+  }
+
+  // size:
+  public int detailsSize()
+  {
+    return details == null ? 0 : details.size();
+  }
+
+	public void setDetails(List<Document> details)
+	{
+		this.details = details;
+	}
+
+	public List<Document> getAvalailableSizes()
+	{
+		return avalailableSizes;
+	}
+
+  // lazy evaluation:
+  public List<Document> avalailableSizes()
+  {
+    if (avalailableSizes == null)
+      avalailableSizes = new ArrayList<Document>();
+    return avalailableSizes;
+  }
+
+  // addTo:
+  public void addToAvalailableSizes(Document element)
+  {
+    avalailableSizes().add(element);
+  }
+
+  // size:
+  public int avalailableSizesSize()
+  {
+    return avalailableSizes == null ? 0 : avalailableSizes.size();
+  }
+
+	public void setAvalailableSizes(List<Document> avalailableSizes)
+	{
+		this.avalailableSizes = avalailableSizes;
+	}
+
+	public MetadataString	sizingReccomendation()
+	{
+		MetadataString	result = this.sizingReccomendation;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.sizingReccomendation = result;
+		}
+		return result;
+	}
+
+	public String getSizingReccomendation()
+	{
+		return this.sizingReccomendation == null ? null : sizingReccomendation().getValue();
+	}
+
+	public MetadataString getSizingReccomendationMetadata()
+	{
+		return sizingReccomendation;
+	}
+
+	public void setSizingReccomendation(String sizingReccomendation)
+	{
+		if (sizingReccomendation != null)
+			this.sizingReccomendation().setValue(sizingReccomendation);
+	}
+
+	public void setSizingReccomendationMetadata(MetadataString sizingReccomendation)
+	{
+		this.sizingReccomendation = sizingReccomendation;
+	}
+
+	public List<Modcloth> getSimilarProducts()
+	{
+		return similarProducts;
+	}
+
+  // lazy evaluation:
+  public List<Modcloth> similarProducts()
+  {
+    if (similarProducts == null)
+      similarProducts = new ArrayList<Modcloth>();
+    return similarProducts;
+  }
+
+  // addTo:
+  public void addToSimilarProducts(Modcloth element)
+  {
+    similarProducts().add(element);
+  }
+
+  // size:
+  public int similarProductsSize()
+  {
+    return similarProducts == null ? 0 : similarProducts.size();
+  }
+
+	public void setSimilarProducts(List<Modcloth> similarProducts)
+	{
+		this.similarProducts = similarProducts;
+	}
+
+	public List<ModclothSearch> getTags()
+	{
+		return tags;
+	}
+
+  // lazy evaluation:
+  public List<ModclothSearch> tags()
+  {
+    if (tags == null)
+      tags = new ArrayList<ModclothSearch>();
+    return tags;
+  }
+
+  // addTo:
+  public void addToTags(ModclothSearch element)
+  {
+    tags().add(element);
+  }
+
+  // size:
+  public int tagsSize()
+  {
+    return tags == null ? 0 : tags.size();
+  }
+
+	public void setTags(List<ModclothSearch> tags)
+	{
+		this.tags = tags;
 	}
 }

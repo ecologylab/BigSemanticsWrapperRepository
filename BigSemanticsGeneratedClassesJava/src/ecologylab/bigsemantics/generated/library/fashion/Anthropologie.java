@@ -9,21 +9,23 @@ package ecologylab.bigsemantics.generated.library.fashion;
  */
 
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class Anthropologie extends Product
 {
-	@simpl_scalar
-	private MetadataString color;
+	@simpl_collection("document")
+	@mm_name("details")
+	private List<Document> details;
 
 	public Anthropologie()
 	{ super(); }
@@ -33,35 +35,33 @@ public class Anthropologie extends Product
 	}
 
 
-	public MetadataString	color()
+	public List<Document> getDetails()
 	{
-		MetadataString	result = this.color;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.color = result;
-		}
-		return result;
+		return details;
 	}
 
-	public String getColor()
-	{
-		return this.color == null ? null : color().getValue();
-	}
+  // lazy evaluation:
+  public List<Document> details()
+  {
+    if (details == null)
+      details = new ArrayList<Document>();
+    return details;
+  }
 
-	public MetadataString getColorMetadata()
-	{
-		return color;
-	}
+  // addTo:
+  public void addToDetails(Document element)
+  {
+    details().add(element);
+  }
 
-	public void setColor(String color)
-	{
-		if (color != null)
-			this.color().setValue(color);
-	}
+  // size:
+  public int detailsSize()
+  {
+    return details == null ? 0 : details.size();
+  }
 
-	public void setColorMetadata(MetadataString color)
+	public void setDetails(List<Document> details)
 	{
-		this.color = color;
+		this.details = details;
 	}
 }

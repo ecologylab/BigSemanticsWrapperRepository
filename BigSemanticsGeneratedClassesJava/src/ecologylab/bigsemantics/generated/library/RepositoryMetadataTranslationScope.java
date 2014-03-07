@@ -322,6 +322,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.icdl.IcdlImageResult.class,
 
+		ecologylab.bigsemantics.generated.library.ideaMache.IdeaMache.class,
+
 		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreArticle.class,
 
 		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreCitations.class,
@@ -457,6 +459,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.primitives.AudioSelfmade.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.CachedHtml.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.InformationCompositionMedia.class,
+
+		ecologylab.bigsemantics.generated.library.primitives.MacheClipping.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.MediaProvider.class,
 
