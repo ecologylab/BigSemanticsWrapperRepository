@@ -103,7 +103,11 @@
 	<meta_metadata name="text_clipping" extends="clipping" built_in="true">
 	  <generic_type_var name="M" arg="html_text" />
 	</meta_metadata>
- 
+ 	
+	<meta_metadata name="mache_clipping" extends="clipping" package="ecologylab.bigsemantics.generated.library.primitives">
+		<generic_type_var name="M" arg="information_composition_media" />
+	</meta_metadata>
+	
 	<meta_metadata name="video_clipping" extends="clipping" package="ecologylab.bigsemantics.generated.library.primitives">
   	<generic_type_var name="M" arg="web_video" />
 	</meta_metadata>
@@ -143,6 +147,12 @@
 		<scalar name="local_location" hide="true" comment="Relative location of local copy of image."/>
 		<scalar name="creation_date" scalar_type="Date" />
 	</meta_metadata>
+
+	<meta_metadata name="information_composition_media" extends="clippable_document" package="ecologylab.bigsemantics.generated.library.primitives">
+	 	<scalar name="pure_nested" scalar_type="String" />  
+		<scalar name="hash_key" scalar_type="String" />
+	</meta_metadata>
+	
 	
 	<meta_metadata name="html_text" extends="metadata" built_in="true">
 		<scalar name="text" scalar_type="String" />
