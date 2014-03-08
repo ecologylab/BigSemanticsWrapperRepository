@@ -23,17 +23,17 @@ import org.slf4j.LoggerFactory;
 public class BSService
 {
 
-  static Logger   logger = LoggerFactory.getLogger(BSService.class);
+  static Logger         logger = LoggerFactory.getLogger(BSService.class);
 
-  private File    serviceDir;
+  private File          serviceDir;
 
-  private File    bsJsDir;
+  private File          bsJsDir;
 
-  private int     servicePort;
+  private int           servicePort;
 
-  private Server  server;
+  private Server        server;
 
-  private Process downloaderProc;
+  private ProcessHelper downloaderProc;
 
   public BSService(Configuration configs)
   {
@@ -122,6 +122,7 @@ public class BSService
       throw new RuntimeException("Failed to stop the BigSemantics web service(s).");
     }
 
+    server = null;
     logger.info("dpool+bigsemantics services stopped.");
   }
 
@@ -130,9 +131,9 @@ public class BSService
     stopDownloader();
     String downloaderJarPath =
         PathUtil.subPath(serviceDir, "DownloaderPool", "build", "Downloader.jar").getAbsolutePath();
-    ProcessBuilder pb = new ProcessBuilder("java", "-jar", downloaderJarPath);
     logger.info("starting downloader...");
-    downloaderProc = pb.start();
+    downloaderProc = new ProcessHelper("java", "-Xms128m", "-jar", downloaderJarPath);
+    downloaderProc.start();
     logger.info("downloader started.");
   }
 
@@ -141,8 +142,7 @@ public class BSService
     if (downloaderProc != null)
     {
       logger.info("stopping downloader...");
-      downloaderProc.destroy();
-      downloaderProc.waitFor();
+      downloaderProc.stop();
       downloaderProc = null;
       logger.info("downloader stopped.");
     }

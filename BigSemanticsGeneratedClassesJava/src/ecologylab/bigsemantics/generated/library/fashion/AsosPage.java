@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.fashion;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.Product;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.generated.library.fashion.Asos;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -21,47 +21,47 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Anthropologie extends Product
+public class AsosPage extends CompoundDocument
 {
-	@simpl_collection("document")
-	@mm_name("details")
-	private List<Document> details;
+	@simpl_collection("asos")
+	@mm_name("products")
+	private List<Asos> products;
 
-	public Anthropologie()
+	public AsosPage()
 	{ super(); }
 
-	public Anthropologie(MetaMetadataCompositeField mmd) {
+	public AsosPage(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<Document> getDetails()
+	public List<Asos> getProducts()
 	{
-		return details;
+		return products;
 	}
 
   // lazy evaluation:
-  public List<Document> details()
+  public List<Asos> products()
   {
-    if (details == null)
-      details = new ArrayList<Document>();
-    return details;
+    if (products == null)
+      products = new ArrayList<Asos>();
+    return products;
   }
 
   // addTo:
-  public void addToDetails(Document element)
+  public void addToProducts(Asos element)
   {
-    details().add(element);
+    products().add(element);
   }
 
   // size:
-  public int detailsSize()
+  public int productsSize()
   {
-    return details == null ? 0 : details.size();
+    return products == null ? 0 : products.size();
   }
 
-	public void setDetails(List<Document> details)
+	public void setProducts(List<Asos> products)
 	{
-		this.details = details;
+		this.products = products;
 	}
 }

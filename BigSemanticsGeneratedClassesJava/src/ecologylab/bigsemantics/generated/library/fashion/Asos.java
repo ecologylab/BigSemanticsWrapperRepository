@@ -8,17 +8,41 @@ package ecologylab.bigsemantics.generated.library.fashion;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.fashion.Asos;
+import ecologylab.bigsemantics.generated.library.fashion.Designer;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
+import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class Asos extends Product
 {
+	@simpl_collection("document")
+	@mm_name("details")
+	private List<Document> details;
+
+	@simpl_composite
+	@mm_name("designer")
+	private Designer designer;
+
+	@simpl_collection("asos")
+	@mm_name("recommmended_products")
+	private List<Asos> recommmendedProducts;
+
+	@simpl_collection("compound_document")
+	@mm_name("tags")
+	private List<CompoundDocument> tags;
+
 	public Asos()
 	{ super(); }
 
@@ -26,4 +50,104 @@ public class Asos extends Product
 		super(mmd);
 	}
 
+
+	public List<Document> getDetails()
+	{
+		return details;
+	}
+
+  // lazy evaluation:
+  public List<Document> details()
+  {
+    if (details == null)
+      details = new ArrayList<Document>();
+    return details;
+  }
+
+  // addTo:
+  public void addToDetails(Document element)
+  {
+    details().add(element);
+  }
+
+  // size:
+  public int detailsSize()
+  {
+    return details == null ? 0 : details.size();
+  }
+
+	public void setDetails(List<Document> details)
+	{
+		this.details = details;
+	}
+
+	public Designer getDesigner()
+	{
+		return designer;
+	}
+
+	public void setDesigner(Designer designer)
+	{
+		this.designer = designer;
+	}
+
+	public List<Asos> getRecommmendedProducts()
+	{
+		return recommmendedProducts;
+	}
+
+  // lazy evaluation:
+  public List<Asos> recommmendedProducts()
+  {
+    if (recommmendedProducts == null)
+      recommmendedProducts = new ArrayList<Asos>();
+    return recommmendedProducts;
+  }
+
+  // addTo:
+  public void addToRecommmendedProducts(Asos element)
+  {
+    recommmendedProducts().add(element);
+  }
+
+  // size:
+  public int recommmendedProductsSize()
+  {
+    return recommmendedProducts == null ? 0 : recommmendedProducts.size();
+  }
+
+	public void setRecommmendedProducts(List<Asos> recommmendedProducts)
+	{
+		this.recommmendedProducts = recommmendedProducts;
+	}
+
+	public List<CompoundDocument> getTags()
+	{
+		return tags;
+	}
+
+  // lazy evaluation:
+  public List<CompoundDocument> tags()
+  {
+    if (tags == null)
+      tags = new ArrayList<CompoundDocument>();
+    return tags;
+  }
+
+  // addTo:
+  public void addToTags(CompoundDocument element)
+  {
+    tags().add(element);
+  }
+
+  // size:
+  public int tagsSize()
+  {
+    return tags == null ? 0 : tags.size();
+  }
+
+	public void setTags(List<CompoundDocument> tags)
+	{
+		this.tags = tags;
+	}
 }

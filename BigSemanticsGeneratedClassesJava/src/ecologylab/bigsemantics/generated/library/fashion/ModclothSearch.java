@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.fashion;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.fashion.Modcloth;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -21,47 +21,47 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Anthropologie extends Product
+public class ModclothSearch extends Product
 {
-	@simpl_collection("document")
-	@mm_name("details")
-	private List<Document> details;
+	@simpl_collection("modcloth")
+	@mm_name("items")
+	private List<Modcloth> items;
 
-	public Anthropologie()
+	public ModclothSearch()
 	{ super(); }
 
-	public Anthropologie(MetaMetadataCompositeField mmd) {
+	public ModclothSearch(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<Document> getDetails()
+	public List<Modcloth> getItems()
 	{
-		return details;
+		return items;
 	}
 
   // lazy evaluation:
-  public List<Document> details()
+  public List<Modcloth> items()
   {
-    if (details == null)
-      details = new ArrayList<Document>();
-    return details;
+    if (items == null)
+      items = new ArrayList<Modcloth>();
+    return items;
   }
 
   // addTo:
-  public void addToDetails(Document element)
+  public void addToItems(Modcloth element)
   {
-    details().add(element);
+    items().add(element);
   }
 
   // size:
-  public int detailsSize()
+  public int itemsSize()
   {
-    return details == null ? 0 : details.size();
+    return items == null ? 0 : items.size();
   }
 
-	public void setDetails(List<Document> details)
+	public void setItems(List<Modcloth> items)
 	{
-		this.details = details;
+		this.items = items;
 	}
 }
