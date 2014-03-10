@@ -400,6 +400,8 @@
 
   <meta_metadata name="bestbuy_product" extends="product" parser="xpath" user_agentname="firefox">
     <selector url_path_tree="http://www.bestbuy.com/site/" domain="bestbuy.com" />
+    <example_url url="http://www.bestbuy.com/site/samsung-60-class-60-diag--led-1080p-120hz-smart-hdtv/7827055.p" />
+    
     <scalar name="title" xpath="//*[@id='sku-title']/h1" />
     <scalar name="price" xpath="//*[@class='item-price']/text()" />
     <scalar name="overall_rating" xpath="//*[@class='average-score' and @itemprop='ratingValue']/text()" />
