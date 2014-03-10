@@ -21,8 +21,12 @@
 		<scalar name="title" scalar_type="String" style="metadata_h1" layer="10.0" hint="XML_LEAF"
             is_facet="true" as_composite_scalar="true" navigates_to="location"
             schema_org_itemprop="name" comment="The Title of the Document" />
-		<scalar name="description" scalar_type="String" other_tags="abstract_field" layer="1.6"
-            style="description_div" schema_org_itemprop="description" hint="XML_LEAF" />
+		<scalar name="description" scalar_type="String" hint="XML_LEAF"
+            layer="1.6" style="description_div"
+            schema_org_itemprop="description" xpath="//meta[@name='description']/@content" />
+    <scalar name="site_name" scalar_type="String" hide="true"
+            xpath="//meta[@property='og:site_name']/@content"
+            comment="Huamn readable name of the site."/>
 		
 		<collection name="additional_locations" child_scalar_type="ParsedURL" child_tag="location"
                 hide="true" />
@@ -190,21 +194,30 @@
 	
 	<meta_metadata name="compound_document"  extends="document" built_in="true">
 		<scalar name="location" always_show="false" />
-		<scalar name="query" layer="5.0" comment="The search query" scalar_type="String"
-            hint="XML_LEAF" />
+		<scalar name="query" scalar_type="String" hint="XML_LEAF" layer="5.0" comment="The search query" />
 		<scalar name="page_structure" layer="6.0" hide="true" scalar_type="String"
             comment="For debugging. Type of the structure recognized by information extraction." />
 		<collection name="clippings" child_type="clipping" hide="true"
                 polymorphic_scope="repository_clippings"
                 comment="Clippings that this document contains." />
 		<composite name="root_document" type="compound_document" />
+
+    <collection name="images" child_type="image" hide="true" xpath="//meta[@property='og:image']">
+      <scalar name="location" xpath="./@content" />
+    </collection>
+    <collection name="videos" child_type="video" hide="true" xpath="//meta[@property='og:video']">
+      <scalar name="location" xpath="./@content" />
+    </collection>
+    <collection name="audios" child_type="audio" hide="true" xpath="//meta[@property='og:audio']">
+      <scalar name="location" xpath="./@content" />
+    </collection>
 		<after_semantic_actions>
 			<visualize_clippings/>
 		</after_semantic_actions>
 	</meta_metadata>
 	
 	<meta_metadata name="html_document" type="compound_document" parser="html_dom_image_text"
-                 user_agent_name="firefox_3_6_8" schema_org_itemtype="http://schema.org/WebPage">
+                 user_agent_name="chrome" schema_org_itemtype="http://schema.org/WebPage">
 		<selector>
 			<mime_type>text/html</mime_type>
 			<suffix>htm</suffix>
