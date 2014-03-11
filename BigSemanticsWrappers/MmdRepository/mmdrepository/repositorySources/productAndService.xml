@@ -59,7 +59,7 @@
       <scalar name="location" hide="true" xpath="./@href" />
     </composite>
     <composite name="image" xpath="//img[@id='main-image']">
-      <scalar name="location" xpath="./@src" />
+      <scalar name="location" xpath="./@data-old-hires" />
     </composite>
 
     <def_var name="reviews_span" xpath="//span[@ref='dp_top_cm_cr_acr_pop_']" type="node" />
