@@ -205,12 +205,7 @@
     <collection name="images" child_type="image" hide="true" xpath="//meta[@property='og:image']">
       <scalar name="location" xpath="./@content" />
     </collection>
-    <collection name="videos" child_type="video" hide="true" xpath="//meta[@property='og:video']">
-      <scalar name="location" xpath="./@content" />
-    </collection>
-    <collection name="audios" child_type="audio" hide="true" xpath="//meta[@property='og:audio']">
-      <scalar name="location" xpath="./@content" />
-    </collection>
+    
 		<after_semantic_actions>
 			<visualize_clippings/>
 		</after_semantic_actions>
