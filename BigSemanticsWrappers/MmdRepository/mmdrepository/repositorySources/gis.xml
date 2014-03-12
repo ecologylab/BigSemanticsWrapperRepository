@@ -1,45 +1,44 @@
-<meta_metadata_repository name="gis" package="ecologylab.bigsemantics.generated.library.gis">
+<meta_metadata_repository name="gis"
+  package="ecologylab.bigsemantics.generated.library.gis">
 
-	<meta_metadata name="gis_location" extends="document">
-		<scalar name="location" always_show="false" />
+  <meta_metadata name="gis_location" extends="document">
+    <scalar name="location" always_show="false" />
 
-		<scalar name="latitude" scalar_type="Double"/>
-		<scalar name="longitude" scalar_type="Double"/>
-		<scalar name="altitude" scalar_type="Double"/>
-		<scalar name="direction" scalar_type="Double"/>
-		
-		<scalar name="satellites" scalar_type="String"/>
-	</meta_metadata>
-	
-  
-	<meta_metadata name="contact_point" extends="document"
-                 schema_org_itemtype="http://schema.org/ContactPoint"
-              	 comment="Resembles a schema.org ContactPoint.">
-		<scalar name="location" always_show="false" />
+    <scalar name="latitude" scalar_type="Double" />
+    <scalar name="longitude" scalar_type="Double" />
+    <scalar name="altitude" scalar_type="Double" />
+    <scalar name="direction" scalar_type="Double" />
 
-		<scalar name="telephone" scalar_type="String" schema_org_itemprop="telephone"/>
-		<scalar name="fax_number" scalar_type="String" schema_org_itemprop="faxNumber" label="fax"/>
-		<scalar name="email" scalar_type="String" schema_org_itemprop="email"/>
+    <scalar name="satellites" scalar_type="String" />
+  </meta_metadata>
+
+
+  <meta_metadata name="contact_point" extends="document" schema_org_itemtype="http://schema.org/ContactPoint"
+    comment="Resembles a schema.org ContactPoint.">
+    <scalar name="location" always_show="false" />
+
+    <scalar name="telephone" scalar_type="String" schema_org_itemprop="telephone" />
+    <scalar name="fax_number" scalar_type="String" schema_org_itemprop="faxNumber" label="fax" />
+    <scalar name="email" scalar_type="String" schema_org_itemprop="email" />
     <scalar name="room" scalar_type="String" />
-		<scalar name="street_address" scalar_type="String" />
-		
-		<composite name="map" type="gis_location"/>
-	</meta_metadata>
+    <scalar name="street_address" scalar_type="String" />
+
+    <composite name="map" type="gis_location" />
+  </meta_metadata>
 
 
-	<meta_metadata name="postal_address" extends="contact_point"
-                 schema_org_itemtype="http://schema.org/PostalAddress"
-              	 comment="Resembles a schema.org PostalAddress, but adds the county field.">
-		<scalar name="street_address" scalar_type="String" schema_org_itemprop="streetAddress"
-            comment="number + street + apartment" navigates_to="location"/>
-		<scalar name="locality" scalar_type="String" schema_org_itemprop="addressLocality" label="city"
-            comment="This is really the city."/>
-		<scalar name="region" scalar_type="String" schema_org_itemprop="addressRegion"
-            comment="This is state in the U.S., province in Canada, and varies internationaaly."/>
-		<scalar name="postal_code" scalar_type="String" schema_org_itemprop="postalCode"
-            label="zip code" comment="The internationalized version of zip code."/>
-		<scalar name="county" scalar_type="String"/>
-		<scalar name="country" scalar_type="String" schema_org_itemprop="addressCountry"/>
-	</meta_metadata>
+  <meta_metadata name="postal_address" extends="contact_point" schema_org_itemtype="http://schema.org/PostalAddress"
+    comment="Resembles a schema.org PostalAddress, but adds the county field.">
+    <scalar name="street_address" scalar_type="String" schema_org_itemprop="streetAddress"
+      comment="number + street + apartment" navigates_to="location" />
+    <scalar name="locality" scalar_type="String" schema_org_itemprop="addressLocality" label="city"
+      comment="This is really the city." />
+    <scalar name="region" scalar_type="String" schema_org_itemprop="addressRegion"
+      comment="This is state in the U.S., province in Canada, and varies internationaaly." />
+    <scalar name="postal_code" scalar_type="String" schema_org_itemprop="postalCode" label="zip code"
+      comment="The internationalized version of zip code." />
+    <scalar name="county" scalar_type="String" />
+    <scalar name="country" scalar_type="String" schema_org_itemprop="addressCountry" />
+  </meta_metadata>
 
 </meta_metadata_repository>

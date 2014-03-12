@@ -1,150 +1,200 @@
-<meta_metadata_repository name="patent" package="ecologylab.bigsemantics.generated.library.patent" default_user_agent_name="chrome">
+<meta_metadata_repository name="patent"
+  package="ecologylab.bigsemantics.generated.library.patent" default_user_agent_name="chrome">
 
-	<meta_metadata name="patent_classification" extends="document" parser="xpath">
-		<selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
+  <meta_metadata name="patent_classification" extends="document" parser="xpath">
+    <selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
 
-		<example_url url="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm" />
+    <example_url url="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm" />
 
-		<scalar name="description" xpath="/html/body/p[3]" />
-		<scalar name="patent_class" scalar_type="string" label="class" xpath="//big[1]">
-			<filter regex="(\d+)" group="1" />
-		</scalar>
-		<scalar name="title" xpath="//td/font/big" />
-	</meta_metadata>
+    <scalar name="description">
+      <xpath>/html/body/p[3]</xpath>
+    </scalar>
+    <scalar name="patent_class" scalar_type="string" label="class">
+      <xpath>//big[1]</xpath>
+      <filter regex="(\d+)" group="1" />
+    </scalar>
+    <scalar name="title">
+      <xpath>//td/font/big</xpath>
+    </scalar>
+  </meta_metadata>
 
 
 
-	<meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
-		<scalar name="inventor" scalar_type="String" />
-		<scalar name="filing_date" scalar_type="Date" />
+  <meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
+    <scalar name="inventor" scalar_type="String" />
+    <scalar name="filing_date" scalar_type="Date" />
 
 		<!-- <collection name="classifications" child_type="document"/> polymorphic fields need simpl_classes/scope meta-information! -->
-		<collection name="classifications" child_type="patent_classification" />
-		<collection name="claims" child_scalar_type="String" child_tag="claim" />
+    <collection name="classifications" child_type="patent_classification" />
+    <collection name="claims" child_scalar_type="String" child_tag="claim" />
 
-		<collection name="authors" child_type="patent_author" />
+    <collection name="authors" child_type="patent_author" />
 
-		<collection name="citations" child_type="patent" other_tags="referenced_bys" comment="subsequent patents that cite this" />
-		<collection name="references" child_type="patent" comment="prior patents that this references" />
+    <collection name="citations" child_type="patent" other_tags="referenced_bys"
+      comment="subsequent patents that cite this" />
+    <collection name="references" child_type="patent" comment="prior patents that this references" />
 
-		<collection name="drawings" hide="true" xpath="//div[@id='selected_pages_v']/div/a[1]" child_type="image">
-			<scalar name="location" xpath="./@href" />
-		</collection>
-	</meta_metadata>
+    <collection name="drawings" hide="true" child_type="image">
+      <xpath>//div[@id='selected_pages_v']/div/a[1]</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
 
 
 
-	<meta_metadata name="patent_author" extends="author" parser="xpath"
-	               comment="Authors of Patents; really this should be a mix-in to author">
-		<collection name="creative_works" tag="patents" other_tags="creative_works,publications" label="patents"
-		            child_type="patent" />
-	</meta_metadata>
-	
-	
-	
-	<meta_metadata name="google_patent_image" type="image" parser="image">
-		<selector url_regex_fragment="http://bks[0-9].books.google.com/patents" domain="google.com" />
-		<selector url_regex_fragment="http://www.google.com/patents?.*&amp;img=1" domain="google.com" />
-		<example_url url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&amp;printsec=abstract&amp;img=1&amp;zoom=1&amp;sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
-		<example_url url="http://www.google.com/patents?id=dtIXAAAAEBAJ&amp;output=text&amp;pg=PA3&amp;img=1&amp;zoom=3&amp;hl=en&amp;q=fire+pit&amp;cds=1&amp;sig=ACfU3U11rwTzwz4BhgQj0ywkgkm6T6DKaQ&amp;edge=0&amp;edge=stretch&amp;ci=108,127,774,1199" />
+  <meta_metadata name="patent_author" extends="author" parser="xpath"
+    comment="Authors of Patents; really this should be a mix-in to author">
+    <collection name="creative_works" tag="patents" other_tags="creative_works,publications"
+      label="patents" child_type="patent" />
+  </meta_metadata>
+
+
+
+  <meta_metadata name="google_patent_image" type="image" parser="image">
+    <selector url_regex_fragment="http://bks[0-9].books.google.com/patents" domain="google.com" />
+    <selector url_regex_fragment="http://www.google.com/patents?.*&amp;img=1" domain="google.com" />
+    <example_url
+      url="http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&amp;printsec=abstract&amp;img=1&amp;zoom=1&amp;sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg" />
+    <example_url
+      url="http://www.google.com/patents?id=dtIXAAAAEBAJ&amp;output=text&amp;pg=PA3&amp;img=1&amp;zoom=3&amp;hl=en&amp;q=fire+pit&amp;cds=1&amp;sig=ACfU3U11rwTzwz4BhgQj0ywkgkm6T6DKaQ&amp;edge=0&amp;edge=stretch&amp;ci=108,127,774,1199" />
 
 <!-- 		<before_semantic_actions> -->
 <!-- 			<filter_location> -->
 <!-- 				<set_param name="zoom" value="2" /> -->
 <!-- 			</filter_location> -->
 <!-- 		</before_semantic_actions> -->
-	</meta_metadata>
-
-	
-
-	<meta_metadata name="google_patent" extends="patent" comment="Google Patents Class" parser="xpath">
-		<selector url_stripped="http://www.google.com/patents/about" />
-		<selector url_path_tree="http://www.google.com/patents/*" domain="google.com" />
-		<selector url_regex="http://www.google.com/patents/[A-Z0-9]*?.*" domain="google.com" />
-
-		<example_url url="http://www.google.com/patents/US20100045705" />
-		<example_url url="http://www.google.com/patents/US7953462" />
-
-		<filter_location>
-			<strip_param name="printsec" />
-			<strip_param name="zoom" />
-			<strip_param name="v" />
-			<strip_param name="q" />
-			<strip_param name="f" />
-			<strip_param name="pg" />
-		</filter_location>
-
-
-		<scalar name="title" xpath="//invention-title" />
-
-		<collection name="authors" child_type="google_patent_author" xpath="//span[@class='patent-bibdata-value']/a[contains(@href,'inventor')]">
-			<scalar name="location" xpath="./@href" />
-			<scalar name="title" xpath="." />
-		</collection>
-
-		<collection name="classifications" xpath="//span[@class='nested-value']/a[contains(@href,'classification')]">
-			<scalar name="location" xpath="./@href" hide="true">
-				<filter regex="http://www.u(.*).htm" />
-			</scalar>
-			<scalar name="patent_class" xpath="." navigates_to="location" />
-		</collection>
-
-		<scalar name="description" xpath="//abstract/div" />
-		
-		<collection name="claims" child_scalar_type="String" xpath="//div[@class='claims']/div">
-
-		</collection>
-
-		<scalar name="filing_date" xpath="(//*[preceding-sibling::td[contains(text(),'Filing date')]])[1]"/>
-
-		<collection name="citations" child_type="google_patent" xpath="//*[@id='intl_patents_v']/div[7]/table/tbody/tr">
-			<scalar name="title" xpath="./td[5]" />
-			<scalar name="location" xpath="./td[1]/a/@href" />
-		</collection>
-
-		<collection name="references" child_type="google_patent" xpath="//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a">
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>
-
-		<collection name="drawings" xpath="//img[@class='patent-thumbnail-image']">
-			<scalar name="location" xpath="./@src" />
-		</collection>
-
-		<semantic_actions>
-			<if>
-				<not_null value="classifications" />
-				<get_field name="classifications" />
-				<for_each collection="classifications" as="classification">
-					<parse_document>
-						<arg value="classification" name="document" />
-					</parse_document>
-				</for_each>
-			</if>
-		</semantic_actions>
-	</meta_metadata>
-	
-	
-	
-	<meta_metadata name="google_patent_author" extends="patent_author" parser="xpath" user_agent_name="chrome">
-		<selector url_regex_fragment="q=ininventor:" domain="google.com" />
-
-		<example_url url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
-		<example_url url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
-
-		<collection name="creative_works" child_type="google_patent" xpath="//li[@class='g']//h3[@class='r']">
-			<scalar name="title" xpath="./a" />
-			<scalar name="location" xpath="./a/@href" />
-		</collection>
-	</meta_metadata>
+  </meta_metadata>
 
 
 
-	<meta_metadata name="google_sorry" extends="document" parser="xpath">
-		<selector url_path_tree="http://sorry.google.com" />
-		<semantic_actions>
-			<back_off_from_site domain="google.com" />
-		</semantic_actions>
-	</meta_metadata>
+  <meta_metadata name="google_patent" extends="patent" comment="Google Patents Class"
+    parser="xpath">
+    <selector url_stripped="http://www.google.com/patents/about" />
+    <selector url_path_tree="http://www.google.com/patents/*" domain="google.com" />
+    <selector url_regex="http://www.google.com/patents/[A-Z0-9]*?.*" domain="google.com" />
+
+    <example_url url="http://www.google.com/patents/US20100045705" />
+    <example_url url="http://www.google.com/patents/US7953462" />
+
+    <filter_location>
+      <strip_param name="printsec" />
+      <strip_param name="zoom" />
+      <strip_param name="v" />
+      <strip_param name="q" />
+      <strip_param name="f" />
+      <strip_param name="pg" />
+    </filter_location>
+
+
+    <scalar name="title">
+      <xpath>//invention-title</xpath>
+    </scalar>
+
+    <collection name="authors" child_type="google_patent_author">
+      <xpath>//span[@class='patent-bibdata-value']/a[contains(@href,'inventor')]</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="classifications">
+      <xpath>//span[@class='nested-value']/a[contains(@href,'classification')]</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+        <filter regex="http://www.u(.*).htm" />
+      </scalar>
+      <scalar name="patent_class" navigates_to="location">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="description">
+      <xpath>//abstract/div</xpath>
+    </scalar>
+
+    <collection name="claims" child_scalar_type="String">
+      <xpath>//div[@class='claims']/div</xpath>
+
+    </collection>
+
+    <scalar name="filing_date">
+      <xpath>(//*[preceding-sibling::td[contains(text(),'Filing date')]])[1]</xpath>
+    </scalar>
+
+    <collection name="citations" child_type="google_patent">
+      <xpath>//*[@id='intl_patents_v']/div[7]/table/tbody/tr</xpath>
+      <scalar name="title">
+        <xpath>./td[5]</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[1]/a/@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="references" child_type="google_patent">
+      <xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="drawings">
+      <xpath>//img[@class='patent-thumbnail-image']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <if>
+        <not_null value="classifications" />
+        <get_field name="classifications" />
+        <for_each collection="classifications" as="classification">
+          <parse_document>
+            <arg value="classification" name="document" />
+          </parse_document>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+
+
+
+  <meta_metadata name="google_patent_author" extends="patent_author" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex_fragment="q=ininventor:" domain="google.com" />
+
+    <example_url
+      url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
+    <example_url
+      url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
+
+    <collection name="creative_works" child_type="google_patent">
+      <xpath>//li[@class='g']//h3[@class='r']</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+
+  <meta_metadata name="google_sorry" extends="document" parser="xpath">
+    <selector url_path_tree="http://sorry.google.com" />
+    <semantic_actions>
+      <back_off_from_site domain="google.com" />
+    </semantic_actions>
+  </meta_metadata>
 
 </meta_metadata_repository>

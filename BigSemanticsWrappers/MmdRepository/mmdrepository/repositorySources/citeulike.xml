@@ -1,170 +1,256 @@
 <meta_metadata_repository name="citeulike"
-                          package="ecologylab.bigsemantics.generated.library.citeulike"
-                          default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.citeulike" default_user_agent_name="chrome">
 
   <meta_metadata name="citeulike_paper" extends="scholarly_article" parser="xpath">
-		<selector url_regex="http://www.citeulike.org/user/[^/]*/article/[^/]*" domain="citeulike.org" />
-		<example_url url="http://www.citeulike.org/user/dwenig/article/828279" />
-		<example_url url="http://www.citeulike.org/user/laurapapaleo/article/2901818" />
+    <selector url_regex="http://www.citeulike.org/user/[^/]*/article/[^/]*" domain="citeulike.org" />
+    <example_url url="http://www.citeulike.org/user/dwenig/article/828279" />
+    <example_url url="http://www.citeulike.org/user/laurapapaleo/article/2901818" />
 
     <composite name="source_article" type="scholarly_article" polymorphic_scope="repository_documents"
-               layer="-10.0">
-      <scalar name="title" xpath="//h1" />
-      <scalar name="location" xpath="//div[@id='citation-plain']//a[starts-with(text(), 'doi')]/@href"/>
+      layer="-10.0">
+      <scalar name="title">
+        <xpath>//h1</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//div[@id='citation-plain']//a[starts-with(text(), 'doi')]/@href</xpath>
+      </scalar>
     </composite>
-    <collection name="additional_locations" child_scalar_type="ParsedURL"
-                xpath="//h3[starts-with(text(), 'View FullText article')]/..//a/@href" />
-    
-		<scalar name="title" xpath="//h1" navigates_to="location" as_natural_id="title" format="text" />
-    
-		<collection name="authors" child_type="citeulike_author" label="authors"
-                ignore_in_term_vector="true" xpath="//div[@class='vague'][1]/a">
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>
+    <collection name="additional_locations" child_scalar_type="ParsedURL">
+      <xpath>//h3[starts-with(text(), 'View FullText article')]/..//a/@href</xpath>
+    </collection>
 
-		<composite name="source" xpath="//div[@id='citation-plain']">
-			<scalar name="title" xpath="." />
-		</composite>
+    <scalar name="title" navigates_to="location" as_natural_id="title" format="text">
+      <xpath>//h1</xpath>
+    </scalar>
 
-		<scalar name="description" xpath="//div[@id='abstract-body']" />
+    <collection name="authors" child_type="citeulike_author" label="authors"
+      ignore_in_term_vector="true">
+      <xpath>//div[@class='vague'][1]/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
 
-  	<collection name="keywords" xpath="//ul[@id='articleTagList']//a[@class='tag']">
-  		<scalar name="title" xpath="." />
-  		<scalar name="location" xpath="./@href" />
-  	</collection>
-    
+    <composite name="source">
+      <xpath>//div[@id='citation-plain']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="description">
+      <xpath>//div[@id='abstract-body']</xpath>
+    </scalar>
+
+    <collection name="keywords">
+      <xpath>//ul[@id='articleTagList']//a[@class='tag']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
     <composite name="citeulike_user" type="citeulike_user" />
   </meta_metadata>
 
 
-  <meta_metadata name="citeulike_author" extends="author" parser="xpath" ignore_in_term_vector="true">
-		<selector url_regex="http://www.citeulike.org/author/[^/]*" domain="citeulike.org" />
-		<selector url_regex="http://www.citeulike.org/user/[^/]*/author/[^/]*" domain="citeulike.org" />
-		<example_url url="http://www.citeulike.org/author/Hearst:MA" />
-		<example_url url="http://www.citeulike.org/user/jsun/author/Hofmann:T" />
-         
-    <scalar name="title" xpath="//h1[1]">
+  <meta_metadata name="citeulike_author" extends="author" parser="xpath"
+    ignore_in_term_vector="true">
+    <selector url_regex="http://www.citeulike.org/author/[^/]*" domain="citeulike.org" />
+    <selector url_regex="http://www.citeulike.org/user/[^/]*/author/[^/]*" domain="citeulike.org" />
+    <example_url url="http://www.citeulike.org/author/Hearst:MA" />
+    <example_url url="http://www.citeulike.org/user/jsun/author/Hofmann:T" />
+
+    <scalar name="title">
+      <xpath>//h1[1]</xpath>
       <filter regex="Author ([^\[]*)" group="1" />
     </scalar>
-  
+
     <collection name="creative_works" other_tags="publications" child_type="citeulike_paper"
-                label="publications" ignore_in_term_vector="true"
-                xpath="//td[@id and @class='list_item ']">
-      <scalar name="title" xpath=".//h2">
-        <filter regex="✔" replace="" />
+      label="publications" ignore_in_term_vector="true">
+      <xpath>//td[@id and @class='list_item ']</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+        <filter regex="&#x2714;" replace="" />
       </scalar>
-      <scalar name="location" xpath=".//h2/a/@href" />
-      <composite name="source" xpath=".//div[@id and @class='article_details']/div[1]">
-        <scalar name="titile" xpath="." />
+      <scalar name="location">
+        <xpath>.//h2/a/@href</xpath>
+      </scalar>
+      <composite name="source">
+        <xpath>.//div[@id and @class='article_details']/div[1]</xpath>
+        <scalar name="titile">
+          <xpath>.</xpath>
+        </scalar>
       </composite>
-			<collection name="authors" xpath=".//div[@id and @class='article_details']/div[2]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
+      <collection name="authors">
+        <xpath>.//div[@id and @class='article_details']/div[2]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
-    
-      <composite name="citeulike_user" xpath=".//div[@id and @class='article_details']/div[3]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
+
+      <composite name="citeulike_user">
+        <xpath>.//div[@id and @class='article_details']/div[3]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </composite>
-		</collection>
+    </collection>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="citeulike_user" extends="person" parser="xpath">
     <selector url_regex="http://www.citeulike.org/user/[^/]*" domain="citeulike.org" />
     <example_url url="http://www.citeulike.org/user/dwenig" />
-    
-    <scalar name="title" xpath="//h1[1]">
+
+    <scalar name="title">
+      <xpath>//h1[1]</xpath>
       <filter regex="([^']*)'s library" group="1" />
     </scalar>
-    <collection name="collected_papers" child_type="citeulike_paper"
-                xpath="//td[@id and @class='list_item ']">
-      <scalar name="title" xpath=".//h2">
-        <filter regex="✔" replace="" />
+    <collection name="collected_papers" child_type="citeulike_paper">
+      <xpath>//td[@id and @class='list_item ']</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+        <filter regex="&#x2714;" replace="" />
       </scalar>
-      <scalar name="location" xpath=".//h2/a/@href" />
-      <composite name="source" xpath=".//div[@id and @class='article_details']/div[1]">
-        <scalar name="titile" xpath="." />
+      <scalar name="location">
+        <xpath>.//h2/a/@href</xpath>
+      </scalar>
+      <composite name="source">
+        <xpath>.//div[@id and @class='article_details']/div[1]</xpath>
+        <scalar name="titile">
+          <xpath>.</xpath>
+        </scalar>
       </composite>
-			<collection name="authors" xpath=".//div[@id and @class='article_details']/div[2]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
+      <collection name="authors">
+        <xpath>.//div[@id and @class='article_details']/div[2]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
     </collection>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="citeulike_tag" extends="compound_document" parser="xpath">
     <selector url_regex="http://www.citeulike.org/tag/[^/]*" domain="citeulike.org" />
     <selector url_regex="http://www.citeulike.org/user/[^/]*/tag/[^/]*" domain="citeulike.org" />
     <example_url url="http://www.citeulike.org/tag/semantic" />
     <example_url url="http://www.citeulike.org/user/yoelabreu84/tag/semantic" />
-    
-    <scalar name="title" xpath="h1[1]">
+
+    <scalar name="title">
+      <xpath>h1[1]</xpath>
       <filter regex="\[[^\]]*\]" replace="" />
     </scalar>
-    
-    <collection name="articles" child_type="citeulike_paper" xpath="//td[@id and @class='list_item ']">
-      <scalar name="title" xpath=".//h2">
-        <filter regex="✔" replace="" />
+
+    <collection name="articles" child_type="citeulike_paper">
+      <xpath>//td[@id and @class='list_item ']</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+        <filter regex="&#x2714;" replace="" />
       </scalar>
-      <scalar name="location" xpath=".//h2/a/@href" />
-      <composite name="source" xpath=".//div[@id and @class='article_details']/div[1]">
-        <scalar name="titile" xpath="." />
+      <scalar name="location">
+        <xpath>.//h2/a/@href</xpath>
+      </scalar>
+      <composite name="source">
+        <xpath>.//div[@id and @class='article_details']/div[1]</xpath>
+        <scalar name="titile">
+          <xpath>.</xpath>
+        </scalar>
       </composite>
-      <collection name="authors" xpath=".//div[@id and @class='article_details']/div[2]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
+      <collection name="authors">
+        <xpath>.//div[@id and @class='article_details']/div[2]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
-    
-      <composite name="citeulike_user" type="citeulike_user" xpath=".//div[@id and @class='article_details']/div[3]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
+
+      <composite name="citeulike_user" type="citeulike_user">
+        <xpath>.//div[@id and @class='article_details']/div[3]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </composite>
     </collection>
   </meta_metadata>
-  
 
-	<meta_metadata name="citeulike_search" extends="search" parser="xpath">
+
+  <meta_metadata name="citeulike_search" extends="search" parser="xpath">
     <generic_type_var name="SR" arg="citeulike_paper" />
-    
-		<selector url_stripped="http://www.citeulike.org/search/all" />
+
+    <selector url_stripped="http://www.citeulike.org/search/all" />
     <example_url url="http://www.citeulike.org/search/all?q=latent+semantic" />
 
-		<collection name="search_results" xpath="//td[@id and @class='list_item ']">
-      <scalar name="title" xpath=".//h2">
-        <filter regex="✔" replace="" />
+    <collection name="search_results">
+      <xpath>//td[@id and @class='list_item ']</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+        <filter regex="&#x2714;" replace="" />
       </scalar>
-      <scalar name="location" xpath=".//h2/a/@href" />
-      <composite name="source" xpath=".//div[@id and @class='article_details']/div[1]">
-        <scalar name="titile" xpath="." />
+      <scalar name="location">
+        <xpath>.//h2/a/@href</xpath>
+      </scalar>
+      <composite name="source">
+        <xpath>.//div[@id and @class='article_details']/div[1]</xpath>
+        <scalar name="titile">
+          <xpath>.</xpath>
+        </scalar>
       </composite>
-			<collection name="authors" xpath=".//div[@id and @class='article_details']/div[2]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
+      <collection name="authors">
+        <xpath>.//div[@id and @class='article_details']/div[2]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
-    
-      <composite name="citeulike_user" type="citeulike_user" xpath=".//div[@id and @class='article_details']/div[3]/a">
-        <scalar name="title" xpath="." />
-        <scalar name="location" xpath="./@href" />
-      </composite>
-		</collection>
 
-		<semantic_actions>
-			<get_field name="search_results" />
-			<if>
-				<not_null value="search_results" />
-				<for_each collection="search_results" as="result">
-					<get_field object="result" name="title" />
-					<get_field object="result" name="location" />
-					<parse_document link_type="TRUSTED_SEMANTICS">
-						<arg name="anchor_text" value="title" />
-						<arg name="location" value="location" />
-					</parse_document>
-				</for_each>
-			</if>
-		</semantic_actions>
-	</meta_metadata>
+      <composite name="citeulike_user" type="citeulike_user">
+        <xpath>.//div[@id and @class='article_details']/div[3]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="search_results" />
+      <if>
+        <not_null value="search_results" />
+        <for_each collection="search_results" as="result">
+          <get_field object="result" name="title" />
+          <get_field object="result" name="location" />
+          <parse_document link_type="TRUSTED_SEMANTICS">
+            <arg name="anchor_text" value="title" />
+            <arg name="location" value="location" />
+          </parse_document>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
 
 </meta_metadata_repository>

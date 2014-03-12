@@ -1,110 +1,139 @@
-<meta_metadata_repository name="search"
-  package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="search" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
 
   <meta_metadata name="search_result" extends="document" show_expanded_initially="true"
     comment="A search result.">
-    <scalar name="title" style="h1"/>
-    <scalar name="description" label="snippet"/>
-    <composite name="destination_page" type="document"/>
+    <scalar name="title" style="h1" />
+    <scalar name="description" label="snippet" />
+    <composite name="destination_page" type="document" />
   </meta_metadata>
 
   <meta_metadata name="search" extends="document" comment="A search.">
-    <generic_type_var name="SR" extends="document"/>
+    <generic_type_var name="SR" extends="document" />
 
-    <scalar name="query" scalar_type="String"/>
+    <scalar name="query" scalar_type="String" />
     <collection name="search_results" child_type="SR" no_wrap="true"
-      show_expanded_initially="true" polymorphic_scope="repository_documents"/>
-    <composite name="next_page" type="search"/>
+      show_expanded_initially="true" polymorphic_scope="repository_documents" />
+    <composite name="next_page" type="search" />
   </meta_metadata>
 
   <meta_metadata name="image_search" extends="search">
-    <collection name="search_results" child_type="image_search_result" child_tag="image_search_result"/>
+    <collection name="search_results" child_type="image_search_result" child_tag="image_search_result" />
   </meta_metadata>
 
   <meta_metadata name="google_search" extends="search" parser="xpath"
     comment="The Google search class">
-    <generic_type_var name="SR" arg="search_result"/>
-    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com"/>
+    <generic_type_var name="SR" arg="search_result" />
+    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
     <example_url
-      url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8"/>
+      url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
 
-    <scalar name="query" xpath="//input[@name='q']/@value"/>
-    <collection name="search_results" xpath="//div[@id='res']//div//ol/li[@*]">
-      <scalar name="title" hide="true"/>
-      <scalar name="description" xpath=".//div[@class='s']//span[@class='st']"/>
-      <composite name="destination_page" xpath=".">
-        <scalar name="title" xpath=".//h3/a"/>
-        <scalar name="location" xpath=".//h3/a/@href"/>
+    <scalar name="query">
+      <xpath>//input[@name='q']/@value</xpath>
+    </scalar>
+    <collection name="search_results">
+      <xpath>//div[@id='res']//div//ol/li[@*]</xpath>
+      <scalar name="title" hide="true" />
+      <scalar name="description">
+        <xpath>.//div[@class='s']//span[@class='st']</xpath>
+      </scalar>
+      <composite name="destination_page">
+        <xpath>.</xpath>
+        <scalar name="title">
+          <xpath>.//h3/a</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>.//h3/a/@href</xpath>
+        </scalar>
       </composite>
     </collection>
     <composite name="next_page">
-      <scalar name="name" xpath="//td[@class='b navend'][2]/a"/>
-      <scalar name="location" xpath="//td[@class='b navend'][2]/a/@href"/>
+      <scalar name="name">
+        <xpath>//td[@class='b navend'][2]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//td[@class='b navend'][2]/a/@href</xpath>
+      </scalar>
     </composite>
   </meta_metadata>
 
   <meta_metadata name="google_scholar_search_result" extends="document"
     comment="A google scholar search result" parser="xpath">
-    <url_generator type="search" engine="google_scholar" use_id="title"/>
-    <scalar name="title" as_natural_id="title"/>
-    <scalar name="document_link" scalar_type="ParsedURL" hide="true"/>
-    <scalar name="source_info" scalar_type="String"/>
-    <scalar name="citations" scalar_type="Int" navigates_to="citations_link"/>
-    <scalar name="citations_link" scalar_type="ParsedURL" hide="true"/>
-    <scalar name="related_articles_link" scalar_type="ParsedURL" label="related articles"/>
-    <scalar name="versions" scalar_type="Int" navigates_to="versions_link"/>
-    <scalar name="versions_link" scalar_type="ParsedURL" hide="true"/>
+    <url_generator type="search" engine="google_scholar" use_id="title" />
+    <scalar name="title" as_natural_id="title" />
+    <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
+    <scalar name="source_info" scalar_type="String" />
+    <scalar name="citations" scalar_type="Int" navigates_to="citations_link" />
+    <scalar name="citations_link" scalar_type="ParsedURL" hide="true" />
+    <scalar name="related_articles_link" scalar_type="ParsedURL" label="related articles" />
+    <scalar name="versions" scalar_type="Int" navigates_to="versions_link" />
+    <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
   </meta_metadata>
 
   <meta_metadata name="google_scholar_search" extends="document" comment="The google Search class"
     parser="xpath">
-    <selector url_stripped="http://scholar.google.com/scholar"/>
+    <selector url_stripped="http://scholar.google.com/scholar" />
 
-    <collection name="search_results" xpath="//div[@class='gs_r']" child_type="google_scholar_search_result"
-      no_wrap="true">
-      <scalar name="title" xpath="./h3/a"/>
-      <scalar name="description" xpath="./div[@class='gs_rs']"/>
-      <scalar name="location" xpath="./h3/a/@href"/>
-      <scalar name="source_info" xpath="./div[@class='gs_a']"/>
+    <collection name="search_results" child_type="google_scholar_search_result" no_wrap="true">
+      <xpath>//div[@class='gs_r']</xpath>
+      <scalar name="title">
+        <xpath>./h3/a</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./div[@class='gs_rs']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./h3/a/@href</xpath>
+      </scalar>
+      <scalar name="source_info">
+        <xpath>./div[@class='gs_a']</xpath>
+      </scalar>
       
       <!-- FIXME this context node is not working -->
 <!--       <def_var name="links_row" xpath="./div[@class='gs_fl']" type="node" /> -->
 
-      <scalar name="citations" xpath="./div[@class='gs_fl']/a[1]">
-        <filter regex="Cited by " replace=""/>
+      <scalar name="citations">
+        <xpath>./div[@class='gs_fl']/a[1]</xpath>
+        <filter regex="Cited by " replace="" />
       </scalar>
-      <scalar name="citations_link" xpath="./div[@class='gs_fl']/a[1]/@href"/>
-      <scalar name="related_articles_link" xpath="./div[@class='gs_fl']/a[2]/@href"/>
-      <scalar name="versions" xpath="./div[@class='gs_fl']/a[last()]">
-        <filter regex="All | versions" replace=""/>
+      <scalar name="citations_link">
+        <xpath>./div[@class='gs_fl']/a[1]/@href</xpath>
       </scalar>
-      <scalar name="versions_link" xpath="./div[@class='gs_fl']/a[last()]/@href"/>
+      <scalar name="related_articles_link">
+        <xpath>./div[@class='gs_fl']/a[2]/@href</xpath>
+      </scalar>
+      <scalar name="versions">
+        <xpath>./div[@class='gs_fl']/a[last()]</xpath>
+        <filter regex="All | versions" replace="" />
+      </scalar>
+      <scalar name="versions_link">
+        <xpath>./div[@class='gs_fl']/a[last()]/@href</xpath>
+      </scalar>
     </collection>
 
     <semantic_actions>
-      <get_field name="search_results"/>
+      <get_field name="search_results" />
       <for_each collection="search_results" as="res">
-        <get_field object="res" name="location"/>
-        <get_field object="res" name="document_link"/>
+        <get_field object="res" name="location" />
+        <get_field object="res" name="document_link" />
         <if>
-          <not_null value="document_link"/>
+          <not_null value="document_link" />
           <parse_document now="true">
-            <arg value="document_link" name="location"/>
-            <arg value="res" name="mixin"/>
+            <arg value="document_link" name="location" />
+            <arg value="res" name="mixin" />
           </parse_document>
         </if>
         <if>
           <and>
-            <null value="document_link"/>
-            <not_null value="location"/>
+            <null value="document_link" />
+            <not_null value="location" />
           </and>
           <parse_document now="true">
-            <arg value="location" name="location"/>
+            <arg value="location" name="location" />
           </parse_document>
         </if>
         <parse_document now="true">
-          <arg value="location" name="location"/>
+          <arg value="location" name="location" />
         </parse_document>
       </for_each>
     </semantic_actions>
@@ -112,116 +141,130 @@
 
   <meta_metadata name="my_google_search" type="search" comment="The my_google Search class"
     user_agent_name="opera_9" parser="xpath">
-    <generic_type_var name="SR" arg="document"/>
-    <selector url_stripped="http://staging.cs.tamu.edu:8080/my_google/search"/>
+    <generic_type_var name="SR" arg="document" />
+    <selector url_stripped="http://staging.cs.tamu.edu:8080/my_google/search" />
 
-    <collection name="search_results" xpath="//div[@class='result']">
-      <scalar name="title" xpath="./a/@href"/>
-      <scalar name="description" xpath="./p"/>
-      <scalar name="location" xpath="./span"/>
+    <collection name="search_results">
+      <xpath>//div[@class='result']</xpath>
+      <scalar name="title">
+        <xpath>./a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./span</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
   <meta_metadata name="my_google_ecology0_search" type="search"
     comment="The my_google_ecology0 Search class" parser="xpath">
-    <generic_type_var name="SR" arg="document"/>
-    <selector url_stripped="http://ecology0.csdl.tamu.edu/my_google/search"/>
+    <generic_type_var name="SR" arg="document" />
+    <selector url_stripped="http://ecology0.csdl.tamu.edu/my_google/search" />
 
-    <collection name="search_results" xpath="//div[@class='result']">
-      <scalar name="title" xpath="./a/@href"/>
-      <scalar name="description" xpath="./p"/>
-      <scalar name="location" xpath="./span"/>
+    <collection name="search_results">
+      <xpath>//div[@class='result']</xpath>
+      <scalar name="title">
+        <xpath>./a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./span</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
   <meta_metadata name="yahoo_thumbnail" extends="metadata">
-    <scalar name="thumb_url" tag="Url" scalar_type="ParsedURL" hint="XML_LEAF"/>
-    <scalar name="width" tag="Width" scalar_type="Int" hint="XML_LEAF"/>
-    <scalar name="height" tag="Height" scalar_type="Int" hint="XML_LEAF"/>
+    <scalar name="thumb_url" tag="Url" scalar_type="ParsedURL" hint="XML_LEAF" />
+    <scalar name="width" tag="Width" scalar_type="Int" hint="XML_LEAF" />
+    <scalar name="height" tag="Height" scalar_type="Int" hint="XML_LEAF" />
   </meta_metadata>
 
   <meta_metadata name="yahoo_result_set" extends="document" comment="Yahoo Web Search Service"
     tag="ResultSet" parser="direct">
     <collection name="results" child_type="yahoo_result" child_extends="document"
       child_tag="Result" no_wrap="true" comment="Collection of results for yahoo search">
-      <scalar name="title" scalar_type="String" tag="Title" hide="true"/>
-      <scalar name="summary" scalar_type="String" tag="Summary"/>
-      <scalar name="location" scalar_type="ParsedURL" tag="Url" hide="true"/>
-      <scalar name="referer_url" scalar_type="ParsedURL" tag="RefererUrl" hide="true"/>
-      <scalar name="modification_date" scalar_type="String" tag="ModificationDate"/>
-      <scalar name="mime_type" scalar_type="String" tag="MimeType" hide="true"/>
-      <composite name="thumbnail" tag="Thumbnail" type="yahoo_thumbnail" hide="true"/>
+      <scalar name="title" scalar_type="String" tag="Title" hide="true" />
+      <scalar name="summary" scalar_type="String" tag="Summary" />
+      <scalar name="location" scalar_type="ParsedURL" tag="Url" hide="true" />
+      <scalar name="referer_url" scalar_type="ParsedURL" tag="RefererUrl" hide="true" />
+      <scalar name="modification_date" scalar_type="String" tag="ModificationDate" />
+      <scalar name="mime_type" scalar_type="String" tag="MimeType" hide="true" />
+      <composite name="thumbnail" tag="Thumbnail" type="yahoo_thumbnail" hide="true" />
     </collection>
   </meta_metadata>
 
   <meta_metadata name="yahoo_geo_code" extends="yahoo_result_set">
-    <selector url_stripped="http://where.yahooapis.com/geocode"/>
+    <selector url_stripped="http://where.yahooapis.com/geocode" />
     <collection name="results" child_type="yahoo_geo_code_result" child_extends="yahoo_result">
-      <scalar name="line1" scalar_type="string" label="address"/>
-      <scalar name="line2" scalar_type="string" label="address"/>
-      <scalar name="city" scalar_type="string"/>
-      <scalar name="county" scalar_type="string"/>
-      <scalar name="state" scalar_type="string"/>
-      <scalar name="postal" scalar_type="string" label="zip code"/>
-      <scalar name="country" scalar_type="string"/>
+      <scalar name="line1" scalar_type="string" label="address" />
+      <scalar name="line2" scalar_type="string" label="address" />
+      <scalar name="city" scalar_type="string" />
+      <scalar name="county" scalar_type="string" />
+      <scalar name="state" scalar_type="string" />
+      <scalar name="postal" scalar_type="string" label="zip code" />
+      <scalar name="country" scalar_type="string" />
     </collection>
   </meta_metadata>
 
   <meta_metadata name="yahoo_web_search" type="yahoo_result_set">
-    <selector url_stripped="http://api.search.yahoo.com/WebSearchService/V1/webSearch"/>
+    <selector url_stripped="http://api.search.yahoo.com/WebSearchService/V1/webSearch" />
     <semantic_actions>
-      <get_field name="results"/>
+      <get_field name="results" />
       <for_each collection="results" as="result">
-        <get_field object="result" name="location"/>
+        <get_field object="result" name="location" />
         <parse_document now="true">
-          <arg value="location" name="location"/>
-          <arg value="result" name="mixin"/>
+          <arg value="location" name="location" />
+          <arg value="result" name="mixin" />
         </parse_document>
       </for_each>
     </semantic_actions>
   </meta_metadata>
 
   <meta_metadata name="yahoo_image_search" type="yahoo_result_set">
-    <selector url_stripped="http://api.search.yahoo.com/ImageSearchService/V1/imageSearch"/>
+    <selector url_stripped="http://api.search.yahoo.com/ImageSearchService/V1/imageSearch" />
     <semantic_actions>
-      <get_field name="results"/>
+      <get_field name="results" />
       <for_each collection="results" as="result">
-        <get_field object="result" name="location"/>
-        <get_field object="result" name="referer_url"/>
-        <get_field object="result" name="summary"/>
-        <get_field object="result" name="title"/>
+        <get_field object="result" name="location" />
+        <get_field object="result" name="referer_url" />
+        <get_field object="result" name="summary" />
+        <get_field object="result" name="title" />
         <create_and_visualize_img_surrogate>
-          <arg name="image_purl" value="location"/>
-          <arg name="caption" value="summary" alt_value="title"/>
+          <arg name="image_purl" value="location" />
+          <arg name="caption" value="summary" alt_value="title" />
 					<!-- <arg value="result" name="mixin" /> -->
-          <arg name="location" value="referer_url"/>
+          <arg name="location" value="referer_url" />
         </create_and_visualize_img_surrogate>
       </for_each>
     </semantic_actions>
   </meta_metadata>
 
   <meta_metadata name="yahoo_news_search" type="yahoo_result_set">
-    <selector url_stripped="http://api.search.yahoo.com/NewsSearchService/V1/newsSearch"/>
+    <selector url_stripped="http://api.search.yahoo.com/NewsSearchService/V1/newsSearch" />
     <semantic_actions>
-      <get_field name="results"/>
+      <get_field name="results" />
       <for_each collection="results" as="result">
-        <get_field object="result" name="summary"/>
-        <get_field object="result" name="thumbnail"/>
-        <get_field object="result" name="location"/>
+        <get_field object="result" name="summary" />
+        <get_field object="result" name="thumbnail" />
+        <get_field object="result" name="location" />
         <choose>
           <case>
-            <not_null value="thumbnail"/>
-            <get_field object="thumbnail" name="thumb_url"/>
+            <not_null value="thumbnail" />
+            <get_field object="thumbnail" name="thumb_url" />
             <create_and_visualize_img_surrogate>
-              <arg value="thumb_url" name="image_purl"/>
-              <arg value="summary" name="caption"/>
-              <arg value="location" name="href"/>
+              <arg value="thumb_url" name="image_purl" />
+              <arg value="summary" name="caption" />
+              <arg value="location" name="href" />
             </create_and_visualize_img_surrogate>
           </case>
           <otherwise>
             <parse_document now="true">
-              <arg value="result" name="mixin"/>
-              <arg value="location" name="location"/>
+              <arg value="result" name="mixin" />
+              <arg value="location" name="location" />
             </parse_document>
           </otherwise>
         </choose>
@@ -232,10 +275,10 @@
 	<!-- this definition of image might apply to many other XML-based search results. -->
   <meta_metadata name="image_search_result" extends="image"
     comment="Def of an image in a Bing image search result.">
-    <scalar name="ref_location" scalar_type="ParsedURL"/>
-    <scalar name="thumb_width" scalar_type="Int"/>
-    <scalar name="thumb_height" scalar_type="Int"/>
-    <scalar name="file_size" scalar_type="Int"/>
+    <scalar name="ref_location" scalar_type="ParsedURL" />
+    <scalar name="thumb_width" scalar_type="Int" />
+    <scalar name="thumb_height" scalar_type="Int" />
+    <scalar name="file_size" scalar_type="Int" />
   </meta_metadata>
 
 	<!-- definitions of Bing search results from different sources. was extends document -->
@@ -266,39 +309,50 @@
 
 
   <meta_metadata name="search_crumb" extends="metadata" always_show="true">
-    <scalar name="search_query" scalar_type="String" always_show="true"/>
+    <scalar name="search_query" scalar_type="String" always_show="true" />
   </meta_metadata>
 
 
   <meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5"
     comment="The bing Search api.">
-    <generic_type_var name="SR" arg="document"/>
-    <selector url_stripped="http://api.bing.net/xml.aspx"/>
-    <scalar name="query" xpath="//searchterms/text()" ignore_in_term_vector="true"/>
+    <generic_type_var name="SR" arg="document" />
+    <selector url_stripped="http://api.bing.net/xml.aspx" />
+    <scalar name="query" ignore_in_term_vector="true">
+      <xpath>//searchterms/text()</xpath>
+    </scalar>
 
     <composite name="search_crumb_composite" type="search_crumb" always_show="true"
       promote_children="true">
-      <scalar name="search_query" xpath="//searchterms/text()" always_show="true"/>
+      <scalar name="search_query" always_show="true">
+        <xpath>//searchterms/text()</xpath>
+      </scalar>
     </composite>
 
-    <collection name="search_results" xpath="//*/webresult" ignore_in_term_vector="true">
-      <scalar name="title" xpath="./title" ignore_in_term_vector="true"/>
-      <scalar name="description" xpath="./description" ignore_in_term_vector="true"/>
-      <scalar name="location" xpath="./url" ignore_in_term_vector="true"/>
+    <collection name="search_results" ignore_in_term_vector="true">
+      <xpath>//*/webresult</xpath>
+      <scalar name="title" ignore_in_term_vector="true">
+        <xpath>./title</xpath>
+      </scalar>
+      <scalar name="description" ignore_in_term_vector="true">
+        <xpath>./description</xpath>
+      </scalar>
+      <scalar name="location" ignore_in_term_vector="true">
+        <xpath>./url</xpath>
+      </scalar>
     </collection>
 
 
     <semantic_actions>
-      <get_field name="search_results"/>
-      <get_field name="search_crumb_composite"/>
+      <get_field name="search_results" />
+      <get_field name="search_crumb_composite" />
       <if>
-        <not_null value="search_results"/>
+        <not_null value="search_results" />
 
         <for_each collection="search_results" as="result">
           <if>
-            <not_null value="result"/>
-            <get_field object="result" name="location"/>
-            <add_mixin object="result" mixin="search_crumb_composite"/>
+            <not_null value="result" />
+            <get_field object="result" name="location" />
+            <add_mixin object="result" mixin="search_crumb_composite" />
           </if>
         </for_each>
       </if>
@@ -370,67 +424,112 @@
 
   <meta_metadata name="bing_search_xpath" type="search" parser="xpath"
     user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">
-    <generic_type_var name="SR" arg="document"/>
-    <selector url_stripped="http://www.bing.com/search"/>
-    <scalar name="query" xpath="//title/text()">
-      <filter regex=" - Bing$" replace=""/>
+    <generic_type_var name="SR" arg="document" />
+    <selector url_stripped="http://www.bing.com/search" />
+    <scalar name="query">
+      <xpath>//title/text()</xpath>
+      <filter regex=" - Bing$" replace="" />
     </scalar>
-    <collection name="search_results" xpath="//li[@class='sa_wr']">
-      <scalar name="title" xpath=".//h3/a"/>
-      <scalar name="description" xpath=".//div[@class='sa_cc']/p"/>
-      <scalar name="location" xpath=".//h3/a/@href"/>
+    <collection name="search_results">
+      <xpath>//li[@class='sa_wr']</xpath>
+      <scalar name="title">
+        <xpath>.//h3/a</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='sa_cc']/p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h3/a/@href</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
   <meta_metadata name="social_media_search_result" extends="document"
     comment="A result from a social media search.">
-    <scalar name="author" scalar_type="String" comment="The author of this item."/>
+    <scalar name="author" scalar_type="String" comment="The author of this item." />
     <collection name="tags" child_type="document"
-      comment="Associated tags from the search engine, if exist."/>
+      comment="Associated tags from the search engine, if exist." />
   </meta_metadata>
 
   <meta_metadata name="slashdot_search" extends="search" comment="The slashdot search class"
     user_agent_name="opera_9" parser="xpath">
-    <selector url_stripped="http://slashdot.org/index2.pl"/>
-    <selector url_stripped="http://slashdot.com/index2.pl"/>
+    <selector url_stripped="http://slashdot.org/index2.pl" />
+    <selector url_stripped="http://slashdot.com/index2.pl" />
 
-    <collection name="search_results" xpath="//div[@id='firehoselist']//article"
-      child_type="social_media_search_result">
-      <scalar name="title" xpath=".//h2"/>
-      <scalar name="location" xpath=".//h2//a[1]/@href"/>
-      <scalar name="description" xpath="./div[@class='hide']/div/i"/>
-      <scalar name="author" xpath="./header/div[@class='details']/a"/>
-      <collection name="tags" xpath="./footer//div[@class='grid_14']//a[@class='popular tag']">
-        <scalar name="title" xpath="."/>
-        <scalar name="location" xpath="./@href"/>
+    <collection name="search_results" child_type="social_media_search_result">
+      <xpath>//div[@id='firehoselist']//article</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h2//a[1]/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./div[@class='hide']/div/i</xpath>
+      </scalar>
+      <scalar name="author">
+        <xpath>./header/div[@class='details']/a</xpath>
+      </scalar>
+      <collection name="tags">
+        <xpath>./footer//div[@class='grid_14']//a[@class='popular tag']</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
     </collection>
   </meta_metadata>
 
   <meta_metadata name="delicious_search" extends="search" comment="The delicious search class"
     user_agent_name="opera_9" parser="xpath">
-    <selector url_stripped="http://www.delicious.com/search"/>
-    <collection name="search_results" xpath="//div[@id='content']/ul/li" child_type="social_media_search_result">
-      <scalar name="title" xpath=".//div/h4/a"/>
-      <scalar name="location" xpath=".//div/h4/a/@href"/>
-      <scalar name="author" xpath="./div/div[@class='meta']//span[1]"/>
-      <collection name="tags" xpath="./div/div[@class='tagdisplay']//a">
-        <scalar name="title" xpath="."/>
-        <scalar name="location" xpath="./@href"/>
+    <selector url_stripped="http://www.delicious.com/search" />
+    <collection name="search_results" child_type="social_media_search_result">
+      <xpath>//div[@id='content']/ul/li</xpath>
+      <scalar name="title">
+        <xpath>.//div/h4/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//div/h4/a/@href</xpath>
+      </scalar>
+      <scalar name="author">
+        <xpath>./div/div[@class='meta']//span[1]</xpath>
+      </scalar>
+      <collection name="tags">
+        <xpath>./div/div[@class='tagdisplay']//a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
     </collection>
   </meta_metadata>
 
   <meta_metadata name="tumblr_search" extends="search" comment="The tumblr search class"
     user_agent_name="opera_9" parser="xpath">
-    <selector url_path_tree="http://www.tumblr.com/tagged/"/>
-    <collection name="search_results" xpath="//div[@id='left_column']//li" child_type="social_media_search_result">
-      <scalar name="title" xpath=".//div[@class='post_title']"/>
-      <scalar name="description" xpath=".//div[@class='post_content']"/>
-      <scalar name="author" xpath="./div[@class='post_info']"/>
-      <collection name="tags" xpath="./div[@class='footer_links with_tags']//a">
-        <scalar name="title" xpath="."/>
-        <scalar name="location" xpath="./@href"/>
+    <selector url_path_tree="http://www.tumblr.com/tagged/" />
+    <collection name="search_results" child_type="social_media_search_result">
+      <xpath>//div[@id='left_column']//li</xpath>
+      <scalar name="title">
+        <xpath>.//div[@class='post_title']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='post_content']</xpath>
+      </scalar>
+      <scalar name="author">
+        <xpath>./div[@class='post_info']</xpath>
+      </scalar>
+      <collection name="tags">
+        <xpath>./div[@class='footer_links with_tags']//a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </collection>
     </collection>
   </meta_metadata>

@@ -1,65 +1,108 @@
-<meta_metadata_repository name="imdb" package="ecologylab.bigsemantics.generated.library.imdb" 
-                          default_user_agent_name="chrome">
-  
+<meta_metadata_repository name="imdb"
+  package="ecologylab.bigsemantics.generated.library.imdb" default_user_agent_name="chrome">
+
   <cookie_processing domain="imdb.com" ignore_all_cookies="true" />
 
   <meta_metadata name="imdb_movie" extends="movie" comment="A movie in IMDB." parser="xpath">
     <selector url_path_tree="http://www.imdb.com/title/" />
-    
+
     <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club." />
     <example_url url="http://www.imdb.com/title/tt0110912/" comment="Pulp fiction." />
-    
-    <scalar name="title" xpath="//h1[@class='header']" />
-    <scalar name="description" xpath="//p[@itemprop='description']">
+
+    <scalar name="title">
+      <xpath>//h1[@class='header']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//p[@itemprop='description']</xpath>
       <filter regex="more" replace="" />
     </scalar>
-    
-    <scalar name="year" xpath="//h1[@class='header']/a" />
-    <scalar name="mpaa_rating" xpath="//span[@itemprop='contentRating' and @title]/@title" />
-    <scalar name="overall_rating" xpath="//span[@itemprop='ratingValue']" />
-    <scalar name="storyline" xpath="//div[@itemprop='description']" />
-    <scalar name="tagline" xpath="//h4[contains(.,'Tagline')]/..">
+
+    <scalar name="year">
+      <xpath>//h1[@class='header']/a</xpath>
+    </scalar>
+    <scalar name="mpaa_rating">
+      <xpath>//span[@itemprop='contentRating' and @title]/@title</xpath>
+    </scalar>
+    <scalar name="overall_rating">
+      <xpath>//span[@itemprop='ratingValue']</xpath>
+    </scalar>
+    <scalar name="storyline">
+      <xpath>//div[@itemprop='description']</xpath>
+    </scalar>
+    <scalar name="tagline">
+      <xpath>//h4[contains(.,'Tagline')]/..</xpath>
       <filter regex="Taglines:|See more" replace="" />
     </scalar>
-    <scalar name="runtime" xpath="//time[@itemprop='duration']" />
-    <scalar name="theater_release" xpath="//h4[contains(.,'Release Date:')]/..">
+    <scalar name="runtime">
+      <xpath>//time[@itemprop='duration']</xpath>
+    </scalar>
+    <scalar name="theater_release">
+      <xpath>//h4[contains(.,'Release Date:')]/..</xpath>
       <filter regex="Release Date:|See more" replace="" />
     </scalar>
-   
-    <scalar name="pic" xpath="//td[@id='img_primary']//img/@src" hide="true" layer="3.0" />
-    <collection name="photos" hide="true" xpath="//div[@class='mediastrip']//img">
-      <scalar name="location" xpath="./@src" />
+
+    <scalar name="pic" hide="true" layer="3.0">
+      <xpath>//td[@id='img_primary']//img/@src</xpath>
+    </scalar>
+    <collection name="photos" hide="true">
+      <xpath>//div[@class='mediastrip']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </collection>
-                
-    <collection name="directors" child_type="imdb_person" xpath="//h4[contains(.,'Director')]/../a[@itemprop]">
-      <scalar name="location" hide="true" xpath="./@href" />
-      <scalar name="title" xpath="." label="name" />  
+
+    <collection name="directors" child_type="imdb_person">
+      <xpath>//h4[contains(.,'Director')]/../a[@itemprop]</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
     </collection>
-    <collection name="writers" child_type="imdb_person" xpath="//h4[contains(.,'Writer')]/../a[@itemprop]">
-      <scalar name="location" hide="true" xpath="./@href" />
-      <scalar name="title" xpath="." label="name" />  
+    <collection name="writers" child_type="imdb_person">
+      <xpath>//h4[contains(.,'Writer')]/../a[@itemprop]</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
     </collection>
-    <collection name="cast" child_type="imdb_person" layer="8.0" xpath="//table[@class='cast_list']//tr[@class]">
-      <scalar name="title" xpath=".//*[@itemprop='actor']/*[@itemprop='url']" />
-      <scalar name="location" xpath=".//*[@itemprop='actor']/*[@itemprop='url']/@href" />
-      <composite name="photo" xpath="./td[@class='primary_photo']">
-        <scalar name="location" xpath=".//img/@src" />
+    <collection name="cast" child_type="imdb_person" layer="8.0">
+      <xpath>//table[@class='cast_list']//tr[@class]</xpath>
+      <scalar name="title">
+        <xpath>.//*[@itemprop='actor']/*[@itemprop='url']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//*[@itemprop='actor']/*[@itemprop='url']/@href</xpath>
+      </scalar>
+      <composite name="photo">
+        <xpath>./td[@class='primary_photo']</xpath>
+        <scalar name="location">
+          <xpath>.//img/@src</xpath>
+        </scalar>
       </composite>
     </collection>
-    <collection name="genres" xpath="//h4[contains(.,'Genres:')]/../a">
-      <scalar name="title" xpath="." />
-      <scalar name="location" hide="false" xpath="./@href" />
+    <collection name="genres">
+      <xpath>//h4[contains(.,'Genres:')]/../a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" hide="false">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
 
     <semantic_actions>
-      <get_field name="pic"/> 
-      <create_and_visualize_img_surrogate> 
-        <arg value="pic" name="image_purl"/> 
-      </create_and_visualize_img_surrogate> 
+      <get_field name="pic" />
+      <create_and_visualize_img_surrogate>
+        <arg value="pic" name="image_purl" />
+      </create_and_visualize_img_surrogate>
     </semantic_actions>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="imdb_person" extends="movie_person" parser="xpath">
     <selector url_path_tree="http://www.imdb.com/name/" />
     <example_url url="http://www.imdb.com/name/nm0000487/" />
@@ -68,26 +111,52 @@
     <filter_location>
       <strip_param name="ref_" />
     </filter_location>
-   
-    <scalar name="title" xpath="//*[@itemprop='name']" />
-    <scalar name="description" xpath="//*[@itemprop='description']" />
-    
+
+    <scalar name="title">
+      <xpath>//*[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//*[@itemprop='description']</xpath>
+    </scalar>
+
     <composite name="birth_detail">
-      <scalar name="birth_date" xpath="//*[@itemprop='birthDate']/@datetime" />
-      <scalar name="birth_place" xpath="//*[@itemprop='birthDate']/following-sibling::a" />
+      <scalar name="birth_date">
+        <xpath>//*[@itemprop='birthDate']/@datetime</xpath>
+      </scalar>
+      <scalar name="birth_place">
+        <xpath>//*[@itemprop='birthDate']/following-sibling::a</xpath>
+      </scalar>
     </composite>
-    
-    <collection name="movies_directed" xpath="//div[@id='filmography']//div[@id='filmo-head-director']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
-      <scalar name="title" xpath=".//a" />
-      <scalar name="location" xpath=".//a/@href" />
+
+    <collection name="movies_directed">
+      <xpath>//div[@id='filmography']//div[@id='filmo-head-director']/following-sibling::div[1]//div[contains(@class,
+        'filmo-row')]</xpath>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
     </collection>
-    <collection name="movies_written" xpath="//div[@id='filmography']//div[@id='filmo-head-writer']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
-      <scalar name="title" xpath=".//a" />
-      <scalar name="location" xpath=".//a/@href" />
+    <collection name="movies_written">
+      <xpath>//div[@id='filmography']//div[@id='filmo-head-writer']/following-sibling::div[1]//div[contains(@class,
+        'filmo-row')]</xpath>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
     </collection>
-    <collection name="movies_acted_in" xpath="//div[@id='filmography']//div[@id='filmo-head-actor' or @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]">
-      <scalar name="title" xpath=".//a" />
-      <scalar name="location" xpath=".//a/@href" />
+    <collection name="movies_acted_in">
+      <xpath>//div[@id='filmography']//div[@id='filmo-head-actor' or
+        @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]</xpath>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 

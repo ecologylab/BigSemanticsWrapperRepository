@@ -1,4 +1,5 @@
-<meta_metadata_repository name="fashion" package="ecologylab.bigsemantics.generated.library.fashion">
+<meta_metadata_repository name="fashion"
+  package="ecologylab.bigsemantics.generated.library.fashion">
 <!-- 
 	<meta_metadata name="fashion_product" extends="commodity" parser="xpath">
 		<collection name="avaiable_sizes" child_scalar_type="String" />
@@ -11,39 +12,63 @@
 		<scalar name="description" scalar_type="String" />
 		<collection name="review" child_type="fashion_review" />
 	</meta_metadata>
- -->	
-	<meta_metadata name="fashion_reviewer" parser="xpath" extends="person" >
-		<scalar name="height" scalar_type="String" />
-	</meta_metadata>
-		
-	<meta_metadata name="forever_21" extends="product" parser="xpath" user_agent_name="chrome" >
-		<selector url_stripped="http://www.forever21.com/Product/Product.aspx" />
-		<example_url url="http://www.forever21.com/Product/Product.aspx?BR=f21&amp;Category=sale_women&amp;ProductID=2000072158&amp;VariantID=" />
-		
-		<scalar name="title" xpath="//h1[@class='product-title']" />
-		<scalar name="price" xpath="//span[@itemprop='price']/p" >
-			<filter regex="Was:\$[0-9]*.[0-9]*Now:" replace="" />
-		</scalar>
-		<scalar name="overall_rating" xpath="//span[@class='pr-snippet-rating-decimal pr-rounded']" />
-		<scalar name="description" xpath="//span[@id='product_overview']/p[1]" />
-		<composite name="image" xpath="//div[@class='zoomPad']/img" >
-			<scalar name="location" xpath="./@src" />
-		</composite>
-		
-		<collection name="available_colors" child_type="document" xpath="//div[@id='ctl00_MainContent_upColorList']/select/option[contains(@value, 'large')]" >
-			<scalar name="title" label="" xpath="." />
-		</collection>
-		<collection name="details" child_type="document" xpath="//span[@id='product_overview']/ul/li" >
-			<scalar name="title" label="" xpath="." />
-		</collection>
-		
-		<collection name="reviews" xpath="//div[@class='pr-review-wrap']">
-			<scalar name="title" xpath=".//p[@class='pr-review-rating-headline']" />
-			<scalar name="rating" xpath=".//div[@class='pr-review-rating']/span" />
-			<scalar name="description" xpath=".//p[@class='pr-comments']" />
-		</collection>
-		
-	</meta_metadata>
+ -->
+  <meta_metadata name="fashion_reviewer" parser="xpath" extends="person">
+    <scalar name="height" scalar_type="String" />
+  </meta_metadata>
+
+  <meta_metadata name="forever_21" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_stripped="http://www.forever21.com/Product/Product.aspx" />
+    <example_url
+      url="http://www.forever21.com/Product/Product.aspx?BR=f21&amp;Category=sale_women&amp;ProductID=2000072158&amp;VariantID=" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='product-title']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']/p</xpath>
+      <filter regex="Was:\$[0-9]*.[0-9]*Now:" replace="" />
+    </scalar>
+    <scalar name="overall_rating">
+      <xpath>//span[@class='pr-snippet-rating-decimal pr-rounded']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//span[@id='product_overview']/p[1]</xpath>
+    </scalar>
+    <composite name="image">
+      <xpath>//div[@class='zoomPad']/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="available_colors" child_type="document">
+      <xpath>//div[@id='ctl00_MainContent_upColorList']/select/option[contains(@value, 'large')]</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <collection name="details" child_type="document">
+      <xpath>//span[@id='product_overview']/ul/li</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="reviews">
+      <xpath>//div[@class='pr-review-wrap']</xpath>
+      <scalar name="title">
+        <xpath>.//p[@class='pr-review-rating-headline']</xpath>
+      </scalar>
+      <scalar name="rating">
+        <xpath>.//div[@class='pr-review-rating']/span</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//p[@class='pr-comments']</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
 	<!-- can make these non-expandable ?? 
 	
 	<meta_metadata name="asos_designer" extends="compound_document" parser="xpath" user_agent_name="chrome" >
@@ -60,70 +85,120 @@
 			<scalar name="location" xpath="./@href" />
 		</collection>
 	</meta_metadata>  -->
-	<meta_metadata name="asos_page" extends="compound_document" parser="xpath" user_agent_name="chrome" >
-		<selector url_regex="http://us.asos.com/[A-Za-z-]*/[A-Za-z0-9]*/.*" domain="asos.com" >
-  			<param name="cid" />
-		</selector>
-		<example_url url="http://us.asos.com/Women-Dresses-Summer-Dresses/vxlwy/?cid=10860" />
-		
-		<scalar name="title" xpath="//span[@id='ctl00_ContentMainPage_ctlBreadCrumbs_lblBreadCrumbs']/span[3]/following-sibling::text()" />
-		<scalar name="description" xpath="//p[@class='copy']" />
-		
-		<collection name="products" child_type="asos" xpath="//ul[@id='items']/li/a" >
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>
-	</meta_metadata>
-	 
-	 
-	<meta_metadata name="asos" extends="product" parser="xpath" user_agent_name="chrome" >
-		<selector url_regex="http://us.asos.com/[ASOS/]*[A-Za-z0-9-]*/[0-9Pa-z]*/.*" domain="asos.com" >
-		 	<param name="iid" />
-		</selector>
-		<example_url url="http://us.asos.com/Warehouse-Floral-Skater-Dress/12p10b/?iid=3735865&amp;cid=15801&amp;sh=0&amp;pge=0&amp;pgesize=36&amp;sort=-1&amp;clr=Multi&amp;mporgp=L1dhcmVob3VzZS9XYXJlaG91c2UtRmxvcmFsLVNrYXRlci1EcmVzcy9Qcm9kLw.." />
-	
-		<scalar name="title" xpath="//span[@class='product_title']" />
-		<scalar name="price" xpath="//span[@class='product_price_details']" />
-		<composite name="image" xpath="//img[@class='main-image xl']" >
-			<scalar name="location" xpath="./@src" />
-		</composite>
-		
-		<collection name="details" child_type="document" xpath="//div[@class='product-description']/ul/li/ul/li" >
-			<scalar name="title" label="" xpath="." />
-		</collection>
+  <meta_metadata name="asos_page" extends="compound_document" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://us.asos.com/[A-Za-z-]*/[A-Za-z0-9]*/.*" domain="asos.com">
+      <param name="cid" />
+    </selector>
+    <example_url url="http://us.asos.com/Women-Dresses-Summer-Dresses/vxlwy/?cid=10860" />
+
+    <scalar name="title">
+      <xpath>//span[@id='ctl00_ContentMainPage_ctlBreadCrumbs_lblBreadCrumbs']/span[3]/following-sibling::text()</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//p[@class='copy']</xpath>
+    </scalar>
+
+    <collection name="products" child_type="asos">
+      <xpath>//ul[@id='items']/li/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+  <meta_metadata name="asos" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_regex="http://us.asos.com/[ASOS/]*[A-Za-z0-9-]*/[0-9Pa-z]*/.*" domain="asos.com">
+      <param name="iid" />
+    </selector>
+    <example_url
+      url="http://us.asos.com/Warehouse-Floral-Skater-Dress/12p10b/?iid=3735865&amp;cid=15801&amp;sh=0&amp;pge=0&amp;pgesize=36&amp;sort=-1&amp;clr=Multi&amp;mporgp=L1dhcmVob3VzZS9XYXJlaG91c2UtRmxvcmFsLVNrYXRlci1EcmVzcy9Qcm9kLw.." />
+
+    <scalar name="title">
+      <xpath>//span[@class='product_title']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@class='product_price_details']</xpath>
+    </scalar>
+    <composite name="image">
+      <xpath>//img[@class='main-image xl']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="details" child_type="document">
+      <xpath>//div[@class='product-description']/ul/li/ul/li</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
 		<!-- can make not expandable???? -->
-		
-		<composite name="designer" extends="asos_page" xpath="//div[@class='product-description']//li[@class='single-entry']" >
-			<scalar name="title" xpath="./a[2]/strong" />
-			<scalar name="location" xpath="./a[2]/@href" />
-			<scalar name="description" xpath="//div[@id='separates_till_box']/div/ul/li[@class='single-entry']" />
-		</composite>
-		
-		<collection name="recommmended_products" child_type="asos" xpath="/div[@class='carousel-wrapper']//div[@class='item']/a[1]" >
-			<scalar name="title" xpath="./@title" />
-			<scalar name="location" xpath="./@href" />
-		</collection>
-		
-		<collection name="tags" child_type="compound_document" xpath="//li[contains (@id, 'divFindSimilar')]/a[3]" >
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>
-		
-	</meta_metadata>
-	
-	
-	<meta_metadata name="anthropologie" extends="product" parser="xpath" user_agent_name="chrome" >
-		<selector url_path_tree="http://www.anthropologie.com/anthro/product/" />
-		<example_url url="http://www.anthropologie.com/anthro/product/clothes-dresses/4130580810078.jsp?cm_sp=Grid-_-4130580810078-_-Regular_3" />
-		
-		<scalar name="title" xpath="//h1[@class='productName']" />
-		<scalar name="price" xpath="//span[@itemprop='price']" />
-		<composite name="image" xpath="//img[@id='addlImgage0']" >
-			<scalar name="location" xpath="./@src" />
-		</composite>
-		<collection name="details" child_type="document" xpath="/span[@itemprop='description']/ul/li/text()" >
-			<scalar name="title" label="" xpath="." />
-		</collection>
+
+    <composite name="designer" extends="asos_page">
+      <xpath>//div[@class='product-description']//li[@class='single-entry']</xpath>
+      <scalar name="title">
+        <xpath>./a[2]/strong</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a[2]/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>//div[@id='separates_till_box']/div/ul/li[@class='single-entry']</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="recommmended_products" child_type="asos">
+      <xpath>/div[@class='carousel-wrapper']//div[@class='item']/a[1]</xpath>
+      <scalar name="title">
+        <xpath>./@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tags" child_type="compound_document">
+      <xpath>//li[contains (@id, 'divFindSimilar')]/a[3]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
+
+  <meta_metadata name="anthropologie" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.anthropologie.com/anthro/product/" />
+    <example_url
+      url="http://www.anthropologie.com/anthro/product/clothes-dresses/4130580810078.jsp?cm_sp=Grid-_-4130580810078-_-Regular_3" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='productName']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']</xpath>
+    </scalar>
+    <composite name="image">
+      <xpath>//img[@id='addlImgage0']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+    <collection name="details" child_type="document">
+      <xpath>/span[@itemprop='description']/ul/li/text()</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
 		<!--
 				ALL JAVASCRIPT 
 		<scalar name="color" scalar_type="String" xpath="//span[@itemprop='color']" />
@@ -139,67 +214,112 @@
 			<scalar name="description" xpath=".//span[@class='BVRRReviewText']" />
 		</collection>
 		 -->
-	</meta_metadata>
-	
-	
-	<meta_metadata name="modcloth" extends="product" parser="xpath" user_agent_name="chrome" >
-		<selector url_regex="http://www.modcloth.com/shop/[a-z-]*/[a-z-]*" domain="modcloth.com" />
-		<example_url url="http://www.modcloth.com/shop/dresses/midnight-sun-dress-in-navy" />
+  </meta_metadata>
+
+
+  <meta_metadata name="modcloth" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_regex="http://www.modcloth.com/shop/[a-z-]*/[a-z-]*" domain="modcloth.com" />
+    <example_url url="http://www.modcloth.com/shop/dresses/midnight-sun-dress-in-navy" />
 <!--		 maybe some urls for other products besides dresses -->
 
-		<scalar name="title" xpath="//h1[@id='product-name']" />    
-		<scalar name="price" xpath="//h3[@id='product-price']/span[@itemprop='price']" />
- 		<composite name="image" xpath="//a[@id='zoomable']" >
-			<scalar name="location" xpath="./@href" />
-		</composite>   
-		
- 		<scalar name="overall_rating" xpath="//div[@id='overall_rating']/meta/@content" />
- 		
-		<scalar name="designer" scalar_type="String" xpath="//h2[@id='product-brand']/a" />
-		<scalar name="description" xpath="//div[@id='pdp_full_description']/p[2]" />
-		
-		<collection name="reviews" xpath="//div[@class='review_wrapper user-review']" >
-			<scalar name="title" xpath="./div[1]/div[@class='review_info_name']" />
-			<scalar name="overall_rating" xpath="./div[2]/div[@class='ratings']/div[1]/div/div/@class" />   
-			<scalar name="description" xpath=".//div[@class='review_comment']" />
-		</collection> 
-		
-		<collection name="details" child_type="document" xpath="//div[@id='pdp_details']/ul/li" >
-			<scalar name="title" label="" xpath="." />
-		</collection>
-		<collection name="avalailable_sizes" child_type="document" 
-		xpath="//input[@class='ui-variant-value size-button ui-corner-all in-stock']/@value" >
-			<scalar name="title" label="" xpath="." />
-		</collection>
-		<scalar name="sizing_reccomendation" scalar_type="String" xpath="//p[@id='sizing-recommendation']" />
-		
-		<collection name="similar_products" child_type="modcloth" xpath="//div[@class='br-sf-widget-merchant-title']/a" >
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>
-		<collection name="tags" child_type="modcloth_search" xpath="//h4[contains(., 'Tags')]/following-sibling::a" >
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</collection>	
-	</meta_metadata>
-	
-	<meta_metadata name="modcloth_search" extends="product" parser="xpath" user_agent_name="chrome" >
-		<selector url_regex="http://www.modcloth.com/shop/[a-z-]*" domain="modcloth.com" />
-		<example_url url="http://www.modcloth.com/shop/best-selling-dresses" />
-		
-		<scalar name="title" xpath="//span[@class='last']" />
-		<collection name="items" child_type="modcloth" xpath="//ul[@class='product_list']/li" >
-			<scalar name="title" xpath="./div[@class='product-info']/p" />
-			<scalar name="location" xpath="./div[@class='thumbnail']/a/@href" />
-		</collection>
-	</meta_metadata>
+    <scalar name="title">
+      <xpath>//h1[@id='product-name']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//h3[@id='product-price']/span[@itemprop='price']</xpath>
+    </scalar>
+    <composite name="image">
+      <xpath>//a[@id='zoomable']</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
 
-	
-	
-	
-	
-	
-	
-	
-	
+    <scalar name="overall_rating">
+      <xpath>//div[@id='overall_rating']/meta/@content</xpath>
+    </scalar>
+
+    <scalar name="designer" scalar_type="String">
+      <xpath>//h2[@id='product-brand']/a</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='pdp_full_description']/p[2]</xpath>
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//div[@class='review_wrapper user-review']</xpath>
+      <scalar name="title">
+        <xpath>./div[1]/div[@class='review_info_name']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>./div[2]/div[@class='ratings']/div[1]/div/div/@class</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='review_comment']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="details" child_type="document">
+      <xpath>//div[@id='pdp_details']/ul/li</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <collection name="avalailable_sizes" child_type="document">
+      <xpath>//input[@class='ui-variant-value size-button ui-corner-all in-stock']/@value</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <scalar name="sizing_reccomendation" scalar_type="String">
+      <xpath>//p[@id='sizing-recommendation']</xpath>
+    </scalar>
+
+    <collection name="similar_products" child_type="modcloth">
+      <xpath>//div[@class='br-sf-widget-merchant-title']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="tags" child_type="modcloth_search">
+      <xpath>//h4[contains(., 'Tags')]/following-sibling::a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="modcloth_search" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://www.modcloth.com/shop/[a-z-]*" domain="modcloth.com" />
+    <example_url url="http://www.modcloth.com/shop/best-selling-dresses" />
+
+    <scalar name="title">
+      <xpath>//span[@class='last']</xpath>
+    </scalar>
+    <collection name="items" child_type="modcloth">
+      <xpath>//ul[@class='product_list']/li</xpath>
+      <scalar name="title">
+        <xpath>./div[@class='product-info']/p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div[@class='thumbnail']/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+
+
+
+
+
+
+
 </meta_metadata_repository>
