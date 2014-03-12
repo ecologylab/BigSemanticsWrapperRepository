@@ -34,6 +34,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
 	
 		<!-- The value of the field "title" (which is defined in the Document), is parsed from the result of the xpath. -->
     <scalar name="title" navigates_to="location" as_natural_id="title" format="text">
+      <xpath>//div[@name='for-testing']</xpath>
       <xpath>//div[@class='large-text']/h1</xpath>
     </scalar>
 
@@ -57,6 +58,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </composite>
 
     <collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true">
+      <xpath>//div[@name='for-testing']</xpath>
       <xpath>//div[@id='divmain']//a[@title='Author Profile Page']</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -76,6 +78,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </collection>
 
     <composite name="source" type="acm_portal_periodical">
+      <xpath>//div[@name='for-testing']</xpath>
       <xpath>//h1/a/span[contains(text(),
         'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]</xpath>
       <scalar name="location">
