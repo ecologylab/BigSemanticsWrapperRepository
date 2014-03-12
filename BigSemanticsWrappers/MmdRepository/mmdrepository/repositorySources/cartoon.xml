@@ -1,50 +1,57 @@
-<meta_metadata_repository name="cartoon" package="ecologylab.bigsemantics.generated.library.cartoon">
+<meta_metadata_repository name="cartoon"
+  package="ecologylab.bigsemantics.generated.library.cartoon">
 
   <!-- Wrappers were authored using the MMD Authoring Tool. -->
   <!-- TODO most types in this package need more work! -->
-  
+
   <meta_metadata name="cartoon" extends="artwork">
     <composite name="content" type="image" hide="true" />
-    
+
     <semantic_actions>
-	    <get_field name="content" />
-  		<if>
-  			<not_null value="content" />
-		    <create_and_visualize_img_surrogate>
-		    	<arg name="metadata" value="content" />
-		    </create_and_visualize_img_surrogate>
-  		</if>
+      <get_field name="content" />
+      <if>
+        <not_null value="content" />
+        <create_and_visualize_img_surrogate>
+          <arg name="metadata" value="content" />
+        </create_and_visualize_img_surrogate>
+      </if>
     </semantic_actions>
   </meta_metadata>
 
 
   <meta_metadata name="british_cartoon_archive" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://www.cartoons.ac.uk/record/" />
-    
-    <scalar name="title" xpath="//*[@class='captionClass']">
+
+    <scalar name="title">
+      <xpath>//*[@class='captionClass']</xpath>
       <filter regex="Caption" replace="" />
     </scalar>
-    <composite name="content" xpath="//*[@id='mediumImage']//img">
-      <scalar name="location" xpath="./@src" />
+    <composite name="content">
+      <xpath>//*[@id='mediumImage']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </composite>
-    
-    <scalar name="artist" scalar_type="String" xpath="//*[@id='detailArtist']"
-            comment="Name of the artist, and period he lived">
+
+    <scalar name="artist" scalar_type="String" comment="Name of the artist, and period he lived">
+      <xpath>//*[@id='detailArtist']</xpath>
       <filter regex="Artist:" replace="" />
     </scalar>
-    <scalar name="published_in" scalar_type="String" xpath="//*[@id='detailPublish']"
-            comment="Name of the publication in which the cartoon appeared">
+    <scalar name="published_in" scalar_type="String"
+      comment="Name of the publication in which the cartoon appeared">
+      <xpath>//*[@id='detailPublish']</xpath>
       <filter regex="(?&lt;=Published:)([^,]+)" />
     </scalar>
-    <scalar name="publication_date" scalar_type="Date" xpath="//*[@id='detailPublish']"
-            comment="Date of the publication">
+    <scalar name="publication_date" scalar_type="Date" comment="Date of the publication">
+      <xpath>//*[@id='detailPublish']</xpath>
       <filter regex="Published:[^,]+," replace="" />
     </scalar>
-    <scalar name="publication_format" scalar_type="String" xpath="//*[@id='detailFormat']"
-            comment="Format of the publication">
+    <scalar name="publication_format" scalar_type="String" comment="Format of the publication">
+      <xpath>//*[@id='detailFormat']</xpath>
       <filter regex="Format:" replace="" />
     </scalar>
-    <scalar name="reference_number" scalar_type="String" xpath="//*[@id='refNumber']" >
+    <scalar name="reference_number" scalar_type="String">
+      <xpath>//*[@id='refNumber']</xpath>
       <filter regex="Reference number:" replace="" />
     </scalar>
   </meta_metadata>
@@ -52,72 +59,110 @@
 
   <meta_metadata name="gaurdian_comic" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://www.guardian.co.uk/commentisfree/cartoon/" />
-    
-    <scalar name="title" xpath="//h1" />
-    
-    <scalar name="comic_subtext" scalar_type="String" xpath="//*[@id='stand-first']"
-            comment="Explanation of the comic" />
-    <scalar name="artist" scalar_type="String" xpath="//a[@class='contributor']"
-            comment="Contributor of the comic" />
-    <scalar name="date_published" scalar_type="String"
-            xpath="//li[@class='publication']//time" />
+
+    <scalar name="title">
+      <xpath>//h1</xpath>
+    </scalar>
+
+    <scalar name="comic_subtext" scalar_type="String" comment="Explanation of the comic">
+      <xpath>//*[@id='stand-first']</xpath>
+    </scalar>
+    <scalar name="artist" scalar_type="String" comment="Contributor of the comic">
+      <xpath>//a[@class='contributor']</xpath>
+    </scalar>
+    <scalar name="date_published" scalar_type="String">
+      <xpath>//li[@class='publication']//time</xpath>
+    </scalar>
   </meta_metadata>
 
 
   <meta_metadata name="globe_cartoon" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/"
-              domain="globecartoon.com" />
+      domain="globecartoon.com" />
     <example_url url="http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/wo/13.0.13.5.9" />
-              
-    <scalar name="title" xpath="//span[@class='imageTitle']" />
-    <composite name="content" xpath="//img[@class='thumbFrame']">
-      <scalar name="location" xpath="./@src" />
+
+    <scalar name="title">
+      <xpath>//span[@class='imageTitle']</xpath>
+    </scalar>
+    <composite name="content">
+      <xpath>//img[@class='thumbFrame']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </composite>
-    
-    <scalar name="date_published" scalar_type="Date" xpath="//td[2]/span[@class='thumbSmall']" />
+
+    <scalar name="date_published" scalar_type="Date">
+      <xpath>//td[2]/span[@class='thumbSmall']</xpath>
+    </scalar>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="political_cartoon" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://www.politicalcartoons.com/cartoon/" />
-    
-    <scalar name="title" xpath="//*[@id='ctrlCartoon_lblTitle']" />
-    <composite name="content" xpath="//img[@id='ctrlCartoon_imgCartoon']">
-      <scalar name="location" xpath="./@src" />
+
+    <scalar name="title">
+      <xpath>//*[@id='ctrlCartoon_lblTitle']</xpath>
+    </scalar>
+    <composite name="content">
+      <xpath>//img[@id='ctrlCartoon_imgCartoon']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </composite>
-    
-    <scalar name="cartoonist" scalar_type="String" xpath="//*[@id='ctrlCartoon_hlnkArtist']" />
+
+    <scalar name="cartoonist" scalar_type="String">
+      <xpath>//*[@id='ctrlCartoon_hlnkArtist']</xpath>
+    </scalar>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="sfu_cartoon_archive" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://edocs.lib.sfu.ca/cgi-bin/" />
-    
-    <scalar name="text" scalar_type="String"
-            xpath="//td[contains(text(), 'Text')]/following-sibling::td" />
-    <scalar name="cartoonist" scalar_type="String"
-            xpath="//td[text()='Cartoonist:']/following-sibling::td" />
-    <scalar name="date_published" scalar_type="Date"
-            xpath="//td[text()='Date on cartoon:']/following-sibling::td" />
-    <scalar name="published_in" scalar_type="String" xpath="//tr[5]/td[2]" />
-    <scalar name="cartoon_size" scalar_type="String" xpath="//tr[7]/td[2]" />
-    <scalar name="notes" scalar_type="String" xpath="//tr[8]/td[2]" />
-    <scalar name="sfu_reference_code" scalar_type="String" xpath="//tr[9]/td[2]" />
+
+    <scalar name="text" scalar_type="String">
+      <xpath>//td[contains(text(), 'Text')]/following-sibling::td</xpath>
+    </scalar>
+    <scalar name="cartoonist" scalar_type="String">
+      <xpath>//td[text()='Cartoonist:']/following-sibling::td</xpath>
+    </scalar>
+    <scalar name="date_published" scalar_type="Date">
+      <xpath>//td[text()='Date on cartoon:']/following-sibling::td</xpath>
+    </scalar>
+    <scalar name="published_in" scalar_type="String">
+      <xpath>//tr[5]/td[2]</xpath>
+    </scalar>
+    <scalar name="cartoon_size" scalar_type="String">
+      <xpath>//tr[7]/td[2]</xpath>
+    </scalar>
+    <scalar name="notes" scalar_type="String">
+      <xpath>//tr[8]/td[2]</xpath>
+    </scalar>
+    <scalar name="sfu_reference_code" scalar_type="String">
+      <xpath>//tr[9]/td[2]</xpath>
+    </scalar>
   </meta_metadata>
-  
-  
-  <meta_metadata name="truman_library_1948_campaign_cartoons" extends="cartoon" parser="xpath">
-    <selector url_regex="http://www.trumanlibrary.org/whistlestop/study_collections/1948campaign/large/docs/political_cartoons/[a-z_]+\.htm"
-              domain="trumanlibrary.org" />
-              
-    <scalar name="title" xpath="//*[@id='titletext']" />
-    <composite name="content" xpath="//*[@id='imagesection']//img">
-      <scalar name="location" xpath="./@src" />
+
+
+  <meta_metadata name="truman_library_1948_campaign_cartoons" extends="cartoon"
+    parser="xpath">
+    <selector
+      url_regex="http://www.trumanlibrary.org/whistlestop/study_collections/1948campaign/large/docs/political_cartoons/[a-z_]+\.htm"
+      domain="trumanlibrary.org" />
+
+    <scalar name="title">
+      <xpath>//*[@id='titletext']</xpath>
+    </scalar>
+    <composite name="content">
+      <xpath>//*[@id='imagesection']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </composite>
-    
-    <scalar name="artist" scalar_type="String" xpath="//*[@id='authortext']" comment="Artist">
+
+    <scalar name="artist" scalar_type="String" comment="Artist">
+      <xpath>//*[@id='authortext']</xpath>
       <filter regex="(by )|\n" replace=" " />
     </scalar>
   </meta_metadata>
-  
+
 </meta_metadata_repository>

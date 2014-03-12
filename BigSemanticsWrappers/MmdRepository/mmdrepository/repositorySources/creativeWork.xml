@@ -1,57 +1,55 @@
-<meta_metadata_repository name="creative_work" package="ecologylab.bigsemantics.generated.library.creative_work">
+<meta_metadata_repository name="creative_work"
+  package="ecologylab.bigsemantics.generated.library.creative_work">
 
-	<meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
-                 comment="An author of an article or creative work.">
-		<scalar name="location" hide="true" schema_org_itemprop="url"/>
-		<scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation"/>
-		<scalar name="city" scalar_type="String" />
-    
-		<collection name="creative_works" child_type="creative_work" child_tag="creative_work" />
-		<composite name="webpage" type="document" polymorphic_scope="repository_documents" wrap="true"/>		
-	</meta_metadata>
-	
-  
-	<meta_metadata name="creative_work" extends="compound_document"
-                 schema_org_itemtype="http://schema.org/CreativeWork">
-		<collection name="authors" child_type="author" child_tag="author" layer="8.0"
-                schema_org_itemprop="author" />
-		<scalar name="description" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
-		<scalar name="year" other_tags="year_of_publication" scalar_type="String" is_facet="true" />
-		<scalar name="overall_rating" scalar_type="string" comment="rating in some context" />
+  <meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
+    comment="An author of an article or creative work.">
+    <scalar name="location" hide="true" schema_org_itemprop="url" />
+    <scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation" />
+    <scalar name="city" scalar_type="String" />
+
+    <collection name="creative_works" child_type="creative_work" child_tag="creative_work" />
+    <composite name="webpage" type="document" polymorphic_scope="repository_documents"
+      wrap="true" />
+  </meta_metadata>
+
+
+  <meta_metadata name="creative_work" extends="compound_document" schema_org_itemtype="http://schema.org/CreativeWork">
+    <collection name="authors" child_type="author" child_tag="author" layer="8.0"
+      schema_org_itemprop="author" />
+    <scalar name="description" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
+    <scalar name="year" other_tags="year_of_publication" scalar_type="String" is_facet="true" />
+    <scalar name="overall_rating" scalar_type="string" comment="rating in some context" />
     <composite name="rating" type="rating" />
-    
+
     <collection name="references" child_tag="reference" child_type="document"
-                polymorphic_scope="repository_documents"
-                comment="Documents that are cited by this work." />
+      polymorphic_scope="repository_documents" comment="Documents that are cited by this work." />
     <!-- citations should use a polymorphic scope of creative_work subtypes -->
     <collection name="citations" child_tag="citation" child_type="creative_work"
-                polymorphic_scope="repository_documents"
-                comment="Creatives that cite this work." />
-		
-		<composite name="rich_media" type="compound_document"/>
-	</meta_metadata>
+      polymorphic_scope="repository_documents" comment="Creatives that cite this work." />
+
+    <composite name="rich_media" type="compound_document" />
+  </meta_metadata>
 
 
-	<meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
-		<scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />
-		<composite name="publisher" type="publisher" schema_org_itemprop="publisher"/>
-	</meta_metadata>
-	
-  
-	<meta_metadata name="periodical" extends="basic_publication" comment="An issue of a periodical.">
-		<composite name="archive" type="document" comment="All the issues of a periodical." >
-			<scalar name="location" hide="true" />
-		</composite>
-		<scalar name="volume_and_issue" scalar_type="String" />
-		<scalar name="date" scalar_type="Date" comment="Publication Date"
-            schema_org_itemprop="datePublished" />
-	</meta_metadata>
-	
-	<meta_metadata name="curation" extends="creative_work">
-		<collection name="metadata_collection" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope" />
-		<scalar name="curation_app_version" scalar_type="String" hide="true" />
-		<scalar name="curation_app" scalar_type="String" hide="true" />
-		<scalar name="cross_platform_version" scalar_type="Float" hide="true" />
-	</meta_metadata>
-	
+  <meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
+    <scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />
+    <composite name="publisher" type="publisher" schema_org_itemprop="publisher" />
+  </meta_metadata>
+
+
+  <meta_metadata name="periodical" extends="basic_publication" comment="An issue of a periodical.">
+    <composite name="archive" type="document" comment="All the issues of a periodical.">
+      <scalar name="location" hide="true" />
+    </composite>
+    <scalar name="volume_and_issue" scalar_type="String" />
+    <scalar name="date" scalar_type="Date" comment="Publication Date" schema_org_itemprop="datePublished" />
+  </meta_metadata>
+
+  <meta_metadata name="curation" extends="creative_work">
+    <collection name="metadata_collection" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope" />
+    <scalar name="curation_app_version" scalar_type="String" hide="true" />
+    <scalar name="curation_app" scalar_type="String" hide="true" />
+    <scalar name="cross_platform_version" scalar_type="Float" hide="true" />
+  </meta_metadata>
+
 </meta_metadata_repository>

@@ -1,23 +1,29 @@
 <meta_metadata_repository name="wikipedia"
-                          package="ecologylab.bigsemantics.generated.library.wikipedia"
-                          default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.wikipedia" default_user_agent_name="chrome_2">
 
   <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search"
-                 parser="xpath" user_agent_name="firefox_2">
+    parser="xpath" user_agent_name="firefox_2">
     <generic_type_var name="SR" arg="wikipedia_page" />
-    
+
     <selector url_stripped="http://en.wikipedia.org/w/index.php?title=Special%3ASearch" />
 
-    <collection name="search_results" xpath="//ul[@class='mw-search-results']/li">
-      <scalar name="title" xpath="./div[@class='mw-search-result-heading']/a" />
-      <scalar name="location" xpath="./div[@class='mw-search-result-heading']/a/@href" />
-      <scalar name="description" xpath="./div[@class='searchresult']" />
+    <collection name="search_results">
+      <xpath>//ul[@class='mw-search-results']/li</xpath>
+      <scalar name="title">
+        <xpath>./div[@class='mw-search-result-heading']/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div[@class='mw-search-result-heading']/a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./div[@class='searchresult']</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="paragraph" extends="metadata" show_expanded_initially="true">
-    <scalar name="text" scalar_type="String" layer="9.0"/>
+    <scalar name="text" scalar_type="String" layer="9.0" />
     <collection name="anchors" child_type="wikipedia_page" child_tag="anchor" layer="7.0">
       <scalar name="location" hide="true" />
 	    <!-- For each anchor: -->
@@ -26,8 +32,8 @@
 	    <!--   location: the target page URL. -->
     </collection>
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="section" extends="metadata">
     <scalar name="title" scalar_type="String" />
 <!--     <scalar name="title" scalar_type="String" other_tags="section_title" navigates_to="section_url" /> -->
@@ -42,27 +48,26 @@
 
 
   <meta_metadata name="wikipedia_page_type" extends="compound_document" other_tags="wikipedia_page"
-                 comment="An article on wikipedia">
+    comment="An article on wikipedia">
     <composite name="main_image" type="image" hide="true" />
-    <scalar name="main_image_src" scalar_type="ParsedURL" hide="true"
-            comment="(For compatibility.)" />
+    <scalar name="main_image_src" scalar_type="ParsedURL" hide="true" comment="(For compatibility.)" />
     
     <!-- TODO infoboxes! -->
-    
+
     <collection name="sections" child_type="section" child_tag="section" />
 
     <collection name="thumbinners" hide="true" child_type="image" child_tag="thumbinner">
       <scalar name="location" other_tags="thumb_img_src" />
       <scalar name="title" other_tags="thumb_img_caption" />
     </collection>
-    
+
     <collection name="categories" child_type="wikipedia_category_type" child_tag="category"
-                label="categories" />
+      label="categories" />
     
     <!-- TODO translations -->
   </meta_metadata>
-  
-  
+
+
   <meta_metadata name="wikipedia_category_type" extends="compound_document">
     <scalar name="title" other_tags="name" />
     <scalar name="location" other_tags="cat_link" />
@@ -75,25 +80,38 @@
 
 
   <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath"
-                 user_agent_name="chrome_12" comment="An article on wikipedia">
+    user_agent_name="chrome_12" comment="An article on wikipedia">
     <selector url_regex="http://en.wikipedia.org/wiki/((?!Category:).)*$" domain="wikipedia.org" />
-    
+
     <example_url url="http://en.wikipedia.org/wiki/Type_system" />
     <example_url url="http://en.wikipedia.org/wiki/Velcro" />
-   
-    <def_var name="main_image" type="node"
-             xpath="//*[starts-with(@class,'infobox')]//img[@width>50][1]" />
-    
-    <scalar name="title" xpath="//*[@id='firstHeading']" />
-    <scalar name="description" xpath="//*[@id='mw-content-text']/p[1]" />
-    
-    <composite name="main_image" xpath="." context_node="main_image">
-      <scalar name="location" xpath="./@src" />
+
+    <def_var name="main_image" type="node">
+      <xpath>//*[starts-with(@class,'infobox')]//img[@width&gt;50][1]</xpath>
+    </def_var>
+
+    <scalar name="title">
+      <xpath>//*[@id='firstHeading']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//*[@id='mw-content-text']/p[1]</xpath>
+    </scalar>
+
+    <composite name="main_image" context_node="main_image">
+      <xpath>.</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </composite>
-    <scalar name="main_image_src" xpath="./@src" context_node="main_image" />
-    
-    <collection name="sections" xpath="//div[@id='mw-content-text']/h2">
-      <scalar name="title" xpath="./span[@id]" />
+    <scalar name="main_image_src" context_node="main_image">
+      <xpath>./@src</xpath>
+    </scalar>
+
+    <collection name="sections">
+      <xpath>//div[@id='mw-content-text']/h2</xpath>
+      <scalar name="title">
+        <xpath>./span[@id]</xpath>
+      </scalar>
 <!--       <scalar name="section_id" xpath="./span[@id]/@id" /> -->
 <!--       <scalar name="section_url"> -->
 <!--         <concatenate_values> -->
@@ -102,12 +120,22 @@
 <!--         </concatenate_values> -->
 <!--         TODO ParsedURL doesn't support #section_id .. -->
 <!--       </scalar> -->
-      <collection name="paragraphs" xpath="./following-sibling::p[preceding-sibling::h2[1]=../h2[$i]]">
-        <scalar name="text" xpath="." />
-        <collection name="anchors" xpath=".//a[@title]">
-          <scalar name="title" xpath="./@title" />
-          <scalar name="description" xpath="." />
-          <scalar name="location" xpath="./@href" />
+      <collection name="paragraphs">
+        <xpath>./following-sibling::p[preceding-sibling::h2[1]=../h2[$i]]</xpath>
+        <scalar name="text">
+          <xpath>.</xpath>
+        </scalar>
+        <collection name="anchors">
+          <xpath>.//a[@title]</xpath>
+          <scalar name="title">
+            <xpath>./@title</xpath>
+          </scalar>
+          <scalar name="description">
+            <xpath>.</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./@href</xpath>
+          </scalar>
         </collection>
       </collection>
 <!--       <collection name="subsections" field_parser_key="$subsections"> -->
@@ -125,26 +153,35 @@
 <!--       </collection> -->
 <!--     </collection> -->
 
-    <collection name="thumbinners" xpath="//div[@class='thumbinner']">
-      <scalar name="location" xpath=".//a/img/@src" />
-      <scalar name="title" xpath="." />
+    <collection name="thumbinners">
+      <xpath>//div[@class='thumbinner']</xpath>
+      <scalar name="location">
+        <xpath>.//a/img/@src</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
     </collection>
 
 <!--     <collection name="categories" promote_children="true" -->
 <!--                 xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]"> -->
-    <collection name="categories"
-                xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]">
-      <scalar name="title" xpath="." />
-      <scalar name="location" xpath="./@href" />
+    <collection name="categories">
+      <xpath>//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
-    
+
     <semantic_actions>
       <get_field name="main_image_src" />
       <create_and_visualize_img_surrogate>
         <not_null value="main_image_src" /><!-- Prerequisite check -->
         <arg value="main_image_src" name="image_purl" />
       </create_and_visualize_img_surrogate>
-      
+
       <get_field name="sections" />
       <for_each collection="sections" as="section">
         <not_null value="sections" /><!-- Prerequisite check -->
@@ -177,10 +214,10 @@
           </create_and_visualize_text_surrogate>
         </for_each>
       </for_each>
-      
+
       <get_field name="thumbinners" />
       <for_each collection="thumbinners" as="thumbinner">
-      	<not_null value="thumbinners"/><!-- Prerequisite check -->
+        <not_null value="thumbinners" /><!-- Prerequisite check -->
         <get_field object="thumbinner" name="location" />
         <get_field object="thumbinner" name="title" />
         <create_and_visualize_img_surrogate>
@@ -198,22 +235,38 @@
     <selector domain="wikipedia.org" url_regex="http://en.wikipedia.org/wiki/Category:.*" />
     <example_url url="http://en.wikipedia.org/wiki/Category:Brand_name_materials" />
     <example_url url="http://en.wikipedia.org/wiki/Category:Theoretical_physicists" />
-    
-   <scalar name="title" xpath="//span[@dir='auto']">
-   	<filter regex="Category:" replace=""/>
-   </scalar>
-   
-    <collection name="subcategories" xpath="//div[@id='mw-subcategories']//a">
-      <scalar name="title" xpath="." />
-      <scalar name="location" xpath="./@href" />
+
+    <scalar name="title">
+      <xpath>//span[@dir='auto']</xpath>
+      <filter regex="Category:" replace="" />
+    </scalar>
+
+    <collection name="subcategories">
+      <xpath>//div[@id='mw-subcategories']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
-    <collection name="articles" xpath="//div[@id='mw-pages']//li/a[@title]">
-      <scalar name="title" xpath="." />
-      <scalar name="location" xpath="./@href" />
+    <collection name="articles">
+      <xpath>//div[@id='mw-pages']//li/a[@title]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
-    <collection name="supercategories" xpath="//div[@id='mw-normal-catlinks']//li/a[@title]">
-      <scalar name="title" xpath="." />
-      <scalar name="location" xpath="./@href" />
+    <collection name="supercategories">
+      <xpath>//div[@id='mw-normal-catlinks']//li/a[@title]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
   

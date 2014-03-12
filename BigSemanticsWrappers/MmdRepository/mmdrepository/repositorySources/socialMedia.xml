@@ -1,178 +1,186 @@
-<meta_metadata_repository name="social_media" package="ecologylab.bigsemantics.generated.library.socialMedia"
-                          default_user_agent_name="firefox_3_6_8">
+<meta_metadata_repository name="social_media"
+  package="ecologylab.bigsemantics.generated.library.socialMedia" default_user_agent_name="firefox_3_6_8">
 
-	<meta_metadata name="tweeter" extends="author" parser="xpath" comment="an author of twitter microblog">
-		<scalar name="num_tweets" scalar_type="Int"	/>
-	    <scalar name="num_following" scalar_type="Int" />
-	    <scalar name="num_followers" scalar_type="Int" />
-	</meta_metadata>	
+  <meta_metadata name="tweeter" extends="author" parser="xpath"
+    comment="an author of twitter microblog">
+    <scalar name="num_tweets" scalar_type="Int" />
+    <scalar name="num_following" scalar_type="Int" />
+    <scalar name="num_followers" scalar_type="Int" />
+  </meta_metadata>
 
-	<meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true" comment="twitter micropost">
-		<scalar name="post_date" layer="8.0" />
-		<composite name="twitter_microblog" type="twitter_microblog" layer="10.0" />
-		<scalar name="id" scalar_type="Int" />
-	</meta_metadata>
-		
-	<meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true">
-		
-		<selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com"/>
-		<example_url url="https://twitter.com/nytimes" />
-		
-		<scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
-		<scalar name="username" scalar_type="String" xpath="//h2[@class='username']/span" hide_label="true" concatenates_to="title" />
-		
-		<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">
+  <meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true"
+    comment="twitter micropost">
+    <scalar name="post_date" layer="8.0" />
+    <composite name="twitter_microblog" type="twitter_microblog" layer="10.0" />
+    <scalar name="id" scalar_type="Int" />
+  </meta_metadata>
+
+  <meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true">
+
+    <selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com" />
+    <example_url url="https://twitter.com/nytimes" />
+
+    <scalar name="title" hide_label="true">
+      <xpath>//h1[@class='fullname editable-group']/span[@class='profile-field']</xpath>
+    </scalar>
+    <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title">
+      <xpath>//h2[@class='username']/span</xpath>
+    </scalar>
+
+    <collection name="tweeters" child_type="tweeter" hide_label="true">
+      <xpath>.</xpath>
 			
 			<!-- <scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
 			<scalar name="location" xpath="//h2[@class='username']/span" always_show="true" hide_label="true" concatenates_to="title">
 		    	<filter regex="@" replace="https://twitter.com/"/>
-		 	</scalar> -->	    			
-	    			
-			<composite name="photo" hide_label="true" xpath="//a[@class='profile-picture media-thumbnail js-tooltip']/img">
-		      <scalar name="location" xpath="./@src" always_show="true" />
-		    </composite>
-		    
-		    <scalar name="description" hide_label="true" xpath="//p[@class='bio profile-field']" />
-		    <scalar name="city" hide_label="true" xpath="//p[@class='location-and-url']//span[@class='location profile-field']" />
-		    
-		    <composite name="webpage" hide_label="true" xpath="//p[@class='location-and-url']//a[@class='js-tooltip']">
-		    	<scalar name="title" xpath="." hide_label="true" />
-				<scalar name="location" xpath="./@href" />
-		    </composite>
-		    
-		    <scalar name="num_tweets" label="tweets" xpath="//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong" 
-		    																label_at="bottom" />
-		    <scalar name="num_following" label="following" xpath="//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong" 
-		    																label_at="bottom" concatenates_to="num_tweets" />
-		    <scalar name="num_followers" label="followers" xpath="//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong" 
-		    																label_at="bottom" concatenates_to="num_tweets" />
-		</collection>
-	    
-	    <collection name="tweets" child_type="tweet" xpath="//ol[@id='stream-items-id']/li//div[@class='content']"	
-	    													child_use_value_as_label="twitter_microblog.photo" label_at="top">		    
-		    <composite name="twitter_microblog" type="twitter_microblog" xpath="./div[@class='stream-item-header']/a" hide_label="true">
-		    	<style is_child_metadata="true" hide="true"/>
-				<scalar name="title" xpath="./strong" hide_label="true" />
-				<scalar name="location" xpath="./span/b" >
-			    	<filter regex="^" replace="https://twitter.com/"/>
-			    </scalar>
+		 	</scalar> -->
+
+      <composite name="photo" hide_label="true">
+        <xpath>//a[@class='profile-picture media-thumbnail js-tooltip']/img</xpath>
+        <scalar name="location" always_show="true">
+          <xpath>./@src</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="description" hide_label="true">
+        <xpath>//p[@class='bio profile-field']</xpath>
+      </scalar>
+      <scalar name="city" hide_label="true">
+        <xpath>//p[@class='location-and-url']//span[@class='location profile-field']</xpath>
+      </scalar>
+
+      <composite name="webpage" hide_label="true">
+        <xpath>//p[@class='location-and-url']//a[@class='js-tooltip']</xpath>
+        <scalar name="title" hide_label="true">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="num_tweets" label="tweets" label_at="bottom">
+        <xpath>//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong</xpath>
+      </scalar>
+      <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
+        <xpath>//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong</xpath>
+      </scalar>
+      <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
+        <xpath>//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tweets" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
+      label_at="top">
+      <xpath>//ol[@id='stream-items-id']/li//div[@class='content']</xpath>
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+        <xpath>./div[@class='stream-item-header']/a</xpath>
+        <style is_child_metadata="true" hide="true" />
+        <scalar name="title" hide_label="true">
+          <xpath>./strong</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./span/b</xpath>
+          <filter regex="^" replace="https://twitter.com/" />
+        </scalar>
 			    <!-- <scalar name="username" xpath="./span" /> -->
 		    	
 		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
-			    	<composite name="photo" label="image" xpath="./img">
-				      <scalar name="location" xpath="./@src" always_show="true" />
-				    </composite>
+        <composite name="photo" label="image">
+          <xpath>./img</xpath>
+          <scalar name="location" always_show="true">
+            <xpath>./@src</xpath>
+          </scalar>
+        </composite>
 				<!--</collection>			    			    -->
-			</composite>
-			
-			<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
-	    	<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>
-	    	<scalar name="id" xpath=".//a[@class='details with-icn js-details']/@href" concatenates_to="post_date" hide_label="true" >
-	    		<filter regex="[^/]+$" />
-	    	</scalar>
-	    	
-	    </collection>	    	    
-	</meta_metadata>
-	
-	<meta_metadata name="twitter_search_results" type="search" parser="xpath" no_cache="true">
-		<selector url_stripped="https://twitter.com/search"/>
-		<example_url url="https://twitter.com/search?q=%23socialinnovation" />
+      </composite>
+
+      <scalar name="description" hide_label="true" extract_as_html="true">
+        <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
+      </scalar>
+      <scalar name="post_date" hide_label="true">
+        <xpath>.//small[@class='time']//span</xpath>
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+        <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
+        <filter regex="[^/]+$" />
+      </scalar>
+
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="twitter_search_results" type="search" parser="xpath" no_cache="true">
+    <selector url_stripped="https://twitter.com/search" />
+    <example_url url="https://twitter.com/search?q=%23socialinnovation" />
 		
 		<!-- def_var doesn't currently seem to be working in js metadata extraction -->
 		<!--<def_var name="search" type="node" xpath="//h2[@id='content-main-heading']/strong"/>-->
-		
-		<scalar name="title" context_node="search" xpath="//h2[@id='content-main-heading']/strong" hide_label="true" >
-			<filter regex="Twitter / Search - " replace=""/>
-		</scalar>
-		<scalar name="location" context_node="search" xpath="//h2[@id='content-main-heading']/strong" >
-	    	<filter regex="^" replace="https://twitter.com/search?q="/>
-	    </scalar>
-	    
-	    <generic_type_var name="SR" arg="post" />
-	    
-	    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet" label_at="top"
-	    		xpath="//ol[@id='stream-items-id']/li//div[@class='content']" child_use_value_as_label="twitter_microblog.photo" >
-	    	
-	    	<composite name="twitter_microblog" type="twitter_microblog" xpath="./div[@class='stream-item-header']/a" hide_label="true">
-	    		<style is_child_metadata="true" hide="true"/>
-				<scalar name="title" xpath="./strong" />
-				<scalar name="location" xpath="./span/b" >
-			    	<filter regex="^" replace="https://twitter.com/"/>
-			    </scalar>
+
+    <scalar name="title" context_node="search" hide_label="true">
+      <xpath>//h2[@id='content-main-heading']/strong</xpath>
+      <filter regex="Twitter / Search - " replace="" />
+    </scalar>
+    <scalar name="location" context_node="search">
+      <xpath>//h2[@id='content-main-heading']/strong</xpath>
+      <filter regex="^" replace="https://twitter.com/search?q=" />
+    </scalar>
+
+    <generic_type_var name="SR" arg="post" />
+
+    <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet"
+      label_at="top" child_use_value_as_label="twitter_microblog.photo">
+      <xpath>//ol[@id='stream-items-id']/li//div[@class='content']</xpath>
+
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+        <xpath>./div[@class='stream-item-header']/a</xpath>
+        <style is_child_metadata="true" hide="true" />
+        <scalar name="title">
+          <xpath>./strong</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./span/b</xpath>
+          <filter regex="^" replace="https://twitter.com/" />
+        </scalar>
 		    	<!-- <scalar name="username" xpath="./span" /> -->
 		    	
-		    	<!-- <collection name="tweeters" child_type="tweeter" xpath="." hide_label="true"> -->		
-					<composite name="photo" label="image" xpath="./img">
-				      <scalar name="location" xpath="./@src" always_show="true" />
-				    </composite>
+		    	<!-- <collection name="tweeters" child_type="tweeter" xpath="." hide_label="true"> -->
+        <composite name="photo" label="image">
+          <xpath>./img</xpath>
+          <scalar name="location" always_show="true">
+            <xpath>./@src</xpath>
+          </scalar>
+        </composite>
 				<!-- </collection>			    			    -->
-			</composite>
-	    
-    		<scalar name="description" xpath="./p[@class='js-tweet-text tweet-text']" hide_label="true" extract_as_html="true" />
-    		<scalar name="post_date" xpath=".//small[@class='time']//span" hide_label="true"/>
-	    	<scalar name="id" xpath=".//a[@class='details with-icn js-details']/@href" concatenates_to="post_date" hide_label="true" >
-	    		<filter regex="[^/]+$" />
-	    	</scalar>	    	
+      </composite>
 
-    	</collection>
-	</meta_metadata>
+      <scalar name="description" hide_label="true" extract_as_html="true">
+        <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
+      </scalar>
+      <scalar name="post_date" hide_label="true">
+        <xpath>.//small[@class='time']//span</xpath>
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+        <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
+        <filter regex="[^/]+$" />
+      </scalar>
 
-	<meta_metadata name="reddit_search_results" type="search" parser="xpath" comment="reddit search results page" no_cache="true">
-  		<selector url_stripped="http://www.reddit.com/search?"/>
-    
-    	<generic_type_var name="SR" arg="document" />
-    	
-    	<collection name="search_results" child_type="document" xpath="//a[@class='title ']">
-    	  	<scalar name="title" xpath="." />
-  	    	<scalar name="location" xpath="./@href" />
-  		</collection>    
-	</meta_metadata>	
-	
-	<meta_metadata name="pinterest_search_results" type="image_search" parser="xpath" comment="pinterest search results page" no_cache="true">
-  		<selector url_stripped="http://pinterest.com/search/?"/>
-    	
-    	<collection name="search_results" xpath="//img[@class='PinImageImg']">
-    		<scalar name="title" xpath="./@src" />
-  	    	<scalar name="location" xpath="./@src" />
-  		</collection>    
-	</meta_metadata>
-	
-	<meta_metadata name="imgur_search_results" type="image_search" parser="xpath" comment="imgur hot search results page" no_cache="true">
-  		<selector url_stripped="http://imgur.com/hot/time?"/>
-    	
-    	<collection name="search_results" xpath="//div[@class='post']/a/img">
-  	    	<scalar name="title" xpath="./@src" />
-  	    	<scalar name="location" xpath="./@src" />
-  		</collection>    
-	</meta_metadata>
-	
-	<meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath" comment="tumblr tag results page" no_cache="true">
-  		<selector url_stripped="http://twitter.com/search?"/>
-    	
-    	<collection name="search_results" xpath="//a[@class='high_res_link' or 'high_res_link no_pop']/img">
-  	    	<scalar name="title" xpath="./@src" />
-  	    	<scalar name="location" xpath="./@src" />
-  		</collection>    
-	</meta_metadata>
-	
-	<meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath" comment="reddit gif image search results page" no_cache="true">
-  		<selector url_stripped="http://www.reddit.com/r/gifs/search?"/>
-    	
-    	<collection name="search_results" xpath="//a[@class='title ']">
-    	  	<scalar name="title" xpath="." />
-  	    	<scalar name="location" xpath="./@href" />
-  		</collection>    
-	</meta_metadata>
-	
+    </collection>
+  </meta_metadata>
+
   <meta_metadata name="reddit_search_results" type="search" parser="xpath"
     comment="reddit search results page" no_cache="true">
     <selector url_stripped="http://www.reddit.com/search?" />
 
     <generic_type_var name="SR" arg="document" />
 
-    <collection name="search_results" child_type="document" xpath="//a[@class='title ']">
-      <scalar name="title" xpath="." />
-      <scalar name="location" xpath="./@href" />
+    <collection name="search_results" child_type="document">
+      <xpath>//a[@class='title ']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
@@ -180,9 +188,14 @@
     comment="pinterest search results page" no_cache="true">
     <selector url_stripped="http://pinterest.com/search/?" />
 
-    <collection name="search_results" xpath="//img[@class='PinImageImg']">
-      <scalar name="title" xpath="./@src" />
-      <scalar name="location" xpath="./@src" />
+    <collection name="search_results">
+      <xpath>//img[@class='PinImageImg']</xpath>
+      <scalar name="title">
+        <xpath>./@src</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
@@ -190,9 +203,14 @@
     comment="imgur hot search results page" no_cache="true">
     <selector url_stripped="http://imgur.com/hot/time?" />
 
-    <collection name="search_results" xpath="//div[@class='post']/a/img">
-      <scalar name="title" xpath="./@src" />
-      <scalar name="location" xpath="./@src" />
+    <collection name="search_results">
+      <xpath>//div[@class='post']/a/img</xpath>
+      <scalar name="title">
+        <xpath>./@src</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
@@ -200,9 +218,14 @@
     comment="tumblr tag results page" no_cache="true">
     <selector url_stripped="http://twitter.com/search?" />
 
-    <collection name="search_results" xpath="//a[@class='high_res_link' or 'high_res_link no_pop']/img">
-      <scalar name="title" xpath="./@src" />
-      <scalar name="location" xpath="./@src" />
+    <collection name="search_results">
+      <xpath>//a[@class='high_res_link' or 'high_res_link no_pop']/img</xpath>
+      <scalar name="title">
+        <xpath>./@src</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 
@@ -210,9 +233,91 @@
     comment="reddit gif image search results page" no_cache="true">
     <selector url_stripped="http://www.reddit.com/r/gifs/search?" />
 
-    <collection name="search_results" xpath="//a[@class='title ']">
-      <scalar name="title" xpath="." />
-      <scalar name="location" xpath="./@href" />
+    <collection name="search_results">
+      <xpath>//a[@class='title ']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="reddit_search_results" type="search" parser="xpath"
+    comment="reddit search results page" no_cache="true">
+    <selector url_stripped="http://www.reddit.com/search?" />
+
+    <generic_type_var name="SR" arg="document" />
+
+    <collection name="search_results" child_type="document">
+      <xpath>//a[@class='title ']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="pinterest_search_results" type="image_search" parser="xpath"
+    comment="pinterest search results page" no_cache="true">
+    <selector url_stripped="http://pinterest.com/search/?" />
+
+    <collection name="search_results">
+      <xpath>//img[@class='PinImageImg']</xpath>
+      <scalar name="title">
+        <xpath>./@src</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="imgur_search_results" type="image_search" parser="xpath"
+    comment="imgur hot search results page" no_cache="true">
+    <selector url_stripped="http://imgur.com/hot/time?" />
+
+    <collection name="search_results">
+      <xpath>//div[@class='post']/a/img</xpath>
+      <scalar name="title">
+        <xpath>./@src</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath"
+    comment="tumblr tag results page" no_cache="true">
+    <selector url_stripped="http://twitter.com/search?" />
+
+    <collection name="search_results">
+      <xpath>//a[@class='high_res_link' or 'high_res_link no_pop']/img</xpath>
+      <scalar name="title">
+        <xpath>./@src</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath"
+    comment="reddit gif image search results page" no_cache="true">
+    <selector url_stripped="http://www.reddit.com/r/gifs/search?" />
+
+    <collection name="search_results">
+      <xpath>//a[@class='title ']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
   </meta_metadata>
 

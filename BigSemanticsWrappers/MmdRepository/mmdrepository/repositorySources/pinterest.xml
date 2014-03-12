@@ -1,10 +1,9 @@
 <meta_metadata_repository name="pinterest"
-                          package="ecologylab.bigsemantics.generated.library.pinterest"
-                          default_user_agent_name="firefox" >
-	
-	<meta_metadata name="pinterest_pin" extends="creative_work" parser="xpath" >
-		<selector url_path_tree="http://pinterest.com/pin/" domain="pinterest.com"/>
-		<example_url url="http://pinterest.com/pin/197525133629352022/" />
+  package="ecologylab.bigsemantics.generated.library.pinterest" default_user_agent_name="firefox">
+
+  <meta_metadata name="pinterest_pin" extends="creative_work" parser="xpath">
+    <selector url_path_tree="http://pinterest.com/pin/" domain="pinterest.com" />
+    <example_url url="http://pinterest.com/pin/197525133629352022/" />
 		
     	<!-- 
 
@@ -40,78 +39,120 @@
 		
 		    <meta property="pinterestapp:actions" content="401"/>
 
-		-->    		
-		
-		<scalar name="title" xpath="//meta[@property='og:title']/@content" />
-		<scalar name="description" xpath="//meta[@property='og:description']/@content" />
+		-->
 
-		
-		<composite name="pinboard" layer="2.5" type="compound_document" >
-			<scalar name="title" xpath="//meta[@property='og:title']/@content" />
-			<scalar name="location" xpath="//meta[@property='pinterestapp:pinboard']/@content" />
-		</composite>
-		
-		<composite name="pinner" layer="3.0" type="compound_document" >
-			<scalar name="title" xpath="//div[@class='pinDescription']//a[@class='commentDescriptionCreator']" />
-			<scalar name="location" xpath="//meta[@property='pinterestapp:pinner']/@content" />
-		</composite>
-		
-		<composite name="repins" layer="2.0" type="compound_document" >
-			<scalar name="title" xpath="//meta[@property='pinterestapp:repins']/@content" />
+    <scalar name="title">
+      <xpath>//meta[@property='og:title']/@content</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//meta[@property='og:description']/@content</xpath>
+    </scalar>
+
+
+    <composite name="pinboard" layer="2.5" type="compound_document">
+      <scalar name="title">
+        <xpath>//meta[@property='og:title']/@content</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//meta[@property='pinterestapp:pinboard']/@content</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="pinner" layer="3.0" type="compound_document">
+      <scalar name="title">
+        <xpath>//div[@class='pinDescription']//a[@class='commentDescriptionCreator']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//meta[@property='pinterestapp:pinner']/@content</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="repins" layer="2.0" type="compound_document">
+      <scalar name="title">
+        <xpath>//meta[@property='pinterestapp:repins']/@content</xpath>
+      </scalar>
 <!-- 			<collection name="repinned_by_pinners" child_type="compound_document" > -->
 				
 <!-- 			</collection> -->
-		</composite>
-		
-				
-		<composite name="likes" layer="1.0" type="compound_document" >
-			<scalar name="title" xpath="//meta[@property='pinterestapp:likes']/@content" />
+    </composite>
+
+
+    <composite name="likes" layer="1.0" type="compound_document">
+      <scalar name="title">
+        <xpath>//meta[@property='pinterestapp:likes']/@content</xpath>
+      </scalar>
 <!-- 			<collection name="liked_by_pinners" child_type="compound_document" > -->
 				
 <!-- 			</collection> -->
-		</composite>
-		
+    </composite>
 
-		<composite name="repinned_from_pinner" type="compound_document" xpath="//p[@id='PinOrigin']/a[2]">
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</composite>
-		
-		<composite name="repinned_from_pinboard" type="compound_document" xpath="//p[@id='PinOrigin']/a[1]">
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</composite>
-		
-		<composite name="original_pinner" type="compound_document" xpath="//div[@class='PinComments']/div[1]/p/a[1]" >
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />
-		</composite>
-		
-		<composite name="original_pinboard" type="compound_document" xpath="//div[@class='PinComments']/div[1]/p/a[2]" >
-			<scalar name="title" xpath="." />
-			<scalar name="location" xpath="./@href" />			
-		</composite>
-				
-		<composite name="originally_from" type="compound_document" >
-			<scalar name="title" xpath="//p[@id='PinSource']/a" />
-			<scalar name="location" xpath="//meta[@property='pinterestapp:source']/@content" />
-		</composite>
-		
-		<composite name="image" type="image" >
-			<scalar name="location" xpath="//meta[@property='og:image']/@content" />
-		</composite>
-		
-	  	<semantic_actions>
-	    <get_field name="image" />
-	  		<if>
-	  			<not_null value="image" />
-			    <create_and_visualize_img_surrogate>
-			    	<arg name="metadata" value="image" />
-			    </create_and_visualize_img_surrogate>
-	  		</if>
-	  	</semantic_actions>
-		
-	</meta_metadata>
+
+    <composite name="repinned_from_pinner" type="compound_document">
+      <xpath>//p[@id='PinOrigin']/a[2]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="repinned_from_pinboard" type="compound_document">
+      <xpath>//p[@id='PinOrigin']/a[1]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="original_pinner" type="compound_document">
+      <xpath>//div[@class='PinComments']/div[1]/p/a[1]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="original_pinboard" type="compound_document">
+      <xpath>//div[@class='PinComments']/div[1]/p/a[2]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="originally_from" type="compound_document">
+      <scalar name="title">
+        <xpath>//p[@id='PinSource']/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//meta[@property='pinterestapp:source']/@content</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="image" type="image">
+      <scalar name="location">
+        <xpath>//meta[@property='og:image']/@content</xpath>
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="image" />
+      <if>
+        <not_null value="image" />
+        <create_and_visualize_img_surrogate>
+          <arg name="metadata" value="image" />
+        </create_and_visualize_img_surrogate>
+      </if>
+    </semantic_actions>
+
+  </meta_metadata>
 	
 <!-- 	<meta_metadata name="pinterest_board" extends="creative_work"> -->
 		

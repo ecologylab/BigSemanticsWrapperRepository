@@ -3,7 +3,9 @@
 
   <xsl:template match="@* | node()">
     <xsl:copy>
-      <xsl:apply-templates select="@* | node()" />
+      <xsl:apply-templates select="@*[name() != 'xpath']" />
+      <xsl:apply-templates select="@xpath" />
+      <xsl:apply-templates select="node()" />
     </xsl:copy>
   </xsl:template>
 

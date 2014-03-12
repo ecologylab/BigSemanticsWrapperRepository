@@ -1,6 +1,5 @@
 <meta_metadata_repository name="trip_advisor"
-                          package="ecologylab.bigsemantics.generated.library.tripAdvisor"
-                          default_user_agent_name="chrome" >
+  package="ecologylab.bigsemantics.generated.library.tripAdvisor" default_user_agent_name="chrome">
 <!-- 	<meta_metadata name="trip_advisor_restaurant" type="restaurant" parser="xpath"  -->
 <!-- 	    comment="Trip advisor restaurant review page" > -->
 	    
@@ -10,49 +9,81 @@
 <!-- 	    comment="Trip advisor hotel review page" > -->
 	    
 <!-- 	</meta_metadata> -->
-	
-	<meta_metadata name="trip_advisor_things_to_do" type="attraction" parser="xpath" 
-	    comment="Trip advisor travel suggestions" >
-  		<selector url_regex_fragment="http://www.tripadvisor.com/Attraction_Review"
-        	domain="tripadvisor.com" />
-  		<example_url url="http://www.tripadvisor.com/Attraction_Review-g60713-d104675-Reviews-Golden_Gate_Bridge-San_Francisco_California.html" />
-  		<scalar name="title" xpath="//h1[@id='HEADING']" />
-  		<composite name="image" >
-			<scalar name="location" xpath="//div[@class='photoGrid photoBx']/div[1]/a/@href" />
-		</composite>
-  		<scalar name="overall_rating" xpath="//div[@class='slim_ranking']"
-            layer="1.6" style="topRight_div" />
-        <scalar name="attraction_type" xpath="//div[@class='listing_details']/div[1]" />
-        <scalar name="fee" xpath="//div[@class='listing_details']/div[3]" />
-        <scalar name="description" xpath="//div[@class='listing_description']" />
-  		<composite name="attraction_address" xpath="//span[@rel='v:address']/span/span[@class='locality']" >
-	  		<scalar name="street_address" xpath="../span[@property='v:street-address']"/>
-	  		<scalar name="locality" xpath="./span[@property='v:locality']"/>
-	  		<scalar name="region" xpath="./span[@property='v:region']"/>
-	  		<scalar name="postal_code" xpath="./span[@property='v:postal-code']" />
-	  		<scalar name="location">
-	  			<concatenate_values>
-	  				<value>http://maps.google.com/maps?q=</value>
-	  				<value from_scalar="street_address" />
-	  				<value>,</value>
-	  				<value from_scalar="postal_code" />
-	  			</concatenate_values>
-	  		</scalar>			
-  		</composite>
-  		<collection name="reviews" xpath="//div[contains(@id, 'review_')]">
-	  		<scalar name="rating" xpath="./div/div[@class='col2of2']//img/@alt" layer="20.0" />
-	  		<scalar name="description" xpath="./div/div[@class='col2of2']/div[@class='entry']/p"
-	              layer="10.0" />
-	  	</collection>
+
+  <meta_metadata name="trip_advisor_things_to_do" type="attraction" parser="xpath"
+    comment="Trip advisor travel suggestions">
+    <selector url_regex_fragment="http://www.tripadvisor.com/Attraction_Review" domain="tripadvisor.com" />
+    <example_url
+      url="http://www.tripadvisor.com/Attraction_Review-g60713-d104675-Reviews-Golden_Gate_Bridge-San_Francisco_California.html" />
+    <scalar name="title">
+      <xpath>//h1[@id='HEADING']</xpath>
+    </scalar>
+    <composite name="image">
+      <scalar name="location">
+        <xpath>//div[@class='photoGrid photoBx']/div[1]/a/@href</xpath>
+      </scalar>
+    </composite>
+    <scalar name="overall_rating" layer="1.6" style="topRight_div">
+      <xpath>//div[@class='slim_ranking']</xpath>
+    </scalar>
+    <scalar name="attraction_type">
+      <xpath>//div[@class='listing_details']/div[1]</xpath>
+    </scalar>
+    <scalar name="fee">
+      <xpath>//div[@class='listing_details']/div[3]</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='listing_description']</xpath>
+    </scalar>
+    <composite name="attraction_address">
+      <xpath>//span[@rel='v:address']/span/span[@class='locality']</xpath>
+      <scalar name="street_address">
+        <xpath>../span[@property='v:street-address']</xpath>
+      </scalar>
+      <scalar name="locality">
+        <xpath>./span[@property='v:locality']</xpath>
+      </scalar>
+      <scalar name="region">
+        <xpath>./span[@property='v:region']</xpath>
+      </scalar>
+      <scalar name="postal_code">
+        <xpath>./span[@property='v:postal-code']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://maps.google.com/maps?q=</value>
+          <value from_scalar="street_address" />
+          <value>,</value>
+          <value from_scalar="postal_code" />
+        </concatenate_values>
+      </scalar>
+    </composite>
+    <collection name="reviews">
+      <xpath>//div[contains(@id, 'review_')]</xpath>
+      <scalar name="rating" layer="20.0">
+        <xpath>./div/div[@class='col2of2']//img/@alt</xpath>
+      </scalar>
+      <scalar name="description" layer="10.0">
+        <xpath>./div/div[@class='col2of2']/div[@class='entry']/p</xpath>
+      </scalar>
+    </collection>
 <!--   		<collection name="popular_attractions_close_by"> -->
 <!--   		    <scalar name="title" /> -->
 <!--   		</collection> -->
-  		<collection name="popular_hotels" child_type="hotel" xpath="//div[starts-with(text(), 'Travelers also viewed')]/following-sibling::table[@class='recTbl']//tr[1]/td">
-	  		<scalar name="location" xpath=".//a[@class='propName ']/@href" />
-	  		<scalar name="title" xpath=".//a[@class='propName ']" />
-	  		<scalar name="overall_rating" xpath=".//img[@class='sprite-ratings']/@alt" />
-	  	</collection>
-  		
-	</meta_metadata>
-	
+    <collection name="popular_hotels" child_type="hotel">
+      <xpath>//div[starts-with(text(), 'Travelers also
+        viewed')]/following-sibling::table[@class='recTbl']//tr[1]/td</xpath>
+      <scalar name="location">
+        <xpath>.//a[@class='propName ']/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//a[@class='propName ']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>.//img[@class='sprite-ratings']/@alt</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
 </meta_metadata_repository>
