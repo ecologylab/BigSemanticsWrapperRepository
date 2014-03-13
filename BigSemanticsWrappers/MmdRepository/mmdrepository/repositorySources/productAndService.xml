@@ -54,6 +54,8 @@
     <example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY" />
     <example_url
       url="http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y" />
+    <example_url url="http://www.amazon.com/Acer-C720-Chromebook-11-6-Inch-2GB/dp/B00FNPD1VW/" />
+    <example_url url="http://www.amazon.com/Discovery-Daft-Punk/dp/B000059MEK" />
 
     <filter_location strip_prefix="/ref=" />
 
@@ -79,6 +81,7 @@
     </composite>
     <composite name="image">
       <xpath>//img[@id='main-image']</xpath>
+      <xpath>//img[@id='landingImage']</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
