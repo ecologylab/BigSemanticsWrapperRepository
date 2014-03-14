@@ -83,6 +83,7 @@
       <xpath>//img[@id='main-image']</xpath>
       <xpath>//img[@id='landingImage']</xpath>
       <scalar name="location">
+        <xpath>./@data-old-hires</xpath>
         <xpath>./@src</xpath>
       </scalar>
     </composite>
