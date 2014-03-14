@@ -15,22 +15,42 @@
   <meta_metadata name="document" extends="metadata" comment="The Document Class"
     built_in="true" schema_org_itemtype="http://schema.org/Thing">
     <scalar name="location" scalar_type="ParsedURL" always_show="true" hide="true" layer="8.0"
-      comment="The document's actual location." schema_org_itemprop="url" />
+      comment="The document's actual location." schema_org_itemprop="url">
+      <xpath>//meta[@name='og:url']/@content</xpath>
+    </scalar>
     <scalar name="local_location" scalar_type="ParsedURL" hide="true"
       comment="Relative location of a local copy of the document." />
     <scalar name="title" scalar_type="String" style="metadata_h1" layer="10.0" hint="XML_LEAF"
       is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name"
-      comment="The Title of the Document" />
+      comment="The Title of the Document">
+      <xpath>//meta[@name='og:title']/@content</xpath>
+      <xpath>//meta[@name='twitter:title']/@content</xpath>
+    </scalar>
     <scalar name="description" scalar_type="String" hint="XML_LEAF" layer="1.6" style="description_div"
       schema_org_itemprop="description">
       <xpath>//meta[@name='description']/@content</xpath>
+      <xpath>//meta[@name='og:description']/@content</xpath>
+      <xpath>//meta[@name='twitter:description']/@content</xpath>
     </scalar>
     <scalar name="site_name" scalar_type="String" hide="true" comment="Huamn readable name of the site.">
       <xpath>//meta[@property='og:site_name']/@content</xpath>
+      <xpath>//meta[@property='twitter:site']/@content</xpath>
     </scalar>
 
     <collection name="additional_locations" child_scalar_type="ParsedURL" child_tag="location"
       hide="true" />
+      
+    <composite name="see_also" type="document">
+      <xpath>//meta[@name='og:see_also']</xpath>
+      <scalar name="title">
+        <concatenate_values>
+          <value>see also</value>
+        </concatenate_values>
+      </scalar>
+      <scalar name="location" required='true'>
+        <xpath>./@content</xpath>
+      </scalar>
+    </composite>
   </meta_metadata>
 
   <meta_metadata name="document_metadata_wrap" extends="metadata" built_in="true"
@@ -137,8 +157,7 @@
     <scalar name="height" scalar_type="Integer" hide="true" />
   </meta_metadata>
 
-  <meta_metadata name="sequenced_clippable_document" extends="clippable_document"
-    package="ecologylab.bigsemantics.generated.library.primitives">
+  <meta_metadata name="sequenced_clippable_document" extends="clippable_document" built_in="true">
     <scalar name="duration" scalar_type="int" comment="duration of media in milliseconds." />
     <scalar name="file_format" scalar_type="String" hide="true" />
   </meta_metadata>
@@ -173,8 +192,7 @@
     <scalar name="html_string" scalar_type="String" hide="true" />
   </meta_metadata>
 
-  <meta_metadata name="video" extends="sequenced_clippable_document"
-    package="ecologylab.bigsemantics.generated.library.primitives">
+  <meta_metadata name="video" extends="sequenced_clippable_document" built_in="true">
     <selector>
       <mime_type>video/mp4</mime_type>
       <mime_type>video/x-flv</mime_type>
@@ -201,8 +219,7 @@
     <composite name="provider" type="media_provider" hide="true" />
   </meta_metadata>
 
-  <meta_metadata name="audio" extends="sequenced_clippable_document"
-    package="ecologylab.bigsemantics.generated.library.primitives">
+  <meta_metadata name="audio" extends="sequenced_clippable_document" built_in="true">
   </meta_metadata>
 
 
@@ -217,11 +234,26 @@
 
     <collection name="main_images" child_type="image" hide="true">
       <xpath>//meta[@property='og:image']</xpath>
-      <xpath>//meta[@property='twitter:image']</xpath>
+      <xpath>//meta[@property='twitter:image:src']</xpath>
       <scalar name="location">
         <xpath>./@content</xpath>
       </scalar>
     </collection>
+
+    <collection name="main_videos" child_type="video" hide="true">
+      <xpath>//meta[@property='og:video']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="main_audio" child_type="audio" hide="true">
+      <xpath>//meta[@property='og:audio']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+
     <after_semantic_actions>
       <visualize_clippings />
     </after_semantic_actions>

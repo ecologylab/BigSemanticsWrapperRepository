@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.primitives;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.primitives.Audio;
+import ecologylab.bigsemantics.metadata.builtins.Audio;
 import ecologylab.bigsemantics.metadata.builtins.Clipping;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

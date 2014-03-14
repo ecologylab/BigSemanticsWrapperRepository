@@ -450,8 +450,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.pinterest.PinterestPin.class,
 
-		ecologylab.bigsemantics.generated.library.primitives.Audio.class,
-
 		ecologylab.bigsemantics.generated.library.primitives.AudioClipping.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.AudioSelfmade.class,
@@ -463,10 +461,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.primitives.MacheClipping.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.MediaProvider.class,
-
-		ecologylab.bigsemantics.generated.library.primitives.SequencedClippableDocument.class,
-
-		ecologylab.bigsemantics.generated.library.primitives.Video.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.VideoClipping.class,
 

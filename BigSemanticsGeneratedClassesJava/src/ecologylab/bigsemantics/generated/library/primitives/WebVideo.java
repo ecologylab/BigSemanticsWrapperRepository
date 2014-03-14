@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.primitives;
  */
 
 import ecologylab.bigsemantics.generated.library.primitives.MediaProvider;
-import ecologylab.bigsemantics.generated.library.primitives.Video;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.Video;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
