@@ -35,7 +35,7 @@
 <!-- 			<scalar name="location" xpath="" /> -->
       <scalar name="year">
         <xpath>./..</xpath>
-        <filter regex="(\d\d\d\d) " group="1" />
+        <regex_op regex="(\d\d\d\d) " group="1" />
       </scalar>
     </composite>
 

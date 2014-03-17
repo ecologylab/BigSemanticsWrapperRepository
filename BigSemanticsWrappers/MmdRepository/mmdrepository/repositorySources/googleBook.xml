@@ -35,13 +35,13 @@
     </def_var>
     <scalar name="year" context_node="publisher_year" layer="9.1">
       <xpath>./text()</xpath>
-      <filter regex="[a-zA-Z, /-]*" replace="" />
+      <regex_op regex="[a-zA-Z, /-]*" replace="" />
     </scalar>
     <composite name="publisher" layer="9.15" context_node="publisher_year">
       <xpath>./text()</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <filter regex=", [0-9]+" replace="" />
+        <regex_op regex=", [0-9]+" replace="" />
       </scalar>
     </composite>
 
@@ -51,7 +51,7 @@
     <scalar name="pages" layer="9.05" hide="true" context_node="metadata_table"
       schema_org_itemprop="numberOfPages">
       <xpath>./tr[contains(., 'Length')]/td[2]</xpath>
-      <filter regex="[pages]*" replace="" />
+      <regex_op regex="[pages]*" replace="" />
     </scalar>
     <scalar name="description" layer="9.4" scalar_type="String">
       <xpath>//div[@id='synopsistext']</xpath>
@@ -71,7 +71,7 @@
       </scalar>
       <scalar name="frequency">
         <xpath>./@class</xpath>
-        <filter regex="cloud" replace="" />
+        <regex_op regex="cloud" replace="" />
       </scalar>
     </collection>
     <scalar name="about_the_authors" layer="7.0">
@@ -80,7 +80,7 @@
     <scalar name="isbn" layer="8.1" hide="true" context_node="metadata_table"
       schema_org_itemprop="isbn">
       <xpath>./tr[contains(., 'ISBN')]/td[2]</xpath>
-      <filter regex="[0-9]+, " replace="" />
+      <regex_op regex="[0-9]+, " replace="" />
     </scalar>
     <collection name="subjects" layer="9.2" context_node="metadata_table">
       <xpath>./tr[contains(., 'Subjects')]/td[2]/a</xpath>
@@ -108,7 +108,7 @@
       </scalar>
       <scalar name="page_number" scalar_type="Int">
         <xpath>./a[2]</xpath>
-        <filter regex="Page " replace="" />
+        <regex_op regex="Page " replace="" />
       </scalar>
     </collection>
 
@@ -130,7 +130,7 @@
 <!-- 		<collection name="citations_from_books" layer="8.5" xpath="//h4[contains(.,'From other books')]/../div" child_type="google_book"> -->
 <!-- 			<scalar name="title" xpath="./table/tr/td[2]/div/h5" /> -->
 <!-- 			<scalar name="location" xpath="./table/tr/td[2]/div/h5/a/@href"> -->
-<!-- 				<filter regex="\&amp;printsec=[a-z]+" replace="" /> -->
+<!-- 				<regex_op regex="\&amp;printsec=[a-z]+" replace="" /> -->
 <!-- 			</scalar> -->
 <!-- 			<collection name="authors" xpath="./table/tr/td[2]/div/font/span/span[1]/a"> -->
 <!-- 				<scalar name="title" xpath="." /> -->

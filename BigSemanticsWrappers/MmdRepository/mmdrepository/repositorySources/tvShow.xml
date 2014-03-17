@@ -38,11 +38,11 @@
     </scalar>
     <scalar name="premiered" context_node="primary_desc">
       <xpath>./ul[@class='stats']/li[1]</xpath>
-      <filter regex="Premiered:&#10;\s*" replace="" />
+      <regex_op regex="Premiered:&#10;\s*" replace="" />
     </scalar>
     <scalar name="status" context_node="primary_desc">
       <xpath>./ul[@class='stats']/li[2]</xpath>
-      <filter regex="Status:&#10;\s*" replace="" />
+      <regex_op regex="Status:&#10;\s*" replace="" />
     </scalar>
     <scalar name="description" context_node="primary_desc">
       <xpath>./span[@itemprop='description']/span[@class='_more_less']/child::text()</xpath>
@@ -67,7 +67,7 @@
       <xpath>//table[@itemprop='episodes']//tr</xpath>
       <scalar name="title">
         <xpath>.//a[@itemprop='url']/span[@itemprop='name']</xpath>
-        <filter regex="'" replace="_" />
+        <regex_op regex="'" replace="_" />
       </scalar>
       <scalar name="location">
         <xpath>.//a[@itemprop='url']/@href</xpath>

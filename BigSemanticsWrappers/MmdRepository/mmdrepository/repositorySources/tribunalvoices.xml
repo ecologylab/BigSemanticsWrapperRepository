@@ -36,7 +36,7 @@
         </scalar>
         <scalar name="location" hide="true">
           <xpath>./@id</xpath>
-          <filter regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
+          <regex_op regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
         </scalar>
       </collection>
     </collection>
@@ -97,7 +97,7 @@
 			only this xpath (for title) differs, so a small workaround -->
     <scalar name="title" context_node="interview_table">
       <xpath>.//h2</xpath>
-      <filter regex="Please help us index this " replace="" />
+      <regex_op regex="Please help us index this " replace="" />
     </scalar>
     <scalar name="location" hide="true" />
     <scalar name="role" scalar_type="String" context_node="video_credits">

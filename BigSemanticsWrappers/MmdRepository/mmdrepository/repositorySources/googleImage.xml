@@ -32,7 +32,7 @@
       </def_var>
       <scalar name="location" context_node="href_node">
         <xpath>.</xpath>
-        <filter regex="imgurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
+        <regex_op regex="imgurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
       </scalar>
       <scalar name="thumb_width">
         <xpath>./a/img/@width</xpath>
@@ -42,7 +42,7 @@
       </scalar>
       <scalar name="ref_location" context_node="href_node">
         <xpath>.</xpath>
-        <filter regex="imgrefurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
+        <regex_op regex="imgrefurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
       </scalar>
     </collection>
     <semantic_actions>

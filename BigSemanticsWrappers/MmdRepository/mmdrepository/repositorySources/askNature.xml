@@ -122,18 +122,18 @@
       <xpath>//a[@name='Organism']/following-sibling::dd[1]</xpath>
       <scalar name="common_name">
         <xpath>./text()[contains(., 'Common name')]</xpath>
-        <filter regex="Common name[s]*:" replace="" />
+        <regex_op regex="Common name[s]*:" replace="" />
       </scalar>
       <scalar name="scientific_name">
         <xpath>./i</xpath>
       </scalar>
       <scalar name="habitat">
         <xpath>./text()[contains(., 'Habitat')]</xpath>
-        <filter regex="Habitat\(s\):" replace="" />
+        <regex_op regex="Habitat\(s\):" replace="" />
       </scalar>
       <scalar name="IUCN_red_list_status">
         <xpath>./text()[contains(., 'IUCN')]</xpath>
-        <filter regex="IUCN Red List Status:" replace="" />
+        <regex_op regex="IUCN Red List Status:" replace="" />
       </scalar>
     </composite>
 
@@ -152,11 +152,11 @@
 
     <scalar name="application_ideas" scalar_type="String">
       <xpath>//a[@name='Products']/following-sibling::dd[1]/p[1]</xpath>
-      <filter regex="Application Ideas[ ]*: " replace="" />
+      <regex_op regex="Application Ideas[ ]*: " replace="" />
     </scalar>
     <scalar name="interested_indstrial_sectors" scalar_type="String">
       <xpath>//a[@name='Products']/following-sibling::dd[1]/p[2]</xpath>
-      <filter regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
+      <regex_op regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
     </scalar>
 
     <composite name="biomimicry_taxonomy" type="ask_nature_taxonomy">
@@ -186,7 +186,7 @@
         </scalar>
         <scalar name="location">
           <xpath>./@href</xpath>
-          <filter regex="\|" replace="%7c" />
+          <regex_op regex="\|" replace="%7c" />
         </scalar>
       </composite>
     </composite>
@@ -260,14 +260,14 @@
     </composite>
     <scalar name="keywords" scalar_type="String" context_node="content">
       <xpath>./text()[contains(., 'Keywords')]</xpath>
-      <filter regex="Keywords: " replace="" />
+      <regex_op regex="Keywords: " replace="" />
     </scalar>
 
     <composite name="link_to_strategy" type="ask_nature_strategy">
       <xpath>//div[@class='text_zone']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <filter regex="Back to Galler" replace="Corresponding Strateg" />
+        <regex_op regex="Back to Galler" replace="Corresponding Strateg" />
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>

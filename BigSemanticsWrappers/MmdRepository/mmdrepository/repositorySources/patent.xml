@@ -11,7 +11,7 @@
     </scalar>
     <scalar name="patent_class" scalar_type="string" label="class">
       <xpath>//big[1]</xpath>
-      <filter regex="(\d+)" group="1" />
+      <regex_op regex="(\d+)" group="1" />
     </scalar>
     <scalar name="title">
       <xpath>//td/font/big</xpath>
@@ -106,7 +106,7 @@
       <xpath>//span[@class='nested-value']/a[contains(@href,'classification')]</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
-        <filter regex="http://www.u(.*).htm" />
+        <regex_op regex="http://www.u(.*).htm" />
       </scalar>
       <scalar name="patent_class" navigates_to="location">
         <xpath>.</xpath>
