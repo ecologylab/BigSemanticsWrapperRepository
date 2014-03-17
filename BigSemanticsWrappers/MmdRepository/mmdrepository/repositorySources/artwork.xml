@@ -277,6 +277,8 @@
     <selector domain="moma.org"
       url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" />
 
+	<example_url url="http://www.moma.org/collection/browse_results.php?criteria=O%3ACL%3AI%3A12&page_number=&template_id=6&sort_order=1" />
+
     <collection name="search_results">
       <xpath>//ul[@id='thumbnail-view-items']/li</xpath>
       <scalar name="title">
