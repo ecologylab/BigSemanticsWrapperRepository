@@ -486,8 +486,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
 
-		ecologylab.bigsemantics.generated.library.product_and_service.NeweggList.class,
-
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggSpecs.class,
