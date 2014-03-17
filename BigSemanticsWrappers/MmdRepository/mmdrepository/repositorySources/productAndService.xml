@@ -300,6 +300,7 @@
     <composite name="image">
       <scalar name="location">
         <xpath>//span[@class='mainSlide']/img/@src</xpath>
+		<xpath>//span[@class='mainSlide']/@imgzoompic</xpath>
       </scalar>
     </composite>
     <!-- This appears to be a newegg specific item number, not a general model number -->
