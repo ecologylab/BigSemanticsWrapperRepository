@@ -160,6 +160,7 @@
           <xpath>./td[1]</xpath>
         </scalar>
         <scalar name="description" label="detail">
+          <xpath>./td[2]//div[@id='averageCustomerReviewRating']</xpath>
           <xpath>./td[2]</xpath>
         </scalar>
       </collection>
@@ -590,7 +591,7 @@
       <scalar name="location">
         <xpath>.//div[@class='wrapper']/a/@href</xpath>
       </scalar>
-      <collection name="all_specs">
+      <collection name="detailed_specifications">
         <xpath>//ul[@class='featureList']</xpath>
         <collection name="specifications">
           <xpath>./li</xpath>

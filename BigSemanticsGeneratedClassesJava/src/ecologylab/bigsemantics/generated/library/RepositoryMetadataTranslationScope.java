@@ -488,11 +488,11 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct.class,
 
-		ecologylab.bigsemantics.generated.library.product_and_service.NeweggSpecs.class,
-
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggSubcategoryList.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Product.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.ProductSpecs.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.SamsclubProduct.class,
 

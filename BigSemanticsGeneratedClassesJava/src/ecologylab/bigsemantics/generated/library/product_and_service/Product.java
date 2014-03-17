@@ -9,13 +9,17 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  */
 
 import ecologylab.bigsemantics.generated.library.product_and_service.Commodity;
+import ecologylab.bigsemantics.generated.library.product_and_service.ProductSpecs;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +28,10 @@ public class Product extends Commodity
 {
 	@simpl_scalar
 	private MetadataString model;
+
+	@simpl_collection("product_specs")
+	@mm_name("detailed_specifications")
+	private List<ProductSpecs> detailedSpecifications;
 
 	public Product()
 	{ super(); }
@@ -63,5 +71,35 @@ public class Product extends Commodity
 	public void setModelMetadata(MetadataString model)
 	{
 		this.model = model;
+	}
+
+	public List<ProductSpecs> getDetailedSpecifications()
+	{
+		return detailedSpecifications;
+	}
+
+  // lazy evaluation:
+  public List<ProductSpecs> detailedSpecifications()
+  {
+    if (detailedSpecifications == null)
+      detailedSpecifications = new ArrayList<ProductSpecs>();
+    return detailedSpecifications;
+  }
+
+  // addTo:
+  public void addToDetailedSpecifications(ProductSpecs element)
+  {
+    detailedSpecifications().add(element);
+  }
+
+  // size:
+  public int detailedSpecificationsSize()
+  {
+    return detailedSpecifications == null ? 0 : detailedSpecifications.size();
+  }
+
+	public void setDetailedSpecifications(List<ProductSpecs> detailedSpecifications)
+	{
+		this.detailedSpecifications = detailedSpecifications;
 	}
 }

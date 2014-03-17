@@ -8,7 +8,6 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.NeweggSpecs;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -33,10 +32,6 @@ public class NeweggProduct extends Product
 	@simpl_collection("compound_document")
 	@mm_name("headline_specs")
 	private List<CompoundDocument> headlineSpecs;
-
-	@simpl_collection("newegg_specs")
-	@mm_name("all_specs")
-	private List<NeweggSpecs> allSpecs;
 
 	public NeweggProduct()
 	{ super(); }
@@ -106,35 +101,5 @@ public class NeweggProduct extends Product
 	public void setHeadlineSpecs(List<CompoundDocument> headlineSpecs)
 	{
 		this.headlineSpecs = headlineSpecs;
-	}
-
-	public List<NeweggSpecs> getAllSpecs()
-	{
-		return allSpecs;
-	}
-
-  // lazy evaluation:
-  public List<NeweggSpecs> allSpecs()
-  {
-    if (allSpecs == null)
-      allSpecs = new ArrayList<NeweggSpecs>();
-    return allSpecs;
-  }
-
-  // addTo:
-  public void addToAllSpecs(NeweggSpecs element)
-  {
-    allSpecs().add(element);
-  }
-
-  // size:
-  public int allSpecsSize()
-  {
-    return allSpecs == null ? 0 : allSpecs.size();
-  }
-
-	public void setAllSpecs(List<NeweggSpecs> allSpecs)
-	{
-		this.allSpecs = allSpecs;
 	}
 }
