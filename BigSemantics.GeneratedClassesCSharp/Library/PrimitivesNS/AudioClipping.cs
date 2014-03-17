@@ -8,7 +8,6 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
