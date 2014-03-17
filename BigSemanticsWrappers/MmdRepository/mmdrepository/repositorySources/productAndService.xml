@@ -29,9 +29,14 @@
     </semantic_actions>
   </meta_metadata>
 
+<meta_metadata name="product_specs" extends="compound_document" parser="xpath">
+    <collection name="specifications" child_type="compound_document"/>
+  </meta_metadata>
 
   <meta_metadata name="product" extends="commodity" schema_org_itemtype="http://schema.org/Product">
     <scalar name="model" scalar_type="String" schema_org_itemprop="model" />
+    <collection name="detailed_specifications" child_type="product_specs"/>
+   
   </meta_metadata>
 
 
@@ -145,8 +150,34 @@
       <scalar name="title">
         <xpath>./@alt</xpath>
       </scalar>
+    </collection
+    >
+	<collection name="detailed_specifications">
+      <xpath>//div[@class='secHeader']</xpath>
+      <scalar name="title" label="type">
+        <xpath>./span</xpath>
+      </scalar>
+      <collection name="specifications">
+        <xpath>./following-sibling::div[1]//tbody/tr[not(position() = last())]</xpath>
+        <scalar name="title" label="spec">
+          <xpath>./td[1]</xpath>
+        </scalar>
+        <scalar name="description" label="detail">
+          <xpath>./td[2]</xpath>
+        </scalar>
+      </collection>
     </collection>
-
+	<!-- Amazon's kindle page uses a peculariar set of xpaths to store tech specs. THis will be merged with 'detailed specs' once
+	multiple xpaths are functional -->
+	<collection name="kindle_specifications" child_type="compound_document">
+		<xpath>//table[@id='technical-details-table']/tbody/tr</xpath>
+		 <scalar name="title" label="spec">
+       	   <xpath>./td[1]</xpath>
+      	 </scalar>
+         <scalar name="description" label="detail">
+           <xpath>./td[2]</xpath>
+         </scalar>
+	</collection>
     <semantic_actions>
       <!-- <reselect_meta_metadata_and_extract name="amazon_item" /> -->
       <!-- <if> -->
@@ -286,10 +317,6 @@
   </meta_metadata>
 
 
-  <meta_metadata name="newegg_specs" extends="compound_document" parser="xpath">
-    <collection name="specifications" child_type="compound_document">
-    </collection>
-  </meta_metadata>
   <meta_metadata name="newegg_product" extends="product" parser="xpath"
     user_agent_name="chrome">
     <selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
@@ -331,7 +358,7 @@
       </scalar>
     </collection>
     <!-- Detailed specs -->
-    <collection name="all_specs" child_type="newegg_specs">
+    <collection name="detailed_specifications">
       <xpath>//div[@id='Specs']/fieldset</xpath>
       <scalar name="title" label="type">
         <xpath>./h3</xpath>
