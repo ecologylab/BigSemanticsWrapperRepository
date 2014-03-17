@@ -101,12 +101,12 @@ the "google_bot_2" user agent when performing web-site scraping. -->
 
       <scalar name="year" label="year published" is_facet="true">
         <xpath>.//td[text()='Publisher']/following-sibling::td</xpath>
-        <filter regex="[\D]" replace="" />
+        <regex_op regex="[\D]" replace="" />
       </scalar>
 
       <scalar name="isbn">
         <xpath>.//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]</xpath>
-        <filter regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
+        <regex_op regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
       </scalar>
 			
 			<!-- xpath that could be used that returns all documents instead of just the first 10: 
@@ -415,7 +415,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
       </scalar>
       <scalar name="bibliometrics">
         <xpath>./tr[4]//strong/..</xpath>
-        <filter regex="Bibliometrics:\s+" replace="" />
+        <regex_op regex="Bibliometrics:\s+" replace="" />
       </scalar>
     </collection>
 

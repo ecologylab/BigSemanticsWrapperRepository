@@ -35,7 +35,7 @@
 
     <scalar name="creation_time" comment="Timestamp for the report.">
       <xpath>/html/body/div[2]/table/tbody/tr[1]/td[2]</xpath>
-      <filter regex="\s+" replace=" " />
+      <regex_op regex="\s+" replace=" " />
     </scalar>
     <scalar name="author" comment="Unit making the report.">
       <xpath>/html/body/div[2]/table/tbody/tr[2]/td[2]</xpath>

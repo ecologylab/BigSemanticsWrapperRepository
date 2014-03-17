@@ -234,13 +234,13 @@
       <xpath>//p[@class='caption'][1]</xpath>
       <field_parser name="regex_find" regex="(\S.+?)\. " />
       <scalar name="temp_year" scalar_type="String" field_parser_key="$0">
-        <filter regex="[().]*" replace="" />
+        <regex_op regex="[().]*" replace="" />
       </scalar>
       <scalar name="temp_medium" scalar_type="String" field_parser_key="$1">
-        <filter regex=", \d.+" replace="" />
+        <regex_op regex=", \d.+" replace="" />
       </scalar>
       <scalar name="temp_dimensions" scalar_type="String" field_parser_key="$1">
-        <filter regex="\S.+, " replace="" />
+        <regex_op regex="\S.+, " replace="" />
       </scalar>
     </composite>
 
@@ -444,7 +444,7 @@
     <scalar name="author_info" comment="Bit of info about author" label="artist info"
       scalar_type="String">
       <xpath>//*[@id='content-container']/div[3]/div[1]/h3</xpath>
-      <filter regex="\((.*?)\)" />
+      <regex_op regex="\((.*?)\)" />
     </scalar>
 
     <scalar name="description">
@@ -615,12 +615,12 @@
 
     <scalar name="year">
       <xpath>//*[@id='caption']</xpath>
-      <filter regex="\d{4}" />
+      <regex_op regex="\d{4}" />
     </scalar>
 
     <scalar name="medium">
       <xpath>//*[@id='caption']</xpath>
-      <filter regex="\.(.*?)(?=\,)" />
+      <regex_op regex="\.(.*?)(?=\,)" />
     </scalar>
 
     <collection name="tags" child_type="guggen_filter" label="tags" tag="tag">

@@ -238,7 +238,7 @@
 
     <scalar name="title">
       <xpath>//span[@dir='auto']</xpath>
-      <filter regex="Category:" replace="" />
+      <regex_op regex="Category:" replace="" />
     </scalar>
 
     <collection name="subcategories">

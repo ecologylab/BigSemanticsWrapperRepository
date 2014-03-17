@@ -27,7 +27,7 @@
     </scalar>
     <scalar name="post_date" context_node="poster_node">
       <xpath>./time</xpath>
-      <filter regex="on ([^,]*)," group="1" />
+      <regex_op regex="on ([^,]*)," group="1" />
     </scalar>
 
     <collection name="anchors" child_type="document" context_node="description_node">

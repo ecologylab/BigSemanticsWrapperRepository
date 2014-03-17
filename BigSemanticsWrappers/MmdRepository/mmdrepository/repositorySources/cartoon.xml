@@ -24,7 +24,7 @@
 
     <scalar name="title">
       <xpath>//*[@class='captionClass']</xpath>
-      <filter regex="Caption" replace="" />
+      <regex_op regex="Caption" replace="" />
     </scalar>
     <composite name="content">
       <xpath>//*[@id='mediumImage']//img</xpath>
@@ -35,24 +35,24 @@
 
     <scalar name="artist" scalar_type="String" comment="Name of the artist, and period he lived">
       <xpath>//*[@id='detailArtist']</xpath>
-      <filter regex="Artist:" replace="" />
+      <regex_op regex="Artist:" replace="" />
     </scalar>
     <scalar name="published_in" scalar_type="String"
       comment="Name of the publication in which the cartoon appeared">
       <xpath>//*[@id='detailPublish']</xpath>
-      <filter regex="(?&lt;=Published:)([^,]+)" />
+      <regex_op regex="(?&lt;=Published:)([^,]+)" />
     </scalar>
     <scalar name="publication_date" scalar_type="Date" comment="Date of the publication">
       <xpath>//*[@id='detailPublish']</xpath>
-      <filter regex="Published:[^,]+," replace="" />
+      <regex_op regex="Published:[^,]+," replace="" />
     </scalar>
     <scalar name="publication_format" scalar_type="String" comment="Format of the publication">
       <xpath>//*[@id='detailFormat']</xpath>
-      <filter regex="Format:" replace="" />
+      <regex_op regex="Format:" replace="" />
     </scalar>
     <scalar name="reference_number" scalar_type="String">
       <xpath>//*[@id='refNumber']</xpath>
-      <filter regex="Reference number:" replace="" />
+      <regex_op regex="Reference number:" replace="" />
     </scalar>
   </meta_metadata>
 
@@ -161,7 +161,7 @@
 
     <scalar name="artist" scalar_type="String" comment="Artist">
       <xpath>//*[@id='authortext']</xpath>
-      <filter regex="(by )|\n" replace=" " />
+      <regex_op regex="(by )|\n" replace=" " />
     </scalar>
   </meta_metadata>
 

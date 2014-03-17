@@ -52,8 +52,7 @@
 
     <example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C" />
     <example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY" />
-    <example_url
-      url="http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y" />
+    <example_url url="http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y" />
     <example_url url="http://www.amazon.com/Acer-C720-Chromebook-11-6-Inch-2GB/dp/B00FNPD1VW/" />
     <example_url url="http://www.amazon.com/Discovery-Daft-Punk/dp/B000059MEK" />
 
@@ -66,9 +65,7 @@
       <xpath>//meta[@name='description']/@content</xpath>
     </scalar>
     <scalar name="price">
-      <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and
-        contains(@class, 'price'))]
-      </xpath>
+      <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
     </scalar>
     <composite name="department" type="document">
       <xpath>//*[@id='nav-subnav']/li[1]/a</xpath>
@@ -169,10 +166,8 @@
       <param name="step" value="accessories" />
     </selector>
 
-    <example_url
-      url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&amp;step=accessories" />
-    <example_url
-      url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&amp;product=ME495LL/A&amp;step=accessories" />
+    <example_url url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&amp;step=accessories" />
+    <example_url url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&amp;product=ME495LL/A&amp;step=accessories" />
 
     <scalar name="title">
       <xpath>//div[@class='section section-product-title']/h3/text()</xpath>
@@ -200,7 +195,7 @@
 
     <scalar name="title">
       <xpath>//h1[@class='title']</xpath>
-      <filter regex="Configure your" replace="" />
+      <regex_op regex="Configure your" replace="" />
     </scalar>
     <scalar name="price">
       <xpath>//p[@itemprop='price']</xpath>
@@ -240,7 +235,7 @@
     <scalar name="overall_rating">
       <xpath>//div[contains(@class, 'product-rating-wrapper')]//span[@itemprop='ratingValue']/text()
       </xpath>
-      <filter regex="$" replace=" out of 5" />
+      <regex_op regex="$" replace=" out of 5" />
     </scalar>
     <scalar name="description">
       <xpath>//li[@id='overview-applerecommends']//div[@class='bkg-none']/text()</xpath>
@@ -264,7 +259,7 @@
       </scalar>
       <scalar name="rating">
         <xpath>.//div[@itemprop='reviewRating']//span[@itemprop='ratingValue']/text()</xpath>
-        <filter regex="$" replace=" out of 5" />
+        <regex_op regex="$" replace=" out of 5" />
       </scalar>
       <scalar name="description">
         <xpath>.//p[@itemprop='reviewBody']/span[@class='more-text']/text()</xpath>
@@ -300,7 +295,7 @@
     <composite name="image">
       <scalar name="location">
         <xpath>//span[@class='mainSlide']/img/@src</xpath>
-		<xpath>//span[@class='mainSlide']/@imgzoompic</xpath>
+        <xpath>//span[@class='mainSlide']/@imgzoompic</xpath>
       </scalar>
     </composite>
     <!-- This appears to be a newegg specific item number, not a general model number -->
@@ -347,9 +342,8 @@
         </scalar>
       </collection>
     </collection>
-
-
   </meta_metadata>
+
   <meta_metadata name="tigerdirect_product" extends="product" parser="xpath"
     user_agent_name="chrome">
     <selector url_stripped="http://www.tigerdirect.com/applications/SearchTools/item-details.asp" />
@@ -370,7 +364,7 @@
     </scalar>
     <scalar name="overall_rating">
       <xpath>//span[@class='piRatingVal']</xpath>
-      <filter regex="$" replace=" out of 5" />
+      <regex_op regex="$" replace=" out of 5" />
     </scalar>
     <scalar name="description">
       <xpath>//div[@id='WriteUp']/div</xpath>
@@ -548,36 +542,41 @@
 
     <scalar name="overall_rating">
       <xpath>//a[@class='group ratings-reviews']/span[1]/@class</xpath>
-      <filter regex="rating stars-" replace="" />
+      <regex_op regex="rating stars-" replace="" />
     </scalar>
   </meta_metadata>
 
-  
-  <meta_metadata name="newegg_list" extends="creative_work">
-    <filter_location strip_prefix="/ref=" />
-
-    <collection name="items" child_type="newegg_product" />
-  </meta_metadata>
-  
-  <meta_metadata name="newegg_subcategory_list" type="newegg_list" parser="xpath"
+  <meta_metadata name="newegg_subcategory_list" extends="compound_document" parser="xpath"
     user_agent_name="chrome">
-	<selector url_path_tree="http://www.newegg.com/All-Laptops-Notebooks/SubCategory" />
-	<example_url url="http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100" />
-	
-	<filter_location strip_prefix="/ref=" />
-	<scalar name="title">
-      <xpath>//div[@class='recordCount']</xpath>	  
+    <selector url_path_tree="http://www.newegg.com/*/SubCategory" />
+    <example_url url="http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100" />
+
+    <scalar name="title">
+      <xpath>//div[@class='recordCount']</xpath>
     </scalar>
-	
-	<collection name="items">
-	  <xpath>//div[@class='itemCell']</xpath>
-	  <scalar name="title">
+
+    <collection name="items" child_type="newegg_product">
+      <xpath>//div[@class='itemCell']</xpath>
+      <scalar name="title">
         <xpath>.//span[@class='itemDescription']</xpath>
       </scalar>
-	  <scalar name="location">
+      <scalar name="location">
         <xpath>.//div[@class='wrapper']/a/@href</xpath>
       </scalar>
-	</collection>
+      <collection name="all_specs">
+        <xpath>//ul[@class='featureList']</xpath>
+        <collection name="specifications">
+          <xpath>./li</xpath>
+          <scalar name="title" label="spec">
+            <xpath>./b</xpath>
+          </scalar>
+          <scalar name="description" label="detail">
+            <xpath>.</xpath>
+            <regex_op regex="^[^:]+:" replace="" />
+          </scalar>
+        </collection>
+      </collection>
+    </collection>
   </meta_metadata>
   
   <meta_metadata name="amazon_list" extends="creative_work">

@@ -27,7 +27,7 @@
     </scalar>
     <scalar name="price">
       <xpath>//span[@itemprop='price']/p</xpath>
-      <filter regex="Was:\$[0-9]*.[0-9]*Now:" replace="" />
+      <regex_op regex="Was:\$[0-9]*.[0-9]*Now:" replace="" />
     </scalar>
     <scalar name="overall_rating">
       <xpath>//span[@class='pr-snippet-rating-decimal pr-rounded']</xpath>
@@ -77,7 +77,7 @@
 		
 		<scalar name="title" label="designer" xpath="//span[@id='ctl00_ContentMainPage_ctlBreadCrumbs_lblBreadCrumbs']/span[3]/following-sibling::text()" />
 		<scalar name="description" scalar_type="String" xpath="//div[@id='category-banner']/p" >
-			<filter regex="/" replace="" />
+			<regex_op regex="/" replace="" />
 		</scalar>
 		
 		<collection name="products" child_type="asos" xpath="//ul[@id='items']/li/a" >
@@ -203,13 +203,13 @@
 				ALL JAVASCRIPT 
 		<scalar name="color" scalar_type="String" xpath="//span[@itemprop='color']" />
 		<scalar name="overall_rating" xpath="//div[@id='BVRRCustomDiv']//div[@id='BVRRRatingOverall_Review_Display']/div[@class='BVRRRatingNormalOutOf']/span[@class='BVRRNumber BVRRRatingNumber']/text()" />
-		 	<filter regex="$" replace=" out of 5.0" />   
+		 	<regex_op regex="$" replace=" out of 5.0" />   
 		</scalar>  
 		
 		<collection name="reviews" xpath="//div[@id='BVRRDisplayContentBodyID']/div/div[@class='BVRRReviewDisplayStyle3']" >
 			<scalar name="title" xpath=".//span[@class='BVRRValue BVRRReviewTitle']" />
 			<scalar name="rating" xpath=".//div[@id='BVRRRatingOverall_Review_Display']/div[@class='BVRRRatingNormalOutOf']/span[@class='BVRRNumber BVRRRatingRangeNumber']" >
-				<filter regex="$" replace=" out of 5.0" />
+				<regex_op regex="$" replace=" out of 5.0" />
 			</scalar>
 			<scalar name="description" xpath=".//span[@class='BVRRReviewText']" />
 		</collection>

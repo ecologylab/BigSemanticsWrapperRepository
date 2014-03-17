@@ -300,16 +300,16 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
       </scalar>
       <scalar name="pre_description">
         <xpath>./a/text()</xpath>
-        <filter regex="^.*$"
+        <regex_op regex="^.*$"
           replace="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=" />
       </scalar>
       <scalar name="mid_description">
         <xpath>./a/text()</xpath>
-        <filter regex="\s" replace="+" />
+        <regex_op regex="\s" replace="+" />
       </scalar>
       <scalar name="post_description">
         <xpath>./a/text()</xpath>
-        <filter regex=".*" replace="&amp;Numero=&amp;zoom=1&amp;Format=1" />
+        <regex_op regex=".*" replace="&amp;Numero=&amp;zoom=1&amp;Format=1" />
       </scalar>
 
 

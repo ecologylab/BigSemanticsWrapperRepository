@@ -46,11 +46,11 @@
     </scalar>
     <scalar name="year">
       <xpath>//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()</xpath>
-      <filter regex="\w+ [0-9]+," replace="" />
+      <regex_op regex="\w+ [0-9]+," replace="" />
     </scalar>
     <scalar name="views" scalar_type="String">
       <xpath>//span[@id='view-count']</xpath>
-      <filter regex=" views$" replace="" />
+      <regex_op regex=" views$" replace="" />
     </scalar>
 
     <composite name="place" type="document">
@@ -59,7 +59,7 @@
       </scalar>
       <scalar name="location" hide="true">
         <xpath>.//a[@id='photoGeolocation-storylink']/@href</xpath>
-			<!--  <filter regex="$"
+			<!--  <regex_op regex="$"
 					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" /> -->
       </scalar>
     </composite>
@@ -110,7 +110,7 @@
 
     <scalar name="title">
       <xpath>//title/text()</xpath>
-      <filter regex="Flickr: " replace="" />
+      <regex_op regex="Flickr: " replace="" />
     </scalar>
 
     <scalar name="description">
@@ -147,7 +147,7 @@
       </scalar>
       <scalar name="location">
         <xpath>./../@href</xpath>
-			<!--  	<filter regex="in/photostream" replace="" /> -->
+			<!--  	<regex_op regex="in/photostream" replace="" /> -->
       </scalar>
     </collection>
   </meta_metadata>
