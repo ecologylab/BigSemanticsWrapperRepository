@@ -300,6 +300,7 @@
     <composite name="image">
       <scalar name="location">
         <xpath>//span[@class='mainSlide']/img/@src</xpath>
+		<xpath>//span[@class='mainSlide']/@imgzoompic</xpath>
       </scalar>
     </composite>
     <!-- This appears to be a newegg specific item number, not a general model number -->
@@ -551,7 +552,34 @@
     </scalar>
   </meta_metadata>
 
+  
+  <meta_metadata name="newegg_list" extends="creative_work">
+    <filter_location strip_prefix="/ref=" />
 
+    <collection name="items" child_type="newegg_product" />
+  </meta_metadata>
+  
+  <meta_metadata name="newegg_subcategory_list" type="newegg_list" parser="xpath"
+    user_agent_name="chrome">
+	<selector url_path_tree="http://www.newegg.com/All-Laptops-Notebooks/SubCategory" />
+	<example_url url="http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100" />
+	
+	<filter_location strip_prefix="/ref=" />
+	<scalar name="title">
+      <xpath>//div[@class='recordCount']</xpath>	  
+    </scalar>
+	
+	<collection name="items">
+	  <xpath>//div[@class='itemCell']</xpath>
+	  <scalar name="title">
+        <xpath>.//span[@class='itemDescription']</xpath>
+      </scalar>
+	  <scalar name="location">
+        <xpath>.//div[@class='wrapper']/a/@href</xpath>
+      </scalar>
+	</collection>
+  </meta_metadata>
+  
   <meta_metadata name="amazon_list" extends="creative_work">
     <filter_location strip_prefix="/ref=" />
 
@@ -602,8 +630,7 @@
       </scalar>
     </collection>
   </meta_metadata>
-
-
+  
   <meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath"
     user_agent_name="firefox">
     <selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
