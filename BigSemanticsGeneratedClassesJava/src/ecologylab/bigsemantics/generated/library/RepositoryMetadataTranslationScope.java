@@ -112,6 +112,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.askNature.AskNatureOrganism.class,
 
+		ecologylab.bigsemantics.generated.library.askNature.AskNatureProduct.class,
+
 		ecologylab.bigsemantics.generated.library.askNature.AskNatureStrategy.class,
 
 		ecologylab.bigsemantics.generated.library.askNature.AskNatureSubgroup.class,

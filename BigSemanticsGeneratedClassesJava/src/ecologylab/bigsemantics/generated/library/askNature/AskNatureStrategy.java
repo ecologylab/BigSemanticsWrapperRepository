@@ -10,6 +10,7 @@ package ecologylab.bigsemantics.generated.library.askNature;
 
 import ecologylab.bigsemantics.generated.library.askNature.AskNatureExpert;
 import ecologylab.bigsemantics.generated.library.askNature.AskNatureOrganism;
+import ecologylab.bigsemantics.generated.library.askNature.AskNatureProduct;
 import ecologylab.bigsemantics.generated.library.askNature.AskNatureTaxonomy;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Image;
@@ -18,10 +19,12 @@ import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -51,6 +54,10 @@ public class AskNatureStrategy extends CompoundDocument
 
 	@simpl_scalar
 	private MetadataString interestedIndstrialSectors;
+
+	@simpl_collection("ask_nature_product")
+	@mm_name("inspired_products")
+	private List<AskNatureProduct> inspiredProducts;
 
 	@simpl_composite
 	@mm_name("biomimicry_taxonomy")
@@ -220,6 +227,36 @@ public class AskNatureStrategy extends CompoundDocument
 	public void setInterestedIndstrialSectorsMetadata(MetadataString interestedIndstrialSectors)
 	{
 		this.interestedIndstrialSectors = interestedIndstrialSectors;
+	}
+
+	public List<AskNatureProduct> getInspiredProducts()
+	{
+		return inspiredProducts;
+	}
+
+  // lazy evaluation:
+  public List<AskNatureProduct> inspiredProducts()
+  {
+    if (inspiredProducts == null)
+      inspiredProducts = new ArrayList<AskNatureProduct>();
+    return inspiredProducts;
+  }
+
+  // addTo:
+  public void addToInspiredProducts(AskNatureProduct element)
+  {
+    inspiredProducts().add(element);
+  }
+
+  // size:
+  public int inspiredProductsSize()
+  {
+    return inspiredProducts == null ? 0 : inspiredProducts.size();
+  }
+
+	public void setInspiredProducts(List<AskNatureProduct> inspiredProducts)
+	{
+		this.inspiredProducts = inspiredProducts;
 	}
 
 	public AskNatureTaxonomy getBiomimicryTaxonomy()

@@ -8,28 +8,48 @@ package ecologylab.bigsemantics.generated.library.askNature;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.askNature.AskNatureStrategy;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class AskNatureProduct extends CompoundDocument
 {
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
+
 	@simpl_scalar
-	private MetadataString productOrProcess;
+	private MetadataString company;
+
+	@simpl_scalar
+	private MetadataString productPhase;
+
+	@simpl_scalar
+	private MetadataString explanation;
 
 	@simpl_scalar
 	private MetadataString challengesSolved;
 
 	@simpl_scalar
 	private MetadataString differencesFromExistingProducts;
+
+	@simpl_collection("ask_nature_strategy")
+	@mm_name("inspiring_strategies")
+	private List<AskNatureStrategy> inspiringStrategies;
 
 	@simpl_scalar
 	private MetadataString biomimicryStory;
@@ -42,36 +62,110 @@ public class AskNatureProduct extends CompoundDocument
 	}
 
 
-	public MetadataString	productOrProcess()
+	public Image getImage()
 	{
-		MetadataString	result = this.productOrProcess;
+		return image;
+	}
+
+	public void setImage(Image image)
+	{
+		this.image = image;
+	}
+
+	public MetadataString	company()
+	{
+		MetadataString	result = this.company;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.productOrProcess = result;
+			this.company = result;
 		}
 		return result;
 	}
 
-	public String getProductOrProcess()
+	public String getCompany()
 	{
-		return this.productOrProcess == null ? null : productOrProcess().getValue();
+		return this.company == null ? null : company().getValue();
 	}
 
-	public MetadataString getProductOrProcessMetadata()
+	public MetadataString getCompanyMetadata()
 	{
-		return productOrProcess;
+		return company;
 	}
 
-	public void setProductOrProcess(String productOrProcess)
+	public void setCompany(String company)
 	{
-		if (productOrProcess != null)
-			this.productOrProcess().setValue(productOrProcess);
+		if (company != null)
+			this.company().setValue(company);
 	}
 
-	public void setProductOrProcessMetadata(MetadataString productOrProcess)
+	public void setCompanyMetadata(MetadataString company)
 	{
-		this.productOrProcess = productOrProcess;
+		this.company = company;
+	}
+
+	public MetadataString	productPhase()
+	{
+		MetadataString	result = this.productPhase;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.productPhase = result;
+		}
+		return result;
+	}
+
+	public String getProductPhase()
+	{
+		return this.productPhase == null ? null : productPhase().getValue();
+	}
+
+	public MetadataString getProductPhaseMetadata()
+	{
+		return productPhase;
+	}
+
+	public void setProductPhase(String productPhase)
+	{
+		if (productPhase != null)
+			this.productPhase().setValue(productPhase);
+	}
+
+	public void setProductPhaseMetadata(MetadataString productPhase)
+	{
+		this.productPhase = productPhase;
+	}
+
+	public MetadataString	explanation()
+	{
+		MetadataString	result = this.explanation;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.explanation = result;
+		}
+		return result;
+	}
+
+	public String getExplanation()
+	{
+		return this.explanation == null ? null : explanation().getValue();
+	}
+
+	public MetadataString getExplanationMetadata()
+	{
+		return explanation;
+	}
+
+	public void setExplanation(String explanation)
+	{
+		if (explanation != null)
+			this.explanation().setValue(explanation);
+	}
+
+	public void setExplanationMetadata(MetadataString explanation)
+	{
+		this.explanation = explanation;
 	}
 
 	public MetadataString	challengesSolved()
@@ -136,6 +230,36 @@ public class AskNatureProduct extends CompoundDocument
 	public void setDifferencesFromExistingProductsMetadata(MetadataString differencesFromExistingProducts)
 	{
 		this.differencesFromExistingProducts = differencesFromExistingProducts;
+	}
+
+	public List<AskNatureStrategy> getInspiringStrategies()
+	{
+		return inspiringStrategies;
+	}
+
+  // lazy evaluation:
+  public List<AskNatureStrategy> inspiringStrategies()
+  {
+    if (inspiringStrategies == null)
+      inspiringStrategies = new ArrayList<AskNatureStrategy>();
+    return inspiringStrategies;
+  }
+
+  // addTo:
+  public void addToInspiringStrategies(AskNatureStrategy element)
+  {
+    inspiringStrategies().add(element);
+  }
+
+  // size:
+  public int inspiringStrategiesSize()
+  {
+    return inspiringStrategies == null ? 0 : inspiringStrategies.size();
+  }
+
+	public void setInspiringStrategies(List<AskNatureStrategy> inspiringStrategies)
+	{
+		this.inspiringStrategies = inspiringStrategies;
 	}
 
 	public MetadataString	biomimicryStory()
