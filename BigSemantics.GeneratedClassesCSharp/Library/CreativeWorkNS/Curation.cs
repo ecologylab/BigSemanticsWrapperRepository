@@ -31,14 +31,14 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		private List<IRichArtifact<Metadata>> metadataCollection;
 
 		[SimplScalar]
-		[SimplOtherTags(new String[] {"version"})]
+		[SimplTag("version")]
 		private MetadataString curationAppVersion;
 
 		[SimplScalar]
 		private MetadataString curationApp;
 
 		[SimplScalar]
-		[SimplOtherTags(new String[] {"metadata_version"})]
+		[SimplTag("metadata_version")]
 		private MetadataString crossPlatformVersion;
 
 		public Curation()
