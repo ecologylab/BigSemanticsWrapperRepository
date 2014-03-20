@@ -249,6 +249,7 @@
   <meta_metadata name="apple_product_accessory" extends="product" parser="xpath"
     user_agent_name="chrome">
     <selector url_path_tree="http://store.apple.com/us/product/" />
+    <example_rul url="http://store.apple.com/us/product/H9345LL/A/hp-photosmart-5520-e-all-in-one-printer?fnode=000105072b" />
 
     <scalar name="title">
       <xpath>//div[@class='action-card']//div[@id='title']/h1[@itemprop='name']/text()</xpath>
