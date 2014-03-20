@@ -147,21 +147,28 @@
       <scalar name="title">
         <xpath>./@alt</xpath>
       </scalar>
-    </collection
-    >
-	<collection name="detailed_specifications">
+    </collection>
+
+    <collection name="detailed_specifications">
       <xpath>//div[@class='secHeader']</xpath>
+      <xpath>//div[@id='technical-data' or @id='detail-bullets']</xpath>
       <scalar name="title" label="type">
         <xpath>./span</xpath>
+        <xpath>.//h2</xpath>
       </scalar>
       <collection name="specifications">
         <xpath>./following-sibling::div[1]//tbody/tr[not(position() = last())]</xpath>
+        <xpath>.//ul/li</xpath>
         <scalar name="title" label="spec">
           <xpath>./td[1]</xpath>
+          <xpath>./b</xpath>
         </scalar>
         <scalar name="description" label="detail">
           <xpath>./td[2]//div[@id='averageCustomerReviewRating']</xpath>
           <xpath>./td[2]</xpath>
+          <xpath>.//span[contains(@class, 'asinReviewsSummary')]//span[@title]</xpath>
+          <xpath>.</xpath>
+          <regex_op regex="^[^:]+:" replace="" />
         </scalar>
       </collection>
     </collection>

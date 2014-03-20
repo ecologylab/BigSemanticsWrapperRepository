@@ -17,9 +17,9 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
+import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +34,14 @@ public class Curation extends CreativeWork
 	private List<RichArtifact> metadataCollection;
 
 	@simpl_scalar
-	@simpl_other_tags({"version"})
+	@simpl_tag("version")
 	private MetadataString curationAppVersion;
 
 	@simpl_scalar
 	private MetadataString curationApp;
 
 	@simpl_scalar
-	@simpl_other_tags({"metadata_version"})
+	@simpl_tag("metadata_version")
 	private MetadataString crossPlatformVersion;
 
 	public Curation()
