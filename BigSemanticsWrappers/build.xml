@@ -68,7 +68,7 @@
     <copy file="${jar.file}" todir="${lib.dir}" />
   </target>
 
-  <target name="mmtest" depends="compile-wrappers-java">
+  <target name="mmtest" depends="jar">
     <!-- run mmtest with a URL list -->
     <java classname="ecologylab.bigsemantics.tools.MmTest"
           classpathref="jars_classpath" fork="yes">
