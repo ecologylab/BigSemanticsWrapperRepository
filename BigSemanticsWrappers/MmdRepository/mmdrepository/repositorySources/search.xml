@@ -5,13 +5,14 @@
     comment="A search result.">
     <scalar name="title" style="h1" />
     <scalar name="description" label="snippet" />
+    <scalar name="site_link" scalar_type="String"/>
     <composite name="destination_page" type="document" />
   </meta_metadata>
 
   <meta_metadata name="search" extends="document" comment="A search.">
     <generic_type_var name="SR" extends="document" />
 
-    <scalar name="query" scalar_type="String" />
+    <scalar name="query" scalar_type="String"/>
     <collection name="search_results" child_type="SR" no_wrap="true"
       show_expanded_initially="true" polymorphic_scope="repository_documents" />
     <composite name="next_page" type="search" />
@@ -27,17 +28,17 @@
     <selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
     <example_url
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
-
-    <scalar name="query">
+	<scalar name="location" layer="9.0" style="h1"/>
+	
+    <scalar name="query" style_name="google_query" layer="9.1">
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
+    
     <collection name="search_results">
       <xpath>//div[@id='res']//div//ol/li[@*]</xpath>
       <scalar name="title" hide="true" />
-      <scalar name="description">
-        <xpath>.//div[@class='s']//span[@class='st']</xpath>
-      </scalar>
-      <composite name="destination_page">
+     
+      <composite name="destination_page" layer="6.0">
         <xpath>.</xpath>
         <scalar name="title">
           <xpath>.//h3/a</xpath>
@@ -46,6 +47,21 @@
           <xpath>.//h3/a/@href</xpath>
         </scalar>
       </composite>
+       <scalar name="description" layer="5.3">
+        <xpath>.//div[@class='s']//span[@class='st']</xpath>
+      </scalar>
+      <scalar name="site_link" style_name="google_link" layer="5.4">
+        <xpath>.//cite</xpath>
+      </scalar>
+    </collection>
+    <collection name="related_searches" child_type="google_search">
+    <xpath>//div[@style='clear:both;margin-bottom:17px;overflow:hidden']/table//p</xpath>
+	<scalar name="title">
+	  <xpath>./a</xpath>
+	</scalar>
+	<scalar name="location">
+	  <xpath>./a/@href</xpath>
+	</scalar>      
     </collection>
     <composite name="next_page">
       <scalar name="name">

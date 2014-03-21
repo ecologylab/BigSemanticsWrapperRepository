@@ -14,6 +14,8 @@
     parser="xpath">
     <selector url_path_tree="http://www.anandtech.com/print/" domain="anandtech.com" />
     <selector url_path_tree="http://www.anandtech.com/show/" domain="anandtech.com" />
+    <example_url url="http://www.anandtech.com/print/7603/mac-pro-review-late-2013"/>
+    <example_url url="http://www.anandtech.com/show/6914/samsung-galaxy-s-4-review"/>
     <scalar name="title">
       <xpath>//div[@class='blog_top_left']//h2/text()</xpath>
     </scalar>
