@@ -31,7 +31,7 @@
       <xpath>//div[@id='product-vitals']//script[contains(text(), 'authorLink(')]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <filter regex="authorLink\(&quot;([^&quot;]+)&quot;\)" group="1" />
+        <regex_op regex="authorLink\(&quot;([^&quot;]+)&quot;\)" group="1" />
       </scalar>
       <scalar name="location" hide="true">
         <concatenate_values>
@@ -72,7 +72,7 @@
       </scalar>
       <scalar name="ieee_xplore_id" hide="true">
         <xpath>//meta[@property='og:url']/@content</xpath>
-        <filter regex="arnumber=(\d+)" group="1" />
+        <regex_op regex="arnumber=(\d+)" group="1" />
       </scalar>
       <scalar name="location">
         <concatenate_values>
@@ -88,7 +88,7 @@
       </scalar>
       <scalar name="ieee_xplore_id" hide="true">
         <xpath>//meta[@property='og:url']/@content</xpath>
-        <filter regex="arnumber=(\d+)" group="1" />
+        <regex_op regex="arnumber=(\d+)" group="1" />
       </scalar>
       <scalar name="location">
         <concatenate_values>
@@ -206,21 +206,21 @@
 	<composite name="inspiring_organism" type="ask_nature_organism" xpath="//a[@name='Organism']/following-sibling::dd[1]" >
 		<scalar name="scientific_name" xpath="./i" />
 		<scalar name="common_name" xpath="./text()[contains(., 'Common name')]" >
-			<filter regex="Common name[s]*:" replace="" />
+			<regex_op regex="Common name[s]*:" replace="" />
 		</scalar>
 		<scalar name="habitat" xpath="./text()[contains(., 'Habitat')]" >
-			<filter regex="Habitat\(s\):" replace="" />
+			<regex_op regex="Habitat\(s\):" replace="" />
 		</scalar>
 		<scalar name="IUCN_red_list_status" xpath="./text()[contains(., 'IUCN')]" >
-			<filter regex="IUCN Red List Status:" replace=""/>
+			<regex_op regex="IUCN Red List Status:" replace=""/>
 		</scalar>
 	</composite>
 	
 	<scalar name="application_ideas" scalar_type="String" xpath="//a[@name='Products']/following-sibling::dd[1]/p[1]" >
-		<filter regex="Application Ideas[ ]*: " replace="" />
+		<regex_op regex="Application Ideas[ ]*: " replace="" />
 	</scalar>
 	<scalar name="interested_indstrial_sectors" scalar_type="String" xpath="//a[@name='Products']/following-sibling::dd[1]/p[2]" >
-		<filter regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
+		<regex_op regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
 	</scalar>
 	
 	<composite name="expert" type="ask_nature_expert" xpath="//a[@name='Experts']/following-sibling::dd[@class='section_content sc_open'][1]/div" >

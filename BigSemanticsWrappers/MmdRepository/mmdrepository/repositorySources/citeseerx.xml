@@ -21,7 +21,7 @@
 
     <scalar name="title" navigate_to="location" as_natural_id="title" format="text">
       <xpath>//h2</xpath>
-      <filter regex="\(\d+\)$" replace="" />
+      <regex_op regex="\(\d+\)$" replace="" />
     </scalar>
 
     <composite name="rich_media">
@@ -40,7 +40,7 @@
       <xpath>//div[@id='docAuthors']</xpath>
       <field_parser name="regex_split" regex="\s*,\s*" />
       <scalar name="title" field_parser_key="$0">
-        <filter regex="^by\s+" replace="" />
+        <regex_op regex="^by\s+" replace="" />
       </scalar>
     </collection>
 
@@ -73,7 +73,7 @@
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </collection>
 
@@ -84,7 +84,7 @@
       </scalar>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </composite>
     <composite name="articles_that_cite_the_same_works" other_tags="active_bibliography_records"
@@ -95,7 +95,7 @@
       </scalar>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </composite>
     <composite name="articles_cited_by_the_same_works" other_tags="cocitation_records"
@@ -106,7 +106,7 @@
       </scalar>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </composite>
 
@@ -148,7 +148,7 @@
 
     <scalar name="title" navigate_to="location" as_natural_id="title" format="text">
       <xpath>//h2</xpath>
-      <filter regex="\(\d+\)$" replace="" />
+      <regex_op regex="\(\d+\)$" replace="" />
     </scalar>
 
     <composite name="rich_media">
@@ -167,7 +167,7 @@
       <xpath>//div[@id='docAuthors']</xpath>
       <field_parser name="regex_split" regex="\s*,\s*" />
       <scalar name="title" field_parser_key="$0">
-        <filter regex="^by\s+" replace="" />
+        <regex_op regex="^by\s+" replace="" />
       </scalar>
     </collection>
 
@@ -185,7 +185,7 @@
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
       <scalar name="description">
         <xpath>..</xpath>
@@ -225,7 +225,7 @@
       </scalar>
       <scalar name="location">
         <xpath>.//h3/a/@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
     </collection>
 
@@ -260,7 +260,7 @@
       </scalar>
       <scalar name="location">
         <xpath>.//h3/a/@href</xpath>
-        <filter regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
       <scalar name="citation_info">
         <xpath>.//a[@title='number of citations']</xpath>

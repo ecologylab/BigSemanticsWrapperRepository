@@ -12,10 +12,13 @@ import ecologylab.bigsemantics.generated.library.askNature.AskNatureFunction;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +26,12 @@ import java.util.Map;
 @simpl_inherit
 public class AskNatureSubgroup extends CompoundDocument
 {
+	@simpl_scalar
+	private MetadataString groupId;
+
+	@simpl_scalar
+	private MetadataString subgroupId;
+
 	@simpl_collection("function")
 	@mm_name("functions")
 	private List<AskNatureFunction> functions;
@@ -34,6 +43,70 @@ public class AskNatureSubgroup extends CompoundDocument
 		super(mmd);
 	}
 
+
+	public MetadataString	groupId()
+	{
+		MetadataString	result = this.groupId;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.groupId = result;
+		}
+		return result;
+	}
+
+	public String getGroupId()
+	{
+		return this.groupId == null ? null : groupId().getValue();
+	}
+
+	public MetadataString getGroupIdMetadata()
+	{
+		return groupId;
+	}
+
+	public void setGroupId(String groupId)
+	{
+		if (groupId != null)
+			this.groupId().setValue(groupId);
+	}
+
+	public void setGroupIdMetadata(MetadataString groupId)
+	{
+		this.groupId = groupId;
+	}
+
+	public MetadataString	subgroupId()
+	{
+		MetadataString	result = this.subgroupId;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.subgroupId = result;
+		}
+		return result;
+	}
+
+	public String getSubgroupId()
+	{
+		return this.subgroupId == null ? null : subgroupId().getValue();
+	}
+
+	public MetadataString getSubgroupIdMetadata()
+	{
+		return subgroupId;
+	}
+
+	public void setSubgroupId(String subgroupId)
+	{
+		if (subgroupId != null)
+			this.subgroupId().setValue(subgroupId);
+	}
+
+	public void setSubgroupIdMetadata(MetadataString subgroupId)
+	{
+		this.subgroupId = subgroupId;
+	}
 
 	public List<AskNatureFunction> getFunctions()
 	{

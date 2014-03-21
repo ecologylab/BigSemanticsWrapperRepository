@@ -29,7 +29,7 @@
       </scalar>
       <scalar name="scopus_author_id">
         <xpath>a[1]/@data-authurl</xpath>
-        <filter regex="ScopusAuthorCountsURL/(\d+)" group="1" />
+        <regex_op regex="ScopusAuthorCountsURL/(\d+)" group="1" />
       </scalar>
       <scalar name="location">
         <concatenate_values>
@@ -56,7 +56,7 @@
       </scalar>
       <scalar name="date">
         <xpath>./p[1]</xpath>
-        <filter regex="Volume \d+, Issue \d+, ([^,]+)," group="1" />
+        <regex_op regex="Volume \d+, Issue \d+, ([^,]+)," group="1" />
       </scalar>
     </composite>
 
@@ -64,7 +64,7 @@
       <xpath>//ul[@class='keyword']/li</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <filter regex=";" replace="" />
+        <regex_op regex=";" replace="" />
       </scalar>
     </collection>
 
@@ -81,7 +81,7 @@
       <composite name="source">
         <xpath>ul/li[@class='source']/p</xpath>
         <scalar name="title">
-          <filter regex=",\s.*" replace="" />
+          <regex_op regex=",\s.*" replace="" />
         </scalar>
       </composite>
 <!-- 	      	<scalar name="location" xpath="ul/li/[@class='refPlaceHolder']/div[2]/a/@href" /> -->

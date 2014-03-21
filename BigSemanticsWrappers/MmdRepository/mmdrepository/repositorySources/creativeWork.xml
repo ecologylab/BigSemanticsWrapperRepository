@@ -47,9 +47,9 @@
 
   <meta_metadata name="curation" extends="creative_work">
     <collection name="metadata_collection" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope" />
-    <scalar name="curation_app_version" other_tags="version" scalar_type="String" hide="true" />
+    <scalar name="curation_app_version" tag="version" scalar_type="String" hide="true" />
     <scalar name="curation_app" scalar_type="String" hide="true" />
-    <scalar name="cross_platform_version" other_tags="metadata_version" scalar_type="String" hide="true" />
+    <scalar name="cross_platform_version" tag="metadata_version" scalar_type="String" hide="true" />
   </meta_metadata>
 
 </meta_metadata_repository>

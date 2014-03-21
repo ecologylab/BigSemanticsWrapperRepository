@@ -12,7 +12,7 @@
 
     <scalar name="title">
       <xpath>//meta[@name='title']/@content</xpath>
-      <filter regex=" \|.+" replace="" />
+      <regex_op regex=" \|.+" replace="" />
     </scalar>
 
     <collection name="authors" label="authors">
@@ -66,7 +66,7 @@
       <xpath>//div//*[self::article or self::div][@class[contains(.,'status-publish')]]</xpath>
       <scalar name="title">
         <xpath>.//a/@title</xpath>
-        <filter regex="Permalink to " replace="" />
+        <regex_op regex="Permalink to " replace="" />
       </scalar>
       <scalar name="location">
         <xpath>.//a/@href</xpath>

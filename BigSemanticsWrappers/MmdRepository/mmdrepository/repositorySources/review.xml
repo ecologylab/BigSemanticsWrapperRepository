@@ -13,9 +13,13 @@
   <meta_metadata name="anandtech_review" extends="tech_review" comment="anandtech.com review"
     parser="xpath">
     <selector url_path_tree="http://www.anandtech.com/print/" domain="anandtech.com" />
+<<<<<<< HEAD
     <selector url_path_tree="http://www.anandtech.com/show/" domain="anandtech.com" />
     <example_url url="http://www.anandtech.com/print/7603/mac-pro-review-late-2013"/>
     <example_url url="http://www.anandtech.com/show/6914/samsung-galaxy-s-4-review"/>
+=======
+    <selector url_path_tree="http://www.anandtech.com/show/" domain="anandtech.com" />    
+>>>>>>> 50634d10926d6d8494fa010e52fa92639ab522e5
     <scalar name="title">
       <xpath>//div[@class='blog_top_left']//h2/text()</xpath>
     </scalar>
@@ -60,6 +64,9 @@
   <meta_metadata name="cnet_review" extends="tech_review" comment="cnet.com review"
     parser="xpath">
     <selector url_path_tree="http://reviews.cnet.com/" domain="cnet.com" />
+    <example_url url="http://reviews.cnet.com/ps4/" />
+    <example_url url="http://reviews.cnet.com/samsung-galaxy-s4/" />
+    
     <scalar name="title">
       <xpath>//span[@class='productSpan']</xpath>
     </scalar>

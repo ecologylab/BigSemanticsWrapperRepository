@@ -41,7 +41,7 @@
     </scalar>
     <scalar name="price">
       <xpath>//span[@itemprop='price']</xpath>
-      <filter regex="/[a-z|A-Z|-]*" replace="" />
+      <regex_op regex="/[a-z|A-Z|-]*" replace="" />
     </scalar>
     <scalar name="overall_rating">
       <xpath>//div[@id='BVRRRatingOverall_']/div[3]/span[1]</xpath>
@@ -90,7 +90,7 @@
     </scalar>
     <scalar name="price">
       <xpath>//span[@class='cinza bigfont']/text()</xpath>
-      <filter regex="Price: " replace="" />
+      <regex_op regex="Price: " replace="" />
     </scalar>
   </meta_metadata>
 
@@ -118,7 +118,7 @@
 
     <scalar name="overall_rating">
       <xpath>//div[@itemprop='ratingValue']</xpath>
-<!--       <filter regex="Rating " replace="" /> -->
+<!--       <regex_op regex="Rating " replace="" /> -->
     </scalar>
 
     <collection name="reviews">

@@ -44,7 +44,7 @@
       <xpath>//h2</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <filter regex="ShowHide" replace="" />
+        <regex_op regex="ShowHide" replace="" />
       </scalar>
       <collection name="paragraphs" child_type="paragraph">
         <xpath>./following-sibling::div[1]/p</xpath>

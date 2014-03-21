@@ -21,6 +21,9 @@
     comment="Video Interviews with personnel from Rwanda Tribunal">
     <selector url_stripped="http://www.tribunalvoices.org/voices/interviews" />
     <selector url_stripped="http://www.tribunalvoices.org/voices/index.html" />
+    <selector url_stripped="http://www.tribunalvoices.org/voices/" />
+    <example_url url="http://www.tribunalvoices.org/voices/interviews" />
+    <example_url url="http://www.tribunalvoices.org/voices/index.html" />
     <scalar name="title">
       <xpath>//div[@class='tv_voices_panel']/h1</xpath>
     </scalar>
@@ -36,7 +39,7 @@
         </scalar>
         <scalar name="location" hide="true">
           <xpath>./@id</xpath>
-          <filter regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
+          <regex_op regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
         </scalar>
       </collection>
     </collection>
@@ -45,7 +48,9 @@
   <meta_metadata name="personnel_interview" extends="document" parser="xpath"
     comment="personnel interview">
     <selector url_path_tree="http://www.tribunalvoices.org/voices/interview/" />
-    <def_var name="interview_table" type="node">
+    <example_url url="http://www.tribunalvoices.org/voices/interview/25" />
+    <example_url url="http://www.tribunalvoices.org/voices/interview/5" />
+	<def_var name="interview_table" type="node">
       <xpath>//div[@class='tv_voices_panel']</xpath>
     </def_var>
     <scalar name="title" label="name" navigates_to="location" context_node="interview_table">
@@ -84,6 +89,8 @@
   <meta_metadata name="video_interview" extends="document" parser="xpath" comment="video interview">
     <selector url_path_tree="http://www.tribunalvoices.org/voices/video/" />
     <selector url_path_tree="http://tribunalvoices.org/voices/video/" />
+    <example_url url="http://www.tribunalvoices.org/voices/video/588" />
+    <example_url url="http://www.tribunalvoices.org/voices/video/327" />
     <def_var name="interview_table" type="node">
       <xpath>//div[@class='tv_voices_panel']</xpath>
     </def_var>
@@ -97,7 +104,7 @@
 			only this xpath (for title) differs, so a small workaround -->
     <scalar name="title" context_node="interview_table">
       <xpath>.//h2</xpath>
-      <filter regex="Please help us index this " replace="" />
+      <regex_op regex="Please help us index this " replace="" />
     </scalar>
     <scalar name="location" hide="true" />
     <scalar name="role" scalar_type="String" context_node="video_credits">

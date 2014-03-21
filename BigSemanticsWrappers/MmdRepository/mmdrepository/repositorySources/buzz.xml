@@ -7,7 +7,7 @@
     <composite name="channel">
       <collection name="items" child_type="item" no_wrap="true">
         <scalar name="title">
-          <filter regex="^\d+\.\s+" replace="" />
+          <regex_op regex="^\d+\.\s+" replace="" />
         </scalar>
       </collection>
     </composite>

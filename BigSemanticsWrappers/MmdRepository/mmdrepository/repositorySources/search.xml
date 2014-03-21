@@ -110,7 +110,7 @@
 
       <scalar name="citations">
         <xpath>./div[@class='gs_fl']/a[1]</xpath>
-        <filter regex="Cited by " replace="" />
+        <regex_op regex="Cited by " replace="" />
       </scalar>
       <scalar name="citations_link">
         <xpath>./div[@class='gs_fl']/a[1]/@href</xpath>
@@ -120,7 +120,7 @@
       </scalar>
       <scalar name="versions">
         <xpath>./div[@class='gs_fl']/a[last()]</xpath>
-        <filter regex="All | versions" replace="" />
+        <regex_op regex="All | versions" replace="" />
       </scalar>
       <scalar name="versions_link">
         <xpath>./div[@class='gs_fl']/a[last()]/@href</xpath>
@@ -444,7 +444,7 @@
     <selector url_stripped="http://www.bing.com/search" />
     <scalar name="query">
       <xpath>//title/text()</xpath>
-      <filter regex=" - Bing$" replace="" />
+      <regex_op regex=" - Bing$" replace="" />
     </scalar>
     <collection name="search_results">
       <xpath>//li[@class='sa_wr']</xpath>

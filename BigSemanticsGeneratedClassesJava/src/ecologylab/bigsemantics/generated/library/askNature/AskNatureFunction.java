@@ -27,6 +27,12 @@ import java.util.Map;
 public class AskNatureFunction extends CompoundDocument
 {
 	@simpl_scalar
+	private MetadataString groupId;
+
+	@simpl_scalar
+	private MetadataString subgroupId;
+
+	@simpl_scalar
 	private MetadataString functionId;
 
 	@simpl_collection("ask_nature_strategy")
@@ -40,6 +46,70 @@ public class AskNatureFunction extends CompoundDocument
 		super(mmd);
 	}
 
+
+	public MetadataString	groupId()
+	{
+		MetadataString	result = this.groupId;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.groupId = result;
+		}
+		return result;
+	}
+
+	public String getGroupId()
+	{
+		return this.groupId == null ? null : groupId().getValue();
+	}
+
+	public MetadataString getGroupIdMetadata()
+	{
+		return groupId;
+	}
+
+	public void setGroupId(String groupId)
+	{
+		if (groupId != null)
+			this.groupId().setValue(groupId);
+	}
+
+	public void setGroupIdMetadata(MetadataString groupId)
+	{
+		this.groupId = groupId;
+	}
+
+	public MetadataString	subgroupId()
+	{
+		MetadataString	result = this.subgroupId;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.subgroupId = result;
+		}
+		return result;
+	}
+
+	public String getSubgroupId()
+	{
+		return this.subgroupId == null ? null : subgroupId().getValue();
+	}
+
+	public MetadataString getSubgroupIdMetadata()
+	{
+		return subgroupId;
+	}
+
+	public void setSubgroupId(String subgroupId)
+	{
+		if (subgroupId != null)
+			this.subgroupId().setValue(subgroupId);
+	}
+
+	public void setSubgroupIdMetadata(MetadataString subgroupId)
+	{
+		this.subgroupId = subgroupId;
+	}
 
 	public MetadataString	functionId()
 	{

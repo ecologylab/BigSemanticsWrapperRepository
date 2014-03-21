@@ -11,28 +11,32 @@
     <scalar name="title" label="group">
       <xpath>//a[@class='selected']</xpath>
     </scalar>
-
+	
+	<def_var name="group_number" type="node">
+		<xpath>//a[@class='selected']/@*[name()='an:id']</xpath>
+	</def_var>
+	
+	
     <collection name="subgroups" child_type="ask_nature_subgroup" child_tag="subgroup">
       <xpath>//ul[@id='accordion_list_2']/div/dt</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
-      <collection name="functions" child_type="ask_nature_function">
-        <xpath>./following-sibling::dd[1]/a</xpath>
-        <scalar name="title">
-          <xpath>./text()</xpath>
-        </scalar>
-        <scalar name="function_id">
-          <xpath>./@*[name()='an:id']</xpath>
-        </scalar>
-        <scalar name="location">
-          <concatenate_values>
-            <value>http://www.asknature.org/browse?selected=strategy%7c%7c%7c</value>
-            <value from_scalar="function_id" />
-            <value>&amp;type=aof</value>
-          </concatenate_values>
-        </scalar>
-      </collection>
+      <scalar name="group_id">
+      	<xpath>./ancestor::div[4]//a[@class='selected']/@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="subgroup_id">
+      	<xpath>./@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.asknature.org/browse?selected=strategy|</value>
+          <value from_scalar="group_id" />
+          <value>|</value>
+          <value from_scalar="subgroup_id" />
+          <value>&amp;type=aof</value>
+        </concatenate_values>
+      </scalar>
     </collection>
   </meta_metadata>
 
@@ -41,10 +45,18 @@
     <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|\d+\|(\d+)\&amp;type=aof"
       domain="asknature.org" />
     <example_url url="http://www.asknature.org/browse?selected=strategy|501|516&amp;type=aof" />
-
+    <example_url url="http://www.asknature.org/browse?selected=strategy|921|971&amp;type=aof" />
+	
     <def_var name="subgroup_node" type="node">
       <xpath>//ul[@id='accordion_list_2']//dt[@class='accordion_close accordion_open']</xpath>
     </def_var>
+
+	<scalar name="group_id" scalar_type="String" hide="true" >
+		<xpath>//a[@class='selected']/@*[name()='an:id']</xpath>
+	</scalar>
+	<scalar name="subgroup_id" scalar_type="String" hide="true" context_node="subgroup_node">
+      <xpath>./@*[name()='an:id']</xpath>
+    </scalar>
 
     <scalar name="title" label="subgroup" context_node="subgroup_node">
       <xpath>.</xpath>
@@ -55,12 +67,22 @@
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
+      <scalar name="group_id">
+      	<xpath>./ancestor::div[4]//a[@class='selected']/@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="subgroup_id">
+      	<xpath>./../preceding-sibling::dt[1]/@*[name()='an:id']</xpath>
+      </scalar>
       <scalar name="function_id">
         <xpath>./@*[name()='an:id']</xpath>
       </scalar>
       <scalar name="location">
         <concatenate_values>
-          <value>http://www.asknature.org/browse?selected=strategy%7c%7c%7c</value>
+          <value>http://www.asknature.org/browse?selected=strategy|</value>
+          <value from_scalar="group_id" />
+          <value>|</value>
+          <value from_scalar="subgroup_id" />
+          <value>|</value>
           <value from_scalar="function_id" />
           <value>&amp;type=aof</value>
         </concatenate_values>
@@ -70,10 +92,17 @@
 
   <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath"
     user_agent_name="chrome">
-    <selector url_regex="http://www.asknature.org/browse\?selected=strategy\%7c[\d]*\%7c[\d]*\%7c[\d]*.*"
+    <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|[\d]*\|[\d]*\|[\d]*.*"
       domain="asknature.org" />
     <example_url url="http://www.asknature.org/browse?selected=strategy|501|531|541&amp;type=aof" />
+    <example_url url="http://www.asknature.org/browse?selected=strategy|921|971|1021&amp;type=aof" />
 
+	<scalar name="group_id" scalar_type="String" hide="true">
+		<xpath>//ul[@id='accordion_list_1']//a[@class='selected']/@*[name()='an:id']</xpath>
+	</scalar>
+	<scalar name="subgroup_id" scalar_type="String" hide="true">
+		<xpath>//ul[@id='accordion_list_2']//dt[@class='accordion_close accordion_open']/@*[name()='an:id']</xpath>
+	</scalar>
     <scalar name="function_id" scalar_type="String" hide="true">
       <xpath>//ul[@id='accordion_list_2']/div/dd/a[@class='selected']/@*[name()='an:id']</xpath>
     </scalar>
@@ -149,16 +178,30 @@
         <xpath>./text()[3]</xpath>
       </scalar>
     </composite>
-
-    <scalar name="application_ideas" scalar_type="String">
-      <xpath>//a[@name='Products']/following-sibling::dd[1]/p[1]</xpath>
+	
+	<def_var name="products" type="node">
+      <xpath>//a[@name='Products']/following-sibling::dd[1]</xpath>
+    </def_var>
+	
+    <scalar name="application_ideas" scalar_type="String" context_node="products">
+      <xpath>./p[1]</xpath>
       <filter regex="Application Ideas[ ]*: " replace="" />
     </scalar>
-    <scalar name="interested_indstrial_sectors" scalar_type="String">
-      <xpath>//a[@name='Products']/following-sibling::dd[1]/p[2]</xpath>
+    <scalar name="interested_indstrial_sectors" scalar_type="String" context_node="products">
+      <xpath>./p[2]</xpath>
       <filter regex="Industrial Sector\(s\) interested in this strategy: " replace="" />
     </scalar>
-
+	
+	<collection name="inspired_products" child_type="ask_nature_product" context_node="products">		
+		<xpath>./div/a</xpath>
+		<scalar name="title">
+			<xpath>./div/div[2]</xpath>
+		</scalar>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+	</collection>
+	
     <composite name="biomimicry_taxonomy" type="ask_nature_taxonomy">
       <xpath>//ul[@class='taxonomy-list']</xpath>
       <composite name="group">
@@ -186,7 +229,6 @@
         </scalar>
         <scalar name="location">
           <xpath>./@href</xpath>
-          <filter regex="\|" replace="%7c" />
         </scalar>
       </composite>
     </composite>
@@ -212,16 +254,58 @@
     <scalar name="affiliation" scalar_type="String" />
   </meta_metadata>   
  
- <!--  
+
  <meta_metadata name="ask_nature_product" parser="xpath" extends="compound_document" >
- 	<scalar name="title" />
- 	<scalar name="description" scalar_type="String" />
- 	<scalar name="product_or_process" scalar_type="String" />
- 	<scalar name="challenges_solved" scalar_type="String" />
- 	<scalar name="differences_from_existing_products" scalar_type="String" />
- 	<scalar name="biomimicry_story" scalar_type="String" />
+ 	<selector url_path_tree="http://www.asknature.org/product/" domain="asknature.org" />
+ 	<example_url url="http://www.asknature.org/product/9db08f87c7bb21d1cd485fb33f64ca50" />
+ 	
+ 	<scalar name="title">
+ 		<xpath>//h1[@id='content_title']</xpath>
+ 	</scalar>
+ 	<composite name="image">
+ 		<xpath>//img[@id='img_1']</xpath>
+ 		<scalar name="location">
+ 			<xpath>./@src</xpath>
+ 		</scalar>
+ 	</composite>
+ 	
+ 	<scalar name="description" scalar_type="String" >
+ 		<xpath>//h2[@class='headline']</xpath>
+ 	</scalar>
+ 	<scalar name="company" scalar_type="String" >
+ 		<xpath>//strong[contains(.,'Company')]/following-sibling::a</xpath>
+ 		<xpath>//strong[contains(.,'Company')]/../text()</xpath>
+ 		<filter regex="Company:" replace="" />
+ 	</scalar>
+ 	<scalar name="product_phase" scalar_type="String">
+ 		<xpath>//strong[contains(.,'Phase')]/../text()</xpath>
+ 	</scalar>
+ 	
+ 	<scalar name="explanation" scalar_type="String" >									
+ 		<xpath>//a[contains(@name, 'process')]/following-sibling::dd[1]</xpath>
+ 	</scalar>
+ 	<scalar name="challenges_solved" scalar_type="String" >
+ 		<xpath>//a[contains(@name, 'Challenges')]/following-sibling::dd[1]</xpath>
+ 	</scalar>
+ 	<scalar name="differences_from_existing_products" scalar_type="String" >
+ 		<xpath>//a[contains(@name, 'Differences')]/following-sibling::dd[1]</xpath>
+ 	</scalar>
+ 	
+ 	<collection name="inspiring_strategies" child_type="ask_nature_strategy">
+ 		<xpath>//div[@class='entity_link_wrap']/a</xpath>
+ 		<scalar name="title">
+ 			<xpath>.//div[@class='entity_title']</xpath>
+ 		</scalar>
+ 		<scalar name="location">
+ 			<xpath>./@href</xpath>
+ 		</scalar>
+ 	</collection>
+ 	
+ 	<scalar name="biomimicry_story" scalar_type="String" >
+ 		<xpath>//a[contains(@name, 'biomimicry')]/following-sibling::dd[1]</xpath>
+ 	</scalar>
  </meta_metadata>
--->
+
 
 
   <meta_metadata name="ask_nature_image" parser="xpath" extends="compound_document"

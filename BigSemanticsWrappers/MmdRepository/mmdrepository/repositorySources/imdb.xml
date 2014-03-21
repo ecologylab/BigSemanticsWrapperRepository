@@ -14,7 +14,7 @@
     </scalar>
     <scalar name="description">
       <xpath>//p[@itemprop='description']</xpath>
-      <filter regex="more" replace="" />
+      <regex_op regex="more" replace="" />
     </scalar>
 
     <scalar name="year">
@@ -31,14 +31,14 @@
     </scalar>
     <scalar name="tagline">
       <xpath>//h4[contains(.,'Tagline')]/..</xpath>
-      <filter regex="Taglines:|See more" replace="" />
+      <regex_op regex="Taglines:|See more" replace="" />
     </scalar>
     <scalar name="runtime">
       <xpath>//time[@itemprop='duration']</xpath>
     </scalar>
     <scalar name="theater_release">
       <xpath>//h4[contains(.,'Release Date:')]/..</xpath>
-      <filter regex="Release Date:|See more" replace="" />
+      <regex_op regex="Release Date:|See more" replace="" />
     </scalar>
 
     <scalar name="pic" hide="true" layer="3.0">

@@ -12,7 +12,6 @@ import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichArtifact;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataFloat;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -20,7 +19,7 @@ import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
-import java.lang.Float;
+import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,13 +34,15 @@ public class Curation extends CreativeWork
 	private List<RichArtifact> metadataCollection;
 
 	@simpl_scalar
+	@simpl_tag("version")
 	private MetadataString curationAppVersion;
 
 	@simpl_scalar
 	private MetadataString curationApp;
 
 	@simpl_scalar
-	private MetadataFloat crossPlatformVersion;
+	@simpl_tag("metadata_version")
+	private MetadataString crossPlatformVersion;
 
 	public Curation()
 	{ super(); }
@@ -145,34 +146,34 @@ public class Curation extends CreativeWork
 		this.curationApp = curationApp;
 	}
 
-	public MetadataFloat	crossPlatformVersion()
+	public MetadataString	crossPlatformVersion()
 	{
-		MetadataFloat	result = this.crossPlatformVersion;
+		MetadataString	result = this.crossPlatformVersion;
 		if (result == null)
 		{
-			result = new MetadataFloat();
+			result = new MetadataString();
 			this.crossPlatformVersion = result;
 		}
 		return result;
 	}
 
-	public Float getCrossPlatformVersion()
+	public String getCrossPlatformVersion()
 	{
-		return this.crossPlatformVersion == null ? 0 : crossPlatformVersion().getValue();
+		return this.crossPlatformVersion == null ? null : crossPlatformVersion().getValue();
 	}
 
-	public MetadataFloat getCrossPlatformVersionMetadata()
+	public MetadataString getCrossPlatformVersionMetadata()
 	{
 		return crossPlatformVersion;
 	}
 
-	public void setCrossPlatformVersion(Float crossPlatformVersion)
+	public void setCrossPlatformVersion(String crossPlatformVersion)
 	{
-		if (crossPlatformVersion != 0)
+		if (crossPlatformVersion != null)
 			this.crossPlatformVersion().setValue(crossPlatformVersion);
 	}
 
-	public void setCrossPlatformVersionMetadata(MetadataFloat crossPlatformVersion)
+	public void setCrossPlatformVersionMetadata(MetadataString crossPlatformVersion)
 	{
 		this.crossPlatformVersion = crossPlatformVersion;
 	}
