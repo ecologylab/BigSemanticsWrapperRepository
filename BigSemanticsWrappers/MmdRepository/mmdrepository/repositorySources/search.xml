@@ -1,7 +1,7 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   name="search" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
 
-  <meta_metadata name="search_result" extends="document" show_expanded_initially="true"
+  <meta_metadata name="search_result" extends="document" show_expanded_always="true" 
     comment="A search result.">
     <scalar name="title" style="h1" />
     <scalar name="description" label="snippet" />
@@ -28,13 +28,14 @@
     <selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
     <example_url
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
-	<scalar name="location" layer="9.0" style="h1"/>
+	
+	
 	
     <scalar name="query" style_name="google_query" layer="9.1">
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
-    
-    <collection name="search_results">
+    <scalar name="location" always_show="true"/>
+    <collection name="search_results" show_expanded_initially="true">
       <xpath>//div[@id='res']//div//ol/li[@*]</xpath>
       <scalar name="title" hide="true" />
      
