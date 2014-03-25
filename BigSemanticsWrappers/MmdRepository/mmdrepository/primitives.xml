@@ -232,7 +232,7 @@
       comment="Clippings that this document contains." />
     <composite name="root_document" type="compound_document" />
 
-    <collection name="main_images" child_type="image" hide="true">
+    <collection name="main_images" child_type="image">
       <xpath>//meta[@property='og:image']</xpath>
       <xpath>//meta[@property='twitter:image:src']</xpath>
       <scalar name="location">
@@ -240,14 +240,14 @@
       </scalar>
     </collection>
 
-    <collection name="main_videos" child_type="video" hide="true">
+    <collection name="main_videos" child_type="video">
       <xpath>//meta[@property='og:video']</xpath>
       <scalar name="location">
         <xpath>./@content</xpath>
       </scalar>
     </collection>
 
-    <collection name="main_audio" child_type="audio" hide="true">
+    <collection name="main_audio" child_type="audio">
       <xpath>//meta[@property='og:audio']</xpath>
       <scalar name="location">
         <xpath>./@content</xpath>
