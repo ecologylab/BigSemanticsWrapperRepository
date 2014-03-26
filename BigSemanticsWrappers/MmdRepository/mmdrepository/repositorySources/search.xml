@@ -46,6 +46,8 @@
         </scalar>
         <scalar name="location">
           <xpath>.//h3/a/@href</xpath>
+          <regex_op regex="/url\?q=" replace=""/>
+          <regex_op regex="&amp;sa=.*" replace=""/>
         </scalar>
       </composite>
        <scalar name="description" layer="5.3">
