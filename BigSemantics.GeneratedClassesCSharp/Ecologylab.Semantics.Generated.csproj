@@ -418,6 +418,8 @@
     <Compile Include="Library\WikipediaNS\WikipediaPageType.cs" />
     <Compile Include="Library\YelpNS\YelpBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RichArtifactsTypeScope.cs" />
+    <Compile Include="RichMediaTypeScope.cs" />
     <Compile Include="Test\Library\Generics\GeneralSearch.cs" />
     <Compile Include="Test\Library\Generics\SocialMediaSearchOne.cs" />
     <Compile Include="Test\Library\Generics\SocialMediaSearchResultForTest.cs" />
