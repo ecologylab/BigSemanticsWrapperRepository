@@ -15,7 +15,8 @@
   </meta_metadata>
   <meta_metadata name="tvtrope" extends="compound_document" parser="xpath">
     <selector url_path_tree="http://tvtropes.org/pmwiki/pmwiki.php/" domain="tvtropes.org" />
-
+    <example_url url="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGunslinger" />
+    <example_url url="http://tvtropes.org/pmwiki/pmwiki.php/Main/ImprobableAimingSkills" />
     <scalar name="title">
       <xpath>//div[@class='pagetitle']/span</xpath>
     </scalar>
