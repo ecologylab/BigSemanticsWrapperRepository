@@ -11,10 +11,13 @@ package ecologylab.bigsemantics.generated.library.search;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +27,9 @@ import java.util.Map;
 @simpl_inherit
 public class SearchResult extends Document
 {
+	@simpl_scalar
+	private MetadataString siteLink;
+
 	@simpl_composite
 	@mm_name("destination_page")
 	private Document destinationPage;
@@ -35,6 +41,38 @@ public class SearchResult extends Document
 		super(mmd);
 	}
 
+
+	public MetadataString	siteLink()
+	{
+		MetadataString	result = this.siteLink;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.siteLink = result;
+		}
+		return result;
+	}
+
+	public String getSiteLink()
+	{
+		return this.siteLink == null ? null : siteLink().getValue();
+	}
+
+	public MetadataString getSiteLinkMetadata()
+	{
+		return siteLink;
+	}
+
+	public void setSiteLink(String siteLink)
+	{
+		if (siteLink != null)
+			this.siteLink().setValue(siteLink);
+	}
+
+	public void setSiteLinkMetadata(MetadataString siteLink)
+	{
+		this.siteLink = siteLink;
+	}
 
 	public Document getDestinationPage()
 	{

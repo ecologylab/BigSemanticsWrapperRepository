@@ -8,12 +8,16 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.search.GoogleSearch;
 import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.generated.library.search.SearchResult;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +27,10 @@ import java.util.Map;
 @simpl_inherit
 public class GoogleSearch extends Search<SearchResult>
 {
+	@simpl_collection("google_search")
+	@mm_name("related_searches")
+	private List<GoogleSearch> relatedSearches;
+
 	public GoogleSearch()
 	{ super(); }
 
@@ -30,4 +38,34 @@ public class GoogleSearch extends Search<SearchResult>
 		super(mmd);
 	}
 
+
+	public List<GoogleSearch> getRelatedSearches()
+	{
+		return relatedSearches;
+	}
+
+  // lazy evaluation:
+  public List<GoogleSearch> relatedSearches()
+  {
+    if (relatedSearches == null)
+      relatedSearches = new ArrayList<GoogleSearch>();
+    return relatedSearches;
+  }
+
+  // addTo:
+  public void addToRelatedSearches(GoogleSearch element)
+  {
+    relatedSearches().add(element);
+  }
+
+  // size:
+  public int relatedSearchesSize()
+  {
+    return relatedSearches == null ? 0 : relatedSearches.size();
+  }
+
+	public void setRelatedSearches(List<GoogleSearch> relatedSearches)
+	{
+		this.relatedSearches = relatedSearches;
+	}
 }

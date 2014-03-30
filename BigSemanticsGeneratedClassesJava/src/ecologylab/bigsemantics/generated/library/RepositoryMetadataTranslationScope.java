@@ -528,12 +528,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.restaurant.RestaurantGenre.class,
 
-		ecologylab.bigsemantics.generated.library.review.AnandtechReview.class,
-
-		ecologylab.bigsemantics.generated.library.review.CnetReview.class,
-
-		ecologylab.bigsemantics.generated.library.review.TechReview.class,
-
 		ecologylab.bigsemantics.generated.library.rss.Channel.class,
 
 		ecologylab.bigsemantics.generated.library.rss.Dc.class,
@@ -659,6 +653,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.video.YoutubeVideoGrid.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeVideoList.class,
+
+		ecologylab.bigsemantics.generated.library.video.YtPlaylist.class,
 
 		ecologylab.bigsemantics.generated.library.wikipedia.Paragraph.class,
 

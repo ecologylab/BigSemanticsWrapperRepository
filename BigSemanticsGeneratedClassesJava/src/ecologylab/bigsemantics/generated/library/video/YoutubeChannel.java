@@ -10,7 +10,7 @@ package ecologylab.bigsemantics.generated.library.video;
 
 import ecologylab.bigsemantics.generated.library.video.YoutubeChannel;
 import ecologylab.bigsemantics.generated.library.video.YoutubeVideo;
-import ecologylab.bigsemantics.generated.library.video.YoutubeVideoList;
+import ecologylab.bigsemantics.generated.library.video.YtPlaylist;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -36,9 +36,13 @@ public class YoutubeChannel extends CompoundDocument
 	@mm_name("video_feed")
 	private List<YoutubeVideo> videoFeed;
 
-	@simpl_collection("youtube_video_list")
+	@simpl_collection("compound_document")
+	@mm_name("playlist")
+	private List<CompoundDocument> playlist;
+
+	@simpl_collection("yt_playlist")
 	@mm_name("playlists")
-	private List<YoutubeVideoList> playlists;
+	private List<YtPlaylist> playlists;
 
 	@simpl_collection("youtube_channel")
 	@mm_name("featured_channels")
@@ -116,21 +120,51 @@ public class YoutubeChannel extends CompoundDocument
 		this.videoFeed = videoFeed;
 	}
 
-	public List<YoutubeVideoList> getPlaylists()
+	public List<CompoundDocument> getPlaylist()
+	{
+		return playlist;
+	}
+
+  // lazy evaluation:
+  public List<CompoundDocument> playlist()
+  {
+    if (playlist == null)
+      playlist = new ArrayList<CompoundDocument>();
+    return playlist;
+  }
+
+  // addTo:
+  public void addToPlaylist(CompoundDocument element)
+  {
+    playlist().add(element);
+  }
+
+  // size:
+  public int playlistSize()
+  {
+    return playlist == null ? 0 : playlist.size();
+  }
+
+	public void setPlaylist(List<CompoundDocument> playlist)
+	{
+		this.playlist = playlist;
+	}
+
+	public List<YtPlaylist> getPlaylists()
 	{
 		return playlists;
 	}
 
   // lazy evaluation:
-  public List<YoutubeVideoList> playlists()
+  public List<YtPlaylist> playlists()
   {
     if (playlists == null)
-      playlists = new ArrayList<YoutubeVideoList>();
+      playlists = new ArrayList<YtPlaylist>();
     return playlists;
   }
 
   // addTo:
-  public void addToPlaylists(YoutubeVideoList element)
+  public void addToPlaylists(YtPlaylist element)
   {
     playlists().add(element);
   }
@@ -141,7 +175,7 @@ public class YoutubeChannel extends CompoundDocument
     return playlists == null ? 0 : playlists.size();
   }
 
-	public void setPlaylists(List<YoutubeVideoList> playlists)
+	public void setPlaylists(List<YtPlaylist> playlists)
 	{
 		this.playlists = playlists;
 	}

@@ -17,6 +17,7 @@
 
   <meta_metadata name="youtube_video" extends="social_video" comment="youtube video view page">
     <selector url_stripped="http://www.youtube.com/watch" />
+    <selector url_stripped="https://www.youtube.com/watch" />
     <example_url url="http://www.youtube.com/watch?v=NLlGopyXT_g" />
 
     <scalar name="title">
@@ -104,12 +105,12 @@
   </meta_metadata>
 
   <meta_metadata name="youtube_video_list" extends="compound_document">
-    <collection name="videos" child_type="youtube_video" />
+    <collection name="videos" child_type="youtube_video"/>
   </meta_metadata>
 
   <meta_metadata name="youtube_video_grid" extends="compound_document" parser="xpath"
     user_agent_name="chrome">
-    <selector url_regex="http://www.youtube.com/.*/videos" domain="youtube.com" />
+    <selector url_regex="https?://www.youtube.com/.*/videos" domain="youtube.com" />
 
 
     <scalar name="title">
@@ -148,15 +149,14 @@
   <meta_metadata name="youtube_channel" extends="compound_document" comment="youtube channels"
     parser="xpath" user_agent_name="chrome">
 
-    <selector url_regex="http://www.youtube.com/(user|channel)/.*((?!videos).)$" domain="youtube.com" />
-    <selector url_regex="http://www.youtube.com/((?!/).)*" domain="youtube.com" />
+    <selector url_regex="https?://www.youtube.com/(user|channel)/.*((?!videos).)$" domain="youtube.com" />
+    <selector url_regex="https?://www.youtube.com/((?!/).)*" domain="youtube.com" />
     <scalar name="title">
       <xpath>//a[@class='spf-link branded-page-header-title-link yt-uix-sessionlink']/@title</xpath>
     </scalar>
 
     <collection name="featured_video" child_type="youtube_video">
-      <xpath>//div[@class='video-player-view-component
-        branded-page-box']//div[@class='video-detail']/h3/a</xpath>
+      <xpath>//div[@class='video-player-view-component branded-page-box']//div[@class='video-detail']/h3/a</xpath>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
@@ -175,22 +175,32 @@
       </scalar>
 
     </collection>
-    <collection name="playlists" child_type="youtube_video_list">
-      <xpath>(//span[@class='shelf-title'])/ancestor::div[1]</xpath>
+    <collection name="playlist" child_type="compound_document">
+      <xpath>//div[@class='compact-shelf shelf-item yt-uix-shelfslider yt-uix-shelfslider-at-head yt-uix-shelfslider-at-tail vve-check clearfix branded-page-box yt-section-hover-container fluid-shelf yt-uix-tdl']//div[@class='compact-shelf-content-container']/div/ul/li</xpath>
+      
       <scalar name="title">
-        <xpath>.//span[@class='shelf-title']/span/text()</xpath>
-      </scalar>
-      <scalar name="description">
-        <xpath>.//div[@class='shelf-description yt-ui-ellipsis yt-ui-ellipsis-2']/text()</xpath>
-      </scalar>
-      <collection name="videos">
-        <xpath>./div[@class='compact-shelf-content-container']//ul[@class='yt-uix-shelfslider-list']/li[not(contains(@class,
-          'view-all'))]</xpath>
-        <scalar name="title">
-          <xpath>./div/div[@class='yt-lockup-content']/h3/a/@title</xpath>
+          <xpath>.//h3/a</xpath>
         </scalar>
         <scalar name="location">
-          <xpath>.//h3[@class='yt-lockup-title']/a/@href</xpath>
+          <xpath>.//h3/a/@href</xpath>
+        </scalar>
+    </collection>
+    <collection name="playlists" child_type="yt_playlist" child_extends="compound_document">
+      <xpath>//div[@class='compact-shelf shelf-item yt-uix-shelfslider yt-uix-shelfslider-at-head yt-uix-shelfslider-at-tail vve-check clearfix branded-page-box yt-section-hover-container fluid-shelf yt-uix-tdl']</xpath>
+      
+      <scalar name="title">
+        <xpath>./h2/a[1]/span/span</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='shelf-description yt-ui-ellipsis yt-ui-ellipsis-2']</xpath>
+      </scalar>
+      <collection name="videos" child_type="compound_document">
+        <xpath>.//div[@class='compact-shelf-content-container']/div/ul/li"</xpath>
+        <scalar name="title">
+          <xpath>.//h3/a/@href</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>.//h3/a/@href</xpath>
         </scalar>
 
 
@@ -220,6 +230,7 @@
     comment="youtube video search results page">
     <generic_type_var name="SR" arg="youtube_video" />
     <selector url_stripped="http://www.youtube.com/results?" />
+    <selector url_stripped="https://www.youtube.com/results?" />
 
     <collection name="search_results">
       <xpath>//h3/a[@class='yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link
