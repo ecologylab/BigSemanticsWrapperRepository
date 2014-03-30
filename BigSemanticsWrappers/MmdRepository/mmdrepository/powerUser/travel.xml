@@ -6,9 +6,9 @@
     <scalar name="open_hours" scalar_type="String" comment="the hours that the attraction is open" />
     <composite name="attraction_address" type="postal_address" />
     <scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" layer="2.0"
-      style="underTopRight_div" schema_org_itemprop="aggregateRating" />
+      style_name="underTopRight_div" schema_org_itemprop="aggregateRating" />
     <scalar name="description" scalar_type="String" comment="an introduction to the attraction" />
-    <collection name="reviews" child_type="review" layer="0.8" style="reviews_div" />
+    <collection name="reviews" child_type="review" layer="0.8" style_name="reviews_div" />
     <semantic_actions>
       <get_field name="image" />
       <if>

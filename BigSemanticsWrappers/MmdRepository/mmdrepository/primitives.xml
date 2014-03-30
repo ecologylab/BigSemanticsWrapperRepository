@@ -20,13 +20,13 @@
     </scalar>
     <scalar name="local_location" scalar_type="ParsedURL" hide="true"
       comment="Relative location of a local copy of the document." />
-    <scalar name="title" scalar_type="String" style="metadata_h1" layer="10.0" hint="XML_LEAF"
+    <scalar name="title" scalar_type="String" style_name="metadata_h1" layer="10.0" hint="XML_LEAF"
       is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name"
       comment="The Title of the Document">
       <xpath>//meta[@name='og:title']/@content</xpath>
       <xpath>//meta[@name='twitter:title']/@content</xpath>
     </scalar>
-    <scalar name="description" scalar_type="String" hint="XML_LEAF" layer="1.6" style="description_div"
+    <scalar name="description" scalar_type="String" hint="XML_LEAF" layer="1.6" style_name="description_div"
       schema_org_itemprop="description">
       <xpath>//meta[@name='description']/@content</xpath>
       <xpath>//meta[@name='og:description']/@content</xpath>

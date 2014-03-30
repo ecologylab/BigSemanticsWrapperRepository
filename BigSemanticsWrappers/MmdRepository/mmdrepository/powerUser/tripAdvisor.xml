@@ -23,7 +23,7 @@
         <xpath>//div[@class='photoGrid photoBx']/div[1]/a/@href</xpath>
       </scalar>
     </composite>
-    <scalar name="overall_rating" layer="1.6" style="topRight_div">
+    <scalar name="overall_rating" layer="1.6" style_name="topRight_div">
       <xpath>//div[@class='slim_ranking']</xpath>
     </scalar>
     <scalar name="attraction_type">

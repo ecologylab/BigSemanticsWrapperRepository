@@ -654,8 +654,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeVideoList.class,
 
-		ecologylab.bigsemantics.generated.library.video.YtPlaylist.class,
-
 		ecologylab.bigsemantics.generated.library.wikipedia.Paragraph.class,
 
 		ecologylab.bigsemantics.generated.library.wikipedia.Section.class,

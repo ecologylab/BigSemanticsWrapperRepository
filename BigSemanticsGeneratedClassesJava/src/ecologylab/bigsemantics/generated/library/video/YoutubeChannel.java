@@ -10,7 +10,6 @@ package ecologylab.bigsemantics.generated.library.video;
 
 import ecologylab.bigsemantics.generated.library.video.YoutubeChannel;
 import ecologylab.bigsemantics.generated.library.video.YoutubeVideo;
-import ecologylab.bigsemantics.generated.library.video.YtPlaylist;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -39,10 +38,6 @@ public class YoutubeChannel extends CompoundDocument
 	@simpl_collection("compound_document")
 	@mm_name("playlist")
 	private List<CompoundDocument> playlist;
-
-	@simpl_collection("yt_playlist")
-	@mm_name("playlists")
-	private List<YtPlaylist> playlists;
 
 	@simpl_collection("youtube_channel")
 	@mm_name("featured_channels")
@@ -148,36 +143,6 @@ public class YoutubeChannel extends CompoundDocument
 	public void setPlaylist(List<CompoundDocument> playlist)
 	{
 		this.playlist = playlist;
-	}
-
-	public List<YtPlaylist> getPlaylists()
-	{
-		return playlists;
-	}
-
-  // lazy evaluation:
-  public List<YtPlaylist> playlists()
-  {
-    if (playlists == null)
-      playlists = new ArrayList<YtPlaylist>();
-    return playlists;
-  }
-
-  // addTo:
-  public void addToPlaylists(YtPlaylist element)
-  {
-    playlists().add(element);
-  }
-
-  // size:
-  public int playlistsSize()
-  {
-    return playlists == null ? 0 : playlists.size();
-  }
-
-	public void setPlaylists(List<YtPlaylist> playlists)
-	{
-		this.playlists = playlists;
 	}
 
 	public List<YoutubeChannel> getFeaturedChannels()

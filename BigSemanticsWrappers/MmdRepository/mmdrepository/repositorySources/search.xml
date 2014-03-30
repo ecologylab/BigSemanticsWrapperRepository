@@ -3,7 +3,7 @@
 
   <meta_metadata name="search_result" extends="document" show_expanded_always="true" 
     comment="A search result.">
-    <scalar name="title" style="h1" />
+    <scalar name="title" style_name="h1" />
     <scalar name="description" label="snippet" />
     <scalar name="site_link" scalar_type="String"/>
     <composite name="destination_page" type="document" />
