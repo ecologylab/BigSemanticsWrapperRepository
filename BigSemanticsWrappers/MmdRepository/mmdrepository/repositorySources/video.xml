@@ -19,7 +19,7 @@
     <selector url_stripped="http://www.youtube.com/watch" />
     <selector url_stripped="https://www.youtube.com/watch" />
     <example_url url="http://www.youtube.com/watch?v=NLlGopyXT_g" />
-
+    <example_url url="https://www.youtube.com/watch?v=KUOVJeOR77M"/>
     <scalar name="title">
       <xpath>//h1[@id='watch-headline-title']</xpath>
     </scalar>
@@ -151,6 +151,8 @@
 
     <selector url_regex="https?://www.youtube.com/(user|channel)/.*((?!videos).)$" domain="youtube.com" />
     <selector url_regex="https?://www.youtube.com/((?!/).)*" domain="youtube.com" />
+    <example_url url="https://www.youtube.com/user/guggenheim"/>
+    <example_url url="https://www.youtube.com/user/PTXofficial"/>
     <scalar name="title">
       <xpath>//a[@class='spf-link branded-page-header-title-link yt-uix-sessionlink']/@title</xpath>
     </scalar>
@@ -185,6 +187,7 @@
           <xpath>.//h3/a/@href</xpath>
         </scalar>
     </collection>
+    <!--
     <collection name="playlists" child_type="yt_playlist" child_extends="compound_document">
       <xpath>//div[@class='compact-shelf shelf-item yt-uix-shelfslider yt-uix-shelfslider-at-head yt-uix-shelfslider-at-tail vve-check clearfix branded-page-box yt-section-hover-container fluid-shelf yt-uix-tdl']</xpath>
       
@@ -206,6 +209,7 @@
 
       </collection>
     </collection>
+    -->
     <collection name="featured_channels" child_type="youtube_channel">
       <xpath>//div[@class='branded-page-related-channels branded-page-box '][1]/ul/li</xpath>
       <scalar name="title">
@@ -231,7 +235,8 @@
     <generic_type_var name="SR" arg="youtube_video" />
     <selector url_stripped="http://www.youtube.com/results?" />
     <selector url_stripped="https://www.youtube.com/results?" />
-
+    <example_url url="https://www.youtube.com/results?search_query=search"/>
+    <example_url url="https://www.youtube.com/results?search_query=windows+phone"/>
     <collection name="search_results">
       <xpath>//h3/a[@class='yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link
         result-item-translation-title']</xpath>
