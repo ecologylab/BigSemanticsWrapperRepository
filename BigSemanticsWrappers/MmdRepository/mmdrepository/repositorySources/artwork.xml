@@ -61,7 +61,7 @@
       <xpath>//div[@id='artwork-summary']</xpath>
     </scalar>
 
-    <collection name="related_works" child_type="artwork" label="related works" tag="related works"
+    <collection name="related_works" child_type="artwork" label="related works"
       other_tags="creative_works" child_tag="artwork">
       <xpath>//div[@id='artwork-similar-works']/div/a</xpath>
       <scalar name="location" hide="true">
