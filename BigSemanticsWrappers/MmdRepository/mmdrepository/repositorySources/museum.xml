@@ -277,7 +277,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
     </collection>
 
     <collection name="related_page" child_type="fondation_article">
-      <xpath>(//h2[child::text()='Related page: ']/following-sibling::div//img)</xpath>
+      <xpath>//h2[child::text()='Related page: ']/following-sibling::div//img</xpath>
       <scalar name="title">
         <xpath>./../../span/a/text()</xpath>
       </scalar>
@@ -287,7 +287,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
     </collection>
 
     <collection name="related_pages" child_type="fondation_article">
-      <xpath>(//h2[child::text()='Related pages: ']/following-sibling::div//img)</xpath>
+      <xpath>//h2[child::text()='Related pages: ']/following-sibling::div//img</xpath>
       <scalar name="title">
         <xpath>./../../span/a/text()</xpath>
       </scalar>
@@ -297,7 +297,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
     </collection>
 
     <collection name="tags" child_type="fondation_tag">
-      <xpath>(//h2[child::text()='Tags:']/following-sibling::div)</xpath>
+      <xpath>//h2[child::text()='Tags:']/following-sibling::div</xpath>
 
       <scalar name="title">
         <xpath>./a/text()</xpath>
@@ -365,7 +365,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
       </scalar>
     </collection>
     <collection name="flamenco_objects" child_type="flamenco_object">
-      <xpath>(//table[@cellpadding='2'])[last()]/tbody/tr/td</xpath>
+      <xpath>(.//table[@cellpadding='2'])[last()]/tbody/tr/td</xpath>
       <scalar name="title">
         <xpath>./a/span</xpath>
       </scalar>
