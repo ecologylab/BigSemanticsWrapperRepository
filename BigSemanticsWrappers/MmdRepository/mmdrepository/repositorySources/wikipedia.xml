@@ -5,7 +5,7 @@
     parser="xpath" user_agent_name="firefox_2">
     <generic_type_var name="SR" arg="wikipedia_page" />
 
-    <selector url_stripped="http://en.wikipedia.org/w/index.php?title=Special%3ASearch" />
+    <selector url_regex="https?://en.wikipedia.org/w/index.php?title=Special%3ASearch.*" />
 
     <collection name="search_results">
       <xpath>//ul[@class='mw-search-results']/li</xpath>
@@ -232,7 +232,7 @@
 
 
   <meta_metadata name="wikipedia_category" type="wikipedia_category_type" parser="xpath">
-    <selector domain="wikipedia.org" url_regex="http://en.wikipedia.org/wiki/Category:.*" />
+    <selector domain="wikipedia.org" url_regex="https?://en.wikipedia.org/wiki/Category:.*" />
     <example_url url="http://en.wikipedia.org/wiki/Category:Brand_name_materials" />
     <example_url url="http://en.wikipedia.org/wiki/Category:Theoretical_physicists" />
 
