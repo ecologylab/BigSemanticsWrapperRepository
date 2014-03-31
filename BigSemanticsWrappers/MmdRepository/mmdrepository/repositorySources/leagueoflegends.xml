@@ -20,6 +20,7 @@
     <selector url_path_tree="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/" />
 
     <example_url url="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/diana/" />
+     <example_url url="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/caitlyn/" />
 
     <scalar name="title" label="champion_name">
       <xpath>//div[@id='champ_header']/h1</xpath>
