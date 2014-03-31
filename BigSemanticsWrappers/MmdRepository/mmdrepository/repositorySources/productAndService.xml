@@ -752,7 +752,7 @@
     <selector url_path_tree="http://www.bestbuy.com/site/" domain="bestbuy.com" />
     <example_url
       url="http://www.bestbuy.com/site/samsung-60-class-60-diag--led-1080p-120hz-smart-hdtv/7827055.p" />
-    <example url
+    <example_url
       url="http://www.bestbuy.com/site/42-class-42-diag--led-1080p-120hz-hdtv/8976043.p;jsessionid=24CDBE3978F5952F7E9C65D34D5FB08A.bbolsp-app01-115?id=1218960132416&amp;skuId=8976043&amp;st=categoryid$abcat0101000&amp;cp=1&amp;lp=1"/>
     <scalar name="title">
       <xpath>//*[@id='sku-title']/h1</xpath>
