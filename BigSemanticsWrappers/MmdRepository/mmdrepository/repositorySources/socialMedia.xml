@@ -60,13 +60,13 @@
       </composite>
 
       <scalar name="num_tweets" label="tweets" label_at="bottom">
-        <xpath>//ul[@class='stats js-mini-profile-stats ']/li[1]/a/strong</xpath>
+        <xpath>//table[@class='stats js-mini-profile-stats ']/td[1]/a/strong</xpath>
       </scalar>
       <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
-        <xpath>//ul[@class='stats js-mini-profile-stats ']/li[2]/a/strong</xpath>
+        <xpath>//table[@class='stats js-mini-profile-stats ']/td[2]/a/strong</xpath>
       </scalar>
       <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
-        <xpath>//ul[@class='stats js-mini-profile-stats ']/li[3]/a/strong</xpath>
+        <xpath>//table[@class='stats js-mini-profile-stats ']/td[3]/a/strong</xpath>
       </scalar>
     </collection>
 
