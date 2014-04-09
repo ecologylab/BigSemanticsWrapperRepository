@@ -26,7 +26,6 @@ import java.util.Map;
 public class RhizomeArtwork extends Artwork
 {
 	@simpl_collection("artwork")
-	@simpl_tag("related works")
 	@simpl_other_tags({"creative_works"})
 	@mm_name("related_works")
 	private List<Artwork> relatedWorks;

@@ -239,7 +239,12 @@
         <xpath>./@content</xpath>
       </scalar>
     </collection>
-
+   <composite name="thumbnail" type="image">
+      <xpath>//meta[@itemprop='thumbnailUrl']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </composite>
     <collection name="main_videos" child_type="video">
       <xpath>//meta[@property='og:video']</xpath>
       <scalar name="location">
