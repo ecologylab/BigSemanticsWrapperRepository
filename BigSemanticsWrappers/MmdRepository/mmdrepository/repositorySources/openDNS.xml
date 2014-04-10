@@ -1,0 +1,23 @@
+<meta_metadata_repository name="openDNS"
+  package="ecologylab.bigsemantics.generated.library.openDNS" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="openDNSDomain" extends="document" comment="openDNS tags for a domain" parser="xpath">
+    <selector url_path_tree="http://domain.opendns.com/" domain="opendns.com" />
+    <example_url url="http://domain.opendns.com/wikipedia.org" />
+    <example_url url="http://domain.opendns.com/boardgamegeek.com" />
+    
+    <scalar name="title">
+      <xpath>//title</xpath>
+    </scalar>
+
+    <scalar name="domain" scalar_type="String">
+      <xpath>//*[@id="maincontent"]/div/div[1]/h2</xpath>
+    </scalar>
+    
+    <scalar name="description" label="tags">
+      <xpath>//*[@id="maincontent"]/div/div[1]/div[2]/h3/span</xpath>
+    </scalar>
+
+  </meta_metadata>
+
+</meta_metadata_repository>
