@@ -79,8 +79,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
 
     <composite name="source" type="acm_portal_periodical">
       <xpath>//div[@name='for-testing']</xpath>
-      <xpath>//h1/a/span[contains(text(),
-        'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]</xpath>
+      <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]</xpath>
       <scalar name="location">
         <xpath>.//td[text()='Title']/following-sibling::td/a[1]</xpath>
       </scalar>
@@ -113,8 +112,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
 			<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
 			-->
       <collection name="articles">
-        <xpath>./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href,
-          'citation.cfm')]/../../..</xpath>
+        <xpath>./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href, 'citation.cfm')]/../../..</xpath>
         <scalar name="title">
           <xpath>.//a</xpath>
         </scalar>
@@ -137,13 +135,11 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </composite>
 
     <scalar name="description">
-      <xpath>//h1/a[contains(text(),
-        'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]/div[1]</xpath>
+      <xpath>//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]/div[1]</xpath>
     </scalar>
 
     <collection name="references" child_type="acm_portal">
-      <xpath>//h1/a/span[contains(text(),
-        'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]</xpath>
+      <xpath>//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]</xpath>
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
       <scalar name="location">
@@ -162,8 +158,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </collection>
 
     <collection name="citations" child_type="acm_portal">
-      <xpath>//h1/a/span[contains(text(), 'CITED
-        BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]</xpath>
+      <xpath>//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]</xpath>
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
       <scalar name="location">
@@ -181,8 +176,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </collection>
 
     <collection name="classifications">
-      <xpath>//h1/a/span[contains(text(), 'INDEX
-        TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]</xpath>
+      <xpath>//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]</xpath>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
@@ -202,8 +196,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </collection>
 
     <scalar name="pages">
-      <xpath>//h1/a/span[contains(text(),
-        'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td</xpath>
+      <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td</xpath>
     </scalar>
 
 
