@@ -91,6 +91,7 @@
     </composite>
 
     <def_var name="reviews_span" type="node">
+      <xpath>//div[@id='averageCustomerReviews']</xpath>
       <xpath>//span[@ref='dp_top_cm_cr_acr_pop_']</xpath>
     </def_var>
     <scalar name="overall_rating" context_node="reviews_span">
@@ -135,7 +136,7 @@
         <xpath>.//div[@class='price']</xpath>
       </scalar>
       <scalar name="overall_rating">
-        <xpath>.//span[@class='swSprite s_star_3_0 ']</xpath>
+        <xpath>.//span[@class='rating-stars']//span[@title]/@title</xpath>
       </scalar>
     </collection>
 
