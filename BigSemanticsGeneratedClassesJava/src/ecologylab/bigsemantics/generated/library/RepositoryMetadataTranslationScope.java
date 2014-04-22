@@ -240,6 +240,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.dlese.UserSearchAdditionalMetadata.class,
 
+		ecologylab.bigsemantics.generated.library.dreamHouse.BedbathandbeyondMobileProduct.class,
+
 		ecologylab.bigsemantics.generated.library.dreamHouse.BedbathandbeyondProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.Cb2Product.class,
@@ -247,6 +249,10 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.dreamHouse.CrateandbarrelProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.HouzzProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.IkeaMobileProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.IkeaProduct.class,
 
@@ -265,6 +271,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.dreamHouse.RestorationhardwareProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.RoomandboardProduct.class,
+
+		ecologylab.bigsemantics.generated.library.dreamHouse.WayfairProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.WestelmProduct.class,
 
@@ -425,6 +433,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.nsf.NsfSearch.class,
 
 		ecologylab.bigsemantics.generated.library.nsf.NsfStaff.class,
+
+		ecologylab.bigsemantics.generated.library.openDNS.OpenDNSDomain.class,
 
 		ecologylab.bigsemantics.generated.library.opml.Body.class,
 
@@ -635,6 +645,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.tvtropes.TvtropeExample.class,
 
 		ecologylab.bigsemantics.generated.library.tvtropes.TvtropeFolder.class,
+
+		ecologylab.bigsemantics.generated.library.urbanspoon.UrbanSpoonRestaurant.class,
 
 		ecologylab.bigsemantics.generated.library.urbanspoon.UrbanSpoonSearch.class,
 

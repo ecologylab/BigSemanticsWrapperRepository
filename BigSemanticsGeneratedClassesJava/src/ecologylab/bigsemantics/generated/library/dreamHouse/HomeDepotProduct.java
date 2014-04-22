@@ -10,11 +10,13 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
 
 import ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,10 @@ public class HomeDepotProduct extends Product
 	@simpl_collection("home_depot_product")
 	@mm_name("people_also_buy")
 	private List<HomeDepotProduct> peopleAlsoBuy;
+
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
 
 	public HomeDepotProduct()
 	{ super(); }
@@ -63,5 +69,15 @@ public class HomeDepotProduct extends Product
 	public void setPeopleAlsoBuy(List<HomeDepotProduct> peopleAlsoBuy)
 	{
 		this.peopleAlsoBuy = peopleAlsoBuy;
+	}
+
+	public Image getImage()
+	{
+		return image;
+	}
+
+	public void setImage(Image image)
+	{
+		this.image = image;
 	}
 }

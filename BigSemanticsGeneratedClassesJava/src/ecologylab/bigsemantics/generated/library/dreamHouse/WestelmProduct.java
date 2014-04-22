@@ -10,11 +10,13 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
 
 import ecologylab.bigsemantics.generated.library.dreamHouse.WestelmProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,10 @@ public class WestelmProduct extends Product
 	@simpl_collection("westelm_product")
 	@mm_name("people_also_shopped_for")
 	private List<WestelmProduct> peopleAlsoShoppedFor;
+
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
 
 	public WestelmProduct()
 	{ super(); }
@@ -97,5 +103,15 @@ public class WestelmProduct extends Product
 	public void setPeopleAlsoShoppedFor(List<WestelmProduct> peopleAlsoShoppedFor)
 	{
 		this.peopleAlsoShoppedFor = peopleAlsoShoppedFor;
+	}
+
+	public Image getImage()
+	{
+		return image;
+	}
+
+	public void setImage(Image image)
+	{
+		this.image = image;
 	}
 }

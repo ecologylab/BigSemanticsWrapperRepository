@@ -12,7 +12,6 @@ import ecologylab.bigsemantics.generated.library.gis.GisLocation;
 import ecologylab.bigsemantics.generated.library.gis.PostalAddress;
 import ecologylab.bigsemantics.generated.library.misc.Review;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
@@ -34,10 +33,6 @@ import java.util.Map;
 @simpl_inherit
 public class Commodity extends CompoundDocument
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	@simpl_scalar
 	private MetadataString price;
 
@@ -73,16 +68,6 @@ public class Commodity extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
 
 	public MetadataString	price()
 	{

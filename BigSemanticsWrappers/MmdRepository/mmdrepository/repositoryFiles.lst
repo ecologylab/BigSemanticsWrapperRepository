@@ -35,6 +35,7 @@ repositorySources/movie.xml
 repositorySources/museum.xml
 repositorySources/news.xml
 repositorySources/nsf.xml
+repositorySources/openDNS.xml
 repositorySources/opml.xml
 repositorySources/patent.xml
 repositorySources/person.xml

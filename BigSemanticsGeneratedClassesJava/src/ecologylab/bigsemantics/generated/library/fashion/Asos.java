@@ -13,6 +13,7 @@ import ecologylab.bigsemantics.generated.library.fashion.Designer;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -27,6 +28,10 @@ import java.util.Map;
 @simpl_inherit
 public class Asos extends Product
 {
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
+
 	@simpl_collection("document")
 	@mm_name("details")
 	private List<Document> details;
@@ -50,6 +55,16 @@ public class Asos extends Product
 		super(mmd);
 	}
 
+
+	public Image getImage()
+	{
+		return image;
+	}
+
+	public void setImage(Image image)
+	{
+		this.image = image;
+	}
 
 	public List<Document> getDetails()
 	{

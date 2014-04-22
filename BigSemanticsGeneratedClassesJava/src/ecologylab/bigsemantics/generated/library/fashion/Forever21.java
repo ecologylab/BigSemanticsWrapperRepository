@@ -10,11 +10,13 @@ package ecologylab.bigsemantics.generated.library.fashion;
 
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
@@ -25,6 +27,10 @@ import java.util.Map;
 @simpl_tag("forever_21")
 public class Forever21 extends Product
 {
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
+
 	@simpl_collection("document")
 	@mm_name("available_colors")
 	private List<Document> availableColors;
@@ -40,6 +46,16 @@ public class Forever21 extends Product
 		super(mmd);
 	}
 
+
+	public Image getImage()
+	{
+		return image;
+	}
+
+	public void setImage(Image image)
+	{
+		this.image = image;
+	}
 
 	public List<Document> getAvailableColors()
 	{
