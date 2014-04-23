@@ -1,0 +1,108 @@
+<meta_metadata_repository name="clothing"
+  package="ecologylab.bigsemantics.generated.library.clothing">
+
+  <meta_metadata name="zara_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_path_tree="http://www.zara.com/us/en/" domain="zara.com" />
+    <example_url
+      url="http://www.zara.com/us/en/woman/trousers/jacquard-trousers-with-faux-leather-piping-c358005p1841024.html" />
+    <scalar name="title">
+      <xpath>//div[@class='right']/header/h1</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//*[@class='price']/span/@data-price</xpath>
+    </scalar>
+    <scalar name="color" scalar_type="String">
+      <xpath>//div[@class='imgCont']/@title</xpath>
+    </scalar>
+    <scalar name="gender" scalar_type="String">
+      <xpath>//ul[@id='mainNavigationMenu']/li[@class='current']/a/text()
+      </xpath>
+    </scalar>
+    <scalar name="category" scalar_type="String">
+      <xpath>//ul[@class='current']/li[@class='current']/a/text()</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//*[@class='media-wrap image-wrap plain imageZoom']/a</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <scalar name="detail" scalar_type="String">
+      <xpath>//div[@class='section zonasPrenda']</xpath>
+    </scalar>
+  </meta_metadata>
+
+  <meta_metadata name="uniqlo_product" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.uniqlo.com/us/" domain="uniqlo.com" />
+    <example_url
+      url="http://www.uniqlo.com/us/women/tops/t-shirts/supima-cotton-crew-neck-long-sleeves/women-supima-cotton-crew-neck-long-sleeve-t-shirt-086844.html#76" />
+    <scalar name="title">
+      <xpath>//h1[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@itemprop='price']</xpath>
+    </scalar>
+    <scalar name="color" scalar_type="String">
+      <xpath>//ul[@class='options articles clearfix']//span/text()</xpath>
+    </scalar>
+    <scalar name="gender" scalar_type="String">
+      <xpath>//ul[@class='breadcrumb-component']/li[1]/a/text()</xpath>
+    </scalar>
+    <scalar name="category" scalar_type="String">
+      <xpath>//ul[@class='breadcrumb-component']/li[2]/a/text()</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//div[@class='pdp-image-main-media']/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+    <scalar name="color" scalar_type="String">
+      <xpath>//span[@itemprop='color']</xpath>
+    </scalar>
+    <scalar name="description" scalar_type="String">
+      <xpath>//article[@class='pdp-description-text pdp-overview']</xpath>
+    </scalar>
+    <scalar name="detail" scalar_type="String">
+      <xpath>//article[@class='pdp-description-text
+        pdp-materials']/ul/li[1]
+      </xpath>
+    </scalar>
+  </meta_metadata>
+
+  <meta_metadata name="hm_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_path_tree="http://www.hm.com/us/product/" domain="hm.com" />
+    <example_url
+      url="http://www.hm.com/us/product/27027?article=27027-B&amp;piaDept=Subdepartment_ladies&amp;piaType=Large_picture" />
+    <scalar name="title">
+      <xpath>//form[@id='product']/h1/text()</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//form[@id='product']/h1/span/span</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//*[@id='product-thumbs']/li[2]/a</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <scalar name="color" scalar_type="String">
+      <xpath>//span[@class='selected']</xpath>
+    </scalar>
+
+    <scalar name="gender" scalar_type="String">
+      <xpath>//*[@id="product-breadcrumbs"]/ul/li[2]/a</xpath>
+    </scalar>
+    <scalar name="category" scalar_type="String">
+      <xpath>//*[@id="product-breadcrumbs"]/ul/li[3]/a</xpath>
+    </scalar>
+    <scalar name="description" scalar_type="String">
+      <xpath>//*[@id='product']/div/p[1]/text()</xpath>
+    </scalar>
+    <scalar name="detail" scalar_type="String">
+      <xpath>//*[@id='product']/div/p[2]/span[1]/text()</xpath>
+    </scalar>
+  </meta_metadata>
+
+</meta_metadata_repository>
