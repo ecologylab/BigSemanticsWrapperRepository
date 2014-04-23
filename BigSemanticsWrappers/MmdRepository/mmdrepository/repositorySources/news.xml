@@ -3,16 +3,23 @@
 
   <meta_metadata name="nytimes" type="post" iparser="xpath" parser="html_dom_image_text">
     <selector url_regex="http://www.nytimes.com/[A-z0-9_@-]+/$" domain="nytimes.com" />
-    <selector url_regex="http://www.nytimes.com/\d\d\d\d/\d\d/\d\d/.*\.html" />
+    <selector url_regex="http://www.nytimes.com/\d\d\d\d/\d\d/\d\d/.*" domain="nytimes.com" />
     <example_url
       url="http://www.nytimes.com/2012/08/28/science/earth/sea-ice-in-arctic-measured-at-record-low.html" />
 
     <scalar name="description">
       <xpath>/html/head/meta[@name='description']/@content</xpath>
     </scalar>
-    <scalar name="title">
+    <scalar name="title" use_value_as_label="thumbnail">
       <xpath>/html/head/meta[@name='hdl']/@content</xpath>
     </scalar>
+    
+    <composite name="thumbnail" hide="true">
+      <xpath>//meta[@itemprop='thumbnailUrl']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </composite>
   </meta_metadata>
 
 </meta_metadata_repository>
