@@ -13,13 +13,6 @@
     <scalar name="title" use_value_as_label="thumbnail">
       <xpath>/html/head/meta[@name='hdl']/@content</xpath>
     </scalar>
-    
-    <composite name="thumbnail" hide="true">
-      <xpath>//meta[@itemprop='thumbnailUrl']</xpath>
-      <scalar name="location">
-        <xpath>./@content</xpath>
-      </scalar>
-    </composite>
   </meta_metadata>
 
 </meta_metadata_repository>
