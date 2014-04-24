@@ -172,6 +172,12 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.citeulike.CiteulikeUser.class,
 
+		ecologylab.bigsemantics.generated.library.clothing.HmProduct.class,
+
+		ecologylab.bigsemantics.generated.library.clothing.UniqloProduct.class,
+
+		ecologylab.bigsemantics.generated.library.clothing.ZaraProduct.class,
+
 		ecologylab.bigsemantics.generated.library.creative_work.Author.class,
 
 		ecologylab.bigsemantics.generated.library.creative_work.BasicPublication.class,
