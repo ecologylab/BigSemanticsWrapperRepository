@@ -707,7 +707,7 @@
 
   <meta_metadata name="amazon_search_list" type="amazon_list" parser="xpath"
     user_agent_name="chrome">
-    <selector domain="amazon.com" url_regex="http://www.amazon.com/s/.*" /> <!-- "http://www.amazon.com/s/ref=*?url=search-alias%3Daps&amp;field-keywords=*" -->
+    <selector domain="amazon.com" url_regex="http://www.amazon.com/s/.*" />
     <example_url url="http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&amp;field-keywords=ps4" />
 
     <scalar name="title">
@@ -727,9 +727,12 @@
       <scalar name="overall_rating">
         <xpath>//span[@class='a-declarative']//a/@alt</xpath>
       </scalar>
-      <scalar name="location">
-        <xpath>//div[@class='imageBox']/img/@src</xpath>
-      </scalar>
+      <collection name="main_images">
+        <xpath>.//div[@class='imageBox']/img</xpath>
+        <scalar name="location">
+          <xpath>//div[@class='imageBox']/img/@src</xpath>
+        </scalar>
+      </collection>
     </collection>
   </meta_metadata>
 
