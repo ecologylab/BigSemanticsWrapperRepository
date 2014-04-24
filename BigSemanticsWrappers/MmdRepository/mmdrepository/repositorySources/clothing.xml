@@ -22,7 +22,7 @@
       <xpath>//ul[@class='current']/li[@class='current']/a/text()</xpath>
     </scalar>
     <collection name="main_images">
-      <xpath>//*[@class='media-wrap image-wrap plain imageZoom']/a</xpath>
+      <xpath>//*[@class='media-wrap image-wrap plain  imageZoom']/a</xpath>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
