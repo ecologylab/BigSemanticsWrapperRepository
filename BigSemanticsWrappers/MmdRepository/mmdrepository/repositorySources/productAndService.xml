@@ -71,6 +71,7 @@
     <collection name="main_images">
       <xpath>//img[@id='main-image']</xpath>
       <xpath>//img[@id='landingImage']</xpath>
+      <xpath>//div[@id='imageBlock']//img</xpath>
       <scalar name="location">
         <xpath>./@data-old-hires</xpath>
         <xpath>./@src</xpath>
