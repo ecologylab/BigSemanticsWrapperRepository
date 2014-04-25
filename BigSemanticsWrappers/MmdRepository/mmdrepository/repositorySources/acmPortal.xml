@@ -1,7 +1,7 @@
 <!-- This file defines a wrapper that allows for extraction of meta-data for scholarly articles from ACM portal web-pages. -->
 <meta_metadata_repository name="acm_portal"
   package="ecologylab.bigsemantics.generated.library.acm" default_user_agent_name="chrome_2">
-						  
+
 <!-- An ACM portal object will extend scholarly_article, will use Xpaths for parsing webpage data, and will use
 the "google_bot_2" user agent when performing web-site scraping. -->
 <!-- Scholarly_article ultimately inherits from document. A document is anything with a corresponding URL for retrieval. -->
@@ -13,7 +13,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
 		<!-- Selector logic can also use a regex. -->
     <selector url_stripped="http://portal.acm.org/citation.cfm" />
     <selector url_stripped="http://dl.acm.org/citation.cfm" />
-		
+
 		<!-- example pages that are acm_portal documents are as follows -->
     <example_url url="http://dl.acm.org/citation.cfm?id=2063231.2063237&amp;preflayout=flat" />
     <example_url url="http://dl.acm.org/citation.cfm?id=642611.642681&amp;preflayout=flat" />
@@ -31,7 +31,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     </filter_location>
 
     <url_generator type="search" engine="acm_portal" use_id="title" />
-	
+
 		<!-- The value of the field "title" (which is defined in the Document), is parsed from the result of the xpath. -->
     <scalar name="title" navigates_to="location" as_natural_id="title" format="text">
       <xpath>//div[@name='for-testing']</xpath>
@@ -47,7 +47,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
           <value>PDF full text</value>
         </concatenate_values>
       </scalar>
-			
+
 			<!-- The location of the rich_media document is given by the URL of the full text PDF. 
 				Again: In our schema, everything that has a URL is a document. That "location" is where one goes to get 
 				information about the document. Authors, Institutions, etc are all "Documents" because they have a location ( a URL ) 
@@ -107,7 +107,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
         <xpath>.//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]</xpath>
         <regex_op regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
       </scalar>
-			
+
 			<!-- xpath that could be used that returns all documents instead of just the first 10: 
 			<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
 			-->
