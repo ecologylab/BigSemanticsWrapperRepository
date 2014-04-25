@@ -7,9 +7,6 @@
     <example_url
       url="http://www.nytimes.com/2012/08/28/science/earth/sea-ice-in-arctic-measured-at-record-low.html" />
 
-    <scalar name="description">
-      <xpath>/html/head/meta[@name='description']/@content</xpath>
-    </scalar>
     <scalar name="title" use_value_as_label="thumbnail">
       <xpath>/html/head/meta[@name='hdl']/@content</xpath>
     </scalar>
