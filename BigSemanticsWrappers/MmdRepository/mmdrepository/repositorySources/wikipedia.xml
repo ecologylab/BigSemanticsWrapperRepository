@@ -96,7 +96,17 @@
     <scalar name="description">
       <xpath>//*[@id='mw-content-text']/p[1]</xpath>
     </scalar>
-
+    
+    
+    <collection name="main_images">
+      <xpath>((//table[contains(@class, 'infobox')])[1]//img)[1]</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    
+    </collection>
+    
+    <!--  Seems unnecessary now that we have main_images
     <composite name="main_image" context_node="main_image">
       <xpath>.</xpath>
       <scalar name="location">
@@ -106,7 +116,7 @@
     <scalar name="main_image_src" context_node="main_image">
       <xpath>./@src</xpath>
     </scalar>
-
+    -->
     <collection name="sections">
       <xpath>//div[@id='mw-content-text']/h2</xpath>
       <scalar name="title">

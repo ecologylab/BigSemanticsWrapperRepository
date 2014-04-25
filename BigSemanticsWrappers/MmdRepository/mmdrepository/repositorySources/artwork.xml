@@ -43,6 +43,13 @@
     <scalar name="title">
       <xpath>//span[@class='artwork-title span-20']/a[1]</xpath>
     </scalar>
+    
+    <collection name="main_images">
+        <xpath>//div[@id='artwork-main-image']//img</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
     <scalar name="year">
       <xpath>//div[@class]/ul/li[1]/span[2]</xpath>
     </scalar>
@@ -141,7 +148,14 @@
     <scalar name="description" tag="abstract" label="about" scalar_type="String">
       <xpath>//div[@class='statement-column-content']</xpath>
     </scalar>
-
+    
+    <collection name="main_images">
+        <xpath>//div[@id='collection-carousel']/div[@class='carousel-item']//img</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
+  
     <collection name="creative_works">
       <xpath>//div[@class='focused']</xpath>
       <scalar name="description">
@@ -201,7 +215,13 @@
         <xpath>./@href</xpath>
       </scalar>
     </composite>
-
+    
+    <collection name="main_images">
+        <xpath>//p[@id='mainImage']//img</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
     <composite name="moma_classification" type="compound_document" label="classification">
       <xpath>//div[@class='item']/h4[contains(text(), 'Classification:')]/../div/a</xpath>
       <scalar name="title" label="name">
@@ -317,13 +337,21 @@
     <scalar name="title">
       <xpath>//span[@class='title']</xpath>
     </scalar>
+    
+    <collection name="main_images">
+        <xpath>//div[@class='artworkModule']//img
+        </xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
     <scalar name="year">
       <xpath>//span[@class='datetext']</xpath>
     </scalar>
     <scalar name="medium">
       <xpath>//span[@class='infoValue infoMedium']</xpath>
     </scalar>
-
+    
     <collection name="authors">
       <xpath>//div[@class='infoWorkArtist infoValue']</xpath>
       <scalar name="location" hide="true">
@@ -421,7 +449,18 @@
     <scalar name="geography" comment="Location of the work." label="geography" scalar_type="String">
       <xpath>(//dd[preceding-sibling::dt[contains(text(),'Geography:')]])[1]</xpath>
     </scalar>
-				
+	
+	<collection name="main_images">
+	   <xpath>//div[@class='object']//img</xpath>
+	   <xpath>//a[@name='art-object-fullscreen']//img</xpath>
+	   <scalar name="location">
+	       <xpath>./@src</xpath>
+	   </scalar>
+	
+	</collection>
+	
+	
+	
 		<!-- special characters (dash) get deleted -->
     <example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
     <scalar name="year">
@@ -524,6 +563,16 @@
         <xpath>.</xpath>
       </scalar>
     </collection>
+    
+    <collection name="main_images">
+  
+    <xpath>//div[@class='individual-image full-width artwork-module-image']//img[not(contains(@src, 'on-view-pin'))]</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    
+    </collection>
+    
     <scalar name="title">
       <xpath>(//*[@class='title']/h1)[last()]</xpath>
     </scalar>
@@ -532,6 +581,7 @@
     </scalar>
   </meta_metadata>
 
+    
   <meta_metadata name="whitney_watch_and_listen" extends="artwork" parser="xpath">
     <selector url_path_tree="http://whitney.org/WatchAndListen/" />
     <example_url url="http://whitney.org/WatchAndListen/Artists?play_id=903" />
@@ -561,16 +611,18 @@
     <scalar name="title" label="search term">
       <xpath>//*[@id='search-result-field']/@value</xpath>
     </scalar>
-
+    
     <collection name="search_results" child_type="whitney_artwork">
-      <xpath>//div[@class='result artwork']/div[@class='title']</xpath>
+      <xpath>//div[@class='result artwork']</xpath>
       <scalar name="location" hide="true">
-        <xpath>./a[2]/@href</xpath>
+        <xpath>./div[@class='title']/a[2]/@href</xpath>
       </scalar>
       <scalar name="title">
-        <xpath>./a[2]</xpath>
+        <xpath>./div[@class='title']/a[2]</xpath>
       </scalar>
+      
     </collection>
+    
   </meta_metadata>
 
 

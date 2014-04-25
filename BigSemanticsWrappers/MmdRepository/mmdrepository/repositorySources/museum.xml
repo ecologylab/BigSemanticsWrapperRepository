@@ -247,7 +247,13 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
     <scalar name="title">
       <xpath>//div[@id='breadcrumbs']/ul/li[last()]</xpath>
     </scalar>
-
+    <collection name="main_images">
+        <xpath>//div[@id='colonne1']/div[@class='contenus']//img[not(contains(@src, 'hs-close.gif')) and contains(@src, 'cropCorners')]</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    
+    </collection>
     <scalar name="article_type" scalar_type="String">
       <xpath>//div[@id='breadcrumbs']/ul/li[2]/a/text()</xpath>
     </scalar>
