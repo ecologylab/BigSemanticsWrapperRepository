@@ -224,8 +224,6 @@
 
 
   <meta_metadata name="compound_document" extends="document" built_in="true">
-    <scalar name="title" use_value_as_label="main_images" />
-    
     <scalar name="location" always_show="false" />
     <scalar name="query" scalar_type="String" hint="XML_LEAF" layer="5.0" comment="The search query" />
     <scalar name="page_structure" layer="6.0" hide="true" scalar_type="String"
