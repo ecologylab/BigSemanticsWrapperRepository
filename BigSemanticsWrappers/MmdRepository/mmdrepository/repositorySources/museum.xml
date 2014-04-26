@@ -244,7 +244,7 @@ The 'flamenco_object' serves as an individual piece in the museum, but also as a
     <scalar name="collection_name" scalar_type="String">
       <xpath>//div[@id='breadcrumbs']/ul/li[(position() = 3) and (not(position()=last()))]/a/text()</xpath>
     </scalar>
-    <scalar name="title">
+    <scalar name="title" use_value_as_label="main_images">
       <xpath>//div[@id='breadcrumbs']/ul/li[last()]</xpath>
     </scalar>
     <collection name="main_images">
