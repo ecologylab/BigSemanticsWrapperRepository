@@ -118,7 +118,7 @@
       </scalar>
       <scalar name="id" concatenates_to="post_date" hide_label="true">
         <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
-        <xpath>.//a[@class='ProfileTweet-timestamp u-textMute js-permalink js-nav js-tooltip']/@href</xpath>
+        <xpath>.//a[@class='ProfileTweet-timestamp js-permalink js-nav js-tooltip']/@href</xpath>
         <regex_op regex="[^/]+$" />
       </scalar>
 
