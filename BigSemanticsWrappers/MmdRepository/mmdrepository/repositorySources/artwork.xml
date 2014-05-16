@@ -9,6 +9,7 @@
 
 
   <meta_metadata name="artwork" extends="creative_work" comment="Artwork class">
+    <scalar name="title" use_value_as_label="main_images" />
     <scalar name="location" hide="true" />
     <scalar name="description" comment="Abstract of the work." />
     <collection name="authors" child_type="artist" label="artists" tag="artists"
