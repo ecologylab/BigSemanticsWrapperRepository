@@ -31,6 +31,7 @@
       <xpath>//meta[@name='description']/@content</xpath>
       <xpath>//meta[@name='og:description']/@content</xpath>
       <xpath>//meta[@name='twitter:description']/@content</xpath>
+      <xpath>//*[@itemprop='description']/@content</xpath>
     </scalar>
     <scalar name="site_name" scalar_type="String" hide="true" comment="Huamn readable name of the site.">
       <xpath>//meta[@property='og:site_name']/@content</xpath>
@@ -258,7 +259,13 @@
         <xpath>./@content</xpath>
       </scalar>
     </collection>
-
+    <collection name="article_bodies" child_type="document">
+      <xpath>//*[@itemprop='articleBody']</xpath>
+      <scalar name="description" label="content">
+        <xpath>.</xpath>
+      </scalar>
+   
+    </collection>
     <after_semantic_actions>
       <visualize_clippings />
     </after_semantic_actions>

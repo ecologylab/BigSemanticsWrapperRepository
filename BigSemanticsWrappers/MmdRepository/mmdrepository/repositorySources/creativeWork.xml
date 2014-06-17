@@ -6,15 +6,17 @@
     <scalar name="location" hide="true" schema_org_itemprop="url" />
     <scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation" />
     <scalar name="city" scalar_type="String" />
-
+    
     <collection name="creative_works" child_type="creative_work" child_tag="creative_work" />
     <composite name="webpage" type="document" polymorphic_scope="repository_documents"
       wrap="true" />
+    
+    <composite name="twitter_profile" type="compound_document"/>
   </meta_metadata>
 
 
   <meta_metadata name="creative_work" extends="compound_document" schema_org_itemtype="http://schema.org/CreativeWork">
-    <collection name="authors" child_type="author" child_tag="author" layer="8.0"
+    <collection name="authors" child_type="author" layer="8.0"
       schema_org_itemprop="author" />
     <scalar name="description" tag="abstract" label="abstract" layer="9.0" hint="XML_LEAF" />
     <scalar name="year" other_tags="year_of_publication" scalar_type="String" is_facet="true" />
@@ -30,6 +32,43 @@
     <composite name="rich_media" type="compound_document" />
   </meta_metadata>
 
+  <meta_metadata name="news_article" extends="creative_work">
+    <collection name="authors" label="authors">
+      <xpath>//*[@itemprop='author creator']</xpath>
+      <scalar name="title">
+        <xpath>.//*[@itemprop='name']</xpath>
+      </scalar>
+      
+      <composite name="twitter_profile">
+        <xpath>.//*[@itemprop='name']</xpath>
+        <scalar name="title">
+          <xpath>./@data-twitter-handle</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@data-twitter-handle</xpath>
+           <regex_op regex="^" replace="https://twitter.com/" />
+        </scalar>
+      </composite>
+      
+    </collection>
+    
+    <scalar name="description">
+     <xpath>//*[@itemprop='description']/@content</xpath>
+    </scalar>
+       <scalar name="publication_date" scalar_type="String">
+      <xpath>//*[@itemprop='datePublished']/@content</xpath>
+    </scalar>
+    <scalar name="subject" scalar_type="String">
+      <xpath>//*[@itemprop='articleSection']/@content</xpath>
+    </scalar>
+   
+       
+ 
+    
+   
+    
+   
+  </meta_metadata>
 
   <meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
     <scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />

@@ -15,6 +15,7 @@
     <scalar name="query" scalar_type="String"/>
     <collection name="search_results" child_type="SR" no_wrap="true"
       show_expanded_initially="true" polymorphic_scope="repository_documents" />
+    <collection name="related_searches" child_type="search"/>
     <composite name="next_page" type="search" />
   </meta_metadata>
 
@@ -65,7 +66,11 @@
 	<scalar name="location">
 	  <xpath>./a/@href</xpath>
 	</scalar>      
+	<scalar name="query">
+	   <xpath>./</xpath>
+	</scalar>
     </collection>
+   
     <composite name="next_page">
       <scalar name="name">
         <xpath>//td[@class='b navend'][2]/a</xpath>
@@ -450,16 +455,29 @@
       <regex_op regex=" - Bing$" replace="" />
     </scalar>
     <collection name="search_results">
-      <xpath>//li[@class='sa_wr']</xpath>
+      <xpath>//li[@class='b_algo']</xpath>
       <scalar name="title">
-        <xpath>.//h3/a</xpath>
+        <xpath>.//h2/a</xpath>
       </scalar>
-      <scalar name="description">
+      <!--  <scalar name="description">
         <xpath>.//div[@class='sa_cc']/p</xpath>
-      </scalar>
+      </scalar> -->
       <scalar name="location">
-        <xpath>.//h3/a/@href</xpath>
+        <xpath>.//h2/a/@href</xpath>
       </scalar>
+    </collection>
+    
+    <collection name="related_searches" child_type="bing_search_xpath">
+    <xpath>//h2[contains(., 'Related searches')]/..//ul/li</xpath>
+    <scalar name="title">
+      <xpath>./a</xpath>
+    </scalar>
+    <scalar name="location">
+      <xpath>./a/@href</xpath>
+    </scalar>      
+    <scalar name="query">
+       <xpath>./</xpath>
+    </scalar>
     </collection>
   </meta_metadata>
 
