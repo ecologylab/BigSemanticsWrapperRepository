@@ -67,7 +67,7 @@
 	  <xpath>./a/@href</xpath>
 	</scalar>      
 	<scalar name="query">
-	   <xpath>./</xpath>
+	   <xpath>.</xpath>
 	</scalar>
     </collection>
    
