@@ -389,6 +389,8 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     <selector url_stripped="http://portal.acm.org/results.cfm" />
     <selector url_stripped="http://dl.acm.org/results.cfm" />
 
+    <scalar name="location" hide="true" always_show="false" />
+    
     <collection name="search_results">
       <xpath>//a[starts-with(@href, 'citation.cfm')]/../../..</xpath>
       <scalar name="title">
