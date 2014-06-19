@@ -27,6 +27,7 @@
     comment="The Google search class">
     <generic_type_var name="SR" arg="search_result" />
     <selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
+    <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com" />
     <example_url
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
 	
