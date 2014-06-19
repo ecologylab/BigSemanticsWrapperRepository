@@ -31,8 +31,6 @@
     <example_url
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
 	
-	
-	
     <scalar name="query" style_name="google_query" layer="9.1">
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
@@ -50,6 +48,7 @@
           <xpath>.//h3/a/@href</xpath>
           <regex_op regex="/url\?q=" replace=""/>
           <regex_op regex="&amp;sa=.*" replace=""/>
+          <url_decode_op />
         </scalar>
       </composite>
        <scalar name="description" layer="5.3">
