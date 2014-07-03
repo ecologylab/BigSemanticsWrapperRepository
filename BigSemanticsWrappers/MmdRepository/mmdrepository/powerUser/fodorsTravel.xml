@@ -6,16 +6,17 @@
     <selector url_regex_fragment="http://www.fodors.com/world" domain="fodors.com" />
     <exampleURL url="http://www.fodors.com/world/europe/italy/rome/review-90077.html" />
     <scalar name="title">
-      <xpath>//head/title</xpath>
+      <xpath>/body/head/title</xpath>
     </scalar>
-    <composite name="image">
+    <collection name="main_images">
+      <xpath>//div[@class='slide-image-details']</xpath>
       <scalar name="location">
-        <xpath>//div[@id='slides']/div[1]/div[1]/img/@src</xpath>
+        <xpath>./img/@src</xpath>
       </scalar>
-    </composite>
-    <scalar name="description">
+    </collection>
+    <!--  <scalar name="description">
       <xpath>//meta[@itemprop='description']/@content</xpath> 											
-    </scalar>
+    </scalar> -->
 	<composite name="attraction_address">
 	  <xpath>//span[@itemprop='address']</xpath> 
 	  <scalar name="street_address"> 
