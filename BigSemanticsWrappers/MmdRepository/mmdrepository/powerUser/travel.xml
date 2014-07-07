@@ -2,14 +2,17 @@
   package="ecologylab.bigsemantics.generated.library.travel" default_user_agent_name="chrome_2">
   
   <meta_metadata name="attraction" extends="compound_document">
+    <scalar name="description" scalar_type="String" comment="an introduction to the attraction" />
+
     <scalar name="fee" scalar_type="String" comment="Price/fee of the attraction" />
     <scalar name="attraction_type" scalar_type="String" comment="type of the attraction, i.e. museum" />
     <scalar name="open_hours" scalar_type="String" comment="the hours that the attraction is open" />
-    <composite name="attraction_address" type="postal_address" />
     <scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" layer="2.0"
       style_name="underTopRight_div" schema_org_itemprop="aggregateRating" />
-    <scalar name="description" scalar_type="String" comment="an introduction to the attraction" />
-    <scalar name="phone_number" scalar_type="String" comment="number to call for more information" />
+      
+    <composite name="attraction_address" type="postal_address" />
+<!--     <scalar name="phone_number" scalar_type="String" comment="number to call for more information" /> -->
+
     <scalar name="attraction_website" scalar_type="ParsedURL" comment="website to go to for more information" />
     <collection name="reviews" child_type="review" layer="0.8" style_name="reviews_div" />
     <scalar name="attractions_in_the_area" scalar_type="ParsedURL" comment="area of where attraction is and other attractions in the area" />
