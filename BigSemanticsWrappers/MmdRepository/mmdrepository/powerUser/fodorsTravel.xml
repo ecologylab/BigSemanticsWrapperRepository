@@ -1,9 +1,9 @@
 <meta_metadata_repository name="fordors_travel"
-  package="ecologylab.bigsemantics.generated.library.tripAdvisor" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.fodorstravel" default_user_agent_name="chrome">
   
   <meta_metadata name="fodors_attraction" type="attraction" parser="xpath"
-    comment="Trip advisor travel suggestions">
-    <selector url_regex_fragment="http://www.fodors.com/world" domain="fodors.com" />
+    comment="Fodor travel suggestions">
+    <selector url_regex_fragment="review-\d+" domain="fodors.com" />
     <exampleURL url="http://www.fodors.com/world/europe/italy/rome/review-90077.html" />
     <scalar name="title">
       <xpath>/body/head/title</xpath>
@@ -39,7 +39,7 @@
       <xpath>//span[@itemprop='telephone']</xpath>
     </scalar>
     <scalar name="attraction_website">
-      <xpath>//li[@class='website']/a/@href</xpath>														<!-- href or no? -->
+      <xpath>//li[@class='website']/a/@href</xpath>														
     </scalar>
     <collection name="reviews">																	
       <xpath>//ul[@class='member-reviews']/li</xpath>
@@ -53,6 +53,31 @@
     <scalar name="attractions_in_the_area">
       <xpath>//li[@class='location']/span[2]/a/@href</xpath>
     </scalar>
+    
+  </meta_metadata>
+  
+  <meta_metadata name="fodors_attractions" type="attraction_list" parser="xpath"
+    comment="Fodor travel suggestions">
+    
+    <selector url_regex_fragment="nam_loc:\d+" domain="fodors.com">
+    </selector>
+    <exampleURL url="http://www.fodors.com/world/australia-and-the-pacific/australia/new-south-wales/sydney/sights-nam_loc:709123.html" />
+    <scalar name="title">
+    	<xpath>//head/title</xpath>
+    </scalar>
+    <collection name="attractions">
+      <xpath>//table[@class='sightslist']//tr</xpath>
+      <scalar name="title">
+        <xpath>./td[1]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[1]/a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./td[2]/span</xpath>
+      </scalar>
+    </collection>
+  
   </meta_metadata>
   
 </meta_metadata_repository>

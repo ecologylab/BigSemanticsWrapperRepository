@@ -1,5 +1,6 @@
 <meta_metadata_repository name="travel"
   package="ecologylab.bigsemantics.generated.library.travel" default_user_agent_name="chrome_2">
+  
   <meta_metadata name="attraction" extends="compound_document">
     <scalar name="fee" scalar_type="String" comment="Price/fee of the attraction" />
     <scalar name="attraction_type" scalar_type="String" comment="type of the attraction, i.e. museum" />
@@ -22,4 +23,10 @@
       </if>
     </semantic_actions>
   </meta_metadata>
+  
+  <meta_metadata name="attraction_list" extends="compound_document">
+    <collection name="attractions" child_type="attraction" >
+    </collection>
+  </meta_metadata>
+  
 </meta_metadata_repository>
