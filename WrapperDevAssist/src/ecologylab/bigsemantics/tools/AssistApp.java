@@ -85,7 +85,31 @@ public class AssistApp extends WindowAdapter
     antRunner = new AntRunner();
     service = new BSService(configs);
     btnUpdate.setEnabled(true);
-    info("Ready.");
+    info("Beginning service startup.");
+
+    btnUpdate.setEnabled(false);
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    executor.execute(new Runnable()
+    {
+      @Override
+      public void run()
+      {
+        updateBackend();
+        SwingUtilities.invokeLater(new Runnable()
+        {
+          @Override
+          public void run()
+          {
+            btnUpdate.setEnabled(true);
+          }
+        });
+      }
+    });
+    executor.shutdown();
+  
+    
+    
+    
   }
 
   public void createAndDisplayGUI()
