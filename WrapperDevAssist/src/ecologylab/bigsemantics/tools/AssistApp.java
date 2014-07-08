@@ -29,6 +29,12 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.io.Files;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+
 public class AssistApp extends WindowAdapter
 {
 
@@ -217,10 +223,32 @@ public class AssistApp extends WindowAdapter
       error("Error relaunching BS service.", null, e);
       return;
     }
+    //Opens string URL in the browser
+    String url = "http://localhost:8080/MICE/index.html";
 
-    info("Service started, running. Point to "
-         + "http://localhost:8080/interactiveSemantics/testLocal.html "
-         + "in your browser to view interactive semantics.");
+    if(Desktop.isDesktopSupported()){
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.browse(new URI(url));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (URISyntaxException e){
+        	// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }else{
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            runtime.exec("xdg-open " + url);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    info("Service running. Opening MICE in your default browser. Point to "
+         + "http://localhost:8080/ "
+         + "in your browser to view other BigSemanticsJavaScript projects.");
   }
 
   private void stopService() throws Exception

@@ -59,7 +59,7 @@
     <scalar name="price">
       <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
     </scalar>
-    <composite name="department" type="document">
+    <composite name="department" type="compound_document">
       <xpath>//*[@id='nav-subnav']/li[1]/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -128,7 +128,7 @@
       </scalar>
     </collection>
 
-    <collection name="list_mania" child_type="document">
+    <collection name="list_mania" child_type="compound_document">
       <xpath>//li//td/a/img</xpath>
       <scalar name="location">
         <xpath>../@href</xpath>
@@ -781,7 +781,7 @@
       <xpath>//*[@id='long-description']/text()</xpath>
     </scalar>
 
-    <collection name="features" child_type="document">
+    <collection name="features" child_type="compound_document">
       <xpath>//*[@id='features']/div[@class='feature']</xpath>
       <scalar name="title" label="feature">
         <xpath>./h4/text()</xpath>
@@ -793,14 +793,14 @@
     </collection>
 
 
-    <collection name="whats_included" child_type="document">
+    <collection name="whats_included" child_type="compound_document">
       <xpath>//*[@id='included-items']/ul/li</xpath>
       <scalar name="title" label="included_item">
         <xpath>./text()</xpath>
       </scalar>
     </collection>
 
-    <collection name="specifications" child_type="document">
+    <collection name="specifications" child_type="compound_document">
       <xpath>//*[@id='specs-sample']/ul/li</xpath>
       <scalar name="title" label="spec">
         <xpath>./span[@class='spec-label']/text()</xpath>
@@ -891,7 +891,7 @@
       <xpath>//span[@itemprop='price']</xpath>
     </scalar>
 
-    <composite name="seller" type="document">
+    <composite name="seller" type="compound_document">
       <scalar name="name" type="String">
         <xpath>//span[@class='mbg-nw']</xpath>
       </scalar>
