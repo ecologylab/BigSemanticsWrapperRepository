@@ -1,0 +1,6 @@
+[submodule "BigSemanticsService"]
+	path = BigSemanticsService
+	url = https://github.com/ecologylab/BigSemanticsService
+[submodule "BigSemanticsJavaScript"]
+	path = BigSemanticsJavaScript
+	url = https://github.com/ecologylab/BigSemanticsJavaScript

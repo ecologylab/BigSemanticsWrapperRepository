@@ -85,18 +85,18 @@
       </java>
   </target>
 	
-	<property name="bsservice.dir" value="../../BigSemanticsService" />
+	<property name="bsservice.dir" value="../BigSemanticsService" />
   <available property="bsservice.dir.exists" file="${bsservice.dir}" type="dir" />
 
 	<target name="build-dpool" if="bsservice.dir.exists">
-		<ant antfile="../../BigSemanticsService/DownloaderPool/build.xml"
+		<ant antfile="../BigSemanticsService/DownloaderPool/build.xml"
          target="main" useNativeBasedir="yes" inheritAll="false" />
 	</target>
   
 	<target name="compile-wrappers-and-update" if="bsservice.dir.exists">
     <ant antfile="../BigSemanticsWrappers/build.xml"
          target="update-deps-bsservice" useNativeBasedir="yes" inheritAll="false" />
-		<ant antfile="../../BigSemanticsService/BigSemanticsService/build/build.xml"
+		<ant antfile="../BigSemanticsService/BigSemanticsService/build/build.xml"
          target="buildwar" useNativeBasedir="yes" inheritAll="false" />
 	</target>
 
