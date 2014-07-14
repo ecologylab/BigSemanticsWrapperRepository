@@ -248,7 +248,7 @@ public class AssistApp extends WindowAdapter
       return;
     }
     //Opens string URL in the browser
-    String url = "http://localhost:8080/MICE/index.html";
+    String url = "http://localhost:8080/MICE/index.html?uselocal=true";
 
     if(Desktop.isDesktopSupported()){
         Desktop desktop = Desktop.getDesktop();
