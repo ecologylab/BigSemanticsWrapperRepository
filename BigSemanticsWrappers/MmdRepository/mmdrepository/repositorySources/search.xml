@@ -41,7 +41,7 @@
      
       <composite name="destination_page" layer="6.0">
         <xpath>.</xpath>
-        <scalar name="title">
+        <scalar name="title" label="title" style_name="google_search_result">
           <xpath>.//h3/a</xpath>
         </scalar>
         <scalar name="location">
