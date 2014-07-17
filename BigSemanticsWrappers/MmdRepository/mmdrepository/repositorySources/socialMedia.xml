@@ -145,6 +145,8 @@
       <regex_op regex="^" replace="https://twitter.com/search?q=" />
     </scalar>
 
+	<scalar name="description" hide_label="true" />
+	
     <generic_type_var name="SR" arg="post" />
 
     <collection name="search_results" label="tweets" child_type="tweet" child_tag="tweet"
