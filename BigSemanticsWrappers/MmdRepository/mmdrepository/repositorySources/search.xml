@@ -81,7 +81,7 @@
     </composite>
   </meta_metadata>
 
-  <meta_metadata name="google_scholar_search_result" extends="document"
+  <meta_metadata name="google_scholar_search_result" extends="compound_document"
     comment="A google scholar search result" parser="xpath">
     <url_generator type="search" engine="google_scholar" use_id="title" />
     <scalar name="title" as_natural_id="title" />
@@ -101,37 +101,37 @@
     <collection name="search_results" child_type="google_scholar_search_result" no_wrap="true">
       <xpath>//div[@class='gs_r']</xpath>
       <scalar name="title">
-        <xpath>./h3/a</xpath>
+        <xpath>.//h3[@class='gs_rt']/a</xpath>
       </scalar>
       <scalar name="description">
-        <xpath>./div[@class='gs_rs']</xpath>
+        <xpath>.//div[@class='gs_rs']</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./h3/a/@href</xpath>
+        <xpath>.//h3[@class='gs_rt']/a/@href</xpath>
       </scalar>
       <scalar name="source_info">
-        <xpath>./div[@class='gs_a']</xpath>
+        <xpath>.//div[@class='gs_a']</xpath>
       </scalar>
       
       <!-- FIXME this context node is not working -->
 <!--       <def_var name="links_row" xpath="./div[@class='gs_fl']" type="node" /> -->
 
       <scalar name="citations">
-        <xpath>./div[@class='gs_fl']/a[1]</xpath>
+        <xpath>.//div[@class='gs_fl']/a[1]</xpath>
         <regex_op regex="Cited by " replace="" />
       </scalar>
       <scalar name="citations_link">
-        <xpath>./div[@class='gs_fl']/a[1]/@href</xpath>
+        <xpath>.//div[@class='gs_fl']/a[1]/@href</xpath>
       </scalar>
       <scalar name="related_articles_link">
-        <xpath>./div[@class='gs_fl']/a[2]/@href</xpath>
+        <xpath>.//div[@class='gs_fl']/a[2]/@href</xpath>
       </scalar>
       <scalar name="versions">
-        <xpath>./div[@class='gs_fl']/a[last()]</xpath>
+        <xpath>.//div[@class='gs_fl']/a[last()]</xpath>
         <regex_op regex="All | versions" replace="" />
       </scalar>
       <scalar name="versions_link">
-        <xpath>./div[@class='gs_fl']/a[last()]/@href</xpath>
+        <xpath>.//div[@class='gs_fl']/a[last()]/@href</xpath>
       </scalar>
     </collection>
 
