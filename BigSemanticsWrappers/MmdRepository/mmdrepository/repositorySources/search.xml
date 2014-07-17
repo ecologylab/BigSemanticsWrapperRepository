@@ -97,7 +97,9 @@
   <meta_metadata name="google_scholar_search" extends="document" comment="The google Search class"
     parser="xpath">
     <selector url_stripped="http://scholar.google.com/scholar" />
-
+      <scalar name="query" scalar_type="String" layer="9.1">      
+      <xpath>//input[@name='q']/@value</xpath>
+    </scalar>
     <collection name="search_results" child_type="google_scholar_search_result" no_wrap="true">
       <xpath>//div[@class='gs_r']</xpath>
       <scalar name="title">
