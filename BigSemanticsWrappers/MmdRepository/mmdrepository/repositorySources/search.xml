@@ -94,13 +94,15 @@
     <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
   </meta_metadata>
 
-  <meta_metadata name="google_scholar_search" extends="document" comment="The google Search class"
+  <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class"
     parser="xpath">
     <selector url_stripped="http://scholar.google.com/scholar" />
-      <scalar name="query" scalar_type="String" layer="9.1">      
+      <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
-    <collection name="search_results" child_type="google_scholar_search_result" no_wrap="true">
+    <generic_type_var name="SR" arg="search_result" />
+    
+    <collection name="search_results"  show_expanded_always="true">
       <xpath>//div[@class='gs_r']</xpath>
       <scalar name="title">
         <xpath>.//h3[@class='gs_rt']/a</xpath>
@@ -114,10 +116,10 @@
       <scalar name="source_info">
         <xpath>.//div[@class='gs_a']</xpath>
       </scalar>
-      
+    </collection>
       <!-- FIXME this context node is not working -->
 <!--       <def_var name="links_row" xpath="./div[@class='gs_fl']" type="node" /> -->
-
+        <!--  
       <scalar name="citations">
         <xpath>.//div[@class='gs_fl']/a[1]</xpath>
         <regex_op regex="Cited by " replace="" />
@@ -163,6 +165,7 @@
         </parse_document>
       </for_each>
     </semantic_actions>
+    -->
   </meta_metadata>
 
   <meta_metadata name="my_google_search" type="search" comment="The my_google Search class"
