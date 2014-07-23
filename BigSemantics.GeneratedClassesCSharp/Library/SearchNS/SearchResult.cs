@@ -11,6 +11,7 @@ using Ecologylab.Collections;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -26,6 +27,9 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	[SimplInherit]
 	public class SearchResult : Document
 	{
+		[SimplScalar]
+		private MetadataString siteLink;
+
 		[SimplComposite]
 		[MmName("destination_page")]
 		private Document destinationPage;
@@ -35,6 +39,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 
 		public SearchResult(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString SiteLink
+		{
+			get{return siteLink;}
+			set
+			{
+				if (this.siteLink != value)
+				{
+					this.siteLink = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public Document DestinationPage
 		{

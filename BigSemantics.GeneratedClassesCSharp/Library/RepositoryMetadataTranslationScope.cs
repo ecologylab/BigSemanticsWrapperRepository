@@ -22,6 +22,7 @@ using Ecologylab.Semantics.Generated.Library.BuzzNS;
 using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
 using Ecologylab.Semantics.Generated.Library.CiteulikeNS;
+using Ecologylab.Semantics.Generated.Library.ClothingNS;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.Generated.Library.DisasterNS;
 using Ecologylab.Semantics.Generated.Library.DleseNS;
@@ -42,8 +43,10 @@ using Ecologylab.Semantics.Generated.Library.LolzNS;
 using Ecologylab.Semantics.Generated.Library.MiscNS;
 using Ecologylab.Semantics.Generated.Library.MovieNS;
 using Ecologylab.Semantics.Generated.Library.MuseumNS;
+using Ecologylab.Semantics.Generated.Library.NewsNS;
 using Ecologylab.Semantics.Generated.Library.NsdlNS;
 using Ecologylab.Semantics.Generated.Library.NsfNS;
+using Ecologylab.Semantics.Generated.Library.OpenDNS;
 using Ecologylab.Semantics.Generated.Library.OpmlNS;
 using Ecologylab.Semantics.Generated.Library.PatentNS;
 using Ecologylab.Semantics.Generated.Library.PersonNS;
@@ -108,22 +111,26 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AskNatureGroup),
 				typeof(AskNatureImage),
 				typeof(AskNatureOrganism),
+				typeof(AskNatureProduct),
 				typeof(AskNatureStrategy),
 				typeof(AskNatureSubgroup),
 				typeof(AskNatureTaxonomy),
 				typeof(Asos),
 				typeof(AsosPage),
 				typeof(Attraction),
+				typeof(AttractionList),
 				typeof(Audience),
 				typeof(AudioClipping),
 				typeof(AudioSelfmade),
 				typeof(Author),
 				typeof(BasicPublication),
+				typeof(BedbathandbeyondMobileProduct),
 				typeof(BedbathandbeyondProduct),
 				typeof(BestbuyProduct),
 				typeof(BggCategory),
 				typeof(BggGame),
 				typeof(BingSearchApi),
+				typeof(BingSearchXpath),
 				typeof(BirthDetail),
 				typeof(Blog),
 				typeof(BoardGame),
@@ -222,9 +229,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Head1),
 				typeof(Head2),
 				typeof(Header),
+				typeof(HmProduct),
 				typeof(HomeDepotProduct),
 				typeof(HotSearch),
 				typeof(Hotel),
+				typeof(HouzzProduct),
 				typeof(IcdlBook),
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
@@ -234,6 +243,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IeeeXploreCitations),
 				typeof(IeeeXploreReferences),
 				typeof(IeeeXploreSearch),
+				typeof(IkeaMobileProduct),
 				typeof(IkeaProduct),
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
@@ -270,11 +280,12 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(MoviePerson),
 				typeof(NetflixMovie),
 				typeof(NeweggProduct),
-				typeof(NeweggSpecs),
+				typeof(NeweggSubcategoryList),
 				typeof(NewmuseumArtist),
 				typeof(NewmuseumArtwork),
 				typeof(NewmuseumExhibition),
 				typeof(NewmuseumFilter),
+				typeof(NewsArticle),
 				typeof(Nsdl),
 				typeof(NsdlDocument),
 				typeof(NsdlService),
@@ -286,7 +297,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(NsfProgramStaffList),
 				typeof(NsfSearch),
 				typeof(NsfStaff),
+				typeof(Nytimes),
 				typeof(OnekingslaneProduct),
+				typeof(OpenDNSDomain),
 				typeof(Opml),
 				typeof(Organization),
 				typeof(Outline),
@@ -308,6 +321,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(PostalAddress),
 				typeof(PotterybarnProduct),
 				typeof(Product),
+				typeof(ProductSpecs),
 				typeof(Publication),
 				typeof(Publisher),
 				typeof(PubmedArticle),
@@ -382,6 +396,8 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Tweeter),
 				typeof(TwitterMicroblog),
 				typeof(TwitterSearchResults),
+				typeof(UniqloProduct),
+				typeof(UrbanSpoonRestaurant),
 				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(UvaModel),
@@ -389,6 +405,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(VideoInterview),
 				typeof(VideoSelfmade),
 				typeof(WalmartProduct),
+				typeof(WayfairProduct),
 				typeof(WeatherReport),
 				typeof(WebVideo),
 				typeof(WestelmProduct),
@@ -414,7 +431,8 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(YoutubeSearchResults),
 				typeof(YoutubeVideo),
 				typeof(YoutubeVideoGrid),
-				typeof(YoutubeVideoList));
+				typeof(YoutubeVideoList),
+				typeof(ZaraProduct));
 		}
 	}
 }

@@ -10,6 +10,7 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
@@ -27,6 +28,10 @@ namespace Ecologylab.Semantics.Generated.Library.YelpNS
 	[SimplInherit]
 	public class YelpBusiness : Service
 	{
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		/// <summary>
 		/// the type of business
 		/// </summary>
@@ -47,6 +52,19 @@ namespace Ecologylab.Semantics.Generated.Library.YelpNS
 
 		public YelpBusiness(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString Category
 		{

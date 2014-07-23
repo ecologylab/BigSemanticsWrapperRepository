@@ -186,6 +186,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.creative_work.Curation.class,
 
+		ecologylab.bigsemantics.generated.library.creative_work.NewsArticle.class,
+
 		ecologylab.bigsemantics.generated.library.creative_work.Periodical.class,
 
 		ecologylab.bigsemantics.generated.library.disaster.Disaster.class,
@@ -416,6 +418,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.museum.GettyWorkInfo.class,
 
+		ecologylab.bigsemantics.generated.library.news.Nytimes.class,
+
 		ecologylab.bigsemantics.generated.library.nsdl.Header.class,
 
 		ecologylab.bigsemantics.generated.library.nsdl.NsdlDocument.class,
@@ -586,6 +590,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.search.BingSearchApi.class,
 
+		ecologylab.bigsemantics.generated.library.search.BingSearchXpath.class,
+
 		ecologylab.bigsemantics.generated.library.search.DeliciousSearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.GoogleScholarSearch.class,
@@ -637,6 +643,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.socialMedia.TwitterSearchResults.class,
 
 		ecologylab.bigsemantics.generated.library.travel.Attraction.class,
+
+		ecologylab.bigsemantics.generated.library.travel.AttractionList.class,
 
 		ecologylab.bigsemantics.generated.library.tripAdvisor.TripAdvisorThingsToDo.class,
 

@@ -28,7 +28,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		[SimplCollection]
 		[SimplScope("rich_artifacts_scope")]
 		[MmName("metadata_collection")]
-		private List<IRichArtifact<Metadata>> metadataCollection;
+		private List<RichArtifact<Metadata>> metadataCollection;
 
 		[SimplScalar]
 		[SimplTag("version")]
@@ -47,7 +47,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		public Curation(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<IRichArtifact<Metadata>> MetadataCollection
+		public List<RichArtifact<Metadata>> MetadataCollection
 		{
 			get{return metadataCollection;}
 			set

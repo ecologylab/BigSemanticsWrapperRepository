@@ -37,6 +37,10 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 		[MmName("search_results")]
 		private List<Document> searchResults;
 
+		[SimplCollection("search")]
+		[MmName("related_searches")]
+		private List<Search<Document>> relatedSearches;
+
 		[SimplComposite]
 		[MmName("next_page")]
 		private Search<Document> nextPage;
@@ -68,6 +72,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 				if (this.searchResults != value)
 				{
 					this.searchResults = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Search<Document>> RelatedSearches
+		{
+			get{return relatedSearches;}
+			set
+			{
+				if (this.relatedSearches != value)
+				{
+					this.relatedSearches = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

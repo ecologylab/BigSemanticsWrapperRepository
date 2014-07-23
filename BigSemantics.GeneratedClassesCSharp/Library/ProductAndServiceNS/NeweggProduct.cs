@@ -32,10 +32,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("headline_specs")]
 		private List<CompoundDocument> headlineSpecs;
 
-		[SimplCollection("newegg_specs")]
-		[MmName("all_specs")]
-		private List<NeweggSpecs> allSpecs;
-
 		public NeweggProduct()
 		{ }
 
@@ -63,19 +59,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.headlineSpecs != value)
 				{
 					this.headlineSpecs = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<NeweggSpecs> AllSpecs
-		{
-			get{return allSpecs;}
-			set
-			{
-				if (this.allSpecs != value)
-				{
-					this.allSpecs = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

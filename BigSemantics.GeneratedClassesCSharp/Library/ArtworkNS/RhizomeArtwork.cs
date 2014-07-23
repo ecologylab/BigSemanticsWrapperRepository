@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 	public class RhizomeArtwork : Artwork
 	{
 		[SimplCollection("artwork")]
-		[SimplTag("related works")]
 		[SimplOtherTags(new String[] {"creative_works"})]
 		[MmName("related_works")]
 		private List<Artwork> relatedWorks;

@@ -49,6 +49,10 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 		[SimplScalar]
 		private MetadataString interestedIndstrialSectors;
 
+		[SimplCollection("ask_nature_product")]
+		[MmName("inspired_products")]
+		private List<AskNatureProduct> inspiredProducts;
+
 		[SimplComposite]
 		[MmName("biomimicry_taxonomy")]
 		private AskNatureTaxonomy biomimicryTaxonomy;
@@ -145,6 +149,19 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 				if (this.interestedIndstrialSectors != value)
 				{
 					this.interestedIndstrialSectors = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<AskNatureProduct> InspiredProducts
+		{
+			get{return inspiredProducts;}
+			set
+			{
+				if (this.inspiredProducts != value)
+				{
+					this.inspiredProducts = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

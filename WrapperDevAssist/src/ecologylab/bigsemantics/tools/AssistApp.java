@@ -216,29 +216,16 @@ public class AssistApp extends WindowAdapter
       info("Recompiling wrappers...");
       antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "jar");
 
-      info("Updating dependencies in the service project...");
-      File wrappersJar =
-          PathUtil.subPath(bsWrappersDir, "build", "jar", "BigSemanticsWrappers.jar");
-      File destWrappersJar =
-          PathUtil.subPath(bsServiceDir, "lib", "BigSemanticsWrappers.jar");
-      Files.copy(wrappersJar, destWrappersJar);
-
-      File metadataJar =
-          PathUtil.subPath(bsWrappersDir.getParentFile(), "BigSemanticsGeneratedClassesJava",
-                           "build", "jar", "BigSemanticsGeneratedClassesJava.jar");
-      File destMetadataJar =
-          PathUtil.subPath(bsServiceDir, "lib", "BigSemanticsGeneratedClassesJava.jar");
-      Files.copy(metadataJar, destMetadataJar);
-
       info("Rebuilding service war...");
       File serviceBuildFile =
-          PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build", "build.xml");
-      antRunner.runAntTarget(serviceBuildFile, "buildwar");
+          PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build.xml");
+      antRunner.runAntTarget(serviceBuildFile, "war");
 
       info("Rebuilding downloader pool war and downloader jar...");
       File dpoolBuildFile =
           PathUtil.subPath(bsServiceDir, "DownloaderPool", "build.xml");
-      antRunner.runAntTarget(dpoolBuildFile, "main");
+      antRunner.runAntTarget(dpoolBuildFile, "war");
+      antRunner.runAntTarget(dpoolBuildFile, "downloader-jar");
 
       startService();
     }
