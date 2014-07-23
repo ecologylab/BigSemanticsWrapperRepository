@@ -120,7 +120,6 @@ Servers/
 # java
 *.class
 META-INF/
-.settings/
 bin/
 target/
 build/
