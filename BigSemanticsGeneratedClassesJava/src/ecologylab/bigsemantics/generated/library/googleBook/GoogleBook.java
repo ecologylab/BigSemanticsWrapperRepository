@@ -8,19 +8,14 @@ package ecologylab.bigsemantics.generated.library.googleBook;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.googleBook.Page;
 import ecologylab.bigsemantics.generated.library.publication.Book;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,15 +23,9 @@ import java.util.Map;
 @simpl_inherit
 public class GoogleBook extends Book
 {
-	@simpl_scalar
-	private MetadataString category;
-
-	@simpl_scalar
-	private MetadataParsedURL placesMentionedKml;
-
-	@simpl_collection("page")
-	@mm_name("selected_pages")
-	private List<Page> selectedPages;
+	@simpl_collection("compound_document")
+	@mm_name("purchase_links")
+	private List<CompoundDocument> purchaseLinks;
 
 	public GoogleBook()
 	{ super(); }
@@ -46,97 +35,33 @@ public class GoogleBook extends Book
 	}
 
 
-	public MetadataString	category()
+	public List<CompoundDocument> getPurchaseLinks()
 	{
-		MetadataString	result = this.category;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.category = result;
-		}
-		return result;
-	}
-
-	public String getCategory()
-	{
-		return this.category == null ? null : category().getValue();
-	}
-
-	public MetadataString getCategoryMetadata()
-	{
-		return category;
-	}
-
-	public void setCategory(String category)
-	{
-		if (category != null)
-			this.category().setValue(category);
-	}
-
-	public void setCategoryMetadata(MetadataString category)
-	{
-		this.category = category;
-	}
-
-	public MetadataParsedURL	placesMentionedKml()
-	{
-		MetadataParsedURL	result = this.placesMentionedKml;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.placesMentionedKml = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getPlacesMentionedKml()
-	{
-		return this.placesMentionedKml == null ? null : placesMentionedKml().getValue();
-	}
-
-	public MetadataParsedURL getPlacesMentionedKmlMetadata()
-	{
-		return placesMentionedKml;
-	}
-
-	public void setPlacesMentionedKml(ParsedURL placesMentionedKml)
-	{
-		if (placesMentionedKml != null)
-			this.placesMentionedKml().setValue(placesMentionedKml);
-	}
-
-	public void setPlacesMentionedKmlMetadata(MetadataParsedURL placesMentionedKml)
-	{
-		this.placesMentionedKml = placesMentionedKml;
-	}
-
-	public List<Page> getSelectedPages()
-	{
-		return selectedPages;
+		return purchaseLinks;
 	}
 
   // lazy evaluation:
-  public List<Page> selectedPages()
+  public List<CompoundDocument> purchaseLinks()
   {
-    if (selectedPages == null)
-      selectedPages = new ArrayList<Page>();
-    return selectedPages;
+    if (purchaseLinks == null)
+      purchaseLinks = new ArrayList<CompoundDocument>();
+    return purchaseLinks;
   }
 
   // addTo:
-  public void addToSelectedPages(Page element)
+  public void addToPurchaseLinks(CompoundDocument element)
   {
-    selectedPages().add(element);
+    purchaseLinks().add(element);
   }
 
   // size:
-  public int selectedPagesSize()
+  public int purchaseLinksSize()
   {
-    return selectedPages == null ? 0 : selectedPages.size();
+    return purchaseLinks == null ? 0 : purchaseLinks.size();
   }
 
-	public void setSelectedPages(List<Page> selectedPages)
+	public void setPurchaseLinks(List<CompoundDocument> purchaseLinks)
 	{
-		this.selectedPages = selectedPages;
+		this.purchaseLinks = purchaseLinks;
 	}
 }

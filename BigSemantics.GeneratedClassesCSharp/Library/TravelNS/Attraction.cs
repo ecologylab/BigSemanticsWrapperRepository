@@ -15,6 +15,7 @@ using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
+using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -54,6 +55,18 @@ namespace Ecologylab.Semantics.Generated.Library.TravelNS
 		[SimplComposite]
 		[MmName("attraction_address")]
 		private PostalAddress attractionAddress;
+
+		/// <summary>
+		/// website to go to for more information
+		/// </summary>
+		[SimplScalar]
+		private MetadataParsedURL attractionWebsite;
+
+		/// <summary>
+		/// area of where attraction is and other attractions in the area
+		/// </summary>
+		[SimplScalar]
+		private MetadataParsedURL attractionsInTheArea;
 
 		public Attraction()
 		{ }
@@ -134,6 +147,32 @@ namespace Ecologylab.Semantics.Generated.Library.TravelNS
 				if (this.attractionAddress != value)
 				{
 					this.attractionAddress = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataParsedURL AttractionWebsite
+		{
+			get{return attractionWebsite;}
+			set
+			{
+				if (this.attractionWebsite != value)
+				{
+					this.attractionWebsite = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataParsedURL AttractionsInTheArea
+		{
+			get{return attractionsInTheArea;}
+			set
+			{
+				if (this.attractionsInTheArea != value)
+				{
+					this.attractionsInTheArea = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// A google scholar search result
 	/// </summary>
 	[SimplInherit]
-	public class GoogleScholarSearchResult : Document
+	public class GoogleScholarSearchResult : CompoundDocument
 	{
 		[SimplScalar]
 		private MetadataParsedURL documentLink;

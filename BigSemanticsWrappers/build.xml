@@ -1,48 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="BigSemanticsWrappers" basedir="." default="main"
-	xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	       xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
   <property name="repo.dir" value="MmdRepository" />
-  <property name="build.dir" value="build" />
-  <property name="classes.dir" value="${build.dir}/classes" />
-  <property name="jar.dir" value="${build.dir}/jar" />
-  <property name="jar.filename" value="${ant.project.name}.jar" />
-  <property name="jar.file" value="${jar.dir}/${jar.filename}" />
-  <property name="lib.dir" value="lib" />
+  <property name="lib.dir" value="../../BigSemanticsJava/lib" />
   
   <!-- declare maven -->
   <path id="maven-ant-tasks.classpath" path="${lib.dir}/maven-ant-tasks-2.1.1.jar" />
   <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
-           uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+           uri="antlib:org.apache.maven.artifact.ant"
+           classpathref="maven-ant-tasks.classpath" />
 
-  <artifact:dependencies filesetId="mavendeps">
-  	<dependency groupId="org.slf4j" artifactId="slf4j-api" version="1.7.5" scope="compile" />
-  	<dependency groupId="com.google.guava" artifactId="guava" version="14.0.1" scope="compile" />
-	</artifact:dependencies>
- 
-  <!-- classpath using jars -->
-  <path id="jars_classpath">
-    <fileset dir="${lib.dir}">
-      <include name="json-simple-1.1.1.jar" />
-      <include name="xercesMinimal.jar" />
-      <!-- we have changes in the ST lib, however antlr has ST in it too, thus
-           ST must be before antlr in the list. -->
-      <include name="ST-4.0.7.jar" />
-      <include name="antlr-3.5-complete.jar" />
-      <include name="*.jar" />
-    </fileset>
-  	<fileset refid="mavendeps" />
+  <artifact:pom id="pom_file" file="../../BigSemanticsJava/BigSemanticsSDK/pom.xml" />
+  <artifact:dependencies filesetId="maven_deps" pomRefId="pom_file" />
+
+  <!-- dependent project -->
+  <path id="dep_projs">
+    <pathelement path="../../simplJava/simplCore" />
+    <pathelement path="../../simplJava/simplSunSpecifics" />
+    <pathelement path="../../simplJava/simplTranslators" />
+    <pathelement path="../../BigSemanticsJava/BigSemanticsCore" />
+    <pathelement path="../../BigSemanticsJava/cyberneko" />
+    <pathelement path="../../BigSemanticsJava/BigSemanticsCybernekoWrapper" />
+    <pathelement path="../../BigSemanticsJava/imageMetadataExtractor" />
+    <pathelement path="../../BigSemanticsJava/BigSemanticsSDK" />
+    <pathelement path="../BigSemanticsGeneratedClassesJava" />
   </path>
   
-  <target name="main" depends="clean,update-deps" />
+  <import file="../../BigSemanticsJava/lib/bs-build-common.xml" />
 
-  <target name="clean">
-    <delete dir="${build.dir}" />
-  </target>
- 
-  <target name="compile-wrappers-java">
+  <target name="compile-wrappers-java" depends="depend.BigSemanticsSDK">
+    <!-- delete old generated code. -->
+    <delete dir="../BigSemanticsGeneratedClassesJava/src" />
+
     <!-- run the compiler. -->
     <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
-          classpathref="jars_classpath" fork="yes" failonerror="true">
+          classpathref="classpath" fork="yes" failonerror="true">
       <arg value="java" />
       <arg value="../BigSemanticsGeneratedClassesJava/src" />
       <jvmarg value="-Xms512m" />
@@ -50,8 +43,7 @@
     </java>
     
     <!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
-    <ant antfile="../BigSemanticsGeneratedClassesJava/build.xml"
-         target="main" useNativeBasedir="yes" inheritAll="false" />
+    <antcall target="depend.BigSemanticsGeneratedClassesJava" inheritall="no" />
 
     <!-- repositoryFiles.lst will only be updated after compilation! -->
     <mkdir dir="${classes.dir}" />
@@ -59,52 +51,38 @@
       <fileset dir="${repo.dir}" />
     </copy>
   </target>
-  
-  <target name="jar" depends="compile-wrappers-java">
-    <mkdir dir="${jar.dir}" />
-    <jar destfile="${jar.file}" basedir="${classes.dir}" />
 
-    <!-- update wrappers jar file. the runtime uses this jar file to load wrappers. -->
-    <copy file="${jar.file}" todir="${lib.dir}" />
-  </target>
-
-  <target name="mmtest" depends="jar">
-    <!-- run mmtest with a URL list -->
-    <java classname="ecologylab.bigsemantics.tools.MmTest"
-          classpathref="jars_classpath" fork="yes">
-      <arg line="-f MmTestURLs.lst" />
-        <jvmarg value="-Xms512m" />
-        <jvmarg value="-Xmx512m" />
-    </java>
-  </target>
-  
-  <target name="compile-wrappers-csharp">
+  <target name="compile-wrappers-csharp" depends="depend.BigSemanticsSDK">
     <!-- run the compiler. -->
     <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
-          classpathref="jars_classpath" fork="yes" failonerror="true">
+          classpathref="classpath" fork="yes" failonerror="true">
       <arg value="csharp" />
       <arg value="../BigSemantics.GeneratedClassesCSharp" />
       <jvmarg value="-Xms512m" />
       <jvmarg value="-Xmx512m" />
     </java>
     
-    <echo message="Metadata classes have been generated in C#. You still need to run a C# compiler to compile them into an assembly!" /> 
+    <echo message="Metadata classes have been generated in C#." />
+    <echo message="You still need to run a C# compiler to compile them into an assembly!" /> 
   </target>
 	
-	<property name="bsjava.lib" value="../../BigSemanticsJava/lib" />
-	<property name="bsservice.lib" value="../../BigSemanticsService/lib" />
-  <available property="bsjava.lib.exists" file="${bsjava.lib}" type="dir" />
-  <available property="bsservice.lib.exists" file="${bsservice.lib}" type="dir" />
-	
-	<target name="update-deps-bsjava" depends="jar" if="bsjava.lib.exists">
-		<copy file="${jar.file}" todir="${bsjava.lib}" />
-	</target>
-	
-	<target name="update-deps-bsservice" depends="jar" if="bsservice.lib.exists">
-		<copy file="${jar.file}" todir="${bsservice.lib}" />
-	</target>
-	
-	<target name="update-deps" depends="update-deps-bsjava,update-deps-bsservice">
-	</target>
-    
+  <target name="compile" depends="compile-wrappers-java,compile-wrappers-csharp">
+    <echo message="Compiling wrappers ..." />
+
+    <mkdir dir="${classes.dir}" />
+    <copy todir="${repo.dir}">
+      <fileset dir="${repo.dir}" includes="**/*" />
+    </copy>
+  </target>
+  
+  <target name="mmtest" depends="depend.BigSemanticsSDK">
+    <!-- run mmtest with a URL list -->
+    <java classname="ecologylab.bigsemantics.tools.MmTest"
+          classpathref="classpath" fork="yes">
+      <arg line="-f MmTestURLs.lst" />
+        <jvmarg value="-Xms512m" />
+        <jvmarg value="-Xmx512m" />
+    </java>
+  </target>
+  
 </project>

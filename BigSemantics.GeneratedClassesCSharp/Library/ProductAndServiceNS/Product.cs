@@ -10,6 +10,7 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
@@ -27,6 +28,10 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[SimplScalar]
 		private MetadataString model;
 
+		[SimplCollection("product_specs")]
+		[MmName("detailed_specifications")]
+		private List<ProductSpecs> detailedSpecifications;
+
 		public Product()
 		{ }
 
@@ -41,6 +46,19 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.model != value)
 				{
 					this.model = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<ProductSpecs> DetailedSpecifications
+		{
+			get{return detailedSpecifications;}
+			set
+			{
+				if (this.detailedSpecifications != value)
+				{
+					this.detailedSpecifications = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

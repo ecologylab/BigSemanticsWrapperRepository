@@ -40,6 +40,9 @@ public class ContactPoint extends Document
 	@simpl_scalar
 	private MetadataString room;
 
+	/** 
+	 *Whole address as one String
+	 */ 
 	@simpl_scalar
 	private MetadataString streetAddress;
 

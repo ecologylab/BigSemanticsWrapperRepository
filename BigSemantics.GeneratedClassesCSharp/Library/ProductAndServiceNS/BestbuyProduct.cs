@@ -24,17 +24,17 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class BestbuyProduct : Product
 	{
-		[SimplCollection("document")]
+		[SimplCollection("compound_document")]
 		[MmName("features")]
-		private List<Document> features;
+		private List<CompoundDocument> features;
 
-		[SimplCollection("document")]
+		[SimplCollection("compound_document")]
 		[MmName("whats_included")]
-		private List<Document> whatsIncluded;
+		private List<CompoundDocument> whatsIncluded;
 
-		[SimplCollection("document")]
+		[SimplCollection("compound_document")]
 		[MmName("specifications")]
-		private List<Document> specifications;
+		private List<CompoundDocument> specifications;
 
 		[SimplCollection("bestbuy_product")]
 		[MmName("companion_products")]
@@ -50,7 +50,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		public BestbuyProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Document> Features
+		public List<CompoundDocument> Features
 		{
 			get{return features;}
 			set
@@ -63,7 +63,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public List<Document> WhatsIncluded
+		public List<CompoundDocument> WhatsIncluded
 		{
 			get{return whatsIncluded;}
 			set
@@ -76,7 +76,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public List<Document> Specifications
+		public List<CompoundDocument> Specifications
 		{
 			get{return specifications;}
 			set

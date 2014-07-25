@@ -33,6 +33,10 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 		[MmName("people_also_shopped_for")]
 		private List<WestelmProduct> peopleAlsoShoppedFor;
 
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		public WestelmProduct()
 		{ }
 
@@ -60,6 +64,19 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 				if (this.peopleAlsoShoppedFor != value)
 				{
 					this.peopleAlsoShoppedFor = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

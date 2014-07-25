@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	{
 		[SimplComposite]
 		[MmName("department")]
-		private Document department;
+		private CompoundDocument department;
 
 		[SimplComposite]
 		[MmName("bestseller_list_rank")]
@@ -36,9 +36,13 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("people_also_buy")]
 		private List<AmazonProduct> peopleAlsoBuy;
 
-		[SimplCollection("document")]
+		[SimplCollection("compound_document")]
 		[MmName("list_mania")]
-		private List<Document> listMania;
+		private List<CompoundDocument> listMania;
+
+		[SimplCollection("compound_document")]
+		[MmName("kindle_specifications")]
+		private List<CompoundDocument> kindleSpecifications;
 
 		public AmazonProduct()
 		{ }
@@ -46,7 +50,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		public AmazonProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Document Department
+		public CompoundDocument Department
 		{
 			get{return department;}
 			set
@@ -85,7 +89,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public List<Document> ListMania
+		public List<CompoundDocument> ListMania
 		{
 			get{return listMania;}
 			set
@@ -93,6 +97,19 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.listMania != value)
 				{
 					this.listMania = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<CompoundDocument> KindleSpecifications
+		{
+			get{return kindleSpecifications;}
+			set
+			{
+				if (this.kindleSpecifications != value)
+				{
+					this.kindleSpecifications = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

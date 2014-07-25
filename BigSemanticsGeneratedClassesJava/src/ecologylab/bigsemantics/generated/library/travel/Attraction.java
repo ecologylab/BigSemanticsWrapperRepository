@@ -13,9 +13,11 @@ import ecologylab.bigsemantics.generated.library.misc.Review;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
@@ -56,6 +58,18 @@ public class Attraction extends CompoundDocument
 	@simpl_composite
 	@mm_name("attraction_address")
 	private PostalAddress attractionAddress;
+
+	/** 
+	 *website to go to for more information
+	 */ 
+	@simpl_scalar
+	private MetadataParsedURL attractionWebsite;
+
+	/** 
+	 *area of where attraction is and other attractions in the area
+	 */ 
+	@simpl_scalar
+	private MetadataParsedURL attractionsInTheArea;
 
 	public Attraction()
 	{ super(); }
@@ -231,5 +245,69 @@ public class Attraction extends CompoundDocument
 	public void setAttractionAddress(PostalAddress attractionAddress)
 	{
 		this.attractionAddress = attractionAddress;
+	}
+
+	public MetadataParsedURL	attractionWebsite()
+	{
+		MetadataParsedURL	result = this.attractionWebsite;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.attractionWebsite = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getAttractionWebsite()
+	{
+		return this.attractionWebsite == null ? null : attractionWebsite().getValue();
+	}
+
+	public MetadataParsedURL getAttractionWebsiteMetadata()
+	{
+		return attractionWebsite;
+	}
+
+	public void setAttractionWebsite(ParsedURL attractionWebsite)
+	{
+		if (attractionWebsite != null)
+			this.attractionWebsite().setValue(attractionWebsite);
+	}
+
+	public void setAttractionWebsiteMetadata(MetadataParsedURL attractionWebsite)
+	{
+		this.attractionWebsite = attractionWebsite;
+	}
+
+	public MetadataParsedURL	attractionsInTheArea()
+	{
+		MetadataParsedURL	result = this.attractionsInTheArea;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.attractionsInTheArea = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getAttractionsInTheArea()
+	{
+		return this.attractionsInTheArea == null ? null : attractionsInTheArea().getValue();
+	}
+
+	public MetadataParsedURL getAttractionsInTheAreaMetadata()
+	{
+		return attractionsInTheArea;
+	}
+
+	public void setAttractionsInTheArea(ParsedURL attractionsInTheArea)
+	{
+		if (attractionsInTheArea != null)
+			this.attractionsInTheArea().setValue(attractionsInTheArea);
+	}
+
+	public void setAttractionsInTheAreaMetadata(MetadataParsedURL attractionsInTheArea)
+	{
+		this.attractionsInTheArea = attractionsInTheArea;
 	}
 }

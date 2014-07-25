@@ -24,6 +24,10 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 	[SimplInherit]
 	public class Anthropologie : Product
 	{
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		[SimplCollection("document")]
 		[MmName("details")]
 		private List<Document> details;
@@ -33,6 +37,19 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 
 		public Anthropologie(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public List<Document> Details
 		{
