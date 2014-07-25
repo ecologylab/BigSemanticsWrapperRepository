@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="BigSemanticsWrappers" basedir="." default="jar"
+<project name="BigSemanticsWrappers" basedir="." default="main"
 	       xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
   <property name="repo.dir" value="MmdRepository" />
@@ -27,9 +27,9 @@
     <pathelement path="../BigSemanticsGeneratedClassesJava" />
   </path>
   
-  <import file="../../BigSemanticsJava/lib/build-common.xml" />
+  <import file="../../BigSemanticsJava/lib/bs-build-common.xml" />
 
-  <target name="compile-wrappers-java">
+  <target name="compile-wrappers-java" depends="depend.BigSemanticsSDK">
     <!-- delete old generated code. -->
     <delete dir="../BigSemanticsGeneratedClassesJava/src" />
 
@@ -43,8 +43,7 @@
     </java>
     
     <!-- run the Ant build in GeneratedClassesJava project to generated a new jar of metadata classes. -->
-    <ant antfile="../BigSemanticsGeneratedClassesJava/build.xml" target="jar"
-         inheritAll="false" useNativeBasedir="yes" />
+    <antcall target="depend.BigSemanticsGeneratedClassesJava" inheritall="no" />
 
     <!-- repositoryFiles.lst will only be updated after compilation! -->
     <mkdir dir="${classes.dir}" />
@@ -53,7 +52,7 @@
     </copy>
   </target>
 
-  <target name="compile-wrappers-csharp">
+  <target name="compile-wrappers-csharp" depends="depend.BigSemanticsSDK">
     <!-- run the compiler. -->
     <java classname="ecologylab.bigsemantics.compiler.MetaMetadataCompiler"
           classpathref="classpath" fork="yes" failonerror="true">
@@ -67,7 +66,16 @@
     <echo message="You still need to run a C# compiler to compile them into an assembly!" /> 
   </target>
 	
-  <target name="mmtest" depends="jar">
+  <target name="compile" depends="compile-wrappers-java,compile-wrappers-csharp">
+    <echo message="Compiling wrappers ..." />
+
+    <mkdir dir="${classes.dir}" />
+    <copy todir="${repo.dir}">
+      <fileset dir="${repo.dir}" includes="**/*" />
+    </copy>
+  </target>
+  
+  <target name="mmtest" depends="depend.BigSemanticsSDK">
     <!-- run mmtest with a URL list -->
     <java classname="ecologylab.bigsemantics.tools.MmTest"
           classpathref="classpath" fork="yes">
@@ -77,16 +85,4 @@
     </java>
   </target>
   
-  <target name="clean">
-    <delete dir="${build.dir}" />
-  </target>
- 
-  <target name="compile" depends="build-deps,compile-wrappers-java,compile-wrappers-csharp">
-  </target>
-  
-  <target name="jar" depends="compile">
-    <mkdir dir="${jar.dir}" />
-    <jar destfile="${jar.file}" basedir="${classes.dir}" />
-  </target>
-
 </project>

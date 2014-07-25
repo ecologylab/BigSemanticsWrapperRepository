@@ -213,19 +213,20 @@ public class AssistApp extends WindowAdapter
     {
       stopService();
 
+      /*
       info("Recompiling wrappers...");
       antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "jar");
+      */
 
-      info("Rebuilding service war...");
+      info("Recompiling wrappers and rebuilding service war...");
       File serviceBuildFile =
           PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build.xml");
-      antRunner.runAntTarget(serviceBuildFile, "war");
+      antRunner.runAntTarget(serviceBuildFile, "main");
 
       info("Rebuilding downloader pool war and downloader jar...");
       File dpoolBuildFile =
           PathUtil.subPath(bsServiceDir, "DownloaderPool", "build.xml");
-      antRunner.runAntTarget(dpoolBuildFile, "war");
-      antRunner.runAntTarget(dpoolBuildFile, "downloader-jar");
+      antRunner.runAntTarget(dpoolBuildFile, "main");
 
       startService();
     }
