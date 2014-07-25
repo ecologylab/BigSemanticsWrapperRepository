@@ -322,8 +322,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.googleBook.GoogleBook.class,
 
-		ecologylab.bigsemantics.generated.library.googleBook.Page.class,
-
 		ecologylab.bigsemantics.generated.library.grant.Grant.class,
 
 		ecologylab.bigsemantics.generated.library.grant.GrantProgram.class,

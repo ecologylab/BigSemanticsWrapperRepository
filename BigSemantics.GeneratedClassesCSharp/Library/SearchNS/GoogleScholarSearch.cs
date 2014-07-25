@@ -10,7 +10,6 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
@@ -25,30 +24,12 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// The google Search class
 	/// </summary>
 	[SimplInherit]
-	public class GoogleScholarSearch : Document
+	public class GoogleScholarSearch : Search<SearchResult>
 	{
-		[SimplCollection("google_scholar_search_result")]
-		[SimplNoWrap]
-		[MmName("search_results")]
-		private List<GoogleScholarSearchResult> searchResults;
-
 		public GoogleScholarSearch()
 		{ }
 
 		public GoogleScholarSearch(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<GoogleScholarSearchResult> SearchResults
-		{
-			get{return searchResults;}
-			set
-			{
-				if (this.searchResults != value)
-				{
-					this.searchResults = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 	}
 }

@@ -304,7 +304,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Organization),
 				typeof(Outline),
 				typeof(OverstockComProduct),
-				typeof(Page),
 				typeof(Paragraph),
 				typeof(Patent),
 				typeof(PatentAuthor),

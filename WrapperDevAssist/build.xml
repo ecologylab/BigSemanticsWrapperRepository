@@ -9,7 +9,7 @@
   <property name="service.code.dir" value="../../BigSemanticsService" />
   <property name="service.lib.dir" value="${service.code.dir}/lib" />
 
-  <import file="../../BigSemanticsJava/lib/build-common.xml" />
+  <import file="../../BigSemanticsJava/lib/bs-build-common.xml" />
 
   <taskdef name="one-jar"
            classname="com.simontuffs.onejar.ant.OneJarTask"
@@ -31,7 +31,7 @@
       </one-jar>
   </target>
 	
-  <target name="run-app" depends="compile">
+  <target name="run-app" depends="main">
   	<java classname="ecologylab.bigsemantics.tools.AssistApp" fork="yes" failonerror="true">
   		  <classpath>
   		  	<pathelement location="${classes.dir}" />
@@ -43,16 +43,4 @@
       </java>
   </target>
 	
-	<target name="build-dpool">
-		<ant antfile="${service.code.dir}/DownloaderPool/build.xml" target="war"
-		     fork="yes" useNativeBasedir="yes" inheritAll="false" />
-	</target>
-  
-	<target name="compile-wrappers-and-update">
-    <ant antfile="../BigSemanticsWrappers/build.xml" target="jar"
-         fork="yes" useNativeBasedir="yes" inheritAll="false" />
-		<ant antfile="${service.code.dir}/BigSemanticsService/build.xml" target="war"
-		     fork="yes" useNativeBasedir="yes" inheritAll="false" />
-	</target>
-
 </project>

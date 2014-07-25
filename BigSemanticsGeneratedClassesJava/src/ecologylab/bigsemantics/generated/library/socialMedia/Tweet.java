@@ -9,16 +9,19 @@ package ecologylab.bigsemantics.generated.library.socialMedia;
  */
 
 import ecologylab.bigsemantics.generated.library.blog.Post;
+import ecologylab.bigsemantics.generated.library.socialMedia.Tweet;
 import ecologylab.bigsemantics.generated.library.socialMedia.TwitterMicroblog;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +37,10 @@ public class Tweet extends Post
 
 	@simpl_scalar
 	private MetadataInteger id;
+
+	@simpl_collection("tweet")
+	@mm_name("replies")
+	private List<Tweet> replies;
 
 	public Tweet()
 	{ super(); }
@@ -83,5 +90,35 @@ public class Tweet extends Post
 	public void setIdMetadata(MetadataInteger id)
 	{
 		this.id = id;
+	}
+
+	public List<Tweet> getReplies()
+	{
+		return replies;
+	}
+
+  // lazy evaluation:
+  public List<Tweet> replies()
+  {
+    if (replies == null)
+      replies = new ArrayList<Tweet>();
+    return replies;
+  }
+
+  // addTo:
+  public void addToReplies(Tweet element)
+  {
+    replies().add(element);
+  }
+
+  // size:
+  public int repliesSize()
+  {
+    return replies == null ? 0 : replies.size();
+  }
+
+	public void setReplies(List<Tweet> replies)
+	{
+		this.replies = replies;
 	}
 }
