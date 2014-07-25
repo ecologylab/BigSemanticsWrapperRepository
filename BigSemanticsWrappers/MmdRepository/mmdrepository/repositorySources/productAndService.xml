@@ -708,7 +708,7 @@
 
   <meta_metadata name="amazon_search_list" type="amazon_list" parser="xpath"
     user_agent_name="chrome">
-    <selector domain="amazon.com" url_regex="http://www.amazon.com/s/.*" />
+    <selector domain="amazon.com" url_regex="http://www.amazon.com/s[/?].*" />
     <example_url url="http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&amp;field-keywords=ps4" />
 
     <scalar name="title">
@@ -717,10 +717,10 @@
     <collection name="items">
       <xpath>//div[@id='result_0' or @id='result_1' or @id='result_2' or @id='result_3' or @id='result_4' or @id='result_5' or @id='result_6' or @id='result_7' or @id='result_8' or @id='result_9' or @id='result_10' or @id='result_11' or @id='result_12' or @id='result_13' or @id='result_14' or @id='result_15']</xpath>   <!-- or @id='result_1' or @id='result_2' or @id='result_3' or @id='result_4' or @id='result_5' -->
       <scalar name="title">
-        <xpath>//span[@class='lrg bold']</xpath>
+        <xpath>.//a[@class='title']/span/@title</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>//h3[@class='newaps']/a/@href</xpath>
+        <xpath>//a[@class='title']/@href</xpath>
       </scalar>
       <scalar name="price">
         <xpath>//li[@class='newp']//span[@class='bld lrg red']</xpath>
