@@ -26,6 +26,12 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 	public class AskNatureFunction : CompoundDocument
 	{
 		[SimplScalar]
+		private MetadataString groupId;
+
+		[SimplScalar]
+		private MetadataString subgroupId;
+
+		[SimplScalar]
 		private MetadataString functionId;
 
 		[SimplCollection("ask_nature_strategy")]
@@ -37,6 +43,32 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 
 		public AskNatureFunction(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString GroupId
+		{
+			get{return groupId;}
+			set
+			{
+				if (this.groupId != value)
+				{
+					this.groupId = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString SubgroupId
+		{
+			get{return subgroupId;}
+			set
+			{
+				if (this.subgroupId != value)
+				{
+					this.subgroupId = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString FunctionId
 		{

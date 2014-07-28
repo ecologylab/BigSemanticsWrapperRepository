@@ -33,6 +33,10 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 		[MmName("accessories")]
 		private List<LandofnodProduct> accessories;
 
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		public LandofnodProduct()
 		{ }
 
@@ -60,6 +64,19 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 				if (this.accessories != value)
 				{
 					this.accessories = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

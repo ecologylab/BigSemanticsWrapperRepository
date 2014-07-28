@@ -41,6 +41,10 @@ public class Search<SR extends Document> extends Document
 	@mm_name("search_results")
 	private List<SR> searchResults;
 
+	@simpl_collection("search")
+	@mm_name("related_searches")
+	private List<Search> relatedSearches;
+
 	@simpl_composite
 	@mm_name("next_page")
 	private Search nextPage;
@@ -113,6 +117,36 @@ public class Search<SR extends Document> extends Document
 	public void setSearchResults(List<SR> searchResults)
 	{
 		this.searchResults = searchResults;
+	}
+
+	public List<Search> getRelatedSearches()
+	{
+		return relatedSearches;
+	}
+
+  // lazy evaluation:
+  public List<Search> relatedSearches()
+  {
+    if (relatedSearches == null)
+      relatedSearches = new ArrayList<Search>();
+    return relatedSearches;
+  }
+
+  // addTo:
+  public void addToRelatedSearches(Search element)
+  {
+    relatedSearches().add(element);
+  }
+
+  // size:
+  public int relatedSearchesSize()
+  {
+    return relatedSearches == null ? 0 : relatedSearches.size();
+  }
+
+	public void setRelatedSearches(List<Search> relatedSearches)
+	{
+		this.relatedSearches = relatedSearches;
 	}
 
 	public Search getNextPage()

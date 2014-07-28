@@ -84,12 +84,10 @@ public class AssistApp extends WindowAdapter
 
     antRunner = new AntRunner();
     service = new BSService(configs);
-    btnUpdate.setEnabled(true);
-    info("Beginning service startup.");
 
     btnUpdate.setEnabled(false);
-    ExecutorService executor = Executors.newSingleThreadExecutor();
-    executor.execute(new Runnable()
+    info("Beginning service startup.");
+    Thread thread = new Thread(new Runnable()
     {
       @Override
       public void run()
@@ -105,11 +103,9 @@ public class AssistApp extends WindowAdapter
         });
       }
     });
-    executor.shutdown();
-  
-    
-    
-    
+    thread.run();
+
+    btnUpdate.setEnabled(true);
   }
 
   public void createAndDisplayGUI()
@@ -127,9 +123,7 @@ public class AssistApp extends WindowAdapter
       public void actionPerformed(ActionEvent event)
       {
         btnUpdate.setEnabled(false);
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.execute(new Runnable()
-        {
+        Thread thread = new Thread(new Runnable() {
           @Override
           public void run()
           {
@@ -144,7 +138,7 @@ public class AssistApp extends WindowAdapter
             });
           }
         });
-        executor.shutdown();
+        thread.run();
       }
     });
 
@@ -211,70 +205,76 @@ public class AssistApp extends WindowAdapter
   {
     try
     {
+      MemoryUsagePrinter.printAll("before updating backend");
+
       stopService();
 
+      /*
       info("Recompiling wrappers...");
       antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "jar");
+      */
 
-      info("Updating dependencies in the service project...");
-      File wrappersJar =
-          PathUtil.subPath(bsWrappersDir, "build", "jar", "BigSemanticsWrappers.jar");
-      File destWrappersJar =
-          PathUtil.subPath(bsServiceDir, "lib", "BigSemanticsWrappers.jar");
-      Files.copy(wrappersJar, destWrappersJar);
-
-      File metadataJar =
-          PathUtil.subPath(bsWrappersDir.getParentFile(), "BigSemanticsGeneratedClassesJava",
-                           "build", "jar", "BigSemanticsGeneratedClassesJava.jar");
-      File destMetadataJar =
-          PathUtil.subPath(bsServiceDir, "lib", "BigSemanticsGeneratedClassesJava.jar");
-      Files.copy(metadataJar, destMetadataJar);
-
-      info("Rebuilding service war...");
+      info("Recompiling wrappers and rebuilding service war...");
       File serviceBuildFile =
-          PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build", "build.xml");
-      antRunner.runAntTarget(serviceBuildFile, "buildwar");
+          PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build.xml");
+      antRunner.runAntTarget(serviceBuildFile, "main");
+      MemoryUsagePrinter.printAll("after compiling wrappers and building bs-service");
 
       info("Rebuilding downloader pool war and downloader jar...");
       File dpoolBuildFile =
           PathUtil.subPath(bsServiceDir, "DownloaderPool", "build.xml");
       antRunner.runAntTarget(dpoolBuildFile, "main");
+      MemoryUsagePrinter.printAll("after building dpool");
 
       startService();
+      MemoryUsagePrinter.printAll("after bs-service and dpool started");
     }
     catch (Exception e)
     {
       error("Error relaunching BS service.", null, e);
       return;
     }
+
     //Opens string URL in the browser
     String url = "http://localhost:8080/MICE/index.html?uselocal=true";
 
-    if(Desktop.isDesktopSupported()){
-        Desktop desktop = Desktop.getDesktop();
-        try {
-            desktop.browse(new URI(url));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (URISyntaxException e){
-        	// TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }else{
-        Runtime runtime = Runtime.getRuntime();
-        try {
-            runtime.exec("xdg-open " + url);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    if (Desktop.isDesktopSupported())
+    {
+      Desktop desktop = Desktop.getDesktop();
+      try
+      {
+        desktop.browse(new URI(url));
+      }
+      catch (IOException e)
+      {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+      catch (URISyntaxException e)
+      {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
     }
+    else
+    {
+      Runtime runtime = Runtime.getRuntime();
+      try
+      {
+        runtime.exec("xdg-open " + url);
+      }
+      catch (IOException e)
+      {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+
     info("Service running. Opening MICE in your default browser. Point to "
          + "http://localhost:8080/ "
          + "in your browser to view other BigSemanticsJavaScript projects.");
   }
-
+  
   private void stopService() throws Exception
   {
     info("Stopping service...");

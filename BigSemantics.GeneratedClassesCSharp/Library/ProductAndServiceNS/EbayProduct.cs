@@ -33,7 +33,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 
 		[SimplComposite]
 		[MmName("seller")]
-		private Document seller;
+		private CompoundDocument seller;
 
 		public EbayProduct()
 		{ }
@@ -67,7 +67,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public Document Seller
+		public CompoundDocument Seller
 		{
 			get{return seller;}
 			set

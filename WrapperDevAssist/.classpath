@@ -8,15 +8,28 @@
 	</classpathentry>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsCore"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsCybernekoWrapper"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsGeneratedClassesJava"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsService"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsSunSpecifics"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsWrappers"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/cyberneko"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/DownloaderPool"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/DownloaderPoolMessages"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/imageMetadataExtractor"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ModifiedHttpClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/simplCore"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/simplSunSpecifics"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

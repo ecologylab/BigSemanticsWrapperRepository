@@ -45,6 +45,10 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		[MmName("webpage")]
 		private Document webpage;
 
+		[SimplComposite]
+		[MmName("twitter_profile")]
+		private CompoundDocument twitterProfile;
+
 		public Author()
 		{ }
 
@@ -98,6 +102,19 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 				if (this.webpage != value)
 				{
 					this.webpage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public CompoundDocument TwitterProfile
+		{
+			get{return twitterProfile;}
+			set
+			{
+				if (this.twitterProfile != value)
+				{
+					this.twitterProfile = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

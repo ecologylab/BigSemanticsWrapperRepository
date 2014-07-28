@@ -40,6 +40,9 @@ namespace Ecologylab.Semantics.Generated.Library.GisNS
 		[SimplScalar]
 		private MetadataString room;
 
+		/// <summary>
+		/// Whole address as one String
+		/// </summary>
 		[SimplScalar]
 		private MetadataString streetAddress;
 

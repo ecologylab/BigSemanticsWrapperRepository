@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
@@ -27,7 +27,7 @@ import java.util.Map;
  *A google scholar search result
  */ 
 @simpl_inherit
-public class GoogleScholarSearchResult extends Document
+public class GoogleScholarSearchResult extends CompoundDocument
 {
 	@simpl_scalar
 	private MetadataParsedURL documentLink;

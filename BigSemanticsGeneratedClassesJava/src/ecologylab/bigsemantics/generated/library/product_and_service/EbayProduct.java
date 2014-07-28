@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  */
 
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -33,7 +33,7 @@ public class EbayProduct extends Product
 
 	@simpl_composite
 	@mm_name("seller")
-	private Document seller;
+	private CompoundDocument seller;
 
 	public EbayProduct()
 	{ super(); }
@@ -107,12 +107,12 @@ public class EbayProduct extends Product
 		this.availability = availability;
 	}
 
-	public Document getSeller()
+	public CompoundDocument getSeller()
 	{
 		return seller;
 	}
 
-	public void setSeller(Document seller)
+	public void setSeller(CompoundDocument seller)
 	{
 		this.seller = seller;
 	}

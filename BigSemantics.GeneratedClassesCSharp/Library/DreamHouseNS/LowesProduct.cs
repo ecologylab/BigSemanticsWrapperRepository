@@ -29,6 +29,10 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 		[MmName("related_items")]
 		private List<LowesProduct> relatedItems;
 
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		public LowesProduct()
 		{ }
 
@@ -43,6 +47,19 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 				if (this.relatedItems != value)
 				{
 					this.relatedItems = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

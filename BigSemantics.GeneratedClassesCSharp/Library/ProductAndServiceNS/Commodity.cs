@@ -27,10 +27,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class Commodity : CompoundDocument
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		[SimplScalar]
 		private MetadataString price;
 
@@ -64,19 +60,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 
 		public Commodity(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString Price
 		{

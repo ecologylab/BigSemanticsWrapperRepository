@@ -8,14 +8,11 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.GoogleBookNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -27,15 +24,9 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleBookNS
 	[SimplInherit]
 	public class GoogleBook : Book
 	{
-		[SimplScalar]
-		private MetadataString category;
-
-		[SimplScalar]
-		private MetadataParsedURL placesMentionedKml;
-
-		[SimplCollection("page")]
-		[MmName("selected_pages")]
-		private List<Page> selectedPages;
+		[SimplCollection("compound_document")]
+		[MmName("purchase_links")]
+		private List<CompoundDocument> purchaseLinks;
 
 		public GoogleBook()
 		{ }
@@ -43,40 +34,14 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleBookNS
 		public GoogleBook(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString Category
+		public List<CompoundDocument> PurchaseLinks
 		{
-			get{return category;}
+			get{return purchaseLinks;}
 			set
 			{
-				if (this.category != value)
+				if (this.purchaseLinks != value)
 				{
-					this.category = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataParsedURL PlacesMentionedKml
-		{
-			get{return placesMentionedKml;}
-			set
-			{
-				if (this.placesMentionedKml != value)
-				{
-					this.placesMentionedKml = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Page> SelectedPages
-		{
-			get{return selectedPages;}
-			set
-			{
-				if (this.selectedPages != value)
-				{
-					this.selectedPages = value;
+					this.purchaseLinks = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

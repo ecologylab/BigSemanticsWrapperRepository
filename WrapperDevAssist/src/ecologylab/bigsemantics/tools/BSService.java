@@ -2,6 +2,7 @@ package ecologylab.bigsemantics.tools;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -10,6 +11,7 @@ import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.webapp.WebAppClassLoader;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +24,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BSService
 {
-
+  
   static Logger         logger = LoggerFactory.getLogger(BSService.class);
 
   private File          serviceDir;
@@ -53,11 +55,11 @@ public class BSService
     stopServer();
     stopDownloader();
   }
-
+  
   private void runServer() throws Exception
   {
     HandlerCollection handlers = new ContextHandlerCollection();
-
+    
     File dpoolWarPath =
         PathUtil.subPath(serviceDir, "DownloaderPool", "build", "DownloaderPool.war");
     WebAppContext context1 =
@@ -76,7 +78,7 @@ public class BSService
     resourceHandler.setDirectoriesListed(true);
     c.setHandler(resourceHandler);
     handlers.addHandler(c);
-
+    
     server = new Server(servicePort);
     server.setHandler(handlers);
     logger.info("starting dpool+bigsemantics services...");
@@ -151,12 +153,15 @@ public class BSService
   public static void main(String[] args) throws Exception
   {
     Configuration configs = new PropertiesConfiguration("wrapper-dev-assist.conf");
-    BSService runner = new BSService(configs);
-    runner.start();
-    runner.server.join();
-    // Thread.sleep(60000);
-    // logger.info("requesting stop ...");
-    // runner.stop();
+    for (int i = 0; i < 10; ++i)
+    {
+      BSService runner = new BSService(configs);
+      runner.start();
+      MemoryUsagePrinter.printAll(null);
+      Thread.sleep(5000);
+      logger.info("requesting stop ...");
+      runner.stop();
+    }
   }
 
 }

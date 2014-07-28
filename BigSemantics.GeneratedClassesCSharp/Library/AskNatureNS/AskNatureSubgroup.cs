@@ -12,6 +12,7 @@ using Ecologylab.Semantics.Generated.Library.AskNatureNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -24,6 +25,12 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 	[SimplInherit]
 	public class AskNatureSubgroup : CompoundDocument
 	{
+		[SimplScalar]
+		private MetadataString groupId;
+
+		[SimplScalar]
+		private MetadataString subgroupId;
+
 		[SimplCollection("function")]
 		[MmName("functions")]
 		private List<AskNatureFunction> functions;
@@ -33,6 +40,32 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 
 		public AskNatureSubgroup(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString GroupId
+		{
+			get{return groupId;}
+			set
+			{
+				if (this.groupId != value)
+				{
+					this.groupId = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString SubgroupId
+		{
+			get{return subgroupId;}
+			set
+			{
+				if (this.subgroupId != value)
+				{
+					this.subgroupId = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public List<AskNatureFunction> Functions
 		{

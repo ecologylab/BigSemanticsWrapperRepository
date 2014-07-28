@@ -10,7 +10,7 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
 
 import ecologylab.bigsemantics.generated.library.product_and_service.BestbuyProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -24,17 +24,17 @@ import java.util.Map;
 @simpl_inherit
 public class BestbuyProduct extends Product
 {
-	@simpl_collection("document")
+	@simpl_collection("compound_document")
 	@mm_name("features")
-	private List<Document> features;
+	private List<CompoundDocument> features;
 
-	@simpl_collection("document")
+	@simpl_collection("compound_document")
 	@mm_name("whats_included")
-	private List<Document> whatsIncluded;
+	private List<CompoundDocument> whatsIncluded;
 
-	@simpl_collection("document")
+	@simpl_collection("compound_document")
 	@mm_name("specifications")
-	private List<Document> specifications;
+	private List<CompoundDocument> specifications;
 
 	@simpl_collection("bestbuy_product")
 	@mm_name("companion_products")
@@ -52,21 +52,21 @@ public class BestbuyProduct extends Product
 	}
 
 
-	public List<Document> getFeatures()
+	public List<CompoundDocument> getFeatures()
 	{
 		return features;
 	}
 
   // lazy evaluation:
-  public List<Document> features()
+  public List<CompoundDocument> features()
   {
     if (features == null)
-      features = new ArrayList<Document>();
+      features = new ArrayList<CompoundDocument>();
     return features;
   }
 
   // addTo:
-  public void addToFeatures(Document element)
+  public void addToFeatures(CompoundDocument element)
   {
     features().add(element);
   }
@@ -77,26 +77,26 @@ public class BestbuyProduct extends Product
     return features == null ? 0 : features.size();
   }
 
-	public void setFeatures(List<Document> features)
+	public void setFeatures(List<CompoundDocument> features)
 	{
 		this.features = features;
 	}
 
-	public List<Document> getWhatsIncluded()
+	public List<CompoundDocument> getWhatsIncluded()
 	{
 		return whatsIncluded;
 	}
 
   // lazy evaluation:
-  public List<Document> whatsIncluded()
+  public List<CompoundDocument> whatsIncluded()
   {
     if (whatsIncluded == null)
-      whatsIncluded = new ArrayList<Document>();
+      whatsIncluded = new ArrayList<CompoundDocument>();
     return whatsIncluded;
   }
 
   // addTo:
-  public void addToWhatsIncluded(Document element)
+  public void addToWhatsIncluded(CompoundDocument element)
   {
     whatsIncluded().add(element);
   }
@@ -107,26 +107,26 @@ public class BestbuyProduct extends Product
     return whatsIncluded == null ? 0 : whatsIncluded.size();
   }
 
-	public void setWhatsIncluded(List<Document> whatsIncluded)
+	public void setWhatsIncluded(List<CompoundDocument> whatsIncluded)
 	{
 		this.whatsIncluded = whatsIncluded;
 	}
 
-	public List<Document> getSpecifications()
+	public List<CompoundDocument> getSpecifications()
 	{
 		return specifications;
 	}
 
   // lazy evaluation:
-  public List<Document> specifications()
+  public List<CompoundDocument> specifications()
   {
     if (specifications == null)
-      specifications = new ArrayList<Document>();
+      specifications = new ArrayList<CompoundDocument>();
     return specifications;
   }
 
   // addTo:
-  public void addToSpecifications(Document element)
+  public void addToSpecifications(CompoundDocument element)
   {
     specifications().add(element);
   }
@@ -137,7 +137,7 @@ public class BestbuyProduct extends Product
     return specifications == null ? 0 : specifications.size();
   }
 
-	public void setSpecifications(List<Document> specifications)
+	public void setSpecifications(List<CompoundDocument> specifications)
 	{
 		this.specifications = specifications;
 	}

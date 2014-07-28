@@ -26,6 +26,10 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 	[SimplInherit]
 	public class Modcloth : Product
 	{
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		[SimplScalar]
 		private MetadataString designer;
 
@@ -53,6 +57,19 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 
 		public Modcloth(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString Designer
 		{

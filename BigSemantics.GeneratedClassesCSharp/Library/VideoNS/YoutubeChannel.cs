@@ -35,9 +35,9 @@ namespace Ecologylab.Semantics.Generated.Library.VideoNS
 		[MmName("video_feed")]
 		private List<YoutubeVideo> videoFeed;
 
-		[SimplCollection("youtube_video_list")]
-		[MmName("playlists")]
-		private List<YoutubeVideoList> playlists;
+		[SimplCollection("compound_document")]
+		[MmName("playlist")]
+		private List<CompoundDocument> playlist;
 
 		[SimplCollection("youtube_channel")]
 		[MmName("featured_channels")]
@@ -79,14 +79,14 @@ namespace Ecologylab.Semantics.Generated.Library.VideoNS
 			}
 		}
 
-		public List<YoutubeVideoList> Playlists
+		public List<CompoundDocument> Playlist
 		{
-			get{return playlists;}
+			get{return playlist;}
 			set
 			{
-				if (this.playlists != value)
+				if (this.playlist != value)
 				{
-					this.playlists = value;
+					this.playlist = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

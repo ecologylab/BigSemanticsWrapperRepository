@@ -36,6 +36,10 @@ namespace Ecologylab.Semantics.Generated.Library.SocialMediaNS
 		[SimplScalar]
 		private MetadataInteger id;
 
+		[SimplCollection("tweet")]
+		[MmName("replies")]
+		private List<Tweet> replies;
+
 		public Tweet()
 		{ }
 
@@ -63,6 +67,19 @@ namespace Ecologylab.Semantics.Generated.Library.SocialMediaNS
 				if (this.id != value)
 				{
 					this.id = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Tweet> Replies
+		{
+			get{return replies;}
+			set
+			{
+				if (this.replies != value)
+				{
+					this.replies = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

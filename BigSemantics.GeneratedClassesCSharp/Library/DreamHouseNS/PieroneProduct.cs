@@ -10,6 +10,7 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
@@ -23,10 +24,27 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 	[SimplInherit]
 	public class PieroneProduct : Product
 	{
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
+
 		public PieroneProduct()
 		{ }
 
 		public PieroneProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public Image Image
+		{
+			get{return image;}
+			set
+			{
+				if (this.image != value)
+				{
+					this.image = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 	}
 }
