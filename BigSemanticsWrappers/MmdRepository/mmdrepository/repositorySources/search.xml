@@ -7,8 +7,13 @@
     <scalar name="description" label="snippet" />
     <scalar name="site_link" scalar_type="String"/>
     <composite name="destination_page" type="document" />
+    
   </meta_metadata>
-
+  <meta_metadata name="research_gate_result" extends="search_result">
+        <collection name="authors" child_type="author">
+        </collection>
+  </meta_metadata>
+  
   <meta_metadata name="search" extends="document" comment="A search.">
     <generic_type_var name="SR" extends="document" />
 

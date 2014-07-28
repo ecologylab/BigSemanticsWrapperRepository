@@ -9,7 +9,18 @@
             <xpath>//div[@class='pub-abstract']/div/div/p</xpath>
         </scalar>
         <collection name="cited_in" child_type="research_gate_article">
-            <xpath>//div[@class='pub-citations-list']/ul/li//h5</xpath>
+            <xpath>//li[@class='lf tab-item tab-item-active js-cited-in']/../following-sibling::div/div//li//h5</xpath>
+            <scalar name="title">
+                <xpath>./a/span</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./a/@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+                
+            </scalar>
+        </collection>
+        <collection name="citations" child_type="research_gate_article">
+            <xpath>//li[@class='lf tab-item tab-item-active js-citations']/../following-sibling::div/div//li//h5</xpath>
             <scalar name="title">
                 <xpath>./a/span</xpath>
             </scalar>
@@ -20,7 +31,7 @@
             </scalar>
         </collection>
         <collection name="similar_publications" child_type="research_gate_article">
-            <xpath>//div[@class='pub-similar-publications pub-similar-publications-sidebar']//li//h5/a</xpath>
+            <xpath>//li[@class='lf tab-item tab-item-active js-citations']/../following-sibling::div/div//li//h5/a</xpath>
             <scalar name="title">
                 <xpath>./span</xpath>
             </scalar>
@@ -43,7 +54,6 @@
     </meta_metadata>
     <meta_metadata name="research_gate_author" parser="xpath" extends="author">
         <selector url_regex="http://www.researchgate.net/profil.*" domain="researchgate.net"/>
-       
         <scalar name="title">
             <xpath>//h1[@class='profile-header-name']/a</xpath>
         </scalar>
@@ -108,6 +118,30 @@
         <collection name="skills" child_scalar_type="String">
             <xpath>//div[@class='profile-highlights-skills']//ul/li//a[@class='keyword-list-token-text']</xpath>
         </collection>       
+    </meta_metadata>
+    
+    <meta_metadata name="research_gate_researcher" extends="research_gate_author">
+        <selector url_regex="http://www.researchgate.net/researcher.*" domain="researchgate.net"/>
+        <scalar name="description" hide="true"/>
+         <collection name="featured_publications" >
+            <xpath>//ul[@class='c-list']/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>./span</xpath>
+            </scalar> 
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>                    
+        </collection>
+        <collection name="researcher_stats" child_type="compound_document">
+            <xpath>//div[@class='stats-container']//tr[@class='item']</xpath>
+            <scalar name="title" label="stat">
+                <xpath>./td[@class='label']</xpath> 
+            </scalar>
+            <scalar name="description" label="value">
+                <xpath>./td[@class='value']</xpath>
+            </scalar>
+        </collection>
     </meta_metadata>
     
     <meta_metadata name="research_gate_institution" extends="compound_document" parser="xpath">
@@ -291,5 +325,44 @@
     <meta_metadata name="research_gate_institution_contact_info" extends="contact_point">
         <scalar name="website_address" scalar_type="String"/>
          
+    </meta_metadata>
+    
+    <meta_metadata name="research_gate_search" extends="search" parser="xpath">
+         <selector url_stripped="http://www.researchgate.net/publicliterature.PublicLiterature.search.html"/>
+         <scalar name="query"  layer="9.1">
+            <xpath>//input[@name='search-keyword']/@value</xpath>
+         </scalar>
+         <scalar name="location" always_show="true"/>
+         <generic_type_var name="SR" arg="research_gate_result" />
+         
+         <collection name="search_results" show_expanded_initially="true">
+          <xpath>//ul[@class='c-list']/li</xpath>
+		      <scalar name="title" hide="true" />
+		     
+		      <composite name="destination_page" layer="6.0">
+		        <xpath>.//h5</xpath>
+		        <scalar name="title" label="title">
+		            <xpath>./a/span</xpath>  
+		        </scalar>
+		        <scalar name="location">
+		              <xpath>./a/@href</xpath>
+		        </scalar>
+		      </composite>
+		      <scalar name="description">
+		          <xpath>./div[@class='abstract']/span[@class='full']</xpath>
+		          <regex_op regex="[Hide abstract] ABSTRACT:" replace=""/>
+		      </scalar>
+		      <collection name="authors">
+		           <xpath>./div[@class='authors']/a</xpath>
+		           <scalar name="title">
+		              <xpath>.</xpath>
+		           </scalar>
+		           <scalar name="location">
+		              <xpath>./@href</xpath>
+		           </scalar>
+            
+		      </collection>
+		      
+         </collection>
     </meta_metadata>
 </meta_metadata_repository>
