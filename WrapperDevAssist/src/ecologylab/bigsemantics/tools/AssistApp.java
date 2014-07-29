@@ -18,6 +18,7 @@ import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -38,7 +39,7 @@ public class AssistApp extends WindowAdapter
 
   static Logger logger        = LoggerFactory.getLogger(AssistApp.class);
 
-  static int    LOW_MEM_IN_MB = 64;
+  static int    LOW_MEM_IN_MB = 300;
 
   private File  bsWrappersDir;
 
@@ -101,6 +102,38 @@ public class AssistApp extends WindowAdapter
             btnUpdate.setEnabled(true);
           }
         });
+      
+        while(true){
+        	if(MemoryUsageMonitor.get().getEffectiveFreeMem() <= AssistApp.LOW_MEM_IN_MB){
+        		Object[] options = {"Close now",
+                        "Keep running"};
+			    Integer n = JOptionPane.showOptionDialog(frame,
+			        "Low memory, close AssistApp before recompiling wrappers",
+			        "Memory Warning",
+			        JOptionPane.YES_NO_CANCEL_OPTION,
+			        JOptionPane.QUESTION_MESSAGE,
+			        null,
+			        options,
+			        options[1]);
+			    //System.out.println("Choice Number: " + n.toString());
+			    if(n == 0){
+			    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+			    	try
+			         {
+			           stopService();
+			         }
+			         catch (Exception e)
+			         {
+			           error("Error stopping BS service.", null, e);
+			         }
+			    	System.exit(0);
+			    }
+			    else{
+			    	break;
+			    }
+			        	}
+        }
+        
       }
     });
     thread.run();
@@ -123,6 +156,26 @@ public class AssistApp extends WindowAdapter
       public void actionPerformed(ActionEvent event)
       {
         btnUpdate.setEnabled(false);
+
+        MemoryUsageMonitor.get().log("after running for a bit");
+        if(MemoryUsageMonitor.get().getEffectiveFreeMem() <= AssistApp.LOW_MEM_IN_MB){
+        	JOptionPane.showMessageDialog(frame,
+        		    "Not enough memory. Closing down.",
+        		    "Memory Warning",
+        		    JOptionPane.ERROR_MESSAGE);
+        	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+	    	try
+	         {
+	           stopService();
+	         }
+	         catch (Exception e)
+	         {
+	           error("Error stopping BS service.", null, e);
+	         }
+	    	System.exit(0);
+        	
+        }
+        
         Thread thread = new Thread(new Runnable() {
           @Override
           public void run()
