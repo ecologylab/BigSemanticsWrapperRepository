@@ -14,19 +14,22 @@
     <scalar name="title">
       <xpath>//h1</xpath>
     </scalar>
-
+	<scaler name="description" hide="false">
+		<xpath>//div[@class='article']//p</xpath>
+	</scaler>
+	<!-- Link to full article -->
     <composite name="rich_media">
       <scalar name="title">
         <xpath />
         <concatenate_values>
-          <value>PDF full text</value>
+          <value>HTML full text</value>
         </concatenate_values>
       </scalar>
       <scalar name="location">
-        <xpath>//ul[@id='subscription-content-controls']/li/a/@href</xpath>
+        <xpath>//a[@id='full-text-html']/@href</xpath>
       </scalar>
     </composite>
-
+<!-- Opens up a IEEE search for those articles -->
     <collection name="articles_by_authors" child_type="ieee_xplore_search">
       <xpath>//div[@id='product-vitals']//script[contains(text(), 'authorLink(')]</xpath>
       <scalar name="title">
@@ -42,12 +45,8 @@
       </scalar>
     </collection>
 
-    <scalar name="description">
-      <xpath>//a[@name='Abstract']/following-sibling::p</xpath>
-    </scalar>
-
-    <composite name="source">
-      <xpath>//a[starts-with(@href, '../xpl/mostRecentIssue.jsp')]</xpath>
+    <composite name="published_in" type="ieee_journal">
+      <xpath>//div[@class='article-ftr']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
@@ -56,45 +55,36 @@
       </scalar>
     </composite>
 
-    <collection name="keywords">
-      <xpath>//div[@id='index-terms']/following-sibling::ul//a</xpath>
+    <composite name="keyword_page" type="ieee_keywords">
+    
+    
+      <xpath>//a[@id='abstract-keyword-tab']</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
-    </collection>
+    </composite>
 
     <composite name="references_page" type="ieee_xplore_references">
+      <xpath>//a[@id='abstract-references-tab']</xpath>
       <scalar name="title">
-        <xpath>//h1</xpath>
-      </scalar>
-      <scalar name="ieee_xplore_id" hide="true">
-        <xpath>//meta[@property='og:url']/@content</xpath>
-        <regex_op regex="arnumber=(\d+)" group="1" />
+        <xpath>.</xpath>
       </scalar>
       <scalar name="location">
-        <concatenate_values>
-          <value>http://ieeexplore.ieee.org/xpl/references.jsp?arnumber=</value>
-          <value from_scalar="ieee_xplore_id" />
-        </concatenate_values>
+      	<xpath>./@href</xpath>
       </scalar>
     </composite>
 
-    <composite name="citations_page" type="ieee_xplore_citations">
+    <composite name="cited_by" type="ieee_xplore_cited_by">
+      <xpath>//a[@id='abstract-citedby-tab']</xpath>
       <scalar name="title">
-        <xpath>//h1</xpath>
+      	<xpath>.</xpath>
       </scalar>
-      <scalar name="ieee_xplore_id" hide="true">
-        <xpath>//meta[@property='og:url']/@content</xpath>
-        <regex_op regex="arnumber=(\d+)" group="1" />
-      </scalar>
+    
       <scalar name="location">
-        <concatenate_values>
-          <value>http://ieeexplore.ieee.org/xpl/citations.jsp?arnumber=</value>
-          <value from_scalar="ieee_xplore_id" />
-        </concatenate_values>
+        <xpath>./@href</xpath>
       </scalar>
     </composite>
 
@@ -106,41 +96,57 @@
 
 
   <meta_metadata name="ieee_xplore_references" extends="compound_document" parser="xpath">
-    <selector url_stripped="http://ieeexplore.ieee.org/xpl/references.jsp" />
-    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/references.jsp" />
-
-    <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractReferences.jsp?" />
 
     <collection name="references" child_type="scholarly_article">
-      <xpath>//div[@id='referenceContent']//li</xpath>
+      <xpath>//ol[@class='docs']/li</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./a/@href</xpath>
+        <xpath>.//a[1]/@href</xpath>
       </scalar>
     </collection>
   </meta_metadata>
 
 
-  <meta_metadata name="ieee_xplore_citations" extends="compound_document" parser="xpath">
-    <selector url_stripped="http://ieeexplore.ieee.org/xpl/citations.jsp" />
-    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/citations.jsp" />
+  <meta_metadata name="ieee_xplore_cited_by" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractCitations.jsp" />
 
     <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
 
     <collection name="citations" child_type="scholarly_article">
-      <xpath>//div[@id='citationContent']//li</xpath>
+      <xpath>//ol[@id='Ieee_citations']/li</xpath>
       <scalar name="title">
-        <xpath>.</xpath>
+        <xpath>./i</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./a/@href</xpath>
+        <xpath>./div/a[1]/@href</xpath>
       </scalar>
     </collection>
   </meta_metadata>
 
-
+<meta_metadata name="ieee_journal" extends="compound_document" parser="xpath">
+</meta_metadata>
+<meta_metadata name="ieee_keywords" extends="compound_document" parser="xpath">
+	<selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractKeywords.jsp" />
+	
+	<collection name="keywords" child_type="ieee_xplore_search">
+		<xpath>//div[@id='abstractKeywords']//li</xpath>
+		<scalar name="title">
+			<xpath>.</xpath>
+		</scalar>
+		<scalar name="location">
+			<concatenate_values>
+	          <value>http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=Search_Index_Terms:</value>
+	          <value from_scalar="title" />
+	          
+	        </concatenate_values>
+			<regex_op regex=" " replace="+"/>
+		</scalar>
+				
+	</collection>
+</meta_metadata>
   <meta_metadata name="ieee_xplore_search" extends="search" parser="xpath">
     <generic_type_var name="SR" arg="ieee_xplore_article" />
 
@@ -152,7 +158,11 @@
       <strip_param name="x" />
       <strip_param name="y" />
     </filter_location>
-
+	<scalar name="query" >
+		<xpath>//strong[@class='search-term']</xpath>
+		<regex_op regex="Index Terms:" replace=""/>
+		<regex_op regex="Authors:" replace=""/>
+	</scalar>
     <collection name="search_results">
       <xpath>//ul[@class='Results']/li</xpath>
       <scalar name="title">
@@ -163,7 +173,20 @@
       </scalar>
     </collection>
   </meta_metadata>
-  
+ <!--  
+  <meta_metadata name="ieee_article_body" parser="xpath" extends="compound_document">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpls/icp.jsp" />
+    <collection name="sections" child_extends="compound_document">
+    	<xpath>//div[@class='section']</xpath>
+    	<scalar name="title">
+    		<xpath>./div/h2</xpath>
+    	</scalar>
+    	<collection name="paragraphs" child_scalar_type="String">
+    		<xpath>./p</xpath>
+    	</collection>
+    </collection>
+  </meta_metadata>
+  -->
   <!--
   <meta_metadata name="ask_nature_group" extends="compound_document" parser="xpath" user_agent_name="chrome" >
   	<selector url_stripped="http://www.asknature.org/browse" domain="asknature.org" />
