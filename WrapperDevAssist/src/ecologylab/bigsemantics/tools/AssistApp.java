@@ -39,7 +39,7 @@ public class AssistApp extends WindowAdapter
 
   static Logger logger        = LoggerFactory.getLogger(AssistApp.class);
 
-  static int    LOW_MEM_IN_MB = 300;
+  static int    LOW_MEM_IN_MB = 128;
 
   private File  bsWrappersDir;
 
