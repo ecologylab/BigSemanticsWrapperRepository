@@ -12,13 +12,10 @@ import ecologylab.bigsemantics.generated.library.scholarlyArticle.ScholarlyArtic
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,9 +23,6 @@ import java.util.Map;
 @simpl_inherit
 public class IeeeXploreReferences extends CompoundDocument
 {
-	@simpl_scalar
-	private MetadataString ieeeXploreId;
-
 	@simpl_collection("scholarly_article")
 	@mm_name("references")
 	private List<ScholarlyArticle> references;
@@ -40,38 +34,6 @@ public class IeeeXploreReferences extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public MetadataString	ieeeXploreId()
-	{
-		MetadataString	result = this.ieeeXploreId;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.ieeeXploreId = result;
-		}
-		return result;
-	}
-
-	public String getIeeeXploreId()
-	{
-		return this.ieeeXploreId == null ? null : ieeeXploreId().getValue();
-	}
-
-	public MetadataString getIeeeXploreIdMetadata()
-	{
-		return ieeeXploreId;
-	}
-
-	public void setIeeeXploreId(String ieeeXploreId)
-	{
-		if (ieeeXploreId != null)
-			this.ieeeXploreId().setValue(ieeeXploreId);
-	}
-
-	public void setIeeeXploreIdMetadata(MetadataString ieeeXploreId)
-	{
-		this.ieeeXploreId = ieeeXploreId;
-	}
 
 	public List<ScholarlyArticle> getReferences()
 	{

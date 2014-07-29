@@ -8,7 +8,10 @@ package ecologylab.bigsemantics.generated.library.ieeeXplore;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreCitations;
+import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeAuthorPage;
+import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeJournalPage;
+import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeKeywords;
+import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreCitedBy;
 import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreReferences;
 import ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreSearch;
 import ecologylab.bigsemantics.generated.library.scholarlyArticle.ScholarlyArticle;
@@ -29,17 +32,29 @@ import java.util.Map;
 @simpl_inherit
 public class IeeeXploreArticle extends ScholarlyArticle
 {
+	@simpl_composite
+	@mm_name("author_page")
+	private IeeeAuthorPage authorPage;
+
 	@simpl_collection("ieee_xplore_search")
 	@mm_name("articles_by_authors")
 	private List<IeeeXploreSearch> articlesByAuthors;
+
+	@simpl_composite
+	@mm_name("published_in")
+	private IeeeJournalPage publishedIn;
+
+	@simpl_composite
+	@mm_name("keyword_page")
+	private IeeeKeywords keywordPage;
 
 	@simpl_composite
 	@mm_name("references_page")
 	private IeeeXploreReferences referencesPage;
 
 	@simpl_composite
-	@mm_name("citations_page")
-	private IeeeXploreCitations citationsPage;
+	@mm_name("cited_by")
+	private IeeeXploreCitedBy citedBy;
 
 	/** 
 	 *The digital object identifier of the article
@@ -54,6 +69,16 @@ public class IeeeXploreArticle extends ScholarlyArticle
 		super(mmd);
 	}
 
+
+	public IeeeAuthorPage getAuthorPage()
+	{
+		return authorPage;
+	}
+
+	public void setAuthorPage(IeeeAuthorPage authorPage)
+	{
+		this.authorPage = authorPage;
+	}
 
 	public List<IeeeXploreSearch> getArticlesByAuthors()
 	{
@@ -85,6 +110,26 @@ public class IeeeXploreArticle extends ScholarlyArticle
 		this.articlesByAuthors = articlesByAuthors;
 	}
 
+	public IeeeJournalPage getPublishedIn()
+	{
+		return publishedIn;
+	}
+
+	public void setPublishedIn(IeeeJournalPage publishedIn)
+	{
+		this.publishedIn = publishedIn;
+	}
+
+	public IeeeKeywords getKeywordPage()
+	{
+		return keywordPage;
+	}
+
+	public void setKeywordPage(IeeeKeywords keywordPage)
+	{
+		this.keywordPage = keywordPage;
+	}
+
 	public IeeeXploreReferences getReferencesPage()
 	{
 		return referencesPage;
@@ -95,14 +140,14 @@ public class IeeeXploreArticle extends ScholarlyArticle
 		this.referencesPage = referencesPage;
 	}
 
-	public IeeeXploreCitations getCitationsPage()
+	public IeeeXploreCitedBy getCitedBy()
 	{
-		return citationsPage;
+		return citedBy;
 	}
 
-	public void setCitationsPage(IeeeXploreCitations citationsPage)
+	public void setCitedBy(IeeeXploreCitedBy citedBy)
 	{
-		this.citationsPage = citationsPage;
+		this.citedBy = citedBy;
 	}
 
 	public MetadataParsedURL	doi()

@@ -338,13 +338,23 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.icdl.IcdlImageResult.class,
 
+		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeArticleBody.class,
+
+		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeAuthorPage.class,
+
+		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeJournalPage.class,
+
+		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeKeywords.class,
+
 		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreArticle.class,
 
-		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreCitations.class,
+		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreCitedBy.class,
 
 		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreReferences.class,
 
 		ecologylab.bigsemantics.generated.library.ieeeXplore.IeeeXploreSearch.class,
+
+		ecologylab.bigsemantics.generated.library.ieeeXplore.Sections.class,
 
 		ecologylab.bigsemantics.generated.library.imdb.ImdbMovie.class,
 
@@ -542,6 +552,24 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.pubmed.PubmedJournal.class,
 
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateArticle.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateArticleStats.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateAuthor.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateInstitution.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateInstitutionContactInfo.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateInstitutionDepartment.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateResearcher.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateSearch.class,
+
+		ecologylab.bigsemantics.generated.library.researchGate.ResearchGateStats.class,
+
 		ecologylab.bigsemantics.generated.library.restaurant.Restaurant.class,
 
 		ecologylab.bigsemantics.generated.library.restaurant.RestaurantGenre.class,
@@ -601,6 +629,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.search.ImageSearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.ImageSearchResult.class,
+
+		ecologylab.bigsemantics.generated.library.search.ResearchGateResult.class,
 
 		ecologylab.bigsemantics.generated.library.search.Search.class,
 

@@ -30,6 +30,15 @@
       </scalar>
     </composite>
 <!-- Opens up a IEEE search for those articles -->
+    <composite name="author_page" type="ieee_author_page">
+    	<xpath>//a[@id='abstract-authors-tab']</xpath>
+    	<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </composite>
     <collection name="articles_by_authors" child_type="ieee_xplore_search">
       <xpath>//div[@id='product-vitals']//script[contains(text(), 'authorLink(')]</xpath>
       <scalar name="title">
@@ -45,7 +54,7 @@
       </scalar>
     </collection>
 
-    <composite name="published_in" type="ieee_journal">
+    <composite name="published_in" type="ieee_journal_page">
       <xpath>//div[@class='article-ftr']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -94,10 +103,25 @@
     </scalar>
   </meta_metadata>
 
-
+  <meta_metadata name="ieee_author_page" extends="author" parser="xpath">
+  <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractAuthors.jsp" />
+	  <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractAuthors.jsp" />
+  	<collection name="authors" child_type="compound_document">
+  		<xpath>//div[@id='abstractAuthors']//a</xpath>
+  		<scalar name="title">
+  			<xpath>./span[@id='preferredName']/@class</xpath>
+  		</scalar>
+  		<scalar name="location">
+  			<xpath>./span[@id='authorId']/@class</xpath>
+  			<regex_op regex="^" replace="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Author_Ids:"/>
+  		</scalar>
+  	
+  	</collection>
+   </meta_metadata>
   <meta_metadata name="ieee_xplore_references" extends="compound_document" parser="xpath">
-    <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractReferences.jsp?" />
-
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractReferences.jsp" />
+	  <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractReferences.jsp" />
+	
     <collection name="references" child_type="scholarly_article">
       <xpath>//ol[@class='docs']/li</xpath>
       <scalar name="title">
@@ -126,11 +150,26 @@
     </collection>
   </meta_metadata>
 
-<meta_metadata name="ieee_journal" extends="compound_document" parser="xpath">
+<meta_metadata name="ieee_journal_page" extends="compound_document" parser="xpath">
+   <selector url_stripped="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp" />
+   <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/mostRecentIssue.jsp" />
+	<scalar name="title">
+		<xpath>//h1</xpath>
+	</scalar>
+	<collection name="top_articles" child_type="ieee_xplore_article">
+      <xpath>//ul[@class='results']/li</xpath>
+      <scalar name="title">
+        <xpath>.//h3</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h3/a/@href</xpath>
+      </scalar>
+    </collection>
+
 </meta_metadata>
 <meta_metadata name="ieee_keywords" extends="compound_document" parser="xpath">
 	<selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractKeywords.jsp" />
-	
+	<selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractKeywords.jsp" />
 	<collection name="keywords" child_type="ieee_xplore_search">
 		<xpath>//div[@id='abstractKeywords']//li</xpath>
 		<scalar name="title">
@@ -173,9 +212,10 @@
       </scalar>
     </collection>
   </meta_metadata>
- <!--  
+ 
   <meta_metadata name="ieee_article_body" parser="xpath" extends="compound_document">
     <selector url_stripped="http://ieeexplore.ieee.org/xpls/icp.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpls/icp.jsp" />
     <collection name="sections" child_extends="compound_document">
     	<xpath>//div[@class='section']</xpath>
     	<scalar name="title">
@@ -186,7 +226,7 @@
     	</collection>
     </collection>
   </meta_metadata>
-  -->
+  
   <!--
   <meta_metadata name="ask_nature_group" extends="compound_document" parser="xpath" user_agent_name="chrome" >
   	<selector url_stripped="http://www.asknature.org/browse" domain="asknature.org" />

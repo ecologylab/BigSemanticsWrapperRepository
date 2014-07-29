@@ -55,6 +55,7 @@ using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
 using Ecologylab.Semantics.Generated.Library.PubmedNS;
+using Ecologylab.Semantics.Generated.Library.ResearchGateNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
 using Ecologylab.Semantics.Generated.Library.ReviewNS;
 using Ecologylab.Semantics.Generated.Library.RssNS;
@@ -239,8 +240,12 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IcdlImage),
 				typeof(IcdlImageResult),
 				typeof(Icsmd),
+				typeof(IeeeArticleBody),
+				typeof(IeeeAuthorPage),
+				typeof(IeeeJournalPage),
+				typeof(IeeeKeywords),
 				typeof(IeeeXploreArticle),
-				typeof(IeeeXploreCitations),
+				typeof(IeeeXploreCitedBy),
 				typeof(IeeeXploreReferences),
 				typeof(IeeeXploreSearch),
 				typeof(IkeaMobileProduct),
@@ -330,6 +335,16 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
 				typeof(RedditSearchResults),
+				typeof(ResearchGateArticle),
+				typeof(ResearchGateArticleStats),
+				typeof(ResearchGateAuthor),
+				typeof(ResearchGateInstitution),
+				typeof(ResearchGateInstitutionContactInfo),
+				typeof(ResearchGateInstitutionDepartment),
+				typeof(ResearchGateResearcher),
+				typeof(ResearchGateResult),
+				typeof(ResearchGateSearch),
+				typeof(ResearchGateStats),
 				typeof(Restaurant),
 				typeof(RestaurantGenre),
 				typeof(RestorationhardwareProduct),
@@ -357,6 +372,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SearchResults),
 				typeof(SearchSection),
 				typeof(Section),
+				typeof(Sections),
 				typeof(Service),
 				typeof(SfuCartoonArchive),
 				typeof(SlashdotArticle),
