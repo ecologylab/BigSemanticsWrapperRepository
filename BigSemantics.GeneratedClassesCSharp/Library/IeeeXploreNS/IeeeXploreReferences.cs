@@ -12,7 +12,6 @@ using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -25,9 +24,6 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeXploreNS
 	[SimplInherit]
 	public class IeeeXploreReferences : CompoundDocument
 	{
-		[SimplScalar]
-		private MetadataString ieeeXploreId;
-
 		[SimplCollection("scholarly_article")]
 		[MmName("references")]
 		private List<ScholarlyArticle> references;
@@ -37,19 +33,6 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeXploreNS
 
 		public IeeeXploreReferences(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString IeeeXploreId
-		{
-			get{return ieeeXploreId;}
-			set
-			{
-				if (this.ieeeXploreId != value)
-				{
-					this.ieeeXploreId = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public List<ScholarlyArticle> References
 		{

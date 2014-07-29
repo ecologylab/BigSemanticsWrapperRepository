@@ -27,17 +27,29 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeXploreNS
 	[SimplInherit]
 	public class IeeeXploreArticle : ScholarlyArticle
 	{
+		[SimplComposite]
+		[MmName("author_page")]
+		private IeeeAuthorPage authorPage;
+
 		[SimplCollection("ieee_xplore_search")]
 		[MmName("articles_by_authors")]
 		private List<IeeeXploreSearch> articlesByAuthors;
+
+		[SimplComposite]
+		[MmName("published_in")]
+		private IeeeJournalPage publishedIn;
+
+		[SimplComposite]
+		[MmName("keyword_page")]
+		private IeeeKeywords keywordPage;
 
 		[SimplComposite]
 		[MmName("references_page")]
 		private IeeeXploreReferences referencesPage;
 
 		[SimplComposite]
-		[MmName("citations_page")]
-		private IeeeXploreCitations citationsPage;
+		[MmName("cited_by")]
+		private IeeeXploreCitedBy citedBy;
 
 		/// <summary>
 		/// The digital object identifier of the article
@@ -51,6 +63,19 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeXploreNS
 		public IeeeXploreArticle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
+		public IeeeAuthorPage AuthorPage
+		{
+			get{return authorPage;}
+			set
+			{
+				if (this.authorPage != value)
+				{
+					this.authorPage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
 		public List<IeeeXploreSearch> ArticlesByAuthors
 		{
 			get{return articlesByAuthors;}
@@ -59,6 +84,32 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeXploreNS
 				if (this.articlesByAuthors != value)
 				{
 					this.articlesByAuthors = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public IeeeJournalPage PublishedIn
+		{
+			get{return publishedIn;}
+			set
+			{
+				if (this.publishedIn != value)
+				{
+					this.publishedIn = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public IeeeKeywords KeywordPage
+		{
+			get{return keywordPage;}
+			set
+			{
+				if (this.keywordPage != value)
+				{
+					this.keywordPage = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -77,14 +128,14 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeXploreNS
 			}
 		}
 
-		public IeeeXploreCitations CitationsPage
+		public IeeeXploreCitedBy CitedBy
 		{
-			get{return citationsPage;}
+			get{return citedBy;}
 			set
 			{
-				if (this.citationsPage != value)
+				if (this.citedBy != value)
 				{
-					this.citationsPage = value;
+					this.citedBy = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
