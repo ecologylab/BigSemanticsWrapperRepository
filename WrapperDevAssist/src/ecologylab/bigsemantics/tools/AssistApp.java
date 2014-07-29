@@ -1,5 +1,6 @@
 package ecologylab.bigsemantics.tools;
 
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -9,8 +10,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
@@ -27,18 +29,16 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.io.Files;
-
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-
-
+/**
+ * 
+ * @author quyin
+ */
 public class AssistApp extends WindowAdapter
 {
 
-  static Logger logger = LoggerFactory.getLogger(AssistApp.class);
+  static Logger logger        = LoggerFactory.getLogger(AssistApp.class);
+
+  static int    LOW_MEM_IN_MB = 64;
 
   private File  bsWrappersDir;
 
@@ -205,7 +205,7 @@ public class AssistApp extends WindowAdapter
   {
     try
     {
-      MemoryUsagePrinter.printAll("before updating backend");
+      MemoryUsageMonitor.get().log("before updating backend");
 
       stopService();
 
@@ -218,16 +218,16 @@ public class AssistApp extends WindowAdapter
       File serviceBuildFile =
           PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build.xml");
       antRunner.runAntTarget(serviceBuildFile, "main");
-      MemoryUsagePrinter.printAll("after compiling wrappers and building bs-service");
+      MemoryUsageMonitor.get().log("after compiling wrappers and building bs-service");
 
       info("Rebuilding downloader pool war and downloader jar...");
       File dpoolBuildFile =
           PathUtil.subPath(bsServiceDir, "DownloaderPool", "build.xml");
       antRunner.runAntTarget(dpoolBuildFile, "main");
-      MemoryUsagePrinter.printAll("after building dpool");
+      MemoryUsageMonitor.get().log("after building dpool");
 
       startService();
-      MemoryUsagePrinter.printAll("after bs-service and dpool started");
+      MemoryUsageMonitor.get().log("after bs-service and dpool started");
     }
     catch (Exception e)
     {

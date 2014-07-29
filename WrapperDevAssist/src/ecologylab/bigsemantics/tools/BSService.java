@@ -157,7 +157,7 @@ public class BSService
     {
       BSService runner = new BSService(configs);
       runner.start();
-      MemoryUsagePrinter.printAll(null);
+      MemoryUsageMonitor.get().log("New service instance ...");
       Thread.sleep(5000);
       logger.info("requesting stop ...");
       runner.stop();
