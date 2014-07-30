@@ -126,7 +126,7 @@
       <xpath>(//*[preceding-sibling::td[contains(text(),'Filing date')]])[1]</xpath>
     </scalar>
 
-    <collection name="citations" child_type="google_patent">
+    <collection name="references" child_type="google_patent">
       <xpath>//*[@id='intl_patents_v']/div[7]/table/tbody/tr</xpath>
       <scalar name="title">
         <xpath>./td[5]</xpath>
@@ -136,7 +136,7 @@
       </scalar>
     </collection>
 
-    <collection name="references" child_type="google_patent">
+    <collection name="citations" child_type="google_patent">
       <xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
