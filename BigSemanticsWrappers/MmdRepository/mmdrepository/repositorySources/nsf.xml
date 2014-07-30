@@ -13,8 +13,7 @@
       <xpath>.</xpath>
     </scalar>
     <collection name="programs" child_type="nsf_program">
-      <xpath>//p[text()='Programs and Funding
-        Opportunities']/following-sibling::table[1]//a[string-length(text())&gt;0 and not(strong)]</xpath>
+      <xpath>//p[text()='Programs and Funding Opportunities']/following-sibling::table[1]//a[string-length(text())&gt;0 and not(strong)]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
@@ -425,8 +424,7 @@
       </scalar>
     </composite>
     <collection name="programs" child_type="nsf_program">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'NSF
-        Program(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'NSF Program(s):')]/following::td[@class='tabletext2'][1]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
@@ -439,21 +437,19 @@
       </scalar>
     </collection>
     <scalar name="grant_number">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Award
-        Number:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Award Number:')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="start_date">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Start
-        Date:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Start Date:')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="expire_date">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(),
-        'Expires:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Expires:')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="amount" hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to
-        Date:')]/following::td[@class='tabletext2'][1]</xpath>
-      <regex_op regex="\s+|[$,]|\.\d+" replace="" />
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to Date:')]/following::td[@class='tabletext2'][1]</xpath>
+      <regex_op regex="\s+" replace="" />
+      <regex_op regex="[\$,]" replace="" />
+      <regex_op regex="\.\d+" replace="" />
     </scalar>
     <scalar name="amount_string" label="amount" scalar_type="String">
       <concatenate_values>
@@ -462,8 +458,7 @@
       </concatenate_values>
     </scalar>
     <collection name="managers" child_type="nsf_staff" extract_as_html="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program
-        Manager:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Manager:')]/following::td[@class='tabletext2'][1]</xpath>
       <field_parser name="regex_split_and_find" regex_find="([\w\s.-]+?)&lt;br&gt;(.*)"
         trim="true" />
       <scalar name="title" field_parser_key="$1" layer="-2.0" />
@@ -479,8 +474,7 @@
       </scalar>
     </collection>
     <composite name="sponsor">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(),
-        'Sponsor:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Sponsor:')]/following::td[@class='tabletext2'][1]</xpath>
       <!-- field parser for addresses needed! -->
       <scalar name="title">
         <xpath>.</xpath>
@@ -488,35 +482,28 @@
     </composite>
 
     <scalar name="award_instrument" scalar_type="String" hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Award
-        Instrument:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Award Instrument:')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="field_applications" scalar_type="String" hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Field
-        Application(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Field Application(s):')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="initial_amendment_date" scalar_type="Date" hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Initial Amendment
-        Date:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Initial Amendment Date:')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="latest_amendment_date" scalar_type="Date" hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Latest Amendment
-        Date:')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Latest Amendment Date:')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <scalar name="program_reference_codes" scalar_type="String" hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Reference
-        Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Reference Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
     <collection name="program_element_codes" child_scalar_type="String" child_tag="program_element_code"
       hide="true">
-      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element
-        Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
       <field_parser name="regex_split" regex="," />
     </collection>
 
     <collection name="publications" extract_as_html="true">
-      <xpath>//strong[@class='greybold' and starts-with(text(), 'PUBLICATIONS PRODUCED AS A RESULT
-        OF THIS RESEARCH')]/parent::p</xpath>
+      <xpath>//strong[@class='greybold' and starts-with(text(), 'PUBLICATIONS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p</xpath>
       <field_parser name="nsf_pub_list" />
       <scalar name="title" field_parser_key="$title" />
       <collection name="authors" field_parser_key="$author_list">
@@ -530,8 +517,7 @@
       </composite>
     </collection>
     <collection name="proceedings" extract_as_html="true">
-      <xpath>//strong[@class='greybold' and starts-with(text(), 'CONFERENCE PROCEEDINGS PRODUCED AS
-        A RESULT OF THIS RESEARCH')]/parent::p</xpath>
+      <xpath>//strong[@class='greybold' and starts-with(text(), 'CONFERENCE PROCEEDINGS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p</xpath>
       <field_parser name="nsf_pub_list" />
       <scalar name="title" field_parser_key="$title" />
       <collection name="authors" field_parser_key="$author_list">
