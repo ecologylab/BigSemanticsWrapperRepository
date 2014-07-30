@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.misc">
 
   <meta_metadata name="comment" extends="metadata">
-    <scalar name="description" scalar_type="String" tag="content" other_tags="description" />
+    <scalar name="description" scalar_type="String"/>
     <composite name="author" type="person" />
     <scalar name="time" scalar_type="String" comment="How long this comment has been there." />
     <scalar name="count" scalar_type="Int" comment="How many votes this comment has got." />

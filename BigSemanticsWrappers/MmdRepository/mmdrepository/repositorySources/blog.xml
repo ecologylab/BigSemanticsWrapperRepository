@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.blog">
 
   <meta_metadata name="post" extends="creative_work">
-    <scalar name="description" label="content" tag="content" other_tags="description" />
+    <scalar name="description" label="content"  />
     <scalar name="post_date" scalar_type="Date" />
     <collection name="tags" child_type="document" />
   </meta_metadata>

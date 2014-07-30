@@ -25,7 +25,7 @@
   </meta_metadata>
 
   <meta_metadata name="image_search" extends="search">
-    <collection name="search_results" child_type="image_search_result" child_tag="image_search_result" />
+    <collection name="search_results" child_type="image_search_result" />
   </meta_metadata>
 
   <meta_metadata name="google_search" extends="search" parser="xpath"
@@ -212,22 +212,22 @@
   </meta_metadata>
 
   <meta_metadata name="yahoo_thumbnail" extends="metadata">
-    <scalar name="thumb_url" tag="Url" scalar_type="ParsedURL" hint="XML_LEAF" />
-    <scalar name="width" tag="Width" scalar_type="Int" hint="XML_LEAF" />
-    <scalar name="height" tag="Height" scalar_type="Int" hint="XML_LEAF" />
+    <scalar name="thumb_url"  scalar_type="ParsedURL" hint="XML_LEAF" />
+    <scalar name="width"  scalar_type="Int" hint="XML_LEAF" />
+    <scalar name="height"  scalar_type="Int" hint="XML_LEAF" />
   </meta_metadata>
 
   <meta_metadata name="yahoo_result_set" extends="document" comment="Yahoo Web Search Service"
-    tag="ResultSet" parser="direct">
+    parser="direct">
     <collection name="results" child_type="yahoo_result" child_extends="document"
-      child_tag="Result" no_wrap="true" comment="Collection of results for yahoo search">
-      <scalar name="title" scalar_type="String" tag="Title" hide="true" />
-      <scalar name="summary" scalar_type="String" tag="Summary" />
-      <scalar name="location" scalar_type="ParsedURL" tag="Url" hide="true" />
-      <scalar name="referer_url" scalar_type="ParsedURL" tag="RefererUrl" hide="true" />
-      <scalar name="modification_date" scalar_type="String" tag="ModificationDate" />
-      <scalar name="mime_type" scalar_type="String" tag="MimeType" hide="true" />
-      <composite name="thumbnail" tag="Thumbnail" type="yahoo_thumbnail" hide="true" />
+      no_wrap="true" comment="Collection of results for yahoo search">
+      <scalar name="title" scalar_type="String"  hide="true" />
+      <scalar name="summary" scalar_type="String" />
+      <scalar name="location" scalar_type="ParsedURL"  hide="true" />
+      <scalar name="referer_url" scalar_type="ParsedURL"  hide="true" />
+      <scalar name="modification_date" scalar_type="String"  />
+      <scalar name="mime_type" scalar_type="String"  hide="true" />
+      <composite name="thumbnail"  type="yahoo_thumbnail" hide="true" />
     </collection>
   </meta_metadata>
 
@@ -319,24 +319,24 @@
 <!-- 
 
 	<meta_metadata name="bing_web_search_result" extends="document" comment="Bing web search result.">
-		<scalar name="title" tag="web:Title" />
-		<scalar name="description" tag="web:Description" />
-		<scalar name="location" tag="web:Url" hide="true" />
+		<scalar name="title" />
+		<scalar name="description"  />
+		<scalar name="location" />
 	</meta_metadata>
 
 	<meta_metadata name="bing_image_search_result" extends="image_in_search_result" comment="Bing image search result.">
-		<composite name="thumbnail" type="image_in_search_result" tag="mms:Thumbnail" />
+		<composite name="thumbnail" type="image_in_search_result"  />
 	</meta_metadata>
  -->
 	<!-- intermediate layers for source types. necessary for binding tags. -->
 
 <!-- 
 	<meta_metadata name="bing_search_web_section" extends="compound_document">
-		<collection name="web_search_results" child_type="bing_web_search_result" tag="web:Results" child_tag="web:WebResult" no_wrap="false" />
+		<collection name="web_search_results" child_type="bing_web_search_result"  no_wrap="false" />
 	</meta_metadata>
 
 	<meta_metadata name="bing_search_image_section" extends="compound_document">
-		<collection name="image_search_results" child_type="bing_image_search_result" tag="mms:Results" child_tag="mms:ImageResult" no_wrap="false" />
+		<collection name="image_search_results" child_type="bing_image_search_result"  no_wrap="false" />
 	</meta_metadata>
 	 -->
 	<!-- Bing search. note that they put different types of search results (i.e. sources) into the same structure. -->
@@ -396,13 +396,13 @@
 	
 	
 	<!--  use xpaths instead so that we can use search
-	<meta_metadata name="bing_search" promote_children="true" extends="compound_document" tag="SearchResponse" parser="direct" user_agent_name="opera_9">
+	<meta_metadata name="bing_search" promote_children="true" extends="compound_document"  parser="direct" user_agent_name="opera_9">
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
 
 
-		<scalar name="bingsearchapi" label="search query" type="bing_query"  scalar_type="String" tag="Query"/>
-		<composite name="web_section" type="bing_search_web_section" tag="web:Web" />
-		<composite name="image_section" type="bing_search_image_section" tag="mms:Image" />
+		<scalar name="bingsearchapi" label="search query" type="bing_query"  scalar_type="String" />
+		<composite name="web_section" type="bing_search_web_section"  />
+		<composite name="image_section" type="bing_search_image_section"  />
 		
 		
 

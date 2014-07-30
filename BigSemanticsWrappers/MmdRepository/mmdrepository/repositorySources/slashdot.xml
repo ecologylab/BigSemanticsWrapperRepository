@@ -71,14 +71,14 @@
 
   <meta_metadata name="slashdot_item" extends="item" comment="One item in a feed."
     parser="direct">
-    <scalar name="department" scalar_type="String" tag="slash:department" hint="XML_LEAF" />
-    <scalar name="section" scalar_type="String" tag="slash:section" hint="XML_LEAF" />
+    <scalar name="department" scalar_type="String"  hint="XML_LEAF" />
+    <scalar name="section" scalar_type="String"  hint="XML_LEAF" />
   </meta_metadata>
 
 
-  <meta_metadata name="slashdot_rss" extends="compound_document" tag="rdf:RDF" parser="direct">
+  <meta_metadata name="slashdot_rss" extends="compound_document" parser="direct">
     <selector url_stripped="http://rss.slashdot.org/Slashdot/slashdot" />
-    <collection name="items" child_type="slashdot_item" no_wrap="true" child_tag="item" />
+    <collection name="items" child_type="slashdot_item" no_wrap="true" />
     <semantic_actions>
       <get_field name="items" />
       <if>

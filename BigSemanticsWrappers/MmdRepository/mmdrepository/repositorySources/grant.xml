@@ -5,13 +5,13 @@
     <generic_type_var name="CW" extends="grant" />
     <scalar name="email" scalar_type="String" />
     <scalar name="investigation_type" scalar_type="String" />
-    <collection name="creative_works" tag="grants" other_tags="creative_works" label="grants" />
+    <collection name="creative_works"  label="grants" />
   </meta_metadata>
 
 
   <meta_metadata name="grant" extends="creative_work">
-    <collection name="authors" child_type="investigator" tag="investigators" other_tags="authors"
-      child_tag="investigator" label="investigators" />
+    <collection name="authors" child_type="investigator" 
+       label="investigators" />
     <scalar name="description" other_tags="abstract_field" />
 
     <collection name="programs" child_type="grant_program" />
@@ -19,21 +19,21 @@
     <scalar name="start_date" scalar_type="Date" />
     <scalar name="expire_date" scalar_type="Date" />
     <scalar name="amount" scalar_type="Int" />
-    <collection name="managers" child_type="grant_staff" child_tag="manager" />
+    <collection name="managers" child_type="grant_staff"  />
     <composite name="sponsor" type="postal_address" />
 
-    <collection name="publications" child_tag="publication" child_type="scholarly_article" />
-    <collection name="proceedings" child_tag="proceeding" child_type="scholarly_article" />
-    <collection name="relevant_locations" child_tag="relevant_location"
+    <collection name="publications"  child_type="scholarly_article" />
+    <collection name="proceedings"  child_type="scholarly_article" />
+    <collection name="relevant_locations" 
       child_scalar_type="ParsedURL" />
   </meta_metadata>
 
 
   <meta_metadata name="grant_program" extends="compound_document">
-    <collection name="staffs" child_type="grant_staff" child_tag="staff" />
+    <collection name="staffs" child_type="grant_staff"  />
     <scalar name="synopsis" scalar_type="String" />
     <scalar name="guidelines" scalar_type="String" />
-    <collection name="due_dates" child_scalar_type="Date" child_tag="due_date" />
+    <collection name="due_dates" child_scalar_type="Date"  />
     <collection name="grants" child_type="grant" />
   </meta_metadata>
 

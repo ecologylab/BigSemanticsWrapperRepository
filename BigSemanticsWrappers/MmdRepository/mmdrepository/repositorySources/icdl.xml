@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.icdl">
 
   <meta_metadata name="icdl_image_result" extends="document" comment="Thumbnail Image"
-    tag="response" package="ecologylab.bigsemantics.generated.library.icdl" parser="direct">
+     package="ecologylab.bigsemantics.generated.library.icdl" parser="direct">
     <selector url_stripped="http://www.childrenslibrary.org/BookXMLResults" />
 		<!--
 			For safety we'd like to add additional selectors: <selector>
@@ -11,7 +11,7 @@
 			name="total" scalar_type="Int" />
 		-->
     <collection name="books" no_wrap="true" child_type="icdl_book" child_extends="document"
-      child_tag="book">
+     >
       <scalar name="id" scalar_type="String" hide="true" />
       <scalar name="bookurl" scalar_type="ParsedURL" hide="true" />
       <scalar name="booktitle" scalar_type="String" />

@@ -71,13 +71,13 @@
   <meta_metadata name="nsf_division_staff_list" extends="compound_document" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/staff/staff_list_all.jsp" />
 
-    <collection name="programs" child_tag="program" child_type="nsf_program_staff_list"
+    <collection name="programs"  child_type="nsf_program_staff_list"
       child_extends="compound_document">
       <xpath>//td[@class='text']//strong[@class='greybold']</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
-      <collection name="staffs" child_tag="staff" child_type="nsf_staff">
+      <collection name="staffs" child_type="nsf_staff">
         <xpath>./following::table[1]//tr[position() mod 3 = 1]</xpath>
         <scalar name="title" layer="10.0">
           <xpath>./following::tr[1]/td[1]/a</xpath>
@@ -508,7 +508,7 @@
     <scalar name="program_reference_codes" scalar_type="String" hide="true">
       <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Reference Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
     </scalar>
-    <collection name="program_element_codes" child_scalar_type="String" child_tag="program_element_code"
+    <collection name="program_element_codes" child_scalar_type="String" 
       hide="true">
       <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
       <field_parser name="regex_split" regex="," />

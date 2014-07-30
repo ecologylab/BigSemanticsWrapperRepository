@@ -3,8 +3,7 @@
 
   <meta_metadata name="artist" extends="author">
 <!-- 		<collection name="mentors" child_type="artist" /> -->
-    <collection name="creative_works" child_type="artwork" label="artworks" tag="artworks"
-      other_tags="creative_works" child_tag="artwork" />
+    <collection name="creative_works" child_type="artwork" label="artworks"  />
   </meta_metadata>
 
 
@@ -12,8 +11,8 @@
     <scalar name="title" use_value_as_label="main_images" />
     <scalar name="location" hide="true" />
     <scalar name="description" comment="Abstract of the work." />
-    <collection name="authors" child_type="artist" label="artists" tag="artists"
-      other_tags="authors" child_tag="artist" layer="9.5" comment="Set of artists." />
+    <collection name="authors" child_type="artist" label="artists"
+      layer="9.5" comment="Set of artists." />
 
     <scalar name="medium" scalar_type="String" layer="9.2" comment="Medium on which the work is done." />
     <scalar name="year" comment="Year the work was created." scalar_type="String" />
@@ -22,12 +21,11 @@
 
   <meta_metadata name="exhibition" extends="creative_work" comment="Artwork exhibition class">
     <scalar name="location" hide="true" />
-    <scalar name="description" tag="abstract" label="abstract" comment="Abstract of the work." />
-    <collection name="contributors" child_type="artist" label="artists" tag="artists"
-      other_tags="contributors" child_tag="artist" layer="9.5" comment="Set of contributors." />
+    <scalar name="description" label="abstract" comment="Abstract of the work." />
+    <collection name="contributors" child_type="artist" label="artists"
+      layer="9.5" comment="Set of contributors." />
 
-    <collection name="creative_works" child_type="artwork" label="artworks" tag="artworks"
-      other_tags="creative_works" child_tag="artwork" />
+    <collection name="creative_works" child_type="artwork" label="artworks" />
   </meta_metadata>
 
   <meta_metadata name="mm_artwork" extends="artwork" comment="ACM Multimedia Interactive Artwork class">
@@ -70,7 +68,7 @@
     </scalar>
 
     <collection name="related_works" child_type="artwork" label="related works"
-      other_tags="creative_works" child_tag="artwork">
+      other_tags="creative_works" >
       <xpath>//div[@id='artwork-similar-works']/div/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -80,7 +78,7 @@
       </scalar>
     </collection>
 
-    <collection name="tags" child_type="rhizome_tag" label="tags" tag="tag">
+    <collection name="tags" child_type="rhizome_tag" label="tags">
       <xpath>//div[@id='artwork-tags']/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -123,7 +121,7 @@
     <scalar name="title">
       <xpath>//div[@class='user-name']</xpath>
     </scalar>
-    <scalar name="bio" tag="abstract" label="artist bio" scalar_type="String">
+    <scalar name="bio"  label="artist bio" scalar_type="String">
       <xpath>//div[@id='profile-bio']</xpath>
     </scalar>
 
@@ -146,7 +144,7 @@
     <scalar name="title">
       <xpath>//div[@id='collection-title-overlay-title']</xpath>
     </scalar>
-    <scalar name="description" tag="abstract" label="about" scalar_type="String">
+    <scalar name="description"  label="about" scalar_type="String">
       <xpath>//div[@class='statement-column-content']</xpath>
     </scalar>
     
@@ -367,8 +365,7 @@
       <xpath>//div[@class='texts_content']</xpath>
     </scalar>
 
-    <collection name="works_of_interest" child_type="artwork" label="works of interest"
-      tag="related works" other_tags="creative_works" child_tag="artwork">
+    <collection name="works_of_interest" child_type="artwork" other_tags="creative_works" >
       <xpath>//div[@class='carousel-clip']/div/div/div[2]/div[2]/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -378,7 +375,7 @@
       </scalar>
     </collection>
 
-    <collection name="tags" child_type="tate_filter" label="tags" tag="tag">
+    <collection name="tags" child_type="tate_filter" >
       <xpath>//span[@class='tag']/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -419,7 +416,7 @@
     <scalar name="title">
       <xpath>//div[@class='region-inner region-header-second-inner']/h1/span[1]</xpath>
     </scalar>
-    <scalar name="bio" tag="abstract" label="artist bio" scalar_type="String">
+    <scalar name="bio" scalar_type="String">
       <xpath>//div[@class='texts_content']/p[1]</xpath>
     </scalar>
 
@@ -492,7 +489,7 @@
     </scalar>
 
     <collection name="works_of_interest" child_type="met_artwork" label="related works"
-      tag="related works" other_tags="creative_works" child_tag="artwork">
+    other_tags="creative_works">
       <xpath>//div[@class='object-info']/p/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -502,7 +499,7 @@
       </scalar>
     </collection>
 
-    <collection name="tags" child_type="met_filter" label="tags" tag="tag">
+    <collection name="tags" child_type="met_filter" label="tags" >
       <xpath>(//div[@class='accordion-inner'])[last()]/dl/dd/ul/li/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -591,8 +588,7 @@
       <xpath>//*[@class='watch-and-listen-title']</xpath>
     </scalar>
 
-    <collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist"
-      tag="audio_playlist" other_tags="audio_playlist" child_tag="audio">
+    <collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist">
       <xpath>//div[@class='audio-guide-playlist-table-wrapper']/table/tbody/tr</xpath>
       <scalar name="location" hide="true">
         <xpath>substring(substring-after(./@onclick, '='), 3,
@@ -676,7 +672,7 @@
       <regex_op regex="\.(.*?)(?=\,)" />
     </scalar>
 
-    <collection name="tags" child_type="guggen_filter" label="tags" tag="tag">
+    <collection name="tags" child_type="guggen_filter" label="tags">
       <xpath>//*[@class='more-tags']/li/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -740,8 +736,7 @@
       </scalar>
     </collection>
 
-    <collection name="related_exhibitions" child_type="newmuseum_exhibition" label="related exhibition"
-      tag="related exhibition" child_tag="exhibition">
+    <collection name="related_exhibitions" child_type="newmuseum_exhibition" label="related exhibition">
       <xpath>(//div[preceding-sibling::div[contains(text(),'Related Exhibition')]])[1]/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -760,8 +755,7 @@
       <xpath>//div[@id='detailTitle']</xpath>
     </scalar>
 
-    <collection name="related_exhibitions" child_type="newmuseum_exhibition" label="exhibitions"
-      tag="related exhibition" child_tag="exhibition">
+    <collection name="related_exhibitions" child_type="newmuseum_exhibition" label="exhibitions">
       <xpath>(//div[preceding-sibling::div[contains(text(),'Exhibition')]])/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>

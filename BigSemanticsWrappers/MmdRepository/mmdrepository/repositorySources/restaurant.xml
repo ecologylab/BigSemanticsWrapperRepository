@@ -8,7 +8,7 @@
 
 
   <meta_metadata name="restaurant_genre" extends="document" comment="Restaurants genre.">
-    <collection name="restaurants" child_type="restaurant" child_tag="restaurant" />
+    <collection name="restaurants" child_type="restaurant"  />
   </meta_metadata>
 
 </meta_metadata_repository>

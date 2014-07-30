@@ -3,7 +3,7 @@
 
   <meta_metadata name="keyword_set" extends="metadata" parser="direct">
     <scalar name="type" scalar_type="String" />
-    <collection name="keywords" child_scalar_type="String" child_tag="keyword" />
+    <collection name="keywords" child_scalar_type="String"/>
   </meta_metadata>
 
 
@@ -16,7 +16,7 @@
     <scalar name="id" scalar_type="Int" />
 
     <collection name="document_set" child_type="document" />
-    <collection name="keyword_sets" child_tag="keyword_set" child_type="keyword_set" />
+    <collection name="keyword_sets" child_type="keyword_set" />
 
     <scalar name="x" scalar_type="Int" />
     <scalar name="y" scalar_type="Int" />

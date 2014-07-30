@@ -236,7 +236,7 @@
   	<example_url url="http://www.asknature.org/browse?selected=strategy|1&amp;type=aof" />
   	
   	<scalar name="title" label="group" xpath="//a[@class='selected']" /> 
-  	<collection name="subgroups" child_type="ask_nature_subgroup" child_tag="subgroup" xpath="//ul[@id='accordion_list_2']/div/dt">
+  	<collection name="subgroups" child_type="ask_nature_subgroup"  xpath="//ul[@id='accordion_list_2']/div/dt">
   		<scalar name="title" xpath="./text()" />
   		<collection name="functions" child_type="ask_nature_function" xpath="./following-sibling::dd[1]/a" >
   			<scalar name="title" xpath="./text()" />
@@ -247,7 +247,7 @@
      
   <meta_metadata name="ask_nature_subgroup" extends="compound_document" parser="xpath" user_agent_name="chrome" >
   	<scalar name="title" label="subgroup"  /> 
-  	<collection name="functions" child_type="ask_nature_function" child_tag="function"/>
+  	<collection name="functions" child_type="ask_nature_function" />
   </meta_metadata>
   
   <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath" user_agent_name="chrome" >

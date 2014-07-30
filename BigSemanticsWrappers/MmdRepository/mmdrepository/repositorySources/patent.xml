@@ -26,7 +26,7 @@
 
 		<!-- <collection name="classifications" child_type="document"/> polymorphic fields need simpl_classes/scope meta-information! -->
     <collection name="classifications" child_type="patent_classification" />
-    <collection name="claims" child_scalar_type="String" child_tag="claim" />
+    <collection name="claims" child_scalar_type="String" />
 
     <collection name="authors" child_type="patent_author" />
 
@@ -46,7 +46,7 @@
 
   <meta_metadata name="patent_author" extends="author" parser="xpath"
     comment="Authors of Patents; really this should be a mix-in to author">
-    <collection name="creative_works" tag="patents" other_tags="creative_works,publications"
+    <collection name="creative_works"  other_tags="publications"
       label="patents" child_type="patent" />
   </meta_metadata>
 

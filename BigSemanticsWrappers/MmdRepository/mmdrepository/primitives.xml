@@ -3,7 +3,7 @@
 
   <meta_metadata name="metadata" comment="The Metadata Class" built_in="true"
     package="ecologylab.bigsemantics.metadata">
-    <scalar name="meta_metadata_name" scalar_type="String" tag="mm_name" hide="true"
+    <scalar name="meta_metadata_name" scalar_type="String" hide="true"
       ignore_in_term_vector="true"
       comment="Stores the name of the meta-metadata, and is used on restoring from XML." />
     <collection name="mixins" child_type="metadata" promote_children="true"
@@ -38,7 +38,7 @@
       <xpath>//meta[@property='twitter:site']/@content</xpath>
     </scalar>
 
-    <collection name="additional_locations" child_scalar_type="ParsedURL" child_tag="location"
+    <collection name="additional_locations" child_scalar_type="ParsedURL"
       hide="true" />
       
     <composite name="see_also" type="document">

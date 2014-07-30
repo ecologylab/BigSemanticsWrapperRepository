@@ -17,7 +17,7 @@
 	</def_var>
 	
 	
-    <collection name="subgroups" child_type="ask_nature_subgroup" child_tag="subgroup">
+    <collection name="subgroups" child_type="ask_nature_subgroup" >
       <xpath>//ul[@id='accordion_list_2']/div/dt</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -61,7 +61,7 @@
     <scalar name="title" label="subgroup" context_node="subgroup_node">
       <xpath>.</xpath>
     </scalar>
-    <collection name="functions" child_type="ask_nature_function" child_tag="function"
+    <collection name="functions" child_type="ask_nature_function"
       context_node="subgroup_node">
       <xpath>./following-sibling::dd[1]/a</xpath>
       <scalar name="title">

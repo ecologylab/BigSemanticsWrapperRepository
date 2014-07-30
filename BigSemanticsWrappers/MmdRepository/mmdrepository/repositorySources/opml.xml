@@ -9,8 +9,8 @@
         <scalar name="text" scalar_type="String" />
         <scalar name="title" scalar_type="String" />
         <scalar name="type" scalar_type="String" />
-        <scalar name="xmlUrl" scalar_type="ParsedURL" tag="xmlUrl" />
-        <scalar name="htmlUrl" scalar_type="ParsedURL" tag="htmlUrl" />
+        <scalar name="xmlUrl" scalar_type="ParsedURL"  />
+        <scalar name="htmlUrl" scalar_type="ParsedURL" />
         <collection name="outlines" child_type="outline" no_wrap="true" />
       </collection>
     </composite>
