@@ -326,7 +326,19 @@
     <!-- first/last name helps form location: -->
     <scalar name="first_name" hide="true" scalar_type="String" />
     <scalar name="last_name" hide="true" scalar_type="String" />
-
+		<scalar name="given_name" scalar_type="String" hide="true">
+    	<xpath>//input[@id='PIFirstName']/@value</xpath>
+    </scalar>
+    <scalar name="family_name" scalar_type="String" hide="true">
+    	<xpath>//input[@id='PILastName']/@value</xpath>
+    </scalar>
+    <scalar name="title">
+    	<concatenate_values>
+    		<value from_scalar="given_name"/>
+    		<value> </value>
+    		<value from_scalar="family_name"/>
+    	</concatenate_values>
+    </scalar>
     <collection name="creative_works" child_type="nsf_award">
       <xpath>//table[@id='displayTagResults']//tr[@class]</xpath>
       <scalar name="title">
