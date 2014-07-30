@@ -4,11 +4,14 @@
   <meta_metadata name="ieee_xplore_article" extends="scholarly_article" parser="xpath">
     <selector url_stripped="http://ieeexplore.ieee.org/xpl/articleDetails.jsp" />
     <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/articleDetails.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org/xpls/abs_all.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpls/abs_all.jsp" />
     <example_url url="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1532126" />
 
     <filter_location>
       <strip_param name="navigation" />
       <strip_param name="reload" />
+      <strip_param name="tag" />
     </filter_location>
 
     <scalar name="title">
