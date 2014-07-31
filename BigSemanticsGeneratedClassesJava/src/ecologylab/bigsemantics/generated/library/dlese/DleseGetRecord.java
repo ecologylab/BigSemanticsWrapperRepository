@@ -16,17 +16,14 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-@simpl_tag("DDSWebService")
 public class DleseGetRecord extends CompoundDocument
 {
-	@simpl_collection("record")
-	@simpl_tag("GetRecord")
+	@simpl_collection("dlese_record2")
 	@mm_name("records")
 	private List<DleseRecord2> records;
 

@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.NsfNS
 	[SimplInherit]
 	public class NsfDivisionStaffList : CompoundDocument
 	{
-		[SimplCollection("program")]
+		[SimplCollection("nsf_program_staff_list")]
 		[MmName("programs")]
 		private List<NsfProgramStaffList> programs;
 

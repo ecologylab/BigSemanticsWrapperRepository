@@ -16,16 +16,13 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-@simpl_tag("NSDLSearchService")
 public class NsdlService extends Metadata
 {
 	@simpl_composite
-	@simpl_tag("SearchResults")
 	@mm_name("search_results")
 	private SearchResults searchResults;
 

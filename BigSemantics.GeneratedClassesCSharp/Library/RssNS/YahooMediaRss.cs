@@ -29,13 +29,11 @@ namespace Ecologylab.Semantics.Generated.Library.RssNS
 	public class YahooMediaRss : Dc
 	{
 		[SimplComposite]
-		[SimplTag("media:content")]
 		[MmName("media_content")]
 		private MediaContent mediaContent;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("media:description")]
 		private MetadataString mediaDescription;
 
 		public YahooMediaRss()

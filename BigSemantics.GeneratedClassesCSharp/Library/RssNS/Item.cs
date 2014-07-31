@@ -33,7 +33,7 @@ namespace Ecologylab.Semantics.Generated.Library.RssNS
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
 		private MetadataParsedURL link;
 
-		[SimplCollection("category")]
+		[SimplCollection("categorie")]
 		[SimplNoWrap]
 		[MmName("categories")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> categories;

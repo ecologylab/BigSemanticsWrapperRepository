@@ -30,7 +30,6 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 		private List<Artwork> relatedWorks;
 
 		[SimplCollection("rhizome_tag")]
-		[SimplTag("tag")]
 		[MmName("tags")]
 		private List<RhizomeTag> tags;
 

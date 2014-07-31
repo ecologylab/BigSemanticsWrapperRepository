@@ -31,6 +31,12 @@ namespace Ecologylab.Semantics.Generated.Library.NsfNS
 		[SimplScalar]
 		private MetadataString lastName;
 
+		[SimplScalar]
+		private MetadataString givenName;
+
+		[SimplScalar]
+		private MetadataString familyName;
+
 		public NsfInvestigator()
 		{ }
 
@@ -58,6 +64,32 @@ namespace Ecologylab.Semantics.Generated.Library.NsfNS
 				if (this.lastName != value)
 				{
 					this.lastName = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString GivenName
+		{
+			get{return givenName;}
+			set
+			{
+				if (this.givenName != value)
+				{
+					this.givenName = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString FamilyName
+		{
+			get{return familyName;}
+			set
+			{
+				if (this.familyName != value)
+				{
+					this.familyName = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

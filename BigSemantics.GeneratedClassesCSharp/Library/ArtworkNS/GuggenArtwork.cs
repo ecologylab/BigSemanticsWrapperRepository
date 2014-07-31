@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 	public class GuggenArtwork : Artwork
 	{
 		[SimplCollection("guggen_filter")]
-		[SimplTag("tag")]
 		[MmName("tags")]
 		private List<GuggenFilter> tags;
 

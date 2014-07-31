@@ -16,16 +16,13 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-@simpl_tag("DDSWebService")
 public class DleseUserSearch extends CompoundDocument
 {
 	@simpl_composite
-	@simpl_tag("Search")
 	@mm_name("search_section")
 	private SearchSection searchSection;
 

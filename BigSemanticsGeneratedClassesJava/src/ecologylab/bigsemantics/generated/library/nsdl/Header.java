@@ -16,7 +16,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +23,6 @@ import java.util.Map;
 public class Header extends Metadata
 {
 	@simpl_scalar
-	@simpl_tag("resourceIdentifier")
 	private MetadataParsedURL resourceIdentifier;
 
 	public Header()

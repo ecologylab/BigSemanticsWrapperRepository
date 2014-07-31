@@ -27,12 +27,10 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class ItemRecord : Metadata
 	{
 		[SimplComposite]
-		[SimplTag("metaMetadata")]
 		[MmName("record_meta_metadata")]
 		private RecordMetaMetadata recordMetaMetadata;
 
 		[SimplScalar]
-		[SimplTag("schemaLocation")]
 		[SimplOtherTags(new String[] {"xsi:schemaLocation"})]
 		private MetadataParsedURL location;
 

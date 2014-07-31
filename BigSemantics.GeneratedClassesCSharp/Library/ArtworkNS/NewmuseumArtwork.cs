@@ -24,8 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 	[SimplInherit]
 	public class NewmuseumArtwork : Artwork
 	{
-		[SimplCollection("exhibition")]
-		[SimplTag("related exhibition")]
+		[SimplCollection("newmuseum_exhibition")]
 		[MmName("related_exhibitions")]
 		private List<NewmuseumExhibition> relatedExhibitions;
 

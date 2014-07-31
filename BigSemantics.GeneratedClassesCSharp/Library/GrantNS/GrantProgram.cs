@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.GrantNS
 	[SimplInherit]
 	public class GrantProgram : CompoundDocument
 	{
-		[SimplCollection("staff")]
+		[SimplCollection("grant_staff")]
 		[MmName("staffs")]
 		private List<GrantStaff> staffs;
 

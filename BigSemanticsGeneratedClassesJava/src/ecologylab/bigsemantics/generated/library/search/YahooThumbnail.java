@@ -19,7 +19,6 @@ import ecologylab.serialization.annotations.Hint;
 import ecologylab.serialization.annotations.simpl_hints;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.Integer;
 import java.util.List;
 import java.util.Map;
@@ -29,17 +28,14 @@ public class YahooThumbnail extends Metadata
 {
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
-	@simpl_tag("Url")
 	private MetadataParsedURL thumbUrl;
 
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
-	@simpl_tag("Width")
 	private MetadataInteger width;
 
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
-	@simpl_tag("Height")
 	private MetadataInteger height;
 
 	public YahooThumbnail()

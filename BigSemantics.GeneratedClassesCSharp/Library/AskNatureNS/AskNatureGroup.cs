@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 	[SimplInherit]
 	public class AskNatureGroup : CompoundDocument
 	{
-		[SimplCollection("subgroup")]
+		[SimplCollection("ask_nature_subgroup")]
 		[MmName("subgroups")]
 		private List<AskNatureSubgroup> subgroups;
 

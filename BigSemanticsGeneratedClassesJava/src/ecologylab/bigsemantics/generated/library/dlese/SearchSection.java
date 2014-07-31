@@ -18,7 +18,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,12 +26,10 @@ import java.util.Map;
 public class SearchSection extends Metadata
 {
 	@simpl_composite
-	@simpl_tag("resultInfo")
 	@mm_name("result_info")
 	private ResultInfo resultInfo;
 
-	@simpl_collection("record")
-	@simpl_tag("results")
+	@simpl_collection("dlese_record1")
 	@mm_name("search_results")
 	private List<DleseRecord1> searchResults;
 

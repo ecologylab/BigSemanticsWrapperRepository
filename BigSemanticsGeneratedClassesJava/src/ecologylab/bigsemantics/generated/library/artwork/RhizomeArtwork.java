@@ -17,7 +17,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +30,6 @@ public class RhizomeArtwork extends Artwork
 	private List<Artwork> relatedWorks;
 
 	@simpl_collection("rhizome_tag")
-	@simpl_tag("tag")
 	@mm_name("tags")
 	private List<RhizomeTag> tags;
 

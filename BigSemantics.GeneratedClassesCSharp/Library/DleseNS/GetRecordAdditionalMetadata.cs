@@ -28,11 +28,9 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 		private MetadataString realm;
 
 		[SimplScalar]
-		[SimplTag("partOfDrc")]
 		private MetadataString partOfDrc;
 
 		[SimplScalar]
-		[SimplTag("accessionStatus")]
 		private MetadataString accessionStatus;
 
 		public GetRecordAdditionalMetadata()

@@ -17,21 +17,17 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-@simpl_tag("record")
 public class DleseRecord extends Document
 {
 	@simpl_composite
-	@simpl_tag("head")
 	@mm_name("dlese_record_head")
 	private DleseRecordHead dleseRecordHead;
 
 	@simpl_composite
-	@simpl_tag("metadata")
 	@mm_name("record_metadata")
 	private RecordMetadata recordMetadata;
 

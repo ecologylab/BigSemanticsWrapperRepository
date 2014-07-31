@@ -25,10 +25,9 @@ namespace Ecologylab.Semantics.Generated.Library.IcdlNS
 	/// Thumbnail Image
 	/// </summary>
 	[SimplInherit]
-	[SimplTag("response")]
 	public class IcdlImageResult : Document
 	{
-		[SimplCollection("book")]
+		[SimplCollection("icdl_book")]
 		[SimplNoWrap]
 		[MmName("books")]
 		private List<IcdlBook> books;

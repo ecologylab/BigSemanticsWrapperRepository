@@ -27,17 +27,14 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	{
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("Url")]
 		private MetadataParsedURL thumbUrl;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("Width")]
 		private MetadataInteger width;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("Height")]
 		private MetadataInteger height;
 
 		public YahooThumbnail()

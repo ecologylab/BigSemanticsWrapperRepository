@@ -15,7 +15,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.Integer;
 import java.util.List;
 import java.util.Map;
@@ -27,15 +26,12 @@ public class ResultInfo extends Metadata
 	private MetadataInteger offset;
 
 	@simpl_scalar
-	@simpl_tag("numReturned")
 	private MetadataInteger returned;
 
 	@simpl_scalar
-	@simpl_tag("totalNumRecordsInLibrary")
 	private MetadataInteger totalRecords;
 
 	@simpl_scalar
-	@simpl_tag("totalNumResults")
 	private MetadataInteger totalResults;
 
 	public ResultInfo()

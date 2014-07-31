@@ -43,11 +43,11 @@ namespace Ecologylab.Semantics.Generated.Library.WikipediaNS
 		[MmName("sections")]
 		private List<Section> sections;
 
-		[SimplCollection("thumbinner")]
+		[SimplCollection("image")]
 		[MmName("thumbinners")]
 		private List<Image> thumbinners;
 
-		[SimplCollection("category")]
+		[SimplCollection("wikipedia_category_type")]
 		[MmName("categories")]
 		private List<WikipediaCategoryType> categories;
 

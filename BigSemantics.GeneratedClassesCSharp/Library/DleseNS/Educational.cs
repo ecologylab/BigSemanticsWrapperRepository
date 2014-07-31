@@ -29,8 +29,7 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 		[MmName("audiences")]
 		private List<Audience> audiences;
 
-		[SimplCollection("resourceType")]
-		[SimplTag("resourceTypes")]
+		[SimplCollection("resource_type")]
 		[MmName("resource_types")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> resourceTypes;
 

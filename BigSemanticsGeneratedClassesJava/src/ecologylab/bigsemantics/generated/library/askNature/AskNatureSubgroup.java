@@ -32,7 +32,7 @@ public class AskNatureSubgroup extends CompoundDocument
 	@simpl_scalar
 	private MetadataString subgroupId;
 
-	@simpl_collection("function")
+	@simpl_collection("ask_nature_function")
 	@mm_name("functions")
 	private List<AskNatureFunction> functions;
 

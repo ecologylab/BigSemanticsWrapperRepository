@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class UserSearchAdditionalMetadata : AdditionalMetadata
 	{
 		[SimplComposite]
-		[SimplTag("adn")]
 		[MmName("search_additional_metadata_adn")]
 		private SearchAdditionalMetadataAdn searchAdditionalMetadataAdn;
 

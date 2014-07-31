@@ -26,8 +26,6 @@ namespace Ecologylab.Semantics.Generated.Library.MiscNS
 	public class Comment : Metadata
 	{
 		[SimplScalar]
-		[SimplTag("content")]
-		[SimplOtherTags(new String[] {"description"})]
 		private MetadataString description;
 
 		[SimplComposite]

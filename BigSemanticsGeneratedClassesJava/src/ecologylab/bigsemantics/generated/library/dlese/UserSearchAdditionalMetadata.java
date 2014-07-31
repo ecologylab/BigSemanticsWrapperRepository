@@ -16,7 +16,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +23,6 @@ import java.util.Map;
 public class UserSearchAdditionalMetadata extends AdditionalMetadata
 {
 	@simpl_composite
-	@simpl_tag("adn")
 	@mm_name("search_additional_metadata_adn")
 	private SearchAdditionalMetadataAdn searchAdditionalMetadataAdn;
 

@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class RecordMetadata : Metadata
 	{
 		[SimplComposite]
-		[SimplTag("itemRecord")]
 		[MmName("item_record")]
 		private ItemRecord itemRecord;
 

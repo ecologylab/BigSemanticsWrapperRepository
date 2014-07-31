@@ -16,7 +16,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,8 +23,7 @@ import java.util.Map;
 @simpl_inherit
 public class NewmuseumArtist extends Artist
 {
-	@simpl_collection("exhibition")
-	@simpl_tag("related exhibition")
+	@simpl_collection("newmuseum_exhibition")
 	@mm_name("related_exhibitions")
 	private List<NewmuseumExhibition> relatedExhibitions;
 

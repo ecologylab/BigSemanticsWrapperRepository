@@ -17,7 +17,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,13 +25,12 @@ import java.util.Map;
  *Yahoo Web Search Service
  */ 
 @simpl_inherit
-@simpl_tag("ResultSet")
 public class YahooResultSet extends Document
 {
 	/** 
 	 *Collection of results for yahoo search
 	 */ 
-	@simpl_collection("Result")
+	@simpl_collection("yahoo_result")
 	@simpl_nowrap
 	@mm_name("results")
 	private List<YahooResult> results;

@@ -17,8 +17,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_other_tags;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,14 +31,10 @@ public class Exhibition extends CreativeWork
 	 *Set of contributors.
 	 */ 
 	@simpl_collection("artist")
-	@simpl_tag("artists")
-	@simpl_other_tags({"contributors"})
 	@mm_name("contributors")
 	private List<Artist> contributors;
 
 	@simpl_collection("artwork")
-	@simpl_tag("artworks")
-	@simpl_other_tags({"creative_works"})
 	@mm_name("creative_works")
 	private List<Artwork> creativeWorks;
 

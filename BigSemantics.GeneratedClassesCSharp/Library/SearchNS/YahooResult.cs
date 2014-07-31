@@ -27,24 +27,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	public class YahooResult : Document
 	{
 		[SimplScalar]
-		[SimplTag("Summary")]
 		private MetadataString summary;
 
 		[SimplScalar]
-		[SimplTag("ModificationDate")]
 		private MetadataString modificationDate;
 
 		[SimplComposite]
-		[SimplTag("Thumbnail")]
 		[MmName("thumbnail")]
 		private YahooThumbnail thumbnail;
 
 		[SimplScalar]
-		[SimplTag("MimeType")]
 		private MetadataString mimeType;
 
 		[SimplScalar]
-		[SimplTag("RefererUrl")]
 		private MetadataParsedURL refererUrl;
 
 		public YahooResult()

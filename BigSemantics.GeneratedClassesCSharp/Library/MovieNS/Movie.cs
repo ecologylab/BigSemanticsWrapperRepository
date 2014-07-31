@@ -57,14 +57,14 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 		/// <summary>
 		/// Who directed the movie.
 		/// </summary>
-		[SimplCollection("director")]
+		[SimplCollection("movie_person")]
 		[MmName("directors")]
 		private List<MoviePerson> directors;
 
 		/// <summary>
 		/// Who wrote the movie.
 		/// </summary>
-		[SimplCollection("writer")]
+		[SimplCollection("movie_person")]
 		[MmName("writers")]
 		private List<MoviePerson> writers;
 
@@ -78,7 +78,7 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 		[MmName("photos")]
 		private List<Image> photos;
 
-		[SimplCollection("star")]
+		[SimplCollection("movie_person")]
 		[MmName("cast")]
 		private List<MoviePerson> cast;
 

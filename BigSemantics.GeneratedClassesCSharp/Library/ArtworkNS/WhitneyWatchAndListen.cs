@@ -24,8 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 	[SimplInherit]
 	public class WhitneyWatchAndListen : Artwork
 	{
-		[SimplCollection("audio")]
-		[SimplOtherTags(new String[] {"audio_playlist"})]
+		[SimplCollection("whitney_watch_and_listen")]
 		[MmName("audio_playlist")]
 		private List<WhitneyWatchAndListen> audioPlaylist;
 

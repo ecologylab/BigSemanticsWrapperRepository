@@ -28,15 +28,12 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 		private MetadataInteger offset;
 
 		[SimplScalar]
-		[SimplTag("numReturned")]
 		private MetadataInteger returned;
 
 		[SimplScalar]
-		[SimplTag("totalNumRecordsInLibrary")]
 		private MetadataInteger totalRecords;
 
 		[SimplScalar]
-		[SimplTag("totalNumResults")]
 		private MetadataInteger totalResults;
 
 		public ResultInfo()

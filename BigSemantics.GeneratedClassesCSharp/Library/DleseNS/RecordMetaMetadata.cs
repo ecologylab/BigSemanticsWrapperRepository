@@ -26,12 +26,10 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class RecordMetaMetadata : Metadata
 	{
 		[SimplComposite]
-		[SimplTag("dateInfo")]
 		[MmName("date_info")]
 		private DateInfo dateInfo;
 
 		[SimplCollection("catalog")]
-		[SimplTag("catalogEntries")]
 		[MmName("catalogs")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> catalogs;
 

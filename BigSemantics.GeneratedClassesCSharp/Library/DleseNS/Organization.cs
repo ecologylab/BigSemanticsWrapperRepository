@@ -25,11 +25,9 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class Organization : Metadata
 	{
 		[SimplScalar]
-		[SimplTag("instEmail")]
 		private MetadataString email;
 
 		[SimplScalar]
-		[SimplTag("instName")]
 		private MetadataString name;
 
 		public Organization()

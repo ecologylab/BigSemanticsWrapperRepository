@@ -16,7 +16,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,6 @@ import java.util.Map;
 public class GuggenArtwork extends Artwork
 {
 	@simpl_collection("guggen_filter")
-	@simpl_tag("tag")
 	@mm_name("tags")
 	private List<GuggenFilter> tags;
 

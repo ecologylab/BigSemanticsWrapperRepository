@@ -29,11 +29,9 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 		private MetadataString id;
 
 		[SimplScalar]
-		[SimplTag("fileLastModified")]
 		private MetadataDate lastModified;
 
 		[SimplScalar]
-		[SimplTag("xmlFormat")]
 		private MetadataString xmlFormat;
 
 		[SimplComposite]
@@ -41,7 +39,6 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 		private Collection collection;
 
 		[SimplComposite]
-		[SimplTag("additionalMetadata")]
 		[MmName("additional_metadata")]
 		private AdditionalMetadata additionalMetadata;
 

@@ -17,7 +17,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +29,7 @@ public class Educational extends Metadata
 	@mm_name("audiences")
 	private List<Audience> audiences;
 
-	@simpl_collection("resourceType")
-	@simpl_tag("resourceTypes")
+	@simpl_collection("resource_type")
 	@mm_name("resource_types")
 	private List<MetadataString> resourceTypes;
 

@@ -37,7 +37,7 @@ public class Item extends YahooMediaRss
 	@simpl_hints({Hint.XML_LEAF})
 	private MetadataParsedURL link;
 
-	@simpl_collection("category")
+	@simpl_collection("categorie")
 	@simpl_nowrap
 	@mm_name("categories")
 	private List<MetadataString> categories;

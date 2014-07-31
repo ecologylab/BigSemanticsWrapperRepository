@@ -28,29 +28,24 @@ namespace Ecologylab.Semantics.Generated.Library.RssNS
 	{
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("dc:creator")]
 		private MetadataString dcCreator;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("dc:subject")]
 		private MetadataString dcSubject;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("dc:description")]
 		[SimplOtherTags(new String[] {"description"})]
 		private MetadataString dcDescription;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("dc:title")]
 		[SimplOtherTags(new String[] {"title"})]
 		private MetadataString dcTitle;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("dc:date")]
 		[SimplOtherTags(new String[] {"pubDate"})]
 		private MetadataDate dcDate;
 

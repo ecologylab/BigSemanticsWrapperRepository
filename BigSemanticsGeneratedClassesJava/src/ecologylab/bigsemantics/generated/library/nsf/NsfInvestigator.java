@@ -29,6 +29,12 @@ public class NsfInvestigator extends Investigator<NsfAward>
 	@simpl_scalar
 	private MetadataString lastName;
 
+	@simpl_scalar
+	private MetadataString givenName;
+
+	@simpl_scalar
+	private MetadataString familyName;
+
 	public NsfInvestigator()
 	{ super(); }
 
@@ -99,5 +105,69 @@ public class NsfInvestigator extends Investigator<NsfAward>
 	public void setLastNameMetadata(MetadataString lastName)
 	{
 		this.lastName = lastName;
+	}
+
+	public MetadataString	givenName()
+	{
+		MetadataString	result = this.givenName;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.givenName = result;
+		}
+		return result;
+	}
+
+	public String getGivenName()
+	{
+		return this.givenName == null ? null : givenName().getValue();
+	}
+
+	public MetadataString getGivenNameMetadata()
+	{
+		return givenName;
+	}
+
+	public void setGivenName(String givenName)
+	{
+		if (givenName != null)
+			this.givenName().setValue(givenName);
+	}
+
+	public void setGivenNameMetadata(MetadataString givenName)
+	{
+		this.givenName = givenName;
+	}
+
+	public MetadataString	familyName()
+	{
+		MetadataString	result = this.familyName;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.familyName = result;
+		}
+		return result;
+	}
+
+	public String getFamilyName()
+	{
+		return this.familyName == null ? null : familyName().getValue();
+	}
+
+	public MetadataString getFamilyNameMetadata()
+	{
+		return familyName;
+	}
+
+	public void setFamilyName(String familyName)
+	{
+		if (familyName != null)
+			this.familyName().setValue(familyName);
+	}
+
+	public void setFamilyNameMetadata(MetadataString familyName)
+	{
+		this.familyName = familyName;
 	}
 }

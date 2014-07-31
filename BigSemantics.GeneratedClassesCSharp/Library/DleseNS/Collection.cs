@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class Collection : Metadata
 	{
 		[SimplScalar]
-		[SimplTag("recordId")]
 		private MetadataString id;
 
 		public Collection()

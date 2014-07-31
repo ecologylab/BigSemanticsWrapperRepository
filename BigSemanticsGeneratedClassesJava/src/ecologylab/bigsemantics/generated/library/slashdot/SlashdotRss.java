@@ -17,16 +17,14 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-@simpl_tag("rdf:RDF")
 public class SlashdotRss extends CompoundDocument
 {
-	@simpl_collection("item")
+	@simpl_collection("slashdot_item")
 	@simpl_nowrap
 	@mm_name("items")
 	private List<SlashdotItem> items;

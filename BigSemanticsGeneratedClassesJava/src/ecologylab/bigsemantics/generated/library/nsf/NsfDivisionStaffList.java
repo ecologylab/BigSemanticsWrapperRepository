@@ -23,7 +23,7 @@ import java.util.Map;
 @simpl_inherit
 public class NsfDivisionStaffList extends CompoundDocument
 {
-	@simpl_collection("program")
+	@simpl_collection("nsf_program_staff_list")
 	@mm_name("programs")
 	private List<NsfProgramStaffList> programs;
 

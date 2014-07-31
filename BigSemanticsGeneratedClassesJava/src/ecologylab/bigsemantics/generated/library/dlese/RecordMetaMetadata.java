@@ -18,7 +18,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +27,10 @@ import java.util.Map;
 public class RecordMetaMetadata extends Metadata
 {
 	@simpl_composite
-	@simpl_tag("dateInfo")
 	@mm_name("date_info")
 	private DateInfo dateInfo;
 
 	@simpl_collection("catalog")
-	@simpl_tag("catalogEntries")
 	@mm_name("catalogs")
 	private List<MetadataString> catalogs;
 

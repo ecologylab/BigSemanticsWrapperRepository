@@ -25,13 +25,11 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 	public class TateArtwork : Artwork
 	{
 		[SimplCollection("artwork")]
-		[SimplTag("related works")]
 		[SimplOtherTags(new String[] {"creative_works"})]
 		[MmName("works_of_interest")]
 		private List<Artwork> worksOfInterest;
 
 		[SimplCollection("tate_filter")]
-		[SimplTag("tag")]
 		[MmName("tags")]
 		private List<TateFilter> tags;
 
