@@ -89,13 +89,15 @@
   <meta_metadata name="google_scholar_search_result" extends="compound_document"
     comment="A google scholar search result" parser="xpath">
     <url_generator type="search" engine="google_scholar" use_id="title" />
+    <composite name="destination_page" type="compound_document"/>
     <scalar name="title" as_natural_id="title" />
     <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
     <scalar name="source_info" scalar_type="String" />
-    <scalar name="citations" scalar_type="Int" navigates_to="citations_link" />
-    <scalar name="citations_link" scalar_type="ParsedURL" hide="true" />
+  	<scalar name="citation_count" scalar_type="String"/>
+    <composite name="citations" type="compound_document"/>
     <scalar name="related_articles_link" scalar_type="ParsedURL" label="related articles" />
     <scalar name="versions" scalar_type="Int" navigates_to="versions_link" />
+   
     <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
   </meta_metadata>
 
@@ -105,33 +107,47 @@
       <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
-    <generic_type_var name="SR" arg="search_result" />
+    <generic_type_var name="SR" arg="google_scholar_search_result" />
     
     <collection name="search_results"  show_expanded_always="true">
       <xpath>//div[@class='gs_r']</xpath>
-      <scalar name="title">
+      <scalar name="title" label="title">
         <xpath>.//h3[@class='gs_rt']/a</xpath>
       </scalar>
+      <composite name="destination_page">
+      	<xpath>.</xpath>
+      	<scalar name="title">
+       	 <xpath>.//h3[@class='gs_rt']/a</xpath>
+     		</scalar>
+      	<scalar name="location">
+        	<xpath>.//h3[@class='gs_rt']/a/@href</xpath>
+      	</scalar>
+      </composite>
       <scalar name="description">
         <xpath>.//div[@class='gs_rs']</xpath>
       </scalar>
-      <scalar name="location">
-        <xpath>.//h3[@class='gs_rt']/a/@href</xpath>
-      </scalar>
+     
       <scalar name="source_info">
         <xpath>.//div[@class='gs_a']</xpath>
       </scalar>
-    </collection>
-      <!-- FIXME this context node is not working -->
-<!--       <def_var name="links_row" xpath="./div[@class='gs_fl']" type="node" /> -->
-        <!--  
-      <scalar name="citations">
-        <xpath>.//div[@class='gs_fl']/a[1]</xpath>
-        <regex_op regex="Cited by " replace="" />
-      </scalar>
-      <scalar name="citations_link">
-        <xpath>.//div[@class='gs_fl']/a[1]/@href</xpath>
-      </scalar>
+    
+  
+      <def_var name="links_row" type="node" > 
+     		 <xpath>.//div[@class='gs_fl']</xpath>  
+     		</def_var> 
+     	<scalar name="citation_count">
+     		<xpath>.//div[@class='gs_fl']/a[1]</xpath>
+     	</scalar>	
+      <composite name="citations">
+      	<xpath>.</xpath>
+        <scalar name="title">
+        	  <xpath>.//div[@class='gs_fl']/a[1]</xpath>
+       			  <regex_op regex=".*" replace="Citation Page" />
+        </scalar>
+      	<scalar name="location">
+      		 <xpath>.//div[@class='gs_fl']/a[1]/@href</xpath>
+      	</scalar>
+      </composite>
       <scalar name="related_articles_link">
         <xpath>.//div[@class='gs_fl']/a[2]/@href</xpath>
       </scalar>
