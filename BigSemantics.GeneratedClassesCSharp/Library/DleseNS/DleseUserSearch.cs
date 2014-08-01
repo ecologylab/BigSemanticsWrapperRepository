@@ -22,11 +22,9 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.DleseNS 
 {
 	[SimplInherit]
-	[SimplTag("DDSWebService")]
 	public class DleseUserSearch : CompoundDocument
 	{
 		[SimplComposite]
-		[SimplTag("Search")]
 		[MmName("search_section")]
 		private SearchSection searchSection;
 

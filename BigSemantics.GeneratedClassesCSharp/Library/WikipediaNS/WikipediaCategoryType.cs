@@ -26,18 +26,18 @@ namespace Ecologylab.Semantics.Generated.Library.WikipediaNS
 	[SimplInherit]
 	public class WikipediaCategoryType : CompoundDocument
 	{
-		[SimplCollection("subcategory")]
+		[SimplCollection("wikipedia_category_type")]
 		[MmName("subcategories")]
 		private List<WikipediaCategoryType> subcategories;
 
-		[SimplCollection("article")]
+		[SimplCollection("wikipedia_page_type")]
 		[MmName("articles")]
 		private List<WikipediaPageType> articles;
 
 		[SimplScalar]
 		private MetadataParsedURL nextPageUrl;
 
-		[SimplCollection("supercategory")]
+		[SimplCollection("wikipedia_category_type")]
 		[MmName("supercategories")]
 		private List<WikipediaCategoryType> supercategories;
 

@@ -22,11 +22,9 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.NsdlNS 
 {
 	[SimplInherit]
-	[SimplTag("NSDLSearchService")]
 	public class NsdlService : Metadata
 	{
 		[SimplComposite]
-		[SimplTag("SearchResults")]
 		[MmName("search_results")]
 		private SearchResults searchResults;
 

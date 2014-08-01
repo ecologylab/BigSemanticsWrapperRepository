@@ -52,7 +52,7 @@ public class Grant extends CreativeWork
 	@simpl_scalar
 	private MetadataInteger amount;
 
-	@simpl_collection("manager")
+	@simpl_collection("grant_staff")
 	@mm_name("managers")
 	private List<GrantStaff> managers;
 
@@ -60,11 +60,11 @@ public class Grant extends CreativeWork
 	@mm_name("sponsor")
 	private PostalAddress sponsor;
 
-	@simpl_collection("publication")
+	@simpl_collection("scholarly_article")
 	@mm_name("publications")
 	private List<ScholarlyArticle> publications;
 
-	@simpl_collection("proceeding")
+	@simpl_collection("scholarly_article")
 	@mm_name("proceedings")
 	private List<ScholarlyArticle> proceedings;
 

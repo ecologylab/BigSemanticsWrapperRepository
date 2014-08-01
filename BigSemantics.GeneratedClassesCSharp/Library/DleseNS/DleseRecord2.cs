@@ -21,7 +21,6 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.DleseNS 
 {
 	[SimplInherit]
-	[SimplTag("record")]
 	public class DleseRecord2 : DleseRecord
 	{
 		public DleseRecord2()

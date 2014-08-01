@@ -22,11 +22,9 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.DleseNS 
 {
 	[SimplInherit]
-	[SimplTag("DDSWebService")]
 	public class DleseGetRecord : CompoundDocument
 	{
-		[SimplCollection("record")]
-		[SimplTag("GetRecord")]
+		[SimplCollection("dlese_record2")]
 		[MmName("records")]
 		private List<DleseRecord2> records;
 

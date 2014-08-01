@@ -20,7 +20,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
@@ -33,11 +32,9 @@ public class DleseRecordHead extends Metadata
 	private MetadataString id;
 
 	@simpl_scalar
-	@simpl_tag("fileLastModified")
 	private MetadataDate lastModified;
 
 	@simpl_scalar
-	@simpl_tag("xmlFormat")
 	private MetadataString xmlFormat;
 
 	@simpl_composite
@@ -45,7 +42,6 @@ public class DleseRecordHead extends Metadata
 	private Collection collection;
 
 	@simpl_composite
-	@simpl_tag("additionalMetadata")
 	@mm_name("additional_metadata")
 	private AdditionalMetadata additionalMetadata;
 

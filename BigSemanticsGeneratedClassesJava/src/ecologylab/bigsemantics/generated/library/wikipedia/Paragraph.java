@@ -29,7 +29,7 @@ public class Paragraph extends Metadata
 	@simpl_scalar
 	private MetadataString text;
 
-	@simpl_collection("anchor")
+	@simpl_collection("wikipedia_page")
 	@mm_name("anchors")
 	private List<WikipediaPage> anchors;
 

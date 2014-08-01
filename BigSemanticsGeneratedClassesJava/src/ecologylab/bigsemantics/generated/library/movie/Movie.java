@@ -60,14 +60,14 @@ public class Movie extends CreativeWork
 	/** 
 	 *Who directed the movie.
 	 */ 
-	@simpl_collection("director")
+	@simpl_collection("movie_person")
 	@mm_name("directors")
 	private List<MoviePerson> directors;
 
 	/** 
 	 *Who wrote the movie.
 	 */ 
-	@simpl_collection("writer")
+	@simpl_collection("movie_person")
 	@mm_name("writers")
 	private List<MoviePerson> writers;
 
@@ -81,7 +81,7 @@ public class Movie extends CreativeWork
 	@mm_name("photos")
 	private List<Image> photos;
 
-	@simpl_collection("star")
+	@simpl_collection("movie_person")
 	@mm_name("cast")
 	private List<MoviePerson> cast;
 

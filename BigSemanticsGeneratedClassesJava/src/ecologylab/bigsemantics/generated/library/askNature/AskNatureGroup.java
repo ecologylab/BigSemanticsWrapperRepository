@@ -23,7 +23,7 @@ import java.util.Map;
 @simpl_inherit
 public class AskNatureGroup extends CompoundDocument
 {
-	@simpl_collection("subgroup")
+	@simpl_collection("ask_nature_subgroup")
 	@mm_name("subgroups")
 	private List<AskNatureSubgroup> subgroups;
 

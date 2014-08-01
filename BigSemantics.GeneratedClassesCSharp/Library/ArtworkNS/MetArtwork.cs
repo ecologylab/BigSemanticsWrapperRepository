@@ -37,14 +37,12 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 		[SimplScalar]
 		private MetadataString authorInfo;
 
-		[SimplCollection("artwork")]
-		[SimplTag("related works")]
+		[SimplCollection("met_artwork")]
 		[SimplOtherTags(new String[] {"creative_works"})]
 		[MmName("works_of_interest")]
 		private List<MetArtwork> worksOfInterest;
 
 		[SimplCollection("met_filter")]
-		[SimplTag("tag")]
 		[MmName("tags")]
 		private List<MetFilter> tags;
 

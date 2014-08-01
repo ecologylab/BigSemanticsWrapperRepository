@@ -27,18 +27,18 @@ import java.util.Map;
 @simpl_inherit
 public class WikipediaCategoryType extends CompoundDocument
 {
-	@simpl_collection("subcategory")
+	@simpl_collection("wikipedia_category_type")
 	@mm_name("subcategories")
 	private List<WikipediaCategoryType> subcategories;
 
-	@simpl_collection("article")
+	@simpl_collection("wikipedia_page_type")
 	@mm_name("articles")
 	private List<WikipediaPageType> articles;
 
 	@simpl_scalar
 	private MetadataParsedURL nextPageUrl;
 
-	@simpl_collection("supercategory")
+	@simpl_collection("wikipedia_category_type")
 	@mm_name("supercategories")
 	private List<WikipediaCategoryType> supercategories;
 

@@ -21,7 +21,6 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.SearchNS 
 {
 	[SimplInherit]
-	[SimplTag("ResultSet")]
 	public class YahooGeoCode : YahooResultSet
 	{
 		public YahooGeoCode()

@@ -28,7 +28,7 @@ namespace Ecologylab.Semantics.Generated.Library.WikipediaNS
 		[SimplScalar]
 		private MetadataString text;
 
-		[SimplCollection("anchor")]
+		[SimplCollection("wikipedia_page")]
 		[MmName("anchors")]
 		private List<WikipediaPage> anchors;
 

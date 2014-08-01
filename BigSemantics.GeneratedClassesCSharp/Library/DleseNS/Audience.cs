@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class Audience : Metadata
 	{
 		[SimplScalar]
-		[SimplTag("gradeRange")]
 		private MetadataString gradeRange;
 
 		public Audience()

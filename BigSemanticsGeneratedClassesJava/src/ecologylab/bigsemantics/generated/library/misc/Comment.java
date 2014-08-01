@@ -18,9 +18,7 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -30,8 +28,6 @@ import java.util.Map;
 public class Comment extends Metadata
 {
 	@simpl_scalar
-	@simpl_tag("content")
-	@simpl_other_tags({"description"})
 	private MetadataString description;
 
 	@simpl_composite

@@ -20,7 +20,6 @@ import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -29,24 +28,19 @@ import java.util.Map;
 public class YahooResult extends Document
 {
 	@simpl_scalar
-	@simpl_tag("Summary")
 	private MetadataString summary;
 
 	@simpl_scalar
-	@simpl_tag("ModificationDate")
 	private MetadataString modificationDate;
 
 	@simpl_composite
-	@simpl_tag("Thumbnail")
 	@mm_name("thumbnail")
 	private YahooThumbnail thumbnail;
 
 	@simpl_scalar
-	@simpl_tag("MimeType")
 	private MetadataString mimeType;
 
 	@simpl_scalar
-	@simpl_tag("RefererUrl")
 	private MetadataParsedURL refererUrl;
 
 	public YahooResult()

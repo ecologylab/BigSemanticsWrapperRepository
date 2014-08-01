@@ -46,11 +46,11 @@ public class WikipediaPageType extends CompoundDocument
 	@mm_name("sections")
 	private List<Section> sections;
 
-	@simpl_collection("thumbinner")
+	@simpl_collection("image")
 	@mm_name("thumbinners")
 	private List<Image> thumbinners;
 
-	@simpl_collection("category")
+	@simpl_collection("wikipedia_category_type")
 	@mm_name("categories")
 	private List<WikipediaCategoryType> categories;
 

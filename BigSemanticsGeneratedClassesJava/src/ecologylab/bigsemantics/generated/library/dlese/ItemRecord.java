@@ -23,7 +23,6 @@ import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
@@ -31,12 +30,10 @@ import java.util.Map;
 public class ItemRecord extends Metadata
 {
 	@simpl_composite
-	@simpl_tag("metaMetadata")
 	@mm_name("record_meta_metadata")
 	private RecordMetaMetadata recordMetaMetadata;
 
 	@simpl_scalar
-	@simpl_tag("schemaLocation")
 	@simpl_other_tags({"xsi:schemaLocation"})
 	private MetadataParsedURL location;
 

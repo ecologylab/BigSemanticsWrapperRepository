@@ -32,14 +32,10 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 		/// Set of contributors.
 		/// </summary>
 		[SimplCollection("artist")]
-		[SimplTag("artists")]
-		[SimplOtherTags(new String[] {"contributors"})]
 		[MmName("contributors")]
 		private List<Artist> contributors;
 
 		[SimplCollection("artwork")]
-		[SimplTag("artworks")]
-		[SimplOtherTags(new String[] {"creative_works"})]
 		[MmName("creative_works")]
 		private List<Artwork> creativeWorks;
 

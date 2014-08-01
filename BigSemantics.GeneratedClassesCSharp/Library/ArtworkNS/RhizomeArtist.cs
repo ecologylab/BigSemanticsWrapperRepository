@@ -25,7 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 	public class RhizomeArtist : Artist
 	{
 		[SimplScalar]
-		[SimplTag("abstract")]
 		private MetadataString bio;
 
 		public RhizomeArtist()

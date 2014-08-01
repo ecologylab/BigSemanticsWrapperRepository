@@ -45,7 +45,7 @@ namespace Ecologylab.Semantics.Generated.Library.GrantNS
 		[SimplScalar]
 		private MetadataInteger amount;
 
-		[SimplCollection("manager")]
+		[SimplCollection("grant_staff")]
 		[MmName("managers")]
 		private List<GrantStaff> managers;
 
@@ -53,11 +53,11 @@ namespace Ecologylab.Semantics.Generated.Library.GrantNS
 		[MmName("sponsor")]
 		private PostalAddress sponsor;
 
-		[SimplCollection("publication")]
+		[SimplCollection("scholarly_article")]
 		[MmName("publications")]
 		private List<ScholarlyArticle> publications;
 
-		[SimplCollection("proceeding")]
+		[SimplCollection("scholarly_article")]
 		[MmName("proceedings")]
 		private List<ScholarlyArticle> proceedings;
 

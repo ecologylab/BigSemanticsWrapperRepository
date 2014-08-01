@@ -20,7 +20,6 @@ import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_other_tags;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,14 +40,12 @@ public class MetArtwork extends Artwork
 	@simpl_scalar
 	private MetadataString authorInfo;
 
-	@simpl_collection("artwork")
-	@simpl_tag("related works")
+	@simpl_collection("met_artwork")
 	@simpl_other_tags({"creative_works"})
 	@mm_name("works_of_interest")
 	private List<MetArtwork> worksOfInterest;
 
 	@simpl_collection("met_filter")
-	@simpl_tag("tag")
 	@mm_name("tags")
 	private List<MetFilter> tags;
 

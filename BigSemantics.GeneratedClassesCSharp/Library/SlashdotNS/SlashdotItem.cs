@@ -29,12 +29,10 @@ namespace Ecologylab.Semantics.Generated.Library.SlashdotNS
 	{
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("slash:department")]
 		private MetadataString department;
 
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]
-		[SimplTag("slash:section")]
 		private MetadataString section;
 
 		public SlashdotItem()

@@ -31,14 +31,12 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 		private List<RichArtifact<Metadata>> metadataCollection;
 
 		[SimplScalar]
-		[SimplTag("version")]
 		private MetadataString curationAppVersion;
 
 		[SimplScalar]
 		private MetadataString curationApp;
 
 		[SimplScalar]
-		[SimplTag("metadata_version")]
 		private MetadataString crossPlatformVersion;
 
 		public Curation()

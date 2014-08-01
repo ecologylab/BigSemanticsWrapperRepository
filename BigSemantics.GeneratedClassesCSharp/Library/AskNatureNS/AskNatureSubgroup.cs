@@ -31,7 +31,7 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureNS
 		[SimplScalar]
 		private MetadataString subgroupId;
 
-		[SimplCollection("function")]
+		[SimplCollection("ask_nature_function")]
 		[MmName("functions")]
 		private List<AskNatureFunction> functions;
 

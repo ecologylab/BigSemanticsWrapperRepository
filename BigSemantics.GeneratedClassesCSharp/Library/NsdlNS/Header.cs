@@ -26,7 +26,6 @@ namespace Ecologylab.Semantics.Generated.Library.NsdlNS
 	public class Header : Metadata
 	{
 		[SimplScalar]
-		[SimplTag("resourceIdentifier")]
 		private MetadataParsedURL resourceIdentifier;
 
 		public Header()

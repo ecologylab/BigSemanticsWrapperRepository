@@ -25,11 +25,9 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class SearchAdditionalMetadataAdn : Metadata
 	{
 		[SimplScalar]
-		[SimplTag("partOfDrc")]
 		private MetadataString partOfDrc;
 
 		[SimplScalar]
-		[SimplTag("accessionStatus")]
 		private MetadataString accessionStatus;
 
 		public SearchAdditionalMetadataAdn()

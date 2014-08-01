@@ -25,13 +25,12 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// Yahoo Web Search Service
 	/// </summary>
 	[SimplInherit]
-	[SimplTag("ResultSet")]
 	public class YahooResultSet : Document
 	{
 		/// <summary>
 		/// Collection of results for yahoo search
 		/// </summary>
-		[SimplCollection("Result")]
+		[SimplCollection("yahoo_result")]
 		[SimplNoWrap]
 		[MmName("results")]
 		private List<YahooResult> results;

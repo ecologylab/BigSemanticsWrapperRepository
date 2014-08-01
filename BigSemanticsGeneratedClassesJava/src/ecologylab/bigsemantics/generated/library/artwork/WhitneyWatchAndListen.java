@@ -16,7 +16,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_other_tags;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,8 +23,7 @@ import java.util.Map;
 @simpl_inherit
 public class WhitneyWatchAndListen extends Artwork
 {
-	@simpl_collection("audio")
-	@simpl_other_tags({"audio_playlist"})
+	@simpl_collection("whitney_watch_and_listen")
 	@mm_name("audio_playlist")
 	private List<WhitneyWatchAndListen> audioPlaylist;
 

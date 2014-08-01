@@ -17,7 +17,6 @@ import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,10 +25,9 @@ import java.util.Map;
  *Thumbnail Image
  */ 
 @simpl_inherit
-@simpl_tag("response")
 public class IcdlImageResult extends Document
 {
-	@simpl_collection("book")
+	@simpl_collection("icdl_book")
 	@simpl_nowrap
 	@mm_name("books")
 	private List<IcdlBook> books;

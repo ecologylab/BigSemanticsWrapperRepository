@@ -20,7 +20,6 @@ import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_hints;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -32,13 +31,11 @@ import java.util.Map;
 public class YahooMediaRss extends Dc
 {
 	@simpl_composite
-	@simpl_tag("media:content")
 	@mm_name("media_content")
 	private MediaContent mediaContent;
 
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})
-	@simpl_tag("media:description")
 	private MetadataString mediaDescription;
 
 	public YahooMediaRss()

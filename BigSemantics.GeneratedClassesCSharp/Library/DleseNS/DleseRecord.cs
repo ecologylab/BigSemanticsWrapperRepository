@@ -22,16 +22,13 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.DleseNS 
 {
 	[SimplInherit]
-	[SimplTag("record")]
 	public class DleseRecord : Document
 	{
 		[SimplComposite]
-		[SimplTag("head")]
 		[MmName("dlese_record_head")]
 		private DleseRecordHead dleseRecordHead;
 
 		[SimplComposite]
-		[SimplTag("metadata")]
 		[MmName("record_metadata")]
 		private RecordMetadata recordMetadata;
 

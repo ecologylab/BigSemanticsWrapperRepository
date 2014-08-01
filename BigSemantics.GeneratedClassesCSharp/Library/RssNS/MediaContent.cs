@@ -29,7 +29,6 @@ namespace Ecologylab.Semantics.Generated.Library.RssNS
 		private MetadataInteger height;
 
 		[SimplScalar]
-		[SimplTag("url")]
 		private MetadataParsedURL mediaUrl;
 
 		[SimplScalar]

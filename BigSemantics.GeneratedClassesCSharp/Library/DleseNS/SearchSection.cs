@@ -25,12 +25,10 @@ namespace Ecologylab.Semantics.Generated.Library.DleseNS
 	public class SearchSection : Metadata
 	{
 		[SimplComposite]
-		[SimplTag("resultInfo")]
 		[MmName("result_info")]
 		private ResultInfo resultInfo;
 
-		[SimplCollection("record")]
-		[SimplTag("results")]
+		[SimplCollection("dlese_record1")]
 		[MmName("search_results")]
 		private List<DleseRecord1> searchResults;
 

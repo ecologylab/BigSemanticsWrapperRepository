@@ -13,12 +13,10 @@ import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-@simpl_tag("record")
 public class DleseRecord2 extends DleseRecord
 {
 	public DleseRecord2()

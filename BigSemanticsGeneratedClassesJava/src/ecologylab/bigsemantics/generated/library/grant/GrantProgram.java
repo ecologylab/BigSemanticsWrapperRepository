@@ -29,7 +29,7 @@ import java.util.Map;
 @simpl_inherit
 public class GrantProgram extends CompoundDocument
 {
-	@simpl_collection("staff")
+	@simpl_collection("grant_staff")
 	@mm_name("staffs")
 	private List<GrantStaff> staffs;
 
