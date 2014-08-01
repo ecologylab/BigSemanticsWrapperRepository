@@ -41,7 +41,7 @@
 		    	<regex_op regex="@" replace="https://twitter.com/"/>
 		 	</scalar> -->
 
-      <composite name="photo" hide_label="true">
+      <composite name="photo" hide_label="true" layer="-1.0">
         <xpath>//a[@class='profile-picture media-thumbnail js-tooltip']/img</xpath>
         <xpath>//img[@class='ProfileAvatar-image ']</xpath>
         <scalar name="location" always_show="true">
