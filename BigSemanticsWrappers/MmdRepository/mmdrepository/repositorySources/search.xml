@@ -95,9 +95,11 @@
     <scalar name="source_info" scalar_type="String" />
   	<scalar name="citation_count" scalar_type="String"/>
     <composite name="citations" type="compound_document"/>
-    <scalar name="related_articles_link" scalar_type="ParsedURL" label="related articles" />
+    <composite name="related_articles_link" type="compound_document" label="related articles" />
     <scalar name="versions" scalar_type="Int" navigates_to="versions_link" />
+   <collection name="google_authors" child_type="compound_document">
    
+   </collection>
     <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
   </meta_metadata>
 
@@ -130,7 +132,15 @@
       <scalar name="source_info">
         <xpath>.//div[@class='gs_a']</xpath>
       </scalar>
-    
+    	<collection name="google_authors">
+    		<xpath>.//div[@class='gs_a']/a</xpath>
+    		<scalar name="title">
+    			<xpath>.</xpath>
+    		</scalar>
+    		<scalar name="location">
+    			<xpath>./@href</xpath>
+    		</scalar>
+    	</collection>
   
       <def_var name="links_row" type="node" > 
      		 <xpath>.//div[@class='gs_fl']</xpath>  
@@ -148,9 +158,16 @@
       		 <xpath>.//div[@class='gs_fl']/a[1]/@href</xpath>
       	</scalar>
       </composite>
-      <scalar name="related_articles_link">
-        <xpath>.//div[@class='gs_fl']/a[2]/@href</xpath>
-      </scalar>
+      <composite name="related_articles_link">
+        <xpath>.//div[@class='gs_fl']/a[2]a</xpath>
+        <scalar name="title">
+        	<xpath>.</xpath>
+        </scalar>
+      	<scalar name="location">
+      		<xpath>./@href</xpath>
+      	</scalar>
+      	
+      </composite>
       <scalar name="versions">
         <xpath>.//div[@class='gs_fl']/a[last()]</xpath>
         <regex_op regex="All | versions" replace="" />
@@ -158,6 +175,7 @@
       <scalar name="versions_link">
         <xpath>.//div[@class='gs_fl']/a[last()]/@href</xpath>
       </scalar>
+      
     </collection>
 
     <semantic_actions>
