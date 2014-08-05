@@ -142,51 +142,6 @@
 
   </meta_metadata>
 
-  <meta_metadata name="ikea_product" extends="product" parser="xpath" user_agent_name="chrome">
-    <selector url_regex_fragment="http://www.ikea.com/us/en/catalog/products/[^/]*" domain="ikea.com" />
-
-    <example_url location="http://www.ikea.com/us/en/catalog/products/60204805/" />
-
-    <scalar name="title">
-      <xpath>//h1</xpath>
-    </scalar>
-    <scalar name="description">
-      <xpath>//div[@class='salesArguments']</xpath>
-    </scalar>
-    <scalar name="price">
-      <xpath>//div[@id='prodPrice']//span[@class='packagePrice']</xpath>
-    </scalar>
-
-    <composite name="image">
-      <scalar name="location">
-        <xpath>//img[@id='productImg']/@src</xpath>
-      </scalar>
-    </composite>
-
-  </meta_metadata>
-
-  <meta_metadata name="ikea_mobile_product" type="product" parser="xpath"
-    user_agent_name="chrome">
-    <selector url_path_tree="http://m.ikea.com/us/en/catalog/products/" domain="ikea.com" />
-    <example location="http://m.ikea.com/us/en/catalog/products/art/50058376/" />
-
-    <scalar name="title">
-      <xpath>//title</xpath>
-    </scalar>
-    <scalar name="description">
-      <xpath>//div[@class='ikea-pip ui-content']/ul[1]/li[5]/div/</xpath>
-    </scalar>
-    <scalar name="price">
-      <xpath>//span[@itemprop='price']/span</xpath>
-    </scalar>
-
-    <composite name="image">
-      <scalar name="location">
-        <xpath>//div[@class='ikea-pip-fullImageWrapper']/img/@src</xpath>
-      </scalar>
-    </composite>
-
-  </meta_metadata>
 
   <meta_metadata name="lowes_product" extends="product" parser="xpath"
     user_agent_name="firefox">
