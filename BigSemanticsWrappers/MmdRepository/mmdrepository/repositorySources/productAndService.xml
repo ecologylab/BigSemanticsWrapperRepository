@@ -926,13 +926,6 @@
       <xpath>//div[@id='prodPrice']//span[@class='packagePrice']</xpath>
     </scalar>
 	
-	<!--  
-    <composite name="image" type="image">
-      <scalar name="location">
-        <xpath>//img[@id='productImg']/@src</xpath>
-      </scalar>
-    </composite>
--->
   </meta_metadata>
 
   <meta_metadata name="ikea_mobile_product" type="product" parser="xpath"
