@@ -184,9 +184,7 @@
 
   <meta_metadata name="apple_iProduct" extends="product" parser="xpath"
     user_agent_name="chrome">
-    <selector url_regex="http://store.apple.com/us/buy-[a-z]*/[a-z0-9-]*\?.*" domain="apple.com">
-      <param name="step" value="accessories" />
-    </selector>
+    <selector url_regex="http://store.apple.com/us/buy-[a-z]*/[a-z0-9-]*\?.*" domain="apple.com"/>
 
     <example_url url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&amp;step=accessories" />
     <example_url url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&amp;product=ME495LL/A&amp;step=accessories" />
@@ -210,9 +208,7 @@
 
   <meta_metadata name="apple_product_mac" extends="product" parser="xpath"
     user_agent_name="chrome">
-    <selector url_regex="http://store.apple.com/us/buy-mac/[a-z-]*\?.*" domain="apple.com">
-      <param name="step" value="config" />
-    </selector>
+    <selector url_regex="http://store.apple.com/us/buy-mac.*" domain="apple.com"/>
     <example_url url="http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&amp;step=config" />
 
     <scalar name="title">
@@ -568,13 +564,13 @@
 
   <meta_metadata name="newegg_subcategory_list" extends="compound_document" parser="xpath"
     user_agent_name="chrome">
-    <selector url_path_tree="http://www.newegg.com/*/SubCategory" />
+    <selector url_regex="http://www.newegg.com/.*/SubCategory/.*" domain="newegg.com"/>
     <example_url url="http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100" />
 
     <scalar name="title">
       <xpath>//div[@class='recordCount']</xpath>
     </scalar>
-
+		
     <collection name="items" child_type="newegg_product">
       <xpath>//div[@class='itemCell']</xpath>
       <scalar name="title">
@@ -597,6 +593,7 @@
         </collection>
       </collection>
     </collection>
+    
   </meta_metadata>
   
   <meta_metadata name="amazon_list" extends="creative_work">

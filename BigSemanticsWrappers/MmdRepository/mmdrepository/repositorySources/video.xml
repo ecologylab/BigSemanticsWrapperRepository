@@ -107,7 +107,7 @@
   <meta_metadata name="youtube_video_list" extends="compound_document">
     <collection name="videos" child_type="youtube_video"/>
   </meta_metadata>
-
+<!--  no longer need 
   <meta_metadata name="youtube_video_grid" extends="compound_document" parser="xpath"
     user_agent_name="chrome">
     <selector url_regex="https?://www.youtube.com/.*/videos" domain="youtube.com" />
@@ -146,6 +146,7 @@
       </scalar>
     </collection>
   </meta_metadata>
+  -->
   <meta_metadata name="youtube_channel" extends="compound_document" comment="youtube channels"
     parser="xpath" user_agent_name="chrome">
 

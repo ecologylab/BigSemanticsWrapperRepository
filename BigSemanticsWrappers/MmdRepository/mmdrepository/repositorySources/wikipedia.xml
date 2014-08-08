@@ -4,8 +4,8 @@
   <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search"
     parser="xpath" user_agent_name="firefox_2">
     <generic_type_var name="SR" arg="wikipedia_page" />
-
-    <selector url_regex="https?://en.wikipedia.org/w/index.php?title=Special%3ASearch.*" />
+		<example_url url="http://en.wikipedia.org/w/index.php?search=the+guildsamp;title=Special%3ASearchamp;go=Go"/>
+    <selector url_stripped="http://en.wikipedia.org/w/index.php?" />
 
     <collection name="search_results">
       <xpath>//ul[@class='mw-search-results']/li</xpath>

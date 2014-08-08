@@ -21,7 +21,7 @@
 
   <meta_metadata name="airbnb" type="hotel" parser="xpath">
     <selector url_path_tree="http://www.airbnb.com/rooms" />
-    <example_url url="http://www.airbnb.com/rooms/72247" />
+    <example_url url="https://www.airbnb.com/rooms/2570524?s=lpub" />
 
     <scalar name="title">
       <xpath>//div[@class='overflow']</xpath>
@@ -136,7 +136,7 @@
 
 
   <meta_metadata name="homeaway" type="hotel" parser="xpath">
-    <selector url_path_tree="http://www.homeaway.com/vacation-rental" />
+    <selector url_regex="http://www.homeaway.com/vacation-rental.*" domain="homeaway.com"/>
     <example_url url="http://www.homeaway.com/vacation-rental/p100000" />
 
     <scalar name="title">
@@ -187,7 +187,7 @@
 
 
   <meta_metadata name="hilton" type="hotel" parser="xpath">
-    <selector url_path_tree="http://www1.hilton.com/en_US/hi/hotel" />
+    <selector url_regex_fragment="hotel" domain="hilton.com"/>
     <example_url
       url="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42" />
 

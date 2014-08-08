@@ -61,7 +61,7 @@
 
   <meta_metadata name="pubmed_author" extends="author" parser="xpath" user_agent_name="firefox">
     <selector
-      url_regex="http://www.ncbi.nlm.nih.gov/pubmed\?term=[^&amp;\[]+\[Author\]&amp;cauthor=true&amp;cauthor_uid=\d+"
+      url_regex_fragment="author=true"
       domain="nih.gov" />
     <example_url
       url="http://www.ncbi.nlm.nih.gov/pubmed?term=Shameli%20A[Author]&amp;cauthor=true&amp;cauthor_uid=23180662" />
@@ -84,7 +84,7 @@
 
   <meta_metadata name="pubmed_journal" extends="periodical" parser="xpath"
     user_agent_name="firefox">
-    <selector url_regex="http://www.ncbi.nlm.nih.gov/pubmed\?term=[^&amp;\[]+\[jour\]"
+    <selector url_regex_fragment="\[.*\]"
       domain="nih.gov" />
     <example_url url="http://www.ncbi.nlm.nih.gov/pubmed?term=%22Eur+J+Immunol%22[jour]" />
 

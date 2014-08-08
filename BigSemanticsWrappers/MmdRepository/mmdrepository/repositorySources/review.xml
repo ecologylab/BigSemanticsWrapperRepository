@@ -60,7 +60,9 @@
 
   <meta_metadata name="cnet_review" extends="tech_review" comment="cnet.com review"
     parser="xpath">
-    <selector url_path_tree="http://reviews.cnet.com/" domain="cnet.com" />
+    <selector url_path_tree="http://reviews.cnet.com/" />
+    <selector url_path_tree="http://www.cnet.com/" domain="cnet.com" />
+    
     <example_url url="http://reviews.cnet.com/ps4/" />
     <example_url url="http://reviews.cnet.com/samsung-galaxy-s4/" />
     

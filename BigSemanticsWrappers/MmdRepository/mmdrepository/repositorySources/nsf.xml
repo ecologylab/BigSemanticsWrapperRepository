@@ -70,7 +70,7 @@
 
   <meta_metadata name="nsf_division_staff_list" extends="compound_document" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/staff/staff_list_all.jsp" />
-
+		<example_url url="http://www.nsf.gov/staff/staff_list_all.jsp?org=NULL"/>
     <collection name="programs"  child_type="nsf_program_staff_list"
       child_extends="compound_document">
       <xpath>//td[@class='text']//strong[@class='greybold']</xpath>
@@ -319,7 +319,7 @@
     </filter_location>
 
     <example_url
-      url="http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&amp;page=1&amp;IncludeCOPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne#results" />
+      url="http://www.nsf.gov/awardsearch/advancedSearchNoScript?PILastName=test" />
     <example_url
       url="http://www.nsf.gov/awardsearch/advancedSearchResult?IncludeCoPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne" />
   
@@ -582,7 +582,7 @@
     <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
       <param name="ProgOfficer" />
     </selector>
-
+		<example_url url="http://www.nsf.gov/awardsearch/advancedSearchNoScript?Keyword=banana"/>
     <filter_location>
       <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
     </filter_location>

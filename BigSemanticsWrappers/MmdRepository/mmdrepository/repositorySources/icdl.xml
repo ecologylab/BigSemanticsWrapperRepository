@@ -1,7 +1,7 @@
 <meta_metadata_repository name="default"
   package="ecologylab.bigsemantics.generated.library.icdl">
 
-  <meta_metadata name="icdl_image_result" extends="document" comment="Thumbnail Image"
+  <meta_metadata name="icdl_image_result" extends="compound_document" comment="Thumbnail Image"
      package="ecologylab.bigsemantics.generated.library.icdl" parser="direct">
     <selector url_stripped="http://www.childrenslibrary.org/BookXMLResults" />
 		<!--
@@ -42,10 +42,10 @@
     </semantic_actions>
   </meta_metadata>
 
-  <meta_metadata name="icdl_book_preview" parser="xpath" extends="metadata"
+  <meta_metadata name="icdl_book_preview" parser="xpath" extends="compound_document"
     comment="ICDL About This Book Page">
     <selector url_stripped="http://www.childrenslibrary.org/icdl/BookPreview" />
-
+		<example_url url="http://www.childrenslibrary.org/icdl/BookPreview?bookid=shiwhit_00900083amp;route=text_English_floweramp;lang=Englishamp;msg=amp;ilang=English"/>
     <composite name="author" type="author">
       <xpath>//td/span[@class='textsize4']/../a[1]</xpath>
       <scalar name="title">

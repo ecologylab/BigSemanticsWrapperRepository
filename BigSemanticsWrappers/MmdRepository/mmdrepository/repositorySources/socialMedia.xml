@@ -269,7 +269,7 @@
   <meta_metadata name="reddit_search_results" type="search" parser="xpath"
     comment="reddit search results page" no_cache="true">
     <selector url_stripped="http://www.reddit.com/search?" />
-
+		<example_url url="http://www.reddit.com/search?q=bananaamp;restrict_sr=offamp;sort=relevanceamp;t=all"/>
     <generic_type_var name="SR" arg="document" />
 
     <collection name="search_results" child_type="document">
@@ -285,8 +285,9 @@
 
   <meta_metadata name="pinterest_search_results" type="image_search" parser="xpath"
     comment="pinterest search results page" no_cache="true">
-    <selector url_stripped="http://pinterest.com/search/?" />
-
+    <selector url_regex="http://www.pinterest.com/search/.*" domain="pinterest.com" />
+		<example_url url="http://www.pinterest.com/search/pins/?q=pencil"/>
+		
     <collection name="search_results">
       <xpath>//img[@class='PinImageImg']</xpath>
       <scalar name="title">
@@ -300,8 +301,8 @@
 
   <meta_metadata name="imgur_search_results" type="image_search" parser="xpath"
     comment="imgur hot search results page" no_cache="true">
-    <selector url_stripped="http://imgur.com/hot/time?" />
-
+    <selector url_stripped="http://imgur.com/search?" />
+		<example_url url="http://imgur.com/search?q=league+of+legends"/>
     <collection name="search_results">
       <xpath>//div[@class='post']/a/img</xpath>
       <scalar name="title">
@@ -315,8 +316,8 @@
 
   <meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath"
     comment="tumblr tag results page" no_cache="true">
-    <selector url_stripped="http://twitter.com/search?" />
-
+    <selector url_path_tree="http://www.tumblr.com/search/" />
+		<example_url url="http://www.tumblr.com/search/wow"/>
     <collection name="search_results">
       <xpath>//a[@class='high_res_link' or 'high_res_link no_pop']/img</xpath>
       <scalar name="title">
@@ -331,7 +332,7 @@
   <meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath"
     comment="reddit gif image search results page" no_cache="true">
     <selector url_stripped="http://www.reddit.com/r/gifs/search?" />
-
+		<example_url url="http://www.reddit.com/r/gifs/search?q=grootamp;sort=relevanceamp;t=all"/>
     <collection name="search_results">
       <xpath>//a[@class='title ']</xpath>
       <scalar name="title">
@@ -343,81 +344,6 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="reddit_search_results" type="search" parser="xpath"
-    comment="reddit search results page" no_cache="true">
-    <selector url_stripped="http://www.reddit.com/search?" />
 
-    <generic_type_var name="SR" arg="document" />
-
-    <collection name="search_results" child_type="document">
-      <xpath>//a[@class='title ']</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-    </collection>
-  </meta_metadata>
-
-  <meta_metadata name="pinterest_search_results" type="image_search" parser="xpath"
-    comment="pinterest search results page" no_cache="true">
-    <selector url_stripped="http://pinterest.com/search/?" />
-
-    <collection name="search_results">
-      <xpath>//img[@class='PinImageImg']</xpath>
-      <scalar name="title">
-        <xpath>./@src</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@src</xpath>
-      </scalar>
-    </collection>
-  </meta_metadata>
-
-  <meta_metadata name="imgur_search_results" type="image_search" parser="xpath"
-    comment="imgur hot search results page" no_cache="true">
-    <selector url_stripped="http://imgur.com/hot/time?" />
-
-    <collection name="search_results">
-      <xpath>//div[@class='post']/a/img</xpath>
-      <scalar name="title">
-        <xpath>./@src</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@src</xpath>
-      </scalar>
-    </collection>
-  </meta_metadata>
-
-  <meta_metadata name="tumblr_tag_results" type="image_search" parser="xpath"
-    comment="tumblr tag results page" no_cache="true">
-    <selector url_stripped="http://twitter.com/search?" />
-
-    <collection name="search_results">
-      <xpath>//a[@class='high_res_link' or 'high_res_link no_pop']/img</xpath>
-      <scalar name="title">
-        <xpath>./@src</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@src</xpath>
-      </scalar>
-    </collection>
-  </meta_metadata>
-
-  <meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath"
-    comment="reddit gif image search results page" no_cache="true">
-    <selector url_stripped="http://www.reddit.com/r/gifs/search?" />
-
-    <collection name="search_results">
-      <xpath>//a[@class='title ']</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-    </collection>
-  </meta_metadata>
 
 </meta_metadata_repository>

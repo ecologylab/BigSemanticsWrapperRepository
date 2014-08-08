@@ -194,7 +194,7 @@
 
     <selector url_stripped="http://ieeexplore.ieee.org/search/searchresult.jsp" />
     <selector url_stripped="http://ieeexplore.ieee.org:80/search/searchresult.jsp" />
-
+		<example_url url="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=Search_Index_Terms:art+pop"/>
     <filter_location>
       <strip_param name="newSearch" />
       <strip_param name="x" />
@@ -219,6 +219,7 @@
   <meta_metadata name="ieee_article_body" parser="xpath" extends="compound_document">
     <selector url_stripped="http://ieeexplore.ieee.org/xpls/icp.jsp" />
     <selector url_stripped="http://ieeexplore.ieee.org:80/xpls/icp.jsp" />
+    <example_url url="http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=1532126"/>
     <collection name="sections" child_extends="compound_document">
     	<xpath>//div[@class='section']</xpath>
     	<scalar name="title">

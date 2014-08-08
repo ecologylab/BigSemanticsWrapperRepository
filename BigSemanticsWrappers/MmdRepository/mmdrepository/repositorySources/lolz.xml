@@ -21,6 +21,10 @@
   <meta_metadata name="cats" type="lolz">
     <selector url_path_tree="http://icanhascheezburger.com/" />
     <selector url_path_tree="http://icanhas.cheezburger.com/" />
+    <selector url_regex_fragment="cheezburger.com" domain="cheezburger.com"/>
+    <selector url_path_tree="http://roflrazzi.cheezburger.com/" />
+    <selector url_path_tree="http://cheezburger.com/" />
+    <example_url url="http://cheezburger.com/8281200384?ref=whatspopularvotes"/>
     <semantic_actions>
       <get_field name="caption" />
       <get_field name="picture" />
@@ -35,7 +39,7 @@
     </semantic_actions>
   </meta_metadata>
 
-
+<!--  No longer neccesary. it all riderects to icanhazcheezzburger anyways
   <meta_metadata name="dogs" type="lolz">
     <selector url_path_tree="http://ihasahotdog.com/" />
     <semantic_actions>
@@ -52,7 +56,8 @@
     </semantic_actions>
   </meta_metadata>
 
-
+-->
+<!--  
   <meta_metadata name="celebs" type="lolz">
     <selector url_path_tree="http://roflrazzi.com/" />
     <semantic_actions>
@@ -204,5 +209,5 @@
       </parse_document>
     </semantic_actions>
   </meta_metadata>
-
+-->
 </meta_metadata_repository>

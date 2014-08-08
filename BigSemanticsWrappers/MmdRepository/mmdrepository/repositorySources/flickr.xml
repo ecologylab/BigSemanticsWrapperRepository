@@ -3,7 +3,7 @@
 
   <meta_metadata name="flickr_tag" extends="compound_document" parser="xpath"
     comment="For flickr crawled tags">
-    <selector url_regex="http://www.flickr.com/photos/[^/]*/tags/.*/?" domain="flickr.com" />
+    <selector url_regex="http://www.flickr.com/photos/.*" domain="flickr.com" />
     <example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />
 
     <scalar name="title">

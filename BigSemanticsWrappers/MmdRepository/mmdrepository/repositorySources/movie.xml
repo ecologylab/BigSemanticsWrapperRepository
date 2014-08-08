@@ -45,7 +45,7 @@
   
   <!-- alas, this will not work until we get login / state stuff working -->
   <meta_metadata name="netflix_movie" extends="movie" parser="xpath">
-    <selector url_path_tree="http://movies.netflix.com/Movie" />
+    <selector url_path_tree="http://www.netflix.com/" />
 
     <example_url url="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
 

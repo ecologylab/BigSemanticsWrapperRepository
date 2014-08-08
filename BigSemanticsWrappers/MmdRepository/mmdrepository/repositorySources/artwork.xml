@@ -433,8 +433,8 @@
 	
 	<!-- section of data about where artist is from -->
   <meta_metadata name="met_artwork" extends="artwork" parser="xpath">
-    <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections/search-the-collections/\d+" />
-    <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections/search-the-collections/\d+" />
+    <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections?/search-the-collections/\d+" />
+    <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections?/search-the-collections/\d+" />
     <example_url
       url="http://www.metmuseum.org/Collections/search-the-collections/503435?rpp=60&amp;pg=1&amp;rndkey=20140121&amp;ao=on&amp;ft=*&amp;what=Spruce&amp;pos=12" />
     <example_url
@@ -512,26 +512,28 @@
 
 
   <meta_metadata name="met_filter" extends="search" parser="xpath">
-    <selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+    <!--  <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
       <param name="who" />
     </selector>
 
-    <selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
       <param name="where" />
     </selector>
 
-    <selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
       <param name="what" />
     </selector>
 
-    <selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
       <param name="when" />
     </selector>
 
-    <selector url_stripped="http://www.metmuseum.org/collections/search-the-collections">
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
       <param name="deptid" />
-    </selector>
-    <example_url url="http://www.metmuseum.org/collections/search-the-collections?ft=*&amp;what=Spruce" />
+    </selector> -->
+    <selector url_regex="http://www.metmuseum.org/collection/the-collection-online/search?.*" domain="metmuseum.org"/>
+
+    <example_url url="http://www.metmuseum.org/collection/search-the-collections?ft=*&amp;what=Spruce" />
 
     <collection name="search_results" child_type="met_artwork">
       <xpath>//div[@class='search-results-container cleared visible']/ul/li</xpath>

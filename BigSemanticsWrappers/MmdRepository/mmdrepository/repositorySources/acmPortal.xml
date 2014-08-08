@@ -251,7 +251,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     <selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
     <example_url
       url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
-
+		<example_url url="http://dl.acm.org/author_page.cfm?id=81309499161"/>
     <filter_location>
       <strip_param name="coll" />
       <strip_param name="dl" />
@@ -336,7 +336,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
   <meta_metadata name="acm_portal_author_collaborators" extends="document" parser="xpath">
     <selector url_regex="http://dl.acm.org/author_page.cfm.+dsp=coll.*" domain="acm.org" />
     <example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll" />
-
+		<example_url url="http://dl.acm.org/author_page.cfm?id=81100091670" />
     <scalar name="title">
       <xpath>//span/strong/text()</xpath>
     </scalar>

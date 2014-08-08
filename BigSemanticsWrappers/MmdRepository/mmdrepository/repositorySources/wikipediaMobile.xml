@@ -4,6 +4,7 @@
   <meta_metadata name="wikipedia_mobile_page" extends="wikipedia_page_type" parser="xpath"
     comment="An article on wikipedia mobile site" user_agent_name="firefox_3_6_8">
     <selector url_regex="http://en.m.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
+    <example_url url="http://en.m.wikipedia.org/wiki/Nuon_Chea"/>
     <def_var name="main_image" type="node">
       <xpath>//*[starts-with(@class,'infobox')]//img[1]</xpath>
     </def_var>

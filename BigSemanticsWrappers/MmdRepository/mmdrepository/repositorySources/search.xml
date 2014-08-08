@@ -109,6 +109,7 @@
       <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
+    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
     <generic_type_var name="SR" arg="google_scholar_search_result" />
     
     <collection name="search_results"  show_expanded_always="true">
@@ -494,6 +495,7 @@
     user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">
     <generic_type_var name="SR" arg="document" />
     <selector url_stripped="http://www.bing.com/search" />
+    <example_url url="http://www.bing.com/search?q=howdyamp;go=Submitamp;qs=dsamp;form=QBLHamp;scope=web"/>
     <scalar name="query">
       <xpath>//title/text()</xpath>
       <regex_op regex=" - Bing$" replace="" />
@@ -536,7 +538,7 @@
     user_agent_name="opera_9" parser="xpath">
     <selector url_stripped="http://slashdot.org/index2.pl" />
     <selector url_stripped="http://slashdot.com/index2.pl" />
-
+		<example_url url="http://slashdot.org/index2.pl?fhfilter=test"/>
     <collection name="search_results" child_type="social_media_search_result">
       <xpath>//div[@id='firehoselist']//article</xpath>
       <scalar name="title">
@@ -565,7 +567,8 @@
 
   <meta_metadata name="delicious_search" extends="search" comment="The delicious search class"
     user_agent_name="opera_9" parser="xpath">
-    <selector url_stripped="http://www.delicious.com/search" />
+    <selector url_path_tree="http://www.delicious.com/" />
+    <example_url url="http://www.delicious.com/search"/>
     <collection name="search_results" child_type="social_media_search_result">
       <xpath>//div[@id='content']/ul/li</xpath>
       <scalar name="title">
@@ -591,7 +594,8 @@
 
   <meta_metadata name="tumblr_search" extends="search" comment="The tumblr search class"
     user_agent_name="opera_9" parser="xpath">
-    <selector url_path_tree="http://www.tumblr.com/tagged/" />
+    <selector url_path_tree="http://www.tumblr.com/search/" />
+    <example_url url="http://www.tumblr.com/search/vinyl"/>
     <collection name="search_results" child_type="social_media_search_result">
       <xpath>//div[@id='left_column']//li</xpath>
       <scalar name="title">
