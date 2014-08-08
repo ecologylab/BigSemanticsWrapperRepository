@@ -22,6 +22,7 @@ repositorySources/flickr.xml
 repositorySources/gis.xml
 repositorySources/googleBook.xml
 repositorySources/googleImage.xml
+repositorySources/googleScholar.xml
 repositorySources/grant.xml
 repositorySources/hotel.xml
 repositorySources/icdl.xml
