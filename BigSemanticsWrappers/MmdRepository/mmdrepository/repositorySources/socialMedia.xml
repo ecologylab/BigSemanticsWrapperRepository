@@ -192,11 +192,14 @@
   <meta_metadata name="twitter_status" type="tweet" parser="xpath" no_cache="true">
   	<selector url_regex_fragment="https://twitter.com/[^/]*/status/[0-9]*" domain="twitter.com" />
     <example_url url="https://twitter.com/realjohngreen/status/486534354642821122" />
+    <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
+    
+    <scalar name="title" hide="true"/>
     
     <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
         <xpath>//div[@class='content clearfix']</xpath>
         <scalar name="title" hide_label="true">
-          <xpath>.//strong[@class='fullname js-action-profile-name show-popup-with-id']</xpath>
+          <xpath>.//strong[@class='fullname']</xpath>
           <regex_op regex="Verified Account" replace=" (Verified Account)" />
         </scalar>
         <scalar name="location">
