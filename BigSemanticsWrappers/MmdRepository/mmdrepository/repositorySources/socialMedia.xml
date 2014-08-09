@@ -194,12 +194,13 @@
     <example_url url="https://twitter.com/realjohngreen/status/486534354642821122" />
     <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
     
-    <scalar name="title" hide="true"/>
+	<!-- <scalar name="title" hide="true"/> -->
     
     <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
         <xpath>//div[@class='content clearfix']</xpath>
         <scalar name="title" hide_label="true">
           <xpath>.//strong[@class='fullname']</xpath>
+          <xpath>.//strong[@class='fullname js-action-profile-name show-popup-with-id']</xpath>
           <regex_op regex="Verified Account" replace=" (Verified Account)" />
         </scalar>
         <scalar name="location">
@@ -218,11 +219,11 @@
     </composite>
     
     <scalar name="description" hide_label="true" extract_as_html="true">
-      <xpath>//div[@class='expansion-container js-expansion-container']//p[@class='js-tweet-text tweet-text']</xpath>
+      <xpath>//div[@class='permalink-inner permalink-tweet-container']//p[@class='js-tweet-text tweet-text']</xpath>
     </scalar>
     
     <scalar name="post_date" hide_label="true">
-      <xpath>//div[@class='expansion-container js-expansion-container']//span[@class='metadata']/span[1]</xpath>
+      <xpath>//div[@class='permalink-inner permalink-tweet-container']//span[@class='metadata']/span[1]</xpath>
     </scalar>
     
     <scalar name="id" concatenates_to="post_date" hide_label="true">
