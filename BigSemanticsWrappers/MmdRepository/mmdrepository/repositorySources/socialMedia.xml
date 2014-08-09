@@ -18,7 +18,7 @@
 
   <meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true">
 
-    <selector url_regex_fragment="https://twitter.com/[^/?]*" domain="twitter.com" />
+    <selector url_regex="https://twitter.com/[^/?]*" domain="twitter.com" />
     <example_url url="https://twitter.com/nytimes" />
 
     <scalar name="title" hide_label="true">
@@ -190,7 +190,7 @@
   </meta_metadata>
   
   <meta_metadata name="twitter_status" type="tweet" parser="xpath" no_cache="true">
-  	<selector url_regex_fragment="https://twitter.com/[^/]*/status/[0-9]*" domain="twitter.com" />
+  	<selector url_regex="https://twitter.com/[^/]*/status/[0-9]*" domain="twitter.com" />
     <example_url url="https://twitter.com/realjohngreen/status/486534354642821122" />
     <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
     
@@ -206,9 +206,9 @@
           <xpath>.//span[@class='username js-action-profile-name']</xpath>
           <regex_op regex="@" replace="https://twitter.com/" />
         </scalar>
-        <scalar name="username" scalar_type="String" hide_label="true">
-      	  <xpath>.//span[@class='username js-action-profile-name']</xpath>
-    	</scalar>
+<!--         <scalar name="username" scalar_type="String" hide_label="true"> -->
+<!--       	  <xpath>.//span[@class='username js-action-profile-name']</xpath> -->
+<!--     	</scalar> -->
         <composite name="photo" label="image">
           <xpath>.//img</xpath>
           <scalar name="location" always_show="true">
