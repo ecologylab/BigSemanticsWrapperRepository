@@ -242,7 +242,7 @@
     <scalar name="IUCN_red_list_status" scalar_type="String" />
   </meta_metadata>
 
-  <meta_metadata name="ask_nature_taxonomy" parser="xpath" extends="document">
+  <meta_metadata name="ask_nature_taxonomy" parser="xpath" extends="compound_document">
     <composite name="group" type="ask_nature_group" />
     <composite name="subgroup" type="ask_nature_subgroup" />
     <composite name="function" type="ask_nature_function" />

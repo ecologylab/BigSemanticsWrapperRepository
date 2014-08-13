@@ -17,7 +17,7 @@
   </meta_metadata>
 
 
-  <meta_metadata name="tv_show_episode" extends="document" comment="TV Show episode"
+  <meta_metadata name="tv_show_episode" extends="compound_document" comment="TV Show episode"
     schema_org_itemtype="http://schema.org/TVEpisode">
     <scalar name="episode_number" scalar_type="String" hint="XML_LEAF_CDATA"
       schema_org_itemprop="episodeNumber" />

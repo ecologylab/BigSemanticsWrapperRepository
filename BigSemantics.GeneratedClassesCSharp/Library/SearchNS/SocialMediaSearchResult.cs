@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// A result from a social media search.
 	/// </summary>
 	[SimplInherit]
-	public class SocialMediaSearchResult : Document
+	public class SocialMediaSearchResult : CompoundDocument
 	{
 		/// <summary>
 		/// The author of this item.

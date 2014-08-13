@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.search;
  */
 
 import ecologylab.bigsemantics.generated.library.search.Search;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -21,7 +21,7 @@ import java.util.Map;
  *The bing Search class, using xpath parser.
  */ 
 @simpl_inherit
-public class BingSearchXpath extends Search<Document>
+public class BingSearchXpath extends Search<CompoundDocument>
 {
 	public BingSearchXpath()
 	{ super(); }

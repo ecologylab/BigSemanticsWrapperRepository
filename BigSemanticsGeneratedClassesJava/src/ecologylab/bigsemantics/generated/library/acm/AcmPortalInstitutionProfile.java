@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.acm;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -19,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AcmPortalInstitutionProfile extends Document
+public class AcmPortalInstitutionProfile extends CompoundDocument
 {
 	@simpl_composite
 	@mm_name("home_page")

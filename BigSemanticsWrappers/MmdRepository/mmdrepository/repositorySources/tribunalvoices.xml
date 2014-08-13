@@ -17,7 +17,7 @@
     <collection name="people" child_type="personnel_interview" comment="personnel interview" />
   </meta_metadata>
 
-  <meta_metadata name="tribunal_voices" extends="document" parser="xpath"
+  <meta_metadata name="tribunal_voices" extends="compound_document" parser="xpath"
     comment="Video Interviews with personnel from Rwanda Tribunal">
     <selector url_stripped="http://www.tribunalvoices.org/voices/interviews" />
     <selector url_stripped="http://www.tribunalvoices.org/voices/index.html" />
@@ -45,7 +45,7 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="personnel_interview" extends="document" parser="xpath"
+  <meta_metadata name="personnel_interview" extends="compound_document" parser="xpath"
     comment="personnel interview">
     <selector url_path_tree="http://www.tribunalvoices.org/voices/interview/" />
     <example_url url="http://www.tribunalvoices.org/voices/interview/25" />
@@ -63,9 +63,11 @@
     <scalar name="description" context_node="interview_table">
       <xpath>.//p</xpath>
     </scalar>
-    <scalar name="image" scalar_type="ParsedURL" context_node="interview_table">
-      <xpath>.//img[@class='interview_photo']/@src</xpath>
-    </scalar>
+    <collection name="main_images" context_node="interview_table">
+    	<scalar name="location">
+     		<xpath>.//img[@class='interview_photo']/@src</xpath>
+     	</scalar>
+    </collection>
     <collection name="speaks_on" child_type="video_interview" context_node="interview_table">
       <xpath>.//li</xpath>
       <scalar name="title">
@@ -86,7 +88,7 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="video_interview" extends="document" parser="xpath" comment="video interview">
+  <meta_metadata name="video_interview" extends="compound_document" parser="xpath" comment="video interview">
     <selector url_path_tree="http://www.tribunalvoices.org/voices/video/" />
     <selector url_path_tree="http://tribunalvoices.org/voices/video/" />
     <example_url url="http://www.tribunalvoices.org/voices/video/588" />

@@ -1,13 +1,13 @@
 <meta_metadata_repository name="person"
   package="ecologylab.bigsemantics.generated.library.person">
 
-  <meta_metadata name="birth_detail" extends="document" comment="Date and place of birth for a person">
+  <meta_metadata name="birth_detail" extends="metadata" comment="Date and place of birth for a person">
     <scalar name="birth_date" scalar_type="Date" />
     <scalar name="birth_place" scalar_type="String" />
   </meta_metadata>
 
 
-  <meta_metadata name="person" extends="document" comment="Abstract type for a person.">
+  <meta_metadata name="person" extends="compound_document" comment="Abstract type for a person.">
     <scalar name="title" label="name" comment="The name of the person." />
     <composite name="photo" type="image" comment="A representative photo for the person." />
     <composite name="birth_detail" type="birth_detail" />

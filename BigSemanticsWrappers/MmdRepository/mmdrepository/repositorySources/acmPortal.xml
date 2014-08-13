@@ -333,7 +333,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
   </meta_metadata>
 
 
-  <meta_metadata name="acm_portal_author_collaborators" extends="document" parser="xpath">
+  <meta_metadata name="acm_portal_author_collaborators" extends="compound_document" parser="xpath">
     <selector url_regex="http://dl.acm.org/author_page.cfm.+dsp=coll.*" domain="acm.org" />
     <example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll" />
 		<example_url url="http://dl.acm.org/author_page.cfm?id=81100091670" />
@@ -352,7 +352,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
   </meta_metadata>
 
 
-  <meta_metadata name="acm_portal_institution_profile" extends="document" parser="xpath">
+  <meta_metadata name="acm_portal_institution_profile" extends="compound_document" parser="xpath">
     <selector url_stripped="http://dl.acm.org/inst_page.cfm" />
     <example_url url="http://dl.acm.org/inst_page.cfm?id=1013772" />
 
@@ -375,7 +375,7 @@ the "google_bot_2" user agent when performing web-site scraping. -->
     <collection name="articles" child_type="acm_portal" />
   </meta_metadata>
 
-  <meta_metadata name="acm_portal_search_result" parser="xpath" extends="document">
+  <meta_metadata name="acm_portal_search_result" parser="xpath" extends="compound_document">
     <scalar name="author_list" scalar_type="String" />
     <scalar name="source" scalar_type="String" />
     <scalar name="bibliometrics" scalar_type="String" />

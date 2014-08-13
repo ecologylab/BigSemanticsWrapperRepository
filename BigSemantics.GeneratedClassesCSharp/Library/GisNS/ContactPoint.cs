@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.GisNS
 	/// Resembles a schema.org ContactPoint.
 	/// </summary>
 	[SimplInherit]
-	public class ContactPoint : Document
+	public class ContactPoint : CompoundDocument
 	{
 		[SimplScalar]
 		private MetadataString telephone;

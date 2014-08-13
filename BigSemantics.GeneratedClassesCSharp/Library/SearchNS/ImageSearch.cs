@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.SearchNS 
 {
 	[SimplInherit]
-	public class ImageSearch : Search<Document>
+	public class ImageSearch : Search<CompoundDocument>
 	{
 		public ImageSearch()
 		{ }

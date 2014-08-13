@@ -14,7 +14,6 @@ using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -27,13 +26,10 @@ namespace Ecologylab.Semantics.Generated.Library.RwandatribunalNS
 	/// personnel interview
 	/// </summary>
 	[SimplInherit]
-	public class PersonnelInterview : Document
+	public class PersonnelInterview : CompoundDocument
 	{
 		[SimplScalar]
 		private MetadataString role;
-
-		[SimplScalar]
-		private MetadataParsedURL image;
 
 		[SimplCollection("video_interview")]
 		[MmName("speaks_on")]
@@ -57,19 +53,6 @@ namespace Ecologylab.Semantics.Generated.Library.RwandatribunalNS
 				if (this.role != value)
 				{
 					this.role = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataParsedURL Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

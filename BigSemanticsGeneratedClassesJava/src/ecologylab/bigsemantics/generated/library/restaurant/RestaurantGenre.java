@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.restaurant;
  */
 
 import ecologylab.bigsemantics.generated.library.restaurant.Restaurant;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -24,7 +24,7 @@ import java.util.Map;
  *Restaurants genre.
  */ 
 @simpl_inherit
-public class RestaurantGenre extends Document
+public class RestaurantGenre extends CompoundDocument
 {
 	@simpl_collection("restaurant")
 	@mm_name("restaurants")

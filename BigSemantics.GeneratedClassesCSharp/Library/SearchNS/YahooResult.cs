@@ -32,6 +32,9 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 		[SimplScalar]
 		private MetadataString modificationDate;
 
+		[SimplScalar]
+		private MetadataString title;
+
 		[SimplComposite]
 		[MmName("thumbnail")]
 		private YahooThumbnail thumbnail;
@@ -69,6 +72,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 				if (this.modificationDate != value)
 				{
 					this.modificationDate = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Title
+		{
+			get{return title;}
+			set
+			{
+				if (this.title != value)
+				{
+					this.title = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

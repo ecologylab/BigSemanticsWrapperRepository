@@ -20,7 +20,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.PatentNS 
 {
 	[SimplInherit]
-	public class GoogleSorry : Document
+	public class GoogleSorry : CompoundDocument
 	{
 		public GoogleSorry()
 		{ }

@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.OpenDNS
 	/// </summary>
 	[SimplInherit]
 	[SimplTag("openDNSDomain")]
-	public class OpenDNSDomain : Document
+	public class OpenDNSDomain : CompoundDocument
 	{
 		[SimplScalar]
 		private MetadataString domain;

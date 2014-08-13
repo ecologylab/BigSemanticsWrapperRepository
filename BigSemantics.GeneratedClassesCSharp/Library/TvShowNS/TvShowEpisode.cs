@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.TvShowNS
 	/// TV Show episode
 	/// </summary>
 	[SimplInherit]
-	public class TvShowEpisode : Document
+	public class TvShowEpisode : CompoundDocument
 	{
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeafCdata})]

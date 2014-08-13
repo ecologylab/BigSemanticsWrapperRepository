@@ -112,9 +112,11 @@
 
 
   <meta_metadata name="urban_spoon_search" type="search" parser="xpath">
+    <generic_type_var name="SR" arg="urban_spoon_restaurant" />
+    
     <selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/" />
 
-    <collection name="search_results" child_type="document">
+    <collection name="search_results">
       <xpath>//div[@class = 't']/a[text() != '']</xpath>
       <scalar name="title">
         <xpath>.</xpath>

@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.tvShow;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -25,7 +25,7 @@ import java.util.Map;
  *TV Show episode
  */ 
 @simpl_inherit
-public class TvShowEpisode extends Document
+public class TvShowEpisode extends CompoundDocument
 {
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF_CDATA})

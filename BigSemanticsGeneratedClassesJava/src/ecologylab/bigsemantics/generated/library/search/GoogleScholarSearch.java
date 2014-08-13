@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.search.GoogleScholarSearchResult;
 import ecologylab.bigsemantics.generated.library.search.Search;
-import ecologylab.bigsemantics.generated.library.search.SearchResult;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -21,7 +21,7 @@ import java.util.Map;
  *The google Search class
  */ 
 @simpl_inherit
-public class GoogleScholarSearch extends Search<SearchResult>
+public class GoogleScholarSearch extends Search<GoogleScholarSearchResult>
 {
 	public GoogleScholarSearch()
 	{ super(); }

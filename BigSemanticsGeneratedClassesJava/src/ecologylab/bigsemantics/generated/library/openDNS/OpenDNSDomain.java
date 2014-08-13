@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.openDNS;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -25,7 +25,7 @@ import java.util.Map;
  */ 
 @simpl_inherit
 @simpl_tag("openDNSDomain")
-public class OpenDNSDomain extends Document
+public class OpenDNSDomain extends CompoundDocument
 {
 	@simpl_scalar
 	private MetadataString domain;

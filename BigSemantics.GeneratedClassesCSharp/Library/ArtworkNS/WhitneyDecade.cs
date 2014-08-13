@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ArtworkNS 
 {
 	[SimplInherit]
-	public class WhitneyDecade : Search<Document>
+	public class WhitneyDecade : Search<CompoundDocument>
 	{
 		public WhitneyDecade()
 		{ }

@@ -12,38 +12,44 @@
 
   <meta_metadata name="google_image_search" type="image_search" comment="Google image search."
     parser="xpath" user_agent_name="chrome_12">
-    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
+    <selector url_stripped="https://www.google.com/search">
+      <param name="tbm" value="isch" />
+    </selector>    
+    <selector url_stripped="http://www.google.com/search">
       <param name="tbm" value="isch" />
     </selector>
     <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
     <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
 
-    <filter_location>
-      <regex match="^https://" replace="http://" />
-      <set_param name="hl" value="en" />
-      <set_param name="gbv" value="1" />
-      <set_param name="sei" value="1" />
-    </filter_location>
+<!--     <filter_location> -->
+<!--       <regex match="^https://" replace="http://" /> -->
+<!--       <set_param name="hl" value="en" /> -->
+<!--       <set_param name="gbv" value="1" /> -->
+<!--       <set_param name="sei" value="1" /> -->
+<!--     </filter_location> -->
 
     <collection name="search_results">
-      <xpath>//div[@id='ires']//td/a</xpath>
-      <def_var name="href_node" type="node">
-        <xpath>./@href</xpath>
-      </def_var>
-      <scalar name="location" context_node="href_node">
-        <xpath>.</xpath>
-        <regex_op regex="imgurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
+      <xpath>//div[@id='ires']//td</xpath>
+      <scalar name="location" always_show="true">
+        <xpath>./a/@href</xpath>
+        <regex_op regex="^/url\?q=" replace="" />
       </scalar>
+      
       <scalar name="thumb_width">
         <xpath>./a/img/@width</xpath>
       </scalar>
       <scalar name="thumb_height">
         <xpath>./a/img/@height</xpath>
       </scalar>
-      <scalar name="ref_location" context_node="href_node">
-        <xpath>.</xpath>
-        <regex_op regex="imgrefurl=([^&amp;]*(&amp;amp;[^&amp;]*)*)" group="1" />
+      <scalar name="description">
+      	<xpath>./b/following-sibling::text()[1]</xpath>
       </scalar>
+      <composite name="image">
+      	<scalar name="location">
+      		<xpath>./a/img/@src</xpath>
+      		<regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
+      	</scalar>
+      </composite>
     </collection>
     <semantic_actions>
       <get_field name="search_results" />

@@ -30,10 +30,6 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 		private MetadataString status;
 
 		[SimplComposite]
-		[MmName("moma_department")]
-		private CompoundDocument momaDepartment;
-
-		[SimplComposite]
 		[MmName("moma_classification")]
 		private CompoundDocument momaClassification;
 
@@ -67,19 +63,6 @@ namespace Ecologylab.Semantics.Generated.Library.ArtworkNS
 				if (this.status != value)
 				{
 					this.status = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public CompoundDocument MomaDepartment
-		{
-			get{return momaDepartment;}
-			set
-			{
-				if (this.momaDepartment != value)
-				{
-					this.momaDepartment = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

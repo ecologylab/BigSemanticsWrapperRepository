@@ -13,6 +13,7 @@ import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite_as_scalar;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -26,6 +27,10 @@ import java.util.Map;
 public class Publisher extends Document
 {
 	@simpl_scalar
+	@simpl_composite_as_scalar
+	private MetadataString title;
+
+	@simpl_scalar
 	private MetadataString city;
 
 	public Publisher()
@@ -35,6 +40,38 @@ public class Publisher extends Document
 		super(mmd);
 	}
 
+
+	public MetadataString	title()
+	{
+		MetadataString	result = this.title;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.title = result;
+		}
+		return result;
+	}
+
+	public String getTitle()
+	{
+		return this.title == null ? null : title().getValue();
+	}
+
+	public MetadataString getTitleMetadata()
+	{
+		return title;
+	}
+
+	public void setTitle(String title)
+	{
+		if (title != null)
+			this.title().setValue(title);
+	}
+
+	public void setTitleMetadata(MetadataString title)
+	{
+		this.title = title;
+	}
 
 	public MetadataString	city()
 	{

@@ -9,6 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
@@ -27,6 +28,10 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	[SimplInherit]
 	public class GoogleScholarSearchResult : CompoundDocument
 	{
+		[SimplComposite]
+		[MmName("destination_page")]
+		private CompoundDocument destinationPage;
+
 		[SimplScalar]
 		private MetadataParsedURL documentLink;
 
@@ -34,16 +39,22 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 		private MetadataString sourceInfo;
 
 		[SimplScalar]
-		private MetadataInteger citations;
+		private MetadataString citationCount;
 
-		[SimplScalar]
-		private MetadataParsedURL citationsLink;
+		[SimplComposite]
+		[MmName("citations")]
+		private CompoundDocument citations;
 
-		[SimplScalar]
-		private MetadataParsedURL relatedArticlesLink;
+		[SimplComposite]
+		[MmName("related_articles_link")]
+		private CompoundDocument relatedArticlesLink;
 
 		[SimplScalar]
 		private MetadataInteger versions;
+
+		[SimplCollection("compound_document")]
+		[MmName("google_authors")]
+		private List<CompoundDocument> googleAuthors;
 
 		[SimplScalar]
 		private MetadataParsedURL versionsLink;
@@ -53,6 +64,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 
 		public GoogleScholarSearchResult(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public CompoundDocument DestinationPage
+		{
+			get{return destinationPage;}
+			set
+			{
+				if (this.destinationPage != value)
+				{
+					this.destinationPage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataParsedURL DocumentLink
 		{
@@ -80,7 +104,20 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataInteger Citations
+		public MetadataString CitationCount
+		{
+			get{return citationCount;}
+			set
+			{
+				if (this.citationCount != value)
+				{
+					this.citationCount = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public CompoundDocument Citations
 		{
 			get{return citations;}
 			set
@@ -93,20 +130,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataParsedURL CitationsLink
-		{
-			get{return citationsLink;}
-			set
-			{
-				if (this.citationsLink != value)
-				{
-					this.citationsLink = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataParsedURL RelatedArticlesLink
+		public CompoundDocument RelatedArticlesLink
 		{
 			get{return relatedArticlesLink;}
 			set
@@ -127,6 +151,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 				if (this.versions != value)
 				{
 					this.versions = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<CompoundDocument> GoogleAuthors
+		{
+			get{return googleAuthors;}
+			set
+			{
+				if (this.googleAuthors != value)
+				{
+					this.googleAuthors = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

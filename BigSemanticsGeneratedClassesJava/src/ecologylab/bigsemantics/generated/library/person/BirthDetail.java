@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.person;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.Metadata;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -25,7 +25,7 @@ import java.util.Map;
  *Date and place of birth for a person
  */ 
 @simpl_inherit
-public class BirthDetail extends Document
+public class BirthDetail extends Metadata
 {
 	@simpl_scalar
 	private MetadataDate birthDate;

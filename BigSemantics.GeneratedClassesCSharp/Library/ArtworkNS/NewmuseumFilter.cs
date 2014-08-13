@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ArtworkNS 
 {
 	[SimplInherit]
-	public class NewmuseumFilter : Search<Document>
+	public class NewmuseumFilter : Search<CompoundDocument>
 	{
 		public NewmuseumFilter()
 		{ }

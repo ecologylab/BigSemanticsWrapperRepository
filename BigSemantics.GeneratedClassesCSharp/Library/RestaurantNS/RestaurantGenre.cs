@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.RestaurantNS
 	/// Restaurants genre.
 	/// </summary>
 	[SimplInherit]
-	public class RestaurantGenre : Document
+	public class RestaurantGenre : CompoundDocument
 	{
 		[SimplCollection("restaurant")]
 		[MmName("restaurants")]

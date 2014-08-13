@@ -8,11 +8,12 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -22,13 +23,14 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.SearchNS 
 {
 	/// <summary>
-	/// Def of an image in a Bing image search result.
+	/// Def of an Google or Bing image search result.
 	/// </summary>
 	[SimplInherit]
-	public class ImageSearchResult : Image
+	public class ImageSearchResult : SearchResult
 	{
-		[SimplScalar]
-		private MetadataParsedURL refLocation;
+		[SimplComposite]
+		[MmName("image")]
+		private Image image;
 
 		[SimplScalar]
 		private MetadataInteger thumbWidth;
@@ -45,14 +47,14 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 		public ImageSearchResult(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataParsedURL RefLocation
+		public Image Image
 		{
-			get{return refLocation;}
+			get{return image;}
 			set
 			{
-				if (this.refLocation != value)
+				if (this.image != value)
 				{
-					this.refLocation = value;
+					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

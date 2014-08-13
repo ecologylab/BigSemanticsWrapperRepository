@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AskNatureNS 
 {
 	[SimplInherit]
-	public class AskNatureTaxonomy : Document
+	public class AskNatureTaxonomy : CompoundDocument
 	{
 		[SimplComposite]
 		[MmName("group")]

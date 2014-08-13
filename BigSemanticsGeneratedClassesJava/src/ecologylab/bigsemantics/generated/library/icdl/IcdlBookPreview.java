@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.icdl;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.Author;
-import ecologylab.bigsemantics.metadata.Metadata;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -26,7 +26,7 @@ import java.util.Map;
  *ICDL About This Book Page
  */ 
 @simpl_inherit
-public class IcdlBookPreview extends Metadata
+public class IcdlBookPreview extends CompoundDocument
 {
 	@simpl_composite
 	@mm_name("author")

@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.gis;
  */
 
 import ecologylab.bigsemantics.generated.library.gis.GisLocation;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -26,7 +26,7 @@ import java.util.Map;
  *Resembles a schema.org ContactPoint.
  */ 
 @simpl_inherit
-public class ContactPoint extends Document
+public class ContactPoint extends CompoundDocument
 {
 	@simpl_scalar
 	private MetadataString telephone;

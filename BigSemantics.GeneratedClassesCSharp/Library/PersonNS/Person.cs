@@ -27,7 +27,7 @@ namespace Ecologylab.Semantics.Generated.Library.PersonNS
 	/// Abstract type for a person.
 	/// </summary>
 	[SimplInherit]
-	public class Person : Document
+	public class Person : CompoundDocument
 	{
 		/// <summary>
 		/// A representative photo for the person.

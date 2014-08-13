@@ -33,6 +33,9 @@ public class YahooResult extends Document
 	@simpl_scalar
 	private MetadataString modificationDate;
 
+	@simpl_scalar
+	private MetadataString title;
+
 	@simpl_composite
 	@mm_name("thumbnail")
 	private YahooThumbnail thumbnail;
@@ -113,6 +116,38 @@ public class YahooResult extends Document
 	public void setModificationDateMetadata(MetadataString modificationDate)
 	{
 		this.modificationDate = modificationDate;
+	}
+
+	public MetadataString	title()
+	{
+		MetadataString	result = this.title;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.title = result;
+		}
+		return result;
+	}
+
+	public String getTitle()
+	{
+		return this.title == null ? null : title().getValue();
+	}
+
+	public MetadataString getTitleMetadata()
+	{
+		return title;
+	}
+
+	public void setTitle(String title)
+	{
+		if (title != null)
+			this.title().setValue(title);
+	}
+
+	public void setTitleMetadata(MetadataString title)
+	{
+		this.title = title;
 	}
 
 	public YahooThumbnail getThumbnail()

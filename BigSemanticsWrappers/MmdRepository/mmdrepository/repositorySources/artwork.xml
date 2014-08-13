@@ -205,7 +205,8 @@
     <scalar name="status" scalar_type="String">
       <xpath>//div[@class='status']/strong</xpath>
     </scalar>
-    <composite name="moma_department" type="compound_document" label="department">
+    
+<!--     <composite name="moma_department" type="compound_document" label="department">
       <xpath>//div[@class='item']/h4[contains(text(), 'Department:')]/../div/a</xpath>
       <scalar name="title" label="name">
         <xpath>.</xpath>
@@ -214,7 +215,7 @@
         <xpath>./@href</xpath>
       </scalar>
     </composite>
-    
+ -->    
     <collection name="main_images">
         <xpath>//p[@id='mainImage']//img</xpath>
         <scalar name="location">

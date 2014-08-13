@@ -1,7 +1,7 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   name="search" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
 
-  <meta_metadata name="search_result" extends="document" show_expanded_always="true" 
+  <meta_metadata name="search_result" extends="compound_document" show_expanded_always="true" 
     comment="A search result.">
     <scalar name="title" style_name="h1" />
     <scalar name="description" label="snippet" />
@@ -14,8 +14,8 @@
         </collection>
   </meta_metadata>
   
-  <meta_metadata name="search" extends="document" comment="A search.">
-    <generic_type_var name="SR" extends="document" />
+  <meta_metadata name="search" extends="compound_document" comment="A search.">
+    <generic_type_var name="SR" extends="compound_document" />
 
     <scalar name="query" scalar_type="String"/>
     <collection name="search_results" child_type="SR" no_wrap="true"
@@ -210,7 +210,7 @@
 
   <meta_metadata name="my_google_search" type="search" comment="The my_google Search class"
     user_agent_name="opera_9" parser="xpath">
-    <generic_type_var name="SR" arg="document" />
+    <generic_type_var name="SR" arg="compound_document" />
     <selector url_stripped="http://staging.cs.tamu.edu:8080/my_google/search" />
 
     <collection name="search_results">
@@ -229,7 +229,7 @@
 
   <meta_metadata name="my_google_ecology0_search" type="search"
     comment="The my_google_ecology0 Search class" parser="xpath">
-    <generic_type_var name="SR" arg="document" />
+    <generic_type_var name="SR" arg="compound_document" />
     <selector url_stripped="http://ecology0.csdl.tamu.edu/my_google/search" />
 
     <collection name="search_results">
@@ -279,72 +279,11 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="yahoo_web_search" type="yahoo_result_set">
-    <selector url_stripped="http://api.search.yahoo.com/WebSearchService/V1/webSearch" />
-    <semantic_actions>
-      <get_field name="results" />
-      <for_each collection="results" as="result">
-        <get_field object="result" name="location" />
-        <parse_document now="true">
-          <arg value="location" name="location" />
-          <arg value="result" name="mixin" />
-        </parse_document>
-      </for_each>
-    </semantic_actions>
-  </meta_metadata>
-
-  <meta_metadata name="yahoo_image_search" type="yahoo_result_set">
-    <selector url_stripped="http://api.search.yahoo.com/ImageSearchService/V1/imageSearch" />
-    <semantic_actions>
-      <get_field name="results" />
-      <for_each collection="results" as="result">
-        <get_field object="result" name="location" />
-        <get_field object="result" name="referer_url" />
-        <get_field object="result" name="summary" />
-        <get_field object="result" name="title" />
-        <create_and_visualize_img_surrogate>
-          <arg name="image_purl" value="location" />
-          <arg name="caption" value="summary" alt_value="title" />
-					<!-- <arg value="result" name="mixin" /> -->
-          <arg name="location" value="referer_url" />
-        </create_and_visualize_img_surrogate>
-      </for_each>
-    </semantic_actions>
-  </meta_metadata>
-
-  <meta_metadata name="yahoo_news_search" type="yahoo_result_set">
-    <selector url_stripped="http://api.search.yahoo.com/NewsSearchService/V1/newsSearch" />
-    <semantic_actions>
-      <get_field name="results" />
-      <for_each collection="results" as="result">
-        <get_field object="result" name="summary" />
-        <get_field object="result" name="thumbnail" />
-        <get_field object="result" name="location" />
-        <choose>
-          <case>
-            <not_null value="thumbnail" />
-            <get_field object="thumbnail" name="thumb_url" />
-            <create_and_visualize_img_surrogate>
-              <arg value="thumb_url" name="image_purl" />
-              <arg value="summary" name="caption" />
-              <arg value="location" name="href" />
-            </create_and_visualize_img_surrogate>
-          </case>
-          <otherwise>
-            <parse_document now="true">
-              <arg value="result" name="mixin" />
-              <arg value="location" name="location" />
-            </parse_document>
-          </otherwise>
-        </choose>
-      </for_each>
-    </semantic_actions>
-  </meta_metadata>
 
 	<!-- this definition of image might apply to many other XML-based search results. -->
-  <meta_metadata name="image_search_result" extends="image"
-    comment="Def of an image in a Bing image search result.">
-    <scalar name="ref_location" scalar_type="ParsedURL" />
+  <meta_metadata name="image_search_result" extends="search_result"
+    comment="Def of an Google or Bing image search result.">
+    <composite name="image" type="image" />
     <scalar name="thumb_width" scalar_type="Int" />
     <scalar name="thumb_height" scalar_type="Int" />
     <scalar name="file_size" scalar_type="Int" />
@@ -384,7 +323,7 @@
 
   <meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5"
     comment="The bing Search api.">
-    <generic_type_var name="SR" arg="document" />
+    <generic_type_var name="SR" arg="compound_document" />
     <selector url_stripped="http://api.bing.net/xml.aspx" />
     <scalar name="query" ignore_in_term_vector="true">
       <xpath>//searchterms/text()</xpath>
@@ -493,7 +432,7 @@
 
   <meta_metadata name="bing_search_xpath" type="search" parser="xpath"
     user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">
-    <generic_type_var name="SR" arg="document" />
+    <generic_type_var name="SR" arg="compound_document" />
     <selector url_stripped="http://www.bing.com/search" />
     <example_url url="http://www.bing.com/search?q=howdyamp;go=Submitamp;qs=dsamp;form=QBLHamp;scope=web"/>
     <scalar name="query">
@@ -527,7 +466,7 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="social_media_search_result" extends="document"
+  <meta_metadata name="social_media_search_result" extends="compound_document"
     comment="A result from a social media search.">
     <scalar name="author" scalar_type="String" comment="The author of this item." />
     <collection name="tags" child_type="document"

@@ -9,6 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
@@ -24,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.PersonNS
 	/// Date and place of birth for a person
 	/// </summary>
 	[SimplInherit]
-	public class BirthDetail : Document
+	public class BirthDetail : Metadata
 	{
 		[SimplScalar]
 		private MetadataDate birthDate;

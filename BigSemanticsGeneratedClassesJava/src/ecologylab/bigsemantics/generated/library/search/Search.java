@@ -9,19 +9,16 @@ package ecologylab.bigsemantics.generated.library.search;
  */
 
 import ecologylab.bigsemantics.generated.library.search.Search;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
-import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,11 +27,8 @@ import java.util.Map;
  *A search.
  */ 
 @simpl_inherit
-public class Search<SR extends Document> extends Document
+public class Search<SR extends CompoundDocument> extends CompoundDocument
 {
-	@simpl_scalar
-	private MetadataString query;
-
 	@simpl_collection
 	@simpl_nowrap
 	@simpl_scope("repository_documents")
@@ -56,38 +50,6 @@ public class Search<SR extends Document> extends Document
 		super(mmd);
 	}
 
-
-	public MetadataString	query()
-	{
-		MetadataString	result = this.query;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.query = result;
-		}
-		return result;
-	}
-
-	public String getQuery()
-	{
-		return this.query == null ? null : query().getValue();
-	}
-
-	public MetadataString getQueryMetadata()
-	{
-		return query;
-	}
-
-	public void setQuery(String query)
-	{
-		if (query != null)
-			this.query().setValue(query);
-	}
-
-	public void setQueryMetadata(MetadataString query)
-	{
-		this.query = query;
-	}
 
 	public List<SR> getSearchResults()
 	{

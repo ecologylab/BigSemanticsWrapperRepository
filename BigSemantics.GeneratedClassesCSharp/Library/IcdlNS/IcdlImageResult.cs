@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.IcdlNS
 	/// Thumbnail Image
 	/// </summary>
 	[SimplInherit]
-	public class IcdlImageResult : Document
+	public class IcdlImageResult : CompoundDocument
 	{
 		[SimplCollection("icdl_book")]
 		[SimplNoWrap]

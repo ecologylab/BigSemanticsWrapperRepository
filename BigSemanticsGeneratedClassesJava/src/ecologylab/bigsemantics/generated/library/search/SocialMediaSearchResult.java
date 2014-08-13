@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -26,7 +27,7 @@ import java.util.Map;
  *A result from a social media search.
  */ 
 @simpl_inherit
-public class SocialMediaSearchResult extends Document
+public class SocialMediaSearchResult extends CompoundDocument
 {
 	/** 
 	 *The author of this item.

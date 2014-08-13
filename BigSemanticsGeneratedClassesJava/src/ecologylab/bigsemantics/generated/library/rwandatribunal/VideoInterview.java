@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.rwandatribunal;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -25,7 +25,7 @@ import java.util.Map;
  *video interview
  */ 
 @simpl_inherit
-public class VideoInterview extends Document
+public class VideoInterview extends CompoundDocument
 {
 	@simpl_scalar
 	private MetadataString interviewee;

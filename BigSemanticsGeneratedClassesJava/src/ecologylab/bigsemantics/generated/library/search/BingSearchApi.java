@@ -10,7 +10,7 @@ package ecologylab.bigsemantics.generated.library.search;
 
 import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.generated.library.search.SearchCrumb;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -24,7 +24,7 @@ import java.util.Map;
  *The bing Search api.
  */ 
 @simpl_inherit
-public class BingSearchApi extends Search<Document>
+public class BingSearchApi extends Search<CompoundDocument>
 {
 	@simpl_composite
 	@mm_name("search_crumb_composite")

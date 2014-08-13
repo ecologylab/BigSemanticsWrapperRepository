@@ -262,9 +262,11 @@
         <xpath>.//h3/a/@href</xpath>
         <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
       </scalar>
-      <scalar name="citation_info">
-        <xpath>.//a[@title='number of citations']</xpath>
-      </scalar>
+      <composite name="citation_info">
+        <scalar name="total_citation">
+          <xpath>.//a[@title='number of citations']</xpath>
+        </scalar>
+      </composite>
     </collection>
 
     <semantic_actions>

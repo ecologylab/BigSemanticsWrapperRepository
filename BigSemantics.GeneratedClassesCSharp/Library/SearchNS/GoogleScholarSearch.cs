@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// The google Search class
 	/// </summary>
 	[SimplInherit]
-	public class GoogleScholarSearch : Search<SearchResult>
+	public class GoogleScholarSearch : Search<GoogleScholarSearchResult>
 	{
 		public GoogleScholarSearch()
 		{ }

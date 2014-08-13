@@ -9,14 +9,12 @@ package ecologylab.bigsemantics.generated.library.rwandatribunal;
  */
 
 import ecologylab.bigsemantics.generated.library.rwandatribunal.VideoInterview;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
@@ -29,13 +27,10 @@ import java.util.Map;
  *personnel interview
  */ 
 @simpl_inherit
-public class PersonnelInterview extends Document
+public class PersonnelInterview extends CompoundDocument
 {
 	@simpl_scalar
 	private MetadataString role;
-
-	@simpl_scalar
-	private MetadataParsedURL image;
 
 	@simpl_collection("video_interview")
 	@mm_name("speaks_on")
@@ -83,38 +78,6 @@ public class PersonnelInterview extends Document
 	public void setRoleMetadata(MetadataString role)
 	{
 		this.role = role;
-	}
-
-	public MetadataParsedURL	image()
-	{
-		MetadataParsedURL	result = this.image;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.image = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getImage()
-	{
-		return this.image == null ? null : image().getValue();
-	}
-
-	public MetadataParsedURL getImageMetadata()
-	{
-		return image;
-	}
-
-	public void setImage(ParsedURL image)
-	{
-		if (image != null)
-			this.image().setValue(image);
-	}
-
-	public void setImageMetadata(MetadataParsedURL image)
-	{
-		this.image = image;
 	}
 
 	public List<VideoInterview> getSpeaksOn()

@@ -8,13 +8,14 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.search.SearchResult;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
@@ -22,13 +23,14 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *Def of an image in a Bing image search result.
+ *Def of an Google or Bing image search result.
  */ 
 @simpl_inherit
-public class ImageSearchResult extends Image
+public class ImageSearchResult extends SearchResult
 {
-	@simpl_scalar
-	private MetadataParsedURL refLocation;
+	@simpl_composite
+	@mm_name("image")
+	private Image image;
 
 	@simpl_scalar
 	private MetadataInteger thumbWidth;
@@ -47,36 +49,14 @@ public class ImageSearchResult extends Image
 	}
 
 
-	public MetadataParsedURL	refLocation()
+	public Image getImage()
 	{
-		MetadataParsedURL	result = this.refLocation;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.refLocation = result;
-		}
-		return result;
+		return image;
 	}
 
-	public ParsedURL getRefLocation()
+	public void setImage(Image image)
 	{
-		return this.refLocation == null ? null : refLocation().getValue();
-	}
-
-	public MetadataParsedURL getRefLocationMetadata()
-	{
-		return refLocation;
-	}
-
-	public void setRefLocation(ParsedURL refLocation)
-	{
-		if (refLocation != null)
-			this.refLocation().setValue(refLocation);
-	}
-
-	public void setRefLocationMetadata(MetadataParsedURL refLocation)
-	{
-		this.refLocation = refLocation;
+		this.image = image;
 	}
 
 	public MetadataInteger	thumbWidth()

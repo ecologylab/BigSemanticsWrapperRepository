@@ -18,7 +18,6 @@ using Ecologylab.Semantics.Generated.Library.AskNatureNS;
 using Ecologylab.Semantics.Generated.Library.BibManagingNS;
 using Ecologylab.Semantics.Generated.Library.BlogNS;
 using Ecologylab.Semantics.Generated.Library.BoardGameNS;
-using Ecologylab.Semantics.Generated.Library.BuzzNS;
 using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
 using Ecologylab.Semantics.Generated.Library.CiteulikeNS;
@@ -32,6 +31,7 @@ using Ecologylab.Semantics.Generated.Library.FastflipNS;
 using Ecologylab.Semantics.Generated.Library.FlickrNS;
 using Ecologylab.Semantics.Generated.Library.GisNS;
 using Ecologylab.Semantics.Generated.Library.GoogleBookNS;
+using Ecologylab.Semantics.Generated.Library.GoogleScholarNS;
 using Ecologylab.Semantics.Generated.Library.GrantNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
 using Ecologylab.Semantics.Generated.Library.IcdlNS;
@@ -216,11 +216,13 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(GoogleBook),
 				typeof(GooglePatent),
 				typeof(GooglePatentAuthor),
+				typeof(GoogleScholarArticle),
+				typeof(GoogleScholarArticleFacts),
+				typeof(GoogleScholarAuthor),
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
 				typeof(GoogleSearch),
 				typeof(GoogleSorry),
-				typeof(GoogleTrends),
 				typeof(Grant),
 				typeof(GrantProgram),
 				typeof(GrantStaff),
@@ -232,7 +234,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Header),
 				typeof(HmProduct),
 				typeof(HomeDepotProduct),
-				typeof(HotSearch),
 				typeof(Hotel),
 				typeof(HouzzProduct),
 				typeof(IcdlBook),
@@ -334,7 +335,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Rating),
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
-				typeof(RedditSearchResults),
 				typeof(ResearchGateArticle),
 				typeof(ResearchGateArticleStats),
 				typeof(ResearchGateAuthor),
@@ -413,7 +413,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(TwitterSearchResults),
 				typeof(UniqloProduct),
 				typeof(UrbanSpoonRestaurant),
-				typeof(UrbanSpoonSearch),
 				typeof(UserSearchAdditionalMetadata),
 				typeof(UvaModel),
 				typeof(VideoClipping),
@@ -445,7 +444,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(YoutubeChannel),
 				typeof(YoutubeSearchResults),
 				typeof(YoutubeVideo),
-				typeof(YoutubeVideoGrid),
 				typeof(YoutubeVideoList),
 				typeof(ZaraProduct));
 		}

@@ -142,10 +142,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.boardGame.BoardGame.class,
 
-		ecologylab.bigsemantics.generated.library.buzz.GoogleTrends.class,
-
-		ecologylab.bigsemantics.generated.library.buzz.HotSearch.class,
-
 		ecologylab.bigsemantics.generated.library.camera.CameraSettings.class,
 
 		ecologylab.bigsemantics.generated.library.cartoon.BritishCartoonArchive.class,
@@ -260,10 +256,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.HouzzProduct.class,
 
-		ecologylab.bigsemantics.generated.library.dreamHouse.IkeaMobileProduct.class,
-
-		ecologylab.bigsemantics.generated.library.dreamHouse.IkeaProduct.class,
-
 		ecologylab.bigsemantics.generated.library.dreamHouse.LandofnodProduct.class,
 
 		ecologylab.bigsemantics.generated.library.dreamHouse.LowesProduct.class,
@@ -321,6 +313,12 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.gis.PostalAddress.class,
 
 		ecologylab.bigsemantics.generated.library.googleBook.GoogleBook.class,
+
+		ecologylab.bigsemantics.generated.library.googleScholar.GoogleScholarArticle.class,
+
+		ecologylab.bigsemantics.generated.library.googleScholar.GoogleScholarArticleFacts.class,
+
+		ecologylab.bigsemantics.generated.library.googleScholar.GoogleScholarAuthor.class,
 
 		ecologylab.bigsemantics.generated.library.grant.Grant.class,
 
@@ -516,6 +514,10 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
 
+		ecologylab.bigsemantics.generated.library.product_and_service.IkeaMobileProduct.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.IkeaProduct.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.NeweggSubcategoryList.class,
@@ -660,8 +662,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.slashdot.SlashdotRss.class,
 
-		ecologylab.bigsemantics.generated.library.socialMedia.RedditSearchResults.class,
-
 		ecologylab.bigsemantics.generated.library.socialMedia.Tweet.class,
 
 		ecologylab.bigsemantics.generated.library.socialMedia.Tweeter.class,
@@ -690,8 +690,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.urbanspoon.UrbanSpoonRestaurant.class,
 
-		ecologylab.bigsemantics.generated.library.urbanspoon.UrbanSpoonSearch.class,
-
 		ecologylab.bigsemantics.generated.library.uva.DocumentSet.class,
 
 		ecologylab.bigsemantics.generated.library.uva.KeywordSet.class,
@@ -709,8 +707,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.video.YoutubeSearchResults.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeVideo.class,
-
-		ecologylab.bigsemantics.generated.library.video.YoutubeVideoGrid.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeVideoList.class,
 

@@ -912,6 +912,7 @@
     <selector url_regex_fragment="http://www.ikea.com/us/en/catalog/products/[^/]*" domain="ikea.com" />
 
     <example_url location="http://www.ikea.com/us/en/catalog/products/60204805/" />
+    <example_url location="http://www.ikea.com/us/en/catalog/products/S09906060/" />
 
     <scalar name="title">
       <xpath>//h1</xpath>

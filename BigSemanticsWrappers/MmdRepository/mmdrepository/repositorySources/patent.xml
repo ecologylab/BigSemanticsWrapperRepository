@@ -1,7 +1,7 @@
 <meta_metadata_repository name="patent"
   package="ecologylab.bigsemantics.generated.library.patent" default_user_agent_name="chrome">
 
-  <meta_metadata name="patent_classification" extends="document" parser="xpath">
+  <meta_metadata name="patent_classification" extends="compound_document" parser="xpath">
     <selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
 
     <example_url url="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm" />
@@ -190,7 +190,7 @@
 
 
 
-  <meta_metadata name="google_sorry" extends="document" parser="xpath">
+  <meta_metadata name="google_sorry" extends="compound_document" parser="xpath">
     <selector url_path_tree="http://sorry.google.com" />
     <semantic_actions>
       <back_off_from_site domain="google.com" />

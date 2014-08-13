@@ -11,7 +11,7 @@ package ecologylab.bigsemantics.generated.library.person;
 import ecologylab.bigsemantics.generated.library.gis.ContactPoint;
 import ecologylab.bigsemantics.generated.library.person.BirthDetail;
 import ecologylab.bigsemantics.generated.library.person.Person;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -31,7 +31,7 @@ import java.util.Map;
  *Abstract type for a person.
  */ 
 @simpl_inherit
-public class Person extends Document
+public class Person extends CompoundDocument
 {
 	/** 
 	 *A representative photo for the person.

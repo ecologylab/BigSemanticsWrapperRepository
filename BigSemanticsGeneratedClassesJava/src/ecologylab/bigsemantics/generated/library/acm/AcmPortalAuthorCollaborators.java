@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.acm;
  */
 
 import ecologylab.bigsemantics.generated.library.acm.AcmPortalAuthor;
-import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AcmPortalAuthorCollaborators extends Document
+public class AcmPortalAuthorCollaborators extends CompoundDocument
 {
 	@simpl_collection("acm_portal_author")
 	@mm_name("collaborators")

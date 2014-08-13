@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AcmNS 
 {
 	[SimplInherit]
-	public class AcmPortalInstitutionProfile : Document
+	public class AcmPortalInstitutionProfile : CompoundDocument
 	{
 		[SimplComposite]
 		[MmName("home_page")]

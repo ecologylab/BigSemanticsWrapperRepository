@@ -10,16 +10,20 @@ package ecologylab.bigsemantics.generated.library.search;
 
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.net.ParsedURL;
+import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +33,10 @@ import java.util.Map;
 @simpl_inherit
 public class GoogleScholarSearchResult extends CompoundDocument
 {
+	@simpl_composite
+	@mm_name("destination_page")
+	private CompoundDocument destinationPage;
+
 	@simpl_scalar
 	private MetadataParsedURL documentLink;
 
@@ -36,16 +44,22 @@ public class GoogleScholarSearchResult extends CompoundDocument
 	private MetadataString sourceInfo;
 
 	@simpl_scalar
-	private MetadataInteger citations;
+	private MetadataString citationCount;
 
-	@simpl_scalar
-	private MetadataParsedURL citationsLink;
+	@simpl_composite
+	@mm_name("citations")
+	private CompoundDocument citations;
 
-	@simpl_scalar
-	private MetadataParsedURL relatedArticlesLink;
+	@simpl_composite
+	@mm_name("related_articles_link")
+	private CompoundDocument relatedArticlesLink;
 
 	@simpl_scalar
 	private MetadataInteger versions;
+
+	@simpl_collection("compound_document")
+	@mm_name("google_authors")
+	private List<CompoundDocument> googleAuthors;
 
 	@simpl_scalar
 	private MetadataParsedURL versionsLink;
@@ -57,6 +71,16 @@ public class GoogleScholarSearchResult extends CompoundDocument
 		super(mmd);
 	}
 
+
+	public CompoundDocument getDestinationPage()
+	{
+		return destinationPage;
+	}
+
+	public void setDestinationPage(CompoundDocument destinationPage)
+	{
+		this.destinationPage = destinationPage;
+	}
 
 	public MetadataParsedURL	documentLink()
 	{
@@ -122,98 +146,54 @@ public class GoogleScholarSearchResult extends CompoundDocument
 		this.sourceInfo = sourceInfo;
 	}
 
-	public MetadataInteger	citations()
+	public MetadataString	citationCount()
 	{
-		MetadataInteger	result = this.citations;
+		MetadataString	result = this.citationCount;
 		if (result == null)
 		{
-			result = new MetadataInteger();
-			this.citations = result;
+			result = new MetadataString();
+			this.citationCount = result;
 		}
 		return result;
 	}
 
-	public Integer getCitations()
+	public String getCitationCount()
 	{
-		return this.citations == null ? 0 : citations().getValue();
+		return this.citationCount == null ? null : citationCount().getValue();
 	}
 
-	public MetadataInteger getCitationsMetadata()
+	public MetadataString getCitationCountMetadata()
+	{
+		return citationCount;
+	}
+
+	public void setCitationCount(String citationCount)
+	{
+		if (citationCount != null)
+			this.citationCount().setValue(citationCount);
+	}
+
+	public void setCitationCountMetadata(MetadataString citationCount)
+	{
+		this.citationCount = citationCount;
+	}
+
+	public CompoundDocument getCitations()
 	{
 		return citations;
 	}
 
-	public void setCitations(Integer citations)
-	{
-		if (citations != 0)
-			this.citations().setValue(citations);
-	}
-
-	public void setCitationsMetadata(MetadataInteger citations)
+	public void setCitations(CompoundDocument citations)
 	{
 		this.citations = citations;
 	}
 
-	public MetadataParsedURL	citationsLink()
-	{
-		MetadataParsedURL	result = this.citationsLink;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.citationsLink = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getCitationsLink()
-	{
-		return this.citationsLink == null ? null : citationsLink().getValue();
-	}
-
-	public MetadataParsedURL getCitationsLinkMetadata()
-	{
-		return citationsLink;
-	}
-
-	public void setCitationsLink(ParsedURL citationsLink)
-	{
-		if (citationsLink != null)
-			this.citationsLink().setValue(citationsLink);
-	}
-
-	public void setCitationsLinkMetadata(MetadataParsedURL citationsLink)
-	{
-		this.citationsLink = citationsLink;
-	}
-
-	public MetadataParsedURL	relatedArticlesLink()
-	{
-		MetadataParsedURL	result = this.relatedArticlesLink;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.relatedArticlesLink = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getRelatedArticlesLink()
-	{
-		return this.relatedArticlesLink == null ? null : relatedArticlesLink().getValue();
-	}
-
-	public MetadataParsedURL getRelatedArticlesLinkMetadata()
+	public CompoundDocument getRelatedArticlesLink()
 	{
 		return relatedArticlesLink;
 	}
 
-	public void setRelatedArticlesLink(ParsedURL relatedArticlesLink)
-	{
-		if (relatedArticlesLink != null)
-			this.relatedArticlesLink().setValue(relatedArticlesLink);
-	}
-
-	public void setRelatedArticlesLinkMetadata(MetadataParsedURL relatedArticlesLink)
+	public void setRelatedArticlesLink(CompoundDocument relatedArticlesLink)
 	{
 		this.relatedArticlesLink = relatedArticlesLink;
 	}
@@ -248,6 +228,36 @@ public class GoogleScholarSearchResult extends CompoundDocument
 	public void setVersionsMetadata(MetadataInteger versions)
 	{
 		this.versions = versions;
+	}
+
+	public List<CompoundDocument> getGoogleAuthors()
+	{
+		return googleAuthors;
+	}
+
+  // lazy evaluation:
+  public List<CompoundDocument> googleAuthors()
+  {
+    if (googleAuthors == null)
+      googleAuthors = new ArrayList<CompoundDocument>();
+    return googleAuthors;
+  }
+
+  // addTo:
+  public void addToGoogleAuthors(CompoundDocument element)
+  {
+    googleAuthors().add(element);
+  }
+
+  // size:
+  public int googleAuthorsSize()
+  {
+    return googleAuthors == null ? 0 : googleAuthors.size();
+  }
+
+	public void setGoogleAuthors(List<CompoundDocument> googleAuthors)
+	{
+		this.googleAuthors = googleAuthors;
 	}
 
 	public MetadataParsedURL	versionsLink()
