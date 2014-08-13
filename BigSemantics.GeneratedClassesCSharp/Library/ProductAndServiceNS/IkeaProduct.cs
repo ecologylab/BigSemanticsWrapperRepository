@@ -10,7 +10,9 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
+using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -23,10 +25,60 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class IkeaProduct : Product
 	{
+		[SimplScalar]
+		private MetadataString dimensions;
+
+		[SimplCollection("ikea_product")]
+		[MmName("more_models")]
+		private List<IkeaProduct> moreModels;
+
+		[SimplCollection("ikea_product")]
+		[MmName("coordinating_products")]
+		private List<IkeaProduct> coordinatingProducts;
+
 		public IkeaProduct()
 		{ }
 
 		public IkeaProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString Dimensions
+		{
+			get{return dimensions;}
+			set
+			{
+				if (this.dimensions != value)
+				{
+					this.dimensions = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<IkeaProduct> MoreModels
+		{
+			get{return moreModels;}
+			set
+			{
+				if (this.moreModels != value)
+				{
+					this.moreModels = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<IkeaProduct> CoordinatingProducts
+		{
+			get{return coordinatingProducts;}
+			set
+			{
+				if (this.coordinatingProducts != value)
+				{
+					this.coordinatingProducts = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 	}
 }

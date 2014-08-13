@@ -20,7 +20,12 @@
   </meta_metadata>
 
   <meta_metadata name="product_specs" extends="compound_document" parser="xpath">
-      <collection name="specifications" child_type="compound_document"/>
+      <scalar name="title" label="type" style_name="metadata_normal" />
+      
+      <collection name="specifications" child_type="compound_document">
+      	<scalar name="title" label="spec" style_name="metadata_italic" />
+      	<scalar name="description" label="detail"/>
+      </collection>
   </meta_metadata>
 
   <meta_metadata name="product" extends="commodity" schema_org_itemtype="http://schema.org/Product">
@@ -127,7 +132,7 @@
         <xpath>.//span[@class='rating-stars']//span[@title]/@title</xpath>
       </scalar>
     </collection>
-
+ 
     <collection name="list_mania" child_type="compound_document">
       <xpath>//li//td/a/img</xpath>
       <scalar name="location">
@@ -141,18 +146,18 @@
     <collection name="detailed_specifications">
       <xpath>//div[@class='secHeader']</xpath>
       <xpath>//div[@id='technical-data' or @id='detail-bullets']</xpath>
-      <scalar name="title" label="type">
+      <scalar name="title">
         <xpath>./span</xpath>
         <xpath>.//h2</xpath>
       </scalar>
       <collection name="specifications">
         <xpath>./following-sibling::div[1]//tbody/tr[not(position() = last())]</xpath>
         <xpath>.//ul/li</xpath>
-        <scalar name="title" label="spec">
+        <scalar name="title">
           <xpath>./td[1]</xpath>
           <xpath>./b</xpath>
         </scalar>
-        <scalar name="description" label="detail">
+        <scalar name="description">
           <xpath>./td[2]//div[@id='averageCustomerReviewRating']</xpath>
           <xpath>./td[2]</xpath>
           <xpath>.//span[contains(@class, 'asinReviewsSummary')]//span[@title]</xpath>
@@ -923,6 +928,40 @@
     <scalar name="price">
       <xpath>//div[@id='prodPrice']//span[@class='packagePrice']</xpath>
     </scalar>
+    
+    <scalar name="model">
+    	<xpath>//div[@id='itemNumber']</xpath>
+    </scalar>
+    
+    <scalar name="dimensions" scalar_type="string">
+    	<xpath>//div[@id='imperial']//text()</xpath>
+    </scalar>
+    
+    <collection name="more_models" child_type="ikea_product">
+    	<xpath>//div[@id='modelVisibleConatiner']//div[@class='borderMar']</xpath>
+    	
+    	<scalar name="location">
+    		<xpath>./a/@href</xpath>
+    	</scalar>
+    	
+    	<composite name="thumbnail">
+    		<xpath>./a/img</xpath>
+    		<scalar name="location">
+    			<xpath>./@src</xpath>
+    		</scalar>
+    	</composite>
+    </collection>
+	
+    <collection name="coordinating_products" child_type="ikea_product">
+    </collection>
+    
+    <collection name="detailed_specifications">
+     	<xpath>//div[@id='custBenefit']/div</xpath>
+     	<xpath>//div[@id='goodToKnow']/text()[(preceding::br)]</xpath>
+     	<scalar name="title">
+     		<xpath>.</xpath>
+     	</scalar>
+    </collection>
 	
   </meta_metadata>
 

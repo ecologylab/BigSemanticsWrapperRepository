@@ -198,7 +198,7 @@
   
     <scalar name="location" always_show="false" hide="true" schema_org_itemprop="url" layer="8.0">
 <!--       <xpath>//meta[@name='og:url']/@content</xpath> -->
-    </scalar>
+    </scalar> 
  
     <scalar name="title" scalar_type="String" style_name="metadata_h1" layer="10.0" hint="XML_LEAF"
       is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name"
@@ -217,6 +217,10 @@
     <scalar name="site_name" scalar_type="String" hide="true" comment="Huamn readable name of the site.">
       <xpath>//meta[@property='og:site_name']/@content</xpath>
       <xpath>//meta[@property='twitter:site']/@content</xpath>
+    </scalar>
+    
+    <scalar name="text_keywords" scalar_type="string" label="keywords" >
+    	<xpath>//meta[@name='keywords']/@content</xpath>
     </scalar>
     
     <composite name="see_also" type="document">

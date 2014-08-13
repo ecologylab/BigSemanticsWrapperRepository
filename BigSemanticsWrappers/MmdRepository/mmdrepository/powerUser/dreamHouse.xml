@@ -55,7 +55,7 @@
       <scalar name="description">
         <xpath>./span[@class='BVRRReviewText']</xpath>
       </scalar>
-    </collection>
+    </collection> 
 
     <collection name="people_also_buy" child_type="home_depot_product">
       <xpath>//div[@id='ymal_vert']/div[@class='product22']</xpath>
@@ -75,6 +75,27 @@
         <xpath>//img[@itemprop='image']/@src</xpath>
       </scalar>
     </composite>
+    
+    <collection name="detailed_specifications">
+      <xpath>//ul[@class='bulletList']/li</xpath>
+
+      <scalar name="title" label="type">
+        <xpath>.</xpath>
+      </scalar>
+      
+      <collection name="specifications">
+        <xpath>//div[@id='specifications']//tr</xpath>
+        <scalar name="title" label="spec">
+          <xpath>./td[1]</xpath>
+<!--           <xpath>./td[3]</xpath> -->
+        </scalar>
+        <scalar name="description" label="detail">
+          <xpath>./td[2]/text()</xpath>
+<!--           <xpath>./td[4]</xpath> -->
+         </scalar>
+      </collection>
+      
+ 	</collection>
 
   </meta_metadata>
 

@@ -8,17 +8,35 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.product_and_service.IkeaProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class IkeaProduct extends Product
 {
+	@simpl_scalar
+	private MetadataString dimensions;
+
+	@simpl_collection("ikea_product")
+	@mm_name("more_models")
+	private List<IkeaProduct> moreModels;
+
+	@simpl_collection("ikea_product")
+	@mm_name("coordinating_products")
+	private List<IkeaProduct> coordinatingProducts;
+
 	public IkeaProduct()
 	{ super(); }
 
@@ -26,4 +44,96 @@ public class IkeaProduct extends Product
 		super(mmd);
 	}
 
+
+	public MetadataString	dimensions()
+	{
+		MetadataString	result = this.dimensions;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.dimensions = result;
+		}
+		return result;
+	}
+
+	public String getDimensions()
+	{
+		return this.dimensions == null ? null : dimensions().getValue();
+	}
+
+	public MetadataString getDimensionsMetadata()
+	{
+		return dimensions;
+	}
+
+	public void setDimensions(String dimensions)
+	{
+		if (dimensions != null)
+			this.dimensions().setValue(dimensions);
+	}
+
+	public void setDimensionsMetadata(MetadataString dimensions)
+	{
+		this.dimensions = dimensions;
+	}
+
+	public List<IkeaProduct> getMoreModels()
+	{
+		return moreModels;
+	}
+
+  // lazy evaluation:
+  public List<IkeaProduct> moreModels()
+  {
+    if (moreModels == null)
+      moreModels = new ArrayList<IkeaProduct>();
+    return moreModels;
+  }
+
+  // addTo:
+  public void addToMoreModels(IkeaProduct element)
+  {
+    moreModels().add(element);
+  }
+
+  // size:
+  public int moreModelsSize()
+  {
+    return moreModels == null ? 0 : moreModels.size();
+  }
+
+	public void setMoreModels(List<IkeaProduct> moreModels)
+	{
+		this.moreModels = moreModels;
+	}
+
+	public List<IkeaProduct> getCoordinatingProducts()
+	{
+		return coordinatingProducts;
+	}
+
+  // lazy evaluation:
+  public List<IkeaProduct> coordinatingProducts()
+  {
+    if (coordinatingProducts == null)
+      coordinatingProducts = new ArrayList<IkeaProduct>();
+    return coordinatingProducts;
+  }
+
+  // addTo:
+  public void addToCoordinatingProducts(IkeaProduct element)
+  {
+    coordinatingProducts().add(element);
+  }
+
+  // size:
+  public int coordinatingProductsSize()
+  {
+    return coordinatingProducts == null ? 0 : coordinatingProducts.size();
+  }
+
+	public void setCoordinatingProducts(List<IkeaProduct> coordinatingProducts)
+	{
+		this.coordinatingProducts = coordinatingProducts;
+	}
 }
