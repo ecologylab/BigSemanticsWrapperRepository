@@ -12,6 +12,7 @@ using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -29,13 +30,13 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 		[MmName("image")]
 		private Image image;
 
-		[SimplCollection("document")]
+		[SimplCollection("compound_document")]
 		[MmName("available_colors")]
-		private List<Document> availableColors;
+		private List<CompoundDocument> availableColors;
 
-		[SimplCollection("document")]
+		[SimplCollection("detail")]
 		[MmName("details")]
-		private List<Document> details;
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> details;
 
 		public Forever21()
 		{ }
@@ -56,7 +57,7 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 			}
 		}
 
-		public List<Document> AvailableColors
+		public List<CompoundDocument> AvailableColors
 		{
 			get{return availableColors;}
 			set
@@ -69,7 +70,7 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 			}
 		}
 
-		public List<Document> Details
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Details
 		{
 			get{return details;}
 			set

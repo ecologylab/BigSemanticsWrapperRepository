@@ -11,6 +11,7 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
 import ecologylab.bigsemantics.generated.library.gis.GisLocation;
 import ecologylab.bigsemantics.generated.library.gis.PostalAddress;
 import ecologylab.bigsemantics.generated.library.misc.Review;
+import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -45,6 +46,10 @@ public class Commodity extends CompoundDocument
 	@simpl_collection("review")
 	@mm_name("reviews")
 	private List<Review> reviews;
+
+	@simpl_collection("specification")
+	@mm_name("specs")
+	private List<Specification> specs;
 
 	@simpl_scalar
 	private MetadataParsedURL reviewsLocation;
@@ -193,6 +198,36 @@ public class Commodity extends CompoundDocument
 	public void setReviews(List<Review> reviews)
 	{
 		this.reviews = reviews;
+	}
+
+	public List<Specification> getSpecs()
+	{
+		return specs;
+	}
+
+  // lazy evaluation:
+  public List<Specification> specs()
+  {
+    if (specs == null)
+      specs = new ArrayList<Specification>();
+    return specs;
+  }
+
+  // addTo:
+  public void addToSpecs(Specification element)
+  {
+    specs().add(element);
+  }
+
+  // size:
+  public int specsSize()
+  {
+    return specs == null ? 0 : specs.size();
+  }
+
+	public void setSpecs(List<Specification> specs)
+	{
+		this.specs = specs;
 	}
 
 	public MetadataParsedURL	reviewsLocation()

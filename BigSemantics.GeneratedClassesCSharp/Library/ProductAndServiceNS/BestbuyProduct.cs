@@ -24,9 +24,9 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class BestbuyProduct : Product
 	{
-		[SimplCollection("compound_document")]
+		[SimplCollection("specification")]
 		[MmName("features")]
-		private List<CompoundDocument> features;
+		private List<Specification> features;
 
 		[SimplCollection("compound_document")]
 		[MmName("whats_included")]
@@ -50,7 +50,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		public BestbuyProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<CompoundDocument> Features
+		public List<Specification> Features
 		{
 			get{return features;}
 			set

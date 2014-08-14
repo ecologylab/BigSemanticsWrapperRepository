@@ -37,9 +37,9 @@ public class Modcloth extends Product
 	@simpl_scalar
 	private MetadataString designer;
 
-	@simpl_collection("document")
+	@simpl_collection("detail")
 	@mm_name("details")
-	private List<Document> details;
+	private List<MetadataString> details;
 
 	@simpl_collection("document")
 	@mm_name("avalailable_sizes")
@@ -106,21 +106,21 @@ public class Modcloth extends Product
 		this.designer = designer;
 	}
 
-	public List<Document> getDetails()
+	public List<MetadataString> getDetails()
 	{
 		return details;
 	}
 
   // lazy evaluation:
-  public List<Document> details()
+  public List<MetadataString> details()
   {
     if (details == null)
-      details = new ArrayList<Document>();
+      details = new ArrayList<MetadataString>();
     return details;
   }
 
   // addTo:
-  public void addToDetails(Document element)
+  public void addToDetails(MetadataString element)
   {
     details().add(element);
   }
@@ -131,7 +131,7 @@ public class Modcloth extends Product
     return details == null ? 0 : details.size();
   }
 
-	public void setDetails(List<Document> details)
+	public void setDetails(List<MetadataString> details)
 	{
 		this.details = details;
 	}

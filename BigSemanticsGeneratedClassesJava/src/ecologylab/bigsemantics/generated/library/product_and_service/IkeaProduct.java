@@ -8,8 +8,10 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.product_and_service.IkeaDepartment;
 import ecologylab.bigsemantics.generated.library.product_and_service.IkeaProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -17,7 +19,6 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +27,9 @@ import java.util.Map;
 @simpl_inherit
 public class IkeaProduct extends Product
 {
-	@simpl_scalar
-	private MetadataString dimensions;
+	@simpl_collection("specification")
+	@mm_name("dimensions")
+	private List<Specification> dimensions;
 
 	@simpl_collection("ikea_product")
 	@mm_name("more_models")
@@ -37,6 +39,14 @@ public class IkeaProduct extends Product
 	@mm_name("coordinating_products")
 	private List<IkeaProduct> coordinatingProducts;
 
+	@simpl_collection("details2")
+	@mm_name("details2")
+	private List<MetadataString> details2;
+
+	@simpl_collection("ikea_department")
+	@mm_name("departments")
+	private List<IkeaDepartment> departments;
+
 	public IkeaProduct()
 	{ super(); }
 
@@ -45,34 +55,32 @@ public class IkeaProduct extends Product
 	}
 
 
-	public MetadataString	dimensions()
-	{
-		MetadataString	result = this.dimensions;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.dimensions = result;
-		}
-		return result;
-	}
-
-	public String getDimensions()
-	{
-		return this.dimensions == null ? null : dimensions().getValue();
-	}
-
-	public MetadataString getDimensionsMetadata()
+	public List<Specification> getDimensions()
 	{
 		return dimensions;
 	}
 
-	public void setDimensions(String dimensions)
-	{
-		if (dimensions != null)
-			this.dimensions().setValue(dimensions);
-	}
+  // lazy evaluation:
+  public List<Specification> dimensions()
+  {
+    if (dimensions == null)
+      dimensions = new ArrayList<Specification>();
+    return dimensions;
+  }
 
-	public void setDimensionsMetadata(MetadataString dimensions)
+  // addTo:
+  public void addToDimensions(Specification element)
+  {
+    dimensions().add(element);
+  }
+
+  // size:
+  public int dimensionsSize()
+  {
+    return dimensions == null ? 0 : dimensions.size();
+  }
+
+	public void setDimensions(List<Specification> dimensions)
 	{
 		this.dimensions = dimensions;
 	}
@@ -135,5 +143,65 @@ public class IkeaProduct extends Product
 	public void setCoordinatingProducts(List<IkeaProduct> coordinatingProducts)
 	{
 		this.coordinatingProducts = coordinatingProducts;
+	}
+
+	public List<MetadataString> getDetails2()
+	{
+		return details2;
+	}
+
+  // lazy evaluation:
+  public List<MetadataString> details2()
+  {
+    if (details2 == null)
+      details2 = new ArrayList<MetadataString>();
+    return details2;
+  }
+
+  // addTo:
+  public void addToDetails2(MetadataString element)
+  {
+    details2().add(element);
+  }
+
+  // size:
+  public int details2Size()
+  {
+    return details2 == null ? 0 : details2.size();
+  }
+
+	public void setDetails2(List<MetadataString> details2)
+	{
+		this.details2 = details2;
+	}
+
+	public List<IkeaDepartment> getDepartments()
+	{
+		return departments;
+	}
+
+  // lazy evaluation:
+  public List<IkeaDepartment> departments()
+  {
+    if (departments == null)
+      departments = new ArrayList<IkeaDepartment>();
+    return departments;
+  }
+
+  // addTo:
+  public void addToDepartments(IkeaDepartment element)
+  {
+    departments().add(element);
+  }
+
+  // size:
+  public int departmentsSize()
+  {
+    return departments == null ? 0 : departments.size();
+  }
+
+	public void setDepartments(List<IkeaDepartment> departments)
+	{
+		this.departments = departments;
 	}
 }

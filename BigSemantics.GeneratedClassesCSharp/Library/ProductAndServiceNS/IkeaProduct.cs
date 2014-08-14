@@ -25,8 +25,9 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class IkeaProduct : Product
 	{
-		[SimplScalar]
-		private MetadataString dimensions;
+		[SimplCollection("specification")]
+		[MmName("dimensions")]
+		private List<Specification> dimensions;
 
 		[SimplCollection("ikea_product")]
 		[MmName("more_models")]
@@ -36,13 +37,21 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("coordinating_products")]
 		private List<IkeaProduct> coordinatingProducts;
 
+		[SimplCollection("details2")]
+		[MmName("details2")]
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> details2;
+
+		[SimplCollection("ikea_department")]
+		[MmName("departments")]
+		private List<IkeaDepartment> departments;
+
 		public IkeaProduct()
 		{ }
 
 		public IkeaProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString Dimensions
+		public List<Specification> Dimensions
 		{
 			get{return dimensions;}
 			set
@@ -76,6 +85,32 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.coordinatingProducts != value)
 				{
 					this.coordinatingProducts = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Details2
+		{
+			get{return details2;}
+			set
+			{
+				if (this.details2 != value)
+				{
+					this.details2 = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<IkeaDepartment> Departments
+		{
+			get{return departments;}
+			set
+			{
+				if (this.departments != value)
+				{
+					this.departments = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

@@ -10,6 +10,7 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
 
 import ecologylab.bigsemantics.generated.library.product_and_service.BestbuyProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -24,9 +25,9 @@ import java.util.Map;
 @simpl_inherit
 public class BestbuyProduct extends Product
 {
-	@simpl_collection("compound_document")
+	@simpl_collection("specification")
 	@mm_name("features")
-	private List<CompoundDocument> features;
+	private List<Specification> features;
 
 	@simpl_collection("compound_document")
 	@mm_name("whats_included")
@@ -52,21 +53,21 @@ public class BestbuyProduct extends Product
 	}
 
 
-	public List<CompoundDocument> getFeatures()
+	public List<Specification> getFeatures()
 	{
 		return features;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> features()
+  public List<Specification> features()
   {
     if (features == null)
-      features = new ArrayList<CompoundDocument>();
+      features = new ArrayList<Specification>();
     return features;
   }
 
   // addTo:
-  public void addToFeatures(CompoundDocument element)
+  public void addToFeatures(Specification element)
   {
     features().add(element);
   }
@@ -77,7 +78,7 @@ public class BestbuyProduct extends Product
     return features == null ? 0 : features.size();
   }
 
-	public void setFeatures(List<CompoundDocument> features)
+	public void setFeatures(List<Specification> features)
 	{
 		this.features = features;
 	}

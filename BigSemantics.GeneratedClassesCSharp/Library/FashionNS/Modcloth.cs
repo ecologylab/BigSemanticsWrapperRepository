@@ -33,9 +33,9 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 		[SimplScalar]
 		private MetadataString designer;
 
-		[SimplCollection("document")]
+		[SimplCollection("detail")]
 		[MmName("details")]
-		private List<Document> details;
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> details;
 
 		[SimplCollection("document")]
 		[MmName("avalailable_sizes")]
@@ -84,7 +84,7 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 			}
 		}
 
-		public List<Document> Details
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Details
 		{
 			get{return details;}
 			set

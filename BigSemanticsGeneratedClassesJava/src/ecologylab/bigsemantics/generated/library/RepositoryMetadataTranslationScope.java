@@ -514,6 +514,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.product_and_service.EtsyProduct.class,
 
+		ecologylab.bigsemantics.generated.library.product_and_service.IkeaDepartment.class,
+
 		ecologylab.bigsemantics.generated.library.product_and_service.IkeaMobileProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.IkeaProduct.class,
@@ -529,6 +531,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.product_and_service.SamsclubProduct.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.Service.class,
+
+		ecologylab.bigsemantics.generated.library.product_and_service.Specification.class,
 
 		ecologylab.bigsemantics.generated.library.product_and_service.TargetProduct.class,
 

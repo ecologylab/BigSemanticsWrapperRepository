@@ -10,6 +10,7 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.GisNS;
 using Ecologylab.Semantics.Generated.Library.MiscNS;
+using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -39,6 +40,10 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[SimplCollection("review")]
 		[MmName("reviews")]
 		private List<Review> reviews;
+
+		[SimplCollection("specification")]
+		[MmName("specs")]
+		private List<Specification> specs;
 
 		[SimplScalar]
 		private MetadataParsedURL reviewsLocation;
@@ -108,6 +113,19 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.reviews != value)
 				{
 					this.reviews = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Specification> Specs
+		{
+			get{return specs;}
+			set
+			{
+				if (this.specs != value)
+				{
+					this.specs = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
