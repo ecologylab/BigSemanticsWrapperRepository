@@ -127,19 +127,30 @@
     </composite>
 
     <collection name="people_also_buy" child_type="amazon_product">
-      <xpath>//div[@id='vtpsims']/ul/li</xpath>
+<!--       <xpath>//div[@id='vtpsims']/ul/li</xpath> -->
+<!-- 	  <xpath>//div[@class='shoveler-content']</xpath> -->
+	  <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath>
+	  
       <scalar name="location">
         <xpath>.//a/@href</xpath>
-      </scalar>
+<!--         <xpath>.//a[@class='sim-img-title']/@href</xpath> -->
+       </scalar>
       <scalar name="title">
-        <xpath>.//a</xpath>
+        <xpath>./a/text()</xpath>
       </scalar>
       <scalar name="price">
-        <xpath>.//div[@class='price']</xpath>
+        <xpath>.//*[@class='price']/text()</xpath>
       </scalar>
       <scalar name="overall_rating">
         <xpath>.//span[@class='rating-stars']//span[@title]/@title</xpath>
       </scalar>
+      <!-- would like to use thumbnails here -->
+      <collection name="main_images" >
+      	<xpath>./a//img</xpath>
+      	<scalar name="location">
+      		<xpath>./@src</xpath>
+      	</scalar>
+      </collection>
     </collection>
  
     <collection name="list_mania" child_type="compound_document">
@@ -662,13 +673,13 @@
   </meta_metadata>
   
   <meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath"
-    user_agent_name="firefox">
+    user_agent_name="chrome">
     <selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
     <selector domain="amazon.com" url_regex="http://www.amazon.com/[^/]*/zgbs/.*" />
     <example_url url="http://www.amazon.com/gp/bestsellers/books/6" />
-
+	
     <filter_location strip_prefix="/ref=" />
-
+    
     <scalar name="title">
       <xpath>//h1[@id='zg_listTitle']/span</xpath>
     </scalar>
@@ -686,6 +697,13 @@
       <scalar name="overall_rating">
         <xpath>.//div[@class='zg_reviews']//span[contains(@class,'swSprite')]</xpath>
       </scalar>
+      
+      <collection name="main_images">
+      	<xpath>//div[@class='zg_image']//a</xpath>
+      	<scalar name="location">
+      		<xpath>.//img/@src</xpath>
+      	</scalar>
+      </collection>
     </collection>
   </meta_metadata>
 
@@ -1009,8 +1027,9 @@
   			<xpath>.//div[@class='price regularPrice']</xpath>
   		</scalar>
    		<collection name="main_images" >
+	  		<xpath>.//a[@class='productLink']/img</xpath>
 	  		<scalar name="location">
-	  			<xpath>.//a[@class='productLink']/img/@src</xpath>
+	  			<xpath>./@src</xpath>
 	  		</scalar>
   		</collection>
   		
