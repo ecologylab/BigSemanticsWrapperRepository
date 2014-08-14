@@ -1,11 +1,20 @@
 <meta_metadata_repository name="product_and_service"
   package="ecologylab.bigsemantics.generated.library.product_and_service">
 
+  <meta_metadata name="specification" extends="metadata">
+	  <scalar name="name" scalar_type="string" style_name="metadata_italic" />
+	  <scalar name="value" scalar_type="string" use_value_as_label="name"/>
+  </meta_metadata>
+
   <meta_metadata name="commodity" extends="compound_document">
     <scalar name="location" hide="true" />
     <collection name="main_images" layer="3.0"  />
+    
     <scalar name="price" scalar_type="String" layer="3.0" style_name="topRight_div"
       schema_org_itemprop="price" />
+      
+<!-- 	<collection name="details" child_scalar_type="string" /> -->
+	<collection name="specs" child_type="specification" />
 
     <scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" layer="2.0"
       style_name="underTopRight_div" schema_org_itemprop="aggregateRating" />
@@ -783,12 +792,12 @@
       <xpath>//*[@id='long-description']/text()</xpath>
     </scalar>
 
-    <collection name="features" child_type="compound_document">
+    <collection name="features" child_type="specification">
       <xpath>//*[@id='features']/div[@class='feature']</xpath>
-      <scalar name="title" label="feature">
+      <scalar name="title" >
         <xpath>./h4/text()</xpath>
       </scalar>
-      <scalar name="description" label="detail">
+      <scalar name="description">
         <xpath>./p/text()</xpath>
       </scalar>
 
@@ -933,11 +942,17 @@
     	<xpath>//div[@id='itemNumber']</xpath>
     </scalar>
     
-    <scalar name="dimensions" scalar_type="string">
-    	<xpath>//div[@id='imperial']//text()</xpath>
-    </scalar>
-    
-    <collection name="more_models" child_type="ikea_product">
+    <collection name="dimensions" child_type="specification" >
+   		<xpath>//div[@id='imperial']//text()</xpath>
+		<scalar name="name">
+			<xpath>substring-before(., ':')</xpath>
+		</scalar>    
+		<scalar name="value" >
+			<xpath>substring-after(., ':')</xpath>
+		</scalar>    
+    </collection>
+	
+   <collection name="more_models" child_type="ikea_product">
     	<xpath>//div[@id='modelVisibleConatiner']//div[@class='borderMar']</xpath>
     	
     	<scalar name="location">
@@ -955,14 +970,52 @@
     <collection name="coordinating_products" child_type="ikea_product">
     </collection>
     
-    <collection name="detailed_specifications">
+	<collection name="details2" label="details" child_scalar_type="String" >
+   		<xpath>//div[@id='custMaterials']//text()</xpath>
      	<xpath>//div[@id='custBenefit']/div</xpath>
      	<xpath>//div[@id='goodToKnow']/text()[(preceding::br)]</xpath>
-     	<scalar name="title">
-     		<xpath>.</xpath>
-     	</scalar>
     </collection>
-	
+    
+	<collection name="departments" child_type="ikea_department" >
+		<xpath>//ul[@id='breadCrumbs']//a</xpath>
+<!-- 		<xpath>//ul[@id='breadCrumbs']/li[not(@class='divider')]</xpath> -->
+		<scalar name="title" style_name="metadata_normal" >
+			<xpath>.//text()</xpath>
+		</scalar>
+		<scalar name="location" >
+			<xpath>./@href</xpath>
+		</scalar>
+	</collection>
+
+  </meta_metadata>
+
+  <meta_metadata name="ikea_department" extends="compound_document" parser="xpath" user_agent_name="chrome">
+     <selector url_path_tree="http://www.ikea.com/us/en/catalog/categories/departments/" domain="ikea.com" />
+     <example location="http://www.ikea.com/us/en/catalog/categories/departments/bathroom/20720/" />
+     
+     <collection name="products" child_type="ikea_product" >   
+     	<xpath>//div[@class='threeColumn product ']</xpath>
+  	
+  		<scalar name="location">
+  			<xpath>.//a[@class='productLink']/@href</xpath>
+  		</scalar>
+  		<scalar name="title" style_name="metadata_normal">
+  			<xpath>concat(.//div[@class='productTitle floatLeft'], ' ', .//div[@class='productDesp'])</xpath>
+  		</scalar>
+  		<scalar name="description">
+  			<xpath>.//div[@class='productDesp']</xpath>
+  		</scalar>
+  		<scalar name="price">
+  			<xpath>.//div[@class='price regularPrice']</xpath>
+  		</scalar>
+   		<collection name="main_images" >
+	  		<scalar name="location">
+	  			<xpath>.//a[@class='productLink']/img/@src</xpath>
+	  		</scalar>
+  		</collection>
+  		
+  	</collection>
+
   </meta_metadata>
 
   <meta_metadata name="ikea_mobile_product" type="product" parser="xpath"
