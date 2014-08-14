@@ -42,17 +42,25 @@
       </scalar>
     </composite>
 
-    <collection name="available_colors" child_type="document">
+    <collection name="available_colors" child_type="compound_document">
       <xpath>//div[@id='ctl00_MainContent_upColorList']/select/option[contains(@value, 'large')]</xpath>
       <scalar name="title" label="">
         <xpath>.</xpath>
       </scalar>
     </collection>
-    <collection name="details" child_type="document">
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="details" child_scalar_type="string"  >
       <xpath>//span[@id='product_overview']/ul/li</xpath>
-      <scalar name="title" label="">
-        <xpath>.</xpath>
-      </scalar>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
+    </collection>
+    
+    <collection name="main_images">
+    	<xpath>//ul[@id='scroller']/li/a/img</xpath>
+    	<scalar name="location">
+    		<xpath>./@src</xpath>
+    	</scalar>
     </collection>
 
     <collection name="reviews">
@@ -131,11 +139,12 @@
       </scalar>
     </composite>
 
-    <collection name="details" child_type="document">
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="details" child_scalar_type="string" >
       <xpath>//div[@class='product-description']/ul/li/ul/li</xpath>
-      <scalar name="title" label="">
-        <xpath>.</xpath>
-      </scalar>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
     </collection>
 		<!-- can make not expandable???? -->
 
@@ -193,11 +202,12 @@
         <xpath>./@src</xpath>
       </scalar>
     </composite>
-    <collection name="details" child_type="document">
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="details" child_scalar_type="string" >
       <xpath>/span[@itemprop='description']/ul/li/text()</xpath>
-      <scalar name="title" label="">
-        <xpath>.</xpath>
-      </scalar>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
     </collection>
 		<!--
 				ALL JAVASCRIPT 
@@ -259,11 +269,12 @@
       </scalar>
     </collection>
 
-    <collection name="details" child_type="document">
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="details" child_scalar_type="string"  >
       <xpath>//div[@id='pdp_details']/ul/li</xpath>
-      <scalar name="title" label="">
-        <xpath>.</xpath>
-      </scalar>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
     </collection>
     <collection name="avalailable_sizes" child_type="document">
       <xpath>//input[@class='ui-variant-value size-button ui-corner-all in-stock']/@value</xpath>
