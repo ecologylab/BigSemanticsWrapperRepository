@@ -2,8 +2,8 @@
   package="ecologylab.bigsemantics.generated.library.product_and_service">
 
   <meta_metadata name="specification" extends="metadata">
-	  <scalar name="name" scalar_type="string" style_name="metadata_italic" />
-	  <scalar name="value" scalar_type="string" use_value_as_label="name"/>
+	  <scalar name="name" scalar_type="string" hide="true"/>
+	  <scalar name="value" scalar_type="string" use_value_as_label="name" style_name="metadata_italic" />
   </meta_metadata>
 
   <meta_metadata name="commodity" extends="compound_document">
@@ -950,14 +950,14 @@
       <xpath>//h1</xpath>
     </scalar>
     <scalar name="description">
-      <xpath>//div[@class='salesArguments']</xpath>
+      <xpath>//*[@itemprop='description']</xpath>
     </scalar>
     <scalar name="price">
-      <xpath>//div[@id='prodPrice']//span[@class='packagePrice']</xpath>
-    </scalar>
+      <xpath>//*[@itemprop='price']</xpath>
+   </scalar>
     
     <scalar name="model">
-    	<xpath>//div[@id='itemNumber']</xpath>
+      <xpath>//*[@itemprop='productID']</xpath>
     </scalar>
     
     <collection name="dimensions" child_type="specification" >
@@ -970,7 +970,11 @@
 		</scalar>    
     </collection>
 	
-   <collection name="more_models" child_type="ikea_product">
+    <scalar name="weight" scalar_type="string">
+    	<xpath>substring-after(//div[@id='packageInfo']//text()[contains(., 'lb')], ':')</xpath>
+    </scalar>
+    
+<!--    <collection name="more_models" child_type="ikea_product">
     	<xpath>//div[@id='modelVisibleConatiner']//div[@class='borderMar']</xpath>
     	
     	<scalar name="location">
@@ -984,14 +988,20 @@
     		</scalar>
     	</composite>
     </collection>
-	
-    <collection name="coordinating_products" child_type="ikea_product">
-    </collection>
+ -->	
+<!--     <collection name="coordinating_products" child_type="ikea_product"> -->
+<!--     </collection> -->
     
-	<collection name="details2" label="details" child_scalar_type="String" >
+	<collection name="specs" label="details" >
    		<xpath>//div[@id='custMaterials']//text()</xpath>
      	<xpath>//div[@id='custBenefit']/div</xpath>
      	<xpath>//div[@id='goodToKnow']/text()[(preceding::br)]</xpath>
+		<scalar name="name">
+			<xpath>substring-before(., ':')</xpath>
+		</scalar>    
+		<scalar name="value" >
+			<xpath>substring-after(., ':')</xpath>
+		</scalar>    
     </collection>
     
 	<collection name="departments" child_type="ikea_department" >

@@ -9,7 +9,6 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  */
 
 import ecologylab.bigsemantics.generated.library.product_and_service.IkeaDepartment;
-import ecologylab.bigsemantics.generated.library.product_and_service.IkeaProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -19,6 +18,7 @@ import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,17 +31,8 @@ public class IkeaProduct extends Product
 	@mm_name("dimensions")
 	private List<Specification> dimensions;
 
-	@simpl_collection("ikea_product")
-	@mm_name("more_models")
-	private List<IkeaProduct> moreModels;
-
-	@simpl_collection("ikea_product")
-	@mm_name("coordinating_products")
-	private List<IkeaProduct> coordinatingProducts;
-
-	@simpl_collection("details2")
-	@mm_name("details2")
-	private List<MetadataString> details2;
+	@simpl_scalar
+	private MetadataString weight;
 
 	@simpl_collection("ikea_department")
 	@mm_name("departments")
@@ -85,94 +76,36 @@ public class IkeaProduct extends Product
 		this.dimensions = dimensions;
 	}
 
-	public List<IkeaProduct> getMoreModels()
+	public MetadataString	weight()
 	{
-		return moreModels;
+		MetadataString	result = this.weight;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.weight = result;
+		}
+		return result;
 	}
 
-  // lazy evaluation:
-  public List<IkeaProduct> moreModels()
-  {
-    if (moreModels == null)
-      moreModels = new ArrayList<IkeaProduct>();
-    return moreModels;
-  }
-
-  // addTo:
-  public void addToMoreModels(IkeaProduct element)
-  {
-    moreModels().add(element);
-  }
-
-  // size:
-  public int moreModelsSize()
-  {
-    return moreModels == null ? 0 : moreModels.size();
-  }
-
-	public void setMoreModels(List<IkeaProduct> moreModels)
+	public String getWeight()
 	{
-		this.moreModels = moreModels;
+		return this.weight == null ? null : weight().getValue();
 	}
 
-	public List<IkeaProduct> getCoordinatingProducts()
+	public MetadataString getWeightMetadata()
 	{
-		return coordinatingProducts;
+		return weight;
 	}
 
-  // lazy evaluation:
-  public List<IkeaProduct> coordinatingProducts()
-  {
-    if (coordinatingProducts == null)
-      coordinatingProducts = new ArrayList<IkeaProduct>();
-    return coordinatingProducts;
-  }
-
-  // addTo:
-  public void addToCoordinatingProducts(IkeaProduct element)
-  {
-    coordinatingProducts().add(element);
-  }
-
-  // size:
-  public int coordinatingProductsSize()
-  {
-    return coordinatingProducts == null ? 0 : coordinatingProducts.size();
-  }
-
-	public void setCoordinatingProducts(List<IkeaProduct> coordinatingProducts)
+	public void setWeight(String weight)
 	{
-		this.coordinatingProducts = coordinatingProducts;
+		if (weight != null)
+			this.weight().setValue(weight);
 	}
 
-	public List<MetadataString> getDetails2()
+	public void setWeightMetadata(MetadataString weight)
 	{
-		return details2;
-	}
-
-  // lazy evaluation:
-  public List<MetadataString> details2()
-  {
-    if (details2 == null)
-      details2 = new ArrayList<MetadataString>();
-    return details2;
-  }
-
-  // addTo:
-  public void addToDetails2(MetadataString element)
-  {
-    details2().add(element);
-  }
-
-  // size:
-  public int details2Size()
-  {
-    return details2 == null ? 0 : details2.size();
-  }
-
-	public void setDetails2(List<MetadataString> details2)
-	{
-		this.details2 = details2;
+		this.weight = weight;
 	}
 
 	public List<IkeaDepartment> getDepartments()
