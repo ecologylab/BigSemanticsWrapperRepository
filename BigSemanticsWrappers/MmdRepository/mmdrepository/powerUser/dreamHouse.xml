@@ -55,7 +55,7 @@
     		<xpath>.</xpath>
     	</scalar>
     	<scalar name="value">
-    		<xpath>../td[position() mod 2 = 0]</xpath>
+    		<xpath>./following-sibling::*</xpath>
     	</scalar>
     </collection>
 
