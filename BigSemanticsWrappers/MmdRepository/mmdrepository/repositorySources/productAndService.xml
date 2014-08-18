@@ -941,7 +941,8 @@
 
 	
   <meta_metadata name="ikea_product" extends="product" parser="xpath" user_agent_name="chrome">
-    <selector url_regex_fragment="http://www.ikea.com/us/en/catalog/products/[^/]*" domain="ikea.com" />
+<!--     <selector url_regex_fragment="http://www.ikea.com/us/en/catalog/products/[^/]*" domain="ikea.com" /> -->
+    <selector url_path_tree="http://www.ikea.com/us/en/catalog/products/" />
 
     <example_url location="http://www.ikea.com/us/en/catalog/products/60204805/" />
     <example_url location="http://www.ikea.com/us/en/catalog/products/S09906060/" />
