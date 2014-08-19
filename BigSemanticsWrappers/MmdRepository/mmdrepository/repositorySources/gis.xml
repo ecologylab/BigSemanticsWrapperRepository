@@ -15,6 +15,7 @@
 
   <meta_metadata name="contact_point" extends="compound_document" schema_org_itemtype="http://schema.org/ContactPoint"
     comment="Resembles a schema.org ContactPoint.">
+    <scalar name="location" xpath="" ></scalar>
     <scalar name="description">NULL</scalar>
 <!-- 	Next is commented out because it blows up MICE :( -->
  <!--         <concatenate_values> -->

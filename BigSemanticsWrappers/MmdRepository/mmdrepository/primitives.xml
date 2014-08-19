@@ -41,7 +41,7 @@
             	6: upload (create image_selfmade, audio_selfmade, video_selfmade for photo/audio/video)
 							7: edit / modify 
 							8: assign_primary_link -->
-    <composite name="creator" type="compound_document" polymorphic_scope="repository_documents"
+    <composite name="creator" type="document" polymorphic_scope="repository_documents"
       wrap="true">
       <scalar name="title" label="name" />
     </composite>
@@ -129,7 +129,7 @@
   </meta_metadata>
 
   <meta_metadata name="sequenced_clippable_document" extends="clippable_document" built_in="true">
-    <scalar name="duration" scalar_type="Int" comment="duration of media in milliseconds." />
+    <scalar name="duration" scalar_type="int" comment="duration of media in milliseconds." />
     <scalar name="file_format" scalar_type="String" hide="true" />
   </meta_metadata>
 
@@ -223,7 +223,7 @@
     	<xpath>//meta[@name='keywords']/@content</xpath>
     </scalar>
     
-    <composite name="see_also" type="compound_document">
+    <composite name="see_also" type="document">
 	      <xpath>//meta[@name='og:see_also']</xpath>
 	      <scalar name="title">
 	        <concatenate_values>
@@ -267,11 +267,12 @@
         <xpath>./@content</xpath>
       </scalar>
     </collection>
-    <collection name="article_bodies" child_type="html_text">
+    <collection name="article_bodies" child_type="document">
       <xpath>//*[@itemprop='articleBody']</xpath>
-      <scalar name="text">
+      <scalar name="description" label="content">
         <xpath>.</xpath>
       </scalar>
+   
     </collection>
     <after_semantic_actions>
       <visualize_clippings />
