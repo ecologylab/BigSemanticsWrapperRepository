@@ -35,12 +35,13 @@
     <scalar name="description">
       <xpath>//span[@id='product_overview']/p[1]</xpath>
     </scalar>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//div[@class='zoomPad']/img</xpath>
+      <xpath>//ul[@id='scroller']/li/a/img</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <collection name="available_colors" child_type="compound_document">
       <xpath>//div[@id='ctl00_MainContent_upColorList']/select/option[contains(@value, 'large')]</xpath>
@@ -49,20 +50,11 @@
       </scalar>
     </collection>
 <!--     <collection name="details" child_type="document"> -->
-    <collection name="details" child_scalar_type="string"  >
+    <collection name="product_details">
       <xpath>//span[@id='product_overview']/ul/li</xpath>
-<!--       <scalar name="title" label=""> -->
-<!--         <xpath>.</xpath> -->
-<!--       </scalar> -->
+
     </collection>
     
-    <collection name="main_images">
-    	<xpath>//ul[@id='scroller']/li/a/img</xpath>
-    	<scalar name="location">
-    		<xpath>./@src</xpath>
-    	</scalar>
-    </collection>
-
     <collection name="reviews">
       <xpath>//div[@class='pr-review-wrap']</xpath>
       <scalar name="title">
@@ -132,15 +124,15 @@
     <scalar name="price">
       <xpath>//span[@class='product_price_details']</xpath>
     </scalar>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//img[@class='main-image xl']</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
 <!--     <collection name="details" child_type="document"> -->
-    <collection name="details" child_scalar_type="string" >
+    <collection name="product_details">
       <xpath>//div[@class='product-description']/ul/li/ul/li</xpath>
 <!--       <scalar name="title" label=""> -->
 <!--         <xpath>.</xpath> -->
@@ -196,14 +188,14 @@
     <scalar name="price">
       <xpath>//span[@itemprop='price']</xpath>
     </scalar>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//img[@id='addlImgage0']</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 <!--     <collection name="details" child_type="document"> -->
-    <collection name="details" child_scalar_type="string" >
+    <collection name="product_details" >
       <xpath>/span[@itemprop='description']/ul/li/text()</xpath>
 <!--       <scalar name="title" label=""> -->
 <!--         <xpath>.</xpath> -->

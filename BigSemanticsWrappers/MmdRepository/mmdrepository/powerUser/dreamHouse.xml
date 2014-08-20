@@ -49,7 +49,7 @@
       <xpath>//div[@id='BVRRRatingOverall_']/div[3]/span[1]</xpath>
     </scalar>
     
-    <collection name="specs">
+    <collection name="specifications">
     	<xpath>//div[@id='specifications']//td[position() mod 2 = 1]</xpath>
     	<scalar name="name">
     		<xpath>.</xpath>
@@ -88,7 +88,7 @@
       </scalar>
     </composite>
     
-    <collection name="detailed_specifications">
+    <collection name="specification_table">
       <xpath>//ul[@class='bulletList']/li</xpath>
 
       <scalar name="title" label="type">
@@ -97,11 +97,11 @@
       
       <collection name="specifications">
         <xpath>//div[@id='specifications']//tr</xpath>
-        <scalar name="title" label="spec">
+        <scalar name="name">
           <xpath>./td[1]</xpath>
 <!--           <xpath>./td[3]</xpath> -->
         </scalar>
-        <scalar name="description" label="detail">
+        <scalar name="value">
           <xpath>./td[2]/text()</xpath>
 <!--           <xpath>./td[4]</xpath> -->
          </scalar>
