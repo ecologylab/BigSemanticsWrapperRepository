@@ -69,7 +69,7 @@
       </scalar>
     </collection> 
 
-    <collection name="people_also_buy" child_type="home_depot_product">
+    <collection name="companion_products" child_type="home_depot_product">
       <xpath>//div[@id='ymal_vert']/div[@class='product22']</xpath>
       <scalar name="location">
         <xpath>.//div[@class='product-name']/a/@href</xpath>
@@ -192,7 +192,7 @@
       <xpath>//div[@id='pricing']/span[@class='price']</xpath>
     </scalar>
 
-    <collection name="related_items" child_type="lowes_product">
+    <collection name="companion_products" child_type="lowes_product">
       <xpath>//div[@id='relatedItems']/div</xpath>
       <scalar name="location">
         <xpath>./a[2]/@href</xpath>
@@ -350,7 +350,7 @@
       </scalar>
     </collection>
 
-    <collection name="customers_also_viewed" child_type="landofnod_product">
+    <collection name="companion_products" child_type="landofnod_product">
       <xpath>//div[@id='coordinatingItems']//ul[@id='carouselCoordinating']//li</xpath>
       <scalar name="location">
         <xpath>.//a[@class='productImgLink']/@href</xpath>
@@ -400,7 +400,7 @@
       <xpath>//div[@class='pdpProductInfoSection']//div[@class='singlePrice']</xpath>
     </scalar>
 
-    <collection name="you_may_also_like" child_type="worldmarket_product">
+    <collection name="companion_products" child_type="worldmarket_product">
       <xpath>//div[@id='mybuyspagezone1']//ul/li</xpath>
       <scalar name="location">
         <xpath>.//span[@class='mbnamerowspan']/a/@href]</xpath>
@@ -450,7 +450,7 @@
       </scalar>
     </collection>
 
-    <collection name="people_also_shopped_for" child_type="westelm_product">
+    <collection name="companion_products" child_type="westelm_product">
       <xpath>//div[@class='you-may-also-like con']/div[2]//ul/li</xpath>
       <scalar name="location">
         <xpath>./a/@href</xpath>
@@ -534,7 +534,7 @@
       <xpath>//div[@class='price-container']</xpath>
     </scalar>
 
-    <collection name="customers_also_viewed" child_type="potterybarn_product">
+    <collection name="companion_products" child_type="potterybarn_product">
       <xpath>//div[@class='you-may-also-like con']//ul/li</xpath>
       <scalar name="location">
         <xpath>./a/@href</xpath>
