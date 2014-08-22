@@ -8,7 +8,6 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -27,10 +26,6 @@ import java.util.Map;
 @simpl_inherit
 public class HomeDepotProduct extends Product
 {
-	@simpl_collection("home_depot_product")
-	@mm_name("people_also_buy")
-	private List<HomeDepotProduct> peopleAlsoBuy;
-
 	@simpl_composite
 	@mm_name("image")
 	private Image image;
@@ -46,36 +41,6 @@ public class HomeDepotProduct extends Product
 		super(mmd);
 	}
 
-
-	public List<HomeDepotProduct> getPeopleAlsoBuy()
-	{
-		return peopleAlsoBuy;
-	}
-
-  // lazy evaluation:
-  public List<HomeDepotProduct> peopleAlsoBuy()
-  {
-    if (peopleAlsoBuy == null)
-      peopleAlsoBuy = new ArrayList<HomeDepotProduct>();
-    return peopleAlsoBuy;
-  }
-
-  // addTo:
-  public void addToPeopleAlsoBuy(HomeDepotProduct element)
-  {
-    peopleAlsoBuy().add(element);
-  }
-
-  // size:
-  public int peopleAlsoBuySize()
-  {
-    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
-  }
-
-	public void setPeopleAlsoBuy(List<HomeDepotProduct> peopleAlsoBuy)
-	{
-		this.peopleAlsoBuy = peopleAlsoBuy;
-	}
 
 	public Image getImage()
 	{

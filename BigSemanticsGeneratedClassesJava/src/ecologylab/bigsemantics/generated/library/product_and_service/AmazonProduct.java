@@ -9,7 +9,6 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  */
 
 import ecologylab.bigsemantics.generated.library.product_and_service.AmazonList;
-import ecologylab.bigsemantics.generated.library.product_and_service.AmazonProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -33,10 +32,6 @@ public class AmazonProduct extends Product
 	@simpl_composite
 	@mm_name("bestseller_list_rank")
 	private AmazonList bestsellerListRank;
-
-	@simpl_collection("amazon_product")
-	@mm_name("people_also_buy")
-	private List<AmazonProduct> peopleAlsoBuy;
 
 	@simpl_collection("compound_document")
 	@mm_name("list_mania")
@@ -68,36 +63,6 @@ public class AmazonProduct extends Product
 	public void setBestsellerListRank(AmazonList bestsellerListRank)
 	{
 		this.bestsellerListRank = bestsellerListRank;
-	}
-
-	public List<AmazonProduct> getPeopleAlsoBuy()
-	{
-		return peopleAlsoBuy;
-	}
-
-  // lazy evaluation:
-  public List<AmazonProduct> peopleAlsoBuy()
-  {
-    if (peopleAlsoBuy == null)
-      peopleAlsoBuy = new ArrayList<AmazonProduct>();
-    return peopleAlsoBuy;
-  }
-
-  // addTo:
-  public void addToPeopleAlsoBuy(AmazonProduct element)
-  {
-    peopleAlsoBuy().add(element);
-  }
-
-  // size:
-  public int peopleAlsoBuySize()
-  {
-    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
-  }
-
-	public void setPeopleAlsoBuy(List<AmazonProduct> peopleAlsoBuy)
-	{
-		this.peopleAlsoBuy = peopleAlsoBuy;
 	}
 
 	public List<CompoundDocument> getListMania()

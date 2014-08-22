@@ -11,6 +11,7 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
 import ecologylab.bigsemantics.generated.library.gis.GisLocation;
 import ecologylab.bigsemantics.generated.library.gis.PostalAddress;
 import ecologylab.bigsemantics.generated.library.misc.Review;
+import ecologylab.bigsemantics.generated.library.product_and_service.Commodity;
 import ecologylab.bigsemantics.generated.library.product_and_service.LabeledSpecifications;
 import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
@@ -47,6 +48,14 @@ public class Commodity extends CompoundDocument
 	@simpl_collection("review")
 	@mm_name("reviews")
 	private List<Review> reviews;
+
+	@simpl_collection("commodity")
+	@mm_name("companion_products")
+	private List<Commodity> companionProducts;
+
+	@simpl_collection("commodity")
+	@mm_name("comparitive_products")
+	private List<Commodity> comparitiveProducts;
 
 	@simpl_collection("product_detail")
 	@mm_name("product_details")
@@ -207,6 +216,66 @@ public class Commodity extends CompoundDocument
 	public void setReviews(List<Review> reviews)
 	{
 		this.reviews = reviews;
+	}
+
+	public List<Commodity> getCompanionProducts()
+	{
+		return companionProducts;
+	}
+
+  // lazy evaluation:
+  public List<Commodity> companionProducts()
+  {
+    if (companionProducts == null)
+      companionProducts = new ArrayList<Commodity>();
+    return companionProducts;
+  }
+
+  // addTo:
+  public void addToCompanionProducts(Commodity element)
+  {
+    companionProducts().add(element);
+  }
+
+  // size:
+  public int companionProductsSize()
+  {
+    return companionProducts == null ? 0 : companionProducts.size();
+  }
+
+	public void setCompanionProducts(List<Commodity> companionProducts)
+	{
+		this.companionProducts = companionProducts;
+	}
+
+	public List<Commodity> getComparitiveProducts()
+	{
+		return comparitiveProducts;
+	}
+
+  // lazy evaluation:
+  public List<Commodity> comparitiveProducts()
+  {
+    if (comparitiveProducts == null)
+      comparitiveProducts = new ArrayList<Commodity>();
+    return comparitiveProducts;
+  }
+
+  // addTo:
+  public void addToComparitiveProducts(Commodity element)
+  {
+    comparitiveProducts().add(element);
+  }
+
+  // size:
+  public int comparitiveProductsSize()
+  {
+    return comparitiveProducts == null ? 0 : comparitiveProducts.size();
+  }
+
+	public void setComparitiveProducts(List<Commodity> comparitiveProducts)
+	{
+		this.comparitiveProducts = comparitiveProducts;
 	}
 
 	public List<MetadataString> getProductDetails()

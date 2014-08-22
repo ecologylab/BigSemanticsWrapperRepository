@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class WalmartProduct extends Product
+public class AppleProductAccessory extends Product
 {
-	public WalmartProduct()
+	public AppleProductAccessory()
 	{ super(); }
 
-	public WalmartProduct(MetaMetadataCompositeField mmd) {
+	public AppleProductAccessory(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

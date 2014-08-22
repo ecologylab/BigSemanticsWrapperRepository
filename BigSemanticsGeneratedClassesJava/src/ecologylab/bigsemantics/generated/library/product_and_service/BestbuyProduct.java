@@ -8,7 +8,6 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.BestbuyProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -33,14 +32,6 @@ public class BestbuyProduct extends Product
 	@simpl_collection("whats_included")
 	@mm_name("whats_included")
 	private List<MetadataString> whatsIncluded;
-
-	@simpl_collection("bestbuy_product")
-	@mm_name("companion_products")
-	private List<BestbuyProduct> companionProducts;
-
-	@simpl_collection("bestbuy_product")
-	@mm_name("comparative_products")
-	private List<BestbuyProduct> comparativeProducts;
 
 	public BestbuyProduct()
 	{ super(); }
@@ -108,65 +99,5 @@ public class BestbuyProduct extends Product
 	public void setWhatsIncluded(List<MetadataString> whatsIncluded)
 	{
 		this.whatsIncluded = whatsIncluded;
-	}
-
-	public List<BestbuyProduct> getCompanionProducts()
-	{
-		return companionProducts;
-	}
-
-  // lazy evaluation:
-  public List<BestbuyProduct> companionProducts()
-  {
-    if (companionProducts == null)
-      companionProducts = new ArrayList<BestbuyProduct>();
-    return companionProducts;
-  }
-
-  // addTo:
-  public void addToCompanionProducts(BestbuyProduct element)
-  {
-    companionProducts().add(element);
-  }
-
-  // size:
-  public int companionProductsSize()
-  {
-    return companionProducts == null ? 0 : companionProducts.size();
-  }
-
-	public void setCompanionProducts(List<BestbuyProduct> companionProducts)
-	{
-		this.companionProducts = companionProducts;
-	}
-
-	public List<BestbuyProduct> getComparativeProducts()
-	{
-		return comparativeProducts;
-	}
-
-  // lazy evaluation:
-  public List<BestbuyProduct> comparativeProducts()
-  {
-    if (comparativeProducts == null)
-      comparativeProducts = new ArrayList<BestbuyProduct>();
-    return comparativeProducts;
-  }
-
-  // addTo:
-  public void addToComparativeProducts(BestbuyProduct element)
-  {
-    comparativeProducts().add(element);
-  }
-
-  // size:
-  public int comparativeProductsSize()
-  {
-    return comparativeProducts == null ? 0 : comparativeProducts.size();
-  }
-
-	public void setComparativeProducts(List<BestbuyProduct> comparativeProducts)
-	{
-		this.comparativeProducts = comparativeProducts;
 	}
 }
