@@ -2,9 +2,10 @@
   package="ecologylab.bigsemantics.generated.library.product_and_service">
 
   <!-- All non-site-specific wrappers for product/service -->
-	<meta_metadata name="labeled_specification" extends="metadata">
-		<scalar name="title" scalar_type="String"/>
-		<collection name="specifications" child_type="specification"/>
+	<meta_metadata name="labeled_specifications" extends="metadata">
+		<scalar name="title" scalar_type="String" hide_label="true" />
+		<collection name="specifications" child_type="specification" 
+		 hide_label="true" show_expanded_always="true" />
 	</meta_metadata>
 	
   <meta_metadata name="specification" extends="metadata">
@@ -17,12 +18,17 @@
     <collection name="main_images" layer="3.0"  />
     
     <scalar name="price" scalar_type="String" layer="3.0" style_name="topRight_div"
-      schema_org_itemprop="price" />
+      schema_org_itemprop="price" >
+      	<xpath>//*[@itemprop='price']//text()</xpath>
       
-  	<collection name="product_details" child_scalar_type="String"/>
+    </scalar>
+      
+  	<collection name="product_details" child_scalar_type="String" label="details"/>
   	<!-- labeled_specifications is a collection of collection of specs, each with its own label -->
-		<collection name="specifications" child_type="specification" />
-		<collection name="specification_table" child_type="labeled_specification"/>
+  	
+	<collection name="specifications" child_type="specification" />
+	<collection name="specifications_table" child_type="labeled_specifications"/>
+		
 		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" layer="2.0"
       style_name="underTopRight_div" schema_org_itemprop="aggregateRating" />
   	<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
@@ -107,11 +113,16 @@
 
     <collection name="reviews">
       <xpath>//div[@id='revMHRL']/div[@id]</xpath>
+      
       <scalar name="rating">
         <xpath>.//*[contains(@title, '5 stars')]/@title</xpath>
+     	<regex_op regex=".0 out of 5" replace="" />
       </scalar>
       <scalar name="description">
         <xpath>./div[@id]/div</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='a-size-base a-text-bold']</xpath>
       </scalar>
     </collection>
 
@@ -358,10 +369,10 @@
     <scalar name="title">
       <xpath>//div[@class='section section-product-title']/h3/text()</xpath>
     </scalar>
-
-    <scalar name="price">
-      <xpath>//ul[@class='purchase-info']/li[@class='total']//span[@itemprop='price']/text()</xpath>
-    </scalar>
+    
+    <collection name="product_details">
+    	<xpath>//div[@class='feature media-block']//p/text()</xpath>
+    </collection>
 
     <collection name="main_images">
       <xpath>//img[@class='hero-img hero-img ir']</xpath>
@@ -754,24 +765,38 @@
     <scalar name="num_reviews">
       <xpath>//span[@itemprop='reviewCount']</xpath>
     </scalar>
+    
     <collection name="reviews">
-      <xpath>//table[@class='grpReviews']//tr/th[@class='reviewer']/..</xpath>
-      <scalar name="rating">
+      <xpath>//table[@class='grpReviews']/tbody/tr</xpath>
+
+<!-- 	  <def_var name="rating_alt" type="node"> -->
+<!-- 	      <xpath>.//span[@class='itmRating']/img/@alt</xpath> -->
+<!-- 	  </def_var> -->
+      <scalar name="rating" >
+<!--       <scalar name="rating" context_node="rating_alt"> -->
+<!--         <xpath>substring-before(.//span[@class='itmRating']/img/@alt, 'out of ')</xpath> -->
+<!--         <xpath>substring-before(.//span[@class='itmRating']/img/@alt, 'out of ')</xpath> -->
         <xpath>.//span[@class='itmRating']/img/@alt</xpath>
+      	<regex_op regex="out of 5" replace="" />
       </scalar>
       <scalar name="title">
         <xpath>.//h3/text()</xpath>
       </scalar>
       <scalar name="description">
-        <xpath>.//div[@class='details']</xpath>
+        <xpath>.//div[@class='details']/p</xpath>
       </scalar>
     </collection>
+    
     <collection name="product_details" child_scalar_type="string">
       <xpath>//ul[@id='grpBullet_']/li/text()</xpath>
     </collection>
     
+    <collection name="features" child_scalar_type="string">
+      <xpath>//ul[@id='hightlights']/li/span</xpath>
+    </collection>
+    
     <!-- Detailed specs -->
-    <collection name="specification_table">
+    <collection name="specifications_table">
       <xpath>//div[@id='Specs']/fieldset</xpath>
       <scalar name="title">
         <xpath>./h3</xpath>
@@ -807,7 +832,7 @@
       <scalar name="location">
         <xpath>.//div[@class='wrapper']/a/@href</xpath>
       </scalar>
-      <collection name="specification_table">
+      <collection name="specifications_table">
         <xpath>//ul[@class='featureList']</xpath>
         <collection name="specifications">
           <xpath>./li</xpath>

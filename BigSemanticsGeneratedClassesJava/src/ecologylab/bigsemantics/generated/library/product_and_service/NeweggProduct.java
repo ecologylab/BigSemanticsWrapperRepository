@@ -9,7 +9,6 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  */
 
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -29,9 +28,9 @@ public class NeweggProduct extends Product
 	@simpl_scalar
 	private MetadataString itemNumber;
 
-	@simpl_collection("compound_document")
-	@mm_name("headline_specs")
-	private List<CompoundDocument> headlineSpecs;
+	@simpl_collection("feature")
+	@mm_name("features")
+	private List<MetadataString> features;
 
 	public NeweggProduct()
 	{ super(); }
@@ -73,33 +72,33 @@ public class NeweggProduct extends Product
 		this.itemNumber = itemNumber;
 	}
 
-	public List<CompoundDocument> getHeadlineSpecs()
+	public List<MetadataString> getFeatures()
 	{
-		return headlineSpecs;
+		return features;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> headlineSpecs()
+  public List<MetadataString> features()
   {
-    if (headlineSpecs == null)
-      headlineSpecs = new ArrayList<CompoundDocument>();
-    return headlineSpecs;
+    if (features == null)
+      features = new ArrayList<MetadataString>();
+    return features;
   }
 
   // addTo:
-  public void addToHeadlineSpecs(CompoundDocument element)
+  public void addToFeatures(MetadataString element)
   {
-    headlineSpecs().add(element);
+    features().add(element);
   }
 
   // size:
-  public int headlineSpecsSize()
+  public int featuresSize()
   {
-    return headlineSpecs == null ? 0 : headlineSpecs.size();
+    return features == null ? 0 : features.size();
   }
 
-	public void setHeadlineSpecs(List<CompoundDocument> headlineSpecs)
+	public void setFeatures(List<MetadataString> features)
 	{
-		this.headlineSpecs = headlineSpecs;
+		this.features = features;
 	}
 }

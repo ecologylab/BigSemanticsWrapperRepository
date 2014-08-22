@@ -11,6 +11,7 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
 import ecologylab.bigsemantics.generated.library.gis.GisLocation;
 import ecologylab.bigsemantics.generated.library.gis.PostalAddress;
 import ecologylab.bigsemantics.generated.library.misc.Review;
+import ecologylab.bigsemantics.generated.library.product_and_service.LabeledSpecifications;
 import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -47,9 +48,17 @@ public class Commodity extends CompoundDocument
 	@mm_name("reviews")
 	private List<Review> reviews;
 
+	@simpl_collection("product_detail")
+	@mm_name("product_details")
+	private List<MetadataString> productDetails;
+
 	@simpl_collection("specification")
-	@mm_name("specs")
-	private List<Specification> specs;
+	@mm_name("specifications")
+	private List<Specification> specifications;
+
+	@simpl_collection("labeled_specifications")
+	@mm_name("specifications_table")
+	private List<LabeledSpecifications> specificationsTable;
 
 	@simpl_scalar
 	private MetadataParsedURL reviewsLocation;
@@ -200,34 +209,94 @@ public class Commodity extends CompoundDocument
 		this.reviews = reviews;
 	}
 
-	public List<Specification> getSpecs()
+	public List<MetadataString> getProductDetails()
 	{
-		return specs;
+		return productDetails;
 	}
 
   // lazy evaluation:
-  public List<Specification> specs()
+  public List<MetadataString> productDetails()
   {
-    if (specs == null)
-      specs = new ArrayList<Specification>();
-    return specs;
+    if (productDetails == null)
+      productDetails = new ArrayList<MetadataString>();
+    return productDetails;
   }
 
   // addTo:
-  public void addToSpecs(Specification element)
+  public void addToProductDetails(MetadataString element)
   {
-    specs().add(element);
+    productDetails().add(element);
   }
 
   // size:
-  public int specsSize()
+  public int productDetailsSize()
   {
-    return specs == null ? 0 : specs.size();
+    return productDetails == null ? 0 : productDetails.size();
   }
 
-	public void setSpecs(List<Specification> specs)
+	public void setProductDetails(List<MetadataString> productDetails)
 	{
-		this.specs = specs;
+		this.productDetails = productDetails;
+	}
+
+	public List<Specification> getSpecifications()
+	{
+		return specifications;
+	}
+
+  // lazy evaluation:
+  public List<Specification> specifications()
+  {
+    if (specifications == null)
+      specifications = new ArrayList<Specification>();
+    return specifications;
+  }
+
+  // addTo:
+  public void addToSpecifications(Specification element)
+  {
+    specifications().add(element);
+  }
+
+  // size:
+  public int specificationsSize()
+  {
+    return specifications == null ? 0 : specifications.size();
+  }
+
+	public void setSpecifications(List<Specification> specifications)
+	{
+		this.specifications = specifications;
+	}
+
+	public List<LabeledSpecifications> getSpecificationsTable()
+	{
+		return specificationsTable;
+	}
+
+  // lazy evaluation:
+  public List<LabeledSpecifications> specificationsTable()
+  {
+    if (specificationsTable == null)
+      specificationsTable = new ArrayList<LabeledSpecifications>();
+    return specificationsTable;
+  }
+
+  // addTo:
+  public void addToSpecificationsTable(LabeledSpecifications element)
+  {
+    specificationsTable().add(element);
+  }
+
+  // size:
+  public int specificationsTableSize()
+  {
+    return specificationsTable == null ? 0 : specificationsTable.size();
+  }
+
+	public void setSpecificationsTable(List<LabeledSpecifications> specificationsTable)
+	{
+		this.specificationsTable = specificationsTable;
 	}
 
 	public MetadataParsedURL	reviewsLocation()

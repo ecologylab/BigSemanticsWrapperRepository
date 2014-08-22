@@ -19,9 +19,9 @@
 
   <meta_metadata name="review" extends="rating" schema_org_itemtype="http://schema.org/Review"
     schema_org_itemprop="reviews">
-    <scalar name="title" scalar_type="string" />
-    <scalar name="description" schema_org_itemprop="reviewBody" />
-    <scalar name="rating" schema_org_itemprop="reviewRating" />
+    <scalar name="title" scalar_type="string" use_value_as_label="rating" style_name="metadata_italic"/>
+    <scalar name="description" schema_org_itemprop="reviewBody" hide_label="true" />
+    <scalar name="rating" schema_org_itemprop="reviewRating" hide="true" />
   </meta_metadata>
 
 

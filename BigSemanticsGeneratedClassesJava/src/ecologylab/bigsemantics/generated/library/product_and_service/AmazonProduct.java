@@ -42,10 +42,6 @@ public class AmazonProduct extends Product
 	@mm_name("list_mania")
 	private List<CompoundDocument> listMania;
 
-	@simpl_collection("compound_document")
-	@mm_name("kindle_specifications")
-	private List<CompoundDocument> kindleSpecifications;
-
 	public AmazonProduct()
 	{ super(); }
 
@@ -132,35 +128,5 @@ public class AmazonProduct extends Product
 	public void setListMania(List<CompoundDocument> listMania)
 	{
 		this.listMania = listMania;
-	}
-
-	public List<CompoundDocument> getKindleSpecifications()
-	{
-		return kindleSpecifications;
-	}
-
-  // lazy evaluation:
-  public List<CompoundDocument> kindleSpecifications()
-  {
-    if (kindleSpecifications == null)
-      kindleSpecifications = new ArrayList<CompoundDocument>();
-    return kindleSpecifications;
-  }
-
-  // addTo:
-  public void addToKindleSpecifications(CompoundDocument element)
-  {
-    kindleSpecifications().add(element);
-  }
-
-  // size:
-  public int kindleSpecificationsSize()
-  {
-    return kindleSpecifications == null ? 0 : kindleSpecifications.size();
-  }
-
-	public void setKindleSpecifications(List<CompoundDocument> kindleSpecifications)
-	{
-		this.kindleSpecifications = kindleSpecifications;
 	}
 }

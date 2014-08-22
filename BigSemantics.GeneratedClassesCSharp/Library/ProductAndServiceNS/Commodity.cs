@@ -41,9 +41,17 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("reviews")]
 		private List<Review> reviews;
 
+		[SimplCollection("product_detail")]
+		[MmName("product_details")]
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> productDetails;
+
 		[SimplCollection("specification")]
-		[MmName("specs")]
-		private List<Specification> specs;
+		[MmName("specifications")]
+		private List<Specification> specifications;
+
+		[SimplCollection("labeled_specifications")]
+		[MmName("specifications_table")]
+		private List<LabeledSpecifications> specificationsTable;
 
 		[SimplScalar]
 		private MetadataParsedURL reviewsLocation;
@@ -118,14 +126,40 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public List<Specification> Specs
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> ProductDetails
 		{
-			get{return specs;}
+			get{return productDetails;}
 			set
 			{
-				if (this.specs != value)
+				if (this.productDetails != value)
 				{
-					this.specs = value;
+					this.productDetails = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Specification> Specifications
+		{
+			get{return specifications;}
+			set
+			{
+				if (this.specifications != value)
+				{
+					this.specifications = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<LabeledSpecifications> SpecificationsTable
+		{
+			get{return specificationsTable;}
+			set
+			{
+				if (this.specificationsTable != value)
+				{
+					this.specificationsTable = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

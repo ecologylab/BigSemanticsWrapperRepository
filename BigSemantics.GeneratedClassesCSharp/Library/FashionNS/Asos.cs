@@ -13,7 +13,6 @@ using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -26,14 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 	[SimplInherit]
 	public class Asos : Product
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
-		[SimplCollection("detail")]
-		[MmName("details")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> details;
-
 		[SimplComposite]
 		[MmName("designer")]
 		private Designer designer;
@@ -51,32 +42,6 @@ namespace Ecologylab.Semantics.Generated.Library.FashionNS
 
 		public Asos(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Details
-		{
-			get{return details;}
-			set
-			{
-				if (this.details != value)
-				{
-					this.details = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public Designer Designer
 		{

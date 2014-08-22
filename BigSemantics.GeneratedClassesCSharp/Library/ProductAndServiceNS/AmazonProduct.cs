@@ -40,10 +40,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("list_mania")]
 		private List<CompoundDocument> listMania;
 
-		[SimplCollection("compound_document")]
-		[MmName("kindle_specifications")]
-		private List<CompoundDocument> kindleSpecifications;
-
 		public AmazonProduct()
 		{ }
 
@@ -97,19 +93,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.listMania != value)
 				{
 					this.listMania = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<CompoundDocument> KindleSpecifications
-		{
-			get{return kindleSpecifications;}
-			set
-			{
-				if (this.kindleSpecifications != value)
-				{
-					this.kindleSpecifications = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
