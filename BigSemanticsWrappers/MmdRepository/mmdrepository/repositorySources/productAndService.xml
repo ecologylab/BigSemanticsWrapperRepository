@@ -19,11 +19,12 @@
     
     <scalar name="price" scalar_type="String" layer="3.0" style_name="topRight_div"
       schema_org_itemprop="price" >
-      	<xpath>//*[@itemprop='price']//text()</xpath>
-      
+      <xpath>//*[@itemprop='price']//text()</xpath>      
     </scalar>
-      
-  	<collection name="product_details" child_scalar_type="String" label="details"/>
+  	<collection name="companion_products" label="people_by_with" child_type="commodity"/>
+  	<collection name="comparitive_products" label="people_by_instead" child_type="commodity"/>
+  	
+  	<collection name="product_details" child_scalar_type="String"/>
   	<!-- labeled_specifications is a collection of collection of specs, each with its own label -->
   	
 	<collection name="specifications" child_type="specification" />
@@ -35,7 +36,7 @@
   	<scalar name="num_reviews" scalar_type="Int" layer="2.0" style_name="reviewCount_div"
       schema_org_itemprop="reviewCount" />
     <collection name="reviews" child_type="review" layer="0.8" style_name="reviews_div" />
-
+	
     <composite name="business_website" type="compound_document" />
     <composite name="business_address" type="postal_address" />
     <composite name="business_gis_location" type="gis_location" />
@@ -139,7 +140,7 @@
       </scalar>
     </composite>
 
-    <collection name="people_also_buy" child_type="amazon_product">
+    <collection name="companion_products" child_type="amazon_product">
 <!--       <xpath>//div[@id='vtpsims']/ul/li</xpath> -->
 <!-- 	  <xpath>//div[@class='shoveler-content']</xpath> -->
 	  <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath>
@@ -408,11 +409,11 @@
     </collection>
   </meta_metadata>
 
-	<!--  
+	  
   <meta_metadata name="apple_product_accessory" extends="product" parser="xpath"
     user_agent_name="chrome">
     <selector url_path_tree="http://store.apple.com/us/product/" />
-    <example_rul url="http://store.apple.com/us/product/H9345LL/A/hp-photosmart-5520-e-all-in-one-printer?fnode=000105072b" />
+    <example_url url="http://store.apple.com/us/product/H9345LL/A/hp-photosmart-5520-e-all-in-one-printer?fnode=000105072b" />
 
     <scalar name="title">
       <xpath>//div[@class='action-card']//div[@id='title']/h1[@itemprop='name']/text()</xpath>
@@ -437,14 +438,19 @@
       <xpath>//li[@id='overview-applerecommends']//div[@class='bkg-none']/text()</xpath>
     </scalar>
 
-    <collection name="overview" child_scalar_type="String">
+    <collection name="product_details" >
       <xpath>//div[@class='group-image-none clearfix']//p</xpath>
+        <xpath>//li[@id='overview-highlights]//ul[@class='pbl bulleted']/li</xpath>
     </collection>
-    <collection name="highlights" child_scalar_type="String">
-      <xpath>//li[@id='overview-highlights]//ul[@class='pbl bulleted']/li</xpath>
-    </collection>
-    <collection name="tech_specs" child_scalar_type="String">
+    
+    <collection name="specifications">
       <xpath>//li[@id='overview-techspecs']//ul[@class='pbl bulleted']/li</xpath>
+      <scalar name="name">
+      	<xpath>substring-before(., ':')</xpath>
+      </scalar>
+      		<scalar name="value" >
+				<xpath>substring-after(., ':')</xpath>
+			</scalar>    
     </collection>
 
     <collection name="reviews">
@@ -462,7 +468,7 @@
       </scalar>
     </collection>
 
-    <collection name="people_also_buy" child_type="apple_product_accessory">
+    <collection name="companion_products" child_type="apple_product_accessory">
       <xpath>//div[@id='navigation']//div[@class='tile-body']</xpath>
       <scalar name="location">
         <xpath>./h3/a/@href</xpath>
@@ -476,7 +482,7 @@
     </collection>
   </meta_metadata>
  	
- 	-->
+ 	
   <meta_metadata name="bestbuy_product" extends="product" parser="xpath"
     user_agentname="firefox">
     <selector url_path_tree="http://www.bestbuy.com/site/" domain="bestbuy.com" />
@@ -523,8 +529,7 @@
         <xpath>./text()</xpath>
       </scalar>
     </collection>
-
-    <collection name="companion_products" child_type="bestbuy_product">
+    <collection name="companion_products">
       <xpath>(//*[@id='productList'])[1]/li</xpath>
       <scalar name="title">
         <xpath>./a[2]/text()</xpath>
@@ -534,7 +539,7 @@
       </scalar>
     </collection>
 
-    <collection name="comparative_products" child_type="bestbuy_product">
+    <collection name="comparitive_products">
       <xpath>(//*[@id='productList'])[2]/li</xpath>
       <scalar name="title">
         <xpath>./a[2]/text()</xpath>
@@ -943,7 +948,7 @@
       </scalar>
     </collection>
 
-    <collection name="people_also_viewed" child_type="target_product">
+    <collection name="companion_products" child_type="target_product">
       <xpath>//ul[@class='borderContainer']//div[@class='product-container']</xpath>
       <scalar name="location">
         <xpath>.//p[@class='productLink-container']/a[@class='waRRtag']/@href</xpath>
@@ -1081,7 +1086,7 @@
       </scalar>
     </collection>
 
-    <collection name="people_also_buy" child_type="walmart_product">
+    <collection name="companion_products" child_type="walmart_product">
       <xpath>//div[@class='prtHid']//div[@id='rr_placement_2']</xpath>
       <scalar name="location">
         <xpath>.//a/@href</xpath>
