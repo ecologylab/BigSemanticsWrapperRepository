@@ -13,6 +13,7 @@ using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -32,6 +33,10 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 		[SimplComposite]
 		[MmName("image")]
 		private Image image;
+
+		[SimplCollection("product_details2")]
+		[MmName("product_details2")]
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> productDetails2;
 
 		public HomeDepotProduct()
 		{ }
@@ -60,6 +65,19 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 				if (this.image != value)
 				{
 					this.image = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> ProductDetails2
+		{
+			get{return productDetails2;}
+			set
+			{
+				if (this.productDetails2 != value)
+				{
+					this.productDetails2 = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

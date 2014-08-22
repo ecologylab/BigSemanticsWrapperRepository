@@ -12,6 +12,7 @@ using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -28,13 +29,9 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("features")]
 		private List<Specification> features;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("whats_included")]
 		[MmName("whats_included")]
-		private List<CompoundDocument> whatsIncluded;
-
-		[SimplCollection("compound_document")]
-		[MmName("specifications")]
-		private List<CompoundDocument> specifications;
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> whatsIncluded;
 
 		[SimplCollection("bestbuy_product")]
 		[MmName("companion_products")]
@@ -63,7 +60,7 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public List<CompoundDocument> WhatsIncluded
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> WhatsIncluded
 		{
 			get{return whatsIncluded;}
 			set
@@ -71,19 +68,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.whatsIncluded != value)
 				{
 					this.whatsIncluded = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<CompoundDocument> Specifications
-		{
-			get{return specifications;}
-			set
-			{
-				if (this.specifications != value)
-				{
-					this.specifications = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

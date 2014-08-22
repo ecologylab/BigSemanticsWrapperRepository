@@ -12,16 +12,13 @@ import ecologylab.bigsemantics.generated.library.fashion.Asos;
 import ecologylab.bigsemantics.generated.library.fashion.Designer;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,14 +26,6 @@ import java.util.Map;
 @simpl_inherit
 public class Asos extends Product
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
-	@simpl_collection("detail")
-	@mm_name("details")
-	private List<MetadataString> details;
-
 	@simpl_composite
 	@mm_name("designer")
 	private Designer designer;
@@ -56,46 +45,6 @@ public class Asos extends Product
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
-
-	public List<MetadataString> getDetails()
-	{
-		return details;
-	}
-
-  // lazy evaluation:
-  public List<MetadataString> details()
-  {
-    if (details == null)
-      details = new ArrayList<MetadataString>();
-    return details;
-  }
-
-  // addTo:
-  public void addToDetails(MetadataString element)
-  {
-    details().add(element);
-  }
-
-  // size:
-  public int detailsSize()
-  {
-    return details == null ? 0 : details.size();
-  }
-
-	public void setDetails(List<MetadataString> details)
-	{
-		this.details = details;
-	}
 
 	public Designer getDesigner()
 	{

@@ -8,27 +8,20 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.dreamHouse.WorldmarketProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class WorldmarketProduct extends Product
 {
-	@simpl_collection("worldmarket_product")
-	@mm_name("you_may_also_like")
-	private List<WorldmarketProduct> youMayAlsoLike;
-
 	@simpl_composite
 	@mm_name("image")
 	private Image image;
@@ -40,36 +33,6 @@ public class WorldmarketProduct extends Product
 		super(mmd);
 	}
 
-
-	public List<WorldmarketProduct> getYouMayAlsoLike()
-	{
-		return youMayAlsoLike;
-	}
-
-  // lazy evaluation:
-  public List<WorldmarketProduct> youMayAlsoLike()
-  {
-    if (youMayAlsoLike == null)
-      youMayAlsoLike = new ArrayList<WorldmarketProduct>();
-    return youMayAlsoLike;
-  }
-
-  // addTo:
-  public void addToYouMayAlsoLike(WorldmarketProduct element)
-  {
-    youMayAlsoLike().add(element);
-  }
-
-  // size:
-  public int youMayAlsoLikeSize()
-  {
-    return youMayAlsoLike == null ? 0 : youMayAlsoLike.size();
-  }
-
-	public void setYouMayAlsoLike(List<WorldmarketProduct> youMayAlsoLike)
-	{
-		this.youMayAlsoLike = youMayAlsoLike;
-	}
 
 	public Image getImage()
 	{

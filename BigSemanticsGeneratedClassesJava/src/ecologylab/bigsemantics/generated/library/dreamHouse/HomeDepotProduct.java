@@ -8,16 +8,17 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.dreamHouse.HomeDepotProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,13 +26,13 @@ import java.util.Map;
 @simpl_inherit
 public class HomeDepotProduct extends Product
 {
-	@simpl_collection("home_depot_product")
-	@mm_name("people_also_buy")
-	private List<HomeDepotProduct> peopleAlsoBuy;
-
 	@simpl_composite
 	@mm_name("image")
 	private Image image;
+
+	@simpl_collection("product_details2")
+	@mm_name("product_details2")
+	private List<MetadataString> productDetails2;
 
 	public HomeDepotProduct()
 	{ super(); }
@@ -41,36 +42,6 @@ public class HomeDepotProduct extends Product
 	}
 
 
-	public List<HomeDepotProduct> getPeopleAlsoBuy()
-	{
-		return peopleAlsoBuy;
-	}
-
-  // lazy evaluation:
-  public List<HomeDepotProduct> peopleAlsoBuy()
-  {
-    if (peopleAlsoBuy == null)
-      peopleAlsoBuy = new ArrayList<HomeDepotProduct>();
-    return peopleAlsoBuy;
-  }
-
-  // addTo:
-  public void addToPeopleAlsoBuy(HomeDepotProduct element)
-  {
-    peopleAlsoBuy().add(element);
-  }
-
-  // size:
-  public int peopleAlsoBuySize()
-  {
-    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
-  }
-
-	public void setPeopleAlsoBuy(List<HomeDepotProduct> peopleAlsoBuy)
-	{
-		this.peopleAlsoBuy = peopleAlsoBuy;
-	}
-
 	public Image getImage()
 	{
 		return image;
@@ -79,5 +50,35 @@ public class HomeDepotProduct extends Product
 	public void setImage(Image image)
 	{
 		this.image = image;
+	}
+
+	public List<MetadataString> getProductDetails2()
+	{
+		return productDetails2;
+	}
+
+  // lazy evaluation:
+  public List<MetadataString> productDetails2()
+  {
+    if (productDetails2 == null)
+      productDetails2 = new ArrayList<MetadataString>();
+    return productDetails2;
+  }
+
+  // addTo:
+  public void addToProductDetails2(MetadataString element)
+  {
+    productDetails2().add(element);
+  }
+
+  // size:
+  public int productDetails2Size()
+  {
+    return productDetails2 == null ? 0 : productDetails2.size();
+  }
+
+	public void setProductDetails2(List<MetadataString> productDetails2)
+	{
+		this.productDetails2 = productDetails2;
 	}
 }

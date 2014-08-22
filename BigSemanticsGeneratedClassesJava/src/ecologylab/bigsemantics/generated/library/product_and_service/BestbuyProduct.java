@@ -8,16 +8,16 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.BestbuyProduct;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.generated.library.product_and_service.Specification;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,21 +29,9 @@ public class BestbuyProduct extends Product
 	@mm_name("features")
 	private List<Specification> features;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("whats_included")
 	@mm_name("whats_included")
-	private List<CompoundDocument> whatsIncluded;
-
-	@simpl_collection("compound_document")
-	@mm_name("specifications")
-	private List<CompoundDocument> specifications;
-
-	@simpl_collection("bestbuy_product")
-	@mm_name("companion_products")
-	private List<BestbuyProduct> companionProducts;
-
-	@simpl_collection("bestbuy_product")
-	@mm_name("comparative_products")
-	private List<BestbuyProduct> comparativeProducts;
+	private List<MetadataString> whatsIncluded;
 
 	public BestbuyProduct()
 	{ super(); }
@@ -83,21 +71,21 @@ public class BestbuyProduct extends Product
 		this.features = features;
 	}
 
-	public List<CompoundDocument> getWhatsIncluded()
+	public List<MetadataString> getWhatsIncluded()
 	{
 		return whatsIncluded;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> whatsIncluded()
+  public List<MetadataString> whatsIncluded()
   {
     if (whatsIncluded == null)
-      whatsIncluded = new ArrayList<CompoundDocument>();
+      whatsIncluded = new ArrayList<MetadataString>();
     return whatsIncluded;
   }
 
   // addTo:
-  public void addToWhatsIncluded(CompoundDocument element)
+  public void addToWhatsIncluded(MetadataString element)
   {
     whatsIncluded().add(element);
   }
@@ -108,98 +96,8 @@ public class BestbuyProduct extends Product
     return whatsIncluded == null ? 0 : whatsIncluded.size();
   }
 
-	public void setWhatsIncluded(List<CompoundDocument> whatsIncluded)
+	public void setWhatsIncluded(List<MetadataString> whatsIncluded)
 	{
 		this.whatsIncluded = whatsIncluded;
-	}
-
-	public List<CompoundDocument> getSpecifications()
-	{
-		return specifications;
-	}
-
-  // lazy evaluation:
-  public List<CompoundDocument> specifications()
-  {
-    if (specifications == null)
-      specifications = new ArrayList<CompoundDocument>();
-    return specifications;
-  }
-
-  // addTo:
-  public void addToSpecifications(CompoundDocument element)
-  {
-    specifications().add(element);
-  }
-
-  // size:
-  public int specificationsSize()
-  {
-    return specifications == null ? 0 : specifications.size();
-  }
-
-	public void setSpecifications(List<CompoundDocument> specifications)
-	{
-		this.specifications = specifications;
-	}
-
-	public List<BestbuyProduct> getCompanionProducts()
-	{
-		return companionProducts;
-	}
-
-  // lazy evaluation:
-  public List<BestbuyProduct> companionProducts()
-  {
-    if (companionProducts == null)
-      companionProducts = new ArrayList<BestbuyProduct>();
-    return companionProducts;
-  }
-
-  // addTo:
-  public void addToCompanionProducts(BestbuyProduct element)
-  {
-    companionProducts().add(element);
-  }
-
-  // size:
-  public int companionProductsSize()
-  {
-    return companionProducts == null ? 0 : companionProducts.size();
-  }
-
-	public void setCompanionProducts(List<BestbuyProduct> companionProducts)
-	{
-		this.companionProducts = companionProducts;
-	}
-
-	public List<BestbuyProduct> getComparativeProducts()
-	{
-		return comparativeProducts;
-	}
-
-  // lazy evaluation:
-  public List<BestbuyProduct> comparativeProducts()
-  {
-    if (comparativeProducts == null)
-      comparativeProducts = new ArrayList<BestbuyProduct>();
-    return comparativeProducts;
-  }
-
-  // addTo:
-  public void addToComparativeProducts(BestbuyProduct element)
-  {
-    comparativeProducts().add(element);
-  }
-
-  // size:
-  public int comparativeProductsSize()
-  {
-    return comparativeProducts == null ? 0 : comparativeProducts.size();
-  }
-
-	public void setComparativeProducts(List<BestbuyProduct> comparativeProducts)
-	{
-		this.comparativeProducts = comparativeProducts;
 	}
 }

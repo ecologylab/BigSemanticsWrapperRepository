@@ -35,6 +35,7 @@
       location="http://www.homedepot.com/p/Home-Decorators-Collection-70-5-in-H-x-69-75-in-W-Cherry-Wood-and-Bamboo-4-Panel-Room-Divider-5852120120/202368416?N=bdtw#.UY56OVf_E4k" />
 	<example_url 
 	  location="http://www.homedepot.com/p/Home-Legend-Hand-Scraped-Maple-Sedona-3-8-in-Thick-x-3-1-2-in-Wide-x-35-1-2-in-Length-Click-Lock-Hardwood-Flooring-20-71-sq-ft-cs-HL502/202269884" />
+
     <scalar name="title">
       <xpath>//span[@itemprop='name']</xpath>
     </scalar>
@@ -49,7 +50,7 @@
       <xpath>//div[@id='BVRRRatingOverall_']/div[3]/span[1]</xpath>
     </scalar>
     
-    <collection name="specs">
+    <collection name="specifications">
     	<xpath>//div[@id='specifications']//td[position() mod 2 = 1]</xpath>
     	<scalar name="name">
     		<xpath>.</xpath>
@@ -69,7 +70,7 @@
       </scalar>
     </collection> 
 
-    <collection name="people_also_buy" child_type="home_depot_product">
+    <collection name="companion_products" child_type="home_depot_product">
       <xpath>//div[@id='ymal_vert']/div[@class='product22']</xpath>
       <scalar name="location">
         <xpath>.//div[@class='product-name']/a/@href</xpath>
@@ -88,26 +89,21 @@
       </scalar>
     </composite>
     
-    <collection name="detailed_specifications">
+    <collection name="product_details2" label="product_details" child_scalar_type="string">
       <xpath>//ul[@class='bulletList']/li</xpath>
+	</collection>
 
-      <scalar name="title" label="type">
-        <xpath>.</xpath>
-      </scalar>
-      
       <collection name="specifications">
         <xpath>//div[@id='specifications']//tr</xpath>
-        <scalar name="title" label="spec">
+        <scalar name="name">
           <xpath>./td[1]</xpath>
 <!--           <xpath>./td[3]</xpath> -->
         </scalar>
-        <scalar name="description" label="detail">
+        <scalar name="value">
           <xpath>./td[2]/text()</xpath>
 <!--           <xpath>./td[4]</xpath> -->
          </scalar>
       </collection>
-      
- 	</collection>
 
   </meta_metadata>
 
@@ -192,7 +188,7 @@
       <xpath>//div[@id='pricing']/span[@class='price']</xpath>
     </scalar>
 
-    <collection name="related_items" child_type="lowes_product">
+    <collection name="companion_products" child_type="lowes_product">
       <xpath>//div[@id='relatedItems']/div</xpath>
       <scalar name="location">
         <xpath>./a[2]/@href</xpath>
@@ -350,7 +346,7 @@
       </scalar>
     </collection>
 
-    <collection name="customers_also_viewed" child_type="landofnod_product">
+    <collection name="companion_products" child_type="landofnod_product">
       <xpath>//div[@id='coordinatingItems']//ul[@id='carouselCoordinating']//li</xpath>
       <scalar name="location">
         <xpath>.//a[@class='productImgLink']/@href</xpath>
@@ -400,7 +396,7 @@
       <xpath>//div[@class='pdpProductInfoSection']//div[@class='singlePrice']</xpath>
     </scalar>
 
-    <collection name="you_may_also_like" child_type="worldmarket_product">
+    <collection name="companion_products" child_type="worldmarket_product">
       <xpath>//div[@id='mybuyspagezone1']//ul/li</xpath>
       <scalar name="location">
         <xpath>.//span[@class='mbnamerowspan']/a/@href]</xpath>
@@ -450,7 +446,7 @@
       </scalar>
     </collection>
 
-    <collection name="people_also_shopped_for" child_type="westelm_product">
+    <collection name="companion_products" child_type="westelm_product">
       <xpath>//div[@class='you-may-also-like con']/div[2]//ul/li</xpath>
       <scalar name="location">
         <xpath>./a/@href</xpath>
@@ -534,7 +530,7 @@
       <xpath>//div[@class='price-container']</xpath>
     </scalar>
 
-    <collection name="customers_also_viewed" child_type="potterybarn_product">
+    <collection name="companion_products" child_type="potterybarn_product">
       <xpath>//div[@class='you-may-also-like con']//ul/li</xpath>
       <scalar name="location">
         <xpath>./a/@href</xpath>

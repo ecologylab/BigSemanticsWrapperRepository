@@ -8,39 +8,17 @@ package ecologylab.bigsemantics.generated.library.product_and_service;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.AppleProductAccessory;
 import ecologylab.bigsemantics.generated.library.product_and_service.Product;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_inherit;
-import java.lang.String;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
 public class AppleProductAccessory extends Product
 {
-	@simpl_collection("overview")
-	@mm_name("overview")
-	private List<MetadataString> overview;
-
-	@simpl_collection("highlight")
-	@mm_name("highlights")
-	private List<MetadataString> highlights;
-
-	@simpl_collection("tech_spec")
-	@mm_name("tech_specs")
-	private List<MetadataString> techSpecs;
-
-	@simpl_collection("apple_product_accessory")
-	@mm_name("people_also_buy")
-	private List<AppleProductAccessory> peopleAlsoBuy;
-
 	public AppleProductAccessory()
 	{ super(); }
 
@@ -48,124 +26,4 @@ public class AppleProductAccessory extends Product
 		super(mmd);
 	}
 
-
-	public List<MetadataString> getOverview()
-	{
-		return overview;
-	}
-
-  // lazy evaluation:
-  public List<MetadataString> overview()
-  {
-    if (overview == null)
-      overview = new ArrayList<MetadataString>();
-    return overview;
-  }
-
-  // addTo:
-  public void addToOverview(MetadataString element)
-  {
-    overview().add(element);
-  }
-
-  // size:
-  public int overviewSize()
-  {
-    return overview == null ? 0 : overview.size();
-  }
-
-	public void setOverview(List<MetadataString> overview)
-	{
-		this.overview = overview;
-	}
-
-	public List<MetadataString> getHighlights()
-	{
-		return highlights;
-	}
-
-  // lazy evaluation:
-  public List<MetadataString> highlights()
-  {
-    if (highlights == null)
-      highlights = new ArrayList<MetadataString>();
-    return highlights;
-  }
-
-  // addTo:
-  public void addToHighlights(MetadataString element)
-  {
-    highlights().add(element);
-  }
-
-  // size:
-  public int highlightsSize()
-  {
-    return highlights == null ? 0 : highlights.size();
-  }
-
-	public void setHighlights(List<MetadataString> highlights)
-	{
-		this.highlights = highlights;
-	}
-
-	public List<MetadataString> getTechSpecs()
-	{
-		return techSpecs;
-	}
-
-  // lazy evaluation:
-  public List<MetadataString> techSpecs()
-  {
-    if (techSpecs == null)
-      techSpecs = new ArrayList<MetadataString>();
-    return techSpecs;
-  }
-
-  // addTo:
-  public void addToTechSpecs(MetadataString element)
-  {
-    techSpecs().add(element);
-  }
-
-  // size:
-  public int techSpecsSize()
-  {
-    return techSpecs == null ? 0 : techSpecs.size();
-  }
-
-	public void setTechSpecs(List<MetadataString> techSpecs)
-	{
-		this.techSpecs = techSpecs;
-	}
-
-	public List<AppleProductAccessory> getPeopleAlsoBuy()
-	{
-		return peopleAlsoBuy;
-	}
-
-  // lazy evaluation:
-  public List<AppleProductAccessory> peopleAlsoBuy()
-  {
-    if (peopleAlsoBuy == null)
-      peopleAlsoBuy = new ArrayList<AppleProductAccessory>();
-    return peopleAlsoBuy;
-  }
-
-  // addTo:
-  public void addToPeopleAlsoBuy(AppleProductAccessory element)
-  {
-    peopleAlsoBuy().add(element);
-  }
-
-  // size:
-  public int peopleAlsoBuySize()
-  {
-    return peopleAlsoBuy == null ? 0 : peopleAlsoBuy.size();
-  }
-
-	public void setPeopleAlsoBuy(List<AppleProductAccessory> peopleAlsoBuy)
-	{
-		this.peopleAlsoBuy = peopleAlsoBuy;
-	}
 }

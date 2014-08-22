@@ -29,10 +29,6 @@ public class WestelmProduct extends Product
 	@mm_name("also_in_this_collection")
 	private List<WestelmProduct> alsoInThisCollection;
 
-	@simpl_collection("westelm_product")
-	@mm_name("people_also_shopped_for")
-	private List<WestelmProduct> peopleAlsoShoppedFor;
-
 	@simpl_composite
 	@mm_name("image")
 	private Image image;
@@ -73,36 +69,6 @@ public class WestelmProduct extends Product
 	public void setAlsoInThisCollection(List<WestelmProduct> alsoInThisCollection)
 	{
 		this.alsoInThisCollection = alsoInThisCollection;
-	}
-
-	public List<WestelmProduct> getPeopleAlsoShoppedFor()
-	{
-		return peopleAlsoShoppedFor;
-	}
-
-  // lazy evaluation:
-  public List<WestelmProduct> peopleAlsoShoppedFor()
-  {
-    if (peopleAlsoShoppedFor == null)
-      peopleAlsoShoppedFor = new ArrayList<WestelmProduct>();
-    return peopleAlsoShoppedFor;
-  }
-
-  // addTo:
-  public void addToPeopleAlsoShoppedFor(WestelmProduct element)
-  {
-    peopleAlsoShoppedFor().add(element);
-  }
-
-  // size:
-  public int peopleAlsoShoppedForSize()
-  {
-    return peopleAlsoShoppedFor == null ? 0 : peopleAlsoShoppedFor.size();
-  }
-
-	public void setPeopleAlsoShoppedFor(List<WestelmProduct> peopleAlsoShoppedFor)
-	{
-		this.peopleAlsoShoppedFor = peopleAlsoShoppedFor;
 	}
 
 	public Image getImage()

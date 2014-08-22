@@ -26,10 +26,6 @@ import java.util.Map;
 public class LandofnodProduct extends Product
 {
 	@simpl_collection("landofnod_product")
-	@mm_name("customers_also_viewed")
-	private List<LandofnodProduct> customersAlsoViewed;
-
-	@simpl_collection("landofnod_product")
 	@mm_name("accessories")
 	private List<LandofnodProduct> accessories;
 
@@ -44,36 +40,6 @@ public class LandofnodProduct extends Product
 		super(mmd);
 	}
 
-
-	public List<LandofnodProduct> getCustomersAlsoViewed()
-	{
-		return customersAlsoViewed;
-	}
-
-  // lazy evaluation:
-  public List<LandofnodProduct> customersAlsoViewed()
-  {
-    if (customersAlsoViewed == null)
-      customersAlsoViewed = new ArrayList<LandofnodProduct>();
-    return customersAlsoViewed;
-  }
-
-  // addTo:
-  public void addToCustomersAlsoViewed(LandofnodProduct element)
-  {
-    customersAlsoViewed().add(element);
-  }
-
-  // size:
-  public int customersAlsoViewedSize()
-  {
-    return customersAlsoViewed == null ? 0 : customersAlsoViewed.size();
-  }
-
-	public void setCustomersAlsoViewed(List<LandofnodProduct> customersAlsoViewed)
-	{
-		this.customersAlsoViewed = customersAlsoViewed;
-	}
 
 	public List<LandofnodProduct> getAccessories()
 	{

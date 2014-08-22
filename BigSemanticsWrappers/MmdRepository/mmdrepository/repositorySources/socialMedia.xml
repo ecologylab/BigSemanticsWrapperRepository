@@ -131,6 +131,7 @@
 
   <meta_metadata name="twitter_search_results" type="search" parser="xpath" no_cache="true">
     <selector url_stripped="https://twitter.com/search" />
+    <selector url_path_tree="https://twitter.com/hashtag/" />
     <example_url url="https://twitter.com/search?q=%23socialinnovation" />
 		
 		<!-- def_var doesn't currently seem to be working in js metadata extraction -->

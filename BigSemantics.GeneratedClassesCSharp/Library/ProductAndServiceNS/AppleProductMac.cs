@@ -10,9 +10,7 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -25,27 +23,10 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class AppleProductMac : Product
 	{
-		[SimplCollection("specification")]
-		[MmName("specifications")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> specifications;
-
 		public AppleProductMac()
 		{ }
 
 		public AppleProductMac(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Specifications
-		{
-			get{return specifications;}
-			set
-			{
-				if (this.specifications != value)
-				{
-					this.specifications = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 	}
 }

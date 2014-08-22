@@ -28,9 +28,9 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[SimplScalar]
 		private MetadataString itemNumber;
 
-		[SimplCollection("compound_document")]
-		[MmName("headline_specs")]
-		private List<CompoundDocument> headlineSpecs;
+		[SimplCollection("feature")]
+		[MmName("features")]
+		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> features;
 
 		public NeweggProduct()
 		{ }
@@ -51,14 +51,14 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 			}
 		}
 
-		public List<CompoundDocument> HeadlineSpecs
+		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Features
 		{
-			get{return headlineSpecs;}
+			get{return features;}
 			set
 			{
-				if (this.headlineSpecs != value)
+				if (this.features != value)
 				{
-					this.headlineSpecs = value;
+					this.features = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
