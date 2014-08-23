@@ -41,6 +41,14 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("reviews")]
 		private List<Review> reviews;
 
+		[SimplCollection("commodity")]
+		[MmName("companion_products")]
+		private List<Commodity> companionProducts;
+
+		[SimplCollection("commodity")]
+		[MmName("comparitive_products")]
+		private List<Commodity> comparitiveProducts;
+
 		[SimplCollection("product_detail")]
 		[MmName("product_details")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> productDetails;
@@ -121,6 +129,32 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.reviews != value)
 				{
 					this.reviews = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Commodity> CompanionProducts
+		{
+			get{return companionProducts;}
+			set
+			{
+				if (this.companionProducts != value)
+				{
+					this.companionProducts = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Commodity> ComparitiveProducts
+		{
+			get{return comparitiveProducts;}
+			set
+			{
+				if (this.comparitiveProducts != value)
+				{
+					this.comparitiveProducts = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

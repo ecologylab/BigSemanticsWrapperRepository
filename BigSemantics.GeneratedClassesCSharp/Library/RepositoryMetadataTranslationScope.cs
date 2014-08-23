@@ -103,6 +103,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AnandtechReview),
 				typeof(Anthropologie),
 				typeof(AppleIProduct),
+				typeof(AppleProductAccessory),
 				typeof(AppleProductMac),
 				typeof(Artist),
 				typeof(Artwork),

@@ -8,7 +8,6 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.DreamHouseNS;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
@@ -25,10 +24,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 	[SimplInherit]
 	public class PotterybarnProduct : Product
 	{
-		[SimplCollection("potterybarn_product")]
-		[MmName("customers_also_viewed")]
-		private List<PotterybarnProduct> customersAlsoViewed;
-
 		[SimplComposite]
 		[MmName("image")]
 		private Image image;
@@ -38,19 +33,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 
 		public PotterybarnProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<PotterybarnProduct> CustomersAlsoViewed
-		{
-			get{return customersAlsoViewed;}
-			set
-			{
-				if (this.customersAlsoViewed != value)
-				{
-					this.customersAlsoViewed = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public Image Image
 		{

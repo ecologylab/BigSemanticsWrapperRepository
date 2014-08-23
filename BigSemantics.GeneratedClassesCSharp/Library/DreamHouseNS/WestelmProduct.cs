@@ -29,10 +29,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 		[MmName("also_in_this_collection")]
 		private List<WestelmProduct> alsoInThisCollection;
 
-		[SimplCollection("westelm_product")]
-		[MmName("people_also_shopped_for")]
-		private List<WestelmProduct> peopleAlsoShoppedFor;
-
 		[SimplComposite]
 		[MmName("image")]
 		private Image image;
@@ -51,19 +47,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 				if (this.alsoInThisCollection != value)
 				{
 					this.alsoInThisCollection = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<WestelmProduct> PeopleAlsoShoppedFor
-		{
-			get{return peopleAlsoShoppedFor;}
-			set
-			{
-				if (this.peopleAlsoShoppedFor != value)
-				{
-					this.peopleAlsoShoppedFor = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

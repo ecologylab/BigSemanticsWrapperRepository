@@ -10,7 +10,6 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
@@ -24,27 +23,10 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class TargetProduct : Product
 	{
-		[SimplCollection("target_product")]
-		[MmName("people_also_viewed")]
-		private List<TargetProduct> peopleAlsoViewed;
-
 		public TargetProduct()
 		{ }
 
 		public TargetProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<TargetProduct> PeopleAlsoViewed
-		{
-			get{return peopleAlsoViewed;}
-			set
-			{
-				if (this.peopleAlsoViewed != value)
-				{
-					this.peopleAlsoViewed = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 	}
 }

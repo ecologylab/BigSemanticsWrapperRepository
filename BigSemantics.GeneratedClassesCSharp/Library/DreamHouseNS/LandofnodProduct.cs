@@ -26,10 +26,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 	public class LandofnodProduct : Product
 	{
 		[SimplCollection("landofnod_product")]
-		[MmName("customers_also_viewed")]
-		private List<LandofnodProduct> customersAlsoViewed;
-
-		[SimplCollection("landofnod_product")]
 		[MmName("accessories")]
 		private List<LandofnodProduct> accessories;
 
@@ -42,19 +38,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 
 		public LandofnodProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<LandofnodProduct> CustomersAlsoViewed
-		{
-			get{return customersAlsoViewed;}
-			set
-			{
-				if (this.customersAlsoViewed != value)
-				{
-					this.customersAlsoViewed = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public List<LandofnodProduct> Accessories
 		{

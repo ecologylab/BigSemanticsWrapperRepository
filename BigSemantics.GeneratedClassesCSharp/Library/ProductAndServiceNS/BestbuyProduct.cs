@@ -33,14 +33,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("whats_included")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> whatsIncluded;
 
-		[SimplCollection("bestbuy_product")]
-		[MmName("companion_products")]
-		private List<BestbuyProduct> companionProducts;
-
-		[SimplCollection("bestbuy_product")]
-		[MmName("comparative_products")]
-		private List<BestbuyProduct> comparativeProducts;
-
 		public BestbuyProduct()
 		{ }
 
@@ -68,32 +60,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.whatsIncluded != value)
 				{
 					this.whatsIncluded = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<BestbuyProduct> CompanionProducts
-		{
-			get{return companionProducts;}
-			set
-			{
-				if (this.companionProducts != value)
-				{
-					this.companionProducts = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<BestbuyProduct> ComparativeProducts
-		{
-			get{return comparativeProducts;}
-			set
-			{
-				if (this.comparativeProducts != value)
-				{
-					this.comparativeProducts = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

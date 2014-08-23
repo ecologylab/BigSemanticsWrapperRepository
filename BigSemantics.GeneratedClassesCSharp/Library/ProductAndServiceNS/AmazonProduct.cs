@@ -32,10 +32,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 		[MmName("bestseller_list_rank")]
 		private AmazonList bestsellerListRank;
 
-		[SimplCollection("amazon_product")]
-		[MmName("people_also_buy")]
-		private List<AmazonProduct> peopleAlsoBuy;
-
 		[SimplCollection("compound_document")]
 		[MmName("list_mania")]
 		private List<CompoundDocument> listMania;
@@ -67,19 +63,6 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 				if (this.bestsellerListRank != value)
 				{
 					this.bestsellerListRank = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<AmazonProduct> PeopleAlsoBuy
-		{
-			get{return peopleAlsoBuy;}
-			set
-			{
-				if (this.peopleAlsoBuy != value)
-				{
-					this.peopleAlsoBuy = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

@@ -8,7 +8,6 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.DreamHouseNS;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
@@ -25,10 +24,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 	[SimplInherit]
 	public class LowesProduct : Product
 	{
-		[SimplCollection("lowes_product")]
-		[MmName("related_items")]
-		private List<LowesProduct> relatedItems;
-
 		[SimplComposite]
 		[MmName("image")]
 		private Image image;
@@ -38,19 +33,6 @@ namespace Ecologylab.Semantics.Generated.Library.DreamHouseNS
 
 		public LowesProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<LowesProduct> RelatedItems
-		{
-			get{return relatedItems;}
-			set
-			{
-				if (this.relatedItems != value)
-				{
-					this.relatedItems = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public Image Image
 		{

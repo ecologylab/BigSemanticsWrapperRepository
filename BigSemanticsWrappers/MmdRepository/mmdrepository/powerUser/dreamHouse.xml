@@ -182,11 +182,29 @@
       <xpath>//div[@class='itemInfo']/h1</xpath>
     </scalar>
     <scalar name="description">
-      <xpath>//div[@id='description-tab']/p</xpath>
+      <xpath>//*[@id='description-tab']/p</xpath>
     </scalar>
     <scalar name="price">
-      <xpath>//div[@id='pricing']/span[@class='price']</xpath>
+      <xpath>//*[@id='pricing']//text()[contains(.,'$')]</xpath>
     </scalar>
+    <scalar name="model">
+      <xpath>//*[@id='ModelNumber']</xpath>
+    </scalar>
+
+  	<collection name="product_details" >
+  		<xpath>//div[@id='description-tab']//li/text()</xpath>
+  	</collection>
+  	
+  	<collection name="specifications" >
+  		<xpath>//div[@id='specifications-tab']//tr</xpath>
+  		
+  		<scalar name="name">
+  			<xpath>./td[1]</xpath>
+  		</scalar>
+  		<scalar name="value">
+  			<xpath>./td[2]</xpath>
+  		</scalar>
+  	</collection>  	
 
     <collection name="companion_products" child_type="lowes_product">
       <xpath>//div[@id='relatedItems']/div</xpath>

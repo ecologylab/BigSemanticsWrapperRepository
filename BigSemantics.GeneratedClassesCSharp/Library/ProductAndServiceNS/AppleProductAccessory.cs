@@ -10,9 +10,7 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -25,78 +23,10 @@ namespace Ecologylab.Semantics.Generated.Library.ProductAndServiceNS
 	[SimplInherit]
 	public class AppleProductAccessory : Product
 	{
-		[SimplCollection("overview")]
-		[MmName("overview")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> overview;
-
-		[SimplCollection("highlight")]
-		[MmName("highlights")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> highlights;
-
-		[SimplCollection("tech_spec")]
-		[MmName("tech_specs")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> techSpecs;
-
-		[SimplCollection("apple_product_accessory")]
-		[MmName("people_also_buy")]
-		private List<AppleProductAccessory> peopleAlsoBuy;
-
 		public AppleProductAccessory()
 		{ }
 
 		public AppleProductAccessory(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Overview
-		{
-			get{return overview;}
-			set
-			{
-				if (this.overview != value)
-				{
-					this.overview = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Highlights
-		{
-			get{return highlights;}
-			set
-			{
-				if (this.highlights != value)
-				{
-					this.highlights = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> TechSpecs
-		{
-			get{return techSpecs;}
-			set
-			{
-				if (this.techSpecs != value)
-				{
-					this.techSpecs = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<AppleProductAccessory> PeopleAlsoBuy
-		{
-			get{return peopleAlsoBuy;}
-			set
-			{
-				if (this.peopleAlsoBuy != value)
-				{
-					this.peopleAlsoBuy = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 	}
 }
