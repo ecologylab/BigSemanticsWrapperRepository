@@ -1,0 +1,42 @@
+<meta_metadata_repository name="uniqloProduct"
+  package="ecologylab.bigsemantics.generated.library.uniqloProduct">
+
+  <meta_metadata name="uniqlo_product" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.uniqlo.com/us/" domain="uniqlo.com" />
+    <example_url
+      url="http://www.uniqlo.com/us/women/tops/t-shirts/supima-cotton-crew-neck-long-sleeves/women-supima-cotton-crew-neck-long-sleeve-t-shirt-086844.html#76" />
+    <scalar name="title">
+      <xpath>//h1[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@itemprop='price']</xpath>
+    </scalar>
+    <scalar name="color" scalar_type="String">
+      <xpath>//ul[@class='options articles clearfix']//span/text()</xpath>
+    </scalar>
+    <scalar name="gender" scalar_type="String">
+      <xpath>//ul[@class='breadcrumb-component']/li[1]/a/text()</xpath>
+    </scalar>
+    <scalar name="category" scalar_type="String">
+      <xpath>//ul[@class='breadcrumb-component']/li[2]/a/text()</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//div[@class='pdp-image-main-media']/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+    <scalar name="color" scalar_type="String">
+      <xpath>//span[@itemprop='color']</xpath>
+    </scalar>
+    <scalar name="description" scalar_type="String">
+      <xpath>//article[@class='pdp-description-text pdp-overview']</xpath>
+    </scalar>
+    <scalar name="detail" scalar_type="String">
+      <xpath>//article[@class='pdp-description-text
+        pdp-materials']/ul/li[1]
+      </xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

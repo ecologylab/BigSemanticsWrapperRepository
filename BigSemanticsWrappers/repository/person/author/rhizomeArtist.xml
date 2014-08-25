@@ -1,0 +1,25 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="rhizomeArtist" package="ecologylab.bigsemantics.generated.library.rhizomeArtist" default_user_agent_name="chrome_32">
+
+  <meta_metadata name="rhizome_artist" extends="artist" parser="xpath">
+    <selector domain="rhizome.org" url_regex_fragment="profile" />
+    <example_url url="http://rhizome.org/profile/uiuuii/" />
+
+    <scalar name="title">
+      <xpath>//div[@class='user-name']</xpath>
+    </scalar>
+    <scalar name="bio"  label="artist bio" scalar_type="String">
+      <xpath>//div[@id='profile-bio']</xpath>
+    </scalar>
+
+    <collection name="creative_works">
+      <xpath>//div[@class='section-content span-24']/div/div[@class='portfolio-work']</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./div/a</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

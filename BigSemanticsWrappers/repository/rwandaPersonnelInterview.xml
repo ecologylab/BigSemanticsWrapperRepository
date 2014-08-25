@@ -1,0 +1,48 @@
+<meta_metadata_repository name="rwandaPersonnelInterview"
+  package="ecologylab.bigsemantics.generated.library.rwandaPersonnelInterview">
+
+  <meta_metadata name="personnel_interview" extends="compound_document" parser="xpath"
+    comment="personnel interview">
+    <selector url_path_tree="http://www.tribunalvoices.org/voices/interview/" />
+    <example_url url="http://www.tribunalvoices.org/voices/interview/25" />
+    <example_url url="http://www.tribunalvoices.org/voices/interview/5" />
+	<def_var name="interview_table" type="node">
+      <xpath>//div[@class='tv_voices_panel']</xpath>
+    </def_var>
+    <scalar name="title" label="name" navigates_to="location" context_node="interview_table">
+      <xpath>.//h1</xpath>
+    </scalar>
+    <scalar name="location" hide="true" />
+    <scalar name="role" scalar_type="String" context_node="interview_table">
+      <xpath>.//h2</xpath>
+    </scalar>
+    <scalar name="description" context_node="interview_table">
+      <xpath>.//p</xpath>
+    </scalar>
+    <collection name="main_images" context_node="interview_table">
+    	<scalar name="location">
+     		<xpath>.//img[@class='interview_photo']/@src</xpath>
+     	</scalar>
+    </collection>
+    <collection name="speaks_on" child_type="video_interview" context_node="interview_table">
+      <xpath>.//li</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location" hide="true">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="interview_segments" child_type="video_interview" context_node="interview_table">
+      <xpath>.//table[@class='video_list']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+</meta_metadata_repository>

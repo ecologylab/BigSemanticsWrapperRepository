@@ -1,0 +1,9 @@
+<meta_metadata_repository name="acmPortalPublication"
+  package="ecologylab.bigsemantics.generated.library.acmPortalPublication">
+	
+	
+  <meta_metadata name="acm_portal_periodical" extends="periodical">
+    <collection name="articles" child_type="acm_portal" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

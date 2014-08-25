@@ -1,0 +1,49 @@
+<meta_metadata_repository name="rwandaVideoInterview"
+  package="ecologylab.bigsemantics.generated.library.rwandaVideoInterview">
+	
+
+  <meta_metadata name="video_interview" extends="compound_document" parser="xpath" comment="video interview">
+    <selector url_path_tree="http://www.tribunalvoices.org/voices/video/" />
+    <selector url_path_tree="http://tribunalvoices.org/voices/video/" />
+    <example_url url="http://www.tribunalvoices.org/voices/video/588" />
+    <example_url url="http://www.tribunalvoices.org/voices/video/327" />
+    <def_var name="interview_table" type="node">
+      <xpath>//div[@class='tv_voices_panel']</xpath>
+    </def_var>
+    <def_var name="video_credits" type="node">
+      <xpath>//table[@class='video_credits']/tbody</xpath>
+    </def_var>
+    <scalar name="interviewee" scalar_type="String" context_node="interview_table">
+      <xpath>.//h1</xpath>
+    </scalar>
+		<!-- url for topics and segments is same. couldn't be divided into 2 MMDs. 
+			only this xpath (for title) differs, so a small workaround -->
+    <scalar name="title" context_node="interview_table">
+      <xpath>.//h2</xpath>
+      <regex_op regex="Please help us index this " replace="" />
+    </scalar>
+    <scalar name="location" hide="true" />
+    <scalar name="role" scalar_type="String" context_node="video_credits">
+      <xpath>./tr[1]/td</xpath>
+    </scalar>
+    <scalar name="country_of_origin" scalar_type="String" context_node="video_credits">
+      <xpath>./tr[2]/td</xpath>
+    </scalar>
+    <scalar name="interview_date" scalar_type="String" context_node="video_credits">
+      <xpath>./tr[3]/td</xpath>
+    </scalar>
+    <scalar name="interviewers" scalar_type="String" context_node="video_credits">
+      <xpath>./tr[4]/td</xpath>
+    </scalar>
+    <scalar name="part_or_timestamp" scalar_type="String" context_node="video_credits">
+      <xpath>./tr[5]/td</xpath>
+    </scalar>
+    <scalar name="video_download_link" scalar_type="ParsedURL" context_node="interview_table">
+      <xpath>.//small/a[1]/@href</xpath>
+    </scalar>
+    <scalar name="audio_download_link" scalar_type="ParsedURL" context_node="interview_table">
+      <xpath>.//small/a[2]/@href</xpath>
+    </scalar>
+  </meta_metadata>
+
+</meta_metadata_repository>

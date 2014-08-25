@@ -1,0 +1,20 @@
+<meta_metadata_repository name="moviePerson"
+  package="ecologylab.bigsemantics.generated.library.moviePerson" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="movie_person" extends="person">
+    <collection name="movies_directed"  child_type="movie"
+      comment="Movies directed by this person." />
+    <collection name="movies_written"  child_type="movie"
+      comment="Movies written by this person." />
+    <collection name="movies_acted_in"  child_type="movie"
+      comment="Movies this person acted in." />
+    <collection name="movies"  child_type="movie"
+      comment="Movies related to this person." />
+
+    <collection name="awards" child_scalar_type="String" comment="The awards this person has won." />
+    
+    <!-- the following fields are for backwards compatibility -->
+    <scalar name="role" scalar_type="String" />
+    <scalar name="rating" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

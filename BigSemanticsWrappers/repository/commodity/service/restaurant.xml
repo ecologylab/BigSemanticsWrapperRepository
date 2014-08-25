@@ -1,0 +1,14 @@
+<meta_metadata_repository name="restaurant"
+  package="ecologylab.bigsemantics.generated.library.restaurant" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="restaurant" extends="service">
+    <scalar name="price_range" scalar_type="String" comment="Price range of the restaurant" />
+    <collection name="genres" child_type="restaurant_genre" comment="The genres of food offered." />
+  </meta_metadata>
+
+
+  <meta_metadata name="restaurant_genre" extends="compound_document" comment="Restaurants genre.">
+    <collection name="restaurants" child_type="restaurant"  />
+  </meta_metadata>
+
+</meta_metadata_repository>

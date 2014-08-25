@@ -1,0 +1,120 @@
+<meta_metadata_repository name="tvtropes"
+  package="ecologylab.bigsemantics.generated.library.tvtropes" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="tvtrope_example" extends="compound_document" parser="xpath">
+
+    <composite name="trope" type="tvtrope" />
+    <collection name="example_tropes" child_type="tvtrope" />
+    <collection name="comments" child_type="compound_document" />
+  </meta_metadata>
+
+  <meta_metadata name="tvtrope_folder" extends="compound_document" parser="xpath">
+    <collection name="examples" child_type="tvtrope_example" />
+    <collection name="ordered_examples" child_type="tvtrope_example" />
+  </meta_metadata>
+  <meta_metadata name="tvtrope" extends="compound_document" parser="xpath">
+    <selector url_path_tree="http://tvtropes.org/pmwiki/pmwiki.php/" domain="tvtropes.org" />
+    <example_url url="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGunslinger" />
+    <example_url url="http://tvtropes.org/pmwiki/pmwiki.php/Main/ImprobableAimingSkills" />
+    <scalar name="title">
+      <xpath>//div[@class='pagetitle']/span</xpath>
+    </scalar>
+
+
+    <scalar name="quote" scalar_type="String">
+      <xpath>//div[@id='wikitext']/div[@class='indent']</xpath>
+    </scalar>
+    <scalar name="quote_source" scalar_type="String">
+      <xpath>//div[@id='wikitext']/div[@class='indent']/div</xpath>
+    </scalar>
+
+    <collection name="sub_tropes" child_type="tvtrope">
+      <xpath>//h2[text()='Tropes']/following-sibling::ul/li</xpath>
+      <scalar name="title">
+        <xpath>./a/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="direct_descendants" child_type="tvtrope">
+      <xpath>//div[@id='wikitext']/ul/li</xpath>
+      <scalar name="title">
+        <xpath>.//a[1]/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a[1]/@href</xpath>
+      </scalar>
+
+    </collection>
+    <collection name="examples_by_category" child_type="tvtrope_folder">
+      <xpath>//div[@class='folder']</xpath>
+      <scalar name="title">
+        <xpath>./preceding-sibling::div[1]</xpath>
+      </scalar>
+      <collection name="examples">
+        <xpath>./ul/li</xpath>
+        <scalar name="title">
+          <xpath>.//a[1]</xpath>
+        </scalar>
+        <scalar name="description">
+          <xpath>.</xpath>
+        </scalar>
+        <collection name="example_tropes">
+          <xpath>//a[@class='twikilink']</xpath>
+          <scalar name="title">
+            <xpath>./text()</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./@href</xpath>
+          </scalar>
+        </collection>
+        <collection name="comments" child_type="compound_document">
+          <xpath>./ul/li</xpath>
+
+          <scalar name="description">
+            <xpath>.</xpath>
+          </scalar>
+        </collection>
+      </collection>
+      <collection name="ordered_examples">
+        <xpath>./ol/li</xpath>
+        <scalar name="title">
+          <xpath>.//a[1]</xpath>
+        </scalar>
+        <scalar name="description">
+          <xpath>.</xpath>
+        </scalar>
+        <composite name="trope">
+          <xpath>.//a[1]</xpath>
+          <scalar name="title">
+            <xpath>./text()</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./@href</xpath>
+          </scalar>
+        </composite>
+        <collection name="comments" child_type="compound_document">
+          <xpath>./ul/li</xpath>
+
+          <scalar name="description">
+            <xpath>.</xpath>
+          </scalar>
+        </collection>
+      </collection>
+    </collection>
+    <collection name="all_linked_tropes" child_type="tvtrope">
+      <xpath>//a[@class='twikilink']</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+</meta_metadata_repository>

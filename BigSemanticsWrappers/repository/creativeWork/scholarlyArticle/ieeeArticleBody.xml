@@ -1,0 +1,24 @@
+<meta_metadata_repository name="ieeeArticleBody"
+  package="ecologylab.bigsemantics.generated.library.ieeeArticleBody">
+
+  
+
+ 
+  <meta_metadata name="ieee_article_body" parser="xpath" extends="scholarly_article">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpls/icp.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpls/icp.jsp" />
+    <example_url url="http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=1532126"/>
+    <collection name="sections" child_extends="compound_document">
+    	<xpath>//div[@class='section']</xpath>
+    	<scalar name="title">
+    		<xpath>./div/h2</xpath>
+    	</scalar>
+    	<collection name="paragraphs" child_scalar_type="String">
+    		<xpath>./p</xpath>
+    	</collection>
+    </collection>
+  </meta_metadata>
+  
+
+
+</meta_metadata_repository>

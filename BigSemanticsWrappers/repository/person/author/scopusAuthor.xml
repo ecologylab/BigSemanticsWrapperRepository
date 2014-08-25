@@ -1,0 +1,34 @@
+<meta_metadata_repository name="scopusAuthor"
+  package="ecologylab.bigsemantics.generated.library.scopusAuthor" default_user_agent_name="chrome">
+
+
+
+
+  <meta_metadata name="scopus_author" extends="author" parser="xpath">
+    <selector url_stripped="http://www.scopus.com/authid/detail.url" />
+    <example_url url="http://www.scopus.com/authid/detail.url?authorId=7005439892" />
+
+    <filter_location>
+      <strip_param name="eid" />
+    </filter_location>
+
+    <scalar name="scopus_author_id" scalar_type="String" hide="true" />
+
+    <scalar name="title">
+      <xpath>//td[text()='Name']/following-sibling::td[@width]</xpath>
+    </scalar>
+    <scalar name="affiliation">
+      <xpath>//td[text()='Affiliation']/following-sibling::td[@width]</xpath>
+    </scalar>
+
+    <composite name="articles_by_author_page" type="scopus_search">
+      <xpath>//td[text()='Documents']/following-sibling::td/table//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+  </meta_metadata>
+</meta_metadata_repository>

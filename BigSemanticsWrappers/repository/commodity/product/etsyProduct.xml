@@ -1,0 +1,27 @@
+<meta_metadata_repository name="etsyProduct"
+  package="ecologylab.bigsemantics.generated.library.etsyProduct">
+ 	
+<meta_metadata name="etsy_product" extends="product" parser="xpath" user_agent_name="firefox">
+    <selector url_path_tree="http://www.etsy.com/listing/" domain="etsy.com" />
+
+    <example_url
+      url="http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8" />
+
+    <scalar name="title">
+      <xpath>//span[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//meta[@property='og:description']/@content</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//meta[@property='etsymarketplace:price']/@content</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//meta[@property='og:image']/@content</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata> 
+ </meta_metadata_repository>

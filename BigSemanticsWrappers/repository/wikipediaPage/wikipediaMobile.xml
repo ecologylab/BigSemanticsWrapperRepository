@@ -1,0 +1,82 @@
+<meta_metadata_repository name="wikipediaMobile"
+  package="ecologylab.bigsemantics.generated.library.wikipediaMobile" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="wikipedia_mobile_page" extends="wikipedia_page_type" parser="xpath"
+    comment="An article on wikipedia mobile site" user_agent_name="firefox_3_6_8">
+    <selector url_regex="http://en.m.wikipedia.org/wiki/[^/:]*" domain="wikipedia.org" />
+    <example_url url="http://en.m.wikipedia.org/wiki/Nuon_Chea"/>
+    <def_var name="main_image" type="node">
+      <xpath>//*[starts-with(@class,'infobox')]//img[1]</xpath>
+    </def_var>
+
+    <scalar name="title">
+      <xpath>//caption</xpath>
+    </scalar>
+
+    <scalar name="main_image_src" context_node="main_image" scalar_type="ParsedURL">
+      <xpath>//*[starts-with(@class,'infobox')]//@src[1]</xpath>
+    </scalar>
+    <scalar name="main_image_caption" scalar_type="String">
+      <xpath>//*[starts-with(@class,'infobox')]//span[1]</xpath>
+    </scalar>
+
+    <composite name="description_section" type="section">
+      <collection name="paragraphs" child_type="paragraph">
+        <xpath>//div[@id='content']/p</xpath>
+        <scalar name="text">
+          <xpath>.</xpath>
+        </scalar>
+        <collection name="anchors">
+          <xpath>./a[@title]</xpath>
+          <scalar name="location">
+            <xpath>./@href</xpath>
+          </scalar>
+          <scalar name="description">
+            <xpath>.</xpath>
+          </scalar>
+          <scalar name="title">
+            <xpath>./@title</xpath>
+          </scalar>
+        </collection>
+      </collection>
+    </composite>
+
+    <collection name="sections" child_type="section" comment="Sections in the article.">
+      <xpath>//h2</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+        <regex_op regex="ShowHide" replace="" />
+      </scalar>
+      <collection name="paragraphs" child_type="paragraph">
+        <xpath>./following-sibling::div[1]/p</xpath>
+        <scalar name="text">
+          <xpath>.</xpath>
+        </scalar>
+        <collection name="anchors">
+          <xpath>./a[@title]</xpath>
+          <scalar name="location">
+            <xpath>./@href</xpath>
+          </scalar>
+          <scalar name="description">
+            <xpath>.</xpath>
+          </scalar>
+          <scalar name="title">
+            <xpath>./@title</xpath>
+          </scalar>
+        </collection>
+      </collection>
+    </collection>
+
+    <collection name="thumbinners">
+      <xpath>//*[@class='thumbinner']</xpath>
+      <scalar name="location">
+        <xpath>./a/img/@src</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,24 @@
+<meta_metadata_repository name="newMuseumArtist"
+  package="ecologylab.bigsemantics.generated.library.newMuseumArtist" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="newmuseum_artist" extends="artist" parser="xpath">
+    <selector url_path_tree="http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/" />
+    <example_url url="http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/1848" />
+
+    <scalar name="title">
+      <xpath>//div[@id='detailTitle']</xpath>
+    </scalar>
+
+    <collection name="related_exhibitions" child_type="newmuseum_exhibition" label="exhibitions">
+      <xpath>(//div[preceding-sibling::div[contains(text(),'Exhibition')]])/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

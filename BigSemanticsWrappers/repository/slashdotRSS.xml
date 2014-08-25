@@ -1,0 +1,31 @@
+<meta_metadata_repository name="slashdotRSS"
+  package="ecologylab.bigsemantics.generated.library.slashdotRSS">
+
+  <meta_metadata name="slashdot_item" extends="item" comment="One item in a feed."
+    parser="direct">
+    <scalar name="department" scalar_type="String"  hint="XML_LEAF" />
+    <scalar name="section" scalar_type="String"  hint="XML_LEAF" />
+  </meta_metadata>
+
+
+  <meta_metadata name="slashdot_rss" extends="compound_document" parser="direct">
+    <selector url_stripped="http://rss.slashdot.org/Slashdot/slashdot" />
+    <collection name="items" child_type="slashdot_item" no_wrap="true" />
+    <semantic_actions>
+      <get_field name="items" />
+      <if>
+        <not_null value="items" />
+        <for_each collection="items" as="i">
+          <get_field object="i" name="link" />
+          <get_field object="i" name="title" />
+          <parse_document>
+            <not_null value="link" />
+            <arg value="link" name="location" />
+            <arg value="title" name="anchor_text" />
+          </parse_document>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

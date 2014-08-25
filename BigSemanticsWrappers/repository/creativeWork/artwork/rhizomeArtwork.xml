@@ -1,0 +1,59 @@
+<meta_metadata_repository name="rhizomeArtwork"
+  package="ecologylab.bigsemantics.generated.library.rhizomeArtwork" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="rhizome_artwork" extends="artwork" parser="xpath">
+    <selector domain="rhizome.org" url_regex_fragment="artwork" />
+    <example_url url="http://rhizome.org/artbase/artwork/30306/" />
+    <example_url url="http://rhizome.org/portfolios/artwork/57882/" />
+
+    <scalar name="title">
+      <xpath>//span[@class='artwork-title span-20']/a[1]</xpath>
+    </scalar>
+    
+    <collection name="main_images">
+        <xpath>//div[@id='artwork-main-image']//img</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
+    <scalar name="year">
+      <xpath>//div[@class]/ul/li[1]/span[2]</xpath>
+    </scalar>
+
+    <collection name="authors">
+      <xpath>//div[@id='artist-info']/span[2]/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="description">
+      <xpath>//div[@id='artwork-summary']</xpath>
+    </scalar>
+
+    <collection name="related_works" child_type="artwork" label="related works"
+      other_tags="creative_works" >
+      <xpath>//div[@id='artwork-similar-works']/div/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./img/@title</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tags" child_type="rhizome_tag" label="tags">
+      <xpath>//div[@id='artwork-tags']/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,46 @@
+<meta_metadata_repository name="samsclubProduct"
+  package="ecologylab.bigsemantics.generated.library.samsclubProduct">
+
+  <meta_metadata name="samsclub_product" extends="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.samsclub.com/sams/" domain="samsclub.com" />
+
+    <example_url
+      url="http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push" />
+
+    <scalar name="title">
+      <xpath>//span[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@itemprop='description']/p</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@class='leftVal onlinePrice']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//div[@id='plImageHolder']/img/@src</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
+  <meta_metadata name="samsclub_mobile_product" type="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://m.samsclub.com/ip/" />
+    <example_url url="http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248" />
+    <scalar name="title">
+      <xpath>//h1[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@itemprop='price']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//img[@itemprop='image']/@src</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

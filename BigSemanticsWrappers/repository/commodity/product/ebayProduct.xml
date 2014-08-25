@@ -1,0 +1,39 @@
+<meta_metadata_repository name="ebayProduct"
+  package="ecologylab.bigsemantics.generated.library.ebayProduct">
+ 	
+  <meta_metadata name="ebay_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_path_tree="http://www.ebay.com/itm/" />
+    <example_url
+      url="http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834" />
+    <scalar name="title">
+      <xpath>//meta[@property='og:title']/@content</xpath>
+    </scalar>
+    <scalar name="item_condition" scalar_type="String">
+      <xpath>//div[@class='u-flL condText']</xpath>
+    </scalar>
+    <scalar name="availability" scalar_type="String">
+      <xpath>//span[@id='qtySubTxt']/span</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']</xpath>
+    </scalar>
+
+    <composite name="seller" type="compound_document">
+      <scalar name="name" type="String">
+        <xpath>//span[@class='mbg-nw']</xpath>
+      </scalar>
+      <scalar name="feedback" type="Integer">
+        <xpath>//span[@class='mbg-l']/a</xpath>
+      </scalar>
+      <scalar name="positive_feedback" type="String">
+        <xpath>//div[@id='si-fb']</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//meta[@property='og:image']/@content</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

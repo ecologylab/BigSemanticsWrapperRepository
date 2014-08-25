@@ -1,0 +1,30 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="tumblrSearch" package="ecologylab.bigsemantics.generated.library.tumblrSearch" default_user_agent_name="chrome_32">
+  
+   <meta_metadata name="tumblr_search" extends="search" comment="The tumblr search class"
+    user_agent_name="opera_9" parser="xpath">
+    <selector url_path_tree="http://www.tumblr.com/search/" />
+    <example_url url="http://www.tumblr.com/search/vinyl"/>
+    <collection name="search_results" child_type="social_media_search_result">
+      <xpath>//div[@id='left_column']//li</xpath>
+      <scalar name="title">
+        <xpath>.//div[@class='post_title']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='post_content']</xpath>
+      </scalar>
+      <scalar name="author">
+        <xpath>./div[@class='post_info']</xpath>
+      </scalar>
+      <collection name="tags">
+        <xpath>./div[@class='footer_links with_tags']//a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

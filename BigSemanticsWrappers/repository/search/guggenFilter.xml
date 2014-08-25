@@ -1,0 +1,30 @@
+<meta_metadata_repository name="guggenFitler"
+  package="ecologylab.bigsemantics.generated.library.guggenFitler" default_user_agent_name="chrome_2">
+  <meta_metadata name="guggen_filter" extends="search" parser="xpath">
+    <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artists/" />
+    <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/" />
+    <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/movements/" />
+    <example_url url="http://www.guggenheim.org/new-york/collections/collection-online/movements/195203" />
+    <example_url
+      url="http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/195198" />
+    <example_url
+      url="http://www.guggenheim.org/new-york/collections/collection-online/artists/963/Jackson%20Pollock" />
+    <example_url
+      url="http://www.guggenheim.org/new-york/collections/collection-online/artists/1529/Vito%20Acconci" />
+
+
+    <scalar name="title">
+      <xpath>//div[@id='main-three-center']/h3</xpath>
+    </scalar>
+
+    <collection name="search_results" child_type="guggen_artwork">
+      <xpath>//div[@class='artworks-item']</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./div/a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./div/span[2]</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,21 @@
+<meta_metadata_repository name="hotel"
+  package="ecologylab.bigsemantics.generated.library.hotel" default_user_agent_name="chrome">
+
+  <meta_metadata name="hotel" extends="service">
+    <scalar name="location" layer="-10" />
+
+    <scalar name="price" layer="0.8" />
+    <composite name="business_address" layer="0.8" />
+
+    <scalar name="space_size" label="size" scalar_type="String" />
+
+    <scalar name="bedrooms" scalar_type="String" />
+    <scalar name="sleeps" scalar_type="String" />
+
+    <scalar name="check_in" scalar_type="String" />
+    <scalar name="check_out" scalar_type="String" />
+
+    <collection name="similar_hotels" child_type="hotel" />
+  </meta_metadata>
+
+</meta_metadata_repository>

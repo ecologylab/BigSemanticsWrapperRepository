@@ -1,0 +1,72 @@
+<meta_metadata_repository name="googleScholarArticle"
+  package="ecologylab.bigsemantics.generated.library.googleScholarArticle" default_user_agent_name="chrome_2">
+
+	<meta_metadata name="google_scholar_article" extends="scholarly_article" parser="xpath">
+      <selector url_regex="http://scholar.google.com/citations\?view_op=view_citation.*" domain="google.com"/>
+      <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+      
+      <scalar name="title">
+      	<xpath>//div[@id='title']/a</xpath>
+      </scalar>
+      <composite name="article_link" type="compound_document">
+      	<xpath>//div[@id='title']/a</xpath>
+      	<scalar name="title">
+      		<xpath>./</xpath>
+      	</scalar>
+      	<scalar name="location">
+      		<xpath>./@href</xpath>
+      	</scalar>
+      </composite>
+      
+     
+      <scalar name="journal" scalar_type="String">
+      	<xpath>//div[@id='publisher_sec']/div[2]</xpath>
+      </scalar>
+			<scalar name="date" scalar_type="String">
+				<xpath>//div[@id='pubdate_sec']/div[2]</xpath>
+			</scalar>
+			
+			<scalar name="publisher" scalar_type="String">
+				<xpath>//div[@id='venue_sec']/div[2]</xpath>
+			</scalar>
+			<scalar name="pages" scalar_type="String">
+				<xpath>//div[@id='pages_sec']/div[2]</xpath>
+			</scalar>
+			<scalar name="issue" scalar_type="String">
+				<xpath>//div[@id='issue_sec']/div[2]</xpath>
+			</scalar>
+			<scalar name="volume" scalar_type="String">
+				<xpath>//div[@id='volume_sec']/div[2]</xpath>
+			</scalar>
+			
+			
+      <composite name="citation_graph" type="image">
+      	<xpath>//div[@class='g-section']//img</xpath>
+      	<scalar name="location">
+      		<xpath>./@src</xpath>
+      	</scalar>
+      </composite>
+			<scalar name="citation_count" scalar_type="String">
+      	<xpath>//div[@id='scholar_sec']//a</xpath>
+      </scalar>
+			 <composite name="google_citations" type="compound_document">
+      	<xpath>//div[@id='scholar_sec']//a</xpath>
+      	<scalar name="title">
+      		<xpath>.</xpath>
+      	</scalar>
+      	<scalar name="location">
+      		<xpath>./@href</xpath>
+      	</scalar>
+      </composite>
+			
+			
+	</meta_metadata>
+	<meta_metadata name="google_scholar_article_facts" extends="compound_document">
+		<composite name="article" type="google_scholar_article"/>
+		<composite name="citations" type="compound_document"/>
+		<scalar name="year" scalar_type="String"/>
+		<collection name="authors" child_type="author">
+		</collection>
+		<scalar name="citation_count" scalar_type="String"/>
+	</meta_metadata>
+</meta_metadata_repository>

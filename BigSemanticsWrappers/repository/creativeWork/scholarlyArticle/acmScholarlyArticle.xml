@@ -1,0 +1,244 @@
+<meta_metadata_repository name="acmWorldScholarlyArticle"
+  package="ecologylab.bigsemantics.generated.library.acmScholarlyArticle">
+  
+  
+  <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath"
+    user_agent_name="google_bot_2">
+
+		<!-- Pages are interpreted as acm_portal documents if their stripped url's match either of these "selectors" -->
+		<!-- Selector logic can also use a regex. -->
+    <selector url_stripped="http://portal.acm.org/citation.cfm" />
+    <selector url_stripped="http://dl.acm.org/citation.cfm" />
+
+		<!-- example pages that are acm_portal documents are as follows -->
+    <example_url url="http://dl.acm.org/citation.cfm?id=2063231.2063237&amp;preflayout=flat" />
+    <example_url url="http://dl.acm.org/citation.cfm?id=642611.642681&amp;preflayout=flat" />
+
+		<!-- This performs the parameter stripping for selection logic. -->
+    <filter_location>
+      <set_param name="preflayout" value="flat" />
+      <strip_param name="coll" />
+      <strip_param name="dl" />
+      <strip_param name="CFID" />
+      <strip_param name="CFTOKEN" />
+      <regex match="id=\d+\.(\d+)" replace="id=$1" />
+      <alternative_host>portal.acm.org</alternative_host>
+      <alternative_host>dl.acm.org</alternative_host>
+    </filter_location>
+
+    <url_generator type="search" engine="acm_portal" use_id="title" />
+
+		<!-- The value of the field "title" (which is defined in the Document), is parsed from the result of the xpath. -->
+    <scalar name="title" navigates_to="location" as_natural_id="title" format="text">
+      <xpath>//div[@name='for-testing']</xpath>
+      <xpath>//div[@class='large-text']/h1</xpath>
+    </scalar>
+
+		<!-- this composite represents a document that will navigate to the full text of the given article. Its type declaration, like title above,
+		is defined in a parent class. -->
+    <composite name="rich_media">
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>PDF full text</value>
+        </concatenate_values>
+      </scalar>
+
+			<!-- The location of the rich_media document is given by the URL of the full text PDF. 
+				Again: In our schema, everything that has a URL is a document. That "location" is where one goes to get 
+				information about the document. Authors, Institutions, etc are all "Documents" because they have a location ( a URL ) 
+				that points to their data. -->
+      <scalar name="location">
+        <xpath>//div[@id='divmain']//a[@name='FullTextPdf' or @name='FullTextPDF']/@href</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true">
+      <xpath>//div[@name='for-testing']</xpath>
+      <xpath>//div[@id='divmain']//a[@title='Author Profile Page']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <collection name="affiliations" child_type="acm_portal_institution_profile">
+        <xpath>../..//a[@title='Institutional Profile Page']</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+    </collection>
+
+    <composite name="source" type="acm_portal_periodical">
+      <xpath>//div[@name='for-testing']</xpath>
+      <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]</xpath>
+      <scalar name="location">
+        <xpath>.//td[text()='Title']/following-sibling::td/a[1]</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//td[text()='Title']/following-sibling::td[1]</xpath>
+      </scalar>
+
+      <collection name="authors" label="chairs" child_type="acm_portal_author"
+        comment="Publication general/program chairs.">
+        <xpath>.//td[contains(text(), 'Chairs')]/following-sibling::td/a</xpath>
+        <scalar name="location">
+          <xpath>./../a[starts-with(@href, 'author_page.cfm')]/@href</xpath>
+        </scalar>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+      </collection>
+
+      <scalar name="year" label="year published" is_facet="true">
+        <xpath>.//td[text()='Publisher']/following-sibling::td</xpath>
+        <regex_op regex="[\D]" replace="" />
+      </scalar>
+
+      <scalar name="isbn">
+        <xpath>.//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]</xpath>
+        <regex_op regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
+      </scalar>
+
+			<!-- xpath that could be used that returns all documents instead of just the first 10: 
+			<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
+			-->
+      <collection name="articles">
+        <xpath>./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href, 'citation.cfm')]/../../..</xpath>
+        <scalar name="title">
+          <xpath>.//a</xpath>
+        </scalar>
+        <scalar name="description">
+          <xpath>./following::tr[position() = 4]//div[@style='display:inline']</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>.//a/@href</xpath>
+        </scalar>
+        <collection name="authors" child_type="acm_portal_author">
+          <xpath>./following::tr[position() = 1]//a</xpath>
+          <scalar name="title">
+            <xpath>./text()</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./../a[starts-with(@href, 'author_page.cfm')]/@href</xpath>
+          </scalar>
+        </collection>
+      </collection>
+    </composite>
+
+    <scalar name="description">
+      <xpath>//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]/div[1]</xpath>
+    </scalar>
+
+    <collection name="references" child_type="acm_portal">
+      <xpath>//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]</xpath>
+      <field_parser name="acm_reference" for_each_element="true" />
+      <scalar name="title" layer="20.0" field_parser_key="$title" />
+      <scalar name="location">
+        <xpath>.//a[1]/@href</xpath>
+      </scalar>
+
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
+    </collection>
+
+    <collection name="citations" child_type="acm_portal">
+      <xpath>//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]</xpath>
+      <field_parser name="acm_reference" for_each_element="true" />
+      <scalar name="title" layer="20.0" field_parser_key="$title" />
+      <scalar name="location">
+        <xpath>.//a[1]/@href</xpath>
+      </scalar>
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
+    </collection>
+
+    <collection name="classifications">
+      <xpath>//h1/a/span[contains(text(), 'INDEX TERMS')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//a[not(@name)]</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./child::text()</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="keywords">
+      <xpath>//div[@id='divtags']//a/span/ancestor::a</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./span/child::text()</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="pages">
+      <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td</xpath>
+    </scalar>
+
+
+    <link_with name="citeseerx_summary" by_id="title" />
+
+    <semantic_actions>
+
+
+      <parse_document now="true">
+        <arg name="document" value="rich_media" />
+      </parse_document>
+
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <arg value="title" name="text" />
+      </create_and_visualize_text_surrogate>
+
+      <get_field name="references" />
+      <if>
+        <not_null value="references" />
+        <for_each collection="references" as="ref">
+          <get_field object="ref" name="description" />
+          <parse_document link_type="TRUSTED_SEMANTICS">
+            <arg name="ciatation_sig" value="true" />
+            <arg name="anchor_text" value="description" />
+            <arg name="entity" value="ref" />
+          </parse_document>
+        </for_each>
+      </if>
+
+      <get_field name="citations" />
+
+      <if>
+        <not_null value="citations" />
+        <for_each collection="citations" as="cit">
+          <get_field object="cit" name="location" />
+          <get_field object="cit" name="description" />
+          <parse_document link_type="TRUSTED_SEMANTICS">
+            <arg name="citation_sig" value="true" />
+            <arg name="anchor_text" value="description" />
+            <arg name="entity" value="cit" />
+          </parse_document>
+        </for_each>
+      </if>
+
+    </semantic_actions>
+  </meta_metadata>
+  
+  </meta_metadata_repository>

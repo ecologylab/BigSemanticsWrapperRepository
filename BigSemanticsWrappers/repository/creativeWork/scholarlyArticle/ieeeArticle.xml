@@ -1,0 +1,108 @@
+<meta_metadata_repository name="ieeeArticle"
+  package="ecologylab.bigsemantics.generated.library.ieeeArticle">
+
+  <meta_metadata name="ieee_xplore_article" extends="scholarly_article" parser="xpath">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/articleDetails.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/articleDetails.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org/xpls/abs_all.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/xpls/abs_all.jsp" />
+    <example_url url="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1532126" />
+
+    <filter_location>
+      <strip_param name="navigation" />
+      <strip_param name="reload" />
+      <strip_param name="tag" />
+    </filter_location>
+
+    <scalar name="title">
+      <xpath>//h1</xpath>
+    </scalar>
+	<scaler name="description" hide="false">
+		<xpath>//div[@class='article']//p</xpath>
+	</scaler>
+	<!-- Link to full article -->
+    <composite name="rich_media">
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>HTML full text</value>
+        </concatenate_values>
+      </scalar>
+      <scalar name="location">
+        <xpath>//a[@id='full-text-html']/@href</xpath>
+      </scalar>
+    </composite>
+<!-- Opens up a IEEE search for those articles -->
+    <composite name="author_page" type="ieee_author_page">
+    	<xpath>//a[@id='abstract-authors-tab']</xpath>
+    	<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </composite>
+    <collection name="articles_by_authors" child_type="ieee_xplore_search">
+      <xpath>//div[@id='product-vitals']//script[contains(text(), 'authorLink(')]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+        <regex_op regex="authorLink\(&quot;([^&quot;]+)&quot;\)" group="1" />
+      </scalar>
+      <scalar name="location" hide="true">
+        <concatenate_values>
+          <value>http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Authors:.QT.</value>
+          <value from_scalar="title" />
+          <value>.QT.</value>
+        </concatenate_values>
+      </scalar>
+    </collection>
+
+    <composite name="published_in" type="ieee_journal_page">
+      <xpath>//div[@class='article-ftr']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="keyword_page" type="ieee_keywords">
+    
+    
+      <xpath>//a[@id='abstract-keyword-tab']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="references_page" type="ieee_xplore_references">
+      <xpath>//a[@id='abstract-references-tab']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+      	<xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="cited_by" type="ieee_xplore_cited_by">
+      <xpath>//a[@id='abstract-citedby-tab']</xpath>
+      <scalar name="title">
+      	<xpath>.</xpath>
+      </scalar>
+    
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="doi" scalar_type="ParsedURL" hide="true"
+      comment="The digital object identifier of the article">
+      <xpath>//a[starts-with(@href, 'http://dx.doi.org/10.1109/')]/@href</xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

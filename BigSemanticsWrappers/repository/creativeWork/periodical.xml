@@ -1,0 +1,12 @@
+<meta_metadata_repository name="periodical"
+  package="ecologylab.bigsemantics.generated.library.periodical">
+
+  <meta_metadata name="periodical" extends="basic_publication" comment="An issue of a periodical.">
+    <composite name="archive" type="document" comment="All the issues of a periodical.">
+      <scalar name="location" hide="true" />
+    </composite>
+    <scalar name="volume_and_issue" scalar_type="String" />
+    <scalar name="date" scalar_type="Date" comment="Publication Date" schema_org_itemprop="datePublished" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

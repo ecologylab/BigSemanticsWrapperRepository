@@ -1,0 +1,72 @@
+<meta_metadata_repository name="gettyArtwork"
+  package="ecologylab.bigsemantics.generated.library.gettyArtwork" default_user_agent_name="chrome_2">
+
+
+
+  <meta_metadata name="getty_work_info" extends="compound_document">
+
+    <scalar name="author_name" scalar_type="String" />
+    <scalar name="dimensions" scalar_type="String" />
+    <scalar name="date_and_location" scalar_type="String" />
+    <scalar name="medium" scalar_type="String" />
+    <scalar name="dimensions" scalar_type="String" />
+    <scalar name="museum_code" scalar_type="String" />
+
+  </meta_metadata>
+
+
+
+  <meta_metadata name="getty_object" extends="artwork" parser="xpath">
+    <selector url_stripped="http://www.getty.edu/art/gettyguide/artObjectDetails" />
+    <example_url url="http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=907" />
+    <example_url url="http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=6706" />
+    <scalar name="title">
+      <xpath>//div[@class='header_redesign']/b</xpath>
+    </scalar>
+
+    <collection name="artist" child_type="getty_artist">
+      <xpath>//form[@name='bookmarkobj']/p[1]/a</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="image">
+      <xpath>//a[@class='art'][1]/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+    <semantic_actions>
+      <get_field name="image" />
+      <if>
+        <not_null value="image" />
+        <create_and_visualize_img_surrogate>
+          <arg name="metadata" value="image" />
+        </create_and_visualize_img_surrogate>
+      </if>
+    </semantic_actions>
+  	<!--  
+	<scalar name="work_info_test" scalar_type="String" xpath="//form[@name='bookmarkobj']/p[1]"/>
+	-->
+    <composite name="work_info" type="getty_work_info">
+      <xpath>//form[@name='bookmarkobj']/p[1]</xpath>
+
+      <field_parser name="regex_find" regex="(.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)" />
+      <scalar name="author_name" field_parser_key="$1" />
+      <scalar name="date_and_location" field_parser_key="$3" />
+      <scalar name="medium" field_parser_key="$5" />
+      <scalar name="dimensions" field_parser_key="$6" />
+      <scalar name="museum_code" field_parser_key="$8" />
+    </composite>
+
+
+    <scalar name="description" scalar_type="String">
+      <xpath>//comment()[.='Main Content Area']/following-sibling::tr[1]/td/p[1]</xpath>
+    </scalar>
+
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,47 @@
+<meta_metadata_repository name="icdlBookPreview"
+  package="ecologylab.bigsemantics.generated.library.icdlBookPreview">
+
+  <meta_metadata name="icdl_book_preview" parser="xpath" extends="compound_document"
+    comment="ICDL About This Book Page">
+    <selector url_stripped="http://www.childrenslibrary.org/icdl/BookPreview" />
+		<example_url url="http://www.childrenslibrary.org/icdl/BookPreview?bookid=shiwhit_00900083amp;route=text_English_floweramp;lang=Englishamp;msg=amp;ilang=English"/>
+    <composite name="author" type="author">
+      <xpath>//td/span[@class='textsize4']/../a[1]</xpath>
+      <scalar name="title">
+        <xpath>./span</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="illustrator" type="author">
+      <xpath>//td/span[@class='textsize4']/../a[2]</xpath>
+      <scalar name="title">
+        <xpath>./span</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="summary" scalar_type="String">
+      <xpath>//td/div/span[3]</xpath>
+    </scalar>
+    <scalar name="year" scalar_type="String">
+      <xpath>//td/div/span[7]</xpath>
+    </scalar>
+    <scalar name="languages" scalar_type="String">
+      <xpath>//td/div/span[13]</xpath>
+    </scalar>
+    <scalar name="publisher" scalar_type="String">
+      <xpath>//td/div/span[21]</xpath>
+    </scalar>
+    <scalar name="isbn" scalar_type="String">
+      <xpath>//td/div/span[26]</xpath>
+    </scalar>
+    <scalar name="awards" scalar_type="String">
+      <xpath>//td/div/span[30]</xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

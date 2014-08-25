@@ -1,0 +1,22 @@
+<meta_metadata_repository name="gettyExploration"
+  package="ecologylab.bigsemantics.generated.library.gettyExploration" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="getty_exploration" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://www.getty.edu/art/gettyguide/exploreArt" />
+    <example_url url="http://www.getty.edu/art/gettyguide/exploreArt?typ=2033760" />
+
+    <scalar name="title">
+      <xpath>(//span[@class='nav_on'])[3]/text()[4]</xpath>
+    </scalar>
+    <collection name="collections" child_type="getty_collection">
+      <xpath>//div[@class='bio']/a</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

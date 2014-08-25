@@ -1,0 +1,37 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="yahooSearch" package="ecologylab.bigsemantics.generated.library.yahooSearch" default_user_agent_name="chrome_32">
+  
+  <meta_metadata name="yahoo_thumbnail" extends="metadata">
+    <scalar name="thumb_url"  scalar_type="ParsedURL" hint="XML_LEAF" />
+    <scalar name="width"  scalar_type="Int" hint="XML_LEAF" />
+    <scalar name="height"  scalar_type="Int" hint="XML_LEAF" />
+  </meta_metadata>
+
+  <meta_metadata name="yahoo_result_set" extends="document" comment="Yahoo Web Search Service"
+    parser="direct">
+    <collection name="results" child_type="yahoo_result" child_extends="document"
+      no_wrap="true" comment="Collection of results for yahoo search">
+      <scalar name="title" scalar_type="String"  hide="true" />
+      <scalar name="summary" scalar_type="String" />
+      <scalar name="location" scalar_type="ParsedURL"  hide="true" />
+      <scalar name="referer_url" scalar_type="ParsedURL"  hide="true" />
+      <scalar name="modification_date" scalar_type="String"  />
+      <scalar name="mime_type" scalar_type="String"  hide="true" />
+      <composite name="thumbnail"  type="yahoo_thumbnail" hide="true" />
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="yahoo_geo_code" extends="yahoo_result_set">
+    <selector url_stripped="http://where.yahooapis.com/geocode" />
+    <collection name="results" child_type="yahoo_geo_code_result" child_extends="yahoo_result">
+      <scalar name="line1" scalar_type="string" label="address" />
+      <scalar name="line2" scalar_type="string" label="address" />
+      <scalar name="city" scalar_type="string" />
+      <scalar name="county" scalar_type="string" />
+      <scalar name="state" scalar_type="string" />
+      <scalar name="postal" scalar_type="string" label="zip code" />
+      <scalar name="country" scalar_type="string" />
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

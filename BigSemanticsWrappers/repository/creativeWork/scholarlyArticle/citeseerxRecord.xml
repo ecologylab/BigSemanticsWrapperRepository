@@ -1,0 +1,13 @@
+<meta_metadata_repository name="citeseerxRecord"
+  package="ecologylab.bigsemantics.generated.library.citeseerxRecord" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="citation_info" extends="metadata" comment="Citation numbers.">
+    <scalar name="total_citation" scalar_type="Int" />
+    <scalar name="self_citation" scalar_type="Int" />
+  </meta_metadata>
+
+
+  <meta_metadata name="citeseerx_record" extends="scholarly_article" comment="CiteSeerX record for an article.">
+    <composite name="citation_info" type="citation_info" />
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,25 @@
+<meta_metadata_repository name="acmPortalInstitution"
+  package="ecologylab.bigsemantics.generated.library.acmPortalInstitution">
+  
+
+
+  <meta_metadata name="acm_portal_institution_profile" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://dl.acm.org/inst_page.cfm" />
+    <example_url url="http://dl.acm.org/inst_page.cfm?id=1013772" />
+
+    <scalar name="title">
+      <xpath>//title/text()</xpath>
+    </scalar>
+    <composite name="home_page" type="document">
+      <xpath>//span/strong/..</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </composite>
+  </meta_metadata>
+
+  
+  </meta_metadata_repository>

@@ -1,0 +1,34 @@
+<meta_metadata_repository name="weatherReport" package="ecologylab.bigsemantics.generated.library.weatherReport"
+  default_user_agent_name="chrome_2">
+
+	<!-- data structure definition for (general) weather report -->
+  <meta_metadata name="weather_report" extends="compound_document"
+    comment="The definition of weather report class.">
+    <scalar name="title" label="city" comment="The name of the city." />
+    <scalar name="time" comment="The time of this weather" scalar_type="String" />
+    <scalar name="weather" comment="The weather condition of the city, like sunny or cloudy."
+      scalar_type="String" />
+    <composite name="weather_image" comment="The URL of the picture indicating weather condition."
+      type="image" hide="true" />
+    <scalar name="temperature" comment="The temperature." scalar_type="String" />
+    <scalar name="humidity" comment="The humidity of the air." scalar_type="String" />
+    <scalar name="wind" comment="The wind speed." scalar_type="String" />
+    <scalar name="dew_point" comment="The dew point." scalar_type="String" />
+    <scalar name="chance_of_rain" comment="chances of rain in percentage" scalar_type="String" />
+    <scalar name="rainfall" comment="the size of the rain" scalar_type="String" />
+
+    <collection name="forecasts" comment="weather forecasts for the near future"
+      child_type="weather_report" />
+
+    <semantic_actions>
+      <get_field name="weather_image" />
+      <if>
+        <not_null value="weather_image" />
+        <create_and_visualize_img_surrogate>
+          <arg name="metadata" value="weather_image" />
+        </create_and_visualize_img_surrogate>
+      </if>
+    </semantic_actions>
+
+  </meta_metadata>
+</meta_metadata_repository>

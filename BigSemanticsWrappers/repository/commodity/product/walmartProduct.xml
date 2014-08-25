@@ -1,0 +1,75 @@
+<meta_metadata_repository name="walmartProduct"
+  package="ecologylab.bigsemantics.generated.library.walmartProduct">
+
+  
+  <meta_metadata name="walmart_product" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.walmart.com/ip/" />
+    <example_url
+      url="http://www.walmart.com/ip/The-Hobbit-An-Unexpected-Journey-DVD-UltraViolet-Widescreen/23263613" />
+    <example_url url="http://www.walmart.com/ip/Twister-Dance/21097609" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='productTitle']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='SITCC_1column']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@id='WM_PRICE']//span[@class='clearfix camelPrice ']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//div[@class='LargeItemPhoto215']//img/@src</xpath>
+      </scalar>
+    </collection>
+
+    <def_var name="rating_summary" type="node">
+      <xpath>//div[@class='CustomerRatings']</xpath>
+    </def_var>
+    <scalar name="overall_rating" context_node="rating_summary">
+      <xpath>.//div[@class='BVRROverallRatingContainer']//img/@alt</xpath>
+    </scalar>
+    <scalar name="num_reviews" context_node="rating_summary">
+      <xpath>.//div[@class='BVRRRatingSummaryLinks']//span[@class='BVRRNumber']</xpath>
+    </scalar>
+    <scalar name="reviews_location" context_node="rating_summary">
+      <xpath>.//span[@class='BVRRRatingSummaryLinkReadWithCountID']/a/@href</xpath>
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//div[@class='BVRRReviewDisplayStyle3Main']</xpath>
+      <scalar name="rating">
+        <xpath>.//div[@class='BVRROverallRatingContainer']//img/@alt</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='BVRRValue BVRRReviewTitle']</xpath>
+      </scalar>
+      <scalar name="time">
+        <xpath>.//span[@class='BVRRValue BVRRReviewDate']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//span[@class='BVRRReviewText']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="companion_products" child_type="walmart_product">
+      <xpath>//div[@class='prtHid']//div[@id='rr_placement_2']</xpath>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>./div[@class='wmStars rrStars']/div/@title</xpath>
+      </scalar>
+      <!-- <scalar name="price" xpath=".//div[@class='price']" /> -->
+    </collection>
+  </meta_metadata>
+  
+  
+  
+  
+</meta_metadata_repository>

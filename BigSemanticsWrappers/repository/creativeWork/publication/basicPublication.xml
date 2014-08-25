@@ -1,0 +1,8 @@
+<meta_metadata_repository name="basicPublication"
+  package="ecologylab.bigsemantics.generated.library.basicPublication">
+
+  <meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
+    <scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />
+    <composite name="publisher" type="publisher" schema_org_itemprop="publisher" />
+  </meta_metadata>
+</meta_metadata_repository>

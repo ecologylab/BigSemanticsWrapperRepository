@@ -1,0 +1,26 @@
+<meta_metadata_repository name="appleProduct"
+  package="ecologylab.bigsemantics.generated.library.appleProduct">
+
+  <meta_metadata name="apple_iProduct" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://store.apple.com/us/buy-[a-z]*/[a-z0-9-]*\?.*" domain="apple.com"/>
+
+    <example_url url="http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&amp;step=accessories" />
+    <example_url url="http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&amp;product=ME495LL/A&amp;step=accessories" />
+
+    <scalar name="title">
+      <xpath>//div[@class='section section-product-title']/h3/text()</xpath>
+    </scalar>
+    
+    <collection name="product_details">
+    	<xpath>//div[@class='feature media-block']//p/text()</xpath>
+    </collection>
+
+    <collection name="main_images">
+      <xpath>//img[@class='hero-img hero-img ir']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

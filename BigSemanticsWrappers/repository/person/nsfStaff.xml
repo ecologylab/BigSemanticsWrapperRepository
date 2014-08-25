@@ -1,0 +1,120 @@
+<meta_metadata_repository name="nsfStaff"
+  package="ecologylab.bigsemantics.generated.library.nsfStaff">
+
+ 
+  <meta_metadata name="nsf_staff" extends="grant_staff" parser="xpath">
+    <selector url_stripped="http://www.nsf.gov/staff/staff_bio.jsp" />
+    <example url="http://www.nsf.gov/staff/staff_bio.jsp?lan=sspengle&amp;org=IIS" />
+
+    <scalar name="title">
+      <xpath>//*[@class='pageheadline']/following::strong[1]</xpath>
+      <regex_op regex="\s+" replace=" " />
+    </scalar>
+    <composite name="contact">
+      <scalar name="email">
+        <xpath>//strong[text()='Email:']/following::a[1]</xpath>
+      </scalar>
+      <scalar name="telephone">
+        <xpath>//strong[text()='Phone:']/parent::td</xpath>
+        <regex_op regex="^Phone:\s*" replace="" />
+      </scalar>
+      <scalar name="fax_number">
+        <xpath>//strong[text()='Fax:']/parent::td</xpath>
+        <regex_op regex="^Fax:\s*" replace="" />
+      </scalar>
+      <scalar name="room" scalar_type="String">
+        <xpath>//strong[text()='Room:']/parent::td</xpath>
+        <regex_op regex="^Room:\s*" replace="" />
+      </scalar>
+    </composite>
+    <scalar name="occupation_title">
+      <xpath>//strong[text()='Title:']/parent::td</xpath>
+      <regex_op regex="^Title:\s*" replace="" />
+    </scalar>
+
+    <collection name="programs" child_type="nsf_program">
+      <xpath>//a[starts-with(@href, '/funding/pgm_summ.jsp')]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="grants" child_type="nsf_award">
+      <xpath>//table[@class='resultTable']/tbody//tr</xpath>
+      <scalar name="title">
+        <xpath>./td[2]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[2]/a/@href</xpath>
+      </scalar>
+      <composite name="division" type="nsf_division">
+        <xpath>./td[3]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+      <collection name="authors" child_type="nsf_investigator">
+        <xpath>./td[6]//a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+      <collection name="programs" child_type="nsf_program">
+        <xpath>./td[4]//a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+      <scalar name="start_date">
+        <xpath>./td[5]</xpath>
+      </scalar>
+      <composite name="sponsor">
+        <xpath>./td[8]</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+      <scalar name="amount">
+        <xpath>./td[9]</xpath>
+        <regex_op regex="(^\$)|,|(\.\d\d$)" replace="" />
+      </scalar>
+    </collection>
+
+    <composite name="grants_by_search" type="nsf_search">
+      <scalar name="title" required="true">
+        <xpath>//*[@class='pageheadline']/following::strong[1]</xpath>
+        <regex_op regex="\s+" replace=" " />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;QueryText=&amp;PIFirstName=&amp;PILastName=&amp;PIInstitution=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=false&amp;ProgRefCode=&amp;BooleanRef=false&amp;ProgFoaCode=&amp;OriginalAwardDateOperator=&amp;OriginalAwardDateFrom=&amp;OriginalAwardDateTo=&amp;StartDateOperator=&amp;StartDateFrom=&amp;StartDateTo=&amp;ExpDateOperator=&amp;ExpDateFrom=&amp;ExpDateTo=&amp;AwardNumberOperator=&amp;AwardNumberFrom=&amp;AwardNumberTo=&amp;AwardAmount=&amp;AwardInstrument=&amp;Restriction=0&amp;Search=Search&amp;ProgProgram=&amp;ProgOfficer=</value>
+          <value from_scalar="title" />
+        </concatenate_values>
+        <regex_op regex="\s+" replace="+" />
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+  
+</meta_metadata_repository>

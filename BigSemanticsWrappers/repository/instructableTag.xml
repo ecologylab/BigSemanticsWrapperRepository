@@ -1,0 +1,21 @@
+<meta_metadata_repository name="instructablesTag"
+  package="ecologylab.bigsemantics.generated.library.instructablesTag" default_user_agent_name="chrome_2">
+  <meta_metadata name="instructable_tag" extends="compound_document" parser="xpath">
+
+    <selector url_path_tree="http://www.instructables.com/tag" />
+    <example_url url="http://www.instructables.com/tag/type-id/category-food/keyword-tomato/" />
+    <example_url url="http://www.instructables.com/tag/type-id/category-food/keyword-potato/" />
+    <scalar name="title">
+      <xpath>//a[@class='btn btn-mini']</xpath>
+    </scalar>
+    <collection name="items_with_tag" child_type="instructable">
+      <xpath>//div[@class='projects']/ul/li</xpath>
+      <scalar name="title">
+        <xpath>./div/a/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

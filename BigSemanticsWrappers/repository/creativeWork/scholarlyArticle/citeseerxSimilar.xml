@@ -1,0 +1,71 @@
+<meta_metadata_repository name="citeseerxSimilar"
+  package="ecologylab.bigsemantics.generated.library.citeseerXSimilar" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="citeseerx_similar" extends="citeseerx_record" parser="xpath"
+    comment="Citation or co-citation page from CiteSeerX.">
+    <selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
+    <example_url url="http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&amp;type=sc" />
+
+    <scalar name="title" navigate_to="location" as_natural_id="title" format="text">
+      <xpath>//h2</xpath>
+      <regex_op regex="\(\d+\)$" replace="" />
+    </scalar>
+
+    <composite name="rich_media">
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>PDF full text</value>
+        </concatenate_values>
+      </scalar>
+      <scalar name="location">
+        <xpath>//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="authors">
+      <xpath>//div[@id='docAuthors']</xpath>
+      <field_parser name="regex_split" regex="\s*,\s*" />
+      <scalar name="title" field_parser_key="$0">
+        <regex_op regex="^by\s+" replace="" />
+      </scalar>
+    </collection>
+
+    <composite name="citation_info">
+      <xpath>//a[@title='number of citations']</xpath>
+      <field_parser name="regex_find" regex="(\d+) - (\d+) self" />
+      <scalar name="total_citation" field_parser_key="$1" />
+      <scalar name="self_citation" field_parser_key="$2" />
+    </composite>
+
+    <collection name="citations" child_type="citeseerx_summary">
+      <xpath>//h3/following-sibling::table[@class='refs']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+      <scalar name="description">
+        <xpath>..</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="citations" />
+      <for_each collection="citations" as="cite">
+        <not_null value="citations" />
+        <get_field object="cite" name="description" />
+        <parse_document>
+          <not_null value="cite" />
+          <arg value="true" name="citation_sig" />
+          <arg value="description" name="anchor_text" />
+          <arg value="cite" name="entity" />
+        </parse_document>
+      </for_each>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

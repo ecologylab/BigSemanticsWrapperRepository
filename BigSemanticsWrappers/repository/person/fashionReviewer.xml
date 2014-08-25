@@ -1,0 +1,7 @@
+<meta_metadata_repository name="fashionReviewer"
+  package="ecologylab.bigsemantics.generated.library.fashionReviewer">
+
+  <meta_metadata name="fashion_reviewer" parser="xpath" extends="person">
+    <scalar name="height" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,33 @@
+<meta_metadata_repository name="rottenTomatoeMoviePerson"
+  package="ecologylab.bigsemantics.generated.library.rottenTomatoeMoviePerson" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="rotten_person" extends="movie_person" parser="xpath"
+    comment="RottenTomatoes celebrity page">
+    <selector url_path_tree="http://www.rottentomatoes.com/celebrity/" />
+
+    <example_url url="http://www.rottentomatoes.com/celebrity/keir_dullea/" />
+
+    <scalar name="title">
+      <xpath>//div[@class='media_block_content celeb_bio']/h1</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='media_block_content celeb_bio']/dl[@class='bottom_divider']/dd[3]</xpath>
+    </scalar>
+
+    <composite name="photo">
+      <xpath>./div[@class='media_block_image big']/a</xpath>
+      <scalar name="location">
+        <xpath>.//img/@src</xpath>
+      </scalar>
+    </composite>
+    <collection name="movies" child_type="rotten_movie">
+      <xpath>//table[@id='filmographyTbl']/tbody/tr</xpath>
+      <scalar name="title">
+        <xpath>.//td[3]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//td[3]/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

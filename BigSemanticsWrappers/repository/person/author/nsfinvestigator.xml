@@ -1,0 +1,79 @@
+<meta_metadata_repository name="nsfInvestigator"
+  package="ecologylab.bigsemantics.generated.library.nsfInvestigator">
+
+  <meta_metadata name="nsf_investigator" extends="investigator" parser="xpath">
+    <generic_type_var name="CW" arg="nsf_award" />
+
+    <selector url_stripped="http://nsf.gov/awardsearch/piSearch.do" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
+      <param name="PILastName" />
+    </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
+      <param name="PILastName" />
+    </selector>
+
+    <filter_location>
+      <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
+    </filter_location>
+
+    <example_url
+      url="http://www.nsf.gov/awardsearch/advancedSearchNoScript?PILastName=test" />
+    <example_url
+      url="http://www.nsf.gov/awardsearch/advancedSearchResult?IncludeCoPI=true&amp;PIFirstName=Andruid&amp;PILastName=Kerne" />
+  
+    <!-- first/last name helps form location: -->
+    <scalar name="first_name" hide="true" scalar_type="String" />
+    <scalar name="last_name" hide="true" scalar_type="String" />
+		<scalar name="given_name" scalar_type="String" hide="true">
+    	<xpath>//input[@id='PIFirstName']/@value</xpath>
+    </scalar>
+    <scalar name="family_name" scalar_type="String" hide="true">
+    	<xpath>//input[@id='PILastName']/@value</xpath>
+    </scalar>
+    <scalar name="title">
+    	<concatenate_values>
+    		<value from_scalar="given_name"/>
+    		<value> </value>
+    		<value from_scalar="family_name"/>
+    	</concatenate_values>
+    </scalar>
+    <collection name="creative_works" child_type="nsf_award">
+      <xpath>//table[@id='displayTagResults']//tr[@class]</xpath>
+      <scalar name="title">
+        <xpath>./td[2]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[2]/a/@href</xpath>
+      </scalar>
+<!--       <composite name="division" type="nsf_division" xpath="./td[3]/a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </composite> -->
+<!--       <collection name="authors" child_type="nsf_investigator" xpath="./td[6]//a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </collection>  -->
+<!--       <collection name="programs" child_type="nsf_program" xpath="./td[4]//a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </collection> -->
+<!--       <scalar name="start_date" xpath="./td[5]" /> -->
+<!--       <composite name="sponsor" xpath="./td[8]"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </composite> -->
+<!--       <scalar name="amount" xpath="./td[9]"> -->
+<!--         <regex_op regex="(^\$)|,|(\.\d\d$)" replace="" /> -->
+<!--       </scalar> -->
+    </collection>
+
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+  </meta_metadata_repository>

@@ -1,0 +1,28 @@
+<meta_metadata_repository name="patent"
+  package="ecologylab.bigsemantics.generated.library.patent" default_user_agent_name="chrome">
+
+
+
+  <meta_metadata name="patent" extends="creative_work" comment="Patents Class" parser="xpath">
+    <scalar name="inventor" scalar_type="String" />
+    <scalar name="filing_date" scalar_type="Date" />
+
+		<!-- <collection name="classifications" child_type="document"/> polymorphic fields need simpl_classes/scope meta-information! -->
+    <collection name="classifications" child_type="patent_classification" />
+    <collection name="claims" child_scalar_type="String" />
+
+    <collection name="authors" child_type="patent_author" />
+
+    <collection name="citations" child_type="patent" other_tags="referenced_bys"
+      comment="subsequent patents that cite this" />
+    <collection name="references" child_type="patent" comment="prior patents that this references" />
+
+    <collection name="drawings" hide="true" child_type="image">
+      <xpath>//div[@id='selected_pages_v']/div/a[1]</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

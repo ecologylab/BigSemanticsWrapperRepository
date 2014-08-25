@@ -1,0 +1,21 @@
+<meta_metadata_repository name="ieeeCitedBy"
+  package="ecologylab.bigsemantics.generated.library.ieeeCitedBy">
+
+
+  <meta_metadata name="ieee_xplore_cited_by" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractCitations.jsp" />
+
+    <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />
+
+    <collection name="citations" child_type="scholarly_article">
+      <xpath>//ol[@id='Ieee_citations']/li</xpath>
+      <scalar name="title">
+        <xpath>./i</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div/a[1]/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

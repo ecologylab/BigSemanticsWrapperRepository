@@ -1,0 +1,46 @@
+<meta_metadata_repository name="fondationCollection"
+  package="ecologylab.bigsemantics.generated.library.fondationCollection" default_user_agent_name="chrome_2">
+
+
+
+  <meta_metadata name="fondation_category_collection" extends="compound_document"
+    parser="xpath">
+    <collection name="collections" child_type="fondation_collection" />
+  </meta_metadata>
+
+  <meta_metadata name="fondation_collection" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://www.fondation-langlois.org/html/e/liste.php" />
+    <example_url url="http://www.fondation-langlois.org/html/e/liste.php?Selection=PUB#" />
+    <example_url url="http://www.fondation-langlois.org/html/e/liste.php?Selection=PRO+col"/>
+    <scalar name="title">
+      <xpath>(//div[@class='contenus'])[1]/h2</xpath>
+    </scalar>
+    <collection name="articles" child_type="fondation_article">
+      <xpath>//div[@id='contenusListe']/div/span/a[1]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="related_collections" child_type="fondation_category_collection">
+      <xpath>//div[@id='bttabledesmatieres']/ul</xpath>
+      <scalar name="title">
+        <xpath />
+      </scalar>
+      <collection name="collections">
+        <xpath>./li/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+    </collection>
+
+  </meta_metadata>
+
+</meta_metadata_repository>

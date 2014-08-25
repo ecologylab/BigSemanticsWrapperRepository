@@ -1,0 +1,44 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="myGoogleSearch" package="ecologylab.bigsemantics.generated.library.myGoogleSearch" default_user_agent_name="chrome_32">
+  
+ 
+
+  <meta_metadata name="my_google_search" type="search" comment="The my_google Search class"
+    user_agent_name="opera_9" parser="xpath">
+    <generic_type_var name="SR" arg="compound_document" />
+    <selector url_stripped="http://staging.cs.tamu.edu:8080/my_google/search" />
+
+    <collection name="search_results">
+      <xpath>//div[@class='result']</xpath>
+      <scalar name="title">
+        <xpath>./a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./span</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="my_google_ecology0_search" type="search"
+    comment="The my_google_ecology0 Search class" parser="xpath">
+    <generic_type_var name="SR" arg="compound_document" />
+    <selector url_stripped="http://ecology0.csdl.tamu.edu/my_google/search" />
+
+    <collection name="search_results">
+      <xpath>//div[@class='result']</xpath>
+      <scalar name="title">
+        <xpath>./a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./span</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+  </meta_metadata_repository>

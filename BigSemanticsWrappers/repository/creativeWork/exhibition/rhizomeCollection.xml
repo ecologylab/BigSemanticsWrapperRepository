@@ -1,0 +1,38 @@
+<meta_metadata_repository name="rhizomeCollection"
+  package="ecologylab.bigsemantics.generated.library.rhizomeCollection" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="rhizome_collection" extends="exhibition" parser="xpath">
+    <selector domain="rhizome.org" url_regex_fragment="collections" />
+    <example_url url="http://rhizome.org/artbase/collections/6/" />
+
+
+    <scalar name="title">
+      <xpath>//div[@id='collection-title-overlay-title']</xpath>
+    </scalar>
+    <scalar name="description"  label="about" scalar_type="String">
+      <xpath>//div[@class='statement-column-content']</xpath>
+    </scalar>
+    
+    <collection name="main_images">
+        <xpath>//div[@id='collection-carousel']/div[@class='carousel-item']//img</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
+  
+    <collection name="creative_works">
+      <xpath>//div[@class='focused']</xpath>
+      <scalar name="description">
+        <xpath>.//div[@class='focused-description']</xpath>
+      </scalar>
+      <scalar name="year">
+        <xpath>.//span[@class='created']</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='artwork-title']</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

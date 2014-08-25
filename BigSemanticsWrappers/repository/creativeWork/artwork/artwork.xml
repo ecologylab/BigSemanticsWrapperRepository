@@ -1,0 +1,17 @@
+<meta_metadata_repository name="artwork"
+  package="ecologylab.bigsemantics.generated.library.artwork" default_user_agent_name="chrome_2">
+
+  
+  <meta_metadata name="artwork" extends="creative_work" comment="Artwork class">
+    <scalar name="title" use_value_as_label="main_images" />
+    <scalar name="location" hide="true" />
+    <scalar name="description" comment="Abstract of the work." />
+    <collection name="authors" child_type="artist" label="artists"
+      layer="9.5" comment="Set of artists." />
+
+    <scalar name="medium" scalar_type="String" layer="9.2" comment="Medium on which the work is done." />
+    <scalar name="year" comment="Year the work was created." scalar_type="String" />
+    <scalar name="dimensions" scalar_type="String" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

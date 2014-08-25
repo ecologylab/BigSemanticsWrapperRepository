@@ -1,0 +1,82 @@
+<meta_metadata_repository name="modclothProduct"
+  package="ecologylab.bigsemantics.generated.library.modclothProduct">
+
+  <meta_metadata name="modcloth" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_regex="http://www.modcloth.com/shop/[a-z-]*/[a-z-]*" domain="modcloth.com" />
+    <example_url url="http://www.modcloth.com/shop/dresses/midnight-sun-dress-in-navy" />
+<!--		 maybe some urls for other products besides dresses -->
+
+    <scalar name="title">
+      <xpath>//h1[@id='product-name']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//h3[@id='product-price']/span[@itemprop='price']</xpath>
+    </scalar>
+    <composite name="image">
+      <xpath>//a[@id='zoomable']</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="overall_rating">
+      <xpath>//div[@id='overall_rating']/meta/@content</xpath>
+    </scalar>
+
+    <scalar name="designer" scalar_type="String">
+      <xpath>//h2[@id='product-brand']/a</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='pdp_full_description']/p[2]</xpath>
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//div[@class='review_wrapper user-review']</xpath>
+      <scalar name="title">
+        <xpath>./div[1]/div[@class='review_info_name']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>./div[2]/div[@class='ratings']/div[1]/div/div/@class</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='review_comment']</xpath>
+      </scalar>
+    </collection>
+
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="details" child_scalar_type="string"  >
+      <xpath>//div[@id='pdp_details']/ul/li</xpath>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
+    </collection>
+    <collection name="avalailable_sizes" child_type="document">
+      <xpath>//input[@class='ui-variant-value size-button ui-corner-all in-stock']/@value</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <scalar name="sizing_reccomendation" scalar_type="String">
+      <xpath>//p[@id='sizing-recommendation']</xpath>
+    </scalar>
+
+    <collection name="similar_products" child_type="modcloth">
+      <xpath>//div[@class='br-sf-widget-merchant-title']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="tags" child_type="modcloth_search">
+      <xpath>//h4[contains(., 'Tags')]/following-sibling::a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

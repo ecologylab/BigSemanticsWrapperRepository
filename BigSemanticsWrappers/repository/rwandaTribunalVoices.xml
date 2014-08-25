@@ -1,0 +1,37 @@
+<meta_metadata_repository name="rwandaTribunalVoices"
+  package="ecologylab.bigsemantics.generated.library.rwandaTribunalVoices">
+	
+
+  <meta_metadata name="category_interviews" extends="metadata" comment="categorized interviews">
+    <scalar name="category" scalar_type="String" comment="category" />
+    <collection name="people" child_type="personnel_interview" comment="personnel interview" />
+  </meta_metadata>
+
+  <meta_metadata name="tribunal_voices" extends="compound_document" parser="xpath"
+    comment="Video Interviews with personnel from Rwanda Tribunal">
+    <selector url_stripped="http://www.tribunalvoices.org/voices/interviews" />
+    <selector url_stripped="http://www.tribunalvoices.org/voices/index.html" />
+    <selector url_stripped="http://www.tribunalvoices.org/voices/" />
+    <example_url url="http://www.tribunalvoices.org/voices/interviews" />
+    <example_url url="http://www.tribunalvoices.org/voices/index.html" />
+    <scalar name="title">
+      <xpath>//div[@class='tv_voices_panel']/h1</xpath>
+    </scalar>
+    <collection name="categorized_interviews" child_type="category_interviews">
+      <xpath>//div[@id='interview_list']/h2</xpath>
+      <scalar name="category">
+        <xpath>.</xpath>
+      </scalar>
+      <collection name="people" child_type="personnel_interview">
+        <xpath>./following::div[@class='item']</xpath>
+        <scalar name="title" label="name" navigates_to="location">
+          <xpath>.//h2</xpath>
+        </scalar>
+        <scalar name="location" hide="true">
+          <xpath>./@id</xpath>
+          <regex_op regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
+        </scalar>
+      </collection>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

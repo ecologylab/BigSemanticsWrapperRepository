@@ -1,0 +1,23 @@
+<meta_metadata_repository name="modclothSearch"
+  package="ecologylab.bigsemantics.generated.library.modclothSearch">
+
+  <meta_metadata name="modcloth_search" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://www.modcloth.com/shop/[a-z-]*" domain="modcloth.com" />
+    <example_url url="http://www.modcloth.com/shop/best-selling-dresses" />
+
+    <scalar name="title">
+      <xpath>//span[@class='last']</xpath>
+    </scalar>
+    <collection name="items" child_type="modcloth">
+      <xpath>//ul[@class='product_list']/li</xpath>
+      <scalar name="title">
+        <xpath>./div[@class='product-info']/p</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div[@class='thumbnail']/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

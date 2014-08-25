@@ -1,0 +1,37 @@
+<meta_metadata_repository name="flickrAuthor"
+  package="ecologylab.bigsemantics.generated.library.flickrAuthor">
+
+
+  <meta_metadata name="flickr_author" extends="author" parser="xpath" comment="Author on flickr">
+    <selector url_regex="http://www.flickr.com/people/[A-z0-9_@-]+/" domain="flickr.com" />
+    <example_url url="http://www.flickr.com/people/maxfined/" />
+
+    <scalar name="title">
+      <xpath>//title/text()</xpath>
+      <regex_op regex="Flickr: " replace="" />
+    </scalar>
+
+    <scalar name="description">
+      <xpath>//div[@class='profile-section profile-section-desc']/p</xpath>
+    </scalar>
+    <scalar name="city">
+      <xpath>//div[@id='a-bit-more-about']/dl[3]/dd</xpath>
+    </scalar>
+
+    <collection name="favorites" comment="Image favorites" child_type="flickr_photo">
+      <xpath>//span[@class='photo_container pc_s']</xpath>
+      <scalar name="title">
+        <xpath>./a/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+
+<!--  		<composite name="photostream" type="photostream">
+			<scalar name="title" xpath="//div[@class='overflow-shim']/h1/a" />
+			<scalar name="location" xpath="//div[@class='overflow-shim']/h1/a/@href" />
+		</composite>     -->
+  </meta_metadata>
+  
+</meta_metadata_repository>
