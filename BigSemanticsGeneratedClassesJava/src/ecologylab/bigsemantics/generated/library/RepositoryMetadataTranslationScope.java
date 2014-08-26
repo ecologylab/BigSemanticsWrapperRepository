@@ -366,6 +366,14 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.instructables.InstructableTag.class,
 
+		ecologylab.bigsemantics.generated.library.jstorArticle.DatabaseArticle.class,
+
+		ecologylab.bigsemantics.generated.library.jstorArticle.JstorArticle.class,
+
+		ecologylab.bigsemantics.generated.library.jstorJournal.JstorJournal.class,
+
+		ecologylab.bigsemantics.generated.library.jstorSearch.JstorSearch.class,
+
 		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueAbility.class,
 
 		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueChampion.class,

@@ -29,6 +29,9 @@ repositorySources/ieeeXplore.xml
 repositorySources/imdb.xml
 repositorySources/informationComposition.xml
 repositorySources/instructables.xml
+repositorySources/jstorArticle.xml
+repositorySources/jstorJournal.xml
+repositorySources/jstorSearch.xml
 repositorySources/leagueoflegends.xml
 repositorySources/lolz.xml
 repositorySources/misc.xml
