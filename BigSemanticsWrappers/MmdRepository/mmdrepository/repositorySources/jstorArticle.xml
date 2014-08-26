@@ -6,7 +6,7 @@
   		<composite name="journal_image" type="image" />
   		<composite name="journal" type="publication" />
   		<composite name="author_link" type="search" />
-  		<composite name="citation_page" type="search" />
+  		<!-- <composite name="citation_page" type="search" /> -->
   		<composite name="summary_page" type="database_article" comment="For pages initally linking to pdf view" /> 
   		<composite name="related_items" type="search" />
   
@@ -15,7 +15,7 @@
  	
    <meta_metadata name="jstor_article" extends="database_article" parser="xpath">
    		<selector url_path_tree="http://www.jstor.org/stable" />
-   		<example_url url="http://www.jstor.org/stable/10.2307/25800022"/>
+   		<example_url url="http://www.jstor.org/stable/info/25735112"/>
    
    		<filter_location>
    			<regex match="stable/view" replace="stable/info" />
@@ -69,6 +69,7 @@
    			<regex_op regex="\).+\)" replace="" />
    		</scalar>
    		
+   		<!-- 
    		<composite name="citation_page">
    			<xpath>//div[@id='linkingContainer']/div[2]//ul[@class='relatedLinks']/li[2]</xpath>
    			<scalar name="title">
@@ -78,6 +79,7 @@
    				<xpath>./a/@href</xpath>
    			</scalar>
    		</composite>
+   		-->
    		
    		<composite name="related_items">
    			<xpath>//div[@id='linkingContainer']/div[2]//ul[@class='relatedLinks']/li[1]</xpath>
@@ -105,7 +107,7 @@
    		</composite>
    		
    		<composite name="author_link">
-   			<xpath>//div[@id='linkingContainer']/div[1]//ul[@class='relatedLinks']/li[2]</xpath>
+   			<xpath>//div[@id='linkingContainer']/div[2]//ul[@class='relatedLinks']/li[3]</xpath>
    			<scalar name="title">
    				<xpath>./a</xpath>
    			</scalar>
@@ -113,6 +115,18 @@
    				<xpath>./a/@href</xpath>
    			</scalar>
    		</composite>
+   		
+   		<collection name="citations" >
+   		
+   			<xpath>//div[@id='itemsCiting']/ul/li</xpath>
+   			<scalar name="title">
+   				<xpath>.//div[@class='mainCite']/div[1]/a</xpath>
+   			</scalar>
+   			<scalar name="location">
+   				<xpath>.//div[@class='mainCite']/div[1]/a/@href</xpath>
+   			</scalar>
+   		
+   		</collection>
    		
   </meta_metadata>
   
