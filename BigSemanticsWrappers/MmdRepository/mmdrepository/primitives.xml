@@ -194,8 +194,22 @@
   </meta_metadata>
 
 
-  <meta_metadata name="compound_document" extends="document" built_in="true" schema_org_itemtype="http://schema.org/Thing">
+  <meta_metadata name="compound_document" extends="document" built_in="true"
+   parser="xpath"
+   schema_org_itemtype="http://schema.org/Thing">
+<!--    parser="html_dom_image_text" -->
   
+    <selector>
+      <mime_type>text/html</mime_type>
+      <suffix>htm</suffix>
+      <suffix>html</suffix>
+      <suffix>htmls</suffix>
+      <suffix>htx</suffix>
+      <suffix>shtml</suffix>
+      <suffix>ssi</suffix>
+      <suffix>acgi</suffix>
+    </selector>
+
     <scalar name="location" always_show="false" hide="true" schema_org_itemprop="url" layer="8.0">
 <!--       <xpath>//meta[@name='og:url']/@content</xpath> -->
     </scalar> 
@@ -203,7 +217,9 @@
     <scalar name="title" scalar_type="String" style_name="metadata_h1" layer="10.0" hint="XML_LEAF"
       is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name" use_value_as_label="main_images"
       comment="The Title of the Document">
-      <xpath>//title</xpath>
+      
+      
+      <xpath>/html/head/title</xpath>
       <xpath>//meta[@name='og:title']/@content</xpath>
       <xpath>//meta[@name='twitter:title']/@content</xpath>
     </scalar>
@@ -274,26 +290,6 @@
       </scalar>
    
     </collection>
-    <after_semantic_actions>
-      <visualize_clippings />
-    </after_semantic_actions>
-  </meta_metadata>
-
-  <meta_metadata name="html_document" type="compound_document" parser="html_dom_image_text"
-    user_agent_name="chrome" schema_org_itemtype="http://schema.org/WebPage">
-    <selector>
-      <mime_type>text/html</mime_type>
-      <suffix>htm</suffix>
-      <suffix>html</suffix>
-      <suffix>htmls</suffix>
-      <suffix>htx</suffix>
-      <suffix>shtml</suffix>
-      <suffix>ssi</suffix>
-      <suffix>acgi</suffix>
-    </selector>
-    <scalar name="title">
-      <xpath>//head/title</xpath>
-    </scalar>
   </meta_metadata>
 
   <meta_metadata name="cached_html" extends="document"
