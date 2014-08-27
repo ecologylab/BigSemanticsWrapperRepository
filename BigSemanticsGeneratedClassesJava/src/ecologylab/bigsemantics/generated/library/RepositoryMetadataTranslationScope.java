@@ -350,6 +350,14 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.item.Item.class,
 
+		ecologylab.bigsemantics.generated.library.jstorArticle.DatabaseArticle.class,
+
+		ecologylab.bigsemantics.generated.library.jstorArticle.JstorArticle.class,
+
+		ecologylab.bigsemantics.generated.library.jstorJournal.JstorJournal.class,
+
+		ecologylab.bigsemantics.generated.library.jstorSearch.JstorSearch.class,
+
 		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueAbility.class,
 
 		ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueChampion.class,
@@ -422,10 +430,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.onekingslaneProduct.OnekingslaneProduct.class,
 
-		ecologylab.bigsemantics.generated.library.onekingslaneProduct.PotterybarnProduct.class,
-
-		ecologylab.bigsemantics.generated.library.onekingslaneProduct.RoomandboardProduct.class,
-
 		ecologylab.bigsemantics.generated.library.openDNSDomain.OpenDNSDomain.class,
 
 		ecologylab.bigsemantics.generated.library.opml.Body.class,
@@ -457,6 +461,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.politicalCartoon.PoliticalCartoon.class,
 
 		ecologylab.bigsemantics.generated.library.postalAddress.PostalAddress.class,
+
+		ecologylab.bigsemantics.generated.library.potterybarnProduct.PotterybarnProduct.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.AudioClipping.class,
 
@@ -539,6 +545,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.rhizomeCollection.RhizomeCollection.class,
 
 		ecologylab.bigsemantics.generated.library.rhizomeTag.RhizomeTag.class,
+
+		ecologylab.bigsemantics.generated.library.roomandboardProduct.RoomandboardProduct.class,
 
 		ecologylab.bigsemantics.generated.library.rottenTomatoeMovie.RottenMovie.class,
 

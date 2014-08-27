@@ -130,6 +130,9 @@ using Ecologylab.Semantics.Generated.Library.InstructableNS;
 using Ecologylab.Semantics.Generated.Library.InstructablesTagNS;
 using Ecologylab.Semantics.Generated.Library.InvestigatorNS;
 using Ecologylab.Semantics.Generated.Library.ItemNS;
+using Ecologylab.Semantics.Generated.Library.JstorArticleNS;
+using Ecologylab.Semantics.Generated.Library.JstorJournalNS;
+using Ecologylab.Semantics.Generated.Library.JstorSearchNS;
 using Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS;
 using Ecologylab.Semantics.Generated.Library.LowesProductNS;
 using Ecologylab.Semantics.Generated.Library.MetArtworkNS;
@@ -171,6 +174,7 @@ using Ecologylab.Semantics.Generated.Library.PieroneProductNS;
 using Ecologylab.Semantics.Generated.Library.PinterestNS;
 using Ecologylab.Semantics.Generated.Library.PoliticalCartoonNS;
 using Ecologylab.Semantics.Generated.Library.PostalAddressNS;
+using Ecologylab.Semantics.Generated.Library.PotterybarnProductNS;
 using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
 using Ecologylab.Semantics.Generated.Library.ProductNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
@@ -192,6 +196,7 @@ using Ecologylab.Semantics.Generated.Library.RhizomeArtistNS;
 using Ecologylab.Semantics.Generated.Library.RhizomeArtworkNS;
 using Ecologylab.Semantics.Generated.Library.RhizomeCollectionNS;
 using Ecologylab.Semantics.Generated.Library.RhizomeTagNS;
+using Ecologylab.Semantics.Generated.Library.RoomandboardProductNS;
 using Ecologylab.Semantics.Generated.Library.RottenTomatoeMovieNS;
 using Ecologylab.Semantics.Generated.Library.RottenTomatoeMoviePersonNS;
 using Ecologylab.Semantics.Generated.Library.Rss22NS;
@@ -335,6 +340,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CrateandbarrelProduct),
 				typeof(CreativeWork),
 				typeof(Curation),
+				typeof(DatabaseArticle),
 				typeof(DateInfo),
 				typeof(Dc),
 				typeof(DcDocument),
@@ -426,6 +432,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
+				typeof(JstorArticle),
+				typeof(JstorJournal),
+				typeof(JstorSearch),
 				typeof(LabeledSpecifications),
 				typeof(LandofnodProduct),
 				typeof(LeagueAbility),
