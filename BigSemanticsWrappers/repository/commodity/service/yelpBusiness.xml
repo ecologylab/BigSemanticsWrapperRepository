@@ -1,0 +1,87 @@
+<meta_metadata_repository name="yelpBusiness"
+  package="ecologylab.bigsemantics.generated.library.yelpBusiness" default_user_agent_name="firefox">
+  <meta_metadata name="yelp_business" type="service" parser="xpath"
+    comment="Yelp local business description page">
+    <selector url_path_tree="http://www.yelp.com/biz" />
+    <example_url url="http://www.yelp.com/biz/the-republic-college-station" />
+
+    <def_var name="bizBox" type="node">
+      <xpath>//div[@id='bizBox']</xpath>
+    </def_var>
+    <def_var name="bizReviews" type="node">
+      <xpath>//div[@id='bizReviews']</xpath>
+    </def_var>
+
+    <scalar name="title">
+      <xpath>//h1</xpath>
+    </scalar>
+    <composite name="image">
+      <scalar name="location" context_node="bizBox">
+        <xpath>//div[@id='bizPhotos']/div/a/img/@src</xpath>
+      </scalar>
+    </composite>
+    <scalar name="overall_rating" context_node="bizBox">
+      <xpath>//div[@id='bizRating']//meta/@content</xpath>
+    </scalar>
+    <scalar name="num_reviews" context_node="bizBox">
+      <xpath>//span[@itemprop='reviewCount']</xpath>
+    </scalar>
+    <collection name="reviews" context_nod="bizReviews">
+      <xpath>//div[@id='reviews-other']/ul/li</xpath>
+      <scalar name="description">
+        <xpath>//p[@itemprop='description']</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="category" scalar_type="String" comment="the type of business">
+      <xpath>//span[@id='cat_display']</xpath>
+    </scalar>
+    <scalar name="open_hours" scalar_type="String" comment="the hours that the attraction is open">
+      <xpath>//p[@class='hours']</xpath>
+    </scalar>
+    <scalar name="price_range" scalar_type="String" comment="price range">
+      <xpath>//span[@id='price_tip']</xpath>
+    </scalar>
+
+    <composite name="business_address">
+      <scalar name="telephone" context_node="bizBox">
+        <xpath>//span[@id='bizPhone']</xpath>
+      </scalar>
+      <scalar name="street_address" context_node="bizBox">
+        <xpath>//span[@itemprop='streetAddress']</xpath>
+      </scalar>
+      <scalar name="locality" context_node="bizBox">
+        <xpath>//span[@itemprop='addressLocality']</xpath>
+      </scalar>
+      <scalar name="postal_code" context_node="bizBox">
+        <xpath>//span[@itemprop='postalCode']</xpath>
+      </scalar>
+      <scalar name="region" context_node="bizBox">
+        <xpath>//span[@itemprop='addressRegion']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://maps.google.com/maps?q=</value>
+          <value from_scalar="street_address" />
+          <value>,</value>
+          <value from_scalar="postal_code" />
+        </concatenate_values>
+      </scalar>
+    </composite>
+
+    <composite name="business_website">
+      <scalar name="location" context_node="bizBox">
+        <xpath>//div[@id='bizUrl']</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="business_gis_location" />
+
+    <scalar name="price_range" scalar_type="String">
+      <xpath />
+    </scalar>
+    <scalar name="hours">
+      <xpath />
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,34 @@
+
+<meta_metadata_repository name="review"
+  package="ecologylab.bigsemantics.generated.library.review">
+
+  <meta_metadata name="review" extends="rating" schema_org_itemtype="http://schema.org/Review"
+    schema_org_itemprop="reviews">
+    <scalar name="title" scalar_type="string" use_value_as_label="rating" style_name="metadata_italic"/>
+    <scalar name="description" schema_org_itemprop="reviewBody" hide_label="true" />
+    <scalar name="rating" schema_org_itemprop="reviewRating" hide="true" />
+  </meta_metadata>
+
+
+  <meta_metadata name="dlms" extends="compound_document" comment="The DLMS Class">
+    <scalar name="subject" scalar_type="String" />
+  </meta_metadata>
+
+
+  <meta_metadata name="nsdl" extends="compound_document" comment="The NSDL class">
+    <scalar name="subject" scalar_type="String" />
+  </meta_metadata>
+
+
+  <meta_metadata name="dc_document" extends="compound_document" comment="">
+    <scalar name="subject" scalar_type="String" />
+    <mixins>search</mixins>
+  </meta_metadata>
+
+
+  <meta_metadata name="icdl_image" extends="image"
+    comment="Image from The Interantional Children's digital library.">
+    <scalar name="languages" comment="The language of the library" scalar_type="String" />
+  </meta_metadata>
+
+</meta_metadata_repository>

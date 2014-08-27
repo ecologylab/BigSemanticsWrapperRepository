@@ -1,0 +1,15 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="yahooRss" package="ecologylab.bigsemantics.generated.library.yahooRss">
+
+
+  <meta_metadata name="yahoo_media_rss" extends="dc" comment="News feeds." parser="direct">
+    <composite name="media_content" extends="metadata"  hide="true"> <!-- should really make this a collection and seek the larger one -->
+      <scalar name="media_url"  scalar_type="ParsedURL" />
+      <scalar name="height" scalar_type="Int" />
+      <scalar name="width" scalar_type="Int" />
+    </composite>
+    <scalar name="media_description"  scalar_type="String" hide="true"
+      hint="XML_LEAF" />
+  </meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,52 @@
+<meta_metadata_repository name="overstockProduct"
+  package="ecologylab.bigsemantics.generated.library.overstockProduct" default_user_agent_name="firefox_3_6_8">
+
+
+  <meta_metadata name="overstock_com_product" extends="product" parser="xpath">
+    <selector url_regex="http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html.*"
+      domain="overstock.com" />
+
+    <example_url
+      url="http://www.overstock.com/Home-Garden/Bodipedic-Essentials-8-inch-Queen-size-Memory-Foam-Mattress/6153386/product.html?rcmndsrc=4" />
+
+    <scalar name="title">
+      <xpath>//div[@itemprop='name']/h1</xpath>
+    </scalar>
+  	<!--
+  	<scalar name="description" xpath="//div[@id='prodMain_descShort']//li[1]/text()"/>
+  	-->
+    <scalar name="description">
+      <xpath>//ul[@id='details_descFull']/text()</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']/text()</xpath>
+    </scalar>
+
+
+
+    <scalar name="overall_rating">
+      <xpath>//div[@itemprop='ratingValue']</xpath>
+<!--       <regex_op regex="Rating " replace="" /> -->
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//div[@id='most-helpful-reviews']/div[2]/ul/li</xpath>
+      <scalar name="rating">
+        <xpath>.//p[@class='helpful-review-rating']/i/@title</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//h4[@class='review-title']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./div[@class='review-copy']/p</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="image">
+      <scalar name="location">
+        <xpath>//div[@id='proImageHero' or @id='galleryImage']//img/@src</xpath>
+      </scalar>
+    </composite>
+
+  </meta_metadata>
+</meta_metadata_repository>

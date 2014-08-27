@@ -1,0 +1,18 @@
+<meta_metadata_repository name="glassTileStoreProduct"
+  package="ecologylab.bigsemantics.generated.library.glassTileStoreProduct" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="glass_tile_store_product" type="product" parser="xpath">
+    <selector url_regex="http://www.glasstilestore.com/\w+-p/\w+.htm" domain="glasstilestore.com" />
+
+    <scalar name="title">
+      <xpath>//font[@class='productnamecolorLARGE colors_productname']/text()</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//table[@class='colors_descriptionbox'//p/text()</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//font[@class='pricecolor']/text()</xpath>
+    </scalar>
+  </meta_metadata>
+  
+</meta_metadata_repository>

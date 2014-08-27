@@ -1,0 +1,60 @@
+<meta_metadata_repository name="pubmedArticle"
+  package="ecologylab.bigsemantics.generated.library.pubmedArticle" default_user_agent_name="firefox">
+
+  <meta_metadata name="pubmed_article" extends="scholarly_article" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.ncbi.nlm.nih.gov/pubmed/" />
+
+    <example_url url="http://www.ncbi.nlm.nih.gov/pubmed/22439083" />
+    <example_url url="http://www.ncbi.nlm.nih.gov/pubmed/23180662" />
+		
+	<!-- 	<scalar name="title" xpath="//div[@class='rprt abstract']/h1/text()"/> -->
+
+    <scalar name="title">
+      <xpath>//div[@id='maincontent']//h1</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='abstr']</xpath>
+    </scalar>
+
+    <collection name="authors" child_type="pubmed_author">
+      <xpath>//div[@class='auths']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="source">
+      <xpath>//a[@alterm and @alsec]</xpath>
+      <scalar name="title">
+        <xpath>./@title</xpath>
+      </scalar>
+<!-- 			<scalar name="location" xpath="" /> -->
+      <scalar name="year">
+        <xpath>./..</xpath>
+        <regex_op regex="(\d\d\d\d) " group="1" />
+      </scalar>
+    </composite>
+
+    <collection name="citations" child_type="pubmed_article">
+      <xpath>//a[@class='brieflinkpopperctrl']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+		
+		<!--
+	 	<scalar name="study_design" scalar_type="string" xpath=""/>
+		<scalar name="purpose" scalar_type="string" xpath=""/>
+		<scalar name="methods" scalar_type="string" xpath=""/>
+		<scalar name="results" scalar_type="string" xpath=""/>
+		<scalar name="conclusions" scalar_type="string" xpath=""/>
+		-->
+  </meta_metadata>
+</meta_metadata_repository>

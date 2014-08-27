@@ -1,0 +1,29 @@
+<meta_metadata_repository name="restorationHardwareProduct"
+  package="ecologylab.bigsemantics.generated.library.restorationHardwareProduct" default_user_agent_name="firefox_3_6_8">
+
+
+  <meta_metadata name="restorationhardware_product" extends="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.restorationhardware.com/catalog/product/" domain="restorationhardware.com" />
+
+    <example_url
+      location="http://www.restorationhardware.com/catalog/product/product.jsp?productId=prod2140452&amp;categoryId=cat80006" />
+
+    <scalar name="title">
+      <xpath>//h1</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='product-description']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@class='price']</xpath>
+    </scalar>
+
+    <composite name="image">
+      <scalar name="location">
+        <xpath>//img[@class='main-photo']/@src</xpath>
+      </scalar>
+    </composite>
+
+  </meta_metadata>
+</meta_metadata_repository>

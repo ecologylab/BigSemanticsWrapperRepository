@@ -1,0 +1,15 @@
+<meta_metadata_repository name="urbanHardwoodsProduct"
+  package="ecologylab.bigsemantics.generated.library.urbanHardwoodsProduct" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="urban_hardwoods_product" type="product" parser="xpath">
+    <selector url_stripped="http://www.urbanhardwoods.com/furniture/product.aspx" />
+
+    <scalar name="title">
+      <xpath>//span[@class='productName']/text()</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//span[@class='furnitureINTRO']/div[0]/text()</xpath>
+    </scalar>
+  </meta_metadata>
+  
+</meta_metadata_repository>

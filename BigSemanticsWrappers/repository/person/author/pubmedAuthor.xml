@@ -1,0 +1,24 @@
+<meta_metadata_repository name="pubmedAuthor"
+  package="ecologylab.bigsemantics.generated.library.pubmedAuthor" default_user_agent_name="firefox">
+  <meta_metadata name="pubmed_author" extends="author" parser="xpath" user_agent_name="firefox">
+    <selector
+      url_regex_fragment="author=true"
+      domain="nih.gov" />
+    <example_url
+      url="http://www.ncbi.nlm.nih.gov/pubmed?term=Shameli%20A[Author]&amp;cauthor=true&amp;cauthor_uid=23180662" />
+
+    <scalar name="title">
+      <xpath>//textarea[@class='searchdetails_term']</xpath>
+    </scalar>
+
+    <collection name="creative_works" other_tags="publications" child_type="pubmed_article">
+      <xpath>//div[@class='rslt']/p/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

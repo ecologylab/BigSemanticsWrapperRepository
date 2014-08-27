@@ -1,0 +1,53 @@
+<meta_metadata_repository name="fordorAttraction"
+  package="ecologylab.bigsemantics.generated.library.fordorAttraction" default_user_agent_name="chrome">
+  
+  <meta_metadata name="fodors_attraction" type="attraction" parser="xpath"
+    comment="Fodor travel suggestions">
+    <selector url_regex_fragment="review-\d+" domain="fodors.com" />
+    <exampleURL url="http://www.fodors.com/world/europe/italy/rome/review-90077.html" />
+    <scalar name="title">
+      <xpath>//head/title</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//div[@class='slide-image-details']</xpath>
+      <scalar name="location">
+        <xpath>./img/@src</xpath>
+      </scalar>
+    </collection>
+<!--     <scalar name="description">
+      <xpath>//meta[@itemprop='description']/@content</xpath> 											
+    </scalar>
+ -->    
+	<composite name="attraction_address">
+	  <!--  <scalar name="location">
+        <concatenate_values>
+          <value>http://maps.google.com/maps?q=</value>
+          <value from_scalar="street_address" />
+        </concatenate_values>
+      </scalar> -->
+	</composite>
+	
+    <scalar name="fee">
+      <xpath>//li[@class='cost']</xpath>
+    </scalar>
+    <scalar name="open_hours">
+      <xpath>//li[@class='hours']</xpath>
+    </scalar>
+    <scalar name="attraction_website">
+      <xpath>//li[@class='website']/a/@href</xpath>														
+    </scalar>
+    <collection name="reviews">																	
+      <xpath>//ul[@class='member-reviews']/li</xpath>
+      <scalar name="title">
+        <xpath>.//p[1]</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//p[2]</xpath>
+      </scalar>
+    </collection>
+    <scalar name="attractions_in_the_area">
+      <xpath>//li[@class='location']/span[2]/a/@href</xpath>
+    </scalar>
+    
+  </meta_metadata>
+</meta_metadata_repository>

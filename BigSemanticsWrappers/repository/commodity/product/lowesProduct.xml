@@ -1,0 +1,70 @@
+<meta_metadata_repository name="lowesProduct"
+  package="ecologylab.bigsemantics.generated.library.lowesProduct" default_user_agent_name="firefox_3_6_8">
+
+
+  <meta_metadata name="lowes_product" extends="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_regex_fragment="http://www.lowes.com/pd*" domain="lowes.com" />
+    <selector url_regex_fragment="http://www.lowes.com/ProductDisplay*" domain="lowes.com" />
+    <example_url location="http://www.lowes.com/pd_331470-817-235159_4294703024%2B4294934373" />
+
+    <scalar name="title">
+      <xpath>//div[@class='itemInfo']/h1</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//*[@id='description-tab']/p</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//*[@id='pricing']//text()[contains(.,'$')]</xpath>
+    </scalar>
+    <scalar name="model">
+      <xpath>//*[@id='ModelNumber']</xpath>
+    </scalar>
+
+  	<collection name="product_details" >
+  		<xpath>//div[@id='description-tab']//li/text()</xpath>
+  	</collection>
+  	
+  	<collection name="specifications" >
+  		<xpath>//div[@id='specifications-tab']//tr</xpath>
+  		
+  		<scalar name="name">
+  			<xpath>./td[1]</xpath>
+  		</scalar>
+  		<scalar name="value">
+  			<xpath>./td[2]</xpath>
+  		</scalar>
+  	</collection>  	
+
+    <collection name="companion_products" child_type="lowes_product">
+      <xpath>//div[@id='relatedItems']/div</xpath>
+      <scalar name="location">
+        <xpath>./a[2]/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./a[2]</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>./p/span</xpath>
+      </scalar>
+    </collection>
+   	
+<!--   	<scalar name="model" xpath="//input[@name='modelNumber']/@value"/> -->
+
+    <composite name="image">
+      <scalar name="location">
+        <xpath>//div[@id='imgCont']//img[@class='productimage']/@src</xpath>
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="image" />
+      <if>
+        <not_null value="image" />
+        <create_and_visualize_img_surrogate>
+          <arg name="metadata" value="image" />
+        </create_and_visualize_img_surrogate>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

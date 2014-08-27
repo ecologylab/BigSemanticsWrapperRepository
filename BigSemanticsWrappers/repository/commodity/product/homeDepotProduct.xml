@@ -1,0 +1,84 @@
+<meta_metadata_repository name="homeDepotProduct"
+  package="ecologylab.bigsemantics.generated.library.homeDepotProduct" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="home_depot_product" extends="product" parser="xpath"
+    user_agent_name="chrome">
+<!--     <selector url_regex_fragment="http://www.homedepot.com/p/[^/]*" domain="homedepot.com" /> -->
+    <selector url_path_tree="http://www.homedepot.com/p/" />
+
+    <example_url
+      location="http://www.homedepot.com/p/Home-Decorators-Collection-70-5-in-H-x-69-75-in-W-Cherry-Wood-and-Bamboo-4-Panel-Room-Divider-5852120120/202368416?N=bdtw#.UY56OVf_E4k" />
+	<example_url 
+	  location="http://www.homedepot.com/p/Home-Legend-Hand-Scraped-Maple-Sedona-3-8-in-Thick-x-3-1-2-in-Wide-x-35-1-2-in-Length-Click-Lock-Hardwood-Flooring-20-71-sq-ft-cs-HL502/202269884" />
+
+    <scalar name="title">
+      <xpath>//span[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//span[@itemprop='description']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']</xpath>
+      <regex_op regex="/[a-z|A-Z|-]*" replace="" />
+    </scalar>
+    <scalar name="overall_rating">
+      <xpath>//div[@id='BVRRRatingOverall_']/div[3]/span[1]</xpath>
+    </scalar>
+    
+    <collection name="specifications">
+    	<xpath>//div[@id='specifications']//td[position() mod 2 = 1]</xpath>
+    	<scalar name="name">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="value">
+    		<xpath>./following-sibling::*</xpath>
+    	</scalar>
+    </collection>
+
+    <collection name="reviews">
+      <xpath>//div[@id='BVRRDisplayContentBodyID']//div[@class='BVRRReviewDisplayStyle5']</xpath>
+      <scalar name="rating">
+        <xpath>.//div[@class='BVRRRatingNormalOutOf'][1]</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./span[@class='BVRRReviewText']</xpath>
+      </scalar>
+    </collection> 
+
+    <collection name="companion_products" child_type="home_depot_product">
+      <xpath>//div[@id='ymal_vert']/div[@class='product22']</xpath>
+      <scalar name="location">
+        <xpath>.//div[@class='product-name']/a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//div[@class='product-name']/</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//div[@class='price']</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="image">
+      <scalar name="location">
+        <xpath>//img[@itemprop='image']/@src</xpath>
+      </scalar>
+    </composite>
+    
+    <collection name="product_details2" label="product_details" child_scalar_type="string">
+      <xpath>//ul[@class='bulletList']/li</xpath>
+	</collection>
+
+      <collection name="specifications">
+        <xpath>//div[@id='specifications']//tr</xpath>
+        <scalar name="name">
+          <xpath>./td[1]</xpath>
+<!--           <xpath>./td[3]</xpath> -->
+        </scalar>
+        <scalar name="value">
+          <xpath>./td[2]/text()</xpath>
+<!--           <xpath>./td[4]</xpath> -->
+         </scalar>
+      </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

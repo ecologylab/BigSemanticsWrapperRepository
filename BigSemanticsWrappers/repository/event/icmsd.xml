@@ -1,0 +1,14 @@
+<meta_metadata_repository name="earthquake"
+  package="ecologylab.bigsemantics.generated.library.disaster" default_user_agent_name="firefox">
+
+
+  <meta_metadata name="icsmd" extends="disaster"
+    comment="Generalized International Charter on Space and Major Disasters Object">
+
+    <scalar name="event_type" scalar_type="String" />
+    <scalar name="event_location" scalar_type="String" />
+    <scalar name="date_of_charter_activation" scalar_type="String" />
+    <scalar name="charter_requestor" scalar_type="String" />
+    <scalar name="project_manager" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

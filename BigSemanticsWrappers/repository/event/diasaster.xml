@@ -1,0 +1,13 @@
+<meta_metadata_repository name="earthquake"
+  package="ecologylab.bigsemantics.generated.library.disaster" default_user_agent_name="firefox">
+  
+  <meta_metadata name="disaster" extends="event" comment="Generalized Disaster Object">
+    <scalar name="magnitude" label="magnitude richter" scalar_type="float" />
+    <composite name="map_image" type="image" />
+
+    <composite name="map" type="document" />
+    <composite name="source" type="compound_document" />
+
+  </meta_metadata>
+  
+</meta_metadata_repository>

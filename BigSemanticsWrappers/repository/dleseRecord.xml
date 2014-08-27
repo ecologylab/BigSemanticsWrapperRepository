@@ -1,0 +1,75 @@
+<meta_metadata_repository name="dleseRecord"
+  package="ecologylab.bigsemantics.generated.library.dleseRecord" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="dlese_record" extends="document" visibility="PACKAGE" parser="direct">
+    <composite name="dlese_record_head" extends="metadata">
+      <scalar name="id" scalar_type="String" />
+      <composite name="collection" extends="metadata">
+        <scalar name="id" scalar_type="String"  />
+				<!-- how can we get the text of element <collection>? -->
+      </composite>
+      <scalar name="xml_format" scalar_type="String" />
+      <scalar name="last_modified" scalar_type="Date"  />
+      <!-- re-use the following type in sub-meta-metadata: -->
+      <composite name="additional_metadata" extends="metadata" />
+    </composite>
+
+    <composite name="record_metadata" extends="metadata" >
+      <composite name="item_record" extends="metadata">
+        <scalar name="location" scalar_type="ParsedURL"  other_tags="xsi:schemaLocation" />
+        <composite name="general" extends="metadata">
+          <scalar name="title" scalar_type="String" />
+          <scalar name="description" scalar_type="String" />
+          <scalar name="language" scalar_type="String" />
+          <collection name="subjects"  child_scalar_type="String" />
+        </composite>
+        <composite name="lifecycle" extends="metadata">
+          <collection name="contributors" child_type="contributor" child_extends="metadata">
+            <scalar name="role" scalar_type="String" />
+            <scalar name="date" scalar_type="Int" /><!-- actually year -->
+            <composite name="organization" extends="metadata">
+              <scalar name="name" scalar_type="String" />
+              <scalar name="email" scalar_type="String" />
+            </composite>
+          </collection>
+        </composite>
+        <composite name="record_meta_metadata" extends="metadata">
+          <collection name="catalogs"
+            child_scalar_type="String" />
+          <composite name="date_info" extends="metadata" >
+            <scalar name="created" scalar_type="Date" />
+            <scalar name="accessioned" scalar_type="Date" />
+          </composite>
+        </composite>
+        <composite name="educational" extends="metadata">
+          <collection name="audiences" child_type="audience" child_extends="metadata">
+            <scalar name="grade_range" scalar_type="String" />
+          </collection>
+          <collection name="resource_types" 
+            child_scalar_type="String" />
+        </composite>
+      </composite>
+    </composite>
+  </meta_metadata>
+  
+  
+
+  <meta_metadata name="dlese_get_record" extends="compound_document" parser="direct"
+   >
+    <selector url_regex="http://www.dlese.org/dds/services/ddsws1-0\?verb=GetRecord.*"
+      domain="dlese.org" />
+
+    <collection name="records" child_type="dlese_record2"
+      child_extends="dlese_record">
+      <composite name="dlese_record_head" type="head2" extends="dlese_record_head">
+        <composite name="additional_metadata" type="get_record_additional_metadata"
+          extends="additional_metadata">
+          <scalar name="realm" scalar_type="String" />
+          <scalar name="accession_status" scalar_type="String"  />
+          <scalar name="part_of_drc" scalar_type="String"  />
+        </composite>
+      </composite>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

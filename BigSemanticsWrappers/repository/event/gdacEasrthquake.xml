@@ -1,0 +1,53 @@
+<meta_metadata_repository name="gdacsEarthquake"
+  package="ecologylab.bigsemantics.generated.library.gdacsEarthquake" default_user_agent_name="firefox">
+
+
+  <meta_metadata name="gdacs_earthquake" type="earthquake" parser="xpath"
+    comment="Global Disaster Alert and Coordination System">
+    <selector url_stripped="http://www.gdacs.org/Earthquakes/report.aspx" />
+    <example_url
+      url="http://www.gdacs.org/Earthquakes/report.aspx?eventid=123892&amp;episodeid=123892&amp;eventtype=EQ" />
+
+    <scalar name="title">
+      <xpath>//span[@id='ctl00_ReportTitle']</xpath>
+    </scalar>
+
+    <def_var name="details_ul" type="node">
+      <xpath>//span[@id='ctl00_cph_earthquake_details']/ul</xpath>
+    </def_var>
+
+    <scalar name="magnitude" context_node="details_ul">
+      <xpath>./li[1]/b</xpath>
+    </scalar>
+    <scalar name="depth" context_node="details_ul">
+      <xpath>./li[2]/b</xpath>
+    </scalar>
+
+    <composite name="gis_location">
+      <scalar name="latitude" context_node="details_ul">
+        <xpath>./li[4]/b[1]</xpath>
+      </scalar>
+      <scalar name="longitude" context_node="details_ul">
+        <xpath>./li[4]/b[2]</xpath>
+      </scalar>
+    </composite>
+
+    <composite name="map_image">
+      <scalar name="location">
+        <xpath>//div[@id='populationmap']/img/@src</xpath>
+      </scalar>
+    </composite>
+
+		<!--
+    <composite name="map">
+      <scalar name="location" context_node="details_ul" xpath="./li[4]/b[1]" />
+    </composite>
+    -->
+
+    <composite name="source">
+      <scalar name="location" context_node="details_ul">
+        <xpath>./li[3]/a/@href</xpath>
+      </scalar>
+    </composite>
+  </meta_metadata>
+</meta_metadata_repository>
