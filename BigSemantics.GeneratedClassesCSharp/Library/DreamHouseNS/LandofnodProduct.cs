@@ -9,7 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.DreamHouseNS;
-using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
+using Ecologylab.Semantics.Generated.Library.ProductNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

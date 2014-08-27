@@ -6,6 +6,6 @@
     <scalar name="number_of_ratings" label="number of ratings" scalar_type="String" />
 
     <collection name="similar_games" child_type="board_game" />
-    <collection name="categories" child_type="search_result" />
+    <collection name="categories" child_type="compound_document" />
   </meta_metadata>
 </meta_metadata_repository>

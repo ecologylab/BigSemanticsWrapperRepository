@@ -127,35 +127,5 @@
     </collection>
   </meta_metadata>
 
-  <meta_metadata name="flamenco_facet" extends="compound_document" parser="xpath">
-    <selector url_regex="^(.(?!index))*$" domain="berkeley.edu" />
-    <example_url
-      url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=heaven_earth:29&amp;group=heaven_earth" />
-    <scalar name="title" scalar_type="String">
-      <xpath>//table[@class='termbox']//tr/td[1]/span[position() = last()]/span</xpath>
-    </scalar>
-
-    <collection name="sub_facets" child_type="flamenco_object">
-      <xpath>//td[@class='itemcolumn']//td[@class='facetbox']</xpath>
-      <scalar name="title">
-        <xpath>./a/span</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./a/@href</xpath>
-      </scalar>
-    </collection>
-    <collection name="flamenco_objects" child_type="flamenco_object">
-      <xpath>(.//table[@cellpadding='2'])[last()]/tbody/tr/td</xpath>
-      <scalar name="title">
-        <xpath>./a/span</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./a/@href</xpath>
-      </scalar>
-
-    </collection>
-    <scalar name="object_count" scalar_type="String" />
-
-  </meta_metadata>
   
 </meta_metadata_repository>

@@ -9,7 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.MovieNS;
+using Ecologylab.Semantics.Generated.Library.MoviePersonNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

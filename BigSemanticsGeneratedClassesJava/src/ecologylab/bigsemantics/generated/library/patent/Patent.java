@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.patent;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.patent.PatentClassification;
+import ecologylab.bigsemantics.generated.library.patentClassification.PatentClassification;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;

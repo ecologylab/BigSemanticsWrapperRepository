@@ -8,7 +8,7 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.GisNS;
+using Ecologylab.Semantics.Generated.Library.ContactPointNS;
 using Ecologylab.Semantics.Generated.Library.PersonNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;

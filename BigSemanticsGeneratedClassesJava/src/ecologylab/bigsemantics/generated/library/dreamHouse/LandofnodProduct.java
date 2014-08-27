@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
  */
 
 import ecologylab.bigsemantics.generated.library.dreamHouse.LandofnodProduct;
-import ecologylab.bigsemantics.generated.library.product_and_service.Product;
+import ecologylab.bigsemantics.generated.library.product.Product;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;

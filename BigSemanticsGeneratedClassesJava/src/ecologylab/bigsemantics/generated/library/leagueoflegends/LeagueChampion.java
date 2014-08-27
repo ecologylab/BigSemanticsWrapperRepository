@@ -8,10 +8,10 @@ package ecologylab.bigsemantics.generated.library.leagueoflegends;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueAbility;
 import ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueRelationshipList;
 import ecologylab.bigsemantics.generated.library.video.YoutubeVideo;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class LeagueChampion extends CompoundDocument
+public class LeagueChampion extends CreativeWork
 {
 	@simpl_scalar
 	private MetadataString epithet;

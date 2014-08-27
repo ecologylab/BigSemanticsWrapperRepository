@@ -9,8 +9,9 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.GisNS;
-using Ecologylab.Semantics.Generated.Library.GrantNS;
+using Ecologylab.Semantics.Generated.Library.GrantProgramNS;
+using Ecologylab.Semantics.Generated.Library.GrantStaffNS;
+using Ecologylab.Semantics.Generated.Library.PostalAddressNS;
 using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;

@@ -9,7 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.PatentNS;
+using Ecologylab.Semantics.Generated.Library.PatentClassificationNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

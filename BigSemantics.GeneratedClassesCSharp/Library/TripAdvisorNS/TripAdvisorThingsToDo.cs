@@ -8,8 +8,8 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.AttractionNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
-using Ecologylab.Semantics.Generated.Library.TravelNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.tripAdvisor;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.attraction.Attraction;
 import ecologylab.bigsemantics.generated.library.hotel.Hotel;
-import ecologylab.bigsemantics.generated.library.travel.Attraction;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;

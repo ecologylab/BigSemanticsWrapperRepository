@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.MetaMetadataNS;
@@ -24,7 +25,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS 
 {
 	[SimplInherit]
-	public class LeagueChampion : CompoundDocument
+	public class LeagueChampion : CreativeWork
 	{
 		[SimplScalar]
 		private MetadataString epithet;

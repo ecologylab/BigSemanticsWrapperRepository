@@ -8,8 +8,9 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.AuthorNS;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.MiscNS;
+using Ecologylab.Semantics.Generated.Library.RatingNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

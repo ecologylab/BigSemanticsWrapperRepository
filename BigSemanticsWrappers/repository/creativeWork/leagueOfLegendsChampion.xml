@@ -7,7 +7,7 @@
     <collection name="champions" child_type="league_champion" />
   </meta_metadata>
 
-  <meta_metadata name="league_ability" extends=" " parser="xpath">
+  <meta_metadata name="league_ability" extends="compound_document" parser="xpath">
     <scalar name="title" label="ability_name" />
     <scalar name="tooltip" scalar_type="String" />
     <scalar name="cost" scalar_type="String" />

@@ -9,9 +9,9 @@ package ecologylab.bigsemantics.generated.library.tvShow;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
+import ecologylab.bigsemantics.generated.library.moviePerson.MoviePerson;
 import ecologylab.bigsemantics.generated.library.tvShow.TvShow;
-import ecologylab.bigsemantics.generated.library.tvShow.TvShowEpisode;
+import ecologylab.bigsemantics.generated.library.tvShowEpisode.TvShowEpisode;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
