@@ -1,0 +1,9 @@
+<meta_metadata_repository name="macheClipping" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="mache_clipping" extends="clipping"
+    package="ecologylab.bigsemantics.generated.library.primitives">
+    <generic_type_var name="M" arg="information_composition_media" />
+  </meta_metadata>
+
+  </meta_metadata_repository>

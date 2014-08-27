@@ -1,0 +1,9 @@
+<meta_metadata_repository name="imageClipping" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  
+
+  <meta_metadata name="image_clipping" extends="clipping" built_in="true">
+    <generic_type_var name="M" arg="image" />
+  </meta_metadata>
+</meta_metadata_repository>

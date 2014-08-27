@@ -1,0 +1,9 @@
+<meta_metadata_repository name="documentMetadataWrap" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="document_metadata_wrap" extends="metadata" built_in="true"
+    comment="Used to disambiguated Document subclass composites.">
+    <composite name="document" type="document" promote_children="true" polymorphic_scope="repository_documents"
+      comment="polymorphic across documents" />
+  </meta_metadata>
+</meta_metadata_repository>

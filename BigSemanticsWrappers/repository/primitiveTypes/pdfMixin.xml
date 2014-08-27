@@ -1,0 +1,16 @@
+<meta_metadata_repository name="primitives" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="pdf_mixin" label="pdf" extends="metadata"
+    comment="For metadata fields extracted by the PDF parser" package="ecologylab.bigsemantics.generated.library">
+    <scalar name="author" comment="The author of the pdf document" scalar_type="String" />
+    <scalar name="summary" comment="Summary of the pdf document" scalar_type="String" />
+    <scalar name="pdf_keywords_string" comment="Key Words of the document" scalar_type="String" />
+    <scalar name="subject" comment="Subject of the document" scalar_type="String" />
+    <scalar name="trapped" scalar_type="String" />
+    <scalar name="modified" scalar_type="String" />
+    <scalar name="contents" comment="Contents of the document" scalar_type="String" />
+    <scalar name="creationdate" comment="Creation date of the document" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

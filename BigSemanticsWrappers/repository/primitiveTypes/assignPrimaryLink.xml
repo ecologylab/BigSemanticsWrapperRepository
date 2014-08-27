@@ -1,0 +1,8 @@
+<meta_metadata_repository name="assignPrimaryLink" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="assign_primary_link" extends="creative_act" built_in="true">
+    <scalar name="location" scalar_type="ParsedURL" />
+  </meta_metadata>
+</meta_metadata_repository>
