@@ -1,0 +1,8 @@
+<meta_metadata_repository name="sequencedClippableDocument" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="sequenced_clippable_document" extends="clippable_document" built_in="true">
+    <scalar name="duration" scalar_type="int" comment="duration of media in milliseconds." />
+    <scalar name="file_format" scalar_type="String" hide="true" />
+  </meta_metadata>
+</meta_metadata_repository>

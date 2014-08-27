@@ -1,0 +1,9 @@
+<meta_metadata_repository name="audioSelfmade" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="audio_selfmade" extends="rich_artifact"
+    package="ecologylab.bigsemantics.generated.library.primitives">
+    <generic_type_var name="M" arg="audio" />
+  </meta_metadata>
+</meta_metadata_repository>

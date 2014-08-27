@@ -1,0 +1,9 @@
+<meta_metadata_repository name="htmlText" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="html_text" extends="metadata" built_in="true">
+    <scalar name="text" scalar_type="String" />
+    <scalar name="html_string" scalar_type="String" hide="true" />
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,13 @@
+<meta_metadata_repository name="xml" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="xml" type="document" parser="direct" user_agent_name="firefox_3_6_8">
+    <selector>
+      <mime_type>text/xml</mime_type>
+      <mime_type>application/xml</mime_type>
+      <suffix>xml</suffix>
+    </selector>
+  </meta_metadata>
+
+</meta_metadata_repository>

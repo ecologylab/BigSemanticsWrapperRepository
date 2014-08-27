@@ -1,0 +1,7 @@
+<meta_metadata_repository name="imageSelfmade" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+  
+  <meta_metadata name="image_selfmade" extends="rich_artifact" built_in="true">
+    <generic_type_var name="M" arg="image" />
+  </meta_metadata>
+</meta_metadata_repository>

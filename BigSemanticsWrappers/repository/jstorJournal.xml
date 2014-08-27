@@ -1,0 +1,18 @@
+<meta_metadata_repository name="jstor_journal"
+  package="ecologylab.bigsemantics.generated.library.jstorJournal">
+  
+  <meta_metadata name="jstor_journal" extends="compound_document" parser="xpath">
+  	<selector url_regex="http://www.jstor.org/action/expandCollapseDecadeGroup\?.*" domain="jstor.org" />
+   	<example_url url="http://www.jstor.org/action/expandCollapseDecadeGroup?close=2000s&amp;journalCode=compeduc#2000s"/>
+  
+  	<scalar name="title">
+  		<xpath>//span[@class='journalTitle langMatch']</xpath>
+  	</scalar>
+  
+  <scalar name="description">
+  	<xpath>//div[@id='journalInfo]/div[1]</xpath>
+  </scalar>
+  
+  </meta_metadata>
+  
+</meta_metadata_repository>

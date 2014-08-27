@@ -1,0 +1,101 @@
+<meta_metadata_repository name="compoundDocument" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="compound_document" extends="document" built_in="true"
+   parser="xpath"
+   schema_org_itemtype="http://schema.org/Thing">
+<!--    parser="html_dom_image_text" -->
+  
+    <selector>
+      <mime_type>text/html</mime_type>
+      <suffix>htm</suffix>
+      <suffix>html</suffix>
+      <suffix>htmls</suffix>
+      <suffix>htx</suffix>
+      <suffix>shtml</suffix>
+      <suffix>ssi</suffix>
+      <suffix>acgi</suffix>
+    </selector>
+
+    <scalar name="location" always_show="false" hide="true" schema_org_itemprop="url" layer="8.0">
+<!--       <xpath>//meta[@name='og:url']/@content</xpath> -->
+    </scalar> 
+ 
+    <scalar name="title" scalar_type="String" style_name="metadata_h1" layer="10.0" hint="XML_LEAF"
+      is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name" use_value_as_label="main_images"
+      comment="The Title of the Document">
+      
+      
+      <xpath>/html/head/title</xpath>
+      <xpath>//meta[@name='og:title']/@content</xpath>
+      <xpath>//meta[@name='twitter:title']/@content</xpath>
+    </scalar>
+    <scalar name="description" scalar_type="String" hint="XML_LEAF" layer="1.6" style_name="description_div"
+      schema_org_itemprop="description">
+      <xpath>//meta[@name='description']/@content</xpath>
+      <xpath>//meta[@name='og:description']/@content</xpath>
+      <xpath>//meta[@name='twitter:description']/@content</xpath>
+      <xpath>//*[@itemprop='description']/@content</xpath>
+    </scalar>
+    <scalar name="site_name" scalar_type="String" hide="true" comment="Huamn readable name of the site.">
+      <xpath>//meta[@property='og:site_name']/@content</xpath>
+      <xpath>//meta[@property='twitter:site']/@content</xpath>
+    </scalar>
+    
+    <scalar name="text_keywords" scalar_type="string" label="keywords" >
+    	<xpath>//meta[@name='keywords']/@content</xpath>
+    </scalar>
+    
+    <composite name="see_also" type="document">
+	      <xpath>//meta[@name='og:see_also']</xpath>
+	      <scalar name="title">
+	        <concatenate_values>
+	          <value>see also</value>
+	        </concatenate_values>
+	      </scalar>
+	      <scalar name="location" required='true'>
+	        <xpath>./@content</xpath>
+	      </scalar>
+    </composite>
+    
+    <scalar name="query" scalar_type="String" hint="XML_LEAF" layer="5.0" comment="The search query" />
+    <scalar name="page_structure" layer="6.0" hide="true" scalar_type="String"
+      comment="For debugging. Type of the structure recognized by information extraction." />
+    <collection name="clippings" child_type="clipping" hide="true" polymorphic_scope="repository_clippings"
+      comment="Clippings that this document contains." />
+
+    <composite name="thumbnail" type="image" hide="true">
+      <xpath>//meta[@itemprop='thumbnailUrl']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </composite>
+    <collection name="main_images" child_type="image">
+      <xpath>//meta[@property='og:image']</xpath>
+<!--       <xpath>//meta[@property='twitter:image:src']</xpath> -->
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+    <collection name="main_videos" child_type="video">
+      <xpath>//meta[@property='og:video']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="main_audio" child_type="audio">
+      <xpath>//meta[@property='og:audio']</xpath>
+      <scalar name="location">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+    <collection name="article_bodies" child_type="document">
+      <xpath>//*[@itemprop='articleBody']</xpath>
+      <scalar name="description" label="content">
+        <xpath>.</xpath>
+      </scalar>
+   
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>
