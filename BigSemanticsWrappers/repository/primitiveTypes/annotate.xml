@@ -1,0 +1,8 @@
+<meta_metadata_repository name="annotate" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="annotate" extends="creative_act" built_in="true">
+    <scalar name="text" scalar_type="string" />
+  </meta_metadata>
+</meta_metadata_repository>

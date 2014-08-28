@@ -1,0 +1,40 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="metFilter" package="ecologylab.bigsemantics.generated.library.metFilter" default_user_agent_name="chrome_32">
+ 
+ 
+  <meta_metadata name="met_filter" extends="search" parser="xpath">
+    <!--  <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
+      <param name="who" />
+    </selector>
+
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
+      <param name="where" />
+    </selector>
+
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
+      <param name="what" />
+    </selector>
+
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
+      <param name="when" />
+    </selector>
+
+    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
+      <param name="deptid" />
+    </selector> -->
+    <selector url_regex="http://www.metmuseum.org/collection/the-collection-online/search?.*" domain="metmuseum.org"/>
+
+    <example_url url="http://www.metmuseum.org/collection/search-the-collections?ft=*&amp;what=Spruce" />
+
+    <collection name="search_results" child_type="met_artwork">
+      <xpath>//div[@class='search-results-container cleared visible']/ul/li</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./div[2]/p/a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./div[2]/p/a</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+ 
+</meta_metadata_repository>

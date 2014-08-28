@@ -10,7 +10,6 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.BoardGameNS;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -40,9 +39,9 @@ namespace Ecologylab.Semantics.Generated.Library.BoardGameNS
 		[MmName("similar_games")]
 		private List<BoardGame> similarGames;
 
-		[SimplCollection("search_result")]
+		[SimplCollection("compound_document")]
 		[MmName("categories")]
-		private List<SearchResult> categories;
+		private List<CompoundDocument> categories;
 
 		public BoardGame()
 		{ }
@@ -89,7 +88,7 @@ namespace Ecologylab.Semantics.Generated.Library.BoardGameNS
 			}
 		}
 
-		public List<SearchResult> Categories
+		public List<CompoundDocument> Categories
 		{
 			get{return categories;}
 			set

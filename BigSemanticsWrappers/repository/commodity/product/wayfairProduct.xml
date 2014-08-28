@@ -1,0 +1,44 @@
+<meta_metadata_repository name="wayfairProduct"
+  package="ecologylab.bigsemantics.generated.library.wayfairProduct" default_user_agent_name="firefox_3_6_8">
+
+
+  <meta_metadata name="wayfair_product" type="product" parser="xpath" user_agent_name="firefox">
+    <selector url_path_tree="http://www.wayfair.com/" />
+    <example_url
+      location="http://www.wayfair.com/Learning-Carpets-Ride-the-Train-Kids-Rug-LC142-LNC1009.html" />
+
+    <scalar name="title">
+      <xpath>//meta[@property='og:title']/@content|//title</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='prodbullets pdbulletswrap']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//meta[@property='og:price:amount']/@content|//span[@data-id='dynamic-sku-price']</xpath>
+    </scalar>
+
+    <scalar name="overall_rating">
+      <xpath>//span[@itemprop='ratingValue']</xpath>
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//table[@class='review_table']/tbody/tr</xpath>
+      <scalar name="rating">
+        <xpath>.//div[@itemprop='ratingValue']</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//p[@itemprop='reviewBody']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='bodytext']/p</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//meta[@property='og:image']/@content|//div[@class='zoomimgwrap']//img/@src</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

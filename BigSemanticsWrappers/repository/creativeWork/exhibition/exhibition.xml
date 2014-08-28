@@ -1,0 +1,15 @@
+<meta_metadata_repository name="exhibition"
+  package="ecologylab.bigsemantics.generated.library.exhibition" default_user_agent_name="chrome_2">
+
+
+
+  <meta_metadata name="exhibition" extends="creative_work" comment="Artwork exhibition class">
+    <scalar name="location" hide="true" />
+    <scalar name="description" label="abstract" comment="Abstract of the work." />
+    <collection name="contributors" child_type="artist" label="artists"
+      layer="9.5" comment="Set of contributors." />
+
+    <collection name="creative_works" child_type="artwork" label="artworks" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

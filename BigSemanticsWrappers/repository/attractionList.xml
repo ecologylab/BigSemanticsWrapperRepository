@@ -1,0 +1,10 @@
+<meta_metadata_repository name="attractionList"
+  package="ecologylab.bigsemantics.generated.library.attractionList" default_user_agent_name="chrome_2">
+  
+  
+  <meta_metadata name="attraction_list" extends="compound_document">
+    <collection name="attractions" child_type="attraction" >
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

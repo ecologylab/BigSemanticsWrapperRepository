@@ -1,0 +1,53 @@
+<meta_metadata_repository name="cnetReview"
+  package="ecologylab.bigsemantics.generated.library.cnetReview" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="cnet_review" extends="tech_review" comment="cnet.com review"
+    parser="xpath">
+    <selector url_path_tree="http://reviews.cnet.com/" />
+    <selector url_path_tree="http://www.cnet.com/" domain="cnet.com" />
+    
+    <example_url url="http://reviews.cnet.com/ps4/" />
+    <example_url url="http://reviews.cnet.com/samsung-galaxy-s4/" />
+    
+    <scalar name="title">
+      <xpath>//span[@class='productSpan']</xpath>
+    </scalar>
+		
+		<!-- rating buggy -->
+    <scalar name="overall_rating">
+      <xpath>//*[@id='editorSubRating']/div[2]/div/ul/li[2]/div[1]/strong</xpath>
+    </scalar>
+    <scalar name="author" scalar_type="String">
+      <xpath>//span[@class='byline']/a</xpath>
+    </scalar>
+    <scalar name="publication_date">
+      <xpath>//div[@class='reviewDate']//span/time</xpath>
+    </scalar>
+    <scalar name="price" label="msrp">
+      <xpath>(//span[@class='msrp']</xpath>
+    </scalar>
+
+    <scalar name="good" label="the good" scalar_type="String">
+      <xpath>//div[@id='reviewSummary']/p[1]</xpath>
+    </scalar>
+    <scalar name="bad" label="the bad" scalar_type="String">
+      <xpath>//div[@id='reviewSummary']/p[2]</xpath>
+    </scalar>
+    <scalar name="bottom" label="the bottom line" scalar_type="String">
+      <xpath>//div[@id='reviewSummary']/p[3]</xpath>
+    </scalar>
+
+    <collection name="specifications" child_type="document">
+      <xpath>//div[@id='contentAux']/section[1]/ul/li</xpath>
+      <scalar name="title" label="spec">
+        <xpath>./span[1]</xpath>
+      </scalar>
+      <scalar name="description" label="detail">
+        <xpath>./span[2]</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
+
+</meta_metadata_repository>

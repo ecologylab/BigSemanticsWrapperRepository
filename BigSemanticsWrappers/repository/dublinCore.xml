@@ -1,0 +1,15 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="dublinCore" package="ecologylab.bigsemantics.generated.library.dublinCore">
+
+  <meta_metadata name="dc" extends="compound_document" comment="Dublin core fields."
+    parser="direct">
+    <scalar name="dc_creator"  label="author" scalar_type="String" hint="XML_LEAF" />
+    <scalar name="dc_subject" scalar_type="String" hint="XML_LEAF" />
+    <scalar name="dc_description"  other_tags="description" scalar_type="String"
+      hint="XML_LEAF" />
+    <scalar name="dc_title"  other_tags="title" scalar_type="String" hint="XML_LEAF"
+      hide="true" />
+    <scalar name="dc_date"  other_tags="pubDate" scalar_type="Date" hint="XML_LEAF"
+      ignore_in_term_vector="true" />
+  </meta_metadata>
+</meta_metadata_repository>

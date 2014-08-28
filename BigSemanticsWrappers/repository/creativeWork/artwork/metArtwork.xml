@@ -1,0 +1,83 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="metArtwork" package="ecologylab.bigsemantics.generated.library.metArtwork" default_user_agent_name="chrome_32">
+
+   <meta_metadata name="met_artwork" extends="artwork" parser="xpath">
+    <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections?/search-the-collections/\d+" />
+    <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/Collections?/search-the-collections/\d+" />
+    <example_url
+      url="http://www.metmuseum.org/Collections/search-the-collections/503435?rpp=60&amp;pg=1&amp;rndkey=20140121&amp;ao=on&amp;ft=*&amp;what=Spruce&amp;pos=12" />
+    <example_url
+      url="http://www.metmuseum.org/Collections/search-the-collections/503647?rpp=60&amp;pg=1&amp;rndkey=20140121&amp;ao=on&amp;ft=*&amp;what=Spruce&amp;pos=10" />
+    <example_url url="http://www.metmuseum.org/Collections/search-the-collections/503932" />
+
+    <scalar name="title">
+      <xpath>//div[@class='text-box first cleared ']/h2</xpath>
+    </scalar>
+    <scalar name="geography" comment="Location of the work." label="geography" scalar_type="String">
+      <xpath>(//dd[preceding-sibling::dt[contains(text(),'Geography:')]])[1]</xpath>
+    </scalar>
+	
+	<collection name="main_images">
+	   <xpath>//div[@class='object']//img</xpath>
+	   <xpath>//a[@name='art-object-fullscreen']//img</xpath>
+	   <scalar name="location">
+	       <xpath>./@src</xpath>
+	   </scalar>
+	
+	</collection>
+	
+	
+	
+		<!-- special characters (dash) get deleted -->
+    <example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
+    <scalar name="year">
+      <xpath>(//dd[preceding-sibling::dt[contains(text(),'Date:')]])[1]</xpath>
+    </scalar>
+
+    <scalar name="medium">
+      <xpath>(//dd[preceding-sibling::dt[contains(text(),'Medium:')]])[1]</xpath>
+    </scalar>
+
+    <collection name="authors">
+      <xpath>//dt[text()='Who']/../dd[1]/ul/li/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <scalar name="author_info" comment="Bit of info about author" label="artist info"
+      scalar_type="String">
+      <xpath>//*[@id='content-container']/div[3]/div[1]/h3</xpath>
+      <regex_op regex="\((.*?)\)" />
+    </scalar>
+
+    <scalar name="description">
+      <xpath>//a[contains(text(),'Description')]/../div/div/p</xpath>
+    </scalar>
+
+    <collection name="works_of_interest" child_type="met_artwork" label="related works"
+    other_tags="creative_works">
+      <xpath>//div[@class='object-info']/p/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tags" child_type="met_filter" label="tags" >
+      <xpath>(//div[@class='accordion-inner'])[last()]/dl/dd/ul/li/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  
+  </meta_metadata_repository>

@@ -1,0 +1,9 @@
+<meta_metadata_repository name="informationCompositionMedia" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="information_composition_media" extends="clippable_document"
+    package="ecologylab.bigsemantics.generated.library.primitives">
+    <scalar name="pure_nested" scalar_type="String" />
+    <scalar name="hash_key" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,10 @@
+<meta_metadata_repository name="event"
+  package="ecologylab.bigsemantics.generated.library.event" default_user_agent_name="firefox">
+
+  <meta_metadata name="event" extends="compound_document" comment="Generalized Event Object">
+    <scalar name="start_time" scalar_type="Date" />
+    <scalar name="end_time" scalar_type="Date" />
+
+    <composite name="gis_location" type="gis_location" />
+  </meta_metadata>
+</meta_metadata_repository>

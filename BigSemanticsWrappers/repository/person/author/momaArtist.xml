@@ -1,0 +1,23 @@
+
+<meta_metadata_repository name="momaArtist"
+  package="ecologylab.bigsemantics.generated.library.momaArtist" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="moma_artist" extends="artist" parser="xpath">
+    <selector url_stripped="http://www.moma.org/collection/artist.php" />
+    <example_url url="http://www.moma.org/collection/artist.php?artist_id=28723" />
+
+    <scalar name="title">
+      <xpath>//h2[@class='pagetitle']</xpath>
+    </scalar>
+    <collection name="creative_works">
+      <xpath>//ul[@id='thumbnail-view-items']/li/div/div</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./a[2]/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./div/i</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

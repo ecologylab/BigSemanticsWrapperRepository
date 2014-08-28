@@ -1,0 +1,28 @@
+<meta_metadata_repository name="appleMacProduct"
+  package="ecologylab.bigsemantics.generated.library.appleMacProduct">
+
+  <meta_metadata name="apple_product_mac" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://store.apple.com/us/buy-mac.*" domain="apple.com"/>
+    <example_url url="http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&amp;step=config" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='title']</xpath>
+      <regex_op regex="Configure your" replace="" />
+    </scalar>
+    <scalar name="price">
+      <xpath>//p[@itemprop='price']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <xpath>//img[@class='hero-img hero-img ir']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="product_details">
+      <xpath>//div[@class='section']/ul[@class='specs-list']/li</xpath>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

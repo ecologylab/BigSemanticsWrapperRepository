@@ -1,0 +1,54 @@
+<meta_metadata_repository name="askNatureSubgroup"
+  package="ecologylab.bigsemantics.generated.library.askNatureSubgroup" default_user_agent_name="chrome">
+
+
+  <meta_metadata name="ask_nature_subgroup" extends="compound_document" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|\d+\|(\d+)\&amp;type=aof"
+      domain="asknature.org" />
+    <example_url url="http://www.asknature.org/browse?selected=strategy|501|516&amp;type=aof" />
+    <example_url url="http://www.asknature.org/browse?selected=strategy|921|971&amp;type=aof" />
+	
+    <def_var name="subgroup_node" type="node">
+      <xpath>//ul[@id='accordion_list_2']//dt[@class='accordion_close accordion_open']</xpath>
+    </def_var>
+
+	<scalar name="group_id" scalar_type="String" hide="true" >
+		<xpath>//a[@class='selected']/@*[name()='an:id']</xpath>
+	</scalar>
+	<scalar name="subgroup_id" scalar_type="String" hide="true" context_node="subgroup_node">
+      <xpath>./@*[name()='an:id']</xpath>
+    </scalar>
+
+    <scalar name="title" label="subgroup" context_node="subgroup_node">
+      <xpath>.</xpath>
+    </scalar>
+    <collection name="functions" child_type="ask_nature_function"
+      context_node="subgroup_node">
+      <xpath>./following-sibling::dd[1]/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="group_id">
+      	<xpath>./ancestor::div[4]//a[@class='selected']/@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="subgroup_id">
+      	<xpath>./../preceding-sibling::dt[1]/@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="function_id">
+        <xpath>./@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.asknature.org/browse?selected=strategy|</value>
+          <value from_scalar="group_id" />
+          <value>|</value>
+          <value from_scalar="subgroup_id" />
+          <value>|</value>
+          <value from_scalar="function_id" />
+          <value>&amp;type=aof</value>
+        </concatenate_values>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

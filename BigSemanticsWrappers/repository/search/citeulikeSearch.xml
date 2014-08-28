@@ -1,0 +1,63 @@
+<meta_metadata_repository name="citeulikeSearch"
+  package="ecologylab.bigsemantics.generated.library.citeulikeSearch" default_user_agent_name="chrome">
+
+  
+  <meta_metadata name="citeulike_search" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="citeulike_paper" />
+
+    <selector url_stripped="http://www.citeulike.org/search/all" />
+    <example_url url="http://www.citeulike.org/search/all?q=latent+semantic" />
+
+    <collection name="search_results">
+      <xpath>//td[@id and @class='list_item ']</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+        <regex_op regex="&#x2714;" replace="" />
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h2/a/@href</xpath>
+      </scalar>
+      <composite name="source">
+        <xpath>.//div[@id and @class='article_details']/div[1]</xpath>
+        <scalar name="titile">
+          <xpath>.</xpath>
+        </scalar>
+      </composite>
+      <collection name="authors">
+        <xpath>.//div[@id and @class='article_details']/div[2]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+
+      <composite name="citeulike_user" type="citeulike_user">
+        <xpath>.//div[@id and @class='article_details']/div[3]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="search_results" />
+      <if>
+        <not_null value="search_results" />
+        <for_each collection="search_results" as="result">
+          <get_field object="result" name="title" />
+          <get_field object="result" name="location" />
+          <parse_document link_type="TRUSTED_SEMANTICS">
+            <arg name="anchor_text" value="title" />
+            <arg name="location" value="location" />
+          </parse_document>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

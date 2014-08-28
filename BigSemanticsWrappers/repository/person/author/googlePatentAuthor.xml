@@ -1,0 +1,24 @@
+<meta_metadata_repository name="googlePatentAuthor"
+  package="ecologylab.bigsemantics.generated.library.googlePatentAuthor" default_user_agent_name="chrome">
+
+
+  <meta_metadata name="google_patent_author" extends="patent_author" parser="xpath"
+    user_agent_name="chrome">
+ 	<selector url_regex="https?://www.google.com/search.*q=ininventor:.*" domain="google.com" />
+
+    <example_url
+      url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Patricia+Maes%22" />
+    <example_url
+      url="http://www.google.com/search?tbo=p&amp;tbm=pts&amp;hl=en&amp;q=ininventor:%22Natan+Linder%22" />
+
+    <collection name="creative_works" child_type="google_patent">
+      <xpath>//li[@class='g']//h3[@class='r']</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

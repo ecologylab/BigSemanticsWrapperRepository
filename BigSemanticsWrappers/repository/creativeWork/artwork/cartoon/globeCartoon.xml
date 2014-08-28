@@ -1,0 +1,26 @@
+<meta_metadata_repository name="globeCartoon"
+  package="ecologylab.bigsemantics.generated.library.globeCartoon">
+  
+
+  <meta_metadata name="globe_cartoon" extends="cartoon" parser="xpath">
+    <selector url_path_tree="http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/"
+      domain="globecartoon.com" />
+    <example_url url="http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/wo/13.0.13.5.9" />
+
+    <scalar name="title">
+      <xpath>//span[@class='imageTitle']</xpath>
+    </scalar>
+    <composite name="content">
+      <xpath>//img[@class='thumbFrame']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="date_published" scalar_type="Date">
+      <xpath>//td[2]/span[@class='thumbSmall']</xpath>
+    </scalar>
+  </meta_metadata>
+
+  
+</meta_metadata_repository>

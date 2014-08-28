@@ -1,0 +1,44 @@
+<meta_metadata_repository name="guggenArtwork"
+  package="ecologylab.bigsemantics.generated.library.guggenArtwork" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="guggen_artwork" extends="artwork" parser="xpath">
+    <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork/" />
+    <example_url url="http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484" />
+
+    <collection name="authors">
+      <xpath>//div[@id='gallery']/h3</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="title">
+      <xpath>//*[@id='caption']/i</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='essay']/p</xpath>
+    </scalar>
+
+    <scalar name="year">
+      <xpath>//*[@id='caption']</xpath>
+      <regex_op regex="\d{4}" />
+    </scalar>
+
+    <scalar name="medium">
+      <xpath>//*[@id='caption']</xpath>
+      <regex_op regex="\.(.*?)(?=\,)" />
+    </scalar>
+
+    <collection name="tags" child_type="guggen_filter" label="tags">
+      <xpath>//*[@class='more-tags']/li/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

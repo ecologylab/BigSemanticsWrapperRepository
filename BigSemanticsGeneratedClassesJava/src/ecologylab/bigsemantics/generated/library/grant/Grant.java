@@ -9,9 +9,9 @@ package ecologylab.bigsemantics.generated.library.grant;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.gis.PostalAddress;
-import ecologylab.bigsemantics.generated.library.grant.GrantProgram;
-import ecologylab.bigsemantics.generated.library.grant.GrantStaff;
+import ecologylab.bigsemantics.generated.library.grantProgram.GrantProgram;
+import ecologylab.bigsemantics.generated.library.grantStaff.GrantStaff;
+import ecologylab.bigsemantics.generated.library.postalAddress.PostalAddress;
 import ecologylab.bigsemantics.generated.library.scholarlyArticle.ScholarlyArticle;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;

@@ -1,0 +1,12 @@
+<meta_metadata_repository name="pdf" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="pdf" type="compound_document" comment="The PDF class." parser="pdf">
+    <selector>
+      <mime_type>application/pdf</mime_type>
+      <mime_type>application/x-pdf</mime_type>
+      <mime_type>image/pdf</mime_type>
+      <suffix>pdf</suffix>
+    </selector>
+  </meta_metadata>
+</meta_metadata_repository>

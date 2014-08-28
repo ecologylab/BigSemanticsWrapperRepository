@@ -1,0 +1,42 @@
+<meta_metadata_repository name="askNatureGroup"
+  package="ecologylab.bigsemantics.generated.library.askNatureGroup" default_user_agent_name="chrome">
+
+
+  <meta_metadata name="ask_nature_group" extends="compound_document" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|[\d]*&amp;type=aof"
+      domain="asknature.org" />
+    <example_url url="http://www.asknature.org/browse?selected=strategy|1&amp;type=aof" />
+
+    <scalar name="title" label="group">
+      <xpath>//a[@class='selected']</xpath>
+    </scalar>
+	
+	<def_var name="group_number" type="node">
+		<xpath>//a[@class='selected']/@*[name()='an:id']</xpath>
+	</def_var>
+	
+	
+    <collection name="subgroups" child_type="ask_nature_subgroup" >
+      <xpath>//ul[@id='accordion_list_2']/div/dt</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="group_id">
+      	<xpath>./ancestor::div[4]//a[@class='selected']/@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="subgroup_id">
+      	<xpath>./@*[name()='an:id']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.asknature.org/browse?selected=strategy|</value>
+          <value from_scalar="group_id" />
+          <value>|</value>
+          <value from_scalar="subgroup_id" />
+          <value>&amp;type=aof</value>
+        </concatenate_values>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

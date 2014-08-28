@@ -1,0 +1,45 @@
+<meta_metadata_repository name="anthropologieProduct"
+  package="ecologylab.bigsemantics.generated.library.anthropologieProduct">
+
+  <meta_metadata name="anthropologie" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.anthropologie.com/anthro/product/" />
+    <example_url
+      url="http://www.anthropologie.com/anthro/product/clothes-dresses/4130580810078.jsp?cm_sp=Grid-_-4130580810078-_-Regular_3" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='productName']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//img[@id='addlImgage0']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="product_details" >
+      <xpath>/span[@itemprop='description']/ul/li/text()</xpath>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
+    </collection>
+		<!--
+				ALL JAVASCRIPT 
+		<scalar name="color" scalar_type="String" xpath="//span[@itemprop='color']" />
+		<scalar name="overall_rating" xpath="//div[@id='BVRRCustomDiv']//div[@id='BVRRRatingOverall_Review_Display']/div[@class='BVRRRatingNormalOutOf']/span[@class='BVRRNumber BVRRRatingNumber']/text()" />
+		 	<regex_op regex="$" replace=" out of 5.0" />   
+		</scalar>  
+		
+		<collection name="reviews" xpath="//div[@id='BVRRDisplayContentBodyID']/div/div[@class='BVRRReviewDisplayStyle3']" >
+			<scalar name="title" xpath=".//span[@class='BVRRValue BVRRReviewTitle']" />
+			<scalar name="rating" xpath=".//div[@id='BVRRRatingOverall_Review_Display']/div[@class='BVRRRatingNormalOutOf']/span[@class='BVRRNumber BVRRRatingRangeNumber']" >
+				<regex_op regex="$" replace=" out of 5.0" />
+			</scalar>
+			<scalar name="description" xpath=".//span[@class='BVRRReviewText']" />
+		</collection>
+		 -->
+  </meta_metadata>
+</meta_metadata_repository>

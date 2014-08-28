@@ -1,0 +1,38 @@
+<meta_metadata_repository name="whitneyArtwork"
+  package="ecologylab.bigsemantics.generated.library.whitneyArtwork" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="whitney_artwork" extends="artwork" parser="xpath">
+    <selector url_path_tree="http://whitney.org/Collection/" />
+    <example_url url="http://whitney.org/Collection/JohnChamberlain/701579aB/" />
+    <example_url url="http://whitney.org/Collection/BobThompson/" />
+    <example_url url="http://whitney.org/Collection/AndyWarhol" />
+
+    <scalar name="description">
+      <xpath>//div[@class='artwork-caption-basic']</xpath>
+    </scalar>
+
+    <collection name="authors">
+      <xpath>//*[@id='mmi_5948']/div[1]/h1</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    
+    <collection name="main_images">
+  
+    <xpath>//div[@class='individual-image full-width artwork-module-image']//img[not(contains(@src, 'on-view-pin'))]</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    
+    </collection>
+    
+    <scalar name="title">
+      <xpath>(//*[@class='title']/h1)[last()]</xpath>
+    </scalar>
+    <scalar name="year">
+      <xpath>//*[@class='artwork-dates']</xpath>
+    </scalar>
+  </meta_metadata>
+
+</meta_metadata_repository>

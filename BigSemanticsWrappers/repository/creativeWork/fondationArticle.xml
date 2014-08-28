@@ -1,0 +1,131 @@
+<meta_metadata_repository name="fondationArticle"
+  package="ecologylab.bigsemantics.generated.library.fondationArticle" default_user_agent_name="chrome_2">
+
+
+
+  <meta_metadata name="fondation_article" extends="creative_work" parser="xpath">
+    <selector url_path_tree="http://www.fondation-langlois.org/html/e/" domain="fondation-langlois.org" /> 	
+	<!--  Consider replacing xpath logic with semantic actions once you learn those -->
+    <example_url url="http://www.fondation-langlois.org/html/e/page.php?NumPage=2131" />
+    <example_url url="http://www.fondation-langlois.org/html/e/page.php?NumPage=2222" />
+    <collection name="main_images">
+      <xpath>//div[@id='editoGrand']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="collection_name" scalar_type="String">
+      <xpath>//div[@id='breadcrumbs']/ul/li[(position() = 3) and (not(position()=last()))]/a/text()</xpath>
+    </scalar>
+    <scalar name="title" use_value_as_label="main_images">
+      <xpath>//div[@id='breadcrumbs']/ul/li[last()]</xpath>
+    </scalar>
+    <collection name="main_images">
+        <xpath>//div[@id='colonne1']/div[@class='contenus']//img[not(contains(@src, 'hs-close.gif')) and contains(@src, 'cropCorners')]</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    
+    </collection>
+    <scalar name="article_type" scalar_type="String">
+      <xpath>//div[@id='breadcrumbs']/ul/li[2]/a/text()</xpath>
+    </scalar>
+	
+	
+	<!-- Because the website will change the headers I use to find the following information
+		will change the header title based on whether or not there are multiple of an item,
+		there are two collections/type of item. One will only include one of an item. -->
+
+    <collection name="external_links" child_type="compound_document">
+      <xpath>//h2[child::text()='External links:']</xpath>
+      <scalar name="title">
+        <xpath>./following-sibling::div[1]/strong</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./following-sibling::div[1]/a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="external_link" child_type="compound_document">
+      <xpath>//h2[child::text()='External link:']</xpath>
+      <scalar name="title">
+        <xpath>./following-sibling::div[1]/strong</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./following-sibling::div[1]/a/@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="related_page" child_type="fondation_article">
+      <xpath>//h2[child::text()='Related page: ']/following-sibling::div//img</xpath>
+      <scalar name="title">
+        <xpath>./../../span/a/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./../@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="related_pages" child_type="fondation_article">
+      <xpath>//h2[child::text()='Related pages: ']/following-sibling::div//img</xpath>
+      <scalar name="title">
+        <xpath>./../../span/a/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./../@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tags" child_type="fondation_tag">
+      <xpath>//h2[child::text()='Tags:']/following-sibling::div</xpath>
+
+      <scalar name="title">
+        <xpath>./a/text()</xpath>
+      </scalar>
+      <scalar name="pre_description">
+        <xpath>./a/text()</xpath>
+        <regex_op regex="^.*$"
+          replace="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=" />
+      </scalar>
+      <scalar name="mid_description">
+        <xpath>./a/text()</xpath>
+        <regex_op regex="\s" replace="+" />
+      </scalar>
+      <scalar name="post_description">
+        <xpath>./a/text()</xpath>
+        <regex_op regex=".*" replace="&amp;Numero=&amp;zoom=1&amp;Format=1" />
+      </scalar>
+
+
+      <scalar name="location">
+        <concatenate_values>
+          <value from_scalar="pre_description" />
+          <value from_scalar="mid_description" />
+          <value from_scalar="post_description" />
+        </concatenate_values>
+      </scalar>
+
+
+
+    </collection>
+
+    <collection name="index" child_type="fondation_article">
+      <xpath>//div[@id='bttexteslies']/ul/li/a</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="footnotes" child_type="compound_document">
+      <xpath>//div[@id='editoFootNotes']/p</xpath>
+
+      <scalar name="description">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  
+</meta_metadata_repository>

@@ -1,0 +1,65 @@
+<meta_metadata_repository name="dream_house"
+  package="ecologylab.bigsemantics.generated.library.dreamHouse" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="landofnod_product" extends="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.landofnod.com/" domain="landofnod.com" />
+    <example_url location="http://www.landofnod.com/oak-park-elementary-bed/f4732" />
+
+    <scalar name="title">
+      <xpath>//h1[@itemprop='name']|//title</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//meta[@property='og:description']/@content</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//meta[@property='og:price:amount']/@content</xpath>
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//div[@class='BVRRDisplayContentBody']/div</xpath>
+      <scalar name="title">
+        <xpath>.//div[@class='BVRRReviewTitleContainer']/span[2]</xpath>
+      </scalar>
+      <scalar name="rating">
+        <xpath>.//div[@class='BVRRRatingNormalImage']/img/@title</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='BVRRReviewTextContainer']//span[2]</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="companion_products" child_type="landofnod_product">
+      <xpath>//div[@id='coordinatingItems']//ul[@id='carouselCoordinating']//li</xpath>
+      <scalar name="location">
+        <xpath>.//a[@class='productImgLink']/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='title']</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//span[@class='salePrice' or @class='regPrice']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="accessories" child_type="landofnod_product">
+      <xpath>//div[@id='accessoryItems']//ul[@id='carouselCoordinating']//li</xpath>
+      <scalar name="location">
+        <xpath>.//a[@class='productImgLink']/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='title']</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//span[@class='salePrice' or @class='regPrice']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//img[@itemprop='image']/@src</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,24 @@
+<meta_metadata_repository name="amazonBook"
+  package="ecologylab.bigsemantics.generated.library.amazonBook">
+
+  
+  <meta_metadata name="amazon_book" extends="book" parser="xpath">
+    <selector meta_metadata_name="amazon_product">
+      <field name="department" value="Books" />
+    </selector>
+
+    <collection name="authors">
+      <xpath>//span[@class='contributorNameTrigger']</xpath>
+      <scalar name="title">
+        <xpath>.//a[1]</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a[1]/@href</xpath>
+      </scalar>
+    </collection>
+    <scalar name="cover_image">
+      <xpath>//td[@id='prodImageCell']//img/@src</xpath>
+    </scalar>
+  </meta_metadata>
+
+</meta_metadata_repository>

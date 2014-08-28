@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.hotel;
  */
 
 import ecologylab.bigsemantics.generated.library.hotel.Hotel;
-import ecologylab.bigsemantics.generated.library.product_and_service.Service;
+import ecologylab.bigsemantics.generated.library.service.Service;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;

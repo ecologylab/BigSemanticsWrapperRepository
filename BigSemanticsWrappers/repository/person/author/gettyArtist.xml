@@ -1,0 +1,42 @@
+<meta_metadata_repository name="getttyArtist"
+  package="ecologylab.bigsemantics.generated.library.getttyArtist">
+  <meta_metadata name="getty_artist_info" extends="compound_document">
+    <scalar name="lifespan" scalar_type="String" />
+    <scalar name="professions" scalar_type="String" />
+    <scalar name="languages" scalar_type="String" />
+  </meta_metadata>
+
+  <meta_metadata name="getty_artist" extends="artist" parser="xpath">
+    <selector url_stripped="http://www.getty.edu/art/gettyguide/artMakerDetails" />
+    <example_url url="http://www.getty.edu/art/gettyguide/artMakerDetails?maker=1229" />
+    <example_url url="http://www.getty.edu/art/gettyguide/artMakerDetails?maker=3318" />
+    <scalar name="title">
+      <xpath>//span[@class='header_redesign']/b</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//p[@class='bio'][last()]</xpath>
+    </scalar>
+
+    <collection name="works" child_type="getty_object">
+      <xpath>//td/p/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+	<!-- <scalar name="quick_test" scalar_type="String" xpath="//p[@class='bio'][1]"/>
+	-->
+    <composite name="artist_info" type="getty_artist_info">
+      <xpath>//p[@class='bio'][1]</xpath>
+
+      <field_parser name="regex_find" regex="(.*)(\n.*)(\n.*)(\n.*)(\n.*)" />
+      <scalar name="lifespan" field_parser_key="$1" />
+      <scalar name="professions" field_parser_key="$3" />
+      <scalar name="languages" field_parser_key="$5" />
+    </composite>
+
+  </meta_metadata>
+  
+  </meta_metadata_repository>

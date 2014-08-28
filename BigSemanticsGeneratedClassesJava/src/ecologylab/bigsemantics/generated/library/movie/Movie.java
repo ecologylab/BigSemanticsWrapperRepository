@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.movie;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
+import ecologylab.bigsemantics.generated.library.moviePerson.MoviePerson;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;

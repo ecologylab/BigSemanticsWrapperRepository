@@ -1,0 +1,22 @@
+<meta_metadata_repository name="politicalCartoon"
+  package="ecologylab.bigsemantics.generated.library.politicalCartoon">
+
+  <meta_metadata name="political_cartoon" extends="cartoon" parser="xpath">
+    <selector url_path_tree="http://www.politicalcartoons.com/cartoon/" />
+    <example_url url="https://www.politicalcartoons.com/cartoon/e396442b-7d98-4d34-b84d-59d9e4fa9bd0.html"/>
+
+    <scalar name="title">
+      <xpath>//*[@id='ctrlCartoon_lblTitle']</xpath>
+    </scalar>
+    <composite name="content">
+      <xpath>//img[@id='ctrlCartoon_imgCartoon']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="cartoonist" scalar_type="String">
+      <xpath>//*[@id='ctrlCartoon_hlnkArtist']</xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

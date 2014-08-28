@@ -1,0 +1,11 @@
+<meta_metadata_repository name="boardGame"
+  package="ecologylab.bigsemantics.generated.library.boardGame" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="board_game" extends="creative_work" comment="The board game info class">
+    <scalar name="number_of_players" label="players" scalar_type="String" />
+    <scalar name="number_of_ratings" label="number of ratings" scalar_type="String" />
+
+    <collection name="similar_games" child_type="board_game" />
+    <collection name="categories" child_type="compound_document" />
+  </meta_metadata>
+</meta_metadata_repository>

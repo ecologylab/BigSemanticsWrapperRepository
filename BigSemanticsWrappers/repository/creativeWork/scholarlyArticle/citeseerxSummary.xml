@@ -1,0 +1,134 @@
+<meta_metadata_repository name="citeseerxSummary"
+  package="ecologylab.bigsemantics.generated.library.citeseerxSummary" default_user_agent_name="chrome_2">
+
+
+
+
+  <meta_metadata name="citeseerx_summary" extends="citeseerx_record" parser="xpath"
+    comment="Summary page from CiteSeerX.">
+    <selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/summary" />
+    <example_url url="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.167.1350" />
+
+    <url_generator type="search" engine="citeseerx" use_id="title" />
+
+    <scalar name="title" navigate_to="location" as_natural_id="title" format="text">
+      <xpath>//h2</xpath>
+      <regex_op regex="\(\d+\)$" replace="" />
+    </scalar>
+
+    <composite name="rich_media">
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>PDF full text</value>
+        </concatenate_values>
+      </scalar>
+      <scalar name="location">
+        <xpath>//div[@id='downloads']//a[@title='View or Download this document as PDF']/@href</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="authors">
+      <xpath>//div[@id='docAuthors']</xpath>
+      <field_parser name="regex_split" regex="\s*,\s*" />
+      <scalar name="title" field_parser_key="$0">
+        <regex_op regex="^by\s+" replace="" />
+      </scalar>
+    </collection>
+
+    <composite name="citation_info">
+      <xpath>//a[@title='number of citations']</xpath>
+      <field_parser name="regex_find" regex="(\d+) - (\d+) self" />
+      <scalar name="total_citation" field_parser_key="$1" />
+      <scalar name="self_citation" field_parser_key="$2" />
+    </composite>
+
+    <composite name="source">
+      <xpath>//div[@id='viewSidebar']//p</xpath>
+      <field_parser name="bibtex" />
+      <composite name="archive">
+        <scalar name="title" field_parser_key="booktitle|journal" />
+      </composite>
+      <scalar name="year" field_parser_key="year" />
+      <scalar name="isbn" field_parser_key="isbn" />
+    </composite>
+
+    <scalar name="description">
+      <xpath>//div[@id='abstract']/p</xpath>
+    </scalar>
+		
+    <!-- CiteSeerX web page says these are citations, but actually they are references! -->
+    <collection name="references">
+      <xpath>//h3[text()='Citations']/../table//a</xpath>
+      <scalar name="title">
+        <xpath>..</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+    </collection>
+
+    <composite name="cited_articles" other_tags="citation_records" type="document">
+      <xpath>//a[@title='number of citations']</xpath>
+      <scalar name="title" navigates_to="location">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+    </composite>
+    <composite name="articles_that_cite_the_same_works" other_tags="active_bibliography_records"
+      type="document">
+      <xpath>//a[@title='Documents that cite the same works']</xpath>
+      <scalar name="title" navigates_to="location">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+    </composite>
+    <composite name="articles_cited_by_the_same_works" other_tags="cocitation_records"
+      type="document">
+      <xpath>//a[@title='Documents cited by the same works']</xpath>
+      <scalar name="title" navigates_to="location">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="location" />
+      <if>
+        <not_null value="location" />
+        <parse_document now="true">
+          <arg value="metadata" name="document" />
+          <arg value="location" name="location" />
+        </parse_document>
+      </if>
+
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <arg value="title" name="text" />
+      </create_and_visualize_text_surrogate>
+
+      <get_field name="references" />
+      <if>
+        <not_null value="references" />
+        <for_each collection="references" as="ref">
+          <get_field object="ref" name="description" />
+          <parse_document>
+            <arg value="true" name="citation_sig" />
+            <arg value="description" name="anchor_text" />
+            <arg value="ref" name="entity" />
+          </parse_document>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

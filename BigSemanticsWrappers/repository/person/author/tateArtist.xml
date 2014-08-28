@@ -1,0 +1,26 @@
+<meta_metadata_repository name="tateArtist"
+  package="ecologylab.bigsemantics.generated.library.tateArtist" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="tate_artist" extends="artist" parser="xpath">
+    <selector domain="tate.org.uk" url_regex_fragment="artists" />
+    <example_url url="http://www.tate.org.uk/art/artists/cy-twombly-2079" />
+
+
+    <scalar name="title">
+      <xpath>//div[@class='region-inner region-header-second-inner']/h1/span[1]</xpath>
+    </scalar>
+    <scalar name="bio" scalar_type="String">
+      <xpath>//div[@class='texts_content']/p[1]</xpath>
+    </scalar>
+
+    <collection name="creative_works">
+      <xpath>//div[@class='carousel-clip']/div/div/div[2]/div[2]/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./span</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+ </meta_metadata_repository>

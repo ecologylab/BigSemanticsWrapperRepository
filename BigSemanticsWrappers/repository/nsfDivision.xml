@@ -1,0 +1,69 @@
+<meta_metadata_repository name="nsfDivision"
+  package="ecologylab.bigsemantics.generated.library.nsfDivision">
+
+  <meta_metadata name="nsf_division" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://www.nsf.gov/div/index.jsp" />
+    <example_url url="http://www.nsf.gov/div/index.jsp?div=IIS" />
+
+    <def_var name="title_node" type="node">
+      <xpath>//span[@class='pageheadline']</xpath>
+    </def_var>
+
+    <scalar name="title" context_node="title_node">
+      <xpath>.</xpath>
+    </scalar>
+    <collection name="programs" child_type="nsf_program">
+      <xpath>//p[text()='Programs and Funding Opportunities']/following-sibling::table[1]//a[string-length(text())&gt;0 and not(strong)]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="recently_announced" child_type="nsf_program">
+      <xpath>//td[text()='Recently Announced Funding Opportunities']/following::tr[2]//p</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="upcoming_due" child_type="nsf_program">
+      <xpath>//td[text()='Upcoming Due Dates']/following::tr[2]//p</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+    <composite name="staffs" type="nsf_division_staff_list" context_node="title_node">
+      <xpath>.</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+        <regex_op regex="\((\w+)\)" group="1" />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/staff/staff_list_all.jsp?org=NULL</value>
+        </concatenate_values>
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="staffs" />
+      <get_field name="title" object="staffs" />
+      <filter_location object="staffs">
+        <set_param name="org" value_from="title" />
+      </filter_location>
+
+      <get_field name="title" object="metadata" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

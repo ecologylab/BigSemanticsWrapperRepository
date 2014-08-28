@@ -1,0 +1,21 @@
+<meta_metadata_repository name="urbanspoonGenre"
+  package="ecologylab.bigsemantics.generated.library.urbanspoonGenre" default_user_agent_name="firefox">
+
+  <meta_metadata name="urban_spoon_genre" type="restaurant_genre" parser="xpath">
+    <selector url_path_tree="http://www.urbanspoon.com/f" />
+    <example_url url="http://www.urbanspoon.com/f/114/11800/College-Station/American-Restaurants" />
+
+    <scalar name="title">
+      <xpath>/html/head/title</xpath>
+    </scalar>
+    <collection name="restaurants">
+      <xpath>//li[@class='row restaurant']//div[@class='title']/a</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

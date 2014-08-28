@@ -1,0 +1,17 @@
+<meta_metadata_repository name="scholarly_article"
+  package="ecologylab.bigsemantics.generated.library.scholarlyArticle">
+                          
+
+  <meta_metadata name="scholarly_article" extends="creative_work" schema_org_itemtype="http://schema.org/ScholarlyArticle">
+    <composite name="source" type="periodical" layer="7.0"
+      comment="Metadata related to where this article was published." />
+    <collection name="classifications" child_type="document" polymorphic_scope="repository_documents"
+      comment="The Classifications of this paper." />
+    <collection name="keywords" child_type="document" schema_org_itemprop="keywords"
+      comment="Key Terms of the paper." />
+    <scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
+    <scalar name="description" label="abstract" comment="Abstract of the work." />
+    <composite name="rich_media" label="full text" />
+  </meta_metadata>
+	
+</meta_metadata_repository>

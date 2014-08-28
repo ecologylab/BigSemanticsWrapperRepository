@@ -10,7 +10,6 @@
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
@@ -28,10 +27,6 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	[SimplInherit]
 	public class ImageSearchResult : SearchResult
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		[SimplScalar]
 		private MetadataInteger thumbWidth;
 
@@ -46,19 +41,6 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 
 		public ImageSearchResult(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataInteger ThumbWidth
 		{

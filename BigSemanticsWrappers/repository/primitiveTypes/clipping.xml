@@ -1,0 +1,13 @@
+<meta_metadata_repository name="clipping" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="clipping" extends="rich_artifact" built_in="true">
+    <generic_type_var name="M" extends="metadata" />
+    <composite name="source_doc" type="document" label="source" wrap="true"
+      polymorphic_scope="repository_documents" show_expanded_initially="true" />
+<!--         <scalar name="context" scalar_type="String" />
+        <scalar name="context_html" scalar_type="String" /> -->
+    <scalar name="xpath" scalar_type="String" />
+    <scalar name="caption" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

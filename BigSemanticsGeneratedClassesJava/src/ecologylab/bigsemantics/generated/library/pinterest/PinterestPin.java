@@ -10,7 +10,6 @@ package ecologylab.bigsemantics.generated.library.pinterest;
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -58,10 +57,6 @@ public class PinterestPin extends CreativeWork
 	@simpl_composite
 	@mm_name("originally_from")
 	private CompoundDocument originallyFrom;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public PinterestPin()
 	{ super(); }
@@ -159,15 +154,5 @@ public class PinterestPin extends CreativeWork
 	public void setOriginallyFrom(CompoundDocument originallyFrom)
 	{
 		this.originallyFrom = originallyFrom;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

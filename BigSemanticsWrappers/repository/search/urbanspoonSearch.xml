@@ -1,0 +1,32 @@
+<meta_metadata_repository name="urbanspoonSearch"
+  package="ecologylab.bigsemantics.generated.library.urbanspoonSearch" default_user_agent_name="firefox">
+
+  <meta_metadata name="urban_spoon_search" type="search" parser="xpath">
+    <generic_type_var name="SR" arg="urban_spoon_restaurant" />
+    
+    <selector name="spoon1" url_path_tree="http://www.urbanspoon.com/s/" />
+
+    <collection name="search_results">
+      <xpath>//div[@class = 't']/a[text() != '']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="search_results" />
+      <for_each collection="search_results" as="res">
+        <get_field object="res" name="location" />
+        <get_field object="res" name="title" />
+        <parse_document>
+          <arg value="title" name="anchor_text" />
+          <arg value="location" name="location" />
+        </parse_document>
+      </for_each>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

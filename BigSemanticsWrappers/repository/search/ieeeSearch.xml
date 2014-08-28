@@ -1,0 +1,31 @@
+<meta_metadata_repository name="ieeeSearch"
+  package="ecologylab.bigsemantics.generated.library.ieeeSearch">
+
+ 
+  <meta_metadata name="ieee_xplore_search" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="ieee_xplore_article" />
+
+    <selector url_stripped="http://ieeexplore.ieee.org/search/searchresult.jsp" />
+    <selector url_stripped="http://ieeexplore.ieee.org:80/search/searchresult.jsp" />
+		<example_url url="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=Search_Index_Terms:art+pop"/>
+    <filter_location>
+      <strip_param name="newSearch" />
+      <strip_param name="x" />
+      <strip_param name="y" />
+    </filter_location>
+	<scalar name="query" >
+		<xpath>//strong[@class='search-term']</xpath>
+		<regex_op regex="Index Terms:" replace=""/>
+		<regex_op regex="Authors:" replace=""/>
+	</scalar>
+    <collection name="search_results">
+      <xpath>//ul[@class='Results']/li</xpath>
+      <scalar name="title">
+        <xpath>.//h3</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h3/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

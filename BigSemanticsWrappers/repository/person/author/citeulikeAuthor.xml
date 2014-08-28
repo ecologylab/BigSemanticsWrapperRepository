@@ -1,0 +1,53 @@
+<meta_metadata_repository name="citeulikeAuthor"
+  package="ecologylab.bigsemantics.generated.library.citeulikeAuthor" default_user_agent_name="chrome">
+
+  <meta_metadata name="citeulike_author" extends="author" parser="xpath"
+    ignore_in_term_vector="true">
+    <selector url_regex="http://www.citeulike.org/author/[^/]*" domain="citeulike.org" />
+    <selector url_regex="http://www.citeulike.org/user/[^/]*/author/[^/]*" domain="citeulike.org" />
+    <example_url url="http://www.citeulike.org/author/Hearst:MA" />
+    <example_url url="http://www.citeulike.org/user/jsun/author/Hofmann:T" />
+
+    <scalar name="title">
+      <xpath>//h1[1]</xpath>
+      <regex_op regex="Author ([^\[]*)" group="1" />
+    </scalar>
+
+    <collection name="creative_works" other_tags="publications" child_type="citeulike_paper"
+      label="publications" ignore_in_term_vector="true">
+      <xpath>//td[@id and @class='list_item ']</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+        <regex_op regex="&#x2714;" replace="" />
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h2/a/@href</xpath>
+      </scalar>
+      <composite name="source">
+        <xpath>.//div[@id and @class='article_details']/div[1]</xpath>
+        <scalar name="titile">
+          <xpath>.</xpath>
+        </scalar>
+      </composite>
+      <collection name="authors">
+        <xpath>.//div[@id and @class='article_details']/div[2]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+
+      <composite name="citeulike_user">
+        <xpath>.//div[@id and @class='article_details']/div[3]/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

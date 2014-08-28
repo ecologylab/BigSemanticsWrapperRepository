@@ -1,0 +1,10 @@
+<meta_metadata_repository name="tweeter"
+  package="ecologylab.bigsemantics.generated.library.tweeter" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="tweeter" extends="author" parser="xpath"
+    comment="an author of twitter microblog">
+    <scalar name="num_tweets" scalar_type="Int" />
+    <scalar name="num_following" scalar_type="Int" />
+    <scalar name="num_followers" scalar_type="Int" />
+  </meta_metadata>
+</meta_metadata_repository>

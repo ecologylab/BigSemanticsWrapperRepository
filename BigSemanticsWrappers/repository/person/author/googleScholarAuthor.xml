@@ -1,0 +1,49 @@
+<meta_metadata_repository name="googleScholarAuthor"
+  package="ecologylab.bigsemantics.generated.library.googleScholarAuthor" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="google_scholar_author" extends="author" parser="xpath">
+      <!--  <selector url_regex="http://scholar.google.com/citations?user=.*" domain="scholar.google.com"/>-->
+      <selector url_regex="http://scholar.google.com/citations\?user=.*" domain="google.com"/>
+    <example_url url="http://scholar.google.com/citations?user=IlKLLhIAAAAJamp;hl=enamp;oi=sra" />
+
+    <scalar name="title">
+      <xpath>//span[@id='cit-name-display']</xpath>
+    </scalar>
+    <collection name="articles" child_type="google_scholar_article_facts">
+    	<xpath>//table[@class='cit-table']//tr[@class='cit-table item']</xpath>
+    	<scalar name="title">
+    		<xpath>./td[@id='col-title']/a</xpath>
+    	</scalar>
+    	<composite name="article">
+    		<xpath>./td[@id='col-title']/a</xpath>
+    		<scalar name="title">
+    			<xpath>.</xpath>
+    		</scalar>
+    		<scalar name="location">
+    			<xpath>./@href</xpath>
+    		</scalar>
+    	</composite>
+    	<scalar name="citation_count">
+    		<xpath>./td[@id='col-citedby']/a</xpath>
+    	</scalar>
+   		<composite name="citations">
+   			<xpath>./td[@id='col-citedby']/a</xpath>
+   			<scalar name="title">
+   				<xpath>.</xpath>
+   			</scalar>
+   			<scalar name="location">
+   				<xpath>./@href</xpath>
+   			</scalar>
+   		</composite>
+   		<scalar name="year">
+   			<xpath>./td[@id='col-year']</xpath>
+   		</scalar>
+   	<!--  	<collection name="authors">
+   			<xpath>/td[@id='col-title']/span[1]</xpath>
+   			<field_parser name="regex_split" regex=",\s" trim="true" />
+      <scalar name="title" field_parser_key="$0" />
+   		</collection>-->
+    </collection>
+    
+  </meta_metadata>
+</meta_metadata_repository>

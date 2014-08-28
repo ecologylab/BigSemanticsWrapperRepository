@@ -1,0 +1,39 @@
+<meta_metadata_repository name="britishCartoonArchive"
+  package="ecologylab.bigsemantics.generated.library.britishCartoonArchive">
+  <meta_metadata name="british_cartoon_archive" extends="cartoon" parser="xpath">
+    <selector url_path_tree="http://www.cartoons.ac.uk/record/" />
+		<example_url url="http://www.cartoons.ac.uk/record/lse2692"/>
+    <scalar name="title">
+      <xpath>//*[@class='captionClass']</xpath>
+      <regex_op regex="Caption" replace="" />
+    </scalar>
+    <composite name="content">
+      <xpath>//*[@id='mediumImage']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="artist" scalar_type="String" comment="Name of the artist, and period he lived">
+      <xpath>//*[@id='detailArtist']</xpath>
+      <regex_op regex="Artist:" replace="" />
+    </scalar>
+    <scalar name="published_in" scalar_type="String"
+      comment="Name of the publication in which the cartoon appeared">
+      <xpath>//*[@id='detailPublish']</xpath>
+      <regex_op regex="(?&lt;=Published:)([^,]+)" />
+    </scalar>
+    <scalar name="publication_date" scalar_type="Date" comment="Date of the publication">
+      <xpath>//*[@id='detailPublish']</xpath>
+      <regex_op regex="Published:[^,]+," replace="" />
+    </scalar>
+    <scalar name="publication_format" scalar_type="String" comment="Format of the publication">
+      <xpath>//*[@id='detailFormat']</xpath>
+      <regex_op regex="Format:" replace="" />
+    </scalar>
+    <scalar name="reference_number" scalar_type="String">
+      <xpath>//*[@id='refNumber']</xpath>
+      <regex_op regex="Reference number:" replace="" />
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

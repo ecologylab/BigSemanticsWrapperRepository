@@ -1,0 +1,29 @@
+<meta_metadata_repository name="hiltonHotel"
+  package="ecologylab.bigsemantics.generated.library.hiltonHotel" default_user_agent_name="chrome">
+
+
+
+  <meta_metadata name="hilton" type="hotel" parser="xpath">
+    <selector url_regex_fragment="hotel" domain="hilton.com"/>
+    <example_url
+      url="http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42" />
+
+    <scalar name="title">
+      <xpath>//html/head/title</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>/html/head/meta[@name='description']/@content</xpath>
+    </scalar>
+
+    <composite name="business_address">
+      <xpath>//div[@id='hotelAddress']</xpath>
+      <scalar name="street_address">
+        <xpath>./text()[(preceding::br)]</xpath>
+      </scalar>
+      <scalar name="telephone">
+        <xpath>./br/following-sibling::text()</xpath>
+      </scalar>
+    </composite>
+  </meta_metadata>
+
+</meta_metadata_repository>

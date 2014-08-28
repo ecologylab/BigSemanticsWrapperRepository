@@ -1,0 +1,22 @@
+<meta_metadata_repository name="redditGifSearch"
+  package="ecologylab.bigsemantics.generated.library.redditGifSearch" default_user_agent_name="firefox_3_6_8">
+  
+ 
+  <meta_metadata name="reddit_gif_search_results" type="image_search" parser="xpath"
+    comment="reddit gif image search results page" no_cache="true">
+    <selector url_stripped="http://www.reddit.com/r/gifs/search?" />
+		<example_url url="http://www.reddit.com/r/gifs/search?q=grootamp;sort=relevanceamp;t=all"/>
+    <collection name="search_results">
+      <xpath>//a[@class='title ']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+
+</meta_metadata_repository>

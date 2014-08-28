@@ -1,0 +1,34 @@
+<meta_metadata_repository name="askNatureFunction"
+  package="ecologylab.bigsemantics.generated.library.askNatureFunction" default_user_agent_name="chrome">
+
+  <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|[\d]*\|[\d]*\|[\d]*.*"
+      domain="asknature.org" />
+    <example_url url="http://www.asknature.org/browse?selected=strategy|501|531|541&amp;type=aof" />
+    <example_url url="http://www.asknature.org/browse?selected=strategy|921|971|1021&amp;type=aof" />
+
+	<scalar name="group_id" scalar_type="String" hide="true">
+		<xpath>//ul[@id='accordion_list_1']//a[@class='selected']/@*[name()='an:id']</xpath>
+	</scalar>
+	<scalar name="subgroup_id" scalar_type="String" hide="true">
+		<xpath>//ul[@id='accordion_list_2']//dt[@class='accordion_close accordion_open']/@*[name()='an:id']</xpath>
+	</scalar>
+    <scalar name="function_id" scalar_type="String" hide="true">
+      <xpath>//ul[@id='accordion_list_2']/div/dd/a[@class='selected']/@*[name()='an:id']</xpath>
+    </scalar>
+
+    <scalar name="title" label="function">
+      <xpath>//ul[@id='accordion_list_2']/div/dd/a[@class='selected']</xpath>
+    </scalar>
+    <collection name="strategies" child_type="ask_nature_strategy">
+      <xpath>//ul[@id='accordion_list_3']/div/li</xpath>
+      <scalar name="title">
+        <xpath>./a[1]</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a[2]/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

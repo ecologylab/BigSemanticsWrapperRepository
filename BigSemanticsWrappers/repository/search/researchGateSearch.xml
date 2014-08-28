@@ -1,0 +1,46 @@
+  <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="researchGateSearch" package="ecologylab.bigsemantics.generated.library.researchGateSearch" default_user_agent_name="chrome_32">
+    <meta_metadata name="research_gate_result" extends="search_result">
+        <collection name="authors" child_type="author">
+        </collection>
+  </meta_metadata>
+  
+  <meta_metadata name="research_gate_search" extends="search" parser="xpath">
+         <selector url_stripped="http://www.researchgate.net/publicliterature.PublicLiterature.search.html"/>
+         <scalar name="query"  layer="9.1">
+            <xpath>//input[@name='search-keyword']/@value</xpath>
+         </scalar>
+         <scalar name="location" always_show="true"/>
+         <generic_type_var name="SR" arg="research_gate_result" />
+         
+         <collection name="search_results" show_expanded_initially="true">
+          <xpath>//ul[@class='c-list']/li</xpath>
+		      <scalar name="title" hide="true" />
+		     
+		      <composite name="destination_page" layer="6.0">
+		        <xpath>.//h5</xpath>
+		        <scalar name="title" label="title">
+		            <xpath>./a/span</xpath>  
+		        </scalar>
+		        <scalar name="location">
+		              <xpath>./a/@href</xpath>
+		        </scalar>
+		      </composite>
+		      <scalar name="description">
+		          <xpath>./div[@class='abstract']/span[@class='full']</xpath>
+		          <regex_op regex="[Hide abstract] ABSTRACT:" replace=""/>
+		      </scalar>
+		      <collection name="authors">
+		           <xpath>./div[@class='authors']/a</xpath>
+		           <scalar name="title">
+		              <xpath>.</xpath>
+		           </scalar>
+		           <scalar name="location">
+		              <xpath>./@href</xpath>
+		           </scalar>
+            
+		      </collection>
+		      
+         </collection>
+    </meta_metadata>
+</meta_metadata_repository>

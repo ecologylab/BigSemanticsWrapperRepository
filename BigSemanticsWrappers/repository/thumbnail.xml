@@ -1,0 +1,10 @@
+<meta_metadata_repository name="thumbnail"
+  package="ecologylab.bigsemantics.generated.library.thumbnail">
+
+  <meta_metadata name="thumbnail" extends="metadata">
+		<!-- <scalar name="title" navigates_to="link" scalar_type="String" /> -->
+    <scalar name="pic" hide="true" scalar_type="ParsedURL" />
+		<!-- <scalar name="link" hide="true" scalar_type="ParsedURL" /> -->
+  </meta_metadata>
+  
+</meta_metadata_repository>

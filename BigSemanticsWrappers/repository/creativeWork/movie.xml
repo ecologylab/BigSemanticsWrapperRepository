@@ -1,0 +1,28 @@
+<meta_metadata_repository name="movie"
+  package="ecologylab.bigsemantics.generated.library.movie" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="movie" extends="creative_work" comment="The movie class.">
+    <scalar name="description" other_tags="short_description" />
+    <scalar name="location" layer="-1.0" />
+    <scalar name="storyline" scalar_type="String" layer="8.5" />
+    <scalar name="tagline" scalar_type="String" layer="9.0" />
+    <scalar name="overall_rating" layer="8.0" />
+    <scalar name="pic" hide="true" comment="Movie Poster or other image" scalar_type="ParsedURL" />
+    <collection name="photos" hide="true" child_type="image" />
+    <scalar name="mpaa_rating" layer="7.0" comment="MPAA rating" scalar_type="String" />
+    <scalar name="runtime" layer="6.0" comment="How long the movie runs" scalar_type="String" />
+    <scalar name="theater_release" scalar_type="String" layer="5.0"
+      comment="When the movie was released in theaters" />
+            
+<!--     <collection name="authors"  -->
+<!--                 label="directors" layer="4.0" comment="Who directed the movie." /> -->
+    <collection name="directors" child_type="movie_person" layer="4.0"
+      comment="Who directed the movie." />
+    <collection name="writers" child_type="movie_person" layer="4.0"
+      comment="Who wrote the movie." />
+    <collection name="cast"  child_type="movie_person" />
+    <collection name="genres" comment="Movie genres" child_type="document" />
+  </meta_metadata>
+</meta_metadata_repository>
+
+  

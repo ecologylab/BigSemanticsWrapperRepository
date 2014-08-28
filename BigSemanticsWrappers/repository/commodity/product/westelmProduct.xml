@@ -1,0 +1,54 @@
+<meta_metadata_repository name="westelmProduct"
+  package="ecologylab.bigsemantics.generated.library.westelmProduct" default_user_agent_name="firefox_3_6_8">
+
+
+  <meta_metadata name="westelm_product" extends="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_regex_fragment="http://www.westelm.com/products/*" domain="westelm.com" />
+
+    <example_url location="http://www.westelm.com/products/paidge-sofa-h211" />
+
+    <scalar name="title">
+      <xpath>//meta[@property='og:title']/@content</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='accordion-contents'][1]</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@class='subset-pricing']</xpath>
+    </scalar>
+
+    <collection name="also_in_this_collection" child_type="westelm_product">
+      <xpath>//div[@class='you-may-also-like con']/div[1]//ul/li</xpath>
+      <scalar name="location">
+        <xpath>./a/@href]</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='item']</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//span[@class='price-amount'][1]</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="companion_products" child_type="westelm_product">
+      <xpath>//div[@class='you-may-also-like con']/div[2]//ul/li</xpath>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//span[@class='item']</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//span[@class='currency currency']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="main_images">>
+      <scalar name="location">
+        <xpath>//meta[@property='og:image']/@content</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

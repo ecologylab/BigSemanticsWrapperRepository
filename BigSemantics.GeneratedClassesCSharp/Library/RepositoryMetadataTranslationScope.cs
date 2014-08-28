@@ -10,72 +10,246 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-using Crit.Semantics.Generated.Txtf1.Fieldreports.EmergentEvent;
-using Crit.Semantics.Generated.Txtf1.Fieldreports.Spotrep;
-using Ecologylab.Semantics.Generated.Library.AcmNS;
+using Ecologylab.Semantics.Generated.Library.AcmAuthorNS;
+using Ecologylab.Semantics.Generated.Library.AcmPortalInstitutionNS;
+using Ecologylab.Semantics.Generated.Library.AcmPortalPublicationNS;
+using Ecologylab.Semantics.Generated.Library.AcmPortalSearchNS;
+using Ecologylab.Semantics.Generated.Library.AcmScholarlyArticleNS;
+using Ecologylab.Semantics.Generated.Library.AmazonBookNS;
+using Ecologylab.Semantics.Generated.Library.AmazonListNS;
+using Ecologylab.Semantics.Generated.Library.AmazonProductNS;
+using Ecologylab.Semantics.Generated.Library.AnandtechReviewNS;
+using Ecologylab.Semantics.Generated.Library.AnthropologieProductNS;
+using Ecologylab.Semantics.Generated.Library.AppleAccessoryProductNS;
+using Ecologylab.Semantics.Generated.Library.AppleMacProductNS;
+using Ecologylab.Semantics.Generated.Library.AppleProductNS;
+using Ecologylab.Semantics.Generated.Library.ArtistNS;
 using Ecologylab.Semantics.Generated.Library.ArtworkNS;
-using Ecologylab.Semantics.Generated.Library.AskNatureNS;
-using Ecologylab.Semantics.Generated.Library.BibManagingNS;
+using Ecologylab.Semantics.Generated.Library.AskNatureFunctionNS;
+using Ecologylab.Semantics.Generated.Library.AskNatureGroupNS;
+using Ecologylab.Semantics.Generated.Library.AskNatureImageNS;
+using Ecologylab.Semantics.Generated.Library.AskNatureProductNS;
+using Ecologylab.Semantics.Generated.Library.AskNatureSubgroupNS;
+using Ecologylab.Semantics.Generated.Library.AsosPageNS;
+using Ecologylab.Semantics.Generated.Library.AsosProductNS;
+using Ecologylab.Semantics.Generated.Library.AttractionListNS;
+using Ecologylab.Semantics.Generated.Library.AttractionNS;
+using Ecologylab.Semantics.Generated.Library.AuthorNS;
+using Ecologylab.Semantics.Generated.Library.BasicPublicationNS;
+using Ecologylab.Semantics.Generated.Library.BedbathandbeyondProductNS;
+using Ecologylab.Semantics.Generated.Library.BestbuyProductNS;
+using Ecologylab.Semantics.Generated.Library.BggBoardGameNS;
+using Ecologylab.Semantics.Generated.Library.BingSearchNS;
 using Ecologylab.Semantics.Generated.Library.BlogNS;
+using Ecologylab.Semantics.Generated.Library.BlogPostNS;
 using Ecologylab.Semantics.Generated.Library.BoardGameNS;
+using Ecologylab.Semantics.Generated.Library.BritishCartoonArchiveNS;
 using Ecologylab.Semantics.Generated.Library.CameraNS;
 using Ecologylab.Semantics.Generated.Library.CartoonNS;
-using Ecologylab.Semantics.Generated.Library.CiteulikeNS;
-using Ecologylab.Semantics.Generated.Library.ClothingNS;
+using Ecologylab.Semantics.Generated.Library.Cb2ProductNS;
+using Ecologylab.Semantics.Generated.Library.CiteseerXSimilarNS;
+using Ecologylab.Semantics.Generated.Library.CiteseerxCitingNS;
+using Ecologylab.Semantics.Generated.Library.CiteseerxRecordNS;
+using Ecologylab.Semantics.Generated.Library.CiteseerxSearchNS;
+using Ecologylab.Semantics.Generated.Library.CiteseerxSummaryNS;
+using Ecologylab.Semantics.Generated.Library.CiteulikeAuthorNS;
+using Ecologylab.Semantics.Generated.Library.CiteulikePaperNS;
+using Ecologylab.Semantics.Generated.Library.CiteulikeSearchNS;
+using Ecologylab.Semantics.Generated.Library.CiteulikeTagNS;
+using Ecologylab.Semantics.Generated.Library.CiteulikeUserNS;
+using Ecologylab.Semantics.Generated.Library.CnetReviewNS;
+using Ecologylab.Semantics.Generated.Library.CommentNS;
+using Ecologylab.Semantics.Generated.Library.CommodityNS;
+using Ecologylab.Semantics.Generated.Library.ContactPointNS;
+using Ecologylab.Semantics.Generated.Library.CrateAndBarrelProductNS;
 using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
+using Ecologylab.Semantics.Generated.Library.CurationNS;
 using Ecologylab.Semantics.Generated.Library.DisasterNS;
-using Ecologylab.Semantics.Generated.Library.DleseNS;
+using Ecologylab.Semantics.Generated.Library.DleseRecordNS;
+using Ecologylab.Semantics.Generated.Library.DleseUserSearchNS;
 using Ecologylab.Semantics.Generated.Library.DreamHouseNS;
-using Ecologylab.Semantics.Generated.Library.FashionNS;
+using Ecologylab.Semantics.Generated.Library.DublinCoreNS;
+using Ecologylab.Semantics.Generated.Library.EarthquakeNS;
+using Ecologylab.Semantics.Generated.Library.EbayProductNS;
+using Ecologylab.Semantics.Generated.Library.EtsyProductNS;
+using Ecologylab.Semantics.Generated.Library.EventNS;
+using Ecologylab.Semantics.Generated.Library.ExhibitionNS;
+using Ecologylab.Semantics.Generated.Library.FashionReviewerNS;
 using Ecologylab.Semantics.Generated.Library.FastflipNS;
-using Ecologylab.Semantics.Generated.Library.FlickrNS;
-using Ecologylab.Semantics.Generated.Library.GisNS;
+using Ecologylab.Semantics.Generated.Library.FlamencoFacetNS;
+using Ecologylab.Semantics.Generated.Library.FlamencoObjectNS;
+using Ecologylab.Semantics.Generated.Library.FlickrAuthorNS;
+using Ecologylab.Semantics.Generated.Library.FlickrPhotoPostNS;
+using Ecologylab.Semantics.Generated.Library.FlickrPhotostreamNS;
+using Ecologylab.Semantics.Generated.Library.FlickrTagNS;
+using Ecologylab.Semantics.Generated.Library.FondationArticleNS;
+using Ecologylab.Semantics.Generated.Library.FondationCollectionNS;
+using Ecologylab.Semantics.Generated.Library.FondationTagNS;
+using Ecologylab.Semantics.Generated.Library.Forever21ProductNS;
+using Ecologylab.Semantics.Generated.Library.GaurdianComicNS;
+using Ecologylab.Semantics.Generated.Library.GetttyArtistNS;
+using Ecologylab.Semantics.Generated.Library.GettyArtworkNS;
+using Ecologylab.Semantics.Generated.Library.GettyCollectionNS;
+using Ecologylab.Semantics.Generated.Library.GettyExplorationNS;
+using Ecologylab.Semantics.Generated.Library.GettySearchNS;
+using Ecologylab.Semantics.Generated.Library.GisLocationNS;
+using Ecologylab.Semantics.Generated.Library.GlobeCartoonNS;
 using Ecologylab.Semantics.Generated.Library.GoogleBookNS;
-using Ecologylab.Semantics.Generated.Library.GoogleScholarNS;
+using Ecologylab.Semantics.Generated.Library.GooglePatentAuthorNS;
+using Ecologylab.Semantics.Generated.Library.GooglePatentNS;
+using Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS;
+using Ecologylab.Semantics.Generated.Library.GoogleScholarAuthorNS;
+using Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS;
+using Ecologylab.Semantics.Generated.Library.GoogleSearchNS;
 using Ecologylab.Semantics.Generated.Library.GrantNS;
+using Ecologylab.Semantics.Generated.Library.GrantProgramNS;
+using Ecologylab.Semantics.Generated.Library.GrantStaffNS;
+using Ecologylab.Semantics.Generated.Library.GuggenArtworkNS;
+using Ecologylab.Semantics.Generated.Library.GuggenFitlerNS;
+using Ecologylab.Semantics.Generated.Library.HmProductNS;
+using Ecologylab.Semantics.Generated.Library.HomeDepotProductNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
+using Ecologylab.Semantics.Generated.Library.IcdlBookPreviewNS;
 using Ecologylab.Semantics.Generated.Library.IcdlNS;
-using Ecologylab.Semantics.Generated.Library.IeeeXploreNS;
-using Ecologylab.Semantics.Generated.Library.ImdbNS;
-using Ecologylab.Semantics.Generated.Library.InstructablesNS;
+using Ecologylab.Semantics.Generated.Library.IeeeArticleBodyNS;
+using Ecologylab.Semantics.Generated.Library.IeeeArticleNS;
+using Ecologylab.Semantics.Generated.Library.IeeeAuthorNS;
+using Ecologylab.Semantics.Generated.Library.IeeeCitedByNS;
+using Ecologylab.Semantics.Generated.Library.IeeeJournalNS;
+using Ecologylab.Semantics.Generated.Library.IeeeKeywordsNS;
+using Ecologylab.Semantics.Generated.Library.IeeeReferencesNS;
+using Ecologylab.Semantics.Generated.Library.IeeeSearchNS;
+using Ecologylab.Semantics.Generated.Library.IkeaProductNS;
+using Ecologylab.Semantics.Generated.Library.ImageSearchNS;
+using Ecologylab.Semantics.Generated.Library.ImdbMovieNS;
+using Ecologylab.Semantics.Generated.Library.ImdbMoviePersonNS;
+using Ecologylab.Semantics.Generated.Library.InformaWorldScholarlyArticleNS;
+using Ecologylab.Semantics.Generated.Library.InstructableAuthorNS;
+using Ecologylab.Semantics.Generated.Library.InstructableNS;
+using Ecologylab.Semantics.Generated.Library.InstructablesTagNS;
+using Ecologylab.Semantics.Generated.Library.InvestigatorNS;
+using Ecologylab.Semantics.Generated.Library.ItemNS;
+using Ecologylab.Semantics.Generated.Library.JstorArticleNS;
+using Ecologylab.Semantics.Generated.Library.JstorJournalNS;
+using Ecologylab.Semantics.Generated.Library.JstorSearchNS;
 using Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS;
-using Ecologylab.Semantics.Generated.Library.LolzNS;
-using Ecologylab.Semantics.Generated.Library.MiscNS;
+using Ecologylab.Semantics.Generated.Library.LowesProductNS;
+using Ecologylab.Semantics.Generated.Library.MetArtworkNS;
+using Ecologylab.Semantics.Generated.Library.MetFilterNS;
+using Ecologylab.Semantics.Generated.Library.MmArtworkNS;
+using Ecologylab.Semantics.Generated.Library.ModclothProductNS;
+using Ecologylab.Semantics.Generated.Library.ModclothSearchNS;
+using Ecologylab.Semantics.Generated.Library.MomaArtistNS;
+using Ecologylab.Semantics.Generated.Library.MomaArtworkNS;
 using Ecologylab.Semantics.Generated.Library.MovieNS;
-using Ecologylab.Semantics.Generated.Library.MuseumNS;
-using Ecologylab.Semantics.Generated.Library.NewsNS;
-using Ecologylab.Semantics.Generated.Library.NsdlNS;
-using Ecologylab.Semantics.Generated.Library.NsfNS;
-using Ecologylab.Semantics.Generated.Library.OpenDNS;
+using Ecologylab.Semantics.Generated.Library.MoviePersonNS;
+using Ecologylab.Semantics.Generated.Library.NetflixMovieNS;
+using Ecologylab.Semantics.Generated.Library.NewMuseumArtistNS;
+using Ecologylab.Semantics.Generated.Library.NewMuseumArtworkNS;
+using Ecologylab.Semantics.Generated.Library.NeweggProductNS;
+using Ecologylab.Semantics.Generated.Library.NewmuseumExhibitionNS;
+using Ecologylab.Semantics.Generated.Library.NewmuseumFilterNS;
+using Ecologylab.Semantics.Generated.Library.NewsArticleNS;
+using Ecologylab.Semantics.Generated.Library.NsdlDocumentNS;
+using Ecologylab.Semantics.Generated.Library.NsdlServiceNS;
+using Ecologylab.Semantics.Generated.Library.NsfAwardGrantNS;
+using Ecologylab.Semantics.Generated.Library.NsfDivisionNS;
+using Ecologylab.Semantics.Generated.Library.NsfInvestigatorNS;
+using Ecologylab.Semantics.Generated.Library.NsfProgramNS;
+using Ecologylab.Semantics.Generated.Library.NsfSearchNS;
+using Ecologylab.Semantics.Generated.Library.NsfStaffListNS;
+using Ecologylab.Semantics.Generated.Library.NsfStaffNS;
+using Ecologylab.Semantics.Generated.Library.NytimesArticleNS;
+using Ecologylab.Semantics.Generated.Library.OnekingslaneProductNS;
+using Ecologylab.Semantics.Generated.Library.OpenDNSDomainNS;
 using Ecologylab.Semantics.Generated.Library.OpmlNS;
+using Ecologylab.Semantics.Generated.Library.OverstockProductNS;
+using Ecologylab.Semantics.Generated.Library.PatentAuthorNS;
+using Ecologylab.Semantics.Generated.Library.PatentClassificationNS;
 using Ecologylab.Semantics.Generated.Library.PatentNS;
+using Ecologylab.Semantics.Generated.Library.PeriodicalNS;
 using Ecologylab.Semantics.Generated.Library.PersonNS;
+using Ecologylab.Semantics.Generated.Library.PieroneProductNS;
 using Ecologylab.Semantics.Generated.Library.PinterestNS;
+using Ecologylab.Semantics.Generated.Library.PoliticalCartoonNS;
+using Ecologylab.Semantics.Generated.Library.PostalAddressNS;
+using Ecologylab.Semantics.Generated.Library.PotterybarnProductNS;
 using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
-using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
+using Ecologylab.Semantics.Generated.Library.ProductNS;
 using Ecologylab.Semantics.Generated.Library.PublicationNS;
-using Ecologylab.Semantics.Generated.Library.PubmedNS;
-using Ecologylab.Semantics.Generated.Library.ResearchGateNS;
+using Ecologylab.Semantics.Generated.Library.PublisherNS;
+using Ecologylab.Semantics.Generated.Library.PubmedArticleNS;
+using Ecologylab.Semantics.Generated.Library.PubmedAuthorNS;
+using Ecologylab.Semantics.Generated.Library.PubmedJournalNS;
+using Ecologylab.Semantics.Generated.Library.RatingNS;
+using Ecologylab.Semantics.Generated.Library.RedditFeedNS;
+using Ecologylab.Semantics.Generated.Library.ResearchGateSearchNS;
+using Ecologylab.Semantics.Generated.Library.ResearchgateArticleNS;
+using Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS;
+using Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionDepartmentNS;
+using Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionNS;
+using Ecologylab.Semantics.Generated.Library.ResearchgateResearcherNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
+using Ecologylab.Semantics.Generated.Library.RestorationHardwareProductNS;
 using Ecologylab.Semantics.Generated.Library.ReviewNS;
+using Ecologylab.Semantics.Generated.Library.RhizomeArtistNS;
+using Ecologylab.Semantics.Generated.Library.RhizomeArtworkNS;
+using Ecologylab.Semantics.Generated.Library.RhizomeCollectionNS;
+using Ecologylab.Semantics.Generated.Library.RhizomeTagNS;
+using Ecologylab.Semantics.Generated.Library.RoomandboardProductNS;
+using Ecologylab.Semantics.Generated.Library.RottenTomatoeMovieNS;
+using Ecologylab.Semantics.Generated.Library.RottenTomatoeMoviePersonNS;
+using Ecologylab.Semantics.Generated.Library.Rss22NS;
 using Ecologylab.Semantics.Generated.Library.RssNS;
-using Ecologylab.Semantics.Generated.Library.RwandatribunalNS;
+using Ecologylab.Semantics.Generated.Library.RwandaPersonnelInterviewNS;
+using Ecologylab.Semantics.Generated.Library.RwandaTribunalVoicesNS;
+using Ecologylab.Semantics.Generated.Library.RwandaVideoInterviewNS;
+using Ecologylab.Semantics.Generated.Library.SamsclubProductNS;
 using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.Semantics.Generated.Library.ScienceDirectNS;
+using Ecologylab.Semantics.Generated.Library.ScienceDirectArticleNS;
+using Ecologylab.Semantics.Generated.Library.ScopusArticleNS;
+using Ecologylab.Semantics.Generated.Library.ScopusAuthorNS;
+using Ecologylab.Semantics.Generated.Library.ScopusSearchNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
-using Ecologylab.Semantics.Generated.Library.SlashdotNS;
-using Ecologylab.Semantics.Generated.Library.SocialMediaNS;
-using Ecologylab.Semantics.Generated.Library.TravelNS;
+using Ecologylab.Semantics.Generated.Library.ServiceNS;
+using Ecologylab.Semantics.Generated.Library.SfuCartoonArchiveNS;
+using Ecologylab.Semantics.Generated.Library.SlashdotPostNS;
+using Ecologylab.Semantics.Generated.Library.SlashdotRSSNS;
+using Ecologylab.Semantics.Generated.Library.SlashdotSearchNS;
+using Ecologylab.Semantics.Generated.Library.TargetProductNS;
+using Ecologylab.Semantics.Generated.Library.TateArtistNS;
+using Ecologylab.Semantics.Generated.Library.TateArtworkNS;
+using Ecologylab.Semantics.Generated.Library.TateFilterNS;
+using Ecologylab.Semantics.Generated.Library.TechReviewNS;
+using Ecologylab.Semantics.Generated.Library.ThumbnailNS;
+using Ecologylab.Semantics.Generated.Library.TigerdirectProductNS;
 using Ecologylab.Semantics.Generated.Library.TripAdvisorNS;
-using Ecologylab.Semantics.Generated.Library.TumblrNS;
+using Ecologylab.Semantics.Generated.Library.TrumanCampaignCartoonNS;
+using Ecologylab.Semantics.Generated.Library.TumblrPostNS;
+using Ecologylab.Semantics.Generated.Library.TumblrSearchNS;
+using Ecologylab.Semantics.Generated.Library.TvShowEpisodeNS;
 using Ecologylab.Semantics.Generated.Library.TvShowNS;
 using Ecologylab.Semantics.Generated.Library.TvtropesNS;
-using Ecologylab.Semantics.Generated.Library.UrbanspoonNS;
-using Ecologylab.Semantics.Generated.Library.UvaNS;
+using Ecologylab.Semantics.Generated.Library.TweetNS;
+using Ecologylab.Semantics.Generated.Library.TweeterNS;
+using Ecologylab.Semantics.Generated.Library.TwitterBlogNS;
+using Ecologylab.Semantics.Generated.Library.TwitterSearchNS;
+using Ecologylab.Semantics.Generated.Library.UniqloProductNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
-using Ecologylab.Semantics.Generated.Library.WikipediaNS;
-using Ecologylab.Semantics.Generated.Library.YelpNS;
-using Ecologylab.Semantics.Test.Library.Generics;
+using Ecologylab.Semantics.Generated.Library.WalmartProductNS;
+using Ecologylab.Semantics.Generated.Library.WeatherReportNS;
+using Ecologylab.Semantics.Generated.Library.WestelmProductNS;
+using Ecologylab.Semantics.Generated.Library.WhitneyArtworkNS;
+using Ecologylab.Semantics.Generated.Library.WhitneyDecadeNS;
+using Ecologylab.Semantics.Generated.Library.WhitneySearchNS;
+using Ecologylab.Semantics.Generated.Library.WhitneyWatchAndListenNS;
+using Ecologylab.Semantics.Generated.Library.WikipediaMobileNS;
+using Ecologylab.Semantics.Generated.Library.WikipediaPageNS;
+using Ecologylab.Semantics.Generated.Library.WikipediaPageTypeNS;
+using Ecologylab.Semantics.Generated.Library.YahooRssNS;
+using Ecologylab.Semantics.Generated.Library.YahooSearchNS;
+using Ecologylab.Semantics.Generated.Library.YelpBusinessNS;
+using Ecologylab.Semantics.Generated.Library.ZaraProductNS;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.Semantics.Generated.Library 
@@ -125,7 +299,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AudioSelfmade),
 				typeof(Author),
 				typeof(BasicPublication),
-				typeof(BedbathandbeyondMobileProduct),
 				typeof(BedbathandbeyondProduct),
 				typeof(BestbuyProduct),
 				typeof(BggCategory),
@@ -137,7 +310,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(BoardGame),
 				typeof(Body),
 				typeof(Book),
-				typeof(Bookmark),
 				typeof(BritishCartoonArchive),
 				typeof(CachedHtml),
 				typeof(CameraSettings),
@@ -165,26 +337,21 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CrateandbarrelProduct),
 				typeof(CreativeWork),
 				typeof(Curation),
+				typeof(DatabaseArticle),
 				typeof(DateInfo),
 				typeof(Dc),
 				typeof(DcDocument),
-				typeof(DeliciousHomepage),
-				typeof(DeliciousSearch),
 				typeof(Designer),
 				typeof(Disaster),
 				typeof(DleseGetRecord),
 				typeof(DleseRecord),
-				typeof(DleseRecord1),
 				typeof(DleseRecord2),
 				typeof(DleseRecordHead),
 				typeof(DleseUserSearch),
 				typeof(Dlms),
-				typeof(DocumentSet),
 				typeof(Earthquake),
 				typeof(EbayProduct),
 				typeof(Educational),
-				typeof(EmergentEvent),
-				typeof(EmergentEventCollection),
 				typeof(EtsyProduct),
 				typeof(Event),
 				typeof(Exhibition),
@@ -202,7 +369,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Forever21),
 				typeof(GaurdianComic),
 				typeof(General),
-				typeof(GeneralSearch<>),
 				typeof(GetRecordAdditionalMetadata),
 				typeof(GettyArtist),
 				typeof(GettyArtistInfo),
@@ -222,20 +388,17 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
 				typeof(GoogleSearch),
-				typeof(GoogleSorry),
 				typeof(Grant),
 				typeof(GrantProgram),
 				typeof(GrantStaff),
 				typeof(GuggenArtwork),
 				typeof(GuggenFilter),
 				typeof(Head),
-				typeof(Head1),
 				typeof(Head2),
 				typeof(Header),
 				typeof(HmProduct),
 				typeof(HomeDepotProduct),
 				typeof(Hotel),
-				typeof(HouzzProduct),
 				typeof(IcdlBook),
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
@@ -250,7 +413,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IeeeXploreReferences),
 				typeof(IeeeXploreSearch),
 				typeof(IkeaDepartment),
-				typeof(IkeaMobileProduct),
 				typeof(IkeaProduct),
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
@@ -265,14 +427,15 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Investigator<>),
 				typeof(Item),
 				typeof(ItemRecord),
-				typeof(KeywordSet),
+				typeof(JstorArticle),
+				typeof(JstorJournal),
+				typeof(JstorSearch),
 				typeof(LabeledSpecifications),
 				typeof(LandofnodProduct),
 				typeof(LeagueAbility),
 				typeof(LeagueChampion),
 				typeof(LeagueRelationshipList),
 				typeof(Lifecycle),
-				typeof(Lolz),
 				typeof(LowesProduct),
 				typeof(MacheClipping),
 				typeof(MediaContent),
@@ -336,6 +499,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Rating),
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
+				typeof(RedditCommentsPage),
+				typeof(RedditFeed),
+				typeof(RedditFrontPage),
+				typeof(RedditLink),
+				typeof(RedditSubreddit),
 				typeof(ResearchGateArticle),
 				typeof(ResearchGateArticleStats),
 				typeof(ResearchGateAuthor),
@@ -367,7 +535,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(ScopusAuthor),
 				typeof(ScopusSearch),
 				typeof(Search<>),
-				typeof(SearchAdditionalMetadataAdn),
 				typeof(SearchCrumb),
 				typeof(SearchResult),
 				typeof(SearchResults),
@@ -380,13 +547,9 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(SlashdotItem),
 				typeof(SlashdotRss),
 				typeof(SlashdotSearch),
-				typeof(SocialMediaSearchOne),
 				typeof(SocialMediaSearchResult),
-				typeof(SocialMediaSearchResultForTest),
-				typeof(SocialMediaSearchTwo<>),
 				typeof(SocialVideo),
 				typeof(Specification),
-				typeof(Spotrep),
 				typeof(Subject),
 				typeof(TargetProduct),
 				typeof(TateArtist),
@@ -397,8 +560,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(TermType),
 				typeof(Thumbnail),
 				typeof(TigerdirectProduct),
-				typeof(Topic),
-				typeof(TopicCluster),
 				typeof(TribunalVoices),
 				typeof(TripAdvisorThingsToDo),
 				typeof(TrumanLibrary1948CampaignCartoons),
@@ -414,14 +575,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(TwitterMicroblog),
 				typeof(TwitterSearchResults),
 				typeof(UniqloProduct),
-				typeof(UrbanSpoonRestaurant),
-				typeof(UserSearchAdditionalMetadata),
-				typeof(UvaModel),
 				typeof(VideoClipping),
 				typeof(VideoInterview),
 				typeof(VideoSelfmade),
 				typeof(WalmartProduct),
-				typeof(WayfairProduct),
 				typeof(WeatherReport),
 				typeof(WebVideo),
 				typeof(WestelmProduct),
@@ -429,13 +586,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(WhitneyDecade),
 				typeof(WhitneySearch),
 				typeof(WhitneyWatchAndListen),
-				typeof(WikiSearch),
 				typeof(WikipediaCategoryType),
-				typeof(WikipediaForTest),
 				typeof(WikipediaMobilePage),
 				typeof(WikipediaPage),
 				typeof(WikipediaPageType),
-				typeof(WorldmarketProduct),
 				typeof(YahooGeoCode),
 				typeof(YahooGeoCodeResult),
 				typeof(YahooMediaRss),

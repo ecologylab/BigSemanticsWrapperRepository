@@ -1,0 +1,73 @@
+<meta_metadata_repository name="bggBoardGame"
+  package="ecologylab.bigsemantics.generated.library.bggBoardGame" default_user_agent_name="chrome_2">
+	
+	<meta_metadata name="bgg_game" extends="board_game" comment="boardgamegeek.com"
+	    parser="xpath">
+	    <selector url_path_tree="http://boardgamegeek.com/boardgame/" />
+	    <selector url_path_tree="http://boardgamegeek.com/boardgameexpansion/" />
+	    <example_url url="http://boardgamegeek.com/boardgame/4324/risk-the-lord-of-the-rings" />
+	
+	    <scalar name="title">
+	      <xpath>//*[@class='geekitem_title']/a/span</xpath>
+	    </scalar>
+	    <scalar name="year">
+	      <xpath>//div[@id='results_yearpublished_thing_1829']</xpath>
+	    </scalar>
+	    <scalar name="description">
+	      <xpath>//div[@class='wiki']</xpath>
+	    </scalar>
+	    <scalar name="overall_rating">
+	      <xpath>//*[@property='v:average']</xpath>
+	      <regex_op regex="$" replace=" out of 10" />
+	    </scalar>
+	
+	    <scalar name="number_of_players">
+	      <xpath>//div[@id='edit_players']/div[2]</xpath>
+	    </scalar>
+	    <scalar name="number_of_ratings">
+	      <xpath>//*[@id='module_17']/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/a</xpath>
+	    </scalar>   
+	   
+	   <!-- show expande  -->
+	    <collection name="categories" child_type="bgg_category" show_expanded_initially="false">
+	      <xpath>//a[contains(@href,'boardgamecategory/')]</xpath>
+	      <scalar name="title">
+	        <xpath>.</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+	
+	    <collection name="expansions" child_type="bgg_game">
+	      <xpath>//*[@id='editdesc']/ul[2]/li/a</xpath>
+	      <scalar name="title">
+	        <xpath>.</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+	
+	  </meta_metadata>
+	
+	  <meta_metadata name="bgg_category" extends="compound_document" comment="boardgamegeek.com"
+	    parser="xpath">
+	    <selector url_path_tree="http://boardgamegeek.com/boardgamecategory/" />
+	    <example_url url="http://boardgamegeek.com/boardgamecategory/1016/science-fiction" />
+	
+	    <scalar name="title">
+	      <xpath>//*[@class='geekitem_title']/a/span</xpath>
+	    </scalar>
+	
+	    <collection name="search_results" child_type="bgg_game">
+	      <xpath>//*[@class='geekitem_linkeditems_title']/a</xpath>
+	      <scalar name="title">
+	        <xpath>.</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+	  </meta_metadata>
+</meta_metadata_repository>

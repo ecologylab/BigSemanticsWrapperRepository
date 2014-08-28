@@ -1,0 +1,145 @@
+<meta_metadata_repository name="amazonList" package="ecologylab.bigsemantics.generated.library.amazonList">
+  
+  <meta_metadata name="amazon_list" extends="creative_work">
+    <filter_location strip_prefix="/ref=" />
+
+    <collection name="items" child_type="amazon_product" />
+  </meta_metadata>
+
+
+  <meta_metadata name="amazon_wish_list" type="amazon_list" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.amazon.com/gp/registry/wishlist" />
+    <selector url_path_tree="http://www.amazon.co.uk//gp/registry/wishlist" />
+    <example_url url="http://www.amazon.com/gp/registry/wishlist/ref=wish_list" />
+
+    <collection name="items">
+      <xpath>//td[@class='lineItemMainInfo']</xpath>
+      <scalar name="title">
+        <xpath>.//span[@class='small productTitle']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//span[@class='small productTitle']/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+
+  <meta_metadata name="amazon_list_mania" type="amazon_list" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_regex="http://www.amazon.com/[^/]*/lm/.*" domain="amazon.com" />
+    <selector url_regex="http://www.amazon.co.uk/[^/]*/lm/.*" domain="amazon.co.uk" />
+    <example_url url="http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='largeTitle']</xpath>
+    </scalar>
+    <collection name="items" child_type="amazon_product">
+      <xpath>//td[@class='listItem']/table/tbody</xpath>
+      <scalar name="title">
+        <xpath>.//strong/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//strong/a/@href</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//span[@class='rpSmall']/span[1]</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>.//span[@class='crAvgStars']//img/@title</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+  <meta_metadata name="amazon_bestseller_list" type="amazon_list" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.amazon.com/gp/bestsellers" />
+    <selector domain="amazon.com" url_regex="http://www.amazon.com/[^/]*/zgbs/.*" />
+    <example_url url="http://www.amazon.com/gp/bestsellers/books/6" />
+	
+    <filter_location strip_prefix="/ref=" />
+    
+    <scalar name="title">
+      <xpath>//h1[@id='zg_listTitle']/span</xpath>
+    </scalar>
+    <collection name="items">
+      <xpath>//div[@class='zg_itemImmersion']</xpath>
+      <scalar name="title">
+        <xpath>.//div[@class='zg_title']/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//div[@class='zg_title']/a/@href</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//div[@class='zg_price']//strong[@class='price']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>.//div[@class='zg_reviews']//span[contains(@class,'swSprite')]</xpath>
+      </scalar>
+      
+      <collection name="main_images">
+      	<xpath>//div[@class='zg_image']//a</xpath>
+      	<scalar name="location">
+      		<xpath>.//img/@src</xpath>
+      	</scalar>
+      </collection>
+    </collection>
+  </meta_metadata>
+    <meta_metadata name="amazon_bestseller_list_uk" type="amazon_list" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.amazon.co.uk/gp/bestsellers" />
+    <example_url url="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
+
+    <filter_location strip_prefix="/ref=" />
+
+    <scalar name="title">
+      <xpath>//h1[@id='zg_listTitle']/span</xpath>
+    </scalar>
+    <collection name="items">
+      <xpath>//div[@class='zg_itemImmersion']</xpath>
+      <scalar name="title">
+        <xpath>.//div[@class='zg_title']/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//div[@class='zg_title']/a/@href</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//div[@class='zg_price']//strong[@class='price']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>.//div[@class='zg_reviews']//span[contains(@class,'swSprite')]</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="amazon_search_list" type="amazon_list" parser="xpath"
+    user_agent_name="chrome">
+    <selector domain="amazon.com" url_regex="http://www.amazon.com/s[/?].*" />
+    <example_url url="http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&amp;field-keywords=ps4" />
+
+    <scalar name="title">
+      <xpath>//title</xpath>
+    </scalar>
+    <collection name="items">
+      <xpath>//div[@id='result_0' or @id='result_1' or @id='result_2' or @id='result_3' or @id='result_4' or @id='result_5' or @id='result_6' or @id='result_7' or @id='result_8' or @id='result_9' or @id='result_10' or @id='result_11' or @id='result_12' or @id='result_13' or @id='result_14' or @id='result_15']</xpath>   <!-- or @id='result_1' or @id='result_2' or @id='result_3' or @id='result_4' or @id='result_5' -->
+      <scalar name="title">
+        <xpath>.//a[@class='title']/span/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//a[@class='title']/@href</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>//li[@class='newp']//span[@class='bld lrg red']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>//span[@class='a-declarative']//a/@alt</xpath>
+      </scalar>
+      <collection name="main_images">
+        <xpath>.//div[@class='imageBox']/img</xpath>
+        <scalar name="location">
+          <xpath>//div[@class='imageBox']/img/@src</xpath>
+        </scalar>
+      </collection>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

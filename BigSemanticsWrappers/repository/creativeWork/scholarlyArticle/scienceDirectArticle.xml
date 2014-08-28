@@ -1,0 +1,105 @@
+<meta_metadata_repository name="scienceDirectArticle"
+  package="ecologylab.bigsemantics.generated.library.scienceDirectArticle" default_user_agent_name="chrome">
+
+  <meta_metadata name="science_direct_article" extends="scholarly_article" parser="xpath"
+    comment="Information about the article">
+    <selector url_path_tree="http://www.sciencedirect.com/science/article" />
+    <example_url url="http://www.sciencedirect.com/science/article/pii/S1570826808000693" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='svTitle']</xpath>
+    </scalar>
+
+    <composite name="rich_media">
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>PDF full text</value>
+        </concatenate_values>
+      </scalar>
+      <scalar name="location">
+        <xpath>//a[@id='pdfLink']/@href</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="authors" child_type="scopus_author" label="authors" comment="All authors">
+      <xpath>//ul[@class='authorGroup']/li</xpath>
+      <scalar name="title">
+        <xpath>a[1]</xpath>
+      </scalar>
+      <scalar name="scopus_author_id">
+        <xpath>a[1]/@data-authurl</xpath>
+        <regex_op regex="ScopusAuthorCountsURL/(\d+)" group="1" />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.scopus.com/authid/detail.url?authorId=</value>
+          <value from_scalar="scopus_author_id" />
+        </concatenate_values>
+      </scalar>
+    </collection>
+
+    <scalar name="description">
+      <xpath>//div[contains(@class, 'svAbstract')]/p</xpath>
+    </scalar>
+
+    <composite name="source">
+      <xpath>//div[@class='publicationHead']</xpath>
+      <scalar name="title">
+        <xpath>./div[@class='title']/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div[@class='title']/a/@href</xpath>
+      </scalar>
+      <scalar name="volume_and_issue">
+        <xpath>./p[1]/a</xpath>
+      </scalar>
+      <scalar name="date">
+        <xpath>./p[1]</xpath>
+        <regex_op regex="Volume \d+, Issue \d+, ([^,]+)," group="1" />
+      </scalar>
+    </composite>
+
+    <collection name="keywords">
+      <xpath>//ul[@class='keyword']/li</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+        <regex_op regex=";" replace="" />
+      </scalar>
+    </collection>
+
+    <collection name="references" child_type="scholarly_article">
+      <xpath>//ol[@class='references']/li</xpath>
+      <scalar name="title">
+        <xpath>ul/li[@class='title']</xpath>
+      </scalar>
+      <collection name="authors" label="authors">
+        <xpath>ul/li[@class='author']</xpath>
+        <field_parser name="regex_split" regex=",\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source">
+        <xpath>ul/li[@class='source']/p</xpath>
+        <scalar name="title">
+          <regex_op regex=",\s.*" replace="" />
+        </scalar>
+      </composite>
+<!-- 	      	<scalar name="location" xpath="ul/li/[@class='refPlaceHolder']/div[2]/a/@href" /> -->
+    </collection>
+
+    <composite name="citations_page" type="scopus_search">
+      <xpath>//ol[@class='citedByLink']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="doi" scalar_type="ParsedURL" hide="true"
+      comment="The digital object identifier of the article">
+      <xpath>//a[@id='ddDoi']/@href</xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

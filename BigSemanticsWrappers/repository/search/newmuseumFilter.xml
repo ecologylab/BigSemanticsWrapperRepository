@@ -1,0 +1,33 @@
+<meta_metadata_repository name="newmuseumFilter"
+  package="ecologylab.bigsemantics.generated.library.newmuseumFilter" default_user_agent_name="chrome_2">
+
+
+
+ 
+
+
+	
+	<!-- section of data about where artist is from -->
+ 
+
+  <meta_metadata name="newmuseum_filter" extends="search" parser="xpath">
+    <selector url_path_tree="http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/" />
+    <example_url
+      url="http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/type_facet/id/12/mod_id/0" />
+
+    <scalar name="title" label="browsing for">
+      <xpath>//span[@id='browsingFor']</xpath>
+    </scalar>
+
+    <collection name="search_results" child_type="newmuseum_artwork">
+      <xpath>//*[@id='resultBox']/table/tbody/tr/td/div[2]/div/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./i</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

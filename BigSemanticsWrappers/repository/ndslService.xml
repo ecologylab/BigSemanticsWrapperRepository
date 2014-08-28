@@ -1,0 +1,14 @@
+<meta_metadata_repository name="nsdlService"
+  package="ecologylab.bigsemantics.generated.library.nsdlService">
+
+  <meta_metadata name="nsdl_service" extends="metadata" 
+    parser="direct">
+    <composite name="search_results" extends="metadata" >
+      <collection name="results" child_type="nsdl_document" />
+    </composite>
+	
+		<!-- semantic actions: set resource_identifier value to location inside dc.
+         then pass that dc extends document to parse document -->
+  </meta_metadata>
+
+</meta_metadata_repository>

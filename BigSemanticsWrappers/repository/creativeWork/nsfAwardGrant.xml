@@ -1,0 +1,188 @@
+<meta_metadata_repository name="nsfAwardGrant"
+  package="ecologylab.bigsemantics.generated.library.nsfAwardGrant">
+
+
+  <meta_metadata name="nsf_award" extends="grant" comment="NSF award details." parser="xpath">
+    <selector url_stripped="http://www.nsf.gov/awardsearch/showAward.do" />
+    <selector url_stripped="http://nsf.gov/awardsearch/showAward.do" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/showAward" />
+    <selector url_stripped="http://nsf.gov/awardsearch/showAward" />
+
+    <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428" />
+    <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854" />
+    <example_url url="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1123972"
+      comment="this has two PIs, good for testing splitting and parsing PI names." />
+    <example_url
+      url="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1247637&amp;HistoricalAwards=false" />
+
+    <scalar name="title">
+      <xpath>//span[@class='pageheadline']/strong</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//strong[@class='greybold' and starts-with(text(), 'ABSTRACT')]/parent::p</xpath>
+    </scalar>
+
+    <collection name="authors" child_type="nsf_investigator" extract_as_html="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(),
+        'Investigator(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <field_parser name="regex_split_and_find" regex="\s*&lt;br\s*/?&gt;\s*"
+        regex_find="([A-Z][a-z]*)\s+([A-Z]\.?\s+)?(([A-Z][a-z]*){1,2}(-([A-Z][a-z]*){1,2})?)\s+([a-z0-9_.-]+@[a-z0-9_.-]+\s+)?(\([^)]+\))"
+        trim="true" />
+      <scalar name="first_name" field_parser_key="$1" />
+      <scalar name="last_name" field_parser_key="$3" />
+      <scalar name="title" required="true">
+        <concatenate_values>
+          <value from_scalar="first_name" />
+          <value>
+          </value>
+          <value from_scalar="last_name" />
+        </concatenate_values>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/advancedSearchResult?PIId=&amp;IncludeCoPI=true&amp;PIOrganization=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=All&amp;ProgRefCode=&amp;BooleanRef=All&amp;Program=&amp;ProgOfficer=&amp;Keyword=&amp;AwardNumberOperator=&amp;AwardAmount=&amp;AwardInstrument=&amp;ActiveAwards=true&amp;ExpiredAwards=true&amp;OriginalAwardDateOperator=&amp;StartDateOperator=&amp;ExpDateOperator=&amp;PIFirstName=</value>
+          <value from_scalar="first_name" />
+          <value>&amp;PILastName=</value>
+          <value from_scalar="last_name" />
+        </concatenate_values>
+      </scalar>
+      <scalar name="email" field_parser_key="$7" />
+      <scalar name="investigation_type" field_parser_key="$8" />
+    </collection>
+    <composite name="division" type="nsf_division">
+      <xpath>//a[starts-with(@href, 'http://www.nsf.gov/div/index.jsp')][2]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+    <collection name="programs" child_type="nsf_program">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'NSF Program(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/advancedSearchNoScript?PIId=&amp;PIFirstName=&amp;PILastName=&amp;PIOrganization=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=All&amp;ProgRefCode=&amp;BooleanRef=All&amp;&amp;ProgOfficer=&amp;Keyword=&amp;AwardNumberOperator=&amp;AwardAmount=&amp;AwardInstrument=&amp;ActiveAwards=true&amp;OriginalAwardDateOperator=&amp;StartDateOperator=&amp;ExpDateOperator=&amp;Program=</value>
+          <value from_scalar="title" />
+        </concatenate_values>
+        <regex_op regex="\s+" replace="+" />
+      </scalar>
+    </collection>
+    <scalar name="grant_number">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Award Number:')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="start_date">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Start Date:')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="expire_date">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Expires:')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="amount" hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to Date:')]/following::td[@class='tabletext2'][1]</xpath>
+      <regex_op regex="\s+" replace="" />
+      <regex_op regex="[\$,]" replace="" />
+      <regex_op regex="\.\d+" replace="" />
+    </scalar>
+    <scalar name="amount_string" label="amount" scalar_type="String">
+      <concatenate_values>
+        <value>$</value>
+        <value from_scalar="amount" />
+      </concatenate_values>
+    </scalar>
+    <collection name="managers" child_type="nsf_staff" extract_as_html="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Manager:')]/following::td[@class='tabletext2'][1]</xpath>
+      <field_parser name="regex_split_and_find" regex_find="([\w\s.-]+?)&lt;br&gt;(.*)"
+        trim="true" />
+      <scalar name="title" field_parser_key="$1" layer="-2.0" />
+      <scalar name="affiliation" field_parser_key="$2" layer="-1.0">
+        <regex_op regex="&lt;.*?&gt;" replace=" " />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/advancedSearchResult?PIId=&amp;PIFirstName=&amp;PILastName=&amp;PIOrganization=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=All&amp;ProgRefCode=&amp;BooleanRef=All&amp;Program=&amp;Keyword=&amp;AwardNumberOperator=&amp;AwardAmount=&amp;AwardInstrument=&amp;ActiveAwards=true&amp;ExpiredAwards=true&amp;OriginalAwardDateOperator=&amp;StartDateOperator=&amp;ExpDateOperator=&amp;ProgOfficer=</value>
+          <value from_scalar="title" />
+        </concatenate_values>
+        <regex_op regex="\s+" replace="+" />
+      </scalar>
+    </collection>
+    <composite name="sponsor">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Sponsor:')]/following::td[@class='tabletext2'][1]</xpath>
+      <!-- field parser for addresses needed! -->
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="award_instrument" scalar_type="String" hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Award Instrument:')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="field_applications" scalar_type="String" hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Field Application(s):')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="initial_amendment_date" scalar_type="Date" hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Initial Amendment Date:')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="latest_amendment_date" scalar_type="Date" hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Latest Amendment Date:')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <scalar name="program_reference_codes" scalar_type="String" hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Reference Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
+    </scalar>
+    <collection name="program_element_codes" child_scalar_type="String" 
+      hide="true">
+      <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Program Element Code(s):')]/following::td[@class='tabletext2'][1]</xpath>
+      <field_parser name="regex_split" regex="," />
+    </collection>
+
+    <collection name="publications" extract_as_html="true">
+      <xpath>//strong[@class='greybold' and starts-with(text(), 'PUBLICATIONS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p</xpath>
+      <field_parser name="nsf_pub_list" />
+      <scalar name="title" field_parser_key="$title" />
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
+    </collection>
+    <collection name="proceedings" extract_as_html="true">
+      <xpath>//strong[@class='greybold' and starts-with(text(), 'CONFERENCE PROCEEDINGS PRODUCED AS A RESULT OF THIS RESEARCH')]/parent::p</xpath>
+      <field_parser name="nsf_pub_list" />
+      <scalar name="title" field_parser_key="$title" />
+      <collection name="authors" field_parser_key="$author_list">
+        <field_parser name="regex_split" regex="\s,\s" trim="true" />
+        <scalar name="title" field_parser_key="$0" />
+      </collection>
+      <composite name="source" field_parser_key="$other">
+        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
+        <scalar name="title" field_parser_key="$0" />
+        <scalar name="year" field_parser_key="$1" />
+      </composite>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="programs" />
+      <get_field name="program_element_codes" />
+      <for_each collection="programs" as="program" current_index="i">
+        <not_null value="programs" />
+        <not_null value="program_element_codes" />
+        <filter_location object="program">
+          <set_param name="ProgEleCode" value_from_collection="program_element_codes"
+            collection_index="i" />
+        </filter_location>
+      </for_each>
+
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

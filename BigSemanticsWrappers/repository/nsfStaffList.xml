@@ -1,0 +1,40 @@
+<meta_metadata_repository name="nsfStaffList"
+  package="ecologylab.bigsemantics.generated.library.nsfStaffList">
+  
+  <meta_metadata name="nsf_division_staff_list" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://www.nsf.gov/staff/staff_list_all.jsp" />
+		<example_url url="http://www.nsf.gov/staff/staff_list_all.jsp?org=NULL"/>
+    <collection name="programs"  child_type="nsf_program_staff_list"
+      child_extends="compound_document">
+      <xpath>//td[@class='text']//strong[@class='greybold']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <collection name="staffs" child_type="nsf_staff">
+        <xpath>./following::table[1]//tr[position() mod 3 = 1]</xpath>
+        <scalar name="title" layer="10.0">
+          <xpath>./following::tr[1]/td[1]/a</xpath>
+        </scalar>
+        <scalar name="occupation_title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location" hide="true">
+          <xpath>./following::tr[1]/td[1]/a/@href</xpath>
+        </scalar>
+        <composite name="contact">
+          <xpath>./following::tr[1]</xpath>
+          <scalar name="telephone">
+            <xpath>./td[2]</xpath>
+          </scalar>
+          <scalar name="room">
+            <xpath>./td[3]</xpath>
+          </scalar>
+          <scalar name="email">
+            <xpath>./td[4]/a</xpath>
+          </scalar>
+        </composite>
+      </collection>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

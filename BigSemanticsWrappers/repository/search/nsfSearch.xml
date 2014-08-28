@@ -1,0 +1,59 @@
+<meta_metadata_repository name="nsfSearch"
+  package="ecologylab.bigsemantics.generated.library.nsfSearch">
+
+
+  <meta_metadata name="nsf_search" extends="search" parser="xpath">
+<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" /> -->
+<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/progSearch.do" /> -->
+<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/afSearch.do" /> -->
+
+    <selector url_stripped="http://www.nsf.gov/awardsearch/simpleSearchResult" />
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
+      <param name="Keyword" />
+    </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
+      <param name="ProgOfficer" />
+    </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
+      <param name="Keyword" />
+    </selector>
+    <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchNoScript">
+      <param name="ProgOfficer" />
+    </selector>
+		<example_url url="http://www.nsf.gov/awardsearch/advancedSearchNoScript?Keyword=banana"/>
+    <filter_location>
+      <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
+    </filter_location>
+
+    <collection name="search_results" label="nsf_awards" child_type="nsf_award">
+      <xpath>//table[@id='displayTagResults']//tr[@class]</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+<!--       <composite name="division" type="nsf_division" xpath="./td[3]/a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </composite> -->
+<!--       <collection name="authors" child_type="nsf_investigator" xpath="./td[6]//a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </collection>  -->
+<!--       <collection name="programs" child_type="nsf_program" xpath="./td[4]//a"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </collection> -->
+<!--       <scalar name="start_date" xpath="./td[5]" /> -->
+<!--       <composite name="sponsor" xpath="./td[8]"> -->
+<!--         <scalar name="title" xpath="." /> -->
+<!--         <scalar name="location" xpath="./@href" /> -->
+<!--       </composite> -->
+<!--       <scalar name="amount" xpath="./td[9]"> -->
+<!--         <regex_op regex="(^\$)|,|(\.\d\d$)" replace="" /> -->
+<!--       </scalar> -->
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

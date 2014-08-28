@@ -1,0 +1,58 @@
+<meta_metadata_repository name="askNatureImage"
+  package="ecologylab.bigsemantics.generated.library.askNatureImage" default_user_agent_name="chrome">
+
+
+
+  <meta_metadata name="ask_nature_image" parser="xpath" extends="compound_document"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.asknature.org/media/image/" domain="asknature.org" />
+    <example_url url="http://www.asknature.org/media/image/192" />
+
+    <scalar name="title">
+      <xpath>//h1[@id='content_title']</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//div[@class='text_zone']/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <def_var name="content" type="node">
+      <xpath>//div[@class='dark']</xpath>
+    </def_var>
+
+    <scalar name="description" scalar_type="String" context_node="content">
+      <xpath>./p</xpath>
+    </scalar>
+    <scalar name="photographer_or_artist" scalar_type="String" context_node="content">
+      <xpath>./text()[contains(., 'Author')]/following-sibling::b[1]</xpath>
+    </scalar>
+    <composite name="image_source" type="compound_document" context_node="content">
+      <xpath>./b/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+    <scalar name="keywords" scalar_type="String" context_node="content">
+      <xpath>./text()[contains(., 'Keywords')]</xpath>
+      <filter regex="Keywords: " replace="" />
+    </scalar>
+
+    <composite name="link_to_strategy" type="ask_nature_strategy">
+      <xpath>//div[@class='text_zone']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+        <filter regex="Back to Galler" replace="Corresponding Strateg" />
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+  </meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,18 @@
+<meta_metadata_repository name="ieeeReferences"
+  package="ecologylab.bigsemantics.generated.library.ieeeReferences">
+
+  <meta_metadata name="ieee_xplore_references" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractReferences.jsp" />
+	  <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractReferences.jsp" />
+	
+    <collection name="references" child_type="scholarly_article">
+      <xpath>//ol[@class='docs']/li</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a[1]/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

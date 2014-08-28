@@ -1,0 +1,29 @@
+<meta_metadata_repository name="sfuCartoonArchive"
+  package="ecologylab.bigsemantics.generated.library.sfuCartoonArchive">
+
+  <meta_metadata name="sfu_cartoon_archive" extends="cartoon" parser="xpath">
+    <selector url_path_tree="http://edocs.lib.sfu.ca/cgi-bin/" />
+
+    <scalar name="text" scalar_type="String">
+      <xpath>//td[contains(text(), 'Text')]/following-sibling::td</xpath>
+    </scalar>
+    <scalar name="cartoonist" scalar_type="String">
+      <xpath>//td[text()='Cartoonist:']/following-sibling::td</xpath>
+    </scalar>
+    <scalar name="date_published" scalar_type="Date">
+      <xpath>//td[text()='Date on cartoon:']/following-sibling::td</xpath>
+    </scalar>
+    <scalar name="published_in" scalar_type="String">
+      <xpath>//tr[5]/td[2]</xpath>
+    </scalar>
+    <scalar name="cartoon_size" scalar_type="String">
+      <xpath>//tr[7]/td[2]</xpath>
+    </scalar>
+    <scalar name="notes" scalar_type="String">
+      <xpath>//tr[8]/td[2]</xpath>
+    </scalar>
+    <scalar name="sfu_reference_code" scalar_type="String">
+      <xpath>//tr[9]/td[2]</xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

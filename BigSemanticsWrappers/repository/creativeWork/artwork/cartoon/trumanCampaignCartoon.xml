@@ -1,0 +1,27 @@
+
+<meta_metadata_repository name="trumanCampaignCartoon"
+  package="ecologylab.bigsemantics.generated.library.trumanCampaignCartoon">
+
+  <meta_metadata name="truman_library_1948_campaign_cartoons" extends="cartoon"
+    parser="xpath">
+    <selector
+      url_regex="http://www.trumanlibrary.org/whistlestop/study_collections/1948campaign/large/docs/political_cartoons/[a-z_]+\.htm"
+      domain="trumanlibrary.org" />
+		<example_url url="http://edocs.lib.sfu.ca/cgi-bin/Cartoons?CartoonID=960"/>
+    <scalar name="title">
+      <xpath>//*[@id='titletext']</xpath>
+    </scalar>
+    <composite name="content">
+      <xpath>//*[@id='imagesection']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="artist" scalar_type="String" comment="Artist">
+      <xpath>//*[@id='authortext']</xpath>
+      <regex_op regex="(by )|\n" replace=" " />
+    </scalar>
+  </meta_metadata>
+
+</meta_metadata_repository>

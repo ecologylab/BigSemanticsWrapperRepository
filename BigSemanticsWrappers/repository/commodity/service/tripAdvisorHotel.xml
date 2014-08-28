@@ -1,0 +1,63 @@
+<meta_metadata_repository name="tripAdvisorHotel"
+  package="ecologylab.bigsemantics.generated.library.tripAdvisorHotel" default_user_agent_name="chrome">
+
+  <meta_metadata name="trip_advisor" type="hotel" parser="xpath">
+    <selector url_regex_fragment="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com" />
+    <example_url
+      url="http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html" />
+
+    <scalar name="title">
+      <xpath>//h1[@id='HEADING']</xpath>
+    </scalar>
+    <scalar name="overall_rating" layer="1.6" style_name="topRight_div">
+      <xpath>//div[@class='slim_ranking']</xpath>
+    </scalar>
+    <composite name="business_address">
+      <xpath>//span[@rel='v:address']/span/span[@class='locality']</xpath>
+      <scalar name="street_address">
+        <xpath>../span[@property='v:street-address']</xpath>
+      </scalar>
+      <scalar name="locality">
+        <xpath>./span[@property='v:locality']</xpath>
+      </scalar>
+      <scalar name="region">
+        <xpath>./span[@property='v:region']</xpath>
+      </scalar>
+      <scalar name="postal_code">
+        <xpath>./span[@property='v:postal-code']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://maps.google.com/maps?q=</value>
+          <value from_scalar="street_address" />
+          <value>,</value>
+          <value from_scalar="postal_code" />
+        </concatenate_values>
+      </scalar>
+    </composite>
+
+    <collection name="reviews">
+      <xpath>//div[contains(@id, 'review_')]</xpath>
+      <scalar name="rating" layer="20.0">
+        <xpath>./div/div[@class='col2of2']//img/@alt</xpath>
+      </scalar>
+      <scalar name="description" layer="10.0">
+        <xpath>./div/div[@class='col2of2']/div[@class='entry']/p</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="similar_hotels">
+      <xpath>//div[starts-with(text(), 'Travelers also
+        viewed')]/following-sibling::table[@class='recTbl']//tr[1]/td</xpath>
+      <scalar name="location">
+        <xpath>.//a[@class='propName ']/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//a[@class='propName ']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>.//img[@class='sprite-ratings']/@alt</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

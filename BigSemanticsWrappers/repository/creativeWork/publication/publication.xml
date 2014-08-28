@@ -1,0 +1,18 @@
+<meta_metadata_repository name="publication"
+  package="ecologylab.bigsemantics.generated.library.publication">
+
+  <meta_metadata name="publication" extends="basic_publication" comment="A publication.">
+    <scalar name="pages" scalar_type="String" />
+    <collection name="subjects" child_type="subject" child_extends="metadata">
+      <scalar name="subject" as_composite_scalar="true" scalar_type="String" navigates_to="location" />
+      <scalar name="location" scalar_type="ParsedURL" hide="true" />
+    </collection>
+    <scalar name="about_the_authors" scalar_type="String" />
+    <collection name="common_terms" child_type="term_type" child_extends="document">
+      <scalar name="term" as_composite_scalar="true" navigates_to="location" scalar_type="String" />
+      <scalar name="location" hide="true" scalar_type="ParsedURL" />
+      <scalar name="frequency" scalar_type="Int" />
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

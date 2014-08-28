@@ -10,7 +10,7 @@ package ecologylab.bigsemantics.generated.library.boardGame;
 
 import ecologylab.bigsemantics.generated.library.boardGame.BoardGame;
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.search.SearchResult;
+import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -40,9 +40,9 @@ public class BoardGame extends CreativeWork
 	@mm_name("similar_games")
 	private List<BoardGame> similarGames;
 
-	@simpl_collection("search_result")
+	@simpl_collection("compound_document")
 	@mm_name("categories")
-	private List<SearchResult> categories;
+	private List<CompoundDocument> categories;
 
 	public BoardGame()
 	{ super(); }
@@ -146,21 +146,21 @@ public class BoardGame extends CreativeWork
 		this.similarGames = similarGames;
 	}
 
-	public List<SearchResult> getCategories()
+	public List<CompoundDocument> getCategories()
 	{
 		return categories;
 	}
 
   // lazy evaluation:
-  public List<SearchResult> categories()
+  public List<CompoundDocument> categories()
   {
     if (categories == null)
-      categories = new ArrayList<SearchResult>();
+      categories = new ArrayList<CompoundDocument>();
     return categories;
   }
 
   // addTo:
-  public void addToCategories(SearchResult element)
+  public void addToCategories(CompoundDocument element)
   {
     categories().add(element);
   }
@@ -171,7 +171,7 @@ public class BoardGame extends CreativeWork
     return categories == null ? 0 : categories.size();
   }
 
-	public void setCategories(List<SearchResult> categories)
+	public void setCategories(List<CompoundDocument> categories)
 	{
 		this.categories = categories;
 	}

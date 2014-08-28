@@ -1,0 +1,12 @@
+<meta_metadata_repository name="richArtifact" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="rich_artifact" extends="metadata" built_in="true">
+    <generic_type_var name="M" extends="metadata" />
+    <composite name="media" type="M" polymorphic_scope="repository_media"
+      promote_children="true" wrap="true" />
+    <collection name="creative_acts" child_type="creative_act" polymorphic_scope="creative_acts_scope" />
+    <collection name="outlinks" child_type="document" wrap="true" polymorphic_socpe="repository_documents" />
+  </meta_metadata>
+</meta_metadata_repository>

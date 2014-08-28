@@ -1,0 +1,8 @@
+<meta_metadata_repository name="debugMetadata" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+  
+  <meta_metadata name="debug_metadata" extends="metadata" built_in="true">
+    <scalar name="new_term_vector" ignore_in_term_vector="true" scalar_type="StringBuilder" />
+  </meta_metadata>
+
+</meta_metadata_repository>

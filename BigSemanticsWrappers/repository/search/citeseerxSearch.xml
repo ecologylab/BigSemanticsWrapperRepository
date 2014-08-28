@@ -1,0 +1,37 @@
+<meta_metadata_repository name="citeseerxSearch"
+  package="ecologylab.bigsemantics.generated.library.citeseerxSearch" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="citeseerx_search" extends="search" parser="xpath"
+    comment="CiteSeerX search using keywords.">
+    <generic_type_var name="SR" arg="citeseerx_summary" />
+
+    <selector url_stripped="http://citeseerx.ist.psu.edu/search" />
+    <example_url url="http://citeseerx.ist.psu.edu/search?q=pad+zooming+graphical+interface" />
+
+    <collection name="search_results">
+      <xpath>//div[@id='result_list']/div[@class='result']</xpath>
+      <scalar name="title">
+        <xpath>.//h3</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='snippet']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h3/a/@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="search_results" />
+      <for_each collection="search_results" as="res">
+        <not_null value="search_results" />
+        <get_field name="location" object="res" />
+        <parse_document now="true">
+          <not_null value="location" />
+          <arg name="location" value="location" />
+        </parse_document>
+      </for_each>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

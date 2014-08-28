@@ -1,0 +1,75 @@
+<meta_metadata_repository name="appleAccessoryProduct"
+  package="ecologylab.bigsemantics.generated.library.appleAccessoryProduct">
+
+ <meta_metadata name="apple_product_accessory" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://store.apple.com/us/product/" />
+    <example_url url="http://store.apple.com/us/product/H9345LL/A/hp-photosmart-5520-e-all-in-one-printer?fnode=000105072b" />
+
+    <scalar name="title">
+      <xpath>//div[@class='action-card']//div[@id='title']/h1[@itemprop='name']/text()</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <xpath>//div[@class='materializer draggable']/figure/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="overall_rating">
+      <xpath>//div[contains(@class, 'product-rating-wrapper')]//span[@itemprop='ratingValue']/text()
+      </xpath>
+      <regex_op regex="$" replace=" out of 5" />
+    </scalar>
+    <scalar name="description">
+      <xpath>//li[@id='overview-applerecommends']//div[@class='bkg-none']/text()</xpath>
+    </scalar>
+
+    <collection name="product_details" >
+      <xpath>//div[@class='group-image-none clearfix']//p</xpath>
+        <xpath>//li[@id='overview-highlights]//ul[@class='pbl bulleted']/li</xpath>
+    </collection>
+    
+    <collection name="specifications">
+      <xpath>//li[@id='overview-techspecs']//ul[@class='pbl bulleted']/li</xpath>
+      <scalar name="name">
+      	<xpath>substring-before(., ':')</xpath>
+      </scalar>
+      		<scalar name="value" >
+				<xpath>substring-after(., ':')</xpath>
+			</scalar>    
+    </collection>
+
+    <collection name="reviews">
+      <xpath>//div[@class='reviews']//div[@id='most-useful-reviews']/ul[@class='review-list']/li
+      </xpath>
+      <scalar name="title">
+        <xpath>.//h3[@class='summary']/text()</xpath>
+      </scalar>
+      <scalar name="rating">
+        <xpath>.//div[@itemprop='reviewRating']//span[@itemprop='ratingValue']/text()</xpath>
+        <regex_op regex="$" replace=" out of 5" />
+      </scalar>
+      <scalar name="description">
+        <xpath>.//p[@itemprop='reviewBody']/span[@class='more-text']/text()</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="companion_products" child_type="apple_product_accessory">
+      <xpath>//div[@id='navigation']//div[@class='tile-body']</xpath>
+      <scalar name="location">
+        <xpath>./h3/a/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./h3/a/text()</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//div[@class='price']/span/text()</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>
