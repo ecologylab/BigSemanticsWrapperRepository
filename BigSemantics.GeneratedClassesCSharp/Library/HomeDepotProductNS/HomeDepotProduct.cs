@@ -25,10 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.HomeDepotProductNS
 	[SimplInherit]
 	public class HomeDepotProduct : Product
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		[SimplCollection("product_details2")]
 		[MmName("product_details2")]
 		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> productDetails2;
@@ -38,19 +34,6 @@ namespace Ecologylab.Semantics.Generated.Library.HomeDepotProductNS
 
 		public HomeDepotProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> ProductDetails2
 		{

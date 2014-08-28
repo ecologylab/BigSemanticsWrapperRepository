@@ -10,13 +10,11 @@ package ecologylab.bigsemantics.generated.library.westelmProduct;
 
 import ecologylab.bigsemantics.generated.library.product.Product;
 import ecologylab.bigsemantics.generated.library.westelmProduct.WestelmProduct;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +26,6 @@ public class WestelmProduct extends Product
 	@simpl_collection("westelm_product")
 	@mm_name("also_in_this_collection")
 	private List<WestelmProduct> alsoInThisCollection;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public WestelmProduct()
 	{ super(); }
@@ -69,15 +63,5 @@ public class WestelmProduct extends Product
 	public void setAlsoInThisCollection(List<WestelmProduct> alsoInThisCollection)
 	{
 		this.alsoInThisCollection = alsoInThisCollection;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

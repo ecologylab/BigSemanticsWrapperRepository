@@ -108,12 +108,12 @@
 
       </composite>
     </collection>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>(//div[@class='photo-container'])[1]/img</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
 </meta_metadata_repository>

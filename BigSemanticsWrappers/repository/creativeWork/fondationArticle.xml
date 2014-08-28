@@ -8,12 +8,12 @@
 	<!--  Consider replacing xpath logic with semantic actions once you learn those -->
     <example_url url="http://www.fondation-langlois.org/html/e/page.php?NumPage=2131" />
     <example_url url="http://www.fondation-langlois.org/html/e/page.php?NumPage=2222" />
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//div[@id='editoGrand']//img</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <scalar name="collection_name" scalar_type="String">
       <xpath>//div[@id='breadcrumbs']/ul/li[(position() = 3) and (not(position()=last()))]/a/text()</xpath>

@@ -36,12 +36,12 @@
       <scalar name="description">
       	<xpath>./b/following-sibling::text()[1]</xpath>
       </scalar>
-      <composite name="image">
+      <collection name="main_images">
       	<scalar name="location">
       		<xpath>./a/img/@src</xpath>
       		<regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
       	</scalar>
-      </composite>
+      </collection>
     </collection>
     <semantic_actions>
       <get_field name="search_results" />

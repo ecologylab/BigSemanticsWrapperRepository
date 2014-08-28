@@ -13,7 +13,6 @@ import ecologylab.bigsemantics.generated.library.askNatureFunction.AskNatureOrga
 import ecologylab.bigsemantics.generated.library.askNatureFunction.AskNatureTaxonomy;
 import ecologylab.bigsemantics.generated.library.askNatureProduct.AskNatureProduct;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -36,10 +35,6 @@ public class AskNatureStrategy extends CompoundDocument
 
 	@simpl_scalar
 	private MetadataString excerpt;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	@simpl_composite
 	@mm_name("inspiring_organism")
@@ -133,16 +128,6 @@ public class AskNatureStrategy extends CompoundDocument
 	public void setExcerptMetadata(MetadataString excerpt)
 	{
 		this.excerpt = excerpt;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 
 	public AskNatureOrganism getInspiringOrganism()

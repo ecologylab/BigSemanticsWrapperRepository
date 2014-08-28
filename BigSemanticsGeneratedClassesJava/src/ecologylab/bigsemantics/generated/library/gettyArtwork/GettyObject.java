@@ -11,7 +11,6 @@ package ecologylab.bigsemantics.generated.library.gettyArtwork;
 import ecologylab.bigsemantics.generated.library.artwork.Artwork;
 import ecologylab.bigsemantics.generated.library.getttyArtist.GettyArtist;
 import ecologylab.bigsemantics.generated.library.gettyArtwork.GettyWorkInfo;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -29,10 +28,6 @@ public class GettyObject extends Artwork
 	@simpl_collection("getty_artist")
 	@mm_name("artist")
 	private List<GettyArtist> artist;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	@simpl_composite
 	@mm_name("work_info")
@@ -74,16 +69,6 @@ public class GettyObject extends Artwork
 	public void setArtist(List<GettyArtist> artist)
 	{
 		this.artist = artist;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 
 	public GettyWorkInfo getWorkInfo()

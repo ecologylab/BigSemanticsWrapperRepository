@@ -34,12 +34,12 @@
       </scalar>
     </collection>
 
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//a[@class='art'][1]/img</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
     <semantic_actions>
       <get_field name="image" />
       <if>

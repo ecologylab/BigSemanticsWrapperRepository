@@ -109,7 +109,6 @@ using Ecologylab.Semantics.Generated.Library.GuggenFitlerNS;
 using Ecologylab.Semantics.Generated.Library.HmProductNS;
 using Ecologylab.Semantics.Generated.Library.HomeDepotProductNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
-using Ecologylab.Semantics.Generated.Library.HouzzProductNS;
 using Ecologylab.Semantics.Generated.Library.IcdlBookPreviewNS;
 using Ecologylab.Semantics.Generated.Library.IcdlNS;
 using Ecologylab.Semantics.Generated.Library.IeeeArticleBodyNS;
@@ -183,6 +182,7 @@ using Ecologylab.Semantics.Generated.Library.PubmedArticleNS;
 using Ecologylab.Semantics.Generated.Library.PubmedAuthorNS;
 using Ecologylab.Semantics.Generated.Library.PubmedJournalNS;
 using Ecologylab.Semantics.Generated.Library.RatingNS;
+using Ecologylab.Semantics.Generated.Library.RedditFeedNS;
 using Ecologylab.Semantics.Generated.Library.ResearchGateSearchNS;
 using Ecologylab.Semantics.Generated.Library.ResearchgateArticleNS;
 using Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS;
@@ -235,10 +235,8 @@ using Ecologylab.Semantics.Generated.Library.TweeterNS;
 using Ecologylab.Semantics.Generated.Library.TwitterBlogNS;
 using Ecologylab.Semantics.Generated.Library.TwitterSearchNS;
 using Ecologylab.Semantics.Generated.Library.UniqloProductNS;
-using Ecologylab.Semantics.Generated.Library.UrbanspoonResterauntNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WalmartProductNS;
-using Ecologylab.Semantics.Generated.Library.WayfairProductNS;
 using Ecologylab.Semantics.Generated.Library.WeatherReportNS;
 using Ecologylab.Semantics.Generated.Library.WestelmProductNS;
 using Ecologylab.Semantics.Generated.Library.WhitneyArtworkNS;
@@ -301,7 +299,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(AudioSelfmade),
 				typeof(Author),
 				typeof(BasicPublication),
-				typeof(BedbathandbeyondMobileProduct),
 				typeof(BedbathandbeyondProduct),
 				typeof(BestbuyProduct),
 				typeof(BggCategory),
@@ -402,7 +399,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(HmProduct),
 				typeof(HomeDepotProduct),
 				typeof(Hotel),
-				typeof(HouzzProduct),
 				typeof(IcdlBook),
 				typeof(IcdlBookPreview),
 				typeof(IcdlImage),
@@ -417,7 +413,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(IeeeXploreReferences),
 				typeof(IeeeXploreSearch),
 				typeof(IkeaDepartment),
-				typeof(IkeaMobileProduct),
 				typeof(IkeaProduct),
 				typeof(ImageSearch),
 				typeof(ImageSearchResult),
@@ -504,6 +499,11 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Rating),
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
+				typeof(RedditCommentsPage),
+				typeof(RedditFeed),
+				typeof(RedditFrontPage),
+				typeof(RedditLink),
+				typeof(RedditSubreddit),
 				typeof(ResearchGateArticle),
 				typeof(ResearchGateArticleStats),
 				typeof(ResearchGateAuthor),
@@ -575,12 +575,10 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(TwitterMicroblog),
 				typeof(TwitterSearchResults),
 				typeof(UniqloProduct),
-				typeof(UrbanSpoonRestaurant),
 				typeof(VideoClipping),
 				typeof(VideoInterview),
 				typeof(VideoSelfmade),
 				typeof(WalmartProduct),
-				typeof(WayfairProduct),
 				typeof(WeatherReport),
 				typeof(WebVideo),
 				typeof(WestelmProduct),

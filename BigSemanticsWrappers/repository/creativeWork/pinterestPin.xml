@@ -136,11 +136,11 @@
       </scalar>
     </composite>
 
-    <composite name="image" type="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//meta[@property='og:image']/@content</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <semantic_actions>
       <get_field name="image" />

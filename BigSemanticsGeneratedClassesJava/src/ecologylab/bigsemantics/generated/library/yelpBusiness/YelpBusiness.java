@@ -9,13 +9,10 @@ package ecologylab.bigsemantics.generated.library.yelpBusiness;
  */
 
 import ecologylab.bigsemantics.generated.library.service.Service;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -28,10 +25,6 @@ import java.util.Map;
 @simpl_inherit
 public class YelpBusiness extends Service
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	/** 
 	 *the type of business
 	 */ 
@@ -54,16 +47,6 @@ public class YelpBusiness extends Service
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
 
 	public MetadataString	category()
 	{

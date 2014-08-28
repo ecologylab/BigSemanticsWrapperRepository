@@ -18,11 +18,11 @@
       <xpath>//h1[@itemprop='name']/div[@class='product-price']/span[last()]</xpath>
     </scalar>
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//div[@class='product-primary-image']//img[@class='primary-image']/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
   

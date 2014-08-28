@@ -33,10 +33,6 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureFunctionNS
 		private MetadataString excerpt;
 
 		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
-		[SimplComposite]
 		[MmName("inspiring_organism")]
 		private AskNatureOrganism inspiringOrganism;
 
@@ -85,19 +81,6 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureFunctionNS
 				if (this.excerpt != value)
 				{
 					this.excerpt = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

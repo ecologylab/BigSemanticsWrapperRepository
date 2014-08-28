@@ -56,10 +56,6 @@ namespace Ecologylab.Semantics.Generated.Library.InstructableNS
 		[MmName("comments")]
 		private List<InstructableComment> comments;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		public Instructable()
 		{ }
 
@@ -165,19 +161,6 @@ namespace Ecologylab.Semantics.Generated.Library.InstructableNS
 				if (this.comments != value)
 				{
 					this.comments = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

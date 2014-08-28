@@ -9,13 +9,10 @@ package ecologylab.bigsemantics.generated.library.search;
  */
 
 import ecologylab.bigsemantics.generated.library.search.SearchResult;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
@@ -28,10 +25,6 @@ import java.util.Map;
 @simpl_inherit
 public class ImageSearchResult extends SearchResult
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	@simpl_scalar
 	private MetadataInteger thumbWidth;
 
@@ -48,16 +41,6 @@ public class ImageSearchResult extends SearchResult
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
 
 	public MetadataInteger	thumbWidth()
 	{

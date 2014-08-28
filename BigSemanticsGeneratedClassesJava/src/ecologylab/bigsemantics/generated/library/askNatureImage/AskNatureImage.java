@@ -10,7 +10,6 @@ package ecologylab.bigsemantics.generated.library.askNatureImage;
 
 import ecologylab.bigsemantics.generated.library.askNatureFunction.AskNatureStrategy;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -26,10 +25,6 @@ import java.util.Map;
 @simpl_inherit
 public class AskNatureImage extends CompoundDocument
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	@simpl_scalar
 	private MetadataString photographerOrArtist;
 
@@ -51,16 +46,6 @@ public class AskNatureImage extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
 
 	public MetadataString	photographerOrArtist()
 	{

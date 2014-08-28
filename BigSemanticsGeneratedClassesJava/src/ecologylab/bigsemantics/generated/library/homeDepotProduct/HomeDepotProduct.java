@@ -9,14 +9,12 @@ package ecologylab.bigsemantics.generated.library.homeDepotProduct;
  */
 
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.lang.String;
 import java.util.ArrayList;
@@ -26,10 +24,6 @@ import java.util.Map;
 @simpl_inherit
 public class HomeDepotProduct extends Product
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	@simpl_collection("product_details2")
 	@mm_name("product_details2")
 	private List<MetadataString> productDetails2;
@@ -41,16 +35,6 @@ public class HomeDepotProduct extends Product
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
 
 	public List<MetadataString> getProductDetails2()
 	{

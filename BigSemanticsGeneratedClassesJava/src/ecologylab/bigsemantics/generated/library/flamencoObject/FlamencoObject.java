@@ -10,14 +10,12 @@ package ecologylab.bigsemantics.generated.library.flamencoObject;
 
 import ecologylab.bigsemantics.generated.library.artwork.Artwork;
 import ecologylab.bigsemantics.generated.library.flamencoFacet.FlamencoFacet;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -28,10 +26,6 @@ import java.util.Map;
 @simpl_inherit
 public class FlamencoObject extends Artwork
 {
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	@simpl_scalar
 	private MetadataString category;
 
@@ -50,16 +44,6 @@ public class FlamencoObject extends Artwork
 		super(mmd);
 	}
 
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
 
 	public MetadataString	category()
 	{

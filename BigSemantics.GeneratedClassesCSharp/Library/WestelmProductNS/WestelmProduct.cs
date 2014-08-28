@@ -29,10 +29,6 @@ namespace Ecologylab.Semantics.Generated.Library.WestelmProductNS
 		[MmName("also_in_this_collection")]
 		private List<WestelmProduct> alsoInThisCollection;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		public WestelmProduct()
 		{ }
 
@@ -47,19 +43,6 @@ namespace Ecologylab.Semantics.Generated.Library.WestelmProductNS
 				if (this.alsoInThisCollection != value)
 				{
 					this.alsoInThisCollection = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

@@ -20,11 +20,11 @@
 
 <!-- 	<scalar name="overall_rating" xpath="//span[@class='pr-snippet-rating-decimal pr-rounded']" /> -->
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//img[@itemprop='image']/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
 </meta_metadata_repository>

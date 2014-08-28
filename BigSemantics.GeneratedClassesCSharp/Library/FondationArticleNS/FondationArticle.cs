@@ -27,10 +27,6 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 	[SimplInherit]
 	public class FondationArticle : CreativeWork
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		[SimplScalar]
 		private MetadataString collectionName;
 
@@ -70,19 +66,6 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 
 		public FondationArticle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString CollectionName
 		{

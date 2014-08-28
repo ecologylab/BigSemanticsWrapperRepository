@@ -13,7 +13,6 @@ import ecologylab.bigsemantics.generated.library.instructable.InstructableCommen
 import ecologylab.bigsemantics.generated.library.instructableAuthor.InstructableAuthor;
 import ecologylab.bigsemantics.generated.library.instructablesTag.InstructableTag;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -59,10 +58,6 @@ public class Instructable extends CompoundDocument
 	@simpl_collection("instructable_comment")
 	@mm_name("comments")
 	private List<InstructableComment> comments;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public Instructable()
 	{ super(); }
@@ -296,15 +291,5 @@ public class Instructable extends CompoundDocument
 	public void setComments(List<InstructableComment> comments)
 	{
 		this.comments = comments;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

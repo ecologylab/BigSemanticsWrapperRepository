@@ -49,12 +49,12 @@
       <scalar name="range">
         <xpath>./div[2]/p/text()[4]</xpath>
       </scalar>
-      <composite name="image">
+      <collection name="main_images">
         <xpath>./div[1]/span/img</xpath>
         <scalar name="location">
           <xpath>./@src</xpath>
         </scalar>
-      </composite>
+      </collection>
 
     </collection>
 
@@ -86,12 +86,12 @@
       </scalar>
 
     </composite>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//div[@class='default-1-3']/img/@src</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
   </meta_metadata>
 
 

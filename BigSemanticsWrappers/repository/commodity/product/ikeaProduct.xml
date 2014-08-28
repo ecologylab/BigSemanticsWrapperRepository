@@ -49,11 +49,11 @@
       <xpath>//span[@itemprop='price']/span</xpath>
     </scalar>
 
-    <composite name="image" type="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//div[@class='ikea-pip-fullImageWrapper']/img/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
   

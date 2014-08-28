@@ -19,11 +19,11 @@
       <xpath>//div[@class='price']</xpath>
     </scalar>
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//img[@class='main-photo']/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
 </meta_metadata_repository>

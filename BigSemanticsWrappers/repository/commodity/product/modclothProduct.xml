@@ -12,12 +12,12 @@
     <scalar name="price">
       <xpath>//h3[@id='product-price']/span[@itemprop='price']</xpath>
     </scalar>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//a[@id='zoomable']</xpath>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <scalar name="overall_rating">
       <xpath>//div[@id='overall_rating']/meta/@content</xpath>

@@ -26,8 +26,7 @@
 	<!-- this definition of image might apply to many other XML-based search results. -->
   <meta_metadata name="image_search_result" extends="search_result"
     comment="Def of an Google or Bing image search result.">
-    <composite name="image" type="image" />
-    <scalar name="thumb_width" scalar_type="Int" />
+      <scalar name="thumb_width" scalar_type="Int" />
     <scalar name="thumb_height" scalar_type="Int" />
     <scalar name="file_size" scalar_type="Int" />
   </meta_metadata>

@@ -31,10 +31,6 @@ namespace Ecologylab.Semantics.Generated.Library.GettyArtworkNS
 		private List<GettyArtist> artist;
 
 		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
-		[SimplComposite]
 		[MmName("work_info")]
 		private GettyWorkInfo workInfo;
 
@@ -52,19 +48,6 @@ namespace Ecologylab.Semantics.Generated.Library.GettyArtworkNS
 				if (this.artist != value)
 				{
 					this.artist = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

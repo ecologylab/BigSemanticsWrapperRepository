@@ -10,13 +10,11 @@ package ecologylab.bigsemantics.generated.library.crateAndBarrelProduct;
 
 import ecologylab.bigsemantics.generated.library.crateAndBarrelProduct.CrateandbarrelProduct;
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +26,6 @@ public class CrateandbarrelProduct extends Product
 	@simpl_collection("crateandbarrel_product")
 	@mm_name("customer_also_viewed")
 	private List<CrateandbarrelProduct> customerAlsoViewed;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public CrateandbarrelProduct()
 	{ super(); }
@@ -69,15 +63,5 @@ public class CrateandbarrelProduct extends Product
 	public void setCustomerAlsoViewed(List<CrateandbarrelProduct> customerAlsoViewed)
 	{
 		this.customerAlsoViewed = customerAlsoViewed;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

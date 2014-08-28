@@ -44,11 +44,11 @@
       </scalar>
     </collection>
 
-    <composite name="image">
+    <collection name="main_images">>
       <scalar name="location">
         <xpath>//meta[@property='og:image']/@content</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
 </meta_metadata_repository>

@@ -8,12 +8,12 @@
     <example_url
       url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&amp;group=objects&amp;index=15" />
 
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//div[@class='endgame']/p/table/tbody/tr/td/img</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <scalar name="title">
       <xpath>//tr[@valign='top'][2]/td[2]</xpath>

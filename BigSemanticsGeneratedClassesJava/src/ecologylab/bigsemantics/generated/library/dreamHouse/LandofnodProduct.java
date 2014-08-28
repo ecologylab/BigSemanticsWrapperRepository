@@ -10,13 +10,11 @@ package ecologylab.bigsemantics.generated.library.dreamHouse;
 
 import ecologylab.bigsemantics.generated.library.dreamHouse.LandofnodProduct;
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +26,6 @@ public class LandofnodProduct extends Product
 	@simpl_collection("landofnod_product")
 	@mm_name("accessories")
 	private List<LandofnodProduct> accessories;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public LandofnodProduct()
 	{ super(); }
@@ -69,15 +63,5 @@ public class LandofnodProduct extends Product
 	public void setAccessories(List<LandofnodProduct> accessories)
 	{
 		this.accessories = accessories;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

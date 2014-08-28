@@ -17,9 +17,6 @@
       <xpath>//p[@class='oklPrice']</xpath>
     </scalar>
    	  	
-<!--   	<composite name="image"> -->
-<!--   		<scalar name="location" xpath="//img[@class='main-photo']/@src"/> -->
-<!--   	</composite> -->
 
   </meta_metadata>
 

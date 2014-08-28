@@ -39,12 +39,12 @@
       <xpath>//a[@name='Excerpt']/following-sibling::dd[1]</xpath>
     </scalar>
 
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//div[@id='slideshow']//img[@class='featured_image']</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <composite name="inspiring_organism" type="ask_nature_organism">
       <xpath>//a[@name='Organism']/following-sibling::dd[1]</xpath>

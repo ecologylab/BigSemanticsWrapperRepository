@@ -58,11 +58,11 @@
       </scalar>
     </collection>
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//img[@itemprop='image']/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
     
     <collection name="product_details2" label="product_details" child_scalar_type="string">
       <xpath>//ul[@class='bulletList']/li</xpath>

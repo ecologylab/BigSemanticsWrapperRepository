@@ -1,6 +1,7 @@
 comment/comment.xml
 comment/rating.xml
 comment/review.xml
+commodity/commodity.xml
 commodity/product/amazonProduct.xml
 commodity/product/anthropologieProduct.xml
 commodity/product/appleAccessoryProduct.xml
@@ -54,7 +55,6 @@ commodity/service/yelpBusiness.xml
 creativeWork/amazonList.xml
 creativeWork/bggBoardGame.xml
 creativeWork/boardGame.xml
-creativeWork/commodity.xml
 creativeWork/creativeWork.xml
 creativeWork/curation.xml
 creativeWork/fondationArticle.xml
@@ -296,6 +296,7 @@ opml.xml
 patentClassification.xml
 postalAddress.xml
 publisher.xml
+redditFeed.xml
 researchgateinstitution.xml
 researchgateInstitutionDepartment.xml
 rss.xml

@@ -25,10 +25,6 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureProductNS
 	[SimplInherit]
 	public class AskNatureProduct : CompoundDocument
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		[SimplScalar]
 		private MetadataString company;
 
@@ -56,19 +52,6 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureProductNS
 
 		public AskNatureProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString Company
 		{

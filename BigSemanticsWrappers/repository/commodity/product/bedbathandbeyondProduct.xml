@@ -14,11 +14,11 @@
       <xpath>//meta[@name='description']/@content</xpath>
     </scalar>
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//link[@rel='image_src']/@href</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
 
@@ -37,11 +37,11 @@
       <xpath>//div[@class='price']</xpath>
     </scalar>
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//div[@class='detail2_img']/img/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
   </meta_metadata>
 </meta_metadata_repository>

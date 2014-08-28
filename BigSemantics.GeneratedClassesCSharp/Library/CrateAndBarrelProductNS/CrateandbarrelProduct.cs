@@ -29,10 +29,6 @@ namespace Ecologylab.Semantics.Generated.Library.CrateAndBarrelProductNS
 		[MmName("customer_also_viewed")]
 		private List<CrateandbarrelProduct> customerAlsoViewed;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		public CrateandbarrelProduct()
 		{ }
 
@@ -47,19 +43,6 @@ namespace Ecologylab.Semantics.Generated.Library.CrateAndBarrelProductNS
 				if (this.customerAlsoViewed != value)
 				{
 					this.customerAlsoViewed = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

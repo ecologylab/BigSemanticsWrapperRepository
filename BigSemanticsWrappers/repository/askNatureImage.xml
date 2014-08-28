@@ -11,12 +11,12 @@
     <scalar name="title">
       <xpath>//h1[@id='content_title']</xpath>
     </scalar>
-    <composite name="image">
+    <collection name="main_images">
       <xpath>//div[@class='text_zone']/img</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <def_var name="content" type="node">
       <xpath>//div[@class='dark']</xpath>

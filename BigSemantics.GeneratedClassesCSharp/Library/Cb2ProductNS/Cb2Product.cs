@@ -29,10 +29,6 @@ namespace Ecologylab.Semantics.Generated.Library.Cb2ProductNS
 		[MmName("works_with")]
 		private List<Cb2Product> worksWith;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		public Cb2Product()
 		{ }
 
@@ -47,19 +43,6 @@ namespace Ecologylab.Semantics.Generated.Library.Cb2ProductNS
 				if (this.worksWith != value)
 				{
 					this.worksWith = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

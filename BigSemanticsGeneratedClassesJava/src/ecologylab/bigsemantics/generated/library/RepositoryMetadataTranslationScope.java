@@ -90,8 +90,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.basicPublication.BasicPublication.class,
 
-		ecologylab.bigsemantics.generated.library.bedbathandbeyondProduct.BedbathandbeyondMobileProduct.class,
-
 		ecologylab.bigsemantics.generated.library.bedbathandbeyondProduct.BedbathandbeyondProduct.class,
 
 		ecologylab.bigsemantics.generated.library.bestbuyProduct.BestbuyProduct.class,
@@ -298,8 +296,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.hotel.Hotel.class,
 
-		ecologylab.bigsemantics.generated.library.houzzProduct.HouzzProduct.class,
-
 		ecologylab.bigsemantics.generated.library.icdl.IcdlBook.class,
 
 		ecologylab.bigsemantics.generated.library.icdl.IcdlImageResult.class,
@@ -325,8 +321,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.ieeeSearch.IeeeXploreSearch.class,
 
 		ecologylab.bigsemantics.generated.library.ikeaProduct.IkeaDepartment.class,
-
-		ecologylab.bigsemantics.generated.library.ikeaProduct.IkeaMobileProduct.class,
 
 		ecologylab.bigsemantics.generated.library.ikeaProduct.IkeaProduct.class,
 
@@ -502,6 +496,16 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.rating.Rating.class,
 
+		ecologylab.bigsemantics.generated.library.redditFeed.RedditCommentsPage.class,
+
+		ecologylab.bigsemantics.generated.library.redditFeed.RedditFeed.class,
+
+		ecologylab.bigsemantics.generated.library.redditFeed.RedditFrontPage.class,
+
+		ecologylab.bigsemantics.generated.library.redditFeed.RedditLink.class,
+
+		ecologylab.bigsemantics.generated.library.redditFeed.RedditSubreddit.class,
+
 		ecologylab.bigsemantics.generated.library.researchGateSearch.ResearchGateResult.class,
 
 		ecologylab.bigsemantics.generated.library.researchGateSearch.ResearchGateSearch.class,
@@ -642,8 +646,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.uniqloProduct.UniqloProduct.class,
 
-		ecologylab.bigsemantics.generated.library.urbanspoonResteraunt.UrbanSpoonRestaurant.class,
-
 		ecologylab.bigsemantics.generated.library.video.SocialVideo.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeChannel.class,
@@ -655,8 +657,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.video.YoutubeVideoList.class,
 
 		ecologylab.bigsemantics.generated.library.walmartProduct.WalmartProduct.class,
-
-		ecologylab.bigsemantics.generated.library.wayfairProduct.WayfairProduct.class,
 
 		ecologylab.bigsemantics.generated.library.weatherReport.WeatherReport.class,
 

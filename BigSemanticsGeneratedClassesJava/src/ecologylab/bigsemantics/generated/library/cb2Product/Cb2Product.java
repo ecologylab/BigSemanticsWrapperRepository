@@ -10,13 +10,11 @@ package ecologylab.bigsemantics.generated.library.cb2Product;
 
 import ecologylab.bigsemantics.generated.library.cb2Product.Cb2Product;
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
-import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +26,6 @@ public class Cb2Product extends Product
 	@simpl_collection("cb2_product")
 	@mm_name("works_with")
 	private List<Cb2Product> worksWith;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public Cb2Product()
 	{ super(); }
@@ -69,15 +63,5 @@ public class Cb2Product extends Product
 	public void setWorksWith(List<Cb2Product> worksWith)
 	{
 		this.worksWith = worksWith;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

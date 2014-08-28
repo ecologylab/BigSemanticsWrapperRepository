@@ -51,11 +51,11 @@
    	
 <!--   	<scalar name="model" xpath="//input[@name='modelNumber']/@value"/> -->
 
-    <composite name="image">
+    <collection name="main_images">
       <scalar name="location">
         <xpath>//div[@id='imgCont']//img[@class='productimage']/@src</xpath>
       </scalar>
-    </composite>
+    </collection>
 
     <semantic_actions>
       <get_field name="image" />
