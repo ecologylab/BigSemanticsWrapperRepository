@@ -29,6 +29,7 @@
       </scalar>
     </collection>
 
+
     <collection name="main_images">
       <scalar name="location">
         <xpath>//img[@id='hero']/@src</xpath>
