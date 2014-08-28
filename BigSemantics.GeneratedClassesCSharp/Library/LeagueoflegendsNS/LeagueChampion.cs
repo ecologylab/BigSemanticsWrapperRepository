@@ -42,10 +42,6 @@ namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS
 		[MmName("champion_spotlight")]
 		private YoutubeVideo championSpotlight;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		public LeagueChampion()
 		{ }
 
@@ -99,19 +95,6 @@ namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS
 				if (this.championSpotlight != value)
 				{
 					this.championSpotlight = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

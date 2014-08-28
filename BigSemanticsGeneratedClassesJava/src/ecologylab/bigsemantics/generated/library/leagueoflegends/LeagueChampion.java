@@ -12,7 +12,6 @@ import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueAbility;
 import ecologylab.bigsemantics.generated.library.leagueoflegends.LeagueRelationshipList;
 import ecologylab.bigsemantics.generated.library.video.YoutubeVideo;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -44,10 +43,6 @@ public class LeagueChampion extends CreativeWork
 	@simpl_composite
 	@mm_name("champion_spotlight")
 	private YoutubeVideo championSpotlight;
-
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
 
 	public LeagueChampion()
 	{ super(); }
@@ -157,15 +152,5 @@ public class LeagueChampion extends CreativeWork
 	public void setChampionSpotlight(YoutubeVideo championSpotlight)
 	{
 		this.championSpotlight = championSpotlight;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }
