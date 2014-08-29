@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.movie;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.movie.MoviePerson;
+import ecologylab.bigsemantics.generated.library.moviePerson.MoviePerson;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -34,10 +34,20 @@ import java.util.Map;
 public class Movie extends CreativeWork
 {
 	@simpl_scalar
-	private MetadataString tagline;
+	private MetadataString storyline;
 
 	@simpl_scalar
-	private MetadataString storyline;
+	private MetadataString tagline;
+
+	/** 
+	 *Movie Poster or other image
+	 */ 
+	@simpl_scalar
+	private MetadataParsedURL pic;
+
+	@simpl_collection("image")
+	@mm_name("photos")
+	private List<Image> photos;
 
 	/** 
 	 *MPAA rating
@@ -71,16 +81,6 @@ public class Movie extends CreativeWork
 	@mm_name("writers")
 	private List<MoviePerson> writers;
 
-	/** 
-	 *Movie Poster or other image
-	 */ 
-	@simpl_scalar
-	private MetadataParsedURL pic;
-
-	@simpl_collection("image")
-	@mm_name("photos")
-	private List<Image> photos;
-
 	@simpl_collection("movie_person")
 	@mm_name("cast")
 	private List<MoviePerson> cast;
@@ -99,6 +99,38 @@ public class Movie extends CreativeWork
 		super(mmd);
 	}
 
+
+	public MetadataString	storyline()
+	{
+		MetadataString	result = this.storyline;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.storyline = result;
+		}
+		return result;
+	}
+
+	public String getStoryline()
+	{
+		return this.storyline == null ? null : storyline().getValue();
+	}
+
+	public MetadataString getStorylineMetadata()
+	{
+		return storyline;
+	}
+
+	public void setStoryline(String storyline)
+	{
+		if (storyline != null)
+			this.storyline().setValue(storyline);
+	}
+
+	public void setStorylineMetadata(MetadataString storyline)
+	{
+		this.storyline = storyline;
+	}
 
 	public MetadataString	tagline()
 	{
@@ -132,36 +164,66 @@ public class Movie extends CreativeWork
 		this.tagline = tagline;
 	}
 
-	public MetadataString	storyline()
+	public MetadataParsedURL	pic()
 	{
-		MetadataString	result = this.storyline;
+		MetadataParsedURL	result = this.pic;
 		if (result == null)
 		{
-			result = new MetadataString();
-			this.storyline = result;
+			result = new MetadataParsedURL();
+			this.pic = result;
 		}
 		return result;
 	}
 
-	public String getStoryline()
+	public ParsedURL getPic()
 	{
-		return this.storyline == null ? null : storyline().getValue();
+		return this.pic == null ? null : pic().getValue();
 	}
 
-	public MetadataString getStorylineMetadata()
+	public MetadataParsedURL getPicMetadata()
 	{
-		return storyline;
+		return pic;
 	}
 
-	public void setStoryline(String storyline)
+	public void setPic(ParsedURL pic)
 	{
-		if (storyline != null)
-			this.storyline().setValue(storyline);
+		if (pic != null)
+			this.pic().setValue(pic);
 	}
 
-	public void setStorylineMetadata(MetadataString storyline)
+	public void setPicMetadata(MetadataParsedURL pic)
 	{
-		this.storyline = storyline;
+		this.pic = pic;
+	}
+
+	public List<Image> getPhotos()
+	{
+		return photos;
+	}
+
+  // lazy evaluation:
+  public List<Image> photos()
+  {
+    if (photos == null)
+      photos = new ArrayList<Image>();
+    return photos;
+  }
+
+  // addTo:
+  public void addToPhotos(Image element)
+  {
+    photos().add(element);
+  }
+
+  // size:
+  public int photosSize()
+  {
+    return photos == null ? 0 : photos.size();
+  }
+
+	public void setPhotos(List<Image> photos)
+	{
+		this.photos = photos;
 	}
 
 	public MetadataString	mpaaRating()
@@ -318,68 +380,6 @@ public class Movie extends CreativeWork
 	public void setWriters(List<MoviePerson> writers)
 	{
 		this.writers = writers;
-	}
-
-	public MetadataParsedURL	pic()
-	{
-		MetadataParsedURL	result = this.pic;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.pic = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getPic()
-	{
-		return this.pic == null ? null : pic().getValue();
-	}
-
-	public MetadataParsedURL getPicMetadata()
-	{
-		return pic;
-	}
-
-	public void setPic(ParsedURL pic)
-	{
-		if (pic != null)
-			this.pic().setValue(pic);
-	}
-
-	public void setPicMetadata(MetadataParsedURL pic)
-	{
-		this.pic = pic;
-	}
-
-	public List<Image> getPhotos()
-	{
-		return photos;
-	}
-
-  // lazy evaluation:
-  public List<Image> photos()
-  {
-    if (photos == null)
-      photos = new ArrayList<Image>();
-    return photos;
-  }
-
-  // addTo:
-  public void addToPhotos(Image element)
-  {
-    photos().add(element);
-  }
-
-  // size:
-  public int photosSize()
-  {
-    return photos == null ? 0 : photos.size();
-  }
-
-	public void setPhotos(List<Image> photos)
-	{
-		this.photos = photos;
 	}
 
 	public List<MoviePerson> getCast()

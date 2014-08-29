@@ -1,0 +1,20 @@
+<meta_metadata_repository name="video" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="video" extends="sequenced_clippable_document" built_in="true">
+    <selector>
+      <mime_type>video/mp4</mime_type>
+      <mime_type>video/x-flv</mime_type>
+      <mime_type>video/ogg</mime_type>
+      <mime_type>video/quicktime</mime_type>
+      <mime_type>video/x-ms-wmv</mime_type>
+      <suffix>mp4</suffix>
+      <suffix>flv</suffix>
+      <suffix>ogg</suffix>
+      <suffix>m4v</suffix>
+      <suffix>mov</suffix>
+      <suffix>wmv</suffix>
+    </selector>
+  </meta_metadata>
+</meta_metadata_repository>

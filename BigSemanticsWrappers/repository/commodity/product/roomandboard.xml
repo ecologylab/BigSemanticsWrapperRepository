@@ -1,0 +1,31 @@
+<meta_metadata_repository name="roomandboardProduct"
+  package="ecologylab.bigsemantics.generated.library.roomandboardProduct" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="roomandboard_product" extends="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://www.roomandboard.com/rnb/product/" domain="roomandboard.com" />
+
+    <example_url
+      location="http://www.roomandboard.com/rnb/product/detail.do?productGroup=3047&amp;catalog=filter&amp;menuCatalog=room&amp;menuCategory=201&amp;menuSubcategory=198" />
+
+    <scalar name="title">
+      <xpath>//meta[@name='title']/@content</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@itemprop='description']/p</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//div[@itemprop='price']</xpath>
+    </scalar>
+
+<!-- 	<scalar name="overall_rating" xpath="//span[@class='pr-snippet-rating-decimal pr-rounded']" /> -->
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//img[@itemprop='image']/@src</xpath>
+      </scalar>
+    </collection>
+
+
+  </meta_metadata>
+</meta_metadata_repository>

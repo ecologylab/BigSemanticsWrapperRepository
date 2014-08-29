@@ -1,0 +1,31 @@
+<meta_metadata_repository name="scopusSearch"
+  package="ecologylab.bigsemantics.generated.library.scopusSearch" default_user_agent_name="chrome">
+  <meta_metadata name="scopus_search" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="scopus_article" />
+
+    <selector url_stripped="http://www.scopus.com/results/citedbyresults.url" />
+    <selector url_stripped="http://www.scopus.com/results/results.url" />
+    <example_url
+      url="http://www.scopus.com/results/citedbyresults.url?sort=plf-f&amp;cite=2-s2.0-56049084874&amp;src=s&amp;imp=t&amp;sot=cite&amp;sdt=a&amp;sl=0&amp;origin=inward" />
+    <example_url
+      url="http://www.scopus.com/results/results.url?sort=plf-f&amp;src=s&amp;sot=aut&amp;sdt=a&amp;sl=17&amp;s=AU-ID%287005439892%29&amp;origin=AuthorProfile&amp;reselectAuthorsLinkName=Huynh%2c+David+F." />
+
+    <filter_location>
+      <strip_param name="sid" />
+      <strip_param name="origin" />
+      <strip_param name="txGid" />
+    </filter_location>
+
+    <collection name="search_results">
+      <xpath>//div[@id='srchResultsList']/ul[contains(@class, 'documentListData
+        docMain')]//span[@class='Bold']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,57 @@
+<meta_metadata_repository name="forever21Product"
+  package="ecologylab.bigsemantics.generated.library.forever21Product">
+
+
+  <meta_metadata name="forever_21" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_stripped="http://www.forever21.com/Product/Product.aspx" />
+    <example_url
+      url="http://www.forever21.com/Product/Product.aspx?BR=f21&amp;Category=sale_women&amp;ProductID=2000072158&amp;VariantID=" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='product-title']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']/p</xpath>
+      <regex_op regex="Was:\$[0-9]*.[0-9]*Now:" replace="" />
+    </scalar>
+    <scalar name="overall_rating">
+      <xpath>//span[@class='pr-snippet-rating-decimal pr-rounded']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//span[@id='product_overview']/p[1]</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//div[@class='zoomPad']/img</xpath>
+      <xpath>//ul[@id='scroller']/li/a/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="available_colors" child_type="compound_document">
+      <xpath>//div[@id='ctl00_MainContent_upColorList']/select/option[contains(@value, 'large')]</xpath>
+      <scalar name="title" label="">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="product_details">
+      <xpath>//span[@id='product_overview']/ul/li</xpath>
+
+    </collection>
+    
+    <collection name="reviews">
+      <xpath>//div[@class='pr-review-wrap']</xpath>
+      <scalar name="title">
+        <xpath>.//p[@class='pr-review-rating-headline']</xpath>
+      </scalar>
+      <scalar name="rating">
+        <xpath>.//div[@class='pr-review-rating']/span</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//p[@class='pr-comments']</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

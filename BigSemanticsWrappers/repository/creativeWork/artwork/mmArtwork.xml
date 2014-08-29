@@ -1,0 +1,9 @@
+<meta_metadata_repository name="mmArtwork"
+  package="ecologylab.bigsemantics.generated.library.mmArtwork" default_user_agent_name="chrome_2">
+
+ <meta_metadata name="mm_artwork" extends="artwork" comment="ACM Multimedia Interactive Artwork class">
+    <scalar name="website" comment="Website of the work or group responsible." scalar_type="ParsedURL" />
+    <scalar name="extended_abstract" comment="Link the ACM Portal page." scalar_type="ParsedURL" />
+  </meta_metadata>
+
+</meta_metadata_repository>

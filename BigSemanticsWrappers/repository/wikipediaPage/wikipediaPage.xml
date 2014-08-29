@@ -1,0 +1,207 @@
+<meta_metadata_repository name="wikipediaPage"
+  package="ecologylab.bigsemantics.generated.library.wikipediaPage" default_user_agent_name="chrome_2">
+  
+  
+
+
+  <meta_metadata name="wikipedia_category" type="wikipedia_category_type" parser="xpath">
+    <selector domain="wikipedia.org" url_regex="https?://en.wikipedia.org/wiki/Category:.*" />
+    <example_url url="http://en.wikipedia.org/wiki/Category:Brand_name_materials" />
+    <example_url url="http://en.wikipedia.org/wiki/Category:Theoretical_physicists" />
+
+    <scalar name="title">
+      <xpath>//span[@dir='auto']</xpath>
+      <regex_op regex="Category:" replace="" />
+    </scalar>
+
+    <collection name="subcategories">
+      <xpath>//div[@id='mw-subcategories']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="articles">
+      <xpath>//div[@id='mw-pages']//li/a[@title]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="supercategories">
+      <xpath>//div[@id='mw-normal-catlinks']//li/a[@title]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+  
+  <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath"
+    user_agent_name="chrome_12" comment="An article on wikipedia">
+    <selector url_regex="https?://en.wikipedia.org/wiki/((?!Category:).)*$" domain="wikipedia.org" />
+
+    <example_url url="http://en.wikipedia.org/wiki/Type_system" />
+    <example_url url="http://en.wikipedia.org/wiki/Velcro" />
+
+    <def_var name="main_image" type="node">
+      <xpath>//*[starts-with(@class,'infobox')]//img[@width&gt;50][1]</xpath>
+    </def_var>
+
+    <scalar name="title">
+      <xpath>//*[@id='firstHeading']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//*[@id='mw-content-text']/p[1]</xpath>
+    </scalar>
+    
+    
+    <collection name="main_images">
+      <xpath>((//table[contains(@class, 'infobox')])[1]//img)[1]</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    
+    </collection>
+    
+    <!--  Seems unnecessary now that we have main_images
+    <composite name="main_image" context_node="main_image">
+      <xpath>.</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </composite>
+    <scalar name="main_image_src" context_node="main_image">
+      <xpath>./@src</xpath>
+    </scalar>
+    -->
+    <collection name="sections">
+      <xpath>//div[@id='mw-content-text']/h2</xpath>
+      <scalar name="title">
+        <xpath>./span[@id]</xpath>
+      </scalar>
+<!--       <scalar name="section_id" xpath="./span[@id]/@id" /> -->
+<!--       <scalar name="section_url"> -->
+<!--         <concatenate_values> -->
+<!--           <value>#</value> -->
+<!--           <value from_scalar="section_id" /> -->
+<!--         </concatenate_values> -->
+<!--         TODO ParsedURL doesn't support #section_id .. -->
+<!--       </scalar> -->
+      <collection name="paragraphs">
+        <xpath>./following-sibling::p[preceding-sibling::h2[1]=../h2[$i]]</xpath>
+        <scalar name="text">
+          <xpath>.</xpath>
+        </scalar>
+        <collection name="anchors">
+          <xpath>.//a[@title]</xpath>
+          <scalar name="title">
+            <xpath>./@title</xpath>
+          </scalar>
+          <scalar name="description">
+            <xpath>.</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./@href</xpath>
+          </scalar>
+        </collection>
+      </collection>
+<!--       <collection name="subsections" field_parser_key="$subsections"> -->
+<!--         TODO -->
+<!--       </collection> -->
+    </collection>
+    
+<!--     <collection name="paragraphs" hide="true" -->
+<!--                 xpath="//*[@id='bodyContent']//p[string-length(text()) > 0]"> -->
+<!--       <scalar name="paragraph_text" xpath="." /> -->
+<!--       <collection name="anchors" xpath="./a[@title]"> -->
+<!--         <scalar name="link" xpath="./@href" /> -->
+<!--         <scalar name="anchor_text" xpath="." /> -->
+<!--         <scalar name="target_title" xpath="./@title" /> -->
+<!--       </collection> -->
+<!--     </collection> -->
+
+    <collection name="thumbinners">
+      <xpath>//div[@class='thumbinner']</xpath>
+      <scalar name="location">
+        <xpath>.//a/img/@src</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+<!--     <collection name="categories" promote_children="true" -->
+<!--                 xpath="//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]"> -->
+    <collection name="categories">
+      <xpath>//*[@id='mw-normal-catlinks']//a[starts-with(@title,'Category:')]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="main_image_src" />
+      <create_and_visualize_img_surrogate>
+        <not_null value="main_image_src" /><!-- Prerequisite check -->
+        <arg value="main_image_src" name="image_purl" />
+      </create_and_visualize_img_surrogate>
+
+      <get_field name="sections" />
+      <for_each collection="sections" as="section">
+        <not_null value="sections" /><!-- Prerequisite check -->
+        <get_field object="section" name="paragraphs">
+          <not_null value="section" /><!-- Prerequisite check -->
+        </get_field>
+        <for_each collection="paragraphs" as="para" current_index="para_index" size="para_count">
+          <not_null value="paragraphs" /><!-- Prerequisite check -->
+          <get_field object="para" name="text" />
+          <get_field object="para" name="anchors" />
+          <for_each collection="anchors" as="anch" current_index="anchor_index" size="anchor_count">
+            <not_null value="anchors" /><!-- Prerequisite check -->
+            <get_field object="anch" name="location" />
+            <get_field object="anch" name="description" />
+            <parse_document only_pick_top_documents="true" number_of_top_documents="5">
+              <not_null value="description" /><!-- Prerequisite check -->
+              <not_null value="location" /><!-- Prerequisite check -->
+              <arg name="anchor_text" value="description" />
+              <arg name="location" value="location" />
+              <arg name="ignore_context_for_tv" value="true" />
+              <arg name="current_index" value="anchor_index" />
+              <arg name="size" value="anchor_count" />
+              <arg name="outer_loop_index" value="para_index" />
+              <arg name="outer_loop_size" value="para_count" />
+            </parse_document>
+          </for_each>
+          <create_and_visualize_text_surrogate>
+            <not_null value="text" /><!-- Prerequisite check -->
+            <arg name="text" value="text" />
+          </create_and_visualize_text_surrogate>
+        </for_each>
+      </for_each>
+
+      <get_field name="thumbinners" />
+      <for_each collection="thumbinners" as="thumbinner">
+        <not_null value="thumbinners" /><!-- Prerequisite check -->
+        <get_field object="thumbinner" name="location" />
+        <get_field object="thumbinner" name="title" />
+        <create_and_visualize_img_surrogate>
+          <not_null value="location" /><!-- Prerequisite check -->
+          <not_null value="title" /><!-- Prerequisite check -->
+          <arg name="caption" value="title" />
+          <arg name="image_purl" value="location" />
+        </create_and_visualize_img_surrogate>
+      </for_each>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

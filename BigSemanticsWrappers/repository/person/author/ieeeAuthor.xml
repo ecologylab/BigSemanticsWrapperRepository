@@ -1,0 +1,20 @@
+<meta_metadata_repository name="ieeeAuthor"
+  package="ecologylab.bigsemantics.generated.library.ieeeAuthor">
+
+ 
+  <meta_metadata name="ieee_author_page" extends="author" parser="xpath">
+  <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractAuthors.jsp" />
+	  <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractAuthors.jsp" />
+  	<collection name="authors" child_type="compound_document">
+  		<xpath>//div[@id='abstractAuthors']//a</xpath>
+  		<scalar name="title">
+  			<xpath>./span[@id='preferredName']/@class</xpath>
+  		</scalar>
+  		<scalar name="location">
+  			<xpath>./span[@id='authorId']/@class</xpath>
+  			<regex_op regex="^" replace="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Author_Ids:"/>
+  		</scalar>
+  	
+  	</collection>
+   </meta_metadata>
+ </meta_metadata_repository>

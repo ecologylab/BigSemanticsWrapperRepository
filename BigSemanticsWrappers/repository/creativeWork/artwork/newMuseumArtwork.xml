@@ -1,0 +1,40 @@
+<meta_metadata_repository name="newMuseumArtwork"
+  package="ecologylab.bigsemantics.generated.library.newMuseumArtwork" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="newmuseum_artwork" extends="artwork" parser="xpath">
+    <selector url_path_tree="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/" />
+    <example_url url="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/5215" />
+    <example_url url="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1840" />
+    <example_url url="http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1445" />
+
+    <scalar name="title">
+      <xpath>//div[@id='detailTitle']</xpath>
+    </scalar>
+
+    <scalar name="year">
+      <xpath>(//div[preceding-sibling::div[contains(text(),'Date')]])[1]</xpath>
+    </scalar>
+
+    <collection name="authors">
+      <xpath>(//div[preceding-sibling::div[contains(text(),'Artist')]])[1]/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="related_exhibitions" child_type="newmuseum_exhibition" label="related exhibition">
+      <xpath>(//div[preceding-sibling::div[contains(text(),'Related Exhibition')]])[1]/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

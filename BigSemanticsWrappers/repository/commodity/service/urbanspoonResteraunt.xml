@@ -1,0 +1,93 @@
+<meta_metadata_repository name="urbanspoonResteraunt"
+  package="ecologylab.bigsemantics.generated.library.urbanspoonResteraunt" default_user_agent_name="firefox">
+
+  <meta_metadata name="urban_spoon_restaurant" type="restaurant" parser="xpath"
+    comment="UrbanSpoon restaurant description page.">
+    <selector url_path_tree="http://www.urbanspoon.com/r" />
+    <example_url
+      url="http://www.urbanspoon.com/r/114/875031/restaurant/College-Station/Christophers-World-Grill-Bryan" />
+
+    <def_var name="main_block" type="node">
+      <xpath>//div[@id='directory']</xpath>
+    </def_var>
+    <def_var name="resto_details" type="node">
+      <xpath>//div[@class='resto_details']</xpath>
+    </def_var>
+    <def_var name="address" type="node">
+      <xpath>//div[@class='address']</xpath>
+    </def_var>
+
+    <scalar name="title">
+      <xpath>//h1[@class='page_title']</xpath>
+    </scalar>
+    <collection name="main_images">>
+      <scalar name="location">
+        <xpath>//div[@class='resto_photos']//ul//li[1]//img/@src</xpath>
+      </scalar>
+    </collection>
+    <scalar name="overall_rating">
+      <xpath>//div[@class='average digits percent-text rating']</xpath>
+    </scalar>
+<!-- 		<composite name="business_website"> -->
+<!-- 			<scalar name="location" context_node="primary" -->
+<!--               xpath="./p[@class='website']/a[@class='ext']/@href" /> -->
+<!-- 		</composite> -->
+    <scalar name="num_reviews" context_node="resto_details">
+      <xpath>//span[@class='posts_count']</xpath>
+    </scalar>
+    <collection name="reviews">
+      <xpath>//div[@id='restaurant_opinions']/ul/li</xpath>
+      <scalar name="title">
+        <xpath>//div[@class='content']/div[@class='title']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>//div[@class='content']//div[@class='body']</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="business_address">
+      <scalar name="telephone" context_node="resto_details">
+        <xpath>./h3</xpath>
+      </scalar>
+      <scalar name="street_address" context_node="address">
+        <xpath>.//span[@class='street-address']</xpath>
+      </scalar>
+      <scalar name="locality" context_node="address">
+        <xpath>.//span[@class='locality']</xpath>
+      </scalar>
+      <scalar name="postal_code" context_node="address">
+        <xpath>.//a[@class='postal-code']</xpath>
+      </scalar>
+      <scalar name="region" context_node="address">
+        <xpath>.//span[@class='region']</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://maps.google.com/maps?q=</value>
+          <value from_scalar="street_address" />
+          <value>,</value>
+          <value from_scalar="postal_code" />
+        </concatenate_values>
+      </scalar>
+    </composite>
+
+    <scalar name="price_range" context_node="resto_details">
+      <xpath>.//span[@class='price']</xpath>
+    </scalar>
+    <collection name="genres" context_node="resto_details">
+      <xpath>./a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.urbanspoon.com</value>
+          <value from_scalar="description" />
+        </concatenate_values>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

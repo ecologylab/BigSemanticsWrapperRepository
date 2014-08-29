@@ -1,0 +1,11 @@
+<meta_metadata_repository name="investigator"
+  package="ecologylab.bigsemantics.generated.library.investigator">
+
+  <meta_metadata name="investigator" extends="author">
+    <generic_type_var name="CW" extends="grant" />
+    <scalar name="email" scalar_type="String" />
+    <scalar name="investigation_type" scalar_type="String" />
+    <collection name="creative_works"  label="grants" />
+  </meta_metadata>
+
+</meta_metadata_repository>

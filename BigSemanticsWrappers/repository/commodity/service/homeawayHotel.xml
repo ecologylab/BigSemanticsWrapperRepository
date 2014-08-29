@@ -1,0 +1,53 @@
+<meta_metadata_repository name="hotel"
+  package="ecologylab.bigsemantics.generated.library.hotel" default_user_agent_name="chrome">
+
+  <meta_metadata name="homeaway" type="hotel" parser="xpath">
+    <selector url_regex="http://www.homeaway.com/vacation-rental.*" domain="homeaway.com"/>
+    <example_url url="http://www.homeaway.com/vacation-rental/p100000" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='newHeader']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='prop-desc-txt']</xpath>
+    </scalar>
+    <scalar name="price" style_name="metadata_h1">
+      <xpath>//div[@id='summary-rates']/div[@class='rates']/ul/li[1]/span[@class='rate']</xpath>
+    </scalar>
+    <scalar name="space_size">
+      <xpath>//div[@id='summary-description']/text()</xpath>
+    </scalar>
+    <scalar name="bedrooms">
+      <xpath>//div[@id='summary-amenities']/ul/li[1]/span[@class='count']</xpath>
+    </scalar>
+    <scalar name="sleeps">
+      <xpath>//div[@id='summary-amenities']/ul/li[2]/span[@class='count']</xpath>
+    </scalar>
+  	
+<!--   	<scalar name="check_in" xpath="//span[@id='check in_val']" /> //div[@class='tel'] -->
+<!--   	<scalar name="check_out" xpath="//span[@id='check out_val']" /> -->
+
+    <composite name="business_address">
+<!--   		<scalar name="street_address" xpath="."/> -->
+      <scalar name="telephone">
+        <xpath>//div[@class='tel']</xpath>
+      </scalar>
+      <composite name="map">
+        <xpath>//script[contains(.,'mapData')]</xpath>
+<!--   			<scalar name="latitude" xpath="./@data-lat"/> -->
+<!--   			<scalar name="longitude" xpath="./@data-lng"/> -->
+        <scalar name="satellites">
+          <xpath>.</xpath>
+        </scalar>
+      </composite>
+    </composite>
+
+    <collection name="reviews">
+      <xpath>//div[@id='propertyReviews']//div[starts-with(@class,'hreview review-box')]</xpath>
+      <scalar name="rating" layer="20.0">
+        <xpath>.//div[@class='rating-txt']</xpath>
+      </scalar>
+<!--  			<scalar name="description" xpath=".//div[@class='description review-txt']" layer="10.0" /> -->
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

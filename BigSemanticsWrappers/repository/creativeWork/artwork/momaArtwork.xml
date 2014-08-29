@@ -1,0 +1,126 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="momaArtwork" package="ecologylab.bigsemantics.generated.library.momaArtwork" default_user_agent_name="chrome_32">
+
+  <meta_metadata name="moma_artwork" extends="artwork" parser="xpath">
+    <selector domain="moma.org"
+      url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*" />
+    <selector domain="moma.org"
+      url_regex="http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+" />
+    <selector domain="moma.org" url_regex="http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+" />
+    <example_url url="http://www.moma.org/collection/browse_results.php?object_id=79211" />
+    <example_url
+      url="http://www.moma.org/collection/browse_results.php?criteria=O%3ADE%3AI%3A3%7CG%3AHI%3AE%3A1&amp;page_number=3&amp;template_id=1&amp;sort_order=2" />
+
+
+    <scalar name="title">
+      <xpath>//div[@id='omniture_caption']/h3</xpath>
+    </scalar>
+
+    <scalar name="year">
+      <xpath>//dl[@class='caption']/dd[1]</xpath>
+    </scalar>
+    <scalar name="medium">
+      <xpath>//dl[@class='caption']/dd[2]</xpath>
+    </scalar>
+
+    <collection name="authors">
+      <xpath>//h4[@class='artist']/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="status" scalar_type="String">
+      <xpath>//div[@class='status']/strong</xpath>
+    </scalar>
+    
+<!--     <composite name="moma_department" type="compound_document" label="department">
+      <xpath>//div[@class='item']/h4[contains(text(), 'Department:')]/../div/a</xpath>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+ -->    
+    <collection name="main_images">
+        <xpath>//p[@id='mainImage']//img</xpath>
+        <scalar name="location">
+            <xpath>./@src</xpath>
+        </scalar>
+    </collection>
+    <composite name="moma_classification" type="compound_document" label="classification">
+      <xpath>//div[@class='item']/h4[contains(text(), 'Classification:')]/../div/a</xpath>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+    <scalar name="year">
+      <xpath>//div[@class='item']/h4[contains(text(), 'Date:')]/../span</xpath>
+    </scalar>
+
+    <scalar name="permalink" scalar_type="ParsedURL" hide="true">
+      <xpath>//div[@class='item']/h4[contains(text(), 'Permalink:')]/../div/a/@href</xpath>
+    </scalar>
+    <scalar name="database_link" scalar_type="ParsedURL" hide="true">
+      <xpath>//div[@class='item']/h4[contains(text(), 'Resources:')]/../div/a/@href</xpath>
+    </scalar>
+    <scalar name="moma_id" scalar_type="String">
+      <xpath>//p[@class='caption'][2]</xpath>
+    </scalar>
+		
+		<!-- make image -->
+    <scalar name="image" scalar_type="ParsedURL" hide="true">
+      <xpath>//p[@id='mainImage']/img/@src</xpath>
+    </scalar>
+
+    <composite name="temp_field_value_holder" extends="metadata" hide="true">
+      <xpath>//p[@class='caption'][1]</xpath>
+      <field_parser name="regex_find" regex="(\S.+?)\. " />
+      <scalar name="temp_year" scalar_type="String" field_parser_key="$0">
+        <regex_op regex="[().]*" replace="" />
+      </scalar>
+      <scalar name="temp_medium" scalar_type="String" field_parser_key="$1">
+        <regex_op regex=", \d.+" replace="" />
+      </scalar>
+      <scalar name="temp_dimensions" scalar_type="String" field_parser_key="$1">
+        <regex_op regex="\S.+, " replace="" />
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="permalink" />
+      <set_field name="location" value="permalink" />
+
+      <get_field name="temp_field_value_holder" />
+      <if>
+        <not_null value="temp_field_value_holder" />
+<!-- 				<get_field name="temp_year" object="temp_field_value_holder" /> -->
+<!-- 				<set_field name="year" value="temp_year" /> -->
+        <get_field name="temp_medium" object="temp_field_value_holder" />
+        <set_field name="medium" value="temp_medium" />
+        <get_field name="temp_dimensions" object="temp_field_value_holder" />
+        <set_field name="dimensions" value="temp_dimensions" />
+      </if>
+			
+<!-- 			<get_field name="image_url"/> -->
+<!-- 			<create_and_visualize_img_surrogate> -->
+<!-- 				<arg name="image_purl" value="image_url" />			 -->
+<!-- 			</create_and_visualize_img_surrogate>  -->
+
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

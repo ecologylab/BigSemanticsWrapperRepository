@@ -1,0 +1,20 @@
+<meta_metadata_repository name="patentClassification"
+  package="ecologylab.bigsemantics.generated.library.patentClassification" default_user_agent_name="chrome">
+
+  <meta_metadata name="patent_classification" extends="compound_document" parser="xpath">
+    <selector url_path_tree="http://www.uspto.gov/web/patents/classification" />
+
+    <example_url url="http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm" />
+
+    <scalar name="description">
+      <xpath>/html/body/p[3]</xpath>
+    </scalar>
+    <scalar name="patent_class" scalar_type="string" label="class">
+      <xpath>//big[1]</xpath>
+      <regex_op regex="(\d+)" group="1" />
+    </scalar>
+    <scalar name="title">
+      <xpath>//td/font/big</xpath>
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>

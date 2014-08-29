@@ -1,0 +1,98 @@
+<meta_metadata_repository name="targetProduct"
+  package="ecologylab.bigsemantics.generated.library.targetProduct">
+
+  <meta_metadata name="target_product" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://www.target.com/p/" />
+    <example_url
+      url="http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1" />
+
+    <scalar name="title">
+      <xpath>//h2[@class='product-name item']/span[@class='fn']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//p[@class='context-buttom-gap tabtextfont'] | //ul[@class='context-buttom-gap
+        innerlistings']
+      </xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//p[@class='price']/span[@class='offerPrice']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//img[@id='heroImage']/@src</xpath>
+      </scalar>
+    </collection>
+
+    <def_var name="rating_summary" type="node">
+      <xpath>//div[@class='ratings']</xpath>
+    </def_var>
+    <scalar name="overall_rating" context_node="rating_summary">
+      <xpath>.//span[@class='rating']</xpath>
+    </scalar>
+    <scalar name="num_reviews" context_node="rating_summary">
+      <xpath>.//a[@class='rating-count']/span</xpath>
+    </scalar>
+    <scalar name="reviews_location" context_node="rating_summary">
+      <xpath>.//a[@class='rating-count']/@href</xpath>
+    </scalar>
+
+    <collection name="reviews">
+      <xpath>//div[@id='ReviewsSection']//div[@class='review-srch-list']</xpath>
+      <scalar name="rating">
+        <xpath>.//div[@class='pro-overall-stars']//div[@class='rating-small fivestar']</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//div[@class='review-heading']</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//p[@class='review-text']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="companion_products" child_type="target_product">
+      <xpath>//ul[@class='borderContainer']//div[@class='product-container']</xpath>
+      <scalar name="location">
+        <xpath>.//p[@class='productLink-container']/a[@class='waRRtag']/@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.//p[@class='productLink-container']/a[@class='waRRtag']</xpath>
+      </scalar>
+      <scalar name="overall_rating">
+        <xpath>.//div[@class='rating-container']//div[@class='rating-small fivestar']</xpath>
+      </scalar>
+      <scalar name="price">
+        <xpath>.//p[@class='price-container']</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+  <meta_metadata name="target_mobile_product" type="product" parser="xpath"
+    user_agent_name="firefox">
+    <selector url_path_tree="http://m.target.com/p/" />
+    <example_url url="http://m.target.com/p/threshold-farrah-fretwork-window-panel/-/A-13976559" />
+
+    <scalar name="title">
+      <xpath>//h2</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//ul[@class='feature-details']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//small[@id='pdpPriceSpan']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//div[@class='product-img']/img/@src</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="overall_rating">
+      <xpath>//a[@class='group ratings-reviews']/span[1]/@class</xpath>
+      <regex_op regex="rating stars-" replace="" />
+    </scalar>
+  </meta_metadata>
+</meta_metadata_repository>
+  

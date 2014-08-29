@@ -1,0 +1,25 @@
+<meta_metadata_repository name="houzzProduct"
+  package="ecologylab.bigsemantics.generated.library.houzzProduct" default_user_agent_name="firefox_3_6_8">
+
+  <meta_metadata name="houzz_product" type="product" parser="xpath" user_agent_name="firefox">
+    <selector url_path_tree="http://www.houzz.com/photos/" />
+    <example_url location="http://www.houzz.com/photos/329895/Cloud-Couch--sofas-" />
+
+    <scalar name="title">
+      <xpath>//meta[@property='og:title']/@content</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//meta[@property='og:description']/@content</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//td[@class='price']</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//meta[@property='og:image']/@content</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

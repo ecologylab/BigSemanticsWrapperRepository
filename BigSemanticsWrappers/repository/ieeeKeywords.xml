@@ -1,0 +1,23 @@
+<meta_metadata_repository name="ieeeKeywords"
+  package="ecologylab.bigsemantics.generated.library.ieeeKeywords">
+	
+	<meta_metadata name="ieee_keywords" extends="compound_document" parser="xpath">
+		<selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractKeywords.jsp" />
+		<selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractKeywords.jsp" />
+		<collection name="keywords" child_type="ieee_xplore_search">
+			<xpath>//div[@id='abstractKeywords']//li</xpath>
+			<scalar name="title">
+				<xpath>.</xpath>
+			</scalar>
+			<scalar name="location">
+				<concatenate_values>
+		          <value>http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=Search_Index_Terms:</value>
+		          <value from_scalar="title" />
+		          
+		        </concatenate_values>
+				<regex_op regex=" " replace="+"/>
+			</scalar>
+					
+		</collection>
+	</meta_metadata>
+</meta_metadata_repository>

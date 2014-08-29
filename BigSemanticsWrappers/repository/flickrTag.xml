@@ -1,0 +1,32 @@
+<meta_metadata_repository name="flickrTag"
+  package="ecologylab.bigsemantics.generated.library.flickrTag">
+
+  <meta_metadata name="flickr_tag" extends="compound_document" parser="xpath"
+    comment="For flickr crawled tags">
+    <selector url_regex="http://www.flickr.com/photos/.*" domain="flickr.com" />
+    <example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />
+
+    <scalar name="title">
+      <xpath>//meta[@name='application-name']/@content</xpath>
+    </scalar>
+    <collection name="photos" comment="Collection of all images of a user" child_type="flickr_photo">
+      <xpath>//span[@class='photo_container pc_t']</xpath>
+      <scalar name="title">
+        <xpath>./a/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="public_tags" type="flickr_tag">
+      <xpath>//a[starts-with(@href, '/photos/tags')]/b/..</xpath>
+      <scalar name="title">
+        <xpath>./b/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+  </meta_metadata>
+</meta_metadata_repository>

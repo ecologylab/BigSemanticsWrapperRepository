@@ -1,0 +1,45 @@
+<meta_metadata_repository name="icdlImageResult"
+  package="ecologylab.bigsemantics.generated.library.icdlImageResult">
+
+  <meta_metadata name="icdl_image_result" extends="compound_document" comment="Thumbnail Image"
+     package="ecologylab.bigsemantics.generated.library.icdl" parser="direct">
+    <selector url_stripped="http://www.childrenslibrary.org/BookXMLResults" />
+		<!--
+			For safety we'd like to add additional selectors: <selector>
+			<mime_type>xml/rss</mime_type> <mime_type>application/rss</mime_type>
+			</selector> <scalar name="pnum" scalar_type="Int" /> <scalar
+			name="total" scalar_type="Int" />
+		-->
+    <collection name="books" no_wrap="true" child_type="icdl_book" child_extends="document"
+     >
+      <scalar name="id" scalar_type="String" hide="true" />
+      <scalar name="bookurl" scalar_type="ParsedURL" hide="true" />
+      <scalar name="booktitle" scalar_type="String" />
+      <scalar name="languages" scalar_type="String" />
+      <scalar name="cover" scalar_type="ParsedURL" />
+      <scalar name="width" scalar_type="Int" hide="true" />
+      <scalar name="height" scalar_type="Int" hide="true" />
+    </collection>
+    <semantic_actions>
+      <get_field name="books" />
+      <if>
+        <not_null value="books" />
+        <for_each collection="books" as="book">
+          <get_field name="cover" object="book" />
+          <get_field name="bookurl" object="book" />
+          <get_field name="booktitle" object="book" />
+          <get_field name="width" object="book" />
+          <get_field name="height" object="book" />
+          <create_and_visualize_img_surrogate name="cover_page_surrogate">
+            <arg name="image_purl" value="cover" />
+            <arg name="location" value="bookurl" />
+            <arg name="caption" value="booktitle" />
+            <arg name="width" value="width" />
+            <arg name="height" value="height" />
+          </create_and_visualize_img_surrogate>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+  
+</meta_metadata_repository>

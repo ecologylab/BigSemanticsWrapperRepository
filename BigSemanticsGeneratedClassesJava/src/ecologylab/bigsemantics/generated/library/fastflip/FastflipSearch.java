@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.fastflip;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.fastflip.Thumbnail;
+import ecologylab.bigsemantics.generated.library.thumbnail.Thumbnail;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;

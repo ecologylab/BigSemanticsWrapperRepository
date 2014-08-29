@@ -1,0 +1,70 @@
+<meta_metadata_repository name="researchgateInstitutionDepartment" 
+package="ecologylab.bigsemantics.generated.library.researchgateInstitutionDepartment" default_user_agent_name="chrome_2">
+    
+  
+    
+    <meta_metadata name="research_gate_institution_department" extends="compound_document" parser="xpath">
+        
+        <selector url_regex="http://www.researchgate.net/institution/.*/department/.*" domain="researchgate.net"/>
+        <scalar name="title">
+            <xpath>//span[@class='fn']</xpath>
+        </scalar>
+        
+        <composite name="stats" type="research_gate_stats">
+            <xpath>//div[@class='section-row last with-appendix']</xpath>
+            <scalar name="publication_count">
+                <xpath>./div[1]/div[1]/a</xpath>
+            </scalar>
+            
+            <scalar name="impact_points">
+                <xpath>./div[2]/div[1]</xpath>
+            </scalar>
+            <scalar name="avg_impact_points">
+                <xpath>./div[3]/div[1]</xpath>
+            </scalar>
+            <scalar name="member_count">
+                <xpath>./div[4]/div[1]</xpath>
+            </scalar>
+        </composite>
+        <composite name="institution" type="research_gate_institution">
+            <xpath>//div[@class='meta']/a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                 <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </composite>
+        <collection name="top_articles" child_type="research_gate_article">
+            <xpath>//div[@class='institution-DepartmentPublicationsContent']/ul/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>./span</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+        <collection name="top_members" child_type="research_gate_author">
+            <xpath>//div[@class='people-list-s institution-members c-box']/ul/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+        <collection name="last_weeks_articles" child_type="research_gate_article">
+            <xpath>//div[@class='profile-ProfileStatsTopPublicationsList']//div[@class='title']/a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+    </meta_metadata>
+</meta_metadata_repository>

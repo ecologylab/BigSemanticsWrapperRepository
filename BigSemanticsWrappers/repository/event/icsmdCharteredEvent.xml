@@ -1,0 +1,50 @@
+<meta_metadata_repository name="icsmdCharteredEvent"
+  package="ecologylab.bigsemantics.generated.library.icsmdCharteredEvent" default_user_agent_name="firefox">
+
+
+  <meta_metadata name="icsmd_chartered_event" type="icsmd" parser="xpath"
+    comment="International Charter Space and Major Disasters">
+    <selector url_stripped="http://www.disasterscharter.org/web/charter/activation_details" />
+    <example_url
+      url="http://www.disasterscharter.org/web/charter/activation_details?p_r_p_1415474252_assetId=ACT-432" />
+
+    <scalar name="title">
+      <xpath>//div[@id='p_p_id_activationDetails_INSTANCE_JmxA_']/div/div/h1</xpath>
+    </scalar>
+
+    <def_var name="info_table" type="node">
+      <xpath>//div[@id='countryInfoTableContainer']/table/tbody</xpath>
+    </def_var>
+
+    <scalar name="event_type" context_node="info_table">
+      <xpath>./tr[2]/td[2]</xpath>
+    </scalar>
+    <scalar name="event_location" context_node="info_table">
+      <xpath>./tr[3]/td[2]</xpath>
+    </scalar>
+    <scalar name="date_of_charter_activation" context_node="info_table">
+      <xpath>./tr[4]/td[2]</xpath>
+    </scalar>
+    <scalar name="charter_requestor" context_node="info_table">
+      <xpath>./tr[5]/td[2]</xpath>
+    </scalar>
+    <scalar name="project_manager" context_node="info_table">
+      <xpath>./tr[6]/td[2]</xpath>
+    </scalar>
+
+    <composite name="gis_location">
+      <scalar name="latitude">
+        <xpath>substring-before(substring-after(//div[@id='eventImageContainer']/script,'('), ',')</xpath>
+      </scalar>
+      <scalar name="longitude">
+        <xpath>substring-before(substring-after(//div[@id='eventImageContainer']/script,','), ',')</xpath>
+      </scalar>
+    </composite>
+
+		<!--<semantic_actions>
+			<reselect_meta_metadata_and_extract />	
+		</semantic_actions>-->
+
+  </meta_metadata>
+
+</meta_metadata_repository>

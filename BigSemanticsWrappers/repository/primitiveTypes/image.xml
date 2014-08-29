@@ -1,0 +1,21 @@
+<meta_metadata_repository name="image" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="image" extends="clippable_document" comment="The Image Base Class"
+    built_in="true" parser="image">
+    <selector>
+      <mime_type>image/jpeg</mime_type>
+      <mime_type>image/png</mime_type>
+      <mime_type>image/gif</mime_type>
+      <mime_type>image/bmp</mime_type>
+      <suffix>jpg</suffix>
+      <suffix>jpeg</suffix>
+      <suffix>gif</suffix>
+      <suffix>png</suffix>
+      <suffix>bmp</suffix>
+    </selector>
+    <scalar name="location" layer="9.0" comment="Location of the image." />
+    <scalar name="local_location" hide="true" comment="Relative location of local copy of image." />
+    <scalar name="creation_date" scalar_type="Date" />
+  </meta_metadata>
+</meta_metadata_repository>

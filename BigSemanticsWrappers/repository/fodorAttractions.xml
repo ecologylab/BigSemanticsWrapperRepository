@@ -1,0 +1,28 @@
+<meta_metadata_repository name="fodorAttractions"
+  package="ecologylab.bigsemantics.generated.library.fodorAttractions" default_user_agent_name="chrome">
+ 
+  <meta_metadata name="fodors_attractions" type="attraction_list" parser="xpath"
+    comment="Fodor travel suggestions">
+    
+    <selector url_regex_fragment="nam_loc:\d+" domain="fodors.com">
+    </selector>
+    <exampleURL url="http://www.fodors.com/world/australia-and-the-pacific/australia/new-south-wales/sydney/sights-nam_loc:709123.html" />
+    <scalar name="title">
+    	<xpath>//head/title</xpath>
+    </scalar>
+    <collection name="attractions">
+      <xpath>//table[@class='sightslist']//tr</xpath>
+      <scalar name="title">
+        <xpath>./td[1]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[1]/a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./td[2]/span</xpath>
+      </scalar>
+    </collection>
+  
+  </meta_metadata>
+  
+</meta_metadata_repository>

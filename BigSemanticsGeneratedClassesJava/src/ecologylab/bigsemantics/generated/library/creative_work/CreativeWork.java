@@ -8,9 +8,9 @@ package ecologylab.bigsemantics.generated.library.creative_work;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creative_work.Author;
+import ecologylab.bigsemantics.generated.library.author.Author;
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.generated.library.misc.Rating;
+import ecologylab.bigsemantics.generated.library.rating.Rating;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;

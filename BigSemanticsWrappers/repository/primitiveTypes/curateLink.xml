@@ -1,0 +1,9 @@
+<meta_metadata_repository name="curateLink" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="curate_link" extends="creative_act" built_in="true">
+    <composite name="document" type="document" polymorphic_scope="repository_documents"
+      wrap="true" />
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,35 @@
+<meta_metadata_repository name="newmuseumExhibition"
+  package="ecologylab.bigsemantics.generated.library.newmuseumExhibition" default_user_agent_name="chrome_2">
+
+<meta_metadata name="newmuseum_exhibition" extends="exhibition" parser="xpath">
+    <selector url_path_tree="http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/" />
+    <example_url url="http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/67" />
+
+    <scalar name="title">
+      <xpath>//div[@id='detailTitle']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='occDescription']</xpath>
+    </scalar>
+
+    <collection name="contributors">
+      <xpath>(//div[preceding-sibling::div[contains(text(),'Artist')]])/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="creative_works">
+      <xpath>//*[@id='resultBox']/table/tbody/tr/td/div[2]/div/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./i</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  </meta_metadata_repository>

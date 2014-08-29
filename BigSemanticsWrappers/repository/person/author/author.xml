@@ -1,0 +1,17 @@
+<meta_metadata_repository name="author"
+  package="ecologylab.bigsemantics.generated.library.author">
+
+  <meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
+    comment="An author of an article or creative work.">
+    <scalar name="location" hide="true" schema_org_itemprop="url" />
+    <scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation" />
+    <scalar name="city" scalar_type="String" />
+    
+    <collection name="creative_works" child_type="creative_work"  />
+    <composite name="webpage" type="document" polymorphic_scope="repository_documents"
+      wrap="true" />
+    
+    <composite name="twitter_profile" type="compound_document"/>
+  </meta_metadata>
+  
+</meta_metadata_repository>

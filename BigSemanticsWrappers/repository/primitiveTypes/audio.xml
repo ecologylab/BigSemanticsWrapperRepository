@@ -1,0 +1,6 @@
+<meta_metadata_repository name="audio" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="audio" extends="sequenced_clippable_document" built_in="true">
+  </meta_metadata>
+</meta_metadata_repository>

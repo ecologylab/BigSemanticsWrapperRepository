@@ -1,0 +1,22 @@
+<meta_metadata_repository name="gettySearch"
+  package="ecologylab.bigsemantics.generated.library.gettySearch" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="getty_search" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://www.getty.edu/art/collectionSearch/collectionSearch" />
+    <example_url
+      url="http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&amp;nh=10&amp;pw=100%25&amp;lk=1&amp;qt=fire&amp;Go.x=-260&amp;Go.y=-187" />
+   <example_url url="http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&amp;nh=10&amp;pw=100%25&amp;lk=1&amp;qt=water&amp;Go.x=0&amp;Go.y=0"/>
+    <collection name="search_results" child_type="getty_object">
+      <xpath>//comment()[.=' START RESULTS ']/following-sibling::table/tbody/tr/td/a/img</xpath>
+      <scalar name="title">
+        <xpath>./../../following-sibling::td[2]/a/strong</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./../@href</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+  
+</meta_metadata_repository>

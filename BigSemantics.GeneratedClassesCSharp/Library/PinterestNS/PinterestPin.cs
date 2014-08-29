@@ -60,10 +60,6 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 		[MmName("originally_from")]
 		private CompoundDocument originallyFrom;
 
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		public PinterestPin()
 		{ }
 
@@ -182,19 +178,6 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 				if (this.originallyFrom != value)
 				{
 					this.originallyFrom = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

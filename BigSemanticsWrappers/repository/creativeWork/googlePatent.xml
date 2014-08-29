@@ -1,0 +1,101 @@
+<meta_metadata_repository name="googlePatent"
+  package="ecologylab.bigsemantics.generated.library.googlePatent" default_user_agent_name="chrome">
+
+
+  <meta_metadata name="google_patent" extends="patent" comment="Google Patents Class"
+    parser="xpath">
+    <selector url_stripped="http://www.google.com/patents/about" />
+    <selector url_path_tree="http://www.google.com/patents/*" domain="google.com" />
+    <selector url_regex="https?://www.google.com/patents/[A-Z0-9]*?.*" domain="google.com" />
+
+    <example_url url="http://www.google.com/patents/US20100045705" />
+    <example_url url="http://www.google.com/patents/US7953462" />
+
+    <filter_location>
+      <strip_param name="printsec" />
+      <strip_param name="zoom" />
+      <strip_param name="v" />
+      <strip_param name="q" />
+      <strip_param name="f" />
+      <strip_param name="pg" />
+    </filter_location>
+
+
+    <scalar name="title">
+      <xpath>//invention-title</xpath>
+    </scalar>
+
+    <collection name="authors" child_type="google_patent_author">
+      <xpath>//span[@class='patent-bibdata-value']/a[contains(@href,'inventor')]</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="classifications">
+      <xpath>//span[@class='nested-value']/a[contains(@href,'classification')]</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+        <regex_op regex="http://www.u(.*).htm" />
+      </scalar>
+      <scalar name="patent_class" navigates_to="location">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="description">
+      <xpath>//abstract/div</xpath>
+    </scalar>
+
+    <collection name="claims" child_scalar_type="String">
+      <xpath>//div[@class='claims']/div</xpath>
+
+    </collection>
+
+    <scalar name="filing_date">
+      <xpath>(//*[preceding-sibling::td[contains(text(),'Filing date')]])[1]</xpath>
+    </scalar>
+
+    <collection name="references" child_type="google_patent">
+      <xpath>//*[@id='intl_patents_v']/div[7]/table/tbody/tr</xpath>
+      <scalar name="title">
+        <xpath>./td[5]</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[1]/a/@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="citations" child_type="google_patent">
+      <xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="drawings">
+      <xpath>//img[@class='patent-thumbnail-image']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <if>
+        <not_null value="classifications" />
+        <get_field name="classifications" />
+        <for_each collection="classifications" as="classification">
+          <parse_document>
+            <arg value="classification" name="document" />
+          </parse_document>
+        </for_each>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

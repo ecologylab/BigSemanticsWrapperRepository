@@ -1,0 +1,64 @@
+<meta_metadata_repository name="imdbMoviePerson"
+  package="ecologylab.bigsemantics.generated.library.imdbMoviePerson" default_user_agent_name="chrome">
+
+  <cookie_processing domain="imdb.com" ignore_all_cookies="true" />
+
+
+  <meta_metadata name="imdb_person" extends="movie_person" parser="xpath">
+    <selector url_path_tree="http://www.imdb.com/name/" />
+    <example_url url="http://www.imdb.com/name/nm0000487/" />
+    <example_url url="http://www.imdb.com/name/nm0000199/" />
+    <example_url url="http://www.imdb.com/name/nm0004266/" />
+    <filter_location>
+      <strip_param name="ref_" />
+    </filter_location>
+
+    <scalar name="title">
+      <xpath>//*[@itemprop='name']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//*[@itemprop='description']</xpath>
+    </scalar>
+
+    <composite name="birth_detail">
+      <scalar name="birth_date">
+        <xpath>//*[@itemprop='birthDate']/@datetime</xpath>
+      </scalar>
+      <scalar name="birth_place">
+        <xpath>//*[@itemprop='birthDate']/following-sibling::a</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="movies_directed">
+      <xpath>//div[@id='filmography']//div[@id='filmo-head-director']/following-sibling::div[1]//div[contains(@class,
+        'filmo-row')]</xpath>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="movies_written">
+      <xpath>//div[@id='filmography']//div[@id='filmo-head-writer']/following-sibling::div[1]//div[contains(@class,
+        'filmo-row')]</xpath>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="movies_acted_in">
+      <xpath>//div[@id='filmography']//div[@id='filmo-head-actor' or
+        @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]</xpath>
+      <scalar name="title">
+        <xpath>.//a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+
+</meta_metadata_repository>

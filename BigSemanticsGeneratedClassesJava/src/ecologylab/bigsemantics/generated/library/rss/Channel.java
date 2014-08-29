@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.rss;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.rss.Item;
+import ecologylab.bigsemantics.generated.library.item.Item;
 import ecologylab.bigsemantics.metadata.Metadata;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;

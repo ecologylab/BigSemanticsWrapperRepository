@@ -10,7 +10,6 @@ package ecologylab.bigsemantics.generated.library.pinterest;
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -24,12 +23,12 @@ import java.util.Map;
 public class PinterestPin extends CreativeWork
 {
 	@simpl_composite
-	@mm_name("pinner")
-	private CompoundDocument pinner;
-
-	@simpl_composite
 	@mm_name("pinboard")
 	private CompoundDocument pinboard;
+
+	@simpl_composite
+	@mm_name("pinner")
+	private CompoundDocument pinner;
 
 	@simpl_composite
 	@mm_name("repins")
@@ -59,10 +58,6 @@ public class PinterestPin extends CreativeWork
 	@mm_name("originally_from")
 	private CompoundDocument originallyFrom;
 
-	@simpl_composite
-	@mm_name("image")
-	private Image image;
-
 	public PinterestPin()
 	{ super(); }
 
@@ -70,16 +65,6 @@ public class PinterestPin extends CreativeWork
 		super(mmd);
 	}
 
-
-	public CompoundDocument getPinner()
-	{
-		return pinner;
-	}
-
-	public void setPinner(CompoundDocument pinner)
-	{
-		this.pinner = pinner;
-	}
 
 	public CompoundDocument getPinboard()
 	{
@@ -89,6 +74,16 @@ public class PinterestPin extends CreativeWork
 	public void setPinboard(CompoundDocument pinboard)
 	{
 		this.pinboard = pinboard;
+	}
+
+	public CompoundDocument getPinner()
+	{
+		return pinner;
+	}
+
+	public void setPinner(CompoundDocument pinner)
+	{
+		this.pinner = pinner;
 	}
 
 	public CompoundDocument getRepins()
@@ -159,15 +154,5 @@ public class PinterestPin extends CreativeWork
 	public void setOriginallyFrom(CompoundDocument originallyFrom)
 	{
 		this.originallyFrom = originallyFrom;
-	}
-
-	public Image getImage()
-	{
-		return image;
-	}
-
-	public void setImage(Image image)
-	{
-		this.image = image;
 	}
 }

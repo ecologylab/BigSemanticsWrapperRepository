@@ -1,0 +1,24 @@
+<meta_metadata_repository name="wikipediaSearch"
+  package="ecologylab.bigsemantics.generated.library.wikipediaSearch" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search"
+    parser="xpath" user_agent_name="firefox_2">
+    <generic_type_var name="SR" arg="wikipedia_page" />
+		<example_url url="http://en.wikipedia.org/w/index.php?search=the+guildsamp;title=Special%3ASearchamp;go=Go"/>
+    <selector url_stripped="http://en.wikipedia.org/w/index.php?" />
+
+    <collection name="search_results">
+      <xpath>//ul[@class='mw-search-results']/li</xpath>
+      <scalar name="title">
+        <xpath>./div[@class='mw-search-result-heading']/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div[@class='mw-search-result-heading']/a/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./div[@class='searchresult']</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

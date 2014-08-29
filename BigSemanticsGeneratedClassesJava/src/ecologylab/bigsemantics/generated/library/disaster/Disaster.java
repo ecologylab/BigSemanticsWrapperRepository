@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.disaster;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.disaster.Event;
+import ecologylab.bigsemantics.generated.library.event.Event;
 import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.Image;

@@ -1,0 +1,84 @@
+<meta_metadata_repository name="nsfProgram"
+  package="ecologylab.bigsemantics.generated.library.nsfProgram">
+
+ 
+  <meta_metadata name="nsf_program" extends="grant_program" parser="xpath">
+    <selector url_stripped="http://www.nsf.gov/funding/pgm_summ.jsp" />
+    <selector url_regex="http://www.nsf.gov/awardsearch/afSearch.do?ProgEleCode=.*" domain="nsf.gov" />
+    <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503302" />
+    <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503581" />
+    <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503286" />
+
+    <scalar name="title">
+      <xpath>//span[@class='pageheadline']</xpath>
+    </scalar>
+
+    <collection name="staffs" child_type="nsf_staff">
+      <xpath>//strong[text()='CONTACTS']/following::table//td[@class='tabletext']/parent::tr</xpath>
+      <scalar name="title">
+        <xpath>./td[1]</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[1]//a/@href</xpath>
+      </scalar>
+      <composite name="contact">
+        <xpath>.</xpath>
+        <scalar name="email">
+          <xpath>./td[2]</xpath>
+        </scalar>
+        <scalar name="telephone">
+          <xpath>./td[3]</xpath>
+        </scalar>
+      </composite>
+    </collection>
+    <scalar name="synopsis">
+      <xpath>//strong[text()='SYNOPSIS']/following::p[text()][1]</xpath>
+    </scalar>
+    <collection name="due_dates" child_scalar_type="Date">
+      <xpath>//h2[text()='DUE DATES']/following::p[@class='due_date' or @class='due_date_first']</xpath>
+      <regex_op regex="[A-Z][a-z]+ \d+, \d+" />
+    </collection>
+
+    <collection name="grants" child_type="nsf_award">
+      <xpath>//table[@class='resultTable']/tbody//tr</xpath>
+      <scalar name="title">
+        <xpath>./td[2]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./td[2]/a/@href</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="grants_by_search" type="nsf_search">
+      <scalar name="title" required="true">
+        <xpath>//span[@class='pageheadline']</xpath>
+        <regex_op regex="\s*\(.*" replace="" normalize_text="true" />
+      </scalar>
+      <scalar name="location">
+        <concatenate_values>
+          <value>http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;QueryText=&amp;PIFirstName=&amp;PILastName=&amp;PIInstitution=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgOfficer=&amp;ProgEleCode=&amp;BooleanElement=false&amp;ProgRefCode=&amp;BooleanRef=false&amp;ProgFoaCode=&amp;OriginalAwardDateOperator=&amp;OriginalAwardDateFrom=&amp;OriginalAwardDateTo=&amp;StartDateOperator=&amp;StartDateFrom=&amp;StartDateTo=&amp;ExpDateOperator=&amp;ExpDateFrom=&amp;ExpDateTo=&amp;AwardNumberOperator=&amp;AwardNumberFrom=&amp;AwardNumberTo=&amp;AwardAmount=&amp;AwardInstrument=&amp;Restriction=0&amp;Search=Search&amp;ProgProgram=</value>
+          <value from_scalar="title" />
+        </concatenate_values>
+        <regex_op regex="\s+" replace="+" />
+      </scalar>
+    </composite>
+
+    <composite name="funding_history" type="nsf_search">
+      <xpath>//a[contains(text(), 'What Has Been Funded')]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <not_null value="title" />
+        <arg name="text" value="title" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

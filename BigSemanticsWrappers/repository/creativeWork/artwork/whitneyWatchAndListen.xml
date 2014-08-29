@@ -1,0 +1,26 @@
+<meta_metadata_repository name="whitneyWatchAndListen"
+  package="ecologylab.bigsemantics.generated.library.whitneyWatchAndListen" default_user_agent_name="chrome_2">
+
+    
+  <meta_metadata name="whitney_watch_and_listen" extends="artwork" parser="xpath">
+    <selector url_path_tree="http://whitney.org/WatchAndListen/" />
+    <example_url url="http://whitney.org/WatchAndListen/Artists?play_id=903" />
+
+    <scalar name="title">
+      <xpath>//*[@class='watch-and-listen-title']</xpath>
+    </scalar>
+
+    <collection name="audio_playlist" child_type="whitney_watch_and_listen" label="audio_playlist">
+      <xpath>//div[@class='audio-guide-playlist-table-wrapper']/table/tbody/tr</xpath>
+      <scalar name="location" hide="true">
+        <xpath>substring(substring-after(./@onclick, '='), 3,
+          string-length(substring-after(./@onclick, '='))-4 )</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./td[2]</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
+</meta_metadata_repository>

@@ -1,0 +1,11 @@
+<meta_metadata_repository name="patentAuthor"
+  package="ecologylab.bigsemantics.generated.library.patentAuthor" default_user_agent_name="chrome">
+
+
+  <meta_metadata name="patent_author" extends="author" parser="xpath"
+    comment="Authors of Patents; really this should be a mix-in to author">
+    <collection name="creative_works"  other_tags="publications"
+      label="patents" child_type="patent" />
+  </meta_metadata>
+
+</meta_metadata_repository>

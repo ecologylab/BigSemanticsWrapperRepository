@@ -1,0 +1,8 @@
+<meta_metadata_repository name="artist"
+  package="ecologylab.bigsemantics.generated.library.artist" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="artist" extends="author">
+<!-- 		<collection name="mentors" child_type="artist" /> -->
+    <collection name="creative_works" child_type="artwork" label="artworks"  />
+  </meta_metadata>
+</meta_metadata_repository>

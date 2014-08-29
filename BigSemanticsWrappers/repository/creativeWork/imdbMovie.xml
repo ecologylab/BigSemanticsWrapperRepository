@@ -1,0 +1,104 @@
+<meta_metadata_repository name="imdbMovie"
+  package="ecologylab.bigsemantics.generated.library.imdbMovie" default_user_agent_name="chrome">
+
+  <cookie_processing domain="imdb.com" ignore_all_cookies="true" />
+
+  <meta_metadata name="imdb_movie" extends="movie" comment="A movie in IMDB." parser="xpath">
+    <selector url_path_tree="http://www.imdb.com/title/" />
+
+    <example_url url="http://www.imdb.com/title/tt0137523/" comment="Fight club." />
+    <example_url url="http://www.imdb.com/title/tt0110912/" comment="Pulp fiction." />
+
+    <scalar name="title">
+      <xpath>//h1[@class='header']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//p[@itemprop='description']</xpath>
+      <regex_op regex="more" replace="" />
+    </scalar>
+
+    <scalar name="year">
+      <xpath>//h1[@class='header']/a</xpath>
+    </scalar>
+    <scalar name="mpaa_rating">
+      <xpath>//span[@itemprop='contentRating' and @title]/@title</xpath>
+    </scalar>
+    <scalar name="overall_rating">
+      <xpath>//span[@itemprop='ratingValue']</xpath>
+    </scalar>
+    <scalar name="storyline">
+      <xpath>//div[@itemprop='description']</xpath>
+    </scalar>
+    <scalar name="tagline">
+      <xpath>//h4[contains(.,'Tagline')]/..</xpath>
+      <regex_op regex="Taglines:|See more" replace="" />
+    </scalar>
+    <scalar name="runtime">
+      <xpath>//time[@itemprop='duration']</xpath>
+    </scalar>
+    <scalar name="theater_release">
+      <xpath>//h4[contains(.,'Release Date:')]/..</xpath>
+      <regex_op regex="Release Date:|See more" replace="" />
+    </scalar>
+
+    <scalar name="pic" hide="true" layer="3.0">
+      <xpath>//td[@id='img_primary']//img/@src</xpath>
+    </scalar>
+    <collection name="photos" hide="true">
+      <xpath>//div[@class='mediastrip']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="directors" child_type="imdb_person">
+      <xpath>//h4[contains(.,'Director')]/../a[@itemprop]</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <collection name="writers" child_type="imdb_person">
+      <xpath>//h4[contains(.,'Writer')]/../a[@itemprop]</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <collection name="cast" child_type="imdb_person" layer="8.0">
+      <xpath>//table[@class='cast_list']//tr[@class]</xpath>
+      <scalar name="title">
+        <xpath>.//*[@itemprop='actor']/*[@itemprop='url']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//*[@itemprop='actor']/*[@itemprop='url']/@href</xpath>
+      </scalar>
+      <composite name="photo">
+        <xpath>./td[@class='primary_photo']</xpath>
+        <scalar name="location">
+          <xpath>.//img/@src</xpath>
+        </scalar>
+      </composite>
+    </collection>
+    <collection name="genres">
+      <xpath>//h4[contains(.,'Genres:')]/../a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" hide="false">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="pic" />
+      <create_and_visualize_img_surrogate>
+        <arg value="pic" name="image_purl" />
+      </create_and_visualize_img_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

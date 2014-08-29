@@ -1,0 +1,8 @@
+<meta_metadata_repository name="textSelfmade" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="text_selfmade" extends="rich_artifact" built_in="true">
+    <generic_type_var name="M" arg="html_text" />
+  </meta_metadata>
+</meta_metadata_repository>

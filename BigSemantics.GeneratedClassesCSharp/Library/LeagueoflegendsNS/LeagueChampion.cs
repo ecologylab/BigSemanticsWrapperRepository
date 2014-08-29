@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.MetaMetadataNS;
@@ -24,7 +25,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS 
 {
 	[SimplInherit]
-	public class LeagueChampion : CompoundDocument
+	public class LeagueChampion : CreativeWork
 	{
 		[SimplScalar]
 		private MetadataString epithet;
@@ -40,10 +41,6 @@ namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS
 		[SimplComposite]
 		[MmName("champion_spotlight")]
 		private YoutubeVideo championSpotlight;
-
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
 
 		public LeagueChampion()
 		{ }
@@ -98,19 +95,6 @@ namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS
 				if (this.championSpotlight != value)
 				{
 					this.championSpotlight = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

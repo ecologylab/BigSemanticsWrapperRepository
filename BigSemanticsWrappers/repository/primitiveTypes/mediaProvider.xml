@@ -1,0 +1,10 @@
+<meta_metadata_repository name="mediaProvider" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+
+  <meta_metadata name="media_provider" extends="metadata"
+    package="ecologylab.bigsemantics.generated.library.primitives">
+    <scalar name="provider" scalar_type="String" />
+    <scalar name="provider_id" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

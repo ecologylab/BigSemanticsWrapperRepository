@@ -1,0 +1,39 @@
+<meta_metadata_repository name="hmProduct"
+  package="ecologylab.bigsemantics.generated.library.hmProduct">
+
+
+  <meta_metadata name="hm_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_path_tree="http://www.hm.com/us/product/" domain="hm.com" />
+    <example_url
+      url="http://www.hm.com/us/product/27027?article=27027-B&amp;piaDept=Subdepartment_ladies&amp;piaType=Large_picture" />
+    <scalar name="title">
+      <xpath>//form[@id='product']/h1/text()</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//form[@id='product']/h1/span/span</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//*[@id='product-thumbs']/li[2]/a</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <scalar name="color" scalar_type="String">
+      <xpath>//span[@class='selected']</xpath>
+    </scalar>
+
+    <scalar name="gender" scalar_type="String">
+      <xpath>//*[@id="product-breadcrumbs"]/ul/li[2]/a</xpath>
+    </scalar>
+    <scalar name="category" scalar_type="String">
+      <xpath>//*[@id="product-breadcrumbs"]/ul/li[3]/a</xpath>
+    </scalar>
+    <scalar name="description" scalar_type="String">
+      <xpath>//*[@id='product']/div/p[1]/text()</xpath>
+    </scalar>
+    <scalar name="detail" scalar_type="String">
+      <xpath>//*[@id='product']/div/p[2]/span[1]/text()</xpath>
+    </scalar>
+  </meta_metadata>
+
+</meta_metadata_repository>

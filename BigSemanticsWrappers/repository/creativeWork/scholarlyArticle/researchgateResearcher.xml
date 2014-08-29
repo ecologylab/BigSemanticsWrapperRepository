@@ -1,0 +1,29 @@
+<meta_metadata_repository name="researchgateResearcher" 
+package="ecologylab.bigsemantics.generated.library.researchgateResearcher" default_user_agent_name="chrome_2">
+    
+  
+    
+    <meta_metadata name="research_gate_researcher" extends="research_gate_author">
+        <selector url_regex="http://www.researchgate.net/researcher.*" domain="researchgate.net"/>
+        <scalar name="description" hide="true"/>
+         <collection name="featured_publications" >
+            <xpath>//ul[@class='c-list']/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>./span</xpath>
+            </scalar> 
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>                    
+        </collection>
+        <collection name="researcher_stats" child_type="compound_document">
+            <xpath>//div[@class='stats-container']//tr[@class='item']</xpath>
+            <scalar name="title" label="stat">
+                <xpath>./td[@class='label']</xpath> 
+            </scalar>
+            <scalar name="description" label="value">
+                <xpath>./td[@class='value']</xpath>
+            </scalar>
+        </collection>
+    </meta_metadata>
+</meta_metadata_repository>

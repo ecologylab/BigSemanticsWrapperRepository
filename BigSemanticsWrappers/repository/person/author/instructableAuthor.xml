@@ -1,0 +1,47 @@
+<meta_metadata_repository name="instructableAuthor"
+  package="ecologylab.bigsemantics.generated.library.instructableAuthor" default_user_agent_name="chrome_2">
+  
+  
+  <meta_metadata name="instructable_author" extends="author" parser="xpath">
+    <selector url_path_tree="http://www.instructables.com/member" />
+    <example_url url="http://www.instructables.com/member/HollyMan" />
+    <example_url url="http://www.instructables.com/member/Thereisonlyme/" />
+    <scalar name="title" label="name">
+      <xpath>//h1[@id='member-profile-name']</xpath>
+    </scalar>
+
+    <scalar name="description" label="about">
+      <xpath>//div[@class='member_sidebar_div_9']/text()</xpath>
+    </scalar>
+    <scalar name="instructor_location" scalar_type="String">
+      <xpath>(//div[@class='member_sidebar_div_11'])[1]/text()</xpath>
+    </scalar>
+    <scalar name="join_date" scalar_type="String">
+      <xpath>(//div[@class='member_sidebar_div_11'])[2]/text()</xpath>
+    </scalar>
+    <scalar name="favorite_percentage" scalar_type="String">
+      <xpath>//div[@id='member-profile-statbar']/ul/li[3]/text()</xpath>
+    </scalar>
+    <scalar name="followers" scalar_type="String">
+      <xpath>//span[@class='callout']</xpath>
+    </scalar>
+    <scalar name="views" scalar_type="String">
+      <xpath>//div[@id='member-profile-statbar']/ul/li[2]</xpath>
+    </scalar>
+
+    <scalar name="best_answers" scalar_type="String">
+      <xpath>//div[@id='member-profile-statbar']/ul/li[4]/text()</xpath>
+    </scalar>
+
+    <collection name="instructables" child_type="instructable">
+      <xpath>//div[@class='sortable-box member-recent-instructables']/div/ul/li</xpath>
+      <scalar name="title">
+        <xpath>./div/a/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div/a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

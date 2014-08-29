@@ -8,8 +8,8 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ProductAndServiceNS;
 using Ecologylab.Semantics.Generated.Library.RestaurantNS;
+using Ecologylab.Semantics.Generated.Library.ServiceNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

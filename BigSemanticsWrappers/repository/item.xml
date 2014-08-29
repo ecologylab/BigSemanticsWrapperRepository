@@ -1,0 +1,14 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="item" package="ecologylab.bigsemantics.generated.library.item">
+
+
+
+  <meta_metadata name="item" extends="yahoo_media_rss" comment="One item in a news feed."
+    parser="direct">
+    <scalar name="location" other_tags="rdf:about" hint="XML_LEAF" hide="true" />
+    <scalar name="link" scalar_type="ParsedURL" hint="XML_LEAF" hide="true" />
+    <collection name="categories"  child_scalar_type="String"
+      no_wrap="true" />
+  </meta_metadata>
+
+</meta_metadata_repository>

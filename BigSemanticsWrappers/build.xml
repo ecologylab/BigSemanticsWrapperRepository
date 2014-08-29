@@ -2,7 +2,7 @@
 <project name="BigSemanticsWrappers" basedir="." default="main"
 	       xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
-  <property name="repo.dir" value="MmdRepository" />
+  <property name="repo.dir" value="repository" />
   <property name="lib.dir" value="../../BigSemanticsJava/lib" />
   
   <!-- declare maven -->

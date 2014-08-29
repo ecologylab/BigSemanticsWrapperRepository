@@ -1,0 +1,140 @@
+<meta_metadata_repository name="ikeaProduct"
+  package="ecologylab.bigsemantics.generated.library.ikeaProduct">
+ 	
+ 	
+ 	<!-- Helper class for the ikea wrappers -->
+  <meta_metadata name="ikea_department" extends="compound_document" parser="xpath" user_agent_name="chrome">
+     <selector url_path_tree="http://www.ikea.com/us/en/catalog/categories/departments/" domain="ikea.com" />
+     <example location="http://www.ikea.com/us/en/catalog/categories/departments/bathroom/20720/" />
+     
+     <collection name="products" child_type="ikea_product" >   
+     	<xpath>//div[@class='threeColumn product ']</xpath>
+  	
+  		<scalar name="location">
+  			<xpath>.//a[@class='productLink']/@href</xpath>
+  		</scalar>
+  		<scalar name="title" style_name="metadata_normal">
+  			<xpath>concat(.//div[@class='productTitle floatLeft'], ' ', .//div[@class='productDesp'])</xpath>
+  		</scalar>
+  		<scalar name="description">
+  			<xpath>.//div[@class='productDesp']</xpath>
+  		</scalar>
+  		<scalar name="price">
+  			<xpath>.//div[@class='price regularPrice']</xpath>
+  		</scalar>
+   		<collection name="main_images" >
+	  		<xpath>.//a[@class='productLink']/img</xpath>
+	  		<scalar name="location">
+	  			<xpath>./@src</xpath>
+	  		</scalar>
+  		</collection>
+  		
+  	</collection>
+
+  </meta_metadata>
+  
+ 	
+  <meta_metadata name="ikea_mobile_product" type="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_path_tree="http://m.ikea.com/us/en/catalog/products/" domain="ikea.com" />
+    <example location="http://m.ikea.com/us/en/catalog/products/art/50058376/" />
+
+    <scalar name="title">
+      <xpath>//title</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@class='ikea-pip ui-content']/ul[1]/li[5]/div/</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@itemprop='price']/span</xpath>
+    </scalar>
+
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//div[@class='ikea-pip-fullImageWrapper']/img/@src</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+  
+  
+  
+	
+  <meta_metadata name="ikea_product" extends="product" parser="xpath" user_agent_name="chrome">
+<!--     <selector url_regex_fragment="http://www.ikea.com/us/en/catalog/products/[^/]*" domain="ikea.com" /> -->
+    <selector url_path_tree="http://www.ikea.com/us/en/catalog/products/" />
+
+    <example_url location="http://www.ikea.com/us/en/catalog/products/60204805/" />
+    <example_url location="http://www.ikea.com/us/en/catalog/products/S09906060/" />
+
+    <scalar name="title">
+      <xpath>//h1</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//*[@itemprop='description']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//*[@itemprop='price']</xpath>
+   </scalar>
+    
+    <scalar name="model">
+      <xpath>//*[@itemprop='productID']</xpath>
+    </scalar>
+    
+    <collection name="dimensions" child_type="specification" >
+	   	<xpath>//div[@id='imperial']//text()</xpath>
+			<scalar name="name">
+				<xpath>substring-before(., ':')</xpath>
+			</scalar>    
+			<scalar name="value" >
+				<xpath>substring-after(., ':')</xpath>
+			</scalar>    
+    </collection>
+	
+    <scalar name="weight" scalar_type="string">
+    	<xpath>substring-after(//div[@id='packageInfo']//text()[contains(., 'lb')], ':')</xpath>
+    </scalar>
+    
+<!--    <collection name="more_models" child_type="ikea_product">
+    	<xpath>//div[@id='modelVisibleConatiner']//div[@class='borderMar']</xpath>
+    	
+    	<scalar name="location">
+    		<xpath>./a/@href</xpath>
+    	</scalar>
+    	
+    	<composite name="thumbnail">
+    		<xpath>./a/img</xpath>
+    		<scalar name="location">
+    			<xpath>./@src</xpath>
+    		</scalar>
+    	</composite>
+    </collection>
+ -->	
+<!--     <collection name="coordinating_products" child_type="ikea_product"> -->
+<!--     </collection> -->
+    
+		<collection name="specifications" label="details" >
+   		<xpath>//div[@id='custMaterials']//text()</xpath>
+     	<xpath>//div[@id='custBenefit']/div</xpath>
+     	<xpath>//div[@id='goodToKnow']/text()[(preceding::br)]</xpath>
+			<scalar name="name">
+				<xpath>substring-before(., ':')</xpath>
+			</scalar>    
+			<scalar name="value" >
+				<xpath>substring-after(., ':')</xpath>
+			</scalar>    
+    </collection>
+    
+		<collection name="departments" child_type="ikea_department" >
+			<xpath>//ul[@id='breadCrumbs']//a</xpath>
+	<!-- 		<xpath>//ul[@id='breadCrumbs']/li[not(@class='divider')]</xpath> -->
+			<scalar name="title" style_name="metadata_normal" >
+				<xpath>.//text()</xpath>
+			</scalar>
+			<scalar name="location" >
+				<xpath>./@href</xpath>
+			</scalar>
+		</collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

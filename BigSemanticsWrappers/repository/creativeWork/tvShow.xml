@@ -1,0 +1,18 @@
+<meta_metadata_repository name="tvShow"
+  package="ecologylab.bigsemantics.generated.library.tvShow" default_user_agent_name="firefox_5">
+
+  <meta_metadata name="tv_show" extends="creative_work" comment="The TV show info class">
+    <collection name="authors"  
+      label="directors" layer="4.0" />
+    <scalar name="description" other_tags="description" />
+
+    <scalar name="premiered" scalar_type="String" />
+    <scalar name="status" scalar_type="String" />
+    <scalar name="pic" scalar_type="ParsedURL" hide="true" comment="A picture of this show." />
+
+    <collection name="cast" child_type="movie_person" />
+    <collection name="episode_list" child_type="tv_show_episode" />
+
+    <collection name="similar_shows" child_type="tv_show" />
+  </meta_metadata>
+</meta_metadata_repository>

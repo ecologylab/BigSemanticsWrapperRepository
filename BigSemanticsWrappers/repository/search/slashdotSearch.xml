@@ -1,0 +1,34 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="slashdotSearch" package="ecologylab.bigsemantics.generated.library.slashdotSearch" default_user_agent_name="chrome_32">
+  
+  <meta_metadata name="slashdot_search" extends="search" comment="The slashdot search class"
+    user_agent_name="opera_9" parser="xpath">
+    <selector url_stripped="http://slashdot.org/index2.pl" />
+    <selector url_stripped="http://slashdot.com/index2.pl" />
+		<example_url url="http://slashdot.org/index2.pl?fhfilter=test"/>
+    <collection name="search_results" child_type="social_media_search_result">
+      <xpath>//div[@id='firehoselist']//article</xpath>
+      <scalar name="title">
+        <xpath>.//h2</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h2//a[1]/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>./div[@class='hide']/div/i</xpath>
+      </scalar>
+      <scalar name="author">
+        <xpath>./header/div[@class='details']/a</xpath>
+      </scalar>
+      <collection name="tags">
+        <xpath>./footer//div[@class='grid_14']//a[@class='popular tag']</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

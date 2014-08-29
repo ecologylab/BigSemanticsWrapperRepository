@@ -1,0 +1,58 @@
+<meta_metadata_repository name="airbnbHotel"
+  package="ecologylab.bigsemantics.generated.library.airbnbHotel" default_user_agent_name="chrome">
+
+  <meta_metadata name="airbnb" type="hotel" parser="xpath">
+    <selector url_path_tree="http://www.airbnb.com/rooms" />
+    <example_url url="https://www.airbnb.com/rooms/2570524?s=lpub" />
+
+    <scalar name="title">
+      <xpath>//div[@class='overflow']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='description_text_wrapper']/p/text()</xpath>
+    </scalar>
+    <scalar name="price" style_name="metadata_h1">
+      <xpath>//h2[@id='price_amount']</xpath>
+    </scalar>
+    <scalar name="space_size">
+      <xpath>//span[@id='size_val']</xpath>
+    </scalar>
+    <scalar name="bedrooms">
+      <xpath>//span[@id='bedrooms_val']</xpath>
+    </scalar>
+    <scalar name="sleeps">
+      <xpath>//span[@id='accommodates_val']</xpath>
+    </scalar>
+    <scalar name="check_in">
+      <xpath>//span[@id='check in_val']</xpath>
+    </scalar>
+    <scalar name="check_out">
+      <xpath>//span[@id='check out_val']</xpath>
+    </scalar>
+
+    <composite name="business_address">
+      <xpath>//span[@id='display_address']</xpath>
+      <scalar name="street_address">
+        <xpath>.</xpath>
+      </scalar>
+      <composite name="map">
+        <xpath>//div[@id='map']</xpath>
+        <scalar name="latitude">
+          <xpath>./@data-lat</xpath>
+        </scalar>
+        <scalar name="longitude">
+          <xpath>./@data-lng</xpath>
+        </scalar>
+        <scalar name="location">
+          <concatenate_values>
+            <value>http://maps.google.com/maps?q=</value>
+            <value from_scalar="latitude" />
+            <value>,</value>
+            <value from_scalar="longitude" />
+          </concatenate_values>
+        </scalar>
+      </composite>
+    </composite>
+  </meta_metadata>
+
+</meta_metadata_repository>

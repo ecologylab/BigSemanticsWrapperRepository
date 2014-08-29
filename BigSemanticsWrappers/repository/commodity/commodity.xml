@@ -1,0 +1,47 @@
+<meta_metadata_repository name="commodity"
+  package="ecologylab.bigsemantics.generated.library.commodity">
+  
+   <!-- Supporting wrappers for commodity and its descendants -->
+	<meta_metadata name="labeled_specifications" extends="metadata">
+		<scalar name="title" scalar_type="String" hide_label="true" />
+		<collection name="specifications" child_type="specification" 
+		 hide_label="true" show_expanded_always="true" />
+	</meta_metadata>
+	
+  <meta_metadata name="specification" extends="metadata">
+	  <scalar name="name" scalar_type="String" hide="true"/>
+	  <scalar name="value" scalar_type="String" use_value_as_label="name" style_name="metadata_italic" />
+  </meta_metadata>
+	
+  
+  
+  <meta_metadata name="commodity" extends="compound_document">
+    <scalar name="location" hide="true" />
+    <collection name="main_images" layer="3.0"  />
+    
+    <scalar name="price" scalar_type="String" layer="3.0" style_name="topRight_div"
+      schema_org_itemprop="price" >
+      <xpath>//*[@itemprop='price']//text()</xpath>      
+    </scalar>
+  	<collection name="companion_products" label="people_by_with" child_type="commodity"/>
+  	<collection name="comparitive_products" label="people_by_instead" child_type="commodity"/>
+  	
+  	<collection name="product_details" child_scalar_type="String"/>
+  	<!-- labeled_specifications is a collection of collection of specs, each with its own label -->
+	  	
+		<collection name="specifications" child_type="specification" />
+		<collection name="specifications_table" child_type="labeled_specifications"/>
+			
+		<scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" layer="2.0"
+      style_name="underTopRight_div" schema_org_itemprop="aggregateRating" />
+  	<scalar name="reviews_location" scalar_type="ParsedURL" hide="true" />
+  	<scalar name="num_reviews" scalar_type="Int" layer="2.0" style_name="reviewCount_div"
+      schema_org_itemprop="reviewCount" />
+    <collection name="reviews" child_type="review" layer="0.8" style_name="reviews_div" />
+	
+    <composite name="business_website" type="compound_document" />
+    <composite name="business_address" type="postal_address" />
+    <composite name="business_gis_location" type="gis_location" />
+  </meta_metadata>
+
+</meta_metadata_repository>

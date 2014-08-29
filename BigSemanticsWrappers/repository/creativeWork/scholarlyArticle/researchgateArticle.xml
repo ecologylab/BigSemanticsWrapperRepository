@@ -1,0 +1,76 @@
+<meta_metadata_repository name="researchgateArticle" 
+package="ecologylab.bigsemantics.generated.library.researchgateArticle" default_user_agent_name="chrome_2">
+  
+    
+    <meta_metadata name="research_gate_stats" extends="compound_document">
+        <scalar name="publication_count" scalar_type="String"></scalar>
+        <scalar name="views" scalar_type="String"></scalar>
+        <scalar name="downloads" scalar_type="String"></scalar>
+        <scalar name="citations" scalar_type="String"></scalar>
+        <scalar name="impact_points" scalar_type="String"></scalar>
+        <scalar name="avg_impact_points" scalar_type="String"></scalar>
+        <scalar name="member_count" scalar_type="String"></scalar>
+        <scalar name="rg_score" scalar_type="String"></scalar>
+    </meta_metadata>
+    <meta_metadata name="research_gate_article_stats" extends="compound_document">
+        <scalar name="views" scalar_type="String"/>
+        <scalar name="downloads" scalar_type="String"/>
+        <scalar name="citations" scalar_type="String"/>
+        
+    </meta_metadata>
+
+  
+    <meta_metadata name="research_gate_article" parser="xpath" extends="scholarly_article">
+        <selector url_regex="http://www.researchgate.net/publicatio.*" domain="researchgate.net"/>
+        <example_url url="http://www.researchgate.net/publication/228563675_A_formula_for_the_volume_of_a_hyperbolic_tetrahedon"/>
+        <scalar name="title">
+            <xpath>//h1[@class='pub-title']</xpath>
+        </scalar>
+        <scalar name="description">
+            <xpath>//div[@class='pub-abstract']/div/div/p</xpath>
+        </scalar>
+        <collection name="cited_in" child_type="research_gate_article">
+            <xpath>//li[@class='lf tab-item tab-item-active js-cited-in']/../following-sibling::div/div//li//h5</xpath>
+            <scalar name="title">
+                <xpath>./a/span</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./a/@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+                
+            </scalar>
+        </collection>
+        <collection name="citations" child_type="research_gate_article">
+            <xpath>//li[@class='lf tab-item tab-item-active js-citations']/../following-sibling::div/div//li//h5</xpath>
+            <scalar name="title">
+                <xpath>./a/span</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./a/@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+                
+            </scalar>
+        </collection>
+        <collection name="similar_publications" child_type="research_gate_article">
+            <xpath>//li[@class='lf tab-item tab-item-active js-citations']/../following-sibling::div/div//li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>./span</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+        <collection name="authors" child_type="research_gate_author">
+            <xpath>//div[@class='publication-detail-author-list']/div/div</xpath>
+            <scalar name="title">
+                <xpath>.//div[@class='item-name']/a</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>.//div[@class='item-name']/a/@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+    
+    </meta_metadata>
+</meta_metadata_repository>

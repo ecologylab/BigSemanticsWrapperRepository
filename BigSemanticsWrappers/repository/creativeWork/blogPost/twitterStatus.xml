@@ -1,0 +1,86 @@
+<meta_metadata_repository name="twitterStatus"
+  package="ecologylab.bigsemantics.generated.library.twitterStatus" default_user_agent_name="firefox_3_6_8">
+  
+ 
+  
+  <meta_metadata name="twitter_status" type="tweet" parser="xpath" no_cache="true">
+  	<selector url_regex="https://twitter.com/[^/]*/status/[0-9]*" domain="twitter.com" />
+    <example_url url="https://twitter.com/realjohngreen/status/486534354642821122" />
+    <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
+    
+	<!-- <scalar name="title" hide="true"/> -->
+    
+    <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+        <xpath>//div[@class='content clearfix']</xpath>
+        <scalar name="title" hide_label="true">
+          <xpath>.//strong[@class='fullname']</xpath>
+          <xpath>.//strong[@class='fullname js-action-profile-name show-popup-with-id']</xpath>
+          <regex_op regex="Verified Account" replace=" (Verified Account)" />
+        </scalar>
+        <scalar name="location">
+          <xpath>.//span[@class='username js-action-profile-name']</xpath>
+          <regex_op regex="@" replace="https://twitter.com/" />
+        </scalar>
+<!--         <scalar name="username" scalar_type="String" hide_label="true"> -->
+<!--       	  <xpath>.//span[@class='username js-action-profile-name']</xpath> -->
+<!--     	</scalar> -->
+        <composite name="photo" label="image">
+          <xpath>.//img</xpath>
+          <scalar name="location" always_show="true">
+            <xpath>./@src</xpath>
+          </scalar>
+        </composite>
+    </composite>
+    
+    <scalar name="description" hide_label="true" extract_as_html="true">
+      <xpath>//div[@class='permalink-inner permalink-tweet-container']//p[@class='js-tweet-text tweet-text']</xpath>
+    </scalar>
+    
+    <scalar name="post_date" hide_label="true">
+      <xpath>//div[@class='permalink-inner permalink-tweet-container']//span[@class='metadata']/span[1]</xpath>
+    </scalar>
+    
+    <scalar name="id" concatenates_to="post_date" hide_label="true">
+      <xpath>//div[@class='content clearfix']//small[@class='time']/a/@href</xpath>
+      <regex_op regex="[^/]+$" />
+    </scalar>
+    
+    <collection name="replies" label="replies" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
+      												child_show_expanded_always="true" label_at="top">
+      <xpath>//ol[@id='stream-items-id']/li//div[@class='content']</xpath>
+    	
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+        <xpath>./div[@class='stream-item-header']/a</xpath>
+        <style is_child_metadata="true" hide="true" />
+        <scalar name="title">
+          <xpath>./strong</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./span/b</xpath>
+          <regex_op regex="^" replace="https://twitter.com/" />
+        </scalar>
+		<!-- <scalar name="username" xpath="./span" /> -->
+		    	
+		<!-- <collection name="tweeters" child_type="tweeter" xpath="." hide_label="true"> -->
+        <composite name="photo" label="image">
+          <xpath>./img</xpath>
+          <scalar name="location" always_show="true">
+            <xpath>./@src</xpath>
+          </scalar>
+        </composite>
+		<!-- </collection>			    			    -->
+      </composite>
+      
+      <scalar name="description" hide_label="true" extract_as_html="true">
+	    <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
+	  </scalar>
+	  <scalar name="post_date" hide_label="true">
+	    <xpath>.//small[@class='time']//span</xpath>
+	  </scalar>
+	  <scalar name="id" concatenates_to="post_date" hide_label="true">
+	    <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
+	    <regex_op regex="[^/]+$" />
+	  </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

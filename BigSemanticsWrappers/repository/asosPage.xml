@@ -1,0 +1,28 @@
+<meta_metadata_repository name="asosPage"
+  package="ecologylab.bigsemantics.generated.library.asosPage">
+
+  <meta_metadata name="asos_page" extends="compound_document" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://us.asos.com/[A-Za-z-]*/[A-Za-z0-9]*/.*" domain="asos.com">
+      <param name="cid" />
+    </selector>
+    <example_url url="http://us.asos.com/Women-Dresses-Summer-Dresses/vxlwy/?cid=10860" />
+
+    <scalar name="title">
+      <xpath>//span[@id='ctl00_ContentMainPage_ctlBreadCrumbs_lblBreadCrumbs']/span[3]/following-sibling::text()</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//p[@class='copy']</xpath>
+    </scalar>
+
+    <collection name="products" child_type="asos">
+      <xpath>//ul[@id='items']/li/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

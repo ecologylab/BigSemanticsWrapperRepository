@@ -1,0 +1,27 @@
+<meta_metadata_repository name="fondationTag"
+  package="ecologylab.bigsemantics.generated.library.fondationTag" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="fondation_tag" extends="compound_document" parser="xpath">
+
+    <selector url_stripped="http://www.fondation-langlois.org/html/e/research.php" />
+    <example_url url="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=Love&amp;Numero=&amp;zoom=1&amp;Format=1"/>
+    <example_url url="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=Art+and+Nature&amp;Numero=t000196&amp;zoom=1&amp;Format=1&amp;Submit.x=20&amp;Submit.y=2"/>
+    <scalar name="title">
+      <xpath>//div[@class='contenus']/h1</xpath>
+    </scalar>
+    <scalar name="pre_description" scalar_type="String" />
+    <scalar name="mid_description" scalar_type="String" />
+    <scalar name="post_description" scalar_type="String" />
+    <collection name="search_results" child_type="fondation_article">
+      <xpath>//div[@id='voirtout']/div/span</xpath>
+      <scalar name="title">
+        <xpath>./a/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

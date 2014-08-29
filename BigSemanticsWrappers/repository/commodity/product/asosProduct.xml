@@ -1,0 +1,68 @@
+<meta_metadata_repository name="asosProduct"
+  package="ecologylab.bigsemantics.generated.library.asosProduct">
+
+  <meta_metadata name="asos" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_regex="http://us.asos.com/[ASOS/]*[A-Za-z0-9-]*/[0-9Pa-z]*/.*" domain="asos.com">
+      <param name="iid" />
+    </selector>
+    <example_url
+      url="http://us.asos.com/Warehouse-Floral-Skater-Dress/12p10b/?iid=3735865&amp;cid=15801&amp;sh=0&amp;pge=0&amp;pgesize=36&amp;sort=-1&amp;clr=Multi&amp;mporgp=L1dhcmVob3VzZS9XYXJlaG91c2UtRmxvcmFsLVNrYXRlci1EcmVzcy9Qcm9kLw.." />
+
+    <scalar name="title">
+      <xpath>//span[@class='product_title']</xpath>
+    </scalar>
+    <scalar name="price">
+      <xpath>//span[@class='product_price_details']</xpath>
+    </scalar>
+    <collection name="main_images">
+      <xpath>//img[@class='main-image xl']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+<!--     <collection name="details" child_type="document"> -->
+    <collection name="product_details">
+      <xpath>//div[@class='product-description']/ul/li/ul/li</xpath>
+<!--       <scalar name="title" label=""> -->
+<!--         <xpath>.</xpath> -->
+<!--       </scalar> -->
+    </collection>
+		<!-- can make not expandable???? -->
+
+    <composite name="designer" extends="asos_page">
+      <xpath>//div[@class='product-description']//li[@class='single-entry']</xpath>
+      <scalar name="title">
+        <xpath>./a[2]/strong</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a[2]/@href</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>//div[@id='separates_till_box']/div/ul/li[@class='single-entry']</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="recommmended_products" child_type="asos">
+      <xpath>/div[@class='carousel-wrapper']//div[@class='item']/a[1]</xpath>
+      <scalar name="title">
+        <xpath>./@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tags" child_type="compound_document">
+      <xpath>//li[contains (@id, 'divFindSimilar')]/a[3]</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+  
+</meta_metadata_repository>

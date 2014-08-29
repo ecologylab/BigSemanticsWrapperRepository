@@ -1,0 +1,76 @@
+<meta_metadata_repository name="flamencoObject"
+  package="ecologylab.bigsemantics.generated.library.flamencoObject" default_user_agent_name="chrome_2">
+
+
+
+  <meta_metadata name="flamenco_object" extends="artwork" parser="xpath">
+    <selector url_regex=".*index=[0123456789]+" domain="berkeley.edu" />
+    <example_url
+      url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&amp;group=objects&amp;index=15" />
+
+    <collection name="main_images">
+      <xpath>//div[@class='endgame']/p/table/tbody/tr/td/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="title">
+      <xpath>//tr[@valign='top'][2]/td[2]</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//tr[@valign='top'][3]/td[2]</xpath>
+    </scalar>
+
+
+    <scalar name="category" scalar_type="String">
+      <xpath>//table[@class='termbox']//tr/td[1]/span[position() = last()]/span</xpath>
+    </scalar>
+	
+	
+	
+	<!-- If the artist is unknown, this displays an (essentially) random facet. The Unknown artist is reported in the "specific_facets" collection -->
+    <collection name="authors">
+      <xpath>//tr[@valign='top'][4]/td[2]</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+    </collection>
+    <scalar name="medium">
+      <xpath>//tr[@valign='top'][5]/td[2]</xpath>
+    </scalar>
+
+    <collection name="general_facets" child_type="flamenco_facet">
+      <xpath>//div[@class='endgame']/div/table/tbody/tr/td/form[2]/table/tbody//nobr/a</xpath>
+      <scalar name="title" label="facet_name">
+        <xpath>./span</xpath>
+      </scalar>
+      <scalar name="object_count">
+        <xpath>./../span/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+		<!--  <scalar name="category" xpath="./../../../../../../../preceding-sibling::tr[1]//span[@class='facet']"/>
+		-->
+    </collection>
+    <collection name="specific_facets" child_type="flamenco_facet">
+      <xpath>//div[@class='endgame']/div/table/tbody/tr//span[@class='sel']</xpath>
+      <scalar name="title" label="facet_name">
+        <xpath>./a/span/text()</xpath>
+      </scalar>
+      <scalar name="object_count">
+        <xpath>./span[@class='count']</xpath>
+      </scalar>
+		<!--  
+		<scalar name="category" xpath="./../../preceding-sibling::tr[1]/td[@class='valuebox']/span/span"/>
+		-->
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+
+
+  </meta_metadata>
+
+</meta_metadata_repository>

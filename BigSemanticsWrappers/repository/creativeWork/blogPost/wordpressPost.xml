@@ -1,0 +1,46 @@
+<meta_metadata_repository name="wordpressPost"
+  package="ecologylab.bigsemantics.generated.library.wordpressPost" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="wordpress_post" type="post" comment="Wordpress post class"
+    parser="xpath">
+    <example_url url="http://babydot74.wordpress.com/2012/09/17/whats-for-dinner/" />
+    <example_url
+      url="http://chocolatebottle.wordpress.com/2012/09/13/disney-social-media-moms-on-the-road-charlotte/" />
+    <example_url url="http://ohnaturelle.wordpress.com/2012/09/11/the-waterfront-restaurant/" />
+
+    <selector url_regex="http://\w+.wordpress.com/[0-9]+/[0-9]+/\S+" domain="wordpress.com" />
+
+    <scalar name="title">
+      <xpath>//meta[@name='title']/@content</xpath>
+      <regex_op regex=" \|.+" replace="" />
+    </scalar>
+
+    <collection name="authors" label="authors">
+      <xpath>//div//*[self::article or
+        self::div][@class[contains(.,'status-publish')]]//a[@title[contains(., 'View all posts
+        by')]]</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="post_date">
+      <xpath>//*[self::time or self::span or self::div][@class='entry-date' or @class='post-date' or
+        @class='timestamp']</xpath>
+    </scalar>
+
+    <scalar name="description">
+      <xpath>//meta[@name='description']/@content</xpath>
+    </scalar>
+
+    <semantic_actions>
+      <get_field name="title" />
+      <create_and_visualize_text_surrogate>
+        <arg value="title" name="text" />
+      </create_and_visualize_text_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+</meta_metadata_repository>

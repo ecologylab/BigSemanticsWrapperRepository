@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.restaurant;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.product_and_service.Service;
 import ecologylab.bigsemantics.generated.library.restaurant.RestaurantGenre;
+import ecologylab.bigsemantics.generated.library.service.Service;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;

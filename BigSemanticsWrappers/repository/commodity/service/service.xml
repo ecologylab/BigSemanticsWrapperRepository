@@ -1,0 +1,9 @@
+<meta_metadata_repository name="service"
+  package="ecologylab.bigsemantics.generated.library.service">
+  <meta_metadata name="service" extends="commodity">
+    <composite name="business_website" label="website" />
+    <composite name="business_address" label="address" />
+    <composite name="business_gis_location" label="gis_location" />
+    <scalar name="hours" scalar_type="String" schema_org_itemprop="openingHours" />
+ 	</meta_metadata>
+</meta_metadata_repository>

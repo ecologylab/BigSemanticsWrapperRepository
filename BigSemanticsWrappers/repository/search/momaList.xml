@@ -1,0 +1,24 @@
+<meta_metadata_repository name="momaList"
+  package="ecologylab.bigsemantics.generated.library.momaList" default_user_agent_name="chrome_2">
+
+  <meta_metadata name="moma_list" type="search" parser="xpath">
+    <!-- 
+    <generic_type_var name="SR" arg="moma_artwork" />
+    <selector domain="moma.org"
+      url_regex="http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*" />
+
+	<example_url url="http://www.moma.org/collection/browse_results.php?criteria=O%3ACL%3AI%3A12&amp;page_number=&amp;template_id=6&amp;sort_order=1" />
+
+    <collection name="search_results">
+      <xpath>//ul[@id='thumbnail-view-items']/li</xpath>
+      <scalar name="title">
+        <xpath>.//div[@class='description']/div</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+    -->
+  </meta_metadata>
+  
+</meta_metadata_repository>

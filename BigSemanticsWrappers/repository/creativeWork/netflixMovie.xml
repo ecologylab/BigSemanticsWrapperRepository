@@ -1,0 +1,40 @@
+<meta_metadata_repository name="netflixMovie"
+  package="ecologylab.bigsemantics.generated.library.netflixMovie" default_user_agent_name="chrome_2">
+
+  <!-- alas, this will not work until we get login / state stuff working -->
+  <meta_metadata name="netflix_movie" extends="movie" parser="xpath">
+    <selector url_path_tree="http://www.netflix.com/" />
+
+    <example_url url="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
+
+    <def_var name="metadata_content">
+      <xpath>//div[@id='mdp-metadata-content']</xpath>
+    </def_var>
+
+    <scalar name="title">
+      <xpath>/html/head/title</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='mdp-metadata-content']/p[@class='synopsis']</xpath>
+    </scalar>
+
+    <scalar name="theater_release">
+      <xpath>//div[@id='mdp-metadata-content']/span[@class='year']</xpath>
+    </scalar>
+    <scalar name="mpaa_rating">
+      <xpath>//div[@id='mdp-metadata-content']/span[@class='certRating']</xpath>
+    </scalar>
+    <scalar name="runtime">
+      <xpath>//div[@id='mdp-metadata-content']/span[@class='duration']</xpath>
+    </scalar>
+    <collection name="cast" child_type="rotten_person">
+      <xpath>//dt[contains(.,'Cast')]/following-sibling::dd/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

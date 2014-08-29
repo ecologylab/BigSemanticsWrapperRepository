@@ -1,0 +1,119 @@
+<meta_metadata_repository name="instructable"
+  package="ecologylab.bigsemantics.generated.library.instructable" default_user_agent_name="chrome_2">
+<meta_metadata name="instructable_comment" extends="compound_document" parser="xpath">
+
+    <composite name="comment_author" type="instructable_author" />
+    <composite name="in_response_to" type="instructable_author" />
+    <composite name="reply" type="instructable_comment" />
+  </meta_metadata>
+  <meta_metadata name="instructable" extends="compound_document" parser="xpath">
+    <selector url_path_tree="http://www.instructables.com/id" />
+    <example_url url="http://www.instructables.com/id/Tomato-Water-Bloody-Mary/" />
+    <example_url url="http://www.instructables.com/id/Cheesy-Potato-Shotz/" />
+    <scalar name="title">
+      <xpath>//h1[@class='fn']</xpath>
+    </scalar>
+
+    <composite name="instructor" type="instructable_author">
+      <xpath>//div[@class='author-details']/div[@class='byline']/a</xpath>
+      <scalar name="title">
+        <xpath>./@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+    <scalar name="number_of_steps" scalar_type="String">
+      <xpath>//a[@title='Go To Step']</xpath>
+    </scalar>
+    <scalar name="views" scalar_type="String">
+      <xpath>(//span[@class='count'])[1]</xpath>
+    </scalar>
+    <scalar name="favorites" scalar_type="String">
+      <xpath>(//span[@class='count'])[2]</xpath>
+    </scalar>
+
+    <collection name="others_by_author" child_type="instructable">
+      <xpath>//ul[@class='h-list']/li</xpath>
+      <scalar name="title">
+        <xpath>./a/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="related" child_type="instructable">
+      <xpath>//div[@id='related-instructables']/ul/li</xpath>
+      <scalar name="title">
+        <xpath>./div/a/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./div/a/@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="tags" child_type="instructable_tag">
+      <xpath>//div[@class='ible-tags']/div/a</xpath>
+      <scalar name="title">
+        <xpath>./@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="comments" child_type="instructable_comment">
+      <xpath>//div[contains(concat(' ', @class, ' '), ' toplevel ')]</xpath>
+
+
+
+      <composite name="comment_author">
+        <xpath>.//span[@class='comment-author']</xpath>
+        <scalar name="title">
+          <xpath>./a</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./a/@href</xpath>
+        </scalar>
+      </composite>
+      <scalar name="description" label="comment">
+        <xpath>./div[@class='txt comment-txt']</xpath>
+      </scalar>
+
+      <composite name="reply">
+        <xpath>./following-sibling::div[1 and (not(contains(concat(' ', @class, ' '), ' toplevel
+          ')))]</xpath>
+        <scalar name="title" value="TEST" />
+        <composite name="comment_author">
+          <xpath>.//span[@class='comment-author']</xpath>
+          <scalar name="title">
+            <xpath>./a[1]</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./a[1]/@href</xpath>
+          </scalar>
+        </composite>
+        <composite name="in_response_to">
+          <xpath>.//[@class='comment-author']</xpath>
+          <scalar name="title">
+            <xpath>./a[2]</xpath>
+          </scalar>
+          <scalar name="location">
+            <xpath>./a[2]/@href</xpath>
+          </scalar>
+        </composite>
+        <scalar name="description">
+          <xpath>./div[@class='txt comment-txt']</xpath>
+        </scalar>
+
+      </composite>
+    </collection>
+    <collection name="main_images">
+      <xpath>(//div[@class='photo-container'])[1]/img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>

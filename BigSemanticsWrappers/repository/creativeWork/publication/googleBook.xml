@@ -1,0 +1,27 @@
+ 
+<meta_metadata_repository name="googleBook" package="ecologylab.bigsemantics.generated.library.googleBook">
+
+  <meta_metadata name="google_book" extends="book" parser="xpath" >
+    <selector url_stripped="http://books.google.com/books" />
+    <example_url url="http://books.google.com/books?id=gFgnde_vwMACamp;printsec=frontcoveramp;dq=testamp;hl=enamp;sa=Xamp;ei=1ZjiU_q9J4ymyATTqoDwDwamp;ved=0CCgQ6AEwAQ"/>
+    <example_url url="http://books.google.com/books?id=noEyxwGQ6SkCamp;printsec=frontcoveramp;dq=testamp;hl=enamp;sa=Xamp;ei=BZniU5arNM-jyASp2YLYBwamp;ved=0CC4Q6AEwAg"/>
+    <scalar name="title">
+        <xpath>//h1[@class='gb-volume-title']</xpath>
+    </scalar>
+    <collection name="authors" label="authors">
+        <xpath>//span[@class='addmd']</xpath>
+        <field_parser name="regex_split" regex=",\s"/>
+        <scalar name="title" label="author" field_parser_key="$0" />
+     </collection>
+    <collection name="purchase_links" child_type="compound_document">
+        <xpath>//div[@id='buy_v']/ul/li</xpath>
+        <scalar name="title">
+            <xpath>./a/span</xpath>
+        </scalar>
+        <scalar name="location">
+            <xpath>./a/@href</xpath>
+        </scalar>
+    </collection> 
+  </meta_metadata>
+
+</meta_metadata_repository>

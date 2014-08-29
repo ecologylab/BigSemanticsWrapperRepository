@@ -1,0 +1,80 @@
+<meta_metadata_repository name="rottenTomatoeMovie"
+  package="ecologylab.bigsemantics.generated.library.rottenTomatoeMovie" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="rotten_movie" extends="movie" parser="xpath"
+    comment="RottenTomatoes movie description page">
+    <selector url_regex="http://www.rottentomatoes.com/m/[^/]*/" domain="rottentomatoes.com" />
+
+    <example_url url="http://www.rottentomatoes.com/m/inglourious_basterds/" />
+
+    <scalar name="title">
+      <xpath>//h1[@class='movie_title']</xpath>
+    </scalar>
+    <scalar name="description">
+      <xpath>//div[@id='all-critics-numbers']/div[@class='tomato_consensus']/p[@class='critic_consensus']</xpath>
+    </scalar>
+
+    <scalar name="overall_rating">
+      <xpath>//div[@id='all-critics-numbers']/a[@class='tomato_numbers']/span[@id='all-critics-meter']</xpath>
+    </scalar>
+
+    <scalar name="pic">
+      <xpath>//div[@class='movie_poster_area']/a[1]/img/@src</xpath>
+    </scalar>
+    <scalar name="mpaa_rating">
+      <xpath>//div[@class='left_col']/p[1]/span[@class='content'][1]/a/span</xpath>
+    </scalar>
+    <scalar name="runtime">
+      <xpath>//div[@class='left_col']/p[1]/span[@class='content'][2]</xpath>
+    </scalar>
+    <scalar name="theater_release">
+      <xpath>//div[@class='right_col']/p[1]/span[@class='content']/span</xpath>
+    </scalar>
+    <collection name="directors" child_type="rotten_person">
+      <xpath>//div[@class='left_col']/p[3]/span[@class='content']/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="name">
+        <xpath>./span</xpath>
+      </scalar>
+    </collection>
+    <collection name="writers" child_type="rotten_person">
+      <xpath>//div[@class='left_col']/p[4]/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="name">
+        <xpath>.</xpath>
+      </scalar>
+    </collection>
+    <collection name="cast" child_type="rotten_person">
+      <xpath>//div[@id='cast-info']//ul/li//a[@itemprop='url']</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./span</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="genres">
+      <xpath>//div[@class='left_col']/p[2]/span[@class='content']/a</xpath>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title" label="genre">
+        <xpath>./span</xpath>
+      </scalar>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="pic" />
+      <create_and_visualize_img_surrogate>
+        <arg value="pic" name="image_purl" />
+      </create_and_visualize_img_surrogate>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

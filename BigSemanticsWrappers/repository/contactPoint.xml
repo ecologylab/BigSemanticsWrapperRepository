@@ -1,0 +1,29 @@
+<meta_metadata_repository name="contactPoint"
+  package="ecologylab.bigsemantics.generated.library.contactPoint">
+
+
+  <meta_metadata name="contact_point" extends="compound_document" schema_org_itemtype="http://schema.org/ContactPoint"
+    comment="Resembles a schema.org ContactPoint.">
+    <scalar name="location" xpath="" ></scalar>
+    <scalar name="description">NULL</scalar>
+<!-- 	Next is commented out because it blows up MICE :( -->
+ <!--         <concatenate_values> -->
+<!--           <value>http://maps.google.com/maps?q=</value> -->
+<!--           <value>Beijing, China</value> -->
+<!--  <value from_scalar="street_address" /> -->
+<!--         </concatenate_values> -->
+
+    <scalar name="telephone" scalar_type="String" schema_org_itemprop="telephone" >
+	   <xpath>//span[@itemprop='telephone']</xpath>
+	</scalar>
+    
+    <scalar name="fax_number" scalar_type="String" schema_org_itemprop="faxNumber" label="fax" />
+    <scalar name="email" scalar_type="String" schema_org_itemprop="email" />
+    <scalar name="room" scalar_type="String" />
+    <scalar name="street_address" scalar_type="String" comment="Whole address as one String">
+	    <xpath>//span[@itemprop='address']</xpath>
+	 </scalar>
+
+    <composite name="map" type="gis_location" />
+  </meta_metadata>
+</meta_metadata_repository>

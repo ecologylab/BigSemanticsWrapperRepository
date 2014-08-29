@@ -1,0 +1,12 @@
+<meta_metadata_repository name="techReview"
+  package="ecologylab.bigsemantics.generated.library.techReview" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="tech_review" extends="creative_work" comment="Base tech review">
+    <scalar name="price" scalar_type="String" layer="3.0" style_name="topRight_div"
+      schema_org_itemprop="price" />
+    <scalar name="overall_rating" scalar_type="String" navigates_to="reviews_location" layer="2.0"
+      style_name="underTopRight_div" schema_org_itemprop="aggregateRating" />
+    <scalar name="publication_date" scalar_type="String" />
+  </meta_metadata>
+</meta_metadata_repository>

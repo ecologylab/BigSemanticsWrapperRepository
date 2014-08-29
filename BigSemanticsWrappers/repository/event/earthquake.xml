@@ -1,0 +1,9 @@
+<meta_metadata_repository name="earthquake"
+  package="ecologylab.bigsemantics.generated.library.earthquake" default_user_agent_name="firefox">
+
+  <meta_metadata name="earthquake" extends="disaster" comment="Generalized Earthquake Object">
+
+    <scalar name="depth" label="magnitude km" scalar_type="float" />
+
+  </meta_metadata>
+</meta_metadata_repository>

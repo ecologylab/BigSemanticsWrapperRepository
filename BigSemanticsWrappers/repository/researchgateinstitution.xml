@@ -1,0 +1,106 @@
+<meta_metadata_repository name="researchgateInstitution" 
+package="ecologylab.bigsemantics.generated.library.researchgateInstitution" default_user_agent_name="chrome_2">
+    
+      <meta_metadata name="research_gate_institution_contact_info" extends="contact_point">
+        <scalar name="website_address" scalar_type="String"/>
+         
+    </meta_metadata>
+    
+    
+    <meta_metadata name="research_gate_institution" extends="compound_document" parser="xpath">
+        <selector url_regex="http://www.researchgate.net/institution/[A-Za-z_]*" domain="researchgate.net"/>
+       
+        
+        <scalar name="institution_head" scalar_type="String">
+            <xpath>//div[@class='c-box institution-info']/ul/li[@data-fields='headOfInstitution']</xpath>
+        </scalar>
+        <collection name="top_publications" child_type="research_gate_article">
+            <xpath>//div[@class='institution-publications-content']/ul/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>./span</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection> 
+        <collection name="top_departments" child_type="research_gate_institution_department">
+            <xpath>//div[@class='c-box topDepartments']//div[@class='info']/div/a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+        <collection name="top_collaborators" child_type="research_gate_institution">
+            <xpath>//ul[@class='institution-list-s']/li//div[@class='name']/a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+        <collection name="top_members" child_type="research_gate_author">
+            <xpath>//ul[@class='js-people-list-content facepile ']//a/@href</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+                <regex_op regex="profile/" replace=""></regex_op>
+                <regex_op regex="_" replace=" "></regex_op>
+            </scalar>
+            <scalar name="location">
+                <xpath>.</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>  
+        <composite name="contact_info" type="research_gate_institution_contact_info">
+            <xpath>//div[@class='c-box institution-info']/ul</xpath>
+            <scalar name="title">
+                <xpath>//div[@class='c-box institution-info']/h4</xpath>
+            </scalar>
+            <scalar name="telephone" scalar_type="String" schema_org_itemprop="telephone" >
+			     <xpath>./li[@data-fields='phone']</xpath>
+                <regex_op regex="Phone" replace=""></regex_op>
+			</scalar>
+			   
+			<scalar name="fax_number">
+			    <xpath>./li[@data-fields='fax']</xpath>
+			    <regex_op regex="Fax" replace=""></regex_op>
+			</scalar>
+		    <scalar name="street_address">
+			     <xpath>./li[@data-fields='street,zip,city,state,country']</xpath>
+			     <regex_op regex="Address" replace=""></regex_op>
+			</scalar>
+        </composite>
+        <composite name="website" type="compound_document">
+            <xpath>//li[@data-fields='institutionWebsite']</xpath>
+           <scalar name="title">
+                <xpath>.</xpath>
+                <regex_op regex="Website" replace=""></regex_op>
+           </scalar>
+            <scalar name="location">
+                <xpath>.</xpath>
+                <regex_op regex="Website" replace="http://"></regex_op>
+            </scalar>
+        </composite>
+           <composite name="stats" type="research_gate_stats">
+            <xpath>//div[@class='c-box facility-stats']</xpath>
+            <scalar name="publication_count">
+                <xpath>./div[2]/div[3]/a/div[1]</xpath>
+            </scalar>
+            
+            <scalar name="impact_points">
+                <xpath>./div[2]/div[1]/a/div[1]</xpath>
+            </scalar>
+            <scalar name="rg_score">
+                <xpath>./div[1]/div[1]/a/div[1]</xpath>
+            </scalar>
+            <scalar name="member_count">
+                <xpath>./div[1]/div[3]/a/div[1]</xpath>
+            </scalar>
+        </composite>
+    </meta_metadata>
+</meta_metadata_repository>

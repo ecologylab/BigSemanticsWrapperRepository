@@ -1,0 +1,71 @@
+<meta_metadata_repository name="researchgateAuthor"
+ package="ecologylab.bigsemantics.generated.library.researchgateAuthor" default_user_agent_name="chrome_2">
+     
+  <meta_metadata name="research_gate_author" parser="xpath" extends="author">
+        <selector url_regex="http://www.researchgate.net/profil.*" domain="researchgate.net"/>
+        <scalar name="title">
+            <xpath>//h1[@class='profile-header-name']/a</xpath>
+        </scalar>
+        <composite name="insitution" type="research_gate_institution">
+            <xpath>//div[@class='truncate-single-line institution-name']//a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </composite>
+        <composite name="department" type="research_gate_institution_department">
+            <xpath>//div[@class='truncate-single-line institution-dept']//a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </composite>
+        <composite name="stats" type="research_gate_stats">
+            <xpath>//ul[@class='stats-list']</xpath>
+            <scalar name="publication_count">
+                <xpath>./li[1]/a/div[1]</xpath>
+            </scalar>
+            <scalar name="views">
+                <xpath>/li[2]/a/div[1]</xpath>
+            </scalar>
+            <scalar name="downloads">
+                <xpath>/li[3]/a/div[1]</xpath>
+            </scalar>
+            <scalar name="citations">
+                <xpath>/li[4]/a/div[1]</xpath>
+            </scalar>
+            <scalar name="impact_points">
+                <xpath>/li[5]/a/div[1]</xpath>
+            </scalar>
+        </composite>
+        <collection name="featured_publications" child_type="research_gate_article" >
+            <xpath>//div[@class='c-box js-wexp-publications']/ul/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>./span</xpath>
+            </scalar> 
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>                    
+        </collection>
+        <collection name="top_coauthors" child_type="research_gate_author">
+            <xpath>//div[@class='js-coauthor-container']//ul/li//h5/a</xpath>
+            <scalar name="title">
+                <xpath>.</xpath>
+            </scalar>
+            <scalar name="location">
+                <xpath>./@href</xpath>
+                <regex_op regex="^" replace="/"></regex_op>
+            </scalar>
+        </collection>
+        <collection name="skills" child_scalar_type="String">
+            <xpath>//div[@class='profile-highlights-skills']//ul/li//a[@class='keyword-list-token-text']</xpath>
+        </collection>       
+    </meta_metadata>
+</meta_metadata_repository>

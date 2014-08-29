@@ -1,0 +1,9 @@
+<meta_metadata_repository name="blogPost"
+  package="ecologylab.bigsemantics.generated.library.blogPost">
+
+  <meta_metadata name="post" extends="creative_work">
+    <scalar name="description" label="content"  />
+    <scalar name="post_date" scalar_type="Date" />
+    <collection name="tags" child_type="document" />
+  </meta_metadata>
+</meta_metadata_repository>

@@ -1,0 +1,21 @@
+<meta_metadata_repository name="cartoon"
+  package="ecologylab.bigsemantics.generated.library.cartoon">
+
+  <!-- Wrappers were authored using the MMD Authoring Tool. -->
+  <!-- TODO most types in this package need more work! -->
+
+  <meta_metadata name="cartoon" extends="artwork">
+    <composite name="content" type="image" hide="true" />
+
+    <semantic_actions>
+      <get_field name="content" />
+      <if>
+        <not_null value="content" />
+        <create_and_visualize_img_surrogate>
+          <arg name="metadata" value="content" />
+        </create_and_visualize_img_surrogate>
+      </if>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

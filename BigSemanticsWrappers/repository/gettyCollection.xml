@@ -1,0 +1,24 @@
+<meta_metadata_repository name="gettyCollection"
+  package="ecologylab.bigsemantics.generated.library.gettyCollection" default_user_agent_name="chrome_2">
+
+
+
+  <meta_metadata name="getty_collection" extends="compound_document" parser="xpath">
+    <selector url_stripped="http://www.getty.edu/art/gettyguide/displayObjectList" />
+    <example_url url="http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033763" />
+    <example_url url="http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033762" />
+    <scalar name="title">
+      <xpath>(//span[@class='header_redesign'])[2]</xpath>
+    </scalar>
+
+    <collection name="artworks" child_type="getty_object">
+      <xpath>//comment()[.=' START CONTENT ']/following-sibling::tr//p/a</xpath>
+      <scalar name="title">
+        <xpath>./b/text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>

@@ -8,8 +8,8 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.AttractionNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
-using Ecologylab.Semantics.Generated.Library.TravelNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -28,10 +28,6 @@ namespace Ecologylab.Semantics.Generated.Library.TripAdvisorNS
 	[SimplInherit]
 	public class TripAdvisorThingsToDo : Attraction
 	{
-		[SimplComposite]
-		[MmName("image")]
-		private Image image;
-
 		[SimplCollection("hotel")]
 		[MmName("popular_hotels")]
 		private List<Hotel> popularHotels;
@@ -41,19 +37,6 @@ namespace Ecologylab.Semantics.Generated.Library.TripAdvisorNS
 
 		public TripAdvisorThingsToDo(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public Image Image
-		{
-			get{return image;}
-			set
-			{
-				if (this.image != value)
-				{
-					this.image = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public List<Hotel> PopularHotels
 		{

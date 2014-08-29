@@ -1,0 +1,113 @@
+<meta_metadata_repository name="neweggProduct"
+  package="ecologylab.bigsemantics.generated.library.neweggProduct">
+
+  
+  <meta_metadata name="newegg_product" extends="product" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_stripped="http://www.newegg.com/Product/Product.aspx" />
+    <example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532" />
+    <example_url url="http://www.newegg.com/Product/Product.aspx?Item=N82E16834257878" />
+    <scalar name="title">
+      <xpath>//div[@class='wrapper']/h1/span</xpath>
+    </scalar>
+    <collection name="main_images">
+      <scalar name="location">
+        <xpath>//span[@class='mainSlide']/img/@src</xpath>
+        <xpath>//span[@class='mainSlide']/@imgzoompic</xpath>
+      </scalar>
+    </collection>
+    <!-- This appears to be a newegg specific item number, not a general model number -->
+    <scalar name="item_number" scalar_type="String">
+      <xpath>//div[@id='bcaBreadcrumbTop']/dl/dd[position() = last()]/em</xpath>
+    </scalar>
+    <scalar name="overall_rating">
+      <xpath>//div[@itemprop='aggregateRating']//img/@title</xpath>
+    </scalar>
+    <scalar name="num_reviews">
+      <xpath>//span[@itemprop='reviewCount']</xpath>
+    </scalar>
+    
+    <collection name="reviews">
+      <xpath>//table[@class='grpReviews']/tbody/tr</xpath>
+
+<!-- 	  <def_var name="rating_alt" type="node"> -->
+<!-- 	      <xpath>.//span[@class='itmRating']/img/@alt</xpath> -->
+<!-- 	  </def_var> -->
+      <scalar name="rating" >
+<!--       <scalar name="rating" context_node="rating_alt"> -->
+<!--         <xpath>substring-before(.//span[@class='itmRating']/img/@alt, 'out of ')</xpath> -->
+<!--         <xpath>substring-before(.//span[@class='itmRating']/img/@alt, 'out of ')</xpath> -->
+        <xpath>.//span[@class='itmRating']/img/@alt</xpath>
+      	<regex_op regex="out of 5" replace="" />
+      </scalar>
+      <scalar name="title">
+        <xpath>.//h3/text()</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='details']/p</xpath>
+      </scalar>
+    </collection>
+    
+    <collection name="product_details" child_scalar_type="string">
+      <xpath>//ul[@id='grpBullet_']/li/text()</xpath>
+    </collection>
+    
+    <collection name="features" child_scalar_type="string">
+      <xpath>//ul[@id='hightlights']/li/span</xpath>
+    </collection>
+    
+    <!-- Detailed specs -->
+    <collection name="specifications_table">
+      <xpath>//div[@id='Specs']/fieldset</xpath>
+      <scalar name="title">
+        <xpath>./h3</xpath>
+      </scalar>
+      <collection name="specifications">
+        <xpath>./dl</xpath>
+        <scalar name="name">
+          <xpath>./dt</xpath>
+        </scalar>
+        <scalar name="value">
+          <xpath>./dd</xpath>
+        </scalar>
+      </collection>
+    </collection>
+  </meta_metadata>
+  
+  
+
+  <meta_metadata name="newegg_subcategory_list" extends="compound_document" parser="xpath"
+    user_agent_name="chrome">
+    <selector url_regex="http://www.newegg.com/.*/SubCategory/.*" domain="newegg.com"/>
+    <example_url url="http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100" />
+
+    <scalar name="title">
+      <xpath>//div[@class='recordCount']</xpath>
+    </scalar>
+		
+    <collection name="items" child_type="newegg_product">
+      <xpath>//div[@class='itemCell']</xpath>
+      <scalar name="title">
+        <xpath>.//span[@class='itemDescription']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//div[@class='wrapper']/a/@href</xpath>
+      </scalar>
+      <collection name="specifications_table">
+        <xpath>//ul[@class='featureList']</xpath>
+        <collection name="specifications">
+          <xpath>./li</xpath>
+          <scalar name="name">
+            <xpath>./b</xpath>
+          </scalar>
+          <scalar name="value">
+            <xpath>.</xpath>
+            <regex_op regex="^[^:]+:" replace="" />
+          </scalar>
+        </collection>
+      </collection>
+    </collection>
+    
+  </meta_metadata>
+</meta_metadata_repository>  
+  

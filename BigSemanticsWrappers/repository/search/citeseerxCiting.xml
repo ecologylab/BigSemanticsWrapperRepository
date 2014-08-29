@@ -1,0 +1,44 @@
+<meta_metadata_repository name="citeseerxCiting"
+  package="ecologylab.bigsemantics.generated.library.citeseerxCiting" default_user_agent_name="chrome_2">
+
+
+  <meta_metadata name="citeseerx_citing" extends="search" parser="xpath"
+    comment="CiteSeerX citing results.">
+    <generic_type_var name="SR" arg="citeseerx_summary" />
+
+    <selector url_stripped="http://citeseerx.ist.psu.edu/showciting" />
+    <example_url url="http://citeseerx.ist.psu.edu/showciting?doi=10.1.1.31.1768" />
+
+    <collection name="search_results">
+      <xpath>//div[@id='result_list']/div[@class='result']</xpath>
+      <scalar name="title">
+        <xpath>.//h3</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='snippet']</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//h3/a/@href</xpath>
+        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+      </scalar>
+      <composite name="citation_info">
+        <scalar name="total_citation">
+          <xpath>.//a[@title='number of citations']</xpath>
+        </scalar>
+      </composite>
+    </collection>
+
+    <semantic_actions>
+      <get_field name="search_results" />
+      <for_each collection="search_results" as="res">
+        <not_null value="search_results" />
+        <get_field name="location" object="res" />
+        <parse_document>
+          <not_null value="location" />
+          <arg name="location" value="location" />
+        </parse_document>
+      </for_each>
+    </semantic_actions>
+  </meta_metadata>
+
+</meta_metadata_repository>

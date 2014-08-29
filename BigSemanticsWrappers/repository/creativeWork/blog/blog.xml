@@ -1,0 +1,9 @@
+<meta_metadata_repository name="blog"
+  package="ecologylab.bigsemantics.generated.library.blog">
+
+  <meta_metadata name="blog" extends="creative_work">
+    <composite name="photo" type="image" />
+    <collection name="posts" child_type="post" />
+  </meta_metadata>
+
+</meta_metadata_repository>

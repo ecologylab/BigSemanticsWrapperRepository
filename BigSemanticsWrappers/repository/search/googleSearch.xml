@@ -1,0 +1,62 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="googleSearch" package="ecologylab.bigsemantics.generated.library.googleSearch" default_user_agent_name="chrome_32">
+  
+   <meta_metadata name="google_search" extends="search" parser="xpath"
+    comment="The Google search class">
+    <generic_type_var name="SR" arg="search_result" />
+    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
+    <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com" />
+    <example_url
+      url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
+	
+    <scalar name="query" style_name="google_query" layer="9.1">
+      <xpath>//input[@name='q']/@value</xpath>
+    </scalar>
+    <scalar name="location" always_show="true"/>
+    <collection name="search_results" show_expanded_initially="true">
+      <xpath>//div[@id='res']//div//ol/li[@*]</xpath>
+      <scalar name="title" hide="true" />
+     
+      <composite name="destination_page" layer="6.0">
+        <xpath>.</xpath>
+        <scalar name="title" label="title" style_name="google_search_result">
+          <xpath>.//h3/a</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>.//h3/a/@href</xpath>
+          <regex_op regex="/url\?q=" replace=""/>
+          <regex_op regex="&amp;sa=.*" replace=""/>
+          <url_decode_op />
+        </scalar>
+      </composite>
+       <scalar name="description" layer="5.3">
+        <xpath>.//div[@class='s']//span[@class='st']</xpath>
+      </scalar>
+      <scalar name="site_link" style_name="google_link" layer="5.4">
+        <xpath>.//cite</xpath>
+      </scalar>
+    </collection>
+    <collection name="related_searches" child_type="google_search">
+    <xpath>//div[@style='clear:both;margin-bottom:17px;overflow:hidden']/table//p</xpath>
+	<scalar name="title">
+	  <xpath>./a</xpath>
+	</scalar>
+	<scalar name="location">
+	  <xpath>./a/@href</xpath>
+	</scalar>      
+	<scalar name="query">
+	   <xpath>.</xpath>
+	</scalar>
+    </collection>
+   
+    <composite name="next_page">
+      <scalar name="name">
+        <xpath>//td[@class='b navend'][2]/a</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//td[@class='b navend'][2]/a/@href</xpath>
+      </scalar>
+    </composite>
+  </meta_metadata>
+  
+</meta_metadata_repository>

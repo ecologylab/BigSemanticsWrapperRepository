@@ -1,0 +1,14 @@
+<meta_metadata_repository name="metadata" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="metadata" comment="The Metadata Class" built_in="true"
+    package="ecologylab.bigsemantics.metadata">
+    <scalar name="meta_metadata_name" scalar_type="String" hide="true"
+      ignore_in_term_vector="true"
+      comment="Stores the name of the meta-metadata, and is used on restoring from XML." />
+    <collection name="mixins" child_type="metadata" promote_children="true"
+      polymorphic_scope="repository_metadata" />
+    <collection name="linked_metadata_list" child_type="metadata" polymorphic_scope="repository_metadata" />
+<!-- 		<collection name="visuals" child_type="serializable_gui" ignore_completely="true"/> -->
+  </meta_metadata>
+</meta_metadata_repository>
