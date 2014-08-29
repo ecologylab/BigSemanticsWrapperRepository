@@ -23,12 +23,12 @@ import java.util.Map;
 public class PinterestPin extends CreativeWork
 {
 	@simpl_composite
-	@mm_name("pinner")
-	private CompoundDocument pinner;
-
-	@simpl_composite
 	@mm_name("pinboard")
 	private CompoundDocument pinboard;
+
+	@simpl_composite
+	@mm_name("pinner")
+	private CompoundDocument pinner;
 
 	@simpl_composite
 	@mm_name("repins")
@@ -66,16 +66,6 @@ public class PinterestPin extends CreativeWork
 	}
 
 
-	public CompoundDocument getPinner()
-	{
-		return pinner;
-	}
-
-	public void setPinner(CompoundDocument pinner)
-	{
-		this.pinner = pinner;
-	}
-
 	public CompoundDocument getPinboard()
 	{
 		return pinboard;
@@ -84,6 +74,16 @@ public class PinterestPin extends CreativeWork
 	public void setPinboard(CompoundDocument pinboard)
 	{
 		this.pinboard = pinboard;
+	}
+
+	public CompoundDocument getPinner()
+	{
+		return pinner;
+	}
+
+	public void setPinner(CompoundDocument pinner)
+	{
+		this.pinner = pinner;
 	}
 
 	public CompoundDocument getRepins()
