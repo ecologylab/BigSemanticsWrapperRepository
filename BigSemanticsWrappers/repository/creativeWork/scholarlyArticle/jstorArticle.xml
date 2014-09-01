@@ -15,7 +15,7 @@
  	
    <meta_metadata name="jstor_article" extends="database_article" parser="xpath">
    		<selector url_path_tree="http://www.jstor.org/stable" />
-   		<example_url url="http://www.jstor.org/stable/info/25735112"/>
+   		<example_url url="http://www.jstor.org/stable/25735112"/>
    
    		<filter_location>
    			<regex match="stable/view" replace="stable/info" />
@@ -65,11 +65,12 @@
    		
    		<scalar name="year">
    			<xpath>//div[@class='indent bibInfo']/ul/li[last()-1]</xpath>
-   			<regex_op regex="Vol\.\s+[0-9]+,\s+No\.\s+[0-9]+\s*\(\w+\.?,?\s" replace="" />
+   			<regex_op regex="Vol\.\s+[0-9]+,(\s+No\.\s+[0-9]+)?\s*\((\w+\.?,?\s)?" replace="" />
    			<regex_op regex="\).+\)" replace="" />
    		</scalar>
    		
    		<!-- 
+   		This is a google scholar citation page - removed because jstor citations available
    		<composite name="citation_page">
    			<xpath>//div[@id='linkingContainer']/div[2]//ul[@class='relatedLinks']/li[2]</xpath>
    			<scalar name="title">
