@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.RhizomeTagNS 
 {
 	[SimplInherit]
-	public class RhizomeTag : Search<CompoundDocument>
+	public class RhizomeTag : Search<RichDocument>
 	{
 		public RhizomeTag()
 		{ }

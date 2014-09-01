@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.ieeeCitedBy">
 
 
-  <meta_metadata name="ieee_xplore_cited_by" extends="compound_document" parser="xpath">
+  <meta_metadata name="ieee_xplore_cited_by" extends="rich_document" parser="xpath">
     <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractCitations.jsp" />
 
     <scalar name="ieee_xplore_id" scalar_type="String" hide="true" />

@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.DublinCoreNS
 	/// Dublin core fields.
 	/// </summary>
 	[SimplInherit]
-	public class Dc : CompoundDocument
+	public class Dc : RichDocument
 	{
 		[SimplScalar]
 		[SimplHints(new Hint[] {Hint.XmlLeaf})]

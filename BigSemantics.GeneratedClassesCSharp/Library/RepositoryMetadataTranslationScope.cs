@@ -182,7 +182,6 @@ using Ecologylab.Semantics.Generated.Library.PubmedArticleNS;
 using Ecologylab.Semantics.Generated.Library.PubmedAuthorNS;
 using Ecologylab.Semantics.Generated.Library.PubmedJournalNS;
 using Ecologylab.Semantics.Generated.Library.RatingNS;
-using Ecologylab.Semantics.Generated.Library.RedditFeedNS;
 using Ecologylab.Semantics.Generated.Library.ResearchGateSearchNS;
 using Ecologylab.Semantics.Generated.Library.ResearchgateArticleNS;
 using Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS;
@@ -235,6 +234,7 @@ using Ecologylab.Semantics.Generated.Library.TweeterNS;
 using Ecologylab.Semantics.Generated.Library.TwitterBlogNS;
 using Ecologylab.Semantics.Generated.Library.TwitterSearchNS;
 using Ecologylab.Semantics.Generated.Library.UniqloProductNS;
+using Ecologylab.Semantics.Generated.Library.UrbanspoonSearchNS;
 using Ecologylab.Semantics.Generated.Library.VideoNS;
 using Ecologylab.Semantics.Generated.Library.WalmartProductNS;
 using Ecologylab.Semantics.Generated.Library.WeatherReportNS;
@@ -246,6 +246,7 @@ using Ecologylab.Semantics.Generated.Library.WhitneyWatchAndListenNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaMobileNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaPageNS;
 using Ecologylab.Semantics.Generated.Library.WikipediaPageTypeNS;
+using Ecologylab.Semantics.Generated.Library.WikipediaSearchNS;
 using Ecologylab.Semantics.Generated.Library.YahooRssNS;
 using Ecologylab.Semantics.Generated.Library.YahooSearchNS;
 using Ecologylab.Semantics.Generated.Library.YelpBusinessNS;
@@ -499,11 +500,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(Rating),
 				typeof(RecordMetaMetadata),
 				typeof(RecordMetadata),
-				typeof(RedditCommentsPage),
-				typeof(RedditFeed),
-				typeof(RedditFrontPage),
-				typeof(RedditLink),
-				typeof(RedditSubreddit),
 				typeof(ResearchGateArticle),
 				typeof(ResearchGateArticleStats),
 				typeof(ResearchGateAuthor),
@@ -575,6 +571,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(TwitterMicroblog),
 				typeof(TwitterSearchResults),
 				typeof(UniqloProduct),
+				typeof(UrbanSpoonSearch),
 				typeof(VideoClipping),
 				typeof(VideoInterview),
 				typeof(VideoSelfmade),
@@ -590,6 +587,7 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(WikipediaMobilePage),
 				typeof(WikipediaPage),
 				typeof(WikipediaPageType),
+				typeof(WikipediaSearch),
 				typeof(YahooGeoCode),
 				typeof(YahooGeoCodeResult),
 				typeof(YahooMediaRss),

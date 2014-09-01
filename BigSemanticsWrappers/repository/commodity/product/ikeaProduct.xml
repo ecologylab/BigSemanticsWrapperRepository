@@ -3,7 +3,7 @@
  	
  	
  	<!-- Helper class for the ikea wrappers -->
-  <meta_metadata name="ikea_department" extends="compound_document" parser="xpath" user_agent_name="chrome">
+  <meta_metadata name="ikea_department" extends="rich_document" parser="xpath" user_agent_name="chrome">
      <selector url_path_tree="http://www.ikea.com/us/en/catalog/categories/departments/" domain="ikea.com" />
      <example location="http://www.ikea.com/us/en/catalog/categories/departments/bathroom/20720/" />
      

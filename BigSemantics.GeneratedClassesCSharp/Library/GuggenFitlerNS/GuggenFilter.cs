@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GuggenFitlerNS 
 {
 	[SimplInherit]
-	public class GuggenFilter : Search<CompoundDocument>
+	public class GuggenFilter : Search<RichDocument>
 	{
 		public GuggenFilter()
 		{ }

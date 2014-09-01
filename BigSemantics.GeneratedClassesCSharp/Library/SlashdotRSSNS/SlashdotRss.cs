@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.SlashdotRSSNS 
 {
 	[SimplInherit]
-	public class SlashdotRss : CompoundDocument
+	public class SlashdotRss : RichDocument
 	{
 		[SimplCollection("slashdot_item")]
 		[SimplNoWrap]

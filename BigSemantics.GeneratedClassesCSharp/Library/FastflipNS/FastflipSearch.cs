@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.FastflipNS
 	/// Fast Flip Search
 	/// </summary>
 	[SimplInherit]
-	public class FastflipSearch : CompoundDocument
+	public class FastflipSearch : RichDocument
 	{
 		[SimplCollection("thumbnail")]
 		[MmName("thumbnails")]

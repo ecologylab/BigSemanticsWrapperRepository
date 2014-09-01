@@ -1,6 +1,6 @@
 <meta_metadata_repository name="getttyArtist"
   package="ecologylab.bigsemantics.generated.library.getttyArtist">
-  <meta_metadata name="getty_artist_info" extends="compound_document">
+  <meta_metadata name="getty_artist_info" extends="rich_document">
     <scalar name="lifespan" scalar_type="String" />
     <scalar name="professions" scalar_type="String" />
     <scalar name="languages" scalar_type="String" />

@@ -49,7 +49,7 @@
     </scalar>
 
 
-    <composite name="pinboard" layer="2.5" type="compound_document">
+    <composite name="pinboard" layer="2.5" type="rich_document">
       <scalar name="title">
         <xpath>//meta[@property='og:title']/@content</xpath>
       </scalar>
@@ -58,7 +58,7 @@
       </scalar>
     </composite>
 
-    <composite name="pinner" layer="3.0" type="compound_document">
+    <composite name="pinner" layer="3.0" type="rich_document">
       <scalar name="title">
         <xpath>//div[@class='pinDescription']//a[@class='commentDescriptionCreator']</xpath>
       </scalar>
@@ -67,27 +67,27 @@
       </scalar>
     </composite>
 
-    <composite name="repins" layer="2.0" type="compound_document">
+    <composite name="repins" layer="2.0" type="rich_document">
       <scalar name="title">
         <xpath>//meta[@property='pinterestapp:repins']/@content</xpath>
       </scalar>
-<!-- 			<collection name="repinned_by_pinners" child_type="compound_document" > -->
+<!-- 			<collection name="repinned_by_pinners" child_type="rich_document" > -->
 				
 <!-- 			</collection> -->
     </composite>
 
 
-    <composite name="likes" layer="1.0" type="compound_document">
+    <composite name="likes" layer="1.0" type="rich_document">
       <scalar name="title">
         <xpath>//meta[@property='pinterestapp:likes']/@content</xpath>
       </scalar>
-<!-- 			<collection name="liked_by_pinners" child_type="compound_document" > -->
+<!-- 			<collection name="liked_by_pinners" child_type="rich_document" > -->
 				
 <!-- 			</collection> -->
     </composite>
 
 
-    <composite name="repinned_from_pinner" type="compound_document">
+    <composite name="repinned_from_pinner" type="rich_document">
       <xpath>//p[@id='PinOrigin']/a[2]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -97,7 +97,7 @@
       </scalar>
     </composite>
 
-    <composite name="repinned_from_pinboard" type="compound_document">
+    <composite name="repinned_from_pinboard" type="rich_document">
       <xpath>//p[@id='PinOrigin']/a[1]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -107,7 +107,7 @@
       </scalar>
     </composite>
 
-    <composite name="original_pinner" type="compound_document">
+    <composite name="original_pinner" type="rich_document">
       <xpath>//div[@class='PinComments']/div[1]/p/a[1]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -117,7 +117,7 @@
       </scalar>
     </composite>
 
-    <composite name="original_pinboard" type="compound_document">
+    <composite name="original_pinboard" type="rich_document">
       <xpath>//div[@class='PinComments']/div[1]/p/a[2]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -127,7 +127,7 @@
       </scalar>
     </composite>
 
-    <composite name="originally_from" type="compound_document">
+    <composite name="originally_from" type="rich_document">
       <scalar name="title">
         <xpath>//p[@id='PinSource']/a</xpath>
       </scalar>

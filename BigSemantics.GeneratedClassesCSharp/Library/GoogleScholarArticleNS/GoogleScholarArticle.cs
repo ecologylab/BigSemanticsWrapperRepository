@@ -27,7 +27,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS
 	{
 		[SimplComposite]
 		[MmName("article_link")]
-		private CompoundDocument articleLink;
+		private RichDocument articleLink;
 
 		[SimplScalar]
 		private MetadataString journal;
@@ -53,7 +53,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS
 
 		[SimplComposite]
 		[MmName("google_citations")]
-		private CompoundDocument googleCitations;
+		private RichDocument googleCitations;
 
 		public GoogleScholarArticle()
 		{ }
@@ -61,7 +61,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS
 		public GoogleScholarArticle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public CompoundDocument ArticleLink
+		public RichDocument ArticleLink
 		{
 			get{return articleLink;}
 			set
@@ -165,7 +165,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS
 			}
 		}
 
-		public CompoundDocument GoogleCitations
+		public RichDocument GoogleCitations
 		{
 			get{return googleCitations;}
 			set

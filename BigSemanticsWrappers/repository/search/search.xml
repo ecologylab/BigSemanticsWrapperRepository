@@ -1,7 +1,7 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   name="search" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
 
-  <meta_metadata name="search_result" extends="compound_document" show_expanded_always="true" 
+  <meta_metadata name="search_result" extends="rich_document" show_expanded_always="true" 
     comment="A search result.">
     <scalar name="title" style_name="h1" />
     <scalar name="description" label="snippet" />
@@ -11,8 +11,8 @@
   </meta_metadata>
 
   
-  <meta_metadata name="search" extends="compound_document" comment="A search.">
-    <generic_type_var name="SR" extends="compound_document" />
+  <meta_metadata name="search" extends="rich_document" comment="A search.">
+    <generic_type_var name="SR" extends="rich_document" />
 
     <scalar name="query" scalar_type="String"/>
     <collection name="search_results" child_type="SR" no_wrap="true"
@@ -39,7 +39,7 @@
 
 
 
-  <meta_metadata name="social_media_search_result" extends="compound_document"
+  <meta_metadata name="social_media_search_result" extends="rich_document"
     comment="A result from a social media search.">
     <scalar name="author" scalar_type="String" comment="The author of this item." />
     <collection name="tags" child_type="document"

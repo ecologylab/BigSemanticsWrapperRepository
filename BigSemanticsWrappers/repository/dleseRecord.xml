@@ -54,7 +54,7 @@
   
   
 
-  <meta_metadata name="dlese_get_record" extends="compound_document" parser="direct"
+  <meta_metadata name="dlese_get_record" extends="rich_document" parser="direct"
    >
     <selector url_regex="http://www.dlese.org/dds/services/ddsws1-0\?verb=GetRecord.*"
       domain="dlese.org" />

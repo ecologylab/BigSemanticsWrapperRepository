@@ -2,7 +2,7 @@
 package="ecologylab.bigsemantics.generated.library.researchgateArticle" default_user_agent_name="chrome_2">
   
     
-    <meta_metadata name="research_gate_stats" extends="compound_document">
+    <meta_metadata name="research_gate_stats" extends="rich_document">
         <scalar name="publication_count" scalar_type="String"></scalar>
         <scalar name="views" scalar_type="String"></scalar>
         <scalar name="downloads" scalar_type="String"></scalar>
@@ -12,7 +12,7 @@ package="ecologylab.bigsemantics.generated.library.researchgateArticle" default_
         <scalar name="member_count" scalar_type="String"></scalar>
         <scalar name="rg_score" scalar_type="String"></scalar>
     </meta_metadata>
-    <meta_metadata name="research_gate_article_stats" extends="compound_document">
+    <meta_metadata name="research_gate_article_stats" extends="rich_document">
         <scalar name="views" scalar_type="String"/>
         <scalar name="downloads" scalar_type="String"/>
         <scalar name="citations" scalar_type="String"/>

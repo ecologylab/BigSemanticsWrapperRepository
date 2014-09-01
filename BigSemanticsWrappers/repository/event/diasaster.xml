@@ -6,7 +6,7 @@
     <composite name="map_image" type="image" />
 
     <composite name="map" type="document" />
-    <composite name="source" type="compound_document" />
+    <composite name="source" type="rich_document" />
 
   </meta_metadata>
   

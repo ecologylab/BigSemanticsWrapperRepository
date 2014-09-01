@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.event;
  */
 
 import ecologylab.bigsemantics.generated.library.gisLocation.GisLocation;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -26,7 +26,7 @@ import java.util.Map;
  *Generalized Event Object
  */ 
 @simpl_inherit
-public class Event extends CompoundDocument
+public class Event extends RichDocument
 {
 	@simpl_scalar
 	private MetadataDate startTime;

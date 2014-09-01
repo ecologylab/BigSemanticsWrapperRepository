@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.NsfStaffListNS 
 {
 	[SimplInherit]
-	public class NsfDivisionStaffList : CompoundDocument
+	public class NsfDivisionStaffList : RichDocument
 	{
 		[SimplCollection("nsf_program_staff_list")]
 		[MmName("programs")]

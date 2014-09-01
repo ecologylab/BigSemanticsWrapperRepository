@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GettyArtworkNS 
 {
 	[SimplInherit]
-	public class GettyWorkInfo : CompoundDocument
+	public class GettyWorkInfo : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString authorName;

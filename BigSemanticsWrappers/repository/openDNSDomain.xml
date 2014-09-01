@@ -1,7 +1,7 @@
 <meta_metadata_repository name="openDNSDomain"
   package="ecologylab.bigsemantics.generated.library.openDNSDomain" default_user_agent_name="chrome_2">
 
-  <meta_metadata name="openDNSDomain" extends="compound_document" comment="openDNS tags for a domain" parser="xpath">
+  <meta_metadata name="openDNSDomain" extends="rich_document" comment="openDNS tags for a domain" parser="xpath">
     <selector url_path_tree="http://domain.opendns.com/" domain="opendns.com" />
     <example_url url="http://domain.opendns.com/wikipedia.org" />
     <example_url url="http://domain.opendns.com/boardgamegeek.com" />

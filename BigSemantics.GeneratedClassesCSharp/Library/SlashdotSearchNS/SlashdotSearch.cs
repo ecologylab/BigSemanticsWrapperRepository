@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.SlashdotSearchNS
 	/// The slashdot search class
 	/// </summary>
 	[SimplInherit]
-	public class SlashdotSearch : Search<CompoundDocument>
+	public class SlashdotSearch : Search<RichDocument>
 	{
 		public SlashdotSearch()
 		{ }

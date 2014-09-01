@@ -1,7 +1,7 @@
 <meta_metadata_repository name="icdlImageResult"
   package="ecologylab.bigsemantics.generated.library.icdlImageResult">
 
-  <meta_metadata name="icdl_image_result" extends="compound_document" comment="Thumbnail Image"
+  <meta_metadata name="icdl_image_result" extends="rich_document" comment="Thumbnail Image"
      package="ecologylab.bigsemantics.generated.library.icdl" parser="direct">
     <selector url_stripped="http://www.childrenslibrary.org/BookXMLResults" />
 		<!--

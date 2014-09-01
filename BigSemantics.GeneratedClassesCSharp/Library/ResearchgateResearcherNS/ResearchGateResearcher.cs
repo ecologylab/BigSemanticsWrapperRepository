@@ -24,9 +24,9 @@ namespace Ecologylab.Semantics.Generated.Library.ResearchgateResearcherNS
 	[SimplInherit]
 	public class ResearchGateResearcher : ResearchGateAuthor
 	{
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("researcher_stats")]
-		private List<CompoundDocument> researcherStats;
+		private List<RichDocument> researcherStats;
 
 		public ResearchGateResearcher()
 		{ }
@@ -34,7 +34,7 @@ namespace Ecologylab.Semantics.Generated.Library.ResearchgateResearcherNS
 		public ResearchGateResearcher(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<CompoundDocument> ResearcherStats
+		public List<RichDocument> ResearcherStats
 		{
 			get{return researcherStats;}
 			set

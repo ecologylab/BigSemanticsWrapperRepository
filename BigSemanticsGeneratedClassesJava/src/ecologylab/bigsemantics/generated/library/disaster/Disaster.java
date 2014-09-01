@@ -9,10 +9,10 @@ package ecologylab.bigsemantics.generated.library.disaster;
  */
 
 import ecologylab.bigsemantics.generated.library.event.Event;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataFloat;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -43,7 +43,7 @@ public class Disaster extends Event
 
 	@simpl_composite
 	@mm_name("source")
-	private CompoundDocument source;
+	private RichDocument source;
 
 	public Disaster()
 	{ super(); }
@@ -105,12 +105,12 @@ public class Disaster extends Event
 		this.map = map;
 	}
 
-	public CompoundDocument getSource()
+	public RichDocument getSource()
 	{
 		return source;
 	}
 
-	public void setSource(CompoundDocument source)
+	public void setSource(RichDocument source)
 	{
 		this.source = source;
 	}

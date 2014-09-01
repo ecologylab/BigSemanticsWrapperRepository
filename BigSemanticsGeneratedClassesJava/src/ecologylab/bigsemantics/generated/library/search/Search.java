@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.search;
  */
 
 import ecologylab.bigsemantics.generated.library.search.Search;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -27,7 +27,7 @@ import java.util.Map;
  *A search.
  */ 
 @simpl_inherit
-public class Search<SR extends CompoundDocument> extends CompoundDocument
+public class Search<SR extends RichDocument> extends RichDocument
 {
 	@simpl_collection
 	@simpl_nowrap

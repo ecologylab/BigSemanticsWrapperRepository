@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.pinterest;
  */
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -23,40 +23,40 @@ import java.util.Map;
 public class PinterestPin extends CreativeWork
 {
 	@simpl_composite
-	@mm_name("pinner")
-	private CompoundDocument pinner;
+	@mm_name("pinboard")
+	private RichDocument pinboard;
 
 	@simpl_composite
-	@mm_name("pinboard")
-	private CompoundDocument pinboard;
+	@mm_name("pinner")
+	private RichDocument pinner;
 
 	@simpl_composite
 	@mm_name("repins")
-	private CompoundDocument repins;
+	private RichDocument repins;
 
 	@simpl_composite
 	@mm_name("likes")
-	private CompoundDocument likes;
+	private RichDocument likes;
 
 	@simpl_composite
 	@mm_name("repinned_from_pinner")
-	private CompoundDocument repinnedFromPinner;
+	private RichDocument repinnedFromPinner;
 
 	@simpl_composite
 	@mm_name("repinned_from_pinboard")
-	private CompoundDocument repinnedFromPinboard;
+	private RichDocument repinnedFromPinboard;
 
 	@simpl_composite
 	@mm_name("original_pinner")
-	private CompoundDocument originalPinner;
+	private RichDocument originalPinner;
 
 	@simpl_composite
 	@mm_name("original_pinboard")
-	private CompoundDocument originalPinboard;
+	private RichDocument originalPinboard;
 
 	@simpl_composite
 	@mm_name("originally_from")
-	private CompoundDocument originallyFrom;
+	private RichDocument originallyFrom;
 
 	public PinterestPin()
 	{ super(); }
@@ -66,92 +66,92 @@ public class PinterestPin extends CreativeWork
 	}
 
 
-	public CompoundDocument getPinner()
-	{
-		return pinner;
-	}
-
-	public void setPinner(CompoundDocument pinner)
-	{
-		this.pinner = pinner;
-	}
-
-	public CompoundDocument getPinboard()
+	public RichDocument getPinboard()
 	{
 		return pinboard;
 	}
 
-	public void setPinboard(CompoundDocument pinboard)
+	public void setPinboard(RichDocument pinboard)
 	{
 		this.pinboard = pinboard;
 	}
 
-	public CompoundDocument getRepins()
+	public RichDocument getPinner()
+	{
+		return pinner;
+	}
+
+	public void setPinner(RichDocument pinner)
+	{
+		this.pinner = pinner;
+	}
+
+	public RichDocument getRepins()
 	{
 		return repins;
 	}
 
-	public void setRepins(CompoundDocument repins)
+	public void setRepins(RichDocument repins)
 	{
 		this.repins = repins;
 	}
 
-	public CompoundDocument getLikes()
+	public RichDocument getLikes()
 	{
 		return likes;
 	}
 
-	public void setLikes(CompoundDocument likes)
+	public void setLikes(RichDocument likes)
 	{
 		this.likes = likes;
 	}
 
-	public CompoundDocument getRepinnedFromPinner()
+	public RichDocument getRepinnedFromPinner()
 	{
 		return repinnedFromPinner;
 	}
 
-	public void setRepinnedFromPinner(CompoundDocument repinnedFromPinner)
+	public void setRepinnedFromPinner(RichDocument repinnedFromPinner)
 	{
 		this.repinnedFromPinner = repinnedFromPinner;
 	}
 
-	public CompoundDocument getRepinnedFromPinboard()
+	public RichDocument getRepinnedFromPinboard()
 	{
 		return repinnedFromPinboard;
 	}
 
-	public void setRepinnedFromPinboard(CompoundDocument repinnedFromPinboard)
+	public void setRepinnedFromPinboard(RichDocument repinnedFromPinboard)
 	{
 		this.repinnedFromPinboard = repinnedFromPinboard;
 	}
 
-	public CompoundDocument getOriginalPinner()
+	public RichDocument getOriginalPinner()
 	{
 		return originalPinner;
 	}
 
-	public void setOriginalPinner(CompoundDocument originalPinner)
+	public void setOriginalPinner(RichDocument originalPinner)
 	{
 		this.originalPinner = originalPinner;
 	}
 
-	public CompoundDocument getOriginalPinboard()
+	public RichDocument getOriginalPinboard()
 	{
 		return originalPinboard;
 	}
 
-	public void setOriginalPinboard(CompoundDocument originalPinboard)
+	public void setOriginalPinboard(RichDocument originalPinboard)
 	{
 		this.originalPinboard = originalPinboard;
 	}
 
-	public CompoundDocument getOriginallyFrom()
+	public RichDocument getOriginallyFrom()
 	{
 		return originallyFrom;
 	}
 
-	public void setOriginallyFrom(CompoundDocument originallyFrom)
+	public void setOriginallyFrom(RichDocument originallyFrom)
 	{
 		this.originallyFrom = originallyFrom;
 	}

@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.RwandaPersonnelInterviewNS
 	/// personnel interview
 	/// </summary>
 	[SimplInherit]
-	public class PersonnelInterview : CompoundDocument
+	public class PersonnelInterview : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString role;

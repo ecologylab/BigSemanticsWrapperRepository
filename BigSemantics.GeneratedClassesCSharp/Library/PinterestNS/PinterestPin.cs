@@ -25,40 +25,40 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 	public class PinterestPin : CreativeWork
 	{
 		[SimplComposite]
-		[MmName("pinner")]
-		private CompoundDocument pinner;
+		[MmName("pinboard")]
+		private RichDocument pinboard;
 
 		[SimplComposite]
-		[MmName("pinboard")]
-		private CompoundDocument pinboard;
+		[MmName("pinner")]
+		private RichDocument pinner;
 
 		[SimplComposite]
 		[MmName("repins")]
-		private CompoundDocument repins;
+		private RichDocument repins;
 
 		[SimplComposite]
 		[MmName("likes")]
-		private CompoundDocument likes;
+		private RichDocument likes;
 
 		[SimplComposite]
 		[MmName("repinned_from_pinner")]
-		private CompoundDocument repinnedFromPinner;
+		private RichDocument repinnedFromPinner;
 
 		[SimplComposite]
 		[MmName("repinned_from_pinboard")]
-		private CompoundDocument repinnedFromPinboard;
+		private RichDocument repinnedFromPinboard;
 
 		[SimplComposite]
 		[MmName("original_pinner")]
-		private CompoundDocument originalPinner;
+		private RichDocument originalPinner;
 
 		[SimplComposite]
 		[MmName("original_pinboard")]
-		private CompoundDocument originalPinboard;
+		private RichDocument originalPinboard;
 
 		[SimplComposite]
 		[MmName("originally_from")]
-		private CompoundDocument originallyFrom;
+		private RichDocument originallyFrom;
 
 		public PinterestPin()
 		{ }
@@ -66,20 +66,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 		public PinterestPin(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public CompoundDocument Pinner
-		{
-			get{return pinner;}
-			set
-			{
-				if (this.pinner != value)
-				{
-					this.pinner = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public CompoundDocument Pinboard
+		public RichDocument Pinboard
 		{
 			get{return pinboard;}
 			set
@@ -92,7 +79,20 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument Repins
+		public RichDocument Pinner
+		{
+			get{return pinner;}
+			set
+			{
+				if (this.pinner != value)
+				{
+					this.pinner = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public RichDocument Repins
 		{
 			get{return repins;}
 			set
@@ -105,7 +105,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument Likes
+		public RichDocument Likes
 		{
 			get{return likes;}
 			set
@@ -118,7 +118,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument RepinnedFromPinner
+		public RichDocument RepinnedFromPinner
 		{
 			get{return repinnedFromPinner;}
 			set
@@ -131,7 +131,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument RepinnedFromPinboard
+		public RichDocument RepinnedFromPinboard
 		{
 			get{return repinnedFromPinboard;}
 			set
@@ -144,7 +144,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument OriginalPinner
+		public RichDocument OriginalPinner
 		{
 			get{return originalPinner;}
 			set
@@ -157,7 +157,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument OriginalPinboard
+		public RichDocument OriginalPinboard
 		{
 			get{return originalPinboard;}
 			set
@@ -170,7 +170,7 @@ namespace Ecologylab.Semantics.Generated.Library.PinterestNS
 			}
 		}
 
-		public CompoundDocument OriginallyFrom
+		public RichDocument OriginallyFrom
 		{
 			get{return originallyFrom;}
 			set

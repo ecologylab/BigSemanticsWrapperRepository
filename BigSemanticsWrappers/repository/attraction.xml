@@ -1,7 +1,7 @@
 <meta_metadata_repository name="attraction"
   package="ecologylab.bigsemantics.generated.library.attraction" default_user_agent_name="chrome_2">
   
-  <meta_metadata name="attraction" extends="compound_document">
+  <meta_metadata name="attraction" extends="rich_document">
     <scalar name="description" scalar_type="String" comment="an introduction to the attraction" />
 
     <scalar name="fee" scalar_type="String" comment="Price/fee of the attraction" />

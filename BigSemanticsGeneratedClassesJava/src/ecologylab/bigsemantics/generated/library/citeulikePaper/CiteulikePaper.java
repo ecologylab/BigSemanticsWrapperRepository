@@ -24,13 +24,13 @@ import java.util.Map;
 public class CiteulikePaper extends ScholarlyArticle
 {
 	@simpl_composite
-	@mm_name("citeulike_user")
-	private CiteulikeUser citeulikeUser;
-
-	@simpl_composite
 	@simpl_scope("repository_documents")
 	@mm_name("source_article")
 	private ScholarlyArticle sourceArticle;
+
+	@simpl_composite
+	@mm_name("citeulike_user")
+	private CiteulikeUser citeulikeUser;
 
 	public CiteulikePaper()
 	{ super(); }
@@ -40,16 +40,6 @@ public class CiteulikePaper extends ScholarlyArticle
 	}
 
 
-	public CiteulikeUser getCiteulikeUser()
-	{
-		return citeulikeUser;
-	}
-
-	public void setCiteulikeUser(CiteulikeUser citeulikeUser)
-	{
-		this.citeulikeUser = citeulikeUser;
-	}
-
 	public ScholarlyArticle getSourceArticle()
 	{
 		return sourceArticle;
@@ -58,5 +48,15 @@ public class CiteulikePaper extends ScholarlyArticle
 	public void setSourceArticle(ScholarlyArticle sourceArticle)
 	{
 		this.sourceArticle = sourceArticle;
+	}
+
+	public CiteulikeUser getCiteulikeUser()
+	{
+		return citeulikeUser;
+	}
+
+	public void setCiteulikeUser(CiteulikeUser citeulikeUser)
+	{
+		this.citeulikeUser = citeulikeUser;
 	}
 }

@@ -25,9 +25,9 @@ namespace Ecologylab.Semantics.Generated.Library.Forever21ProductNS
 	[SimplTag("forever_21")]
 	public class Forever21 : Product
 	{
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("available_colors")]
-		private List<CompoundDocument> availableColors;
+		private List<RichDocument> availableColors;
 
 		public Forever21()
 		{ }
@@ -35,7 +35,7 @@ namespace Ecologylab.Semantics.Generated.Library.Forever21ProductNS
 		public Forever21(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<CompoundDocument> AvailableColors
+		public List<RichDocument> AvailableColors
 		{
 			get{return availableColors;}
 			set

@@ -1,7 +1,7 @@
 <meta_metadata_repository name="rwandaPersonnelInterview"
   package="ecologylab.bigsemantics.generated.library.rwandaPersonnelInterview">
 
-  <meta_metadata name="personnel_interview" extends="compound_document" parser="xpath"
+  <meta_metadata name="personnel_interview" extends="rich_document" parser="xpath"
     comment="personnel interview">
     <selector url_path_tree="http://www.tribunalvoices.org/voices/interview/" />
     <example_url url="http://www.tribunalvoices.org/voices/interview/25" />

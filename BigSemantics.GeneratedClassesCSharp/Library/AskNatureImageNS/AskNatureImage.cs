@@ -23,14 +23,14 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AskNatureImageNS 
 {
 	[SimplInherit]
-	public class AskNatureImage : CompoundDocument
+	public class AskNatureImage : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString photographerOrArtist;
 
 		[SimplComposite]
 		[MmName("image_source")]
-		private CompoundDocument imageSource;
+		private RichDocument imageSource;
 
 		[SimplScalar]
 		private MetadataString keywords;
@@ -58,7 +58,7 @@ namespace Ecologylab.Semantics.Generated.Library.AskNatureImageNS
 			}
 		}
 
-		public CompoundDocument ImageSource
+		public RichDocument ImageSource
 		{
 			get{return imageSource;}
 			set

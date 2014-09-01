@@ -8,7 +8,7 @@
     <selector url_stripped="http://ieeexplore.ieee.org/xpls/icp.jsp" />
     <selector url_stripped="http://ieeexplore.ieee.org:80/xpls/icp.jsp" />
     <example_url url="http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=1532126"/>
-    <collection name="sections" child_extends="compound_document">
+    <collection name="sections" child_extends="rich_document">
     	<xpath>//div[@class='section']</xpath>
     	<scalar name="title">
     		<xpath>./div/h2</xpath>

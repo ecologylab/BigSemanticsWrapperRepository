@@ -76,7 +76,7 @@
   
   
 
-  <meta_metadata name="newegg_subcategory_list" extends="compound_document" parser="xpath"
+  <meta_metadata name="newegg_subcategory_list" extends="rich_document" parser="xpath"
     user_agent_name="chrome">
     <selector url_regex="http://www.newegg.com/.*/SubCategory/.*" domain="newegg.com"/>
     <example_url url="http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100" />

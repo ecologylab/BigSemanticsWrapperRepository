@@ -32,7 +32,7 @@ namespace Ecologylab.Semantics.Generated.Library.MomaArtworkNS
 
 		[SimplComposite]
 		[MmName("moma_classification")]
-		private CompoundDocument momaClassification;
+		private RichDocument momaClassification;
 
 		[SimplScalar]
 		private MetadataParsedURL permalink;
@@ -69,7 +69,7 @@ namespace Ecologylab.Semantics.Generated.Library.MomaArtworkNS
 			}
 		}
 
-		public CompoundDocument MomaClassification
+		public RichDocument MomaClassification
 		{
 			get{return momaClassification;}
 			set

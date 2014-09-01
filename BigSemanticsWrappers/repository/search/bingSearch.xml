@@ -3,7 +3,7 @@
   
   <meta_metadata name="bing_search_xpath" type="search" parser="xpath"
     user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">
-    <generic_type_var name="SR" arg="compound_document" />
+    <generic_type_var name="SR" arg="rich_document" />
     <selector url_stripped="http://www.bing.com/search" />
     <example_url url="http://www.bing.com/search?q=howdyamp;go=Submitamp;qs=dsamp;form=QBLHamp;scope=web"/>
     <scalar name="query">
@@ -58,11 +58,11 @@
 	<!-- intermediate layers for source types. necessary for binding tags. -->
 
 <!-- 
-	<meta_metadata name="bing_search_web_section" extends="compound_document">
+	<meta_metadata name="bing_search_web_section" extends="rich_document">
 		<collection name="web_search_results" child_type="bing_web_search_result"  no_wrap="false" />
 	</meta_metadata>
 
-	<meta_metadata name="bing_search_image_section" extends="compound_document">
+	<meta_metadata name="bing_search_image_section" extends="rich_document">
 		<collection name="image_search_results" child_type="bing_image_search_result"  no_wrap="false" />
 	</meta_metadata>
 	 -->
@@ -71,7 +71,7 @@
   
   <meta_metadata name="bing_search_api" type="search" parser="xpath" user_agent_name="firefox_5"
     comment="The bing Search api.">
-    <generic_type_var name="SR" arg="compound_document" />
+    <generic_type_var name="SR" arg="rich_document" />
     <selector url_stripped="http://api.bing.net/xml.aspx" />
     <scalar name="query" ignore_in_term_vector="true">
       <xpath>//searchterms/text()</xpath>
@@ -118,7 +118,7 @@
 	
 	
 	<!--  use xpaths instead so that we can use search
-	<meta_metadata name="bing_search" promote_children="true" extends="compound_document"  parser="direct" user_agent_name="opera_9">
+	<meta_metadata name="bing_search" promote_children="true" extends="rich_document"  parser="direct" user_agent_name="opera_9">
 		<selector url_stripped="http://api.bing.net/xml.aspx" />
 
 

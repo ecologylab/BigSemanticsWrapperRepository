@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.TvtropesNS 
 {
 	[SimplInherit]
-	public class TvtropeFolder : CompoundDocument
+	public class TvtropeFolder : RichDocument
 	{
 		[SimplCollection("tvtrope_example")]
 		[MmName("examples")]

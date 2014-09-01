@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.VideoNS 
 {
 	[SimplInherit]
-	public class YoutubeVideoList : CompoundDocument
+	public class YoutubeVideoList : RichDocument
 	{
 		[SimplCollection("youtube_video")]
 		[MmName("videos")]

@@ -11,9 +11,9 @@ package ecologylab.bigsemantics.generated.library.creative_work;
 import ecologylab.bigsemantics.generated.library.author.Author;
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.rating.Rating;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class CreativeWork extends CompoundDocument
+public class CreativeWork extends RichDocument
 {
 	@simpl_collection("author")
 	@mm_name("authors")
@@ -68,7 +68,7 @@ public class CreativeWork extends CompoundDocument
 
 	@simpl_composite
 	@mm_name("rich_media")
-	private CompoundDocument richMedia;
+	private RichDocument richMedia;
 
 	public CreativeWork()
 	{ super(); }
@@ -242,12 +242,12 @@ public class CreativeWork extends CompoundDocument
 		this.citations = citations;
 	}
 
-	public CompoundDocument getRichMedia()
+	public RichDocument getRichMedia()
 	{
 		return richMedia;
 	}
 
-	public void setRichMedia(CompoundDocument richMedia)
+	public void setRichMedia(RichDocument richMedia)
 	{
 		this.richMedia = richMedia;
 	}

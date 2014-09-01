@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.ReviewNS
 	/// The DLMS Class
 	/// </summary>
 	[SimplInherit]
-	public class Dlms : CompoundDocument
+	public class Dlms : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString subject;

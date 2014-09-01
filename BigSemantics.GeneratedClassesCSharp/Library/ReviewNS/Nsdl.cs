@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.ReviewNS
 	/// The NSDL class
 	/// </summary>
 	[SimplInherit]
-	public class Nsdl : CompoundDocument
+	public class Nsdl : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString subject;

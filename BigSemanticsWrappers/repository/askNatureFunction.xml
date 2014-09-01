@@ -1,7 +1,7 @@
 <meta_metadata_repository name="askNatureFunction"
   package="ecologylab.bigsemantics.generated.library.askNatureFunction" default_user_agent_name="chrome">
 
-  <meta_metadata name="ask_nature_function" extends="compound_document" parser="xpath"
+  <meta_metadata name="ask_nature_function" extends="rich_document" parser="xpath"
     user_agent_name="chrome">
     <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|[\d]*\|[\d]*\|[\d]*.*"
       domain="asknature.org" />

@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ResearchgateArticleNS 
 {
 	[SimplInherit]
-	public class ResearchGateArticleStats : CompoundDocument
+	public class ResearchGateArticleStats : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString views;

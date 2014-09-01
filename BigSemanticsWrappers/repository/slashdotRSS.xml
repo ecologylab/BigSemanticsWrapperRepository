@@ -8,7 +8,7 @@
   </meta_metadata>
 
 
-  <meta_metadata name="slashdot_rss" extends="compound_document" parser="direct">
+  <meta_metadata name="slashdot_rss" extends="rich_document" parser="direct">
     <selector url_stripped="http://rss.slashdot.org/Slashdot/slashdot" />
     <collection name="items" child_type="slashdot_item" no_wrap="true" />
     <semantic_actions>

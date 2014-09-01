@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.rwandaPersonnelInterview;
  */
 
 import ecologylab.bigsemantics.generated.library.rwandaVideoInterview.VideoInterview;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -27,7 +27,7 @@ import java.util.Map;
  *personnel interview
  */ 
 @simpl_inherit
-public class PersonnelInterview extends CompoundDocument
+public class PersonnelInterview extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString role;

@@ -53,7 +53,7 @@
       </scalar>
     </collection>
 
-    <collection name="tags" child_type="compound_document">
+    <collection name="tags" child_type="rich_document">
       <xpath>//li[contains (@id, 'divFindSimilar')]/a[3]</xpath>
       <scalar name="title">
         <xpath>.</xpath>

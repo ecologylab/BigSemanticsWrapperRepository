@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.IeeeCitedByNS 
 {
 	[SimplInherit]
-	public class IeeeXploreCitedBy : CompoundDocument
+	public class IeeeXploreCitedBy : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString ieeeXploreId;

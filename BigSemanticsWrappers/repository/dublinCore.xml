@@ -1,7 +1,7 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   name="dublinCore" package="ecologylab.bigsemantics.generated.library.dublinCore">
 
-  <meta_metadata name="dc" extends="compound_document" comment="Dublin core fields."
+  <meta_metadata name="dc" extends="rich_document" comment="Dublin core fields."
     parser="direct">
     <scalar name="dc_creator"  label="author" scalar_type="String" hint="XML_LEAF" />
     <scalar name="dc_subject" scalar_type="String" hint="XML_LEAF" />

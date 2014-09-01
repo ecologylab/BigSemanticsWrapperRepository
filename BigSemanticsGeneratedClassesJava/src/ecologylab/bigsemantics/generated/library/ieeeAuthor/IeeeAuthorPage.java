@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.ieeeAuthor;
  */
 
 import ecologylab.bigsemantics.generated.library.author.Author;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -23,9 +23,9 @@ import java.util.Map;
 @simpl_inherit
 public class IeeeAuthorPage extends Author
 {
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("authors")
-	private List<CompoundDocument> authors;
+	private List<RichDocument> authors;
 
 	public IeeeAuthorPage()
 	{ super(); }
@@ -35,21 +35,21 @@ public class IeeeAuthorPage extends Author
 	}
 
 
-	public List<CompoundDocument> getAuthors()
+	public List<RichDocument> getAuthors()
 	{
 		return authors;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> authors()
+  public List<RichDocument> authors()
   {
     if (authors == null)
-      authors = new ArrayList<CompoundDocument>();
+      authors = new ArrayList<RichDocument>();
     return authors;
   }
 
   // addTo:
-  public void addToAuthors(CompoundDocument element)
+  public void addToAuthors(RichDocument element)
   {
     authors().add(element);
   }
@@ -60,7 +60,7 @@ public class IeeeAuthorPage extends Author
     return authors == null ? 0 : authors.size();
   }
 
-	public void setAuthors(List<CompoundDocument> authors)
+	public void setAuthors(List<RichDocument> authors)
 	{
 		this.authors = authors;
 	}

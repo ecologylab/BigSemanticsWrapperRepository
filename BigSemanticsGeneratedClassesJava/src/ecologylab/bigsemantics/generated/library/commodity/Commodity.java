@@ -14,8 +14,8 @@ import ecologylab.bigsemantics.generated.library.commodity.Specification;
 import ecologylab.bigsemantics.generated.library.gisLocation.GisLocation;
 import ecologylab.bigsemantics.generated.library.postalAddress.PostalAddress;
 import ecologylab.bigsemantics.generated.library.review.Review;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
@@ -34,20 +34,10 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Commodity extends CompoundDocument
+public class Commodity extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString price;
-
-	@simpl_scalar
-	private MetadataString overallRating;
-
-	@simpl_scalar
-	private MetadataInteger numReviews;
-
-	@simpl_collection("review")
-	@mm_name("reviews")
-	private List<Review> reviews;
 
 	@simpl_collection("commodity")
 	@mm_name("companion_products")
@@ -70,11 +60,21 @@ public class Commodity extends CompoundDocument
 	private List<LabeledSpecifications> specificationsTable;
 
 	@simpl_scalar
+	private MetadataString overallRating;
+
+	@simpl_scalar
 	private MetadataParsedURL reviewsLocation;
+
+	@simpl_scalar
+	private MetadataInteger numReviews;
+
+	@simpl_collection("review")
+	@mm_name("reviews")
+	private List<Review> reviews;
 
 	@simpl_composite
 	@mm_name("business_website")
-	private CompoundDocument businessWebsite;
+	private RichDocument businessWebsite;
 
 	@simpl_composite
 	@mm_name("business_address")
@@ -122,100 +122,6 @@ public class Commodity extends CompoundDocument
 	public void setPriceMetadata(MetadataString price)
 	{
 		this.price = price;
-	}
-
-	public MetadataString	overallRating()
-	{
-		MetadataString	result = this.overallRating;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.overallRating = result;
-		}
-		return result;
-	}
-
-	public String getOverallRating()
-	{
-		return this.overallRating == null ? null : overallRating().getValue();
-	}
-
-	public MetadataString getOverallRatingMetadata()
-	{
-		return overallRating;
-	}
-
-	public void setOverallRating(String overallRating)
-	{
-		if (overallRating != null)
-			this.overallRating().setValue(overallRating);
-	}
-
-	public void setOverallRatingMetadata(MetadataString overallRating)
-	{
-		this.overallRating = overallRating;
-	}
-
-	public MetadataInteger	numReviews()
-	{
-		MetadataInteger	result = this.numReviews;
-		if (result == null)
-		{
-			result = new MetadataInteger();
-			this.numReviews = result;
-		}
-		return result;
-	}
-
-	public Integer getNumReviews()
-	{
-		return this.numReviews == null ? 0 : numReviews().getValue();
-	}
-
-	public MetadataInteger getNumReviewsMetadata()
-	{
-		return numReviews;
-	}
-
-	public void setNumReviews(Integer numReviews)
-	{
-		if (numReviews != 0)
-			this.numReviews().setValue(numReviews);
-	}
-
-	public void setNumReviewsMetadata(MetadataInteger numReviews)
-	{
-		this.numReviews = numReviews;
-	}
-
-	public List<Review> getReviews()
-	{
-		return reviews;
-	}
-
-  // lazy evaluation:
-  public List<Review> reviews()
-  {
-    if (reviews == null)
-      reviews = new ArrayList<Review>();
-    return reviews;
-  }
-
-  // addTo:
-  public void addToReviews(Review element)
-  {
-    reviews().add(element);
-  }
-
-  // size:
-  public int reviewsSize()
-  {
-    return reviews == null ? 0 : reviews.size();
-  }
-
-	public void setReviews(List<Review> reviews)
-	{
-		this.reviews = reviews;
 	}
 
 	public List<Commodity> getCompanionProducts()
@@ -368,6 +274,38 @@ public class Commodity extends CompoundDocument
 		this.specificationsTable = specificationsTable;
 	}
 
+	public MetadataString	overallRating()
+	{
+		MetadataString	result = this.overallRating;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.overallRating = result;
+		}
+		return result;
+	}
+
+	public String getOverallRating()
+	{
+		return this.overallRating == null ? null : overallRating().getValue();
+	}
+
+	public MetadataString getOverallRatingMetadata()
+	{
+		return overallRating;
+	}
+
+	public void setOverallRating(String overallRating)
+	{
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
+	}
+
+	public void setOverallRatingMetadata(MetadataString overallRating)
+	{
+		this.overallRating = overallRating;
+	}
+
 	public MetadataParsedURL	reviewsLocation()
 	{
 		MetadataParsedURL	result = this.reviewsLocation;
@@ -400,12 +338,74 @@ public class Commodity extends CompoundDocument
 		this.reviewsLocation = reviewsLocation;
 	}
 
-	public CompoundDocument getBusinessWebsite()
+	public MetadataInteger	numReviews()
+	{
+		MetadataInteger	result = this.numReviews;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.numReviews = result;
+		}
+		return result;
+	}
+
+	public Integer getNumReviews()
+	{
+		return this.numReviews == null ? 0 : numReviews().getValue();
+	}
+
+	public MetadataInteger getNumReviewsMetadata()
+	{
+		return numReviews;
+	}
+
+	public void setNumReviews(Integer numReviews)
+	{
+		if (numReviews != 0)
+			this.numReviews().setValue(numReviews);
+	}
+
+	public void setNumReviewsMetadata(MetadataInteger numReviews)
+	{
+		this.numReviews = numReviews;
+	}
+
+	public List<Review> getReviews()
+	{
+		return reviews;
+	}
+
+  // lazy evaluation:
+  public List<Review> reviews()
+  {
+    if (reviews == null)
+      reviews = new ArrayList<Review>();
+    return reviews;
+  }
+
+  // addTo:
+  public void addToReviews(Review element)
+  {
+    reviews().add(element);
+  }
+
+  // size:
+  public int reviewsSize()
+  {
+    return reviews == null ? 0 : reviews.size();
+  }
+
+	public void setReviews(List<Review> reviews)
+	{
+		this.reviews = reviews;
+	}
+
+	public RichDocument getBusinessWebsite()
 	{
 		return businessWebsite;
 	}
 
-	public void setBusinessWebsite(CompoundDocument businessWebsite)
+	public void setBusinessWebsite(RichDocument businessWebsite)
 	{
 		this.businessWebsite = businessWebsite;
 	}

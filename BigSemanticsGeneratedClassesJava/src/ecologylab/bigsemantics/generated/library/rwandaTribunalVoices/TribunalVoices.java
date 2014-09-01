@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.rwandaTribunalVoices;
  */
 
 import ecologylab.bigsemantics.generated.library.rwandaTribunalVoices.CategoryInterviews;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -24,7 +24,7 @@ import java.util.Map;
  *Video Interviews with personnel from Rwanda Tribunal
  */ 
 @simpl_inherit
-public class TribunalVoices extends CompoundDocument
+public class TribunalVoices extends RichDocument
 {
 	@simpl_collection("category_interviews")
 	@mm_name("categorized_interviews")

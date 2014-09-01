@@ -14,8 +14,8 @@ import ecologylab.bigsemantics.generated.library.researchgateAuthor.ResearchGate
 import ecologylab.bigsemantics.generated.library.researchgateInstitution.ResearchGateInstitution;
 import ecologylab.bigsemantics.generated.library.researchgateInstitution.ResearchGateInstitutionContactInfo;
 import ecologylab.bigsemantics.generated.library.researchgateInstitutionDepartment.ResearchGateInstitutionDepartment;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class ResearchGateInstitution extends CompoundDocument
+public class ResearchGateInstitution extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString institutionHead;
@@ -57,7 +57,7 @@ public class ResearchGateInstitution extends CompoundDocument
 
 	@simpl_composite
 	@mm_name("website")
-	private CompoundDocument website;
+	private RichDocument website;
 
 	@simpl_composite
 	@mm_name("stats")
@@ -233,12 +233,12 @@ public class ResearchGateInstitution extends CompoundDocument
 		this.contactInfo = contactInfo;
 	}
 
-	public CompoundDocument getWebsite()
+	public RichDocument getWebsite()
 	{
 		return website;
 	}
 
-	public void setWebsite(CompoundDocument website)
+	public void setWebsite(RichDocument website)
 	{
 		this.website = website;
 	}

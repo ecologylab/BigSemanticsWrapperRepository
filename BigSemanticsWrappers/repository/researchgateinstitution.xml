@@ -7,7 +7,7 @@ package="ecologylab.bigsemantics.generated.library.researchgateInstitution" defa
     </meta_metadata>
     
     
-    <meta_metadata name="research_gate_institution" extends="compound_document" parser="xpath">
+    <meta_metadata name="research_gate_institution" extends="rich_document" parser="xpath">
         <selector url_regex="http://www.researchgate.net/institution/[A-Za-z_]*" domain="researchgate.net"/>
        
         
@@ -75,7 +75,7 @@ package="ecologylab.bigsemantics.generated.library.researchgateInstitution" defa
 			     <regex_op regex="Address" replace=""></regex_op>
 			</scalar>
         </composite>
-        <composite name="website" type="compound_document">
+        <composite name="website" type="rich_document">
             <xpath>//li[@data-fields='institutionWebsite']</xpath>
            <scalar name="title">
                 <xpath>.</xpath>

@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.RwandaTribunalVoicesNS
 	/// Video Interviews with personnel from Rwanda Tribunal
 	/// </summary>
 	[SimplInherit]
-	public class TribunalVoices : CompoundDocument
+	public class TribunalVoices : RichDocument
 	{
 		[SimplCollection("category_interviews")]
 		[MmName("categorized_interviews")]

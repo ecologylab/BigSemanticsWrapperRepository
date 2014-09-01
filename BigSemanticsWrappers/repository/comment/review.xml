@@ -10,17 +10,17 @@
   </meta_metadata>
 
 
-  <meta_metadata name="dlms" extends="compound_document" comment="The DLMS Class">
+  <meta_metadata name="dlms" extends="rich_document" comment="The DLMS Class">
     <scalar name="subject" scalar_type="String" />
   </meta_metadata>
 
 
-  <meta_metadata name="nsdl" extends="compound_document" comment="The NSDL class">
+  <meta_metadata name="nsdl" extends="rich_document" comment="The NSDL class">
     <scalar name="subject" scalar_type="String" />
   </meta_metadata>
 
 
-  <meta_metadata name="dc_document" extends="compound_document" comment="">
+  <meta_metadata name="dc_document" extends="rich_document" comment="">
     <scalar name="subject" scalar_type="String" />
     <mixins>search</mixins>
   </meta_metadata>

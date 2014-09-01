@@ -11,7 +11,7 @@
     <composite name="webpage" type="document" polymorphic_scope="repository_documents"
       wrap="true" />
     
-    <composite name="twitter_profile" type="compound_document"/>
+    <composite name="twitter_profile" type="rich_document"/>
   </meta_metadata>
   
 </meta_metadata_repository>

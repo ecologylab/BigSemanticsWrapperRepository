@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.FlamencoFacetNS 
 {
 	[SimplInherit]
-	public class FlamencoFacet : CompoundDocument
+	public class FlamencoFacet : RichDocument
 	{
 		[SimplCollection("flamenco_object")]
 		[MmName("sub_facets")]

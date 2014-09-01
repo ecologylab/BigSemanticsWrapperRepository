@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.askNatureSubgroup" default_user_agent_name="chrome">
 
 
-  <meta_metadata name="ask_nature_subgroup" extends="compound_document" parser="xpath"
+  <meta_metadata name="ask_nature_subgroup" extends="rich_document" parser="xpath"
     user_agent_name="chrome">
     <selector url_regex="http://www.asknature.org/browse\?selected=strategy\|\d+\|(\d+)\&amp;type=aof"
       domain="asknature.org" />

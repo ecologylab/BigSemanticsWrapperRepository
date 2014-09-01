@@ -10,9 +10,9 @@ package ecologylab.bigsemantics.generated.library.author;
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.person.Person;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -52,7 +52,7 @@ public class Author extends Person
 
 	@simpl_composite
 	@mm_name("twitter_profile")
-	private CompoundDocument twitterProfile;
+	private RichDocument twitterProfile;
 
 	public Author()
 	{ super(); }
@@ -166,12 +166,12 @@ public class Author extends Person
 		this.webpage = webpage;
 	}
 
-	public CompoundDocument getTwitterProfile()
+	public RichDocument getTwitterProfile()
 	{
 		return twitterProfile;
 	}
 
-	public void setTwitterProfile(CompoundDocument twitterProfile)
+	public void setTwitterProfile(RichDocument twitterProfile)
 	{
 		this.twitterProfile = twitterProfile;
 	}

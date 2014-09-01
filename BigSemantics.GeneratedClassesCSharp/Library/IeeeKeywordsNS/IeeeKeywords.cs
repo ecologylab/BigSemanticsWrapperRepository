@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.IeeeKeywordsNS 
 {
 	[SimplInherit]
-	public class IeeeKeywords : CompoundDocument
+	public class IeeeKeywords : RichDocument
 	{
 		[SimplCollection("ieee_xplore_search")]
 		[MmName("keywords")]

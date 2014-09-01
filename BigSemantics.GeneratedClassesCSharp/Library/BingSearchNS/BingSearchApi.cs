@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.BingSearchNS
 	/// The bing Search api.
 	/// </summary>
 	[SimplInherit]
-	public class BingSearchApi : Search<CompoundDocument>
+	public class BingSearchApi : Search<RichDocument>
 	{
 		[SimplComposite]
 		[MmName("search_crumb_composite")]

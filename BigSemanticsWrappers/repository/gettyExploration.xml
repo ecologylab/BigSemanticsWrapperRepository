@@ -1,7 +1,7 @@
 <meta_metadata_repository name="gettyExploration"
   package="ecologylab.bigsemantics.generated.library.gettyExploration" default_user_agent_name="chrome_2">
 
-  <meta_metadata name="getty_exploration" extends="compound_document" parser="xpath">
+  <meta_metadata name="getty_exploration" extends="rich_document" parser="xpath">
     <selector url_stripped="http://www.getty.edu/art/gettyguide/exploreArt" />
     <example_url url="http://www.getty.edu/art/gettyguide/exploreArt?typ=2033760" />
 

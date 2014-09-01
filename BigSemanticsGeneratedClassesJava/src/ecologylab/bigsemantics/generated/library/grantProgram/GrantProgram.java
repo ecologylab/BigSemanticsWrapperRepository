@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.grantProgram;
 
 import ecologylab.bigsemantics.generated.library.grant.Grant;
 import ecologylab.bigsemantics.generated.library.grantStaff.GrantStaff;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class GrantProgram extends CompoundDocument
+public class GrantProgram extends RichDocument
 {
 	@simpl_collection("grant_staff")
 	@mm_name("staffs")

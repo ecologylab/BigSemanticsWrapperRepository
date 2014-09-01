@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrTagNS
 	/// For flickr crawled tags
 	/// </summary>
 	[SimplInherit]
-	public class FlickrTag : CompoundDocument
+	public class FlickrTag : RichDocument
 	{
 		/// <summary>
 		/// Collection of all images of a user

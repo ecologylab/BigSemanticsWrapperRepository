@@ -104,11 +104,11 @@
     </semantic_actions>
   </meta_metadata>
 
-  <meta_metadata name="youtube_video_list" extends="compound_document">
+  <meta_metadata name="youtube_video_list" extends="rich_document">
     <collection name="videos" child_type="youtube_video"/>
   </meta_metadata>
 <!--  no longer need 
-  <meta_metadata name="youtube_video_grid" extends="compound_document" parser="xpath"
+  <meta_metadata name="youtube_video_grid" extends="rich_document" parser="xpath"
     user_agent_name="chrome">
     <selector url_regex="https?://www.youtube.com/.*/videos" domain="youtube.com" />
 
@@ -147,7 +147,7 @@
     </collection>
   </meta_metadata>
   -->
-  <meta_metadata name="youtube_channel" extends="compound_document" comment="youtube channels"
+  <meta_metadata name="youtube_channel" extends="rich_document" comment="youtube channels"
     parser="xpath" user_agent_name="chrome">
 
     <selector url_regex="https?://www.youtube.com/(user|channel)/.*((?!videos).)$" domain="youtube.com" />
@@ -178,7 +178,7 @@
       </scalar>
 
     </collection>
-    <collection name="playlist" child_type="compound_document">
+    <collection name="playlist" child_type="rich_document">
       <xpath>//div[@class='compact-shelf shelf-item yt-uix-shelfslider yt-uix-shelfslider-at-head yt-uix-shelfslider-at-tail vve-check clearfix branded-page-box yt-section-hover-container fluid-shelf yt-uix-tdl']//div[@class='compact-shelf-content-container']/div/ul/li</xpath>
       
       <scalar name="title">
@@ -189,7 +189,7 @@
         </scalar>
     </collection>
     <!--
-    <collection name="playlists" child_type="yt_playlist" child_extends="compound_document">
+    <collection name="playlists" child_type="yt_playlist" child_extends="rich_document">
       <xpath>//div[@class='compact-shelf shelf-item yt-uix-shelfslider yt-uix-shelfslider-at-head yt-uix-shelfslider-at-tail vve-check clearfix branded-page-box yt-section-hover-container fluid-shelf yt-uix-tdl']</xpath>
       
       <scalar name="title">
@@ -198,7 +198,7 @@
       <scalar name="description">
         <xpath>.//div[@class='shelf-description yt-ui-ellipsis yt-ui-ellipsis-2']</xpath>
       </scalar>
-      <collection name="videos" child_type="compound_document">
+      <collection name="videos" child_type="rich_document">
         <xpath>.//div[@class='compact-shelf-content-container']/div/ul/li"</xpath>
         <scalar name="title">
           <xpath>.//h3/a/@href</xpath>

@@ -7,7 +7,7 @@
     <collection name="people" child_type="personnel_interview" comment="personnel interview" />
   </meta_metadata>
 
-  <meta_metadata name="tribunal_voices" extends="compound_document" parser="xpath"
+  <meta_metadata name="tribunal_voices" extends="rich_document" parser="xpath"
     comment="Video Interviews with personnel from Rwanda Tribunal">
     <selector url_stripped="http://www.tribunalvoices.org/voices/interviews" />
     <selector url_stripped="http://www.tribunalvoices.org/voices/index.html" />

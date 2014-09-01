@@ -37,7 +37,7 @@
 		will change the header title based on whether or not there are multiple of an item,
 		there are two collections/type of item. One will only include one of an item. -->
 
-    <collection name="external_links" child_type="compound_document">
+    <collection name="external_links" child_type="rich_document">
       <xpath>//h2[child::text()='External links:']</xpath>
       <scalar name="title">
         <xpath>./following-sibling::div[1]/strong</xpath>
@@ -46,7 +46,7 @@
         <xpath>./following-sibling::div[1]/a/@href</xpath>
       </scalar>
     </collection>
-    <collection name="external_link" child_type="compound_document">
+    <collection name="external_link" child_type="rich_document">
       <xpath>//h2[child::text()='External link:']</xpath>
       <scalar name="title">
         <xpath>./following-sibling::div[1]/strong</xpath>
@@ -118,7 +118,7 @@
         <xpath>./@href</xpath>
       </scalar>
     </collection>
-    <collection name="footnotes" child_type="compound_document">
+    <collection name="footnotes" child_type="rich_document">
       <xpath>//div[@id='editoFootNotes']/p</xpath>
 
       <scalar name="description">

@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AskNatureFunctionNS 
 {
 	[SimplInherit]
-	public class AskNatureFunction : CompoundDocument
+	public class AskNatureFunction : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString groupId;

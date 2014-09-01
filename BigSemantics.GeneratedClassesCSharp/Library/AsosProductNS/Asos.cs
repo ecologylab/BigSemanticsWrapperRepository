@@ -33,9 +33,9 @@ namespace Ecologylab.Semantics.Generated.Library.AsosProductNS
 		[MmName("recommmended_products")]
 		private List<Asos> recommmendedProducts;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("tags")]
-		private List<CompoundDocument> tags;
+		private List<RichDocument> tags;
 
 		public Asos()
 		{ }
@@ -69,7 +69,7 @@ namespace Ecologylab.Semantics.Generated.Library.AsosProductNS
 			}
 		}
 
-		public List<CompoundDocument> Tags
+		public List<RichDocument> Tags
 		{
 			get{return tags;}
 			set

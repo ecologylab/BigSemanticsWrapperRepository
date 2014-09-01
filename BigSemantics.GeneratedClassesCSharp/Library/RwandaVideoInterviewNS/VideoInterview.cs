@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.RwandaVideoInterviewNS
 	/// video interview
 	/// </summary>
 	[SimplInherit]
-	public class VideoInterview : CompoundDocument
+	public class VideoInterview : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString interviewee;

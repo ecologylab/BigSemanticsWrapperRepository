@@ -496,16 +496,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.rating.Rating.class,
 
-		ecologylab.bigsemantics.generated.library.redditFeed.RedditCommentsPage.class,
-
-		ecologylab.bigsemantics.generated.library.redditFeed.RedditFeed.class,
-
-		ecologylab.bigsemantics.generated.library.redditFeed.RedditFrontPage.class,
-
-		ecologylab.bigsemantics.generated.library.redditFeed.RedditLink.class,
-
-		ecologylab.bigsemantics.generated.library.redditFeed.RedditSubreddit.class,
-
 		ecologylab.bigsemantics.generated.library.researchGateSearch.ResearchGateResult.class,
 
 		ecologylab.bigsemantics.generated.library.researchGateSearch.ResearchGateSearch.class,
@@ -646,6 +636,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.uniqloProduct.UniqloProduct.class,
 
+		ecologylab.bigsemantics.generated.library.urbanspoonSearch.UrbanSpoonSearch.class,
+
 		ecologylab.bigsemantics.generated.library.video.SocialVideo.class,
 
 		ecologylab.bigsemantics.generated.library.video.YoutubeChannel.class,
@@ -681,6 +673,8 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.wikipediaPageType.WikipediaCategoryType.class,
 
 		ecologylab.bigsemantics.generated.library.wikipediaPageType.WikipediaPageType.class,
+
+		ecologylab.bigsemantics.generated.library.wikipediaSearch.WikipediaSearch.class,
 
 		ecologylab.bigsemantics.generated.library.yahooRss.MediaContent.class,
 

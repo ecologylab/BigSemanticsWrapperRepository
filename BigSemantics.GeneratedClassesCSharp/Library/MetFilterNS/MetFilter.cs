@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.MetFilterNS 
 {
 	[SimplInherit]
-	public class MetFilter : Search<CompoundDocument>
+	public class MetFilter : Search<RichDocument>
 	{
 		public MetFilter()
 		{ }

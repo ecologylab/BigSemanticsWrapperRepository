@@ -13,7 +13,7 @@
         <field_parser name="regex_split" regex=",\s"/>
         <scalar name="title" label="author" field_parser_key="$0" />
      </collection>
-    <collection name="purchase_links" child_type="compound_document">
+    <collection name="purchase_links" child_type="rich_document">
         <xpath>//div[@id='buy_v']/ul/li</xpath>
         <scalar name="title">
             <xpath>./a/span</xpath>

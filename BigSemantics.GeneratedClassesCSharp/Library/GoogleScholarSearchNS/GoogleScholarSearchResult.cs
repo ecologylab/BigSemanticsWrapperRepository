@@ -26,11 +26,11 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS
 	/// A google scholar search result
 	/// </summary>
 	[SimplInherit]
-	public class GoogleScholarSearchResult : CompoundDocument
+	public class GoogleScholarSearchResult : RichDocument
 	{
 		[SimplComposite]
 		[MmName("destination_page")]
-		private CompoundDocument destinationPage;
+		private RichDocument destinationPage;
 
 		[SimplScalar]
 		private MetadataParsedURL documentLink;
@@ -43,18 +43,18 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS
 
 		[SimplComposite]
 		[MmName("citations")]
-		private CompoundDocument citations;
+		private RichDocument citations;
 
 		[SimplComposite]
 		[MmName("related_articles_link")]
-		private CompoundDocument relatedArticlesLink;
+		private RichDocument relatedArticlesLink;
 
 		[SimplScalar]
 		private MetadataInteger versions;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("google_authors")]
-		private List<CompoundDocument> googleAuthors;
+		private List<RichDocument> googleAuthors;
 
 		[SimplScalar]
 		private MetadataParsedURL versionsLink;
@@ -65,7 +65,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS
 		public GoogleScholarSearchResult(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public CompoundDocument DestinationPage
+		public RichDocument DestinationPage
 		{
 			get{return destinationPage;}
 			set
@@ -117,7 +117,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS
 			}
 		}
 
-		public CompoundDocument Citations
+		public RichDocument Citations
 		{
 			get{return citations;}
 			set
@@ -130,7 +130,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS
 			}
 		}
 
-		public CompoundDocument RelatedArticlesLink
+		public RichDocument RelatedArticlesLink
 		{
 			get{return relatedArticlesLink;}
 			set
@@ -156,7 +156,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS
 			}
 		}
 
-		public List<CompoundDocument> GoogleAuthors
+		public List<RichDocument> GoogleAuthors
 		{
 			get{return googleAuthors;}
 			set

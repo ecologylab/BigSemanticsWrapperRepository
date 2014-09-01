@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AcmPortalSearchNS 
 {
 	[SimplInherit]
-	public class AcmPortalSearchResult : CompoundDocument
+	public class AcmPortalSearchResult : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString authorList;

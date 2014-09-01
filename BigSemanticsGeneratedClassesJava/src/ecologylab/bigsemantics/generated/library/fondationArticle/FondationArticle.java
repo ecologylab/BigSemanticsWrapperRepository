@@ -11,8 +11,8 @@ package ecologylab.bigsemantics.generated.library.fondationArticle;
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.fondationArticle.FondationArticle;
 import ecologylab.bigsemantics.generated.library.fondationTag.FondationTag;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -34,13 +34,13 @@ public class FondationArticle extends CreativeWork
 	@simpl_scalar
 	private MetadataString articleType;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("external_links")
-	private List<CompoundDocument> externalLinks;
+	private List<RichDocument> externalLinks;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("external_link")
-	private List<CompoundDocument> externalLink;
+	private List<RichDocument> externalLink;
 
 	@simpl_collection("fondation_article")
 	@mm_name("related_page")
@@ -58,9 +58,9 @@ public class FondationArticle extends CreativeWork
 	@mm_name("index")
 	private List<FondationArticle> index;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("footnotes")
-	private List<CompoundDocument> footnotes;
+	private List<RichDocument> footnotes;
 
 	public FondationArticle()
 	{ super(); }
@@ -134,21 +134,21 @@ public class FondationArticle extends CreativeWork
 		this.articleType = articleType;
 	}
 
-	public List<CompoundDocument> getExternalLinks()
+	public List<RichDocument> getExternalLinks()
 	{
 		return externalLinks;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> externalLinks()
+  public List<RichDocument> externalLinks()
   {
     if (externalLinks == null)
-      externalLinks = new ArrayList<CompoundDocument>();
+      externalLinks = new ArrayList<RichDocument>();
     return externalLinks;
   }
 
   // addTo:
-  public void addToExternalLinks(CompoundDocument element)
+  public void addToExternalLinks(RichDocument element)
   {
     externalLinks().add(element);
   }
@@ -159,26 +159,26 @@ public class FondationArticle extends CreativeWork
     return externalLinks == null ? 0 : externalLinks.size();
   }
 
-	public void setExternalLinks(List<CompoundDocument> externalLinks)
+	public void setExternalLinks(List<RichDocument> externalLinks)
 	{
 		this.externalLinks = externalLinks;
 	}
 
-	public List<CompoundDocument> getExternalLink()
+	public List<RichDocument> getExternalLink()
 	{
 		return externalLink;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> externalLink()
+  public List<RichDocument> externalLink()
   {
     if (externalLink == null)
-      externalLink = new ArrayList<CompoundDocument>();
+      externalLink = new ArrayList<RichDocument>();
     return externalLink;
   }
 
   // addTo:
-  public void addToExternalLink(CompoundDocument element)
+  public void addToExternalLink(RichDocument element)
   {
     externalLink().add(element);
   }
@@ -189,7 +189,7 @@ public class FondationArticle extends CreativeWork
     return externalLink == null ? 0 : externalLink.size();
   }
 
-	public void setExternalLink(List<CompoundDocument> externalLink)
+	public void setExternalLink(List<RichDocument> externalLink)
 	{
 		this.externalLink = externalLink;
 	}
@@ -314,21 +314,21 @@ public class FondationArticle extends CreativeWork
 		this.index = index;
 	}
 
-	public List<CompoundDocument> getFootnotes()
+	public List<RichDocument> getFootnotes()
 	{
 		return footnotes;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> footnotes()
+  public List<RichDocument> footnotes()
   {
     if (footnotes == null)
-      footnotes = new ArrayList<CompoundDocument>();
+      footnotes = new ArrayList<RichDocument>();
     return footnotes;
   }
 
   // addTo:
-  public void addToFootnotes(CompoundDocument element)
+  public void addToFootnotes(RichDocument element)
   {
     footnotes().add(element);
   }
@@ -339,7 +339,7 @@ public class FondationArticle extends CreativeWork
     return footnotes == null ? 0 : footnotes.size();
   }
 
-	public void setFootnotes(List<CompoundDocument> footnotes)
+	public void setFootnotes(List<RichDocument> footnotes)
 	{
 		this.footnotes = footnotes;
 	}

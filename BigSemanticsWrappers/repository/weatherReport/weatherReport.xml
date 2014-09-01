@@ -2,7 +2,7 @@
   default_user_agent_name="chrome_2">
 
 	<!-- data structure definition for (general) weather report -->
-  <meta_metadata name="weather_report" extends="compound_document"
+  <meta_metadata name="weather_report" extends="rich_document"
     comment="The definition of weather report class.">
     <scalar name="title" label="city" comment="The name of the city." />
     <scalar name="time" comment="The time of this weather" scalar_type="String" />

@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS 
 {
 	[SimplInherit]
-	public class GoogleScholarArticleFacts : CompoundDocument
+	public class GoogleScholarArticleFacts : RichDocument
 	{
 		[SimplComposite]
 		[MmName("article")]
@@ -32,7 +32,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS
 
 		[SimplComposite]
 		[MmName("citations")]
-		private CompoundDocument citations;
+		private RichDocument citations;
 
 		[SimplScalar]
 		private MetadataString year;
@@ -63,7 +63,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS
 			}
 		}
 
-		public CompoundDocument Citations
+		public RichDocument Citations
 		{
 			get{return citations;}
 			set

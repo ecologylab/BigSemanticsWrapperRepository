@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.fondationTag" default_user_agent_name="chrome_2">
 
 
-  <meta_metadata name="fondation_tag" extends="compound_document" parser="xpath">
+  <meta_metadata name="fondation_tag" extends="rich_document" parser="xpath">
 
     <selector url_stripped="http://www.fondation-langlois.org/html/e/research.php" />
     <example_url url="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=Love&amp;Numero=&amp;zoom=1&amp;Format=1"/>

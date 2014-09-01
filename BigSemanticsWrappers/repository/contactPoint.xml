@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.contactPoint">
 
 
-  <meta_metadata name="contact_point" extends="compound_document" schema_org_itemtype="http://schema.org/ContactPoint"
+  <meta_metadata name="contact_point" extends="rich_document" schema_org_itemtype="http://schema.org/ContactPoint"
     comment="Resembles a schema.org ContactPoint.">
     <scalar name="location" xpath="" ></scalar>
     <scalar name="description">NULL</scalar>

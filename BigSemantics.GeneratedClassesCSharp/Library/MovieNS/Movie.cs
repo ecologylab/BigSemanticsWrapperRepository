@@ -31,10 +31,20 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 	public class Movie : CreativeWork
 	{
 		[SimplScalar]
-		private MetadataString tagline;
+		private MetadataString storyline;
 
 		[SimplScalar]
-		private MetadataString storyline;
+		private MetadataString tagline;
+
+		/// <summary>
+		/// Movie Poster or other image
+		/// </summary>
+		[SimplScalar]
+		private MetadataParsedURL pic;
+
+		[SimplCollection("image")]
+		[MmName("photos")]
+		private List<Image> photos;
 
 		/// <summary>
 		/// MPAA rating
@@ -68,16 +78,6 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 		[MmName("writers")]
 		private List<MoviePerson> writers;
 
-		/// <summary>
-		/// Movie Poster or other image
-		/// </summary>
-		[SimplScalar]
-		private MetadataParsedURL pic;
-
-		[SimplCollection("image")]
-		[MmName("photos")]
-		private List<Image> photos;
-
 		[SimplCollection("movie_person")]
 		[MmName("cast")]
 		private List<MoviePerson> cast;
@@ -95,6 +95,19 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 		public Movie(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
+		public MetadataString Storyline
+		{
+			get{return storyline;}
+			set
+			{
+				if (this.storyline != value)
+				{
+					this.storyline = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
 		public MetadataString Tagline
 		{
 			get{return tagline;}
@@ -108,14 +121,27 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 			}
 		}
 
-		public MetadataString Storyline
+		public MetadataParsedURL Pic
 		{
-			get{return storyline;}
+			get{return pic;}
 			set
 			{
-				if (this.storyline != value)
+				if (this.pic != value)
 				{
-					this.storyline = value;
+					this.pic = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Image> Photos
+		{
+			get{return photos;}
+			set
+			{
+				if (this.photos != value)
+				{
+					this.photos = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -181,32 +207,6 @@ namespace Ecologylab.Semantics.Generated.Library.MovieNS
 				if (this.writers != value)
 				{
 					this.writers = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataParsedURL Pic
-		{
-			get{return pic;}
-			set
-			{
-				if (this.pic != value)
-				{
-					this.pic = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Image> Photos
-		{
-			get{return photos;}
-			set
-			{
-				if (this.photos != value)
-				{
-					this.photos = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

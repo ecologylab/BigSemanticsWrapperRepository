@@ -47,7 +47,7 @@ namespace Ecologylab.Semantics.Generated.Library.AuthorNS
 
 		[SimplComposite]
 		[MmName("twitter_profile")]
-		private CompoundDocument twitterProfile;
+		private RichDocument twitterProfile;
 
 		public Author()
 		{ }
@@ -107,7 +107,7 @@ namespace Ecologylab.Semantics.Generated.Library.AuthorNS
 			}
 		}
 
-		public CompoundDocument TwitterProfile
+		public RichDocument TwitterProfile
 		{
 			get{return twitterProfile;}
 			set

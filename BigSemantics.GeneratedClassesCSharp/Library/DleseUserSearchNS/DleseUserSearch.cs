@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.DleseUserSearchNS 
 {
 	[SimplInherit]
-	public class DleseUserSearch : CompoundDocument
+	public class DleseUserSearch : RichDocument
 	{
 		[SimplComposite]
 		[MmName("search_section")]

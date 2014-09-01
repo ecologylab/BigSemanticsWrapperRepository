@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.attraction;
 
 import ecologylab.bigsemantics.generated.library.postalAddress.PostalAddress;
 import ecologylab.bigsemantics.generated.library.review.Review;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -28,15 +28,8 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Attraction extends CompoundDocument
+public class Attraction extends RichDocument
 {
-	@simpl_scalar
-	private MetadataString overallRating;
-
-	@simpl_collection("review")
-	@mm_name("reviews")
-	private List<Review> reviews;
-
 	/** 
 	 *Price/fee of the attraction
 	 */ 
@@ -55,6 +48,9 @@ public class Attraction extends CompoundDocument
 	@simpl_scalar
 	private MetadataString openHours;
 
+	@simpl_scalar
+	private MetadataString overallRating;
+
 	@simpl_composite
 	@mm_name("attraction_address")
 	private PostalAddress attractionAddress;
@@ -64,6 +60,10 @@ public class Attraction extends CompoundDocument
 	 */ 
 	@simpl_scalar
 	private MetadataParsedURL attractionWebsite;
+
+	@simpl_collection("review")
+	@mm_name("reviews")
+	private List<Review> reviews;
 
 	/** 
 	 *area of where attraction is and other attractions in the area
@@ -78,68 +78,6 @@ public class Attraction extends CompoundDocument
 		super(mmd);
 	}
 
-
-	public MetadataString	overallRating()
-	{
-		MetadataString	result = this.overallRating;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.overallRating = result;
-		}
-		return result;
-	}
-
-	public String getOverallRating()
-	{
-		return this.overallRating == null ? null : overallRating().getValue();
-	}
-
-	public MetadataString getOverallRatingMetadata()
-	{
-		return overallRating;
-	}
-
-	public void setOverallRating(String overallRating)
-	{
-		if (overallRating != null)
-			this.overallRating().setValue(overallRating);
-	}
-
-	public void setOverallRatingMetadata(MetadataString overallRating)
-	{
-		this.overallRating = overallRating;
-	}
-
-	public List<Review> getReviews()
-	{
-		return reviews;
-	}
-
-  // lazy evaluation:
-  public List<Review> reviews()
-  {
-    if (reviews == null)
-      reviews = new ArrayList<Review>();
-    return reviews;
-  }
-
-  // addTo:
-  public void addToReviews(Review element)
-  {
-    reviews().add(element);
-  }
-
-  // size:
-  public int reviewsSize()
-  {
-    return reviews == null ? 0 : reviews.size();
-  }
-
-	public void setReviews(List<Review> reviews)
-	{
-		this.reviews = reviews;
-	}
 
 	public MetadataString	fee()
 	{
@@ -237,6 +175,38 @@ public class Attraction extends CompoundDocument
 		this.openHours = openHours;
 	}
 
+	public MetadataString	overallRating()
+	{
+		MetadataString	result = this.overallRating;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.overallRating = result;
+		}
+		return result;
+	}
+
+	public String getOverallRating()
+	{
+		return this.overallRating == null ? null : overallRating().getValue();
+	}
+
+	public MetadataString getOverallRatingMetadata()
+	{
+		return overallRating;
+	}
+
+	public void setOverallRating(String overallRating)
+	{
+		if (overallRating != null)
+			this.overallRating().setValue(overallRating);
+	}
+
+	public void setOverallRatingMetadata(MetadataString overallRating)
+	{
+		this.overallRating = overallRating;
+	}
+
 	public PostalAddress getAttractionAddress()
 	{
 		return attractionAddress;
@@ -277,6 +247,36 @@ public class Attraction extends CompoundDocument
 	public void setAttractionWebsiteMetadata(MetadataParsedURL attractionWebsite)
 	{
 		this.attractionWebsite = attractionWebsite;
+	}
+
+	public List<Review> getReviews()
+	{
+		return reviews;
+	}
+
+  // lazy evaluation:
+  public List<Review> reviews()
+  {
+    if (reviews == null)
+      reviews = new ArrayList<Review>();
+    return reviews;
+  }
+
+  // addTo:
+  public void addToReviews(Review element)
+  {
+    reviews().add(element);
+  }
+
+  // size:
+  public int reviewsSize()
+  {
+    return reviews == null ? 0 : reviews.size();
+  }
+
+	public void setReviews(List<Review> reviews)
+	{
+		this.reviews = reviews;
 	}
 
 	public MetadataParsedURL	attractionsInTheArea()

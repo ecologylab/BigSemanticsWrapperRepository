@@ -27,15 +27,15 @@ namespace Ecologylab.Semantics.Generated.Library.AmazonProductNS
 	{
 		[SimplComposite]
 		[MmName("department")]
-		private CompoundDocument department;
+		private RichDocument department;
 
 		[SimplComposite]
 		[MmName("bestseller_list_rank")]
 		private AmazonList bestsellerListRank;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("list_mania")]
-		private List<CompoundDocument> listMania;
+		private List<RichDocument> listMania;
 
 		public AmazonProduct()
 		{ }
@@ -43,7 +43,7 @@ namespace Ecologylab.Semantics.Generated.Library.AmazonProductNS
 		public AmazonProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public CompoundDocument Department
+		public RichDocument Department
 		{
 			get{return department;}
 			set
@@ -69,7 +69,7 @@ namespace Ecologylab.Semantics.Generated.Library.AmazonProductNS
 			}
 		}
 
-		public List<CompoundDocument> ListMania
+		public List<RichDocument> ListMania
 		{
 			get{return listMania;}
 			set

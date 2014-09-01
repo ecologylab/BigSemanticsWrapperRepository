@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.WeatherReportNS
 	/// The definition of weather report class.
 	/// </summary>
 	[SimplInherit]
-	public class WeatherReport : CompoundDocument
+	public class WeatherReport : RichDocument
 	{
 		/// <summary>
 		/// The time of this weather

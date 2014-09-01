@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AsosPageNS 
 {
 	[SimplInherit]
-	public class AsosPage : CompoundDocument
+	public class AsosPage : RichDocument
 	{
 		[SimplCollection("asos")]
 		[MmName("products")]

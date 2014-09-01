@@ -27,7 +27,7 @@ namespace Ecologylab.Semantics.Generated.Library.WikipediaPageTypeNS
 	/// An article on wikipedia
 	/// </summary>
 	[SimplInherit]
-	public class WikipediaPageType : CompoundDocument
+	public class WikipediaPageType : RichDocument
 	{
 		[SimplComposite]
 		[MmName("main_image")]

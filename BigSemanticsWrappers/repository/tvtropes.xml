@@ -2,18 +2,18 @@
   package="ecologylab.bigsemantics.generated.library.tvtropes" default_user_agent_name="chrome_2">
 
 
-  <meta_metadata name="tvtrope_example" extends="compound_document" parser="xpath">
+  <meta_metadata name="tvtrope_example" extends="rich_document" parser="xpath">
 
     <composite name="trope" type="tvtrope" />
     <collection name="example_tropes" child_type="tvtrope" />
-    <collection name="comments" child_type="compound_document" />
+    <collection name="comments" child_type="rich_document" />
   </meta_metadata>
 
-  <meta_metadata name="tvtrope_folder" extends="compound_document" parser="xpath">
+  <meta_metadata name="tvtrope_folder" extends="rich_document" parser="xpath">
     <collection name="examples" child_type="tvtrope_example" />
     <collection name="ordered_examples" child_type="tvtrope_example" />
   </meta_metadata>
-  <meta_metadata name="tvtrope" extends="compound_document" parser="xpath">
+  <meta_metadata name="tvtrope" extends="rich_document" parser="xpath">
     <selector url_path_tree="http://tvtropes.org/pmwiki/pmwiki.php/" domain="tvtropes.org" />
     <example_url url="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGunslinger" />
     <example_url url="http://tvtropes.org/pmwiki/pmwiki.php/Main/ImprobableAimingSkills" />
@@ -71,7 +71,7 @@
             <xpath>./@href</xpath>
           </scalar>
         </collection>
-        <collection name="comments" child_type="compound_document">
+        <collection name="comments" child_type="rich_document">
           <xpath>./ul/li</xpath>
 
           <scalar name="description">
@@ -96,7 +96,7 @@
             <xpath>./@href</xpath>
           </scalar>
         </composite>
-        <collection name="comments" child_type="compound_document">
+        <collection name="comments" child_type="rich_document">
           <xpath>./ul/li</xpath>
 
           <scalar name="description">

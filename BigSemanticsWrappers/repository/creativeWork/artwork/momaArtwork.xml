@@ -37,7 +37,7 @@
       <xpath>//div[@class='status']/strong</xpath>
     </scalar>
     
-<!--     <composite name="moma_department" type="compound_document" label="department">
+<!--     <composite name="moma_department" type="rich_document" label="department">
       <xpath>//div[@class='item']/h4[contains(text(), 'Department:')]/../div/a</xpath>
       <scalar name="title" label="name">
         <xpath>.</xpath>
@@ -53,7 +53,7 @@
             <xpath>./@src</xpath>
         </scalar>
     </collection>
-    <composite name="moma_classification" type="compound_document" label="classification">
+    <composite name="moma_classification" type="rich_document" label="classification">
       <xpath>//div[@class='item']/h4[contains(text(), 'Classification:')]/../div/a</xpath>
       <scalar name="title" label="name">
         <xpath>.</xpath>

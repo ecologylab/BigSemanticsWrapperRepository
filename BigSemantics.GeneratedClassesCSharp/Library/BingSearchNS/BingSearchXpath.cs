@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.BingSearchNS
 	/// The bing Search class, using xpath parser.
 	/// </summary>
 	[SimplInherit]
-	public class BingSearchXpath : Search<CompoundDocument>
+	public class BingSearchXpath : Search<RichDocument>
 	{
 		public BingSearchXpath()
 		{ }

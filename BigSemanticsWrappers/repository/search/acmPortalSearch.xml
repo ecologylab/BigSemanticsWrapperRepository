@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.acmPortalSearch">
   
   
-  <meta_metadata name="acm_portal_search_result" parser="xpath" extends="compound_document">
+  <meta_metadata name="acm_portal_search_result" parser="xpath" extends="rich_document">
     <scalar name="author_list" scalar_type="String" />
     <scalar name="source" scalar_type="String" />
     <scalar name="bibliometrics" scalar_type="String" />

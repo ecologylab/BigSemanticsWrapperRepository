@@ -1,6 +1,6 @@
 <meta_metadata_repository name="default"
   package="ecologylab.bigsemantics.generated.library.opml">
-  <meta_metadata name="opml" extends="compound_document" parser="direct">
+  <meta_metadata name="opml" extends="rich_document" parser="direct">
     <composite name="head" extends="metadata">
       <scalar name="title" scalar_type="String" />
     </composite>

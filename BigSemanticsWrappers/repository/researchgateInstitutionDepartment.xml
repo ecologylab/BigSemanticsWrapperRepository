@@ -3,7 +3,7 @@ package="ecologylab.bigsemantics.generated.library.researchgateInstitutionDepart
     
   
     
-    <meta_metadata name="research_gate_institution_department" extends="compound_document" parser="xpath">
+    <meta_metadata name="research_gate_institution_department" extends="rich_document" parser="xpath">
         
         <selector url_regex="http://www.researchgate.net/institution/.*/department/.*" domain="researchgate.net"/>
         <scalar name="title">

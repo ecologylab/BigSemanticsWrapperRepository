@@ -25,21 +25,21 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// A search.
 	/// </summary>
 	[SimplInherit]
-	public class Search<SR> : CompoundDocument where SR : CompoundDocument
+	public class Search<SR> : RichDocument where SR : RichDocument
 	{
 		[SimplCollection]
 		[SimplNoWrap]
 		[SimplScope("repository_documents")]
 		[MmName("search_results")]
-		private List<CompoundDocument> searchResults;
+		private List<RichDocument> searchResults;
 
 		[SimplCollection("search")]
 		[MmName("related_searches")]
-		private List<Search<CompoundDocument>> relatedSearches;
+		private List<Search<rich_document>> relatedSearches;
 
 		[SimplComposite]
 		[MmName("next_page")]
-		private Search<CompoundDocument> nextPage;
+		private Search<RichDocument> nextPage;
 
 		public Search()
 		{ }
@@ -47,7 +47,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 		public Search(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<CompoundDocument> SearchResults
+		public List<RichDocument> SearchResults
 		{
 			get{return searchResults;}
 			set
@@ -60,7 +60,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public List<Search<CompoundDocument>> RelatedSearches
+		public List<Search<rich_document>> RelatedSearches
 		{
 			get{return relatedSearches;}
 			set
@@ -73,7 +73,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public Search<CompoundDocument> NextPage
+		public Search<RichDocument> NextPage
 		{
 			get{return nextPage;}
 			set

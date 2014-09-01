@@ -25,7 +25,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS 
 {
 	[SimplInherit]
-	public class CreativeWork : CompoundDocument
+	public class CreativeWork : RichDocument
 	{
 		[SimplCollection("author")]
 		[MmName("authors")]
@@ -63,7 +63,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 
 		[SimplComposite]
 		[MmName("rich_media")]
-		private CompoundDocument richMedia;
+		private RichDocument richMedia;
 
 		public CreativeWork()
 		{ }
@@ -149,7 +149,7 @@ namespace Ecologylab.Semantics.Generated.Library.CreativeWorkNS
 			}
 		}
 
-		public CompoundDocument RichMedia
+		public RichDocument RichMedia
 		{
 			get{return richMedia;}
 			set

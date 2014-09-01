@@ -8,7 +8,7 @@
       <scalar name="title">
       	<xpath>//div[@id='title']/a</xpath>
       </scalar>
-      <composite name="article_link" type="compound_document">
+      <composite name="article_link" type="rich_document">
       	<xpath>//div[@id='title']/a</xpath>
       	<scalar name="title">
       		<xpath>./</xpath>
@@ -49,7 +49,7 @@
 			<scalar name="citation_count" scalar_type="String">
       	<xpath>//div[@id='scholar_sec']//a</xpath>
       </scalar>
-			 <composite name="google_citations" type="compound_document">
+			 <composite name="google_citations" type="rich_document">
       	<xpath>//div[@id='scholar_sec']//a</xpath>
       	<scalar name="title">
       		<xpath>.</xpath>
@@ -61,9 +61,9 @@
 			
 			
 	</meta_metadata>
-	<meta_metadata name="google_scholar_article_facts" extends="compound_document">
+	<meta_metadata name="google_scholar_article_facts" extends="rich_document">
 		<composite name="article" type="google_scholar_article"/>
-		<composite name="citations" type="compound_document"/>
+		<composite name="citations" type="rich_document"/>
 		<scalar name="year" scalar_type="String"/>
 		<collection name="authors" child_type="author">
 		</collection>

@@ -26,32 +26,19 @@ namespace Ecologylab.Semantics.Generated.Library.CiteulikePaperNS
 	public class CiteulikePaper : ScholarlyArticle
 	{
 		[SimplComposite]
-		[MmName("citeulike_user")]
-		private CiteulikeUser citeulikeUser;
-
-		[SimplComposite]
 		[SimplScope("repository_documents")]
 		[MmName("source_article")]
 		private ScholarlyArticle sourceArticle;
+
+		[SimplComposite]
+		[MmName("citeulike_user")]
+		private CiteulikeUser citeulikeUser;
 
 		public CiteulikePaper()
 		{ }
 
 		public CiteulikePaper(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public CiteulikeUser CiteulikeUser
-		{
-			get{return citeulikeUser;}
-			set
-			{
-				if (this.citeulikeUser != value)
-				{
-					this.citeulikeUser = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public ScholarlyArticle SourceArticle
 		{
@@ -61,6 +48,19 @@ namespace Ecologylab.Semantics.Generated.Library.CiteulikePaperNS
 				if (this.sourceArticle != value)
 				{
 					this.sourceArticle = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public CiteulikeUser CiteulikeUser
+		{
+			get{return citeulikeUser;}
+			set
+			{
+				if (this.citeulikeUser != value)
+				{
+					this.citeulikeUser = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

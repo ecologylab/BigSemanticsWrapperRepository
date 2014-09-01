@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.WhitneySearchNS 
 {
 	[SimplInherit]
-	public class WhitneySearch : Search<CompoundDocument>
+	public class WhitneySearch : Search<RichDocument>
 	{
 		public WhitneySearch()
 		{ }

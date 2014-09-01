@@ -1,7 +1,7 @@
 <meta_metadata_repository name="citeulikeTag"
   package="ecologylab.bigsemantics.generated.library.citeulikeTag" default_user_agent_name="chrome">
 
-  <meta_metadata name="citeulike_tag" extends="compound_document" parser="xpath">
+  <meta_metadata name="citeulike_tag" extends="rich_document" parser="xpath">
     <selector url_regex="http://www.citeulike.org/tag/[^/]*" domain="citeulike.org" />
     <selector url_regex="http://www.citeulike.org/user/[^/]*/tag/[^/]*" domain="citeulike.org" />
     <example_url url="http://www.citeulike.org/tag/semantic" />

@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.dleseUserSearch;
  */
 
 import ecologylab.bigsemantics.generated.library.dleseUserSearch.SearchSection;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class DleseUserSearch extends CompoundDocument
+public class DleseUserSearch extends RichDocument
 {
 	@simpl_composite
 	@mm_name("search_section")

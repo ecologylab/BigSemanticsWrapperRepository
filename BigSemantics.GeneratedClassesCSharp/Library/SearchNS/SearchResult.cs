@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// A search result.
 	/// </summary>
 	[SimplInherit]
-	public class SearchResult : CompoundDocument
+	public class SearchResult : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString siteLink;

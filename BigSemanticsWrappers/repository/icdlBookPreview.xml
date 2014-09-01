@@ -1,7 +1,7 @@
 <meta_metadata_repository name="icdlBookPreview"
   package="ecologylab.bigsemantics.generated.library.icdlBookPreview">
 
-  <meta_metadata name="icdl_book_preview" parser="xpath" extends="compound_document"
+  <meta_metadata name="icdl_book_preview" parser="xpath" extends="rich_document"
     comment="ICDL About This Book Page">
     <selector url_stripped="http://www.childrenslibrary.org/icdl/BookPreview" />
 		<example_url url="http://www.childrenslibrary.org/icdl/BookPreview?bookid=shiwhit_00900083amp;route=text_English_floweramp;lang=Englishamp;msg=amp;ilang=English"/>

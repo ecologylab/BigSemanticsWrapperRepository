@@ -26,7 +26,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionNS 
 {
 	[SimplInherit]
-	public class ResearchGateInstitution : CompoundDocument
+	public class ResearchGateInstitution : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString institutionHead;
@@ -53,7 +53,7 @@ namespace Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionNS
 
 		[SimplComposite]
 		[MmName("website")]
-		private CompoundDocument website;
+		private RichDocument website;
 
 		[SimplComposite]
 		[MmName("stats")]
@@ -143,7 +143,7 @@ namespace Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionNS
 			}
 		}
 
-		public CompoundDocument Website
+		public RichDocument Website
 		{
 			get{return website;}
 			set

@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.TateFilterNS 
 {
 	[SimplInherit]
-	public class TateFilter : Search<CompoundDocument>
+	public class TateFilter : Search<RichDocument>
 	{
 		public TateFilter()
 		{ }

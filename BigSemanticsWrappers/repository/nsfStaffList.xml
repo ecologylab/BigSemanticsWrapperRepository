@@ -1,11 +1,11 @@
 <meta_metadata_repository name="nsfStaffList"
   package="ecologylab.bigsemantics.generated.library.nsfStaffList">
   
-  <meta_metadata name="nsf_division_staff_list" extends="compound_document" parser="xpath">
+  <meta_metadata name="nsf_division_staff_list" extends="rich_document" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/staff/staff_list_all.jsp" />
 		<example_url url="http://www.nsf.gov/staff/staff_list_all.jsp?org=NULL"/>
     <collection name="programs"  child_type="nsf_program_staff_list"
-      child_extends="compound_document">
+      child_extends="rich_document">
       <xpath>//td[@class='text']//strong[@class='greybold']</xpath>
       <scalar name="title">
         <xpath>.</xpath>

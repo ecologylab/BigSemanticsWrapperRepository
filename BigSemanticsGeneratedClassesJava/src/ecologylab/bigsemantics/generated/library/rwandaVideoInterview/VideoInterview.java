@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.rwandaVideoInterview;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -25,7 +25,7 @@ import java.util.Map;
  *video interview
  */ 
 @simpl_inherit
-public class VideoInterview extends CompoundDocument
+public class VideoInterview extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString interviewee;

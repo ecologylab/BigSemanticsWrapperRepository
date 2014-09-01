@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.FondationTagNS 
 {
 	[SimplInherit]
-	public class FondationTag : CompoundDocument
+	public class FondationTag : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString preDescription;

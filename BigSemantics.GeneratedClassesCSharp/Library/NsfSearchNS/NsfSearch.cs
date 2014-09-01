@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.NsfSearchNS 
 {
 	[SimplInherit]
-	public class NsfSearch : Search<CompoundDocument>
+	public class NsfSearch : Search<RichDocument>
 	{
 		public NsfSearch()
 		{ }

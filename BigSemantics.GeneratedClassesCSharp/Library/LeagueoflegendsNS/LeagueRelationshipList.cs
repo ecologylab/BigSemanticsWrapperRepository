@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS 
 {
 	[SimplInherit]
-	public class LeagueRelationshipList : CompoundDocument
+	public class LeagueRelationshipList : RichDocument
 	{
 		[SimplCollection("league_champion")]
 		[MmName("champions")]

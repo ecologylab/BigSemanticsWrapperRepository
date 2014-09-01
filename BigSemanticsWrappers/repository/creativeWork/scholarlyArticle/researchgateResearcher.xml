@@ -16,7 +16,7 @@ package="ecologylab.bigsemantics.generated.library.researchgateResearcher" defau
                 <regex_op regex="^" replace="/"></regex_op>
             </scalar>                    
         </collection>
-        <collection name="researcher_stats" child_type="compound_document">
+        <collection name="researcher_stats" child_type="rich_document">
             <xpath>//div[@class='stats-container']//tr[@class='item']</xpath>
             <scalar name="title" label="stat">
                 <xpath>./td[@class='label']</xpath> 
