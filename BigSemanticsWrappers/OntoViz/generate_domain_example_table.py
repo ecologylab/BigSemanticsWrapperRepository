@@ -40,35 +40,9 @@ def dfs(node, children, op):
         for child in children(node):
             dfs(child, children, op)
 
-def subtypes(node):
-    subtypes = node.get('subtype', [])
-    if subtypes is None:
-        subtypes = node.get('subtypes', [])
-    if subtypes is not None:
-        if isinstance(subtypes, list):
-            return subtypes
-        else:
-            subtypes = subtypes.get('subtype', [])
-            if isinstance(subtypes, list):
-                return subtypes
-    return None
-
-def all_example_urls(node):
-    all_example_urls = node.get('all_example_url', [])
-    if all_example_urls is None:
-        all_example_urls = node.get('all_example_urls', [])
-    if all_example_urls is not None:
-        if isinstance(all_example_urls, list):
-            return all_example_urls
-        else:
-            all_example_urls = all_example_urls.get('all_example_url', [])
-            if isinstance(all_example_urls, list):
-                return all_example_urls
-    return None
-
 def collect_example_urls(node, is_filter, results):
     name = node['name']
-    urls = all_example_urls(node)
+    urls = node.get('all_example_urls', [])
     if urls is not None and len(urls) > 0:
         subdomain = None
         domain = None
@@ -96,7 +70,9 @@ def example_urls_by_domain_type(repo_json_file, is_filter):
     root = repo['node']
     # {domain: {type: [urls]}}
     results = dict()
-    dfs(root, subtypes, lambda n: collect_example_urls(n, is_filter, results))
+    dfs(root,
+        lambda n: n.get('subtypes', []),
+        lambda n: collect_example_urls(n, is_filter, results))
     return results
 
 def print_domain_example_json(results, f):
