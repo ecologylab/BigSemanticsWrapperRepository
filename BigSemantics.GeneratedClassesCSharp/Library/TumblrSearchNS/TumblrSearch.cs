@@ -24,7 +24,7 @@ namespace Ecologylab.Semantics.Generated.Library.TumblrSearchNS
 	/// The tumblr search class
 	/// </summary>
 	[SimplInherit]
-	public class TumblrSearch : Search<RichDocument>
+	public class TumblrSearch : Search<SocialMediaSearchResult>
 	{
 		public TumblrSearch()
 		{ }

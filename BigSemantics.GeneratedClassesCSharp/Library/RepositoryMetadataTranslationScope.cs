@@ -105,7 +105,7 @@ using Ecologylab.Semantics.Generated.Library.GrantNS;
 using Ecologylab.Semantics.Generated.Library.GrantProgramNS;
 using Ecologylab.Semantics.Generated.Library.GrantStaffNS;
 using Ecologylab.Semantics.Generated.Library.GuggenArtworkNS;
-using Ecologylab.Semantics.Generated.Library.GuggenFitlerNS;
+using Ecologylab.Semantics.Generated.Library.GuggenFilterNS;
 using Ecologylab.Semantics.Generated.Library.HmProductNS;
 using Ecologylab.Semantics.Generated.Library.HomeDepotProductNS;
 using Ecologylab.Semantics.Generated.Library.HotelNS;
@@ -251,6 +251,7 @@ using Ecologylab.Semantics.Generated.Library.YahooRssNS;
 using Ecologylab.Semantics.Generated.Library.YahooSearchNS;
 using Ecologylab.Semantics.Generated.Library.YelpBusinessNS;
 using Ecologylab.Semantics.Generated.Library.ZaraProductNS;
+using Ecologylab.Semantics.MetadataNS.Builtins.Declarations;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.Semantics.Generated.Library 

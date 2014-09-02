@@ -1,6 +1,8 @@
-<meta_metadata_repository name="guggenFitler"
-  package="ecologylab.bigsemantics.generated.library.guggenFitler" default_user_agent_name="chrome_2">
+<meta_metadata_repository name="guggenFilter"
+  package="ecologylab.bigsemantics.generated.library.guggenFilter" default_user_agent_name="chrome_2">
   <meta_metadata name="guggen_filter" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="guggen_artwork" />
+
     <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artists/" />
     <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/" />
     <selector url_path_tree="http://www.guggenheim.org/new-york/collections/collection-online/movements/" />
@@ -17,7 +19,7 @@
       <xpath>//div[@id='main-three-center']/h3</xpath>
     </scalar>
 
-    <collection name="search_results" child_type="guggen_artwork">
+    <collection name="search_results">
       <xpath>//div[@class='artworks-item']</xpath>
       <scalar name="location" hide="true">
         <xpath>./div/a/@href</xpath>

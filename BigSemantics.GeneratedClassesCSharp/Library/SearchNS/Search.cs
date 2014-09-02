@@ -35,7 +35,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 
 		[SimplCollection("search")]
 		[MmName("related_searches")]
-		private List<Search<rich_document>> relatedSearches;
+		private List<Search<RichDocument>> relatedSearches;
 
 		[SimplComposite]
 		[MmName("next_page")]
@@ -60,7 +60,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public List<Search<rich_document>> RelatedSearches
+		public List<Search<RichDocument>> RelatedSearches
 		{
 			get{return relatedSearches;}
 			set

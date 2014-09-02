@@ -62,6 +62,7 @@
     <scalar name="page_structure" layer="6.0" hide="true" scalar_type="String"
       comment="For debugging. Type of the structure recognized by information extraction." />
     <collection name="clippings" child_type="clipping" hide="true" polymorphic_scope="repository_clippings"
+      covariant="true"
       comment="Clippings that this document contains." />
 
     <composite name="thumbnail" type="image" hide="true">

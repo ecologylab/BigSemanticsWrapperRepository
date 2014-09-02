@@ -3,9 +3,7 @@
 
 
   <meta_metadata name="nsf_search" extends="search" parser="xpath">
-<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/piSearch.do" /> -->
-<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/progSearch.do" /> -->
-<!--     <selector url_stripped="http://www.nsf.gov/awardsearch/afSearch.do" /> -->
+    <generic_type_var name="SR" arg="nsf_award" />
 
     <selector url_stripped="http://www.nsf.gov/awardsearch/simpleSearchResult" />
     <selector url_stripped="http://www.nsf.gov/awardsearch/advancedSearchResult">
@@ -25,7 +23,7 @@
       <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
     </filter_location>
 
-    <collection name="search_results" label="nsf_awards" child_type="nsf_award">
+    <collection name="search_results" label="nsf_awards">
       <xpath>//table[@id='displayTagResults']//tr[@class]</xpath>
       <scalar name="title">
         <xpath>./a</xpath>

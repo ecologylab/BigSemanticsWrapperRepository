@@ -28,7 +28,7 @@ namespace Ecologylab.Semantics.Generated.Library.CurationNS
 		[SimplCollection]
 		[SimplScope("rich_artifacts_scope")]
 		[MmName("metadata_collection")]
-		private List<RichArtifact> metadataCollection;
+		private List<RichArtifact<Metadata>> metadataCollection;
 
 		[SimplScalar]
 		private MetadataString curationAppVersion;
@@ -45,7 +45,7 @@ namespace Ecologylab.Semantics.Generated.Library.CurationNS
 		public Curation(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<RichArtifact> MetadataCollection
+		public List<RichArtifact<Metadata>> MetadataCollection
 		{
 			get{return metadataCollection;}
 			set

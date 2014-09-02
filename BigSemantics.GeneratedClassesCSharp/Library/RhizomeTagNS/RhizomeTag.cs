@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.RhizomeArtworkNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -21,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.RhizomeTagNS 
 {
 	[SimplInherit]
-	public class RhizomeTag : Search<RichDocument>
+	public class RhizomeTag : Search<RhizomeArtwork>
 	{
 		public RhizomeTag()
 		{ }

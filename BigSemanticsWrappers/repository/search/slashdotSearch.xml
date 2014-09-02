@@ -3,10 +3,13 @@
   
   <meta_metadata name="slashdot_search" extends="search" comment="The slashdot search class"
     user_agent_name="opera_9" parser="xpath">
+    <generic_type_var name="SR" arg="social_media_search_result" />
+
     <selector url_stripped="http://slashdot.org/index2.pl" />
     <selector url_stripped="http://slashdot.com/index2.pl" />
 		<example_url url="http://slashdot.org/index2.pl?fhfilter=test"/>
-    <collection name="search_results" child_type="social_media_search_result">
+
+    <collection name="search_results">
       <xpath>//div[@id='firehoselist']//article</xpath>
       <scalar name="title">
         <xpath>.//h2</xpath>

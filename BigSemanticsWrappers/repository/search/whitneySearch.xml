@@ -2,6 +2,8 @@
   package="ecologylab.bigsemantics.generated.library.whitneySearch" default_user_agent_name="chrome_2">
 
   <meta_metadata name="whitney_search" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="whitney_artwork" />
+
     <selector url_stripped="http://whitney.org/Search" />
     <example_url url="http://whitney.org/Search?query=Georgia+O%27Keeffe" />
 
@@ -9,7 +11,7 @@
       <xpath>//*[@id='search-result-field']/@value</xpath>
     </scalar>
     
-    <collection name="search_results" child_type="whitney_artwork">
+    <collection name="search_results">
       <xpath>//div[@class='result artwork']</xpath>
       <scalar name="location" hide="true">
         <xpath>./div[@class='title']/a[2]/@href</xpath>

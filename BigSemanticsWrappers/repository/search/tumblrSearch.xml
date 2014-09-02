@@ -3,9 +3,12 @@
   
    <meta_metadata name="tumblr_search" extends="search" comment="The tumblr search class"
     user_agent_name="opera_9" parser="xpath">
+    <generic_type_var name="SR" arg="social_media_search_result" />
+
     <selector url_path_tree="http://www.tumblr.com/search/" />
     <example_url url="http://www.tumblr.com/search/vinyl"/>
-    <collection name="search_results" child_type="social_media_search_result">
+
+    <collection name="search_results">
       <xpath>//div[@id='left_column']//li</xpath>
       <scalar name="title">
         <xpath>.//div[@class='post_title']</xpath>

@@ -9,7 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.ArtworkNS;
-using Ecologylab.Semantics.Generated.Library.GuggenFitlerNS;
+using Ecologylab.Semantics.Generated.Library.GuggenFilterNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

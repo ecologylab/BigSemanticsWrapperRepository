@@ -11,6 +11,8 @@
  
 
   <meta_metadata name="newmuseum_filter" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="newmuseum_artwork" />
+
     <selector url_path_tree="http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/" />
     <example_url
       url="http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/type_facet/id/12/mod_id/0" />
@@ -19,7 +21,7 @@
       <xpath>//span[@id='browsingFor']</xpath>
     </scalar>
 
-    <collection name="search_results" child_type="newmuseum_artwork">
+    <collection name="search_results">
       <xpath>//*[@id='resultBox']/table/tbody/tr/td/div[2]/div/a</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
