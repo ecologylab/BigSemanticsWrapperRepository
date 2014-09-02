@@ -182,7 +182,6 @@ primitiveTypes/audioSelfmade.xml
 primitiveTypes/cachedHTML.xml
 primitiveTypes/clippableDocument.xml
 primitiveTypes/clipping.xml
-primitiveTypes/compoundDocument.xml
 primitiveTypes/creativeAct.xml
 primitiveTypes/curateLink.xml
 primitiveTypes/debugMetadata.xml
@@ -199,6 +198,7 @@ primitiveTypes/metadata.xml
 primitiveTypes/pdf.xml
 primitiveTypes/pdfMixin.xml
 primitiveTypes/richArtifact.xml
+primitiveTypes/richDocument.xml
 primitiveTypes/sequencedClippableDocument.xml
 primitiveTypes/textClipping.xml
 primitiveTypes/textSelfmade.xml
@@ -243,8 +243,8 @@ search/imageSearch/imgurSearch.xml
 search/imageSearch/pinterestImageSearch.xml
 search/imageSearch/redditGifSearch.xml
 search/imageSearch/tumblrTagResults.xml
-wheatherReport/weatherReport.xml
-wheatherReport/wuWeatherReport.xml
+weatherReport/weatherReport.xml
+weatherReport/wuWeatherReport.xml
 wikipediaPage/wikipediaMobile.xml
 wikipediaPage/wikipediaPage.xml
 wikipediaPage/wikipediaPageType.xml
@@ -296,6 +296,7 @@ opml.xml
 patentClassification.xml
 postalAddress.xml
 publisher.xml
+redditFeed.xml
 researchgateinstitution.xml
 researchgateInstitutionDepartment.xml
 rss.xml
