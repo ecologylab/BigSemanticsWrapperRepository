@@ -3,12 +3,12 @@
 
 
 
-  <meta_metadata name="fondation_category_collection" extends="compound_document"
+  <meta_metadata name="fondation_category_collection" extends="rich_document"
     parser="xpath">
     <collection name="collections" child_type="fondation_collection" />
   </meta_metadata>
 
-  <meta_metadata name="fondation_collection" extends="compound_document" parser="xpath">
+  <meta_metadata name="fondation_collection" extends="rich_document" parser="xpath">
     <selector url_stripped="http://www.fondation-langlois.org/html/e/liste.php" />
     <example_url url="http://www.fondation-langlois.org/html/e/liste.php?Selection=PUB#" />
     <example_url url="http://www.fondation-langlois.org/html/e/liste.php?Selection=PRO+col"/>

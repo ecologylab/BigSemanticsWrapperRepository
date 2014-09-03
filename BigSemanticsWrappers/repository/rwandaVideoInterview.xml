@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.rwandaVideoInterview">
 	
 
-  <meta_metadata name="video_interview" extends="compound_document" parser="xpath" comment="video interview">
+  <meta_metadata name="video_interview" extends="rich_document" parser="xpath" comment="video interview">
     <selector url_path_tree="http://www.tribunalvoices.org/voices/video/" />
     <selector url_path_tree="http://tribunalvoices.org/voices/video/" />
     <example_url url="http://www.tribunalvoices.org/voices/video/588" />

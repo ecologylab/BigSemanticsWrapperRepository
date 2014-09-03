@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.askNatureSubgroup;
  */
 
 import ecologylab.bigsemantics.generated.library.askNatureFunction.AskNatureFunction;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AskNatureSubgroup extends CompoundDocument
+public class AskNatureSubgroup extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString groupId;

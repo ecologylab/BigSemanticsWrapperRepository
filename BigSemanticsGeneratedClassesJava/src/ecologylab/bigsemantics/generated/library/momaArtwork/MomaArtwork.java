@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.momaArtwork;
 
 import ecologylab.bigsemantics.generated.library.artwork.Artwork;
 import ecologylab.bigsemantics.generated.library.momaArtwork.TempFieldValueHolder;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -33,7 +33,7 @@ public class MomaArtwork extends Artwork
 
 	@simpl_composite
 	@mm_name("moma_classification")
-	private CompoundDocument momaClassification;
+	private RichDocument momaClassification;
 
 	@simpl_scalar
 	private MetadataParsedURL permalink;
@@ -91,12 +91,12 @@ public class MomaArtwork extends Artwork
 		this.status = status;
 	}
 
-	public CompoundDocument getMomaClassification()
+	public RichDocument getMomaClassification()
 	{
 		return momaClassification;
 	}
 
-	public void setMomaClassification(CompoundDocument momaClassification)
+	public void setMomaClassification(RichDocument momaClassification)
 	{
 		this.momaClassification = momaClassification;
 	}

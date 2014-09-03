@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.tvtropes;
  */
 
 import ecologylab.bigsemantics.generated.library.tvtropes.Tvtrope;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class TvtropeExample extends CompoundDocument
+public class TvtropeExample extends RichDocument
 {
 	@simpl_composite
 	@mm_name("trope")
@@ -32,9 +32,9 @@ public class TvtropeExample extends CompoundDocument
 	@mm_name("example_tropes")
 	private List<Tvtrope> exampleTropes;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("comments")
-	private List<CompoundDocument> comments;
+	private List<RichDocument> comments;
 
 	public TvtropeExample()
 	{ super(); }
@@ -84,21 +84,21 @@ public class TvtropeExample extends CompoundDocument
 		this.exampleTropes = exampleTropes;
 	}
 
-	public List<CompoundDocument> getComments()
+	public List<RichDocument> getComments()
 	{
 		return comments;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> comments()
+  public List<RichDocument> comments()
   {
     if (comments == null)
-      comments = new ArrayList<CompoundDocument>();
+      comments = new ArrayList<RichDocument>();
     return comments;
   }
 
   // addTo:
-  public void addToComments(CompoundDocument element)
+  public void addToComments(RichDocument element)
   {
     comments().add(element);
   }
@@ -109,7 +109,7 @@ public class TvtropeExample extends CompoundDocument
     return comments == null ? 0 : comments.size();
   }
 
-	public void setComments(List<CompoundDocument> comments)
+	public void setComments(List<RichDocument> comments)
 	{
 		this.comments = comments;
 	}

@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.WikipediaPageTypeNS 
 {
 	[SimplInherit]
-	public class WikipediaCategoryType : CompoundDocument
+	public class WikipediaCategoryType : RichDocument
 	{
 		[SimplCollection("wikipedia_category_type")]
 		[MmName("subcategories")]

@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.InstructablesTagNS 
 {
 	[SimplInherit]
-	public class InstructableTag : CompoundDocument
+	public class InstructableTag : RichDocument
 	{
 		[SimplCollection("instructable")]
 		[MmName("items_with_tag")]

@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.EventNS
 	/// Generalized Event Object
 	/// </summary>
 	[SimplInherit]
-	public class Event : CompoundDocument
+	public class Event : RichDocument
 	{
 		[SimplScalar]
 		private MetadataDate startTime;

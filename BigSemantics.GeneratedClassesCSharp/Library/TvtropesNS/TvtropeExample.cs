@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.TvtropesNS 
 {
 	[SimplInherit]
-	public class TvtropeExample : CompoundDocument
+	public class TvtropeExample : RichDocument
 	{
 		[SimplComposite]
 		[MmName("trope")]
@@ -32,9 +32,9 @@ namespace Ecologylab.Semantics.Generated.Library.TvtropesNS
 		[MmName("example_tropes")]
 		private List<Tvtrope> exampleTropes;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("comments")]
-		private List<CompoundDocument> comments;
+		private List<RichDocument> comments;
 
 		public TvtropeExample()
 		{ }
@@ -68,7 +68,7 @@ namespace Ecologylab.Semantics.Generated.Library.TvtropesNS
 			}
 		}
 
-		public List<CompoundDocument> Comments
+		public List<RichDocument> Comments
 		{
 			get{return comments;}
 			set

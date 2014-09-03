@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.IkeaProductNS 
 {
 	[SimplInherit]
-	public class IkeaDepartment : CompoundDocument
+	public class IkeaDepartment : RichDocument
 	{
 		[SimplCollection("ikea_product")]
 		[MmName("products")]

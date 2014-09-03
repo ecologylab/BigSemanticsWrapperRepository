@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.OpmlNS 
 {
 	[SimplInherit]
-	public class Opml : CompoundDocument
+	public class Opml : RichDocument
 	{
 		[SimplComposite]
 		[MmName("head")]

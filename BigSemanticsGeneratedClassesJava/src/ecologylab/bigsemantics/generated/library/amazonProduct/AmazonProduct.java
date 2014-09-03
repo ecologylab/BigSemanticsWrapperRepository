@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.amazonProduct;
 
 import ecologylab.bigsemantics.generated.library.amazonList.AmazonList;
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -27,15 +27,15 @@ public class AmazonProduct extends Product
 {
 	@simpl_composite
 	@mm_name("department")
-	private CompoundDocument department;
+	private RichDocument department;
 
 	@simpl_composite
 	@mm_name("bestseller_list_rank")
 	private AmazonList bestsellerListRank;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("list_mania")
-	private List<CompoundDocument> listMania;
+	private List<RichDocument> listMania;
 
 	public AmazonProduct()
 	{ super(); }
@@ -45,12 +45,12 @@ public class AmazonProduct extends Product
 	}
 
 
-	public CompoundDocument getDepartment()
+	public RichDocument getDepartment()
 	{
 		return department;
 	}
 
-	public void setDepartment(CompoundDocument department)
+	public void setDepartment(RichDocument department)
 	{
 		this.department = department;
 	}
@@ -65,21 +65,21 @@ public class AmazonProduct extends Product
 		this.bestsellerListRank = bestsellerListRank;
 	}
 
-	public List<CompoundDocument> getListMania()
+	public List<RichDocument> getListMania()
 	{
 		return listMania;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> listMania()
+  public List<RichDocument> listMania()
   {
     if (listMania == null)
-      listMania = new ArrayList<CompoundDocument>();
+      listMania = new ArrayList<RichDocument>();
     return listMania;
   }
 
   // addTo:
-  public void addToListMania(CompoundDocument element)
+  public void addToListMania(RichDocument element)
   {
     listMania().add(element);
   }
@@ -90,7 +90,7 @@ public class AmazonProduct extends Product
     return listMania == null ? 0 : listMania.size();
   }
 
-	public void setListMania(List<CompoundDocument> listMania)
+	public void setListMania(List<RichDocument> listMania)
 	{
 		this.listMania = listMania;
 	}

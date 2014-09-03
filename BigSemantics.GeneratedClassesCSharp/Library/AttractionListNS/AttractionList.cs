@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AttractionListNS 
 {
 	[SimplInherit]
-	public class AttractionList : CompoundDocument
+	public class AttractionList : RichDocument
 	{
 		[SimplCollection("attraction")]
 		[MmName("attractions")]

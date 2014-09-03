@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.FlickrPhotostreamNS
 	/// All flickr photos of a particular user
 	/// </summary>
 	[SimplInherit]
-	public class Photostream : CompoundDocument
+	public class Photostream : RichDocument
 	{
 		/// <summary>
 		/// Collection of all images of a user

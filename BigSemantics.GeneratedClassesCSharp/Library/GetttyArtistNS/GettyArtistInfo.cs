@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GetttyArtistNS 
 {
 	[SimplInherit]
-	public class GettyArtistInfo : CompoundDocument
+	public class GettyArtistInfo : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString lifespan;

@@ -7,7 +7,7 @@
     comment="reddit search results page" no_cache="true">
     <selector url_stripped="http://www.reddit.com/search?" />
 		<example_url url="http://www.reddit.com/search?q=bananaamp;restrict_sr=offamp;sort=relevanceamp;t=all"/>
-    <generic_type_var name="SR" arg="compound_document" />
+    <generic_type_var name="SR" arg="rich_document" />
 
     <collection name="search_results">
       <xpath>//a[@class='title ']</xpath>

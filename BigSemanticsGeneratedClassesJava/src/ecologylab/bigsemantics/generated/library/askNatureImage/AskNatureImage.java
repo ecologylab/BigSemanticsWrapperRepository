@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.askNatureImage;
  */
 
 import ecologylab.bigsemantics.generated.library.askNatureFunction.AskNatureStrategy;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -23,14 +23,14 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class AskNatureImage extends CompoundDocument
+public class AskNatureImage extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString photographerOrArtist;
 
 	@simpl_composite
 	@mm_name("image_source")
-	private CompoundDocument imageSource;
+	private RichDocument imageSource;
 
 	@simpl_scalar
 	private MetadataString keywords;
@@ -79,12 +79,12 @@ public class AskNatureImage extends CompoundDocument
 		this.photographerOrArtist = photographerOrArtist;
 	}
 
-	public CompoundDocument getImageSource()
+	public RichDocument getImageSource()
 	{
 		return imageSource;
 	}
 
-	public void setImageSource(CompoundDocument imageSource)
+	public void setImageSource(RichDocument imageSource)
 	{
 		this.imageSource = imageSource;
 	}

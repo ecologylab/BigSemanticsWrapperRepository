@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GrantProgramNS 
 {
 	[SimplInherit]
-	public class GrantProgram : CompoundDocument
+	public class GrantProgram : RichDocument
 	{
 		[SimplCollection("grant_staff")]
 		[MmName("staffs")]

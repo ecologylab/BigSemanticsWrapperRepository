@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.researchgateResearcher;
  */
 
 import ecologylab.bigsemantics.generated.library.researchgateAuthor.ResearchGateAuthor;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -23,9 +23,9 @@ import java.util.Map;
 @simpl_inherit
 public class ResearchGateResearcher extends ResearchGateAuthor
 {
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("researcher_stats")
-	private List<CompoundDocument> researcherStats;
+	private List<RichDocument> researcherStats;
 
 	public ResearchGateResearcher()
 	{ super(); }
@@ -35,21 +35,21 @@ public class ResearchGateResearcher extends ResearchGateAuthor
 	}
 
 
-	public List<CompoundDocument> getResearcherStats()
+	public List<RichDocument> getResearcherStats()
 	{
 		return researcherStats;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> researcherStats()
+  public List<RichDocument> researcherStats()
   {
     if (researcherStats == null)
-      researcherStats = new ArrayList<CompoundDocument>();
+      researcherStats = new ArrayList<RichDocument>();
     return researcherStats;
   }
 
   // addTo:
-  public void addToResearcherStats(CompoundDocument element)
+  public void addToResearcherStats(RichDocument element)
   {
     researcherStats().add(element);
   }
@@ -60,7 +60,7 @@ public class ResearchGateResearcher extends ResearchGateAuthor
     return researcherStats == null ? 0 : researcherStats.size();
   }
 
-	public void setResearcherStats(List<CompoundDocument> researcherStats)
+	public void setResearcherStats(List<RichDocument> researcherStats)
 	{
 		this.researcherStats = researcherStats;
 	}

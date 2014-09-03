@@ -25,15 +25,8 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AttractionNS 
 {
 	[SimplInherit]
-	public class Attraction : CompoundDocument
+	public class Attraction : RichDocument
 	{
-		[SimplScalar]
-		private MetadataString overallRating;
-
-		[SimplCollection("review")]
-		[MmName("reviews")]
-		private List<Review> reviews;
-
 		/// <summary>
 		/// Price/fee of the attraction
 		/// </summary>
@@ -52,6 +45,9 @@ namespace Ecologylab.Semantics.Generated.Library.AttractionNS
 		[SimplScalar]
 		private MetadataString openHours;
 
+		[SimplScalar]
+		private MetadataString overallRating;
+
 		[SimplComposite]
 		[MmName("attraction_address")]
 		private PostalAddress attractionAddress;
@@ -61,6 +57,10 @@ namespace Ecologylab.Semantics.Generated.Library.AttractionNS
 		/// </summary>
 		[SimplScalar]
 		private MetadataParsedURL attractionWebsite;
+
+		[SimplCollection("review")]
+		[MmName("reviews")]
+		private List<Review> reviews;
 
 		/// <summary>
 		/// area of where attraction is and other attractions in the area
@@ -73,32 +73,6 @@ namespace Ecologylab.Semantics.Generated.Library.AttractionNS
 
 		public Attraction(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString OverallRating
-		{
-			get{return overallRating;}
-			set
-			{
-				if (this.overallRating != value)
-				{
-					this.overallRating = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Review> Reviews
-		{
-			get{return reviews;}
-			set
-			{
-				if (this.reviews != value)
-				{
-					this.reviews = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString Fee
 		{
@@ -139,6 +113,19 @@ namespace Ecologylab.Semantics.Generated.Library.AttractionNS
 			}
 		}
 
+		public MetadataString OverallRating
+		{
+			get{return overallRating;}
+			set
+			{
+				if (this.overallRating != value)
+				{
+					this.overallRating = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
 		public PostalAddress AttractionAddress
 		{
 			get{return attractionAddress;}
@@ -160,6 +147,19 @@ namespace Ecologylab.Semantics.Generated.Library.AttractionNS
 				if (this.attractionWebsite != value)
 				{
 					this.attractionWebsite = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Review> Reviews
+		{
+			get{return reviews;}
+			set
+			{
+				if (this.reviews != value)
+				{
+					this.reviews = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

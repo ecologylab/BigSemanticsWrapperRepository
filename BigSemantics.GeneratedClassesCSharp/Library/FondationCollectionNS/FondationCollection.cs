@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.FondationCollectionNS 
 {
 	[SimplInherit]
-	public class FondationCollection : CompoundDocument
+	public class FondationCollection : RichDocument
 	{
 		[SimplCollection("fondation_article")]
 		[MmName("articles")]

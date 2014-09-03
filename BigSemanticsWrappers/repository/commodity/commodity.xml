@@ -15,7 +15,7 @@
 	
   
   
-  <meta_metadata name="commodity" extends="compound_document">
+  <meta_metadata name="commodity" extends="rich_document">
     <scalar name="location" hide="true" />
     <collection name="main_images" layer="3.0"  />
     
@@ -23,8 +23,8 @@
       schema_org_itemprop="price" >
       <xpath>//*[@itemprop='price']//text()</xpath>      
     </scalar>
-  	<collection name="companion_products" label="people_by_with" child_type="commodity"/>
-  	<collection name="comparitive_products" label="people_by_instead" child_type="commodity"/>
+  	<collection name="companion_products" label="people_buy_with" child_type="commodity"/>
+  	<collection name="comparitive_products" label="people_buy_instead" child_type="commodity"/>
   	
   	<collection name="product_details" child_scalar_type="String"/>
   	<!-- labeled_specifications is a collection of collection of specs, each with its own label -->
@@ -39,7 +39,7 @@
       schema_org_itemprop="reviewCount" />
     <collection name="reviews" child_type="review" layer="0.8" style_name="reviews_div" />
 	
-    <composite name="business_website" type="compound_document" />
+    <composite name="business_website" type="rich_document" />
     <composite name="business_address" type="postal_address" />
     <composite name="business_gis_location" type="gis_location" />
   </meta_metadata>

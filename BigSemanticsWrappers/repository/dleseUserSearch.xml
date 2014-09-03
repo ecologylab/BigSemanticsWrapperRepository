@@ -1,7 +1,7 @@
 <meta_metadata_repository name="dleseUserSearch"
   package="ecologylab.bigsemantics.generated.library.dleseUserSearch" default_user_agent_name="firefox_3_6_8">
 
-  <meta_metadata name="dlese_user_search" extends="compound_document" parser="direct">
+  <meta_metadata name="dlese_user_search" extends="rich_document" parser="direct">
     <selector url_regex="http://www.dlese.org/dds/services/ddsws1-1\?verb=UserSearch.*"
       domain="dlese.org" />
 

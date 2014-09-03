@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.neweggProduct;
  */
 
 import ecologylab.bigsemantics.generated.library.neweggProduct.NeweggProduct;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class NeweggSubcategoryList extends CompoundDocument
+public class NeweggSubcategoryList extends RichDocument
 {
 	@simpl_collection("newegg_product")
 	@mm_name("items")

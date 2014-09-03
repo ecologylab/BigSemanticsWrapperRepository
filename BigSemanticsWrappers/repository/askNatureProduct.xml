@@ -1,7 +1,7 @@
 <meta_metadata_repository name="askNatureProduct"
   package="ecologylab.bigsemantics.generated.library.askNatureProduct" default_user_agent_name="chrome">
 
-	<meta_metadata name="ask_nature_product" parser="xpath" extends="compound_document" >
+	<meta_metadata name="ask_nature_product" parser="xpath" extends="rich_document" >
 	 	<selector url_path_tree="http://www.asknature.org/product/" domain="asknature.org" />
 	 	<example_url url="http://www.asknature.org/product/9db08f87c7bb21d1cd485fb33f64ca50" />
 	 	

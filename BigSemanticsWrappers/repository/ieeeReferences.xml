@@ -1,7 +1,7 @@
 <meta_metadata_repository name="ieeeReferences"
   package="ecologylab.bigsemantics.generated.library.ieeeReferences">
 
-  <meta_metadata name="ieee_xplore_references" extends="compound_document" parser="xpath">
+  <meta_metadata name="ieee_xplore_references" extends="rich_document" parser="xpath">
     <selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractReferences.jsp" />
 	  <selector url_stripped="http://ieeexplore.ieee.org:80/xpl/abstractReferences.jsp" />
 	

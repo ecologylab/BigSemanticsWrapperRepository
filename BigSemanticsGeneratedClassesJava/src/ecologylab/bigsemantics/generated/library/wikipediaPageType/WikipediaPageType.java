@@ -10,9 +10,9 @@ package ecologylab.bigsemantics.generated.library.wikipediaPageType;
 
 import ecologylab.bigsemantics.generated.library.wikipediaPageType.Section;
 import ecologylab.bigsemantics.generated.library.wikipediaPageType.WikipediaCategoryType;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -30,7 +30,7 @@ import java.util.Map;
  *An article on wikipedia
  */ 
 @simpl_inherit
-public class WikipediaPageType extends CompoundDocument
+public class WikipediaPageType extends RichDocument
 {
 	@simpl_composite
 	@mm_name("main_image")

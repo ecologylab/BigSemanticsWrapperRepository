@@ -24,7 +24,7 @@
     <scalar name="price">
       <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
     </scalar>
-    <composite name="department" type="compound_document">
+    <composite name="department" type="rich_document">
       <xpath>//*[@id='nav-subnav']/li[1]/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -109,7 +109,7 @@
       </collection>
     </collection>
  
-    <collection name="list_mania" child_type="compound_document">
+    <collection name="list_mania" child_type="rich_document">
       <xpath>//li//td/a/img</xpath>
       <scalar name="location">
         <xpath>../@href</xpath>

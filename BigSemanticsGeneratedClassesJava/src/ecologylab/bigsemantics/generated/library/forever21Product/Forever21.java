@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.forever21Product;
  */
 
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -25,9 +25,9 @@ import java.util.Map;
 @simpl_tag("forever_21")
 public class Forever21 extends Product
 {
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("available_colors")
-	private List<CompoundDocument> availableColors;
+	private List<RichDocument> availableColors;
 
 	public Forever21()
 	{ super(); }
@@ -37,21 +37,21 @@ public class Forever21 extends Product
 	}
 
 
-	public List<CompoundDocument> getAvailableColors()
+	public List<RichDocument> getAvailableColors()
 	{
 		return availableColors;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> availableColors()
+  public List<RichDocument> availableColors()
   {
     if (availableColors == null)
-      availableColors = new ArrayList<CompoundDocument>();
+      availableColors = new ArrayList<RichDocument>();
     return availableColors;
   }
 
   // addTo:
-  public void addToAvailableColors(CompoundDocument element)
+  public void addToAvailableColors(RichDocument element)
   {
     availableColors().add(element);
   }
@@ -62,7 +62,7 @@ public class Forever21 extends Product
     return availableColors == null ? 0 : availableColors.size();
   }
 
-	public void setAvailableColors(List<CompoundDocument> availableColors)
+	public void setAvailableColors(List<RichDocument> availableColors)
 	{
 		this.availableColors = availableColors;
 	}

@@ -1,7 +1,7 @@
 <meta_metadata_repository name="grantProgram"
   package="ecologylab.bigsemantics.generated.library.grantProgram">
 
-  <meta_metadata name="grant_program" extends="compound_document">
+  <meta_metadata name="grant_program" extends="rich_document">
     <collection name="staffs" child_type="grant_staff"  />
     <scalar name="synopsis" scalar_type="String" />
     <scalar name="guidelines" scalar_type="String" />

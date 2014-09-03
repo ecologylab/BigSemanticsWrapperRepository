@@ -3,7 +3,7 @@
 
 
 
-  <meta_metadata name="getty_collection" extends="compound_document" parser="xpath">
+  <meta_metadata name="getty_collection" extends="rich_document" parser="xpath">
     <selector url_stripped="http://www.getty.edu/art/gettyguide/displayObjectList" />
     <example_url url="http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033763" />
     <example_url url="http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033762" />

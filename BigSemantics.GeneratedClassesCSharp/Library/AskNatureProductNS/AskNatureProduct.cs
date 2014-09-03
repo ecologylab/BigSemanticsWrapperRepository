@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AskNatureProductNS 
 {
 	[SimplInherit]
-	public class AskNatureProduct : CompoundDocument
+	public class AskNatureProduct : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString company;

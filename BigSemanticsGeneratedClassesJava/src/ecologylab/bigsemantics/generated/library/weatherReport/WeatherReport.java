@@ -9,9 +9,9 @@ package ecologylab.bigsemantics.generated.library.weatherReport;
  */
 
 import ecologylab.bigsemantics.generated.library.weatherReport.WeatherReport;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -29,7 +29,7 @@ import java.util.Map;
  *The definition of weather report class.
  */ 
 @simpl_inherit
-public class WeatherReport extends CompoundDocument
+public class WeatherReport extends RichDocument
 {
 	/** 
 	 *The time of this weather

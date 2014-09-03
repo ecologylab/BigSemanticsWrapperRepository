@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.Rss22NS
 	/// </summary>
 	[SimplInherit]
 	[SimplTag("rss_2_2")]
-	public class Rss22 : CompoundDocument
+	public class Rss22 : RichDocument
 	{
 		[SimplCollection("item")]
 		[SimplNoWrap]

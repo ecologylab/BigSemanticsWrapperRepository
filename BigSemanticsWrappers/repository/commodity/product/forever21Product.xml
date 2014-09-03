@@ -28,7 +28,7 @@
       </scalar>
     </collection>
 
-    <collection name="available_colors" child_type="compound_document">
+    <collection name="available_colors" child_type="rich_document">
       <xpath>//div[@id='ctl00_MainContent_upColorList']/select/option[contains(@value, 'large')]</xpath>
       <scalar name="title" label="">
         <xpath>.</xpath>

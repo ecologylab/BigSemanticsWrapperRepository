@@ -33,13 +33,13 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 		[SimplScalar]
 		private MetadataString articleType;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("external_links")]
-		private List<CompoundDocument> externalLinks;
+		private List<RichDocument> externalLinks;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("external_link")]
-		private List<CompoundDocument> externalLink;
+		private List<RichDocument> externalLink;
 
 		[SimplCollection("fondation_article")]
 		[MmName("related_page")]
@@ -57,9 +57,9 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 		[MmName("index")]
 		private List<FondationArticle> index;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("footnotes")]
-		private List<CompoundDocument> footnotes;
+		private List<RichDocument> footnotes;
 
 		public FondationArticle()
 		{ }
@@ -93,7 +93,7 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 			}
 		}
 
-		public List<CompoundDocument> ExternalLinks
+		public List<RichDocument> ExternalLinks
 		{
 			get{return externalLinks;}
 			set
@@ -106,7 +106,7 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 			}
 		}
 
-		public List<CompoundDocument> ExternalLink
+		public List<RichDocument> ExternalLink
 		{
 			get{return externalLink;}
 			set
@@ -171,7 +171,7 @@ namespace Ecologylab.Semantics.Generated.Library.FondationArticleNS
 			}
 		}
 
-		public List<CompoundDocument> Footnotes
+		public List<RichDocument> Footnotes
 		{
 			get{return footnotes;}
 			set

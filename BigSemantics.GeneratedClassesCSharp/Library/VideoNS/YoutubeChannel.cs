@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.VideoNS
 	/// youtube channels
 	/// </summary>
 	[SimplInherit]
-	public class YoutubeChannel : CompoundDocument
+	public class YoutubeChannel : RichDocument
 	{
 		[SimplCollection("youtube_video")]
 		[MmName("featured_video")]
@@ -35,9 +35,9 @@ namespace Ecologylab.Semantics.Generated.Library.VideoNS
 		[MmName("video_feed")]
 		private List<YoutubeVideo> videoFeed;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("playlist")]
-		private List<CompoundDocument> playlist;
+		private List<RichDocument> playlist;
 
 		[SimplCollection("youtube_channel")]
 		[MmName("featured_channels")]
@@ -79,7 +79,7 @@ namespace Ecologylab.Semantics.Generated.Library.VideoNS
 			}
 		}
 
-		public List<CompoundDocument> Playlist
+		public List<RichDocument> Playlist
 		{
 			get{return playlist;}
 			set

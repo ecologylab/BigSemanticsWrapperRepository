@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.comment;
  */
 
 import ecologylab.bigsemantics.generated.library.person.Person;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Comment extends CompoundDocument
+public class Comment extends RichDocument
 {
 	@simpl_composite
 	@mm_name("author")

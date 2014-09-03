@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.gettySearch" default_user_agent_name="chrome_2">
 
 
-  <meta_metadata name="getty_search" extends="compound_document" parser="xpath">
+  <meta_metadata name="getty_search" extends="rich_document" parser="xpath">
     <selector url_stripped="http://www.getty.edu/art/collectionSearch/collectionSearch" />
     <example_url
       url="http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&amp;nh=10&amp;pw=100%25&amp;lk=1&amp;qt=fire&amp;Go.x=-260&amp;Go.y=-187" />

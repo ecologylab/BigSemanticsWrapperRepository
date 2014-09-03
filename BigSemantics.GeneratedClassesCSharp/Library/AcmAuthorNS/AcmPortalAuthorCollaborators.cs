@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AcmAuthorNS 
 {
 	[SimplInherit]
-	public class AcmPortalAuthorCollaborators : CompoundDocument
+	public class AcmPortalAuthorCollaborators : RichDocument
 	{
 		[SimplCollection("acm_portal_author")]
 		[MmName("collaborators")]

@@ -3,7 +3,7 @@
   
 
 
-  <meta_metadata name="acm_portal_institution_profile" extends="compound_document" parser="xpath">
+  <meta_metadata name="acm_portal_institution_profile" extends="rich_document" parser="xpath">
     <selector url_stripped="http://dl.acm.org/inst_page.cfm" />
     <example_url url="http://dl.acm.org/inst_page.cfm?id=1013772" />
 

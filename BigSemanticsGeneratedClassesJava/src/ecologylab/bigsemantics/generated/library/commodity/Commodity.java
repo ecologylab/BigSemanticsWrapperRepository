@@ -14,8 +14,8 @@ import ecologylab.bigsemantics.generated.library.commodity.Specification;
 import ecologylab.bigsemantics.generated.library.gisLocation.GisLocation;
 import ecologylab.bigsemantics.generated.library.postalAddress.PostalAddress;
 import ecologylab.bigsemantics.generated.library.review.Review;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Commodity extends CompoundDocument
+public class Commodity extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString price;
@@ -74,7 +74,7 @@ public class Commodity extends CompoundDocument
 
 	@simpl_composite
 	@mm_name("business_website")
-	private CompoundDocument businessWebsite;
+	private RichDocument businessWebsite;
 
 	@simpl_composite
 	@mm_name("business_address")
@@ -400,12 +400,12 @@ public class Commodity extends CompoundDocument
 		this.reviews = reviews;
 	}
 
-	public CompoundDocument getBusinessWebsite()
+	public RichDocument getBusinessWebsite()
 	{
 		return businessWebsite;
 	}
 
-	public void setBusinessWebsite(CompoundDocument businessWebsite)
+	public void setBusinessWebsite(RichDocument businessWebsite)
 	{
 		this.businessWebsite = businessWebsite;
 	}

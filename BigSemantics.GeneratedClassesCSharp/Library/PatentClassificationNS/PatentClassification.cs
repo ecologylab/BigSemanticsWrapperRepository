@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.PatentClassificationNS 
 {
 	[SimplInherit]
-	public class PatentClassification : CompoundDocument
+	public class PatentClassification : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString patentClass;

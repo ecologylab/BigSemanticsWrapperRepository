@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.googleBook;
  */
 
 import ecologylab.bigsemantics.generated.library.publication.Book;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -23,9 +23,9 @@ import java.util.Map;
 @simpl_inherit
 public class GoogleBook extends Book
 {
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("purchase_links")
-	private List<CompoundDocument> purchaseLinks;
+	private List<RichDocument> purchaseLinks;
 
 	public GoogleBook()
 	{ super(); }
@@ -35,21 +35,21 @@ public class GoogleBook extends Book
 	}
 
 
-	public List<CompoundDocument> getPurchaseLinks()
+	public List<RichDocument> getPurchaseLinks()
 	{
 		return purchaseLinks;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> purchaseLinks()
+  public List<RichDocument> purchaseLinks()
   {
     if (purchaseLinks == null)
-      purchaseLinks = new ArrayList<CompoundDocument>();
+      purchaseLinks = new ArrayList<RichDocument>();
     return purchaseLinks;
   }
 
   // addTo:
-  public void addToPurchaseLinks(CompoundDocument element)
+  public void addToPurchaseLinks(RichDocument element)
   {
     purchaseLinks().add(element);
   }
@@ -60,7 +60,7 @@ public class GoogleBook extends Book
     return purchaseLinks == null ? 0 : purchaseLinks.size();
   }
 
-	public void setPurchaseLinks(List<CompoundDocument> purchaseLinks)
+	public void setPurchaseLinks(List<RichDocument> purchaseLinks)
 	{
 		this.purchaseLinks = purchaseLinks;
 	}

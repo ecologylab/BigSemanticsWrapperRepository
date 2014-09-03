@@ -3,7 +3,7 @@
 
 
 
-  <meta_metadata name="ask_nature_image" parser="xpath" extends="compound_document"
+  <meta_metadata name="ask_nature_image" parser="xpath" extends="rich_document"
     user_agent_name="chrome">
     <selector url_path_tree="http://www.asknature.org/media/image/" domain="asknature.org" />
     <example_url url="http://www.asknature.org/media/image/192" />
@@ -28,7 +28,7 @@
     <scalar name="photographer_or_artist" scalar_type="String" context_node="content">
       <xpath>./text()[contains(., 'Author')]/following-sibling::b[1]</xpath>
     </scalar>
-    <composite name="image_source" type="compound_document" context_node="content">
+    <composite name="image_source" type="rich_document" context_node="content">
       <xpath>./b/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>

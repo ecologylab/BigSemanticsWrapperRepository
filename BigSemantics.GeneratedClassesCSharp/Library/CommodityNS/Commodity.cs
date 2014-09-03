@@ -27,20 +27,10 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.CommodityNS 
 {
 	[SimplInherit]
-	public class Commodity : CompoundDocument
+	public class Commodity : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString price;
-
-		[SimplScalar]
-		private MetadataString overallRating;
-
-		[SimplScalar]
-		private MetadataInteger numReviews;
-
-		[SimplCollection("review")]
-		[MmName("reviews")]
-		private List<Review> reviews;
 
 		[SimplCollection("commodity")]
 		[MmName("companion_products")]
@@ -63,11 +53,21 @@ namespace Ecologylab.Semantics.Generated.Library.CommodityNS
 		private List<LabeledSpecifications> specificationsTable;
 
 		[SimplScalar]
+		private MetadataString overallRating;
+
+		[SimplScalar]
 		private MetadataParsedURL reviewsLocation;
+
+		[SimplScalar]
+		private MetadataInteger numReviews;
+
+		[SimplCollection("review")]
+		[MmName("reviews")]
+		private List<Review> reviews;
 
 		[SimplComposite]
 		[MmName("business_website")]
-		private CompoundDocument businessWebsite;
+		private RichDocument businessWebsite;
 
 		[SimplComposite]
 		[MmName("business_address")]
@@ -91,45 +91,6 @@ namespace Ecologylab.Semantics.Generated.Library.CommodityNS
 				if (this.price != value)
 				{
 					this.price = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString OverallRating
-		{
-			get{return overallRating;}
-			set
-			{
-				if (this.overallRating != value)
-				{
-					this.overallRating = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataInteger NumReviews
-		{
-			get{return numReviews;}
-			set
-			{
-				if (this.numReviews != value)
-				{
-					this.numReviews = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Review> Reviews
-		{
-			get{return reviews;}
-			set
-			{
-				if (this.reviews != value)
-				{
-					this.reviews = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -200,6 +161,19 @@ namespace Ecologylab.Semantics.Generated.Library.CommodityNS
 			}
 		}
 
+		public MetadataString OverallRating
+		{
+			get{return overallRating;}
+			set
+			{
+				if (this.overallRating != value)
+				{
+					this.overallRating = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
 		public MetadataParsedURL ReviewsLocation
 		{
 			get{return reviewsLocation;}
@@ -213,7 +187,33 @@ namespace Ecologylab.Semantics.Generated.Library.CommodityNS
 			}
 		}
 
-		public CompoundDocument BusinessWebsite
+		public MetadataInteger NumReviews
+		{
+			get{return numReviews;}
+			set
+			{
+				if (this.numReviews != value)
+				{
+					this.numReviews = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<Review> Reviews
+		{
+			get{return reviews;}
+			set
+			{
+				if (this.reviews != value)
+				{
+					this.reviews = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public RichDocument BusinessWebsite
 		{
 			get{return businessWebsite;}
 			set

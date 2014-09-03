@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AskNatureFunctionNS 
 {
 	[SimplInherit]
-	public class AskNatureStrategy : CompoundDocument
+	public class AskNatureStrategy : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString summary;

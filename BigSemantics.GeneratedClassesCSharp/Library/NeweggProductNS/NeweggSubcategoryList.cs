@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.NeweggProductNS 
 {
 	[SimplInherit]
-	public class NeweggSubcategoryList : CompoundDocument
+	public class NeweggSubcategoryList : RichDocument
 	{
 		[SimplCollection("newegg_product")]
 		[MmName("items")]

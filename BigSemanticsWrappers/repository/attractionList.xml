@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.attractionList" default_user_agent_name="chrome_2">
   
   
-  <meta_metadata name="attraction_list" extends="compound_document">
+  <meta_metadata name="attraction_list" extends="rich_document">
     <collection name="attractions" child_type="attraction" >
     </collection>
   </meta_metadata>

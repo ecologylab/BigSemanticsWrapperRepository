@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.googleScholarSearch;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
@@ -31,11 +31,11 @@ import java.util.Map;
  *A google scholar search result
  */ 
 @simpl_inherit
-public class GoogleScholarSearchResult extends CompoundDocument
+public class GoogleScholarSearchResult extends RichDocument
 {
 	@simpl_composite
 	@mm_name("destination_page")
-	private CompoundDocument destinationPage;
+	private RichDocument destinationPage;
 
 	@simpl_scalar
 	private MetadataParsedURL documentLink;
@@ -48,18 +48,18 @@ public class GoogleScholarSearchResult extends CompoundDocument
 
 	@simpl_composite
 	@mm_name("citations")
-	private CompoundDocument citations;
+	private RichDocument citations;
 
 	@simpl_composite
 	@mm_name("related_articles_link")
-	private CompoundDocument relatedArticlesLink;
+	private RichDocument relatedArticlesLink;
 
 	@simpl_scalar
 	private MetadataInteger versions;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("google_authors")
-	private List<CompoundDocument> googleAuthors;
+	private List<RichDocument> googleAuthors;
 
 	@simpl_scalar
 	private MetadataParsedURL versionsLink;
@@ -72,12 +72,12 @@ public class GoogleScholarSearchResult extends CompoundDocument
 	}
 
 
-	public CompoundDocument getDestinationPage()
+	public RichDocument getDestinationPage()
 	{
 		return destinationPage;
 	}
 
-	public void setDestinationPage(CompoundDocument destinationPage)
+	public void setDestinationPage(RichDocument destinationPage)
 	{
 		this.destinationPage = destinationPage;
 	}
@@ -178,22 +178,22 @@ public class GoogleScholarSearchResult extends CompoundDocument
 		this.citationCount = citationCount;
 	}
 
-	public CompoundDocument getCitations()
+	public RichDocument getCitations()
 	{
 		return citations;
 	}
 
-	public void setCitations(CompoundDocument citations)
+	public void setCitations(RichDocument citations)
 	{
 		this.citations = citations;
 	}
 
-	public CompoundDocument getRelatedArticlesLink()
+	public RichDocument getRelatedArticlesLink()
 	{
 		return relatedArticlesLink;
 	}
 
-	public void setRelatedArticlesLink(CompoundDocument relatedArticlesLink)
+	public void setRelatedArticlesLink(RichDocument relatedArticlesLink)
 	{
 		this.relatedArticlesLink = relatedArticlesLink;
 	}
@@ -230,21 +230,21 @@ public class GoogleScholarSearchResult extends CompoundDocument
 		this.versions = versions;
 	}
 
-	public List<CompoundDocument> getGoogleAuthors()
+	public List<RichDocument> getGoogleAuthors()
 	{
 		return googleAuthors;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> googleAuthors()
+  public List<RichDocument> googleAuthors()
   {
     if (googleAuthors == null)
-      googleAuthors = new ArrayList<CompoundDocument>();
+      googleAuthors = new ArrayList<RichDocument>();
     return googleAuthors;
   }
 
   // addTo:
-  public void addToGoogleAuthors(CompoundDocument element)
+  public void addToGoogleAuthors(RichDocument element)
   {
     googleAuthors().add(element);
   }
@@ -255,7 +255,7 @@ public class GoogleScholarSearchResult extends CompoundDocument
     return googleAuthors == null ? 0 : googleAuthors.size();
   }
 
-	public void setGoogleAuthors(List<CompoundDocument> googleAuthors)
+	public void setGoogleAuthors(List<RichDocument> googleAuthors)
 	{
 		this.googleAuthors = googleAuthors;
 	}

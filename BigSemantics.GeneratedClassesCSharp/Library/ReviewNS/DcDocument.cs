@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ReviewNS 
 {
 	[SimplInherit]
-	public class DcDocument : CompoundDocument
+	public class DcDocument : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString subject;

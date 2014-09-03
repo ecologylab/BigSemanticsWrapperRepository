@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionDepartmentNS 
 {
 	[SimplInherit]
-	public class ResearchGateInstitutionDepartment : CompoundDocument
+	public class ResearchGateInstitutionDepartment : RichDocument
 	{
 		[SimplComposite]
 		[MmName("stats")]

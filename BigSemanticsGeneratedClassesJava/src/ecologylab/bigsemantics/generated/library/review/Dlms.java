@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.review;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -23,7 +23,7 @@ import java.util.Map;
  *The DLMS Class
  */ 
 @simpl_inherit
-public class Dlms extends CompoundDocument
+public class Dlms extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString subject;

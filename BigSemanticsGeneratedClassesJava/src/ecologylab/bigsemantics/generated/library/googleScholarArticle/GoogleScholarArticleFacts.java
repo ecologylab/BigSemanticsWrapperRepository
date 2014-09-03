@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.googleScholarArticle;
 
 import ecologylab.bigsemantics.generated.library.author.Author;
 import ecologylab.bigsemantics.generated.library.googleScholarArticle.GoogleScholarArticle;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class GoogleScholarArticleFacts extends CompoundDocument
+public class GoogleScholarArticleFacts extends RichDocument
 {
 	@simpl_composite
 	@mm_name("article")
@@ -34,7 +34,7 @@ public class GoogleScholarArticleFacts extends CompoundDocument
 
 	@simpl_composite
 	@mm_name("citations")
-	private CompoundDocument citations;
+	private RichDocument citations;
 
 	@simpl_scalar
 	private MetadataString year;
@@ -64,12 +64,12 @@ public class GoogleScholarArticleFacts extends CompoundDocument
 		this.article = article;
 	}
 
-	public CompoundDocument getCitations()
+	public RichDocument getCitations()
 	{
 		return citations;
 	}
 
-	public void setCitations(CompoundDocument citations)
+	public void setCitations(RichDocument citations)
 	{
 		this.citations = citations;
 	}

@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AskNatureFunctionNS 
 {
 	[SimplInherit]
-	public class AskNatureTaxonomy : CompoundDocument
+	public class AskNatureTaxonomy : RichDocument
 	{
 		[SimplComposite]
 		[MmName("group")]

@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.acmAuthor">
   
   
-  <meta_metadata name="acm_portal_author_collaborators" extends="compound_document" parser="xpath">
+  <meta_metadata name="acm_portal_author_collaborators" extends="rich_document" parser="xpath">
     <selector url_regex="http://dl.acm.org/author_page.cfm.+dsp=coll.*" domain="acm.org" />
     <example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll" />
 		<example_url url="http://dl.acm.org/author_page.cfm?id=81100091670" />

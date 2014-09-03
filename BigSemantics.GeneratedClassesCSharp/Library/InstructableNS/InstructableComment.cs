@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.InstructableNS 
 {
 	[SimplInherit]
-	public class InstructableComment : CompoundDocument
+	public class InstructableComment : RichDocument
 	{
 		[SimplComposite]
 		[MmName("comment_author")]

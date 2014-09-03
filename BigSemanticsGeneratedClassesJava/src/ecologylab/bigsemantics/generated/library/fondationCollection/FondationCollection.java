@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.fondationCollection;
 
 import ecologylab.bigsemantics.generated.library.fondationArticle.FondationArticle;
 import ecologylab.bigsemantics.generated.library.fondationCollection.FondationCategoryCollection;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class FondationCollection extends CompoundDocument
+public class FondationCollection extends RichDocument
 {
 	@simpl_collection("fondation_article")
 	@mm_name("articles")

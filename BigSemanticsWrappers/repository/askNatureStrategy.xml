@@ -9,7 +9,7 @@
     <scalar name="IUCN_red_list_status" scalar_type="String" />
   </meta_metadata>
 
-  <meta_metadata name="ask_nature_taxonomy" parser="xpath" extends="compound_document">
+  <meta_metadata name="ask_nature_taxonomy" parser="xpath" extends="rich_document">
     <composite name="group" type="ask_nature_group" />
     <composite name="subgroup" type="ask_nature_subgroup" />
     <composite name="function" type="ask_nature_function" />
@@ -20,7 +20,7 @@
     <scalar name="name" scalar_type="String" />
     <scalar name="affiliation" scalar_type="String" />
   </meta_metadata>   
-  <meta_metadata name="ask_nature_strategy" extends="compound_document" parser="xpath"
+  <meta_metadata name="ask_nature_strategy" extends="rich_document" parser="xpath"
     user_agent_name="chrome">
     <selector url_path_tree="http://www.asknature.org/strategy/" domain="asknature.org" />
     <example_url url="http://www.asknature.org/strategy/efd9f97ba5240b796b855c9bd5ee8397" />

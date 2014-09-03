@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.GettyExplorationNS 
 {
 	[SimplInherit]
-	public class GettyExploration : CompoundDocument
+	public class GettyExploration : RichDocument
 	{
 		[SimplCollection("getty_collection")]
 		[MmName("collections")]

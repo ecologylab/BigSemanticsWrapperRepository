@@ -1,0 +1,69 @@
+<meta_metadata_repository name="redditFeed"
+  package="ecologylab.bigsemantics.generated.library.redditFeed" default_user_agent_name="firefox_3_6_8">
+  <!--  
+  <meta_metadata name="redditLink" extends="rich_document" parser="xpath">
+  	
+  
+  	<composite name="linked_site" type="rich_document"/>
+  	
+  	<composite name="redditComments" type="redditCommentsPage"/>
+  </meta_metadata>
+  <meta_metadata name="redditCommentsPage" extends="rich_document" parser="xpath">
+  		<selector url_regex="http://www.reddit.com/r/.*/comments/.*" domain="reddit.com"/>
+  </meta_metadata>
+  <meta_metadata nem="redditUser" extends="person" parser="xpath">
+  	
+  </meta_metadata>
+   <meta_metadata nem="redditComment" extends="comment" parser="xpath">
+  	
+  </meta_metadata>
+  <meta_metadata name="redditFeed" extends="rich_document" parser="xpath">
+  
+  	<selector url_path_tree="https://www.reddit.com/r"/>
+  	<collection name="links" child_type="redditLink"/>
+  
+  </meta_metadata>
+  
+  <meta_metadata name="redditFrontPage" extends="redditFeed">
+  	  	<selector url_regex="http://www.reddit.com" domain="reddit.com"/>
+  	  	<selector url_regex="http://www.reddit.com/new" domain="reddit.com"/>
+  	  	<selector url_regex="http://www.reddit.com/rising" domain="reddit.com"/>
+  	  	<selector url_regex="http://www.reddit.com/controversial" domain="reddit.com"/>
+  	  	<selector url_regex="http://www.reddit.com/top" domain="reddit.com"/>
+  	  	<selector url_regex="http://www.reddit.com/guilded" domain="reddit.com"/>  	  
+  		  <example_url url="http://www.reddit.com/promoted"/>
+  		  
+  		  <collection name="links">
+  		  	<xpath>//div[@id='siteTable']//span[@class='rank']/..</xpath>
+  		  	<composite name="linked_site">
+  		  		<xpath>.//p[@class='title']/a</xpath>
+  		  		<scalar name="title">
+  		  			<xpath>.</xpath>
+  		  		</scalar>
+  		  		<scalar name="location">
+  		  			<xpath>./@href</xpath>
+  		  		</scalar>
+  		  	</composite>
+  		  	<composite name="redditCommentsPage">
+  		  		<xpath>.//a[@class='comments may-blank']</xpath>
+  		  		<scalar name="title">
+  		  			<xpath>.</xpath>
+  		  		</scalar>
+  		  		<scalar name="location">
+  		  			<xpath>./@href</xpath>
+  		  		</scalar>
+  		  	</composite>
+  		  	<collection name="main_images">
+  		  		<xpath>./a/img</xpath>
+  		  		
+  		  		<scalar name="location">
+  		  			<xpath>./@src</xpath>
+  		  		</scalar>
+  		  	</collection>
+  		  </collection>
+  		  
+  </meta_metadata>
+  <meta_metadata name="redditSubreddit" extends="redditFeed">
+  </meta_metadata>
+  -->
+</meta_metadata_repository>

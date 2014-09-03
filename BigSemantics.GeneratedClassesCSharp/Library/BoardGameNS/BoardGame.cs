@@ -39,9 +39,9 @@ namespace Ecologylab.Semantics.Generated.Library.BoardGameNS
 		[MmName("similar_games")]
 		private List<BoardGame> similarGames;
 
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("categories")]
-		private List<CompoundDocument> categories;
+		private List<RichDocument> categories;
 
 		public BoardGame()
 		{ }
@@ -88,7 +88,7 @@ namespace Ecologylab.Semantics.Generated.Library.BoardGameNS
 			}
 		}
 
-		public List<CompoundDocument> Categories
+		public List<RichDocument> Categories
 		{
 			get{return categories;}
 			set

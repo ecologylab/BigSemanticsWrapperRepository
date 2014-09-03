@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.TvtropesNS 
 {
 	[SimplInherit]
-	public class Tvtrope : CompoundDocument
+	public class Tvtrope : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString quote;

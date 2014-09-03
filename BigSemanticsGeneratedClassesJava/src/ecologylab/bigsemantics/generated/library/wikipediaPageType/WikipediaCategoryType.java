@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.wikipediaPageType;
 
 import ecologylab.bigsemantics.generated.library.wikipediaPageType.WikipediaCategoryType;
 import ecologylab.bigsemantics.generated.library.wikipediaPageType.WikipediaPageType;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class WikipediaCategoryType extends CompoundDocument
+public class WikipediaCategoryType extends RichDocument
 {
 	@simpl_collection("wikipedia_category_type")
 	@mm_name("subcategories")

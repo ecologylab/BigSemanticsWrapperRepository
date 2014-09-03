@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.IeeeReferencesNS 
 {
 	[SimplInherit]
-	public class IeeeXploreReferences : CompoundDocument
+	public class IeeeXploreReferences : RichDocument
 	{
 		[SimplCollection("scholarly_article")]
 		[MmName("references")]

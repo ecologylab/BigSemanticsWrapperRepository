@@ -8,9 +8,8 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -26,14 +25,14 @@ import java.util.Map;
  *A search result.
  */ 
 @simpl_inherit
-public class SearchResult extends CompoundDocument
+public class SearchResult extends RichDocument
 {
 	@simpl_scalar
 	private MetadataString siteLink;
 
 	@simpl_composite
 	@mm_name("destination_page")
-	private Document destinationPage;
+	private RichDocument destinationPage;
 
 	public SearchResult()
 	{ super(); }
@@ -75,12 +74,12 @@ public class SearchResult extends CompoundDocument
 		this.siteLink = siteLink;
 	}
 
-	public Document getDestinationPage()
+	public RichDocument getDestinationPage()
 	{
 		return destinationPage;
 	}
 
-	public void setDestinationPage(Document destinationPage)
+	public void setDestinationPage(RichDocument destinationPage)
 	{
 		this.destinationPage = destinationPage;
 	}

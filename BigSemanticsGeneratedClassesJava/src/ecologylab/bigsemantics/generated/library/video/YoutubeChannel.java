@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.video;
 
 import ecologylab.bigsemantics.generated.library.video.YoutubeChannel;
 import ecologylab.bigsemantics.generated.library.video.YoutubeVideo;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -25,7 +25,7 @@ import java.util.Map;
  *youtube channels
  */ 
 @simpl_inherit
-public class YoutubeChannel extends CompoundDocument
+public class YoutubeChannel extends RichDocument
 {
 	@simpl_collection("youtube_video")
 	@mm_name("featured_video")
@@ -35,9 +35,9 @@ public class YoutubeChannel extends CompoundDocument
 	@mm_name("video_feed")
 	private List<YoutubeVideo> videoFeed;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("playlist")
-	private List<CompoundDocument> playlist;
+	private List<RichDocument> playlist;
 
 	@simpl_collection("youtube_channel")
 	@mm_name("featured_channels")
@@ -115,21 +115,21 @@ public class YoutubeChannel extends CompoundDocument
 		this.videoFeed = videoFeed;
 	}
 
-	public List<CompoundDocument> getPlaylist()
+	public List<RichDocument> getPlaylist()
 	{
 		return playlist;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> playlist()
+  public List<RichDocument> playlist()
   {
     if (playlist == null)
-      playlist = new ArrayList<CompoundDocument>();
+      playlist = new ArrayList<RichDocument>();
     return playlist;
   }
 
   // addTo:
-  public void addToPlaylist(CompoundDocument element)
+  public void addToPlaylist(RichDocument element)
   {
     playlist().add(element);
   }
@@ -140,7 +140,7 @@ public class YoutubeChannel extends CompoundDocument
     return playlist == null ? 0 : playlist.size();
   }
 
-	public void setPlaylist(List<CompoundDocument> playlist)
+	public void setPlaylist(List<RichDocument> playlist)
 	{
 		this.playlist = playlist;
 	}

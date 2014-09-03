@@ -9,9 +9,9 @@ package ecologylab.bigsemantics.generated.library.googleScholarArticle;
  */
 
 import ecologylab.bigsemantics.generated.library.scholarlyArticle.ScholarlyArticle;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -28,7 +28,7 @@ public class GoogleScholarArticle extends ScholarlyArticle
 {
 	@simpl_composite
 	@mm_name("article_link")
-	private CompoundDocument articleLink;
+	private RichDocument articleLink;
 
 	@simpl_scalar
 	private MetadataString journal;
@@ -54,7 +54,7 @@ public class GoogleScholarArticle extends ScholarlyArticle
 
 	@simpl_composite
 	@mm_name("google_citations")
-	private CompoundDocument googleCitations;
+	private RichDocument googleCitations;
 
 	public GoogleScholarArticle()
 	{ super(); }
@@ -64,12 +64,12 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	}
 
 
-	public CompoundDocument getArticleLink()
+	public RichDocument getArticleLink()
 	{
 		return articleLink;
 	}
 
-	public void setArticleLink(CompoundDocument articleLink)
+	public void setArticleLink(RichDocument articleLink)
 	{
 		this.articleLink = articleLink;
 	}
@@ -276,12 +276,12 @@ public class GoogleScholarArticle extends ScholarlyArticle
 		this.citationCount = citationCount;
 	}
 
-	public CompoundDocument getGoogleCitations()
+	public RichDocument getGoogleCitations()
 	{
 		return googleCitations;
 	}
 
-	public void setGoogleCitations(CompoundDocument googleCitations)
+	public void setGoogleCitations(RichDocument googleCitations)
 	{
 		this.googleCitations = googleCitations;
 	}

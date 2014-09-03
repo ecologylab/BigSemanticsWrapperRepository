@@ -1,6 +1,6 @@
 <meta_metadata_repository name="instructablesTag"
   package="ecologylab.bigsemantics.generated.library.instructablesTag" default_user_agent_name="chrome_2">
-  <meta_metadata name="instructable_tag" extends="compound_document" parser="xpath">
+  <meta_metadata name="instructable_tag" extends="rich_document" parser="xpath">
 
     <selector url_path_tree="http://www.instructables.com/tag" />
     <example_url url="http://www.instructables.com/tag/type-id/category-food/keyword-tomato/" />

@@ -1,18 +1,18 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.googleScholarSearch" default_user_agent_name="chrome_32">
   
-   <meta_metadata name="google_scholar_search_result" extends="compound_document"
+   <meta_metadata name="google_scholar_search_result" extends="rich_document"
     comment="A google scholar search result" parser="xpath">
     <url_generator type="search" engine="google_scholar" use_id="title" />
-    <composite name="destination_page" type="compound_document"/>
+    <composite name="destination_page" type="rich_document"/>
     <scalar name="title" as_natural_id="title" />
     <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
     <scalar name="source_info" scalar_type="String" />
   	<scalar name="citation_count" scalar_type="String"/>
-    <composite name="citations" type="compound_document"/>
-    <composite name="related_articles_link" type="compound_document" label="related articles" />
+    <composite name="citations" type="rich_document"/>
+    <composite name="related_articles_link" type="rich_document" label="related articles" />
     <scalar name="versions" scalar_type="Int" navigates_to="versions_link" />
-   <collection name="google_authors" child_type="compound_document">
+   <collection name="google_authors" child_type="rich_document">
    
    </collection>
     <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />

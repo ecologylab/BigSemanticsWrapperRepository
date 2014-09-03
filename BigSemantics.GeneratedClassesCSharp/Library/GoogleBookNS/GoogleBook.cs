@@ -24,9 +24,9 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleBookNS
 	[SimplInherit]
 	public class GoogleBook : Book
 	{
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("purchase_links")]
-		private List<CompoundDocument> purchaseLinks;
+		private List<RichDocument> purchaseLinks;
 
 		public GoogleBook()
 		{ }
@@ -34,7 +34,7 @@ namespace Ecologylab.Semantics.Generated.Library.GoogleBookNS
 		public GoogleBook(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<CompoundDocument> PurchaseLinks
+		public List<RichDocument> PurchaseLinks
 		{
 			get{return purchaseLinks;}
 			set

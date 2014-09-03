@@ -26,7 +26,7 @@ namespace Ecologylab.Semantics.Generated.Library.IcdlBookPreviewNS
 	/// ICDL About This Book Page
 	/// </summary>
 	[SimplInherit]
-	public class IcdlBookPreview : CompoundDocument
+	public class IcdlBookPreview : RichDocument
 	{
 		[SimplComposite]
 		[MmName("author")]

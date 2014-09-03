@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.CiteulikeTagNS 
 {
 	[SimplInherit]
-	public class CiteulikeTag : CompoundDocument
+	public class CiteulikeTag : RichDocument
 	{
 		[SimplCollection("citeulike_paper")]
 		[MmName("articles")]

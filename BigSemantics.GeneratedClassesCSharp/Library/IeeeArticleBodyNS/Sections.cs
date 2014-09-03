@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.IeeeArticleBodyNS 
 {
 	[SimplInherit]
-	public class Sections : CompoundDocument
+	public class Sections : RichDocument
 	{
 		[SimplCollection("paragraph")]
 		[MmName("paragraphs")]

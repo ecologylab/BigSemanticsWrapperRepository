@@ -41,7 +41,7 @@ namespace Ecologylab.Semantics.Generated.Library.DisasterNS
 
 		[SimplComposite]
 		[MmName("source")]
-		private CompoundDocument source;
+		private RichDocument source;
 
 		public Disaster()
 		{ }
@@ -88,7 +88,7 @@ namespace Ecologylab.Semantics.Generated.Library.DisasterNS
 			}
 		}
 
-		public CompoundDocument Source
+		public RichDocument Source
 		{
 			get{return source;}
 			set

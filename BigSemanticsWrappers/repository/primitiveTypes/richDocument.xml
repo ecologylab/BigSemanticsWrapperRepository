@@ -1,7 +1,7 @@
 <meta_metadata_repository name="compoundDocument" package="ecologylab.bigsemantics.metadata.builtins"
   default_user_agent_name="firefox_3_5">
 
-  <meta_metadata name="compound_document" extends="document" built_in="true"
+  <meta_metadata name="rich_document" extends="document" built_in="true"
    parser="xpath"
    schema_org_itemtype="http://schema.org/Thing">
 <!--    parser="html_dom_image_text" -->

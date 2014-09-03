@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.attraction;
 
 import ecologylab.bigsemantics.generated.library.postalAddress.PostalAddress;
 import ecologylab.bigsemantics.generated.library.review.Review;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Attraction extends CompoundDocument
+public class Attraction extends RichDocument
 {
 	/** 
 	 *Price/fee of the attraction

@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.flickrTag;
 
 import ecologylab.bigsemantics.generated.library.flickrPhotoPost.FlickrPhoto;
 import ecologylab.bigsemantics.generated.library.flickrTag.FlickrTag;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -26,7 +26,7 @@ import java.util.Map;
  *For flickr crawled tags
  */ 
 @simpl_inherit
-public class FlickrTag extends CompoundDocument
+public class FlickrTag extends RichDocument
 {
 	/** 
 	 *Collection of all images of a user

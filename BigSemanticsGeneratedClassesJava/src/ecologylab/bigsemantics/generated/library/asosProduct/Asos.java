@@ -11,8 +11,8 @@ package ecologylab.bigsemantics.generated.library.asosProduct;
 import ecologylab.bigsemantics.generated.library.asosProduct.Asos;
 import ecologylab.bigsemantics.generated.library.asosProduct.Designer;
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -34,9 +34,9 @@ public class Asos extends Product
 	@mm_name("recommmended_products")
 	private List<Asos> recommmendedProducts;
 
-	@simpl_collection("compound_document")
+	@simpl_collection("rich_document")
 	@mm_name("tags")
-	private List<CompoundDocument> tags;
+	private List<RichDocument> tags;
 
 	public Asos()
 	{ super(); }
@@ -86,21 +86,21 @@ public class Asos extends Product
 		this.recommmendedProducts = recommmendedProducts;
 	}
 
-	public List<CompoundDocument> getTags()
+	public List<RichDocument> getTags()
 	{
 		return tags;
 	}
 
   // lazy evaluation:
-  public List<CompoundDocument> tags()
+  public List<RichDocument> tags()
   {
     if (tags == null)
-      tags = new ArrayList<CompoundDocument>();
+      tags = new ArrayList<RichDocument>();
     return tags;
   }
 
   // addTo:
-  public void addToTags(CompoundDocument element)
+  public void addToTags(RichDocument element)
   {
     tags().add(element);
   }
@@ -111,7 +111,7 @@ public class Asos extends Product
     return tags == null ? 0 : tags.size();
   }
 
-	public void setTags(List<CompoundDocument> tags)
+	public void setTags(List<RichDocument> tags)
 	{
 		this.tags = tags;
 	}

@@ -25,14 +25,14 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	/// A search result.
 	/// </summary>
 	[SimplInherit]
-	public class SearchResult : CompoundDocument
+	public class SearchResult : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString siteLink;
 
 		[SimplComposite]
 		[MmName("destination_page")]
-		private Document destinationPage;
+		private RichDocument destinationPage;
 
 		public SearchResult()
 		{ }
@@ -53,7 +53,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public Document DestinationPage
+		public RichDocument DestinationPage
 		{
 			get{return destinationPage;}
 			set

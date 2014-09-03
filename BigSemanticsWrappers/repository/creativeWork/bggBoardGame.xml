@@ -51,7 +51,7 @@
 	
 	  </meta_metadata>
 	
-	  <meta_metadata name="bgg_category" extends="compound_document" comment="boardgamegeek.com"
+	  <meta_metadata name="bgg_category" extends="rich_document" comment="boardgamegeek.com"
 	    parser="xpath">
 	    <selector url_path_tree="http://boardgamegeek.com/boardgamecategory/" />
 	    <example_url url="http://boardgamegeek.com/boardgamecategory/1016/science-fiction" />

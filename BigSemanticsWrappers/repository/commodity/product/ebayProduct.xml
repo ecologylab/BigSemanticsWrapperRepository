@@ -18,7 +18,7 @@
       <xpath>//span[@itemprop='price']</xpath>
     </scalar>
 
-    <composite name="seller" type="compound_document">
+    <composite name="seller" type="rich_document">
       <scalar name="name" type="String">
         <xpath>//span[@class='mbg-nw']</xpath>
       </scalar>

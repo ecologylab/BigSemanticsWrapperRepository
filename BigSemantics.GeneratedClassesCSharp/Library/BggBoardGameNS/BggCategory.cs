@@ -25,7 +25,7 @@ namespace Ecologylab.Semantics.Generated.Library.BggBoardGameNS
 	/// boardgamegeek.com
 	/// </summary>
 	[SimplInherit]
-	public class BggCategory : CompoundDocument
+	public class BggCategory : RichDocument
 	{
 		[SimplCollection("bgg_game")]
 		[MmName("search_results")]

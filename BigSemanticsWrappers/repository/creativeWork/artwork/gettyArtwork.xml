@@ -3,7 +3,7 @@
 
 
 
-  <meta_metadata name="getty_work_info" extends="compound_document">
+  <meta_metadata name="getty_work_info" extends="rich_document">
 
     <scalar name="author_name" scalar_type="String" />
     <scalar name="dimensions" scalar_type="String" />

@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.instructable;
 
 import ecologylab.bigsemantics.generated.library.instructable.InstructableComment;
 import ecologylab.bigsemantics.generated.library.instructableAuthor.InstructableAuthor;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class InstructableComment extends CompoundDocument
+public class InstructableComment extends RichDocument
 {
 	@simpl_composite
 	@mm_name("comment_author")

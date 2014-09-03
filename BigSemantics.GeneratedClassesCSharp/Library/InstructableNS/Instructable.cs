@@ -25,7 +25,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.InstructableNS 
 {
 	[SimplInherit]
-	public class Instructable : CompoundDocument
+	public class Instructable : RichDocument
 	{
 		[SimplComposite]
 		[MmName("instructor")]

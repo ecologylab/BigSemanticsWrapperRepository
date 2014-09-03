@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.ieeeArticleBody;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class Sections extends CompoundDocument
+public class Sections extends RichDocument
 {
 	@simpl_collection("paragraph")
 	@mm_name("paragraphs")

@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.flamencoFacet" default_user_agent_name="chrome_2">
 
 
-  <meta_metadata name="flamenco_facet" extends="compound_document" parser="xpath">
+  <meta_metadata name="flamenco_facet" extends="rich_document" parser="xpath">
     <selector url_regex="^(.(?!index))*$" domain="berkeley.edu" />
     <example_url
       url="http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=heaven_earth:29&amp;group=heaven_earth" />

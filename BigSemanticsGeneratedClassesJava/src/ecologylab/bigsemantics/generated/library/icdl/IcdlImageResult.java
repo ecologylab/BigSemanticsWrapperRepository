@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.icdl;
  */
 
 import ecologylab.bigsemantics.generated.library.icdl.IcdlBook;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -25,7 +25,7 @@ import java.util.Map;
  *Thumbnail Image
  */ 
 @simpl_inherit
-public class IcdlImageResult extends CompoundDocument
+public class IcdlImageResult extends RichDocument
 {
 	@simpl_collection("icdl_book")
 	@simpl_nowrap

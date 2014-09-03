@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.rss_2_2;
  */
 
 import ecologylab.bigsemantics.generated.library.item.Item;
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -27,7 +27,7 @@ import java.util.Map;
  */ 
 @simpl_inherit
 @simpl_tag("rss_2_2")
-public class Rss22 extends CompoundDocument
+public class Rss22 extends RichDocument
 {
 	@simpl_collection("item")
 	@simpl_nowrap

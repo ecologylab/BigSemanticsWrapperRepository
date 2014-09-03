@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.LeagueoflegendsNS 
 {
 	[SimplInherit]
-	public class LeagueAbility : CompoundDocument
+	public class LeagueAbility : RichDocument
 	{
 		[SimplScalar]
 		private MetadataString tooltip;

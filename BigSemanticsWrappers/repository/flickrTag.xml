@@ -1,7 +1,7 @@
 <meta_metadata_repository name="flickrTag"
   package="ecologylab.bigsemantics.generated.library.flickrTag">
 
-  <meta_metadata name="flickr_tag" extends="compound_document" parser="xpath"
+  <meta_metadata name="flickr_tag" extends="rich_document" parser="xpath"
     comment="For flickr crawled tags">
     <selector url_regex="http://www.flickr.com/photos/.*" domain="flickr.com" />
     <example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />

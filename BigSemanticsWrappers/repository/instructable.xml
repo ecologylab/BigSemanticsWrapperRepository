@@ -1,12 +1,12 @@
 <meta_metadata_repository name="instructable"
   package="ecologylab.bigsemantics.generated.library.instructable" default_user_agent_name="chrome_2">
-<meta_metadata name="instructable_comment" extends="compound_document" parser="xpath">
+<meta_metadata name="instructable_comment" extends="rich_document" parser="xpath">
 
     <composite name="comment_author" type="instructable_author" />
     <composite name="in_response_to" type="instructable_author" />
     <composite name="reply" type="instructable_comment" />
   </meta_metadata>
-  <meta_metadata name="instructable" extends="compound_document" parser="xpath">
+  <meta_metadata name="instructable" extends="rich_document" parser="xpath">
     <selector url_path_tree="http://www.instructables.com/id" />
     <example_url url="http://www.instructables.com/id/Tomato-Water-Bloody-Mary/" />
     <example_url url="http://www.instructables.com/id/Cheesy-Potato-Shotz/" />

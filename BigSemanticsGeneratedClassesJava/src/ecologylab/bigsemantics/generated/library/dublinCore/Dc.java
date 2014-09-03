@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.dublinCore;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.CompoundDocument;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -28,7 +28,7 @@ import java.util.Map;
  *Dublin core fields.
  */ 
 @simpl_inherit
-public class Dc extends CompoundDocument
+public class Dc extends RichDocument
 {
 	@simpl_scalar
 	@simpl_hints({Hint.XML_LEAF})

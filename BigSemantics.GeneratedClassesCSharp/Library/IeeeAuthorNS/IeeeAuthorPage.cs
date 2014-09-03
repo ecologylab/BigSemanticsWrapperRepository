@@ -24,9 +24,9 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeAuthorNS
 	[SimplInherit]
 	public class IeeeAuthorPage : Author
 	{
-		[SimplCollection("compound_document")]
+		[SimplCollection("rich_document")]
 		[MmName("authors")]
-		private List<CompoundDocument> authors;
+		private List<RichDocument> authors;
 
 		public IeeeAuthorPage()
 		{ }
@@ -34,7 +34,7 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeAuthorNS
 		public IeeeAuthorPage(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<CompoundDocument> Authors
+		public List<RichDocument> Authors
 		{
 			get{return authors;}
 			set
