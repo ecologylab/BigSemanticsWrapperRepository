@@ -32,7 +32,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 
 		[SimplComposite]
 		[MmName("destination_page")]
-		private Document destinationPage;
+		private RichDocument destinationPage;
 
 		public SearchResult()
 		{ }
@@ -53,7 +53,7 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 			}
 		}
 
-		public Document DestinationPage
+		public RichDocument DestinationPage
 		{
 			get{return destinationPage;}
 			set

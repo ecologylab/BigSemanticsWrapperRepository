@@ -3,10 +3,9 @@
 
   <meta_metadata name="search_result" extends="rich_document" show_expanded_always="true" 
     comment="A search result.">
-    <scalar name="title" style_name="h1" />
     <scalar name="description" label="snippet" />
     <scalar name="site_link" scalar_type="String"/>
-    <composite name="destination_page" type="document" />
+    <composite name="destination_page" type="rich_document" />
     
   </meta_metadata>
 
