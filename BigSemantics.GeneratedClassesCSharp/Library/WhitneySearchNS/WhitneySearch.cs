@@ -9,6 +9,7 @@
 
 using Ecologylab.Collections;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
+using Ecologylab.Semantics.Generated.Library.WhitneyArtworkNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
@@ -21,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.WhitneySearchNS 
 {
 	[SimplInherit]
-	public class WhitneySearch : Search<RichDocument>
+	public class WhitneySearch : Search<WhitneyArtwork>
 	{
 		public WhitneySearch()
 		{ }

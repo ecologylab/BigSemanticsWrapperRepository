@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.MetArtworkNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -21,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.MetFilterNS 
 {
 	[SimplInherit]
-	public class MetFilter : Search<RichDocument>
+	public class MetFilter : Search<MetArtwork>
 	{
 		public MetFilter()
 		{ }

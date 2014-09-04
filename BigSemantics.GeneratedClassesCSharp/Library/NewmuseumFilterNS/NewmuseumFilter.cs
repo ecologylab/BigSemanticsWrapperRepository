@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.NewMuseumArtworkNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -21,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.NewmuseumFilterNS 
 {
 	[SimplInherit]
-	public class NewmuseumFilter : Search<RichDocument>
+	public class NewmuseumFilter : Search<NewmuseumArtwork>
 	{
 		public NewmuseumFilter()
 		{ }

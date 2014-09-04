@@ -8,7 +8,7 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.GisNS;
+using Ecologylab.Semantics.Generated.Library.GisLocationNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;

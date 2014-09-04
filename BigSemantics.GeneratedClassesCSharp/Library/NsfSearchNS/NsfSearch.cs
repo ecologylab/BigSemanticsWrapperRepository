@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.NsfAwardGrantNS;
 using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
@@ -21,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.NsfSearchNS 
 {
 	[SimplInherit]
-	public class NsfSearch : Search<RichDocument>
+	public class NsfSearch : Search<NsfAward>
 	{
 		public NsfSearch()
 		{ }
