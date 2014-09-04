@@ -3,6 +3,7 @@
   default_user_agent_name="chrome_2">
 
   <meta_metadata name="image_search" extends="search">
-    <collection name="search_results" child_type="image_search_result" />
+    <generic_type_var name="SR" arg="image_search_result" />
+    <collection name="search_results" />
   </meta_metadata>
 </meta_metadata_repository>

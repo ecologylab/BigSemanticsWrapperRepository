@@ -3,7 +3,9 @@
 
   <meta_metadata name="clippable_document" extends="document" built_in="true">
     <collection name="clippings_this_is_in" other_tags="clippings" child_type="clipping"
-      hide="true" polymorphic_scope="repository_clippings" comment="Clippings based on this.">
+      hide="true" polymorphic_scope="repository_clippings"
+      covariant="true"
+      comment="Clippings based on this.">
     </collection>
     <scalar name="width" scalar_type="Integer" hide="true" />
     <scalar name="height" scalar_type="Integer" hide="true" />

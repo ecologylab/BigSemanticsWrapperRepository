@@ -3,11 +3,13 @@
  
  
   <meta_metadata name="rhizome_tag" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="rhizome_artwork" />
+
     <selector domain="rhizome.org" url_regex_fragment="tag" />
     <example_url url="http://rhizome.org/artbase/tag/futurism/" />
     <example_url url="http://rhizome.org/artbase/tag/nostalgia/" />
 
-    <collection name="search_results" child_type="rhizome_artwork">
+    <collection name="search_results">
       <xpath>//div[@id='work']</xpath>
       <scalar name="location" hide="true">
         <xpath>./a/@href</xpath>

@@ -2,11 +2,13 @@
   package="ecologylab.bigsemantics.generated.library.tateFilter" default_user_agent_name="chrome_2">
 
   <meta_metadata name="tate_filter" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="tate_artwork" />
+    
     <selector url_stripped="http://www.tate.org.uk/art/artworks" />
     <example_url url="http://www.tate.org.uk/art/artworks?gm=416" />
     <example_url url="http://www.tate.org.uk/art/artworks?gid=999999952" />
 
-    <collection name="search_results" child_type="tate_artwork">
+    <collection name="search_results">
       <xpath>//div[@class='grid-work-text']</xpath>
       <scalar name="location" hide="true">
         <xpath>./div[2]/a/@href</xpath>

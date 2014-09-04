@@ -2,6 +2,8 @@
   package="ecologylab.bigsemantics.generated.library.whitneyDecade" default_user_agent_name="chrome_2">
 
   <meta_metadata name="whitney_decade" extends="search" parser="xpath">
+    <generic_type_var name="SR" arg="whitney_artwork" />
+    
     <selector url_stripped="http://whitney.org/Collection">
       <param name="decade" />
     </selector>
@@ -11,7 +13,7 @@
       <xpath>//*[@class='selected']</xpath>
     </scalar>
 
-    <collection name="search_results" child_type="whitney_artwork">
+    <collection name="search_results">
       <xpath>//div[@class='collection-module-artwork']/div</xpath>
       <scalar name="location" hide="true">
         <xpath>./a/@href</xpath>

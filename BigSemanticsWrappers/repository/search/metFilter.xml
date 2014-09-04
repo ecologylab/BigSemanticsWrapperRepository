@@ -3,30 +3,13 @@
  
  
   <meta_metadata name="met_filter" extends="search" parser="xpath">
-    <!--  <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
-      <param name="who" />
-    </selector>
+    <generic_type_var name="SR" arg="met_artwork" />
 
-    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
-      <param name="where" />
-    </selector>
-
-    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
-      <param name="what" />
-    </selector>
-
-    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
-      <param name="when" />
-    </selector>
-
-    <selector url_stripped="http://www.metmuseum.org/collection/the-collection-online/search">
-      <param name="deptid" />
-    </selector> -->
     <selector url_regex="http://www.metmuseum.org/collection/the-collection-online/search?.*" domain="metmuseum.org"/>
 
     <example_url url="http://www.metmuseum.org/collection/search-the-collections?ft=*&amp;what=Spruce" />
 
-    <collection name="search_results" child_type="met_artwork">
+    <collection name="search_results">
       <xpath>//div[@class='search-results-container cleared visible']/ul/li</xpath>
       <scalar name="location" hide="true">
         <xpath>./div[2]/p/a/@href</xpath>
