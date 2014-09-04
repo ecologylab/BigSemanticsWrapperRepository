@@ -339,7 +339,6 @@ namespace Ecologylab.Semantics.Generated.Library
 				typeof(CrateandbarrelProduct),
 				typeof(CreativeWork),
 				typeof(Curation),
-				typeof(DatabaseArticle),
 				typeof(DateInfo),
 				typeof(Dc),
 				typeof(DcDocument),

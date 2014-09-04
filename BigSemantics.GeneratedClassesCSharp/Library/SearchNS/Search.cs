@@ -12,6 +12,7 @@ using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -27,6 +28,12 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 	[SimplInherit]
 	public class Search<SR> : RichDocument where SR : RichDocument
 	{
+		/// <summary>
+		/// Useful for smaller searches where knowing num results is helpful
+		/// </summary>
+		[SimplScalar]
+		private MetadataString numberResults;
+
 		[SimplCollection]
 		[SimplNoWrap]
 		[SimplScope("repository_documents")]
@@ -46,6 +53,19 @@ namespace Ecologylab.Semantics.Generated.Library.SearchNS
 
 		public Search(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString NumberResults
+		{
+			get{return numberResults;}
+			set
+			{
+				if (this.numberResults != value)
+				{
+					this.numberResults = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public List<RichDocument> SearchResults
 		{

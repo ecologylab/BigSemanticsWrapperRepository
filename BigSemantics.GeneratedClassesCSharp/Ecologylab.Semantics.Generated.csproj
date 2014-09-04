@@ -240,7 +240,6 @@
     <Compile Include="Library\InstructablesTagNS\InstructableTag.cs" />
     <Compile Include="Library\InvestigatorNS\Investigator.cs" />
     <Compile Include="Library\ItemNS\Item.cs" />
-    <Compile Include="Library\JstorArticleNS\DatabaseArticle.cs" />
     <Compile Include="Library\JstorArticleNS\JstorArticle.cs" />
     <Compile Include="Library\JstorJournalNS\JstorJournal.cs" />
     <Compile Include="Library\JstorSearchNS\JstorSearch.cs" />
