@@ -8,7 +8,6 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -33,7 +32,7 @@ public class SearchResult extends RichDocument
 
 	@simpl_composite
 	@mm_name("destination_page")
-	private Document destinationPage;
+	private RichDocument destinationPage;
 
 	public SearchResult()
 	{ super(); }
@@ -75,12 +74,12 @@ public class SearchResult extends RichDocument
 		this.siteLink = siteLink;
 	}
 
-	public Document getDestinationPage()
+	public RichDocument getDestinationPage()
 	{
 		return destinationPage;
 	}
 
-	public void setDestinationPage(Document destinationPage)
+	public void setDestinationPage(RichDocument destinationPage)
 	{
 		this.destinationPage = destinationPage;
 	}

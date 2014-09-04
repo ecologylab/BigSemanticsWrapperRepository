@@ -40,10 +40,6 @@ public class DatabaseArticle extends ScholarlyArticle
 	@mm_name("author_link")
 	private Search authorLink;
 
-	@simpl_composite
-	@mm_name("citation_page")
-	private Search citationPage;
-
 	/** 
 	 *For pages initally linking to pdf view
 	 */ 
@@ -91,16 +87,6 @@ public class DatabaseArticle extends ScholarlyArticle
 	public void setAuthorLink(Search authorLink)
 	{
 		this.authorLink = authorLink;
-	}
-
-	public Search getCitationPage()
-	{
-		return citationPage;
-	}
-
-	public void setCitationPage(Search citationPage)
-	{
-		this.citationPage = citationPage;
 	}
 
 	public DatabaseArticle getSummaryPage()

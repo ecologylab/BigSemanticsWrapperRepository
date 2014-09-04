@@ -3,10 +3,9 @@
 
   <meta_metadata name="search_result" extends="rich_document" show_expanded_always="true" 
     comment="A search result.">
-    <scalar name="title" style_name="h1" />
     <scalar name="description" label="snippet" />
     <scalar name="site_link" scalar_type="String"/>
-    <composite name="destination_page" type="document" />
+    <composite name="destination_page" type="rich_document" />
     
   </meta_metadata>
 
@@ -14,6 +13,7 @@
   <meta_metadata name="search" extends="rich_document" comment="A search.">
     <generic_type_var name="SR" extends="rich_document" />
 
+	<scalar name="number_results" scalar_type="String" comment="Useful for smaller searches where knowing num results is helpful"/>
     <scalar name="query" scalar_type="String"/>
     <collection name="search_results" child_type="SR" no_wrap="true"
       show_expanded_initially="true" polymorphic_scope="repository_documents" />

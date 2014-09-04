@@ -42,10 +42,6 @@ namespace Ecologylab.Semantics.Generated.Library.JstorArticleNS
 		[MmName("author_link")]
 		private Search<RichDocument> authorLink;
 
-		[SimplComposite]
-		[MmName("citation_page")]
-		private Search<RichDocument> citationPage;
-
 		/// <summary>
 		/// For pages initally linking to pdf view
 		/// </summary>
@@ -97,19 +93,6 @@ namespace Ecologylab.Semantics.Generated.Library.JstorArticleNS
 				if (this.authorLink != value)
 				{
 					this.authorLink = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Search<RichDocument> CitationPage
-		{
-			get{return citationPage;}
-			set
-			{
-				if (this.citationPage != value)
-				{
-					this.citationPage = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

@@ -3,14 +3,66 @@
   
   <meta_metadata name="jstor_search" extends="search" parser="xpath" user_agent_name="chrome_32" comment="jstor Search class">
   		<generic_type_var name="SR" arg="search_result" />
-  		<selector url_regex="https?://www.jstor.org/action/doBasicSearch\?.*" domain="jstor.org" />
-   		<example_url url="http://www.jstor.org/action/doBasicSearch?Query=internet+everyday"/>
+  		<selector url_regex="https?://www.jstor.org/action/.*" domain="jstor.org" />
+   		<example_url url="http://www.jstor.org/action/doBasicSearch?Search=Searchamp;Query=au:%22Robert%20E.%20Wood%22"/>
   
+  		<scalar name="title">
+  			<xpath>//div[@class='tabs-search-results']/dl[@class='tabs hide-for-small ']/dd[@class]/a</xpath>
+  		</scalar>
+  		
+  		<!-- 
+  		<scalar name="number_results">
+  			<xpath>//div[@id='content'/div[1]/h1</xpath>
+  		</scalar>
+  		-->
   		<scalar name="query">
   			<xpath>//*[@id='searchBox']/@value</xpath>
   		</scalar>
   
-  		<scalar name="location" always_show="true"/>
+  		<collection name="search_results" show_expanded_initially="true">
+  		
+      		<xpath>//ol[@class='list-searchResults']/li</xpath>
+      		
+     		 <scalar name="title" hide="true"/>
+     
+     		 <composite name="destination_page" type="jstor_article">
+        		<xpath>.</xpath>
+        		<scalar name="title">
+          			<xpath>.//div[@class='title']/a</xpath>
+          			<xpath>.//div[@class='rw']/a/cite</xpath>
+        		</scalar>
+        		<scalar name="location">
+          			<xpath>.//div[@class='title']/a/@href</xpath>
+          			<xpath>.//div[@class='rw']/a/@href</xpath>
+          			<regex_op regex="\?.*" replace=""/>
+        		</scalar>
+      		</composite>
+       	
+    	</collection>
+    	
+    	
+    	<collection name="related_searches" label="specify_medium" show_expanded_initially="true">
+    	
+    		<xpath>//div[@class='tabs-search-results']/dl[@class='tabs hide-for-small ']/dd[not(@class)]</xpath>
+    		
+    		<scalar name="title">
+    			<xpath>./a</xpath>
+    		</scalar>
+    		<scalar name="location">
+    			<xpath>./a/@href</xpath>
+    		</scalar>
+    	
+    	</collection>
+    	
+    	<composite name="next_page" type="jstor_search">
+    		<xpath>//ul[@class='pagination mbn right']/li[3]</xpath>
+    		<scalar name="title">
+    			<xpath>./a</xpath>
+    		</scalar>
+    		<scalar name="location">
+    			<xpath>./a/@href</xpath>
+    		</scalar>
+    	</composite>
   
   </meta_metadata>
 

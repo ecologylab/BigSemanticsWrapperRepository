@@ -8,6 +8,7 @@
 
 
 using Ecologylab.Collections;
+using Ecologylab.Semantics.Generated.Library.SearchNS;
 using Ecologylab.Semantics.MetaMetadataNS;
 using Ecologylab.Semantics.MetadataNS.Builtins;
 using Ecologylab.Semantics.MetadataNS.Scalar;
@@ -21,7 +22,7 @@ using System.Collections.Generic;
 namespace Ecologylab.Semantics.Generated.Library.AcmPortalSearchNS 
 {
 	[SimplInherit]
-	public class AcmPortalSearchResult : RichDocument
+	public class AcmPortalSearchResult : SearchResult
 	{
 		[SimplScalar]
 		private MetadataString authorList;
