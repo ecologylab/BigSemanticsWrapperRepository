@@ -8,9 +8,7 @@
     <example_url url="https://twitter.com/realjohngreen/status/486534354642821122" />
     <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
     
-	<scalar name="title" hide_label="true">
-		<regex_op regex="^(.*)$" replace="Twitter Status" />
-	</scalar>
+	<scalar name="title" hide="true" />
     
     <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
         <xpath>//div[@class='content clearfix']</xpath>
@@ -38,7 +36,7 @@
       <xpath>//div[@class='permalink-inner permalink-tweet-container']//p[@class='js-tweet-text tweet-text']</xpath>
     </scalar>
     
-    <scalar name="post_date" hide_label="true">
+    <scalar name="post_date" navigates_to="location" hide_label="true">
       <xpath>//div[@class='permalink-inner permalink-tweet-container']//span[@class='metadata']/span[1]</xpath>
     </scalar>
     
