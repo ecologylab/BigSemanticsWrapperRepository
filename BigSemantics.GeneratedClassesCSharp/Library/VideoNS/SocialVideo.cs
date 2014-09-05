@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CommentNS;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.CommentNS;
-using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Fundamental.Net;
 using Simpl.Serialization;
@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.VideoNS 
+namespace Ecologylab.BigSemantics.Generated.Library.VideoNS 
 {
 	[SimplInherit]
 	public class SocialVideo : CreativeWork

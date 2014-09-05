@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.AuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.AuthorNS;
-using Ecologylab.Semantics.Generated.Library.GoogleScholarArticleNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.GoogleScholarAuthorNS 
+namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarAuthorNS 
 {
 	[SimplInherit]
 	public class GoogleScholarAuthor : Author

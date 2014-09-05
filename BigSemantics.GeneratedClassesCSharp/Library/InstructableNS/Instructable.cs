@@ -7,14 +7,14 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.InstructableAuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.InstructableNS;
+using Ecologylab.BigSemantics.Generated.Library.InstructablesTagNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.InstructableAuthorNS;
-using Ecologylab.Semantics.Generated.Library.InstructableNS;
-using Ecologylab.Semantics.Generated.Library.InstructablesTagNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.InstructableNS 
+namespace Ecologylab.BigSemantics.Generated.Library.InstructableNS 
 {
 	[SimplInherit]
 	public class Instructable : RichDocument

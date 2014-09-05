@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.BggBoardGameNS;
+using Ecologylab.BigSemantics.Generated.Library.BoardGameNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.BggBoardGameNS;
-using Ecologylab.Semantics.Generated.Library.BoardGameNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.BggBoardGameNS 
+namespace Ecologylab.BigSemantics.Generated.Library.BggBoardGameNS 
 {
 	/// <summary>
 	/// boardgamegeek.com

@@ -8,10 +8,10 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -19,7 +19,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Test.Library.Generics 
+namespace Ecologylab.BigSemantics.Test.Library.Generics 
 {
 	[SimplInherit]
 	public class SocialMediaSearchResultForTest : Document
@@ -29,7 +29,7 @@ namespace Ecologylab.Semantics.Test.Library.Generics
 
 		[SimplCollection("tag")]
 		[MmName("tags")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> tags;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> tags;
 
 		public SocialMediaSearchResultForTest()
 		{ }
@@ -50,7 +50,7 @@ namespace Ecologylab.Semantics.Test.Library.Generics
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Tags
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Tags
 		{
 			get{return tags;}
 			set

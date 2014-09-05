@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.DublinCoreNS;
+using Ecologylab.BigSemantics.Generated.Library.NsdlDocumentNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.DublinCoreNS;
-using Ecologylab.Semantics.Generated.Library.NsdlDocumentNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.NsdlDocumentNS 
+namespace Ecologylab.BigSemantics.Generated.Library.NsdlDocumentNS 
 {
 	[SimplInherit]
 	public class NsdlDocument : Dc

@@ -7,11 +7,11 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.ScopusArticleNS;
+using Ecologylab.BigSemantics.Generated.Library.SearchNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ScopusArticleNS;
-using Ecologylab.Semantics.Generated.Library.SearchNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -19,7 +19,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.ScopusSearchNS 
+namespace Ecologylab.BigSemantics.Generated.Library.ScopusSearchNS 
 {
 	[SimplInherit]
 	public class ScopusSearch : Search<ScopusArticle>

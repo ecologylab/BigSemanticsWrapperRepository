@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateArticleNS;
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateAuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateInstitutionNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ResearchgateArticleNS;
-using Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS;
-using Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionDepartmentNS 
+namespace Ecologylab.BigSemantics.Generated.Library.ResearchgateInstitutionDepartmentNS 
 {
 	[SimplInherit]
 	public class ResearchGateInstitutionDepartment : RichDocument

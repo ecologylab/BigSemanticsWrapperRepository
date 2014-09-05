@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.HotelNS;
+using Ecologylab.BigSemantics.Generated.Library.ServiceNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.HotelNS;
-using Ecologylab.Semantics.Generated.Library.ServiceNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.HotelNS 
+namespace Ecologylab.BigSemantics.Generated.Library.HotelNS 
 {
 	[SimplInherit]
 	public class Hotel : Service

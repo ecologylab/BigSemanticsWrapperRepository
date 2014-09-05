@@ -1,9 +1,9 @@
 ﻿using System;
-using Ecologylab.Semantics.Generated.Library.PrimitivesNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.Generated.Library.PrimitivesNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Simpl.Serialization;
 
-namespace Ecologylab.Semantics.Generated
+namespace Ecologylab.BigSemantics.Generated
 {
     public class RichArtifactsTypeScope
     {

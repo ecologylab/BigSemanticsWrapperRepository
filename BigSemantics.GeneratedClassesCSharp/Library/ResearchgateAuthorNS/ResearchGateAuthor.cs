@@ -7,16 +7,16 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.AuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateArticleNS;
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateAuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateInstitutionDepartmentNS;
+using Ecologylab.BigSemantics.Generated.Library.ResearchgateInstitutionNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.AuthorNS;
-using Ecologylab.Semantics.Generated.Library.ResearchgateArticleNS;
-using Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS;
-using Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionDepartmentNS;
-using Ecologylab.Semantics.Generated.Library.ResearchgateInstitutionNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -24,7 +24,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS 
+namespace Ecologylab.BigSemantics.Generated.Library.ResearchgateAuthorNS 
 {
 	[SimplInherit]
 	public class ResearchGateAuthor : Author
@@ -51,7 +51,7 @@ namespace Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS
 
 		[SimplCollection("skill")]
 		[MmName("skills")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> skills;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> skills;
 
 		public ResearchGateAuthor()
 		{ }
@@ -124,7 +124,7 @@ namespace Ecologylab.Semantics.Generated.Library.ResearchgateAuthorNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Skills
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Skills
 		{
 			get{return skills;}
 			set

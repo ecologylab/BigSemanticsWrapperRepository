@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.AuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.PublicationNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.AuthorNS;
-using Ecologylab.Semantics.Generated.Library.PublicationNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Fundamental.Net;
 using Simpl.Serialization;
@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.PublicationNS 
+namespace Ecologylab.BigSemantics.Generated.Library.PublicationNS 
 {
 	[SimplInherit]
 	public class Book : Publication

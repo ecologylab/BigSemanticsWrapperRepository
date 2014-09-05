@@ -7,11 +7,11 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -19,7 +19,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.IeeeReferencesNS 
+namespace Ecologylab.BigSemantics.Generated.Library.IeeeReferencesNS 
 {
 	[SimplInherit]
 	public class IeeeXploreReferences : RichDocument

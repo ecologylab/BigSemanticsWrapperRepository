@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.ProductNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ProductNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,14 +20,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.HomeDepotProductNS 
+namespace Ecologylab.BigSemantics.Generated.Library.HomeDepotProductNS 
 {
 	[SimplInherit]
 	public class HomeDepotProduct : Product
 	{
 		[SimplCollection("product_details2")]
 		[MmName("product_details2")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> productDetails2;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> productDetails2;
 
 		public HomeDepotProduct()
 		{ }
@@ -35,7 +35,7 @@ namespace Ecologylab.Semantics.Generated.Library.HomeDepotProductNS
 		public HomeDepotProduct(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> ProductDetails2
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> ProductDetails2
 		{
 			get{return productDetails2;}
 			set

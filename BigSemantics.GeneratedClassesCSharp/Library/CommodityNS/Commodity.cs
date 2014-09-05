@@ -7,15 +7,15 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CommodityNS;
+using Ecologylab.BigSemantics.Generated.Library.GisLocationNS;
+using Ecologylab.BigSemantics.Generated.Library.PostalAddressNS;
+using Ecologylab.BigSemantics.Generated.Library.ReviewNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.CommodityNS;
-using Ecologylab.Semantics.Generated.Library.GisLocationNS;
-using Ecologylab.Semantics.Generated.Library.PostalAddressNS;
-using Ecologylab.Semantics.Generated.Library.ReviewNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Fundamental.Net;
 using Simpl.Serialization;
@@ -24,7 +24,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.CommodityNS 
+namespace Ecologylab.BigSemantics.Generated.Library.CommodityNS 
 {
 	[SimplInherit]
 	public class Commodity : RichDocument
@@ -42,7 +42,7 @@ namespace Ecologylab.Semantics.Generated.Library.CommodityNS
 
 		[SimplCollection("product_detail")]
 		[MmName("product_details")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> productDetails;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> productDetails;
 
 		[SimplCollection("specification")]
 		[MmName("specifications")]
@@ -122,7 +122,7 @@ namespace Ecologylab.Semantics.Generated.Library.CommodityNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> ProductDetails
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> ProductDetails
 		{
 			get{return productDetails;}
 			set

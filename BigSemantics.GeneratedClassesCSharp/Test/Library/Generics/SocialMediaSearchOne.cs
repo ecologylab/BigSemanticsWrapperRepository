@@ -8,9 +8,9 @@
 
 
 using Ecologylab.Collections;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.Test.Library.Generics;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.Test.Library.Generics;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -18,7 +18,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Test.Library.Generics 
+namespace Ecologylab.BigSemantics.Test.Library.Generics 
 {
 	[SimplInherit]
 	public class SocialMediaSearchOne : GeneralSearch<SocialMediaSearchResultForTest>

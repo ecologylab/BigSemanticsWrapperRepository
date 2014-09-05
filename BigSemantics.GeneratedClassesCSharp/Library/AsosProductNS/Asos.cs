@@ -7,12 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.AsosPageNS;
+using Ecologylab.BigSemantics.Generated.Library.AsosProductNS;
+using Ecologylab.BigSemantics.Generated.Library.ProductNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.AsosProductNS;
-using Ecologylab.Semantics.Generated.Library.ProductNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,14 +21,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.AsosProductNS 
+namespace Ecologylab.BigSemantics.Generated.Library.AsosProductNS 
 {
 	[SimplInherit]
 	public class Asos : Product
 	{
 		[SimplComposite]
 		[MmName("designer")]
-		private Designer designer;
+		private AsosPage designer;
 
 		[SimplCollection("asos")]
 		[MmName("recommmended_products")]
@@ -43,7 +44,7 @@ namespace Ecologylab.Semantics.Generated.Library.AsosProductNS
 		public Asos(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Designer Designer
+		public AsosPage Designer
 		{
 			get{return designer;}
 			set

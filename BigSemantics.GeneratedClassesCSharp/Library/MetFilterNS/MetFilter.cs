@@ -7,11 +7,11 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.MetArtworkNS;
+using Ecologylab.BigSemantics.Generated.Library.SearchNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.MetArtworkNS;
-using Ecologylab.Semantics.Generated.Library.SearchNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -19,7 +19,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.MetFilterNS 
+namespace Ecologylab.BigSemantics.Generated.Library.MetFilterNS 
 {
 	[SimplInherit]
 	public class MetFilter : Search<MetArtwork>

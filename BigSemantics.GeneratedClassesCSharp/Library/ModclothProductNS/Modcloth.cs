@@ -7,14 +7,14 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.ModclothProductNS;
+using Ecologylab.BigSemantics.Generated.Library.ModclothSearchNS;
+using Ecologylab.BigSemantics.Generated.Library.ProductNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ModclothProductNS;
-using Ecologylab.Semantics.Generated.Library.ModclothSearchNS;
-using Ecologylab.Semantics.Generated.Library.ProductNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.ModclothProductNS 
+namespace Ecologylab.BigSemantics.Generated.Library.ModclothProductNS 
 {
 	[SimplInherit]
 	public class Modcloth : Product
@@ -32,7 +32,7 @@ namespace Ecologylab.Semantics.Generated.Library.ModclothProductNS
 
 		[SimplCollection("detail")]
 		[MmName("details")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> details;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> details;
 
 		[SimplCollection("document")]
 		[MmName("avalailable_sizes")]
@@ -68,7 +68,7 @@ namespace Ecologylab.Semantics.Generated.Library.ModclothProductNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Details
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Details
 		{
 			get{return details;}
 			set

@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.MovieNS;
+using Ecologylab.BigSemantics.Generated.Library.PersonNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.MovieNS;
-using Ecologylab.Semantics.Generated.Library.PersonNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.MoviePersonNS 
+namespace Ecologylab.BigSemantics.Generated.Library.MoviePersonNS 
 {
 	[SimplInherit]
 	public class MoviePerson : Person
@@ -59,7 +59,7 @@ namespace Ecologylab.Semantics.Generated.Library.MoviePersonNS
 		/// </summary>
 		[SimplCollection("award")]
 		[MmName("awards")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> awards;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> awards;
 
 		[SimplScalar]
 		private MetadataString role;
@@ -125,7 +125,7 @@ namespace Ecologylab.Semantics.Generated.Library.MoviePersonNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Awards
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Awards
 		{
 			get{return awards;}
 			set

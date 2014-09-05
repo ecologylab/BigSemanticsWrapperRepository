@@ -7,14 +7,14 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.BlogNS;
+using Ecologylab.BigSemantics.Generated.Library.TweetNS;
+using Ecologylab.BigSemantics.Generated.Library.TweeterNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.BlogNS;
-using Ecologylab.Semantics.Generated.Library.TweetNS;
-using Ecologylab.Semantics.Generated.Library.TweeterNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.TwitterBlogNS 
+namespace Ecologylab.BigSemantics.Generated.Library.TwitterBlogNS 
 {
 	[SimplInherit]
 	public class TwitterMicroblog : Blog

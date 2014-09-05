@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.DleseRecordNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.DleseRecordNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.DleseRecordNS 
+namespace Ecologylab.BigSemantics.Generated.Library.DleseRecordNS 
 {
 	[SimplInherit]
 	public class RecordMetaMetadata : Metadata
@@ -31,7 +31,7 @@ namespace Ecologylab.Semantics.Generated.Library.DleseRecordNS
 
 		[SimplCollection("catalog")]
 		[MmName("catalogs")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> catalogs;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> catalogs;
 
 		public RecordMetaMetadata()
 		{ }
@@ -52,7 +52,7 @@ namespace Ecologylab.Semantics.Generated.Library.DleseRecordNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Catalogs
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Catalogs
 		{
 			get{return catalogs;}
 			set

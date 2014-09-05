@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.GrantNS;
+using Ecologylab.BigSemantics.Generated.Library.NsfDivisionNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.GrantNS;
-using Ecologylab.Semantics.Generated.Library.NsfDivisionNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.NsfAwardGrantNS 
+namespace Ecologylab.BigSemantics.Generated.Library.NsfAwardGrantNS 
 {
 	/// <summary>
 	/// NSF award details.
@@ -53,7 +53,7 @@ namespace Ecologylab.Semantics.Generated.Library.NsfAwardGrantNS
 
 		[SimplCollection("program_element_code")]
 		[MmName("program_element_codes")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> programElementCodes;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> programElementCodes;
 
 		public NsfAward()
 		{ }
@@ -152,7 +152,7 @@ namespace Ecologylab.Semantics.Generated.Library.NsfAwardGrantNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> ProgramElementCodes
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> ProgramElementCodes
 		{
 			get{return programElementCodes;}
 			set

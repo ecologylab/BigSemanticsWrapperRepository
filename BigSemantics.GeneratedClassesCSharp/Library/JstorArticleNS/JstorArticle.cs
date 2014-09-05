@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.PublicationNS;
+using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
+using Ecologylab.BigSemantics.Generated.Library.SearchNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.PublicationNS;
-using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.Semantics.Generated.Library.SearchNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.JstorArticleNS 
+namespace Ecologylab.BigSemantics.Generated.Library.JstorArticleNS 
 {
 	[SimplInherit]
 	public class JstorArticle : ScholarlyArticle

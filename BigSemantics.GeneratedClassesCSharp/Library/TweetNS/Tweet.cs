@@ -7,14 +7,14 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.BlogPostNS;
+using Ecologylab.BigSemantics.Generated.Library.TweetNS;
+using Ecologylab.BigSemantics.Generated.Library.TwitterBlogNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.BlogPostNS;
-using Ecologylab.Semantics.Generated.Library.TweetNS;
-using Ecologylab.Semantics.Generated.Library.TwitterBlogNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.TweetNS 
+namespace Ecologylab.BigSemantics.Generated.Library.TweetNS 
 {
 	/// <summary>
 	/// twitter micropost

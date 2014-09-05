@@ -30,7 +30,7 @@
     </collection>
 		<!-- can make not expandable???? -->
 
-    <composite name="designer" extends="asos_page">
+    <composite name="designer" type="asos_page">
       <xpath>//div[@class='product-description']//li[@class='single-entry']</xpath>
       <scalar name="title">
         <xpath>./a[2]/strong</xpath>

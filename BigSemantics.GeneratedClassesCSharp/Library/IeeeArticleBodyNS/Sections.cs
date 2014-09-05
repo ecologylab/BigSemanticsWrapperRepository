@@ -7,11 +7,11 @@
 //
 
 
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -19,14 +19,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.IeeeArticleBodyNS 
+namespace Ecologylab.BigSemantics.Generated.Library.IeeeArticleBodyNS 
 {
 	[SimplInherit]
 	public class Sections : RichDocument
 	{
 		[SimplCollection("paragraph")]
 		[MmName("paragraphs")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> paragraphs;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> paragraphs;
 
 		public Sections()
 		{ }
@@ -34,7 +34,7 @@ namespace Ecologylab.Semantics.Generated.Library.IeeeArticleBodyNS
 		public Sections(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Paragraphs
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Paragraphs
 		{
 			get{return paragraphs;}
 			set

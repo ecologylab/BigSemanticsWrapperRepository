@@ -7,16 +7,16 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
+using Ecologylab.BigSemantics.Generated.Library.GrantProgramNS;
+using Ecologylab.BigSemantics.Generated.Library.GrantStaffNS;
+using Ecologylab.BigSemantics.Generated.Library.PostalAddressNS;
+using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.GrantProgramNS;
-using Ecologylab.Semantics.Generated.Library.GrantStaffNS;
-using Ecologylab.Semantics.Generated.Library.PostalAddressNS;
-using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Fundamental.Net;
 using Simpl.Serialization;
@@ -25,7 +25,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.GrantNS 
+namespace Ecologylab.BigSemantics.Generated.Library.GrantNS 
 {
 	[SimplInherit]
 	public class Grant : CreativeWork
@@ -64,7 +64,7 @@ namespace Ecologylab.Semantics.Generated.Library.GrantNS
 
 		[SimplCollection("relevant_location")]
 		[MmName("relevant_locations")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataParsedURL> relevantLocations;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataParsedURL> relevantLocations;
 
 		public Grant()
 		{ }
@@ -189,7 +189,7 @@ namespace Ecologylab.Semantics.Generated.Library.GrantNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataParsedURL> RelevantLocations
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataParsedURL> RelevantLocations
 		{
 			get{return relevantLocations;}
 			set

@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.ProductNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.ProductNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.NeweggProductNS 
+namespace Ecologylab.BigSemantics.Generated.Library.NeweggProductNS 
 {
 	[SimplInherit]
 	public class NeweggProduct : Product
@@ -30,7 +30,7 @@ namespace Ecologylab.Semantics.Generated.Library.NeweggProductNS
 
 		[SimplCollection("feature")]
 		[MmName("features")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> features;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> features;
 
 		public NeweggProduct()
 		{ }
@@ -51,7 +51,7 @@ namespace Ecologylab.Semantics.Generated.Library.NeweggProductNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Features
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Features
 		{
 			get{return features;}
 			set

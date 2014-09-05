@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.YahooRssNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.YahooRssNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Fundamental.Net;
 using Simpl.Serialization;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.ItemNS 
+namespace Ecologylab.BigSemantics.Generated.Library.ItemNS 
 {
 	/// <summary>
 	/// One item in a news feed.
@@ -36,7 +36,7 @@ namespace Ecologylab.Semantics.Generated.Library.ItemNS
 		[SimplCollection("categorie")]
 		[SimplNoWrap]
 		[MmName("categories")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> categories;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> categories;
 
 		public Item()
 		{ }
@@ -57,7 +57,7 @@ namespace Ecologylab.Semantics.Generated.Library.ItemNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Categories
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Categories
 		{
 			get{return categories;}
 			set

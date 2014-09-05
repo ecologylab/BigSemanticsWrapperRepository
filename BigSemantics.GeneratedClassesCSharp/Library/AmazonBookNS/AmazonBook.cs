@@ -7,10 +7,10 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.PublicationNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.PublicationNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -18,7 +18,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.AmazonBookNS 
+namespace Ecologylab.BigSemantics.Generated.Library.AmazonBookNS 
 {
 	[SimplInherit]
 	public class AmazonBook : Book

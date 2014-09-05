@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CommodityNS;
+using Ecologylab.BigSemantics.Generated.Library.ProductNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.CommodityNS;
-using Ecologylab.Semantics.Generated.Library.ProductNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.BestbuyProductNS 
+namespace Ecologylab.BigSemantics.Generated.Library.BestbuyProductNS 
 {
 	[SimplInherit]
 	public class BestbuyProduct : Product
@@ -32,7 +32,7 @@ namespace Ecologylab.Semantics.Generated.Library.BestbuyProductNS
 
 		[SimplCollection("whats_included")]
 		[MmName("whats_included")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> whatsIncluded;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> whatsIncluded;
 
 		public BestbuyProduct()
 		{ }
@@ -53,7 +53,7 @@ namespace Ecologylab.Semantics.Generated.Library.BestbuyProductNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> WhatsIncluded
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> WhatsIncluded
 		{
 			get{return whatsIncluded;}
 			set

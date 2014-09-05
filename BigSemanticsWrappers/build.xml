@@ -58,6 +58,7 @@
           classpathref="classpath" fork="yes" failonerror="true">
       <arg value="csharp" />
       <arg value="../BigSemantics.GeneratedClassesCSharp" />
+      <arg value="../../BigSemanticsCSharp/Ecologylab.BigSemantics" />
       <jvmarg value="-Xms512m" />
       <jvmarg value="-Xmx512m" />
     </java>

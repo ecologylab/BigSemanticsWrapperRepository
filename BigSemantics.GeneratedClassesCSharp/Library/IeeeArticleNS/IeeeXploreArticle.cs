@@ -7,18 +7,18 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.IeeeAuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.IeeeCitedByNS;
+using Ecologylab.BigSemantics.Generated.Library.IeeeJournalNS;
+using Ecologylab.BigSemantics.Generated.Library.IeeeKeywordsNS;
+using Ecologylab.BigSemantics.Generated.Library.IeeeReferencesNS;
+using Ecologylab.BigSemantics.Generated.Library.IeeeSearchNS;
+using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.IeeeAuthorNS;
-using Ecologylab.Semantics.Generated.Library.IeeeCitedByNS;
-using Ecologylab.Semantics.Generated.Library.IeeeJournalNS;
-using Ecologylab.Semantics.Generated.Library.IeeeKeywordsNS;
-using Ecologylab.Semantics.Generated.Library.IeeeReferencesNS;
-using Ecologylab.Semantics.Generated.Library.IeeeSearchNS;
-using Ecologylab.Semantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Fundamental.Net;
 using Simpl.Serialization;
@@ -27,7 +27,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.IeeeArticleNS 
+namespace Ecologylab.BigSemantics.Generated.Library.IeeeArticleNS 
 {
 	[SimplInherit]
 	public class IeeeXploreArticle : ScholarlyArticle

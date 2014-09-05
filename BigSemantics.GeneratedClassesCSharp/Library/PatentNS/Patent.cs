@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
+using Ecologylab.BigSemantics.Generated.Library.PatentClassificationNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.Semantics.Generated.Library.PatentClassificationNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
-using Ecologylab.Semantics.MetadataNS.Scalar;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -21,7 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.PatentNS 
+namespace Ecologylab.BigSemantics.Generated.Library.PatentNS 
 {
 	/// <summary>
 	/// Patents Class
@@ -41,7 +41,7 @@ namespace Ecologylab.Semantics.Generated.Library.PatentNS
 
 		[SimplCollection("claim")]
 		[MmName("claims")]
-		private List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> claims;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> claims;
 
 		[SimplCollection("image")]
 		[MmName("drawings")]
@@ -92,7 +92,7 @@ namespace Ecologylab.Semantics.Generated.Library.PatentNS
 			}
 		}
 
-		public List<Ecologylab.Semantics.MetadataNS.Scalar.MetadataString> Claims
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Claims
 		{
 			get{return claims;}
 			set

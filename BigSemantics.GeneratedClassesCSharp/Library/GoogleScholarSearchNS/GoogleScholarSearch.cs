@@ -7,11 +7,11 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.GoogleScholarSearchNS;
+using Ecologylab.BigSemantics.Generated.Library.SearchNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS;
-using Ecologylab.Semantics.Generated.Library.SearchNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -19,7 +19,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.GoogleScholarSearchNS 
+namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarSearchNS 
 {
 	/// <summary>
 	/// The google Search class

@@ -7,12 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.FlickrPhotoPostNS;
+using Ecologylab.BigSemantics.Generated.Library.FlickrTagNS;
+using Ecologylab.BigSemantics.MetaMetadataNS;
+using Ecologylab.BigSemantics.MetadataNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;
-using Ecologylab.Semantics.Generated.Library.FlickrPhotoPostNS;
-using Ecologylab.Semantics.Generated.Library.FlickrTagNS;
-using Ecologylab.Semantics.MetaMetadataNS;
-using Ecologylab.Semantics.MetadataNS;
-using Ecologylab.Semantics.MetadataNS.Builtins;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.Semantics.Generated.Library.FlickrTagNS 
+namespace Ecologylab.BigSemantics.Generated.Library.FlickrTagNS 
 {
 	/// <summary>
 	/// For flickr crawled tags
