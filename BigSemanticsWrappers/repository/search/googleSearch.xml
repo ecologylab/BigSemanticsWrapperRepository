@@ -50,7 +50,7 @@
     </collection>
    
     <composite name="next_page">
-      <scalar name="name">
+      <scalar name="title">
         <xpath>//td[@class='b navend'][2]/a</xpath>
       </scalar>
       <scalar name="location">

@@ -31,13 +31,13 @@ namespace Ecologylab.BigSemantics.Generated.Library.AnandtechReviewNS
 		[SimplScalar]
 		private MetadataString author;
 
-		[SimplCollection("document")]
+		[SimplCollection("rich_document")]
 		[MmName("sections")]
-		private List<Document> sections;
+		private List<RichDocument> sections;
 
-		[SimplCollection("document")]
+		[SimplCollection("rich_document")]
 		[MmName("specifications")]
-		private List<Document> specifications;
+		private List<RichDocument> specifications;
 
 		public AnandtechReview()
 		{ }
@@ -58,7 +58,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.AnandtechReviewNS
 			}
 		}
 
-		public List<Document> Sections
+		public List<RichDocument> Sections
 		{
 			get{return sections;}
 			set
@@ -71,7 +71,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.AnandtechReviewNS
 			}
 		}
 
-		public List<Document> Specifications
+		public List<RichDocument> Specifications
 		{
 			get{return specifications;}
 			set

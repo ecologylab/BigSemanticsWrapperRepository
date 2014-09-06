@@ -85,9 +85,9 @@ namespace Ecologylab.BigSemantics.Generated.Library.MovieNS
 		/// <summary>
 		/// Movie genres
 		/// </summary>
-		[SimplCollection("document")]
+		[SimplCollection("rich_document")]
 		[MmName("genres")]
-		private List<Document> genres;
+		private List<RichDocument> genres;
 
 		public Movie()
 		{ }
@@ -225,7 +225,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.MovieNS
 			}
 		}
 
-		public List<Document> Genres
+		public List<RichDocument> Genres
 		{
 			get{return genres;}
 			set

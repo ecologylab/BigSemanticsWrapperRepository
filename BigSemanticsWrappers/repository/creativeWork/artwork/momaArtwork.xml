@@ -81,7 +81,7 @@
       <xpath>//p[@id='mainImage']/img/@src</xpath>
     </scalar>
 
-    <composite name="temp_field_value_holder" extends="metadata" hide="true">
+    <composite name="temp_field_value_holder" type="temp_field_value_holder" extends="metadata" hide="true">
       <xpath>//p[@class='caption'][1]</xpath>
       <field_parser name="regex_find" regex="(\S.+?)\. " />
       <scalar name="temp_year" scalar_type="String" field_parser_key="$0">

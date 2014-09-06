@@ -46,7 +46,7 @@
     	<xpath>//meta[@name='keywords']/@content</xpath>
     </scalar>
     
-    <composite name="see_also" type="document">
+    <composite name="see_also" type="rich_document">
 	      <xpath>//meta[@name='og:see_also']</xpath>
 	      <scalar name="title">
 	        <concatenate_values>
@@ -91,12 +91,8 @@
         <xpath>./@content</xpath>
       </scalar>
     </collection>
-    <collection name="article_bodies" child_type="document">
+    <collection name="article_bodies" child_scalar_type="String">
       <xpath>//*[@itemprop='articleBody']</xpath>
-      <scalar name="description" label="content">
-        <xpath>.</xpath>
-      </scalar>
-   
     </collection>
   </meta_metadata>
 </meta_metadata_repository>

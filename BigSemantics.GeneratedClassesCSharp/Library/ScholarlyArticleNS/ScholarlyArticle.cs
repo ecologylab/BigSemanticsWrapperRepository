@@ -39,14 +39,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS
 		[SimplCollection]
 		[SimplScope("repository_documents")]
 		[MmName("classifications")]
-		private List<Document> classifications;
+		private List<RichDocument> classifications;
 
 		/// <summary>
 		/// Key Terms of the paper.
 		/// </summary>
-		[SimplCollection("document")]
+		[SimplCollection("rich_document")]
 		[MmName("keywords")]
-		private List<Document> keywords;
+		private List<RichDocument> keywords;
 
 		[SimplScalar]
 		private MetadataString pages;
@@ -70,7 +70,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS
 			}
 		}
 
-		public List<Document> Classifications
+		public List<RichDocument> Classifications
 		{
 			get{return classifications;}
 			set
@@ -83,7 +83,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS
 			}
 		}
 
-		public List<Document> Keywords
+		public List<RichDocument> Keywords
 		{
 			get{return keywords;}
 			set

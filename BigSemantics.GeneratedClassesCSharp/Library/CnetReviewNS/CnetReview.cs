@@ -40,9 +40,9 @@ namespace Ecologylab.BigSemantics.Generated.Library.CnetReviewNS
 		[SimplScalar]
 		private MetadataString bottom;
 
-		[SimplCollection("document")]
+		[SimplCollection("rich_document")]
 		[MmName("specifications")]
-		private List<Document> specifications;
+		private List<RichDocument> specifications;
 
 		public CnetReview()
 		{ }
@@ -102,7 +102,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CnetReviewNS
 			}
 		}
 
-		public List<Document> Specifications
+		public List<RichDocument> Specifications
 		{
 			get{return specifications;}
 			set

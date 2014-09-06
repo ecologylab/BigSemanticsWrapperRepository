@@ -7,6 +7,7 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.EbayProductNS;
 using Ecologylab.BigSemantics.Generated.Library.ProductNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
@@ -33,7 +34,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.EbayProductNS
 
 		[SimplComposite]
 		[MmName("seller")]
-		private RichDocument seller;
+		private Seller seller;
 
 		public EbayProduct()
 		{ }
@@ -67,7 +68,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.EbayProductNS
 			}
 		}
 
-		public RichDocument Seller
+		public Seller Seller
 		{
 			get{return seller;}
 			set

@@ -30,17 +30,17 @@ namespace Ecologylab.BigSemantics.Generated.Library.CiteseerxSummaryNS
 		[SimplComposite]
 		[SimplOtherTags(new String[] {"citation_records"})]
 		[MmName("cited_articles")]
-		private Document citedArticles;
+		private RichDocument citedArticles;
 
 		[SimplComposite]
 		[SimplOtherTags(new String[] {"active_bibliography_records"})]
 		[MmName("articles_that_cite_the_same_works")]
-		private Document articlesThatCiteTheSameWorks;
+		private RichDocument articlesThatCiteTheSameWorks;
 
 		[SimplComposite]
 		[SimplOtherTags(new String[] {"cocitation_records"})]
 		[MmName("articles_cited_by_the_same_works")]
-		private Document articlesCitedByTheSameWorks;
+		private RichDocument articlesCitedByTheSameWorks;
 
 		public CiteseerxSummary()
 		{ }
@@ -48,7 +48,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CiteseerxSummaryNS
 		public CiteseerxSummary(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Document CitedArticles
+		public RichDocument CitedArticles
 		{
 			get{return citedArticles;}
 			set
@@ -61,7 +61,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CiteseerxSummaryNS
 			}
 		}
 
-		public Document ArticlesThatCiteTheSameWorks
+		public RichDocument ArticlesThatCiteTheSameWorks
 		{
 			get{return articlesThatCiteTheSameWorks;}
 			set
@@ -74,7 +74,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CiteseerxSummaryNS
 			}
 		}
 
-		public Document ArticlesCitedByTheSameWorks
+		public RichDocument ArticlesCitedByTheSameWorks
 		{
 			get{return articlesCitedByTheSameWorks;}
 			set

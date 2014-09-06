@@ -10,7 +10,7 @@
     <scalar name="title">
       <xpath>//title/text()</xpath>
     </scalar>
-    <composite name="home_page" type="document">
+    <composite name="home_page" type="rich_document">
       <xpath>//span/strong/..</xpath>
       <scalar name="title">
         <xpath>./a</xpath>

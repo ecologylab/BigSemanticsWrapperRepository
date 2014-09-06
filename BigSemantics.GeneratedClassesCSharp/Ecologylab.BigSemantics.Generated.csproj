@@ -180,6 +180,7 @@
     <Compile Include="Library\DublinCoreNS\Dc.cs" />
     <Compile Include="Library\EarthquakeNS\Earthquake.cs" />
     <Compile Include="Library\EbayProductNS\EbayProduct.cs" />
+    <Compile Include="Library\EbayProductNS\Seller.cs" />
     <Compile Include="Library\EtsyProductNS\EtsyProduct.cs" />
     <Compile Include="Library\EventNS\Event.cs" />
     <Compile Include="Library\ExhibitionNS\Exhibition.cs" />

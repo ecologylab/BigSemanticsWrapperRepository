@@ -21,7 +21,7 @@
     <collection name="writers" child_type="movie_person" layer="4.0"
       comment="Who wrote the movie." />
     <collection name="cast"  child_type="movie_person" />
-    <collection name="genres" comment="Movie genres" child_type="document" />
+    <collection name="genres" comment="Movie genres" child_type="rich_document" />
   </meta_metadata>
 </meta_metadata_repository>
 

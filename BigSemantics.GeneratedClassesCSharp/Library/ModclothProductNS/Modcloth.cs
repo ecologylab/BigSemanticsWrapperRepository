@@ -34,9 +34,9 @@ namespace Ecologylab.BigSemantics.Generated.Library.ModclothProductNS
 		[MmName("details")]
 		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> details;
 
-		[SimplCollection("document")]
+		[SimplCollection("avalailable_size")]
 		[MmName("avalailable_sizes")]
-		private List<Document> avalailableSizes;
+		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> avalailableSizes;
 
 		[SimplScalar]
 		private MetadataString sizingReccomendation;
@@ -81,7 +81,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.ModclothProductNS
 			}
 		}
 
-		public List<Document> AvalailableSizes
+		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> AvalailableSizes
 		{
 			get{return avalailableSizes;}
 			set

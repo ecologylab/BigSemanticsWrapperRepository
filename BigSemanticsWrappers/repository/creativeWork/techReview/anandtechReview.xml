@@ -24,7 +24,7 @@
       <xpath>(//*[@class='articleContent']//table)[1]/tbody/tr[last()]/td[2]/text()</xpath>
     </scalar>
 
-    <collection name="sections" child_type="document">
+    <collection name="sections" child_type="rich_document">
       <xpath>//*[@class='articleContent']/h2[position()&gt;1 and
         ((preceding-sibling::h2[1])[text()])]</xpath>
 		<!-- Due to the common use of empty headers or headers that only contain whitespace to delineate
@@ -38,7 +38,7 @@
 
     </collection>
 
-    <collection name="specifications" child_type="document">
+    <collection name="specifications" child_type="rich_document">
       <xpath>(//*[@class='articleContent']//table)[1]/tbody/tr</xpath>
 	    <!-- The first column of the first table usually has specs, but this is not guaranteed. -->
       <scalar name="title" label="spec">

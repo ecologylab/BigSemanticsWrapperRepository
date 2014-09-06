@@ -37,7 +37,7 @@
       <xpath>//div[@id='reviewSummary']/p[3]</xpath>
     </scalar>
 
-    <collection name="specifications" child_type="document">
+    <collection name="specifications" child_type="rich_document">
       <xpath>//div[@id='contentAux']/section[1]/ul/li</xpath>
       <scalar name="title" label="spec">
         <xpath>./span[1]</xpath>

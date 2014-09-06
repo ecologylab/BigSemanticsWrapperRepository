@@ -38,7 +38,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.FlickrPhotoPostNS
 
 		[SimplComposite]
 		[MmName("place")]
-		private Document place;
+		private RichDocument place;
 
 		[SimplComposite]
 		[MmName("geo_location")]
@@ -76,7 +76,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.FlickrPhotoPostNS
 			}
 		}
 
-		public Document Place
+		public RichDocument Place
 		{
 			get{return place;}
 			set

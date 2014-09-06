@@ -33,7 +33,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.PeriodicalNS
 		/// </summary>
 		[SimplComposite]
 		[MmName("archive")]
-		private Document archive;
+		private RichDocument archive;
 
 		[SimplScalar]
 		private MetadataString volumeAndIssue;
@@ -50,7 +50,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.PeriodicalNS
 		public Periodical(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Document Archive
+		public RichDocument Archive
 		{
 			get{return archive;}
 			set

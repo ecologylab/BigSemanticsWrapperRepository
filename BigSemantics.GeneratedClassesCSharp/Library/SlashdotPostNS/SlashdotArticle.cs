@@ -25,9 +25,9 @@ namespace Ecologylab.BigSemantics.Generated.Library.SlashdotPostNS
 	[SimplInherit]
 	public class SlashdotArticle : Post
 	{
-		[SimplCollection("document")]
+		[SimplCollection("rich_document")]
 		[MmName("anchors")]
-		private List<Document> anchors;
+		private List<RichDocument> anchors;
 
 		[SimplCollection("slashdot_article")]
 		[MmName("related_stories")]
@@ -39,7 +39,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.SlashdotPostNS
 		public SlashdotArticle(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<Document> Anchors
+		public List<RichDocument> Anchors
 		{
 			get{return anchors;}
 			set

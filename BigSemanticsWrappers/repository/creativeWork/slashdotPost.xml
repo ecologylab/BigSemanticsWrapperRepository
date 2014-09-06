@@ -30,7 +30,7 @@
       <regex_op regex="on ([^,]*)," group="1" />
     </scalar>
 
-    <collection name="anchors" child_type="document" context_node="description_node">
+    <collection name="anchors" child_type="rich_document" context_node="description_node">
       <xpath>.//a</xpath>
       <scalar name="title">
         <xpath>.</xpath>

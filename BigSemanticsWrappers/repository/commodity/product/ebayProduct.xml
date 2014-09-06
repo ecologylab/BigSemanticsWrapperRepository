@@ -18,14 +18,14 @@
       <xpath>//span[@itemprop='price']</xpath>
     </scalar>
 
-    <composite name="seller" type="rich_document">
-      <scalar name="name" type="String">
+    <composite name="seller" type="seller" extends="rich_document">
+      <scalar name="title" label="name" scalar_type="String">
         <xpath>//span[@class='mbg-nw']</xpath>
       </scalar>
-      <scalar name="feedback" type="Integer">
+      <scalar name="feedback" scalar_type="String">
         <xpath>//span[@class='mbg-l']/a</xpath>
       </scalar>
-      <scalar name="positive_feedback" type="String">
+      <scalar name="positive_feedback" scalar_type="String">
         <xpath>//div[@id='si-fb']</xpath>
       </scalar>
     </composite>

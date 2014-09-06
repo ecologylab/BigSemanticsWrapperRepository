@@ -536,6 +536,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(SearchSection),
 				typeof(Section),
 				typeof(Sections),
+				typeof(Seller),
 				typeof(Service),
 				typeof(SfuCartoonArchive),
 				typeof(SlashdotArticle),

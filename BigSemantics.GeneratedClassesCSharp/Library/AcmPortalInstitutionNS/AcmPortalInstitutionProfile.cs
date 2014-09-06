@@ -25,7 +25,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.AcmPortalInstitutionNS
 	{
 		[SimplComposite]
 		[MmName("home_page")]
-		private Document homePage;
+		private RichDocument homePage;
 
 		public AcmPortalInstitutionProfile()
 		{ }
@@ -33,7 +33,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.AcmPortalInstitutionNS
 		public AcmPortalInstitutionProfile(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Document HomePage
+		public RichDocument HomePage
 		{
 			get{return homePage;}
 			set

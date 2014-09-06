@@ -69,7 +69,7 @@
       </scalar>
     </collection>
 
-    <composite name="cited_articles" other_tags="citation_records" type="document">
+    <composite name="cited_articles" other_tags="citation_records" type="rich_document">
       <xpath>//a[@title='number of citations']</xpath>
       <scalar name="title" navigates_to="location">
         <xpath>.</xpath>
@@ -80,7 +80,7 @@
       </scalar>
     </composite>
     <composite name="articles_that_cite_the_same_works" other_tags="active_bibliography_records"
-      type="document">
+      type="rich_document">
       <xpath>//a[@title='Documents that cite the same works']</xpath>
       <scalar name="title" navigates_to="location">
         <xpath>.</xpath>
@@ -91,7 +91,7 @@
       </scalar>
     </composite>
     <composite name="articles_cited_by_the_same_works" other_tags="cocitation_records"
-      type="document">
+      type="rich_document">
       <xpath>//a[@title='Documents cited by the same works']</xpath>
       <scalar name="title" navigates_to="location">
         <xpath>.</xpath>

@@ -35,7 +35,7 @@
       <scalar name="title">
         <xpath>./div[1]/div[@class='review_info_name']</xpath>
       </scalar>
-      <scalar name="overall_rating">
+      <scalar name="rating">
         <xpath>./div[2]/div[@class='ratings']/div[1]/div/div/@class</xpath>
       </scalar>
       <scalar name="description">
@@ -50,11 +50,8 @@
 <!--         <xpath>.</xpath> -->
 <!--       </scalar> -->
     </collection>
-    <collection name="avalailable_sizes" child_type="document">
+    <collection name="avalailable_sizes" child_scalar_type="String">
       <xpath>//input[@class='ui-variant-value size-button ui-corner-all in-stock']/@value</xpath>
-      <scalar name="title" label="">
-        <xpath>.</xpath>
-      </scalar>
     </collection>
     <scalar name="sizing_reccomendation" scalar_type="String">
       <xpath>//p[@id='sizing-recommendation']</xpath>

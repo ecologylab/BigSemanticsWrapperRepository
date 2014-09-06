@@ -24,7 +24,7 @@
       <regex_op regex=" views$" replace="" />
     </scalar>
 
-    <composite name="place" type="document">
+    <composite name="place" type="rich_document">
       <scalar name="title">
         <xpath>.//a[@id='photoGeolocation-storylink']</xpath>
       </scalar>
