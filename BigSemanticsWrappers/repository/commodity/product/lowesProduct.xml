@@ -7,6 +7,8 @@
     <selector url_regex_fragment="http://www.lowes.com/pd*" domain="lowes.com" />
     <selector url_regex_fragment="http://www.lowes.com/ProductDisplay*" domain="lowes.com" />
     <example_url location="http://www.lowes.com/pd_331470-817-235159_4294703024%2B4294934373" />
+    <example_url 
+     location="http://www.lowes.com/pd_325832-972-E5100YP_1z0x5ra+1z11oh9+1z13zu6__?productId=50188931&amp;Ns=p_product_price|0&amp;pl=1&amp;currentURL=%3FNs%3Dp_product_price%7C0%26page%3D1&amp;facetInfo=Locking/Floating|Oak" />
 
     <scalar name="title">
       <xpath>//div[@class='itemInfo']/h1</xpath>
@@ -15,8 +17,13 @@
       <xpath>//*[@id='description-tab']/p</xpath>
     </scalar>
     <scalar name="price">
-      <xpath>//*[@id='pricing']//text()[contains(.,'$')]</xpath>
-    </scalar>
+      <xpath>//div[@id='pricing']/span</xpath>
+<!--   these work in chrome, but it seems not in cyberneko :(    
+      <xpath>//div[@id='pricing']/*[@class='price']/text()</xpath>
+      <xpath>//*[@id='pricing']//text()[contains(.,'$')]</xpath> 
+      <xpath>//div[@class='pricingDetails']//span[@class='price']/text()</xpath>
+      
+ -->    </scalar>
     <scalar name="model">
       <xpath>//*[@id='ModelNumber']</xpath>
     </scalar>
@@ -36,35 +43,34 @@
   		</scalar>
   	</collection>  	
 
-    <collection name="companion_products" child_type="lowes_product">
+    <collection name="companion_products" child_type="lowes_product" label="related items">
       <xpath>//div[@id='relatedItems']/div</xpath>
       <scalar name="location">
-        <xpath>./a[2]/@href</xpath>
+        <xpath>./p/a/@href</xpath>
       </scalar>
       <scalar name="title">
-        <xpath>./a[2]</xpath>
+        <xpath>./a/img/@alt</xpath>
       </scalar>
       <scalar name="price">
-        <xpath>./p/span</xpath>
+        <xpath>.//*[@class='price']/text()</xpath>
       </scalar>
+      <collection name="main_images">
+      	<xpath>./a/img</xpath>
+      	<scalar name="location">
+      		<xpath>./@src</xpath>
+      	</scalar>
+      </collection>
     </collection>
    	
 <!--   	<scalar name="model" xpath="//input[@name='modelNumber']/@value"/> -->
 
     <collection name="main_images">
+        <xpath>//img[@id='prodPrimaryImg']</xpath>
       <scalar name="location">
-        <xpath>//div[@id='imgCont']//img[@class='productimage']/@src</xpath>
+<!--         <xpath>//div[@id='imgCont']//img[@class='productimage']/@src</xpath> -->
+        <xpath>./@src</xpath>
       </scalar>
     </collection>
 
-    <semantic_actions>
-      <get_field name="image" />
-      <if>
-        <not_null value="image" />
-        <create_and_visualize_img_surrogate>
-          <arg name="metadata" value="image" />
-        </create_and_visualize_img_surrogate>
-      </if>
-    </semantic_actions>
   </meta_metadata>
 </meta_metadata_repository>
