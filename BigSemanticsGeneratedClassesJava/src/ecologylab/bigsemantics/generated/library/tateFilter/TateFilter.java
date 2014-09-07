@@ -9,6 +9,7 @@ package ecologylab.bigsemantics.generated.library.tateFilter;
  */
 
 import ecologylab.bigsemantics.generated.library.search.Search;
+import ecologylab.bigsemantics.generated.library.tateArtwork.TateArtwork;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class TateFilter extends Search
+public class TateFilter extends Search<TateArtwork>
 {
 	public TateFilter()
 	{ super(); }

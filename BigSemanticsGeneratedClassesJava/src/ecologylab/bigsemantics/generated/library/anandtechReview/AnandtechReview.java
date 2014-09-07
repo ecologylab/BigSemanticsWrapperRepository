@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.anandtechReview;
  */
 
 import ecologylab.bigsemantics.generated.library.techReview.TechReview;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -32,13 +32,13 @@ public class AnandtechReview extends TechReview
 	@simpl_scalar
 	private MetadataString author;
 
-	@simpl_collection("document")
+	@simpl_collection("rich_document")
 	@mm_name("sections")
-	private List<Document> sections;
+	private List<RichDocument> sections;
 
-	@simpl_collection("document")
+	@simpl_collection("rich_document")
 	@mm_name("specifications")
-	private List<Document> specifications;
+	private List<RichDocument> specifications;
 
 	public AnandtechReview()
 	{ super(); }
@@ -80,21 +80,21 @@ public class AnandtechReview extends TechReview
 		this.author = author;
 	}
 
-	public List<Document> getSections()
+	public List<RichDocument> getSections()
 	{
 		return sections;
 	}
 
   // lazy evaluation:
-  public List<Document> sections()
+  public List<RichDocument> sections()
   {
     if (sections == null)
-      sections = new ArrayList<Document>();
+      sections = new ArrayList<RichDocument>();
     return sections;
   }
 
   // addTo:
-  public void addToSections(Document element)
+  public void addToSections(RichDocument element)
   {
     sections().add(element);
   }
@@ -105,26 +105,26 @@ public class AnandtechReview extends TechReview
     return sections == null ? 0 : sections.size();
   }
 
-	public void setSections(List<Document> sections)
+	public void setSections(List<RichDocument> sections)
 	{
 		this.sections = sections;
 	}
 
-	public List<Document> getSpecifications()
+	public List<RichDocument> getSpecifications()
 	{
 		return specifications;
 	}
 
   // lazy evaluation:
-  public List<Document> specifications()
+  public List<RichDocument> specifications()
   {
     if (specifications == null)
-      specifications = new ArrayList<Document>();
+      specifications = new ArrayList<RichDocument>();
     return specifications;
   }
 
   // addTo:
-  public void addToSpecifications(Document element)
+  public void addToSpecifications(RichDocument element)
   {
     specifications().add(element);
   }
@@ -135,7 +135,7 @@ public class AnandtechReview extends TechReview
     return specifications == null ? 0 : specifications.size();
   }
 
-	public void setSpecifications(List<Document> specifications)
+	public void setSpecifications(List<RichDocument> specifications)
 	{
 		this.specifications = specifications;
 	}

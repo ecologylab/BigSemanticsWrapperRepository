@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.scholarlyArticle;
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.periodical.Periodical;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -42,14 +42,14 @@ public class ScholarlyArticle extends CreativeWork
 	@simpl_collection
 	@simpl_scope("repository_documents")
 	@mm_name("classifications")
-	private List<Document> classifications;
+	private List<RichDocument> classifications;
 
 	/** 
 	 *Key Terms of the paper.
 	 */ 
-	@simpl_collection("document")
+	@simpl_collection("rich_document")
 	@mm_name("keywords")
-	private List<Document> keywords;
+	private List<RichDocument> keywords;
 
 	@simpl_scalar
 	private MetadataString pages;
@@ -72,21 +72,21 @@ public class ScholarlyArticle extends CreativeWork
 		this.source = source;
 	}
 
-	public List<Document> getClassifications()
+	public List<RichDocument> getClassifications()
 	{
 		return classifications;
 	}
 
   // lazy evaluation:
-  public List<Document> classifications()
+  public List<RichDocument> classifications()
   {
     if (classifications == null)
-      classifications = new ArrayList<Document>();
+      classifications = new ArrayList<RichDocument>();
     return classifications;
   }
 
   // addTo:
-  public void addToClassifications(Document element)
+  public void addToClassifications(RichDocument element)
   {
     classifications().add(element);
   }
@@ -97,26 +97,26 @@ public class ScholarlyArticle extends CreativeWork
     return classifications == null ? 0 : classifications.size();
   }
 
-	public void setClassifications(List<Document> classifications)
+	public void setClassifications(List<RichDocument> classifications)
 	{
 		this.classifications = classifications;
 	}
 
-	public List<Document> getKeywords()
+	public List<RichDocument> getKeywords()
 	{
 		return keywords;
 	}
 
   // lazy evaluation:
-  public List<Document> keywords()
+  public List<RichDocument> keywords()
   {
     if (keywords == null)
-      keywords = new ArrayList<Document>();
+      keywords = new ArrayList<RichDocument>();
     return keywords;
   }
 
   // addTo:
-  public void addToKeywords(Document element)
+  public void addToKeywords(RichDocument element)
   {
     keywords().add(element);
   }
@@ -127,7 +127,7 @@ public class ScholarlyArticle extends CreativeWork
     return keywords == null ? 0 : keywords.size();
   }
 
-	public void setKeywords(List<Document> keywords)
+	public void setKeywords(List<RichDocument> keywords)
 	{
 		this.keywords = keywords;
 	}

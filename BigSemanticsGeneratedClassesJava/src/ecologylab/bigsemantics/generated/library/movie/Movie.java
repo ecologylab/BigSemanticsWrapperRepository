@@ -10,9 +10,9 @@ package ecologylab.bigsemantics.generated.library.movie;
 
 import ecologylab.bigsemantics.generated.library.creative_work.CreativeWork;
 import ecologylab.bigsemantics.generated.library.moviePerson.MoviePerson;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -88,9 +88,9 @@ public class Movie extends CreativeWork
 	/** 
 	 *Movie genres
 	 */ 
-	@simpl_collection("document")
+	@simpl_collection("rich_document")
 	@mm_name("genres")
-	private List<Document> genres;
+	private List<RichDocument> genres;
 
 	public Movie()
 	{ super(); }
@@ -412,21 +412,21 @@ public class Movie extends CreativeWork
 		this.cast = cast;
 	}
 
-	public List<Document> getGenres()
+	public List<RichDocument> getGenres()
 	{
 		return genres;
 	}
 
   // lazy evaluation:
-  public List<Document> genres()
+  public List<RichDocument> genres()
   {
     if (genres == null)
-      genres = new ArrayList<Document>();
+      genres = new ArrayList<RichDocument>();
     return genres;
   }
 
   // addTo:
-  public void addToGenres(Document element)
+  public void addToGenres(RichDocument element)
   {
     genres().add(element);
   }
@@ -437,7 +437,7 @@ public class Movie extends CreativeWork
     return genres == null ? 0 : genres.size();
   }
 
-	public void setGenres(List<Document> genres)
+	public void setGenres(List<RichDocument> genres)
 	{
 		this.genres = genres;
 	}

@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.flickrPhotoPost;
 
 import ecologylab.bigsemantics.generated.library.blogPost.Post;
 import ecologylab.bigsemantics.generated.library.gisLocation.GisLocation;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -39,7 +39,7 @@ public class FlickrPhoto extends Post
 
 	@simpl_composite
 	@mm_name("place")
-	private Document place;
+	private RichDocument place;
 
 	@simpl_composite
 	@mm_name("geo_location")
@@ -117,12 +117,12 @@ public class FlickrPhoto extends Post
 		this.views = views;
 	}
 
-	public Document getPlace()
+	public RichDocument getPlace()
 	{
 		return place;
 	}
 
-	public void setPlace(Document place)
+	public void setPlace(RichDocument place)
 	{
 		this.place = place;
 	}

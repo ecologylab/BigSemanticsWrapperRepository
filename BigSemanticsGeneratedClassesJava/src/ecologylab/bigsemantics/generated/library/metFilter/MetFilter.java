@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.metFilter;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.metArtwork.MetArtwork;
 import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class MetFilter extends Search
+public class MetFilter extends Search<MetArtwork>
 {
 	public MetFilter()
 	{ super(); }

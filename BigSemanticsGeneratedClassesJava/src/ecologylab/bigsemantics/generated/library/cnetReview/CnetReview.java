@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.cnetReview;
  */
 
 import ecologylab.bigsemantics.generated.library.techReview.TechReview;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -41,9 +41,9 @@ public class CnetReview extends TechReview
 	@simpl_scalar
 	private MetadataString bottom;
 
-	@simpl_collection("document")
+	@simpl_collection("rich_document")
 	@mm_name("specifications")
-	private List<Document> specifications;
+	private List<RichDocument> specifications;
 
 	public CnetReview()
 	{ super(); }
@@ -181,21 +181,21 @@ public class CnetReview extends TechReview
 		this.bottom = bottom;
 	}
 
-	public List<Document> getSpecifications()
+	public List<RichDocument> getSpecifications()
 	{
 		return specifications;
 	}
 
   // lazy evaluation:
-  public List<Document> specifications()
+  public List<RichDocument> specifications()
   {
     if (specifications == null)
-      specifications = new ArrayList<Document>();
+      specifications = new ArrayList<RichDocument>();
     return specifications;
   }
 
   // addTo:
-  public void addToSpecifications(Document element)
+  public void addToSpecifications(RichDocument element)
   {
     specifications().add(element);
   }
@@ -206,7 +206,7 @@ public class CnetReview extends TechReview
     return specifications == null ? 0 : specifications.size();
   }
 
-	public void setSpecifications(List<Document> specifications)
+	public void setSpecifications(List<RichDocument> specifications)
 	{
 		this.specifications = specifications;
 	}

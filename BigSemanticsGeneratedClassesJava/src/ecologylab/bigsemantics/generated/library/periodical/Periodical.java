@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.periodical;
  */
 
 import ecologylab.bigsemantics.generated.library.basicPublication.BasicPublication;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -35,7 +35,7 @@ public class Periodical extends BasicPublication
 	 */ 
 	@simpl_composite
 	@mm_name("archive")
-	private Document archive;
+	private RichDocument archive;
 
 	@simpl_scalar
 	private MetadataString volumeAndIssue;
@@ -54,12 +54,12 @@ public class Periodical extends BasicPublication
 	}
 
 
-	public Document getArchive()
+	public RichDocument getArchive()
 	{
 		return archive;
 	}
 
-	public void setArchive(Document archive)
+	public void setArchive(RichDocument archive)
 	{
 		this.archive = archive;
 	}

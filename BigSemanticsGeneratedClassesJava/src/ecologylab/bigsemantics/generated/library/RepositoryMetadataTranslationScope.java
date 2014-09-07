@@ -80,8 +80,6 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.asosProduct.Asos.class,
 
-		ecologylab.bigsemantics.generated.library.asosProduct.Designer.class,
-
 		ecologylab.bigsemantics.generated.library.attraction.Attraction.class,
 
 		ecologylab.bigsemantics.generated.library.attractionList.AttractionList.class,
@@ -210,6 +208,8 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.ebayProduct.EbayProduct.class,
 
+		ecologylab.bigsemantics.generated.library.ebayProduct.Seller.class,
+
 		ecologylab.bigsemantics.generated.library.etsyProduct.EtsyProduct.class,
 
 		ecologylab.bigsemantics.generated.library.event.Event.class,
@@ -288,7 +288,7 @@ public class RepositoryMetadataTranslationScope
 
 		ecologylab.bigsemantics.generated.library.guggenArtwork.GuggenArtwork.class,
 
-		ecologylab.bigsemantics.generated.library.guggenFitler.GuggenFilter.class,
+		ecologylab.bigsemantics.generated.library.guggenFilter.GuggenFilter.class,
 
 		ecologylab.bigsemantics.generated.library.hmProduct.HmProduct.class,
 
@@ -343,8 +343,6 @@ public class RepositoryMetadataTranslationScope
 		ecologylab.bigsemantics.generated.library.investigator.Investigator.class,
 
 		ecologylab.bigsemantics.generated.library.item.Item.class,
-
-		ecologylab.bigsemantics.generated.library.jstorArticle.DatabaseArticle.class,
 
 		ecologylab.bigsemantics.generated.library.jstorArticle.JstorArticle.class,
 

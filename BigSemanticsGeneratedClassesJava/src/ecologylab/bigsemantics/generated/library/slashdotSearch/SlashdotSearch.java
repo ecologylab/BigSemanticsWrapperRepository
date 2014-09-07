@@ -9,6 +9,7 @@ package ecologylab.bigsemantics.generated.library.slashdotSearch;
  */
 
 import ecologylab.bigsemantics.generated.library.search.Search;
+import ecologylab.bigsemantics.generated.library.search.SocialMediaSearchResult;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -20,7 +21,7 @@ import java.util.Map;
  *The slashdot search class
  */ 
 @simpl_inherit
-public class SlashdotSearch extends Search
+public class SlashdotSearch extends Search<SocialMediaSearchResult>
 {
 	public SlashdotSearch()
 	{ super(); }

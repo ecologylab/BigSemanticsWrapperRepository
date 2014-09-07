@@ -11,7 +11,6 @@ package ecologylab.bigsemantics.generated.library.modclothProduct;
 import ecologylab.bigsemantics.generated.library.modclothProduct.Modcloth;
 import ecologylab.bigsemantics.generated.library.modclothSearch.ModclothSearch;
 import ecologylab.bigsemantics.generated.library.product.Product;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -35,9 +34,9 @@ public class Modcloth extends Product
 	@mm_name("details")
 	private List<MetadataString> details;
 
-	@simpl_collection("document")
+	@simpl_collection("avalailable_size")
 	@mm_name("avalailable_sizes")
-	private List<Document> avalailableSizes;
+	private List<MetadataString> avalailableSizes;
 
 	@simpl_scalar
 	private MetadataString sizingReccomendation;
@@ -120,21 +119,21 @@ public class Modcloth extends Product
 		this.details = details;
 	}
 
-	public List<Document> getAvalailableSizes()
+	public List<MetadataString> getAvalailableSizes()
 	{
 		return avalailableSizes;
 	}
 
   // lazy evaluation:
-  public List<Document> avalailableSizes()
+  public List<MetadataString> avalailableSizes()
   {
     if (avalailableSizes == null)
-      avalailableSizes = new ArrayList<Document>();
+      avalailableSizes = new ArrayList<MetadataString>();
     return avalailableSizes;
   }
 
   // addTo:
-  public void addToAvalailableSizes(Document element)
+  public void addToAvalailableSizes(MetadataString element)
   {
     avalailableSizes().add(element);
   }
@@ -145,7 +144,7 @@ public class Modcloth extends Product
     return avalailableSizes == null ? 0 : avalailableSizes.size();
   }
 
-	public void setAvalailableSizes(List<Document> avalailableSizes)
+	public void setAvalailableSizes(List<MetadataString> avalailableSizes)
 	{
 		this.avalailableSizes = avalailableSizes;
 	}

@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.citeseerxSummary;
  */
 
 import ecologylab.bigsemantics.generated.library.citeseerxRecord.CiteseerxRecord;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -29,17 +29,17 @@ public class CiteseerxSummary extends CiteseerxRecord
 	@simpl_composite
 	@simpl_other_tags({"citation_records"})
 	@mm_name("cited_articles")
-	private Document citedArticles;
+	private RichDocument citedArticles;
 
 	@simpl_composite
 	@simpl_other_tags({"active_bibliography_records"})
 	@mm_name("articles_that_cite_the_same_works")
-	private Document articlesThatCiteTheSameWorks;
+	private RichDocument articlesThatCiteTheSameWorks;
 
 	@simpl_composite
 	@simpl_other_tags({"cocitation_records"})
 	@mm_name("articles_cited_by_the_same_works")
-	private Document articlesCitedByTheSameWorks;
+	private RichDocument articlesCitedByTheSameWorks;
 
 	public CiteseerxSummary()
 	{ super(); }
@@ -49,32 +49,32 @@ public class CiteseerxSummary extends CiteseerxRecord
 	}
 
 
-	public Document getCitedArticles()
+	public RichDocument getCitedArticles()
 	{
 		return citedArticles;
 	}
 
-	public void setCitedArticles(Document citedArticles)
+	public void setCitedArticles(RichDocument citedArticles)
 	{
 		this.citedArticles = citedArticles;
 	}
 
-	public Document getArticlesThatCiteTheSameWorks()
+	public RichDocument getArticlesThatCiteTheSameWorks()
 	{
 		return articlesThatCiteTheSameWorks;
 	}
 
-	public void setArticlesThatCiteTheSameWorks(Document articlesThatCiteTheSameWorks)
+	public void setArticlesThatCiteTheSameWorks(RichDocument articlesThatCiteTheSameWorks)
 	{
 		this.articlesThatCiteTheSameWorks = articlesThatCiteTheSameWorks;
 	}
 
-	public Document getArticlesCitedByTheSameWorks()
+	public RichDocument getArticlesCitedByTheSameWorks()
 	{
 		return articlesCitedByTheSameWorks;
 	}
 
-	public void setArticlesCitedByTheSameWorks(Document articlesCitedByTheSameWorks)
+	public void setArticlesCitedByTheSameWorks(RichDocument articlesCitedByTheSameWorks)
 	{
 		this.articlesCitedByTheSameWorks = articlesCitedByTheSameWorks;
 	}

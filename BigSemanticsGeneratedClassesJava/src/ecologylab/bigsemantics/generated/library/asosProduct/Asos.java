@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.asosProduct;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.asosPage.AsosPage;
 import ecologylab.bigsemantics.generated.library.asosProduct.Asos;
-import ecologylab.bigsemantics.generated.library.asosProduct.Designer;
 import ecologylab.bigsemantics.generated.library.product.Product;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
@@ -28,7 +28,7 @@ public class Asos extends Product
 {
 	@simpl_composite
 	@mm_name("designer")
-	private Designer designer;
+	private AsosPage designer;
 
 	@simpl_collection("asos")
 	@mm_name("recommmended_products")
@@ -46,12 +46,12 @@ public class Asos extends Product
 	}
 
 
-	public Designer getDesigner()
+	public AsosPage getDesigner()
 	{
 		return designer;
 	}
 
-	public void setDesigner(Designer designer)
+	public void setDesigner(AsosPage designer)
 	{
 		this.designer = designer;
 	}

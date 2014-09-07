@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.imageSearch;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.search.ImageSearchResult;
 import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class ImageSearch extends Search
+public class ImageSearch extends Search<ImageSearchResult>
 {
 	public ImageSearch()
 	{ super(); }

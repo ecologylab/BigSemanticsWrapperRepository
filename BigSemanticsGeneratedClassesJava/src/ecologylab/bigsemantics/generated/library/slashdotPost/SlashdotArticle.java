@@ -10,8 +10,8 @@ package ecologylab.bigsemantics.generated.library.slashdotPost;
 
 import ecologylab.bigsemantics.generated.library.blogPost.Post;
 import ecologylab.bigsemantics.generated.library.slashdotPost.SlashdotArticle;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -24,9 +24,9 @@ import java.util.Map;
 @simpl_inherit
 public class SlashdotArticle extends Post
 {
-	@simpl_collection("document")
+	@simpl_collection("rich_document")
 	@mm_name("anchors")
-	private List<Document> anchors;
+	private List<RichDocument> anchors;
 
 	@simpl_collection("slashdot_article")
 	@mm_name("related_stories")
@@ -40,21 +40,21 @@ public class SlashdotArticle extends Post
 	}
 
 
-	public List<Document> getAnchors()
+	public List<RichDocument> getAnchors()
 	{
 		return anchors;
 	}
 
   // lazy evaluation:
-  public List<Document> anchors()
+  public List<RichDocument> anchors()
   {
     if (anchors == null)
-      anchors = new ArrayList<Document>();
+      anchors = new ArrayList<RichDocument>();
     return anchors;
   }
 
   // addTo:
-  public void addToAnchors(Document element)
+  public void addToAnchors(RichDocument element)
   {
     anchors().add(element);
   }
@@ -65,7 +65,7 @@ public class SlashdotArticle extends Post
     return anchors == null ? 0 : anchors.size();
   }
 
-	public void setAnchors(List<Document> anchors)
+	public void setAnchors(List<RichDocument> anchors)
 	{
 		this.anchors = anchors;
 	}

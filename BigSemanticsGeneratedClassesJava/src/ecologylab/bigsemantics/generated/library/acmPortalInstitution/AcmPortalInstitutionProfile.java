@@ -8,7 +8,6 @@ package ecologylab.bigsemantics.generated.library.acmPortalInstitution;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -24,7 +23,7 @@ public class AcmPortalInstitutionProfile extends RichDocument
 {
 	@simpl_composite
 	@mm_name("home_page")
-	private Document homePage;
+	private RichDocument homePage;
 
 	public AcmPortalInstitutionProfile()
 	{ super(); }
@@ -34,12 +33,12 @@ public class AcmPortalInstitutionProfile extends RichDocument
 	}
 
 
-	public Document getHomePage()
+	public RichDocument getHomePage()
 	{
 		return homePage;
 	}
 
-	public void setHomePage(Document homePage)
+	public void setHomePage(RichDocument homePage)
 	{
 		this.homePage = homePage;
 	}

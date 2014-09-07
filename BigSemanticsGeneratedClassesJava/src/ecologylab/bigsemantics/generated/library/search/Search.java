@@ -12,13 +12,16 @@ import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_nowrap;
+import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_scope;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +32,12 @@ import java.util.Map;
 @simpl_inherit
 public class Search<SR extends RichDocument> extends RichDocument
 {
+	/** 
+	 *Useful for smaller searches where knowing num results is helpful
+	 */ 
+	@simpl_scalar
+	private MetadataString numberResults;
+
 	@simpl_collection
 	@simpl_nowrap
 	@simpl_scope("repository_documents")
@@ -50,6 +59,38 @@ public class Search<SR extends RichDocument> extends RichDocument
 		super(mmd);
 	}
 
+
+	public MetadataString	numberResults()
+	{
+		MetadataString	result = this.numberResults;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.numberResults = result;
+		}
+		return result;
+	}
+
+	public String getNumberResults()
+	{
+		return this.numberResults == null ? null : numberResults().getValue();
+	}
+
+	public MetadataString getNumberResultsMetadata()
+	{
+		return numberResults;
+	}
+
+	public void setNumberResults(String numberResults)
+	{
+		if (numberResults != null)
+			this.numberResults().setValue(numberResults);
+	}
+
+	public void setNumberResultsMetadata(MetadataString numberResults)
+	{
+		this.numberResults = numberResults;
+	}
 
 	public List<SR> getSearchResults()
 	{

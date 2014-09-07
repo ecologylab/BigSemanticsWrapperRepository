@@ -9,7 +9,7 @@ package ecologylab.bigsemantics.generated.library.guggenArtwork;
  */
 
 import ecologylab.bigsemantics.generated.library.artwork.Artwork;
-import ecologylab.bigsemantics.generated.library.guggenFitler.GuggenFilter;
+import ecologylab.bigsemantics.generated.library.guggenFilter.GuggenFilter;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

@@ -8,9 +8,9 @@ package ecologylab.bigsemantics.generated.library.ebayProduct;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.ebayProduct.Seller;
 import ecologylab.bigsemantics.generated.library.product.Product;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -33,7 +33,7 @@ public class EbayProduct extends Product
 
 	@simpl_composite
 	@mm_name("seller")
-	private RichDocument seller;
+	private Seller seller;
 
 	public EbayProduct()
 	{ super(); }
@@ -107,12 +107,12 @@ public class EbayProduct extends Product
 		this.availability = availability;
 	}
 
-	public RichDocument getSeller()
+	public Seller getSeller()
 	{
 		return seller;
 	}
 
-	public void setSeller(RichDocument seller)
+	public void setSeller(Seller seller)
 	{
 		this.seller = seller;
 	}

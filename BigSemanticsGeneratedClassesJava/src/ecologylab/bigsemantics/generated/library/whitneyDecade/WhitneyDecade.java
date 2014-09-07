@@ -9,6 +9,7 @@ package ecologylab.bigsemantics.generated.library.whitneyDecade;
  */
 
 import ecologylab.bigsemantics.generated.library.search.Search;
+import ecologylab.bigsemantics.generated.library.whitneyArtwork.WhitneyArtwork;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class WhitneyDecade extends Search
+public class WhitneyDecade extends Search<WhitneyArtwork>
 {
 	public WhitneyDecade()
 	{ super(); }
