@@ -74,14 +74,6 @@
       <Project>{3a67f507-1e77-4ed6-bd46-981e66d15f92}</Project>
       <Name>Ecologylab.BigSemantics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\simplCSharp\Simpl.Fundamental\Simpl.Fundamental.csproj">
-      <Project>{10287dd6-0c07-4737-9469-0aa21b7723bf}</Project>
-      <Name>Simpl.Fundamental</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\simplCSharp\Simpl.Serialization\Simpl.Serialization.csproj">
-      <Project>{16c61dd8-68b1-4509-8e18-6f7e80b605a3}</Project>
-      <Name>Simpl.Serialization</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="crit\semantics\generated\txtf1\fieldreports\emergent_event\EmergentEvent.cs" />
@@ -434,7 +426,14 @@
     <Compile Include="Test\Library\Generics\WikipediaForTest.cs" />
     <Compile Include="Test\Library\Generics\WikiSearch.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Simpl.Fundamental">
+      <HintPath>..\..\BigSemanticsCSharp\lib\Simpl.Fundamental.dll</HintPath>
+    </Reference>
+    <Reference Include="Simpl.Serialization">
+      <HintPath>..\..\BigSemanticsCSharp\lib\Simpl.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
