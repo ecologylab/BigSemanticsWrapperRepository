@@ -31,9 +31,13 @@
     <scalar name="title">
       	<xpath>//div[@id='gs_rt_hdr']//a</xpath>
     </scalar>
-    
+    		
     <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
+    </scalar>
+    
+    <scalar name="number_of_results">
+    	<xpath>substring-before(substring-after(//div[@id='gs_ab_md'], 'About '), ' results')</xpath>
     </scalar>
     
     <collection name="search_results"  show_expanded_always="true">

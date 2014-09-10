@@ -46,6 +46,19 @@
 	  <scalar name="citation_count" scalar_type="String">
 		<xpath>substring-after(//div[@class='gsc_field'][text()='Total citations']/following-sibling::div//a, 'Cited by ')</xpath>
       </scalar>
+      <composite name="citations" type="google_scholar_search">
+      	<xpath>//div[@class='gsc_field'][text()='Total citations']/following-sibling::div//a</xpath>
+      	<scalar name="location">
+      		<xpath>./@href</xpath>
+      	</scalar>
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>citations</value>
+        </concatenate_values>
+      </scalar>
+      </composite>
+      
 	  <scalar name="volume" scalar_type="String">
 		<xpath>//div[@class='gsc_field'][text()='Volume']/following-sibling::div</xpath>
 	  </scalar>
