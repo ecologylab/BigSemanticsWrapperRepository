@@ -36,7 +36,7 @@ public class Search<SR extends RichDocument> extends RichDocument
 	 *Useful for smaller searches where knowing num results is helpful
 	 */ 
 	@simpl_scalar
-	private MetadataString numberResults;
+	private MetadataString numberOfResults;
 
 	@simpl_collection
 	@simpl_nowrap
@@ -60,36 +60,36 @@ public class Search<SR extends RichDocument> extends RichDocument
 	}
 
 
-	public MetadataString	numberResults()
+	public MetadataString	numberOfResults()
 	{
-		MetadataString	result = this.numberResults;
+		MetadataString	result = this.numberOfResults;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.numberResults = result;
+			this.numberOfResults = result;
 		}
 		return result;
 	}
 
-	public String getNumberResults()
+	public String getNumberOfResults()
 	{
-		return this.numberResults == null ? null : numberResults().getValue();
+		return this.numberOfResults == null ? null : numberOfResults().getValue();
 	}
 
-	public MetadataString getNumberResultsMetadata()
+	public MetadataString getNumberOfResultsMetadata()
 	{
-		return numberResults;
+		return numberOfResults;
 	}
 
-	public void setNumberResults(String numberResults)
+	public void setNumberOfResults(String numberOfResults)
 	{
-		if (numberResults != null)
-			this.numberResults().setValue(numberResults);
+		if (numberOfResults != null)
+			this.numberOfResults().setValue(numberOfResults);
 	}
 
-	public void setNumberResultsMetadata(MetadataString numberResults)
+	public void setNumberOfResultsMetadata(MetadataString numberOfResults)
 	{
-		this.numberResults = numberResults;
+		this.numberOfResults = numberOfResults;
 	}
 
 	public List<SR> getSearchResults()

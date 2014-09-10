@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.googleScholarArticle;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.googleScholarSearch.GoogleScholarSearch;
 import ecologylab.bigsemantics.generated.library.scholarlyArticle.ScholarlyArticle;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -38,6 +39,10 @@ public class GoogleScholarArticle extends ScholarlyArticle
 
 	@simpl_scalar
 	private MetadataString citationCount;
+
+	@simpl_composite
+	@mm_name("citations_page")
+	private GoogleScholarSearch citationsPage;
 
 	@simpl_scalar
 	private MetadataString volume;
@@ -168,6 +173,16 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	public void setCitationCountMetadata(MetadataString citationCount)
 	{
 		this.citationCount = citationCount;
+	}
+
+	public GoogleScholarSearch getCitationsPage()
+	{
+		return citationsPage;
+	}
+
+	public void setCitationsPage(GoogleScholarSearch citationsPage)
+	{
+		this.citationsPage = citationsPage;
 	}
 
 	public MetadataString	volume()
