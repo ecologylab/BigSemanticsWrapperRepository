@@ -15,7 +15,7 @@ import ecologylab.serialization.SimplTypesScope;
 import java.util.List;
 import java.util.Map;
 
-public class RepositoryMetadataTranslationScope
+public class RepositoryMetadataTypesScope
 {
 
 	protected static final Class TRANSLATIONS[] =

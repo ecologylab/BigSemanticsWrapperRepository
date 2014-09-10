@@ -256,9 +256,9 @@ using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations;
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.BigSemantics.Generated.Library 
 {
-	public class RepositoryMetadataTranslationScope
+	public class RepositoryMetadataTypesScope
 	{
-		public RepositoryMetadataTranslationScope()
+		public RepositoryMetadataTypesScope()
 		{ }
 
 		public static SimplTypesScope Get()

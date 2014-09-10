@@ -20,12 +20,21 @@
 
   <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class"
     parser="xpath">
+    <generic_type_var name="SR" arg="google_scholar_search_result" />
+
+<!--     <selector url_regex="http\:\/\/scholar\.google\.com\/scholar\?.*q=.*" domain="google.com"/> -->   
     <selector url_stripped="http://scholar.google.com/scholar" />
-      <scalar name="query" layer="9.1">      
+    
+    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
+    <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+
+    <scalar name="title">
+      	<xpath>//div[@id='gs_rt_hdr']//a</xpath>
+    </scalar>
+    
+    <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
-    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
-    <generic_type_var name="SR" arg="google_scholar_search_result" />
     
     <collection name="search_results"  show_expanded_always="true">
       <xpath>//div[@class='gs_r']</xpath>

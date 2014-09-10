@@ -37,20 +37,20 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	private MetadataString date;
 
 	@simpl_scalar
-	private MetadataString publisher;
+	private MetadataString citationCount;
+
+	@simpl_scalar
+	private MetadataString volume;
 
 	@simpl_scalar
 	private MetadataString issue;
 
 	@simpl_scalar
-	private MetadataString volume;
+	private MetadataString publisher;
 
 	@simpl_composite
 	@mm_name("citation_graph")
 	private Image citationGraph;
-
-	@simpl_scalar
-	private MetadataString citationCount;
 
 	@simpl_composite
 	@mm_name("google_citations")
@@ -138,68 +138,36 @@ public class GoogleScholarArticle extends ScholarlyArticle
 		this.date = date;
 	}
 
-	public MetadataString	publisher()
+	public MetadataString	citationCount()
 	{
-		MetadataString	result = this.publisher;
+		MetadataString	result = this.citationCount;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.publisher = result;
+			this.citationCount = result;
 		}
 		return result;
 	}
 
-	public String getPublisher()
+	public String getCitationCount()
 	{
-		return this.publisher == null ? null : publisher().getValue();
+		return this.citationCount == null ? null : citationCount().getValue();
 	}
 
-	public MetadataString getPublisherMetadata()
+	public MetadataString getCitationCountMetadata()
 	{
-		return publisher;
+		return citationCount;
 	}
 
-	public void setPublisher(String publisher)
+	public void setCitationCount(String citationCount)
 	{
-		if (publisher != null)
-			this.publisher().setValue(publisher);
+		if (citationCount != null)
+			this.citationCount().setValue(citationCount);
 	}
 
-	public void setPublisherMetadata(MetadataString publisher)
+	public void setCitationCountMetadata(MetadataString citationCount)
 	{
-		this.publisher = publisher;
-	}
-
-	public MetadataString	issue()
-	{
-		MetadataString	result = this.issue;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.issue = result;
-		}
-		return result;
-	}
-
-	public String getIssue()
-	{
-		return this.issue == null ? null : issue().getValue();
-	}
-
-	public MetadataString getIssueMetadata()
-	{
-		return issue;
-	}
-
-	public void setIssue(String issue)
-	{
-		if (issue != null)
-			this.issue().setValue(issue);
-	}
-
-	public void setIssueMetadata(MetadataString issue)
-	{
-		this.issue = issue;
+		this.citationCount = citationCount;
 	}
 
 	public MetadataString	volume()
@@ -234,6 +202,70 @@ public class GoogleScholarArticle extends ScholarlyArticle
 		this.volume = volume;
 	}
 
+	public MetadataString	issue()
+	{
+		MetadataString	result = this.issue;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.issue = result;
+		}
+		return result;
+	}
+
+	public String getIssue()
+	{
+		return this.issue == null ? null : issue().getValue();
+	}
+
+	public MetadataString getIssueMetadata()
+	{
+		return issue;
+	}
+
+	public void setIssue(String issue)
+	{
+		if (issue != null)
+			this.issue().setValue(issue);
+	}
+
+	public void setIssueMetadata(MetadataString issue)
+	{
+		this.issue = issue;
+	}
+
+	public MetadataString	publisher()
+	{
+		MetadataString	result = this.publisher;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.publisher = result;
+		}
+		return result;
+	}
+
+	public String getPublisher()
+	{
+		return this.publisher == null ? null : publisher().getValue();
+	}
+
+	public MetadataString getPublisherMetadata()
+	{
+		return publisher;
+	}
+
+	public void setPublisher(String publisher)
+	{
+		if (publisher != null)
+			this.publisher().setValue(publisher);
+	}
+
+	public void setPublisherMetadata(MetadataString publisher)
+	{
+		this.publisher = publisher;
+	}
+
 	public Image getCitationGraph()
 	{
 		return citationGraph;
@@ -242,38 +274,6 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	public void setCitationGraph(Image citationGraph)
 	{
 		this.citationGraph = citationGraph;
-	}
-
-	public MetadataString	citationCount()
-	{
-		MetadataString	result = this.citationCount;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.citationCount = result;
-		}
-		return result;
-	}
-
-	public String getCitationCount()
-	{
-		return this.citationCount == null ? null : citationCount().getValue();
-	}
-
-	public MetadataString getCitationCountMetadata()
-	{
-		return citationCount;
-	}
-
-	public void setCitationCount(String citationCount)
-	{
-		if (citationCount != null)
-			this.citationCount().setValue(citationCount);
-	}
-
-	public void setCitationCountMetadata(MetadataString citationCount)
-	{
-		this.citationCount = citationCount;
 	}
 
 	public RichDocument getGoogleCitations()

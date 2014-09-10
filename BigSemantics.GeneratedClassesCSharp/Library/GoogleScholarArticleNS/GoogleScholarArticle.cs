@@ -36,20 +36,20 @@ namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS
 		private MetadataString date;
 
 		[SimplScalar]
-		private MetadataString publisher;
+		private MetadataString citationCount;
+
+		[SimplScalar]
+		private MetadataString volume;
 
 		[SimplScalar]
 		private MetadataString issue;
 
 		[SimplScalar]
-		private MetadataString volume;
+		private MetadataString publisher;
 
 		[SimplComposite]
 		[MmName("citation_graph")]
 		private Image citationGraph;
-
-		[SimplScalar]
-		private MetadataString citationCount;
 
 		[SimplComposite]
 		[MmName("google_citations")]
@@ -100,27 +100,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS
 			}
 		}
 
-		public MetadataString Publisher
+		public MetadataString CitationCount
 		{
-			get{return publisher;}
+			get{return citationCount;}
 			set
 			{
-				if (this.publisher != value)
+				if (this.citationCount != value)
 				{
-					this.publisher = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Issue
-		{
-			get{return issue;}
-			set
-			{
-				if (this.issue != value)
-				{
-					this.issue = value;
+					this.citationCount = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -139,6 +126,32 @@ namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS
 			}
 		}
 
+		public MetadataString Issue
+		{
+			get{return issue;}
+			set
+			{
+				if (this.issue != value)
+				{
+					this.issue = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Publisher
+		{
+			get{return publisher;}
+			set
+			{
+				if (this.publisher != value)
+				{
+					this.publisher = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
 		public Image CitationGraph
 		{
 			get{return citationGraph;}
@@ -147,19 +160,6 @@ namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS
 				if (this.citationGraph != value)
 				{
 					this.citationGraph = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString CitationCount
-		{
-			get{return citationCount;}
-			set
-			{
-				if (this.citationCount != value)
-				{
-					this.citationCount = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
