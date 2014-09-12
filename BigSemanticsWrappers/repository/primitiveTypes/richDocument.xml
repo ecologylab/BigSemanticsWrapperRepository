@@ -23,7 +23,8 @@
  	<def_var name="root_location" type="string">
  	
  	</def_var>
-    <scalar name="title" scalar_type="String" style_name="metadata_h1" layer="10.0" hint="XML_LEAF"
+    <scalar name="title" scalar_type="String" layer="10.0" hint="XML_LEAF"
+      style_name="metadata_h1" collapsed_style_name="metadata_normal"
       is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name" use_value_as_label="main_images"
       comment="The Title of the Document">
       

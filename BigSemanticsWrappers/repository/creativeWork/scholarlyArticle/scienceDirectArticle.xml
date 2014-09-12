@@ -1,5 +1,5 @@
 <meta_metadata_repository name="scienceDirectArticle"
-  package="ecologylab.bigsemantics.generated.library.scienceDirectArticle" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.creative_work.scholarly_article" default_user_agent_name="chrome">
 
   <meta_metadata name="science_direct_article" extends="scholarly_article" parser="xpath"
     comment="Information about the article">
@@ -26,12 +26,20 @@
         <xpath>//a[@id='pdfLink']/@href</xpath>
       </scalar>
     </composite>
+    
+    <collection name="main_images">
+<!--     	<xpath>//ol[@class='figures ']/li//a</xpath> -->
+    	<xpath>//img[@class='displayImg']</xpath>
+    	<scalar name="location">
+    		<xpath>./@src</xpath>
+    	</scalar>
+    </collection>
 
     <collection name="authors" child_type="scopus_author" label="authors" comment="All authors">
-<!--       <xpath>//ul[@class='authorGroup']/li</xpath> -->
+<!--       <xpath>//ul[@class='authorGroup']/li//a</xpath> -->
 		<xpath>//li[@class='smh5']</xpath>
       <scalar name="title">
-        <xpath>./a</xpath>
+        <xpath>./a[1]</xpath>
       </scalar>
       <scalar name="scopus_author_id">
         <xpath>substring-after(./a/@id,'authname_')</xpath>

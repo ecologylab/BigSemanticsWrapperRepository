@@ -152,6 +152,10 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creative_work.CreativeWork.class,
 
+		ecologylab.bigsemantics.generated.library.creative_work.scholarly_article.ScienceDirectArticle.class,
+
+		ecologylab.bigsemantics.generated.library.creative_work.scholarly_article.WileyArticle.class,
+
 		ecologylab.bigsemantics.generated.library.curation.Curation.class,
 
 		ecologylab.bigsemantics.generated.library.disaster.Disaster.class,
@@ -561,8 +565,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.samsclubProduct.SamsclubProduct.class,
 
 		ecologylab.bigsemantics.generated.library.scholarlyArticle.ScholarlyArticle.class,
-
-		ecologylab.bigsemantics.generated.library.scienceDirectArticle.ScienceDirectArticle.class,
 
 		ecologylab.bigsemantics.generated.library.scopusArticle.ScopusArticle.class,
 

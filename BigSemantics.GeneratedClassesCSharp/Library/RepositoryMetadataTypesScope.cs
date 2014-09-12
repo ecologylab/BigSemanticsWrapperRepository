@@ -62,6 +62,7 @@ using Ecologylab.BigSemantics.Generated.Library.CommentNS;
 using Ecologylab.BigSemantics.Generated.Library.CommodityNS;
 using Ecologylab.BigSemantics.Generated.Library.ContactPointNS;
 using Ecologylab.BigSemantics.Generated.Library.CrateAndBarrelProductNS;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWork.ScholarlyArticleNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.BigSemantics.Generated.Library.CurationNS;
 using Ecologylab.BigSemantics.Generated.Library.DisasterNS;
@@ -205,7 +206,6 @@ using Ecologylab.BigSemantics.Generated.Library.RwandaTribunalVoicesNS;
 using Ecologylab.BigSemantics.Generated.Library.RwandaVideoInterviewNS;
 using Ecologylab.BigSemantics.Generated.Library.SamsclubProductNS;
 using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.BigSemantics.Generated.Library.ScienceDirectArticleNS;
 using Ecologylab.BigSemantics.Generated.Library.ScopusArticleNS;
 using Ecologylab.BigSemantics.Generated.Library.ScopusAuthorNS;
 using Ecologylab.BigSemantics.Generated.Library.ScopusSearchNS;
@@ -588,6 +588,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(WikipediaPage),
 				typeof(WikipediaPageType),
 				typeof(WikipediaSearch),
+				typeof(WileyArticle),
 				typeof(YahooGeoCode),
 				typeof(YahooGeoCodeResult),
 				typeof(YahooMediaRss),

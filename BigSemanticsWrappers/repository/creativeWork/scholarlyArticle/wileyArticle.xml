@@ -1,0 +1,60 @@
+<meta_metadata_repository name="scienceDirectArticle"
+  package="ecologylab.bigsemantics.generated.library.creative_work.scholarly_article" default_user_agent_name="chrome">
+
+  <meta_metadata name="wiley_article" extends="scholarly_article" parser="xpath"
+    comment="Information about the article">
+    <selector url_path_tree="http://onlinelibrary.wiley.com/doi/" />
+    <example_url        url="http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8659.2011.01898.x/abstract" />
+	
+    <scalar name="description">
+    	<xpath>//div[starts-with(@class,'abstract')]/p/text()</xpath>
+    </scalar>
+
+    <composite name="rich_media">
+      <xpath>//a[@class='readcubePdfLink']</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+    
+    <collection name="authors" child_type="scopus_author" label="authors" comment="All authors">
+<!--       <xpath>//ul[@class='authorGroup']/li//a</xpath> -->
+		<xpath>/html/head/meta[@name='citation_author']</xpath>
+      <scalar name="title">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="description">
+      <xpath>//div[@id='abstract']//p//text()</xpath>
+    </scalar>
+
+    <composite name="source">
+      <xpath>/html/head</xpath>
+      <scalar name="title">
+        <xpath>./meta[@name='citation_journal_title']/@content</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>//p[@class='articleDetails']/a/@href</xpath>
+      </scalar>
+      <scalar name="volume_and_issue">
+        <xpath>./meta[@name='citation_volume']/@content</xpath>
+      </scalar>
+      <scalar name="date">
+        <xpath>./meta[@name='citation_publication_date']/@content</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="keywords">
+      <xpath>/html/head/meta[@name='citation_keywords']</xpath>
+      <scalar name="title">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>
+
