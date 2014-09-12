@@ -15,7 +15,9 @@
     <collection name="citations"  child_type="creative_work"
       polymorphic_scope="repository_documents" comment="Creatives that cite this work." />
 
-    <composite name="rich_media" type="rich_document" />
+    <composite name="rich_media" type="rich_document" >
+    	<scalar name="title" style_name="metadata_normal" />
+    </composite>
   </meta_metadata>
   
 </meta_metadata_repository>

@@ -3,11 +3,16 @@
 
   <meta_metadata name="science_direct_article" extends="scholarly_article" parser="xpath"
     comment="Information about the article">
-    <selector url_path_tree="http://www.sciencedirect.com/science/article" />
-    <example_url url="http://www.sciencedirect.com/science/article/pii/S1570826808000693" />
-
+    <selector url_path_tree="http://www.sciencedirect.com/science/article/" />
+    <example_url        url="http://www.sciencedirect.com/science/article/pii/S1570826808000693" />
+	<example_url        url="http://www.sciencedirect.com/science/article/pii/S1364661300015382" />
+	
     <scalar name="title">
       <xpath>//h1[@class='svTitle']</xpath>
+    </scalar>
+    
+    <scalar name="description">
+    	<xpath>//div[starts-with(@class,'abstract')]/p/text()</xpath>
     </scalar>
 
     <composite name="rich_media">
@@ -23,13 +28,15 @@
     </composite>
 
     <collection name="authors" child_type="scopus_author" label="authors" comment="All authors">
-      <xpath>//ul[@class='authorGroup']/li</xpath>
+<!--       <xpath>//ul[@class='authorGroup']/li</xpath> -->
+		<xpath>//li[@class='smh5']</xpath>
       <scalar name="title">
-        <xpath>a[1]</xpath>
+        <xpath>./a</xpath>
       </scalar>
       <scalar name="scopus_author_id">
-        <xpath>a[1]/@data-authurl</xpath>
-        <regex_op regex="ScopusAuthorCountsURL/(\d+)" group="1" />
+        <xpath>substring-after(./a/@id,'authname_')</xpath>
+<!--         <xpath>a[1]/@data-authurl</xpath> -->
+<!--         <regex_op regex="ScopusAuthorCountsURL/(\d+)" group="1" /> -->
       </scalar>
       <scalar name="location">
         <concatenate_values>
@@ -44,18 +51,19 @@
     </scalar>
 
     <composite name="source">
-      <xpath>//div[@class='publicationHead']</xpath>
+      <xpath>//div[starts-with(@class, 'publicationHead')]</xpath>
       <scalar name="title">
-        <xpath>./div[@class='title']/a</xpath>
+        <xpath>./div[starts-with(@class, 'title')]/a/img/@alt</xpath>
+        <xpath>./div[starts-with(@class, 'title')]/a//text()</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./div[@class='title']/a/@href</xpath>
+        <xpath>./div[starts-with(@class, 'title')]/a/@href</xpath>
       </scalar>
       <scalar name="volume_and_issue">
-        <xpath>./p[1]/a</xpath>
+        <xpath>./p[@class='volIssue']/a</xpath>
       </scalar>
       <scalar name="date">
-        <xpath>./p[1]</xpath>
+        <xpath>./p[@class='volIssue']/text()</xpath>
         <regex_op regex="Volume \d+, Issue \d+, ([^,]+)," group="1" />
       </scalar>
     </composite>
