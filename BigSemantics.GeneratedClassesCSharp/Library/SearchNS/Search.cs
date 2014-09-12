@@ -32,7 +32,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		/// Useful for smaller searches where knowing num results is helpful
 		/// </summary>
 		[SimplScalar]
-		private MetadataString numberResults;
+		private MetadataString numberOfResults;
 
 		[SimplCollection]
 		[SimplNoWrap]
@@ -54,14 +54,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		public Search(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString NumberResults
+		public MetadataString NumberOfResults
 		{
-			get{return numberResults;}
+			get{return numberOfResults;}
 			set
 			{
-				if (this.numberResults != value)
+				if (this.numberOfResults != value)
 				{
-					this.numberResults = value;
+					this.numberOfResults = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

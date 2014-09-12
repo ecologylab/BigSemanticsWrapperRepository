@@ -7,6 +7,7 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.GoogleScholarSearchNS;
 using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
@@ -37,6 +38,10 @@ namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS
 
 		[SimplScalar]
 		private MetadataString citationCount;
+
+		[SimplComposite]
+		[MmName("citations_page")]
+		private GoogleScholarSearch citationsPage;
 
 		[SimplScalar]
 		private MetadataString volume;
@@ -108,6 +113,19 @@ namespace Ecologylab.BigSemantics.Generated.Library.GoogleScholarArticleNS
 				if (this.citationCount != value)
 				{
 					this.citationCount = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public GoogleScholarSearch CitationsPage
+		{
+			get{return citationsPage;}
+			set
+			{
+				if (this.citationsPage != value)
+				{
+					this.citationsPage = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
