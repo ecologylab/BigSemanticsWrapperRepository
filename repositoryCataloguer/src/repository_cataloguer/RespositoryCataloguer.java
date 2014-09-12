@@ -150,6 +150,19 @@ public class RespositoryCataloguer {
 	      }
 
 	    }
+	    
+	    //recurse through all subdirectories
+	    String[] names = folder.list();
+	    for(String name : names)
+	    {
+	    	File tempFile = new File(folder.getAbsolutePath() + "/" + name);
+	        if (tempFile.isDirectory())
+	        {
+	        	aList.addAll(Arrays.asList(getXMLFiles(tempFile)));
+	        	System.out.println(name);
+	        }
+	    }	   
+	    
 	    return aList.toArray(new File[aList.size()]);
 
 	}    
@@ -157,7 +170,7 @@ public class RespositoryCataloguer {
 
 		try{
 			RespositoryCataloguer cataloguer = new RespositoryCataloguer();   
-			String path = "..\\BigSemanticsWrappers\\MmdRepository\\mmdrepository\\repositorySources";
+			String path = "..\\BigSemanticsWrappers\\repository";
 			path = path.replaceAll("\\\\", "/");
 			File directory = new File(path);
 			//Need to generate a list of paths to be used. Loop through them and call catalogueXML for each
