@@ -523,6 +523,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(RottenPerson),
 				typeof(Rss),
 				typeof(Rss22),
+				typeof(SageArticle),
 				typeof(SamsclubProduct),
 				typeof(ScholarlyArticle),
 				typeof(ScienceDirectArticle),

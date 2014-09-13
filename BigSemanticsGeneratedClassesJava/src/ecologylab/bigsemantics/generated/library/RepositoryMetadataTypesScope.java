@@ -152,6 +152,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creative_work.CreativeWork.class,
 
+		ecologylab.bigsemantics.generated.library.creative_work.scholarly_article.SageArticle.class,
+
 		ecologylab.bigsemantics.generated.library.creative_work.scholarly_article.ScienceDirectArticle.class,
 
 		ecologylab.bigsemantics.generated.library.creative_work.scholarly_article.WileyArticle.class,
