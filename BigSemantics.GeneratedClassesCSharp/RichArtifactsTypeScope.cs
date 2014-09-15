@@ -16,6 +16,7 @@ namespace Ecologylab.BigSemantics.Generated
                 typeof (ImageClipping),
                 typeof (TextClipping),
                 typeof (VideoClipping),
+                typeof (MacheClipping),
                 typeof (ImageSelfmade),
                 typeof (TextSelfmade),
                 typeof (WebVideo),

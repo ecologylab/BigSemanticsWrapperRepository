@@ -15,7 +15,8 @@ namespace Ecologylab.BigSemantics.Generated
                 typeof (Image),
                 typeof (WebVideo),
                 typeof (Video),
-                typeof (Audio)
+                typeof (Audio),
+                typeof (InformationCompositionMedia)
             };
 
         public static SimplTypesScope Get()
