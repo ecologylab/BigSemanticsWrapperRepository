@@ -7,8 +7,8 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.ScholarlyArticleNS;
-using Ecologylab.BigSemantics.Generated.Library.ScopusSearchNS;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWork.ScholarlyArticleNS;
+using Ecologylab.BigSemantics.Generated.Library.SearchNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;

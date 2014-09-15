@@ -1,5 +1,5 @@
 <meta_metadata_repository name="author"
-  package="ecologylab.bigsemantics.generated.library.author">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
     comment="An author of an article or creative work.">

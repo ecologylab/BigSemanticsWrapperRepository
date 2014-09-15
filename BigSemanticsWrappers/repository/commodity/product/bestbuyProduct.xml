@@ -1,5 +1,5 @@
 <meta_metadata_repository name="bestbuyProduct"
-  package="ecologylab.bigsemantics.generated.library.bestbuyProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="bestbuy_product" extends="product" parser="xpath"
     user_agentname="firefox">

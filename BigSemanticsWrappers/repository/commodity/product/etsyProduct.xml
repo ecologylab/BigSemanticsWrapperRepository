@@ -1,5 +1,5 @@
 <meta_metadata_repository name="etsyProduct"
-  package="ecologylab.bigsemantics.generated.library.etsyProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
  	
 <meta_metadata name="etsy_product" extends="product" parser="xpath" user_agent_name="firefox">
     <selector url_path_tree="http://www.etsy.com/listing/" domain="etsy.com" />

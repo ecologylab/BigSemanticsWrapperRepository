@@ -1,4 +1,4 @@
-<meta_metadata_repository name="wuWeatherReport" package="ecologylab.bigsemantics.generated.library.wuWeatherReport"
+<meta_metadata_repository name="wuWeatherReport" package="ecologylab.bigsemantics.generated.library.weatherReport"
   default_user_agent_name="chrome_2">
 
 	<!-- a (specific) weather report meta-metadata definition for wunderground.com -->

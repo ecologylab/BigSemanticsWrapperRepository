@@ -1,5 +1,5 @@
 <meta_metadata_repository name="attractionList"
-  package="ecologylab.bigsemantics.generated.library.attractionList" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library">
   
   
   <meta_metadata name="attraction_list" extends="rich_document">

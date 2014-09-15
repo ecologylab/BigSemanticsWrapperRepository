@@ -1,5 +1,5 @@
 <meta_metadata_repository name="product"
-  package="ecologylab.bigsemantics.generated.library.product">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
 	<meta_metadata name="product" extends="commodity" schema_org_itemtype="http://schema.org/Product">
     <scalar name="model" scalar_type="String" schema_org_itemprop="model" >

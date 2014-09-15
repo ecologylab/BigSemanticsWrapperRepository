@@ -1,5 +1,5 @@
 <meta_metadata_repository name="westelmProduct"
-  package="ecologylab.bigsemantics.generated.library.westelmProduct" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
 
   <meta_metadata name="westelm_product" extends="product" parser="xpath"

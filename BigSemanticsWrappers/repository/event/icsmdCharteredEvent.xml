@@ -1,5 +1,5 @@
 <meta_metadata_repository name="icsmdCharteredEvent"
-  package="ecologylab.bigsemantics.generated.library.icsmdCharteredEvent" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.event">
 
 
   <meta_metadata name="icsmd_chartered_event" type="icsmd" parser="xpath"

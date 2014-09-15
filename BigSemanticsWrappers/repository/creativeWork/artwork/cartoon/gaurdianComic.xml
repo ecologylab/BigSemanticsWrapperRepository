@@ -1,6 +1,6 @@
 
 <meta_metadata_repository name="gaurdianComic"
-  package="ecologylab.bigsemantics.generated.library.gaurdianComic">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon">
   
   <meta_metadata name="gaurdian_comic" extends="cartoon" parser="xpath">
     <selector url_regex="http://www.guardian.co.uk/commentisfree/cartoon/.*" domain="guardian.co.uk" />

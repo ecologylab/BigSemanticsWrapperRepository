@@ -1,5 +1,5 @@
 <meta_metadata_repository name="forever21Product"
-  package="ecologylab.bigsemantics.generated.library.forever21Product">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
 
   <meta_metadata name="forever_21" extends="product" parser="xpath" user_agent_name="chrome">

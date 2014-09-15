@@ -1,5 +1,5 @@
 <meta_metadata_repository name="flickrPhotoPost"
-  package="ecologylab.bigsemantics.generated.library.flickrPhotoPost">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
 
   <meta_metadata name="flickr_photo" extends="post" parser="xpath" comment="A Flickr image post page">
     <selector url_regex_fragment="http://www.flickr.com/photos/[^/]*/[0-9]" domain="flickr.com" />

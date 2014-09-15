@@ -1,5 +1,5 @@
 <meta_metadata_repository name="icdlBookPreview"
-  package="ecologylab.bigsemantics.generated.library.icdlBookPreview">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="icdl_book_preview" parser="xpath" extends="rich_document"
     comment="ICDL About This Book Page">

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="uniqloProduct"
-  package="ecologylab.bigsemantics.generated.library.uniqloProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="uniqlo_product" extends="product" parser="xpath"
     user_agent_name="chrome">

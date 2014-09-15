@@ -1,5 +1,5 @@
 <meta_metadata_repository name="politicalCartoon"
-  package="ecologylab.bigsemantics.generated.library.politicalCartoon">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon">
 
   <meta_metadata name="political_cartoon" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://www.politicalcartoons.com/cartoon/" />

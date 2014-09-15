@@ -1,5 +1,5 @@
 <meta_metadata_repository name="modclothSearch"
-  package="ecologylab.bigsemantics.generated.library.modclothSearch">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="modcloth_search" extends="product" parser="xpath"
     user_agent_name="chrome">

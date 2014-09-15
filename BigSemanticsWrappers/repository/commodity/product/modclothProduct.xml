@@ -1,5 +1,5 @@
 <meta_metadata_repository name="modclothProduct"
-  package="ecologylab.bigsemantics.generated.library.modclothProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="modcloth" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_regex="http://www.modcloth.com/shop/[a-z-]*/[a-z-]*" domain="modcloth.com" />

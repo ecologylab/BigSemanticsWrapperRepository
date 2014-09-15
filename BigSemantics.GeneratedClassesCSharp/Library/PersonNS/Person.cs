@@ -7,7 +7,7 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.ContactPointNS;
+using Ecologylab.BigSemantics.Generated.Library;
 using Ecologylab.BigSemantics.Generated.Library.PersonNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;

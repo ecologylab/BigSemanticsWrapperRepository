@@ -1,5 +1,5 @@
 <meta_metadata_repository name="event"
-  package="ecologylab.bigsemantics.generated.library.event" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.event">
 
   <meta_metadata name="event" extends="rich_document" comment="Generalized Event Object">
     <scalar name="start_time" scalar_type="Date" />

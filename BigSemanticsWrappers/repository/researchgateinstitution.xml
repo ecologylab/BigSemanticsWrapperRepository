@@ -1,5 +1,5 @@
 <meta_metadata_repository name="researchgateInstitution" 
-package="ecologylab.bigsemantics.generated.library.researchgateInstitution" default_user_agent_name="chrome_2">
+package="ecologylab.bigsemantics.generated.library">
     
       <meta_metadata name="research_gate_institution_contact_info" extends="contact_point">
         <scalar name="website_address" scalar_type="String"/>

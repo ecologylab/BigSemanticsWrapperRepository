@@ -1,5 +1,5 @@
 <meta_metadata_repository name="anthropologieProduct"
-  package="ecologylab.bigsemantics.generated.library.anthropologieProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="anthropologie" extends="product" parser="xpath"
     user_agent_name="chrome">

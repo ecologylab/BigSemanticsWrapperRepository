@@ -1,5 +1,5 @@
 <meta_metadata_repository name="rwandaTribunalVoices"
-  package="ecologylab.bigsemantics.generated.library.rwandaTribunalVoices">
+  package="ecologylab.bigsemantics.generated.library">
 	
 
   <meta_metadata name="category_interviews" extends="metadata" comment="categorized interviews">

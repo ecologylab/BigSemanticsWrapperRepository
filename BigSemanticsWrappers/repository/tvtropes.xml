@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tvtropes"
-  package="ecologylab.bigsemantics.generated.library.tvtropes" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library">
 
 
   <meta_metadata name="tvtrope_example" extends="rich_document" parser="xpath">

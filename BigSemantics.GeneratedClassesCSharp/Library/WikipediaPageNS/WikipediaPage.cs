@@ -7,7 +7,7 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.WikipediaPageTypeNS;
+using Ecologylab.BigSemantics.Generated.Library.WikipediaPageNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.Collections;

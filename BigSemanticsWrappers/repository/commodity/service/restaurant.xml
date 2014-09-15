@@ -1,5 +1,5 @@
 <meta_metadata_repository name="restaurant"
-  package="ecologylab.bigsemantics.generated.library.restaurant" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
 
   <meta_metadata name="restaurant" extends="service">
     <scalar name="price_range" scalar_type="String" comment="Price range of the restaurant" />

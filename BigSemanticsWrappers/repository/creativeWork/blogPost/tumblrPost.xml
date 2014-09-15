@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tumblrPost"
-  package="ecologylab.bigsemantics.generated.library.tumblrPost" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
                           
   <!-- This is not working now. We should transit to use Tumblr API. -->
 

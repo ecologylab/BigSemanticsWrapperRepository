@@ -1,5 +1,5 @@
 <meta_metadata_repository name="amazonBook"
-  package="ecologylab.bigsemantics.generated.library.amazonBook">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
   
   <meta_metadata name="amazon_book" extends="book" parser="xpath">

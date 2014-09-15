@@ -1,5 +1,5 @@
 <meta_metadata_repository name="researchgateAuthor"
- package="ecologylab.bigsemantics.generated.library.researchgateAuthor" default_user_agent_name="chrome_2">
+ package="ecologylab.bigsemantics.generated.library.person.author">
      
   <meta_metadata name="research_gate_author" parser="xpath" extends="author">
         <selector url_regex="http://www.researchgate.net/profil.*" domain="researchgate.net"/>

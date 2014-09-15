@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.wikipediaPage;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.wikipediaPageType.WikipediaPageType;
+import ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaPageType;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;

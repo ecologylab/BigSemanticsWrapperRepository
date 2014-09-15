@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsfAwardGrant"
-  package="ecologylab.bigsemantics.generated.library.nsfAwardGrant">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 
 
   <meta_metadata name="nsf_award" extends="grant" comment="NSF award details." parser="xpath">

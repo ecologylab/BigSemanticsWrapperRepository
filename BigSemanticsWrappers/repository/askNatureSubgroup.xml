@@ -1,5 +1,5 @@
 <meta_metadata_repository name="askNatureSubgroup"
-  package="ecologylab.bigsemantics.generated.library.askNatureSubgroup" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library">
 
 
   <meta_metadata name="ask_nature_subgroup" extends="rich_document" parser="xpath"

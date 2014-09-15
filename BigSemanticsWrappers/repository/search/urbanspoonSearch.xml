@@ -1,5 +1,5 @@
 <meta_metadata_repository name="urbanspoonSearch"
-  package="ecologylab.bigsemantics.generated.library.urbanspoonSearch" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.search">
 
   <meta_metadata name="urban_spoon_search" type="search" parser="xpath">
     <generic_type_var name="SR" arg="urban_spoon_restaurant" />

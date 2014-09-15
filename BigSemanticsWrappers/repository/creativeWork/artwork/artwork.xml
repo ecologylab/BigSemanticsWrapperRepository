@@ -1,5 +1,5 @@
 <meta_metadata_repository name="artwork"
-  package="ecologylab.bigsemantics.generated.library.artwork" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
   
   <meta_metadata name="artwork" extends="creative_work" comment="Artwork class">

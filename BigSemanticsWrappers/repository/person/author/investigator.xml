@@ -1,5 +1,5 @@
 <meta_metadata_repository name="investigator"
-  package="ecologylab.bigsemantics.generated.library.investigator">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="investigator" extends="author">
     <generic_type_var name="CW" extends="grant" />

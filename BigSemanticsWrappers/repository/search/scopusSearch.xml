@@ -1,5 +1,5 @@
 <meta_metadata_repository name="scopusSearch"
-  package="ecologylab.bigsemantics.generated.library.scopusSearch" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.search">
   <meta_metadata name="scopus_search" extends="search" parser="xpath">
     <generic_type_var name="SR" arg="scopus_article" />
 

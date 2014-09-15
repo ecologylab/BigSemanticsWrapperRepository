@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="googleSearch" package="ecologylab.bigsemantics.generated.library.googleSearch" default_user_agent_name="chrome_32">
+  name="googleSearch" package="ecologylab.bigsemantics.generated.library.search">
   
    <meta_metadata name="google_search" extends="search" parser="xpath"
     comment="The Google search class">

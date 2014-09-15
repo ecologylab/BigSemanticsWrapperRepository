@@ -1,5 +1,5 @@
 <meta_metadata_repository name="pinterestImageSearch"
-  package="ecologylab.bigsemantics.generated.library.pinterestImageSearch" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.search.imageSearch">
   
  
   <meta_metadata name="pinterest_search_results" type="image_search" parser="xpath"

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="earthquake"
-  package="ecologylab.bigsemantics.generated.library.disaster" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.event">
   
   <meta_metadata name="disaster" extends="event" comment="Generalized Disaster Object">
     <scalar name="magnitude" label="magnitude richter" scalar_type="float" />

@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="tumblrSearch" package="ecologylab.bigsemantics.generated.library.tumblrSearch" default_user_agent_name="chrome_32">
+  name="tumblrSearch" package="ecologylab.bigsemantics.generated.library.search">
   
    <meta_metadata name="tumblr_search" extends="search" comment="The tumblr search class"
     user_agent_name="opera_9" parser="xpath">

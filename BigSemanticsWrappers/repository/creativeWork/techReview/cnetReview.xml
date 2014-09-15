@@ -1,5 +1,5 @@
 <meta_metadata_repository name="cnetReview"
-  package="ecologylab.bigsemantics.generated.library.cnetReview" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.techReview">
 
   <meta_metadata name="cnet_review" extends="tech_review" comment="cnet.com review"
     parser="xpath">

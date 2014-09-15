@@ -1,5 +1,5 @@
 <meta_metadata_repository name="postalAddress"
-  package="ecologylab.bigsemantics.generated.library.postalAddress">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="postal_address" extends="contact_point" schema_org_itemtype="http://schema.org/PostalAddress"
     comment="Resembles a schema.org PostalAddress, but adds the county field.">

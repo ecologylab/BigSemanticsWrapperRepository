@@ -1,5 +1,5 @@
 <meta_metadata_repository name="newMuseumArtwork"
-  package="ecologylab.bigsemantics.generated.library.newMuseumArtwork" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
 
   <meta_metadata name="newmuseum_artwork" extends="artwork" parser="xpath">

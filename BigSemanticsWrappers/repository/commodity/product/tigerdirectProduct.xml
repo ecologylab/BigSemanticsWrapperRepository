@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tigerdirectProduct"
-  package="ecologylab.bigsemantics.generated.library.tigerdirectProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
   <meta_metadata name="tigerdirect_product" extends="product" parser="xpath"
     user_agent_name="chrome">
     <selector url_stripped="http://www.tigerdirect.com/applications/SearchTools/item-details.asp" />

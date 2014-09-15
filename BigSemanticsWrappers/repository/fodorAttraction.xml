@@ -1,5 +1,5 @@
 <meta_metadata_repository name="fordorAttraction"
-  package="ecologylab.bigsemantics.generated.library.fordorAttraction" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library">
   
   <meta_metadata name="fodors_attraction" type="attraction" parser="xpath"
     comment="Fodor travel suggestions">

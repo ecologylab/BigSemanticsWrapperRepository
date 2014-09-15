@@ -1,5 +1,5 @@
 <meta_metadata_repository name="citeulikeAuthor"
-  package="ecologylab.bigsemantics.generated.library.citeulikeAuthor" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="citeulike_author" extends="author" parser="xpath"
     ignore_in_term_vector="true">

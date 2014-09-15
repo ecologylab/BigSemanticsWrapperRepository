@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="googleImage" package="ecologylab.bigsemantics.generated.library.googleImage"
+  name="googleImage" package="ecologylab.bigsemantics.generated.library.image"
   default_user_agent_name="chrome_2">
 
   <meta_metadata name="google_image" type="image" parser="image">

@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="ingetaConnect" package="ecologylab.bigsemantics.generated.library.ingetaConnect">
+  name="ingetaConnect" package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="ingeta_connect" type="rich_document" redirect_handling="REDIRECT_FOLLOW_DONT_RESET_LOCATION">
     <selector url_path_tree="http://www.ingentaconnect.com" />

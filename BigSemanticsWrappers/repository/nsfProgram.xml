@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsfProgram"
-  package="ecologylab.bigsemantics.generated.library.nsfProgram">
+  package="ecologylab.bigsemantics.generated.library">
 
  
   <meta_metadata name="nsf_program" extends="grant_program" parser="xpath">

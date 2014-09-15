@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.googleScholarSearch" default_user_agent_name="chrome_32">
+  name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.search">
   
    <meta_metadata name="google_scholar_search_result" extends="rich_document"
     comment="A google scholar search result" parser="xpath">

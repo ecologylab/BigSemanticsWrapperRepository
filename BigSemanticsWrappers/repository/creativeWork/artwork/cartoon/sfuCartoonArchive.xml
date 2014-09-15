@@ -1,5 +1,5 @@
 <meta_metadata_repository name="sfuCartoonArchive"
-  package="ecologylab.bigsemantics.generated.library.sfuCartoonArchive">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon">
 
   <meta_metadata name="sfu_cartoon_archive" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://edocs.lib.sfu.ca/cgi-bin/" />

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="googleScholarAuthor"
-  package="ecologylab.bigsemantics.generated.library.googleScholarAuthor" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="google_scholar_author" extends="author" parser="xpath">
       <!--  <selector url_regex="http://scholar.google.com/citations?user=.*" domain="scholar.google.com"/>-->

@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="imageSearch" package="ecologylab.bigsemantics.generated.library.imageSearch"
+  name="imageSearch" package="ecologylab.bigsemantics.generated.library.search.imageSearch"
   default_user_agent_name="chrome_2">
 
   <meta_metadata name="image_search" extends="search">

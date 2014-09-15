@@ -1,4 +1,4 @@
-<meta_metadata_repository name="agents_engines_styles_sites" package="ecologylab.bigsemantics.generated.library"
+<meta_metadata_repository name="agents_engines_styles_sites" package="ecologylab.bigsemantics.generated.library.otherDefinitions"
   default_user_agent_name="chrome_2" default_cache_life="30d">
   <sites>
     <site domain="google.com" min_download_interval="5" />

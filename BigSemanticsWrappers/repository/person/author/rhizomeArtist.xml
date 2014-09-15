@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="rhizomeArtist" package="ecologylab.bigsemantics.generated.library.rhizomeArtist" default_user_agent_name="chrome_32">
+  name="rhizomeArtist" package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="rhizome_artist" extends="artist" parser="xpath">
     <selector domain="rhizome.org" url_regex_fragment="profile" />

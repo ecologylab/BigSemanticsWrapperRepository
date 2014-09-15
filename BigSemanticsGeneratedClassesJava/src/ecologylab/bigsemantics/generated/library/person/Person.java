@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.person;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.contactPoint.ContactPoint;
+import ecologylab.bigsemantics.generated.library.ContactPoint;
 import ecologylab.bigsemantics.generated.library.person.BirthDetail;
 import ecologylab.bigsemantics.generated.library.person.Person;
 import ecologylab.bigsemantics.metadata.builtins.Image;

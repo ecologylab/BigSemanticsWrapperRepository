@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="metArtwork" package="ecologylab.bigsemantics.generated.library.metArtwork" default_user_agent_name="chrome_32">
+  name="metArtwork" package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
    <meta_metadata name="met_artwork" extends="artwork" parser="xpath">
     <selector domain="metmuseum.org" url_regex_fragment="http://www.metmuseum.org/collections?/search-the-collections/\d+" />

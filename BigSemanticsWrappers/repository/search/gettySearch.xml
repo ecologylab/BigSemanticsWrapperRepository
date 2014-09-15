@@ -1,5 +1,5 @@
 <meta_metadata_repository name="gettySearch"
-  package="ecologylab.bigsemantics.generated.library.gettySearch" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
 
 
   <meta_metadata name="getty_search" extends="rich_document" parser="xpath">

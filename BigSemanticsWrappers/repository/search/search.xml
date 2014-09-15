@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="search" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
+  name="search" package="ecologylab.bigsemantics.generated.library.search">
 
   <meta_metadata name="search_result" extends="rich_document" show_expanded_always="true" 
     comment="A search result.">

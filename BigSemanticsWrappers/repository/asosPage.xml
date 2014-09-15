@@ -1,5 +1,5 @@
 <meta_metadata_repository name="asosPage"
-  package="ecologylab.bigsemantics.generated.library.asosPage">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="asos_page" extends="rich_document" parser="xpath"
     user_agent_name="chrome">

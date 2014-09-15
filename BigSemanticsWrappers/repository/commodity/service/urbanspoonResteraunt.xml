@@ -1,5 +1,5 @@
 <meta_metadata_repository name="urbanspoonResteraunt"
-  package="ecologylab.bigsemantics.generated.library.urbanspoonResteraunt" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
 
   <meta_metadata name="urban_spoon_restaurant" type="restaurant" parser="xpath"
     comment="UrbanSpoon restaurant description page.">

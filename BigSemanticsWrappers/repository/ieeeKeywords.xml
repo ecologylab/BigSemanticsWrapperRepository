@@ -1,5 +1,5 @@
 <meta_metadata_repository name="ieeeKeywords"
-  package="ecologylab.bigsemantics.generated.library.ieeeKeywords">
+  package="ecologylab.bigsemantics.generated.library">
 	
 	<meta_metadata name="ieee_keywords" extends="rich_document" parser="xpath">
 		<selector url_stripped="http://ieeexplore.ieee.org/xpl/abstractKeywords.jsp" />

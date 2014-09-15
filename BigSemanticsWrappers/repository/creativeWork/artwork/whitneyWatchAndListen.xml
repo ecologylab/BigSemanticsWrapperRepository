@@ -1,5 +1,5 @@
 <meta_metadata_repository name="whitneyWatchAndListen"
-  package="ecologylab.bigsemantics.generated.library.whitneyWatchAndListen" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
     
   <meta_metadata name="whitney_watch_and_listen" extends="artwork" parser="xpath">

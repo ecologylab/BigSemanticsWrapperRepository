@@ -1,5 +1,5 @@
 <meta_metadata_repository name="jstor_journal"
-  package="ecologylab.bigsemantics.generated.library.jstorJournal">
+  package="ecologylab.bigsemantics.generated.library">
   
   <meta_metadata name="jstor_journal" extends="rich_document" parser="xpath">
   	<selector url_regex="http://www.jstor.org/action/expandCollapseDecadeGroup\?.*" domain="jstor.org" />

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="globeCartoon"
-  package="ecologylab.bigsemantics.generated.library.globeCartoon">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon">
   
 
   <meta_metadata name="globe_cartoon" extends="cartoon" parser="xpath">

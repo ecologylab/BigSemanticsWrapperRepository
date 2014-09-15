@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="metFilter" package="ecologylab.bigsemantics.generated.library.metFilter" default_user_agent_name="chrome_32">
+  name="metFilter" package="ecologylab.bigsemantics.generated.library.search">
  
  
   <meta_metadata name="met_filter" extends="search" parser="xpath">

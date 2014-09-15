@@ -1,5 +1,5 @@
 <meta_metadata_repository name="jstor_search"
-  package="ecologylab.bigsemantics.generated.library.jstorSearch">
+  package="ecologylab.bigsemantics.generated.library.search">
   
   <meta_metadata name="jstor_search" extends="search" parser="xpath" user_agent_name="chrome_32" comment="jstor Search class">
   		<generic_type_var name="SR" arg="search_result" />

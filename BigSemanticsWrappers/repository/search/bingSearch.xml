@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="bingSearch" package="ecologylab.bigsemantics.generated.library.bingSearch" default_user_agent_name="chrome_32">
+  name="bingSearch" package="ecologylab.bigsemantics.generated.library.search">
   
   <meta_metadata name="bing_search_xpath" type="search" parser="xpath"
     user_agent_name="firefox_5" comment="The bing Search class, using xpath parser.">

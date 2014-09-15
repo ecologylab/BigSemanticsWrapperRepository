@@ -1,5 +1,5 @@
 <meta_metadata_repository name="basicPublication"
-  package="ecologylab.bigsemantics.generated.library.basicPublication">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
   <meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
     <scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />

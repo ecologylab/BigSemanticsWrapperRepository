@@ -1,5 +1,5 @@
 <meta_metadata_repository name="whitneyDecade"
-  package="ecologylab.bigsemantics.generated.library.whitneyDecade" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
 
   <meta_metadata name="whitney_decade" extends="search" parser="xpath">
     <generic_type_var name="SR" arg="whitney_artwork" />

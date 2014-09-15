@@ -1,5 +1,5 @@
 <meta_metadata_repository name="instructable"
-  package="ecologylab.bigsemantics.generated.library.instructable" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library">
 <meta_metadata name="instructable_comment" extends="rich_document" parser="xpath">
 
     <composite name="comment_author" type="instructable_author" />

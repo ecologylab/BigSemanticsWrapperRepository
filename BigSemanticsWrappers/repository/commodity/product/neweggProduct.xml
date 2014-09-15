@@ -1,5 +1,5 @@
 <meta_metadata_repository name="neweggProduct"
-  package="ecologylab.bigsemantics.generated.library.neweggProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   
   <meta_metadata name="newegg_product" extends="product" parser="xpath"

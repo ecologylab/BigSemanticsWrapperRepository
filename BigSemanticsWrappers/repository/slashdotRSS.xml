@@ -1,5 +1,5 @@
 <meta_metadata_repository name="slashdotRSS"
-  package="ecologylab.bigsemantics.generated.library.slashdotRSS">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="slashdot_item" extends="item" comment="One item in a feed."
     parser="direct">

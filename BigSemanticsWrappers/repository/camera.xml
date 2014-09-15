@@ -1,5 +1,5 @@
 <meta_metadata_repository name="camera"
-  package="ecologylab.bigsemantics.generated.library.camera">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="camera_settings" extends="metadata"
     comment="Mixin: Image description from EXIF image metadata.">

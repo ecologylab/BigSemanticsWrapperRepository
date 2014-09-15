@@ -1,5 +1,5 @@
 <meta_metadata_repository name="scopusArticle"
-  package="ecologylab.bigsemantics.generated.library.scopusArticle" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
 
   <meta_metadata name="scopus_article" extends="scholarly_article" parser="xpath">
     <selector url_stripped="http://www.scopus.com/record/display.url" />

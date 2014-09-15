@@ -1,5 +1,5 @@
 <meta_metadata_repository name="glassTileStoreProduct"
-  package="ecologylab.bigsemantics.generated.library.glassTileStoreProduct" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="glass_tile_store_product" type="product" parser="xpath">
     <selector url_regex="http://www.glasstilestore.com/\w+-p/\w+.htm" domain="glasstilestore.com" />

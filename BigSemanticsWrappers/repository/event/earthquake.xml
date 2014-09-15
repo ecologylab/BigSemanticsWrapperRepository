@@ -1,5 +1,5 @@
 <meta_metadata_repository name="earthquake"
-  package="ecologylab.bigsemantics.generated.library.earthquake" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.event">
 
   <meta_metadata name="earthquake" extends="disaster" comment="Generalized Earthquake Object">
 

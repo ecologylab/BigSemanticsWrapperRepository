@@ -1,5 +1,5 @@
 <meta_metadata_repository name="techReview"
-  package="ecologylab.bigsemantics.generated.library.techReview" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.techReview">
 
 
   <meta_metadata name="tech_review" extends="creative_work" comment="Base tech review">

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="ieeeArticle"
-  package="ecologylab.bigsemantics.generated.library.ieeeArticle">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
 
   <meta_metadata name="ieee_xplore_article" extends="scholarly_article" parser="xpath">
     <selector url_stripped="http://ieeexplore.ieee.org/xpl/articleDetails.jsp" />

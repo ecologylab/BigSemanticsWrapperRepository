@@ -1,5 +1,5 @@
 <meta_metadata_repository name="houzzProduct"
-  package="ecologylab.bigsemantics.generated.library.houzzProduct" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="houzz_product" type="product" parser="xpath" user_agent_name="firefox">
     <selector url_path_tree="http://www.houzz.com/photos/" />

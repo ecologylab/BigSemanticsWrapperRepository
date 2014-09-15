@@ -1,5 +1,5 @@
 <meta_metadata_repository name="fastflipSearch"
-  package="ecologylab.bigsemantics.generated.library.fastflip">
+  package="ecologylab.bigsemantics.generated.library">
 
   <selector name="fastflip_search_selector" url_stripped="http://fastflip.googlelabs.com/search"
     default_pref="fastflip_search" pref_name="fastflip_search_type" />

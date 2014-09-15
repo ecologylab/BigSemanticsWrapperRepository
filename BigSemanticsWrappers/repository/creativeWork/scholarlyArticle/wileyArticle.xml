@@ -1,5 +1,5 @@
 <meta_metadata_repository name="scienceDirectArticle"
-  package="ecologylab.bigsemantics.generated.library.creative_work.scholarly_article" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
 
   <meta_metadata name="wiley_article" extends="scholarly_article" parser="xpath"
     comment="Information about the article">

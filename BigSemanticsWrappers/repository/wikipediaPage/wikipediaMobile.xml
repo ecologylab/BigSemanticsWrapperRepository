@@ -1,5 +1,5 @@
 <meta_metadata_repository name="wikipediaMobile"
-  package="ecologylab.bigsemantics.generated.library.wikipediaMobile" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.wikipediaPage">
 
   <meta_metadata name="wikipedia_mobile_page" extends="wikipedia_page_type" parser="xpath"
     comment="An article on wikipedia mobile site" user_agent_name="firefox_3_6_8">

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="citeulikeTag"
-  package="ecologylab.bigsemantics.generated.library.citeulikeTag" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="citeulike_tag" extends="rich_document" parser="xpath">
     <selector url_regex="http://www.citeulike.org/tag/[^/]*" domain="citeulike.org" />

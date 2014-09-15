@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="slashdotSearch" package="ecologylab.bigsemantics.generated.library.slashdotSearch" default_user_agent_name="chrome_32">
+  name="slashdotSearch" package="ecologylab.bigsemantics.generated.library.search">
   
   <meta_metadata name="slashdot_search" extends="search" comment="The slashdot search class"
     user_agent_name="opera_9" parser="xpath">
