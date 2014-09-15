@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsfInvestigator"
-  package="ecologylab.bigsemantics.generated.library.nsfInvestigator">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="nsf_investigator" extends="investigator" parser="xpath">
     <generic_type_var name="CW" arg="nsf_award" />

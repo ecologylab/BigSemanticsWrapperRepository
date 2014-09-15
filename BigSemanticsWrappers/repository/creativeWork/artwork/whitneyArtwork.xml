@@ -1,5 +1,5 @@
 <meta_metadata_repository name="whitneyArtwork"
-  package="ecologylab.bigsemantics.generated.library.whitneyArtwork" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
   <meta_metadata name="whitney_artwork" extends="artwork" parser="xpath">
     <selector url_path_tree="http://whitney.org/Collection/" />

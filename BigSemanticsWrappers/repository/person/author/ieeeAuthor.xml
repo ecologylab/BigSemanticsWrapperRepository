@@ -1,5 +1,5 @@
 <meta_metadata_repository name="ieeeAuthor"
-  package="ecologylab.bigsemantics.generated.library.ieeeAuthor">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
  
   <meta_metadata name="ieee_author_page" extends="author" parser="xpath">

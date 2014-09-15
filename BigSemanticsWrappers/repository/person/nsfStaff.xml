@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsfStaff"
-  package="ecologylab.bigsemantics.generated.library.nsfStaff">
+  package="ecologylab.bigsemantics.generated.library.person">
 
  
   <meta_metadata name="nsf_staff" extends="grant_staff" parser="xpath">

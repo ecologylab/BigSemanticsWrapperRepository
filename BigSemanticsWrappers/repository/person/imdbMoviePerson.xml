@@ -1,5 +1,5 @@
 <meta_metadata_repository name="imdbMoviePerson"
-  package="ecologylab.bigsemantics.generated.library.imdbMoviePerson" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.person">
 
   <cookie_processing domain="imdb.com" ignore_all_cookies="true" />
 

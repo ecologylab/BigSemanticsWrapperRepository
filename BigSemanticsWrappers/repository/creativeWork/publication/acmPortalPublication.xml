@@ -1,5 +1,5 @@
 <meta_metadata_repository name="acmPortalPublication"
-  package="ecologylab.bigsemantics.generated.library.acmPortalPublication">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 	
 	
   <meta_metadata name="acm_portal_periodical" extends="periodical">

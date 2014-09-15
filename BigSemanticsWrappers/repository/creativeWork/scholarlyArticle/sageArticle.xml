@@ -1,0 +1,67 @@
+<meta_metadata_repository name="scienceDirectArticle"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
+
+  <meta_metadata name="sage_article" extends="scholarly_article" parser="xpath"
+    comment="Sage Journals">
+    <selector url_path_tree="http://nms.sagepub.com/content/" />
+    <example_url        url="http://nms.sagepub.com/content/13/7/1031" />
+	
+    <scalar name="description">
+    	<xpath>//div[starts-with(@class,'abstract')]/p/text()</xpath>
+    </scalar>
+
+    <composite name="rich_media">
+      <xpath>/html/head</xpath>
+      <scalar name="location">
+        <xpath>./meta[@name='citation_pdf_url']/@content</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath />
+	    <concatenate_values>
+	      <value>PDF full text</value>
+	    </concatenate_values>
+      </scalar>
+    </composite>
+    
+    <collection name="authors" child_type="scopus_author" label="authors" comment="All authors">
+<!--       <xpath>//ul[@class='authorGroup']/li//a</xpath> -->
+		<xpath>/html/head/meta[@name='citation_author']</xpath>
+      <scalar name="title">
+        <xpath>./@content</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="description">
+      <xpath>//div[@class='section abstract']/p/text()</xpath>
+    </scalar>
+
+    <composite name="source">
+      <xpath>/html/head</xpath>
+      <scalar name="title">
+        <xpath>./meta[@name='citation_journal_title']/@content</xpath>
+      </scalar>
+<!--       <scalar name="location">
+        <xpath>//p[@class='articleDetails']/a/@href</xpath>
+      </scalar>
+ -->
+      <scalar name="volume_and_issue">
+        <xpath>./meta[@name='citation_volume']/@content</xpath>
+      </scalar>
+      <scalar name="date">
+        <xpath>./meta[@name='citation_publication_date']/@content</xpath>
+      </scalar>
+    </composite>
+
+    <collection name="keywords">
+      <xpath>//li[@class='kwd']//a</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+</meta_metadata_repository>
+

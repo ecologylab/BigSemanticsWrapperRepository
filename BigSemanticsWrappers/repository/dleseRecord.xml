@@ -1,5 +1,5 @@
 <meta_metadata_repository name="dleseRecord"
-  package="ecologylab.bigsemantics.generated.library.dleseRecord" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="dlese_record" extends="document" visibility="PACKAGE" parser="direct">
     <composite name="dlese_record_head" extends="metadata">

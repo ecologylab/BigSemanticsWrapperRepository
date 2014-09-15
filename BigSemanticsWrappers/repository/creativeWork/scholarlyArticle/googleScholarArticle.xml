@@ -1,15 +1,17 @@
 <meta_metadata_repository name="googleScholarArticle"
-  package="ecologylab.bigsemantics.generated.library.googleScholarArticle" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
 
 	<meta_metadata name="google_scholar_article" extends="scholarly_article" parser="xpath">
       <selector url_regex="http://scholar.google.com/citations\?view_op=view_citation.*" domain="google.com"/>
-      <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+      <example_url url="http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IlKLLhIAAAAJ&amp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+<!--       <selector url_regex="http\:\/\/scholar\.google\.com\/scholar\?.*cites=.*" domain="google.com"/> -->
+ <!--       <example_url url="http://scholar.google.com/scholar?cites=5590676059233338808&amp;as_sdt=5,44&amp;sciodt=0,44&amp;hl=en" /> -->
       
       <scalar name="title">
-      	<xpath>//div[@id='title']/a</xpath>
+    	<xpath>//div[@id='gsc_title']/a</xpath>
       </scalar>
       <composite name="article_link" type="rich_document">
-      	<xpath>//div[@id='title']/a</xpath>
+      	<xpath>//div[@id='gsc_title']/a</xpath>
       	<scalar name="title">
       		<xpath>./</xpath>
       	</scalar>
@@ -20,24 +22,55 @@
       
      
       <scalar name="journal" scalar_type="String">
-      	<xpath>//div[@id='publisher_sec']/div[2]</xpath>
+<!--       	<xpath>//div[@id='publisher_sec']/div[2]</xpath> -->
+		<xpath>//div[@class='gsc_field'][text()='Journal']/following-sibling::div</xpath>
       </scalar>
 			<scalar name="date" scalar_type="String">
-				<xpath>//div[@id='pubdate_sec']/div[2]</xpath>
+<!-- 				<xpath>//div[@id='pubdate_sec']/div[2]</xpath> -->
+		<xpath>//div[@class='gsc_field'][text()='Publication date']/following-sibling::div</xpath>
 			</scalar>
 			
-			<scalar name="publisher" scalar_type="String">
-				<xpath>//div[@id='venue_sec']/div[2]</xpath>
-			</scalar>
-			<scalar name="pages" scalar_type="String">
-				<xpath>//div[@id='pages_sec']/div[2]</xpath>
-			</scalar>
-			<scalar name="issue" scalar_type="String">
-				<xpath>//div[@id='issue_sec']/div[2]</xpath>
-			</scalar>
-			<scalar name="volume" scalar_type="String">
-				<xpath>//div[@id='volume_sec']/div[2]</xpath>
-			</scalar>
+    <composite name="rich_media">
+     	<xpath>//div[@id='gsc_title']/a</xpath>
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>full text</value>
+        </concatenate_values>
+      </scalar>
+      <scalar name="location">
+     		<xpath>./@href</xpath>
+      </scalar>
+    </composite>
+	    
+	  <scalar name="citation_count" scalar_type="String">
+		<xpath>substring-after(//div[@class='gsc_field'][text()='Total citations']/following-sibling::div//a, 'Cited by ')</xpath>
+      </scalar>
+      <composite name="citations_page" type="google_scholar_search">
+      	<xpath>//div[@class='gsc_field'][text()='Total citations']/following-sibling::div//a</xpath>
+      	<scalar name="location">
+      		<xpath>./@href</xpath>
+      	</scalar>
+      <scalar name="title">
+        <xpath />
+        <concatenate_values>
+          <value>citations</value>
+        </concatenate_values>
+      </scalar>
+      </composite>
+      
+	  <scalar name="volume" scalar_type="String">
+		<xpath>//div[@class='gsc_field'][text()='Volume']/following-sibling::div</xpath>
+	  </scalar>
+	  <scalar name="issue" scalar_type="String">
+		<xpath>//div[@class='gsc_field'][text()='Issue']/following-sibling::div</xpath>
+	  </scalar>
+	  <scalar name="pages">
+		<xpath>//div[@class='gsc_field'][text()='Pages']/following-sibling::div</xpath>
+	  </scalar>
+	  <scalar name="publisher" scalar_type="String">
+		<xpath>//div[@class='gsc_field'][text()='Publisher']/following-sibling::div</xpath>
+	  </scalar>
 			
 			
       <composite name="citation_graph" type="image">
@@ -46,17 +79,14 @@
       		<xpath>./@src</xpath>
       	</scalar>
       </composite>
-			<scalar name="citation_count" scalar_type="String">
+	  <composite name="google_citations" type="rich_document">
       	<xpath>//div[@id='scholar_sec']//a</xpath>
-      </scalar>
-			 <composite name="google_citations" type="rich_document">
-      	<xpath>//div[@id='scholar_sec']//a</xpath>
-      	<scalar name="title">
-      		<xpath>.</xpath>
-      	</scalar>
-      	<scalar name="location">
-      		<xpath>./@href</xpath>
-      	</scalar>
+	      	<scalar name="title">
+	      		<xpath>.</xpath>
+	      	</scalar>
+	      	<scalar name="location">
+	      		<xpath>./@href</xpath>
+	      	</scalar>
       </composite>
 			
 			

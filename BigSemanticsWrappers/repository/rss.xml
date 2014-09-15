@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="rss" package="ecologylab.bigsemantics.generated.library.rss">
+  name="rss" package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="channel" extends="metadata">
     <scalar name="title" scalar_type="String" />

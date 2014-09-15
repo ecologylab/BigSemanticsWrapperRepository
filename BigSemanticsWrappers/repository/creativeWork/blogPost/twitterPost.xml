@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tweet"
-  package="ecologylab.bigsemantics.generated.library.tweet" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
   
   <meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true"
     comment="twitter micropost">

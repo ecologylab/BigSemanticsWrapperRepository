@@ -1,5 +1,5 @@
 <meta_metadata_repository name="redditFeed"
-  package="ecologylab.bigsemantics.generated.library.redditFeed" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library">
   <!--  
   <meta_metadata name="redditLink" extends="rich_document" parser="xpath">
   	

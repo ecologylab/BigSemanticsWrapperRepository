@@ -1,5 +1,5 @@
 <meta_metadata_repository name="video"
-  package="ecologylab.bigsemantics.generated.library.video" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="social_video" extends="creative_work" parser="xpath">
     <scalar name="upload_date" scalar_type="Date" comment="Date on which video is uploaded" />

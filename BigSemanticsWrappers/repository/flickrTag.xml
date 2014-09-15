@@ -1,5 +1,5 @@
 <meta_metadata_repository name="flickrTag"
-  package="ecologylab.bigsemantics.generated.library.flickrTag">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="flickr_tag" extends="rich_document" parser="xpath"
     comment="For flickr crawled tags">

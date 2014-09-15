@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="yahooRss" package="ecologylab.bigsemantics.generated.library.yahooRss">
+  name="yahooRss" package="ecologylab.bigsemantics.generated.library">
 
 
   <meta_metadata name="yahoo_media_rss" extends="dc" comment="News feeds." parser="direct">

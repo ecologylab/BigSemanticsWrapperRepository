@@ -1,5 +1,5 @@
 <meta_metadata_repository name="acmPortalSearch"
-  package="ecologylab.bigsemantics.generated.library.acmPortalSearch">
+  package="ecologylab.bigsemantics.generated.library.search">
   
   
   <meta_metadata name="acm_portal_search_result" parser="xpath" extends="search_result">

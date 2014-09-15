@@ -1,5 +1,5 @@
 <meta_metadata_repository name="britishCartoonArchive"
-  package="ecologylab.bigsemantics.generated.library.britishCartoonArchive">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon">
   <meta_metadata name="british_cartoon_archive" extends="cartoon" parser="xpath">
     <selector url_path_tree="http://www.cartoons.ac.uk/record/" />
 		<example_url url="http://www.cartoons.ac.uk/record/lse2692"/>

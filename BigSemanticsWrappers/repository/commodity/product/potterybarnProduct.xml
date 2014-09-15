@@ -1,5 +1,5 @@
 <meta_metadata_repository name="potterybarnProduct"
-  package="ecologylab.bigsemantics.generated.library.potterybarnProduct" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
   <meta_metadata name="potterybarn_product" extends="product" parser="xpath"
     user_agent_name="firefox">
     <selector url_path_tree="http://www.potterybarn.com/products/" domain="potterybarn.com" />

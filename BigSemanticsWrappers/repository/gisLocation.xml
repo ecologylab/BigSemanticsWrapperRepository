@@ -1,5 +1,5 @@
 <meta_metadata_repository name="gisLocation"
-  package="ecologylab.bigsemantics.generated.library.gisLocation">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="gis_location" extends="document">
     <scalar name="location" always_show="false" />

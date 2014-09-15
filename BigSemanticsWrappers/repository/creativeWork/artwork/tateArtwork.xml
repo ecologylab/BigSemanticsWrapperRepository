@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="tateArtwork" package="ecologylab.bigsemantics.generated.library.tateArtwork" default_user_agent_name="chrome_32">
+  name="tateArtwork" package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
 
   <meta_metadata name="tate_artwork" extends="artwork" parser="xpath">

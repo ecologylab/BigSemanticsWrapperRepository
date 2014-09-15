@@ -1,5 +1,5 @@
 <meta_metadata_repository name="samsclubProduct"
-  package="ecologylab.bigsemantics.generated.library.samsclubProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="samsclub_product" extends="product" parser="xpath"
     user_agent_name="firefox">

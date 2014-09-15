@@ -1,5 +1,5 @@
 <meta_metadata_repository name="scholarly_article"
-  package="ecologylab.bigsemantics.generated.library.scholarlyArticle">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
                           
 
   <meta_metadata name="scholarly_article" extends="creative_work" schema_org_itemtype="http://schema.org/ScholarlyArticle">
@@ -11,7 +11,7 @@
       comment="Key Terms of the paper." />
     <scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" />
     <scalar name="description" label="abstract" comment="Abstract of the work." />
-    <composite name="rich_media" label="full text" />
+    <composite name="rich_media" label="full text" not_expandable="true"/>
   </meta_metadata>
 	
 </meta_metadata_repository>

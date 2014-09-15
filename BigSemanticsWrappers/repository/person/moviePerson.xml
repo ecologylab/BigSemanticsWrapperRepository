@@ -1,5 +1,5 @@
 <meta_metadata_repository name="moviePerson"
-  package="ecologylab.bigsemantics.generated.library.moviePerson" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.person">
 
   <meta_metadata name="movie_person" extends="person">
     <collection name="movies_directed"  child_type="movie"

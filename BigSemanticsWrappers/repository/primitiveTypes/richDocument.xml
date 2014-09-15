@@ -20,8 +20,11 @@
     <scalar name="location" always_show="false" hide="true" schema_org_itemprop="url" layer="8.0">
 <!--       <xpath>//meta[@name='og:url']/@content</xpath> -->
     </scalar> 
- 
-    <scalar name="title" scalar_type="String" style_name="metadata_h1" layer="10.0" hint="XML_LEAF"
+ 	<def_var name="root_location" type="string">
+ 	
+ 	</def_var>
+    <scalar name="title" scalar_type="String" layer="10.0" hint="XML_LEAF"
+      style_name="metadata_h1" collapsed_style_name="metadata_normal"
       is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name" use_value_as_label="main_images"
       comment="The Title of the Document">
       
@@ -64,6 +67,15 @@
     <collection name="clippings" child_type="clipping" hide="true" polymorphic_scope="repository_clippings"
       covariant="true"
       comment="Clippings that this document contains." />
+      
+    <composite name="favicon" type="image" hide="true">
+      <xpath>/html/head</xpath>
+	  <scalar name="location">
+	     <xpath>./link[@rel='icon']/@href</xpath>
+	     <xpath>./link[@rel='shortcut icon']/@href</xpath>
+	  </scalar>
+
+    </composite>
 
     <composite name="thumbnail" type="image" hide="true">
       <xpath>//meta[@itemprop='thumbnailUrl']</xpath>
@@ -94,5 +106,14 @@
     <collection name="article_bodies" child_scalar_type="String">
       <xpath>//*[@itemprop='articleBody']</xpath>
     </collection>
+    
+<!--     <semantic_actions> 
+    	<if>
+    		<null value="favicon">
+    			<get
+    		</null>
+    	</if>
+    </semantic_actions>
+ -->    
   </meta_metadata>
 </meta_metadata_repository>

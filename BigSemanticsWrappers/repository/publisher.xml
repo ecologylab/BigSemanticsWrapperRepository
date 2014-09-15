@@ -1,5 +1,5 @@
 <meta_metadata_repository name="publisher"
-  package="ecologylab.bigsemantics.generated.library.publisher">
+  package="ecologylab.bigsemantics.generated.library">
   
   <meta_metadata name="publisher" extends="document" comment="A publishing company."
     schema_org_itemtype="http://schema.org/Organization">

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="researchgateArticle" 
-package="ecologylab.bigsemantics.generated.library.researchgateArticle" default_user_agent_name="chrome_2">
+package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
   
     
     <meta_metadata name="research_gate_stats" extends="rich_document">

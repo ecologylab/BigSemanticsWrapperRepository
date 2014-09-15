@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsdlService"
-  package="ecologylab.bigsemantics.generated.library.nsdlService">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="nsdl_service" extends="metadata" 
     parser="direct">

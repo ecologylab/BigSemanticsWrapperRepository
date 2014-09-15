@@ -7,10 +7,9 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library;
+using Ecologylab.BigSemantics.Generated.Library.CommentNS;
 using Ecologylab.BigSemantics.Generated.Library.CommodityNS;
-using Ecologylab.BigSemantics.Generated.Library.GisLocationNS;
-using Ecologylab.BigSemantics.Generated.Library.PostalAddressNS;
-using Ecologylab.BigSemantics.Generated.Library.ReviewNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;

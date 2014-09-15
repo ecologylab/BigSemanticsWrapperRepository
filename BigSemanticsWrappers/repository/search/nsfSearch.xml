@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsfSearch"
-  package="ecologylab.bigsemantics.generated.library.nsfSearch">
+  package="ecologylab.bigsemantics.generated.library.search">
 
 
   <meta_metadata name="nsf_search" extends="search" parser="xpath">

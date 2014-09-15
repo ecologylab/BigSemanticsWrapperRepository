@@ -1,5 +1,5 @@
 <meta_metadata_repository name="bggBoardGame"
-  package="ecologylab.bigsemantics.generated.library.bggBoardGame" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 	
 	<meta_metadata name="bgg_game" extends="board_game" comment="boardgamegeek.com"
 	    parser="xpath">

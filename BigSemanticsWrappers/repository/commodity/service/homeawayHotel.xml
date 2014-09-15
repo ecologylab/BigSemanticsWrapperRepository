@@ -1,5 +1,5 @@
 <meta_metadata_repository name="hotel"
-  package="ecologylab.bigsemantics.generated.library.hotel" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
 
   <meta_metadata name="homeaway" type="hotel" parser="xpath">
     <selector url_regex="http://www.homeaway.com/vacation-rental.*" domain="homeaway.com"/>

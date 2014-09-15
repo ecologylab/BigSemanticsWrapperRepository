@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tateFilter"
-  package="ecologylab.bigsemantics.generated.library.tateFilter" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
 
   <meta_metadata name="tate_filter" extends="search" parser="xpath">
     <generic_type_var name="SR" arg="tate_artwork" />

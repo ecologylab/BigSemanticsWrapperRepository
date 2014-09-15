@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="yahooSearch" package="ecologylab.bigsemantics.generated.library.yahooSearch" default_user_agent_name="chrome_32">
+  name="yahooSearch" package="ecologylab.bigsemantics.generated.library.search">
   
   <meta_metadata name="yahoo_thumbnail" extends="metadata">
     <scalar name="thumb_url"  scalar_type="ParsedURL" hint="XML_LEAF" />

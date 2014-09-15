@@ -1,5 +1,5 @@
 <meta_metadata_repository name="blogPost"
-  package="ecologylab.bigsemantics.generated.library.blogPost">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
 
   <meta_metadata name="post" extends="creative_work">
     <scalar name="description" label="content"  />

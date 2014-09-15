@@ -1,5 +1,5 @@
 <meta_metadata_repository name="patentClassification"
-  package="ecologylab.bigsemantics.generated.library.patentClassification" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="patent_classification" extends="rich_document" parser="xpath">
     <selector url_path_tree="http://www.uspto.gov/web/patents/classification" />

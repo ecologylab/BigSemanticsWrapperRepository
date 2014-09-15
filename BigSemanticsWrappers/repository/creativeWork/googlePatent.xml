@@ -1,5 +1,5 @@
 <meta_metadata_repository name="googlePatent"
-  package="ecologylab.bigsemantics.generated.library.googlePatent" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 
 
   <meta_metadata name="google_patent" extends="patent" comment="Google Patents Class"

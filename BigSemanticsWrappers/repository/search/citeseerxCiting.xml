@@ -1,5 +1,5 @@
 <meta_metadata_repository name="citeseerxCiting"
-  package="ecologylab.bigsemantics.generated.library.citeseerxCiting" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
 
 
   <meta_metadata name="citeseerx_citing" extends="search" parser="xpath"

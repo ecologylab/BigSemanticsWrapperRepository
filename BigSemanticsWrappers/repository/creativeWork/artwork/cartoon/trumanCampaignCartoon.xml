@@ -1,6 +1,6 @@
 
 <meta_metadata_repository name="trumanCampaignCartoon"
-  package="ecologylab.bigsemantics.generated.library.trumanCampaignCartoon">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon">
 
   <meta_metadata name="truman_library_1948_campaign_cartoons" extends="cartoon"
     parser="xpath">

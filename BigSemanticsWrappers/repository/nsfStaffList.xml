@@ -1,5 +1,5 @@
 <meta_metadata_repository name="nsfStaffList"
-  package="ecologylab.bigsemantics.generated.library.nsfStaffList">
+  package="ecologylab.bigsemantics.generated.library">
   
   <meta_metadata name="nsf_division_staff_list" extends="rich_document" parser="xpath">
     <selector url_stripped="http://www.nsf.gov/staff/staff_list_all.jsp" />

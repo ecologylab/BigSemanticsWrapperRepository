@@ -1,5 +1,5 @@
 <meta_metadata_repository name="guggenArtwork"
-  package="ecologylab.bigsemantics.generated.library.guggenArtwork" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
 
   <meta_metadata name="guggen_artwork" extends="artwork" parser="xpath">

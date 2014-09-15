@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tateArtist"
-  package="ecologylab.bigsemantics.generated.library.tateArtist" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="tate_artist" extends="artist" parser="xpath">
     <selector domain="tate.org.uk" url_regex_fragment="artists" />

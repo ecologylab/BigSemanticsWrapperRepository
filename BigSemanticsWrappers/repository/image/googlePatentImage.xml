@@ -1,5 +1,5 @@
 <meta_metadata_repository name="googlePatentImage"
-  package="ecologylab.bigsemantics.generated.library.googlePatentImage" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.image">
 
 
   <meta_metadata name="google_patent_image" type="image" parser="image">

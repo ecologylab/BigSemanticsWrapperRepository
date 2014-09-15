@@ -1,5 +1,5 @@
 <meta_metadata_repository name="guggenFilter"
-  package="ecologylab.bigsemantics.generated.library.guggenFilter" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
   <meta_metadata name="guggen_filter" extends="search" parser="xpath">
     <generic_type_var name="SR" arg="guggen_artwork" />
 

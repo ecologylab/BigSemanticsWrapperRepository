@@ -1,5 +1,5 @@
   <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="researchGateSearch" package="ecologylab.bigsemantics.generated.library.researchGateSearch" default_user_agent_name="chrome_32">
+  name="researchGateSearch" package="ecologylab.bigsemantics.generated.library.search">
     <meta_metadata name="research_gate_result" extends="search_result">
         <collection name="authors" child_type="author">
         </collection>

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="rhizomeCollection"
-  package="ecologylab.bigsemantics.generated.library.rhizomeCollection" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.exhibition">
 
 
   <meta_metadata name="rhizome_collection" extends="exhibition" parser="xpath">

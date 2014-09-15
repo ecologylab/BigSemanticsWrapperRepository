@@ -1,5 +1,5 @@
 <meta_metadata_repository name="curation"
-  package="ecologylab.bigsemantics.generated.library.curation">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 	
   <meta_metadata name="curation" extends="creative_work">
     <collection name="metadata_collection" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope" />

@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.googleScholarSearch" default_user_agent_name="chrome_32">
+  name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.search">
   
    <meta_metadata name="google_scholar_search_result" extends="rich_document"
     comment="A google scholar search result" parser="xpath">
@@ -20,12 +20,25 @@
 
   <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class"
     parser="xpath">
+    <generic_type_var name="SR" arg="google_scholar_search_result" />
+
+<!--     <selector url_regex="http\:\/\/scholar\.google\.com\/scholar\?.*q=.*" domain="google.com"/> -->   
     <selector url_stripped="http://scholar.google.com/scholar" />
-      <scalar name="query" layer="9.1">      
+    
+    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
+    <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+
+    <scalar name="title">
+      	<xpath>//div[@id='gs_rt_hdr']//a</xpath>
+    </scalar>
+    		
+    <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
-    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
-    <generic_type_var name="SR" arg="google_scholar_search_result" />
+    
+    <scalar name="number_of_results">
+    	<xpath>substring-before(substring-after(//div[@id='gs_ab_md'], 'About '), ' results')</xpath>
+    </scalar>
     
     <collection name="search_results"  show_expanded_always="true">
       <xpath>//div[@class='gs_r']</xpath>

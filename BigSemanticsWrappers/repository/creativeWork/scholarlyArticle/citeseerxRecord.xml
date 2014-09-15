@@ -1,5 +1,5 @@
 <meta_metadata_repository name="citeseerxRecord"
-  package="ecologylab.bigsemantics.generated.library.citeseerxRecord" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
 
   <meta_metadata name="citation_info" extends="metadata" comment="Citation numbers.">
     <scalar name="total_citation" scalar_type="Int" />

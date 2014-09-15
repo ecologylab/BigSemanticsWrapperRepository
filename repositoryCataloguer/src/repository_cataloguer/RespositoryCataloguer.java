@@ -150,6 +150,18 @@ public class RespositoryCataloguer {
 	      }
 
 	    }
+	    
+	    //recurse through all subdirectories
+	    String[] names = folder.list();
+	    for(String name : names)
+	    {
+	    	File tempFile = new File(folder.getAbsolutePath() + "/" + name);
+	        if (tempFile.isDirectory())
+	        {
+	        	aList.addAll(Arrays.asList(getXMLFiles(tempFile)));
+	        }
+	    }	   
+	    
 	    return aList.toArray(new File[aList.size()]);
 
 	}    
@@ -157,7 +169,7 @@ public class RespositoryCataloguer {
 
 		try{
 			RespositoryCataloguer cataloguer = new RespositoryCataloguer();   
-			String path = "..\\BigSemanticsWrappers\\MmdRepository\\mmdrepository\\repositorySources";
+			String path = "..\\BigSemanticsWrappers\\repository";
 			path = path.replaceAll("\\\\", "/");
 			File directory = new File(path);
 			//Need to generate a list of paths to be used. Loop through them and call catalogueXML for each
@@ -179,6 +191,30 @@ public class RespositoryCataloguer {
 				jsonFile.createNewFile();
 			}
 			cataloguer.printDataAsJSONToFile(jsonFile);
+			
+			File exampleFile = new File("exampleUrls.txt");
+			if (!exampleFile.exists()) {
+				exampleFile.createNewFile();
+			}
+			PrintWriter writer = new PrintWriter("exampleUrls.txt", "UTF-8");
+			for (Tag tag : cataloguer.uniqueTags){
+				if (tag.getName() == "example_url"){
+					ArrayList<Attribute> attributes = tag.getAttributes();
+					for (Attribute s : attributes){
+						if (s.getName()=="url"){
+							ArrayList<String> urls = s.getValues();
+							Object[] urlArray = urls.toArray();
+							writer.print("[");
+							for (int i=0; i < urls.size()-1; i++ ){
+								writer.print("\"" + urlArray[i] + "\", ");
+
+							}
+							writer.print("\"" + urlArray[urls.size()-1] + "\"]");
+						}
+					}
+				}
+			}
+			writer.close();
 		}catch(Exception e){
 			e.printStackTrace();
 

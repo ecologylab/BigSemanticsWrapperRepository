@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tvShow"
-  package="ecologylab.bigsemantics.generated.library.tvShow" default_user_agent_name="firefox_5">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 
   <meta_metadata name="tv_show" extends="creative_work" comment="The TV show info class">
     <collection name="authors"  

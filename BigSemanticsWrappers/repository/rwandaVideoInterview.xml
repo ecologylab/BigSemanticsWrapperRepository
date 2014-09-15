@@ -1,5 +1,5 @@
 <meta_metadata_repository name="rwandaVideoInterview"
-  package="ecologylab.bigsemantics.generated.library.rwandaVideoInterview">
+  package="ecologylab.bigsemantics.generated.library">
 	
 
   <meta_metadata name="video_interview" extends="rich_document" parser="xpath" comment="video interview">

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="informaWorldScholarlyArticle"
-  package="ecologylab.bigsemantics.generated.library.informaWorldScholarlyArticle">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
   
    <meta_metadata name="informa_world" extends="scholarly_article" parser="xpath">
     <selector url_stripped="http://www.informaworld.com/smpp/content~db=all" />

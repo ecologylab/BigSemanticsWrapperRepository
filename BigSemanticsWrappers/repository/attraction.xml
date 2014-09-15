@@ -1,5 +1,5 @@
 <meta_metadata_repository name="attraction"
-  package="ecologylab.bigsemantics.generated.library.attraction" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library">
   
   <meta_metadata name="attraction" extends="rich_document">
     <scalar name="description" scalar_type="String" comment="an introduction to the attraction" />

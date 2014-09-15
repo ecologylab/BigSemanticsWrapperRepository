@@ -1,6 +1,6 @@
 
 <meta_metadata_repository name="momaArtist"
-  package="ecologylab.bigsemantics.generated.library.momaArtist" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="moma_artist" extends="artist" parser="xpath">
     <selector url_stripped="http://www.moma.org/collection/artist.php" />

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tripAdvisorHotel"
-  package="ecologylab.bigsemantics.generated.library.tripAdvisorHotel" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
 
   <meta_metadata name="trip_advisor" type="hotel" parser="xpath">
     <selector url_regex_fragment="http://www.tripadvisor.com/Hotel_Review" domain="tripadvisor.com" />

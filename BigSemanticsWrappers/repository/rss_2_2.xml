@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="rss_2_2" package="ecologylab.bigsemantics.generated.library.rss_2_2">
+  name="rss_2_2" package="ecologylab.bigsemantics.generated.library">
 
 	
   <meta_metadata name="rss_2_2" extends="rich_document" comment="A news feed, yucky style."

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="asosProduct"
-  package="ecologylab.bigsemantics.generated.library.asosProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="asos" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_regex="http://us.asos.com/[ASOS/]*[A-Za-z0-9-]*/[0-9Pa-z]*/.*" domain="asos.com">

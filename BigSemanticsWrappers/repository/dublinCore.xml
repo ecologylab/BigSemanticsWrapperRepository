@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="dublinCore" package="ecologylab.bigsemantics.generated.library.dublinCore">
+  name="dublinCore" package="ecologylab.bigsemantics.generated.library">
 
   <meta_metadata name="dc" extends="rich_document" comment="Dublin core fields."
     parser="direct">

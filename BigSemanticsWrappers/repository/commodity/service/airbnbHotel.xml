@@ -1,5 +1,5 @@
 <meta_metadata_repository name="airbnbHotel"
-  package="ecologylab.bigsemantics.generated.library.airbnbHotel" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
 
   <meta_metadata name="airbnb" type="hotel" parser="xpath">
     <selector url_path_tree="http://www.airbnb.com/rooms" />

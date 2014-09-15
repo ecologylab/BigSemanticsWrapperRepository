@@ -1,5 +1,5 @@
 <meta_metadata_repository name="yelpBusiness"
-  package="ecologylab.bigsemantics.generated.library.yelpBusiness" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
   <meta_metadata name="yelp_business" type="service" parser="xpath"
     comment="Yelp local business description page">
     <selector url_path_tree="http://www.yelp.com/biz" />

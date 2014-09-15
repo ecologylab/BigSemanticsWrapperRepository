@@ -1,5 +1,5 @@
 <meta_metadata_repository name="fondationTag"
-  package="ecologylab.bigsemantics.generated.library.fondationTag" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library">
 
 
   <meta_metadata name="fondation_tag" extends="rich_document" parser="xpath">

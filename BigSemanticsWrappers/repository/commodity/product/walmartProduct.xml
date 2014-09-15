@@ -1,5 +1,5 @@
 <meta_metadata_repository name="walmartProduct"
-  package="ecologylab.bigsemantics.generated.library.walmartProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   
   <meta_metadata name="walmart_product" extends="product" parser="xpath"

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="flickrPhotostream"
-  package="ecologylab.bigsemantics.generated.library.flickrPhotostream">
+  package="ecologylab.bigsemantics.generated.library">
 
 
   <meta_metadata name="photostream" extends="rich_document" comment="All flickr photos of a particular user"

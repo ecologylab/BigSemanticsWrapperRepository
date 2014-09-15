@@ -1,5 +1,5 @@
 <meta_metadata_repository name="wikipediaSearch"
-  package="ecologylab.bigsemantics.generated.library.wikipediaSearch" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
 
   <meta_metadata name="wikipedia_search" comment="Wikipedia Web Search Class" type="search"
     parser="xpath" user_agent_name="firefox_2">

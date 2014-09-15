@@ -1,6 +1,6 @@
 
 <meta_metadata_repository name="review"
-  package="ecologylab.bigsemantics.generated.library.review">
+  package="ecologylab.bigsemantics.generated.library.comment">
 
   <meta_metadata name="review" extends="rating" schema_org_itemtype="http://schema.org/Review"
     schema_org_itemprop="reviews">

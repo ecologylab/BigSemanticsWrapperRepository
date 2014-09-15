@@ -1,5 +1,5 @@
 <meta_metadata_repository name="rottenTomatoeMoviePerson"
-  package="ecologylab.bigsemantics.generated.library.rottenTomatoeMoviePerson" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.person">
 
   <meta_metadata name="rotten_person" extends="movie_person" parser="xpath"
     comment="RottenTomatoes celebrity page">

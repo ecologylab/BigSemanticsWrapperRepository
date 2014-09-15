@@ -1,5 +1,5 @@
 <meta_metadata_repository name="gdacsEarthquake"
-  package="ecologylab.bigsemantics.generated.library.gdacsEarthquake" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.event">
 
 
   <meta_metadata name="gdacs_earthquake" type="earthquake" parser="xpath"

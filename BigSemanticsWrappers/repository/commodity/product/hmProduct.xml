@@ -1,5 +1,5 @@
 <meta_metadata_repository name="hmProduct"
-  package="ecologylab.bigsemantics.generated.library.hmProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
 
   <meta_metadata name="hm_product" extends="product" parser="xpath" user_agent_name="chrome">

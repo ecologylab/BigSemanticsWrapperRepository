@@ -1,5 +1,5 @@
 <meta_metadata_repository name="wordpressPost"
-  package="ecologylab.bigsemantics.generated.library.wordpressPost" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
 
   <meta_metadata name="wordpress_post" type="post" comment="Wordpress post class"
     parser="xpath">

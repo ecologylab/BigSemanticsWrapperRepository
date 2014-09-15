@@ -1,5 +1,5 @@
 <meta_metadata_repository name="periodical"
-  package="ecologylab.bigsemantics.generated.library.periodical">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
   <meta_metadata name="periodical" extends="basic_publication" comment="An issue of a periodical.">
     <composite name="archive" type="rich_document" comment="All the issues of a periodical.">

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="ieeeSearch"
-  package="ecologylab.bigsemantics.generated.library.ieeeSearch">
+  package="ecologylab.bigsemantics.generated.library.search">
 
  
   <meta_metadata name="ieee_xplore_search" extends="search" parser="xpath">

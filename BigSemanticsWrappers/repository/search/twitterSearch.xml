@@ -1,5 +1,5 @@
 <meta_metadata_repository name="twitterSearch"
-  package="ecologylab.bigsemantics.generated.library.twitterSearch" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.search">
   
    <meta_metadata name="twitter_search_results" type="search" parser="xpath" no_cache="true">
     <selector url_stripped="https://twitter.com/search" />

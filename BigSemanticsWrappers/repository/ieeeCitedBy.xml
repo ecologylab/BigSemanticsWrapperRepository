@@ -1,5 +1,5 @@
 <meta_metadata_repository name="ieeeCitedBy"
-  package="ecologylab.bigsemantics.generated.library.ieeeCitedBy">
+  package="ecologylab.bigsemantics.generated.library">
 
 
   <meta_metadata name="ieee_xplore_cited_by" extends="rich_document" parser="xpath">

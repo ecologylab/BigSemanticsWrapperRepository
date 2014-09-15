@@ -1,5 +1,5 @@
 <meta_metadata_repository name="tweeter"
-  package="ecologylab.bigsemantics.generated.library.tweeter" default_user_agent_name="firefox_3_6_8">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="tweeter" extends="author" parser="xpath"
     comment="an author of twitter microblog">

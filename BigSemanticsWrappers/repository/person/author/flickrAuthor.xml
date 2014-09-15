@@ -1,5 +1,5 @@
 <meta_metadata_repository name="flickrAuthor"
-  package="ecologylab.bigsemantics.generated.library.flickrAuthor">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
 
   <meta_metadata name="flickr_author" extends="author" parser="xpath" comment="Author on flickr">

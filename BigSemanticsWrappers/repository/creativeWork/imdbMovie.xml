@@ -1,5 +1,5 @@
 <meta_metadata_repository name="imdbMovie"
-  package="ecologylab.bigsemantics.generated.library.imdbMovie" default_user_agent_name="chrome">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 
   <cookie_processing domain="imdb.com" ignore_all_cookies="true" />
 

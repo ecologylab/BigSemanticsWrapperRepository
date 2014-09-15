@@ -1,5 +1,5 @@
 <meta_metadata_repository name="service"
-  package="ecologylab.bigsemantics.generated.library.service">
+  package="ecologylab.bigsemantics.generated.library.commodity.service">
   <meta_metadata name="service" extends="commodity">
     <composite name="business_website" label="website" />
     <composite name="business_address" label="address" />

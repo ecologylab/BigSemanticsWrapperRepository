@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="momaArtwork" package="ecologylab.bigsemantics.generated.library.momaArtwork" default_user_agent_name="chrome_32">
+  name="momaArtwork" package="ecologylab.bigsemantics.generated.library.creativeWork.artwork">
 
   <meta_metadata name="moma_artwork" extends="artwork" parser="xpath">
     <selector domain="moma.org"

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="netflixMovie"
-  package="ecologylab.bigsemantics.generated.library.netflixMovie" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
 
   <!-- alas, this will not work until we get login / state stuff working -->
   <meta_metadata name="netflix_movie" extends="movie" parser="xpath">

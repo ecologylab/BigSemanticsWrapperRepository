@@ -1,5 +1,5 @@
 <meta_metadata_repository name="pubmedJournal"
-  package="ecologylab.bigsemantics.generated.library.pubmedJournal" default_user_agent_name="firefox">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
 
   <meta_metadata name="pubmed_journal" extends="periodical" parser="xpath"

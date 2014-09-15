@@ -1,5 +1,5 @@
 <meta_metadata_repository name="momaList"
-  package="ecologylab.bigsemantics.generated.library.momaList" default_user_agent_name="chrome_2">
+  package="ecologylab.bigsemantics.generated.library.search">
 
   <meta_metadata name="moma_list" type="search" parser="xpath">
     <!-- 

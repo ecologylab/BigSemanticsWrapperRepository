@@ -1,5 +1,5 @@
 <meta_metadata_repository name="book"
-  package="ecologylab.bigsemantics.generated.library.publication">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
   <meta_metadata name="book" extends="publication">
     <collection name="editors" child_type="author" schema_org_itemprop="editor" />

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="jstor_article"
-  package="ecologylab.bigsemantics.generated.library.jstorArticle">
+  package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
   
    <meta_metadata name="jstor_article" extends="scholarly_article" parser="xpath">
    		<selector url_path_tree="http://www.jstor.org/stable" />

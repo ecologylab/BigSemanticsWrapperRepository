@@ -1,5 +1,5 @@
 <meta_metadata_repository name="appleAccessoryProduct"
-  package="ecologylab.bigsemantics.generated.library.appleAccessoryProduct">
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
 
  <meta_metadata name="apple_product_accessory" extends="product" parser="xpath"
     user_agent_name="chrome">
