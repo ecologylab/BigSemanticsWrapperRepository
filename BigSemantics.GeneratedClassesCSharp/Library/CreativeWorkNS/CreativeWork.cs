@@ -9,7 +9,7 @@
 
 using Ecologylab.BigSemantics.Generated.Library.CommentNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
-using Ecologylab.BigSemantics.Generated.Library.Person.AuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.PersonNS.AuthorNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;

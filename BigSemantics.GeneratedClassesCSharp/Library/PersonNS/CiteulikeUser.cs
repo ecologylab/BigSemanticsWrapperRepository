@@ -7,7 +7,7 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.CreativeWork.ScholarlyArticleNS;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ScholarlyArticleNS;
 using Ecologylab.BigSemantics.Generated.Library.PersonNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;

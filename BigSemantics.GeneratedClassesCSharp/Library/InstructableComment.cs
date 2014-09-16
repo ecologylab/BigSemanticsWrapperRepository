@@ -8,7 +8,7 @@
 
 
 using Ecologylab.BigSemantics.Generated.Library;
-using Ecologylab.BigSemantics.Generated.Library.Person.AuthorNS;
+using Ecologylab.BigSemantics.Generated.Library.PersonNS.AuthorNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;

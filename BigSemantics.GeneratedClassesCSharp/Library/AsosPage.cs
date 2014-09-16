@@ -7,7 +7,7 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.Commodity.ProductNS;
+using Ecologylab.BigSemantics.Generated.Library.CommodityNS.ProductNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
