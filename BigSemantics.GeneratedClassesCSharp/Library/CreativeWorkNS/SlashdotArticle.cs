@@ -7,8 +7,8 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.CreativeWork.BlogPostNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.BlogPostNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
