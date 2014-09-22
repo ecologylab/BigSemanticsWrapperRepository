@@ -7,15 +7,15 @@
 
     <selector url_regex="http://www.metmuseum.org/collection/the-collection-online/search?.*" domain="metmuseum.org"/>
 
-    <example_url url="http://www.metmuseum.org/collection/search-the-collections?ft=*&amp;what=Spruce" />
+    <example_url url="http://www.metmuseum.org/collection/the-collection-online/search?&amp;ft=*&amp;who=Babylonian&amp;pg=1" />
 
     <collection name="search_results">
-      <xpath>//div[@class='search-results-container cleared visible']/ul/li</xpath>
+      <xpath>//div[@class='list-results-container']//div[@class='list-view-object-info']</xpath>
       <scalar name="location" hide="true">
-        <xpath>./div[2]/p/a/@href</xpath>
+        <xpath>./a/@href</xpath>
       </scalar>
       <scalar name="title">
-        <xpath>./div[2]/p/a</xpath>
+        <xpath>./a/div</xpath>
       </scalar>
     </collection>
   </meta_metadata>
