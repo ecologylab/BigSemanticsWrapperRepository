@@ -1,0 +1,17 @@
+<meta_metadata_repository name="springer_editor"
+  package="ecologylab.bigsemantics.generated.library.author.springereditor">
+
+  <meta_metadata name="springer_editor" extends="author" schema_org_itemtype="http://schema.org/Person"
+    comment="An editor of a book or article on Springer Link.">
+    <collection name="creative_works">
+      <xpath></xpath>
+      <scalar name="title">
+        <xpath></xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath></xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>

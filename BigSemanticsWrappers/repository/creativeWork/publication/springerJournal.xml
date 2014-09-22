@@ -1,0 +1,46 @@
+<meta_metadata_repository name="springer_journal" 
+package="ecologylab.bigsemantics.generated.library.springerjournal" default_user_agent="chrome">	
+
+	
+	<cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
+	
+	<meta_metadata name="springer_journal" extends="springer_article" comment="A journal in Springer Link." parser="xpath">
+ 		
+ 		<selector url_path_tree="http://link.springer.com/journal"/>
+ 	 	<example url="http://link.springer.com/journal/11465"/>
+
+	    
+	    <collection name="latest_articles" child_type="springer_article">
+	    	<xpath>//*[@class="content-item-list"]/li/h3/a</xpath>
+	        <scalar name="title">
+		    	<xpath>./text()</xpath>
+		    </scalar>
+		    <scalar name="location">
+		      <xpath>./@href</xpath>
+		    </scalar>
+	    </collection>
+		
+		
+ 	 	<scalar name = "coverage" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-journal-coverage"]/text()</xpath>
+ 	 	</scalar>
+ 	 	
+ 	 	
+ 	 	<scalar name = "print_issn" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-journal-print-issn"]/text()</xpath>
+ 	 	</scalar>
+ 	 	
+ 	 	
+ 	 	<scalar name = "online_issn" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-journal-online-issn"]/text()</xpath>
+ 	 	</scalar>
+ 	 	
+ 	 	
+ 	 	<scalar name = "publisher_name" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-publisher"]/text()</xpath>
+ 	 	</scalar>
+ 	 	
+ 	 	
+	</meta_metadata>
+</meta_metadata_repository>
+

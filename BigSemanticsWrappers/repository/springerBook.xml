@@ -1,0 +1,121 @@
+<meta_metadata_repository name="springer_book" 
+package="ecologylab.bigsemantics.generated.library.springerbook" default_user_agent="chrome">	
+
+	<cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
+	
+	<meta_metadata name="springer_book" extends="book" comment="A book in Springer Link." parser="xpath">
+ 		
+ 		<selector url_path_tree="http://link.springer.com/book/"/>
+ 	 	<example url="http://link.springer.com/book/10.1007/978-3-319-09858-6"/>
+ 	 		
+ 	 	<!-- Everything above the table of contents -->
+ 	 	<scalar name = "subtitle" scalar_type = "String">
+ 	 		<xpath>//*[@id="subtitle"]/text()</xpath>
+ 	 	</scalar>
+		<collection name="main_images">
+	        <xpath>//*[@class="look-inside-cover"]</xpath>
+	        <scalar name="location">
+	          <xpath>./@src</xpath>
+	        </scalar>
+	    </collection>
+	    
+       <scalar name="description" >
+	    	<xpath>//*[@class="abstract-content formatted"]/p</xpath>
+	    </scalar>
+	    
+      	<collection name="editor_names" child_type="springer_search">
+	      <xpath>//li[@class='editor']/a</xpath>
+	      <scalar name="title">
+	      	<xpath>./text()</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+
+      	<collection name="isbn" child_scalar_type="String">
+	      <xpath>//*[@id="isbn"]/span</xpath>
+	    </collection>
+	    
+	    <!-- Table Of Contents -->
+	    <collection name="book_chapters_incomplete" child_type="springer_search">
+		  <xpath>//div[@class='toc']/ol/li[@class='toc-item chapter-item no-access']</xpath>
+	      <scalar name="title">
+	      	<xpath>./p[@class='title']/a/text()</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./p[@class='title']/a/@href</xpath>
+	      </scalar>
+	     </collection>
+	     
+	     <!-- About this book -->
+ 	 	<scalar name = "copyright" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-book-chapter-copyright-year"]</xpath>
+ 	 	</scalar>
+
+ 	 	<scalar name = "DOI" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-book-chapter-doi"]</xpath>
+ 	 	</scalar>
+	      	 
+ 	 	<scalar name = "print_ISBN" scalar_type = "String" layer="5.2">
+ 	 		<xpath>//*[@id="abstract-about-book-print-isbn"]</xpath>
+ 	 	</scalar>
+
+ 	 	<scalar name = "online_ISBN" scalar_type = "String" layer="5.3">
+ 	 		<xpath>//*[@id="abstract-about-book-online-isbn"]</xpath>
+ 	 	</scalar>
+
+ 	 	<!-- Link to series description -->
+ 	 	<!-- <scalar name = "series Title" scalar_type = "String">
+ 	 		<xpath>//*[@id="subtitle"]/text()</xpath>
+ 	 	</scalar> -->
+
+ 	 	<scalar name = "series_volume" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-book-series-volume"]</xpath>
+ 	 	</scalar>
+
+ 	 	<scalar name = "series_ISSN" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-book-series-print-issn"]</xpath>
+ 	 	</scalar>
+
+ 	 	<scalar name = "publisher" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-publisher"]</xpath>
+ 	 	</scalar>
+ 	 	
+ 	 	<scalar name = "copyright_holder" scalar_type = "String">
+ 	 		<xpath>//*[@id="abstract-about-book-copyright-holder"]</xpath>
+ 	 	</scalar>
+
+ 	 	<!-- Link to different type of book description -->
+ 	 	<!-- <scalar name = "additional links" scalar_type = "String">
+ 	 		<xpath>//*[@id="subtitle"]/text()</xpath>
+ 	 	</scalar> -->
+	
+		<!-- Link to search results -->
+      	<collection name="topics" child_type="springer_search">
+	      <xpath>//*[@id="abstract-about"]/div[2]/div/div/dl[2]/dd[1]/ul/li/a</xpath>
+	      <scalar name="title"><xpath>.</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+
+		
+
+	    <!-- Link to search results -->
+	    <collection name="ebook_packages" child_type="springer_search">
+	      <xpath>//*[@id="abstract-about"]/div[2]/div/div/dl[2]/dd[2]/ul/li/a</xpath>
+	      <scalar name="title"><xpath>.</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+
+      	<collection name="editor_affiliations" child_scalar_type="String">
+	      <xpath>//*[@id="abstract-about"]/div[2]/div/div/dl[3]/dd[2]/ul/li</xpath>
+	    </collection>
+
+	</meta_metadata>
+</meta_metadata_repository>
+
+
