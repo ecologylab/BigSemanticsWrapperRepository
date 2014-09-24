@@ -33,9 +33,9 @@ package="ecologylab.bigsemantics.generated.library.springerbook" default_user_ag
 	      </scalar>
 	    </collection>
 
-      	<collection name="isbn" child_scalar_type="String">
+      <scalar name="isbn">
 	      <xpath>//*[@id="isbn"]/span</xpath>
-	    </collection>
+	    </scalar>
 	    
 	    <!-- Table Of Contents -->
 	    <collection name="book_chapters_incomplete" child_type="springer_search">
@@ -78,9 +78,11 @@ package="ecologylab.bigsemantics.generated.library.springerbook" default_user_ag
  	 		<xpath>//*[@id="abstract-about-book-series-print-issn"]</xpath>
  	 	</scalar>
 
- 	 	<scalar name = "publisher" scalar_type = "String">
- 	 		<xpath>//*[@id="abstract-about-publisher"]</xpath>
- 	 	</scalar>
+ 	 	<composite name = "publisher">
+      <scalar name="title">
+        <xpath>//*[@id="abstract-about-publisher"]</xpath>
+      </scalar>
+ 	 	</composite>
  	 	
  	 	<scalar name = "copyright_holder" scalar_type = "String">
  	 		<xpath>//*[@id="abstract-about-book-copyright-holder"]</xpath>
