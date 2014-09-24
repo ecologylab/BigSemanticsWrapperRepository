@@ -222,6 +222,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.YoutubeVideoList.class,
 
+		ecologylab.bigsemantics.generated.library.author.springereditor.SpringerEditor.class,
+
 		ecologylab.bigsemantics.generated.library.comment.Comment.class,
 
 		ecologylab.bigsemantics.generated.library.comment.DcDocument.class,
@@ -681,6 +683,16 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.YahooThumbnail.class,
 
 		ecologylab.bigsemantics.generated.library.search.imageSearch.ImageSearch.class,
+
+		ecologylab.bigsemantics.generated.library.springerSearch.SpringerSearch.class,
+
+		ecologylab.bigsemantics.generated.library.springerarticle.SpringerArticle.class,
+
+		ecologylab.bigsemantics.generated.library.springerbook.SpringerBook.class,
+
+		ecologylab.bigsemantics.generated.library.springerjournal.SpringerJournal.class,
+
+		ecologylab.bigsemantics.generated.library.springerseriessummary.SpringerSeriesSummary.class,
 
 		ecologylab.bigsemantics.generated.library.weatherReport.WeatherReport.class,
 
