@@ -1,0 +1,21 @@
+<meta_metadata_repository name="springer_series_summary" 
+package="ecologylab.bigsemantics.generated.library.springerseriessummary" default_user_agent="chrome">	
+
+	<cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
+	
+	<meta_metadata name="springer_series_summary" extends="springer_book" comment="An article or any other text heavy component in Springer Link." parser="xpath">
+ 		
+		
+ 		<selector url_path_tree="http://link.springer.com/bookseries"/>
+ 	 	<example url="http://link.springer.com/bookseries/8779"/>
+
+	    
+       <scalar name="description" scalar_type="String">
+	    	<xpath>//*[@class="abstract-content formatted"]</xpath>
+	    </scalar>
+	    
+	    
+	</meta_metadata>
+</meta_metadata_repository>
+
+

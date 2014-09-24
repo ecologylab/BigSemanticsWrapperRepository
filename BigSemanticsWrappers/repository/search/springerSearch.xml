@@ -1,0 +1,61 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="springerSearch" package="ecologylab.bigsemantics.generated.library.springerSearch" default_user_agent_name="chrome_32">
+  <cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
+  <meta_metadata name="springer_search" extends="search" comment="The springer search class" parser="xpath">
+    <selector url_stripped="http://link.springer.com/search" />
+	<example_url url="http://link.springer.com/search?facet-author=%22Marco+Ceccarelli%22"/>
+  
+  		<collection name="search_filters" child_scalar_type="String" >
+	      <xpath>//*[@id="kb-nav--main"]/div[1]/p/a</xpath>
+	      <scalar name="title"><xpath>./text()</xpath></scalar>
+	    </collection>
+	    
+		<collection name="search_results" child_type="springer_book">
+			<xpath>//*[@id="results-list"]/li/h2/a</xpath>
+	      <scalar name="title"><xpath>.</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</collection>
+		
+		<collection name="refine_search_by_content_type" child_type="springer_search">
+		  <xpath>//*[@id="content-type-facet"]/ol/li/a</xpath>
+	      <scalar name="title"><xpath>./span[2]</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</collection>
+	
+		<collection name="refine_search_by_discipline" child_type="springer_search">
+		  <xpath>//*[@id="discipline-facet"]/ol/li/a</xpath>
+	      <scalar name="title"><xpath>./span[2]</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</collection>
+	
+		<collection name="refine_search_by_subdiscipline" child_type="springer_search">
+		  <xpath>//*[@id="sub-discipline-facet"]/ol/li/a</xpath>
+	      <scalar name="title"><xpath>./span[2]</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</collection>
+	
+		<collection name="refine_search_by_published_in" child_type="springer_search">
+		  <xpath>//*[@id="publication-title-facet"]/ol/li/a</xpath>
+	      <scalar name="title"><xpath>./span[2]</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</collection>
+		
+		<collection name="refine_search_by_language" child_type="springer_search">
+		  <xpath>//*[@id="language-facet"]/ol/li/a</xpath>
+	      <scalar name="title"><xpath>./span[2]</xpath></scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</collection> 
+  </meta_metadata>
+</meta_metadata_repository>
