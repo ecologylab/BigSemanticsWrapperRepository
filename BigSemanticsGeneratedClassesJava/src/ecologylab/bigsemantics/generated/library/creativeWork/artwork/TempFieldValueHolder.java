@@ -23,13 +23,13 @@ import java.util.Map;
 public class TempFieldValueHolder extends Metadata
 {
 	@simpl_scalar
-	private MetadataString tempMedium;
-
-	@simpl_scalar
 	private MetadataString tempDimensions;
 
 	@simpl_scalar
 	private MetadataString tempYear;
+
+	@simpl_scalar
+	private MetadataString tempMedium;
 
 	public TempFieldValueHolder()
 	{ super(); }
@@ -38,38 +38,6 @@ public class TempFieldValueHolder extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	tempMedium()
-	{
-		MetadataString	result = this.tempMedium;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.tempMedium = result;
-		}
-		return result;
-	}
-
-	public String getTempMedium()
-	{
-		return this.tempMedium == null ? null : tempMedium().getValue();
-	}
-
-	public MetadataString getTempMediumMetadata()
-	{
-		return tempMedium;
-	}
-
-	public void setTempMedium(String tempMedium)
-	{
-		if (tempMedium != null)
-			this.tempMedium().setValue(tempMedium);
-	}
-
-	public void setTempMediumMetadata(MetadataString tempMedium)
-	{
-		this.tempMedium = tempMedium;
-	}
 
 	public MetadataString	tempDimensions()
 	{
@@ -133,5 +101,37 @@ public class TempFieldValueHolder extends Metadata
 	public void setTempYearMetadata(MetadataString tempYear)
 	{
 		this.tempYear = tempYear;
+	}
+
+	public MetadataString	tempMedium()
+	{
+		MetadataString	result = this.tempMedium;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.tempMedium = result;
+		}
+		return result;
+	}
+
+	public String getTempMedium()
+	{
+		return this.tempMedium == null ? null : tempMedium().getValue();
+	}
+
+	public MetadataString getTempMediumMetadata()
+	{
+		return tempMedium;
+	}
+
+	public void setTempMedium(String tempMedium)
+	{
+		if (tempMedium != null)
+			this.tempMedium().setValue(tempMedium);
+	}
+
+	public void setTempMediumMetadata(MetadataString tempMedium)
+	{
+		this.tempMedium = tempMedium;
 	}
 }

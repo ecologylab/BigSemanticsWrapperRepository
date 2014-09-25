@@ -22,8 +22,6 @@ public class RepositoryMetadataTypesScope
 	{
 		ecologylab.bigsemantics.generated.library.AcmPortalInstitutionProfile.class,
 
-		ecologylab.bigsemantics.generated.library.AdditionalMetadata.class,
-
 		ecologylab.bigsemantics.generated.library.AskNatureExpert.class,
 
 		ecologylab.bigsemantics.generated.library.AskNatureFunction.class,
@@ -48,8 +46,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.AttractionList.class,
 
-		ecologylab.bigsemantics.generated.library.Audience.class,
-
 		ecologylab.bigsemantics.generated.library.Body.class,
 
 		ecologylab.bigsemantics.generated.library.CameraSettings.class,
@@ -60,27 +56,9 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.CiteulikeTag.class,
 
-		ecologylab.bigsemantics.generated.library.Collection.class,
-
 		ecologylab.bigsemantics.generated.library.ContactPoint.class,
 
-		ecologylab.bigsemantics.generated.library.Contributor.class,
-
-		ecologylab.bigsemantics.generated.library.DateInfo.class,
-
 		ecologylab.bigsemantics.generated.library.Dc.class,
-
-		ecologylab.bigsemantics.generated.library.DleseGetRecord.class,
-
-		ecologylab.bigsemantics.generated.library.DleseRecord.class,
-
-		ecologylab.bigsemantics.generated.library.DleseRecord2.class,
-
-		ecologylab.bigsemantics.generated.library.DleseRecordHead.class,
-
-		ecologylab.bigsemantics.generated.library.DleseUserSearch.class,
-
-		ecologylab.bigsemantics.generated.library.Educational.class,
 
 		ecologylab.bigsemantics.generated.library.FastflipSearch.class,
 
@@ -94,10 +72,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.FondationTag.class,
 
-		ecologylab.bigsemantics.generated.library.General.class,
-
-		ecologylab.bigsemantics.generated.library.GetRecordAdditionalMetadata.class,
-
 		ecologylab.bigsemantics.generated.library.GettyCollection.class,
 
 		ecologylab.bigsemantics.generated.library.GettyExploration.class,
@@ -107,8 +81,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.GrantProgram.class,
 
 		ecologylab.bigsemantics.generated.library.Head.class,
-
-		ecologylab.bigsemantics.generated.library.Head2.class,
 
 		ecologylab.bigsemantics.generated.library.Header.class,
 
@@ -132,11 +104,7 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.Item.class,
 
-		ecologylab.bigsemantics.generated.library.ItemRecord.class,
-
 		ecologylab.bigsemantics.generated.library.JstorJournal.class,
-
-		ecologylab.bigsemantics.generated.library.Lifecycle.class,
 
 		ecologylab.bigsemantics.generated.library.MediaContent.class,
 
@@ -156,8 +124,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.Opml.class,
 
-		ecologylab.bigsemantics.generated.library.Organization.class,
-
 		ecologylab.bigsemantics.generated.library.Outline.class,
 
 		ecologylab.bigsemantics.generated.library.PatentClassification.class,
@@ -172,25 +138,17 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.Publisher.class,
 
-		ecologylab.bigsemantics.generated.library.RecordMetaMetadata.class,
-
-		ecologylab.bigsemantics.generated.library.RecordMetadata.class,
-
 		ecologylab.bigsemantics.generated.library.ResearchGateInstitution.class,
 
 		ecologylab.bigsemantics.generated.library.ResearchGateInstitutionContactInfo.class,
 
 		ecologylab.bigsemantics.generated.library.ResearchGateInstitutionDepartment.class,
 
-		ecologylab.bigsemantics.generated.library.ResultInfo.class,
-
 		ecologylab.bigsemantics.generated.library.Rss.class,
 
 		ecologylab.bigsemantics.generated.library.Rss22.class,
 
 		ecologylab.bigsemantics.generated.library.SearchResults.class,
-
-		ecologylab.bigsemantics.generated.library.SearchSection.class,
 
 		ecologylab.bigsemantics.generated.library.SlashdotItem.class,
 

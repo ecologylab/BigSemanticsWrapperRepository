@@ -26,30 +26,17 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.PublicationNS
 	public class Subject : Metadata
 	{
 		[SimplScalar]
-		[SimplCompositeAsScalar]
-		private MetadataString subject;
+		private MetadataParsedURL location;
 
 		[SimplScalar]
-		private MetadataParsedURL location;
+		[SimplCompositeAsScalar]
+		private MetadataString subject;
 
 		public Subject()
 		{ }
 
 		public Subject(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString SubjectProp
-		{
-			get{return subject;}
-			set
-			{
-				if (this.subject != value)
-				{
-					this.subject = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataParsedURL Location
 		{
@@ -59,6 +46,19 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.PublicationNS
 				if (this.location != value)
 				{
 					this.location = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString SubjectProp
+		{
+			get{return subject;}
+			set
+			{
+				if (this.subject != value)
+				{
+					this.subject = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

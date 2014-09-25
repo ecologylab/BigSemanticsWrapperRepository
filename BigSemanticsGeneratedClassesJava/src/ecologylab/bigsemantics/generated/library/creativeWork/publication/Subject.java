@@ -26,11 +26,11 @@ import java.util.Map;
 public class Subject extends Metadata
 {
 	@simpl_scalar
-	@simpl_composite_as_scalar
-	private MetadataString subject;
+	private MetadataParsedURL location;
 
 	@simpl_scalar
-	private MetadataParsedURL location;
+	@simpl_composite_as_scalar
+	private MetadataString subject;
 
 	public Subject()
 	{ super(); }
@@ -39,38 +39,6 @@ public class Subject extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	subject()
-	{
-		MetadataString	result = this.subject;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.subject = result;
-		}
-		return result;
-	}
-
-	public String getSubject()
-	{
-		return this.subject == null ? null : subject().getValue();
-	}
-
-	public MetadataString getSubjectMetadata()
-	{
-		return subject;
-	}
-
-	public void setSubject(String subject)
-	{
-		if (subject != null)
-			this.subject().setValue(subject);
-	}
-
-	public void setSubjectMetadata(MetadataString subject)
-	{
-		this.subject = subject;
-	}
 
 	public MetadataParsedURL	location()
 	{
@@ -102,5 +70,37 @@ public class Subject extends Metadata
 	public void setLocationMetadata(MetadataParsedURL location)
 	{
 		this.location = location;
+	}
+
+	public MetadataString	subject()
+	{
+		MetadataString	result = this.subject;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.subject = result;
+		}
+		return result;
+	}
+
+	public String getSubject()
+	{
+		return this.subject == null ? null : subject().getValue();
+	}
+
+	public MetadataString getSubjectMetadata()
+	{
+		return subject;
+	}
+
+	public void setSubject(String subject)
+	{
+		if (subject != null)
+			this.subject().setValue(subject);
+	}
+
+	public void setSubjectMetadata(MetadataString subject)
+	{
+		this.subject = subject;
 	}
 }

@@ -30,15 +30,6 @@ import java.util.Map;
 @simpl_inherit
 public class Outline extends Metadata
 {
-	@simpl_collection("outline")
-	@simpl_nowrap
-	@mm_name("outlines")
-	private List<Outline> outlines;
-
-	@simpl_scalar
-	@simpl_tag("htmlUrl")
-	private MetadataParsedURL htmlUrl;
-
 	@simpl_scalar
 	private MetadataString text;
 
@@ -46,11 +37,20 @@ public class Outline extends Metadata
 	private MetadataString title;
 
 	@simpl_scalar
-	private MetadataString type;
+	@simpl_tag("htmlUrl")
+	private MetadataParsedURL htmlUrl;
+
+	@simpl_collection("outline")
+	@simpl_nowrap
+	@mm_name("outlines")
+	private List<Outline> outlines;
 
 	@simpl_scalar
 	@simpl_tag("xmlUrl")
 	private MetadataParsedURL xmlUrl;
+
+	@simpl_scalar
+	private MetadataString type;
 
 	public Outline()
 	{ super(); }
@@ -59,68 +59,6 @@ public class Outline extends Metadata
 		super(mmd);
 	}
 
-
-	public List<Outline> getOutlines()
-	{
-		return outlines;
-	}
-
-  // lazy evaluation:
-  public List<Outline> outlines()
-  {
-    if (outlines == null)
-      outlines = new ArrayList<Outline>();
-    return outlines;
-  }
-
-  // addTo:
-  public void addToOutlines(Outline element)
-  {
-    outlines().add(element);
-  }
-
-  // size:
-  public int outlinesSize()
-  {
-    return outlines == null ? 0 : outlines.size();
-  }
-
-	public void setOutlines(List<Outline> outlines)
-	{
-		this.outlines = outlines;
-	}
-
-	public MetadataParsedURL	htmlUrl()
-	{
-		MetadataParsedURL	result = this.htmlUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.htmlUrl = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getHtmlUrl()
-	{
-		return this.htmlUrl == null ? null : htmlUrl().getValue();
-	}
-
-	public MetadataParsedURL getHtmlUrlMetadata()
-	{
-		return htmlUrl;
-	}
-
-	public void setHtmlUrl(ParsedURL htmlUrl)
-	{
-		if (htmlUrl != null)
-			this.htmlUrl().setValue(htmlUrl);
-	}
-
-	public void setHtmlUrlMetadata(MetadataParsedURL htmlUrl)
-	{
-		this.htmlUrl = htmlUrl;
-	}
 
 	public MetadataString	text()
 	{
@@ -186,36 +124,66 @@ public class Outline extends Metadata
 		this.title = title;
 	}
 
-	public MetadataString	type()
+	public MetadataParsedURL	htmlUrl()
 	{
-		MetadataString	result = this.type;
+		MetadataParsedURL	result = this.htmlUrl;
 		if (result == null)
 		{
-			result = new MetadataString();
-			this.type = result;
+			result = new MetadataParsedURL();
+			this.htmlUrl = result;
 		}
 		return result;
 	}
 
-	public String getType()
+	public ParsedURL getHtmlUrl()
 	{
-		return this.type == null ? null : type().getValue();
+		return this.htmlUrl == null ? null : htmlUrl().getValue();
 	}
 
-	public MetadataString getTypeMetadata()
+	public MetadataParsedURL getHtmlUrlMetadata()
 	{
-		return type;
+		return htmlUrl;
 	}
 
-	public void setType(String type)
+	public void setHtmlUrl(ParsedURL htmlUrl)
 	{
-		if (type != null)
-			this.type().setValue(type);
+		if (htmlUrl != null)
+			this.htmlUrl().setValue(htmlUrl);
 	}
 
-	public void setTypeMetadata(MetadataString type)
+	public void setHtmlUrlMetadata(MetadataParsedURL htmlUrl)
 	{
-		this.type = type;
+		this.htmlUrl = htmlUrl;
+	}
+
+	public List<Outline> getOutlines()
+	{
+		return outlines;
+	}
+
+  // lazy evaluation:
+  public List<Outline> outlines()
+  {
+    if (outlines == null)
+      outlines = new ArrayList<Outline>();
+    return outlines;
+  }
+
+  // addTo:
+  public void addToOutlines(Outline element)
+  {
+    outlines().add(element);
+  }
+
+  // size:
+  public int outlinesSize()
+  {
+    return outlines == null ? 0 : outlines.size();
+  }
+
+	public void setOutlines(List<Outline> outlines)
+	{
+		this.outlines = outlines;
 	}
 
 	public MetadataParsedURL	xmlUrl()
@@ -248,5 +216,37 @@ public class Outline extends Metadata
 	public void setXmlUrlMetadata(MetadataParsedURL xmlUrl)
 	{
 		this.xmlUrl = xmlUrl;
+	}
+
+	public MetadataString	type()
+	{
+		MetadataString	result = this.type;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.type = result;
+		}
+		return result;
+	}
+
+	public String getType()
+	{
+		return this.type == null ? null : type().getValue();
+	}
+
+	public MetadataString getTypeMetadata()
+	{
+		return type;
+	}
+
+	public void setType(String type)
+	{
+		if (type != null)
+			this.type().setValue(type);
+	}
+
+	public void setTypeMetadata(MetadataString type)
+	{
+		this.type = type;
 	}
 }

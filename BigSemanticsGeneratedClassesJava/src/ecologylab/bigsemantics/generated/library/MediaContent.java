@@ -25,13 +25,13 @@ import java.util.Map;
 public class MediaContent extends Metadata
 {
 	@simpl_scalar
-	private MetadataInteger width;
+	private MetadataInteger height;
 
 	@simpl_scalar
 	private MetadataParsedURL mediaUrl;
 
 	@simpl_scalar
-	private MetadataInteger height;
+	private MetadataInteger width;
 
 	public MediaContent()
 	{ super(); }
@@ -41,36 +41,36 @@ public class MediaContent extends Metadata
 	}
 
 
-	public MetadataInteger	width()
+	public MetadataInteger	height()
 	{
-		MetadataInteger	result = this.width;
+		MetadataInteger	result = this.height;
 		if (result == null)
 		{
 			result = new MetadataInteger();
-			this.width = result;
+			this.height = result;
 		}
 		return result;
 	}
 
-	public Integer getWidth()
+	public Integer getHeight()
 	{
-		return this.width == null ? 0 : width().getValue();
+		return this.height == null ? 0 : height().getValue();
 	}
 
-	public MetadataInteger getWidthMetadata()
+	public MetadataInteger getHeightMetadata()
 	{
-		return width;
+		return height;
 	}
 
-	public void setWidth(Integer width)
+	public void setHeight(Integer height)
 	{
-		if (width != 0)
-			this.width().setValue(width);
+		if (height != 0)
+			this.height().setValue(height);
 	}
 
-	public void setWidthMetadata(MetadataInteger width)
+	public void setHeightMetadata(MetadataInteger height)
 	{
-		this.width = width;
+		this.height = height;
 	}
 
 	public MetadataParsedURL	mediaUrl()
@@ -105,35 +105,35 @@ public class MediaContent extends Metadata
 		this.mediaUrl = mediaUrl;
 	}
 
-	public MetadataInteger	height()
+	public MetadataInteger	width()
 	{
-		MetadataInteger	result = this.height;
+		MetadataInteger	result = this.width;
 		if (result == null)
 		{
 			result = new MetadataInteger();
-			this.height = result;
+			this.width = result;
 		}
 		return result;
 	}
 
-	public Integer getHeight()
+	public Integer getWidth()
 	{
-		return this.height == null ? 0 : height().getValue();
+		return this.width == null ? 0 : width().getValue();
 	}
 
-	public MetadataInteger getHeightMetadata()
+	public MetadataInteger getWidthMetadata()
 	{
-		return height;
+		return width;
 	}
 
-	public void setHeight(Integer height)
+	public void setWidth(Integer width)
 	{
-		if (height != 0)
-			this.height().setValue(height);
+		if (width != 0)
+			this.width().setValue(width);
 	}
 
-	public void setHeightMetadata(MetadataInteger height)
+	public void setWidthMetadata(MetadataInteger width)
 	{
-		this.height = height;
+		this.width = width;
 	}
 }
