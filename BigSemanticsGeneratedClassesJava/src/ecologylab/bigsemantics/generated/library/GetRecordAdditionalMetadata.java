@@ -23,13 +23,13 @@ import java.util.Map;
 public class GetRecordAdditionalMetadata extends AdditionalMetadata
 {
 	@simpl_scalar
+	private MetadataString accessionStatus;
+
+	@simpl_scalar
 	private MetadataString realm;
 
 	@simpl_scalar
 	private MetadataString partOfDrc;
-
-	@simpl_scalar
-	private MetadataString accessionStatus;
 
 	public GetRecordAdditionalMetadata()
 	{ super(); }
@@ -38,6 +38,38 @@ public class GetRecordAdditionalMetadata extends AdditionalMetadata
 		super(mmd);
 	}
 
+
+	public MetadataString	accessionStatus()
+	{
+		MetadataString	result = this.accessionStatus;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.accessionStatus = result;
+		}
+		return result;
+	}
+
+	public String getAccessionStatus()
+	{
+		return this.accessionStatus == null ? null : accessionStatus().getValue();
+	}
+
+	public MetadataString getAccessionStatusMetadata()
+	{
+		return accessionStatus;
+	}
+
+	public void setAccessionStatus(String accessionStatus)
+	{
+		if (accessionStatus != null)
+			this.accessionStatus().setValue(accessionStatus);
+	}
+
+	public void setAccessionStatusMetadata(MetadataString accessionStatus)
+	{
+		this.accessionStatus = accessionStatus;
+	}
 
 	public MetadataString	realm()
 	{
@@ -101,37 +133,5 @@ public class GetRecordAdditionalMetadata extends AdditionalMetadata
 	public void setPartOfDrcMetadata(MetadataString partOfDrc)
 	{
 		this.partOfDrc = partOfDrc;
-	}
-
-	public MetadataString	accessionStatus()
-	{
-		MetadataString	result = this.accessionStatus;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.accessionStatus = result;
-		}
-		return result;
-	}
-
-	public String getAccessionStatus()
-	{
-		return this.accessionStatus == null ? null : accessionStatus().getValue();
-	}
-
-	public MetadataString getAccessionStatusMetadata()
-	{
-		return accessionStatus;
-	}
-
-	public void setAccessionStatus(String accessionStatus)
-	{
-		if (accessionStatus != null)
-			this.accessionStatus().setValue(accessionStatus);
-	}
-
-	public void setAccessionStatusMetadata(MetadataString accessionStatus)
-	{
-		this.accessionStatus = accessionStatus;
 	}
 }

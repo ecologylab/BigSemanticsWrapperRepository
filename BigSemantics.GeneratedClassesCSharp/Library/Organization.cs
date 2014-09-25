@@ -25,29 +25,16 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class Organization : Metadata
 	{
 		[SimplScalar]
-		private MetadataString email;
+		private MetadataString name;
 
 		[SimplScalar]
-		private MetadataString name;
+		private MetadataString email;
 
 		public Organization()
 		{ }
 
 		public Organization(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString Email
-		{
-			get{return email;}
-			set
-			{
-				if (this.email != value)
-				{
-					this.email = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString Name
 		{
@@ -57,6 +44,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.name != value)
 				{
 					this.name = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Email
+		{
+			get{return email;}
+			set
+			{
+				if (this.email != value)
+				{
+					this.email = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

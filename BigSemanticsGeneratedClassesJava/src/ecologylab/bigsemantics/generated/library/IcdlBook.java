@@ -27,25 +27,25 @@ import java.util.Map;
 public class IcdlBook extends Document
 {
 	@simpl_scalar
-	private MetadataString id;
+	private MetadataParsedURL cover;
 
 	@simpl_scalar
 	private MetadataString languages;
 
 	@simpl_scalar
-	private MetadataParsedURL cover;
-
-	@simpl_scalar
-	private MetadataInteger height;
-
-	@simpl_scalar
 	private MetadataInteger width;
+
+	@simpl_scalar
+	private MetadataString id;
 
 	@simpl_scalar
 	private MetadataString booktitle;
 
 	@simpl_scalar
 	private MetadataParsedURL bookurl;
+
+	@simpl_scalar
+	private MetadataInteger height;
 
 	public IcdlBook()
 	{ super(); }
@@ -55,36 +55,36 @@ public class IcdlBook extends Document
 	}
 
 
-	public MetadataString	id()
+	public MetadataParsedURL	cover()
 	{
-		MetadataString	result = this.id;
+		MetadataParsedURL	result = this.cover;
 		if (result == null)
 		{
-			result = new MetadataString();
-			this.id = result;
+			result = new MetadataParsedURL();
+			this.cover = result;
 		}
 		return result;
 	}
 
-	public String getId()
+	public ParsedURL getCover()
 	{
-		return this.id == null ? null : id().getValue();
+		return this.cover == null ? null : cover().getValue();
 	}
 
-	public MetadataString getIdMetadata()
+	public MetadataParsedURL getCoverMetadata()
 	{
-		return id;
+		return cover;
 	}
 
-	public void setId(String id)
+	public void setCover(ParsedURL cover)
 	{
-		if (id != null)
-			this.id().setValue(id);
+		if (cover != null)
+			this.cover().setValue(cover);
 	}
 
-	public void setIdMetadata(MetadataString id)
+	public void setCoverMetadata(MetadataParsedURL cover)
 	{
-		this.id = id;
+		this.cover = cover;
 	}
 
 	public MetadataString	languages()
@@ -119,70 +119,6 @@ public class IcdlBook extends Document
 		this.languages = languages;
 	}
 
-	public MetadataParsedURL	cover()
-	{
-		MetadataParsedURL	result = this.cover;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.cover = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getCover()
-	{
-		return this.cover == null ? null : cover().getValue();
-	}
-
-	public MetadataParsedURL getCoverMetadata()
-	{
-		return cover;
-	}
-
-	public void setCover(ParsedURL cover)
-	{
-		if (cover != null)
-			this.cover().setValue(cover);
-	}
-
-	public void setCoverMetadata(MetadataParsedURL cover)
-	{
-		this.cover = cover;
-	}
-
-	public MetadataInteger	height()
-	{
-		MetadataInteger	result = this.height;
-		if (result == null)
-		{
-			result = new MetadataInteger();
-			this.height = result;
-		}
-		return result;
-	}
-
-	public Integer getHeight()
-	{
-		return this.height == null ? 0 : height().getValue();
-	}
-
-	public MetadataInteger getHeightMetadata()
-	{
-		return height;
-	}
-
-	public void setHeight(Integer height)
-	{
-		if (height != 0)
-			this.height().setValue(height);
-	}
-
-	public void setHeightMetadata(MetadataInteger height)
-	{
-		this.height = height;
-	}
-
 	public MetadataInteger	width()
 	{
 		MetadataInteger	result = this.width;
@@ -213,6 +149,38 @@ public class IcdlBook extends Document
 	public void setWidthMetadata(MetadataInteger width)
 	{
 		this.width = width;
+	}
+
+	public MetadataString	id()
+	{
+		MetadataString	result = this.id;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.id = result;
+		}
+		return result;
+	}
+
+	public String getId()
+	{
+		return this.id == null ? null : id().getValue();
+	}
+
+	public MetadataString getIdMetadata()
+	{
+		return id;
+	}
+
+	public void setId(String id)
+	{
+		if (id != null)
+			this.id().setValue(id);
+	}
+
+	public void setIdMetadata(MetadataString id)
+	{
+		this.id = id;
 	}
 
 	public MetadataString	booktitle()
@@ -277,5 +245,37 @@ public class IcdlBook extends Document
 	public void setBookurlMetadata(MetadataParsedURL bookurl)
 	{
 		this.bookurl = bookurl;
+	}
+
+	public MetadataInteger	height()
+	{
+		MetadataInteger	result = this.height;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.height = result;
+		}
+		return result;
+	}
+
+	public Integer getHeight()
+	{
+		return this.height == null ? 0 : height().getValue();
+	}
+
+	public MetadataInteger getHeightMetadata()
+	{
+		return height;
+	}
+
+	public void setHeight(Integer height)
+	{
+		if (height != 0)
+			this.height().setValue(height);
+	}
+
+	public void setHeightMetadata(MetadataInteger height)
+	{
+		this.height = height;
 	}
 }

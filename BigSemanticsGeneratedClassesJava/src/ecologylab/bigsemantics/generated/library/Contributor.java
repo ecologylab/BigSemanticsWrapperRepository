@@ -27,15 +27,15 @@ import java.util.Map;
 @simpl_inherit
 public class Contributor extends Metadata
 {
-	@simpl_composite
-	@mm_name("organization")
-	private Organization organization;
+	@simpl_scalar
+	private MetadataInteger date;
 
 	@simpl_scalar
 	private MetadataString role;
 
-	@simpl_scalar
-	private MetadataInteger date;
+	@simpl_composite
+	@mm_name("organization")
+	private Organization organization;
 
 	public Contributor()
 	{ super(); }
@@ -45,14 +45,36 @@ public class Contributor extends Metadata
 	}
 
 
-	public Organization getOrganization()
+	public MetadataInteger	date()
 	{
-		return organization;
+		MetadataInteger	result = this.date;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.date = result;
+		}
+		return result;
 	}
 
-	public void setOrganization(Organization organization)
+	public Integer getDate()
 	{
-		this.organization = organization;
+		return this.date == null ? 0 : date().getValue();
+	}
+
+	public MetadataInteger getDateMetadata()
+	{
+		return date;
+	}
+
+	public void setDate(Integer date)
+	{
+		if (date != 0)
+			this.date().setValue(date);
+	}
+
+	public void setDateMetadata(MetadataInteger date)
+	{
+		this.date = date;
 	}
 
 	public MetadataString	role()
@@ -87,35 +109,13 @@ public class Contributor extends Metadata
 		this.role = role;
 	}
 
-	public MetadataInteger	date()
+	public Organization getOrganization()
 	{
-		MetadataInteger	result = this.date;
-		if (result == null)
-		{
-			result = new MetadataInteger();
-			this.date = result;
-		}
-		return result;
+		return organization;
 	}
 
-	public Integer getDate()
+	public void setOrganization(Organization organization)
 	{
-		return this.date == null ? 0 : date().getValue();
-	}
-
-	public MetadataInteger getDateMetadata()
-	{
-		return date;
-	}
-
-	public void setDate(Integer date)
-	{
-		if (date != 0)
-			this.date().setValue(date);
-	}
-
-	public void setDateMetadata(MetadataInteger date)
-	{
-		this.date = date;
+		this.organization = organization;
 	}
 }

@@ -26,13 +26,13 @@ import java.util.Map;
 @simpl_inherit
 public class RecordMetaMetadata extends Metadata
 {
-	@simpl_composite
-	@mm_name("date_info")
-	private DateInfo dateInfo;
-
 	@simpl_collection("catalog")
 	@mm_name("catalogs")
 	private List<MetadataString> catalogs;
+
+	@simpl_composite
+	@mm_name("date_info")
+	private DateInfo dateInfo;
 
 	public RecordMetaMetadata()
 	{ super(); }
@@ -41,16 +41,6 @@ public class RecordMetaMetadata extends Metadata
 		super(mmd);
 	}
 
-
-	public DateInfo getDateInfo()
-	{
-		return dateInfo;
-	}
-
-	public void setDateInfo(DateInfo dateInfo)
-	{
-		this.dateInfo = dateInfo;
-	}
 
 	public List<MetadataString> getCatalogs()
 	{
@@ -80,5 +70,15 @@ public class RecordMetaMetadata extends Metadata
 	public void setCatalogs(List<MetadataString> catalogs)
 	{
 		this.catalogs = catalogs;
+	}
+
+	public DateInfo getDateInfo()
+	{
+		return dateInfo;
+	}
+
+	public void setDateInfo(DateInfo dateInfo)
+	{
+		this.dateInfo = dateInfo;
 	}
 }

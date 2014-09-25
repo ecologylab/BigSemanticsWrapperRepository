@@ -24,9 +24,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	[SimplInherit]
 	public class General : Metadata
 	{
-		[SimplScalar]
-		private MetadataString title;
-
 		[SimplCollection("subject")]
 		[MmName("subjects")]
 		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> subjects;
@@ -37,24 +34,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		[SimplScalar]
 		private MetadataString language;
 
+		[SimplScalar]
+		private MetadataString title;
+
 		public General()
 		{ }
 
 		public General(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString Title
-		{
-			get{return title;}
-			set
-			{
-				if (this.title != value)
-				{
-					this.title = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Subjects
 		{
@@ -90,6 +77,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.language != value)
 				{
 					this.language = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Title
+		{
+			get{return title;}
+			set
+			{
+				if (this.title != value)
+				{
+					this.title = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

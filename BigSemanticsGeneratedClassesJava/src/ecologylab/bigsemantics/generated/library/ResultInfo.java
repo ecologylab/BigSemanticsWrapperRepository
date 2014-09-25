@@ -26,10 +26,10 @@ public class ResultInfo extends Metadata
 	private MetadataInteger offset;
 
 	@simpl_scalar
-	private MetadataInteger returned;
+	private MetadataInteger totalRecords;
 
 	@simpl_scalar
-	private MetadataInteger totalRecords;
+	private MetadataInteger returned;
 
 	@simpl_scalar
 	private MetadataInteger totalResults;
@@ -74,38 +74,6 @@ public class ResultInfo extends Metadata
 		this.offset = offset;
 	}
 
-	public MetadataInteger	returned()
-	{
-		MetadataInteger	result = this.returned;
-		if (result == null)
-		{
-			result = new MetadataInteger();
-			this.returned = result;
-		}
-		return result;
-	}
-
-	public Integer getReturned()
-	{
-		return this.returned == null ? 0 : returned().getValue();
-	}
-
-	public MetadataInteger getReturnedMetadata()
-	{
-		return returned;
-	}
-
-	public void setReturned(Integer returned)
-	{
-		if (returned != 0)
-			this.returned().setValue(returned);
-	}
-
-	public void setReturnedMetadata(MetadataInteger returned)
-	{
-		this.returned = returned;
-	}
-
 	public MetadataInteger	totalRecords()
 	{
 		MetadataInteger	result = this.totalRecords;
@@ -136,6 +104,38 @@ public class ResultInfo extends Metadata
 	public void setTotalRecordsMetadata(MetadataInteger totalRecords)
 	{
 		this.totalRecords = totalRecords;
+	}
+
+	public MetadataInteger	returned()
+	{
+		MetadataInteger	result = this.returned;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.returned = result;
+		}
+		return result;
+	}
+
+	public Integer getReturned()
+	{
+		return this.returned == null ? 0 : returned().getValue();
+	}
+
+	public MetadataInteger getReturnedMetadata()
+	{
+		return returned;
+	}
+
+	public void setReturned(Integer returned)
+	{
+		if (returned != 0)
+			this.returned().setValue(returned);
+	}
+
+	public void setReturnedMetadata(MetadataInteger returned)
+	{
+		this.returned = returned;
 	}
 
 	public MetadataInteger	totalResults()

@@ -25,32 +25,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	[SimplInherit]
 	public class RecordMetaMetadata : Metadata
 	{
-		[SimplComposite]
-		[MmName("date_info")]
-		private DateInfo dateInfo;
-
 		[SimplCollection("catalog")]
 		[MmName("catalogs")]
 		private List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> catalogs;
+
+		[SimplComposite]
+		[MmName("date_info")]
+		private DateInfo dateInfo;
 
 		public RecordMetaMetadata()
 		{ }
 
 		public RecordMetaMetadata(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public DateInfo DateInfo
-		{
-			get{return dateInfo;}
-			set
-			{
-				if (this.dateInfo != value)
-				{
-					this.dateInfo = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public List<Ecologylab.BigSemantics.MetadataNS.Scalar.MetadataString> Catalogs
 		{
@@ -60,6 +47,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.catalogs != value)
 				{
 					this.catalogs = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public DateInfo DateInfo
+		{
+			get{return dateInfo;}
+			set
+			{
+				if (this.dateInfo != value)
+				{
+					this.dateInfo = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

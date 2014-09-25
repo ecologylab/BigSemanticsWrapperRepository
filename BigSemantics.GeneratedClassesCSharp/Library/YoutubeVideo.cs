@@ -35,9 +35,9 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		[MmName("suggested_videos")]
 		private List<YoutubeVideo> suggestedVideos;
 
-		[SimplCollection("youtube_channel")]
+		[SimplComposite]
 		[MmName("creator_channel")]
-		private List<YoutubeChannel> creatorChannel;
+		private RichDocument creatorChannel;
 
 		public YoutubeVideo()
 		{ }
@@ -71,7 +71,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public List<YoutubeChannel> CreatorChannel
+		public RichDocument CreatorChannel
 		{
 			get{return creatorChannel;}
 			set

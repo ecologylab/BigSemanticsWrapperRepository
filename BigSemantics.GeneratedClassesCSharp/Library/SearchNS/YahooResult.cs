@@ -30,10 +30,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		private MetadataString summary;
 
 		[SimplScalar]
-		private MetadataString modificationDate;
-
-		[SimplScalar]
-		private MetadataString title;
+		private MetadataParsedURL refererUrl;
 
 		[SimplComposite]
 		[MmName("thumbnail")]
@@ -43,7 +40,10 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		private MetadataString mimeType;
 
 		[SimplScalar]
-		private MetadataParsedURL refererUrl;
+		private MetadataString modificationDate;
+
+		[SimplScalar]
+		private MetadataString title;
 
 		public YahooResult()
 		{ }
@@ -64,27 +64,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataString ModificationDate
+		public MetadataParsedURL RefererUrl
 		{
-			get{return modificationDate;}
+			get{return refererUrl;}
 			set
 			{
-				if (this.modificationDate != value)
+				if (this.refererUrl != value)
 				{
-					this.modificationDate = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Title
-		{
-			get{return title;}
-			set
-			{
-				if (this.title != value)
-				{
-					this.title = value;
+					this.refererUrl = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -116,14 +103,27 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataParsedURL RefererUrl
+		public MetadataString ModificationDate
 		{
-			get{return refererUrl;}
+			get{return modificationDate;}
 			set
 			{
-				if (this.refererUrl != value)
+				if (this.modificationDate != value)
 				{
-					this.refererUrl = value;
+					this.modificationDate = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Title
+		{
+			get{return title;}
+			set
+			{
+				if (this.title != value)
+				{
+					this.title = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

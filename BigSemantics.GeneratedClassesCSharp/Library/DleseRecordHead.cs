@@ -26,17 +26,17 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class DleseRecordHead : Metadata
 	{
 		[SimplScalar]
-		private MetadataString id;
-
-		[SimplScalar]
-		private MetadataDate lastModified;
-
-		[SimplScalar]
 		private MetadataString xmlFormat;
+
+		[SimplScalar]
+		private MetadataString id;
 
 		[SimplComposite]
 		[MmName("collection")]
 		private Collection collection;
+
+		[SimplScalar]
+		private MetadataDate lastModified;
 
 		[SimplComposite]
 		[MmName("additional_metadata")]
@@ -47,32 +47,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 
 		public DleseRecordHead(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataString Id
-		{
-			get{return id;}
-			set
-			{
-				if (this.id != value)
-				{
-					this.id = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataDate LastModified
-		{
-			get{return lastModified;}
-			set
-			{
-				if (this.lastModified != value)
-				{
-					this.lastModified = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataString XmlFormat
 		{
@@ -87,6 +61,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
+		public MetadataString Id
+		{
+			get{return id;}
+			set
+			{
+				if (this.id != value)
+				{
+					this.id = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
 		public Collection Collection
 		{
 			get{return collection;}
@@ -95,6 +82,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.collection != value)
 				{
 					this.collection = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataDate LastModified
+		{
+			get{return lastModified;}
+			set
+			{
+				if (this.lastModified != value)
+				{
+					this.lastModified = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

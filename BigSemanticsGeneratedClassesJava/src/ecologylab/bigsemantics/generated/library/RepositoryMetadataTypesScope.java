@@ -222,8 +222,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.YoutubeVideoList.class,
 
-		ecologylab.bigsemantics.generated.library.author.springereditor.SpringerEditor.class,
-
 		ecologylab.bigsemantics.generated.library.comment.Comment.class,
 
 		ecologylab.bigsemantics.generated.library.comment.DcDocument.class,
@@ -456,6 +454,12 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.publication.PubmedJournal.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.publication.SpringerBook.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.publication.SpringerJournal.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.publication.SpringerSeriesSummary.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.publication.Subject.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.publication.TermType.class,
@@ -503,6 +507,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.ScopusArticle.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.Sections.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.SpringerArticle.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.WileyArticle.class,
 
@@ -582,6 +588,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.person.author.ScopusAuthor.class,
 
+		ecologylab.bigsemantics.generated.library.person.author.SpringerEditor.class,
+
 		ecologylab.bigsemantics.generated.library.person.author.TateArtist.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.Tweeter.class,
@@ -658,6 +666,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.search.SocialMediaSearchResult.class,
 
+		ecologylab.bigsemantics.generated.library.search.SpringerSearch.class,
+
 		ecologylab.bigsemantics.generated.library.search.TateFilter.class,
 
 		ecologylab.bigsemantics.generated.library.search.TumblrSearch.class,
@@ -683,16 +693,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.YahooThumbnail.class,
 
 		ecologylab.bigsemantics.generated.library.search.imageSearch.ImageSearch.class,
-
-		ecologylab.bigsemantics.generated.library.springerSearch.SpringerSearch.class,
-
-		ecologylab.bigsemantics.generated.library.springerarticle.SpringerArticle.class,
-
-		ecologylab.bigsemantics.generated.library.springerbook.SpringerBook.class,
-
-		ecologylab.bigsemantics.generated.library.springerjournal.SpringerJournal.class,
-
-		ecologylab.bigsemantics.generated.library.springerseriessummary.SpringerSeriesSummary.class,
 
 		ecologylab.bigsemantics.generated.library.weatherReport.WeatherReport.class,
 

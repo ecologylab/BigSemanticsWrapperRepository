@@ -25,19 +25,32 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class GetRecordAdditionalMetadata : AdditionalMetadata
 	{
 		[SimplScalar]
+		private MetadataString accessionStatus;
+
+		[SimplScalar]
 		private MetadataString realm;
 
 		[SimplScalar]
 		private MetadataString partOfDrc;
-
-		[SimplScalar]
-		private MetadataString accessionStatus;
 
 		public GetRecordAdditionalMetadata()
 		{ }
 
 		public GetRecordAdditionalMetadata(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString AccessionStatus
+		{
+			get{return accessionStatus;}
+			set
+			{
+				if (this.accessionStatus != value)
+				{
+					this.accessionStatus = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString Realm
 		{
@@ -60,19 +73,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.partOfDrc != value)
 				{
 					this.partOfDrc = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString AccessionStatus
-		{
-			get{return accessionStatus;}
-			set
-			{
-				if (this.accessionStatus != value)
-				{
-					this.accessionStatus = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

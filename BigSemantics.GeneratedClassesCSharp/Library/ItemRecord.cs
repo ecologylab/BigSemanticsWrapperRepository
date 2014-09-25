@@ -27,30 +27,43 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class ItemRecord : Metadata
 	{
 		[SimplComposite]
+		[MmName("lifecycle")]
+		private Lifecycle lifecycle;
+
+		[SimplComposite]
 		[MmName("record_meta_metadata")]
 		private RecordMetaMetadata recordMetaMetadata;
 
-		[SimplScalar]
-		[SimplOtherTags(new String[] {"xsi:schemaLocation"})]
-		private MetadataParsedURL location;
-
 		[SimplComposite]
-		[MmName("lifecycle")]
-		private Lifecycle lifecycle;
+		[MmName("general")]
+		private General general;
 
 		[SimplComposite]
 		[MmName("educational")]
 		private Educational educational;
 
-		[SimplComposite]
-		[MmName("general")]
-		private General general;
+		[SimplScalar]
+		[SimplOtherTags(new String[] {"xsi:schemaLocation"})]
+		private MetadataParsedURL location;
 
 		public ItemRecord()
 		{ }
 
 		public ItemRecord(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public Lifecycle Lifecycle
+		{
+			get{return lifecycle;}
+			set
+			{
+				if (this.lifecycle != value)
+				{
+					this.lifecycle = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public RecordMetaMetadata RecordMetaMetadata
 		{
@@ -65,27 +78,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataParsedURL Location
+		public General General
 		{
-			get{return location;}
+			get{return general;}
 			set
 			{
-				if (this.location != value)
+				if (this.general != value)
 				{
-					this.location = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public Lifecycle Lifecycle
-		{
-			get{return lifecycle;}
-			set
-			{
-				if (this.lifecycle != value)
-				{
-					this.lifecycle = value;
+					this.general = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -104,14 +104,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public General General
+		public MetadataParsedURL Location
 		{
-			get{return general;}
+			get{return location;}
 			set
 			{
-				if (this.general != value)
+				if (this.location != value)
 				{
-					this.general = value;
+					this.location = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

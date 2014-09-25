@@ -25,9 +25,6 @@ import java.util.Map;
 @simpl_inherit
 public class General extends Metadata
 {
-	@simpl_scalar
-	private MetadataString title;
-
 	@simpl_collection("subject")
 	@mm_name("subjects")
 	private List<MetadataString> subjects;
@@ -38,6 +35,9 @@ public class General extends Metadata
 	@simpl_scalar
 	private MetadataString language;
 
+	@simpl_scalar
+	private MetadataString title;
+
 	public General()
 	{ super(); }
 
@@ -45,38 +45,6 @@ public class General extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	title()
-	{
-		MetadataString	result = this.title;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.title = result;
-		}
-		return result;
-	}
-
-	public String getTitle()
-	{
-		return this.title == null ? null : title().getValue();
-	}
-
-	public MetadataString getTitleMetadata()
-	{
-		return title;
-	}
-
-	public void setTitle(String title)
-	{
-		if (title != null)
-			this.title().setValue(title);
-	}
-
-	public void setTitleMetadata(MetadataString title)
-	{
-		this.title = title;
-	}
 
 	public List<MetadataString> getSubjects()
 	{
@@ -170,5 +138,37 @@ public class General extends Metadata
 	public void setLanguageMetadata(MetadataString language)
 	{
 		this.language = language;
+	}
+
+	public MetadataString	title()
+	{
+		MetadataString	result = this.title;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.title = result;
+		}
+		return result;
+	}
+
+	public String getTitle()
+	{
+		return this.title == null ? null : title().getValue();
+	}
+
+	public MetadataString getTitleMetadata()
+	{
+		return title;
+	}
+
+	public void setTitle(String title)
+	{
+		if (title != null)
+			this.title().setValue(title);
+	}
+
+	public void setTitleMetadata(MetadataString title)
+	{
+		this.title = title;
 	}
 }

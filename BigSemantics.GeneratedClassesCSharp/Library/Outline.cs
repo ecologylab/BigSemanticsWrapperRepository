@@ -26,6 +26,15 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	[SimplInherit]
 	public class Outline : Metadata
 	{
+		[SimplCollection("outline")]
+		[SimplNoWrap]
+		[MmName("outlines")]
+		private List<Outline> outlines;
+
+		[SimplScalar]
+		[SimplTag("htmlUrl")]
+		private MetadataParsedURL htmlUrl;
+
 		[SimplScalar]
 		private MetadataString text;
 
@@ -33,26 +42,43 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		private MetadataString title;
 
 		[SimplScalar]
-		[SimplTag("htmlUrl")]
-		private MetadataParsedURL htmlUrl;
-
-		[SimplCollection("outline")]
-		[SimplNoWrap]
-		[MmName("outlines")]
-		private List<Outline> outlines;
+		private MetadataString type;
 
 		[SimplScalar]
 		[SimplTag("xmlUrl")]
 		private MetadataParsedURL xmlUrl;
-
-		[SimplScalar]
-		private MetadataString type;
 
 		public Outline()
 		{ }
 
 		public Outline(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public List<Outline> Outlines
+		{
+			get{return outlines;}
+			set
+			{
+				if (this.outlines != value)
+				{
+					this.outlines = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataParsedURL HtmlUrl
+		{
+			get{return htmlUrl;}
+			set
+			{
+				if (this.htmlUrl != value)
+				{
+					this.htmlUrl = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString Text
 		{
@@ -80,27 +106,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataParsedURL HtmlUrl
+		public MetadataString Type
 		{
-			get{return htmlUrl;}
+			get{return type;}
 			set
 			{
-				if (this.htmlUrl != value)
+				if (this.type != value)
 				{
-					this.htmlUrl = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<Outline> Outlines
-		{
-			get{return outlines;}
-			set
-			{
-				if (this.outlines != value)
-				{
-					this.outlines = value;
+					this.type = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -114,19 +127,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.xmlUrl != value)
 				{
 					this.xmlUrl = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Type
-		{
-			get{return type;}
-			set
-			{
-				if (this.type != value)
-				{
-					this.type = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

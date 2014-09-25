@@ -1,5 +1,5 @@
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="springerSearch" package="ecologylab.bigsemantics.generated.library.springerSearch" default_user_agent_name="chrome_32">
+  name="springerSearch" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
   <cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
   <meta_metadata name="springer_search" extends="search" comment="The springer search class" parser="xpath">
     <selector url_stripped="http://link.springer.com/search" />

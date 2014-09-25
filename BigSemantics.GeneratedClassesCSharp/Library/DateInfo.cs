@@ -25,29 +25,16 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class DateInfo : Metadata
 	{
 		[SimplScalar]
-		private MetadataDate created;
+		private MetadataDate accessioned;
 
 		[SimplScalar]
-		private MetadataDate accessioned;
+		private MetadataDate created;
 
 		public DateInfo()
 		{ }
 
 		public DateInfo(MetaMetadataCompositeField mmd) : base(mmd) { }
 
-
-		public MetadataDate Created
-		{
-			get{return created;}
-			set
-			{
-				if (this.created != value)
-				{
-					this.created = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
 
 		public MetadataDate Accessioned
 		{
@@ -57,6 +44,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.accessioned != value)
 				{
 					this.accessioned = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataDate Created
+		{
+			get{return created;}
+			set
+			{
+				if (this.created != value)
+				{
+					this.created = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

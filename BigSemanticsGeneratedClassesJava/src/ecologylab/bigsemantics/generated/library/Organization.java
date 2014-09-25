@@ -23,10 +23,10 @@ import java.util.Map;
 public class Organization extends Metadata
 {
 	@simpl_scalar
-	private MetadataString email;
+	private MetadataString name;
 
 	@simpl_scalar
-	private MetadataString name;
+	private MetadataString email;
 
 	public Organization()
 	{ super(); }
@@ -35,38 +35,6 @@ public class Organization extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	email()
-	{
-		MetadataString	result = this.email;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.email = result;
-		}
-		return result;
-	}
-
-	public String getEmail()
-	{
-		return this.email == null ? null : email().getValue();
-	}
-
-	public MetadataString getEmailMetadata()
-	{
-		return email;
-	}
-
-	public void setEmail(String email)
-	{
-		if (email != null)
-			this.email().setValue(email);
-	}
-
-	public void setEmailMetadata(MetadataString email)
-	{
-		this.email = email;
-	}
 
 	public MetadataString	name()
 	{
@@ -98,5 +66,37 @@ public class Organization extends Metadata
 	public void setNameMetadata(MetadataString name)
 	{
 		this.name = name;
+	}
+
+	public MetadataString	email()
+	{
+		MetadataString	result = this.email;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.email = result;
+		}
+		return result;
+	}
+
+	public String getEmail()
+	{
+		return this.email == null ? null : email().getValue();
+	}
+
+	public MetadataString getEmailMetadata()
+	{
+		return email;
+	}
+
+	public void setEmail(String email)
+	{
+		if (email != null)
+			this.email().setValue(email);
+	}
+
+	public void setEmailMetadata(MetadataString email)
+	{
+		this.email = email;
 	}
 }

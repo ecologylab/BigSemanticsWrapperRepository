@@ -51,7 +51,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 		[SimplCollection]
 		[SimplScope("repository_documents")]
 		[MmName("references")]
-		private List<Document> references;
+		private List<RichDocument> references;
 
 		/// <summary>
 		/// Creatives that cite this work.
@@ -123,7 +123,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 			}
 		}
 
-		public List<Document> References
+		public List<RichDocument> References
 		{
 			get{return references;}
 			set

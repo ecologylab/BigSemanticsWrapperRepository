@@ -28,10 +28,10 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		private MetadataInteger offset;
 
 		[SimplScalar]
-		private MetadataInteger returned;
+		private MetadataInteger totalRecords;
 
 		[SimplScalar]
-		private MetadataInteger totalRecords;
+		private MetadataInteger returned;
 
 		[SimplScalar]
 		private MetadataInteger totalResults;
@@ -55,19 +55,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataInteger Returned
-		{
-			get{return returned;}
-			set
-			{
-				if (this.returned != value)
-				{
-					this.returned = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
 		public MetadataInteger TotalRecords
 		{
 			get{return totalRecords;}
@@ -76,6 +63,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.totalRecords != value)
 				{
 					this.totalRecords = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataInteger Returned
+		{
+			get{return returned;}
+			set
+			{
+				if (this.returned != value)
+				{
+					this.returned = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

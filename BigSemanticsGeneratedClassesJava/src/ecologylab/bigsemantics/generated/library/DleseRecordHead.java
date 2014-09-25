@@ -29,17 +29,17 @@ import java.util.Map;
 public class DleseRecordHead extends Metadata
 {
 	@simpl_scalar
-	private MetadataString id;
-
-	@simpl_scalar
-	private MetadataDate lastModified;
-
-	@simpl_scalar
 	private MetadataString xmlFormat;
+
+	@simpl_scalar
+	private MetadataString id;
 
 	@simpl_composite
 	@mm_name("collection")
 	private Collection collection;
+
+	@simpl_scalar
+	private MetadataDate lastModified;
 
 	@simpl_composite
 	@mm_name("additional_metadata")
@@ -52,70 +52,6 @@ public class DleseRecordHead extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataString	id()
-	{
-		MetadataString	result = this.id;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.id = result;
-		}
-		return result;
-	}
-
-	public String getId()
-	{
-		return this.id == null ? null : id().getValue();
-	}
-
-	public MetadataString getIdMetadata()
-	{
-		return id;
-	}
-
-	public void setId(String id)
-	{
-		if (id != null)
-			this.id().setValue(id);
-	}
-
-	public void setIdMetadata(MetadataString id)
-	{
-		this.id = id;
-	}
-
-	public MetadataDate	lastModified()
-	{
-		MetadataDate	result = this.lastModified;
-		if (result == null)
-		{
-			result = new MetadataDate();
-			this.lastModified = result;
-		}
-		return result;
-	}
-
-	public Date getLastModified()
-	{
-		return this.lastModified == null ? null : lastModified().getValue();
-	}
-
-	public MetadataDate getLastModifiedMetadata()
-	{
-		return lastModified;
-	}
-
-	public void setLastModified(Date lastModified)
-	{
-		if (lastModified != null)
-			this.lastModified().setValue(lastModified);
-	}
-
-	public void setLastModifiedMetadata(MetadataDate lastModified)
-	{
-		this.lastModified = lastModified;
-	}
 
 	public MetadataString	xmlFormat()
 	{
@@ -149,6 +85,38 @@ public class DleseRecordHead extends Metadata
 		this.xmlFormat = xmlFormat;
 	}
 
+	public MetadataString	id()
+	{
+		MetadataString	result = this.id;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.id = result;
+		}
+		return result;
+	}
+
+	public String getId()
+	{
+		return this.id == null ? null : id().getValue();
+	}
+
+	public MetadataString getIdMetadata()
+	{
+		return id;
+	}
+
+	public void setId(String id)
+	{
+		if (id != null)
+			this.id().setValue(id);
+	}
+
+	public void setIdMetadata(MetadataString id)
+	{
+		this.id = id;
+	}
+
 	public Collection getCollection()
 	{
 		return collection;
@@ -157,6 +125,38 @@ public class DleseRecordHead extends Metadata
 	public void setCollection(Collection collection)
 	{
 		this.collection = collection;
+	}
+
+	public MetadataDate	lastModified()
+	{
+		MetadataDate	result = this.lastModified;
+		if (result == null)
+		{
+			result = new MetadataDate();
+			this.lastModified = result;
+		}
+		return result;
+	}
+
+	public Date getLastModified()
+	{
+		return this.lastModified == null ? null : lastModified().getValue();
+	}
+
+	public MetadataDate getLastModifiedMetadata()
+	{
+		return lastModified;
+	}
+
+	public void setLastModified(Date lastModified)
+	{
+		if (lastModified != null)
+			this.lastModified().setValue(lastModified);
+	}
+
+	public void setLastModifiedMetadata(MetadataDate lastModified)
+	{
+		this.lastModified = lastModified;
 	}
 
 	public AdditionalMetadata getAdditionalMetadata()

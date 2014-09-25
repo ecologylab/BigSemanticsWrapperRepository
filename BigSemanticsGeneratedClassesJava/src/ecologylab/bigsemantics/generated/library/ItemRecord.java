@@ -30,24 +30,24 @@ import java.util.Map;
 public class ItemRecord extends Metadata
 {
 	@simpl_composite
+	@mm_name("lifecycle")
+	private Lifecycle lifecycle;
+
+	@simpl_composite
 	@mm_name("record_meta_metadata")
 	private RecordMetaMetadata recordMetaMetadata;
 
-	@simpl_scalar
-	@simpl_other_tags({"xsi:schemaLocation"})
-	private MetadataParsedURL location;
-
 	@simpl_composite
-	@mm_name("lifecycle")
-	private Lifecycle lifecycle;
+	@mm_name("general")
+	private General general;
 
 	@simpl_composite
 	@mm_name("educational")
 	private Educational educational;
 
-	@simpl_composite
-	@mm_name("general")
-	private General general;
+	@simpl_scalar
+	@simpl_other_tags({"xsi:schemaLocation"})
+	private MetadataParsedURL location;
 
 	public ItemRecord()
 	{ super(); }
@@ -57,6 +57,16 @@ public class ItemRecord extends Metadata
 	}
 
 
+	public Lifecycle getLifecycle()
+	{
+		return lifecycle;
+	}
+
+	public void setLifecycle(Lifecycle lifecycle)
+	{
+		this.lifecycle = lifecycle;
+	}
+
 	public RecordMetaMetadata getRecordMetaMetadata()
 	{
 		return recordMetaMetadata;
@@ -65,6 +75,26 @@ public class ItemRecord extends Metadata
 	public void setRecordMetaMetadata(RecordMetaMetadata recordMetaMetadata)
 	{
 		this.recordMetaMetadata = recordMetaMetadata;
+	}
+
+	public General getGeneral()
+	{
+		return general;
+	}
+
+	public void setGeneral(General general)
+	{
+		this.general = general;
+	}
+
+	public Educational getEducational()
+	{
+		return educational;
+	}
+
+	public void setEducational(Educational educational)
+	{
+		this.educational = educational;
 	}
 
 	public MetadataParsedURL	location()
@@ -97,35 +127,5 @@ public class ItemRecord extends Metadata
 	public void setLocationMetadata(MetadataParsedURL location)
 	{
 		this.location = location;
-	}
-
-	public Lifecycle getLifecycle()
-	{
-		return lifecycle;
-	}
-
-	public void setLifecycle(Lifecycle lifecycle)
-	{
-		this.lifecycle = lifecycle;
-	}
-
-	public Educational getEducational()
-	{
-		return educational;
-	}
-
-	public void setEducational(Educational educational)
-	{
-		this.educational = educational;
-	}
-
-	public General getGeneral()
-	{
-		return general;
-	}
-
-	public void setGeneral(General general)
-	{
-		this.general = general;
 	}
 }

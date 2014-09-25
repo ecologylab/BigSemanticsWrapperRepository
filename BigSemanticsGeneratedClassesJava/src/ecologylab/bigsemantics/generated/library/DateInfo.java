@@ -23,10 +23,10 @@ import java.util.Map;
 public class DateInfo extends Metadata
 {
 	@simpl_scalar
-	private MetadataDate created;
+	private MetadataDate accessioned;
 
 	@simpl_scalar
-	private MetadataDate accessioned;
+	private MetadataDate created;
 
 	public DateInfo()
 	{ super(); }
@@ -35,38 +35,6 @@ public class DateInfo extends Metadata
 		super(mmd);
 	}
 
-
-	public MetadataDate	created()
-	{
-		MetadataDate	result = this.created;
-		if (result == null)
-		{
-			result = new MetadataDate();
-			this.created = result;
-		}
-		return result;
-	}
-
-	public Date getCreated()
-	{
-		return this.created == null ? null : created().getValue();
-	}
-
-	public MetadataDate getCreatedMetadata()
-	{
-		return created;
-	}
-
-	public void setCreated(Date created)
-	{
-		if (created != null)
-			this.created().setValue(created);
-	}
-
-	public void setCreatedMetadata(MetadataDate created)
-	{
-		this.created = created;
-	}
 
 	public MetadataDate	accessioned()
 	{
@@ -98,5 +66,37 @@ public class DateInfo extends Metadata
 	public void setAccessionedMetadata(MetadataDate accessioned)
 	{
 		this.accessioned = accessioned;
+	}
+
+	public MetadataDate	created()
+	{
+		MetadataDate	result = this.created;
+		if (result == null)
+		{
+			result = new MetadataDate();
+			this.created = result;
+		}
+		return result;
+	}
+
+	public Date getCreated()
+	{
+		return this.created == null ? null : created().getValue();
+	}
+
+	public MetadataDate getCreatedMetadata()
+	{
+		return created;
+	}
+
+	public void setCreated(Date created)
+	{
+		if (created != null)
+			this.created().setValue(created);
+	}
+
+	public void setCreatedMetadata(MetadataDate created)
+	{
+		this.created = created;
 	}
 }

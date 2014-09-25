@@ -25,15 +25,15 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	[SimplInherit]
 	public class Contributor : Metadata
 	{
-		[SimplComposite]
-		[MmName("organization")]
-		private Organization organization;
+		[SimplScalar]
+		private MetadataInteger date;
 
 		[SimplScalar]
 		private MetadataString role;
 
-		[SimplScalar]
-		private MetadataInteger date;
+		[SimplComposite]
+		[MmName("organization")]
+		private Organization organization;
 
 		public Contributor()
 		{ }
@@ -41,14 +41,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		public Contributor(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public Organization Organization
+		public MetadataInteger Date
 		{
-			get{return organization;}
+			get{return date;}
 			set
 			{
-				if (this.organization != value)
+				if (this.date != value)
 				{
-					this.organization = value;
+					this.date = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -67,14 +67,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataInteger Date
+		public Organization Organization
 		{
-			get{return date;}
+			get{return organization;}
 			set
 			{
-				if (this.date != value)
+				if (this.organization != value)
 				{
-					this.date = value;
+					this.organization = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
