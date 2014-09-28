@@ -9,5 +9,6 @@
     </collection>
     <scalar name="width" scalar_type="Integer" hide="true" />
     <scalar name="height" scalar_type="Integer" hide="true" />
+    <scalar name="location" navigates_to="location"  layer="9.0" />
   </meta_metadata>
 </meta_metadata_repository>
