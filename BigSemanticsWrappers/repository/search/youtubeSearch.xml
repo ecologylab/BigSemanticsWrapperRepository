@@ -1,0 +1,25 @@
+
+  <meta_metadata_repository name="video"
+  package="ecologylab.bigsemantics.generated.library.search">
+  
+
+  <meta_metadata name="youtube_search_results" extends="search" parser="xpath"
+    comment="youtube video search results page">
+    <generic_type_var name="SR" arg="youtube_video" />
+    <selector url_stripped="http://www.youtube.com/results?" />
+    <selector url_stripped="https://www.youtube.com/results?" />
+    <example_url url="https://www.youtube.com/results?search_query=search"/>
+    <example_url url="https://www.youtube.com/results?search_query=windows+phone"/>
+    <collection name="search_results">
+      <xpath>//h3/a[@class='yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link
+        result-item-translation-title']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+  </meta_metadata_repository>

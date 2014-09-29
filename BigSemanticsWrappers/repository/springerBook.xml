@@ -33,7 +33,7 @@ package="ecologylab.bigsemantics.generated.library.springerbook" default_user_ag
 	      </scalar>
 	    </collection>
 
-      	<collection name="isbn" child_scalar_type="String">
+      	<collection name="isbns" child_scalar_type="String">
 	      <xpath>//*[@id="isbn"]/span</xpath>
 	    </collection>
 	    
@@ -78,7 +78,7 @@ package="ecologylab.bigsemantics.generated.library.springerbook" default_user_ag
  	 		<xpath>//*[@id="abstract-about-book-series-print-issn"]</xpath>
  	 	</scalar>
 
- 	 	<scalar name = "publisher" scalar_type = "String">
+ 	 	<scalar name = "puuublisher" scalar_type = "String">
  	 		<xpath>//*[@id="abstract-about-publisher"]</xpath>
  	 	</scalar>
  	 	

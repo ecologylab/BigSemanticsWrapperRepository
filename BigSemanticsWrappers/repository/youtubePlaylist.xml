@@ -1,0 +1,17 @@
+<meta_metadata_repository name="video"
+  package="ecologylab.bigsemantics.generated.library">
+
+  <meta_metadata name="yt_playlist" extends="rich_document">
+  	<selector url_stripped='https://www.youtube.com/playlist'/>
+  	<example_url url="https://www.youtube.com/playlist?list=PLmU8B4gZ41ieHBayEVXEUUgUs-YGKLk17"/>
+  	<collection name="yt_videos" child_type="rich_document">
+  		<xpath>//td[@class='pl-video-title']/a</xpath>
+  		<scalar name="title">
+  			<xpath>.</xpath>
+  		</scalar>
+  		<scalar name="location">
+  			<xpath>./@href</xpath>
+  		</scalar>
+  	</collection>
+  </meta_metadata>
+ </meta_metadata_repository>

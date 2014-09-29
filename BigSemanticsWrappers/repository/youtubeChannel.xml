@@ -1,0 +1,88 @@
+<meta_metadata_repository name="video"
+  package="ecologylab.bigsemantics.generated.library">
+  
+  
+  <meta_metadata name="youtube_channel" extends="rich_document" comment="youtube channels"
+    parser="xpath" user_agent_name="chrome">
+
+    <selector url_regex="https?://www.youtube.com/(user|channel)/.*((?!videos).)$" domain="youtube.com" />
+  
+    <example_url url="https://www.youtube.com/user/guggenheim"/>
+    <example_url url="https://www.youtube.com/user/PTXofficial"/>
+    <scalar name="title">
+      <xpath>//a[@class='spf-link branded-page-header-title-link yt-uix-sessionlink']/@title</xpath>
+    </scalar>
+
+    <collection name="featured_video" child_type="youtube_video">
+      <xpath>//div[@class='video-player-view-component branded-page-box']//div[@class='video-detail']/h3/a</xpath>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+      <scalar name="title">
+        <xpath>./@title</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="playlists" child_type="yt_playlist">
+      <xpath>//ul[@id='browse-items-primary']/li//h2</xpath>
+       <scalar name="title">
+        <xpath>.//span[@class='branded-page-module-title-text']/span</xpath>
+     	 </scalar>
+      <collection name="yt_videos">
+      	<xpath>./following-sibling::div//ul[@class='yt-uix-shelfslider-list']/li//h3/a</xpath>
+      	<scalar name="title">
+      		<xpath>.</xpath>
+      	</scalar>
+      	<scalar name="location">
+      		<xpath>./@href</xpath>
+      		
+      	</scalar>
+      </collection>
+     
+
+    </collection>
+  
+    <!--
+    <collection name="playlists" child_type="yt_playlist" child_extends="rich_document">
+      <xpath>//div[@class='compact-shelf shelf-item yt-uix-shelfslider yt-uix-shelfslider-at-head yt-uix-shelfslider-at-tail vve-check clearfix branded-page-box yt-section-hover-container fluid-shelf yt-uix-tdl']</xpath>
+      
+      <scalar name="title">
+        <xpath>./h2/a[1]/span/span</xpath>
+      </scalar>
+      <scalar name="description">
+        <xpath>.//div[@class='shelf-description yt-ui-ellipsis yt-ui-ellipsis-2']</xpath>
+      </scalar>
+      <collection name="videos" child_type="rich_document">
+        <xpath>.//div[@class='compact-shelf-content-container']/div/ul/li"</xpath>
+        <scalar name="title">
+          <xpath>.//h3/a/@href</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>.//h3/a/@href</xpath>
+        </scalar>
+
+
+      </collection>
+    </collection>
+    -->
+    <collection name="featured_channels" child_type="rich_document">
+      <xpath>//div[@class='branded-page-v2-secondary-col']/div[1]//li//h3/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="related_channels" child_type="youtube_channel">
+      <xpath>//div[@class='branded-page-v2-secondary-col']/div[2]//li//h3/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  
+</meta_metadata_repository>
