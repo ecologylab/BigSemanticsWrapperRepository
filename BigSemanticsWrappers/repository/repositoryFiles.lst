@@ -114,6 +114,9 @@ creativeWork/publication/ieeeJournal.xml
 creativeWork/publication/periodical.xml
 creativeWork/publication/publication.xml
 creativeWork/publication/pubmedJournal.xml
+creativeWork/publication/springerBook.xml
+creativeWork/publication/springerJournal.xml
+creativeWork/publication/springerSeriesSummary.xml
 creativeWork/scholarlyArticle/acmScholarlyArticle.xml
 creativeWork/scholarlyArticle/citeseerxRecord.xml
 creativeWork/scholarlyArticle/citeseerxSimilar.xml
@@ -131,6 +134,7 @@ creativeWork/scholarlyArticle/sageArticle.xml
 creativeWork/scholarlyArticle/scholarlyArticle.xml
 creativeWork/scholarlyArticle/scienceDirectArticle.xml
 creativeWork/scholarlyArticle/scopusArticle.xml
+creativeWork/scholarlyArticle/springerArticle.xml
 creativeWork/scholarlyArticle/wileyArticle.xml
 creativeWork/techReview/anandtechReview.xml
 creativeWork/techReview/cnetReview.xml
@@ -174,6 +178,7 @@ person/author/pubmedAuthor.xml
 person/author/researchgateAuthor.xml
 person/author/rhizomeArtist.xml
 person/author/scopusAuthor.xml
+person/author/springerEditor.xml
 person/author/tateArtist.xml
 person/author/tweeter.xml
 primitiveTypes/annotate.xml
@@ -232,6 +237,7 @@ search/rhizomeTag.xml
 search/scopusSearch.xml
 search/search.xml
 search/slashdotSearch.xml
+search/springerSearch.xml
 search/tateFilter.xml
 search/tumblrSearch.xml
 search/twitterSearch.xml
@@ -263,8 +269,6 @@ attractionList.xml
 camera.xml
 citeulikeTag.xml
 contactPoint.xml
-dleseRecord.xml
-dleseUserSearch.xml
 dublinCore.xml
 fastflipSearch.xml
 flamencoFacet.xml

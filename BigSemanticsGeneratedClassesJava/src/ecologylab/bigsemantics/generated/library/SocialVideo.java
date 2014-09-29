@@ -13,7 +13,6 @@ import ecologylab.bigsemantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
@@ -26,7 +25,6 @@ import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +35,7 @@ public class SocialVideo extends CreativeWork
 	 *Date on which video is uploaded
 	 */ 
 	@simpl_scalar
-	private MetadataDate uploadDate;
+	private MetadataString uploadDate;
 
 	/** 
 	 *video License
@@ -72,19 +70,19 @@ public class SocialVideo extends CreativeWork
 	 *Total number of likes recived
 	 */ 
 	@simpl_scalar
-	private MetadataInteger likes;
+	private MetadataString likes;
 
 	/** 
 	 *Total number of dislikes received
 	 */ 
 	@simpl_scalar
-	private MetadataInteger dislikes;
+	private MetadataString dislikes;
 
 	/** 
 	 *Total number of views
 	 */ 
 	@simpl_scalar
-	private MetadataInteger viewCount;
+	private MetadataString viewCount;
 
 	public SocialVideo()
 	{ super(); }
@@ -94,34 +92,34 @@ public class SocialVideo extends CreativeWork
 	}
 
 
-	public MetadataDate	uploadDate()
+	public MetadataString	uploadDate()
 	{
-		MetadataDate	result = this.uploadDate;
+		MetadataString	result = this.uploadDate;
 		if (result == null)
 		{
-			result = new MetadataDate();
+			result = new MetadataString();
 			this.uploadDate = result;
 		}
 		return result;
 	}
 
-	public Date getUploadDate()
+	public String getUploadDate()
 	{
 		return this.uploadDate == null ? null : uploadDate().getValue();
 	}
 
-	public MetadataDate getUploadDateMetadata()
+	public MetadataString getUploadDateMetadata()
 	{
 		return uploadDate;
 	}
 
-	public void setUploadDate(Date uploadDate)
+	public void setUploadDate(String uploadDate)
 	{
 		if (uploadDate != null)
 			this.uploadDate().setValue(uploadDate);
 	}
 
-	public void setUploadDateMetadata(MetadataDate uploadDate)
+	public void setUploadDateMetadata(MetadataString uploadDate)
 	{
 		this.uploadDate = uploadDate;
 	}
@@ -282,98 +280,98 @@ public class SocialVideo extends CreativeWork
 		this.numberOfComments = numberOfComments;
 	}
 
-	public MetadataInteger	likes()
+	public MetadataString	likes()
 	{
-		MetadataInteger	result = this.likes;
+		MetadataString	result = this.likes;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new MetadataString();
 			this.likes = result;
 		}
 		return result;
 	}
 
-	public Integer getLikes()
+	public String getLikes()
 	{
-		return this.likes == null ? 0 : likes().getValue();
+		return this.likes == null ? null : likes().getValue();
 	}
 
-	public MetadataInteger getLikesMetadata()
+	public MetadataString getLikesMetadata()
 	{
 		return likes;
 	}
 
-	public void setLikes(Integer likes)
+	public void setLikes(String likes)
 	{
-		if (likes != 0)
+		if (likes != null)
 			this.likes().setValue(likes);
 	}
 
-	public void setLikesMetadata(MetadataInteger likes)
+	public void setLikesMetadata(MetadataString likes)
 	{
 		this.likes = likes;
 	}
 
-	public MetadataInteger	dislikes()
+	public MetadataString	dislikes()
 	{
-		MetadataInteger	result = this.dislikes;
+		MetadataString	result = this.dislikes;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new MetadataString();
 			this.dislikes = result;
 		}
 		return result;
 	}
 
-	public Integer getDislikes()
+	public String getDislikes()
 	{
-		return this.dislikes == null ? 0 : dislikes().getValue();
+		return this.dislikes == null ? null : dislikes().getValue();
 	}
 
-	public MetadataInteger getDislikesMetadata()
+	public MetadataString getDislikesMetadata()
 	{
 		return dislikes;
 	}
 
-	public void setDislikes(Integer dislikes)
+	public void setDislikes(String dislikes)
 	{
-		if (dislikes != 0)
+		if (dislikes != null)
 			this.dislikes().setValue(dislikes);
 	}
 
-	public void setDislikesMetadata(MetadataInteger dislikes)
+	public void setDislikesMetadata(MetadataString dislikes)
 	{
 		this.dislikes = dislikes;
 	}
 
-	public MetadataInteger	viewCount()
+	public MetadataString	viewCount()
 	{
-		MetadataInteger	result = this.viewCount;
+		MetadataString	result = this.viewCount;
 		if (result == null)
 		{
-			result = new MetadataInteger();
+			result = new MetadataString();
 			this.viewCount = result;
 		}
 		return result;
 	}
 
-	public Integer getViewCount()
+	public String getViewCount()
 	{
-		return this.viewCount == null ? 0 : viewCount().getValue();
+		return this.viewCount == null ? null : viewCount().getValue();
 	}
 
-	public MetadataInteger getViewCountMetadata()
+	public MetadataString getViewCountMetadata()
 	{
 		return viewCount;
 	}
 
-	public void setViewCount(Integer viewCount)
+	public void setViewCount(String viewCount)
 	{
-		if (viewCount != 0)
+		if (viewCount != null)
 			this.viewCount().setValue(viewCount);
 	}
 
-	public void setViewCountMetadata(MetadataInteger viewCount)
+	public void setViewCountMetadata(MetadataString viewCount)
 	{
 		this.viewCount = viewCount;
 	}

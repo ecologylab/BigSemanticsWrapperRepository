@@ -11,7 +11,6 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
 import ecologylab.bigsemantics.generated.library.comment.Rating;
 import ecologylab.bigsemantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.generated.library.person.author.Author;
-import ecologylab.bigsemantics.metadata.builtins.Document;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -56,7 +55,7 @@ public class CreativeWork extends RichDocument
 	@simpl_collection
 	@simpl_scope("repository_documents")
 	@mm_name("references")
-	private List<Document> references;
+	private List<RichDocument> references;
 
 	/** 
 	 *Creatives that cite this work.
@@ -182,21 +181,21 @@ public class CreativeWork extends RichDocument
 		this.rating = rating;
 	}
 
-	public List<Document> getReferences()
+	public List<RichDocument> getReferences()
 	{
 		return references;
 	}
 
   // lazy evaluation:
-  public List<Document> references()
+  public List<RichDocument> references()
   {
     if (references == null)
-      references = new ArrayList<Document>();
+      references = new ArrayList<RichDocument>();
     return references;
   }
 
   // addTo:
-  public void addToReferences(Document element)
+  public void addToReferences(RichDocument element)
   {
     references().add(element);
   }
@@ -207,7 +206,7 @@ public class CreativeWork extends RichDocument
     return references == null ? 0 : references.size();
   }
 
-	public void setReferences(List<Document> references)
+	public void setReferences(List<RichDocument> references)
 	{
 		this.references = references;
 	}

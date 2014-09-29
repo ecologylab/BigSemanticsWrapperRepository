@@ -31,7 +31,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		/// Date on which video is uploaded
 		/// </summary>
 		[SimplScalar]
-		private MetadataDate uploadDate;
+		private MetadataString uploadDate;
 
 		/// <summary>
 		/// video License
@@ -66,19 +66,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		/// Total number of likes recived
 		/// </summary>
 		[SimplScalar]
-		private MetadataInteger likes;
+		private MetadataString likes;
 
 		/// <summary>
 		/// Total number of dislikes received
 		/// </summary>
 		[SimplScalar]
-		private MetadataInteger dislikes;
+		private MetadataString dislikes;
 
 		/// <summary>
 		/// Total number of views
 		/// </summary>
 		[SimplScalar]
-		private MetadataInteger viewCount;
+		private MetadataString viewCount;
 
 		public SocialVideo()
 		{ }
@@ -86,7 +86,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		public SocialVideo(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataDate UploadDate
+		public MetadataString UploadDate
 		{
 			get{return uploadDate;}
 			set
@@ -164,7 +164,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataInteger Likes
+		public MetadataString Likes
 		{
 			get{return likes;}
 			set
@@ -177,7 +177,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataInteger Dislikes
+		public MetadataString Dislikes
 		{
 			get{return dislikes;}
 			set
@@ -190,7 +190,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataInteger ViewCount
+		public MetadataString ViewCount
 		{
 			get{return viewCount;}
 			set

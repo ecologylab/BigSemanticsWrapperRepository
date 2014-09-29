@@ -9,14 +9,15 @@ package ecologylab.bigsemantics.generated.library;
  */
 
 import ecologylab.bigsemantics.generated.library.SocialVideo;
-import ecologylab.bigsemantics.generated.library.YoutubeChannel;
 import ecologylab.bigsemantics.generated.library.YoutubeVideo;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
@@ -37,9 +38,9 @@ public class YoutubeVideo extends SocialVideo
 	@mm_name("suggested_videos")
 	private List<YoutubeVideo> suggestedVideos;
 
-	@simpl_collection("youtube_channel")
+	@simpl_composite
 	@mm_name("creator_channel")
-	private List<YoutubeChannel> creatorChannel;
+	private RichDocument creatorChannel;
 
 	public YoutubeVideo()
 	{ super(); }
@@ -111,32 +112,12 @@ public class YoutubeVideo extends SocialVideo
 		this.suggestedVideos = suggestedVideos;
 	}
 
-	public List<YoutubeChannel> getCreatorChannel()
+	public RichDocument getCreatorChannel()
 	{
 		return creatorChannel;
 	}
 
-  // lazy evaluation:
-  public List<YoutubeChannel> creatorChannel()
-  {
-    if (creatorChannel == null)
-      creatorChannel = new ArrayList<YoutubeChannel>();
-    return creatorChannel;
-  }
-
-  // addTo:
-  public void addToCreatorChannel(YoutubeChannel element)
-  {
-    creatorChannel().add(element);
-  }
-
-  // size:
-  public int creatorChannelSize()
-  {
-    return creatorChannel == null ? 0 : creatorChannel.size();
-  }
-
-	public void setCreatorChannel(List<YoutubeChannel> creatorChannel)
+	public void setCreatorChannel(RichDocument creatorChannel)
 	{
 		this.creatorChannel = creatorChannel;
 	}

@@ -1,5 +1,5 @@
 <meta_metadata_repository name="springer_editor"
-  package="ecologylab.bigsemantics.generated.library.author.springereditor">
+  package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="springer_editor" extends="author" schema_org_itemtype="http://schema.org/Person"
     comment="An editor of a book or article on Springer Link.">

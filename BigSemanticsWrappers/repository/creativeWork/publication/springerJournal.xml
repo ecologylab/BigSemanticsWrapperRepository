@@ -1,5 +1,5 @@
 <meta_metadata_repository name="springer_journal" 
-package="ecologylab.bigsemantics.generated.library.springerjournal" default_user_agent="chrome">	
+package="ecologylab.bigsemantics.generated.library.creativeWork.publication" default_user_agent="chrome">	
 
 	
 	<cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
