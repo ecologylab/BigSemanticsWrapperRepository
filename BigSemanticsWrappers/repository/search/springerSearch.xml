@@ -2,6 +2,10 @@
   name="springerSearch" package="ecologylab.bigsemantics.generated.library.search" default_user_agent_name="chrome_32">
   <cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
   <meta_metadata name="springer_search" extends="search" comment="The springer search class" parser="xpath">
+    
+    
+    <generic_type_var name="SR" arg="springer_book" />
+    
     <selector url_stripped="http://link.springer.com/search" />
 	<example_url url="http://link.springer.com/search?facet-author=%22Marco+Ceccarelli%22"/>
   
