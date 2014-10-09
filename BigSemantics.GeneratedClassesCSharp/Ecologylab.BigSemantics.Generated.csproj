@@ -85,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\AcmPortalInstitutionProfile.cs" />
-    <Compile Include="Library\AdditionalMetadata.cs" />
     <Compile Include="Library\AskNatureExpert.cs" />
     <Compile Include="Library\AskNatureFunction.cs" />
     <Compile Include="Library\AskNatureGroup.cs" />
@@ -98,13 +97,11 @@
     <Compile Include="Library\AsosPage.cs" />
     <Compile Include="Library\Attraction.cs" />
     <Compile Include="Library\AttractionList.cs" />
-    <Compile Include="Library\Audience.cs" />
     <Compile Include="Library\Body.cs" />
     <Compile Include="Library\CameraSettings.cs" />
     <Compile Include="Library\CategoryInterviews.cs" />
     <Compile Include="Library\Channel.cs" />
     <Compile Include="Library\CiteulikeTag.cs" />
-    <Compile Include="Library\Collection.cs" />
     <Compile Include="Library\CommentNS\Comment.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -167,7 +164,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\ContactPoint.cs" />
-    <Compile Include="Library\Contributor.cs" />
     <Compile Include="Library\CreativeWorkNS\AmazonList.cs" />
     <Compile Include="Library\CreativeWorkNS\ArtworkNS\Artwork.cs" />
     <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\BritishCartoonArchive.cs" />
@@ -229,6 +225,9 @@
     <Compile Include="Library\CreativeWorkNS\PublicationNS\Periodical.cs" />
     <Compile Include="Library\CreativeWorkNS\PublicationNS\Publication.cs" />
     <Compile Include="Library\CreativeWorkNS\PublicationNS\PubmedJournal.cs" />
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerBook.cs" />
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerJournal.cs" />
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerSeriesSummary.cs" />
     <Compile Include="Library\CreativeWorkNS\PublicationNS\Subject.cs" />
     <Compile Include="Library\CreativeWorkNS\PublicationNS\TermType.cs" />
     <Compile Include="Library\CreativeWorkNS\RottenMovie.cs" />
@@ -254,6 +253,7 @@
     <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScienceDirectArticle.cs" />
     <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScopusArticle.cs" />
     <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\Sections.cs" />
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\SpringerArticle.cs" />
     <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\WileyArticle.cs" />
     <Compile Include="Library\CreativeWorkNS\SlashdotArticle.cs" />
     <Compile Include="Library\CreativeWorkNS\TechReviewNS\AnandtechReview.cs" />
@@ -261,14 +261,7 @@
     <Compile Include="Library\CreativeWorkNS\TechReviewNS\TechReview.cs" />
     <Compile Include="Library\CreativeWorkNS\TvShow.cs" />
     <Compile Include="Library\CreativeWorkNS\TvShowEpisode.cs" />
-    <Compile Include="Library\DateInfo.cs" />
     <Compile Include="Library\Dc.cs" />
-    <Compile Include="Library\DleseGetRecord.cs" />
-    <Compile Include="Library\DleseRecord.cs" />
-    <Compile Include="Library\DleseRecord2.cs" />
-    <Compile Include="Library\DleseRecordHead.cs" />
-    <Compile Include="Library\DleseUserSearch.cs" />
-    <Compile Include="Library\Educational.cs" />
     <Compile Include="Library\EventNS\Disaster.cs" />
     <Compile Include="Library\EventNS\Earthquake.cs" />
     <Compile Include="Library\EventNS\Event.cs">
@@ -281,14 +274,11 @@
     <Compile Include="Library\FondationCategoryCollection.cs" />
     <Compile Include="Library\FondationCollection.cs" />
     <Compile Include="Library\FondationTag.cs" />
-    <Compile Include="Library\General.cs" />
-    <Compile Include="Library\GetRecordAdditionalMetadata.cs" />
     <Compile Include="Library\GettyCollection.cs" />
     <Compile Include="Library\GettyExploration.cs" />
     <Compile Include="Library\GisLocation.cs" />
     <Compile Include="Library\GrantProgram.cs" />
     <Compile Include="Library\Head.cs" />
-    <Compile Include="Library\Head2.cs" />
     <Compile Include="Library\Header.cs" />
     <Compile Include="Library\IcdlBook.cs" />
     <Compile Include="Library\IcdlBookPreview.cs" />
@@ -300,9 +290,7 @@
     <Compile Include="Library\InstructableComment.cs" />
     <Compile Include="Library\InstructableTag.cs" />
     <Compile Include="Library\Item.cs" />
-    <Compile Include="Library\ItemRecord.cs" />
     <Compile Include="Library\JstorJournal.cs" />
-    <Compile Include="Library\Lifecycle.cs" />
     <Compile Include="Library\MediaContent.cs" />
     <Compile Include="Library\NsdlDocument.cs" />
     <Compile Include="Library\NsdlService.cs" />
@@ -312,7 +300,6 @@
     <Compile Include="Library\NsfProgramStaffList.cs" />
     <Compile Include="Library\OpenDNSDomain.cs" />
     <Compile Include="Library\Opml.cs" />
-    <Compile Include="Library\Organization.cs" />
     <Compile Include="Library\Outline.cs" />
     <Compile Include="Library\PatentClassification.cs" />
     <Compile Include="Library\PdfMixin.cs">
@@ -341,6 +328,7 @@
     <Compile Include="Library\PersonNS\AuthorNS\ResearchGateAuthor.cs" />
     <Compile Include="Library\PersonNS\AuthorNS\RhizomeArtist.cs" />
     <Compile Include="Library\PersonNS\AuthorNS\ScopusAuthor.cs" />
+    <Compile Include="Library\PersonNS\AuthorNS\SpringerEditor.cs" />
     <Compile Include="Library\PersonNS\AuthorNS\TateArtist.cs" />
     <Compile Include="Library\PersonNS\AuthorNS\Tweeter.cs" />
     <Compile Include="Library\PersonNS\BirthDetail.cs">
@@ -386,13 +374,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\Publisher.cs" />
-    <Compile Include="Library\RecordMetadata.cs" />
-    <Compile Include="Library\RecordMetaMetadata.cs" />
     <Compile Include="Library\RepositoryMetadataTypesScope.cs" />
     <Compile Include="Library\ResearchGateInstitution.cs" />
     <Compile Include="Library\ResearchGateInstitutionContactInfo.cs" />
     <Compile Include="Library\ResearchGateInstitutionDepartment.cs" />
-    <Compile Include="Library\ResultInfo.cs" />
     <Compile Include="Library\Rss.cs" />
     <Compile Include="Library\Rss22.cs" />
     <Compile Include="Library\SearchNS\AcmPortalSearch.cs" />
@@ -433,6 +418,7 @@
     <Compile Include="Library\SearchNS\SocialMediaSearchResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\SearchNS\SpringerSearch.cs" />
     <Compile Include="Library\SearchNS\TateFilter.cs" />
     <Compile Include="Library\SearchNS\TumblrSearch.cs" />
     <Compile Include="Library\SearchNS\TwitterSearchResults.cs" />
@@ -446,7 +432,6 @@
     <Compile Include="Library\SearchNS\YahooResultSet.cs" />
     <Compile Include="Library\SearchNS\YahooThumbnail.cs" />
     <Compile Include="Library\SearchResults.cs" />
-    <Compile Include="Library\SearchSection.cs" />
     <Compile Include="Library\SlashdotItem.cs" />
     <Compile Include="Library\SlashdotRss.cs" />
     <Compile Include="Library\SocialVideo.cs" />
