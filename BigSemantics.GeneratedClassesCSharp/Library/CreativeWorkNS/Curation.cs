@@ -31,15 +31,13 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 		private List<IRichArtifact<Metadata>> metadataCollection;
 
 		[SimplScalar]
-        [SimplTag("version")]
 		private MetadataString curationAppVersion;
 
 		[SimplScalar]
 		private MetadataString curationApp;
 
 		[SimplScalar]
-        [SimplTag("metadata_version")]
-		private MetadataFloat crossPlatformVersion;
+		private MetadataString crossPlatformVersion;
 
 		public Curation()
 		{ }
@@ -86,7 +84,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 			}
 		}
 
-        public MetadataFloat CrossPlatformVersion
+        public MetadataString CrossPlatformVersion
 		{
 			get{return crossPlatformVersion;}
 			set
