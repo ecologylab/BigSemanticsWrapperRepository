@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.ContactPoint;
+import ecologylab.bigsemantics.metadata.builtins.ContactPoint;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

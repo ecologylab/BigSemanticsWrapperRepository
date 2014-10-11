@@ -8,7 +8,6 @@ package ecologylab.bigsemantics.generated.library;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.YoutubeVideo;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -21,47 +20,47 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class YoutubeVideoList extends RichDocument
+public class YtPlaylist extends RichDocument
 {
-	@simpl_collection("youtube_video")
-	@mm_name("videos")
-	private List<YoutubeVideo> videos;
+	@simpl_collection("rich_document")
+	@mm_name("yt_videos")
+	private List<RichDocument> ytVideos;
 
-	public YoutubeVideoList()
+	public YtPlaylist()
 	{ super(); }
 
-	public YoutubeVideoList(MetaMetadataCompositeField mmd) {
+	public YtPlaylist(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
 
-	public List<YoutubeVideo> getVideos()
+	public List<RichDocument> getYtVideos()
 	{
-		return videos;
+		return ytVideos;
 	}
 
   // lazy evaluation:
-  public List<YoutubeVideo> videos()
+  public List<RichDocument> ytVideos()
   {
-    if (videos == null)
-      videos = new ArrayList<YoutubeVideo>();
-    return videos;
+    if (ytVideos == null)
+      ytVideos = new ArrayList<RichDocument>();
+    return ytVideos;
   }
 
   // addTo:
-  public void addToVideos(YoutubeVideo element)
+  public void addToYtVideos(RichDocument element)
   {
-    videos().add(element);
+    ytVideos().add(element);
   }
 
   // size:
-  public int videosSize()
+  public int ytVideosSize()
   {
-    return videos == null ? 0 : videos.size();
+    return ytVideos == null ? 0 : ytVideos.size();
   }
 
-	public void setVideos(List<YoutubeVideo> videos)
+	public void setYtVideos(List<RichDocument> ytVideos)
 	{
-		this.videos = videos;
+		this.ytVideos = ytVideos;
 	}
 }

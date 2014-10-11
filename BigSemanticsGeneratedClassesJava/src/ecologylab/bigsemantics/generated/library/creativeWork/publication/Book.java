@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.creativeWork.publication;
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.publication.Publication;
-import ecologylab.bigsemantics.generated.library.person.author.Author;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.person.author.Author;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;

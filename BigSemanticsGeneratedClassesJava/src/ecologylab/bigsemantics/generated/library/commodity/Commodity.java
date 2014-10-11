@@ -8,12 +8,12 @@ package ecologylab.bigsemantics.generated.library.commodity;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.GisLocation;
 import ecologylab.bigsemantics.generated.library.PostalAddress;
 import ecologylab.bigsemantics.generated.library.comment.Review;
 import ecologylab.bigsemantics.generated.library.commodity.Commodity;
 import ecologylab.bigsemantics.generated.library.commodity.LabeledSpecifications;
 import ecologylab.bigsemantics.generated.library.commodity.Specification;
+import ecologylab.bigsemantics.metadata.builtins.GisLocation;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
