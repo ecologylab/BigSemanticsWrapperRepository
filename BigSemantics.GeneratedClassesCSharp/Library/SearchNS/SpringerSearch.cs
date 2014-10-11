@@ -7,6 +7,7 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.PublicationNS;
 using Ecologylab.BigSemantics.Generated.Library.SearchNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
@@ -26,7 +27,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 	/// The springer search class
 	/// </summary>
 	[SimplInherit]
-	public class SpringerSearch<SR> : Search where SR : RichDocument
+	public class SpringerSearch : Search<SpringerBook>
 	{
 		[SimplCollection("search_filter")]
 		[MmName("search_filters")]

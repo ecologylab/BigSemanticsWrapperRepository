@@ -7,11 +7,11 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.PersonNS.AuthorNS;
 using Ecologylab.BigSemantics.Generated.Library.SearchNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.PersonNS.AuthorNS;
 using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;

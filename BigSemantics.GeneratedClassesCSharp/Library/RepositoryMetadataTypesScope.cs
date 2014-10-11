@@ -32,6 +32,10 @@ using Ecologylab.BigSemantics.Generated.Library.SearchNS.ImageSearchNS;
 using Ecologylab.BigSemantics.Generated.Library.WeatherReportNS;
 using Ecologylab.BigSemantics.Generated.Library.WikipediaPageNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.CommentNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.CreativeWorkNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.PersonNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.PersonNS.AuthorNS;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.BigSemantics.Generated.Library 
@@ -77,7 +81,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(AttractionList),
 				typeof(AudioClipping),
 				typeof(AudioSelfmade),
-				typeof(Author),
 				typeof(BasicPublication),
 				typeof(BedbathandbeyondProduct),
 				typeof(BestbuyProduct),
@@ -85,7 +88,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(BggGame),
 				typeof(BingSearchApi),
 				typeof(BingSearchXpath),
-				typeof(BirthDetail),
 				typeof(Blog),
 				typeof(BoardGame),
 				typeof(Body),
@@ -109,12 +111,8 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(CiteulikeTag),
 				typeof(CiteulikeUser),
 				typeof(CnetReview),
-				typeof(Comment),
 				typeof(Commodity),
-				typeof(ContactPoint),
 				typeof(CrateandbarrelProduct),
-				typeof(CreativeWork),
-				typeof(Curation),
 				typeof(Dc),
 				typeof(DcDocument),
 				typeof(Disaster),
@@ -144,7 +142,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(GettyObject),
 				typeof(GettySearch),
 				typeof(GettyWorkInfo),
-				typeof(GisLocation),
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
 				typeof(GooglePatent),
@@ -244,7 +241,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(PatentClassification),
 				typeof(PdfMixin),
 				typeof(Periodical),
-				typeof(Person),
 				typeof(PersonnelInterview),
 				typeof(Photostream),
 				typeof(PieroneProduct),
@@ -259,7 +255,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(PubmedArticle),
 				typeof(PubmedAuthor),
 				typeof(PubmedJournal),
-				typeof(Rating),
 				typeof(ResearchGateArticle),
 				typeof(ResearchGateArticleStats),
 				typeof(ResearchGateAuthor),
@@ -365,7 +360,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(YoutubeChannel),
 				typeof(YoutubeSearchResults),
 				typeof(YoutubeVideo),
-				typeof(YoutubeVideoList),
+				typeof(YtPlaylist),
 				typeof(ZaraProduct));
 		}
 	}
