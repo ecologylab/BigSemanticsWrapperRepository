@@ -1,7 +1,7 @@
 <meta_metadata_repository name="creative_work"
-  package="ecologylab.bigsemantics.generated.library.creativeWork">
+  package="ecologylab.bigsemantics.metadata.builtins.creativeWork">
   
-  <meta_metadata name="creative_work" extends="rich_document" schema_org_itemtype="http://schema.org/CreativeWork">
+  <meta_metadata name="creative_work" extends="rich_document" built_in="true" schema_org_itemtype="http://schema.org/CreativeWork">
     <collection name="authors" child_type="author" layer="8.0"
       schema_org_itemprop="author" />
     <scalar name="description"  label="abstract" layer="9.0" hint="XML_LEAF" />
