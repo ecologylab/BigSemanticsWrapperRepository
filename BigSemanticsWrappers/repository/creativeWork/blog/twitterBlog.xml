@@ -111,6 +111,13 @@
         <xpath>.//a[@class='ProfileTweet-timestamp js-permalink js-nav js-tooltip']/@href</xpath>
         <regex_op regex="[^/]+$" />
       </scalar>
+      
+      <collection name="main_images" child_type="image" hide_label="true">
+      	<xpath>.//div[@class='TwitterPhoto-container']//img[@class='TwitterPhoto-mediaSource']</xpath>
+      	<scalar name="location">
+	      <xpath>./@src</xpath>
+	    </scalar>
+      </collection>
 
     </collection>
   </meta_metadata>

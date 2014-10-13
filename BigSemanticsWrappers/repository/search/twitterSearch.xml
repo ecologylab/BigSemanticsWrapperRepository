@@ -59,6 +59,13 @@
         <regex_op regex="[^/]+$" />
       </scalar>
 
+	  <collection name="main_images" child_type="image" hide_label="true">
+      	<xpath>.//div[@class=' is-preview']/img</xpath>
+      	<scalar name="location">
+	      <xpath>./@src</xpath>
+	    </scalar>
+      </collection>
+
     </collection>
   </meta_metadata>
 </meta_metadata_repository>
