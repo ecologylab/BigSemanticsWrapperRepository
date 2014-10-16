@@ -8,10 +8,10 @@ package ecologylab.bigsemantics.generated.library.creativeWork.exhibition;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.generated.library.creativeWork.artwork.Artwork;
 import ecologylab.bigsemantics.generated.library.person.author.Artist;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;

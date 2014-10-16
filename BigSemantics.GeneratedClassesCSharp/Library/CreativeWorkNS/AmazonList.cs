@@ -8,10 +8,10 @@
 
 
 using Ecologylab.BigSemantics.Generated.Library.CommodityNS.ProductNS;
-using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.CreativeWorkNS;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;

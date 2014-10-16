@@ -8,11 +8,11 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.YoutubeVideo;
-import ecologylab.bigsemantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.generated.library.creativeWork.LeagueAbility;
 import ecologylab.bigsemantics.generated.library.creativeWork.LeagueRelationshipList;
+import ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

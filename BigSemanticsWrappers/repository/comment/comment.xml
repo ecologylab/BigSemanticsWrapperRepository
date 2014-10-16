@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><meta_metadata_repository name="comment"
-  package="ecologylab.bigsemantics.generated.library.comment">
+  package="ecologylab.bigsemantics.metadata.builtins.comment">
 
-  <meta_metadata name="comment" extends="rich_document">
-  
+  <meta_metadata name="comment" extends="rich_document" built_in="true">
     <composite name="author" type="person" />
     <scalar name="time" scalar_type="String" comment="How long this comment has been there." />
     <scalar name="count" scalar_type="Int" comment="How many votes this comment has got." />

@@ -8,6 +8,7 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2014) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creativeWork.publication.SpringerBook;
 import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.generated.library.search.SpringerSearch;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -26,7 +27,7 @@ import java.util.Map;
  *The springer search class
  */ 
 @simpl_inherit
-public class SpringerSearch extends Search
+public class SpringerSearch extends Search<SpringerBook>
 {
 	@simpl_collection("search_filter")
 	@mm_name("search_filters")

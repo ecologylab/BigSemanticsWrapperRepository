@@ -9,7 +9,8 @@ package ecologylab.bigsemantics.generated.library;
  */
 
 import ecologylab.bigsemantics.generated.library.YoutubeChannel;
-import ecologylab.bigsemantics.generated.library.YoutubeVideo;
+import ecologylab.bigsemantics.generated.library.YtPlaylist;
+import ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -31,17 +32,13 @@ public class YoutubeChannel extends RichDocument
 	@mm_name("featured_video")
 	private List<YoutubeVideo> featuredVideo;
 
-	@simpl_collection("youtube_video")
-	@mm_name("video_feed")
-	private List<YoutubeVideo> videoFeed;
+	@simpl_collection("yt_playlist")
+	@mm_name("playlists")
+	private List<YtPlaylist> playlists;
 
 	@simpl_collection("rich_document")
-	@mm_name("playlist")
-	private List<RichDocument> playlist;
-
-	@simpl_collection("youtube_channel")
 	@mm_name("featured_channels")
-	private List<YoutubeChannel> featuredChannels;
+	private List<RichDocument> featuredChannels;
 
 	@simpl_collection("youtube_channel")
 	@mm_name("related_channels")
@@ -85,81 +82,51 @@ public class YoutubeChannel extends RichDocument
 		this.featuredVideo = featuredVideo;
 	}
 
-	public List<YoutubeVideo> getVideoFeed()
+	public List<YtPlaylist> getPlaylists()
 	{
-		return videoFeed;
+		return playlists;
 	}
 
   // lazy evaluation:
-  public List<YoutubeVideo> videoFeed()
+  public List<YtPlaylist> playlists()
   {
-    if (videoFeed == null)
-      videoFeed = new ArrayList<YoutubeVideo>();
-    return videoFeed;
+    if (playlists == null)
+      playlists = new ArrayList<YtPlaylist>();
+    return playlists;
   }
 
   // addTo:
-  public void addToVideoFeed(YoutubeVideo element)
+  public void addToPlaylists(YtPlaylist element)
   {
-    videoFeed().add(element);
+    playlists().add(element);
   }
 
   // size:
-  public int videoFeedSize()
+  public int playlistsSize()
   {
-    return videoFeed == null ? 0 : videoFeed.size();
+    return playlists == null ? 0 : playlists.size();
   }
 
-	public void setVideoFeed(List<YoutubeVideo> videoFeed)
+	public void setPlaylists(List<YtPlaylist> playlists)
 	{
-		this.videoFeed = videoFeed;
+		this.playlists = playlists;
 	}
 
-	public List<RichDocument> getPlaylist()
-	{
-		return playlist;
-	}
-
-  // lazy evaluation:
-  public List<RichDocument> playlist()
-  {
-    if (playlist == null)
-      playlist = new ArrayList<RichDocument>();
-    return playlist;
-  }
-
-  // addTo:
-  public void addToPlaylist(RichDocument element)
-  {
-    playlist().add(element);
-  }
-
-  // size:
-  public int playlistSize()
-  {
-    return playlist == null ? 0 : playlist.size();
-  }
-
-	public void setPlaylist(List<RichDocument> playlist)
-	{
-		this.playlist = playlist;
-	}
-
-	public List<YoutubeChannel> getFeaturedChannels()
+	public List<RichDocument> getFeaturedChannels()
 	{
 		return featuredChannels;
 	}
 
   // lazy evaluation:
-  public List<YoutubeChannel> featuredChannels()
+  public List<RichDocument> featuredChannels()
   {
     if (featuredChannels == null)
-      featuredChannels = new ArrayList<YoutubeChannel>();
+      featuredChannels = new ArrayList<RichDocument>();
     return featuredChannels;
   }
 
   // addTo:
-  public void addToFeaturedChannels(YoutubeChannel element)
+  public void addToFeaturedChannels(RichDocument element)
   {
     featuredChannels().add(element);
   }
@@ -170,7 +137,7 @@ public class YoutubeChannel extends RichDocument
     return featuredChannels == null ? 0 : featuredChannels.size();
   }
 
-	public void setFeaturedChannels(List<YoutubeChannel> featuredChannels)
+	public void setFeaturedChannels(List<RichDocument> featuredChannels)
 	{
 		this.featuredChannels = featuredChannels;
 	}

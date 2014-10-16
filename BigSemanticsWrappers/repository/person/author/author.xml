@@ -1,7 +1,7 @@
 <meta_metadata_repository name="author"
-  package="ecologylab.bigsemantics.generated.library.person.author">
+  package="ecologylab.bigsemantics.metadata.builtins.person.author">
 
-  <meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person"
+  <meta_metadata name="author" extends="person" schema_org_itemtype="http://schema.org/Person" built_in="true"
     comment="An author of an article or creative work.">
     <scalar name="location" hide="true" schema_org_itemprop="url" />
     <scalar name="affiliation" scalar_type="String" schema_org_itemprop="affiliation" />

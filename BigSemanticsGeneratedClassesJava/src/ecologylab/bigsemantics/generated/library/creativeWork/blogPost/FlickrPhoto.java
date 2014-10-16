@@ -8,8 +8,8 @@ package ecologylab.bigsemantics.generated.library.creativeWork.blogPost;
  * Copyright (2014) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.GisLocation;
 import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post;
+import ecologylab.bigsemantics.metadata.builtins.GisLocation;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;

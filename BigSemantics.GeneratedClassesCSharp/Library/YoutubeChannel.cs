@@ -8,6 +8,7 @@
 
 
 using Ecologylab.BigSemantics.Generated.Library;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
@@ -31,17 +32,13 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		[MmName("featured_video")]
 		private List<YoutubeVideo> featuredVideo;
 
-		[SimplCollection("youtube_video")]
-		[MmName("video_feed")]
-		private List<YoutubeVideo> videoFeed;
+		[SimplCollection("yt_playlist")]
+		[MmName("playlists")]
+		private List<YtPlaylist> playlists;
 
 		[SimplCollection("rich_document")]
-		[MmName("playlist")]
-		private List<RichDocument> playlist;
-
-		[SimplCollection("youtube_channel")]
 		[MmName("featured_channels")]
-		private List<YoutubeChannel> featuredChannels;
+		private List<RichDocument> featuredChannels;
 
 		[SimplCollection("youtube_channel")]
 		[MmName("related_channels")]
@@ -66,33 +63,20 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public List<YoutubeVideo> VideoFeed
+		public List<YtPlaylist> Playlists
 		{
-			get{return videoFeed;}
+			get{return playlists;}
 			set
 			{
-				if (this.videoFeed != value)
+				if (this.playlists != value)
 				{
-					this.videoFeed = value;
+					this.playlists = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
 		}
 
-		public List<RichDocument> Playlist
-		{
-			get{return playlist;}
-			set
-			{
-				if (this.playlist != value)
-				{
-					this.playlist = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public List<YoutubeChannel> FeaturedChannels
+		public List<RichDocument> FeaturedChannels
 		{
 			get{return featuredChannels;}
 			set
