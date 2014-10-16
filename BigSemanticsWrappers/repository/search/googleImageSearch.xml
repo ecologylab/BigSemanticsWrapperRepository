@@ -2,8 +2,8 @@
   name="googleImageSearch" package="ecologylab.bigsemantics.generated.library.search"
   default_user_agent_name="chrome_2">
 
-  <meta_metadata name="google_image_search" type="image_search" comment="Google image search."
-    parser="xpath" user_agent_name="chrome_12">
+  <meta_metadata name="google_image_search" extends="image_search" comment="Google image search."
+    parser="xpath" >
     <selector url_stripped="https://www.google.com/search">
       <param name="tbm" value="isch" />
     </selector>    
@@ -19,14 +19,16 @@
 <!--       <set_param name="gbv" value="1" /> -->
 <!--       <set_param name="sei" value="1" /> -->
 <!--     </filter_location> -->
-
+	
     <collection name="search_results">
       <xpath>//div[@id='ires']//td</xpath>
       <scalar name="location" always_show="true">
         <xpath>./a/@href</xpath>
         <regex_op regex="^/url\?q=" replace="" />
       </scalar>
-      
+      	<scalar name ="title">
+      		<xpath>./cite</xpath>
+      	</scalar>
       <scalar name="thumb_width">
         <xpath>./a/img/@width</xpath>
       </scalar>
@@ -37,12 +39,14 @@
       	<xpath>./b/following-sibling::text()[1]</xpath>
       </scalar>
       <collection name="main_images">
+      	<xpath>./a</xpath>
       	<scalar name="location">
-      		<xpath>./a/img/@src</xpath>
+      		<xpath>./img/@src</xpath>
       		<regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
       	</scalar>
       </collection>
     </collection>
+    
     <semantic_actions>
       <get_field name="search_results" />
       <for_each collection="search_results" as="result">
@@ -50,15 +54,14 @@
         <parse_document>
           <arg name="location" value="location" />
         </parse_document>
-<!-- 				<create_and_visualize_img_surrogate> -->
-<!-- 					<arg name="image_purl" value="location" /> -->
-<!-- 				</create_and_visualize_img_surrogate> -->
+
         <get_field object="result" name="ref_location" />
         <parse_document>
           <arg name="location" value="ref_location" />
         </parse_document>
       </for_each>
     </semantic_actions>
+-
   </meta_metadata>
 
 </meta_metadata_repository>
