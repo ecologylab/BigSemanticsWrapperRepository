@@ -3,7 +3,7 @@
   
   
   <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath"
-    user_agent_name="google_bot_2">
+    user_agent_name="google_bot_2" extract_with="service">
 
 		<!-- Pages are interpreted as acm_portal documents if their stripped url's match either of these "selectors" -->
 		<!-- Selector logic can also use a regex. -->
