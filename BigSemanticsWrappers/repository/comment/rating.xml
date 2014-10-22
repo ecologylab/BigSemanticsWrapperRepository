@@ -1,9 +1,9 @@
 <meta_metadata_repository name="rating"
-  package="ecologylab.bigsemantics.generated.library.comment">
+  package="ecologylab.bigsemantics.metadata.builtins.comment">
 
 
 
-  <meta_metadata name="rating" extends="comment" schema_org_itemtype="http://schema.org/AggregateRating">
+  <meta_metadata name="rating" extends="comment" built_in="true" schema_org_itemtype="http://schema.org/AggregateRating">
     <scalar name="count" schema_org_itemprop="ratingCount" />
     <scalar name="rating" scalar_type="String" schema_org_itemprop="ratingValue" />
   </meta_metadata>

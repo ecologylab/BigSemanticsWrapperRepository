@@ -1,0 +1,45 @@
+<meta_metadata_repository
+  name="googleScholarAuthor" package="ecologylab.bigsemantics.generated.library.search">
+  
+    <meta_metadata name="google_scholar_author_search_result" extends="search_result" show_expanded_always="true" 
+    comment="A search result.">
+    <scalar name="description" label="snippet" />
+    <scalar name="site_link" scalar_type="String"/>
+    <composite name="destination_page" type="rich_document" />
+    <scalar name="citation_count" scalar_type="String"/>
+  </meta_metadata>
+
+  
+   <meta_metadata name="google_scholar_author_search" extends="search" parser="xpath"
+    comment="The Google search class">
+    <generic_type_var name="SR" arg="google_scholar_author_search_result" />
+    <selector url_regex="http://scholar\.google\.com/citations\?view_op=search_authors.*" domain="google.com" />
+    <example_url
+      url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
+      <scalar name="query">	
+      	<xpath>//input[@id='gs_hdr_frm_in_txt']/@value</xpath>
+      	<regex_op regex="label:" replace=""/>
+      </scalar>
+      <collection name="search_results">
+      	<xpath>//*[@class='gsc_1usr_text']</xpath>
+      	<scalar name="title">
+      		<xpath>./h3/a</xpath>
+      	</scalar>
+      	<scalar name="description">
+      		<xpath>./div[@class='gsc_1usr_aff']</xpath>
+      	</scalar>
+      	<scalar name="citation_count">
+      		<xpath>./div[@class='gsc_1usr_cby']</xpath>
+      	</scalar>
+      	<composite name="destination_page">
+      		<xpath>./h3/a</xpath>
+      		<scalar name="title">
+      			<xpath>.</xpath>
+      		</scalar>
+      		<scalar name="location">
+      			<xpath>./@href</xpath>
+      		</scalar>
+      	</composite>
+      </collection>
+	</meta_metadata>
+</meta_metadata_repository>	

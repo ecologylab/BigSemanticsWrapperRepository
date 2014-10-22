@@ -7,9 +7,9 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;

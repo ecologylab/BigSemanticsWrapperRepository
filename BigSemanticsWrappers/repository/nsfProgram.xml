@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library">
 
  
-  <meta_metadata name="nsf_program" extends="grant_program" parser="xpath">
+  <meta_metadata name="nsf_program" extends="grant_program" parser="xpath" extract_with="service">
     <selector url_stripped="http://www.nsf.gov/funding/pgm_summ.jsp" />
     <selector url_regex="http://www.nsf.gov/awardsearch/afSearch.do?ProgEleCode=.*" domain="nsf.gov" />
     <example_url url="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503302" />

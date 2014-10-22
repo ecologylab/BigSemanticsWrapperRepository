@@ -9,8 +9,8 @@ package ecologylab.bigsemantics.generated.library.person;
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.Movie;
-import ecologylab.bigsemantics.generated.library.person.Person;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.person.Person;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

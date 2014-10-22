@@ -9,9 +9,9 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.BoardGame;
-import ecologylab.bigsemantics.generated.library.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
+import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

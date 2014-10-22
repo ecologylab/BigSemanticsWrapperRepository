@@ -71,9 +71,11 @@ creativeWork/patent.xml
 creativeWork/pinterestPin.xml
 creativeWork/rottenTomatoeMovie.xml
 creativeWork/slashdotPost.xml
+creativeWork/socialVideo.xml
 creativeWork/tvComShow.xml
 creativeWork/tvShow.xml
 creativeWork/tvShowEpisode.xml
+creativeWork/youtubeVideo.xml
 creativeWork/artwork/artwork.xml
 creativeWork/artwork/flamencoObject.xml
 creativeWork/artwork/gettyArtwork.xml
@@ -167,6 +169,7 @@ person/author/flickrAuthor.xml
 person/author/gettyArtist.xml
 person/author/googlePatentAuthor.xml
 person/author/googleScholarAuthor.xml
+person/author/idea_mache_user.xml
 person/author/ieeeAuthor.xml
 person/author/instructableAuthor.xml
 person/author/investigator.xml
@@ -246,6 +249,7 @@ search/whitneyDecade.xml
 search/whitneySearch.xml
 search/wikipediaSearch.xml
 search/yahooSearch.xml
+search/youtubeSearch.xml
 search/imageSearch/imageSearch.xml
 search/imageSearch/imgurSearch.xml
 search/imageSearch/pinterestImageSearch.xml
@@ -314,5 +318,6 @@ slashdotRSS.xml
 thumbnail.xml
 tripAdvisor.xml
 tvtropes.xml
-video.xml
 yahooRss.xml
+youtubeChannel.xml
+youtubePlaylist.xml

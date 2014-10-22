@@ -7,11 +7,10 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ScholarlyArticleNS;
-using Ecologylab.BigSemantics.Generated.Library.PersonNS.AuthorNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.PersonNS.AuthorNS;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
@@ -25,9 +24,21 @@ namespace Ecologylab.BigSemantics.Generated.Library.PersonNS.AuthorNS
 	[SimplInherit]
 	public class GoogleScholarAuthor : Author
 	{
-		[SimplCollection("google_scholar_article_facts")]
-		[MmName("articles")]
-		private List<GoogleScholarArticleFacts> articles;
+		[SimplCollection("rich_document")]
+		[MmName("interests")]
+		private List<RichDocument> interests;
+
+		[SimplComposite]
+		[MmName("homepage")]
+		private RichDocument homepage;
+
+		[SimplCollection("rich_document")]
+		[MmName("top_coauthors")]
+		private List<RichDocument> topCoauthors;
+
+		[SimplCollection("rich_document")]
+		[MmName("papers")]
+		private List<RichDocument> papers;
 
 		public GoogleScholarAuthor()
 		{ }
@@ -35,14 +46,53 @@ namespace Ecologylab.BigSemantics.Generated.Library.PersonNS.AuthorNS
 		public GoogleScholarAuthor(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public List<GoogleScholarArticleFacts> Articles
+		public List<RichDocument> Interests
 		{
-			get{return articles;}
+			get{return interests;}
 			set
 			{
-				if (this.articles != value)
+				if (this.interests != value)
 				{
-					this.articles = value;
+					this.interests = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public RichDocument Homepage
+		{
+			get{return homepage;}
+			set
+			{
+				if (this.homepage != value)
+				{
+					this.homepage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<RichDocument> TopCoauthors
+		{
+			get{return topCoauthors;}
+			set
+			{
+				if (this.topCoauthors != value)
+				{
+					this.topCoauthors = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<RichDocument> Papers
+		{
+			get{return papers;}
+			set
+			{
+				if (this.papers != value)
+				{
+					this.papers = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

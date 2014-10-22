@@ -1,7 +1,7 @@
 <meta_metadata_repository name="curation"
-  package="ecologylab.bigsemantics.generated.library.creativeWork">
+  package="ecologylab.bigsemantics.metadata.builtins.creativeWork">
 	
-  <meta_metadata name="curation" extends="creative_work">
+  <meta_metadata name="curation" extends="creative_work" built_in="true">
     <collection name="metadata_collection" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope"
                 covariant="true" />
     <scalar name="curation_app_version"  scalar_type="String" hide="true" />

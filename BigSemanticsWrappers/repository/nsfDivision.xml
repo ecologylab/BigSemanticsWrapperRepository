@@ -1,7 +1,7 @@
 <meta_metadata_repository name="nsfDivision"
   package="ecologylab.bigsemantics.generated.library">
 
-  <meta_metadata name="nsf_division" extends="rich_document" parser="xpath">
+  <meta_metadata name="nsf_division" extends="rich_document" parser="xpath" extract_with="service">
     <selector url_stripped="http://www.nsf.gov/div/index.jsp" />
     <example_url url="http://www.nsf.gov/div/index.jsp?div=IIS" />
 

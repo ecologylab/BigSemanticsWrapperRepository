@@ -56,8 +56,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.CiteulikeTag.class,
 
-		ecologylab.bigsemantics.generated.library.ContactPoint.class,
-
 		ecologylab.bigsemantics.generated.library.Dc.class,
 
 		ecologylab.bigsemantics.generated.library.FastflipSearch.class,
@@ -75,8 +73,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.GettyCollection.class,
 
 		ecologylab.bigsemantics.generated.library.GettyExploration.class,
-
-		ecologylab.bigsemantics.generated.library.GisLocation.class,
 
 		ecologylab.bigsemantics.generated.library.GrantProgram.class,
 
@@ -154,8 +150,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.SlashdotRss.class,
 
-		ecologylab.bigsemantics.generated.library.SocialVideo.class,
-
 		ecologylab.bigsemantics.generated.library.Thumbnail.class,
 
 		ecologylab.bigsemantics.generated.library.TribunalVoices.class,
@@ -174,13 +168,7 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.YoutubeChannel.class,
 
-		ecologylab.bigsemantics.generated.library.YoutubeSearchResults.class,
-
-		ecologylab.bigsemantics.generated.library.YoutubeVideo.class,
-
-		ecologylab.bigsemantics.generated.library.YoutubeVideoList.class,
-
-		ecologylab.bigsemantics.generated.library.comment.Comment.class,
+		ecologylab.bigsemantics.generated.library.YtPlaylist.class,
 
 		ecologylab.bigsemantics.generated.library.comment.DcDocument.class,
 
@@ -189,8 +177,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.comment.IcdlImage.class,
 
 		ecologylab.bigsemantics.generated.library.comment.Nsdl.class,
-
-		ecologylab.bigsemantics.generated.library.comment.Rating.class,
 
 		ecologylab.bigsemantics.generated.library.comment.Review.class,
 
@@ -294,10 +280,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.BoardGame.class,
 
-		ecologylab.bigsemantics.generated.library.creativeWork.CreativeWork.class,
-
-		ecologylab.bigsemantics.generated.library.creativeWork.Curation.class,
-
 		ecologylab.bigsemantics.generated.library.creativeWork.FondationArticle.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.GooglePatent.class,
@@ -330,9 +312,13 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.SlashdotArticle.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.TvShow.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.TvShowEpisode.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.artwork.Artwork.class,
 
@@ -484,8 +470,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.event.Icsmd.class,
 
-		ecologylab.bigsemantics.generated.library.person.BirthDetail.class,
-
 		ecologylab.bigsemantics.generated.library.person.CiteulikeUser.class,
 
 		ecologylab.bigsemantics.generated.library.person.FashionReviewer.class,
@@ -498,8 +482,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.person.NsfStaff.class,
 
-		ecologylab.bigsemantics.generated.library.person.Person.class,
-
 		ecologylab.bigsemantics.generated.library.person.RottenPerson.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.AcmPortalAuthor.class,
@@ -509,8 +491,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.person.author.AcmPortalAuthorPublicationDetail.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.Artist.class,
-
-		ecologylab.bigsemantics.generated.library.person.author.Author.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.CiteulikeAuthor.class,
 
@@ -649,6 +629,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.YahooResultSet.class,
 
 		ecologylab.bigsemantics.generated.library.search.YahooThumbnail.class,
+
+		ecologylab.bigsemantics.generated.library.search.YoutubeSearchResults.class,
 
 		ecologylab.bigsemantics.generated.library.search.imageSearch.ImageSearch.class,
 

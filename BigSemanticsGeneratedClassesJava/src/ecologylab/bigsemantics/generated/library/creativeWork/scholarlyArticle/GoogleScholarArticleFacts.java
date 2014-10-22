@@ -9,9 +9,9 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.GoogleScholarArticle;
-import ecologylab.bigsemantics.generated.library.person.author.Author;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
+import ecologylab.bigsemantics.metadata.builtins.person.author.Author;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;

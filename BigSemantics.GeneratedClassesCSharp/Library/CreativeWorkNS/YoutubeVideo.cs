@@ -7,7 +7,7 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecologylab.BigSemantics.Generated.Library 
+namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS 
 {
 	/// <summary>
 	/// youtube video view page

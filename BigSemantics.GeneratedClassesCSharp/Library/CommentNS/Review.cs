@@ -7,9 +7,9 @@
 //
 
 
-using Ecologylab.BigSemantics.Generated.Library.CommentNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.CommentNS;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;

@@ -1,0 +1,9 @@
+<meta_metadata_repository name="idea_mache_user"
+  package="ecologylab.bigsemantics.metadata.builtins.person.author">
+  
+  <meta_metadata name="idea_mache_user" extends="author" built_in="true">
+    <scalar name="title" comment="The user name registered with IdeaMACHE." />
+    <collection name="creative_works" child_type="curation" /><!-- or mache if we have that type -->
+  </meta_metadata>
+  
+</meta_metadata_repository>
