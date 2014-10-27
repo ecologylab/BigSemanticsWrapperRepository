@@ -3,7 +3,7 @@
   default_user_agent_name="chrome_2">
 
   <meta_metadata name="google_image_search" extends="image_search" comment="Google image search."
-    parser="xpath" >
+    parser="xpath" extract_with="service">
     <selector url_stripped="https://www.google.com/search">
       <param name="tbm" value="isch" />
     </selector>    
