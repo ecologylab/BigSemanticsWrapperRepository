@@ -566,6 +566,12 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.search.GettySearch.class,
 
+		ecologylab.bigsemantics.generated.library.search.GoogleImageSearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.GoogleScholarAuthorSearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.GoogleScholarAuthorSearchResult.class,
+
 		ecologylab.bigsemantics.generated.library.search.GoogleScholarSearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.GoogleScholarSearchResult.class,
