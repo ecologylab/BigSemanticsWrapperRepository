@@ -4,10 +4,16 @@
 
   <meta_metadata name="google_image_search" extends="image_search" comment="Google image search."
     parser="xpath" extract_with="service">
-    <selector url_stripped="https://www.google.com/search">
+<!--     <selector url_stripped="https://www.google.com/search"> -->
+<!--       <param name="tbm" value="isch" /> -->
+<!--     </selector>     -->
+<!--     <selector url_stripped="http://www.google.com/search"> -->
+<!--       <param name="tbm" value="isch" /> -->
+<!--     </selector> -->
+    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
       <param name="tbm" value="isch" />
-    </selector>    
-    <selector url_stripped="http://www.google.com/search">
+    </selector>
+    <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com">
       <param name="tbm" value="isch" />
     </selector>
     <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
@@ -19,6 +25,15 @@
 <!--       <set_param name="gbv" value="1" /> -->
 <!--       <set_param name="sei" value="1" /> -->
 <!--     </filter_location> -->
+
+    <filter_location>
+      <override_params />
+      <strip_param name="source" />
+      <strip_param name="newwindow" />
+      <strip_param name="biw" />
+      <strip_param name="bih" />
+      <strip_param name="oq" />
+    </filter_location>
 	
     <collection name="search_results">
       <xpath>//div[@id='ires']//td</xpath>

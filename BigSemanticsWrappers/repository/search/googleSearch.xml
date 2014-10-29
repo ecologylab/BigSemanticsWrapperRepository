@@ -4,10 +4,18 @@
    <meta_metadata name="google_search" extends="search" parser="xpath"
     comment="The Google search class">
     <generic_type_var name="SR" arg="search_result" />
-    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com" />
-    <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com" />
+    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
+      <param name="tbm" value_is_not="isch" />
+    </selector>
+    <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com">
+      <param name="tbm" value_is_not="isch" />
+    </selector>
     <example_url
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
+	
+    <filter_location>
+      <override_params />
+    </filter_location>
 	
     <scalar name="query" style_name="google_query" layer="9.1">
       <xpath>//input[@name='q']/@value</xpath>

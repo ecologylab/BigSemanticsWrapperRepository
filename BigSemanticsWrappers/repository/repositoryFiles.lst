@@ -226,6 +226,7 @@ search/gettySearch.xml
 search/googleImageSearch.xml
 search/googleScholarSearch.xml
 search/googleSearch.xml
+search/gScholarAuthorSearch.xml
 search/guggenFilter.xml
 search/ieeeSearch.xml
 search/jstorSearch.xml
