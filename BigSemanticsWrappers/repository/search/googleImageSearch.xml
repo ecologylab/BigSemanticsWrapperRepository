@@ -39,7 +39,8 @@
       <xpath>//div[@id='ires']//td</xpath>
       <scalar name="location" always_show="true">
         <xpath>./a/@href</xpath>
-        <regex_op regex="^/url\?q=" replace="" />
+        <location_op extract_param="q" decode_url="true" />
+        
       </scalar>
       	<scalar name ="title">
       		<xpath>./cite</xpath>
