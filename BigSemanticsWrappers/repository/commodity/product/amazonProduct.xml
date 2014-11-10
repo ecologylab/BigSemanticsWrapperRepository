@@ -82,7 +82,7 @@
       </scalar>
     </composite>
 
-    <collection name="companion_products" child_type="amazon_product" is_facet="true">
+    <collection name="companion_products" child_type="amazon_product" facet_type="ordinal">
 <!--       <xpath>//div[@id='vtpsims']/ul/li</xpath> -->
 <!-- 	  <xpath>//div[@class='shoveler-content']</xpath> -->
 	  <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath>

@@ -53,7 +53,7 @@
       </scalar>
     </composite>
 
-    <collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true">
+    <collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true" facet_type="ordinal">
       <xpath>//div[@name='for-testing']</xpath>
       <xpath>//div[@id='divmain']//a[@title='Author Profile Page']</xpath>
       <scalar name="title">
@@ -134,7 +134,7 @@
       <xpath>//h1/a[contains(text(), 'ABSTRACT')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]/div[1]</xpath>
     </scalar>
 
-    <collection name="references" child_type="acm_portal">
+    <collection name="references" child_type="acm_portal" facet_type="quant">
       <xpath>//h1/a/span[contains(text(), 'REFERENCES')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[3]</xpath>
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
@@ -153,7 +153,7 @@
       </composite>
     </collection>
 
-    <collection name="citations" child_type="acm_portal">
+    <collection name="citations" child_type="acm_portal" facet_type="quant">
       <xpath>//h1/a/span[contains(text(), 'CITED BY')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//tr/td[2]</xpath>
       <field_parser name="acm_reference" for_each_element="true" />
       <scalar name="title" layer="20.0" field_parser_key="$title" />
