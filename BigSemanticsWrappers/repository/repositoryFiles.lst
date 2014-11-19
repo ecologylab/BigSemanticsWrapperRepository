@@ -192,6 +192,7 @@ primitiveTypes/audioSelfmade.xml
 primitiveTypes/cachedHTML.xml
 primitiveTypes/clippableDocument.xml
 primitiveTypes/clipping.xml
+primitiveTypes/couchdbEntry.xml
 primitiveTypes/creativeAct.xml
 primitiveTypes/curateLink.xml
 primitiveTypes/debugMetadata.xml
@@ -207,6 +208,7 @@ primitiveTypes/mediaProvider.xml
 primitiveTypes/metadata.xml
 primitiveTypes/pdf.xml
 primitiveTypes/pdfMixin.xml
+primitiveTypes/persistenceMetalnfo.xml
 primitiveTypes/richArtifact.xml
 primitiveTypes/richDocument.xml
 primitiveTypes/sequencedClippableDocument.xml
@@ -226,6 +228,7 @@ search/gettySearch.xml
 search/googleImageSearch.xml
 search/googleScholarSearch.xml
 search/googleSearch.xml
+search/gScholarAuthorSearch.xml
 search/guggenFilter.xml
 search/ieeeSearch.xml
 search/jstorSearch.xml

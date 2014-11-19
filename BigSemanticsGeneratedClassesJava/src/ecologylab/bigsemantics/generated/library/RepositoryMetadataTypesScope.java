@@ -538,6 +538,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.primitives.CachedHtml.class,
 
+		ecologylab.bigsemantics.generated.library.primitives.CouchdbEntry.class,
+
 		ecologylab.bigsemantics.generated.library.primitives.InformationCompositionMedia.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.MacheClipping.class,
@@ -565,6 +567,12 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.CiteulikeSearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.GettySearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.GoogleImageSearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.GoogleScholarAuthorSearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.GoogleScholarAuthorSearchResult.class,
 
 		ecologylab.bigsemantics.generated.library.search.GoogleScholarSearch.class,
 
