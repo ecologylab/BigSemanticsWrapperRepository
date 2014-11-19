@@ -1,0 +1,16 @@
+<meta_metadata_repository name="metadata" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="persistence_meta_info" extends="metadata" 
+    comment="The PersistenceMetaInfo Class" built_in="true">
+    <scalar name = "doc_id"  scalar_type = "String" ></scalar>
+    <scalar name = "location" scalar_type = "ParsedURL" ></scalar>
+    <collection name = "additional_locations" child_scalar_type = "ParsedURL"></collection>
+    <scalar name = "charset"         scalar_type = "String" ></scalar>
+    <scalar name = "mime_type"        scalar_type = "String" ></scalar>
+    <scalar name = "access_time"      scalar_type = "Date" ></scalar>
+    <scalar name = "persistence_time" scalar_type = "Date" ></scalar>
+    <scalar name = "mmd_hash"         scalar_type = "String" ></scalar>
+    
+  </meta_metadata>
+</meta_metadata_repository>
