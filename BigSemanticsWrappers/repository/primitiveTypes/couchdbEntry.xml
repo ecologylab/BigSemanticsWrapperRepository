@@ -1,0 +1,10 @@
+<meta_metadata_repository name="cachedHTML" package="ecologylab.bigsemantics.generated.library.primitives"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="couchdb_entry" extends="document"
+    comment="The data structure for cached HTML pages.">
+    <scalar name="id" scalar_type="String" other_tags="_id" />
+    <scalar name="revision" scalar_type="String" other_tags="_rev" />
+    <composite name="value" type="metadata" polymorphic_scope="repository_metadata"/>
+  </meta_metadata>
+</meta_metadata_repository>

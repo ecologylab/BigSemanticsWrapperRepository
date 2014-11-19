@@ -538,6 +538,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.primitives.CachedHtml.class,
 
+		ecologylab.bigsemantics.generated.library.primitives.CouchdbEntry.class,
+
 		ecologylab.bigsemantics.generated.library.primitives.InformationCompositionMedia.class,
 
 		ecologylab.bigsemantics.generated.library.primitives.MacheClipping.class,

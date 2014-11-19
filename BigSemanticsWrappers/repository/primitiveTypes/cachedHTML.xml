@@ -1,8 +1,8 @@
-<meta_metadata_repository name="cachedHTML" package="ecologylab.bigsemantics.metadata.builtins"
+<meta_metadata_repository name="cachedHTML" package="ecologylab.bigsemantics.generated.library.primitives"
   default_user_agent_name="firefox_3_5">
 
   <meta_metadata name="cached_html" extends="document"
-    package="ecologylab.bigsemantics.generated.library.primitives" comment="The data structure for cached HTML pages.">
+    comment="The data structure for cached HTML pages.">
     <scalar name="user_agent" scalar_type="String" />
     <scalar name="access_time" scalar_type="Date" />
     <scalar name="http_response_code" scalar_type="Int" />
