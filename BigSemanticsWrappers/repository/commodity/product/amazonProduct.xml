@@ -15,7 +15,7 @@
 
     <filter_location strip_prefix="/ref=" />
 
-    <scalar name="title">
+    <scalar name="title" facet_type="ordered">
       <xpath>//h1[@id='title' or @class='parseasinTitle ']</xpath>
     </scalar>
     <scalar name="description">
@@ -82,7 +82,7 @@
       </scalar>
     </composite>
 
-    <collection name="companion_products" child_type="amazon_product">
+    <collection name="companion_products" child_type="amazon_product" facet_type="ordinal">
 <!--       <xpath>//div[@id='vtpsims']/ul/li</xpath> -->
 <!-- 	  <xpath>//div[@class='shoveler-content']</xpath> -->
 	  <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath>
