@@ -5,7 +5,7 @@
   <meta_metadata name="netflix_movie" extends="movie" parser="xpath">
     <selector url_path_tree="http://www.netflix.com/" />
 
-    <example_url url="http://movies.netflix.com/Movie/A_Dangerous_Method/70158333" />
+    <example_url url="http://www.netflix.com/WiMovie/70158333?trkid=3565916" />
 
     <def_var name="metadata_content">
       <xpath>//div[@id='mdp-metadata-content']</xpath>
