@@ -27,7 +27,7 @@
 	</collection>
 	
 	<!-- special characters (dash) get deleted -->
-    <example_url url="http://www.metmuseum.org/Collections/search-the-collections/436576" />
+    <example_url url="http://www.metmuseum.org/collection/the-collection-online/search/436576" />
     <scalar name="year">
       <xpath>//strong[contains(text(),'Date:')]/../text()</xpath>
     </scalar>
