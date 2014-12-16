@@ -5,7 +5,6 @@
   <meta_metadata name="acm_portal_author_collaborators" extends="rich_document" parser="xpath">
     <selector url_regex="http://dl.acm.org/author_page.cfm.+dsp=coll.*" domain="acm.org" />
     <example_url url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;dsp=coll" />
-		<example_url url="http://dl.acm.org/author_page.cfm?id=81100091670" />
     <scalar name="title">
       <xpath>//span/strong/text()</xpath>
     </scalar>
@@ -31,7 +30,7 @@
 
   <meta_metadata name="acm_portal_author" extends="author" parser="xpath"
     ignore_in_term_vector="true" user_agent_name="firefox_3_6_8">
-    <selector url_regex="http://dl.acm.org/author_page.cfm.+(?&lt;!dsp=coll)$" domain="acm.org" />
+    <selector url_regex="^((?!dsp=coll).)*http:\/\/dl.acm.org\/author_page.cfm((?!dsp=coll).)*$" domain="acm.org" />
     <example_url
       url="http://dl.acm.org/author_page.cfm?id=81100203284&amp;srt=meta_published_date%20dsc&amp;role=Author&amp;perpage=10" />
 		<example_url url="http://dl.acm.org/author_page.cfm?id=81309499161"/>
