@@ -1,0 +1,87 @@
+<meta_metadata_repository name="author"
+  package="ecologylab.bigsemantics.metadata.builtins.person.author">
+
+
+  <meta_metadata name="tedauthor_quote" extends="rich_document">
+  	<scalar name="quote" scalar_type="String"/>
+  	<composite name="ted_talk" type="tedtalk_video"/>
+	   
+  </meta_metadata>
+  <meta_metadata name="ted_author" extends="author">
+      <selector url_path_tree="http://www.ted.com/speakers/" />
+    <example_url url="hhttp://www.ted.com/speakers/jamil_abu_wardeh" />
+  
+    <scalar name="title">
+    	<xpath>//h1</xpath>
+    </scalar>
+    <scalar name="description">
+    	<xpath>//div[@class='profile-intro']</xpath>
+    </scalar>
+    
+    <scalar name="occupation" scalar_type="String"	>
+   		<xpath>//div[@class='p2 profile-header__summary']</xpath>
+    </scalar>
+    <scalar name="first_p" scalar_type="String" hide="true">
+    	<xpath>//div[@class='section section--minor']/p[1]</xpath>
+    </scalar>
+      <scalar name="second_p" scalar_type="String" hide="true">
+    	<xpath>//div[@class='section section--minor']/p[2]</xpath>
+    </scalar>
+    <scalar name="credentials" scalar_type="String">
+    	<concatenate_values>
+          <value from_scalar="first_p" />
+          <value from_scalar="second_p" />
+        </concatenate_values>
+    </scalar>
+    <scalar name="what_others_say" scalar_type="String"	>
+   		<xpath>//div[@class='section section--minor']/p[3]</xpath>
+    </scalar>
+    <collection name="badges" child_scalar_type="String">
+    	<xpath>//div[@class='profile-header__flairs show-sm']//li/a</xpath>
+    </collection>
+    <composite name="twitter_profile">
+    <xpath>//a[@class='l3 profile-header__link profile-header__link--twitter']</xpath>
+    	<scalar name="title">
+    		<xpath>./span</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </composite>
+    <collection name="creative_works" child_type="tedtalk_video">
+    	<xpath>//div[@class='talk-link']//div[@class='media__message']//a</xpath>
+    		<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </collection>
+    <composite name="webpage">
+    	<xpath>//a[@class='l3 profile-header__link profile-header__link--other']</xpath>
+    	<scalar name="title">
+    		<xpath>./span</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </composite>
+    <collection name="quotes" child_type="tedauthor_quote">
+        <xpath>//div[@class='list__item profile-quote']/article</xpath>
+   		<scalar name="title">
+    		<xpath>./div[1]</xpath>
+    	</scalar>
+    	<composite name="ted_talk">
+	   		<xpath>.//div[2]//div[@class='h7']/a"</xpath>
+		   	<scalar name="quote">
+	    		<xpath>.</xpath>
+	    	</scalar>
+	    	<scalar name="location">
+	    		<xpath>./@href</xpath>
+	    	</scalar>
+  		</composite>
+    </collection>
+    
+  </meta_metadata>
+  
+</meta_metadata_repository>

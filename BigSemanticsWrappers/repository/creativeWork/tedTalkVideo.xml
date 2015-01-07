@@ -1,0 +1,69 @@
+
+<meta_metadata_repository name="tedTalk"
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
+
+  <meta_metadata name="tedtalk_video" extends="social_video">
+    <selector url_path_tree="https://www.ted.com/talks/" />
+    <example_url url="https://www.ted.com/talks/terry_moore_how_to_tie_your_shoes" />
+    <scalar name="title">
+      <xpath>//span[@class='player-hero__title__content']</xpath>
+    </scalar>
+    <scalar name="description" label="description">
+      <xpath>//p[@class='talk-description']</xpath>
+    </scalar>
+    
+    <scalar name="number_of_views" scalar_type="String">
+      <xpath>//span[@class='talk-sharing__value']</xpath>
+    </scalar>
+ <!--  
+    <scalar name="upload_date">
+      <xpath>//p[@id='watch-uploader-info']/strong</xpath>
+    </scalar>
+    <scalar name="description" label="description">
+      <xpath>//p[@id='eow-description']</xpath>
+    </scalar>
+    <scalar name="license">
+      <xpath>//p[@id='eow-reuse']</xpath>
+    </scalar>
+    <collection name="authors">
+      <xpath>//a[@class='yt-user-name author' and @rel='author']</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <scalar name="pic">
+      <xpath>//meta[@property='og:image']/@content</xpath>
+    </scalar>-->
+	<collection name="authors">
+	     <xpath>//div[@class='talk-speaker__name h10']/a</xpath>
+	     <scalar name="title">
+	       <xpath>.</xpath>
+	     </scalar>
+	     <scalar name="location">
+	       <xpath>./@href</xpath>
+	     </scalar>
+	   </collection>
+	<collection name="similar_topics" child_type="ted_topic">
+	     <xpath>//*[@class='talk-topics__list']/li/a</xpath>
+	     <scalar name="title">
+	       <xpath>.</xpath>
+	     </scalar>
+	     <scalar name="location">
+	       <xpath>./@href</xpath>
+	     </scalar>
+    </collection>
+    
+    <collection name="suggested_videos" child_type="tedtalk_video">
+      <xpath>//div[@class='talk-related']//h4/a</xpath>
+      <scalar name="title">
+        <xpath>./div[2]</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+  </meta_metadata_repository>

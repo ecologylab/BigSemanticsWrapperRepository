@@ -1,0 +1,27 @@
+
+<meta_metadata_repository name="ted_topic"
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
+
+  <meta_metadata name="ted_topic" extends="rich_document">
+    <selector url_path_tree="https://www.ted.com/topics/" />
+    <example_url url="https://www.ted.com/topics/demo" />
+    <scalar name="title">
+      <xpath>//h1</xpath>
+    </scalar>
+    <scalar name="description" label="description">
+      <xpath>//div[@class='p1']</xpath>
+    </scalar>
+    
+
+	<collection name="talks" child_type="tedtalk_video">
+	     <xpath>//div[@class='row row-skinny row-sm-4up']/div[@class='col']//*[@class='h9 m5']/a</xpath>
+	     <scalar name="title">
+	       <xpath>.</xpath>
+	     </scalar>
+	     <scalar name="location">
+	       <xpath>./@href</xpath>
+	     </scalar>
+    </collection>
+  </meta_metadata>
+  
+  </meta_metadata_repository>

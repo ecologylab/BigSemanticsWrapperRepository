@@ -1,0 +1,26 @@
+
+<meta_metadata_repository name="ted_topic"
+  package="ecologylab.bigsemantics.generated.library">
+
+  <meta_metadata name="ted_playlist" extends="rich_document">
+    <selector url_path_tree="https://www.ted.com/playlists/" />
+    <example_url url="https://www.ted.com/playlists/17/how_to_live_with_robots	" />
+    <scalar name="title">
+      <xpath>//div[@class='player-hero__title playlist-hero__title']</xpath>
+    </scalar>
+    <scalar name="description" label="description">
+      <xpath>//div[@class='playlist-hero__description']</xpath>
+    </scalar>
+    
+	<collection name="talks" child_type="tedtalk_video">
+	     <xpath>//*[@class='playlist-talks__title']/a</xpath>
+	     <scalar name="title">
+	       <xpath>.</xpath>
+	     </scalar>
+	     <scalar name="location">
+	       <xpath>./@href</xpath>
+	     </scalar>
+    </collection>
+  </meta_metadata>
+  
+  </meta_metadata_repository>
