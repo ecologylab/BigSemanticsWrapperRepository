@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library.search;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2014) Interface Ecology Lab.
+ * Copyright (2015) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.search.SearchResult;

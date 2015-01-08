@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2014) Interface Ecology Lab.
+ * Copyright (2015) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -149,6 +149,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.SlashdotItem.class,
 
 		ecologylab.bigsemantics.generated.library.SlashdotRss.class,
+
+		ecologylab.bigsemantics.generated.library.TedPlaylist.class,
 
 		ecologylab.bigsemantics.generated.library.Thumbnail.class,
 
@@ -313,6 +315,10 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.SlashdotArticle.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.TedTopic.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.TedtalkVideo.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.TvShow.class,
 
@@ -655,6 +661,10 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaPage.class,
 
 		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaPageType.class,
+
+		ecologylab.bigsemantics.metadata.builtins.person.author.TedAuthor.class,
+
+		ecologylab.bigsemantics.metadata.builtins.person.author.TedauthorQuote.class,
 
 	};
 

@@ -72,6 +72,7 @@ creativeWork/pinterestPin.xml
 creativeWork/rottenTomatoeMovie.xml
 creativeWork/slashdotPost.xml
 creativeWork/socialVideo.xml
+creativeWork/tedTalkVideo.xml
 creativeWork/tvComShow.xml
 creativeWork/tvShow.xml
 creativeWork/tvShowEpisode.xml
@@ -183,6 +184,7 @@ person/author/rhizomeArtist.xml
 person/author/scopusAuthor.xml
 person/author/springerEditor.xml
 person/author/tateArtist.xml
+person/author/tedAuthor.xml
 person/author/tweeter.xml
 primitiveTypes/annotate.xml
 primitiveTypes/assignPrimaryLink.xml
@@ -318,6 +320,8 @@ rwandaPersonnelInterview.xml
 rwandaTribunalVoices.xml
 rwandaVideoInterview.xml
 slashdotRSS.xml
+ted_playlist.xml
+ted_topic.xml
 thumbnail.xml
 tripAdvisor.xml
 tvtropes.xml

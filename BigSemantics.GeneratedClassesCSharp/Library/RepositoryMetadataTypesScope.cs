@@ -36,6 +36,7 @@ using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.CommentNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.PersonNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins.Declarations.PersonNS.AuthorNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.PersonNS.AuthorNS;
 
 // Developer should proof-read this TranslationScope before using it for production.
 namespace Ecologylab.BigSemantics.Generated.Library 
@@ -112,6 +113,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(CiteulikeUser),
 				typeof(CnetReview),
 				typeof(Commodity),
+				typeof(CouchdbEntry),
 				typeof(CrateandbarrelProduct),
 				typeof(Dc),
 				typeof(DcDocument),
@@ -144,11 +146,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(GettyWorkInfo),
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
+				typeof(GoogleImageSearch),
 				typeof(GooglePatent),
 				typeof(GooglePatentAuthor),
 				typeof(GoogleScholarArticle),
 				typeof(GoogleScholarArticleFacts),
 				typeof(GoogleScholarAuthor),
+				typeof(GoogleScholarAuthorSearch),
+				typeof(GoogleScholarAuthorSearchResult),
 				typeof(GoogleScholarSearch),
 				typeof(GoogleScholarSearchResult),
 				typeof(GoogleSearch),
@@ -313,6 +318,11 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(TateArtwork),
 				typeof(TateFilter),
 				typeof(TechReview),
+				typeof(TedAuthor),
+				typeof(TedPlaylist),
+				typeof(TedTopic),
+				typeof(TedauthorQuote),
+				typeof(TedtalkVideo),
 				typeof(TempFieldValueHolder),
 				typeof(TermType),
 				typeof(Thumbnail),
