@@ -102,38 +102,40 @@ public class AssistApp extends WindowAdapter
             btnUpdate.setEnabled(true);
           }
         });
-      
-        while(true){
-        	if(MemoryUsageMonitor.get().getEffectiveFreeMem() <= AssistApp.LOW_MEM_IN_MB){
-        		Object[] options = {"Close now",
-                        "Keep running"};
-			    Integer n = JOptionPane.showOptionDialog(frame,
-			        "Low memory, close AssistApp before recompiling wrappers",
-			        "Memory Warning",
-			        JOptionPane.YES_NO_CANCEL_OPTION,
-			        JOptionPane.QUESTION_MESSAGE,
-			        null,
-			        options,
-			        options[1]);
-			    //System.out.println("Choice Number: " + n.toString());
-			    if(n == 0){
-			    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-			    	try
-			         {
-			           stopService();
-			         }
-			         catch (Exception e)
-			         {
-			           error("Error stopping BS service.", null, e);
-			         }
-			    	System.exit(0);
-			    }
-			    else{
-			    	break;
-			    }
-			        	}
+
+        while (true)
+        {
+          if (MemoryUsageMonitor.get().getEffectiveFreeMem() <= AssistApp.LOW_MEM_IN_MB)
+          {
+            Object[] options = { "Close now", "Keep running" };
+            Integer n = JOptionPane.showOptionDialog(frame,
+                                                     "Low memory, close AssistApp before recompiling wrappers",
+                                                     "Memory Warning",
+                                                     JOptionPane.YES_NO_CANCEL_OPTION,
+                                                     JOptionPane.QUESTION_MESSAGE,
+                                                     null,
+                                                     options,
+                                                     options[1]);
+            if (n == 0)
+            {
+              frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+              try
+              {
+                stopService();
+              }
+              catch (Exception e)
+              {
+                error("Error stopping BS service.", null, e);
+              }
+              System.exit(0);
+            }
+            else
+            {
+              break;
+            }
+          }
         }
-        
+
       }
     });
     thread.run();
@@ -158,25 +160,27 @@ public class AssistApp extends WindowAdapter
         btnUpdate.setEnabled(false);
 
         MemoryUsageMonitor.get().log("after running for a bit");
-        if(MemoryUsageMonitor.get().getEffectiveFreeMem() <= AssistApp.LOW_MEM_IN_MB){
-        	JOptionPane.showMessageDialog(frame,
-        		    "Not enough memory. Closing down.",
-        		    "Memory Warning",
-        		    JOptionPane.ERROR_MESSAGE);
-        	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-	    	try
-	         {
-	           stopService();
-	         }
-	         catch (Exception e)
-	         {
-	           error("Error stopping BS service.", null, e);
-	         }
-	    	System.exit(0);
-        	
+        if (MemoryUsageMonitor.get().getEffectiveFreeMem() <= AssistApp.LOW_MEM_IN_MB)
+        {
+          JOptionPane.showMessageDialog(frame,
+                                        "Not enough memory. Closing down.",
+                                        "Memory Warning",
+                                        JOptionPane.ERROR_MESSAGE);
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          try
+          {
+            stopService();
+          }
+          catch (Exception e)
+          {
+            error("Error stopping BS service.", null, e);
+          }
+          System.exit(0);
+
         }
-        
-        Thread thread = new Thread(new Runnable() {
+
+        Thread thread = new Thread(new Runnable()
+        {
           @Override
           public void run()
           {
@@ -262,25 +266,17 @@ public class AssistApp extends WindowAdapter
 
       stopService();
 
-      /*
-      info("Recompiling wrappers...");
-      antRunner.runAntTarget(PathUtil.subPath(bsWrappersDir, "build.xml"), "jar");
-      */
-
-      info("Recompiling wrappers and rebuilding service war...");
-      File serviceBuildFile =
-          PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build.xml");
+      info("Recompiling wrappers and rebuilding service jar...");
+      File wrappersBuildFile = PathUtil.subPath(bsWrappersDir, "build.xml");
+      antRunner.runAntTarget(wrappersBuildFile, "clean");
+      File serviceBuildFile = PathUtil.subPath(bsServiceDir, "BigSemanticsService", "build.xml");
+      antRunner.runAntTarget(serviceBuildFile, "clean");
       antRunner.runAntTarget(serviceBuildFile, "main");
+
       MemoryUsageMonitor.get().log("after compiling wrappers and building bs-service");
 
-      info("Rebuilding downloader pool war and downloader jar...");
-      File dpoolBuildFile =
-          PathUtil.subPath(bsServiceDir, "DownloaderPool", "build.xml");
-      antRunner.runAntTarget(dpoolBuildFile, "main");
-      MemoryUsageMonitor.get().log("after building dpool");
-
       startService();
-      MemoryUsageMonitor.get().log("after bs-service and dpool started");
+      MemoryUsageMonitor.get().log("after bs-service started");
     }
     catch (Exception e)
     {
@@ -288,9 +284,9 @@ public class AssistApp extends WindowAdapter
       return;
     }
 
-    //Opens string URL in the browser
-    String url = "http://localhost:8080/MICE/index.html?uselocal=true";
-
+    // Opens string URL in the browser
+    String url = "http://localhost:8080/static/MICE/index.html?uselocal=true";
+    info("Service running. Opening MICE in your default browser.");
     if (Desktop.isDesktopSupported())
     {
       Desktop desktop = Desktop.getDesktop();
@@ -298,15 +294,9 @@ public class AssistApp extends WindowAdapter
       {
         desktop.browse(new URI(url));
       }
-      catch (IOException e)
+      catch (Exception e)
       {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      }
-      catch (URISyntaxException e)
-      {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+        logger.error("Exception opening MICE in browser.", e);
       }
     }
     else
@@ -316,18 +306,13 @@ public class AssistApp extends WindowAdapter
       {
         runtime.exec("xdg-open " + url);
       }
-      catch (IOException e)
+      catch (Exception e)
       {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+        logger.error("Exception opening MICE in browser through xdg-open.", e);
       }
     }
-
-    info("Service running. Opening MICE in your default browser. Point to "
-         + "http://localhost:8080/ "
-         + "in your browser to view other BigSemanticsJavaScript projects.");
   }
-  
+
   private void stopService() throws Exception
   {
     info("Stopping service...");

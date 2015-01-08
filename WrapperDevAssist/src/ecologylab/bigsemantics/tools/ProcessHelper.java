@@ -42,6 +42,8 @@ public class ProcessHelper implements Runnable
 
   private BufferedReader outputReader;
 
+  private BufferedReader errorReader;
+
   private boolean        running;
 
   /**
@@ -81,6 +83,7 @@ public class ProcessHelper implements Runnable
           processBuilder.redirectErrorStream(true);
           process = processBuilder.start();
           outputReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+          errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
           new Thread(this).start();
         }
       }
@@ -109,6 +112,7 @@ public class ProcessHelper implements Runnable
           try
           {
             line = outputReader.readLine();
+            errorReader.readLine();
           }
           catch (IOException e)
           {
