@@ -7,6 +7,8 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ecologylab.generic.StringTools;
+
 /**
  * A class for running and stopping the BigSemantics service suite (including a downloading service,
  * an extraction service, and a downloading worker).
@@ -39,9 +41,12 @@ public class BSService
           PathUtil.subPath(serviceDir, "BigSemanticsService", "build", "BigSemanticsService.jar");
       String serviceJarPath = serviceJarFile.getAbsolutePath();
       logger.info("starting bigsemantics service ...");
-      serviceProc = new ProcessHelper("java", "-server", "-jar", serviceJarPath,
-                                      "--static_dir=" + jsDir.getCanonicalPath());
+      String[] cmds = new String[] { "java", "-server", "-jar", serviceJarPath,
+          "--service.static_dir=" + jsDir.getCanonicalPath() };
+      logger.info("command line: {}", StringTools.join(" ", cmds));
+      serviceProc = new ProcessHelper(cmds);
       serviceProc.start();
+      Thread.sleep(1000 * 10); // wait a bit for the service to start up.
       logger.info("bigsemantics service started.");
     }
   }
