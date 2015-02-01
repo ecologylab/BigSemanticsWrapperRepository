@@ -61,11 +61,11 @@
       </scalar>
       <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
         <xpath>//table[@class='stats js-mini-profile-stats ']//td[2]/a/strong</xpath>
-        <xpath>//ul[@class='ProfileNav-list']/li[3]//span[@class='ProfileNav-value']</xpath>
+        <xpath>//ul[@class='ProfileNav-list']/li[2]//span[@class='ProfileNav-value']</xpath>
       </scalar>
       <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
         <xpath>//table[@class='stats js-mini-profile-stats ']//td[3]/a/strong</xpath>
-        <xpath>//ul[@class='ProfileNav-list']/li[4]//span[@class='ProfileNav-value']</xpath>
+        <xpath>//ul[@class='ProfileNav-list']/li[3]//span[@class='ProfileNav-value']</xpath>
       </scalar>
     </collection>
 
@@ -112,7 +112,7 @@
         <regex_op regex="[^/]+$" />
       </scalar>
       
-      <collection name="main_images" child_type="image" hide_label="true">
+      <collection name="main_images" child_type="image" hide_label="true" layer="8.0">
       	<xpath>.//div[@class='TwitterPhoto-container']//img[@class='TwitterPhoto-mediaSource']</xpath>
       	<scalar name="location">
 	      <xpath>./@src</xpath>
