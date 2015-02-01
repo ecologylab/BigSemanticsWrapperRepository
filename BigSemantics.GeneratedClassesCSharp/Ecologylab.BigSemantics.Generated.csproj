@@ -84,253 +84,719 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\AcmPortalInstitutionProfile.cs" />
-    <Compile Include="Library\AskNatureExpert.cs" />
-    <Compile Include="Library\AskNatureFunction.cs" />
-    <Compile Include="Library\AskNatureGroup.cs" />
-    <Compile Include="Library\AskNatureImage.cs" />
-    <Compile Include="Library\AskNatureOrganism.cs" />
-    <Compile Include="Library\AskNatureProduct.cs" />
-    <Compile Include="Library\AskNatureStrategy.cs" />
-    <Compile Include="Library\AskNatureSubgroup.cs" />
-    <Compile Include="Library\AskNatureTaxonomy.cs" />
-    <Compile Include="Library\AsosPage.cs" />
-    <Compile Include="Library\Attraction.cs" />
-    <Compile Include="Library\AttractionList.cs" />
-    <Compile Include="Library\Body.cs" />
-    <Compile Include="Library\CameraSettings.cs" />
-    <Compile Include="Library\CategoryInterviews.cs" />
-    <Compile Include="Library\Channel.cs" />
-    <Compile Include="Library\CiteulikeTag.cs" />
-    <Compile Include="Library\CommentNS\DcDocument.cs" />
-    <Compile Include="Library\CommentNS\Dlms.cs" />
-    <Compile Include="Library\CommentNS\IcdlImage.cs" />
-    <Compile Include="Library\CommentNS\Nsdl.cs" />
-    <Compile Include="Library\CommentNS\Review.cs" />
+    <Compile Include="Library\AcmPortalInstitutionProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureExpert.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureOrganism.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureSubgroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AskNatureTaxonomy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AsosPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Attraction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\AttractionList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Body.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CameraSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CategoryInterviews.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Channel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CiteulikeTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommentNS\DcDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommentNS\Dlms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommentNS\IcdlImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommentNS\Nsdl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommentNS\Review.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\CommodityNS\Commodity.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\CommodityNS\LabeledSpecifications.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\CommodityNS\ProductNS\AmazonProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Anthropologie.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\AppleIProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\AppleProductAccessory.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\AppleProductMac.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Asos.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\BedbathandbeyondProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\BestbuyProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Cb2Product.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\CrateandbarrelProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\EbayProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\EtsyProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Forever21.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\HmProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\HomeDepotProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\IkeaDepartment.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\IkeaProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\LandofnodProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\LowesProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Modcloth.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\ModclothSearch.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\NeweggProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\NeweggSubcategoryList.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\OnekingslaneProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\OverstockComProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\PieroneProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\PotterybarnProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Product.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\RestorationhardwareProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\RoomandboardProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\SamsclubProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\Seller.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\TargetProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\TigerdirectProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\UniqloProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\WalmartProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\WestelmProduct.cs" />
-    <Compile Include="Library\CommodityNS\ProductNS\ZaraProduct.cs" />
-    <Compile Include="Library\CommodityNS\ServiceNS\Hotel.cs" />
-    <Compile Include="Library\CommodityNS\ServiceNS\Restaurant.cs" />
-    <Compile Include="Library\CommodityNS\ServiceNS\RestaurantGenre.cs" />
-    <Compile Include="Library\CommodityNS\ServiceNS\Service.cs" />
-    <Compile Include="Library\CommodityNS\ServiceNS\YelpBusiness.cs" />
+    <Compile Include="Library\CommodityNS\ProductNS\AmazonProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Anthropologie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\AppleIProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\AppleProductAccessory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\AppleProductMac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Asos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\BedbathandbeyondProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\BestbuyProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Cb2Product.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\CrateandbarrelProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\EbayProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\EtsyProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Forever21.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\HmProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\HomeDepotProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\IkeaDepartment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\IkeaProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\LandofnodProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\LowesProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Modcloth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\ModclothSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\NeweggProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\NeweggSubcategoryList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\OnekingslaneProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\OverstockComProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\PieroneProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\PotterybarnProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Product.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\RestorationhardwareProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\RoomandboardProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\SamsclubProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\Seller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\TargetProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\TigerdirectProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\UniqloProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\WalmartProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\WestelmProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\ZaraProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ServiceNS\Hotel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ServiceNS\Restaurant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ServiceNS\RestaurantGenre.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ServiceNS\Service.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CommodityNS\ServiceNS\YelpBusiness.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\CommodityNS\Specification.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\CreativeWorkNS\AmazonList.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\Artwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\BritishCartoonArchive.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\Cartoon.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\GaurdianComic.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\GlobeCartoon.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\PoliticalCartoon.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\SfuCartoonArchive.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\TrumanLibrary1948CampaignCartoons.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\FlamencoObject.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\GettyObject.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\GettyWorkInfo.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\GuggenArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\MetArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\MmArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\MomaArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\NewmuseumArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\RhizomeArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\TateArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\TempFieldValueHolder.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\WhitneyArtwork.cs" />
-    <Compile Include="Library\CreativeWorkNS\ArtworkNS\WhitneyWatchAndListen.cs" />
-    <Compile Include="Library\CreativeWorkNS\BggCategory.cs" />
-    <Compile Include="Library\CreativeWorkNS\BggGame.cs" />
-    <Compile Include="Library\CreativeWorkNS\BlogNS\Blog.cs" />
-    <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterMicroblog.cs" />
-    <Compile Include="Library\CreativeWorkNS\BlogPostNS\FlickrPhoto.cs" />
-    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Post.cs" />
-    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Tumblr.cs" />
-    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Tweet.cs" />
-    <Compile Include="Library\CreativeWorkNS\BoardGame.cs" />
-    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\Exhibition.cs" />
-    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\NewmuseumExhibition.cs" />
-    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\RhizomeCollection.cs" />
-    <Compile Include="Library\CreativeWorkNS\FondationArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\GooglePatent.cs" />
-    <Compile Include="Library\CreativeWorkNS\Grant.cs" />
-    <Compile Include="Library\CreativeWorkNS\ImdbMovie.cs" />
-    <Compile Include="Library\CreativeWorkNS\LeagueAbility.cs" />
-    <Compile Include="Library\CreativeWorkNS\LeagueChampion.cs" />
-    <Compile Include="Library\CreativeWorkNS\LeagueRelationshipList.cs" />
-    <Compile Include="Library\CreativeWorkNS\Movie.cs" />
-    <Compile Include="Library\CreativeWorkNS\NetflixMovie.cs" />
-    <Compile Include="Library\CreativeWorkNS\NewsArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\NsfAward.cs" />
-    <Compile Include="Library\CreativeWorkNS\Nytimes.cs" />
-    <Compile Include="Library\CreativeWorkNS\Patent.cs" />
-    <Compile Include="Library\CreativeWorkNS\PinterestPin.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\AcmPortalPeriodical.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\AmazonBook.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\BasicPublication.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\Book.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\GoogleBook.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\IeeeJournalPage.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\Periodical.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\Publication.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\PubmedJournal.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerBook.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerJournal.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerSeriesSummary.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\Subject.cs" />
-    <Compile Include="Library\CreativeWorkNS\PublicationNS\TermType.cs" />
-    <Compile Include="Library\CreativeWorkNS\RottenMovie.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\AcmPortal.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CitationInfo.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteseerxRecord.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteseerxSimilar.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteseerxSummary.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteulikePaper.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\GoogleScholarArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\GoogleScholarArticleFacts.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\IeeeArticleBody.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\IeeeXploreArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\InformaWorld.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\JstorArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\PubmedArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateArticleStats.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateResearcher.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateStats.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\SageArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScholarlyArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScienceDirectArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScopusArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\Sections.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\SpringerArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\WileyArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\SlashdotArticle.cs" />
-    <Compile Include="Library\CreativeWorkNS\SocialVideo.cs" />
-    <Compile Include="Library\CreativeWorkNS\TechReviewNS\AnandtechReview.cs" />
-    <Compile Include="Library\CreativeWorkNS\TechReviewNS\CnetReview.cs" />
-    <Compile Include="Library\CreativeWorkNS\TechReviewNS\TechReview.cs" />
-    <Compile Include="Library\CreativeWorkNS\TvShow.cs" />
-    <Compile Include="Library\CreativeWorkNS\TvShowEpisode.cs" />
-    <Compile Include="Library\CreativeWorkNS\YoutubeVideo.cs" />
-    <Compile Include="Library\Dc.cs" />
-    <Compile Include="Library\EventNS\Disaster.cs" />
-    <Compile Include="Library\EventNS\Earthquake.cs" />
+    <Compile Include="Library\CreativeWorkNS\AmazonList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\Artwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\BritishCartoonArchive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\Cartoon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\GaurdianComic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\GlobeCartoon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\PoliticalCartoon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\SfuCartoonArchive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\CartoonNS\TrumanLibrary1948CampaignCartoons.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\FlamencoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\GettyObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\GettyWorkInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\GuggenArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\MetArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\MmArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\MomaArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\NewmuseumArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\RhizomeArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\TateArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\TempFieldValueHolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\WhitneyArtwork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArtworkNS\WhitneyWatchAndListen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BggCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BggGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogNS\Blog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterMicroblog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\FlickrPhoto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Post.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Tumblr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Tweet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\BoardGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\Exhibition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\NewmuseumExhibition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\RhizomeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\FondationArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\GooglePatent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\Grant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ImdbMovie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\LeagueAbility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\LeagueChampion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\LeagueRelationshipList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\Movie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\NetflixMovie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\NewsArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\NsfAward.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\Nytimes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\Patent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PinterestPin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\AcmPortalPeriodical.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\AmazonBook.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\BasicPublication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\Book.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\GoogleBook.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\IeeeJournalPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\Periodical.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\Publication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\PubmedJournal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerBook.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerJournal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\SpringerSeriesSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\Subject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\PublicationNS\TermType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\RottenMovie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\AcmPortal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CitationInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteseerxRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteseerxSimilar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteseerxSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\CiteulikePaper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\GoogleScholarArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\GoogleScholarArticleFacts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\IeeeArticleBody.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\IeeeXploreArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\InformaWorld.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\JstorArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\PubmedArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateArticleStats.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateResearcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ResearchGateStats.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\SageArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScholarlyArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScienceDirectArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\ScopusArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\Sections.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\SpringerArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ScholarlyArticleNS\WileyArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\SlashdotArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\SocialVideo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\TechReviewNS\AnandtechReview.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\TechReviewNS\CnetReview.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\TechReviewNS\TechReview.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\TedtalkVideo.cs" />
+    <Compile Include="Library\CreativeWorkNS\TedTopic.cs" />
+    <Compile Include="Library\CreativeWorkNS\TvShow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\TvShowEpisode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\YoutubeVideo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Dc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\EventNS\Disaster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\EventNS\Earthquake.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\EventNS\Event.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\EventNS\Icsmd.cs" />
-    <Compile Include="Library\FastflipSearch.cs" />
-    <Compile Include="Library\FlamencoFacet.cs" />
-    <Compile Include="Library\FlickrTag.cs" />
-    <Compile Include="Library\FondationCategoryCollection.cs" />
-    <Compile Include="Library\FondationCollection.cs" />
-    <Compile Include="Library\FondationTag.cs" />
-    <Compile Include="Library\GettyCollection.cs" />
-    <Compile Include="Library\GettyExploration.cs" />
-    <Compile Include="Library\GrantProgram.cs" />
-    <Compile Include="Library\Head.cs" />
-    <Compile Include="Library\Header.cs" />
-    <Compile Include="Library\IcdlBook.cs" />
-    <Compile Include="Library\IcdlBookPreview.cs" />
-    <Compile Include="Library\IcdlImageResult.cs" />
-    <Compile Include="Library\IeeeKeywords.cs" />
-    <Compile Include="Library\IeeeXploreCitedBy.cs" />
-    <Compile Include="Library\IeeeXploreReferences.cs" />
-    <Compile Include="Library\Instructable.cs" />
-    <Compile Include="Library\InstructableComment.cs" />
-    <Compile Include="Library\InstructableTag.cs" />
-    <Compile Include="Library\Item.cs" />
-    <Compile Include="Library\JstorJournal.cs" />
-    <Compile Include="Library\MediaContent.cs" />
-    <Compile Include="Library\NsdlDocument.cs" />
-    <Compile Include="Library\NsdlService.cs" />
-    <Compile Include="Library\NsfDivision.cs" />
-    <Compile Include="Library\NsfDivisionStaffList.cs" />
-    <Compile Include="Library\NsfProgram.cs" />
-    <Compile Include="Library\NsfProgramStaffList.cs" />
-    <Compile Include="Library\OpenDNSDomain.cs" />
-    <Compile Include="Library\Opml.cs" />
-    <Compile Include="Library\Outline.cs" />
-    <Compile Include="Library\PatentClassification.cs" />
+    <Compile Include="Library\EventNS\Icsmd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\FastflipSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\FlamencoFacet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\FlickrTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\FondationCategoryCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\FondationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\FondationTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\GettyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\GettyExploration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\GrantProgram.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Head.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\IcdlBook.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\IcdlBookPreview.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\IcdlImageResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\IeeeKeywords.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\IeeeXploreCitedBy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\IeeeXploreReferences.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Instructable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\InstructableComment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\InstructableTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\JstorJournal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\MediaContent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\NsdlDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\NsdlService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\NsfDivision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\NsfDivisionStaffList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\NsfProgram.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\NsfProgramStaffList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\OpenDNSDomain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Opml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Outline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PatentClassification.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\PdfMixin.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\PersonnelInterview.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\AcmPortalAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\AcmPortalAuthorCollaborators.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\AcmPortalAuthorPublicationDetail.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\Artist.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\CiteulikeAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\FlickrAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\GettyArtist.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\GettyArtistInfo.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\GooglePatentAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\GoogleScholarAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\IeeeAuthorPage.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\InstructableAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\Investigator.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\MomaArtist.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\NewmuseumArtist.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\NsfInvestigator.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\PatentAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\PubmedAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\ResearchGateAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\RhizomeArtist.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\ScopusAuthor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\SpringerEditor.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\TateArtist.cs" />
-    <Compile Include="Library\PersonNS\AuthorNS\Tweeter.cs" />
-    <Compile Include="Library\PersonNS\CiteulikeUser.cs" />
-    <Compile Include="Library\PersonNS\FashionReviewer.cs" />
-    <Compile Include="Library\PersonNS\GrantStaff.cs" />
-    <Compile Include="Library\PersonNS\ImdbPerson.cs" />
-    <Compile Include="Library\PersonNS\MoviePerson.cs" />
-    <Compile Include="Library\PersonNS\NsfStaff.cs" />
-    <Compile Include="Library\PersonNS\RottenPerson.cs" />
-    <Compile Include="Library\Photostream.cs" />
-    <Compile Include="Library\PostalAddress.cs" />
+    <Compile Include="Library\PersonnelInterview.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\AcmPortalAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\AcmPortalAuthorCollaborators.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\AcmPortalAuthorPublicationDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\Artist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\CiteulikeAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\FlickrAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\GettyArtist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\GettyArtistInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\GooglePatentAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\GoogleScholarAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\IeeeAuthorPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\InstructableAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\Investigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\MomaArtist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\NewmuseumArtist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\NsfInvestigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\PatentAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\PubmedAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\ResearchGateAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\RhizomeArtist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\ScopusAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\SpringerEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\TateArtist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\Tweeter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\CiteulikeUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\FashionReviewer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\GrantStaff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\ImdbPerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\MoviePerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\NsfStaff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PersonNS\RottenPerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Photostream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\PostalAddress.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\PrimitivesNS\AudioClipping.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -340,6 +806,7 @@
     <Compile Include="Library\PrimitivesNS\CachedHtml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\PrimitivesNS\CouchdbEntry.cs" />
     <Compile Include="Library\PrimitivesNS\InformationCompositionMedia.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -358,38 +825,99 @@
     <Compile Include="Library\PrimitivesNS\WebVideo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Publisher.cs" />
-    <Compile Include="Library\RepositoryMetadataTypesScope.cs" />
-    <Compile Include="Library\ResearchGateInstitution.cs" />
-    <Compile Include="Library\ResearchGateInstitutionContactInfo.cs" />
-    <Compile Include="Library\ResearchGateInstitutionDepartment.cs" />
-    <Compile Include="Library\Rss.cs" />
-    <Compile Include="Library\Rss22.cs" />
-    <Compile Include="Library\SearchNS\AcmPortalSearch.cs" />
-    <Compile Include="Library\SearchNS\AcmPortalSearchResult.cs" />
-    <Compile Include="Library\SearchNS\BingSearchApi.cs" />
-    <Compile Include="Library\SearchNS\BingSearchXpath.cs" />
-    <Compile Include="Library\SearchNS\CiteseerxCiting.cs" />
-    <Compile Include="Library\SearchNS\CiteseerxSearch.cs" />
-    <Compile Include="Library\SearchNS\CiteulikeSearch.cs" />
-    <Compile Include="Library\SearchNS\GettySearch.cs" />
-    <Compile Include="Library\SearchNS\GoogleScholarSearch.cs" />
-    <Compile Include="Library\SearchNS\GoogleScholarSearchResult.cs" />
-    <Compile Include="Library\SearchNS\GoogleSearch.cs" />
-    <Compile Include="Library\SearchNS\GuggenFilter.cs" />
-    <Compile Include="Library\SearchNS\IeeeXploreSearch.cs" />
-    <Compile Include="Library\SearchNS\ImageSearchNS\ImageSearch.cs" />
+    <Compile Include="Library\Publisher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\RepositoryMetadataTypesScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ResearchGateInstitution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ResearchGateInstitutionContactInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\ResearchGateInstitutionDepartment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Rss.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Rss22.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\AcmPortalSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\AcmPortalSearchResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\BingSearchApi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\BingSearchXpath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\CiteseerxCiting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\CiteseerxSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\CiteulikeSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GettySearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GoogleImageSearch.cs" />
+    <Compile Include="Library\SearchNS\GoogleScholarAuthorSearch.cs" />
+    <Compile Include="Library\SearchNS\GoogleScholarAuthorSearchResult.cs" />
+    <Compile Include="Library\SearchNS\GoogleScholarSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GoogleScholarSearchResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GoogleSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GuggenFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\IeeeXploreSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\ImageSearchNS\ImageSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\SearchNS\ImageSearchResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\SearchNS\JstorSearch.cs" />
-    <Compile Include="Library\SearchNS\MetFilter.cs" />
-    <Compile Include="Library\SearchNS\NewmuseumFilter.cs" />
-    <Compile Include="Library\SearchNS\NsfSearch.cs" />
-    <Compile Include="Library\SearchNS\ResearchGateResult.cs" />
-    <Compile Include="Library\SearchNS\ResearchGateSearch.cs" />
-    <Compile Include="Library\SearchNS\RhizomeTag.cs" />
-    <Compile Include="Library\SearchNS\ScopusSearch.cs" />
+    <Compile Include="Library\SearchNS\JstorSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\MetFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\NewmuseumFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\NsfSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\ResearchGateResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\ResearchGateSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\RhizomeTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\ScopusSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\SearchNS\Search.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -399,48 +927,117 @@
     <Compile Include="Library\SearchNS\SearchResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\SearchNS\SlashdotSearch.cs" />
+    <Compile Include="Library\SearchNS\SlashdotSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\SearchNS\SocialMediaSearchResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\SearchNS\SpringerSearch.cs" />
-    <Compile Include="Library\SearchNS\TateFilter.cs" />
-    <Compile Include="Library\SearchNS\TumblrSearch.cs" />
-    <Compile Include="Library\SearchNS\TwitterSearchResults.cs" />
-    <Compile Include="Library\SearchNS\UrbanSpoonSearch.cs" />
-    <Compile Include="Library\SearchNS\WhitneyDecade.cs" />
-    <Compile Include="Library\SearchNS\WhitneySearch.cs" />
-    <Compile Include="Library\SearchNS\WikipediaSearch.cs" />
-    <Compile Include="Library\SearchNS\YahooGeoCode.cs" />
-    <Compile Include="Library\SearchNS\YahooGeoCodeResult.cs" />
-    <Compile Include="Library\SearchNS\YahooResult.cs" />
-    <Compile Include="Library\SearchNS\YahooResultSet.cs" />
-    <Compile Include="Library\SearchNS\YahooThumbnail.cs" />
-    <Compile Include="Library\SearchNS\YoutubeSearchResults.cs" />
-    <Compile Include="Library\SearchResults.cs" />
-    <Compile Include="Library\SlashdotItem.cs" />
-    <Compile Include="Library\SlashdotRss.cs" />
-    <Compile Include="Library\Thumbnail.cs" />
-    <Compile Include="Library\TribunalVoices.cs" />
-    <Compile Include="Library\TripAdvisorThingsToDo.cs" />
-    <Compile Include="Library\Tvtrope.cs" />
-    <Compile Include="Library\TvtropeExample.cs" />
-    <Compile Include="Library\TvtropeFolder.cs" />
-    <Compile Include="Library\VideoInterview.cs" />
+    <Compile Include="Library\SearchNS\SpringerSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\TateFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\TumblrSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\TwitterSearchResults.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\UrbanSpoonSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\WhitneyDecade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\WhitneySearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\WikipediaSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\YahooGeoCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\YahooGeoCodeResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\YahooResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\YahooResultSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\YahooThumbnail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\YoutubeSearchResults.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchResults.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SlashdotItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SlashdotRss.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\TedPlaylist.cs" />
+    <Compile Include="Library\Thumbnail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\TribunalVoices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\TripAdvisorThingsToDo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Tvtrope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\TvtropeExample.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\TvtropeFolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\VideoInterview.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\WeatherReportNS\WeatherReport.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\WikipediaPageNS\Paragraph.cs" />
-    <Compile Include="Library\WikipediaPageNS\Section.cs" />
-    <Compile Include="Library\WikipediaPageNS\WikipediaCategoryType.cs" />
-    <Compile Include="Library\WikipediaPageNS\WikipediaMobilePage.cs" />
+    <Compile Include="Library\WikipediaPageNS\Paragraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\WikipediaPageNS\Section.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\WikipediaPageNS\WikipediaCategoryType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\WikipediaPageNS\WikipediaMobilePage.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\WikipediaPageNS\WikipediaPage.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\WikipediaPageNS\WikipediaPageType.cs" />
-    <Compile Include="Library\YahooMediaRss.cs" />
-    <Compile Include="Library\YoutubeChannel.cs" />
-    <Compile Include="Library\YtPlaylist.cs" />
+    <Compile Include="Library\WikipediaPageNS\WikipediaPageType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\YahooMediaRss.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\YoutubeChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\YtPlaylist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetadataNS\Builtins\PersonNS\AuthorNS\TedAuthor.cs" />
+    <Compile Include="MetadataNS\Builtins\PersonNS\AuthorNS\TedauthorQuote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RichArtifactsTypeScope.cs" />
     <Compile Include="RichMediaTypeScope.cs" />
