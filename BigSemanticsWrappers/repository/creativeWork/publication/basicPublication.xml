@@ -3,6 +3,6 @@
 
   <meta_metadata name="basic_publication" extends="creative_work" comment="A publication.">
     <scalar name="isbn" scalar_type="String" schema_org_itemprop="isbn" />
-    <composite name="publisher" type="publisher" schema_org_itemprop="publisher" />
+    <composite name="publisher" type="publisher" schema_org_itemprop="publisher" bibtex_field="publisher" />
   </meta_metadata>
 </meta_metadata_repository>

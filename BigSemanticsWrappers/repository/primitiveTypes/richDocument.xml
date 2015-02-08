@@ -1,7 +1,7 @@
 <meta_metadata_repository name="compoundDocument" package="ecologylab.bigsemantics.metadata.builtins"
   default_user_agent_name="firefox_3_5">
 
-  <meta_metadata name="rich_document" extends="document" built_in="true"
+  <meta_metadata name="rich_document" extends="document" built_in="true" bibtex_type="misc"
    other_tags="compound_document,html_document" parser="xpath"
    schema_org_itemtype="http://schema.org/Thing">
 <!--    parser="html_dom_image_text" -->
@@ -24,11 +24,9 @@
  	
  	</def_var>
     <scalar name="title" scalar_type="String" layer="10.0" hint="XML_LEAF"
-      style_name="metadata_h1" collapsed_style_name="metadata_normal"
-      is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name" use_value_as_label="main_images"
-      comment="The Title of the Document">
-      
-      
+      style_name="metadata_h1" collapsed_style_name="metadata_normal" bibtex_field="title"
+      is_facet="true" as_composite_scalar="true" navigates_to="location" schema_org_itemprop="name"
+      use_value_as_label="main_images" comment="The Title of the Document">
       <xpath>/html/head/title</xpath>
       <xpath>//meta[@name='og:title']/@content</xpath>
       <xpath>//meta[@name='twitter:title']/@content</xpath>

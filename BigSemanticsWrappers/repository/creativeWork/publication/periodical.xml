@@ -5,8 +5,10 @@
     <composite name="archive" type="rich_document" comment="All the issues of a periodical.">
       <scalar name="location" hide="true" />
     </composite>
-    <scalar name="volume_and_issue" scalar_type="String" />
-    <scalar name="date" scalar_type="Date" comment="Publication Date" schema_org_itemprop="datePublished" />
+    <scalar name="volume" scalar_type="String" bibtex_field="volume" />
+    <scalar name="issue" scalar_type="String" bibtex_field="number" />
+    <scalar name="date" scalar_type="Date" comment="Publication Date"
+            schema_org_itemprop="datePublished" bibtex_field="month" />
   </meta_metadata>
   
 </meta_metadata_repository>
