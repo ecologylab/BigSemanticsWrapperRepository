@@ -283,7 +283,7 @@ public class AssistApp extends WindowAdapter
     }
 
     // Opens string URL in the browser
-    String url = "http://localhost:8080/static/MICE/index.html?uselocal=true";
+    String url = "http://localhost:8080/static/houseMICE/index.html";
     info("Service running. Opening MICE in your default browser.");
     if (Desktop.isDesktopSupported())
     {
