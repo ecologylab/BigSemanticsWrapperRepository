@@ -3,7 +3,7 @@
   
  
   
-  <meta_metadata name="twitter_status" type="tweet" parser="xpath" no_cache="true">
+  <meta_metadata name="twitter_status" type="tweet" parser="xpath" no_cache="true" renderer="tweetbubble">
   	<selector url_regex="https://twitter.com/[^/]*/status/[0-9]*" domain="twitter.com" />
     <example_url url="https://twitter.com/realjohngreen/status/486534354642821122" />
     <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
