@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
   
   <meta_metadata name="tweet" extends="post" parser="xpath" show_expanded_initially="true"
-    comment="twitter micropost">
+    comment="twitter micropost" renderer="tweetbubble">
     <scalar name="post_date" layer="7.0" />
     <composite name="twitter_microblog" type="twitter_microblog" layer="10.0" />
     <scalar name="id" scalar_type="Int" />

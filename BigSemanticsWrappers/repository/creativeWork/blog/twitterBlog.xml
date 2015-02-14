@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
   
   
-  <meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true">
+  <meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true" renderer="tweetbubble">
 
     <selector url_regex="https://twitter.com/[^/?]*" domain="twitter.com" />
     <example_url url="https://twitter.com/nytimes" />
