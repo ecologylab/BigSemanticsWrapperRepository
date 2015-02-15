@@ -25,10 +25,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsSunSpecifics"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/BigSemanticsWrappers"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/cyberneko"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/DownloaderPool"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/DownloaderPoolMessages"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/imageMetadataExtractor"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ModifiedHttpClient"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/simplCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/simplSunSpecifics"/>
 	<classpathentry kind="output" path="target/classes"/>
