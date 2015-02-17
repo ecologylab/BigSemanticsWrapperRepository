@@ -26,6 +26,7 @@
 
     <scalar name="number_of_steps" scalar_type="String">
       <xpath>//a[@title='Go To Step']</xpath>
+      <xpath>//a[@data-original-title='Go To Step']</xpath>
     </scalar>
     <scalar name="views" scalar_type="String">
       <xpath>(//span[@class='count'])[1]</xpath>
