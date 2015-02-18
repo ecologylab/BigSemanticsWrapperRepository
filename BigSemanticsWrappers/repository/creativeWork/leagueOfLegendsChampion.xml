@@ -76,7 +76,8 @@
     </collection>
     <composite name="champion_spotlight" type="youtube_video">
       <xpath>//iframe[@width='450']</xpath>
-
+      <xpath>//iframe[contains(@src, 'youtube.com')]</xpath>
+      
       <scalar name="title">
         <xpath>//div[@id='champ_header']/h1/text()</xpath>
         <regex_op regex="$" replace=" Champion Spotlight" />
