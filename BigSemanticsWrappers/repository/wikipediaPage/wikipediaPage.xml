@@ -45,7 +45,7 @@
   
   
   <meta_metadata name="wikipedia_page" extends="wikipedia_page_type" parser="xpath"
-    user_agent_name="chrome_12" comment="An article on wikipedia">
+    user_agent_name="chrome_12" comment="An article on wikipedia" extract_with="service">
     <selector url_regex="https?://en.wikipedia.org/wiki/((?!Category:).)*$" domain="wikipedia.org" />
 
     <example_url url="http://en.wikipedia.org/wiki/Type_system" />
