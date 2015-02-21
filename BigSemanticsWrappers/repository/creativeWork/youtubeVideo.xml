@@ -1,6 +1,11 @@
-
 <meta_metadata_repository name="video"
   package="ecologylab.bigsemantics.generated.library.creativeWork">
+
+  <meta_metadata name="yt_table" extends="metadata">
+    <scalar name="name" scalar_type="String" hide="true"/>
+    <scalar name="value" scalar_type="String" use_value_as_label="name" style_name="metadata_italic" />
+  </meta_metadata>
+
 
   <meta_metadata name="youtube_video" extends="social_video" comment="youtube video view page">
     <selector url_stripped="http://www.youtube.com/watch" />
@@ -11,27 +16,35 @@
       <xpath>//h1[@id='watch-headline-title']</xpath>
     </scalar>
     <scalar name="upload_date">
-      <xpath>//p[@id='watch-uploader-info']/strong</xpath>
+      <xpath>//div[@id='watch-uploader-info']/strongg</xpath>
     </scalar>
     <scalar name="description" label="description">
       <xpath>//p[@id='eow-description']</xpath>
     </scalar>
-    <scalar name="license">
-      <xpath>//p[@id='eow-reuse']</xpath>
-    </scalar>
-    <collection name="authors">
-      <xpath>//a[@class='yt-user-name author' and @rel='author']</xpath>
+    <composite name="creator_channel" type="rich_document">
+      <xpath>//div[@class='yt-user-info']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
+    </composite>
+    <collection name="artist_and_licenses" child_type='yt_table'>
+      <xpath>//ul[@class='watch-extras-section']/li</xpath>
+      <scalar name="name">
+        <xpath>./h4</xpath>
+      </scalar>
+      <scalar name="value">
+        <xpath>.//li</xpath>
+      </scalar>
     </collection>
+
+
     <scalar name="pic">
       <xpath>//meta[@property='og:image']/@content</xpath>
     </scalar>
-  	<!-- Javascript required for tags now 
+    <!-- Javascript required for tags now 
   	<collection name="tag" xpath="//ul[@id='eow-tags']/li/a" >
   		<scalar name="title" xpath="./text()"/>
   		<scalar name="location" xpath="./@href"/>
@@ -52,36 +65,45 @@
   	<scalar name="number_of_comments" xpath="//span[@class='comments-section-stat']"/>
      -->
     <scalar name="likes">
-      <xpath>//*[@id='watch-like-dislike-buttons']/span[1]/button/span[2]</xpath>
+      <xpath>//span[@id='watch-like-dislike-buttons']/span[1]//span[@class='yt-uix-button-content']</xpath>
     </scalar>
     <scalar name="dislikes">
-      <xpath>//*[@id='watch-like-dislike-buttons']/span[2]/button/span[2]</xpath>
+      <xpath>//span[@id='watch-like-dislike-buttons']/span[2]//span[@class='yt-uix-button-content']</xpath>
     </scalar>
     <scalar name="number_of_views" scalar_type="String">
       <xpath>//div[@class='watch-view-count']</xpath>
     </scalar>
 
     <collection name="suggested_videos" child_type="youtube_video">
-      <xpath>//ul[@id='watch-related']/li</xpath>
+      <xpath>//ul[@id='watch-related']/li/div[1]/a</xpath>
       <scalar name="title">
-        <xpath>./a/span/@title</xpath>
+        <xpath>./@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <composite name="suggested_playlist" type="rich_document">
+      <xpath>//ul[@id='watch-related']/li[1]/a"</xpath>
+      <scalar name="title">
+        <xpath>./span[@class='title']/@title</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
+
+    <collection name="authors">
+      <xpath>//div[@class='yt-user-info']"</xpath>
+      <scalar name="title">
+        <xpath>./a</xpath>
       </scalar>
       <scalar name="location">
         <xpath>./a/@href</xpath>
       </scalar>
     </collection>
 
-    <composite name="creator_channel" type="rich_document">
-      <xpath>//div[@class='yt-user-info']/a</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-
-
-    </composite>
 
     <semantic_actions>
       <get_field name="pic" />
@@ -90,4 +112,4 @@
       </create_and_visualize_img_surrogate>
     </semantic_actions>
   </meta_metadata>
-  </meta_metadata_repository>
+</meta_metadata_repository>
