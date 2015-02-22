@@ -21,15 +21,6 @@
     <scalar name="description" label="description">
       <xpath>//p[@id='eow-description']</xpath>
     </scalar>
-    <composite name="creator_channel" type="rich_document">
-      <xpath>//div[@class='yt-user-info']/a</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-    </composite>
     <collection name="artist_and_licenses" child_type='yt_table'>
       <xpath>//ul[@class='watch-extras-section']/li</xpath>
       <scalar name="name">
@@ -95,7 +86,7 @@
 
 
     <collection name="authors">
-      <xpath>//div[@class='yt-user-info']"</xpath>
+      <xpath>//div[@class='yt-user-info']</xpath>
       <scalar name="title">
         <xpath>./a</xpath>
       </scalar>
