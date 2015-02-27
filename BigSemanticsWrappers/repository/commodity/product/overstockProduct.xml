@@ -25,7 +25,7 @@
 
 
     <scalar name="overall_rating">
-      <xpath>//div[@itemprop='ratingValue']</xpath>
+      <xpath>//span[@itemprop='ratingValue']</xpath>
 <!--       <regex_op regex="Rating " replace="" /> -->
     </scalar>
 
