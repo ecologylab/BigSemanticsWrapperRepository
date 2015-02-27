@@ -27,6 +27,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
             <xpath>//h1[@class='pub-title']</xpath>
         </scalar>
         <scalar name="description">
+            <xpath>//p[@itemprop='description']</xpath>
             <xpath>//div[@class='pub-abstract']/div/div/p</xpath>
         </scalar>
         <collection name="cited_in" child_type="research_gate_article">
