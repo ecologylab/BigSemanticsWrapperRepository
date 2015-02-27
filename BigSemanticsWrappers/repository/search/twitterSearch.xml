@@ -1,7 +1,7 @@
 <meta_metadata_repository name="twitterSearch"
   package="ecologylab.bigsemantics.generated.library.search">
   
-   <meta_metadata name="twitter_search_results" type="search" parser="xpath" no_cache="true">
+   <meta_metadata name="twitter_search_results" extends="search" parser="xpath" renderer="tweetbubble" no_cache="true">
     <selector url_stripped="https://twitter.com/search" />
     <selector url_path_tree="https://twitter.com/hashtag/" />
     <example_url url="https://twitter.com/search?q=%23socialinnovation" />
@@ -13,11 +13,7 @@
       <xpath>//h2[@id='content-main-heading']/strong</xpath>
       <regex_op regex="Twitter / Search - " replace="" />
     </scalar>
-    <scalar name="location" context_node="search">
-      <xpath>//h2[@id='content-main-heading']/strong</xpath>
-      <regex_op regex="^" replace="https://twitter.com/search?q=" />
-    </scalar>
-
+  
 	<scalar name="description" hide_label="true" />
 	
     <generic_type_var name="SR" arg="post" />
