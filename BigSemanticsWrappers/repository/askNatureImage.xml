@@ -37,7 +37,7 @@
         <xpath>./@href</xpath>
       </scalar>
     </composite>
-    <scalar name="keywords" scalar_type="String" context_node="content">
+    <scalar name="text_keywords" scalar_type="String" context_node="content">
       <xpath>./text()[contains(., 'Keywords')]</xpath>
       <filter regex="Keywords: " replace="" />
     </scalar>
