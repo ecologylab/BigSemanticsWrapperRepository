@@ -75,7 +75,7 @@
       </scalar>
     </collection>
     <composite name="suggested_playlist" type="rich_document">
-      <xpath>//ul[@id='watch-related']/li[1]/a"</xpath>
+      <xpath>//ul[@id='watch-related']/li[1]/a</xpath>
       <scalar name="title">
         <xpath>./span[@class='title']/@title</xpath>
       </scalar>
