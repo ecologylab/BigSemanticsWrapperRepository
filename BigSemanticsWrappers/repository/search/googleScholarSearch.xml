@@ -24,6 +24,7 @@
 
 <!--     <selector url_regex="http\:\/\/scholar\.google\.com\/scholar\?.*q=.*" domain="google.com"/> -->   
     <selector url_stripped="http://scholar.google.com/scholar" />
+    <selector url_stripped="https://scholar.google.com/scholar" />
     
     <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
     <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
