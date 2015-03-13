@@ -27,6 +27,12 @@
     
     <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
     <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+    
+    <filter_location>
+      <strip_param name="btnG" />
+      <strip_param name="as_sdt" />
+      <strip_param name="as_sdtp" />
+    </filter_location>
 
     <scalar name="title">
       	<xpath>//div[@id='gs_rt_hdr']//a</xpath>
