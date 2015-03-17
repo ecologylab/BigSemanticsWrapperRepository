@@ -38,7 +38,10 @@ public class Periodical extends BasicPublication
 	private RichDocument archive;
 
 	@simpl_scalar
-	private MetadataString volumeAndIssue;
+	private MetadataString volume;
+
+	@simpl_scalar
+	private MetadataString issue;
 
 	/** 
 	 *Publication Date
@@ -64,36 +67,68 @@ public class Periodical extends BasicPublication
 		this.archive = archive;
 	}
 
-	public MetadataString	volumeAndIssue()
+	public MetadataString	volume()
 	{
-		MetadataString	result = this.volumeAndIssue;
+		MetadataString	result = this.volume;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.volumeAndIssue = result;
+			this.volume = result;
 		}
 		return result;
 	}
 
-	public String getVolumeAndIssue()
+	public String getVolume()
 	{
-		return this.volumeAndIssue == null ? null : volumeAndIssue().getValue();
+		return this.volume == null ? null : volume().getValue();
 	}
 
-	public MetadataString getVolumeAndIssueMetadata()
+	public MetadataString getVolumeMetadata()
 	{
-		return volumeAndIssue;
+		return volume;
 	}
 
-	public void setVolumeAndIssue(String volumeAndIssue)
+	public void setVolume(String volume)
 	{
-		if (volumeAndIssue != null)
-			this.volumeAndIssue().setValue(volumeAndIssue);
+		if (volume != null)
+			this.volume().setValue(volume);
 	}
 
-	public void setVolumeAndIssueMetadata(MetadataString volumeAndIssue)
+	public void setVolumeMetadata(MetadataString volume)
 	{
-		this.volumeAndIssue = volumeAndIssue;
+		this.volume = volume;
+	}
+
+	public MetadataString	issue()
+	{
+		MetadataString	result = this.issue;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.issue = result;
+		}
+		return result;
+	}
+
+	public String getIssue()
+	{
+		return this.issue == null ? null : issue().getValue();
+	}
+
+	public MetadataString getIssueMetadata()
+	{
+		return issue;
+	}
+
+	public void setIssue(String issue)
+	{
+		if (issue != null)
+			this.issue().setValue(issue);
+	}
+
+	public void setIssueMetadata(MetadataString issue)
+	{
+		this.issue = issue;
 	}
 
 	public MetadataDate	date()

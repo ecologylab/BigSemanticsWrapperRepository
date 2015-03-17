@@ -28,6 +28,10 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 	[SimplInherit]
 	public class YoutubeVideo : SocialVideo
 	{
+		[SimplCollection("yt_table")]
+		[MmName("artist_and_licenses")]
+		private List<YtTable> artistAndLicenses;
+
 		[SimplScalar]
 		private MetadataString numberOfViews;
 
@@ -36,14 +40,27 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 		private List<YoutubeVideo> suggestedVideos;
 
 		[SimplComposite]
-		[MmName("creator_channel")]
-		private RichDocument creatorChannel;
+		[MmName("suggested_playlist")]
+		private RichDocument suggestedPlaylist;
 
 		public YoutubeVideo()
 		{ }
 
 		public YoutubeVideo(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public List<YtTable> ArtistAndLicenses
+		{
+			get{return artistAndLicenses;}
+			set
+			{
+				if (this.artistAndLicenses != value)
+				{
+					this.artistAndLicenses = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString NumberOfViews
 		{
@@ -71,14 +88,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 			}
 		}
 
-		public RichDocument CreatorChannel
+		public RichDocument SuggestedPlaylist
 		{
-			get{return creatorChannel;}
+			get{return suggestedPlaylist;}
 			set
 			{
-				if (this.creatorChannel != value)
+				if (this.suggestedPlaylist != value)
 				{
-					this.creatorChannel = value;
+					this.suggestedPlaylist = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

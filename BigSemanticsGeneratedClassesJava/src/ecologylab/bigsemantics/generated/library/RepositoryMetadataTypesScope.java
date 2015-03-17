@@ -308,7 +308,11 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.Patent.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.PinterestAuthor.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.PinterestPin.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.PinterestPinboard.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.RottenMovie.class,
 
@@ -325,6 +329,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.TvShowEpisode.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.YtTable.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.artwork.Artwork.class,
 

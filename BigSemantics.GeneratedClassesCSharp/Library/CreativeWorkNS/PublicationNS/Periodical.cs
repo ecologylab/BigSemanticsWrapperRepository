@@ -36,7 +36,10 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.PublicationNS
 		private RichDocument archive;
 
 		[SimplScalar]
-		private MetadataString volumeAndIssue;
+		private MetadataString volume;
+
+		[SimplScalar]
+		private MetadataString issue;
 
 		/// <summary>
 		/// Publication Date
@@ -63,14 +66,27 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.PublicationNS
 			}
 		}
 
-		public MetadataString VolumeAndIssue
+		public MetadataString Volume
 		{
-			get{return volumeAndIssue;}
+			get{return volume;}
 			set
 			{
-				if (this.volumeAndIssue != value)
+				if (this.volume != value)
 				{
-					this.volumeAndIssue = value;
+					this.volume = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Issue
+		{
+			get{return issue;}
+			set
+			{
+				if (this.issue != value)
+				{
+					this.issue = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

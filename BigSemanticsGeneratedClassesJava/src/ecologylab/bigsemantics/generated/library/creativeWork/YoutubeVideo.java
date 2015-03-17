@@ -10,6 +10,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
 
 import ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo;
 import ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo;
+import ecologylab.bigsemantics.generated.library.creativeWork.YtTable;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -31,6 +32,10 @@ import java.util.Map;
 @simpl_inherit
 public class YoutubeVideo extends SocialVideo
 {
+	@simpl_collection("yt_table")
+	@mm_name("artist_and_licenses")
+	private List<YtTable> artistAndLicenses;
+
 	@simpl_scalar
 	private MetadataString numberOfViews;
 
@@ -39,8 +44,8 @@ public class YoutubeVideo extends SocialVideo
 	private List<YoutubeVideo> suggestedVideos;
 
 	@simpl_composite
-	@mm_name("creator_channel")
-	private RichDocument creatorChannel;
+	@mm_name("suggested_playlist")
+	private RichDocument suggestedPlaylist;
 
 	public YoutubeVideo()
 	{ super(); }
@@ -49,6 +54,36 @@ public class YoutubeVideo extends SocialVideo
 		super(mmd);
 	}
 
+
+	public List<YtTable> getArtistAndLicenses()
+	{
+		return artistAndLicenses;
+	}
+
+  // lazy evaluation:
+  public List<YtTable> artistAndLicenses()
+  {
+    if (artistAndLicenses == null)
+      artistAndLicenses = new ArrayList<YtTable>();
+    return artistAndLicenses;
+  }
+
+  // addTo:
+  public void addToArtistAndLicenses(YtTable element)
+  {
+    artistAndLicenses().add(element);
+  }
+
+  // size:
+  public int artistAndLicensesSize()
+  {
+    return artistAndLicenses == null ? 0 : artistAndLicenses.size();
+  }
+
+	public void setArtistAndLicenses(List<YtTable> artistAndLicenses)
+	{
+		this.artistAndLicenses = artistAndLicenses;
+	}
 
 	public MetadataString	numberOfViews()
 	{
@@ -112,13 +147,13 @@ public class YoutubeVideo extends SocialVideo
 		this.suggestedVideos = suggestedVideos;
 	}
 
-	public RichDocument getCreatorChannel()
+	public RichDocument getSuggestedPlaylist()
 	{
-		return creatorChannel;
+		return suggestedPlaylist;
 	}
 
-	public void setCreatorChannel(RichDocument creatorChannel)
+	public void setSuggestedPlaylist(RichDocument suggestedPlaylist)
 	{
-		this.creatorChannel = creatorChannel;
+		this.suggestedPlaylist = suggestedPlaylist;
 	}
 }

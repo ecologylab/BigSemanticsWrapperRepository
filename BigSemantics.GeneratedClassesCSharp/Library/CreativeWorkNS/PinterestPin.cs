@@ -7,10 +7,12 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.BigSemantics.MetadataNS.Builtins.CreativeWorkNS;
+using Ecologylab.BigSemantics.MetadataNS.Builtins.PersonNS.AuthorNS;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;
 using Simpl.Serialization;
@@ -26,11 +28,11 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 	{
 		[SimplComposite]
 		[MmName("pinboard")]
-		private RichDocument pinboard;
+		private PinterestPinboard pinboard;
 
 		[SimplComposite]
 		[MmName("pinner")]
-		private RichDocument pinner;
+		private Author pinner;
 
 		[SimplComposite]
 		[MmName("repins")]
@@ -66,7 +68,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 		public PinterestPin(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public RichDocument Pinboard
+		public PinterestPinboard Pinboard
 		{
 			get{return pinboard;}
 			set
@@ -79,7 +81,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 			}
 		}
 
-		public RichDocument Pinner
+		public Author Pinner
 		{
 			get{return pinner;}
 			set
