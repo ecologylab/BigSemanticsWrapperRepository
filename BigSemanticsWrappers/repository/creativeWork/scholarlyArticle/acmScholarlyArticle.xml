@@ -77,7 +77,7 @@
       <xpath>//div[@name='for-testing']</xpath>
       <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]</xpath>
       <scalar name="location">
-        <xpath>.//td[text()='Title']/following-sibling::td/a[1]</xpath>
+        <xpath>.//td[text()='Title']/following-sibling::td/a[1]/@href</xpath>
       </scalar>
       <scalar name="title">
         <xpath>.//td[text()='Title']/following-sibling::td[1]</xpath>

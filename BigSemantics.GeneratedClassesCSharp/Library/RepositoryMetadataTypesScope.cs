@@ -249,7 +249,9 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(PersonnelInterview),
 				typeof(Photostream),
 				typeof(PieroneProduct),
+				typeof(PinterestAuthor),
 				typeof(PinterestPin),
+				typeof(PinterestPinboard),
 				typeof(PoliticalCartoon),
 				typeof(Post),
 				typeof(PostalAddress),
@@ -371,6 +373,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(YoutubeSearchResults),
 				typeof(YoutubeVideo),
 				typeof(YtPlaylist),
+				typeof(YtTable),
 				typeof(ZaraProduct));
 		}
 	}

@@ -68,7 +68,9 @@ creativeWork/newsArticle.xml
 creativeWork/nsfAwardGrant.xml
 creativeWork/nytimesArticle.xml
 creativeWork/patent.xml
+creativeWork/pinterestAuthor.xml
 creativeWork/pinterestPin.xml
+creativeWork/pinterestPinboard.xml
 creativeWork/rottenTomatoeMovie.xml
 creativeWork/slashdotPost.xml
 creativeWork/socialVideo.xml

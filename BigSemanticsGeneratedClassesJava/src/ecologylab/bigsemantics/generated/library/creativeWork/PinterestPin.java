@@ -8,9 +8,11 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  * Copyright (2015) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creativeWork.PinterestPinboard;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
+import ecologylab.bigsemantics.metadata.builtins.person.author.Author;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -24,11 +26,11 @@ public class PinterestPin extends CreativeWork
 {
 	@simpl_composite
 	@mm_name("pinboard")
-	private RichDocument pinboard;
+	private PinterestPinboard pinboard;
 
 	@simpl_composite
 	@mm_name("pinner")
-	private RichDocument pinner;
+	private Author pinner;
 
 	@simpl_composite
 	@mm_name("repins")
@@ -66,22 +68,22 @@ public class PinterestPin extends CreativeWork
 	}
 
 
-	public RichDocument getPinboard()
+	public PinterestPinboard getPinboard()
 	{
 		return pinboard;
 	}
 
-	public void setPinboard(RichDocument pinboard)
+	public void setPinboard(PinterestPinboard pinboard)
 	{
 		this.pinboard = pinboard;
 	}
 
-	public RichDocument getPinner()
+	public Author getPinner()
 	{
 		return pinner;
 	}
 
-	public void setPinner(RichDocument pinner)
+	public void setPinner(Author pinner)
 	{
 		this.pinner = pinner;
 	}

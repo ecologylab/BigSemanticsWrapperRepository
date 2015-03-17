@@ -32,9 +32,6 @@ public class AskNatureImage extends RichDocument
 	@mm_name("image_source")
 	private RichDocument imageSource;
 
-	@simpl_scalar
-	private MetadataString keywords;
-
 	@simpl_composite
 	@mm_name("link_to_strategy")
 	private AskNatureStrategy linkToStrategy;
@@ -87,38 +84,6 @@ public class AskNatureImage extends RichDocument
 	public void setImageSource(RichDocument imageSource)
 	{
 		this.imageSource = imageSource;
-	}
-
-	public MetadataString	keywords()
-	{
-		MetadataString	result = this.keywords;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.keywords = result;
-		}
-		return result;
-	}
-
-	public String getKeywords()
-	{
-		return this.keywords == null ? null : keywords().getValue();
-	}
-
-	public MetadataString getKeywordsMetadata()
-	{
-		return keywords;
-	}
-
-	public void setKeywords(String keywords)
-	{
-		if (keywords != null)
-			this.keywords().setValue(keywords);
-	}
-
-	public void setKeywordsMetadata(MetadataString keywords)
-	{
-		this.keywords = keywords;
 	}
 
 	public AskNatureStrategy getLinkToStrategy()

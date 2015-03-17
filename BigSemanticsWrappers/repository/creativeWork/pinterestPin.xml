@@ -4,7 +4,9 @@
   <meta_metadata name="pinterest_pin" extends="creative_work" parser="xpath">
     <selector url_path_tree="http://pinterest.com/pin/" domain="pinterest.com" />
     <example_url url="http://pinterest.com/pin/197525133629352022/" />
-		
+    <selector url_path_tree="http://www.pinterest.com/pin/" domain="pinterest.com" />
+    <example_url url="https://www.pinterest.com/pin/110127153362144444/" />
+ 		
     	<!-- 
 
 		    Pinterest has glorious data in the headers...
@@ -49,24 +51,39 @@
     </scalar>
 
 
-    <composite name="pinboard" layer="2.5" type="rich_document">
+    <composite name="pinboard" layer="2.5" type="pinterest_pinboard">
       <scalar name="title">
-        <xpath>//meta[@property='og:title']/@content</xpath>
+        <xpath>//meta[@property='twitter:title']/@content</xpath>
       </scalar>
       <scalar name="location">
         <xpath>//meta[@property='pinterestapp:pinboard']/@content</xpath>
       </scalar>
     </composite>
 
-    <composite name="pinner" layer="3.0" type="rich_document">
+    <composite name="pinner" layer="3.0" type="author">
+        <xpath>//div[contains(@class,'boardHeader')]/div[contains(@class,'User boardRepTitle')]</xpath>
       <scalar name="title">
-        <xpath>//div[@class='pinDescription']//a[@class='commentDescriptionCreator']</xpath>
-      </scalar>
+        <xpath>.//*[@class='fullname']</xpath>
+<!--         <xpath>//div[@class='pinDescription']//a[@class='commentDescriptionCreator']</xpath> -->
+       </scalar>
       <scalar name="location">
-        <xpath>//meta[@property='pinterestapp:pinner']/@content</xpath>
+        <xpath>./a/@href</xpath>
+<!--         <xpath>//meta[@name='pinterestapp:pinner']/@content</xpath> -->
       </scalar>
-    </composite>
+	  <collection name="main_images">
+	  	<xpath>.//img</xpath>
+	    <scalar name="location">
+	       <xpath>./@src</xpath>
+	      </scalar>
+	    </collection>
+     </composite>
 
+<!-- 	<meta_metadata name="pinterest_pinner" type="author" xpath="//div[contains(@class,'boardHeader')]/div[contains(@class,'User boardRepTitle')]">
+		<scalar name="title" xpath=".//*[@class='fullname']" />
+		<scalar name="location" xpath="./a/@href" />
+ 	</meta_metadata>
+ -->
+ 
     <composite name="repins" layer="2.0" type="rich_document">
       <scalar name="title">
         <xpath>//meta[@property='pinterestapp:repins']/@content</xpath>
@@ -128,11 +145,11 @@
     </composite>
 
     <composite name="originally_from" type="rich_document">
-      <scalar name="title">
-        <xpath>//p[@id='PinSource']/a</xpath>
+       <scalar name="location">
+        <xpath>//meta[@name='og:see_also']/@content</xpath>
       </scalar>
-      <scalar name="location">
-        <xpath>//meta[@property='pinterestapp:source']/@content</xpath>
+      <scalar name="title">
+        <xpath>//a[@itemprop='url']/@href</xpath>
       </scalar>
     </composite>
 
@@ -153,13 +170,12 @@
     </semantic_actions>
 
   </meta_metadata>
+  
+ 
 	
 <!-- 	<meta_metadata name="pinterest_board" extends="creative_work"> -->
 		
 <!-- 	</meta_metadata> -->
 	
-<!-- 	<meta_metadata name="pinterest_pinner" extends="author"> -->
-		
-<!-- 	</meta_metadata> -->
 
 </meta_metadata_repository>

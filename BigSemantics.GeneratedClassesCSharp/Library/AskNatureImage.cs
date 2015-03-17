@@ -32,9 +32,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		[MmName("image_source")]
 		private RichDocument imageSource;
 
-		[SimplScalar]
-		private MetadataString keywords;
-
 		[SimplComposite]
 		[MmName("link_to_strategy")]
 		private AskNatureStrategy linkToStrategy;
@@ -66,19 +63,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.imageSource != value)
 				{
 					this.imageSource = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Keywords
-		{
-			get{return keywords;}
-			set
-			{
-				if (this.keywords != value)
-				{
-					this.keywords = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
