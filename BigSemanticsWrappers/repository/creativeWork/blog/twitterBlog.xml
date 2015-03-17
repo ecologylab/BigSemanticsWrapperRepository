@@ -123,4 +123,84 @@
 
     </collection>
   </meta_metadata>
+  
+  <meta_metadata name="twitter_api_microblog" extends="blog" parser="direct" no_cache="true" renderer="tweetbubble">
+
+    <selector url_stripped="https://api.twitter.com/1.1/statuses/user_timeline.json" domain="twitter.com" />
+    <example_url url="https://api.twitter.com/1.1/statuses/user_timeline.json?userid=barackobama" />
+
+    <scalar name="title" hide_label="true">
+    </scalar>
+    
+    <scalar name="description" hide="true"/>
+    
+    <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title">
+    </scalar>
+
+    <collection name="tweeters" child_type="tweeter" hide_label="true">
+			
+			<!-- <scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
+			<scalar name="location" xpath="//h2[@class='username']/span" always_show="true" hide_label="true" concatenates_to="title">
+		    	<regex_op regex="^@" replace="https://twitter.com/"/>
+		 	</scalar> -->
+
+      <composite name="photo" hide_label="true" layer="-1.0">
+        <scalar name="location" always_show="true">
+        </scalar>
+      </composite>
+
+      <scalar name="description" hide_label="true">
+      </scalar>
+      <scalar name="city" hide_label="true">
+      </scalar>
+
+      <composite name="webpage" hide_label="true">
+        <scalar name="title" hide_label="true">
+        </scalar>
+        <scalar name="location">
+        </scalar>
+      </composite>
+
+      <scalar name="num_tweets" label="tweets" label_at="bottom">
+      </scalar>
+      <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
+      </scalar>
+      <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
+      </scalar>
+    </collection>
+
+    <collection name="tweets" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
+      child_show_expanded_always="true" label_at="top" tag="tweets">
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true" tag="user">
+        <style is_child_metadata="true" hide="true" />
+        <scalar name="title" hide_label="true" tag="name">
+        </scalar>
+        <scalar name="location" tag="screen_name">
+         <regex_op regex="^" replace="https://twitter.com/" />
+        </scalar>
+			    <!-- <scalar name="username" xpath="./span" /> -->
+		    	
+		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
+        <composite name="photo" label="image" tag="profile_image_url">
+          <scalar name="location" always_show="true"  tag=".">
+          </scalar>
+        </composite>
+				<!--</collection>			    			    -->
+      </composite>
+
+      <scalar name="description" hide_label="true" extract_as_html="true" tag="text">
+      </scalar>
+      <scalar name="post_date" hide_label="true" tag="created_at">
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true" tag="id_str">
+        <regex_op regex="[^/]+$" />
+      </scalar>
+      
+      <collection name="main_images" child_type="image" hide_label="true" layer="8.0" tag="entites.media">
+      	<scalar name="location" tag="media_url">
+	    </scalar>
+      </collection>
+
+    </collection>
+  </meta_metadata>
 </meta_metadata_repository>
