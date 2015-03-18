@@ -23,7 +23,11 @@ namespace Ecologylab.BigSemantics.Generated
                 typeof (HtmlText),
                 typeof (Image),
                 typeof (Video),
-                typeof (Audio)
+                typeof (Audio),
+                typeof (FrameSelfmade),
+                typeof (PresentationFrame),
+                typeof (AggregateMedia),
+                typeof (AggregateSelfmade)
             };
 
         public static SimplTypesScope Get()
