@@ -22,7 +22,7 @@
     </scalar>
     <scalar name="location" always_show="true"/>
     <collection name="search_results" show_expanded_initially="true">
-      <xpath>//div[@id='res']//div//ol/li[@*]</xpath>
+      <xpath>//div[@id='ires']//ol/li[@*]</xpath>
       <scalar name="title" hide="true" />
      
       <composite name="destination_page" layer="6.0">
