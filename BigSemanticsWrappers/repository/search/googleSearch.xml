@@ -21,8 +21,10 @@
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
     <scalar name="location" always_show="true"/>
+    
+    
     <collection name="search_results" show_expanded_initially="true">
-      <xpath>//div[@id='ires']//ol/li[@*]</xpath>
+      <xpath>//div[@id='ires']/ol//li[@class='g']</xpath>
       <scalar name="title" hide="true" />
      
       <composite name="destination_page" layer="6.0">
@@ -32,9 +34,9 @@
         </scalar>
         <scalar name="location">
           <xpath>.//h3/a/@href</xpath>
-          <regex_op regex="/url\?q=" replace=""/>
+     <!--       <regex_op regex="/url\?q=" replace=""/>
           <regex_op regex="&amp;sa=.*" replace=""/>
-          <url_decode_op />
+          <url_decode_op /> -->
         </scalar>
       </composite>
        <scalar name="description" layer="5.3">
@@ -46,6 +48,7 @@
     </collection>
     <collection name="related_searches" child_type="google_search">
     <xpath>//div[@style='clear:both;margin-bottom:17px;overflow:hidden']/table//p</xpath>
+    <xpath>//p[@class='_Bmc']</xpath>
 	<scalar name="title">
 	  <xpath>./a</xpath>
 	</scalar>
