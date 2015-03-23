@@ -1,0 +1,11 @@
+<meta_metadata_repository name="aggregateSelfmade" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="aggregate_media" extends="metadata" built_in="true" />
+
+  <meta_metadata name="aggregate_selfmade" extends="rich_artifact" built_in="true">
+    <generic_type_var name="M" arg="aggregate_media" />
+    <collection name="rich_artifacts" child_type="rich_artifact" polymorphic_scope="rich_artifacts_scope" covariant="true" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

@@ -1,0 +1,11 @@
+<meta_metadata_repository name="frameSelfmade" package="ecologylab.bigsemantics.metadata.builtins"
+  default_user_agent_name="firefox_3_5">
+
+  <meta_metadata name="presentation_frame" extends="metadata" built_in="true" />
+	
+  <meta_metadata name="frame_selfmade" extends="rich_artifact" built_in="true">
+    <generic_type_var name="M" arg="presentation_frame" />
+    <scalar name="frame_number" scalar_type="float" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

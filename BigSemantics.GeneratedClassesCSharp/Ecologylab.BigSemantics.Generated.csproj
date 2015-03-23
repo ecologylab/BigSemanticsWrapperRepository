@@ -432,9 +432,11 @@
     <Compile Include="Library\CreativeWorkNS\Patent.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\PinterestAuthor.cs" />
     <Compile Include="Library\CreativeWorkNS\PinterestPin.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\PinterestPinboard.cs" />
     <Compile Include="Library\CreativeWorkNS\PublicationNS\AcmPortalPeriodical.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -567,8 +569,12 @@
     <Compile Include="Library\CreativeWorkNS\TechReviewNS\TechReview.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\CreativeWorkNS\TedtalkVideo.cs" />
-    <Compile Include="Library\CreativeWorkNS\TedTopic.cs" />
+    <Compile Include="Library\CreativeWorkNS\TedtalkVideo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\TedTopic.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\CreativeWorkNS\TvShow.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -578,6 +584,7 @@
     <Compile Include="Library\CreativeWorkNS\YoutubeVideo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\YtTable.cs" />
     <Compile Include="Library\Dc.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -806,7 +813,9 @@
     <Compile Include="Library\PrimitivesNS\CachedHtml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\PrimitivesNS\CouchdbEntry.cs" />
+    <Compile Include="Library\PrimitivesNS\CouchdbEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\PrimitivesNS\InformationCompositionMedia.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -870,9 +879,15 @@
     <Compile Include="Library\SearchNS\GettySearch.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\SearchNS\GoogleImageSearch.cs" />
-    <Compile Include="Library\SearchNS\GoogleScholarAuthorSearch.cs" />
-    <Compile Include="Library\SearchNS\GoogleScholarAuthorSearchResult.cs" />
+    <Compile Include="Library\SearchNS\GoogleImageSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GoogleScholarAuthorSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\SearchNS\GoogleScholarAuthorSearchResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\SearchNS\GoogleScholarSearch.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -984,7 +999,9 @@
     <Compile Include="Library\SlashdotRss.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\TedPlaylist.cs" />
+    <Compile Include="Library\TedPlaylist.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\Thumbnail.cs">
       <SubType>Code</SubType>
     </Compile>

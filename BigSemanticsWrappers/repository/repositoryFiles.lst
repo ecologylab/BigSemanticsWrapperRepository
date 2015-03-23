@@ -188,6 +188,7 @@ person/author/springerEditor.xml
 person/author/tateArtist.xml
 person/author/tedAuthor.xml
 person/author/tweeter.xml
+primitiveTypes/aggregateSelfmade.xml
 primitiveTypes/annotate.xml
 primitiveTypes/assignPrimaryLink.xml
 primitiveTypes/audio.xml
@@ -202,6 +203,7 @@ primitiveTypes/curateLink.xml
 primitiveTypes/debugMetadata.xml
 primitiveTypes/document.xml
 primitiveTypes/documentMetadataWrap.xml
+primitiveTypes/frameSelfmade.xml
 primitiveTypes/htmlText.xml
 primitiveTypes/image.xml
 primitiveTypes/imageClipping.xml
