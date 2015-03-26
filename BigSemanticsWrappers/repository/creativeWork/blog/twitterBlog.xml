@@ -124,78 +124,100 @@
     </collection>
   </meta_metadata>
   
-  <meta_metadata name="twitter_api_microblog" extends="blog" parser="direct" no_cache="true" renderer="tweetbubble">
+  <meta_metadata name="twitter_api_microblog" extends="blog" parser="jsonpath" no_cache="true" renderer="tweetbubble">
 
     <selector url_stripped="https://api.twitter.com/1.1/statuses/user_timeline.json" domain="twitter.com" />
     <example_url url="https://api.twitter.com/1.1/statuses/user_timeline.json?userid=barackobama" />
 
-    <scalar name="title" hide_label="true" tag="$.[0].user.name">
+    <scalar name="title" hide_label="true">
+    	<json_path>$.[0].user.name</json_path>
     </scalar>
     
     <scalar name="description" hide="true"/>
     
-    <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title"
-    				tag="$.[0].user.screen_name">
+    <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title">
+    	<json_path>$.[0].user.screen_name</json_path>			
     </scalar>
 
-    <collection name="tweeters" child_type="tweeter" hide_label="true" tag="$.[0].user">
+    <collection name="tweeters" child_type="tweeter" hide_label="true">
+      <json_path>$.[0].user</json_path>
 			
-      <composite name="photo" hide_label="true" layer="-1.0" tag=".">
-        <scalar name="location" always_show="true" tag="profile_image_url">
+      <composite name="photo" hide_label="true" layer="-1.0">
+        <json_path>.</json_path>
+        <scalar name="location" always_show="true">
+        	<json_path>profile_image_url</json_path>
         </scalar>
       </composite>
 
-      <scalar name="description" hide_label="true" tag="description">
+      <scalar name="description" hide_label="true">
+      	<json_path>description</json_path>
       </scalar>
-      <scalar name="city" hide_label="true" tag="location">
+      <scalar name="city" hide_label="true">
+      	<json_path>location</json_path>
       </scalar>
 
-      <composite name="webpage" hide_label="true" tag=".">
-        <scalar name="title" hide_label="true" tag="url">
+      <composite name="webpage" hide_label="true">
+      	<json_path>.</json_path>
+        <scalar name="title" hide_label="true">
+        	<json_path>url</json_path>
         </scalar>
-        <scalar name="location" tag="url">
+        <scalar name="location">
+        	<json_path>url</json_path>
         </scalar>
       </composite>
 
-      <scalar name="num_tweets" label="tweets" label_at="bottom" tag="statuses_count">
+      <scalar name="num_tweets" label="tweets" label_at="bottom">
+      	<json_path>statuses_count</json_path>
       </scalar>
-      <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets"
-      					tag="friends_count">
+      <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
+      	<json_path>friends_count</json_path>
       </scalar>
-      <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets"
-      					tag="followers_count">
+      <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
+      	<json_path>followers_count</json_path>
       </scalar>
     </collection>
 
     <collection name="tweets" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
-      child_show_expanded_always="true" label_at="top" tag="tweets">
-      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true" tag="retweeted_status.user">
-        <style is_child_metadata="true" hide="true" />
-        <scalar name="title" hide_label="true" tag="name">
+      child_show_expanded_always="true" label_at="top">
+      <json_path>tweets</json_path>
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+      	<json_path>retweeted_status.user</json_path>
+      	<style is_child_metadata="true" hide="true" />
+        
+        <scalar name="title" hide_label="true">
+         <json_path>name</json_path>
         </scalar>
-        <scalar name="location" tag="screen_name">
+        <scalar name="location">
+         <json_path>screen_name</json_path> 
          <regex_op regex="^" replace="https://twitter.com/" />
         </scalar>
 			    <!-- <scalar name="username" xpath="./span" /> -->
 		    	
 		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
-        <composite name="photo" label="image" tag=".">
-          <scalar name="location" always_show="true"  tag="profile_image_url">
+        <composite name="photo" label="image">
+          <json_path>.</json_path>
+          <scalar name="location" always_show="true">
+          	<json_path>profile_image_url</json_path>
           </scalar>
         </composite>
 				<!--</collection>			    			    -->
       </composite>
 
-      <scalar name="description" hide_label="true" extract_as_html="true" tag="text">
+      <scalar name="description" hide_label="true" extract_as_html="true">
+      	<json_path>text</json_path>
       </scalar>
-      <scalar name="post_date" hide_label="true" tag="created_at">
+      <scalar name="post_date" hide_label="true">
+      	<json_path>created_at</json_path>
       </scalar>
-      <scalar name="id" concatenates_to="post_date" hide_label="true" tag="id_str">
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+      	<json_path>id_str</json_path>
         <regex_op regex="[^/]+$" />
       </scalar>
       
-      <collection name="main_images" child_type="image" hide_label="true" layer="8.0" tag="entities.media">
-      	<scalar name="location" tag="media_url">
+      <collection name="main_images" child_type="image" hide_label="true" layer="8.0">
+      	<json_path>entities.media</json_path>
+      	<scalar name="location">
+      	  <json_path>media_url</json_path>
 	    </scalar>
       </collection>
 
