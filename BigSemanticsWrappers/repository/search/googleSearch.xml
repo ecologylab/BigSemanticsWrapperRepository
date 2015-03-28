@@ -4,6 +4,7 @@
    <meta_metadata name="google_search" extends="search" parser="xpath"
     comment="The Google search class">
     <generic_type_var name="SR" arg="search_result" />
+
     <selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
       <param name="tbm" value_is_not="isch" />
     </selector>
@@ -14,7 +15,14 @@
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
 	
     <filter_location>
+      <regex match="^http://www.google.com/webhp" replace="http://www.google.com/search" />
+      <regex match="^https://www.google.com/webhp" replace="https://www.google.com/search" />
       <override_params />
+      <strip_params_but>
+        <param>q</param>
+        <param>tbm</param>
+        <param>hl</param>
+      </strip_params_but>
     </filter_location>
 	
     <scalar name="query" style_name="google_query" layer="9.1">

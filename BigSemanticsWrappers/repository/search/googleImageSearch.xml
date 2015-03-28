@@ -4,47 +4,39 @@
 
   <meta_metadata name="google_image_search" extends="image_search" comment="Google image search."
     parser="xpath" extract_with="service">
-<!--     <selector url_stripped="https://www.google.com/search"> -->
-<!--       <param name="tbm" value="isch" /> -->
-<!--     </selector>     -->
-<!--     <selector url_stripped="http://www.google.com/search"> -->
-<!--       <param name="tbm" value="isch" /> -->
-<!--     </selector> -->
+
     <selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
       <param name="tbm" value="isch" />
     </selector>
     <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com">
       <param name="tbm" value="isch" />
     </selector>
+    <selector url_regex="https?://www.google.com/images\?.*" domain="google.com">
+      <param name="tbm" value="isch" />
+    </selector>
     <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
     <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
 
-<!--     <filter_location> -->
-<!--       <regex match="^https://" replace="http://" /> -->
-<!--       <set_param name="hl" value="en" /> -->
-<!--       <set_param name="gbv" value="1" /> -->
-<!--       <set_param name="sei" value="1" /> -->
-<!--     </filter_location> -->
-
     <filter_location>
+      <regex match="^http://www.google.com/webhp" replace="http://www.google.com/search" />
+      <regex match="^https://www.google.com/webhp" replace="https://www.google.com/search" />
       <override_params />
-      <strip_param name="source" />
-      <strip_param name="newwindow" />
-      <strip_param name="biw" />
-      <strip_param name="bih" />
-      <strip_param name="oq" />
+      <strip_params_but>
+        <param>q</param>
+        <param>tbm</param>
+        <param>hl</param>
+      </strip_params_but>
     </filter_location>
-	
+
     <collection name="search_results">
       <xpath>//div[@id='ires']//td</xpath>
       <scalar name="location" always_show="true">
         <xpath>./a/@href</xpath>
         <location_op extract_param="q" decode_url="true" />
-        
       </scalar>
-      	<scalar name ="title">
-      		<xpath>./cite</xpath>
-      	</scalar>
+      <scalar name ="title">
+        <xpath>./cite</xpath>
+      </scalar>
       <scalar name="thumb_width">
         <xpath>./a/img/@width</xpath>
       </scalar>
@@ -52,14 +44,14 @@
         <xpath>./a/img/@height</xpath>
       </scalar>
       <scalar name="description">
-      	<xpath>./b/following-sibling::text()[1]</xpath>
+        <xpath>./b/following-sibling::text()[1]</xpath>
       </scalar>
       <collection name="main_images">
-      	<xpath>./a</xpath>
-      	<scalar name="location">
-      		<xpath>./img/@src</xpath>
-      		<regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
-      	</scalar>
+        <xpath>./a</xpath>
+        <scalar name="location">
+          <xpath>./img/@src</xpath>
+          <regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
+        </scalar>
       </collection>
     </collection>
     

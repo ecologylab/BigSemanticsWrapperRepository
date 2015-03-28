@@ -22,7 +22,6 @@
     parser="xpath">
     <generic_type_var name="SR" arg="google_scholar_search_result" />
 
-<!--     <selector url_regex="http\:\/\/scholar\.google\.com\/scholar\?.*q=.*" domain="google.com"/> -->   
     <selector url_stripped="http://scholar.google.com/scholar" />
     <selector url_stripped="https://scholar.google.com/scholar" />
     
@@ -30,9 +29,10 @@
     <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
     
     <filter_location>
-      <strip_param name="btnG" />
-      <strip_param name="as_sdt" />
-      <strip_param name="as_sdtp" />
+      <strip_params_but>
+        <param>q</param>
+        <param>hl</param>
+      </strip_params_but>
     </filter_location>
 
     <scalar name="title">
