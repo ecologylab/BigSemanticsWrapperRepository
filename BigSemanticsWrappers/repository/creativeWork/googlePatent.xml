@@ -41,7 +41,7 @@
         <xpath>./@href</xpath>
         <regex_op regex="http://www.u(.*).htm" />
       </scalar>
-      <scalar name="patent_class" navigates_to="location">
+      <scalar name="title" label="patent_class" navigates_to="location">
         <xpath>.</xpath>
       </scalar>
     </collection>
