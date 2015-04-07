@@ -5,6 +5,7 @@
 
   <meta_metadata name="exhibition" extends="creative_work" comment="Artwork exhibition class">
     <scalar name="location" hide="true" />
+    <scalar name="subtitle" scalar_type="String" hide="true"/>
     <scalar name="description" label="abstract" comment="Abstract of the work." />
     <collection name="contributors" child_type="artist" label="artists"
       layer="9.5" comment="Set of contributors." />
