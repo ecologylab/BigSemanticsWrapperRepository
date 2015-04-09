@@ -46,7 +46,25 @@
 		<xpath>//article[@id='content']/div/p[1]</xpath>
 	</scalar>
 	
+	<composite name="video">
+		<xpath>//ul[@class='video']/li[1]/a</xpath>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+		<scalar name="title">
+			<xpath>.</xpath>
+		</scalar>
+	</composite>
 	
+	<composite name="website">
+		<xpath>//ul[@class='video']/li[2]/a</xpath>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+		<scalar name="title">
+			<xpath>.</xpath>
+		</scalar>
+	</composite>
 
   </meta_metadata>
   </meta_metadata_repository>

@@ -7,6 +7,10 @@
     <scalar name="location" hide="true" />
     <scalar name="subtitle" scalar_type="String" hide="true"/>
     <scalar name="description" label="abstract" comment="Abstract of the work." />
+    
+    <composite name="website" type="rich_document" hide="false" comment="link to work's website" />
+    <composite name="video" type="social_video" hide="false" comment="exhibition video" />
+    
     <collection name="contributors" child_type="artist" label="artists"
       layer="9.5" comment="Set of contributors." />
 
