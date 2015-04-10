@@ -20,7 +20,10 @@
       <strip_param name="pg" />
     </filter_location>
 
-
+	<scalar name="site_name" >
+      <regex_op regex="Books" replace ="Patents"></regex_op>
+    </scalar>
+    
     <scalar name="title">
       <xpath>//invention-title</xpath>
     </scalar>
