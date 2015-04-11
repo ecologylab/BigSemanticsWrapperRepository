@@ -20,7 +20,10 @@
       <strip_param name="pg" />
     </filter_location>
 
-
+	<scalar name="site_name" >
+      <regex_op regex="Books" replace ="Patents"></regex_op>
+    </scalar>
+    
     <scalar name="title">
       <xpath>//invention-title</xpath>
     </scalar>
@@ -41,7 +44,7 @@
         <xpath>./@href</xpath>
         <regex_op regex="http://www.u(.*).htm" />
       </scalar>
-      <scalar name="patent_class" navigates_to="location">
+      <scalar name="title" label="patent_class" navigates_to="location">
         <xpath>.</xpath>
       </scalar>
     </collection>

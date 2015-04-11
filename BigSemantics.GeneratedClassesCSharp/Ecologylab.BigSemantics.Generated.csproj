@@ -366,6 +366,7 @@
     <Compile Include="Library\CreativeWorkNS\BlogNS\Blog.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterApiMicroblog.cs" />
     <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterMicroblog.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -384,6 +385,7 @@
     <Compile Include="Library\CreativeWorkNS\BoardGame.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\ArtchiExhibition.cs" />
     <Compile Include="Library\CreativeWorkNS\ExhibitionNS\Exhibition.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,0 +1,70 @@
+<meta_metadata_repository name="artchiExhibition"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.exhibition">
+
+<meta_metadata name="artchi_exhibition" extends="exhibition" parser="xpath">
+    <selector url_path_tree="http://art-chi.org/" />
+    <example_url url="http://art-chi.org/daddylabyrinth" />
+
+    <scalar name="title">
+      <xpath>//article[@id='content']/div/h1</xpath>
+    </scalar>
+    
+    <scalar name="subtitle">
+      <xpath>//article[@id='content']/div/h2</xpath>
+    </scalar>
+    
+    <scalar name="title">
+    	<concatenate_values>
+			<value from_scalar="title" />
+			<value>: </value>
+			<value from_scalar="subtitle" />
+		</concatenate_values>
+		<regex_op regex=":[\s]*$" replace="" />
+    </scalar>
+
+	<collection name="contributors" show_expanded_initially="true">
+		<xpath>//*[@id="content"]/div[3]/div</xpath>
+		<scalar name="title">
+			<xpath>.//strong</xpath>
+		</scalar>
+		<scalar name="affiliation">
+			<xpath>.//em</xpath>
+		</scalar>
+		<scalar name="description">
+			<xpath>.//text()[preceding-sibling::br]</xpath>
+		</scalar>
+	</collection>
+	
+	<collection name="main_images">
+		<xpath>//*[@id="content"]/div[2]/div</xpath>
+        <scalar name="location">
+        	<xpath>.//img/@src</xpath>
+        </scalar>
+	</collection>
+
+	<scalar name="description">
+		<xpath>//article[@id='content']/div/p[1]</xpath>
+	</scalar>
+	
+	<composite name="video">
+		<xpath>//ul[@class='video']/li[1]/a</xpath>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+		<scalar name="title">
+			<xpath>.</xpath>
+		</scalar>
+	</composite>
+	
+	<composite name="website">
+		<xpath>//ul[@class='video']/li[2]/a</xpath>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+		<scalar name="title">
+			<xpath>.</xpath>
+		</scalar>
+	</composite>
+
+  </meta_metadata>
+  </meta_metadata_repository>

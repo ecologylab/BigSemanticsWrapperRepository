@@ -26,13 +26,13 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class MediaContent : Metadata
 	{
 		[SimplScalar]
-		private MetadataInteger height;
+		private MetadataInteger width;
 
 		[SimplScalar]
 		private MetadataParsedURL mediaUrl;
 
 		[SimplScalar]
-		private MetadataInteger width;
+		private MetadataInteger height;
 
 		public MediaContent()
 		{ }
@@ -40,14 +40,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		public MediaContent(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataInteger Height
+		public MetadataInteger Width
 		{
-			get{return height;}
+			get{return width;}
 			set
 			{
-				if (this.height != value)
+				if (this.width != value)
 				{
-					this.height = value;
+					this.width = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -66,14 +66,14 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataInteger Width
+		public MetadataInteger Height
 		{
-			get{return width;}
+			get{return height;}
 			set
 			{
-				if (this.width != value)
+				if (this.height != value)
 				{
-					this.width = value;
+					this.height = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
