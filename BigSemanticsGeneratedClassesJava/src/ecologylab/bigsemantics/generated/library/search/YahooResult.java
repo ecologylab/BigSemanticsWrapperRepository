@@ -31,10 +31,7 @@ public class YahooResult extends Document
 	private MetadataString summary;
 
 	@simpl_scalar
-	private MetadataString modificationDate;
-
-	@simpl_scalar
-	private MetadataString title;
+	private MetadataParsedURL refererUrl;
 
 	@simpl_composite
 	@mm_name("thumbnail")
@@ -44,7 +41,10 @@ public class YahooResult extends Document
 	private MetadataString mimeType;
 
 	@simpl_scalar
-	private MetadataParsedURL refererUrl;
+	private MetadataString modificationDate;
+
+	@simpl_scalar
+	private MetadataString title;
 
 	public YahooResult()
 	{ super(); }
@@ -84,6 +84,80 @@ public class YahooResult extends Document
 	public void setSummaryMetadata(MetadataString summary)
 	{
 		this.summary = summary;
+	}
+
+	public MetadataParsedURL	refererUrl()
+	{
+		MetadataParsedURL	result = this.refererUrl;
+		if (result == null)
+		{
+			result = new MetadataParsedURL();
+			this.refererUrl = result;
+		}
+		return result;
+	}
+
+	public ParsedURL getRefererUrl()
+	{
+		return this.refererUrl == null ? null : refererUrl().getValue();
+	}
+
+	public MetadataParsedURL getRefererUrlMetadata()
+	{
+		return refererUrl;
+	}
+
+	public void setRefererUrl(ParsedURL refererUrl)
+	{
+		if (refererUrl != null)
+			this.refererUrl().setValue(refererUrl);
+	}
+
+	public void setRefererUrlMetadata(MetadataParsedURL refererUrl)
+	{
+		this.refererUrl = refererUrl;
+	}
+
+	public YahooThumbnail getThumbnail()
+	{
+		return thumbnail;
+	}
+
+	public void setThumbnail(YahooThumbnail thumbnail)
+	{
+		this.thumbnail = thumbnail;
+	}
+
+	public MetadataString	mimeType()
+	{
+		MetadataString	result = this.mimeType;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.mimeType = result;
+		}
+		return result;
+	}
+
+	public String getMimeType()
+	{
+		return this.mimeType == null ? null : mimeType().getValue();
+	}
+
+	public MetadataString getMimeTypeMetadata()
+	{
+		return mimeType;
+	}
+
+	public void setMimeType(String mimeType)
+	{
+		if (mimeType != null)
+			this.mimeType().setValue(mimeType);
+	}
+
+	public void setMimeTypeMetadata(MetadataString mimeType)
+	{
+		this.mimeType = mimeType;
 	}
 
 	public MetadataString	modificationDate()
@@ -148,79 +222,5 @@ public class YahooResult extends Document
 	public void setTitleMetadata(MetadataString title)
 	{
 		this.title = title;
-	}
-
-	public YahooThumbnail getThumbnail()
-	{
-		return thumbnail;
-	}
-
-	public void setThumbnail(YahooThumbnail thumbnail)
-	{
-		this.thumbnail = thumbnail;
-	}
-
-	public MetadataString	mimeType()
-	{
-		MetadataString	result = this.mimeType;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.mimeType = result;
-		}
-		return result;
-	}
-
-	public String getMimeType()
-	{
-		return this.mimeType == null ? null : mimeType().getValue();
-	}
-
-	public MetadataString getMimeTypeMetadata()
-	{
-		return mimeType;
-	}
-
-	public void setMimeType(String mimeType)
-	{
-		if (mimeType != null)
-			this.mimeType().setValue(mimeType);
-	}
-
-	public void setMimeTypeMetadata(MetadataString mimeType)
-	{
-		this.mimeType = mimeType;
-	}
-
-	public MetadataParsedURL	refererUrl()
-	{
-		MetadataParsedURL	result = this.refererUrl;
-		if (result == null)
-		{
-			result = new MetadataParsedURL();
-			this.refererUrl = result;
-		}
-		return result;
-	}
-
-	public ParsedURL getRefererUrl()
-	{
-		return this.refererUrl == null ? null : refererUrl().getValue();
-	}
-
-	public MetadataParsedURL getRefererUrlMetadata()
-	{
-		return refererUrl;
-	}
-
-	public void setRefererUrl(ParsedURL refererUrl)
-	{
-		if (refererUrl != null)
-			this.refererUrl().setValue(refererUrl);
-	}
-
-	public void setRefererUrlMetadata(MetadataParsedURL refererUrl)
-	{
-		this.refererUrl = refererUrl;
 	}
 }

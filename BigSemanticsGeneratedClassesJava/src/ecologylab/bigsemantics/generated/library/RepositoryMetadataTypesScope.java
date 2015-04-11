@@ -328,6 +328,12 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.TvShowEpisode.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.VimeoList.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.VimeoUser.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.VimeoVideo.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.YtTable.class,
@@ -376,6 +382,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.Blog.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.TwitterApiMicroblog.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.TwitterMicroblog.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.FlickrPhoto.class,
@@ -385,6 +393,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Tumblr.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Tweet.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.exhibition.ArtchiExhibition.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.exhibition.Exhibition.class,
 
