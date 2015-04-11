@@ -1,70 +1,81 @@
 <meta_metadata_repository name="video"
   package="ecologylab.bigsemantics.generated.library.creativeWork">
 
- <meta_metadata name="vimeo_user_videos" extends="rich_document" parser="xpath">
-   <selector url_regex="https?://vimeo.com/\D\w*/videos" domain="vimeo.com"/>
-   <collection name="videos" child_type="vimeo_video">
-      <xpath>//div[@id='browse_content']/descendant::a</xpath>
+  <meta_metadata name="vimeo_list" extends="rich_document" parser="xpath">
+    <selector url_regex="https?://vimeo.com/\D\w*/videos.*" domain="vimeo.com"/>
+    <selector url_regex="https?://vimeo.com/\D\w*/following.*" domain="vimeo.com"/>
+    <example_url url="https://vimeo.com/snebtor/videos" />
+    <example_url url="https://vimeo.com/snebtor/following" />
+
+    <collection name="links" child_type="rich_document" hide_label="true">
+      <xpath>//div[@id='browse_content']/ol/li/a</xpath>
       <scalar name="title">
-        <xpath>.</xpath>
+        <xpath>./@title</xpath>
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
     </collection>
- </meta_metadata>
+  </meta_metadata>
  
- <meta_metadata name="vimeo_user" extends="author" comment="vimeo user page" parser="xpath">
+  <meta_metadata name="vimeo_user" extends="author" comment="vimeo user page" parser="xpath">
     <selector url_regex="https?://vimeo.com/\D\w*" domain="vimeo.com"/>
- 	<scalar name='portrait' scalar_type="ParsedURL" hide="true">
- 		<xpath>//img[@class='portrait portrait_main']</xpath>
- 	</scalar>
- 	<scalar name= 'title'>
- 		<xpath>//header/h1/span</xpath>
- 	</scalar>
- 	
- 	<scalar name="date_joined" scalar_type="String">
- 		<xpath>//dl[@class='inline_block_list user_meta']/descendant::time/title</xpath>
- 	</scalar>
- 	
- 	<composite name='videos' type="vimeo_user_videos">
- 		<xpath>//li[@class='submenu_container'][1]//div[@class='inner']/a</xpath>
- 		<scalar name="title">
-        	<xpath>.</xpath>
-      	</scalar>
-      	<scalar name="location">
-        	<xpath>./@href</xpath>
-        </scalar>
- 	</composite>
- 	
- 	<scalar name="total_number_of_videos" label="Total number of videos" scalar_type="String">
- 		<xpath>//b[@class ='stat_list_count'][1]</xpath>
- 	</scalar>
- 	
- 	<scalar name="likes" scalar_type="String">
- 		<xpath>(//b[@class ='stat_list_count'])[2]</xpath>
- 	</scalar>
- 	
- 	<scalar name="following" scalar_type="String">
- 		<xpath>(//b[@class ='stat_list_count'])[3]</xpath>
- 	</scalar>
- 	
- 	<scalar name="groups" scalar_type="String">
- 		<xpath>(//b[@class ='stat_list_count'])[4]</xpath>
- 	</scalar>
- 	
- 	<scalar name="channels" scalar_type="String">
- 		<xpath>(//b[@class ='stat_list_count'])[5]</xpath>
- 	</scalar>
- 	
- 	<scalar name="albumns" scalar_type="String">
- 		<xpath>(//b[@class ='stat_list_count'])[6]</xpath>
- 	</scalar>
+    <example_url url="https://vimeo.com/snebtor" />
 
- </meta_metadata>
- 
- 
- 
+    <scalar name= 'title'>
+      <xpath>//header/h1/span</xpath>
+    </scalar>
+
+    <scalar name='portrait' scalar_type="ParsedURL" hide="true">
+      <xpath>//img[@class='portrait portrait_main']</xpath>
+    </scalar>
+    
+    <scalar name="date_joined" scalar_type="String">
+      <xpath>//dl[@class='inline_block_list user_meta']/descendant::time/title</xpath>
+    </scalar>
+         
+    <scalar name="likes" scalar_type="String">
+      <xpath>(//b[@class ='stat_list_count'])[2]</xpath>
+    </scalar>
+     
+    <scalar name="following" scalar_type="String">
+      <xpath>(//b[@class ='stat_list_count'])[3]</xpath>
+    </scalar>
+     
+    <scalar name="groups" scalar_type="String">
+      <xpath>(//b[@class ='stat_list_count'])[4]</xpath>
+    </scalar>
+     
+    <scalar name="channels" scalar_type="String">
+      <xpath>(//b[@class ='stat_list_count'])[5]</xpath>
+    </scalar>
+     
+    <scalar name="albumns" scalar_type="String">
+      <xpath>(//b[@class ='stat_list_count'])[6]</xpath>
+    </scalar>
+
+    <composite name="videos" type="vimeo_list">
+      <xpath>//li[@class='submenu_container'][1]//div[@class='inner']/a</xpath>
+      <scalar name="title">
+       	<xpath>.</xpath>
+     	</scalar>
+     	<scalar name="location">
+       	<xpath>./@href</xpath>
+      </scalar>
+      <collection name="links" label="videos" />
+ 	  </composite>
+ 	  
+ 	  <composite name="following" type="vimeo_list">
+ 	    <xpath>//section[@class='user_stats']/ul/li[3]//a</xpath>
+      <scalar name="title">
+       	<xpath>.</xpath>
+     	</scalar>
+     	<scalar name="location">
+       	<xpath>./@href</xpath>
+      </scalar>
+      <collection name="links" label="following" />
+ 	  </composite>
+  </meta_metadata>
 
   <meta_metadata name="vimeo_video" extends="social_video" comment="vimeo video view page" parser="xpath">
     <selector url_regex="https?://vimeo.com/[0-9]*" domain="vimeo.com"/>
@@ -83,7 +94,6 @@
     	<xpath>//meta[@property='og:url']</xpath>
     </scalar>
     
-    
     <collection name="authors" child_type="vimeo_user">
       <xpath>//a[@rel='author']</xpath>
       <scalar name="title">
@@ -93,7 +103,6 @@
         <xpath>./@href</xpath>
       </scalar>
     </collection>
-    
   </meta_metadata>
   
 </meta_metadata_repository>    
