@@ -37,22 +37,23 @@
         <xpath>./@href</xpath>
       </scalar>
     </composite>
+    
     <scalar name="text_keywords" scalar_type="String" context_node="content">
       <xpath>./text()[contains(., 'Keywords')]</xpath>
-      <filter regex="Keywords: " replace="" />
+      <regex_op regex="Keywords: " replace=""></regex_op>
     </scalar>
-
+     
     <composite name="link_to_strategy" type="ask_nature_strategy">
       <xpath>//div[@class='text_zone']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <filter regex="Back to Galler" replace="Corresponding Strateg" />
+        <regex_op regex="Back to Galler" replace="Corresponding Strateg"></regex_op>
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
     </composite>
-
+    
   </meta_metadata>
 
 </meta_metadata_repository>
