@@ -5,6 +5,7 @@
   <meta_metadata name="citeseerx_similar" extends="citeseerx_record" parser="xpath"
     comment="Citation or co-citation page from CiteSeerX.">
     <selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
+    <selector url_stripped="http://citeseer.ist.psu.edu/viewdoc/similar" />
     <example_url url="http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&amp;type=sc" />
 
     <scalar name="title" navigate_to="location" as_natural_id="title" format="text">
