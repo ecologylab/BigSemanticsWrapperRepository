@@ -33,6 +33,12 @@
 		<scalar name="description">
 			<xpath>.//text()[preceding-sibling::br]</xpath>
 		</scalar>
+		<composite name="photo">
+			<xpath>.</xpath>
+			<scalar name="location">
+				<xpath>.//img/@src</xpath>
+			</scalar>	
+		</composite>
 	</collection>
 	
 	<collection name="main_images">
