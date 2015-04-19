@@ -2,7 +2,7 @@
 <meta_metadata_repository name="googleBook" package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
   <meta_metadata name="google_book" extends="book" parser="xpath" >
-    <selector url_regex="https?://books.google.com/books/.*" />
+    <selector url_regex="https?://books.google.com/books/.*" domain="google.com" />
     <example_url url="http://books.google.com/books?id=gFgnde_vwMACamp;printsec=frontcoveramp;dq=testamp;hl=enamp;sa=Xamp;ei=1ZjiU_q9J4ymyATTqoDwDwamp;ved=0CCgQ6AEwAQ"/>
     <example_url url="http://books.google.com/books?id=noEyxwGQ6SkCamp;printsec=frontcoveramp;dq=testamp;hl=enamp;sa=Xamp;ei=BZniU5arNM-jyASp2YLYBwamp;ved=0CC4Q6AEwAg"/>
     <scalar name="title">
