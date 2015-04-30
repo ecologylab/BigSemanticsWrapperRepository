@@ -18,20 +18,21 @@
     <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
 
     <filter_location>
-      <regex match="//www.google.co(m|m?\.\w\w)/webhp" replace="//www.google.com/search" />
+      <replace pattern="//www.google.co(m|m?\.\w\w)/webhp" to="//www.google.com/search" />
       <override_params />
-      <strip_params_but>
-        <param>q</param>
-        <param>tbm</param>
-        <param>hl</param>
-        <param>btnG</param>
-        <param>site</param>
-        <param>gbv</param>
-      </strip_params_but>
-      <set_param name="hl" value="en" only_when_not_set="true" />
-      <set_param name="btnG" value="Search" />
+      <set_param name="btnG" value="search" />
       <set_param name="site" value="imghp" />
+      <set_param name="tbm" value="isch" />
       <set_param name="gbv" value="1" />
+      <set_param name="hl" value="en" only_when_not_set="true" />
+      <strip_params_but>
+        <name>q</name>
+        <name>tbm</name>
+        <name>btnG</name>
+        <name>site</name>
+        <name>gbv</name>
+        <name>hl</name>
+      </strip_params_but>
     </filter_location>
 
     <collection name="search_results">
@@ -56,7 +57,7 @@
         <xpath>./a</xpath>
         <scalar name="location">
           <xpath>./img/@src</xpath>
-          <regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
+          <replace pattern="https://encrypted-tbn([0-9]+)\.google\.com/images" to="http://t$1.gstatic.com/images" />
         </scalar>
       </collection>
     </collection>

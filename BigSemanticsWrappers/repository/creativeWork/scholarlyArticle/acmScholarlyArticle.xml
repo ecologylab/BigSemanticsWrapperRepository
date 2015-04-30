@@ -21,7 +21,7 @@
       <strip_param name="dl" />
       <strip_param name="CFID" />
       <strip_param name="CFTOKEN" />
-      <regex match="id=\d+\.(\d+)" replace="id=$1" />
+      <replace pattern="id=\d+\.(\d+)" to="id=$1" />
       <alternative_host>portal.acm.org</alternative_host>
       <alternative_host>dl.acm.org</alternative_host>
     </filter_location>
@@ -96,12 +96,12 @@
 
       <scalar name="year" label="year published" is_facet="true">
         <xpath>.//td[text()='Publisher']/following-sibling::td</xpath>
-        <regex_op regex="[\D]" replace="" />
+        <replace pattern="[\D]" to="" />
       </scalar>
 
       <scalar name="isbn">
         <xpath>.//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]</xpath>
-        <regex_op regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
+        <match pattern="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
       </scalar>
 
 			<!-- xpath that could be used that returns all documents instead of just the first 10: 

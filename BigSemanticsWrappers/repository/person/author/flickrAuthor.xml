@@ -8,7 +8,7 @@
 
     <scalar name="title">
       <xpath>//title/text()</xpath>
-      <regex_op regex="Flickr: " replace="" />
+      <replace pattern="Flickr: " to="" />
     </scalar>
 
     <scalar name="description">

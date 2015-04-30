@@ -22,12 +22,12 @@
 
     <scalar name="year">
       <xpath>//*[@id='caption']</xpath>
-      <regex_op regex="\d{4}" />
+      <match pattern="\d{4}" />
     </scalar>
 
     <scalar name="medium">
       <xpath>//*[@id='caption']</xpath>
-      <regex_op regex="\.(.*?)(?=\,)" />
+      <match pattern="\.(.*?)(?=\,)" />
     </scalar>
 
     <collection name="tags" child_type="guggen_filter" label="tags">

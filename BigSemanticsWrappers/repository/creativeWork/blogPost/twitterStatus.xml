@@ -15,11 +15,11 @@
         <scalar name="title" hide_label="true">
           <xpath>.//strong[@class='fullname']</xpath>
           <xpath>.//strong[@class='fullname js-action-profile-name show-popup-with-id']</xpath>
-          <regex_op regex="Verified Account" replace=" (Verified Account)" />
+          <replace pattern="Verified Account" to=" (Verified Account)" />
         </scalar>
         <scalar name="location">
           <xpath>.//span[@class='username js-action-profile-name']</xpath>
-          <regex_op regex="@" replace="https://twitter.com/" />
+          <replace pattern="@" to="https://twitter.com/" />
         </scalar>
 <!--         <scalar name="username" scalar_type="String" hide_label="true"> -->
 <!--       	  <xpath>.//span[@class='username js-action-profile-name']</xpath> -->
@@ -42,7 +42,7 @@
     
     <scalar name="id" concatenates_to="post_date" hide_label="true">
       <xpath>//div[@class='content clearfix']//small[@class='time']/a/@href</xpath>
-      <regex_op regex="[^/]+$" />
+      <match pattern="[^/]+$" />
     </scalar>
     
     <collection name="replies" label="replies" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
@@ -57,7 +57,7 @@
         </scalar>
         <scalar name="location">
           <xpath>./span/b</xpath>
-          <regex_op regex="^" replace="https://twitter.com/" />
+          <replace pattern="^" to="https://twitter.com/" />
         </scalar>
 		<!-- <scalar name="username" xpath="./span" /> -->
 		    	
@@ -79,7 +79,7 @@
 	  </scalar>
 	  <scalar name="id" concatenates_to="post_date" hide_label="true">
 	    <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
-	    <regex_op regex="[^/]+$" />
+	    <match pattern="[^/]+$" />
 	  </scalar>
     </collection>
   </meta_metadata>

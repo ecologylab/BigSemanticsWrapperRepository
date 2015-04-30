@@ -84,16 +84,15 @@
       </scalar>
       <scalar name="pre_description">
         <xpath>./a/text()</xpath>
-        <regex_op regex="^.*$"
-          replace="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=" />
+        <replace pattern="^.*$" to="http://www.fondation-langlois.org/html/e/research.php?Filtres=1&amp;MotsCles=" />
       </scalar>
       <scalar name="mid_description">
         <xpath>./a/text()</xpath>
-        <regex_op regex="\s" replace="+" />
+        <replace pattern="\s" to="+" />
       </scalar>
       <scalar name="post_description">
         <xpath>./a/text()</xpath>
-        <regex_op regex=".*" replace="&amp;Numero=&amp;zoom=1&amp;Format=1" />
+        <replace pattern=".*" to="&amp;Numero=&amp;zoom=1&amp;Format=1" />
       </scalar>
 
 

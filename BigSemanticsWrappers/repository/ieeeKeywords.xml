@@ -15,7 +15,7 @@
 		          <value from_scalar="title" />
 		          
 		        </concatenate_values>
-				<regex_op regex=" " replace="+"/>
+				<replace pattern=" " to="+"/>
 			</scalar>
 					
 		</collection>

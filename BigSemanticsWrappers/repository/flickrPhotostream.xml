@@ -13,7 +13,7 @@
       </scalar>
       <scalar name="location">
         <xpath>./../@href</xpath>
-			<!--  	<regex_op regex="in/photostream" replace="" /> -->
+			<!--  	<replace pattern="in/photostream" to="" /> -->
       </scalar>
     </collection>
   </meta_metadata>

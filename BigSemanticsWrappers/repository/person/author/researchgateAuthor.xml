@@ -13,7 +13,7 @@
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </composite>
         <composite name="department" type="research_gate_institution_department">
@@ -23,7 +23,7 @@
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </composite>
         <composite name="stats" type="research_gate_stats">
@@ -51,7 +51,7 @@
             </scalar> 
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>                    
         </collection>
         <collection name="top_coauthors" child_type="research_gate_author">
@@ -61,7 +61,7 @@
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
         <collection name="skills" child_scalar_type="String">

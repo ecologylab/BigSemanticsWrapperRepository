@@ -49,7 +49,7 @@
         <scalar name="location" xpath="./@href" />
       </composite>
   		<scalar name="time" xpath=".//span[@class='time']">
-        <regex_op regex=".* ago" />
+        <match pattern=".* ago" />
       </scalar>
   		<scalar name="count" xpath=".//span[@class='comments-rating-positive']"/>
   	</collection>

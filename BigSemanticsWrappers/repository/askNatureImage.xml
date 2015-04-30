@@ -40,14 +40,14 @@
     
     <scalar name="text_keywords" scalar_type="String" context_node="content">
       <xpath>./text()[contains(., 'Keywords')]</xpath>
-      <regex_op regex="Keywords: " replace=""></regex_op>
+      <replace pattern="Keywords: " to="" />
     </scalar>
      
     <composite name="link_to_strategy" type="ask_nature_strategy">
       <xpath>//div[@class='text_zone']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <regex_op regex="Back to Galler" replace="Corresponding Strateg"></regex_op>
+        <replace pattern="Back to Galler" to="Corresponding Strateg" />
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>

@@ -21,7 +21,7 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection> 
         <collection name="top_departments" child_type="research_gate_institution_department">
@@ -31,7 +31,7 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
         <collection name="top_collaborators" child_type="research_gate_institution">
@@ -41,19 +41,19 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
         <collection name="top_members" child_type="research_gate_author">
             <xpath>//ul[@class='js-people-list-content facepile ']//a/@href</xpath>
             <scalar name="title">
                 <xpath>.</xpath>
-                <regex_op regex="profile/" replace=""></regex_op>
-                <regex_op regex="_" replace=" "></regex_op>
+                <replace pattern="profile/" to="" />
+                <replace pattern="_" to=" " />
             </scalar>
             <scalar name="location">
                 <xpath>.</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>  
         <composite name="contact_info" type="research_gate_institution_contact_info">
@@ -63,27 +63,27 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="telephone" scalar_type="String" schema_org_itemprop="telephone" >
 			     <xpath>./li[@data-fields='phone']</xpath>
-                <regex_op regex="Phone" replace=""></regex_op>
+                <replace pattern="Phone" to="" />
 			</scalar>
 			   
 			<scalar name="fax_number">
 			    <xpath>./li[@data-fields='fax']</xpath>
-			    <regex_op regex="Fax" replace=""></regex_op>
+			    <replace pattern="Fax" to="" />
 			</scalar>
 		    <scalar name="street_address">
 			     <xpath>./li[@data-fields='street,zip,city,state,country']</xpath>
-			     <regex_op regex="Address" replace=""></regex_op>
+			     <replace pattern="Address" to="" />
 			</scalar>
         </composite>
         <composite name="website" type="rich_document">
             <xpath>//li[@data-fields='institutionWebsite']</xpath>
            <scalar name="title">
                 <xpath>.</xpath>
-                <regex_op regex="Website" replace=""></regex_op>
+                <replace pattern="Website" to="" />
            </scalar>
             <scalar name="location">
                 <xpath>.</xpath>
-                <regex_op regex="Website" replace="http://"></regex_op>
+                <replace pattern="Website" to="http://" />
             </scalar>
         </composite>
            <composite name="stats" type="research_gate_stats">

@@ -12,7 +12,7 @@
     </scalar>
     <scalar name="price">
       <xpath>//span[@class='cinza bigfont']/text()</xpath>
-      <regex_op regex="Price: " replace="" />
+      <replace pattern="Price: " to="" />
     </scalar>
   </meta_metadata>
 </meta_metadata_repository>

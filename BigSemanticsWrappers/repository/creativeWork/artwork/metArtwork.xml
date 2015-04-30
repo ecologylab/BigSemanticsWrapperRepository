@@ -48,7 +48,7 @@
     <scalar name="author_info" comment="Bit of info about author" label="artist info"
       scalar_type="String">
       <xpath>//div[@class='tombstone-container']/h3/text()[count(preceding-sibling::br) = 1]</xpath>
-      <regex_op regex="\((.*?)\)" />
+      <match pattern="\((.*?)\)" />
     </scalar>
 
     <scalar name="description">

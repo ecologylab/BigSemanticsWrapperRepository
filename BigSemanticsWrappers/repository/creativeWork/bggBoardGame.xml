@@ -18,7 +18,7 @@
 	    </scalar>
 	    <scalar name="overall_rating">
 	      <xpath>//*[@property='v:average']</xpath>
-	      <regex_op regex="$" replace=" out of 10" />
+	      <replace pattern="$" to=" out of 10" />
 	    </scalar>
 	
 	    <scalar name="number_of_players">

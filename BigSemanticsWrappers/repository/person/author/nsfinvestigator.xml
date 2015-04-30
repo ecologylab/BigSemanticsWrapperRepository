@@ -14,7 +14,7 @@
     </selector>
 
     <filter_location>
-      <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
+      <replace pattern="advancedSearchResult" to="advancedSearchNoScript" />
     </filter_location>
 
     <example_url
@@ -64,7 +64,7 @@
 <!--         <scalar name="location" xpath="./@href" /> -->
 <!--       </composite> -->
 <!--       <scalar name="amount" xpath="./td[9]"> -->
-<!--         <regex_op regex="(^\$)|,|(\.\d\d$)" replace="" /> -->
+<!--         <replace pattern="(^\$)|,|(\.\d\d$)" to="" /> -->
 <!--       </scalar> -->
     </collection>
 

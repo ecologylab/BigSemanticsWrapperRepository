@@ -28,7 +28,7 @@
 		      </composite>
 		      <scalar name="description">
 		          <xpath>./div[@class='abstract']/span[@class='full']</xpath>
-		          <regex_op regex="[Hide abstract] ABSTRACT:" replace=""/>
+		          <replace pattern="[Hide abstract] ABSTRACT:" to=""/>
 		      </scalar>
 		      <collection name="authors">
 		           <xpath>./div[@class='authors']/a</xpath>

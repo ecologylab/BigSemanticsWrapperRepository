@@ -30,13 +30,13 @@
 				ALL JAVASCRIPT 
 		<scalar name="color" scalar_type="String" xpath="//span[@itemprop='color']" />
 		<scalar name="overall_rating" xpath="//div[@id='BVRRCustomDiv']//div[@id='BVRRRatingOverall_Review_Display']/div[@class='BVRRRatingNormalOutOf']/span[@class='BVRRNumber BVRRRatingNumber']/text()" />
-		 	<regex_op regex="$" replace=" out of 5.0" />   
+		 	<replace pattern="$" to=" out of 5.0" />   
 		</scalar>  
 		
 		<collection name="reviews" xpath="//div[@id='BVRRDisplayContentBodyID']/div/div[@class='BVRRReviewDisplayStyle3']" >
 			<scalar name="title" xpath=".//span[@class='BVRRValue BVRRReviewTitle']" />
 			<scalar name="rating" xpath=".//div[@id='BVRRRatingOverall_Review_Display']/div[@class='BVRRRatingNormalOutOf']/span[@class='BVRRNumber BVRRRatingRangeNumber']" >
-				<regex_op regex="$" replace=" out of 5.0" />
+				<replace pattern="$" to=" out of 5.0" />
 			</scalar>
 			<scalar name="description" xpath=".//span[@class='BVRRReviewText']" />
 		</collection>

@@ -38,7 +38,7 @@
 <!--         <xpath>substring-before(.//span[@class='itmRating']/img/@alt, 'out of ')</xpath> -->
 <!--         <xpath>substring-before(.//span[@class='itmRating']/img/@alt, 'out of ')</xpath> -->
         <xpath>.//span[@class='itmRating']/img/@alt</xpath>
-      	<regex_op regex="out of 5" replace="" />
+      	<replace pattern="out of 5" to="" />
       </scalar>
       <scalar name="title">
         <xpath>.//h3/text()</xpath>
@@ -102,7 +102,7 @@
           </scalar>
           <scalar name="value">
             <xpath>.</xpath>
-            <regex_op regex="^[^:]+:" replace="" />
+            <replace pattern="^[^:]+:" to="" />
           </scalar>
         </collection>
       </collection>

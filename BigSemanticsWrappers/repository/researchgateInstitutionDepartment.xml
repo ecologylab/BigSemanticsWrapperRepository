@@ -33,7 +33,7 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                 <regex_op regex="^" replace="/"></regex_op>
+                 <replace pattern="^" to="/" />
             </scalar>
         </composite>
         <collection name="top_articles" child_type="research_gate_article">
@@ -43,7 +43,7 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
         <collection name="top_members" child_type="research_gate_author">
@@ -53,7 +53,7 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
         <collection name="last_weeks_articles" child_type="research_gate_article">
@@ -63,7 +63,7 @@ package="ecologylab.bigsemantics.generated.library">
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
     </meta_metadata>

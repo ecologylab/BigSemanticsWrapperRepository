@@ -89,7 +89,7 @@
       	<xpath>.</xpath>
         <scalar name="title">
         	  <xpath>.//div[@class='gs_fl']/a[1]</xpath>
-       			  <regex_op regex=".*" replace="Citation Page" />
+       			  <replace pattern=".*" to="Citation Page" />
         </scalar>
       	<scalar name="location">
       		 <xpath>.//div[@class='gs_fl']/a[1]/@href</xpath>
@@ -107,7 +107,7 @@
       </composite>
       <scalar name="versions">
         <xpath>.//div[@class='gs_fl']/a[last()]</xpath>
-        <regex_op regex="All | versions" replace="" />
+        <replace pattern="All | versions" to="" />
       </scalar>
       <scalar name="versions_link">
         <xpath>.//div[@class='gs_fl']/a[last()]/@href</xpath>

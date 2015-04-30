@@ -68,7 +68,7 @@
           <value>http://www.nsf.gov/awardsearch/advancedSearchNoScript?PIId=&amp;PIFirstName=&amp;PILastName=&amp;PIOrganization=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=All&amp;ProgRefCode=&amp;BooleanRef=All&amp;&amp;ProgOfficer=&amp;Keyword=&amp;AwardNumberOperator=&amp;AwardAmount=&amp;AwardInstrument=&amp;ActiveAwards=true&amp;OriginalAwardDateOperator=&amp;StartDateOperator=&amp;ExpDateOperator=&amp;Program=</value>
           <value from_scalar="title" />
         </concatenate_values>
-        <regex_op regex="\s+" replace="+" />
+        <replace pattern="\s+" to="+" />
       </scalar>
     </collection>
     <scalar name="grant_number">
@@ -82,9 +82,9 @@
     </scalar>
     <scalar name="amount" hide="true">
       <xpath>//td[@class='tabletext2']/strong[starts-with(text(), 'Awarded Amount to Date:')]/following::td[@class='tabletext2'][1]</xpath>
-      <regex_op regex="\s+" replace="" />
-      <regex_op regex="[\$,]" replace="" />
-      <regex_op regex="\.\d+" replace="" />
+      <replace pattern="\s+" to="" />
+      <replace pattern="[\$,]" to="" />
+      <replace pattern="\.\d+" to="" />
     </scalar>
     <scalar name="amount_string" label="amount" scalar_type="String">
       <concatenate_values>
@@ -98,14 +98,14 @@
         trim="true" />
       <scalar name="title" field_parser_key="$1" layer="-2.0" />
       <scalar name="affiliation" field_parser_key="$2" layer="-1.0">
-        <regex_op regex="&lt;.*?&gt;" replace=" " />
+        <replace pattern="&lt;.*?&gt;" to=" " />
       </scalar>
       <scalar name="location">
         <concatenate_values>
           <value>http://www.nsf.gov/awardsearch/advancedSearchResult?PIId=&amp;PIFirstName=&amp;PILastName=&amp;PIOrganization=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgEleCode=&amp;BooleanElement=All&amp;ProgRefCode=&amp;BooleanRef=All&amp;Program=&amp;Keyword=&amp;AwardNumberOperator=&amp;AwardAmount=&amp;AwardInstrument=&amp;ActiveAwards=true&amp;ExpiredAwards=true&amp;OriginalAwardDateOperator=&amp;StartDateOperator=&amp;ExpDateOperator=&amp;ProgOfficer=</value>
           <value from_scalar="title" />
         </concatenate_values>
-        <regex_op regex="\s+" replace="+" />
+        <replace pattern="\s+" to="+" />
       </scalar>
     </collection>
     <composite name="sponsor">

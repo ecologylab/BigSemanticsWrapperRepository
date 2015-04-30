@@ -20,7 +20,7 @@
     </scalar>
     <scalar name="overall_rating">
       <xpath>//span[@class='piRatingVal']</xpath>
-      <regex_op regex="$" replace=" out of 5" />
+      <replace pattern="$" to=" out of 5" />
     </scalar>
     <scalar name="description">
       <xpath>//div[@id='WriteUp']/div</xpath>

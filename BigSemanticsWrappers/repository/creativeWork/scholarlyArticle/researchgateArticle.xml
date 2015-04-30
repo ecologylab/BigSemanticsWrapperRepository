@@ -37,7 +37,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
             </scalar>
             <scalar name="location">
                 <xpath>./a/@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
                 
             </scalar>
         </collection>
@@ -48,7 +48,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
             </scalar>
             <scalar name="location">
                 <xpath>./a/@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
                 
             </scalar>
         </collection>
@@ -59,7 +59,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
             </scalar>
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
         <collection name="authors" child_type="research_gate_author">
@@ -69,7 +69,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
             </scalar>
             <scalar name="location">
                 <xpath>.//div[@class='item-name']/a/@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>
         </collection>
     

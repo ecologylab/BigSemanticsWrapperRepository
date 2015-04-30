@@ -19,7 +19,7 @@
 			<value>: </value>
 			<value from_scalar="subtitle" />
 		</concatenate_values>
-		<regex_op regex=":[\s]*$" replace="" />
+		<replace pattern=":[\s]*$" to="" />
     </scalar>
 
 	<collection name="contributors" show_expanded_initially="true">

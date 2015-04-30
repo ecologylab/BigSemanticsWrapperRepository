@@ -13,7 +13,9 @@
     <example_url url="http://www.amazon.com/Acer-C720-Chromebook-11-6-Inch-2GB/dp/B00FNPD1VW/" />
     <example_url url="http://www.amazon.com/Discovery-Daft-Punk/dp/B000059MEK" />
 
-    <filter_location strip_prefix="/ref=" />
+    <filter_location>
+      <substring before="/ref=" />
+    </filter_location>
 
     <scalar name="title" facet_type="ordered">
       <xpath>//h1[@id='title' or @class='parseasinTitle ']</xpath>
@@ -59,7 +61,7 @@
       
       <scalar name="rating">
         <xpath>.//*[contains(@title, '5 stars')]/@title</xpath>
-     	<regex_op regex=".0 out of 5" replace="" />
+     	<replace pattern=".0 out of 5" to="" />
       </scalar>
       <scalar name="description">
         <xpath>./div[@id]/div</xpath>
@@ -132,7 +134,7 @@
           <xpath>./td[2]</xpath>
           <xpath>.//span[contains(@class, 'asinReviewsSummary')]//span[@title]</xpath>
           <xpath>.</xpath>
-          <regex_op regex="^[^:]+:" replace="" />
+          <replace pattern="^[^:]+:" to="" />
         </scalar>
     </collection>
   

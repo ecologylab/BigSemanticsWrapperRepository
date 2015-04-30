@@ -13,7 +13,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
             </scalar> 
             <scalar name="location">
                 <xpath>./@href</xpath>
-                <regex_op regex="^" replace="/"></regex_op>
+                <replace pattern="^" to="/" />
             </scalar>                    
         </collection>
         <collection name="researcher_stats" child_type="rich_document">

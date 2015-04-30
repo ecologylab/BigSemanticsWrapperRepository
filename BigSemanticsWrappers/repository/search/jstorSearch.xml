@@ -34,7 +34,7 @@
         		<scalar name="location">
           			<xpath>.//div[@class='title']/a/@href</xpath>
           			<xpath>.//div[@class='rw']/a/@href</xpath>
-          			<regex_op regex="\?.*" replace=""/>
+          			<replace pattern="\?.*" to=""/>
         		</scalar>
       		</composite>
        	

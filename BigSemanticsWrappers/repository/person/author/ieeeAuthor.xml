@@ -12,7 +12,7 @@
   		</scalar>
   		<scalar name="location">
   			<xpath>./span[@id='authorId']/@class</xpath>
-  			<regex_op regex="^" replace="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Author_Ids:"/>
+  			<replace pattern="^" to="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Author_Ids:"/>
   		</scalar>
   	
   	</collection>

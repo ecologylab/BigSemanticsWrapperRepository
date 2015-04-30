@@ -11,7 +11,7 @@
     </scalar>
     <scalar name="patent_class" scalar_type="string" label="class">
       <xpath>//big[1]</xpath>
-      <regex_op regex="(\d+)" group="1" />
+      <match pattern="(\d+)" group="1" />
     </scalar>
     <scalar name="title">
       <xpath>//td/font/big</xpath>

@@ -29,7 +29,7 @@
         </scalar>
         <scalar name="location" hide="true">
           <xpath>./@id</xpath>
-          <regex_op regex="video_" replace="http://www.tribunalvoices.org/voices/interview/" />
+          <replace pattern="video_" to="http://www.tribunalvoices.org/voices/interview/" />
         </scalar>
       </collection>
     </collection>
