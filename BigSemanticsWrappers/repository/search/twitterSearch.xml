@@ -45,6 +45,7 @@
       </composite>
 
       <scalar name="description" hide_label="true" extract_as_html="true">
+        <xpath>./p[@class='TweetTextSize  js-tweet-text tweet-text']</xpath>
         <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
       </scalar>
       <scalar name="post_date" hide_label="true">
