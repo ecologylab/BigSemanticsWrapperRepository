@@ -30,7 +30,7 @@
         </scalar>
         <scalar name="location">
           <xpath>./span/b</xpath>
-          <replace pattern="^" to="https://twitter.com/" />
+          <!-- <replace pattern="^" to="https://twitter.com/" /> -->
         </scalar>
 		    	<!-- <scalar name="username" xpath="./span" /> -->
 		    	
