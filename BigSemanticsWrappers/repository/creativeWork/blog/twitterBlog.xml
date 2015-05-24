@@ -86,7 +86,7 @@
           <xpath>./span[@class='username js-action-profile-name']</xpath>
           <xpath>./span/span</xpath>
           <xpath>./@href</xpath>
-         <!-- <replace pattern="@" to="https://twitter.com/" /> -->
+          <replace pattern="@" to="https://twitter.com/" />
         </scalar>
 			    <!-- <scalar name="username" xpath="./span" /> -->
 		    	
