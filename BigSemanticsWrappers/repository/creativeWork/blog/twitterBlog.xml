@@ -102,6 +102,8 @@
 
       <scalar name="description" hide_label="true" extract_as_html="true">
         <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
+        <xpath>./p[@class='TweetTextSize TweetTextSize--16px js-tweet-text tweet-text']</xpath>
+        <xpath>./p[@class='TweetTextSize TweetTextSize--26px js-tweet-text tweet-text']</xpath>
         <xpath>.//p[@class='ProfileTweet-text js-tweet-text u-dir']</xpath>
       </scalar>
       <scalar name="post_date" hide_label="true">
