@@ -118,6 +118,7 @@
       
       <collection name="main_images" child_type="image" hide_label="true" layer="8.0">
       	<xpath>.//div[@class='TwitterPhoto-container']//img[@class='TwitterPhoto-mediaSource']</xpath>
+      	<xpath>.//div[@class='cards-base cards-multimedia']//img</xpath>
       	<scalar name="location">
 	      <xpath>./@src</xpath>
 	    </scalar>
