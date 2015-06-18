@@ -5,26 +5,33 @@
   <meta_metadata name="google_image_search" extends="image_search" comment="Google image search."
     parser="xpath" extract_with="service">
 
-    <selector url_regex="https?://www.google.com/search\?.*" domain="google.com">
+    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/search\?.*" domain="google.com">
       <param name="tbm" value="isch" />
     </selector>
-    <selector url_regex="https?://www.google.com/webhp\?.*" domain="google.com">
+    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/webhp\?.*" domain="google.com">
       <param name="tbm" value="isch" />
     </selector>
-    <selector url_regex="https?://www.google.com/images\?.*" domain="google.com">
+    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/images\?.*" domain="google.com">
       <param name="tbm" value="isch" />
     </selector>
     <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
     <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
 
     <filter_location>
-      <regex match="^http://www.google.com/webhp" replace="http://www.google.com/search" />
-      <regex match="^https://www.google.com/webhp" replace="https://www.google.com/search" />
+      <replace pattern="//www.google.co(m|m?\.\w\w)/webhp" to="//www.google.com/search" />
       <override_params />
+      <set_param name="btnG" value="search" />
+      <set_param name="site" value="imghp" />
+      <set_param name="tbm" value="isch" />
+      <set_param name="gbv" value="1" />
+      <set_param name="hl" value="en" only_when_not_set="true" />
       <strip_params_but>
-        <param>q</param>
-        <param>tbm</param>
-        <param>hl</param>
+        <name>q</name>
+        <name>tbm</name>
+        <name>btnG</name>
+        <name>site</name>
+        <name>gbv</name>
+        <name>hl</name>
       </strip_params_but>
     </filter_location>
 
@@ -50,7 +57,7 @@
         <xpath>./a</xpath>
         <scalar name="location">
           <xpath>./img/@src</xpath>
-          <regex_op match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
+          <replace pattern="https://encrypted-tbn([0-9]+)\.google\.com/images" to="http://t$1.gstatic.com/images" />
         </scalar>
       </collection>
     </collection>

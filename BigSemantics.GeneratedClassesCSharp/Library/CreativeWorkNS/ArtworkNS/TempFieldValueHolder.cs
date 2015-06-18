@@ -25,19 +25,32 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ArtworkNS
 	public class TempFieldValueHolder : Metadata
 	{
 		[SimplScalar]
+		private MetadataString tempMedium;
+
+		[SimplScalar]
 		private MetadataString tempDimensions;
 
 		[SimplScalar]
 		private MetadataString tempYear;
-
-		[SimplScalar]
-		private MetadataString tempMedium;
 
 		public TempFieldValueHolder()
 		{ }
 
 		public TempFieldValueHolder(MetaMetadataCompositeField mmd) : base(mmd) { }
 
+
+		public MetadataString TempMedium
+		{
+			get{return tempMedium;}
+			set
+			{
+				if (this.tempMedium != value)
+				{
+					this.tempMedium = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
 
 		public MetadataString TempDimensions
 		{
@@ -60,19 +73,6 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ArtworkNS
 				if (this.tempYear != value)
 				{
 					this.tempYear = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString TempMedium
-		{
-			get{return tempMedium;}
-			set
-			{
-				if (this.tempMedium != value)
-				{
-					this.tempMedium = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

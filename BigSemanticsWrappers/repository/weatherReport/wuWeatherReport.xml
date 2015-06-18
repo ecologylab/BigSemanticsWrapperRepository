@@ -33,7 +33,7 @@
 
     <scalar name="chance_of_rain">
       <xpath>//div[@class='foreCondition'][1]/div</xpath>
-      <regex_op regex=" chance of precipitation" replace="" />
+      <replace pattern=" chance of precipitation" to="" />
     </scalar>
     <scalar name="rainfall">
       <xpath>//div[@id='conds_details_moisture']//div[@class='dataCol2']</xpath>

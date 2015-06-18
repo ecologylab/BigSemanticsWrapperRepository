@@ -15,8 +15,8 @@
     </filter_location>
 	<scalar name="query" >
 		<xpath>//strong[@class='search-term']</xpath>
-		<regex_op regex="Index Terms:" replace=""/>
-		<regex_op regex="Authors:" replace=""/>
+		<replace pattern="Index Terms:" to=""/>
+		<replace pattern="Authors:" to=""/>
 	</scalar>
     <collection name="search_results">
       <xpath>//ul[@class='Results']/li</xpath>

@@ -20,7 +20,7 @@
     </selector>
 		<example_url url="http://www.nsf.gov/awardsearch/advancedSearchNoScript?Keyword=banana"/>
     <filter_location>
-      <regex match="advancedSearchResult" replace="advancedSearchNoScript" />
+      <replace pattern="advancedSearchResult" to="advancedSearchNoScript" />
     </filter_location>
 
     <collection name="search_results" label="nsf_awards">
@@ -49,7 +49,7 @@
 <!--         <scalar name="location" xpath="./@href" /> -->
 <!--       </composite> -->
 <!--       <scalar name="amount" xpath="./td[9]"> -->
-<!--         <regex_op regex="(^\$)|,|(\.\d\d$)" replace="" /> -->
+<!--         <replace pattern="(^\$)|,|(\.\d\d$)" to="" /> -->
 <!--       </scalar> -->
     </collection>
   </meta_metadata>

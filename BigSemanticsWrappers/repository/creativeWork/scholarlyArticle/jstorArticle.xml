@@ -6,7 +6,7 @@
    		<example_url url="http://www.jstor.org/stable/25735112"/>
    
    		<filter_location>
-   			<regex match="stable/view" replace="stable/info" />
+   			<replace pattern="stable/view" to="stable/info" />
    		</filter_location>
 
    	    <scalar name="title">
@@ -57,18 +57,18 @@
    		
    		<scalar name="location">
    			<xpath>//div[@class='stable']</xpath>
-   			<regex_op regex="Stable URL: " replace="" />
+   			<replace pattern="Stable URL: " to="" />
    		</scalar>
    		
    		<scalar name="pages">
    			<xpath>//div[@class='indent bibInfo']/ul/li[last()]</xpath>
-   			<regex_op regex="Page Count: " replace="" />
+   			<replace pattern="Page Count: " to="" />
    		</scalar>
    		
    		<scalar name="year">
    			<xpath>//div[@class='indent bibInfo']/ul/li[last()-1]</xpath>
-   			<regex_op regex=".*Vol\.\s+[0-9]+,(\s+No\.\s+[0-9]+)?\s*\((\w+\.?,?\s)?" replace="" />
-   			<regex_op regex="\).+\)" replace="" />
+   			<replace pattern=".*Vol\.\s+[0-9]+,(\s+No\.\s+[0-9]+)?\s*\((\w+\.?,?\s)?" to="" />
+   			<replace pattern="\).+\)" to="" />
    		</scalar>
    		
    		<!-- 

@@ -25,19 +25,16 @@ namespace Ecologylab.BigSemantics.Generated.Library
 	public class IcdlBook : Document
 	{
 		[SimplScalar]
-		private MetadataString id;
+		private MetadataParsedURL cover;
 
 		[SimplScalar]
 		private MetadataString languages;
 
 		[SimplScalar]
-		private MetadataParsedURL cover;
-
-		[SimplScalar]
-		private MetadataInteger height;
-
-		[SimplScalar]
 		private MetadataInteger width;
+
+		[SimplScalar]
+		private MetadataString id;
 
 		[SimplScalar]
 		private MetadataString booktitle;
@@ -45,20 +42,23 @@ namespace Ecologylab.BigSemantics.Generated.Library
 		[SimplScalar]
 		private MetadataParsedURL bookurl;
 
+		[SimplScalar]
+		private MetadataInteger height;
+
 		public IcdlBook()
 		{ }
 
 		public IcdlBook(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString Id
+		public MetadataParsedURL Cover
 		{
-			get{return id;}
+			get{return cover;}
 			set
 			{
-				if (this.id != value)
+				if (this.cover != value)
 				{
-					this.id = value;
+					this.cover = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -77,32 +77,6 @@ namespace Ecologylab.BigSemantics.Generated.Library
 			}
 		}
 
-		public MetadataParsedURL Cover
-		{
-			get{return cover;}
-			set
-			{
-				if (this.cover != value)
-				{
-					this.cover = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataInteger Height
-		{
-			get{return height;}
-			set
-			{
-				if (this.height != value)
-				{
-					this.height = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
 		public MetadataInteger Width
 		{
 			get{return width;}
@@ -111,6 +85,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.width != value)
 				{
 					this.width = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Id
+		{
+			get{return id;}
+			set
+			{
+				if (this.id != value)
+				{
+					this.id = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -137,6 +124,19 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				if (this.bookurl != value)
 				{
 					this.bookurl = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataInteger Height
+		{
+			get{return height;}
+			set
+			{
+				if (this.height != value)
+				{
+					this.height = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

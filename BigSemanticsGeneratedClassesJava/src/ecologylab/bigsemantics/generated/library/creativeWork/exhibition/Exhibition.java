@@ -8,15 +8,21 @@ package ecologylab.bigsemantics.generated.library.creativeWork.exhibition;
  * Copyright (2015) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo;
 import ecologylab.bigsemantics.generated.library.creativeWork.artwork.Artwork;
 import ecologylab.bigsemantics.generated.library.person.author.Artist;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import ecologylab.serialization.annotations.simpl_scalar;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +33,23 @@ import java.util.Map;
 @simpl_inherit
 public class Exhibition extends CreativeWork
 {
+	@simpl_scalar
+	private MetadataString subtitle;
+
+	/** 
+	 *link to work's website
+	 */ 
+	@simpl_composite
+	@mm_name("website")
+	private RichDocument website;
+
+	/** 
+	 *exhibition video
+	 */ 
+	@simpl_composite
+	@mm_name("video")
+	private SocialVideo video;
+
 	/** 
 	 *Set of contributors.
 	 */ 
@@ -45,6 +68,58 @@ public class Exhibition extends CreativeWork
 		super(mmd);
 	}
 
+
+	public MetadataString	subtitle()
+	{
+		MetadataString	result = this.subtitle;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.subtitle = result;
+		}
+		return result;
+	}
+
+	public String getSubtitle()
+	{
+		return this.subtitle == null ? null : subtitle().getValue();
+	}
+
+	public MetadataString getSubtitleMetadata()
+	{
+		return subtitle;
+	}
+
+	public void setSubtitle(String subtitle)
+	{
+		if (subtitle != null)
+			this.subtitle().setValue(subtitle);
+	}
+
+	public void setSubtitleMetadata(MetadataString subtitle)
+	{
+		this.subtitle = subtitle;
+	}
+
+	public RichDocument getWebsite()
+	{
+		return website;
+	}
+
+	public void setWebsite(RichDocument website)
+	{
+		this.website = website;
+	}
+
+	public SocialVideo getVideo()
+	{
+		return video;
+	}
+
+	public void setVideo(SocialVideo video)
+	{
+		this.video = video;
+	}
 
 	public List<Artist> getContributors()
 	{

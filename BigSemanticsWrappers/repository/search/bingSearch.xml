@@ -8,7 +8,7 @@
     <example_url url="http://www.bing.com/search?q=howdyamp;go=Submitamp;qs=dsamp;form=QBLHamp;scope=web"/>
     <scalar name="query">
       <xpath>//title/text()</xpath>
-      <regex_op regex=" - Bing$" replace="" />
+      <replace pattern=" - Bing$" to="" />
     </scalar>
     <collection name="search_results">
       <xpath>//li[@class='b_algo']</xpath>

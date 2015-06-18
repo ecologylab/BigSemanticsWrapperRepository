@@ -23,7 +23,7 @@
     <scalar name="overall_rating">
       <xpath>//div[contains(@class, 'product-rating-wrapper')]//span[@itemprop='ratingValue']/text()
       </xpath>
-      <regex_op regex="$" replace=" out of 5" />
+      <replace pattern="$" to=" out of 5" />
     </scalar>
     <scalar name="description">
       <xpath>//li[@id='overview-applerecommends']//div[@class='bkg-none']/text()</xpath>
@@ -52,7 +52,7 @@
       </scalar>
       <scalar name="rating">
         <xpath>.//div[@itemprop='reviewRating']//span[@itemprop='ratingValue']/text()</xpath>
-        <regex_op regex="$" replace=" out of 5" />
+        <replace pattern="$" to=" out of 5" />
       </scalar>
       <scalar name="description">
         <xpath>.//p[@itemprop='reviewBody']/span[@class='more-text']/text()</xpath>

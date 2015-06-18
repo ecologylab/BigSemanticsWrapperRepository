@@ -17,11 +17,11 @@
     </scalar>
     <scalar name="year">
       <xpath>//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()</xpath>
-      <regex_op regex="\w+ [0-9]+," replace="" />
+      <replace pattern="\w+ [0-9]+," to="" />
     </scalar>
     <scalar name="views" scalar_type="String">
       <xpath>//span[@id='view-count']</xpath>
-      <regex_op regex=" views$" replace="" />
+      <replace pattern=" views$" to="" />
     </scalar>
 
     <composite name="place" type="rich_document">
@@ -30,8 +30,6 @@
       </scalar>
       <scalar name="location" hide="true">
         <xpath>.//a[@id='photoGeolocation-storylink']/@href</xpath>
-			<!--  <regex_op regex="$"
-					replace="nearby?show=thumb&amp;fromfilter=1&amp;by=everyone&amp;taken=alltime&amp;sort=distance&amp;show=detail" /> -->
       </scalar>
     </composite>
 

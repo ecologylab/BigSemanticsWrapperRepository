@@ -19,7 +19,7 @@
       </scalar>
       <scalar name="location">
         <xpath>.//h3/a/@href</xpath>
-        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <replace pattern=";jsessionid=[A-Za-z0-9]*" to="" />
       </scalar>
       <composite name="citation_info">
         <scalar name="total_citation">

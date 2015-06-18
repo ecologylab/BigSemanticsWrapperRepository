@@ -5,11 +5,12 @@
   <meta_metadata name="citeseerx_similar" extends="citeseerx_record" parser="xpath"
     comment="Citation or co-citation page from CiteSeerX.">
     <selector url_stripped="http://citeseerx.ist.psu.edu/viewdoc/similar" />
+    <selector url_stripped="http://citeseer.ist.psu.edu/viewdoc/similar" />
     <example_url url="http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&amp;type=sc" />
 
     <scalar name="title" navigate_to="location" as_natural_id="title" format="text">
       <xpath>//h2</xpath>
-      <regex_op regex="\(\d+\)$" replace="" />
+      <replace pattern="\(\d+\)$" to="" />
     </scalar>
 
     <composite name="rich_media">
@@ -28,7 +29,7 @@
       <xpath>//div[@id='docAuthors']</xpath>
       <field_parser name="regex_split" regex="\s*,\s*" />
       <scalar name="title" field_parser_key="$0">
-        <regex_op regex="^by\s+" replace="" />
+        <replace pattern="^by\s+" to="" />
       </scalar>
     </collection>
 
@@ -46,7 +47,7 @@
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
-        <regex_op regex=";jsessionid=[A-Za-z0-9]*" replace="" />
+        <replace pattern=";jsessionid=[A-Za-z0-9]*" to="" />
       </scalar>
       <scalar name="description">
         <xpath>..</xpath>

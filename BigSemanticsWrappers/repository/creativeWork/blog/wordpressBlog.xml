@@ -24,7 +24,7 @@
       <xpath>//div//*[self::article or self::div][@class[contains(.,'status-publish')]]</xpath>
       <scalar name="title">
         <xpath>.//a/@title</xpath>
-        <regex_op regex="Permalink to " replace="" />
+        <replace pattern="Permalink to " to="" />
       </scalar>
       <scalar name="location">
         <xpath>.//a/@href</xpath>

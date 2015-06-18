@@ -85,13 +85,13 @@
       <xpath>//p[@class='caption'][1]</xpath>
       <field_parser name="regex_find" regex="(\S.+?)\. " />
       <scalar name="temp_year" scalar_type="String" field_parser_key="$0">
-        <regex_op regex="[().]*" replace="" />
+        <replace pattern="[().]*" to="" />
       </scalar>
       <scalar name="temp_medium" scalar_type="String" field_parser_key="$1">
-        <regex_op regex=", \d.+" replace="" />
+        <replace pattern=", \d.+" to="" />
       </scalar>
       <scalar name="temp_dimensions" scalar_type="String" field_parser_key="$1">
-        <regex_op regex="\S.+, " replace="" />
+        <replace pattern="\S.+, " to="" />
       </scalar>
     </composite>
 

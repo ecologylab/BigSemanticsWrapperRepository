@@ -37,7 +37,7 @@
       </scalar>
       <scalar name="bibliometrics">
         <xpath>./tr[4]//strong/..</xpath>
-        <regex_op regex="Bibliometrics:\s+" replace="" />
+        <replace pattern="Bibliometrics:\s+" to="" />
       </scalar>
       
       <composite name="destination_page">

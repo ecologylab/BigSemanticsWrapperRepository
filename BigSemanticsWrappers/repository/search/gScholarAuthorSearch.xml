@@ -18,7 +18,7 @@
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
       <scalar name="query">	
       	<xpath>//input[@id='gs_hdr_frm_in_txt']/@value</xpath>
-      	<regex_op regex="label:" replace=""/>
+      	<replace pattern="label:" to=""/>
       </scalar>
       <collection name="search_results">
       	<xpath>//*[@class='gsc_1usr_text']</xpath>

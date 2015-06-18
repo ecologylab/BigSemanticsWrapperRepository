@@ -43,7 +43,7 @@
       <xpath>.</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <regex_op regex="\((\w+)\)" group="1" />
+        <match pattern="\((\w+)\)" group="1" />
       </scalar>
       <scalar name="location">
         <concatenate_values>

@@ -19,7 +19,7 @@
     </scalar>
     <scalar name="price">
       <xpath>//span[@itemprop='price']</xpath>
-      <regex_op regex="/[a-z|A-Z|-]*" replace="" />
+      <replace pattern="/[a-z|A-Z|-]*" to="" />
     </scalar>
     <scalar name="overall_rating">
       <xpath>//div[@id='BVRRRatingOverall_']/div[3]/span[1]</xpath>

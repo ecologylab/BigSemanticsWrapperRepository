@@ -1,7 +1,9 @@
 <meta_metadata_repository name="amazonList" package="ecologylab.bigsemantics.generated.library.creativeWork">
   
   <meta_metadata name="amazon_list" extends="creative_work">
-    <filter_location strip_prefix="/ref=" />
+    <filter_location>
+      <substring before="/ref=" />
+    </filter_location>
 
     <collection name="items" child_type="amazon_product" />
   </meta_metadata>
@@ -57,7 +59,9 @@
     <selector domain="amazon.com" url_regex="http://www.amazon.com/[^/]*/zgbs/.*" />
     <example_url url="http://www.amazon.com/gp/bestsellers/books/6" />
 	
-    <filter_location strip_prefix="/ref=" />
+    <filter_location>
+      <substring before="/ref=" />
+    </filter_location>
     
     <scalar name="title">
       <xpath>//h1[@id='zg_listTitle']/span</xpath>
@@ -90,7 +94,9 @@
     <selector url_path_tree="http://www.amazon.co.uk/gp/bestsellers" />
     <example_url url="http://www.amazon.co.uk/gp/bestsellers/books/515344" />
 
-    <filter_location strip_prefix="/ref=" />
+    <filter_location>
+      <substring before="/ref=" />
+    </filter_location>
 
     <scalar name="title">
       <xpath>//h1[@id='zg_listTitle']/span</xpath>

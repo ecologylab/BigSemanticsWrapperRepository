@@ -12,7 +12,7 @@
 
     <scalar name="title">
       <xpath>//meta[@name='title']/@content</xpath>
-      <regex_op regex=" \|.+" replace="" />
+      <replace pattern=" \|.+" to="" />
     </scalar>
 
     <collection name="authors" label="authors">

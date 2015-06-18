@@ -91,7 +91,7 @@
 
     <scalar name="overall_rating">
       <xpath>//a[@class='group ratings-reviews']/span[1]/@class</xpath>
-      <regex_op regex="rating stars-" replace="" />
+      <replace pattern="rating stars-" to="" />
     </scalar>
   </meta_metadata>
 </meta_metadata_repository>

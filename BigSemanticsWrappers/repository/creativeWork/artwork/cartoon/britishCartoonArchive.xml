@@ -5,7 +5,7 @@
 		<example_url url="http://www.cartoons.ac.uk/record/lse2692"/>
     <scalar name="title">
       <xpath>//*[@class='captionClass']</xpath>
-      <regex_op regex="Caption" replace="" />
+      <replace pattern="Caption" to="" />
     </scalar>
     <composite name="content">
       <xpath>//*[@id='mediumImage']//img</xpath>
@@ -16,24 +16,24 @@
 
     <scalar name="artist" scalar_type="String" comment="Name of the artist, and period he lived">
       <xpath>//*[@id='detailArtist']</xpath>
-      <regex_op regex="Artist:" replace="" />
+      <replace pattern="Artist:" to="" />
     </scalar>
     <scalar name="published_in" scalar_type="String"
       comment="Name of the publication in which the cartoon appeared">
       <xpath>//*[@id='detailPublish']</xpath>
-      <regex_op regex="(?&lt;=Published:)([^,]+)" />
+      <match pattern="(?&lt;=Published:)([^,]+)" />
     </scalar>
     <scalar name="publication_date" scalar_type="Date" comment="Date of the publication">
       <xpath>//*[@id='detailPublish']</xpath>
-      <regex_op regex="Published:[^,]+," replace="" />
+      <replace pattern="Published:[^,]+," to="" />
     </scalar>
     <scalar name="publication_format" scalar_type="String" comment="Format of the publication">
       <xpath>//*[@id='detailFormat']</xpath>
-      <regex_op regex="Format:" replace="" />
+      <replace pattern="Format:" to="" />
     </scalar>
     <scalar name="reference_number" scalar_type="String">
       <xpath>//*[@id='refNumber']</xpath>
-      <regex_op regex="Reference number:" replace="" />
+      <replace pattern="Reference number:" to="" />
     </scalar>
   </meta_metadata>
 </meta_metadata_repository>

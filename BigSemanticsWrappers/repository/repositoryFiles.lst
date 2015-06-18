@@ -78,6 +78,7 @@ creativeWork/tedTalkVideo.xml
 creativeWork/tvComShow.xml
 creativeWork/tvShow.xml
 creativeWork/tvShowEpisode.xml
+creativeWork/vimeoVideo.xml
 creativeWork/youtubeVideo.xml
 creativeWork/artwork/artwork.xml
 creativeWork/artwork/flamencoObject.xml
@@ -107,6 +108,7 @@ creativeWork/blogPost/tumblrPost.xml
 creativeWork/blogPost/twitterPost.xml
 creativeWork/blogPost/twitterStatus.xml
 creativeWork/blogPost/wordpressPost.xml
+creativeWork/exhibition/artchiExhibition.xml
 creativeWork/exhibition/exhibition.xml
 creativeWork/exhibition/newmuseumExhibition.xml
 creativeWork/exhibition/rhizomeCollection.xml

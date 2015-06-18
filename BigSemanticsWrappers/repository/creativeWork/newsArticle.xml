@@ -15,7 +15,7 @@
         </scalar>
         <scalar name="location">
           <xpath>./@data-twitter-handle</xpath>
-           <regex_op regex="^" replace="https://twitter.com/" />
+           <replace pattern="^" to="https://twitter.com/" />
         </scalar>
       </composite>
       

@@ -12,7 +12,7 @@
       <xpath>//td[@id and @class='list_item ']</xpath>
       <scalar name="title">
         <xpath>.//h2</xpath>
-        <regex_op regex="&#x2714;" replace="" />
+        <replace pattern="&#x2714;" to="" />
       </scalar>
       <scalar name="location">
         <xpath>.//h2/a/@href</xpath>

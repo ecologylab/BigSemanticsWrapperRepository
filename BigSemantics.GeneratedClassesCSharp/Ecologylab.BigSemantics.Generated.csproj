@@ -366,6 +366,9 @@
     <Compile Include="Library\CreativeWorkNS\BlogNS\Blog.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterApiMicroblog.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterMicroblog.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -382,6 +385,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\CreativeWorkNS\BoardGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\CreativeWorkNS\ExhibitionNS\ArtchiExhibition.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\CreativeWorkNS\ExhibitionNS\Exhibition.cs">
@@ -432,11 +438,15 @@
     <Compile Include="Library\CreativeWorkNS\Patent.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\CreativeWorkNS\PinterestAuthor.cs" />
+    <Compile Include="Library\CreativeWorkNS\PinterestAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\CreativeWorkNS\PinterestPin.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\CreativeWorkNS\PinterestPinboard.cs" />
+    <Compile Include="Library\CreativeWorkNS\PinterestPinboard.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\CreativeWorkNS\PublicationNS\AcmPortalPeriodical.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -581,10 +591,15 @@
     <Compile Include="Library\CreativeWorkNS\TvShowEpisode.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\VimeoList.cs" />
+    <Compile Include="Library\CreativeWorkNS\VimeoUser.cs" />
+    <Compile Include="Library\CreativeWorkNS\VimeoVideo.cs" />
     <Compile Include="Library\CreativeWorkNS\YoutubeVideo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\CreativeWorkNS\YtTable.cs" />
+    <Compile Include="Library\CreativeWorkNS\YtTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\Dc.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -25,25 +25,25 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 	public class YahooGeoCodeResult : YahooResult
 	{
 		[SimplScalar]
-		private MetadataString county;
-
-		[SimplScalar]
-		private MetadataString postal;
-
-		[SimplScalar]
-		private MetadataString state;
-
-		[SimplScalar]
-		private MetadataString line1;
-
-		[SimplScalar]
-		private MetadataString line2;
+		private MetadataString country;
 
 		[SimplScalar]
 		private MetadataString city;
 
 		[SimplScalar]
-		private MetadataString country;
+		private MetadataString county;
+
+		[SimplScalar]
+		private MetadataString state;
+
+		[SimplScalar]
+		private MetadataString postal;
+
+		[SimplScalar]
+		private MetadataString line2;
+
+		[SimplScalar]
+		private MetadataString line1;
 
 		public YahooGeoCodeResult()
 		{ }
@@ -51,66 +51,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		public YahooGeoCodeResult(MetaMetadataCompositeField mmd) : base(mmd) { }
 
 
-		public MetadataString County
+		public MetadataString Country
 		{
-			get{return county;}
+			get{return country;}
 			set
 			{
-				if (this.county != value)
+				if (this.country != value)
 				{
-					this.county = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Postal
-		{
-			get{return postal;}
-			set
-			{
-				if (this.postal != value)
-				{
-					this.postal = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString State
-		{
-			get{return state;}
-			set
-			{
-				if (this.state != value)
-				{
-					this.state = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Line1
-		{
-			get{return line1;}
-			set
-			{
-				if (this.line1 != value)
-				{
-					this.line1 = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataString Line2
-		{
-			get{return line2;}
-			set
-			{
-				if (this.line2 != value)
-				{
-					this.line2 = value;
+					this.country = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -129,14 +77,66 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataString Country
+		public MetadataString County
 		{
-			get{return country;}
+			get{return county;}
 			set
 			{
-				if (this.country != value)
+				if (this.county != value)
 				{
-					this.country = value;
+					this.county = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString State
+		{
+			get{return state;}
+			set
+			{
+				if (this.state != value)
+				{
+					this.state = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Postal
+		{
+			get{return postal;}
+			set
+			{
+				if (this.postal != value)
+				{
+					this.postal = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Line2
+		{
+			get{return line2;}
+			set
+			{
+				if (this.line2 != value)
+				{
+					this.line2 = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString Line1
+		{
+			get{return line1;}
+			set
+			{
+				if (this.line1 != value)
+				{
+					this.line1 = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

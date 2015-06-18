@@ -12,7 +12,7 @@
     </scalar>
     <scalar name="price">
       <xpath>//span[@itemprop='price']/p</xpath>
-      <regex_op regex="Was:\$[0-9]*.[0-9]*Now:" replace="" />
+      <replace pattern="Was:\$[0-9]*.[0-9]*Now:" to="" />
     </scalar>
     <scalar name="overall_rating">
       <xpath>//span[@class='pr-snippet-rating-decimal pr-rounded']</xpath>

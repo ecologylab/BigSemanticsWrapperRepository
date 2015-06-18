@@ -20,7 +20,7 @@
 
     <scalar name="artist" scalar_type="String" comment="Artist">
       <xpath>//*[@id='authortext']</xpath>
-      <regex_op regex="(by )|\n" replace=" " />
+      <replace pattern="(by )|\n" to=" " />
     </scalar>
   </meta_metadata>
 

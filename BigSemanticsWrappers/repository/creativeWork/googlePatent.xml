@@ -20,7 +20,10 @@
       <strip_param name="pg" />
     </filter_location>
 
-
+	<scalar name="site_name" >
+      <replace pattern="Books" to="Patents" />
+    </scalar>
+    
     <scalar name="title">
       <xpath>//invention-title</xpath>
     </scalar>
@@ -39,7 +42,7 @@
       <xpath>//span[@class='nested-value']/a[contains(@href,'classification')]</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
-        <regex_op regex="http://www.u(.*).htm" />
+        <match pattern="http://www.u(.*).htm" />
       </scalar>
       <scalar name="title" label="patent_class" navigates_to="location">
         <xpath>.</xpath>

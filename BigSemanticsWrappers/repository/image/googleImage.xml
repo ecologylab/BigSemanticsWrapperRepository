@@ -6,7 +6,7 @@
     <selector url_regex_fragment="https://encrypted-tbn[0-9]+\.google\.com/images" domain="google.com" />
 
     <filter_location>
-      <regex match="https://encrypted-tbn([0-9]+)\.google\.com/images" replace="http://t$1.gstatic.com/images" />
+      <replace pattern="https://encrypted-tbn([0-9]+)\.google\.com/images" to="http://t$1.gstatic.com/images" />
     </filter_location>
   </meta_metadata>
 </meta_metadata_repository>

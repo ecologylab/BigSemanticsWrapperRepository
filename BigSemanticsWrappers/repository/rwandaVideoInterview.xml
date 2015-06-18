@@ -20,7 +20,7 @@
 			only this xpath (for title) differs, so a small workaround -->
     <scalar name="title" context_node="interview_table">
       <xpath>.//h2</xpath>
-      <regex_op regex="Please help us index this " replace="" />
+      <replace pattern="Please help us index this " to="" />
     </scalar>
     <scalar name="location" hide="true" />
     <scalar name="role" scalar_type="String" context_node="video_credits">

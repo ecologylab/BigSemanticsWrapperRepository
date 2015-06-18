@@ -46,7 +46,7 @@
       <xpath>//div[@id='product-vitals']//script[contains(text(), 'authorLink(')]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
-        <regex_op regex="authorLink\(&quot;([^&quot;]+)&quot;\)" group="1" />
+        <match pattern="authorLink\(&quot;([^&quot;]+)&quot;\)" group="1" />
       </scalar>
       <scalar name="location" hide="true">
         <concatenate_values>

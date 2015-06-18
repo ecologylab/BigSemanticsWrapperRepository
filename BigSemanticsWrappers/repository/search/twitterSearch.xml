@@ -11,7 +11,7 @@
 
     <scalar name="title" context_node="search" hide_label="true">
       <xpath>//h2[@id='content-main-heading']/strong</xpath>
-      <regex_op regex="Twitter / Search - " replace="" />
+      <replace pattern="Twitter / Search - " to="" />
     </scalar>
   
 	<scalar name="description" hide_label="true" />
@@ -30,7 +30,7 @@
         </scalar>
         <scalar name="location">
           <xpath>./span/b</xpath>
-          <regex_op regex="^" replace="https://twitter.com/" />
+          <!-- <replace pattern="^" to="https://twitter.com/" /> -->
         </scalar>
 		    	<!-- <scalar name="username" xpath="./span" /> -->
 		    	
@@ -45,6 +45,7 @@
       </composite>
 
       <scalar name="description" hide_label="true" extract_as_html="true">
+        <xpath>./p[@class='TweetTextSize  js-tweet-text tweet-text']</xpath>
         <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
       </scalar>
       <scalar name="post_date" hide_label="true">
@@ -52,7 +53,7 @@
       </scalar>
       <scalar name="id" concatenates_to="post_date" hide_label="true">
         <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
-        <regex_op regex="[^/]+$" />
+        <match pattern="[^/]+$" />
       </scalar>
 
 	  <collection name="main_images" child_type="image" hide_label="true">
