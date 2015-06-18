@@ -4,7 +4,7 @@
   <meta_metadata name="creative_work" extends="rich_document" built_in="true" schema_org_itemtype="http://schema.org/CreativeWork">
 <!--  authors needs a generic type variable!!! -->
     <collection name="authors" child_type="author" layer="8.0"
-      schema_org_itemprop="author" bibtex_field="author" />
+      schema_org_itemprop="author" bibtex_field="author" mink_style="subheader" />
     <scalar name="description"  label="abstract" layer="9.0" hint="XML_LEAF" />
     <scalar name="year" other_tags="year_of_publication" scalar_type="String" is_facet="true" bibtex_field="year" />
     <scalar name="overall_rating" scalar_type="string" comment="rating in some context" />

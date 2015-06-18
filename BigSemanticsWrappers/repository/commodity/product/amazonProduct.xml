@@ -18,10 +18,10 @@
     <scalar name="title" facet_type="ordered">
       <xpath>//h1[@id='title' or @class='parseasinTitle ']</xpath>
     </scalar>
-    <scalar name="description">
+    <scalar name="description" show_in_snippet="true">
       <xpath>//meta[@name='description']/@content</xpath>
     </scalar>
-    <scalar name="price">
+    <scalar name="price" show_in_snippet="true">
       <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
     </scalar>
     <composite name="department" type="rich_document">
@@ -47,7 +47,7 @@
       <xpath>//div[@id='averageCustomerReviews']</xpath>
       <xpath>//span[@ref='dp_top_cm_cr_acr_pop_']</xpath>
     </def_var>
-    <scalar name="overall_rating" context_node="reviews_span">
+    <scalar name="overall_rating" context_node="reviews_span" show_in_snippet="true">
       <xpath>.//span[1]/@title</xpath>
     </scalar>
     <scalar name="reviews_location" context_node="reviews_span">
@@ -57,7 +57,7 @@
     <collection name="reviews">
       <xpath>//div[@id='revMHRL']/div[@id]</xpath>
       
-      <scalar name="rating">
+      <scalar name="rating" >
         <xpath>.//*[contains(@title, '5 stars')]/@title</xpath>
      	<regex_op regex=".0 out of 5" replace="" />
       </scalar>
@@ -82,17 +82,17 @@
       </scalar>
     </composite>
 
-    <collection name="companion_products" child_type="amazon_product" facet_type="ordinal">
+    <collection name="companion_products" child_type="amazon_product" facet_type="ordinal" show_in_snippet="true">
 <!--       <xpath>//div[@id='vtpsims']/ul/li</xpath> -->
 <!-- 	  <xpath>//div[@class='shoveler-content']</xpath> -->
-	  <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath>
-	  
+	<!--    <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath>-->
+	  <xpath>//div[@id='purchase-sims-feature']//li</xpath>
       <scalar name="location">
-        <xpath>.//a/@href</xpath>
+        <xpath>./div/a/@href</xpath>
 <!--         <xpath>.//a[@class='sim-img-title']/@href</xpath> -->
        </scalar>
       <scalar name="title">
-        <xpath>./a</xpath>
+        <xpath>./div/a</xpath>
       </scalar>
       <scalar name="price">
         <xpath>.//*[@class='price']/text()</xpath>

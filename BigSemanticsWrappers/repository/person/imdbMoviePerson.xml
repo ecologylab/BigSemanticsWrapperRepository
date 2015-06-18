@@ -12,7 +12,9 @@
     <filter_location>
       <strip_param name="ref_" />
     </filter_location>
-
+	<collection name="main_images" mink_height='150' mink_width='101'>
+	
+	</collection>
     <scalar name="title">
       <xpath>//*[@itemprop='name']</xpath>
     </scalar>
