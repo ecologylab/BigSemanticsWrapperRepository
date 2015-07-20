@@ -80,7 +80,7 @@
     <generic_type_var name="SR" arg="post" />
 
     <collection name="search_results" label="tweets" child_type="tweet" dont_show_expanded_initially="true"
-      child_use_value_as_label="twitter_microblog.photo" child_show_expanded_always="true" label_at="top">
+      child_use_value_as_label="twitter_microblog.photo" child_show_expanded_always="true" label_at="top" streaming="true">
       <json_path>.</json_path>
       <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
       	<json_path>user</json_path>

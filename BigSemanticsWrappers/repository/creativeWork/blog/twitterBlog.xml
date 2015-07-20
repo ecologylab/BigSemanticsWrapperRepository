@@ -181,7 +181,7 @@
     </collection>
 
     <collection name="tweets" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
-      child_show_expanded_always="true" label_at="top">
+      child_show_expanded_always="true" label_at="top" streaming="true">
       <json_path>tweets</json_path>
       <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
       	<json_path>retweeted_status.user</json_path>
