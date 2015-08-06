@@ -18,7 +18,7 @@
     <scalar name="title">
       <xpath>//*[@itemprop='name']</xpath>
     </scalar>
-    <scalar name="description">
+    <scalar name="description" >
       <xpath>//*[@itemprop='description']</xpath>
     </scalar>
 
@@ -31,7 +31,7 @@
       </scalar>
     </composite>
 
-    <collection name="movies_directed">
+    <collection name="movies_directed" show_in_snippet="true">
       <xpath>//div[@id='filmography']//div[@id='filmo-head-director']/following-sibling::div[1]//div[contains(@class,
         'filmo-row')]</xpath>
       <scalar name="title">
@@ -41,7 +41,7 @@
         <xpath>.//a/@href</xpath>
       </scalar>
     </collection>
-    <collection name="movies_written">
+    <collection name="movies_written" show_in_snippet="true">
       <xpath>//div[@id='filmography']//div[@id='filmo-head-writer']/following-sibling::div[1]//div[contains(@class,
         'filmo-row')]</xpath>
       <scalar name="title">
@@ -51,7 +51,7 @@
         <xpath>.//a/@href</xpath>
       </scalar>
     </collection>
-    <collection name="movies_acted_in">
+    <collection name="movies_acted_in" show_in_snippet="true">
       <xpath>//div[@id='filmography']//div[@id='filmo-head-actor' or
         @id='filmo-head-Actress']/following-sibling::div[1]//div[contains(@class, 'filmo-row')]</xpath>
       <scalar name="title">

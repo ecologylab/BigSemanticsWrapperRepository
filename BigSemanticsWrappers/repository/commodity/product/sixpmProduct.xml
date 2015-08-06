@@ -1,0 +1,64 @@
+<meta_metadata_repository name="sixpmProduct"
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
+
+  <meta_metadata name="sixpm_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_path_tree="http://www.6pm.com/p/asin/" domain="6pm.com" />
+    <selector url_regex="http://www.6pm.com/[^/~?-]+(-[^/~?-]+)+(\?.*)?" domain="6pm.com" />
+    <!-- This should be the correct regex, but we need location filters on client side: -->
+    <!-- <selector url_regex="http://www.6pm.com/[^/~?-]+(-[^/~?-]+)+" domain="6pm.com" /> -->
+    <example_url url="http://www.6pm.com/deer-stags-nevis-black" />
+    
+    <filter_location>
+      <strip_param name="zlfid" />
+      <strip_param name="ref" />
+    </filter_location>
+
+    <scalar name="title">
+      <substring before=" - 6pm.com" />
+    </scalar>
+    <collection name="main_images" child_type="image">
+      <xpath>//div[@id='actors']//img</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
+    </collection>
+    <scalar name="price">
+      <xpath>//*[@id='priceSlot']/*[@class='price']</xpath>
+    </scalar>
+    <scalar name="color" scalar_type="String">
+      <xpath>//*[@id='color']//option[@selected]</xpath>
+    </scalar>
+    <collection name="product_details" child_scalar_type="String">
+      <xpath>//*[@itemprop='description']//li</xpath>
+    </collection>
+    
+    <collection name="companion_products" label="people_buy_with" child_type="sixpm_product">
+      <xpath>//*[text()='Customers Who Bought This Item Also Bought']/../following-sibling::a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="comparitive_products" label="people_buy_instead" child_type="sixpm_product">
+      <xpath>//*[text()='Customers Who Viewed This Item Also Viewed']/../following-sibling::a</xpath>
+      <xpath>//*[text()='Customers Who Viewed This Item Also Viewed']/../following-sibling::div[@class='productsWrap']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+    <collection name="associated_products" label="you_may_also_like" child_type="sixpm_product">
+      <xpath>//*[text()='You May Also Like']/..//following-sibling::a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>
