@@ -1,0 +1,66 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="bingImageSearch" package="ecologylab.bigsemantics.generated.library.search"
+  default_user_agent_name="chrome_2">
+
+  <meta_metadata name="bing_image_search" extends="image_search"
+	comment="Bing image search." parser="xpath" extract_with="service">
+
+    <selector url_regex="https?://www.bing.co(m|m?\.\w\w)/images/search\?.*" domain="bing.com">
+    </selector>
+    
+     <collection name="search_results">
+      <xpath>//div[@class='dg_u']</xpath>
+
+      <scalar name ="title">
+        <xpath>.//a/@t0</xpath> 
+      </scalar>
+
+<!--  DO THIS REGEX THIS THING  -->
+<!-- https?://.[^"]* but only want the first instance of this match-->
+	<scalar name="location">
+          <xpath>./a/@m</xpath>
+    </scalar>
+        
+    <!--  <scalar name="site_link" label="source" absolute_url="true">
+	        <xpath>./a/@t3</xpath>
+	        <regex_op regex="https?://www.bing.com/images/" replace=""/> 
+		</scalar> -->
+    
+      <collection name="main_images">
+        <xpath>.//img</xpath>
+        
+        <scalar name="location">
+          <xpath>./@src</xpath>
+        </scalar>
+       
+      </collection> 
+      
+      <scalar name="thumb_width" label="thumbnail width">
+		   	<xpath>.//img/@width</xpath>
+		   	<append value=" px" /> 
+	   </scalar>
+		   
+	   <scalar name="thumb_height" label="thumbnail height">
+		   	<xpath>.//img/@height</xpath>
+		   	<append value=" px" />
+	   </scalar>
+       
+    </collection>
+    
+    <collection name="related_searches">
+    	<xpath>//span[@class='rb_bar']</xpath>
+    	
+    	<scalar name="title">
+    		<xpath>.//strong</xpath>
+    	</scalar>
+    	
+    	<scalar name="location">
+    		<xpath>.//@href</xpath>
+    	</scalar>
+    	
+    </collection>
+   
+	</meta_metadata> 
+
+
+</meta_metadata_repository> 
