@@ -13,7 +13,7 @@
     <scalar name="description" show_in_snippet="true">
       <xpath>//div[@id='prod-desc']/h1/span</xpath>
     </scalar>
-    <scalar name="price" show_in_snippet="true">
+    <scalar name="price" show_in_snippet="true" label="price">
       <xpath>//span[@id='price-value']</xpath>
     </scalar>
 
