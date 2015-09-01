@@ -7,7 +7,9 @@
 
     <selector url_regex="https?://www.bing.co(m|m?\.\w\w)/images/search\?.*" domain="bing.com">
     </selector>
-    
+    <example_url url="https://www.bing.com/images/search?q=ice+cream" />
+	<example_url url="https://www.bing.com/images/search?q=coffee" />
+
      <collection name="search_results">
       <xpath>//div[@class='dg_u']</xpath>
 
@@ -15,17 +17,11 @@
         <xpath>.//a/@t0</xpath> 
       </scalar>
 
-<!--  DO THIS REGEX THIS THING  -->
-<!-- https?://.[^"]* but only want the first instance of this match-->
-	<scalar name="location">
-          <xpath>./a/@m</xpath>
-    </scalar>
-        
-    <!--  <scalar name="site_link" label="source" absolute_url="true">
-	        <xpath>./a/@t3</xpath>
-	        <regex_op regex="https?://www.bing.com/images/" replace=""/> 
-		</scalar> -->
-    
+		<scalar name="location">
+			 <xpath>./a/@m</xpath>
+			 <match pattern="surl:&quot;([^&quot;]*)&quot;" group="1" />
+		</scalar>
+
       <collection name="main_images">
         <xpath>.//img</xpath>
         

@@ -6,35 +6,19 @@
 	comment="Google image search." parser="xpath" extract_with="service">
 	
 	    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/search\?.*" domain="google.com">
-	      <param name="tbm" value="isch" />
 	    </selector>
-	    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/webhp\?.*" domain="google.com">
-	      <param name="tbm" value="isch" />
+		<selector url_regex="https?://www.google.co(m|m?\.\w\w)/webhp\?.*" domain="google.com">
 	    </selector>
 	    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/images\?.*" domain="google.com">
-	      <param name="tbm" value="isch" />
 	    </selector>
-	    <example_url url="https://www.google.com/search?tbm=isch&amp;hl=en&amp;q=watergate" />
-	    <example_url url="http://www.google.com/search?hl=en&amp;tbm=isch&amp;q=earth" />
-	
-	    <filter_location>
-	      <replace pattern="//www.google.co(m|m?\.\w\w)/webhp" to="//www.google.com/search" />
-	      <override_params />
-	      <set_param name="btnG" value="search" />
-	      <set_param name="site" value="imghp" />
-	      <set_param name="tbm" value="isch" />
-	      <set_param name="gbv" value="1" />
-	      <set_param name="hl" value="en" only_when_not_set="true" />
-	      <strip_params_but>
-	        <name>q</name>
-	        <name>tbm</name>
-	        <name>btnG</name>
-	        <name>site</name>
-	        <name>gbv</name>
-	        <name>hl</name>
-	      </strip_params_but>
-	    </filter_location>
-	
+	    
+	    <!--Searches w/ JavaScript enabled examples -->
+	    <example_url url="https://www.google.com/search?q=water&amp;hl=en&amp;gbv=2&amp;source=lnms&amp;tbm=isch&amp;sa=X" />
+	    <example_url url="https://www.google.com/search?q=coffee&amp;espv=2&amp;biw=1600&amp;bih=1099&amp;source=lnms&amp;tbm=isch&amp;sa=X" />
+		<!--Searches w/o JavaScript enabled examples -->
+		<example_url url="https://www.google.com/search?q=water&amp;btnG=Search&amp;hl=en&amp;biw=1920&amp;bih=1099&amp;tbm=isch&amp;gbv=1"/>
+		<example_url url="https://www.google.com/search?q=coffee&amp;sa=X&amp;hl=en&amp;biw=1920&amp;bih=1099&amp;tbm=isch&amp;gbv=1&amp;sei=N3_fVcnhGYm3yQSS9qKQCg"/>
+		
     <collection name="search_results">
       <xpath>//div[@class='rg_di rg_el ivg-i']</xpath>
       <xpath>//table[@class='images_table']//td</xpath>
@@ -68,8 +52,7 @@
 	      <xpath>//img/@height</xpath>
 	      <append value=" px" />
 	    </scalar>
-	  
-	  
+
 	</collection>
 	
 	<collection name="related_searches">
@@ -103,6 +86,8 @@
 	
 	    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/imgres\?imgurl=.*" domain="google.com">
 	    </selector>    
+	    <example_url url="http://www.google.com/imgres?imgurl=http://www.swlcws.com/files/Files/Pictures/Glass%252520of%252520Water.jpg&amp;imgrefurl=http://www.swlcws.com/&amp;h=2962&amp;w=1797&amp;tbnid=PZSvbtGVUtkQtM:&amp;docid=ST-hvry_JA1xMM&amp;hl=en&amp;ei=mX7fVfXnJ4OSyQS-5Jb4Cw&amp;tbm=isch&amp;ved=0CFAQMygXMBdqFQoTCLWYkIyYyscCFQNJkgodPrIFvw" />
+		<example_url url="http://www.google.com/imgres?imgurl=http://www.sensiblehealth.com/Blog/wp-content/uploads/2015/04/Coffee-brisbane-25.jpg&amp;imgrefurl=http://www.sensiblehealth.com/Blog/?p%3D160&amp;h=1265&amp;w=1536&amp;tbnid=I2YXADbbnCCfnM:&amp;docid=fvWTjLOM-ZemYM&amp;hl=en&amp;ei=XH7fVffcEMmmyATp6qnIAg&amp;tbm=isch&amp;ved=0CEEQMygPMA9qFQoTCPf67e6XyscCFUkTkgodaXUKKQ" />
 	
 	    <scalar name ="title">
 	      <xpath>//span[@class='irc_pt' and @dir='ltr']</xpath>
