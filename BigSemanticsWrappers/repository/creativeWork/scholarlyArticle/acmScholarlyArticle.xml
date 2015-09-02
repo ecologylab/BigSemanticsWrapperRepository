@@ -115,61 +115,17 @@
       </collection>
     </collection>
 
-    <composite name="source" type="acm_portal_periodical" explorable_label="title" show_in_snippet="true">
-      <xpath>//div[@name='for-testing']</xpath>
-      <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]</xpath>
+    <composite name="journal" type="rich_document" explorable_label="title" show_in_snippet="true">
+      <xpath>//div[@id='divmain']/table[1]/tbody/tr/td[1]/table[3]/tbody/tr[1]/td[1]/table/tbody/tr[4]/td</xpath>
+     
+     <scalar name="title">
+        <xpath>./a[1]/@href</xpath>
+      </scalar>
+
       <scalar name="location">
-        <xpath>.//td[text()='Title']/following-sibling::td/a[1]/@href</xpath>
+        <xpath>.f</xpath>
       </scalar>
-      <scalar name="title">
-        <xpath>.//td[text()='Title']/following-sibling::td[1]</xpath>
-      </scalar>
-
-      <collection name="authors" label="chairs" child_type="acm_portal_author"
-        comment="Publication general/program chairs.">
-        <xpath>.//td[contains(text(), 'Chairs')]/following-sibling::td/a</xpath>
-        <scalar name="location">
-          <xpath>./../a[starts-with(@href, 'author_page.cfm')]/@href</xpath>
-        </scalar>
-        <scalar name="title">
-          <xpath>.</xpath>
-        </scalar>
-      </collection>
-
-      <scalar name="year" label="year published" is_facet="true">
-        <xpath>.//td[text()='Publisher']/following-sibling::td</xpath>
-        <replace pattern="[\D]" to="" />
-      </scalar>
-
-      <scalar name="isbn">
-        <xpath>.//td[text()='Publisher']/parent::*/following-sibling::tr/td[2]</xpath>
-        <regex_op regex="\d\d\d-\d-\d\d\d\d\d-\d\d\d-\d" />
-      </scalar>
-
-			<!-- xpath that could be used that returns all documents instead of just the first 10: 
-			<collection name="articles" xpath="./..//table[@class='text12']//a[starts-with(@href, 'citation.cfm')]/../../..">
-			-->
-      <collection name="articles">
-        <xpath>./..//table[@class='text12']//tbody/tr[position() &lt; 70]//a[starts-with(@href, 'citation.cfm')]/../../..</xpath>
-        <scalar name="title">
-          <xpath>.//a</xpath>
-        </scalar>
-        <scalar name="description">
-          <xpath>./following::tr[position() = 4]//div[@style='display:inline']</xpath>
-        </scalar>
-        <scalar name="location">
-          <xpath>.//a/@href</xpath>
-        </scalar>
-        <collection name="authors" child_type="acm_portal_author">
-          <xpath>./following::tr[position() = 1]//a</xpath>
-          <scalar name="title">
-            <xpath>./text()</xpath>
-          </scalar>
-          <scalar name="location">
-            <xpath>./../a[starts-with(@href, 'author_page.cfm')]/@href</xpath>
-          </scalar>
-        </collection>
-      </collection>
+      
     </composite>
 
     <scalar name="description">
