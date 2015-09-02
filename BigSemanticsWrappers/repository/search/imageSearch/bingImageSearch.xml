@@ -1,0 +1,62 @@
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="bingImageSearch" package="ecologylab.bigsemantics.generated.library.search"
+  default_user_agent_name="chrome_2">
+
+  <meta_metadata name="bing_image_search" extends="image_search"
+	comment="Bing image search." parser="xpath" extract_with="service">
+
+    <selector url_regex="https?://www.bing.co(m|m?\.\w\w)/images/search\?.*" domain="bing.com">
+    </selector>
+    <example_url url="https://www.bing.com/images/search?q=ice+cream" />
+	<example_url url="https://www.bing.com/images/search?q=coffee" />
+
+     <collection name="search_results">
+      <xpath>//div[@class='dg_u']</xpath>
+
+      <scalar name ="title">
+        <xpath>.//a/@t0</xpath> 
+      </scalar>
+
+		<scalar name="location">
+			 <xpath>./a/@m</xpath>
+			 <match pattern="surl:&quot;([^&quot;]*)&quot;" group="1" />
+		</scalar>
+
+      <collection name="main_images">
+        <xpath>.//img</xpath>
+        
+        <scalar name="location">
+          <xpath>./@src</xpath>
+        </scalar>
+       
+      </collection> 
+      
+      <scalar name="thumb_width" label="thumbnail width">
+		   	<xpath>.//img/@width</xpath>
+		   	<append value=" px" /> 
+	   </scalar>
+		   
+	   <scalar name="thumb_height" label="thumbnail height">
+		   	<xpath>.//img/@height</xpath>
+		   	<append value=" px" />
+	   </scalar>
+       
+    </collection>
+    
+    <collection name="related_searches">
+    	<xpath>//span[@class='rb_bar']</xpath>
+    	
+    	<scalar name="title">
+    		<xpath>.//strong</xpath>
+    	</scalar>
+    	
+    	<scalar name="location">
+    		<xpath>.//@href</xpath>
+    	</scalar>
+    	
+    </collection>
+   
+	</meta_metadata> 
+
+
+</meta_metadata_repository> 
