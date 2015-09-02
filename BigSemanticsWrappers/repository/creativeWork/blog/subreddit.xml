@@ -1,0 +1,104 @@
+<meta_metadata_repository name="subreddit"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.reddit">
+ 
+  <meta_metadata name="reddit_post_data" extends="post">
+
+
+    <scalar name="flair" scalar_type="String">
+      <xpath></xpath>
+    </scalar> 
+    <scalar name="post_karma" scalar_type="String"/>
+    <composite name="post_content" type="rich_document">
+     
+    
+    </composite>
+    <composite name="comments" type="reddit_comments">
+    
+    </composite>
+
+  </meta_metadata>
+ 
+  <meta_metadata name="reddit_user" extends="author">
+      <selector url_regex="https?://www.reddit.com/user/.*" domain="reddit.com"/>
+      <scalar name="title">
+        <xpath>//div[@id='header-bottom-left']/span</xpath>
+      </scalar>
+  
+  </meta_metadata>
+  
+  <meta_metadata name="reddit_comment" extends="rich_document">
+    <selector url_regex="https?://www.reddit.com/r/[a-zA-Z\d]+/comments/[a-zA-Z\d]+/[a-zA-Z\d_]+/[a-zA-Z\d_]+/?" domain="reddit.com"/>
+    
+    <composite name="commenter" type="rich_document">
+    </composite>
+    <scalar name="description" label="comment">    
+    </scalar>
+    <scalar name="age" scalar_type="String"></scalar> 
+    <scalar name="karma" scalar_type="String"></scalar> 
+    <collection name="replies" child_type="reddit_comment">
+    </collection>
+    
+    
+  </meta_metadata>
+  
+  <meta_metadata name="reddit_comments" extends="rich_document">
+    <selector url_regex="https?://www.reddit.com/r/[a-zA-Z\d]+/comments/[a-zA-Z\d]+/[a-zA-Z\d_]+/" domain="reddit.com"/>
+    <collection name="comments" child_type="reddit_comment">
+      <xpath>//div[@class='sitetable nestedlisting']/div[contains(@class,'thing')]</xpath>
+      <scalar name="title">
+        <xpath>./div[contains(@class, 'entry')]//div[@class='md']</xpath>
+        <regex_op regex="^\[\]" replace=""/>
+      </scalar>
+      <scalar name="location">
+        <xpath>.//li[@class='first']/a/@href</xpath>
+      </scalar>
+    </collection>
+  
+  </meta_metadata>
+  
+  <meta_metadata name="subreddit" extends="blog">
+    <selector url_regex="https?://www.reddit.com/r/[a-zA-Z\d]+/?" domain="reddit.com"/>
+    <scalar name="title" label="subreddit">
+      <xpath>//*[@class='hover redditname']/a</xpath>
+    </scalar>
+   <scalar name="subscribers" scalar_type="String">
+    <xpath>//span[@class='subscribers']</xpath>
+   </scalar>
+    <collection name="post" child_type="reddit_post_data">
+      <xpath>//div[@id='siteTable']/div[contains(@class,'thing')]</xpath>
+      <scalar name="title">
+        <xpath>.//p[@class='title']/a</xpath>
+      </scalar>
+      
+      
+      <collection name="main_images">
+        <xpath>.//img</xpath>
+        <scalar name="location">
+          <xpath>./@src</xpath>
+        </scalar>
+      </collection>
+    
+      <composite name="post_content">
+        <xpath>.//p[@class='title']</xpath>
+        <scalar name="title">
+          <xpath>./span/a</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./a/@href</xpath>
+        </scalar>
+      </composite>
+      <scalar name="flair">
+        <xpath>//div[@id='siteTable']/div[contains(@class,'thing')]//span[@class='linkflairlabel']</xpath>
+      </scalar>
+      <scalar name="post_karma">
+        <xpath>.//div[@class='score unvoted']</xpath>
+      </scalar>
+      
+   
+    </collection>
+    
+  </meta_metadata>
+ 
+  
+
+</meta_metadata_repository>

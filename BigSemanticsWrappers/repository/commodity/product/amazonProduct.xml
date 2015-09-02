@@ -17,7 +17,7 @@
       <substring before="/ref=" />
     </filter_location>
 
-    <scalar name="title" facet_type="ordered">
+    <scalar name="title" facet_type="ordered" show_in_snippet="true">
       <xpath>//h1[@id='title' or @class='parseasinTitle ']</xpath>
     </scalar>
     <scalar name="description" show_in_snippet="true">
@@ -26,7 +26,7 @@
     <scalar name="price" show_in_snippet="true">
       <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
     </scalar>
-    <composite name="department" type="rich_document">
+    <composite name="department" type="rich_document" show_in_snippet="true">
       <xpath>//*[@id='nav-subnav']/li[1]/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>

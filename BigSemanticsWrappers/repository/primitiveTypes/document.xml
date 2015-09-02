@@ -4,7 +4,7 @@
   <meta_metadata name="document" extends="metadata" comment="The Primitive Document Class. Even images should extend this."
     built_in="true" schema_org_itemtype="http://schema.org/Thing">
     <scalar name="location" scalar_type="ParsedURL" always_show="true"
-     bibtex_field="howpublished" comment="The document's actual location." />
+     bibtex_field="URL" comment="The document's actual location." />
     
     <scalar name="local_location" scalar_type="ParsedURL" hide="true"
       comment="Relative location of a local copy of the document." />

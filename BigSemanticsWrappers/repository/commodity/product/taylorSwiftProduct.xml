@@ -1,0 +1,26 @@
+<meta_metadata_repository name="taylorSwiftProduct"
+  package="ecologylab.bigsemantics.generated.library.commodity.product">
+  
+  <meta_metadata name="taylorswift_product" extends="product" parser="xpath" user_agent_name="chrome">
+    <selector url_path_tree="http://store.taylorswift.com/"/>
+   
+
+    <example_url url="http://store.taylorswift.com/Seagull-Long-Sleeved-Top.html" />
+
+    <scalar name="title" facet_type="ordered" show_in_snippet="true">
+      <xpath>//div[@id='product-info-container']/h1/span</xpath>
+    </scalar>
+    <scalar name="description" show_in_snippet="true">
+      <xpath>//div[@id='prod-desc']/h1/span</xpath>
+    </scalar>
+    <scalar name="price" show_in_snippet="true" label="price">
+      <xpath>//span[@id='price-value']</xpath>
+    </scalar>
+
+  </meta_metadata>
+
+
+
+</meta_metadata_repository>
+
+  

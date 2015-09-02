@@ -23,7 +23,7 @@
     <scalar name="mpaa_rating">
       <xpath>//span[@itemprop='contentRating' and @title]/@title</xpath>
     </scalar>
-    <scalar name="overall_rating">
+    <scalar name="overall_rating" show_in_snippet="true">
       <xpath>//span[@itemprop='ratingValue']</xpath>
     </scalar>
     <scalar name="storyline">
@@ -51,7 +51,7 @@
       </scalar>
     </collection>
 
-    <collection name="directors" child_type="imdb_person">
+    <collection name="directors" child_type="imdb_person"> show_in_snippet="true"
       <xpath>//h4[contains(.,'Director')]/../a[@itemprop]</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
@@ -69,7 +69,7 @@
         <xpath>.</xpath>
       </scalar>
     </collection>
-    <collection name="cast" child_type="imdb_person" layer="8.0">
+    <collection name="cast" child_type="imdb_person" layer="8.0" show_in_snippet="true">
       <xpath>//table[@class='cast_list']//tr[@class]</xpath>
       <scalar name="title">
         <xpath>.//*[@itemprop='actor']/*[@itemprop='url']</xpath>
