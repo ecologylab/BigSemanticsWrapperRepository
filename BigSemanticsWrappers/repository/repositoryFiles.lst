@@ -34,7 +34,9 @@ commodity/product/remodelistaProduct.xml
 commodity/product/restorationHardwareProduct.xml
 commodity/product/roomandboard.xml
 commodity/product/samsclubProduct.xml
+commodity/product/sixpmProduct.xml
 commodity/product/targetProduct.xml
+commodity/product/taylorSwiftProduct.xml
 commodity/product/tigerdirectProduct.xml
 commodity/product/uniqloProduct.xml
 commodity/product/urbanHardwoodsProduct.xml
@@ -100,6 +102,7 @@ creativeWork/artwork/cartoon/politicalCartoon.xml
 creativeWork/artwork/cartoon/sfuCartoonArchive.xml
 creativeWork/artwork/cartoon/trumanCampaignCartoon.xml
 creativeWork/blog/blog.xml
+creativeWork/blog/subreddit.xml
 creativeWork/blog/twitterBlog.xml
 creativeWork/blog/wordpressBlog.xml
 creativeWork/blogPost/blogPost.xml
@@ -233,7 +236,6 @@ search/citeseerxCiting.xml
 search/citeseerxSearch.xml
 search/citeulikeSearch.xml
 search/gettySearch.xml
-search/googleImageSearch.xml
 search/googleScholarSearch.xml
 search/googleSearch.xml
 search/gScholarAuthorSearch.xml
@@ -261,6 +263,8 @@ search/whitneySearch.xml
 search/wikipediaSearch.xml
 search/yahooSearch.xml
 search/youtubeSearch.xml
+search/imageSearch/bingImageSearch.xml
+search/imageSearch/googleImageSearch.xml
 search/imageSearch/imageSearch.xml
 search/imageSearch/imgurSearch.xml
 search/imageSearch/pinterestImageSearch.xml

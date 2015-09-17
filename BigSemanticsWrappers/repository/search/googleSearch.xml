@@ -11,6 +11,10 @@
     <selector url_regex="https?://www.google.co(m|m?\.\w\w)/webhp\?.*" domain="google.com">
       <param name="tbm" value_is_not="isch" />
     </selector>
+    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/#q.*" domain="google.com">
+      <param name="tbm" value_is_not="isch" />
+    </selector>
+    
     <example_url url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
 	
     <filter_location>
@@ -35,48 +39,46 @@
     
     
     <collection name="search_results" show_expanded_initially="true">
-      <xpath>//div[@id='ires']/ol//li[@class='g']</xpath>
+      <xpath>//div[@id='ires']//div[@class='g']</xpath>
       <scalar name="title" hide="true" />
      
       <composite name="destination_page" layer="6.0">
-        <xpath>.</xpath>
+        <xpath>.//h3/a</xpath>
         <scalar name="title">
-          <xpath>.//h3/a</xpath>
+          <xpath>.</xpath>
         </scalar>
         <scalar name="location">
-          <xpath>.//h3/a/@href</xpath>
-     <!--       <replace pattern="/url\?q=" to=""/>
-          <replace pattern="&amp;sa=.*" to=""/>
-          <url_decode_op /> -->
+          <xpath>./@href</xpath>
         </scalar>
       </composite>
-       <scalar name="description" layer="5.3">
-        <xpath>.//div[@class='s']//span[@class='st']</xpath>
+      
+      <scalar name="description" layer="5.3">
+        <xpath>.//span[@class='st']</xpath>
       </scalar>
       <scalar name="site_link" style_name="google_link" layer="5.4">
         <xpath>.//cite</xpath>
       </scalar>
     </collection>
     <collection name="related_searches" child_type="google_search">
-    <xpath>//div[@style='clear:both;margin-bottom:17px;overflow:hidden']/table//p</xpath>
-    <xpath>//p[@class='_Bmc']</xpath>
-	<scalar name="title">
-	  <xpath>./a</xpath>
-	</scalar>
-	<scalar name="location">
-	  <xpath>./a/@href</xpath>
-	</scalar>      
-	<scalar name="query">
-	   <xpath>.</xpath>
-	</scalar>
+	    <xpath>//div[@style='clear:both;margin-bottom:17px;overflow:hidden']/table//p</xpath>
+	    <xpath>//p[@class='_Bmc']</xpath>
+	    <xpath>//div[@id='extrares']//p[@class='_e4b']</xpath>
+		<scalar name="title">
+		  <xpath>./a</xpath>
+		</scalar>
+		<scalar name="location">
+		  <xpath>./a/@href</xpath>
+		</scalar>      
+
     </collection>
    
     <composite name="next_page">
+    	<xpath>//td[@class='b navend'][2]/a</xpath>
       <scalar name="title">
-        <xpath>//td[@class='b navend'][2]/a</xpath>
+        <xpath>.</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>//td[@class='b navend'][2]/a/@href</xpath>
+        <xpath>./@href</xpath>
       </scalar>
     </composite>
   </meta_metadata>
