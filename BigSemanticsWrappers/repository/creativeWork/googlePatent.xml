@@ -7,9 +7,11 @@
     <selector url_stripped="http://www.google.com/patents/about" />
     <selector url_path_tree="http://www.google.com/patents/*" domain="google.com" />
     <selector url_regex="https?://www.google.com/patents/[A-Z0-9]*?.*" domain="google.com" />
+    <selector url_regex="https?://patents.google.com/patent/.*" domain="patents.google.com"/>
 
     <example_url url="http://www.google.com/patents/US20100045705" />
     <example_url url="http://www.google.com/patents/US7953462" />
+    <example_url url="https://patents.google.com/patent/US5009626A/en?q=dolls"/>
 
     <filter_location>
       <strip_param name="printsec" />
@@ -26,26 +28,35 @@
     
     <scalar name="title">
       <xpath>//invention-title</xpath>
+      <xpath>//h1[@id='title']</xpath>
     </scalar>
 
     <collection name="authors" child_type="google_patent_author">
       <xpath>//span[@class='patent-bibdata-value']/a[contains(@href,'inventor')]</xpath>
+      <!-- <xapth>(//dd[@class='style-scope search-app']//a[@is='state-modifier' and not(@add-before) and not(@add-assignee)])</xapth>-->
+      
       <scalar name="location">
         <xpath>./@href</xpath>
       </scalar>
       <scalar name="title">
         <xpath>.</xpath>
+        <!--<xpath>./@add-inventor</xpath>-->
       </scalar>
     </collection>
 
     <collection name="classifications">
       <xpath>//span[@class='nested-value']/a[contains(@href,'classification')]</xpath>
+      <xpath>(//div[@class='flex style-scope classification-tree']/div[not(@hidden)])</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
         <match pattern="http://www.u(.*).htm" />
       </scalar>
       <scalar name="title" label="patent_class" navigates_to="location">
-        <xpath>.</xpath>
+      	<xapth>.</xapth>
+      	<xpath>./a/@add-cpc</xpath>
+      </scalar>
+      <scalar name="description">
+      	<xpath>./span</xpath>
       </scalar>
     </collection>
 
@@ -53,37 +64,44 @@
       <xpath>//abstract/div</xpath>
     </scalar>
 
-    <collection name="claims" child_scalar_type="String">
+	<collection name="claims" child_scalar_type="String">
       <xpath>//div[@class='claims']/div</xpath>
-
+	  <xpath>(//div[@class='claim style-scope patent-text' and (@num)]) | (//div[@class='claim style-scope patent-text' and (@num)])</xpath>
     </collection>
 
     <scalar name="filing_date">
       <xpath>(//*[preceding-sibling::td[contains(text(),'Filing date')]])[1]</xpath>
+      <xpath>(//dd[@class='style-scope search-app']/a[@is='state-modifier'])[last()]</xpath>
     </scalar>
 
     <collection name="references" child_type="google_patent">
       <xpath>//*[@id='intl_patents_v']/div[7]/table/tbody/tr</xpath>
+      <!--<xapth>(//div[@class='footer style-scope search-app']//table//tbody)[1]//tr</xapth>-->
       <scalar name="title">
-        <xpath>./td[5]</xpath>
+        <xpath>.</xpath>
       </scalar>
       <scalar name="location">
         <xpath>./td[1]/a/@href</xpath>
       </scalar>
     </collection>
 
+
     <collection name="citations" child_type="google_patent">
       <xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a</xpath>
+      <!-- <xapth>(//tbody[@class='style-scope search-app'])[2]//tr</xapth>-->
       <scalar name="title">
-        <xpath>.</xpath>
+        <xpath>./td[5]</xpath>
+        <!--<xpath>.</xpath>-->
       </scalar>
       <scalar name="location">
         <xpath>./@href</xpath>
+        <!--<xpath>./td[1]/a/@href</xpath>-->
       </scalar>
     </collection>
 
     <collection name="drawings">
       <xpath>//img[@class='patent-thumbnail-image']</xpath>
+      <!--<xpath>//img[@class='style-scope image-carousel']</xpath>-->
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
