@@ -11,7 +11,8 @@
 
     <example_url url="http://www.google.com/patents/US20100045705" />
     <example_url url="http://www.google.com/patents/US7953462" />
-    <example_url url="https://patents.google.com/patent/US5009626A/en?q=dolls"/>
+    <example_url url="https://patents.google.com/patent/US7953462B2/en"/>
+    <example_url url="https://patents.google.com/patent/US20100045705A1/en" />
 
     <filter_location>
       <strip_param name="printsec" />
@@ -33,14 +34,14 @@
 
     <collection name="authors" child_type="google_patent_author">
       <xpath>//span[@class='patent-bibdata-value']/a[contains(@href,'inventor')]</xpath>
-      <!-- <xapth>(//dd[@class='style-scope search-app']//a[@is='state-modifier' and not(@add-before) and not(@add-assignee)])</xapth>-->
+      <xpath>(//dd[@class='style-scope search-app']//a[@is='state-modifier' and not(@add-before) and not(@add-assignee) and not(@open-result)])</xpath>
       
       <scalar name="location">
-        <xpath>./@href</xpath>
+        <!--<xpath>./@href</xpath>-->
       </scalar>
       <scalar name="title">
         <xpath>.</xpath>
-        <!--<xpath>./@add-inventor</xpath>-->
+        <xpath>./@add-inventor</xpath>
       </scalar>
     </collection>
 
@@ -49,11 +50,11 @@
       <xpath>(//div[@class='flex style-scope classification-tree']/div[not(@hidden)])</xpath>
       <scalar name="location" hide="true">
         <xpath>./@href</xpath>
+        <!--<xpath>./a/@href</xpath>-->
         <match pattern="http://www.u(.*).htm" />
       </scalar>
       <scalar name="title" label="patent_class" navigates_to="location">
-      	<xapth>.</xapth>
-      	<xpath>./a/@add-cpc</xpath>
+      	<xpath>.</xpath>
       </scalar>
       <scalar name="description">
       	<xpath>./span</xpath>
@@ -74,38 +75,42 @@
       <xpath>(//dd[@class='style-scope search-app']/a[@is='state-modifier'])[last()]</xpath>
     </scalar>
 
+	<!-- this location has js on the patents.google -->
     <collection name="references" child_type="google_patent">
       <xpath>//*[@id='intl_patents_v']/div[7]/table/tbody/tr</xpath>
-      <!--<xapth>(//div[@class='footer style-scope search-app']//table//tbody)[1]//tr</xapth>-->
+      <xpath>(//div[@class='footer style-scope search-app']//table//tbody)[1]//tr</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./td[1]/a/@href</xpath>
+      	<xpath>//*[@id='intl_patents_v']/div[7]/table/tbody/tr/td[1]/a/@href</xpath>
+        <!--<xpath>./td[1]/a/@href</xpath>-->
+        <!--<replace pattern="en\?.*" to="" />-->
       </scalar>
     </collection>
 
-
+	<!-- this location has js on the patents.google -->
     <collection name="citations" child_type="google_patent">
-      <xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a</xpath>
-      <!-- <xapth>(//tbody[@class='style-scope search-app'])[2]//tr</xapth>-->
+      <xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr</xpath>
+      <xpath>(//tbody[@class='style-scope search-app'])[2]//tr</xpath>
       <scalar name="title">
         <xpath>./td[5]</xpath>
-        <!--<xpath>.</xpath>-->
       </scalar>
       <scalar name="location">
-        <xpath>./@href</xpath>
+      	<xpath>//span[contains(text(),'Referenced')]/../../table/tbody/tr/td[1]/a/@href</xpath>
         <!--<xpath>./td[1]/a/@href</xpath>-->
+         <!--<replace pattern="en\?.*" to="" />-->
       </scalar>
     </collection>
 
-    <collection name="drawings">
+	<!-- not working for either google.patent and patents.google-->
+    <!-- <collection name="drawings">
       <xpath>//img[@class='patent-thumbnail-image']</xpath>
-      <!--<xpath>//img[@class='style-scope image-carousel']</xpath>-->
+      <xpath>//img[@class='style-scope image-carousel']</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
       </scalar>
-    </collection>
+    </collection>-->
 
     <semantic_actions>
       <if>
