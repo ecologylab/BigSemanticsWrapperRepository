@@ -1,0 +1,69 @@
+<meta_metadata_repository name="fbSocialMediaProfile"
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
+
+  <meta_metadata name="fbSocialMediaProfile" extends="blog" parser="xpath" no_cache="true">
+	    <selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/[^/?]*[?fref=tl_fr_box]*" domain="facebook.com" />
+	     
+	    <scalar name="title" label="title">
+	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
+	    </scalar>
+	    
+	    <scalar name="description"/>
+		
+		<scalar name="username" scalar_type="String">
+	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
+	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
+    	</scalar>
+    	
+    	
+		<collection name="facebook" child_type="facebook">
+		  <xpath>.</xpath>
+			<composite name="photo">
+		        <xpath>//a[@class='profilePicThumb']/img</xpath>
+		        <xpath>//img[@class='profilePic img']</xpath>
+		        <scalar name="location" >
+		          <xpath>./@src</xpath>
+		        </scalar>
+	        </composite>
+	        <scalar name="description"/>
+	  	 	<scalar name="city">
+	        	<xpath>//div[@class='_50f3']//text()[contains(.,'Lives in') or contains(.,'lives in')]/../a</xpath>
+	      	</scalar>
+     	   <scalar name="worked" >
+     	   		<xpath>//div[@class='_50f3']//text()[contains(.,'Worked at')]/../a</xpath>
+     	   </scalar>
+	       <scalar name="studied" >
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'Studie')]/../a</xpath>
+	       </scalar>
+	       <collection name="friend_stats" child_scalar_type="String">
+	       		<xpath>//div[@class='_70l _2i-0']//text()[contains(.,'Friends')]/../../../span[@class='_71u']/a</xpath>
+	       		<xpath>//div[@class='_70l _2i-0']//text()[contains(.,'Friends')]/../../../span[@class='_71u']/span/a</xpath>
+	       </collection>
+	       <scalar name="birth_date">
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'Born on')]/..</xpath>
+	       </scalar>
+	       <scalar name="birth_place">
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'From')]/../a</xpath>
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'from')]/..</xpath>
+	       </scalar>
+		</collection>
+		
+		<collection name="feed" child_type="socailMediaPost"  comment="mainFeed">
+			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
+			<scalar name="title" scalar_type="String"/>
+			<collection name="authors" child_type="author">
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
+    			<scalar name="title">
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
+    			</scalar>
+    			<composite name="photo" type="image">
+    				<xpath>.//img</xpath>
+    			</composite>
+			</collection>
+			<scalar name="date"> <!-- need to figure how to seperate date 'at' time -->
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr</xpath>
+			</scalar>
+		</collection>
+  </meta_metadata> 
+</meta_metadata_repository>

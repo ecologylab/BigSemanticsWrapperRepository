@@ -1,0 +1,20 @@
+<meta_metadata_repository name="socailMediaPost" package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
+  <meta_metadata name="socailMediaPost" extends="post" parser="xpath"
+    comment="socialMedia post">
+    <scalar name="title" scalar_type="String"/>
+    <!-- authors inherited -->
+    <scalar name="shares" scalar_type="String"/>
+    <scalar name="location" scalar_type="String" comment="location created"/>
+    <scalar name="date" scalar_type="String" comment="date created"/>
+    <scalar name="time" scalar_type="String" comment="Timestamp of when created"/>
+    <scalar name="up_votes" scalar_type="String"/>
+    <scalar name="down_votes" scalar_type="String"/>
+    <!-- contents of post -->
+    	<!-- how to put links -->
+    	<!-- how to setup videos -->
+    	<!-- text goes in description inherited -->
+    	<composite name="photo" type="image" comment="A photo posted in post." />
+    <!-- tags  -->
+    <collection name="comments" child_type="socailMediaPost"  comment="comments,replys,subtweets"/>
+  </meta_metadata>
+</meta_metadata_repository>
