@@ -13,6 +13,7 @@
     	<!-- how to put links -->
     	<!-- how to setup videos -->
     	<!-- text goes in description inherited -->
+    	<scalar name="description_content" scalar_type="String"></scalar>
     	<composite name="photo" type="image" comment="A photo posted in post." />
     <!-- tags  -->
     <collection name="comments" child_type="socailMediaPost"  comment="comments,replys,subtweets"/>

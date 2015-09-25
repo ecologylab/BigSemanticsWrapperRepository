@@ -64,6 +64,15 @@
 			<scalar name="date"> <!-- need to figure how to seperate date 'at' time -->
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr</xpath>
 			</scalar>
+			<composite name="photo" type="image">
+				<xpath>.//div[@class='_3x-2']//img</xpath>
+			</composite>
+			<scalar name="description_content">
+				<cpath>.//div[@class='_5pbx userContent']//p</cpath>
+			</scalar>
+			<scalar name="up_votes"/>
+			<scalar name="shares"/>
 		</collection>
+		
   </meta_metadata> 
 </meta_metadata_repository>
