@@ -67,17 +67,26 @@
 			<scalar name="date"> <!-- need to figure how to seperate date 'at' time -->
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr</xpath>
 			</scalar>
-			<composite name="photo">
-				<xpath>.//div[@class='_3x-2']//img</xpath>
+			
+			<collection name="photos" >
+			<xpath>.//div[@class='_3x-2']//img</xpath>
     			   <scalar name="location">
 		            <xpath>./@src</xpath>
 		          </scalar>
-			</composite>
+			</collection>
 			<scalar name="description_content">
 				<xpath>.//div[@class='_5pbx userContent']//p</xpath>
 			</scalar>
-			<scalar name="up_votes"/>
-			<scalar name="shares"/>
+			<collection name="up_votes" child_scalar_type="String">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Likes')]</xpath>
+				<xpath>.//div[@class='UFILikeSentenceText']/span</xpath>
+			</collection>
+			<scalar name="shares">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Shares')]</xpath>
+			</scalar>
+			<scalar name="num_comments">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Comments')]</xpath>
+			</scalar>
 		</collection>
 		
   </meta_metadata> 
