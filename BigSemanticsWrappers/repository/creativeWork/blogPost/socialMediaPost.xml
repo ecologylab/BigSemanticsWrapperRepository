@@ -7,15 +7,15 @@
     <scalar name="location" scalar_type="String" comment="location created"/>
     <scalar name="date" scalar_type="String" comment="date created"/>
     <scalar name="time" scalar_type="String" comment="Timestamp of when created"/>
-    <scalar name="up_votes" scalar_type="String"/>
+    <collection name="up_votes"  child_scalar_type="String"/>
     <scalar name="down_votes" scalar_type="String"/>
     <!-- contents of post -->
     	<!-- how to put links -->
     	<!-- how to setup videos -->
-    	<!-- text goes in description inherited -->
-    	<scalar name="description_content" scalar_type="String"></scalar>
-    	<composite name="photo" type="image" comment="A photo posted in post." />
+    	<collection name="description_content" child_scalar_type="String"/>
+    	<collection name="photos" child_type="image" comment="Photos posted in post." />
     <!-- tags  -->
+    <scalar name="num_comments" scalar_type="String"/>
     <collection name="comments" child_type="socailMediaPost"  comment="comments,replys,subtweets"/>
   </meta_metadata>
 </meta_metadata_repository>
