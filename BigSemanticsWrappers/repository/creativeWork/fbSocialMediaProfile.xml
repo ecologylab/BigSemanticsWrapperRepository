@@ -16,8 +16,14 @@
 	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
     	</scalar>
     	
+    	<composite name="coverPhoto" type="image">
+    		<xpath>//img[@class='coverPhotoImg photo img']</xpath>
+    		<scalar name="location">
+            	<xpath>./@src</xpath>
+         	</scalar>
+    	</composite>
     	
-		<collection name="facebook" child_type="facebook">
+		<collection label="user" name="facebook" child_type="facebook">
 		  <xpath>.</xpath>
 			<composite name="photo">
 		        <xpath>//a[@class='profilePicThumb']/img</xpath>
@@ -143,9 +149,9 @@
 				</collection>
 			</collection>
 		</collection>
-		<!-- li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@class='article']//h3[@class='_71u _70n _5r0_']//a/text()[contains(.,'Friends') -->
-		<!-- <collection name="authors" child_type="author" label="FRIENDS">
-			<xpath>.//div[@class='clearfix']</xpath>
+		
+<!-- 		<collection name="authors" child_type="author" label="FRIENDS">
+			<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']//h3[@class='_71u _70n _5r0_']//a/text()[contains(.,'Friends')]/..</xpath>
     			<scalar name="title" >
     				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
     			</scalar>
@@ -155,7 +161,7 @@
 		            	<xpath>./@src</xpath>
 		          </scalar>
     			</composite>
-		</collection>
-		 -->
+		</collection> -->
+		
   </meta_metadata> 
 </meta_metadata_repository>
