@@ -3,7 +3,10 @@ package="ecologylab.bigsemantics.generated.library.creativeWork">
   
   <meta_metadata name="socialMediaFeed" extends="creative_work"  parser="xpath" 
   comment="a social media feed">
-  	<scalar name="name" scalar_type="String" comment="name of feed"/>
-<!--     <collection name="feed" child_type="socailMediaPost"  comment="mainFeed"/>
- -->  </meta_metadata>
+	  	<scalar name="name" scalar_type="String" comment="name of feed">
+	  		<scalar name="location" scalar_type="ParsedURL">
+         	</scalar>
+	  	</scalar>
+	    <collection name="feed" child_type="socailMediaPost"  comment="mainFeed"/>
+   </meta_metadata>
  </meta_metadata_repository>

@@ -2,6 +2,9 @@
   <meta_metadata name="socailMediaPost" extends="post" parser="xpath"
     comment="socialMedia post">
     <scalar name="title" scalar_type="String"/>
+	<scalar name="title_content" scalar_type="String">
+		<scalar name="location" scalar_type="ParsedURL"/>
+	</scalar>	
     <!-- authors inherited -->
     <scalar name="shares" scalar_type="String"/>
     <scalar name="location" scalar_type="String" comment="location created"/>

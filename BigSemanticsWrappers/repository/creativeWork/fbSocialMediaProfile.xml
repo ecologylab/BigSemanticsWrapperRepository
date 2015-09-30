@@ -63,6 +63,9 @@
     			<scalar name="title" >
     				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
     			</scalar>
+    			<scalar name="location" >
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
+    			</scalar>
     			<composite name="photo">
     				<xpath>.//img</xpath>
     				<scalar name="location">
@@ -100,6 +103,9 @@
 						<xpath>.//div[@class='clearfix']</xpath>
 		    			<scalar name="title" >
 		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
+		    			</scalar>
+		    			<scalar name="location" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']</xpath>
 		    			</scalar>
 		    			<composite name="photo">
 		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
@@ -150,20 +156,49 @@
 			</collection>
 		</collection>
 		
-	
-	<collection name="subArticles" child_type="socailMediaPost"  comment="articles">
-		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
-		<scalar name="title_content" scalar_type="String" label="Content Block">
+	<composite name="Friends" type="socialMediaFeed">
+	<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
+		<scalar name="name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 			<scalar name="location">
-            	<xpath>./@href</xpath>
+            	<xpath>./</xpath>
+         	</scalar>
+		</scalar>
+	    <collection name="feed" comment="Friends block">
+	    	<xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
+	    	<collection name="authors" child_type="author" label="friends">
+    			<scalar name="title" >
+    				<xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
+    			</scalar>
+    			<scalar name="location">
+    				<xpath>./a</xpath>
+    			</scalar>
+    			<composite name="photo">
+    				<xpath>./a/img[contains(@class, '_s0 friendPhoto _rv img')]</xpath>
+    				<scalar name="location">
+		            	<xpath>./@src</xpath>
+		          </scalar>
+    			</composite>
+		</collection>
+	    </collection>
+		
+	</composite>
+	<collection name="subArticles" child_type="socailMediaPost"  comment="articles">
+		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
+		<scalar name="title_content" label="Content Block">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+			<scalar name="location">
+            	<xpath>./</xpath>
          	</scalar>
 		</scalar>	
 		<!-- friends block -->
-		<collection name="authors" child_type="author" label="FRIENDS">
-			<xpath>.//div[@class='_w8_']/ul/li[contains(@class,'friendListing')]</xpath>
+		<collection name="authors" child_type="author" label="friends">
+			<xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
     			<scalar name="title" >
     				<xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
+    			</scalar>
+    			<scalar name="location">
+    				<xpath>./a</xpath>
     			</scalar>
     			<composite name="photo">
     				<xpath>./a/img[contains(@class, '_s0 friendPhoto _rv img')]</xpath>
@@ -173,6 +208,12 @@
     			</composite>
 		</collection>
 		<!-- attempt to catch photos and videos block -->
+		<collection name="photos" >
+			<xpath>.//table[contains(@class,'uiGrid')]//img</xpath>
+    			   <scalar name="location">
+		            <xpath>./@src</xpath>
+		          </scalar>
+		</collection>		
 	</collection>
 		
 		
