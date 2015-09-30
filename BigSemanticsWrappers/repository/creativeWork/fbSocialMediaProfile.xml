@@ -150,18 +150,31 @@
 			</collection>
 		</collection>
 		
-<!-- 		<collection name="authors" child_type="author" label="FRIENDS">
-			<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']//h3[@class='_71u _70n _5r0_']//a/text()[contains(.,'Friends')]/..</xpath>
+	
+	<collection name="subArticles" child_type="socailMediaPost"  comment="articles">
+		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
+		<scalar name="title_content" scalar_type="String" label="Content Block">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+			<scalar name="location">
+            	<xpath>./@href</xpath>
+         	</scalar>
+		</scalar>	
+		<!-- friends block -->
+		<collection name="authors" child_type="author" label="FRIENDS">
+			<xpath>.//div[@class='_w8_']/ul/li[contains(@class,'friendListing')]</xpath>
     			<scalar name="title" >
-    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
+    				<xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
     			</scalar>
     			<composite name="photo">
-    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
+    				<xpath>./a/img[contains(@class, '_s0 friendPhoto _rv img')]</xpath>
     				<scalar name="location">
 		            	<xpath>./@src</xpath>
 		          </scalar>
     			</composite>
-		</collection> -->
+		</collection>
+		<!-- attempt to catch photos and videos block -->
+	</collection>
+		
 		
   </meta_metadata> 
 </meta_metadata_repository>
