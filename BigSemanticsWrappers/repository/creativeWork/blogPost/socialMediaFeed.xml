@@ -1,0 +1,6 @@
+<meta_metadata_repository name="socialMediaFeed" package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
+  <meta_metadata name="socialMediaFeed" extends="rich_document" parser="xpath">
+	  	<scalar name="feed_name" scalar_type="String" comment="name of feed"/>
+	    <collection name="feed" child_type="socailMediaPost"  comment="mainFeed"/>
+   </meta_metadata>
+ </meta_metadata_repository>
