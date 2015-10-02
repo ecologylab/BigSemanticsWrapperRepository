@@ -155,14 +155,14 @@
 				</collection>
 			</collection>
 		</collection>
-	<collection name="Subarticles" child_type="socialMediaFeed">
-		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
+		
+	<composite name="friendsArticle" type="socialMediaFeed" label="Friends">
+		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'][4]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
 		<collection name="feed">
    		 <xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
- 		 <xpath>.//table[contains(@class,'uiGrid')]//img</xpath>
 		    <collection name="authors">
 		    	<xpath>.</xpath>
 		        <scalar name="title" >
@@ -175,16 +175,63 @@
 		            <xpath>./a/img[contains(@class, '_s0 friendPhoto _rv img')]</xpath>
 		            <scalar name="location">
 		                <xpath>./@src</xpath>
+		          	</scalar>
+		        </composite>
+		    </collection>
+		</collection>
+	</composite>	
+	<collection name="Subarticles" child_type="socialMediaFeed">
+		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
+		<scalar name="feed_name">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed">
+   		 <xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
+ 		 <xpath>.//table[contains(@class,'uiGrid')]//img</xpath>
+ 		 <xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 	<scalar name="title_content" scalar_type="String">
+ 		 		<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+		 		<scalar name="location">
+		 			<xpath>./@href</xpath>
+		 		</scalar>	
+ 		 	</scalar>
+		    <collection name="authors">
+		    	<xpath>.</xpath>
+		        <scalar name="title" >
+		        	<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+		            <xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
+		        </scalar>
+		        <scalar name="location">
+					<xpath>./a/@href</xpath>
+					<xpath>./@href</xpath>
+				</scalar>
+		        <composite name="photo">
+		            <xpath>./a/img</xpath>
+		            <scalar name="location">
+		                <xpath>./@src</xpath>
 		          </scalar>
 		        </composite>
 		    </collection>
 			<collection name="photos" >
+				<xpath>.//div[@class='art_border music_artwork_grid']//img</xpath> <!-- MUSIC -->
+				<xpath>./a/div[@class='_6l-']/img</xpath>
+				<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+				<xpath>./a/img[contains(@class,'friendPhoto')]</xpath>
 				<xpath>.</xpath>
 	    			   <scalar name="location">
+	    			   		<filter regex="url\([^\)]*">
+	    			   			<xpath>./@style</xpath>
+	    			   		</filter>
+	    			   <!-- <xpath>./@style</xpath> need to parse out url  style="background-image: url(https://external-dfw1-1.xx.fbcdn.net/safe_image.php?d=AQBWr0S_fkUARGiO&w=103&h=103&url=https%3A%2F%2Fscontent-dfw1-1.xx.fbcdn.net%2Fhprofile-xpf1%2Fv%2Ft1.0-1%2Fp320x320%2F11836905_1022007501154587_2092565011098495599_n.png%3Foh%3D227bd5bc04fa4ea952b156354892f0ce%26oe%3D56929585&cfs=1&upscale=1);"-->
 			            <xpath>./@src</xpath>
 			          </scalar>
 			</collection>
+			<collection name="urls">
+				<xpath>./a[@class='_4q3 _57t _4un3 _gx8']/@hre</xpath>
+			</collection>
 			<scalar name="location" scalar_type="ParsedURL">
+				<xpath>./div[@class='_ph4 _ph5']/div/@href</xpath>
+				<xpath>./a[contains(@class,'uiVideoThumb')]/@href</xpath>
 				<xpath>./../../@href</xpath>
 			</scalar>
 		</collection> 

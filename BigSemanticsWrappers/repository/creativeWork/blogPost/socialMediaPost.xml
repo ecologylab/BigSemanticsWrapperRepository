@@ -7,13 +7,15 @@
 	</scalar>	
     <!-- authors inherited -->
     <scalar name="shares" scalar_type="String"/>
-    <scalar name="location" scalar_type="String" comment="location created"/>
+    <scalar name="feeling" scalar_type="String"/>
+    <scalar name="creation_location" scalar_type="String" comment="location created"/>
     <scalar name="date" scalar_type="String" comment="date created"/>
     <scalar name="time" scalar_type="String" comment="Timestamp of when created"/>
     <collection name="up_votes"  child_scalar_type="String"/>
     <scalar name="down_votes" scalar_type="String"/>
     <!-- contents of post -->
     	<!-- how to put links -->
+    	 <collection name="urls" child_scalar_type="ParsedURL"/>
     	<!-- how to setup videos -->
     	<collection name="description_content" child_scalar_type="String"/>
     	<collection name="photos" child_type="image" comment="Photos posted in post." />
