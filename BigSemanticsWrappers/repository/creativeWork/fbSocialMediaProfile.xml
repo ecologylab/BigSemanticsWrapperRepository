@@ -157,7 +157,7 @@
 		</collection>
 		
 	<composite name="friendsArticle" type="socialMediaFeed" label="Friends">
-		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'][3]</xpath>
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
