@@ -64,7 +64,7 @@
     				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
     			</scalar>
     			<scalar name="location" >
-    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a@href</xpath>
     			</scalar>
     			<composite name="photo">
     				<xpath>.//img</xpath>
@@ -117,6 +117,7 @@
 				<collection name="description_content" child_scalar_type="String">
 					<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
 				</collection>
+				<composite name="sticker" type="image"/>
 				<!-- path for stickers but need to figure out how to extract pic url
 				/div[@class='UFICommentContent']//div[@data-testid='ufi_comment_sticker']/@style
 				  -->
@@ -161,26 +162,94 @@
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
-		<collection name="feed">
+		<collection name="feed" child_type="socailMediaPost" >
    		 <xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
+  		 	<scalar name="title_content" scalar_type="String">
+ 		 		<xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
+		 		<scalar name="location">
+		 			<xpath>./a/@href</xpath>
+		 		</scalar>	
+ 		 	</scalar>
+   		 
 		    <collection name="authors">
 		    	<xpath>.</xpath>
 		        <scalar name="title" >
 		            <xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
 		        </scalar>
-		        <scalar name="location" scalar_type="ParsedURL">
+		        <scalar name="location">
 					<xpath>./a/@href</xpath>
 				</scalar>
 		        <composite name="photo">
-		            <xpath>./a/img[contains(@class, '_s0 friendPhoto _rv img')]</xpath>
+		            <xpath>./a/img</xpath>
 		            <scalar name="location">
 		                <xpath>./@src</xpath>
-		          	</scalar>
+		          </scalar>
 		        </composite>
 		    </collection>
 		</collection>
 	</composite>
-		
+	<composite name="friend_article" type="interest_group">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="friends">
+			 <xpath>./div[@id='pagelet_timeline_app_collection_report_26']//ul/li</xpath>
+			<scalar name="title">
+				<xpath>./a/div/div</xpath>
+			</scalar>
+			<scalar name="location">
+				<xpath>./a/@href</xpath>
+			</scalar>
+			<composite name="photo">
+				<xpath>./a/img</xpath>
+					<scalar name="location">
+						<xpath>./@src</xpath>
+					</scalar>
+			</composite>
+		</collection>
+	</composite>
+		<!-- photos block -->
+		<composite name="photos_article" type="socialMediaFeed">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[4]</xpath>
+		<scalar name="feed_name">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed" child_type="socailMediaPost" >
+   		 <xpath>.//table[contains(@class,'uiGrid')]//img</xpath>
+			<collection name="photos" >
+				<xpath>.</xpath>
+	    			   <scalar name="location">
+			            	<xpath>./@src</xpath>
+			          </scalar>
+			</collection>
+			<scalar name="location">
+				<xpath>./../../@href</xpath>
+			</scalar>
+		</collection>
+	</composite>
+	
+	<!-- sports block -->
+	<composite name="sports_article" type="interest_group">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[7]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="intrests">
+ 		 <xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+			<collection name="main_images" label="photos">
+				<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+	    			   <scalar name="location">
+			            	<xpath>./@src</xpath>
+			          </scalar>
+			</collection>
+			<scalar name="location">
+				<xpath>./a@href</xpath>
+			</scalar>
+		</collection>
+	</composite>
+	
+	
 	<collection name="Subarticles" child_type="socialMediaFeed">
 		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
 		<scalar name="feed_name">
