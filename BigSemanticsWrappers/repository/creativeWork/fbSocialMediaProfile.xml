@@ -86,6 +86,26 @@
 			<collection name="description_content" child_scalar_type="String">
 				<xpath>.//div[@class='_5pbx userContent']//p</xpath>
 			</collection>
+			
+			<composite name="shared">
+				<xpath>.//span[@class='fcg' and contains(text(),'shared')]</xpath>
+				<scalar name="title" >
+    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]</xpath>
+    			</scalar>
+    			<scalar name="location" >
+    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]/@href</xpath>
+    			</scalar>
+			</composite>
+			<collection name="urls">
+				<xpath>.//a[@class='_52c6']/@href</xpath>
+			</collection>
+			<composite name="video" type="facebook_video" >
+				<xpath>.</xpath>
+				<scalar name="video_link">
+					<xpath>.//span[@class='fcg']/a[@class='profileLink' and contains(text(),'video')]/@href</xpath>
+				</scalar>
+			</composite>
+			
 			<collection name="up_votes" label="likes" child_scalar_type="String">
 				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Likes')]</xpath>
 				<xpath>.//div[@class='UFILikeSentenceText']/span</xpath>
@@ -206,8 +226,8 @@
 		<scalar name="title">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
-		<collection name="friends">
-			 <xpath>./div[@id='pagelet_timeline_app_collection_report_26']//ul/li</xpath>
+		<collection name="friends" label="findme">
+			 <xpath>./div[@id='pagelet_timeline_app_collection_report_26']//ul/li[contains(@class,'friendListing')]</xpath><!-- /div[@id='pagelet_timeline_app_collection_report_26'] -->
 			<scalar name="title">
 				<xpath>./a/div/div</xpath>
 			</scalar>
