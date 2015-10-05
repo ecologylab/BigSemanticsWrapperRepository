@@ -1,0 +1,14 @@
+<meta_metadata_repository name="interest_group"
+  package="ecologylab.bigsemantics.generated.library">
+	
+
+  <meta_metadata name="social_media_interest" extends="rich_document" parser="xpath" comment="subjects the user is intrested in">
+	   <composite name="video" type="facebook_video" />
+  </meta_metadata>
+  
+  
+  <meta_metadata name="interest_group" extends="rich_document" parser="xpath" comment="a group of interests">
+	   <collection name="intrests" child_type="social_media_interest"/>
+	   <collection name="friends" child_type="person"/>
+  </meta_metadata>
+ </meta_metadata_repository>

@@ -19,13 +19,7 @@
     	<!-- how to setup videos -->
     	<composite name="video" type="facebook_video" />
     	<collection name="description_content" child_scalar_type="String"/>
-    	<composite name="sticker" type="image">
-    		<scalar name="location">
-    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
-     			<replace pattern="^[^\(]*\(" to=""/>
-    			<replace pattern="\);.*" to=""/>
-    		</scalar>
-    	</composite>
+    	<composite name="sticker" type="image"/>
     	<collection name="photos" child_type="image" comment="Photos posted in post." />
     <!-- tags  -->
     <scalar name="num_comments" scalar_type="String"/>

@@ -58,13 +58,13 @@
 		<collection name="feed" child_type="socailMediaPost"  comment="mainFeed">
 			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 			<scalar name="title" scalar_type="String"/>
-			<collection name="authors" child_type="author">
+			<collection name="authors" child_type="author" label="user_post">
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
     			<scalar name="title" >
     				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
     			</scalar>
     			<scalar name="location" >
-    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a@href</xpath>
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a/@href</xpath>
     			</scalar>
     			<composite name="photo">
     				<xpath>.//img</xpath>
@@ -99,13 +99,13 @@
 			
 			<collection name="comments">
 				<xpath>.//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//li[contains(@class,'UFIFirstComment ')]/../..//ul[not(contains(@class, 'UFIReplyList'))]/li[contains(@class, 'Comment')]</xpath>
-					<collection name="authors" child_type="author">
+					<collection name="authors" child_type="author" label="user_ commented">
 						<xpath>.//div[@class='clearfix']</xpath>
 		    			<scalar name="title" >
 		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
 		    			</scalar>
 		    			<scalar name="location" >
-		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']</xpath>
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
 		    			</scalar>
 		    			<composite name="photo">
 		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
@@ -117,7 +117,13 @@
 				<collection name="description_content" child_scalar_type="String">
 					<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
 				</collection>
-				<composite name="sticker" type="image"/>
+		    	<composite name="sticker" type="image">
+		    		<scalar name="location">
+		    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
+		     			<replace pattern="^[^\(]*\(" to=""/>
+		    			<replace pattern="\);.*" to=""/>
+		    		</scalar>
+		    	</composite>
 				<!-- path for stickers but need to figure out how to extract pic url
 				/div[@class='UFICommentContent']//div[@data-testid='ufi_comment_sticker']/@style
 				  -->
@@ -127,12 +133,15 @@
 				<scalar name="date"> <!-- need to figure how to seperate date 'at' time -->
 					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']</xpath>
 				</scalar>
-				<collection label="replies" name="comments">
+				<collection label="replies" name="comments" >
 					<xpath>./following-sibling::li[1]/ul/li[contains(@class,'UFIComment')]</xpath>
-					<collection name="authors" child_type="author">
+					<collection name="authors" child_type="author" label="user replied">
 						<xpath>.//div[@class='clearfix']</xpath>
 		    			<scalar name="title" >
 		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
+		    			</scalar>
+		    			<scalar name="location" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
 		    			</scalar>
 		    			<composite name="photo">
 		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
@@ -144,9 +153,13 @@
 					<collection name="description_content" child_scalar_type="String">
 						<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
 					</collection>
-					<!-- path for stickers but need to figure out how to extract pic url
-					/div[@class='UFICommentContent']//div[@data-testid='ufi_comment_sticker']/@style
-					  -->
+			    	<composite name="sticker" type="image">
+			    		<scalar name="location">
+			    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
+			     			<replace pattern="^[^\(]*\(" to=""/>
+			    			<replace pattern="\);.*" to=""/>
+			    		</scalar>
+			    	</composite>
 					<collection name="up_votes" label="likes" child_scalar_type="String">
 						<xpath>.//div[contains(@class,'UFICommentActions')]//a[@class='UFICommentLikeButton']/span</xpath>
 					</collection>
