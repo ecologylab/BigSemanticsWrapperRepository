@@ -17,7 +17,7 @@
     <scalar name="down_votes" scalar_type="String"/>
     <!-- contents of post -->
     	<!-- how to put links -->
-    	 <collection name="urls" child_scalar_type="ParsedURL"/>
+    	 <collection name="urls" child_scalar_type="String"/>
     	<!-- how to setup videos -->
     	<composite name="video" type="facebook_video" />
     	<collection name="description_content" child_scalar_type="String"/>

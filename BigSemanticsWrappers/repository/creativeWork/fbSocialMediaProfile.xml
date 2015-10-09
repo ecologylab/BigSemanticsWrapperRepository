@@ -55,7 +55,7 @@
 	       </scalar>
 		</collection>
 		
-	<collection name="feed" child_type="socailMediaPost"  comment="mainFeed">
+		<collection name="feed" child_type="socailMediaPost"  comment="mainFeed">
 			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 			<scalar name="title" scalar_type="String"/>
 			<collection name="authors" child_type="author" label="user_post">
@@ -205,21 +205,14 @@
 			</collection>
 		</collection>
 		
-	<composite name="friendsArticle" type="socialMediaFeed" label="Friends">
+	<collection name="Friends" child_type="socialMediaFeed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
-		<collection name="feed" child_type="socailMediaPost" >
+		<collection name="feed" hide_label="true">
    		 <xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
-  		 	<scalar name="title_content" scalar_type="String">
- 		 		<xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
-		 		<scalar name="location">
-		 			<xpath>./a/@href</xpath>
-		 		</scalar>	
- 		 	</scalar>
-   		 
-		    <collection name="authors">
+		    <collection name="authors" label="friend">
 		    	<xpath>.</xpath>
 		        <scalar name="title" >
 		            <xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
@@ -234,69 +227,50 @@
 		          </scalar>
 		        </composite>
 		    </collection>
-		</collection>
-	</composite>
-	<composite name="friend_article" type="interest_group">
-		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
-		<scalar name="title">
-			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
-		</scalar>
-		<collection name="friends" label="findme">
-			 <xpath>./div[@id='pagelet_timeline_app_collection_report_26']//ul/li[contains(@class,'friendListing')]</xpath><!-- /div[@id='pagelet_timeline_app_collection_report_26'] -->
-			<scalar name="title">
-				<xpath>./a/div/div</xpath>
-			</scalar>
-			<scalar name="location">
-				<xpath>./a/@href</xpath>
-			</scalar>
-			<composite name="photo">
-				<xpath>./a/img</xpath>
-					<scalar name="location">
-						<xpath>./@src</xpath>
-					</scalar>
-			</composite>
-		</collection>
-	</composite>
-		<!-- photos block -->
-	<composite name="photos_article" type="socialMediaFeed">
-	<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[4]</xpath>
-	<scalar name="feed_name">
-		<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
-	</scalar>
-	<collection name="feed" child_type="socailMediaPost" >
-  		 <xpath>.//table[contains(@class,'uiGrid')]//img</xpath>
-		<collection name="photos" >
-			<xpath>.</xpath>
-    			   <scalar name="location">
-		            	<xpath>./@src</xpath>
-		          </scalar>
-		</collection>
-		<scalar name="location">
-			<xpath>./../../@href</xpath>
-		</scalar>
+
+		</collection> 
+			
 	</collection>
-	</composite>
 	
-	<!-- sports block -->
-	<composite name="sports_article" type="interest_group">
-		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[7]</xpath>
-		<scalar name="title">
+	<collection name="Photos" child_type="socialMediaFeed" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[4]</xpath>
+		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
-		<collection name="intrests">
- 		 <xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
-			<collection name="main_images" label="photos">
-				<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+		<collection name="feed" label="Photos" hide_label="true">
+ 		 <xpath>.//table[@class='uiGrid _51mz _122 _4b25']//img</xpath>	 
+			<collection name="photos" hide_label="true">
+				<xpath>.</xpath>
 	    			   <scalar name="location">
 			            	<xpath>./@src</xpath>
 			          </scalar>
 			</collection>
-			<scalar name="location">
-				<xpath>./a@href</xpath>
+			<scalar name="location" scalar_type="ParsedURL" hidden="false">
+				<xpath>./../../@href</xpath>
 			</scalar>
-		</collection>
-	</composite>
-	
+		</collection> 
+			
+	</collection>
+	<collection name="Videos" child_type="socialMediaFeed" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[5]</xpath>
+		<scalar name="feed_name">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed" label="Videos" hide_label="true">
+ 		 <xpath>.//table[@class='uiGrid _51mz _2ze_ _4b25']//td</xpath>	 
+			<collection name="photos" hide_label="true">
+				<xpath>.//img</xpath>
+	    			   <scalar name="location">
+			            	<xpath>./@src</xpath>
+			          </scalar>
+			</collection>
+			<scalar name="location" scalar_type="ParsedURL" hidden="false">
+				<xpath>.//a[contains(@aria-label,'Video')]/@ajaxify</xpath>
+				<replace pattern="^\/" to="https://www.facebook.com/"/>
+			</scalar>
+		</collection> 
+			
+	</collection>
 	
 	<collection name="Subarticles" child_type="socialMediaFeed">
 		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
@@ -354,57 +328,58 @@
 		</collection> 
 			
 	</collection>
+
+
+
+
 	
-	<composite name="check_ins" type="socialMediaFeed">
-		<def_var name="main_check_block" type="node">
-			<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[6]</xpath>
-		</def_var>
+	<collection name="check_ins" child_type="socialMediaFeed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[6]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
-		<collection name="feed" context_node="main_check_block">
-   		 <xpath>.//ul/li/div</xpath>
-   		 <collection name="photos" context_node="main_check_block">
-   		 	<xpath>.//img[@class='scaledImageFitWidth img']</xpath>
-   		 </collection>
-   		 <scalar name="location">
-   		 	<xpath>./a/@href</xpath>
-   		 </scalar>
-   		 <collection name="description_content" context_node="main_check_block">
-   		 	<xpath>.//span[@class='fcg']/../a</xpath>
-   		 </collection>
-   		 <collection name="authors">
-   		 	<xpath>(.//span[@class='fcg']/a)[1]</xpath>
-   		 	<scalar name="title">
-   		 		<xpath>.</xpath>
-   		 	</scalar>
-   		 	<scalar name="location">
-   		 		<xpath>./@href</xpath>
-   		 	</scalar>
-   		 </collection>
-   		 <collection name="with_users">
-   		 	<xpath>.//span[@class='fcg']/a[position()>1]</xpath>
-   		 	<scalar name="title">
-   		 		<xpath>.</xpath>
-   		 	</scalar>
- 		 	<scalar name="location">
-   		 		<xpath>./@href</xpath>
-   		 	</scalar>
-   		 </collection>
+		<collection name="feed" hide_label="true">
+	   		 <xpath>.//ul/li/div</xpath>
+	   		 <collection name="photos">
+	   		 	<xpath>.//img[@class='scaledImageFitWidth img']</xpath>
+	   		 </collection>
+	   		 <scalar name="location">
+	   		 	<xpath>./a/@href</xpath>
+	   		 </scalar>
+	   		 <collection name="description_content">
+	   		 	<xpath>.//span[@class='fcg']/../a</xpath>
+	   		 </collection>
+	   		 <collection name="authors">
+	   		 	<xpath>(.//span[@class='fcg']/a)[1]</xpath>
+	   		 	<scalar name="title">
+	   		 		<xpath>.</xpath>
+	   		 	</scalar>
+	   		 	<scalar name="location">
+	   		 		<xpath>./@href</xpath>
+	   		 	</scalar>
+	   		 </collection>
+	   		 <collection name="with_users">
+	   		 	<xpath>.//span[@class='fcg']/a[position()>1]</xpath>
+	   		 	<scalar name="title">
+	   		 		<xpath>.</xpath>
+	   		 	</scalar>
+	 		 	<scalar name="location">
+	   		 		<xpath>./@href</xpath>
+	   		 	</scalar>
+	   		 </collection>
+	   		 <scalar name="date">
+				<xpath>./div//abbr[@class='timestamp']/@title</xpath>
+				<replace pattern=" at.*" to=""/>
+			</scalar>
+			<scalar name="time">
+				<xpath>./div//abbr[@class='timestamp']/@title</xpath>
+				<replace pattern=".*at " to=""/>
+			</scalar>
+			<scalar name="feeling">
+				<xpath>.//span[@class='fcg']/span</xpath>
+			</scalar>
 		</collection>
-		<scalar name="date">
-			<xpath>./div//abbr[@class='timestamp']/@title</xpath>
-			<replace pattern=" at.*" to=""/>
-		</scalar>
-		<scalar name="time">
-			<xpath>./div//abbr[@class='timestamp']/@title</xpath>
-			<replace pattern=".*at " to=""/>
-		</scalar>
-		<scalar name="feeling">
-			<xpath>.//span[@class='fcg']/span</xpath>
-		</scalar>
-	</composite>
+	</collection>
 		
   </meta_metadata> 
 </meta_metadata_repository>
