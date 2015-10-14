@@ -8,7 +8,7 @@
   
   
   <meta_metadata name="interest_group" extends="rich_document" parser="xpath" comment="a group of interests">
-	   <collection name="intrests" child_type="social_media_interest"/>
+	   <collection name="interests" child_type="social_media_interest"/>
 	   <collection name="friends" child_type="person"/>
   </meta_metadata>
  </meta_metadata_repository>

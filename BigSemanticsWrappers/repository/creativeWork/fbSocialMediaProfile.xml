@@ -238,15 +238,15 @@
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
 		<collection name="feed" label="Photos" hide_label="true">
- 		 <xpath>.//table[@class='uiGrid _51mz _122 _4b25']//img</xpath>	 
+ 		 <xpath>.//table[@class='uiGrid _51mz _122 _4b25']//tr[@class='_51mx']</xpath>	 
 			<collection name="photos" hide_label="true">
-				<xpath>.</xpath>
+				<xpath>.//img</xpath>
 	    			   <scalar name="location">
 			            	<xpath>./@src</xpath>
 			          </scalar>
 			</collection>
-			<scalar name="location" scalar_type="ParsedURL" hidden="false">
-				<xpath>./../../@href</xpath>
+			<scalar name="location">
+				<xpath>.//td[@class='_51m-']/a/@href</xpath>
 			</scalar>
 		</collection> 
 			
@@ -264,8 +264,8 @@
 			            	<xpath>./@src</xpath>
 			          </scalar>
 			</collection>
-			<scalar name="location" scalar_type="ParsedURL" hidden="false">
-				<xpath>.//a[contains(@aria-label,'Video')]/@ajaxify</xpath>
+			<scalar name="location">
+				<xpath>.//td[@class='_51m-']/a/@ajaxify</xpath>
 				<replace pattern="^\/" to="https://www.facebook.com/"/>
 			</scalar>
 		</collection> 
@@ -312,6 +312,14 @@
 	    			   		<replace pattern="\);" to=""/>
 	    			</scalar>
  		 		</collection>
+ 		 		<!-- video link can be found  -->
+ 		 		 <composite name="video">
+ 		 		 	<xpath>./div[contains(@class,'_4--s music_button')]//a/@href</xpath>
+ 		 		 	<replace pattern="^\/" to="https://www.facebook.com/"/>
+ 		 		 </composite>
+ 		 		 <scalar name="location">
+ 		 		 	<xpath>./div[@class='_ph4 _ph5']//a/@href</xpath>
+ 		 		 </scalar>
 			</collection>			
 	</collection>
 	<collection name="Movies" child_type="interest_group" hide_label="true">
