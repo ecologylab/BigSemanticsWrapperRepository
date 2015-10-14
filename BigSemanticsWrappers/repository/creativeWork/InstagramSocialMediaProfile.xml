@@ -1,0 +1,47 @@
+<meta_metadata_repository name="instagram_social_media_profile"
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
+
+  <meta_metadata name="instagram_social_media_profile" extends="social_media_profile" parser="xpath" no_cache="true">
+    <selector url_regex="https://instagram.com/[^/?]*/" domain="instagram.com" />
+  	
+  	<scalar name="description" hide="true"/>
+  	<collection name="main_images" hide="true" />
+  	<composite name="user" type="social_media_user">
+  		<scalar name="title" hide="true"/>
+  		<xpath>//div[contains(@class,'authorInfo')]</xpath>
+  		<scalar name="user_name">
+  			<xpath>./div/h1[contains(@class,'username')]</xpath>
+  		</scalar>
+  		<scalar name="posts">
+  			<xpath>.//ul[contains(@class,'statistics')]//span[contains(@class,'PostsStatistic')]</xpath>
+  		</scalar>
+  		<scalar name="followers">
+  			<xpath>//ul[contains(@class,'statistics')]//span[contains(@class,'FollowedByStatistic')]</xpath>
+  		</scalar>
+  		<scalar name="following">
+  			<xpath>.//ul[contains(@class,'statistics')]//span[contains(@class,'FollowsStatistic__count')]</xpath>
+  		</scalar>
+  		<composite name="photo">
+  			<scalar name="location">
+  				<xpath>//div[contains(@class,'ProfilePage__avatar')]/img/@src</xpath>
+  			</scalar>
+  		</composite>
+  	</composite>
+  	<composite name="profile_feed" label="PhotoStream" type="socialMediaFeed">
+  		<xpath>.</xpath>
+  		<collection name="feed">
+  			<xpath>//div[@class='-cx-PRIVATE-PostsGrid__root']//a[contains(@class,'item')]</xpath>
+  			<collection name="photos">
+  				<xpath>.//img</xpath>
+  				<scalar name="location">
+  					<xpath>./@src</xpath>
+  				</scalar>
+  			</collection>
+  			<scalar name="location">
+  				<xpath>./@href</xpath>
+				<replace pattern="^\/" to="https://instagram.com"/>
+  			</scalar>
+  		</collection>
+  	</composite>
+  </meta_metadata>
+ </meta_metadata_repository>

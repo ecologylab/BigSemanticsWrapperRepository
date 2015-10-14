@@ -8,6 +8,6 @@
     <scalar name="posts" scalar_type="String" />
     <scalar name="followers" scalar_type="String"/>
     <scalar name="following" scalar_type="String"/>
-    <scalar name="user" scalar_type="String"/>
+    <scalar name="user_name" scalar_type="String"/>
   </meta_metadata> 
 </meta_metadata_repository>
