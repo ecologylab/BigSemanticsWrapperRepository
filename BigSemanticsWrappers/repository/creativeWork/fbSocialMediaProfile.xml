@@ -272,66 +272,113 @@
 			
 	</collection>
 	
-	<collection name="Subarticles" child_type="socialMediaFeed">
-		<xpath>//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article']</xpath>
-		<scalar name="feed_name">
+	<collection name="Sports" child_type="interest_group" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[7]</xpath>
+		<scalar name="title">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
-		<collection name="feed">
-   		 <xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
- 		 <xpath>.//table[contains(@class,'uiGrid')]//img</xpath>
- 		 <xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
- 		 	<scalar name="title_content" scalar_type="String">
- 		 		<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
-		 		<scalar name="location">
-		 			<xpath>./@href</xpath>
-		 		</scalar>	
- 		 	</scalar>
-		    <collection name="authors">
-		    	<xpath>.</xpath>
-		        <scalar name="title" >
-		        	<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
-		            <xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
-		        </scalar>
+			<collection name="interests">
+ 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 		<scalar name="title">
+ 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+ 		 		</scalar>	
 		        <scalar name="location">
 					<xpath>./a/@href</xpath>
-					<xpath>./@href</xpath>
-				</scalar>
-		        <composite name="photo">
-		            <xpath>./a/img</xpath>
-		            <scalar name="location">
-		                <xpath>./@src</xpath>
-		          </scalar>
-		        </composite>
-		    </collection>
-			<collection name="photos" >
+<!-- 					<xpath>./@href</xpath>
+ -->				</scalar>
+ 		 		<collection name="main_images" hide="false">
+					<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+ 		 			<scalar name="location">
+	    			   	    <xpath>./@src</xpath>
+	    			</scalar>
+ 		 		</collection>
+			</collection>			
+	</collection>
+	<collection name="Music" child_type="interest_group" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[8]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+			<collection name="interests">
+ 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 		<scalar name="title">
+ 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+ 		 		</scalar>	
+ 		 		<collection name="main_images" hide="false">
 				<xpath>.//div[@class='art_border music_artwork_grid']</xpath> <!-- MUSIC -->
-				<xpath>./a/div[@class='_6l-']/img</xpath>
-				<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
-				<xpath>./a/img[contains(@class,'friendPhoto')]</xpath>
-				<xpath>.</xpath>
-	    			   <scalar name="location">
+ 		 			<scalar name="location">
 	    			   	    <xpath>.//img[@class='music_artwork img']/@style</xpath>
-			            	<xpath>./@src</xpath>
         	    			<replace pattern="background-image: url\(" to=""/>
 	    			   		<replace pattern="\);" to=""/>
-			          </scalar>
-			</collection>
-			<collection name="urls">
-				<xpath>./a[@class='_4q3 _57t _4un3 _gx8']/@href</xpath>
-			</collection>
-			<scalar name="location" scalar_type="ParsedURL">
-				<xpath>./div[@class='_ph4 _ph5']/div/@href</xpath>
-				<xpath>./a[contains(@class,'uiVideoThumb')]/@href</xpath>
-				<xpath>./../../@href</xpath>
-			</scalar>
-		</collection> 
-			
+	    			</scalar>
+ 		 		</collection>
+			</collection>			
 	</collection>
-
-
-
-
+	<collection name="Movies" child_type="interest_group" hide_label="true">
+	<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[9]</xpath>
+	<scalar name="title">
+		<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+	</scalar>
+		<collection name="interests">
+		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+		 		<scalar name="title">
+		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+		 		</scalar>	
+		 		<scalar name="location">
+				<xpath>./a/@href</xpath>
+			</scalar>
+		 		<collection name="main_images" hide="false">
+			<xpath>./a/div[@class='_6l-']/img</xpath> <!-- movies -->
+			<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath> <!-- sports & movies-->
+		 			<scalar name="location">
+    			   	    <xpath>./@src</xpath>
+    			</scalar>
+		 		</collection>
+		</collection>			
+</collection>	
+	<collection name="appsAndGames" child_type="interest_group" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[10]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+			<collection name="interests">
+ 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 		<scalar name="title">
+ 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+ 		 		</scalar>
+		        <scalar name="location">
+					<xpath>./a/@href</xpath>
+				</scalar>	
+ 		 		<collection name="main_images" hide="false">
+				<xpath>./a/div[@class='_6l-']/img</xpath> <!-- movies -->
+				<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath> <!-- sports & movies-->
+ 		 			<scalar name="location">
+	    			   	    <xpath>./@src</xpath>
+	    			</scalar>
+			</collection>			
+			</collection>
+	</collection>
+	<collection name="Likes" child_type="interest_group" hide_label="true">
+			<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[11]</xpath>
+			<scalar name="title">
+				<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+			</scalar>
+				<collection name="interests">
+	 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+	 		 		<scalar name="title">
+	 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+	 		 		</scalar>	
+			        <scalar name="location">
+						<xpath>./a/@href</xpath>
+					</scalar>
+	 		 		<collection name="main_images" hide="false">
+						<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+	 		 			<scalar name="location">
+		    			   	    <xpath>./@src</xpath>
+		    			</scalar>
+				   </collection>			
+				</collection>
+		</collection>
 	
 	<collection name="check_ins" child_type="socialMediaFeed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[6]</xpath>
@@ -341,7 +388,7 @@
 		<collection name="feed" hide_label="true">
 	   		 <xpath>.//ul/li/div</xpath>
 	   		 <collection name="photos">
-	   		 	<xpath>.//img[@class='scaledImageFitWidth img']</xpath>
+	   		 	<xpath>.//img[@class='scaledImageFitWidth img']/@src</xpath>
 	   		 </collection>
 	   		 <scalar name="location">
 	   		 	<xpath>./a/@href</xpath>
