@@ -30,7 +30,7 @@
   	<composite name="profile_feed" label="PhotoStream" type="socialMediaFeed">
   		<xpath>.</xpath>
   		<collection name="feed">
-  			<xpath>//div[@class='-cx-PRIVATE-PostsGrid__root']//a[contains(@class,'item')]</xpath>
+  			<xpath>//div[@class='-cx-PRIVATE-Photo__placeholder']</xpath>
   			<collection name="photos">
   				<xpath>.//img</xpath>
   				<scalar name="location">
