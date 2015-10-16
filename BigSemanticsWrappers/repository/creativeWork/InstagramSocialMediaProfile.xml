@@ -32,6 +32,7 @@
   		</composite>
   	</composite>
   	<composite name="profile_feed" label="PhotoStream" type="socialMediaFeed">
+  		<scalar name="title" hide="true" />
   		<scalar name="description" hide="true" />
   		<xpath>//div[@class='-cx-PRIVATE-PostsGrid__root']</xpath>
   		<collection name="feed" label="photos">
