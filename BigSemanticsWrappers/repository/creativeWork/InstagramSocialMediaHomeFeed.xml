@@ -2,7 +2,8 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork">
 
   <meta_metadata name="instagram_social_media_home_feed" extends="rich_document" parser="xpath" no_cache="true">
-      <selector url_regex="https://instagram.com/" domain="instagram.com" />
+      <selector url_stripped="https://instagram.com" />
+      <selector url_stripped="https://instagram.com/" />
   		<composite name="home_feed" type="socialMediaFeed">
   			<xpath>.</xpath>
   			<collection name="feed" child_type="socailMediaPost">
