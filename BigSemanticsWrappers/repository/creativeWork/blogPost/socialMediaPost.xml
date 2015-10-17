@@ -5,7 +5,7 @@
     <scalar name="title" scalar_type="String"/>
 	<scalar name="title_content" scalar_type="String"/>
 	<scalar name="location" scalar_type="ParsedURL"/>
-	<composite name="shared" type="person"/>
+	<composite name="shared" type="social_media_user"/>
     <!-- authors inherited -->
     <scalar name="shares" scalar_type="String"/>
     <scalar name="feeling" scalar_type="String"/>

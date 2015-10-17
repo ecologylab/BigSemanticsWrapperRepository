@@ -1,0 +1,64 @@
+<meta_metadata_repository name="instagram_social_media_post"
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
+
+  <meta_metadata name="instagram_social_media_post" extends="socailMediaPost" parser="xpath" no_cache="true">
+    <selector url_regex="https://instagram.com/p/[^/]*/" domain="instagram.com"/>
+    <example_url url="https://instagram.com/p/86fyx5hQZa/?taken-by=instagram" />
+    <example_url url="https://instagram.com/p/86vFSEoVdh/?taken-by=natgeo" />
+        
+  	<scalar name="title" hide="true"/>
+  	<collection name="main_images" hide="true" />
+  	
+  	<composite name="shared" label="user" type="social_media_user">
+  		<xpath>//div[@class='-cx-PRIVATE-Post__ownerAndLocation']</xpath>
+  		<scalar name="title" hide="true"/>
+  		<scalar name="user_name" use_value_as_label="photo">
+  			<xpath>.</xpath>
+  		</scalar>
+  		<scalar name="location">
+  			<xpath>./@href</xpath>
+  		</scalar>
+  		<composite name="photo" hide="true">
+  			<scalar name="location">
+  				<xpath>//img[@class='-cx-PRIVATE-Post__ownerAvatar']/@src</xpath>
+  			</scalar>
+  		</composite>
+  	</composite>
+  	
+  	<collection name="photos" hide_label="true">
+  		<xpath>//div[@class='-cx-PRIVATE-Photo__root -cx-PRIVATE-Post__media']//img</xpath>
+  		<scalar name="location">
+			<xpath>./@src</xpath>
+		</scalar>
+  	</collection>
+  	
+  	<collection name="up_votes" label="likes" child_scalar_type="String">
+  		<xpath>//span[@class='-cx-PRIVATE-PostLikers__likeCount']/span[2]</xpath>
+  	</collection>
+  	
+  	<scalar name="time">
+  		<xpath>//time[@class='-cx-PRIVATE-Timestamp__root']</xpath>
+  	</scalar>
+  	
+  	<scalar name="description">
+  		<xpath>//li[@class='-cx-PRIVATE-PostInfo__comment'][1]/h1</xpath>
+  	</scalar>
+  	
+  	<collection name="comments">
+		<xpath>//li[@class='-cx-PRIVATE-PostInfo__comment'][position() > 1]</xpath>
+		<composite name="shared" label="user">
+			<xpath>./a</xpath>
+			<scalar name="title">
+				<xpath>.</xpath>
+			</scalar>
+			<scalar name="location">
+				<xpath>./@href</xpath>
+			</scalar>
+		</composite>
+		<scalar name="description" label="comment">
+			<xpath>./span/span</xpath>
+		</scalar>	
+  	</collection>
+  	 
+  </meta_metadata>
+ </meta_metadata_repository>
