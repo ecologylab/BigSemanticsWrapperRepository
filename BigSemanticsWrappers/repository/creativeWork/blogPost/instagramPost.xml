@@ -1,7 +1,7 @@
-<meta_metadata_repository name="instagram_social_media_post"
-  package="ecologylab.bigsemantics.generated.library.creativeWork">
+<meta_metadata_repository name="instagramPost"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
 
-  <meta_metadata name="instagram_social_media_post" extends="socailMediaPost" parser="xpath" no_cache="true">
+  <meta_metadata name="instagram_post" extends="social_media_post" parser="xpath" no_cache="true">
     <selector url_regex="https://instagram.com/p/[^/]*/" domain="instagram.com"/>
     <example_url url="https://instagram.com/p/86fyx5hQZa/?taken-by=instagram" />
     <example_url url="https://instagram.com/p/86vFSEoVdh/?taken-by=natgeo" />

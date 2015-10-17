@@ -1,11 +1,11 @@
-<meta_metadata_repository name="instagram_social_media_home_feed"
-  package="ecologylab.bigsemantics.generated.library.creativeWork">
+<meta_metadata_repository name="instagramHomeFeed"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
-  <meta_metadata name="instagram_social_media_home_feed" extends="socialMediaFeed" parser="xpath" no_cache="true">
+  <meta_metadata name="instagram_home_feed" extends="social_media_feed" parser="xpath" no_cache="true">
       <selector url_stripped="https://instagram.com" />
       <selector url_stripped="https://instagram.com/" />
   		
- 			<collection name="feed" child_type="socailMediaPost">
+ 			<collection name="feed" child_type="social_media_post">
  				<xpath>.//div[@class='-cx-PRIVATE-FeedPage__feed']//article</xpath>
  				<composite name="shared" label="user" type="social_media_user">
 		  		<xpath>.//div[@class='-cx-PRIVATE-Post__ownerAndLocation']</xpath>

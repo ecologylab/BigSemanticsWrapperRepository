@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  * Copyright (2015) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.SocialMediaFeed;
+import ecologylab.bigsemantics.generated.library.creativeWork.blog.SocialMediaFeed;
 import ecologylab.bigsemantics.generated.library.person.author.SocialMediaUser;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;

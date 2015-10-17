@@ -10,7 +10,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork.blogPost;
 
 import ecologylab.bigsemantics.generated.library.creativeWork.FacebookVideo;
 import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post;
-import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.SocailMediaPost;
+import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.SocialMediaPost;
 import ecologylab.bigsemantics.generated.library.person.author.SocialMediaUser;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -23,18 +23,16 @@ import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
-import ecologylab.serialization.annotations.simpl_tag;
 import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /** 
- *socialMedia post
+ *social media post
  */ 
 @simpl_inherit
-@simpl_tag("socailMediaPost")
-public class SocailMediaPost extends Post
+public class SocialMediaPost extends Post
 {
 	@simpl_scalar
 	private MetadataString titleContent;
@@ -107,14 +105,14 @@ public class SocailMediaPost extends Post
 	/** 
 	 *comments,replys,subtweets
 	 */ 
-	@simpl_collection("socailMediaPost")
+	@simpl_collection("social_media_post")
 	@mm_name("comments")
-	private List<SocailMediaPost> comments;
+	private List<SocialMediaPost> comments;
 
-	public SocailMediaPost()
+	public SocialMediaPost()
 	{ super(); }
 
-	public SocailMediaPost(MetaMetadataCompositeField mmd) {
+	public SocialMediaPost(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 
@@ -555,21 +553,21 @@ public class SocailMediaPost extends Post
 		this.withUsers = withUsers;
 	}
 
-	public List<SocailMediaPost> getComments()
+	public List<SocialMediaPost> getComments()
 	{
 		return comments;
 	}
 
   // lazy evaluation:
-  public List<SocailMediaPost> comments()
+  public List<SocialMediaPost> comments()
   {
     if (comments == null)
-      comments = new ArrayList<SocailMediaPost>();
+      comments = new ArrayList<SocialMediaPost>();
     return comments;
   }
 
   // addTo:
-  public void addToComments(SocailMediaPost element)
+  public void addToComments(SocialMediaPost element)
   {
     comments().add(element);
   }
@@ -580,7 +578,7 @@ public class SocailMediaPost extends Post
     return comments == null ? 0 : comments.size();
   }
 
-	public void setComments(List<SocailMediaPost> comments)
+	public void setComments(List<SocialMediaPost> comments)
 	{
 		this.comments = comments;
 	}

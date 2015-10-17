@@ -1,7 +1,7 @@
-<meta_metadata_repository name="fbSocialMediaProfile"
-  package="ecologylab.bigsemantics.generated.library.creativeWork">
+<meta_metadata_repository name="facebookProfile"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
-  <meta_metadata name="fbSocialMediaProfile" extends="blog" parser="xpath" no_cache="true">
+  <meta_metadata name="facebook_profile" extends="blog" parser="xpath" no_cache="true">
 	    <selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/[^/?]*[?fref=tl_fr_box]*" domain="facebook.com" />
 	     
@@ -23,7 +23,7 @@
          	</scalar>
     	</composite>
     	
-		<collection label="user" name="facebook" child_type="facebook">
+		<collection label="user" name="facebook" child_type="facebook_user">
 		  <xpath>.</xpath>
 			<composite name="photo">
 		        <xpath>//a[@class='profilePicThumb']/img</xpath>
@@ -55,7 +55,7 @@
 	       </scalar>
 		</collection>
 		
-		<collection name="feed" child_type="socailMediaPost"  comment="mainFeed">
+		<collection name="feed" child_type="social_media_post"  comment="mainFeed">
 			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 			<scalar name="title" scalar_type="String"/>
 			<collection name="authors" child_type="author" label="user_post">
@@ -205,7 +205,7 @@
 			</collection>
 		</collection>
 		
-	<collection name="Friends" child_type="socialMediaFeed" hide_label="true">
+	<collection name="Friends" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
@@ -232,7 +232,7 @@
 			
 	</collection>
 	
-	<collection name="Photos" child_type="socialMediaFeed" hide_label="true">
+	<collection name="Photos" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[4]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
@@ -251,7 +251,7 @@
 		</collection> 
 			
 	</collection>
-	<collection name="Videos" child_type="socialMediaFeed" hide_label="true">
+	<collection name="Videos" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[5]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
@@ -388,7 +388,7 @@
 				</collection>
 		</collection>
 	
-	<collection name="check_ins" child_type="socialMediaFeed" hide_label="true">
+	<collection name="check_ins" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[6]</xpath>
 		<scalar name="feed_name">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>

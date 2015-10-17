@@ -1,4 +1,4 @@
-<meta_metadata_repository name="social_media_user"
+<meta_metadata_repository name="socialMediaUser"
   package="ecologylab.bigsemantics.generated.library.person.author">
     
   <meta_metadata name="social_media_user" extends="author" parser="xpath"

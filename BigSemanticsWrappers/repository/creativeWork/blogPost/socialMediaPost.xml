@@ -1,7 +1,7 @@
-<meta_metadata_repository name="socailMediaPost" package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
+<meta_metadata_repository name="socialMediaPost" package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
   
-  <meta_metadata name="socailMediaPost" extends="post" parser="xpath"
-    comment="socialMedia post">
+  <meta_metadata name="social_media_post" extends="post" parser="xpath"
+    comment="social media post">
     <scalar name="title" scalar_type="String"/>
 	<scalar name="title_content" scalar_type="String"/>
 	<scalar name="location" scalar_type="ParsedURL"/>
@@ -25,6 +25,6 @@
     <!-- tags  -->
     <scalar name="num_comments" scalar_type="String"/>
     <collection name="with_users" child_type="person"/>
-    <collection name="comments" child_type="socailMediaPost"  comment="comments,replys,subtweets"/>
+    <collection name="comments" child_type="social_media_post"  comment="comments,replys,subtweets"/>
   </meta_metadata>
 </meta_metadata_repository>

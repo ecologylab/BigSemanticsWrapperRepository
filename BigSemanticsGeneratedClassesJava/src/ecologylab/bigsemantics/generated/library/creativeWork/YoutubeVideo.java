@@ -37,6 +37,9 @@ public class YoutubeVideo extends SocialVideo
 	private List<YtTable> artistAndLicenses;
 
 	@simpl_scalar
+	private MetadataString videoLink;
+
+	@simpl_scalar
 	private MetadataString numberOfViews;
 
 	@simpl_collection("youtube_video")
@@ -83,6 +86,38 @@ public class YoutubeVideo extends SocialVideo
 	public void setArtistAndLicenses(List<YtTable> artistAndLicenses)
 	{
 		this.artistAndLicenses = artistAndLicenses;
+	}
+
+	public MetadataString	videoLink()
+	{
+		MetadataString	result = this.videoLink;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.videoLink = result;
+		}
+		return result;
+	}
+
+	public String getVideoLink()
+	{
+		return this.videoLink == null ? null : videoLink().getValue();
+	}
+
+	public MetadataString getVideoLinkMetadata()
+	{
+		return videoLink;
+	}
+
+	public void setVideoLink(String videoLink)
+	{
+		if (videoLink != null)
+			this.videoLink().setValue(videoLink);
+	}
+
+	public void setVideoLinkMetadata(MetadataString videoLink)
+	{
+		this.videoLink = videoLink;
 	}
 
 	public MetadataString	numberOfViews()
