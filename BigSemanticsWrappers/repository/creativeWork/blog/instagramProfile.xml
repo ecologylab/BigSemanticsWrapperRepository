@@ -13,7 +13,7 @@
   	<composite name="user" type="social_media_user">
   		<scalar name="title" hide="true"/>
   		<xpath>//div[contains(@class,'authorInfo')]</xpath>
-  		<scalar name="user_name">
+  		<scalar name="user_name" layer="10.0">
   			<xpath>./div/h1[contains(@class,'username')]</xpath>
   		</scalar>
   		<scalar name="posts">
@@ -39,6 +39,7 @@
   			<xpath>//a[@class='-cx-PRIVATE-PostsGridItem__root -cx-PRIVATE-PostsGrid__item']</xpath>
   			<scalar name="title" use_value_as_label="photos">
   				<xpath>.//img/@alt</xpath>
+  				<replace pattern="([\s\S]{0,50}).*" to="$1 ..." />
   			</scalar>
   			<scalar name="location">
   				<xpath>./@href</xpath>
