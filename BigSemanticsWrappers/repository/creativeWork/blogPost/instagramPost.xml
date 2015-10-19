@@ -27,8 +27,10 @@
   	<collection name="photos" hide_label="true" layer="9.5"
   										child_style_name="ecologylab-fieldValueContainerInstagramPostImage">
   		<xpath>//div[@class='-cx-PRIVATE-Photo__root -cx-PRIVATE-Post__media']//img</xpath>
+  		<xpath>//meta[@property='og:image']</xpath>
   		<scalar name="location">
 			<xpath>./@src</xpath>
+			<xpath>./@content</xpath>
 		</scalar>
   	</collection>
   	
