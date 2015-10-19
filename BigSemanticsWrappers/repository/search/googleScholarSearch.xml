@@ -62,14 +62,14 @@
         	<xpath>.//h3[@class='gs_rt']/a/@href</xpath>
       	</scalar>
       </composite>
-      <scalar name="description">
+      <scalar name="description" show_in_snippet="true">
         <xpath>.//div[@class='gs_rs']</xpath>
       </scalar>
      
       <scalar name="source_info">
         <xpath>.//div[@class='gs_a']</xpath>
       </scalar>
-    	<collection name="google_authors">
+    	<collection name="google_authors" show_in_snippet="true">
     		<xpath>.//div[@class='gs_a']/a</xpath>
     		<scalar name="title">
     			<xpath>.</xpath>
@@ -82,10 +82,10 @@
       <def_var name="links_row" type="node" > 
      		 <xpath>.//div[@class='gs_fl']</xpath>  
      		</def_var> 
-     	<scalar name="citation_count">
+     	<scalar name="citation_count" show_in_snippet="true">
      		<xpath>.//div[@class='gs_fl']/a[1]</xpath>
      	</scalar>	
-      <composite name="citations">
+      <composite name="citations" show_in_snippet="true">
       	<xpath>.</xpath>
         <scalar name="title">
         	  <xpath>.//div[@class='gs_fl']/a[1]</xpath>

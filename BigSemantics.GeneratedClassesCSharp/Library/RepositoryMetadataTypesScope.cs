@@ -21,6 +21,7 @@ using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.BlogNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.BlogPostNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ExhibitionNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.PublicationNS;
+using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.RedditNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ScholarlyArticleNS;
 using Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.TechReviewNS;
 using Ecologylab.BigSemantics.Generated.Library.EventNS;
@@ -88,6 +89,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(BestbuyProduct),
 				typeof(BggCategory),
 				typeof(BggGame),
+				typeof(BingImageSearch),
 				typeof(BingSearchApi),
 				typeof(BingSearchXpath),
 				typeof(Blog),
@@ -148,6 +150,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(GlobeCartoon),
 				typeof(GoogleBook),
 				typeof(GoogleImageSearch),
+				typeof(GoogleImageSearchResult),
 				typeof(GooglePatent),
 				typeof(GooglePatentAuthor),
 				typeof(GoogleScholarArticle),
@@ -263,6 +266,10 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(PubmedArticle),
 				typeof(PubmedAuthor),
 				typeof(PubmedJournal),
+				typeof(RedditComment),
+				typeof(RedditComments),
+				typeof(RedditPostData),
+				typeof(RedditUser),
 				typeof(ResearchGateArticle),
 				typeof(ResearchGateArticleStats),
 				typeof(ResearchGateAuthor),
@@ -302,6 +309,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(Seller),
 				typeof(Service),
 				typeof(SfuCartoonArchive),
+				typeof(SixpmProduct),
 				typeof(SlashdotArticle),
 				typeof(SlashdotItem),
 				typeof(SlashdotRss),
@@ -316,10 +324,12 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(SpringerSearch),
 				typeof(SpringerSeriesSummary),
 				typeof(Subject),
+				typeof(Subreddit),
 				typeof(TargetProduct),
 				typeof(TateArtist),
 				typeof(TateArtwork),
 				typeof(TateFilter),
+				typeof(TaylorswiftProduct),
 				typeof(TechReview),
 				typeof(TedAuthor),
 				typeof(TedPlaylist),
@@ -343,6 +353,7 @@ namespace Ecologylab.BigSemantics.Generated.Library
 				typeof(Tweet),
 				typeof(Tweeter),
 				typeof(TwitterApiMicroblog),
+				typeof(TwitterApiSearch),
 				typeof(TwitterMicroblog),
 				typeof(TwitterSearchResults),
 				typeof(UniqloProduct),

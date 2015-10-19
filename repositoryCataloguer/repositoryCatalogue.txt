@@ -1,307 +1,393 @@
 List of Tags
 	Tag Name: meta_metadata_repository
 		Attribute Names: 
-			Attribute: default_user_agent_name
-				Values it takes: [chrome_2, chrome, firefox, chrome_32, firefox_3_6_8, firefox_5]
 			Attribute: name
-				Values it takes: [acm_portal, artwork, ask_nature, blog, board_game, yahoo_buzz, camera, cartoon, bib_managing, citeulike, clothing, creative_work, delicious, fashion, fastflip, flickr, gis, google_book, google_image, grant, hotel, default, scienceDirect, imdb, information_composition, instructables, leagueoflegends, lolz, movie, museum, news, nsf, openDNS, patent, person, pinterest, product_and_service, publication, pubmed, restaurant, review, rss, scholarly_article, search, slashdot, social_media, rwanda_tribunal, tumblr, tv_show, tvtropes, video, weather, wikipedia, wikipedia_mobile, wordpress]
+				Values it takes: [acmPortalInstitution, askNatureFunction, askNatureGroup, askNatureImage, askNatureProduct, askNatureSubgroup, asosPage, attraction, attractionList, camera, citeulikeTag, contactPoint, dublinCore, fastflipSearch, flamencoFacet, flickrPhotostream, flickrTag, fordorAttraction, fodorAttractions, fondationCollection, fondationTag, gettyCollection, gettyExploration, gisLocation, grantProgram, icdlBookPreview, icdlImageResult, ieeeCitedBy, ieeeKeywords, ieeeReferences, ingetaConnect, instructable, instructablesTag, item, jstor_journal, nsdlDocument, nsdlService, nsfDivision, nsfProgram, nsfStaffList, openDNSDomain, default, patentClassification, postalAddress, publisher, redditFeed, researchgateInstitution, researchgateInstitutionDepartment, rss, rss_2_2, rwandaPersonnelInterview, rwandaTribunalVoices, rwandaVideoInterview, slashdotRSS, ted_topic, thumbnail, trip_advisor, tvtropes, yahooRss, video, comment, rating, review, commodity, amazonProduct, anthropologieProduct, appleAccessoryProduct, appleMacProduct, appleProduct, asosProduct, bedbathandbeyondProduct, bestbuyProduct, cb2Product, crateAndBarrelProduct, ebayProduct, etsyProduct, forever21Product, glassTileStoreProduct, hmProduct, homeDepotProduct, houzzProduct, ikeaProduct, dream_house, lowesProduct, modclothProduct, modclothSearch, neweggProduct, onekingslaneProduct, overstockProduct, pieroneProduct, potterybarnProduct, product, remodelistaProduct, restorationHardwareProduct, roomandboardProduct, samsclubProduct, sixpmProduct, targetProduct, taylorSwiftProduct, tigerdirectProduct, uniqloProduct, urbanHardwoodsProduct, walmartProduct, wayfairProduct, westelmProduct, zaraProduct, airbnbHotel, hiltonHotel, hotel, restaurant, service, tripAdvisorHotel, urbanspoonGenre, urbanspoonResteraunt, yelpBusiness, amazonList, bggBoardGame, boardGame, creative_work, curation, fondationArticle, googlePatent, grant, imdbMovie, leagueoflegends, movie, netflixMovie, newsArticle, nsfAwardGrant, nytimesArticle, patent, pinterest_author, pinterestPin, pinboard, rottenTomatoeMovie, slashdotPost, tedTalk, tvComShow, tvShow, tvShowEpisode, artwork, flamencoObject, gettyArtwork, guggenArtwork, metArtwork, mmArtwork, momaArtwork, newMuseumArtwork, rhizomeArtwork, tateArtwork, whitneyArtwork, whitneyWatchAndListen, britishCartoonArchive, cartoon, gaurdianComic, globeCartoon, politicalCartoon, sfuCartoonArchive, trumanCampaignCartoon, blog, subreddit, twitterBlog, wordpressBlog, blogPost, flickrPhotoPost, tumblrPost, tweet, twitterStatus, wordpressPost, artchiExhibition, exhibition, newmuseumExhibition, rhizomeCollection, acmPortalPublication, amazonBook, basicPublication, book, googleBook, ieeeJournal, periodical, publication, pubmedJournal, springer_book, springer_journal, springer_series_summary, acmWorldScholarlyArticle, citeseerxRecord, citeseerxSimilar, citeseerxSummary, citeulikePaper, googleScholarArticle, ieeeArticle, ieeeArticleBody, informaWorldScholarlyArticle, jstor_article, pubmedArticle, researchgateArticle, researchgateResearcher, scienceDirectArticle, scholarly_article, scopusArticle, springer_article, anandtechReview, cnetReview, techReview, earthquake, event, gdacsEarthquake, icsmdCharteredEvent, googleImage, googlePatentImage, agents_engines_styles_sites, citeulikeUser, fashionReviewer, grantStaff, imdbMoviePerson, moviePerson, nsfStaff, person, rottenTomatoeMoviePerson, acmAuthor, artist, author, citeulikeAuthor, flickrAuthor, getttyArtist, googlePatentAuthor, googleScholarAuthor, idea_mache_user, ieeeAuthor, instructableAuthor, investigator, momaArtist, newMuseumArtist, nsfInvestigator, patentAuthor, pubmedAuthor, researchgateAuthor, rhizomeArtist, scopusAuthor, springer_editor, tateArtist, tweeter, aggregateSelfmade, annotate, assignPrimaryLink, audio, audioClipping, audioSelfmade, cachedHTML, clippableDocument, clipping, primitives, curateLink, debugMetadata, document, documentMetadataWrap, frameSelfmade, htmlText, image, imageClipping, imageSelfmade, informationCompositionMedia, macheClipping, mediaProvider, metadata, pdf, richArtifact, compoundDocument, sequencedClippableDocument, textClipping, textSelfmade, videoClipping, videoSelfmade, webVideo, xml, acmPortalSearch, bingSearch, citeseerxCiting, citeseerxSearch, citeulikeSearch, gettySearch, googleScholarSearch, googleSearch, guggenFilter, ieeeSearch, jstor_search, metFilter, momaList, myGoogleSearch, newmuseumFilter, nsfSearch, redditSearch, researchGateSearch, rhizomeTag, scopusSearch, search, slashdotSearch, springerSearch, tateFilter, tumblrSearch, twitterSearch, urbanspoonSearch, whitneyDecade, whitneySearch, wikipediaSearch, yahooSearch, bingImageSearch, googleImageSearch, imageSearch, imgurSearch, pinterestImageSearch, redditGifSearch, tumblrTagResults, weatherReport, wuWeatherReport, wikipediaMobile, wikipediaPage, wikipediaPageType]
 			Attribute: package
-				Values it takes: [ecologylab.bigsemantics.generated.library.acm, ecologylab.bigsemantics.generated.library.artwork, ecologylab.bigsemantics.generated.library.askNature, ecologylab.bigsemantics.generated.library.blog, ecologylab.bigsemantics.generated.library.boardGame, ecologylab.bigsemantics.generated.library.buzz, ecologylab.bigsemantics.generated.library.camera, ecologylab.bigsemantics.generated.library.cartoon, ecologylab.bigsemantics.generated.library.bibManaging, ecologylab.bigsemantics.generated.library.citeulike, ecologylab.bigsemantics.generated.library.clothing, ecologylab.bigsemantics.generated.library.creative_work, ecologylab.bigsemantics.generated.library, ecologylab.bigsemantics.generated.library.fashion, ecologylab.bigsemantics.generated.library.fastflip, ecologylab.bigsemantics.generated.library.flickr, ecologylab.bigsemantics.generated.library.gis, ecologylab.bigsemantics.generated.library.googleBook, ecologylab.bigsemantics.generated.library.google_image, ecologylab.bigsemantics.generated.library.grant, ecologylab.bigsemantics.generated.library.hotel, ecologylab.bigsemantics.generated.library.icdl, ecologylab.bigsemantics.generated.library.ieeeXplore, ecologylab.bigsemantics.generated.library.imdb, ecologylab.bigsemantics.generated.library.infocomp, ecologylab.bigsemantics.generated.library.instructables, ecologylab.bigsemantics.generated.library.leagueoflegends, ecologylab.bigsemantics.generated.library.lolz, ecologylab.bigsemantics.generated.library.misc, ecologylab.bigsemantics.generated.library.movie, ecologylab.bigsemantics.generated.library.museum, ecologylab.bigsemantics.generated.library.news, ecologylab.bigsemantics.generated.library.nsf, ecologylab.bigsemantics.generated.library.openDNS, ecologylab.bigsemantics.generated.library.opml, ecologylab.bigsemantics.generated.library.patent, ecologylab.bigsemantics.generated.library.person, ecologylab.bigsemantics.generated.library.pinterest, ecologylab.bigsemantics.generated.library.product_and_service, ecologylab.bigsemantics.generated.library.publication, ecologylab.bigsemantics.generated.library.pubmed, ecologylab.bigsemantics.generated.library.restaurant, ecologylab.bigsemantics.generated.library.review, ecologylab.bigsemantics.generated.library.rss, ecologylab.bigsemantics.generated.library.scholarlyArticle, ecologylab.bigsemantics.generated.library.scienceDirect, ecologylab.bigsemantics.generated.library.search, ecologylab.bigsemantics.generated.library.slashdot, ecologylab.bigsemantics.generated.library.socialMedia, ecologylab.bigsemantics.generated.library.rwandatribunal, ecologylab.bigsemantics.generated.library.tumblr, ecologylab.bigsemantics.generated.library.tvShow, ecologylab.bigsemantics.generated.library.tvtropes, ecologylab.bigsemantics.generated.library.video, ecologylab.bigsemantics.generated.library.wikipedia, ecologylab.bigsemantics.generated.library.wordpress]
+				Values it takes: [ecologylab.bigsemantics.generated.library, ecologylab.bigsemantics.metadata.builtins, ecologylab.bigsemantics.generated.library.creativeWork, ecologylab.bigsemantics.metadata.builtins.comment, ecologylab.bigsemantics.generated.library.comment, ecologylab.bigsemantics.generated.library.commodity, ecologylab.bigsemantics.generated.library.commodity.product, ecologylab.bigsemantics.generated.library.commodity.service, ecologylab.bigsemantics.metadata.builtins.creativeWork, ecologylab.bigsemantics.generated.library.creativeWork.artwork, ecologylab.bigsemantics.generated.library.creativeWork.artwork.cartoon, ecologylab.bigsemantics.generated.library.creativeWork.blog, ecologylab.bigsemantics.generated.library.creativeWork.reddit, ecologylab.bigsemantics.generated.library.creativeWork.blogPost, ecologylab.bigsemantics.generated.library.creativeWork.exhibition, ecologylab.bigsemantics.generated.library.creativeWork.publication, ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle, ecologylab.bigsemantics.generated.library.creativeWork.techReview, ecologylab.bigsemantics.generated.library.event, ecologylab.bigsemantics.generated.library.image, ecologylab.bigsemantics.generated.library.otherDefinitions, ecologylab.bigsemantics.generated.library.person, ecologylab.bigsemantics.metadata.builtins.person, ecologylab.bigsemantics.generated.library.person.author, ecologylab.bigsemantics.metadata.builtins.person.author, ecologylab.bigsemantics.generated.library.primitives, ecologylab.bigsemantics.generated.library.search, ecologylab.bigsemantics.generated.library.search.imageSearch, ecologylab.bigsemantics.generated.library.weatherReport, ecologylab.bigsemantics.generated.library.wikipediaPage]
 			Attribute: xmlns:xsi
 				Values it takes: [http://www.w3.org/2001/XMLSchema-instance]
+			Attribute: default_user_agent
+				Values it takes: [chrome]
+			Attribute: default_user_agent_name
+				Values it takes: [chrome_2, firefox_3_5, chrome_32]
+			Attribute: default_cache_life
+				Values it takes: [999999d]
 	Tag Name: meta_metadata
 		Attribute Names: 
 			Attribute: extends
-				Values it takes: [scholarly_article, author, metadata, document, periodical, search, creative_work, artwork, artist, exhibition, compound_document, board_game, search_result, cartoon, citeseerx_record, person, product, basic_publication, post, contact_point, book, service, movie, movie_person, comment, rating, image, news_article, grant_program, grant_staff, investigator, grant, patent, patent_author, commodity, publication, tech_review, dc, yahoo_media_rss, yahoo_result_set, item, blog, social_video, wikipedia_page_type]
+				Values it takes: [rich_document, document, metadata, yahoo_media_rss, dc, grant_program, contact_point, item, comment, rating, image, product, commodity, service, creative_work, board_game, patent, movie, grant, news_article, post, social_video, author, artwork, cartoon, blog, exhibition, periodical, book, publication, basic_publication, springer_article, springer_book, scholarly_article, citeseerx_record, research_gate_author, tech_review, event, disaster, person, movie_person, grant_staff, artist, patent_author, investigator, rich_artifact, creative_act, sequenced_clippable_document, clipping, clippable_document, video, search_result, search, yahoo_result_set, image_search, image_search_result, wikipedia_page_type]
+			Attribute: extract_with
+				Values it takes: [service]
 			Attribute: name
-				Values it takes: [acm_portal, acm_portal_author, acm_portal_author_publication_detail, acm_portal_author_collaborators, acm_portal_institution_profile, acm_portal_periodical, acm_portal_search_result, acm_portal_search, artist, artwork, exhibition, mm_artwork, rhizome_artwork, rhizome_tag, rhizome_artist, rhizome_collection, moma_artwork, moma_list, moma_artist, tate_artwork, tate_filter, tate_artist, met_artwork, met_filter, whitney_artwork, whitney_watch_and_listen, whitney_search, whitney_decade, guggen_artwork, guggen_filter, newmuseum_artwork, newmuseum_artist, newmuseum_exhibition, newmuseum_filter, ask_nature_group, ask_nature_subgroup, ask_nature_function, ask_nature_strategy, ask_nature_organism, ask_nature_taxonomy, ask_nature_expert, ask_nature_product, ask_nature_image, post, blog, board_game, bgg_game, bgg_category, yahoo_buzz, yahoo_buzz_search, google_trends, camera_settings, cartoon, british_cartoon_archive, gaurdian_comic, globe_cartoon, political_cartoon, sfu_cartoon_archive, truman_library_1948_campaign_cartoons, citation_info, citeseerx_record, citeseerx_summary, citeseerx_similar, citeseerx_search, citeseerx_citing, citeulike_paper, citeulike_author, citeulike_user, citeulike_tag, citeulike_search, zara_product, uniqlo_product, hm_product, author, creative_work, news_article, basic_publication, periodical, curation, delicious_homepage, fashion_reviewer, forever_21, asos_page, asos, anthropologie, modcloth, modcloth_search, thumbnail, fastflip_search, flickr_tag, flickr_photo, flickr_author, photostream, gis_location, contact_point, postal_address, google_book, google_image, google_image_search, investigator, grant, grant_program, grant_staff, hotel, airbnb, trip_advisor, homeaway, hilton, icdl_image_result, icdl_book_preview, ieee_xplore_article, ieee_xplore_references, ieee_xplore_citations, ieee_xplore_search, imdb_movie, imdb_person, instructable_comment, instructable_author, instructable_tag, instructable, league_relationship_list, league_ability, league_champion, lolz, cats, dogs, celebs, lookalikes, politics, sports, graphs, fixes, fails, facebooks, engrish, comment, rating, review, dlms, nsdl, dc_document, icdl_image, movie, movie_person, netflix_movie, rotten_person, rotten_movie, getty_search, getty_work_info, getty_artist_info, getty_artist, getty_object, getty_collection, getty_exploration, fondation_tag, fondation_category_collection, fondation_collection, fondation_article, flamenco_facet, flamenco_object, nytimes, nsf_division, nsf_division_staff_list, nsf_program, nsf_staff, nsf_investigator, nsf_award, nsf_search, openDNSDomain, opml, patent_classification, patent, patent_author, google_patent_image, google_patent, google_patent_author, google_sorry, birth_detail, person, pinterest_pin, commodity, product_specs, product, service, amazon_product, apple_iProduct, apple_product_mac, apple_product_accessory, newegg_product, tigerdirect_product, walmart_product, target_product, target_mobile_product, newegg_subcategory_list, amazon_list, amazon_wish_list, amazon_list_mania, amazon_bestseller_list, amazon_bestseller_list_uk, amazon_search_list, etsy_product, bestbuy_product, samsclub_product, samsclub_mobile_product, ebay_product, publication, book, publisher, amazon_book, pubmed_article, pubmed_author, pubmed_journal, restaurant, restaurant_genre, tech_review, anandtech_review, cnet_review, dc, yahoo_media_rss, item, channel, rss, rss_2_2, scholarly_article, ingeta_connect, informa_world, science_direct_article, scopus_article, scopus_author, scopus_search, search_result, search, image_search, google_search, google_scholar_search_result, google_scholar_search, my_google_search, my_google_ecology0_search, yahoo_thumbnail, yahoo_result_set, yahoo_geo_code, yahoo_web_search, yahoo_image_search, yahoo_news_search, image_search_result, search_crumb, bing_search_api, bing_search_xpath, social_media_search_result, slashdot_search, delicious_search, tumblr_search, slashdot_article, slashdot_item, slashdot_rss, tweeter, tweet, twitter_microblog, twitter_search_results, reddit_search_results, pinterest_search_results, imgur_search_results, tumblr_tag_results, reddit_gif_search_results, category_interviews, tribunal_voices, personnel_interview, video_interview, tumblr, tv_show, tv_show_episode, tv_com_show, tvtrope_example, tvtrope_folder, tvtrope, social_video, youtube_video, youtube_video_list, youtube_video_grid, youtube_channel, youtube_search_results, weather_report, wu_weather_report, wu_weather_mobile, wikipedia_search, paragraph, section, wikipedia_page_type, wikipedia_category_type, wikipedia_page, wikipedia_category, wikipedia_mobile_page, wordpress_post, wordpress_blog]
+				Values it takes: [acm_portal_institution_profile, ask_nature_function, ask_nature_group, ask_nature_image, ask_nature_product, ask_nature_organism, ask_nature_taxonomy, ask_nature_expert, ask_nature_strategy, ask_nature_subgroup, asos_page, attraction, attraction_list, camera_settings, citeulike_tag, contact_point, dc, fastflip_search, flamenco_facet, photostream, flickr_tag, fodors_attraction, fodors_attractions, fondation_category_collection, fondation_collection, fondation_tag, getty_collection, getty_exploration, gis_location, grant_program, icdl_book_preview, icdl_image_result, ieee_xplore_cited_by, ieee_keywords, ieee_xplore_references, ingeta_connect, instructable_comment, instructable, instructable_tag, item, jstor_journal, nsdl_document, nsdl_service, nsf_division, nsf_program, nsf_division_staff_list, openDNSDomain, opml, patent_classification, postal_address, publisher, research_gate_institution_contact_info, research_gate_institution, research_gate_institution_department, channel, rss, rss_2_2, personnel_interview, category_interviews, tribunal_voices, video_interview, slashdot_item, slashdot_rss, ted_playlist, ted_topic, thumbnail, trip_advisor_things_to_do, tvtrope_example, tvtrope_folder, tvtrope, yahoo_media_rss, youtube_channel, yt_playlist, comment, rating, review, dlms, nsdl, dc_document, icdl_image, labeled_specifications, specification, commodity, amazon_product, anthropologie, apple_product_accessory, apple_product_mac, apple_iProduct, asos, bedbathandbeyond_product, bedbathandbeyond_mobile_product, bestbuy_product, cb2_product, crateandbarrel_product, ebay_product, etsy_product, forever_21, glass_tile_store_product, hm_product, home_depot_product, houzz_product, ikea_department, ikea_mobile_product, ikea_product, landofnod_product, lowes_product, modcloth, modcloth_search, newegg_product, newegg_subcategory_list, onekingslane_product, overstock_com_product, pierone_product, potterybarn_product, product, remodelista_product, restorationhardware_product, roomandboard_product, samsclub_product, samsclub_mobile_product, sixpm_product, target_product, target_mobile_product, taylorswift_product, tigerdirect_product, uniqlo_product, urban_hardwoods_product, walmart_product, wayfair_product, westelm_product, zara_product, airbnb, hilton, homeaway, hotel, restaurant, restaurant_genre, service, trip_advisor, urban_spoon_genre, urban_spoon_restaurant, yelp_business, amazon_list, amazon_wish_list, amazon_list_mania, amazon_bestseller_list, amazon_bestseller_list_uk, amazon_search_list, bgg_game, bgg_category, board_game, creative_work, curation, fondation_article, google_patent, grant, imdb_movie, league_relationship_list, league_ability, league_champion, movie, netflix_movie, news_article, nsf_award, nytimes, patent, pinterest_author, pinterest_pin, pinterest_pinboard, rotten_movie, slashdot_article, social_video, tedtalk_video, tv_com_show, tv_show, tv_show_episode, vimeo_list, vimeo_user, vimeo_video, yt_table, youtube_video, artwork, flamenco_object, getty_work_info, getty_object, guggen_artwork, met_artwork, mm_artwork, moma_artwork, newmuseum_artwork, rhizome_artwork, tate_artwork, whitney_artwork, whitney_watch_and_listen, british_cartoon_archive, cartoon, gaurdian_comic, globe_cartoon, political_cartoon, sfu_cartoon_archive, truman_library_1948_campaign_cartoons, blog, reddit_post_data, reddit_user, reddit_comment, reddit_comments, subreddit, twitter_microblog, twitter_api_microblog, wordpress_blog, post, flickr_photo, tumblr, tweet, twitter_status, wordpress_post, artchi_exhibition, exhibition, newmuseum_exhibition, rhizome_collection, acm_portal_periodical, amazon_book, basic_publication, book, google_book, ieee_journal_page, periodical, publication, pubmed_journal, springer_book, springer_journal, springer_series_summary, acm_portal, citation_info, citeseerx_record, citeseerx_similar, citeseerx_summary, citeulike_paper, google_scholar_article, google_scholar_article_facts, ieee_xplore_article, ieee_article_body, informa_world, jstor_article, pubmed_article, research_gate_stats, research_gate_article_stats, research_gate_article, research_gate_researcher, sage_article, scholarly_article, science_direct_article, scopus_article, springer_article, wiley_article, anandtech_review, cnet_review, tech_review, disaster, earthquake, event, gdacs_earthquake, icsmd, icsmd_chartered_event, google_image, google_patent_image, citeulike_user, fashion_reviewer, grant_staff, imdb_person, movie_person, nsf_staff, birth_detail, person, rotten_person, acm_portal_author_collaborators, acm_portal_author_publication_detail, acm_portal_author, artist, author, citeulike_author, flickr_author, getty_artist_info, getty_artist, google_patent_author, google_scholar_author, idea_mache_user, ieee_author_page, instructable_author, investigator, moma_artist, newmuseum_artist, nsf_investigator, patent_author, pubmed_author, research_gate_author, rhizome_artist, scopus_author, springer_editor, tate_artist, tedauthor_quote, ted_author, tweeter, aggregate_media, aggregate_selfmade, annotate, assign_primary_link, audio, audio_clipping, audio_selfmade, cached_html, clippable_document, clipping, couchdb_entry, creative_act, curate_link, debug_metadata, document, document_metadata_wrap, presentation_frame, frame_selfmade, html_text, image, image_clipping, image_selfmade, information_composition_media, mache_clipping, media_provider, metadata, pdf, pdf_mixin, persistence_meta_info, rich_artifact, rich_document, sequenced_clippable_document, text_clipping, text_selfmade, video, video_clipping, video_selfmade, web_video, xml, acm_portal_search_result, acm_portal_search, bing_search_xpath, bing_search_api, citeseerx_citing, citeseerx_search, citeulike_search, getty_search, google_scholar_search_result, google_scholar_search, google_search, google_scholar_author_search_result, google_scholar_author_search, guggen_filter, ieee_xplore_search, jstor_search, met_filter, moma_list, my_google_search, my_google_ecology0_search, newmuseum_filter, nsf_search, reddit_search_results, research_gate_result, research_gate_search, rhizome_tag, scopus_search, search_result, search, image_search_result, search_crumb, social_media_search_result, slashdot_search, springer_search, tate_filter, tumblr_search, twitter_search_results, twitter_api_search, urban_spoon_search, whitney_decade, whitney_search, wikipedia_search, yahoo_thumbnail, yahoo_result_set, yahoo_geo_code, youtube_search_results, bing_image_search, google_image_search, google_image_search_result, image_search, imgur_search_results, pinterest_search_results, reddit_gif_search_results, tumblr_tag_results, weather_report, wu_weather_report, wu_weather_mobile, wikipedia_mobile_page, wikipedia_category, wikipedia_page, section, paragraph, wikipedia_category_type, wikipedia_page_type]
 			Attribute: parser
-				Values it takes: [xpath, direct, image, feed]
+				Values it takes: [xpath, direct, feed, jsonpath, image, pdf]
 			Attribute: user_agent_name
-				Values it takes: [google_bot_2, firefox_3_6_8, chrome, chrome_12, google_bot_0, firefox, opera_9, firefox_5, firefox_2]
-			Attribute: ignore_in_term_vector
-				Values it takes: [true]
+				Values it takes: [chrome, firefox_3_6_8, firefox, google_bot_2, firefox_5, chrome_32, opera_9, firefox_2, chrome_12]
 			Attribute: comment
-				Values it takes: [Artwork class, Artwork exhibition class, ACM Multimedia Interactive Artwork class, The board game info class, boardgamegeek.com, Yahoo Buzz., Yahoo buzz search, Google trends, Mixin: Image description from EXIF image metadata., Citation numbers., CiteSeerX record for an article., Summary page from CiteSeerX., Citation or co-citation page from CiteSeerX., CiteSeerX search using keywords., CiteSeerX citing results., An author of an article or creative work., A publication., An issue of a periodical., Delicious home page class, Fast Flip Search, For flickr crawled tags, A Flickr image post page, Author on flickr, All flickr photos of a particular user, Resembles a schema.org ContactPoint., Resembles a schema.org PostalAddress, but adds the county field., Google image search., Thumbnail Image, ICDL About This Book Page, A movie in IMDB., The LOLZ class, The DLMS Class, The NSDL class, , Image from The Interantional Children's digital library., The movie class., RottenTomatoes celebrity page, RottenTomatoes movie description page, NSF award details., openDNS tags for a domain, Patents Class, Authors of Patents; really this should be a mix-in to author, Google Patents Class, Date and place of birth for a person, Abstract type for a person., A publishing company., Restaurants genre., Base tech review, anandtech.com review, cnet.com review, Dublin core fields., News feeds., One item in a news feed., A news feed., A news feed, yucky style., Information about the article, A search result., A search., The Google search class, A google scholar search result, The google Search class, The my_google Search class, The my_google_ecology0 Search class, Yahoo Web Search Service, Def of an image in a Bing image search result., The bing Search api., The bing Search class, using xpath parser., A result from a social media search., The slashdot search class, The delicious search class, The tumblr search class, One item in a feed., an author of twitter microblog, twitter micropost, reddit search results page, pinterest search results page, imgur hot search results page, tumblr tag results page, reddit gif image search results page, categorized interviews, Video Interviews with personnel from Rwanda Tribunal, personnel interview, video interview, The TV show info class, TV Show episode, TV.com show description page, youtube video view page, youtube channels, youtube video search results page, The definition of weather report class., Wikipedia Web Search Class, An article on wikipedia, An article on wikipedia mobile site, Wordpress post class, Wordpress blog class]
-			Attribute: type
-				Values it takes: [search, rss, image, image_search, hotel, lolz, product, amazon_list, document, yahoo_result_set, tv_show, weather_report, wikipedia_category_type, post, blog]
+				Values it takes: [Mixin: Image description from EXIF image metadata., Resembles a schema.org ContactPoint., Dublin core fields., Fast Flip Search, All flickr photos of a particular user, For flickr crawled tags, Fodor travel suggestions, ICDL About This Book Page, Thumbnail Image, One item in a news feed., openDNS tags for a domain, Resembles a schema.org PostalAddress, but adds the county field., A publishing company., A news feed., A news feed, yucky style., personnel interview, categorized interviews, Video Interviews with personnel from Rwanda Tribunal, video interview, One item in a feed., Trip advisor travel suggestions, News feeds., youtube channels, The DLMS Class, The NSDL class, , Image from The Interantional Children's digital library., Restaurants genre., UrbanSpoon restaurant description page., Yelp local business description page, boardgamegeek.com, The board game info class, Google Patents Class, A movie in IMDB., The movie class., NSF award details., Patents Class, RottenTomatoes movie description page, TV.com show description page, The TV show info class, TV Show episode, vimeo user page, vimeo video view page, youtube video view page, Artwork class, ACM Multimedia Interactive Artwork class, Wordpress blog class, A Flickr image post page, twitter micropost, Wordpress post class, Artwork exhibition class, A publication., An issue of a periodical., A book in Springer Link., A journal in Springer Link., An article or any other text heavy component in Springer Link., Citation numbers., CiteSeerX record for an article., Citation or co-citation page from CiteSeerX., Summary page from CiteSeerX., Sage Journals, Information about the article, anandtech.com review, cnet.com review, Base tech review, Generalized Disaster Object, Generalized Earthquake Object, Generalized Event Object, Global Disaster Alert and Coordination System, Generalized International Charter on Space and Major Disasters Object, International Charter Space and Major Disasters, Date and place of birth for a person, Abstract type for a person., RottenTomatoes celebrity page, An author of an article or creative work., Author on flickr, Authors of Patents; really this should be a mix-in to author, An editor of a book or article on Springer Link., an author of twitter microblog, The data structure for cached HTML pages., The Primitive Document Class. Even images should extend this., Used to disambiguated Document subclass composites., The Image Base Class, The Metadata Class, The PDF class., For metadata fields extracted by the PDF parser, The PersistenceMetaInfo Class, The bing Search class, using xpath parser., The bing Search api., CiteSeerX citing results., CiteSeerX search using keywords., A google scholar search result, The google Search class, The Google search class, A search result., jstor Search class, The my_google Search class, The my_google_ecology0 Search class, reddit search results page, A search., Def of an Google or Bing image search result., A result from a social media search., The slashdot search class, The springer search class, The tumblr search class, Wikipedia Web Search Class, Yahoo Web Search Service, youtube video search results page, Bing image search., Google image search., Google image search result., imgur hot search results page, pinterest search results page, reddit gif image search results page, tumblr tag results page, The definition of weather report class., An article on wikipedia mobile site, An article on wikipedia]
+			Attribute: built_in
+				Values it takes: [true]
 			Attribute: schema_org_itemtype
-				Values it takes: [http://schema.org/Person, http://schema.org/CreativeWork, http://schema.org/ContactPoint, http://schema.org/PostalAddress, http://schema.org/AggregateRating, http://schema.org/Review, http://schema.org/Product, http://schema.org/Organization, http://schema.org/ScholarlyArticle, http://schema.org/TVEpisode]
+				Values it takes: [http://schema.org/ContactPoint, http://schema.org/PostalAddress, http://schema.org/Organization, http://schema.org/AggregateRating, http://schema.org/Review, http://schema.org/Product, http://schema.org/CreativeWork, http://schema.org/TVEpisode, http://schema.org/ScholarlyArticle, http://schema.org/Person, http://schema.org/Thing]
+			Attribute: type
+				Values it takes: [attraction, attraction_list, rich_document, product, hotel, restaurant_genre, restaurant, service, amazon_list, tv_show, blog, tweet, post, earthquake, icsmd, image, document, search, image_search, weather_report, wikipedia_category_type]
 			Attribute: package
-				Values it takes: [ecologylab.bigsemantics.generated.library.icdl]
-			Attribute: tag
-				Values it takes: [response, rss_2_2, ResultSet, rdf:RDF]
+				Values it takes: [ecologylab.bigsemantics.generated.library, ecologylab.bigsemantics.generated.library.primitives, ecologylab.bigsemantics.metadata]
+			Attribute: redirect_handling
+				Values it takes: [REDIRECT_FOLLOW_DONT_RESET_LOCATION]
 			Attribute: schema_org_itemprop
 				Values it takes: [reviews]
 			Attribute: user_agentname
 				Values it takes: [firefox]
-			Attribute: redirect_handling
-				Values it takes: [REDIRECT_FOLLOW_DONT_RESET_LOCATION]
+			Attribute: no_cache
+				Values it takes: [true]
+			Attribute: renderer
+				Values it takes: [tweetbubble]
+			Attribute: show_expanded_initially
+				Values it takes: [true]
+			Attribute: bibtex_type
+				Values it takes: [book, article, misc]
+			Attribute: force_location_filter
+				Values it takes: [true]
+			Attribute: ignore_in_term_vector
+				Values it takes: [true]
+			Attribute: label
+				Values it takes: [pdf]
+			Attribute: other_tags
+				Values it takes: [compound_document,html_document, wikipedia_page]
 			Attribute: show_expanded_always
 				Values it takes: [true]
 			Attribute: always_show
 				Values it takes: [true]
-			Attribute: show_expanded_initially
-				Values it takes: [true]
-			Attribute: no_cache
-				Values it takes: [true]
-			Attribute: other_tags
-				Values it takes: [wikipedia_page]
 	Tag Name: selector
 		Attribute Names: 
 			Attribute: url_stripped
-				Values it takes: [http://portal.acm.org/citation.cfm, http://dl.acm.org/citation.cfm, http://dl.acm.org/inst_page.cfm, http://portal.acm.org/results.cfm, http://dl.acm.org/results.cfm, http://www.moma.org/collection/artist.php, http://www.tate.org.uk/art/artworks, http://www.metmuseum.org/collections/search-the-collections, http://whitney.org/Search, http://whitney.org/Collection, http://citeseerx.ist.psu.edu/viewdoc/summary, http://citeseerx.ist.psu.edu/viewdoc/similar, http://citeseerx.ist.psu.edu/search, http://citeseerx.ist.psu.edu/showciting, http://www.citeulike.org/search/all, http://www.forever21.com/Product/Product.aspx, http://fastflip.googlelabs.com/search, http://books.google.com/books, http://www.childrenslibrary.org/BookXMLResults, http://www.childrenslibrary.org/icdl/BookPreview, http://ieeexplore.ieee.org/xpl/articleDetails.jsp, http://ieeexplore.ieee.org:80/xpl/articleDetails.jsp, http://ieeexplore.ieee.org/xpl/references.jsp, http://ieeexplore.ieee.org:80/xpl/references.jsp, http://ieeexplore.ieee.org/xpl/citations.jsp, http://ieeexplore.ieee.org:80/xpl/citations.jsp, http://ieeexplore.ieee.org/search/searchresult.jsp, http://ieeexplore.ieee.org:80/search/searchresult.jsp, http://www.getty.edu/art/collectionSearch/collectionSearch, http://www.getty.edu/art/gettyguide/artMakerDetails, http://www.getty.edu/art/gettyguide/artObjectDetails, http://www.getty.edu/art/gettyguide/displayObjectList, http://www.getty.edu/art/gettyguide/exploreArt, http://www.fondation-langlois.org/html/e/research.php, http://www.fondation-langlois.org/html/e/liste.php, http://www.nsf.gov/div/index.jsp, http://www.nsf.gov/staff/staff_list_all.jsp, http://www.nsf.gov/funding/pgm_summ.jsp, http://www.nsf.gov/staff/staff_bio.jsp, http://nsf.gov/awardsearch/piSearch.do, http://www.nsf.gov/awardsearch/piSearch.do, http://www.nsf.gov/awardsearch/advancedSearchResult, http://www.nsf.gov/awardsearch/advancedSearchNoScript, http://www.nsf.gov/awardsearch/showAward.do, http://nsf.gov/awardsearch/showAward.do, http://www.nsf.gov/awardsearch/showAward, http://nsf.gov/awardsearch/showAward, http://www.nsf.gov/awardsearch/simpleSearchResult, http://www.google.com/patents/about, http://www.newegg.com/Product/Product.aspx, http://www.tigerdirect.com/applications/SearchTools/item-details.asp, http://www.informaworld.com/smpp/content~db=all, http://www.scopus.com/record/display.url, http://www.scopus.com/authid/detail.url, http://www.scopus.com/results/citedbyresults.url, http://www.scopus.com/results/results.url, http://scholar.google.com/scholar, http://staging.cs.tamu.edu:8080/my_google/search, http://ecology0.csdl.tamu.edu/my_google/search, http://where.yahooapis.com/geocode, http://api.search.yahoo.com/WebSearchService/V1/webSearch, http://api.search.yahoo.com/ImageSearchService/V1/imageSearch, http://api.search.yahoo.com/NewsSearchService/V1/newsSearch, http://api.bing.net/xml.aspx, http://www.bing.com/search, http://slashdot.org/index2.pl, http://slashdot.com/index2.pl, http://www.delicious.com/search, http://rss.slashdot.org/Slashdot/slashdot, https://twitter.com/search, http://www.reddit.com/search?, http://pinterest.com/search/?, http://imgur.com/hot/time?, http://twitter.com/search?, http://www.reddit.com/r/gifs/search?, http://www.tribunalvoices.org/voices/interviews, http://www.tribunalvoices.org/voices/index.html, http://www.tribunalvoices.org/voices/, http://www.youtube.com/watch, https://www.youtube.com/watch, http://www.youtube.com/results?, https://www.youtube.com/results?]
+				Values it takes: [http://dl.acm.org/inst_page.cfm, http://fastflip.googlelabs.com/search, http://www.fondation-langlois.org/html/e/liste.php, http://www.fondation-langlois.org/html/e/research.php, http://www.getty.edu/art/gettyguide/displayObjectList, http://www.getty.edu/art/gettyguide/exploreArt, http://www.childrenslibrary.org/icdl/BookPreview, http://www.childrenslibrary.org/BookXMLResults, http://ieeexplore.ieee.org/xpl/abstractCitations.jsp, http://ieeexplore.ieee.org/xpl/abstractKeywords.jsp, http://ieeexplore.ieee.org:80/xpl/abstractKeywords.jsp, http://ieeexplore.ieee.org/xpl/abstractReferences.jsp, http://ieeexplore.ieee.org:80/xpl/abstractReferences.jsp, http://www.nsf.gov/div/index.jsp, http://www.nsf.gov/funding/pgm_summ.jsp, http://www.nsf.gov/staff/staff_list_all.jsp, http://www.tribunalvoices.org/voices/interviews, http://www.tribunalvoices.org/voices/index.html, http://www.tribunalvoices.org/voices/, http://rss.slashdot.org/Slashdot/slashdot, https://www.youtube.com/playlist, http://www.forever21.com/Product/Product.aspx, http://www.newegg.com/Product/Product.aspx, http://www.tigerdirect.com/applications/SearchTools/item-details.asp, http://www.urbanhardwoods.com/furniture/product.aspx, http://www.google.com/patents/about, http://www.nsf.gov/awardsearch/showAward.do, http://nsf.gov/awardsearch/showAward.do, http://www.nsf.gov/awardsearch/showAward, http://nsf.gov/awardsearch/showAward, http://www.youtube.com/watch, https://www.youtube.com/watch, http://www.getty.edu/art/gettyguide/artObjectDetails, https://api.twitter.com/1.1/statuses/user_timeline.json, http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp, http://ieeexplore.ieee.org:80/xpl/mostRecentIssue.jsp, http://portal.acm.org/citation.cfm, http://dl.acm.org/citation.cfm, http://citeseerx.ist.psu.edu/viewdoc/similar, http://citeseer.ist.psu.edu/viewdoc/similar, http://citeseerx.ist.psu.edu/viewdoc/summary, http://citeseer.ist.psu.edu/viewdoc/summary, http://ieeexplore.ieee.org/xpl/articleDetails.jsp, http://ieeexplore.ieee.org:80/xpl/articleDetails.jsp, http://ieeexplore.ieee.org/xpls/abs_all.jsp, http://ieeexplore.ieee.org:80/xpls/abs_all.jsp, http://ieeexplore.ieee.org/xpls/icp.jsp, http://ieeexplore.ieee.org:80/xpls/icp.jsp, http://www.informaworld.com/smpp/content~db=all, http://www.scopus.com/record/display.url, http://www.gdacs.org/Earthquakes/report.aspx, http://www.disasterscharter.org/web/charter/activation_details, http://www.nsf.gov/staff/staff_bio.jsp, http://www.getty.edu/art/gettyguide/artMakerDetails, http://ieeexplore.ieee.org/xpl/abstractAuthors.jsp, http://ieeexplore.ieee.org:80/xpl/abstractAuthors.jsp, http://www.moma.org/collection/artist.php, http://nsf.gov/awardsearch/piSearch.do, http://www.nsf.gov/awardsearch/piSearch.do, http://www.nsf.gov/awardsearch/advancedSearchResult, http://www.nsf.gov/awardsearch/advancedSearchNoScript, http://www.scopus.com/authid/detail.url, http://portal.acm.org/results.cfm, http://dl.acm.org/results.cfm, http://www.bing.com/search, http://api.bing.net/xml.aspx, http://citeseerx.ist.psu.edu/showciting, http://citeseerx.ist.psu.edu/search, http://www.citeulike.org/search/all, http://www.getty.edu/art/collectionSearch/collectionSearch, http://scholar.google.com/scholar, https://scholar.google.com/scholar, http://ieeexplore.ieee.org/search/searchresult.jsp, http://ieeexplore.ieee.org:80/search/searchresult.jsp, http://staging.cs.tamu.edu:8080/my_google/search, http://ecology0.csdl.tamu.edu/my_google/search, http://www.nsf.gov/awardsearch/simpleSearchResult, http://www.reddit.com/search?, http://www.researchgate.net/publicliterature.PublicLiterature.search.html, http://www.scopus.com/results/citedbyresults.url, http://www.scopus.com/results/results.url, http://slashdot.org/index2.pl, http://slashdot.com/index2.pl, http://link.springer.com/search, http://www.tate.org.uk/art/artworks, https://twitter.com/search, https://userstream.twitter.com/1.1/user.json, http://whitney.org/Collection, http://whitney.org/Search, http://en.wikipedia.org/w/index.php?, http://where.yahooapis.com/geocode, http://www.youtube.com/results?, https://www.youtube.com/results?, http://imgur.com/search?, http://www.reddit.com/r/gifs/search?]
 			Attribute: domain
-				Values it takes: [acm.org, rhizome.org, moma.org, tate.org.uk, metmuseum.org, asknature.org, globecartoon.com, trumanlibrary.org, citeulike.org, zara.com, uniqlo.com, hm.com, delicious.com, asos.com, modcloth.com, flickr.com, google.com, tripadvisor.com, rottentomatoes.com, fondation-langlois.org, berkeley.edu, nytimes.com, nsf.gov, opendns.com, pinterest.com, amazon.com, amazon.co.uk, apple.com, etsy.com, bestbuy.com, samsclub.com, nih.gov, anandtech.com, cnet.com, slashdot.org, twitter.com, tvtropes.org, youtube.com, wunderground.com, wund.com, wikipedia.org, wordpress.com]
+				Values it takes: [asknature.org, asos.com, citeulike.org, berkeley.edu, flickr.com, fodors.com, jstor.org, nsf.gov, opendns.com, researchgate.net, tripadvisor.com, tvtropes.org, youtube.com, amazon.com, amazon.co.uk, apple.com, bedbathandbeyond.com, bestbuy.com, cb2.com, crateandbarrel.com, etsy.com, glasstilestore.com, hm.com, ikea.com, landofnod.com, lowes.com, modcloth.com, newegg.com, onekingslane.com, overstock.com, roomandboard.com, potterybarn.com, restorationhardware.com, samsclub.com, 6pm.com, uniqlo.com, westelm.com, zara.com, hilton.com, homeaway.com, fondation-langlois.org, google.com, patents.google.com, nytimes.com, pinterest.com, rottentomatoes.com, slashdot.org, vimeo.com, metmuseum.org, moma.org, rhizome.org, guardian.co.uk, theguardian.com, globecartoon.com, trumanlibrary.org, reddit.com, twitter.com, wordpress.com, nih.gov, tandfonline.com, anandtech.com, cnet.com, acm.org, tate.org.uk, bing.com, wunderground.com, wund.com, wikipedia.org]
 			Attribute: url_regex
-				Values it takes: [http://dl.acm.org/author_page.cfm.+(?<!dsp=coll)$, http://dl.acm.org/author_page.cfm.+dsp=coll.*, http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*, http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+, http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+, http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=6[\S]*, http://www.asknature.org/browse\?selected=strategy\|[\d]*&type=aof, http://www.asknature.org/browse\?selected=strategy\|\d+\|(\d+)\&type=aof, http://www.asknature.org/browse\?selected=strategy\|[\d]*\|[\d]*\|[\d]*.*, http://www.trumanlibrary.org/whistlestop/study_collections/1948campaign/large/docs/political_cartoons/[a-z_]+\.htm, http://www.citeulike.org/user/[^/]*/article/[^/]*, http://www.citeulike.org/author/[^/]*, http://www.citeulike.org/user/[^/]*/author/[^/]*, http://www.citeulike.org/user/[^/]*, http://www.citeulike.org/tag/[^/]*, http://www.citeulike.org/user/[^/]*/tag/[^/]*, http://us.asos.com/[A-Za-z-]*/[A-Za-z0-9]*/.*, http://us.asos.com/[ASOS/]*[A-Za-z0-9-]*/[0-9Pa-z]*/.*, http://www.modcloth.com/shop/[a-z-]*/[a-z-]*, http://www.modcloth.com/shop/[a-z-]*, http://www.flickr.com/photos/[^/]*/tags/.*/?, http://www.flickr.com/people/[A-z0-9_@-]+/, http://www.flickr.com/photos/[A-z0-9_@-]+/$, https?://www.google.com/search\?.*, http://www.rottentomatoes.com/m/[^/]*/, ^(.(?!index))*$, .*index=[0123456789]+, http://www.nytimes.com/[A-z0-9_@-]+/$, http://www.nytimes.com/\d\d\d\d/\d\d/\d\d/.*, http://www.nsf.gov/awardsearch/afSearch.do?ProgEleCode=.*, https?://www.google.com/patents/[A-Z0-9]*?.*, https?://www.google.com/search.*q=ininventor:.*, http://store.apple.com/us/buy-[a-z]*/[a-z0-9-]*\?.*, http://store.apple.com/us/buy-mac/[a-z-]*\?.*, http://www.amazon.com/[^/]*/lm/.*, http://www.amazon.co.uk/[^/]*/lm/.*, http://www.amazon.com/[^/]*/zgbs/.*, http://www.amazon.com/s/.*, http://www.ncbi.nlm.nih.gov/pubmed\?term=[^&\[]+\[Author\]&cauthor=true&cauthor_uid=\d+, http://www.ncbi.nlm.nih.gov/pubmed\?term=[^&\[]+\[jour\], https?://www.google.com/webhp\?.*, https?://www.youtube.com/.*/videos, https?://www.youtube.com/(user|channel)/.*((?!videos).)$, https?://www.youtube.com/((?!/).)*, https?://en.wikipedia.org/w/index.php?title=Special%3ASearch.*, https?://en.wikipedia.org/wiki/((?!Category:).)*$, https?://en.wikipedia.org/wiki/Category:.*, http://en.m.wikipedia.org/wiki/[^/:]*, http://\w+.wordpress.com/[0-9]+/[0-9]+/\S+, http://\w+.wordpress.com/]
-			Attribute: url_regex_fragment
-				Values it takes: [artwork, tag, profile, collections, artists, http://www.metmuseum.org/collections/search-the-collections/\d+, http://www.metmuseum.org/Collections/search-the-collections/\d+, http://www.flickr.com/photos/[^/]*/[0-9], https://encrypted-tbn[0-9]+\.google\.com/images, http://www.tripadvisor.com/Hotel_Review, http://bks[0-9].books.google.com/patents, http://www.google.com/patents?.*&img=1, http://www.amazon.com/[^/]*/dp/[^/]*, http://www.amazon.co.uk/[^/]*/dp/[^/]*, http://www.amazon.com/gp/product/[^/]*, http://www.amazon.co.uk/gp/product/[^/]*, http://[a-zA-Z]*.slashdot.org/story/, https://twitter.com/[^/?]*]
+				Values it takes: [http://www.asknature.org/browse\?selected=strategy\|[\d]*\|[\d]*\|[\d]*.*, http://www.asknature.org/browse\?selected=strategy\|[\d]*&type=aof, http://www.asknature.org/browse\?selected=strategy\|\d+\|(\d+)\&type=aof, http://us.asos.com/[A-Za-z-]*/[A-Za-z0-9]*/.*, http://www.citeulike.org/tag/[^/]*, http://www.citeulike.org/user/[^/]*/tag/[^/]*, ^(.(?!index))*$, http://www.flickr.com/photos/[A-z0-9_@-]+/$, http://www.flickr.com/photos/.*, http://www.jstor.org/action/expandCollapseDecadeGroup\?.*, http://www.nsf.gov/awardsearch/afSearch.do?ProgEleCode=.*, http://www.researchgate.net/institution/[A-Za-z_]*, http://www.researchgate.net/institution/.*/department/.*, https?://www.youtube.com/(user|channel)/.*((?!videos).)$, http://store.apple.com/us/buy-mac.*, http://store.apple.com/us/buy-[a-z]*/[a-z0-9-]*\?.*, http://us.asos.com/[ASOS/]*[A-Za-z0-9-]*/[0-9Pa-z]*/.*, http://www.glasstilestore.com/\w+-p/\w+.htm, http://www.modcloth.com/shop/[a-z-]*/[a-z-]*, http://www.modcloth.com/shop/[a-z-]*, http://www.newegg.com/.*/SubCategory/.*, http://www.overstock.com/[^/]+/[^/]+/[0-9]+/product.html.*, http://www.6pm.com/[^/~?-]+(-[^/~?-]+)+(\?.*)?, http://www.homeaway.com/vacation-rental.*, http://www.amazon.com/[^/]*/lm/.*, http://www.amazon.co.uk/[^/]*/lm/.*, http://www.amazon.com/[^/]*/zgbs/.*, http://www.amazon.com/s[/?].*, https?://www.google.com/patents/[A-Z0-9]*?.*, https?://patents.google.com/patent/.*, http://www.nytimes.com/[A-z0-9_@-]+/$, http://www.nytimes.com/\d\d\d\d/\d\d/\d\d/.*, https:\/\/www\.pinterest\.com\/\w+\/$, https:\/\/www\.pinterest\.com\/\w+\/.+\/$, http://www.rottentomatoes.com/m/[^/]*/, https?://vimeo.com/\D\w*/videos.*, https?://vimeo.com/\D\w*/following.*, https?://vimeo.com/\D\w*, https?://vimeo.com/[0-9]*, .*index=[0123456789]+, http://(www\.)?moma.org/collection/browse_results.php[\S]*template_id=1[\S]*, http://(www\.)?moma.org/collection/browse_results.php\?object_id=[\d]+, http://(www\.)?moma.org/collection/object.php\?object_id=[\d]+, http://www.guardian.co.uk/commentisfree/cartoon/.*, http://www.theguardian.com/commentisfree/cartoon/.*, http://www.trumanlibrary.org/whistlestop/study_collections/1948campaign/large/docs/political_cartoons/[a-z_]+\.htm, https?://www.reddit.com/user/.*, https?://www.reddit.com/r/[a-zA-Z\d]+/comments/[a-zA-Z\d]+/[a-zA-Z\d_]+/[a-zA-Z\d_]+/?, https?://www.reddit.com/r/[a-zA-Z\d]+/comments/[a-zA-Z\d]+/[a-zA-Z\d_]+/, https?://www.reddit.com/r/[a-zA-Z\d]+/?, https://twitter.com/[^/?]*, http://\w+.wordpress.com/, https://twitter.com/[^/]*/status/[0-9]*, http://\w+.wordpress.com/[0-9]+/[0-9]+/\S+, https?://books.google.com/books/.*, http://www.citeulike.org/user/[^/]*/article/[^/]*, http://scholar.google.com/citations\?view_op=view_citation.*, http://www.tandfonline.com/doi/.*, http://www.researchgate.net/publicatio.*, http://www.researchgate.net/researcher.*, http://www.citeulike.org/user/[^/]*, http://dl.acm.org/author_page.cfm.+dsp=coll.*, ^((?!dsp=coll).)*http:\/\/dl.acm.org\/author_page.cfm((?!dsp=coll).)*$, http://www.citeulike.org/author/[^/]*, http://www.citeulike.org/user/[^/]*/author/[^/]*, http://www.flickr.com/people/[A-z0-9_@-]+/, https?://www.google.com/search.*q=ininventor:.*, http://scholar.google.com/citations\?user=.*, http://www.researchgate.net/profil.*, https?://www.google.co(m|m?\.\w\w)/search\?.*, https?://www.google.co(m|m?\.\w\w)/webhp\?.*, https?://www.google.co(m|m?\.\w\w)/#q.*, http://scholar\.google\.com/citations\?view_op=search_authors.*, https?://www.jstor.org/action/.*, http://www.metmuseum.org/collection/the-collection-online/search?.*, https?://www.bing.co(m|m?\.\w\w)/images/search\?.*, https?://www.google.co(m|m?\.\w\w)/images\?.*, https?://www.google.co(m|m?\.\w\w)/imgres\?imgurl=.*, http://www.pinterest.com/search/.*, http://en.m.wikipedia.org/wiki/[^/:]*, https?://en.wikipedia.org/wiki/Category:.*, https?://en.wikipedia.org/wiki/((?!Category:).)*$]
 			Attribute: url_path_tree
-				Values it takes: [http://www.tate.org.uk/art/artworks/, http://whitney.org/Collection/, http://whitney.org/WatchAndListen/, http://www.guggenheim.org/new-york/collections/collection-online/artwork/, http://www.guggenheim.org/new-york/collections/collection-online/artists/, http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/, http://www.guggenheim.org/new-york/collections/collection-online/movements/, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/, http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/, http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/, http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/, http://www.asknature.org/strategy/, http://www.asknature.org/product/, http://www.asknature.org/media/image/, http://boardgamegeek.com/boardgame/, http://boardgamegeek.com/boardgameexpansion/, http://boardgamegeek.com/boardgamecategory/, http://buzzlog.buzz.yahoo.com/feeds/, http://buzz.yahoo.com/search, http://www.google.com/trends, http://www.cartoons.ac.uk/record/, http://www.guardian.co.uk/commentisfree/cartoon/, http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/, http://www.politicalcartoons.com/cartoon/, http://edocs.lib.sfu.ca/cgi-bin/, http://www.zara.com/us/en/, http://www.uniqlo.com/us/, http://www.hm.com/us/product/, http://delicious.com/, http://www.anthropologie.com/anthro/product/, http://www.airbnb.com/rooms, http://www.homeaway.com/vacation-rental, http://www1.hilton.com/en_US/hi/hotel, http://www.imdb.com/title/, http://www.imdb.com/name/, http://www.instructables.com/member, http://www.instructables.com/tag, http://www.instructables.com/id, http://gameinfo.na.leagueoflegends.com/en/game-info/champions/, http://icanhascheezburger.com/, http://icanhas.cheezburger.com/, http://ihasahotdog.com/, http://roflrazzi.com/, http://totallylookslike.com/, http://punditkitchen.com/, http://upnextinsports.com/, http://graphjam.com/, http://thereifixedit.com/, http://failblog.org/, http://failbooking.com/, http://engrishfunny.com/, http://movies.netflix.com/Movie, http://www.rottentomatoes.com/celebrity/, http://www.fondation-langlois.org/html/e/, http://domain.opendns.com/, http://www.uspto.gov/web/patents/classification, http://www.google.com/patents/*, http://sorry.google.com, http://pinterest.com/pin/, http://store.apple.com/us/product/, http://www.walmart.com/ip/, http://www.target.com/p/, http://m.target.com/p/, http://www.newegg.com/*/SubCategory, http://www.amazon.com/gp/registry/wishlist, http://www.amazon.co.uk//gp/registry/wishlist, http://www.amazon.com/gp/bestsellers, http://www.amazon.co.uk/gp/bestsellers, http://www.etsy.com/listing/, http://www.bestbuy.com/site/, http://www.samsclub.com/sams/, http://m.samsclub.com/ip/, http://www.ebay.com/itm/, http://www.ncbi.nlm.nih.gov/pubmed/, http://www.anandtech.com/print/, http://www.anandtech.com/show/, http://reviews.cnet.com/, http://www.ingentaconnect.com, http://tandfonline.com/doi/full/*/*, http://tandfonline.com/doi/ref/*/*, http://www.sciencedirect.com/science/article, http://www.tumblr.com/tagged/, http://www.tribunalvoices.org/voices/interview/, http://www.tribunalvoices.org/voices/video/, http://tribunalvoices.org/voices/video/, http://www.tv.com/shows/, http://tvtropes.org/pmwiki/pmwiki.php/, http://www.wunderground.com/US/, http://www.wunderground.com/cgi-bin/findweather/, http://i.wund.com/]
+				Values it takes: [http://www.asknature.org/media/image/, http://www.asknature.org/product/, http://www.asknature.org/strategy/, http://www.ingentaconnect.com, http://www.instructables.com/id, http://www.instructables.com/tag, http://domain.opendns.com/, http://www.uspto.gov/web/patents/classification, http://www.tribunalvoices.org/voices/interview/, http://www.tribunalvoices.org/voices/video/, http://tribunalvoices.org/voices/video/, https://www.ted.com/playlists/, https://www.ted.com/topics/, http://tvtropes.org/pmwiki/pmwiki.php/, http://www.anthropologie.com/anthro/product/, http://store.apple.com/us/product/, https://m.bedbathandbeyond.com/bedbathbeyond/product/, http://www.bestbuy.com/site/, http://www.cb2.com/, http://www.ebay.com/itm/, http://www.etsy.com/listing/, http://www.hm.com/us/product/, http://www.homedepot.com/p/, http://www.houzz.com/photos/, http://www.ikea.com/us/en/catalog/categories/departments/, http://m.ikea.com/us/en/catalog/products/, http://www.ikea.com/us/en/catalog/products/, http://www.landofnod.com/, https://www.onekingslane.com/product/, http://www.pier1.com/, http://www.potterybarn.com/products/, http://remodelista.com/products/, http://www.restorationhardware.com/catalog/product/, http://www.roomandboard.com/rnb/product/, http://www.samsclub.com/sams/, http://m.samsclub.com/ip/, http://www.6pm.com/p/asin/, http://www.target.com/p/, http://m.target.com/p/, http://store.taylorswift.com/, http://www.uniqlo.com/us/, http://www.walmart.com/ip/, http://www.wayfair.com/, http://www.zara.com/us/en/, http://www.airbnb.com/rooms, http://www.urbanspoon.com/f, http://www.urbanspoon.com/r, http://www.yelp.com/biz, http://www.amazon.com/gp/registry/wishlist, http://www.amazon.co.uk//gp/registry/wishlist, http://www.amazon.com/gp/bestsellers, http://www.amazon.co.uk/gp/bestsellers, http://boardgamegeek.com/boardgame/, http://boardgamegeek.com/boardgameexpansion/, http://boardgamegeek.com/boardgamecategory/, http://www.fondation-langlois.org/html/e/, http://www.google.com/patents/*, https://www.google.com/patents/*, http://www.imdb.com/title/, http://gameinfo.na.leagueoflegends.com/en/game-info/champions/, http://www.netflix.com/, http://pinterest.com/pin/, http://www.pinterest.com/pin/, https://www.ted.com/talks/, http://www.tv.com/shows/, http://www.guggenheim.org/new-york/collections/collection-online/artwork/, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/, http://www.tate.org.uk/art/artworks/, http://whitney.org/Collection/, http://whitney.org/WatchAndListen/, http://www.cartoons.ac.uk/record/, http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/, http://www.politicalcartoons.com/cartoon/, http://edocs.lib.sfu.ca/cgi-bin/, http://art-chi.org/, http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/, http://link.springer.com/book/, http://link.springer.com/journal, http://link.springer.com/bookseries, http://tandfonline.com/doi/ref/*/*, http://www.jstor.org/stable, http://www.ncbi.nlm.nih.gov/pubmed/, http://nms.sagepub.com/content/, http://www.sciencedirect.com/science/article/, http://link.springer.com/article, http://link.springer.com/referenceworkentry, http://link.springer.com/chapter, http://onlinelibrary.wiley.com/doi/, http://www.anandtech.com/print/, http://www.anandtech.com/show/, http://reviews.cnet.com/, http://www.cnet.com/, http://www.imdb.com/name/, http://www.rottentomatoes.com/celebrity/, http://www.instructables.com/member, http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/, http://www.ted.com/speakers/, http://www.guggenheim.org/new-york/collections/collection-online/artists/, http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/, http://www.guggenheim.org/new-york/collections/collection-online/movements/, http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/, http://www.tumblr.com/search/, https://twitter.com/hashtag/, http://www.urbanspoon.com/s/, http://www.wunderground.com/US/, http://www.wunderground.com/cgi-bin/findweather/, http://i.wund.com/]
 			Attribute: default_pref
 				Values it takes: [fastflip_search]
 			Attribute: name
-				Values it takes: [fastflip_search_selector]
+				Values it takes: [fastflip_search_selector, spoon1]
 			Attribute: pref_name
 				Values it takes: [fastflip_search_type]
+			Attribute: url_regex_fragment
+				Values it takes: [review-\d+, nam_loc:\d+, http://www.tripadvisor.com/Attraction_Review, http://www.amazon.com/[^/]*/dp/[^/]*, http://www.amazon.co.uk/[^/]*/dp/[^/]*, http://www.amazon.com/gp/product/[^/]*, http://www.amazon.co.uk/gp/product/[^/]*, http://www.bedbathandbeyond.com/[^/]*, http://www.crateandbarrel.com/[^/]*/[^/]*, http://www.lowes.com/pd*, http://www.lowes.com/ProductDisplay*, http://www.westelm.com/products/*, hotel, http://www.tripadvisor.com/Hotel_Review, http://[a-zA-Z]*.slashdot.org/story/, http://www.metmuseum.org/collections?/the-collection-online/search/\d+, http://www.metmuseum.org/Collections?/the-collection-online/search/\d+, artwork, http://www.flickr.com/photos/[^/]*/[0-9], collections, \[.*\], https://encrypted-tbn[0-9]+\.google\.com/images, http://bks[0-9].books.google.com/patents, http://www.google.com/patents?.*&img=1, author=true, profile, artists, tag]
 			Attribute: meta_metadata_name
 				Values it takes: [amazon_product]
 	Tag Name: example_url
 		Attribute Names: 
 			Attribute: url
-				Values it takes: [http://dl.acm.org/citation.cfm?id=2063231.2063237&preflayout=flat, http://dl.acm.org/citation.cfm?id=642611.642681&preflayout=flat, http://dl.acm.org/author_page.cfm?id=81100203284&srt=meta_published_date%20dsc&role=Author&perpage=10, http://dl.acm.org/author_page.cfm?id=81100203284&dsp=coll, http://dl.acm.org/inst_page.cfm?id=1013772, http://rhizome.org/artbase/artwork/30306/, http://rhizome.org/portfolios/artwork/57882/, http://rhizome.org/artbase/tag/futurism/, http://rhizome.org/artbase/tag/nostalgia/, http://rhizome.org/profile/uiuuii/, http://rhizome.org/artbase/collections/6/, http://www.moma.org/collection/browse_results.php?object_id=79211, http://www.moma.org/collection/browse_results.php?criteria=O%3ADE%3AI%3A3%7CG%3AHI%3AE%3A1&page_number=3&template_id=1&sort_order=2, http://www.moma.org/collection/browse_results.php?criteria=O%3ACL%3AI%3A12&page_number=&template_id=6&sort_order=1, http://www.moma.org/collection/artist.php?artist_id=28723, http://www.tate.org.uk/art/artworks/pollock-number-14-t03978, http://www.tate.org.uk/art/artworks/duchamp-fountain-t07573, http://www.tate.org.uk/art/artworks?gm=416, http://www.tate.org.uk/art/artworks?gid=999999952, http://www.tate.org.uk/art/artists/cy-twombly-2079, http://www.metmuseum.org/Collections/search-the-collections/503435?rpp=60&pg=1&rndkey=20140121&ao=on&ft=*&what=Spruce&pos=12, http://www.metmuseum.org/Collections/search-the-collections/503647?rpp=60&pg=1&rndkey=20140121&ao=on&ft=*&what=Spruce&pos=10, http://www.metmuseum.org/Collections/search-the-collections/503932, http://www.metmuseum.org/Collections/search-the-collections/436576, http://www.metmuseum.org/collections/search-the-collections?ft=*&what=Spruce, http://whitney.org/Collection/JohnChamberlain/701579aB/, http://whitney.org/Collection/BobThompson/, http://whitney.org/Collection/AndyWarhol, http://whitney.org/WatchAndListen/Artists?play_id=903, http://whitney.org/Search?query=Georgia+O%27Keeffe, http://whitney.org/Collection?decade=194, http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484, http://www.guggenheim.org/new-york/collections/collection-online/movements/195203, http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/195198, http://www.guggenheim.org/new-york/collections/collection-online/artists/963/Jackson%20Pollock, http://www.guggenheim.org/new-york/collections/collection-online/artists/1529/Vito%20Acconci, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/5215, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1840, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1445, http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/1848, http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/67, http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/type_facet/id/12/mod_id/0, http://www.asknature.org/browse?selected=strategy|1&type=aof, http://www.asknature.org/browse?selected=strategy|501|516&type=aof, http://www.asknature.org/browse?selected=strategy|921|971&type=aof, http://www.asknature.org/browse?selected=strategy|501|531|541&type=aof, http://www.asknature.org/browse?selected=strategy|921|971|1021&type=aof, http://www.asknature.org/strategy/efd9f97ba5240b796b855c9bd5ee8397, http://www.asknature.org/strategy/b91cc7c16934434bb7c01ecbd8ad286c, http://www.asknature.org/product/9db08f87c7bb21d1cd485fb33f64ca50, http://www.asknature.org/media/image/192, http://boardgamegeek.com/boardgame/4324/risk-the-lord-of-the-rings, http://boardgamegeek.com/boardgamecategory/1016/science-fiction, http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/wo/13.0.13.5.9, http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.167.1350, http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&type=sc, http://citeseerx.ist.psu.edu/search?q=pad+zooming+graphical+interface, http://citeseerx.ist.psu.edu/showciting?doi=10.1.1.31.1768, http://www.citeulike.org/user/dwenig/article/828279, http://www.citeulike.org/user/laurapapaleo/article/2901818, http://www.citeulike.org/author/Hearst:MA, http://www.citeulike.org/user/jsun/author/Hofmann:T, http://www.citeulike.org/user/dwenig, http://www.citeulike.org/tag/semantic, http://www.citeulike.org/user/yoelabreu84/tag/semantic, http://www.citeulike.org/search/all?q=latent+semantic, http://www.zara.com/us/en/woman/trousers/jacquard-trousers-with-faux-leather-piping-c358005p1841024.html, http://www.uniqlo.com/us/women/tops/t-shirts/supima-cotton-crew-neck-long-sleeves/women-supima-cotton-crew-neck-long-sleeve-t-shirt-086844.html#76, http://www.hm.com/us/product/27027?article=27027-B&piaDept=Subdepartment_ladies&piaType=Large_picture, http://www.forever21.com/Product/Product.aspx?BR=f21&Category=sale_women&ProductID=2000072158&VariantID=, http://us.asos.com/Women-Dresses-Summer-Dresses/vxlwy/?cid=10860, http://us.asos.com/Warehouse-Floral-Skater-Dress/12p10b/?iid=3735865&cid=15801&sh=0&pge=0&pgesize=36&sort=-1&clr=Multi&mporgp=L1dhcmVob3VzZS9XYXJlaG91c2UtRmxvcmFsLVNrYXRlci1EcmVzcy9Qcm9kLw.., http://www.anthropologie.com/anthro/product/clothes-dresses/4130580810078.jsp?cm_sp=Grid-_-4130580810078-_-Regular_3, http://www.modcloth.com/shop/dresses/midnight-sun-dress-in-navy, http://www.modcloth.com/shop/best-selling-dresses, http://www.flickr.com/photos/barockschloss/tags/potato/, http://www.flickr.com/photos/kali-kold/8345182714/, http://www.flickr.com/photos/sobrido/8137315867/, http://www.flickr.com/people/maxfined/, http://www.flickr.com/photos/kali-kold/, https://www.google.com/search?tbm=isch&hl=en&q=watergate, http://www.google.com/search?hl=en&tbm=isch&q=earth, http://www.airbnb.com/rooms/72247, http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html, http://www.homeaway.com/vacation-rental/p100000, http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42, http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1532126, http://www.imdb.com/title/tt0137523/, http://www.imdb.com/title/tt0110912/, http://www.imdb.com/name/nm0000487/, http://www.imdb.com/name/nm0000199/, http://www.imdb.com/name/nm0004266/, http://www.instructables.com/member/HollyMan, http://www.instructables.com/member/Thereisonlyme/, http://www.instructables.com/tag/type-id/category-food/keyword-tomato/, http://www.instructables.com/tag/type-id/category-food/keyword-potato/, http://www.instructables.com/id/Tomato-Water-Bloody-Mary/, http://www.instructables.com/id/Cheesy-Potato-Shotz/, http://gameinfo.na.leagueoflegends.com/en/game-info/champions/diana/, http://gameinfo.na.leagueoflegends.com/en/game-info/champions/caitlyn/, http://movies.netflix.com/Movie/A_Dangerous_Method/70158333, http://www.rottentomatoes.com/celebrity/keir_dullea/, http://www.rottentomatoes.com/m/inglourious_basterds/, http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&nh=10&pw=100%25&lk=1&qt=fire&Go.x=-260&Go.y=-187, http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&nh=10&pw=100%25&lk=1&qt=water&Go.x=0&Go.y=0, http://www.getty.edu/art/gettyguide/artMakerDetails?maker=1229, http://www.getty.edu/art/gettyguide/artMakerDetails?maker=3318, http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=907, http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=6706, http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033763, http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033762, http://www.getty.edu/art/gettyguide/exploreArt?typ=2033760, http://www.fondation-langlois.org/html/e/research.php?Filtres=1&MotsCles=Love&Numero=&zoom=1&Format=1, http://www.fondation-langlois.org/html/e/research.php?Filtres=1&MotsCles=Art+and+Nature&Numero=t000196&zoom=1&Format=1&Submit.x=20&Submit.y=2, http://www.fondation-langlois.org/html/e/liste.php?Selection=PUB#, http://www.fondation-langlois.org/html/e/liste.php?Selection=PRO+col, http://www.fondation-langlois.org/html/e/page.php?NumPage=2131, http://www.fondation-langlois.org/html/e/page.php?NumPage=2222, http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=heaven_earth:29&group=heaven_earth, http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&group=objects&index=15, http://www.nytimes.com/2012/08/28/science/earth/sea-ice-in-arctic-measured-at-record-low.html, http://www.nsf.gov/div/index.jsp?div=IIS, http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503302, http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503581, http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503286, http://www.nsf.gov/awardsearch/piSearch.do?SearchType=piSearch&page=1&IncludeCOPI=true&PIFirstName=Andruid&PILastName=Kerne#results, http://www.nsf.gov/awardsearch/advancedSearchResult?IncludeCoPI=true&PIFirstName=Andruid&PILastName=Kerne, http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428, http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854, http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1123972, http://www.nsf.gov/awardsearch/showAward?AWD_ID=1247637&HistoricalAwards=false, http://domain.opendns.com/wikipedia.org, http://domain.opendns.com/boardgamegeek.com, http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm, http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&printsec=abstract&img=1&zoom=1&sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg, http://www.google.com/patents?id=dtIXAAAAEBAJ&output=text&pg=PA3&img=1&zoom=3&hl=en&q=fire+pit&cds=1&sig=ACfU3U11rwTzwz4BhgQj0ywkgkm6T6DKaQ&edge=0&edge=stretch&ci=108,127,774,1199, http://www.google.com/patents/US20100045705, http://www.google.com/patents/US7953462, http://www.google.com/search?tbo=p&tbm=pts&hl=en&q=ininventor:%22Patricia+Maes%22, http://www.google.com/search?tbo=p&tbm=pts&hl=en&q=ininventor:%22Natan+Linder%22, http://pinterest.com/pin/197525133629352022/, http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C, http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY, http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y, http://www.amazon.com/Acer-C720-Chromebook-11-6-Inch-2GB/dp/B00FNPD1VW/, http://www.amazon.com/Discovery-Daft-Punk/dp/B000059MEK, http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&step=accessories, http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&product=ME495LL/A&step=accessories, http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&step=config, http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532, http://www.newegg.com/Product/Product.aspx?Item=N82E16834257878, http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=8674056, http://www.walmart.com/ip/The-Hobbit-An-Unexpected-Journey-DVD-UltraViolet-Widescreen/23263613, http://www.walmart.com/ip/Twister-Dance/21097609, http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1, http://m.target.com/p/threshold-farrah-fretwork-window-panel/-/A-13976559, http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100, http://www.amazon.com/gp/registry/wishlist/ref=wish_list, http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/, http://www.amazon.com/gp/bestsellers/books/6, http://www.amazon.co.uk/gp/bestsellers/books/515344, http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=ps4, http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8, http://www.bestbuy.com/site/samsung-60-class-60-diag--led-1080p-120hz-smart-hdtv/7827055.p, http://www.bestbuy.com/site/42-class-42-diag--led-1080p-120hz-hdtv/8976043.p;jsessionid=24CDBE3978F5952F7E9C65D34D5FB08A.bbolsp-app01-115?id=1218960132416&skuId=8976043&st=categoryid$abcat0101000&cp=1&lp=1, http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push, http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248, http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834, http://www.ncbi.nlm.nih.gov/pubmed/22439083, http://www.ncbi.nlm.nih.gov/pubmed/23180662, http://www.ncbi.nlm.nih.gov/pubmed?term=Shameli%20A[Author]&cauthor=true&cauthor_uid=23180662, http://www.ncbi.nlm.nih.gov/pubmed?term=%22Eur+J+Immunol%22[jour], http://www.anandtech.com/print/7603/mac-pro-review-late-2013, http://www.anandtech.com/show/6914/samsung-galaxy-s-4-review, http://reviews.cnet.com/ps4/, http://reviews.cnet.com/samsung-galaxy-s4/, http://www.tandfonline.com/doi/ref/10.1080/15332861.2012.689565, http://www.sciencedirect.com/science/article/pii/S1570826808000693, http://www.scopus.com/record/display.url?eid=2-s2.0-49949098043&origin=resultslist&sort=plf-f&src=s&sot=aut&sdt=a&sl=35&s=AU-ID%28%22Huynh%2c+David+F.%22+7005439892%29, http://www.scopus.com/record/display.url?eid=2-s2.0-35348863146&origin=resultslist&sort=plf-f&src=s&sot=aut&sdt=a&sl=35&s=AU-ID%28%22Huynh%2c+David+F.%22+7005439892%29, http://www.scopus.com/authid/detail.url?authorId=7005439892, http://www.scopus.com/results/citedbyresults.url?sort=plf-f&cite=2-s2.0-56049084874&src=s&imp=t&sot=cite&sdt=a&sl=0&origin=inward, http://www.scopus.com/results/results.url?sort=plf-f&src=s&sot=aut&sdt=a&sl=17&s=AU-ID%287005439892%29&origin=AuthorProfile&reselectAuthorsLinkName=Huynh%2c+David+F., https://www.google.com/search?q=exploratory+search&sourceid=chrome&ie=UTF-8, http://science.slashdot.org/story/12/09/14/1834239/smooth-high-definition-video-of-curiositys-landing-on-mars, https://twitter.com/nytimes, https://twitter.com/search?q=%23socialinnovation, http://www.tribunalvoices.org/voices/interviews, http://www.tribunalvoices.org/voices/index.html, http://www.tribunalvoices.org/voices/interview/25, http://www.tribunalvoices.org/voices/interview/5, http://www.tribunalvoices.org/voices/video/588, http://www.tribunalvoices.org/voices/video/327, http://www.tv.com/shows/house, http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGunslinger, http://tvtropes.org/pmwiki/pmwiki.php/Main/ImprobableAimingSkills, http://www.youtube.com/watch?v=NLlGopyXT_g, https://www.youtube.com/watch?v=KUOVJeOR77M, https://www.youtube.com/user/guggenheim, https://www.youtube.com/user/PTXofficial, https://www.youtube.com/results?search_query=search, https://www.youtube.com/results?search_query=windows+phone, http://www.wunderground.com/US/77840?MR=1, http://i.wund.com/US/TX/College_Station.html, http://en.wikipedia.org/wiki/Type_system, http://en.wikipedia.org/wiki/Velcro, http://en.wikipedia.org/wiki/Category:Brand_name_materials, http://en.wikipedia.org/wiki/Category:Theoretical_physicists, http://babydot74.wordpress.com/2012/09/17/whats-for-dinner/, http://chocolatebottle.wordpress.com/2012/09/13/disney-social-media-moms-on-the-road-charlotte/, http://ohnaturelle.wordpress.com/2012/09/11/the-waterfront-restaurant/, http://thingswemake.wordpress.com/, http://babydot74.wordpress.com/, http://chocolatebottle.wordpress.com/, http://readcookdevour.wordpress.com/, http://traveleat.wordpress.com/, http://dirophil.wordpress.com/, http://poffdevblog.wordpress.com/, http://ohnaturelle.wordpress.com/]
+				Values it takes: [http://dl.acm.org/inst_page.cfm?id=1013772, http://www.asknature.org/browse?selected=strategy|501|531|541&type=aof, http://www.asknature.org/browse?selected=strategy|921|971|1021&type=aof, http://www.asknature.org/browse?selected=strategy|1&type=aof, http://www.asknature.org/media/image/192, http://www.asknature.org/product/9db08f87c7bb21d1cd485fb33f64ca50, http://www.asknature.org/strategy/efd9f97ba5240b796b855c9bd5ee8397, http://www.asknature.org/strategy/b91cc7c16934434bb7c01ecbd8ad286c, http://www.asknature.org/browse?selected=strategy|501|516&type=aof, http://www.asknature.org/browse?selected=strategy|921|971&type=aof, http://us.asos.com/Women-Dresses-Summer-Dresses/vxlwy/?cid=10860, http://www.citeulike.org/tag/semantic, http://www.citeulike.org/user/yoelabreu84/tag/semantic, http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=heaven_earth:29&group=heaven_earth, http://www.flickr.com/photos/kali-kold/, http://www.flickr.com/photos/barockschloss/tags/potato/, http://www.fondation-langlois.org/html/e/liste.php?Selection=PUB#, http://www.fondation-langlois.org/html/e/liste.php?Selection=PRO+col, http://www.fondation-langlois.org/html/e/research.php?Filtres=1&MotsCles=Love&Numero=&zoom=1&Format=1, http://www.fondation-langlois.org/html/e/research.php?Filtres=1&MotsCles=Art+and+Nature&Numero=t000196&zoom=1&Format=1&Submit.x=20&Submit.y=2, http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033763, http://www.getty.edu/art/gettyguide/displayObjectList?cat=2033762, http://www.getty.edu/art/gettyguide/exploreArt?typ=2033760, http://www.childrenslibrary.org/icdl/BookPreview?bookid=shiwhit_00900083amp;route=text_English_floweramp;lang=Englishamp;msg=amp;ilang=English, http://www.instructables.com/id/Tomato-Water-Bloody-Mary/, http://www.instructables.com/id/Cheesy-Potato-Shotz/, http://www.instructables.com/tag/type-id/category-food/keyword-tomato/, http://www.instructables.com/tag/type-id/category-food/keyword-potato/, http://www.jstor.org/action/expandCollapseDecadeGroup?close=2000s&journalCode=compeduc#2000s, http://www.nsf.gov/div/index.jsp?div=IIS, http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503302, http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503581, http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503286, http://www.nsf.gov/staff/staff_list_all.jsp?org=NULL, http://domain.opendns.com/wikipedia.org, http://domain.opendns.com/boardgamegeek.com, http://www.uspto.gov/web/patents/classification/uspc725/defs725.htm, http://www.tribunalvoices.org/voices/interview/25, http://www.tribunalvoices.org/voices/interview/5, http://www.tribunalvoices.org/voices/interviews, http://www.tribunalvoices.org/voices/index.html, http://www.tribunalvoices.org/voices/video/588, http://www.tribunalvoices.org/voices/video/327, https://www.ted.com/playlists/17/how_to_live_with_robots , https://www.ted.com/topics/demo, http://www.tripadvisor.com/Attraction_Review-g60713-d104675-Reviews-Golden_Gate_Bridge-San_Francisco_California.html, http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGunslinger, http://tvtropes.org/pmwiki/pmwiki.php/Main/ImprobableAimingSkills, https://www.youtube.com/user/guggenheim, https://www.youtube.com/user/PTXofficial, https://www.youtube.com/playlist?list=PLmU8B4gZ41ieHBayEVXEUUgUs-YGKLk17, http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C, http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY, http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y, http://www.amazon.com/Acer-C720-Chromebook-11-6-Inch-2GB/dp/B00FNPD1VW/, http://www.amazon.com/Discovery-Daft-Punk/dp/B000059MEK, http://www.anthropologie.com/anthro/product/clothes-dresses/4130580810078.jsp?cm_sp=Grid-_-4130580810078-_-Regular_3, http://store.apple.com/us/product/H9345LL/A/hp-photosmart-5520-e-all-in-one-printer?fnode=000105072b, http://store.apple.com/us/buy-mac/imac?product=ME087LL/A&step=config, http://store.apple.com/us/buy-ipad/ipad-air?product=MD786LL/A&step=accessories, http://store.apple.com/us/buy-iphone/iphone5c?cppart=UNLOCKED/US&product=ME495LL/A&step=accessories, http://us.asos.com/Warehouse-Floral-Skater-Dress/12p10b/?iid=3735865&cid=15801&sh=0&pge=0&pgesize=36&sort=-1&clr=Multi&mporgp=L1dhcmVob3VzZS9XYXJlaG91c2UtRmxvcmFsLVNrYXRlci1EcmVzcy9Qcm9kLw.., http://www.bestbuy.com/site/samsung-60-class-60-diag--led-1080p-120hz-smart-hdtv/7827055.p, http://www.bestbuy.com/site/42-class-42-diag--led-1080p-120hz-hdtv/8976043.p;jsessionid=24CDBE3978F5952F7E9C65D34D5FB08A.bbolsp-app01-115?id=1218960132416&skuId=8976043&st=categoryid$abcat0101000&cp=1&lp=1, http://www.ebay.com/itm/HomCom-Brown-Square-Microfiber-Storage-Ottoman-Footstool-Foot-Rest-Stool-Cube-/111078764834, http://www.etsy.com/listing/117020598/new-york-continuous-arm-windsor-chair-by?ref=fp_treasury_8, http://www.forever21.com/Product/Product.aspx?BR=f21&Category=sale_women&ProductID=2000072158&VariantID=, http://www.hm.com/us/product/27027?article=27027-B&piaDept=Subdepartment_ladies&piaType=Large_picture, http://www.modcloth.com/shop/dresses/midnight-sun-dress-in-navy, http://www.modcloth.com/shop/best-selling-dresses, http://www.newegg.com/Product/Product.aspx?Item=N82E16813128532, http://www.newegg.com/Product/Product.aspx?Item=N82E16834257878, http://www.newegg.com/All-Laptops-Notebooks/SubCategory/ID-32?Pagesize=100, http://www.overstock.com/Home-Garden/Bodipedic-Essentials-8-inch-Queen-size-Memory-Foam-Mattress/6153386/product.html?rcmndsrc=4, http://www.samsclub.com/sams/cortina-pub-back-reclining-living-room-3-pcs/prod2360758.ip?navAction=push, http://m.samsclub.com/ip/showtime-reclining-sectional-with-console-storage/180248, http://www.6pm.com/deer-stags-nevis-black, http://www.target.com/p/keurig-elite-single-cup-home-brewing-system-k40/-/A-10174593#prodSlot=medium_1_1, http://m.target.com/p/threshold-farrah-fretwork-window-panel/-/A-13976559, http://store.taylorswift.com/Seagull-Long-Sleeved-Top.html, http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=8674056, http://www.uniqlo.com/us/women/tops/t-shirts/supima-cotton-crew-neck-long-sleeves/women-supima-cotton-crew-neck-long-sleeve-t-shirt-086844.html#76, http://www.walmart.com/ip/The-Hobbit-An-Unexpected-Journey-DVD-UltraViolet-Widescreen/23263613, http://www.walmart.com/ip/Twister-Dance/21097609, http://www.zara.com/us/en/woman/trousers/jacquard-trousers-with-faux-leather-piping-c358005p1841024.html, https://www.airbnb.com/rooms/2570524?s=lpub, http://www1.hilton.com/en_US/hi/hotel/DFWANHH/index.do;jsessionid=FA645984CF5E8826E0DD207A9049F0AE.etc42, http://www.homeaway.com/vacation-rental/p100000, http://www.tripadvisor.com/Hotel_Review-g30196-d98474-Reviews-The_Driskill-Austin_Texas.html, http://www.urbanspoon.com/f/114/11800/College-Station/American-Restaurants, http://www.urbanspoon.com/r/114/875031/restaurant/College-Station/Christophers-World-Grill-Bryan, http://www.yelp.com/biz/the-republic-college-station, http://www.amazon.com/gp/registry/wishlist/ref=wish_list, http://www.amazon.com/Cook-Books-amp-more/lm/R1PADW7FZALCHA/, http://www.amazon.com/gp/bestsellers/books/6, http://www.amazon.co.uk/gp/bestsellers/books/515344, http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=ps4, http://boardgamegeek.com/boardgame/4324/risk-the-lord-of-the-rings, http://boardgamegeek.com/boardgamecategory/1016/science-fiction, http://www.fondation-langlois.org/html/e/page.php?NumPage=2131, http://www.fondation-langlois.org/html/e/page.php?NumPage=2222, http://www.google.com/patents/US20100045705, http://www.google.com/patents/US7953462, http://www.imdb.com/title/tt0137523/, http://www.imdb.com/title/tt0110912/, http://gameinfo.na.leagueoflegends.com/en/game-info/champions/diana/, http://gameinfo.na.leagueoflegends.com/en/game-info/champions/caitlyn/, http://www.netflix.com/WiMovie/70158333?trkid=3565916, http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0747428, http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0803854, http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1123972, http://www.nsf.gov/awardsearch/showAward?AWD_ID=1247637&HistoricalAwards=false, http://www.nytimes.com/2012/08/28/science/earth/sea-ice-in-arctic-measured-at-record-low.html, https://www.pinterest.com/ladysweets/, http://pinterest.com/pin/197525133629352022/, https://www.pinterest.com/pin/110127153362144444/, https://www.pinterest.com/ladysweets/for-the-home/, https://www.pinterest.com/4fbcbaef/dwell/, http://www.rottentomatoes.com/m/inglourious_basterds/, http://science.slashdot.org/story/12/09/14/1834239/smooth-high-definition-video-of-curiositys-landing-on-mars, https://www.ted.com/talks/terry_moore_how_to_tie_your_shoes, http://www.tv.com/shows/house, https://vimeo.com/snebtor/videos, https://vimeo.com/snebtor/following, https://vimeo.com/snebtor, https://vimeo.com/115872531, https://vimeo.com/105505950, http://www.youtube.com/watch?v=NLlGopyXT_g, https://www.youtube.com/watch?v=KUOVJeOR77M, http://orange.sims.berkeley.edu/cgi-bin/flamenco.cgi/famuseum/Flamenco?q=objects:81&group=objects&index=15, http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=907, http://www.getty.edu/art/gettyguide/artObjectDetails?artobj=6706, http://www.guggenheim.org/new-york/collections/collection-online/artwork/3484, http://www.metmuseum.org/collection/the-collection-online/search/503435?rpp=60&pg=1&rndkey=20140121&ao=on&ft=*&what=Spruce&pos=12, http://www.metmuseum.org/collection/the-collection-online/search/503647?rpp=60&pg=1&rndkey=20140121&ao=on&ft=*&what=Spruce&pos=10, http://www.metmuseum.org/collection/the-collection-online/search/503932, http://www.metmuseum.org/collection/the-collection-online/search/436576, http://www.moma.org/collection/browse_results.php?object_id=79211, http://www.moma.org/collection/browse_results.php?criteria=O%3ADE%3AI%3A3%7CG%3AHI%3AE%3A1&page_number=3&template_id=1&sort_order=2, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/5215, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1840, http://archive.newmuseum.org/index.php/Detail/Object/Show/object_id/1445, http://rhizome.org/artbase/artwork/30306/, http://rhizome.org/portfolios/artwork/57882/, http://www.tate.org.uk/art/artworks/pollock-number-14-t03978, http://www.tate.org.uk/art/artworks/duchamp-fountain-t07573, http://whitney.org/Collection/JohnChamberlain/701579aB/, http://whitney.org/Collection/BobThompson/, http://whitney.org/Collection/AndyWarhol, http://whitney.org/WatchAndListen/Artists?play_id=903, http://www.cartoons.ac.uk/record/lse2692, http://www.theguardian.com/commentisfree/cartoon/2013/jun/08/bilderberg, http://public.globecartoon.com/cgi-bin/WebObjects/globecartoon.woa/wo/13.0.13.5.9, https://www.politicalcartoons.com/cartoon/e396442b-7d98-4d34-b84d-59d9e4fa9bd0.html, http://edocs.lib.sfu.ca/cgi-bin/Cartoons?CartoonID=960, https://twitter.com/nytimes, https://api.twitter.com/1.1/statuses/user_timeline.json?userid=barackobama, http://thingswemake.wordpress.com/, http://babydot74.wordpress.com/, http://chocolatebottle.wordpress.com/, http://readcookdevour.wordpress.com/, http://traveleat.wordpress.com/, http://dirophil.wordpress.com/, http://poffdevblog.wordpress.com/, http://ohnaturelle.wordpress.com/, http://www.flickr.com/photos/kali-kold/8345182714/, http://www.flickr.com/photos/sobrido/8137315867/, https://twitter.com/realjohngreen/status/486534354642821122, https://twitter.com/asbruckman/status/497357723789692928, http://babydot74.wordpress.com/2012/09/17/whats-for-dinner/, http://chocolatebottle.wordpress.com/2012/09/13/disney-social-media-moms-on-the-road-charlotte/, http://ohnaturelle.wordpress.com/2012/09/11/the-waterfront-restaurant/, http://art-chi.org/daddylabyrinth, http://archive.newmuseum.org/index.php/Detail/Occurrence/Show/occurrence_id/67, http://rhizome.org/artbase/collections/6/, http://books.google.com/books?id=gFgnde_vwMACamp;printsec=frontcoveramp;dq=testamp;hl=enamp;sa=Xamp;ei=1ZjiU_q9J4ymyATTqoDwDwamp;ved=0CCgQ6AEwAQ, http://books.google.com/books?id=noEyxwGQ6SkCamp;printsec=frontcoveramp;dq=testamp;hl=enamp;sa=Xamp;ei=BZniU5arNM-jyASp2YLYBwamp;ved=0CC4Q6AEwAg, http://www.ncbi.nlm.nih.gov/pubmed?term=%22Eur+J+Immunol%22[jour], http://dl.acm.org/citation.cfm?id=2063231.2063237&preflayout=flat, http://dl.acm.org/citation.cfm?id=642611.642681&preflayout=flat, http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.167.1350&type=sc, http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.167.1350, http://www.citeulike.org/user/dwenig/article/828279, http://www.citeulike.org/user/laurapapaleo/article/2901818, http://scholar.google.com/citations?view_op=view_citation&hl=en&user=IlKLLhIAAAAJ&citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C, http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1532126, http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=1532126, http://www.tandfonline.com/doi/ref/10.1080/15332861.2012.689565, http://www.jstor.org/stable/25735112, http://www.ncbi.nlm.nih.gov/pubmed/22439083, http://www.ncbi.nlm.nih.gov/pubmed/23180662, http://www.researchgate.net/publication/228563675_A_formula_for_the_volume_of_a_hyperbolic_tetrahedon, http://nms.sagepub.com/content/13/7/1031, http://www.sciencedirect.com/science/article/pii/S1570826808000693, http://www.sciencedirect.com/science/article/pii/S1364661300015382, http://www.scopus.com/record/display.url?eid=2-s2.0-49949098043&origin=resultslist&sort=plf-f&src=s&sot=aut&sdt=a&sl=35&s=AU-ID%28%22Huynh%2c+David+F.%22+7005439892%29, http://www.scopus.com/record/display.url?eid=2-s2.0-35348863146&origin=resultslist&sort=plf-f&src=s&sot=aut&sdt=a&sl=35&s=AU-ID%28%22Huynh%2c+David+F.%22+7005439892%29, http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8659.2011.01898.x/abstract, http://www.anandtech.com/print/7603/mac-pro-review-late-2013, http://www.anandtech.com/show/6914/samsung-galaxy-s-4-review, http://reviews.cnet.com/ps4/, http://reviews.cnet.com/samsung-galaxy-s4/, http://www.gdacs.org/Earthquakes/report.aspx?eventid=123892&episodeid=123892&eventtype=EQ, http://www.disasterscharter.org/web/charter/activation_details?p_r_p_1415474252_assetId=ACT-432, http://bks8.books.google.com/patents?id=kz_NAAAAEBAJ&printsec=abstract&img=1&zoom=1&sig=ACfU3U3KH5aI9FWAEoN6HkNrmXZT4i7ejg, http://www.google.com/patents?id=dtIXAAAAEBAJ&output=text&pg=PA3&img=1&zoom=3&hl=en&q=fire+pit&cds=1&sig=ACfU3U11rwTzwz4BhgQj0ywkgkm6T6DKaQ&edge=0&edge=stretch&ci=108,127,774,1199, http://www.citeulike.org/user/dwenig, http://www.imdb.com/name/nm0000487/, http://www.imdb.com/name/nm0000199/, http://www.imdb.com/name/nm0004266/, http://www.rottentomatoes.com/celebrity/keir_dullea/, http://dl.acm.org/author_page.cfm?id=81100203284&dsp=coll, http://dl.acm.org/author_page.cfm?id=81100203284&srt=meta_published_date%20dsc&role=Author&perpage=10, http://dl.acm.org/author_page.cfm?id=81309499161, http://www.citeulike.org/author/Hearst:MA, http://www.citeulike.org/user/jsun/author/Hofmann:T, http://www.flickr.com/people/maxfined/, http://www.getty.edu/art/gettyguide/artMakerDetails?maker=1229, http://www.getty.edu/art/gettyguide/artMakerDetails?maker=3318, http://www.google.com/search?tbo=p&tbm=pts&hl=en&q=ininventor:%22Patricia+Maes%22, http://www.google.com/search?tbo=p&tbm=pts&hl=en&q=ininventor:%22Natan+Linder%22, http://scholar.google.com/citations?user=IlKLLhIAAAAJamp;hl=enamp;oi=sra, http://www.instructables.com/member/HollyMan, http://www.instructables.com/member/Thereisonlyme/, http://www.moma.org/collection/artist.php?artist_id=28723, http://archive.newmuseum.org/index.php/Detail/Entity/Show/entity_id/1848, http://www.nsf.gov/awardsearch/advancedSearchNoScript?PILastName=test, http://www.nsf.gov/awardsearch/advancedSearchResult?IncludeCoPI=true&PIFirstName=Andruid&PILastName=Kerne, http://www.ncbi.nlm.nih.gov/pubmed?term=Shameli%20A[Author]&cauthor=true&cauthor_uid=23180662, http://rhizome.org/profile/uiuuii/, http://www.scopus.com/authid/detail.url?authorId=7005439892, http://www.tate.org.uk/art/artists/cy-twombly-2079, http://www.ted.com/speakers/jamil_abu_wardeh, http://www.bing.com/search?q=howdyamp;go=Submitamp;qs=dsamp;form=QBLHamp;scope=web, http://citeseerx.ist.psu.edu/showciting?doi=10.1.1.31.1768, http://citeseerx.ist.psu.edu/search?q=pad+zooming+graphical+interface, http://www.citeulike.org/search/all?q=latent+semantic, http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&nh=10&pw=100%25&lk=1&qt=fire&Go.x=-260&Go.y=-187, http://www.getty.edu/art/collectionSearch/collectionSearch?col=museum&nh=10&pw=100%25&lk=1&qt=water&Go.x=0&Go.y=0, http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp=, http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C, https://www.google.com/search?q=exploratory+search&sourceid=chrome&ie=UTF-8, http://www.guggenheim.org/new-york/collections/collection-online/movements/195203, http://www.guggenheim.org/new-york/collections/collection-online/artwork-types/195198, http://www.guggenheim.org/new-york/collections/collection-online/artists/963/Jackson%20Pollock, http://www.guggenheim.org/new-york/collections/collection-online/artists/1529/Vito%20Acconci, http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=Search_Index_Terms:art+pop, http://www.jstor.org/action/doBasicSearch?Search=Searchamp;Query=au:%22Robert%20E.%20Wood%22, http://www.metmuseum.org/collection/the-collection-online/search?&ft=*&who=Babylonian&pg=1, http://archive.newmuseum.org/index.php/Browse/modifyCriteria/facet/type_facet/id/12/mod_id/0, http://www.nsf.gov/awardsearch/advancedSearchNoScript?Keyword=banana, http://www.reddit.com/search?q=bananaamp;restrict_sr=offamp;sort=relevanceamp;t=all, http://rhizome.org/artbase/tag/futurism/, http://rhizome.org/artbase/tag/nostalgia/, http://www.scopus.com/results/citedbyresults.url?sort=plf-f&cite=2-s2.0-56049084874&src=s&imp=t&sot=cite&sdt=a&sl=0&origin=inward, http://www.scopus.com/results/results.url?sort=plf-f&src=s&sot=aut&sdt=a&sl=17&s=AU-ID%287005439892%29&origin=AuthorProfile&reselectAuthorsLinkName=Huynh%2c+David+F., http://slashdot.org/index2.pl?fhfilter=test, http://link.springer.com/search?facet-author=%22Marco+Ceccarelli%22, http://www.tate.org.uk/art/artworks?gm=416, http://www.tate.org.uk/art/artworks?gid=999999952, http://www.tumblr.com/search/vinyl, https://twitter.com/search?q=%23socialinnovation, https://userstream.twitter.com/1.1/user.json?track=innovation, http://whitney.org/Collection?decade=194, http://whitney.org/Search?query=Georgia+O%27Keeffe, http://en.wikipedia.org/w/index.php?search=the+guildsamp;title=Special%3ASearchamp;go=Go, https://www.youtube.com/results?search_query=search, https://www.youtube.com/results?search_query=windows+phone, https://www.bing.com/images/search?q=ice+cream, https://www.bing.com/images/search?q=coffee, https://www.google.com/search?q=water&hl=en&gbv=2&source=lnms&tbm=isch&sa=X, https://www.google.com/search?q=coffee&espv=2&biw=1600&bih=1099&source=lnms&tbm=isch&sa=X, https://www.google.com/search?q=water&btnG=Search&hl=en&biw=1920&bih=1099&tbm=isch&gbv=1, https://www.google.com/search?q=coffee&sa=X&hl=en&biw=1920&bih=1099&tbm=isch&gbv=1&sei=N3_fVcnhGYm3yQSS9qKQCg, http://www.google.com/imgres?imgurl=http://www.swlcws.com/files/Files/Pictures/Glass%252520of%252520Water.jpg&imgrefurl=http://www.swlcws.com/&h=2962&w=1797&tbnid=PZSvbtGVUtkQtM:&docid=ST-hvry_JA1xMM&hl=en&ei=mX7fVfXnJ4OSyQS-5Jb4Cw&tbm=isch&ved=0CFAQMygXMBdqFQoTCLWYkIyYyscCFQNJkgodPrIFvw, http://www.google.com/imgres?imgurl=http://www.sensiblehealth.com/Blog/wp-content/uploads/2015/04/Coffee-brisbane-25.jpg&imgrefurl=http://www.sensiblehealth.com/Blog/?p%3D160&h=1265&w=1536&tbnid=I2YXADbbnCCfnM:&docid=fvWTjLOM-ZemYM&hl=en&ei=XH7fVffcEMmmyATp6qnIAg&tbm=isch&ved=0CEEQMygPMA9qFQoTCPf67e6XyscCFUkTkgodaXUKKQ, http://imgur.com/search?q=league+of+legends, http://www.pinterest.com/search/pins/?q=pencil, http://www.reddit.com/r/gifs/search?q=grootamp;sort=relevanceamp;t=all, http://www.tumblr.com/search/wow, http://www.wunderground.com/US/77840?MR=1, http://i.wund.com/US/TX/College_Station.html, http://en.m.wikipedia.org/wiki/Nuon_Chea, http://en.wikipedia.org/wiki/Category:Brand_name_materials, http://en.wikipedia.org/wiki/Category:Theoretical_physicists, http://en.wikipedia.org/wiki/Type_system, http://en.wikipedia.org/wiki/Velcro]
+			Attribute: location
+				Values it takes: [http://www.bedbathandbeyond.com/product.asp?SKU=41425404&RN=2031&, https://m.bedbathandbeyond.com/bedbathbeyond/product/detail.do?itemId=16137340, http://www.cb2.com/parlour-atomic-orange-chair/f7238, http://www.crateandbarrel.com/davis-twin-sleeper/s613452, http://www.homedepot.com/p/Home-Decorators-Collection-70-5-in-H-x-69-75-in-W-Cherry-Wood-and-Bamboo-4-Panel-Room-Divider-5852120120/202368416?N=bdtw#.UY56OVf_E4k, http://www.homedepot.com/p/Home-Legend-Hand-Scraped-Maple-Sedona-3-8-in-Thick-x-3-1-2-in-Wide-x-35-1-2-in-Length-Click-Lock-Hardwood-Flooring-20-71-sq-ft-cs-HL502/202269884, http://www.houzz.com/photos/329895/Cloud-Couch--sofas-, http://www.ikea.com/us/en/catalog/products/60204805/, http://www.ikea.com/us/en/catalog/products/S09906060/, http://www.landofnod.com/oak-park-elementary-bed/f4732, http://www.lowes.com/pd_331470-817-235159_4294703024%2B4294934373, http://www.lowes.com/pd_325832-972-E5100YP_1z0x5ra+1z11oh9+1z13zu6__?productId=50188931&Ns=p_product_price|0&pl=1&currentURL=%3FNs%3Dp_product_price%7C0%26page%3D1&facetInfo=Locking/Floating|Oak, https://www.onekingslane.com/product/21827/1385098, http://www.pier1.com/Grandiose-Wall-Clock/2495749,default,pd.html, http://www.potterybarn.com/products/pb-comfort-armchair/, http://www.restorationhardware.com/catalog/product/product.jsp?productId=prod2140452&categoryId=cat80006, http://www.roomandboard.com/rnb/product/detail.do?productGroup=3047&catalog=filter&menuCatalog=room&menuCategory=201&menuSubcategory=198, http://www.wayfair.com/Learning-Carpets-Ride-the-Train-Kids-Rug-LC142-LNC1009.html, http://www.westelm.com/products/paidge-sofa-h211]
 			Attribute: comment
 				Values it takes: [Fight club., Pulp fiction., this has two PIs, good for testing splitting and parsing PI names.]
-	Tag Name: filter_location
-		Attribute Names: 
-			Attribute: object
-				Values it takes: [staffs, program]
-			Attribute: strip_prefix
-				Values it takes: [/ref=]
-	Tag Name: set_param
-		Attribute Names: 
-			Attribute: name
-				Values it takes: [preflayout, hl, gbv, sei, org, ProgEleCode]
-			Attribute: value
-				Values it takes: [flat, en, 1]
-			Attribute: value_from
-				Values it takes: [title]
-			Attribute: collection_index
-				Values it takes: [i]
-			Attribute: value_from_collection
-				Values it takes: [program_element_codes]
-	Tag Name: strip_param
-		Attribute Names: 
-			Attribute: name
-				Values it takes: [coll, dl, CFID, CFTOKEN, trk, cfid, cftoken, navigation, reload, newSearch, x, y, ref_, printsec, zoom, v, q, f, pg, sid, src, relpos, searchTerm, eid, origin, txGid]
-	Tag Name: regex
-		Attribute Names: 
-			Attribute: match
-				Values it takes: [id=\d+\.(\d+), https://encrypted-tbn([0-9]+)\.google\.com/images, ^https://, advancedSearchResult]
-			Attribute: replace
-				Values it takes: [id=$1, http://t$1.gstatic.com/images, http://, advancedSearchNoScript]
-	Tag Name: alternative_host
-		Attribute Names: 
-	Tag Name: url_generator
-		Attribute Names: 
-			Attribute: engine
-				Values it takes: [acm_portal, citeseerx, google_scholar]
-			Attribute: type
-				Values it takes: [search]
-			Attribute: use_id
-				Values it takes: [title]
 	Tag Name: scalar
 		Attribute Names: 
-			Attribute: as_natural_id
-				Values it takes: [title]
-			Attribute: format
-				Values it takes: [text]
 			Attribute: name
-				Values it takes: [title, location, year, isbn, description, pages, publication_count, citation_count, years, author_list, source, bibliometrics, query, medium, dimensions, website, extended_abstract, bio, status, permalink, database_link, moma_id, image, temp_year, temp_medium, temp_dimensions, geography, author_info, group_id, subgroup_id, function_id, summary, excerpt, common_name, scientific_name, habitat, IUCN_red_list_status, group, name, affiliation, application_ideas, interested_indstrial_sectors, company, product_phase, explanation, challenges_solved, differences_from_existing_products, biomimicry_story, photographer_or_artist, keywords, post_date, number_of_players, number_of_ratings, overall_rating, search, subject_distance, exposure_time, aperture, shutter_speed, model, orientation, resolution, artist, published_in, publication_date, publication_format, reference_number, comic_subtext, date_published, cartoonist, text, cartoon_size, notes, sfu_reference_code, total_citation, self_citation, citation_info, titile, price, color, gender, category, detail, city, subject, volume_and_issue, date, curation_app_version, curation_app, cross_platform_version, link, pic, height, rating, designer, sizing_reccomendation, image_location, views, latitude, longitude, altitude, direction, satellites, telephone, fax_number, email, room, street_address, locality, region, postal_code, county, country, term, frequency, about_the_authors, cover_image, places_mentioned_kml, page_thumbnail, page_number, thumb_width, thumb_height, ref_location, investigation_type, grant_number, start_date, expire_date, amount, synopsis, guidelines, occupation_title, space_size, bedrooms, sleeps, check_in, check_out, id, bookurl, booktitle, languages, cover, width, publisher, awards, ieee_xplore_id, doi, mpaa_rating, storyline, tagline, runtime, theater_release, birth_date, birth_place, instructor_location, join_date, favorite_percentage, followers, best_answers, number_of_steps, favorites, tooltip, cost, range, epithet, caption, picture, might_like, time, count, role, author_name, date_and_location, museum_code, lifespan, professions, pre_description, mid_description, post_description, collection_name, article_type, object_count, first_name, last_name, amount_string, award_instrument, field_applications, initial_amendment_date, latest_amendment_date, program_reference_codes, domain, type, xmlUrl, htmlUrl, patent_class, inventor, filing_date, nationality, reviews_location, num_reviews, hours, item_number, item_condition, availability, feedback, positive_feedback, edition, price_range, author, good, bad, bottom, dc_creator, dc_subject, dc_description, dc_title, dc_date, media_url, media_description, scopus_author_id, site_link, document_link, source_info, citations, citations_link, related_articles_link, versions, versions_link, thumb_url, referer_url, modification_date, mime_type, line1, line2, state, postal, file_size, search_query, department, section, num_tweets, num_following, num_followers, username, interviewee, country_of_origin, interview_date, interviewers, part_or_timestamp, video_download_link, audio_download_link, post, premiered, episode_number, quote, quote_source, upload_date, license, number_of_comments, likes, dislikes, view_count, number_of_views, weather, temperature, humidity, wind, dew_point, chance_of_rain, rainfall, main_image_src, next_page_url, main_image_caption]
-			Attribute: navigates_to
-				Values it takes: [location, reviews_location, table_of_contents, citations_link, versions_link]
-			Attribute: is_facet
-				Values it takes: [true]
-			Attribute: label
-				Values it takes: [year published, abstract, artist bio, about, name, geography, artist info, search term, decade, browsing for, group, subgroup, function, description, content, players, number of ratings, , fax, city, zip code, size, comment, relationship_type, ability_name, champion_name, lore, genre, facet_name, amount, tags, class, rank, type, spec, detail, specification, feature, included_item, deatail, chapter title, heading, conclusion, msrp, the good, the bad, the bottom line, author, snippet, related articles, address, tweets, following, followers]
-			Attribute: field_parser_key
-				Values it takes: [$title, $0, $1, $2, booktitle|journal, year, isbn, $3, $5, $6, $8, $7]
-			Attribute: layer
-				Values it takes: [20.0, 9.2, 9.0, 9.1, 9.3, 9.05, 9.4, 7.0, 8.1, -10, 0.8, 1.6, 10.0, 3.0, -1.0, 8.5, 8.0, 6.0, 5.0, -2.0, 2.0, 5.3, 5.4]
-			Attribute: hidden
-				Values it takes: [true]
-			Attribute: scalar_type
-				Values it takes: [String, ParsedURL, Date, float, Float, int, Int, string, Double]
-			Attribute: use_value_as_label
-				Values it takes: [main_images, thumbnail]
+				Values it takes: [title, location, group_id, subgroup_id, function_id, description, photographer_or_artist, text_keywords, company, product_phase, explanation, challenges_solved, differences_from_existing_products, biomimicry_story, common_name, scientific_name, habitat, IUCN_red_list_status, group, name, affiliation, summary, excerpt, application_ideas, interested_indstrial_sectors, fee, attraction_type, open_hours, overall_rating, attraction_website, attractions_in_the_area, subject_distance, exposure_time, aperture, shutter_speed, model, orientation, resolution, titile, telephone, fax_number, email, room, street_address, dc_creator, dc_subject, dc_description, dc_title, dc_date, pic, object_count, pre_description, mid_description, post_description, latitude, longitude, altitude, direction, satellites, synopsis, guidelines, year, languages, publisher, isbn, awards, id, bookurl, booktitle, cover, width, height, ieee_xplore_id, number_of_steps, views, favorites, link, resource_identifier, occupation_title, domain, text, type, xmlUrl, htmlUrl, patent_class, locality, region, postal_code, county, country, city, website_address, institution_head, publication_count, impact_points, rg_score, member_count, avg_impact_points, role, category, interviewee, country_of_origin, interview_date, interviewers, part_or_timestamp, video_download_link, audio_download_link, department, section, rating, quote, quote_source, media_url, media_description, time, count, subject, value, price, reviews_location, num_reviews, item_condition, availability, feedback, positive_feedback, color, gender, detail, weight, designer, sizing_reccomendation, item_number, space_size, bedrooms, sleeps, check_in, check_out, price_range, hours, number_of_players, number_of_ratings, curation_app_version, curation_app, cross_platform_version, collection_name, article_type, site_name, filing_date, grant_number, start_date, expire_date, amount, mpaa_rating, storyline, tagline, runtime, theater_release, tooltip, cost, range, epithet, publication_date, first_name, last_name, investigation_type, amount_string, award_instrument, field_applications, initial_amendment_date, latest_amendment_date, program_reference_codes, inventor, post_date, upload_date, license, number_of_comments, likes, dislikes, view_count, number_of_views, premiered, status, episode_number, portrait, date_joined, following, groups, channels, albumns, video_link, medium, dimensions, author_name, date_and_location, museum_code, geography, author_info, website, extended_abstract, permalink, database_link, moma_id, image, temp_year, temp_medium, temp_dimensions, artist, published_in, publication_format, reference_number, comic_subtext, date_published, cartoonist, cartoon_size, notes, sfu_reference_code, flair, post_karma, age, karma, subscribers, username, num_tweets, num_following, num_followers, image_location, post, subtitle, cover_image, edition, volume, issue, date, pages, about_the_authors, term, frequency, copyright, DOI, print_ISBN, online_ISBN, series_volume, series_ISSN, copyright_holder, coverage, print_issn, online_issn, publisher_name, total_citation, self_citation, journal, citation_count, doi, downloads, citations, volume_and_issue, scopus_author_id, online_date, author, good, bad, bottom, magnitude, depth, start_time, end_time, event_type, event_location, date_of_charter_activation, charter_requestor, project_manager, birth_date, birth_place, nationality, years, lifespan, professions, instructor_location, join_date, favorite_percentage, followers, best_answers, given_name, family_name, bio, occupation, first_p, second_p, credentials, what_others_say, user_agent, access_time, http_response_code, http_response_message, mime_type, content, parser, xpath, caption, revision, action, new_term_vector, local_location, frame_number, html_string, creation_date, pure_nested, hash_key, provider, provider_id, meta_metadata_name, pdf_keywords_string, trapped, modified, contents, creationdate, doc_id, charset, persistence_time, mmd_hash, query, page_structure, duration, file_format, author_list, source, bibliometrics, search_query, document_link, source_info, versions, versions_link, number_of_results, site_link, thumb_width, thumb_height, file_size, thumb_url, referer_url, modification_date, line1, line2, state, postal, weather, temperature, humidity, wind, dew_point, chance_of_rain, rainfall, main_image_src, main_image_caption, next_page_url]
 			Attribute: hide
 				Values it takes: [true, false]
-			Attribute: comment
-				Values it takes: [Abstract of the work., Medium on which the work is done., Year the work was created., Website of the work or group responsible., Link the ACM Portal page., Location of the work., Bit of info about author, Name of the artist, and period he lived, Name of the publication in which the cartoon appeared, Date of the publication, Format of the publication, Explanation of the comic, Contributor of the comic, Artist, rating in some context, Publication Date, Whole address as one String, number + street + apartment, This is really the city., This is state in the U.S., province in Canada, and varies internationaaly., The internationalized version of zip code., The digital object identifier of the article, How long this comment has been there., How many votes this comment has got., The language of the library, Movie Poster or other image, MPAA rating, How long the movie runs, When the movie was released in theaters, The name of the person., Price range of the restaurant, The author of this item., category, A picture of this show., Date on which video is uploaded, video License, Total number of comments received, Total number of likes recived, Total number of dislikes received, Total number of views, The name of the city., The time of this weather, The weather condition of the city, like sunny or cloudy., The temperature., The humidity of the air., The wind speed., The dew point., chances of rain in percentage, the size of the rain, (For compatibility.), Name of the Wordpress blog]
-			Attribute: tag
-				Values it takes: [abstract, content, version, metadata_version, xmlUrl, htmlUrl, name, dc:creator, dc:subject, dc:description, dc:title, dc:date, url, media:description, guid, Url, Width, Height, Title, Summary, RefererUrl, ModificationDate, MimeType, slash:department, slash:section]
+			Attribute: scalar_type
+				Values it takes: [String, ParsedURL, float, Float, int, Date, Double, Int, string, Integer, StringBuilder]
+			Attribute: label
+				Values it takes: [function, group, description, subgroup, fax, author, comment, tags, class, city, zip code, name, rank, , price, size, players, number of ratings, abstract, patent_class, relationship_type, ability_name, champion_name, lore, amount, title, genre, facet_name, geography, artist info, subreddit, tweets, following, followers, content, about, chapter title, stat, value, heading, conclusion, spec, detail, msrp, the good, the bad, the bottom line, magnitude richter, magnitude km, artist bio, keywords, snippet, browsing for, decade, search term, address, thumbnail width, thumbnail height, source]
 			Attribute: context_node
-				Values it takes: [subgroup_node, products, content, metadata_table, publisher_year, href_node, title_node, reviews_span, rating_summary, description_node, poster_node, search, interview_table, video_credits, primary_desc, main_image]
-			Attribute: other_tags
-				Values it takes: [description, year_of_publication, abstract_field, short_description, title, pubDate, rdf:about, thumb_img_src, thumb_img_caption, name, cat_link]
-			Attribute: navigate_to
-				Values it takes: [location]
+				Values it takes: [content, products, subgroup_node, title_node, interview_table, video_credits, reviews_span, rating_summary, resto_details, address, bizBox, description_node, poster_node, primary_desc, details_ul, info_table, search, main_image]
+			Attribute: comment
+				Values it takes: [an introduction to the attraction, Price/fee of the attraction, type of the attraction, i.e. museum, the hours that the attraction is open, website to go to for more information, area of where attraction is and other attractions in the area, Whole address as one String, number + street + apartment, This is really the city., This is state in the U.S., province in Canada, and varies internationaaly., The internationalized version of zip code., category, How long this comment has been there., How many votes this comment has got., The language of the library, Price range of the restaurant, the type of business, price range, rating in some context, Movie Poster or other image, MPAA rating, How long the movie runs, When the movie was released in theaters, Date on which video is uploaded, video License, Total number of comments received, Total number of likes recived, Total number of dislikes received, Total number of views, A picture of this show., Abstract of the work., Medium on which the work is done., Year the work was created., Location of the work., Bit of info about author, Website of the work or group responsible., Link the ACM Portal page., Name of the artist, and period he lived, Name of the publication in which the cartoon appeared, Date of the publication, Format of the publication, Explanation of the comic, Contributor of the comic, Artist, Name of the Wordpress blog, Publication Date, The digital object identifier of the article, The name of the person., The user name registered with IdeaMACHE., UTF8 encoded., The document's actual location., Relative location of a local copy of the document., Location of the image., Relative location of local copy of image., Stores the name of the meta-metadata, and is used on restoring from XML., The author of the pdf document, Summary of the pdf document, Key Words of the document, Subject of the document, Contents of the document, Creation date of the document, The Title of the Document, Huamn readable name of the site., The search query, For debugging. Type of the structure recognized by information extraction., duration of media in milliseconds., Useful for smaller searches where knowing num results is helpful, The author of this item., The name of the city., The time of this weather, The weather condition of the city, like sunny or cloudy., The temperature., The humidity of the air., The wind speed., The dew point., chances of rain in percentage, the size of the rain, (For compatibility.)]
+			Attribute: layer
+				Values it takes: [2.0, 10.0, 1.6, 20.0, 3.0, -10, 0.8, 9.0, -1.0, 8.5, 8.0, 7.0, 6.0, 5.0, -2.0, 9.2, 5.2, 5.3, 9.1, 5.4]
+			Attribute: navigates_to
+				Values it takes: [reviews_location, location, table_of_contents, versions_link]
 			Attribute: schema_org_itemprop
-				Values it takes: [url, affiliation, isbn, datePublished, telephone, faxNumber, email, streetAddress, addressLocality, addressRegion, postalCode, addressCountry, numberOfPages, ratingCount, ratingValue, reviewBody, reviewRating, price, aggregateRating, reviewCount, model, openingHours, bookEdition, location, episodeNumber]
+				Values it takes: [aggregateRating, telephone, faxNumber, email, streetAddress, addressLocality, addressRegion, postalCode, addressCountry, location, ratingCount, ratingValue, reviewBody, reviewRating, price, reviewCount, model, openingHours, episodeNumber, isbn, bookEdition, datePublished, url, affiliation, name, description]
+			Attribute: style_name
+				Values it takes: [underTopRight_div, topRight_div, metadata_italic, reviewCount_div, metadata_normal, metadata_h1, description_div, google_query, google_link]
+			Attribute: xpath
+				Values it takes: []
 			Attribute: hint
 				Values it takes: [XML_LEAF, XML_LEAF_CDATA]
-			Attribute: as_composite_scalar
-				Values it takes: [true]
+			Attribute: other_tags
+				Values it takes: [description, title, pubDate, rdf:about, year_of_publication, abstract_field, short_description, _id, _rev, name, cat_link, thumb_img_src, thumb_img_caption]
 			Attribute: ignore_in_term_vector
 				Values it takes: [true]
 			Attribute: always_show
 				Values it takes: [false, true]
-			Attribute: xpath
-				Values it takes: []
-			Attribute: style_name
-				Values it takes: [metadata_h1, topRight_div, underTopRight_div, reviewCount_div, h1, google_query, google_link]
 			Attribute: value
 				Values it takes: [TEST]
 			Attribute: required
 				Values it takes: [true]
-			Attribute: type
-				Values it takes: [String, Integer]
+			Attribute: as_composite_scalar
+				Values it takes: [true]
+			Attribute: is_facet
+				Values it takes: [true]
+			Attribute: use_value_as_label
+				Values it takes: [rating, name, main_images, thumbnail]
 			Attribute: hide_label
 				Values it takes: [true]
+			Attribute: facet_type
+				Values it takes: [ordered]
+			Attribute: show_in_snippet
+				Values it takes: [true]
+			Attribute: bibtex_field
+				Values it takes: [year, edition, volume, number, month, page, URL, title]
+			Attribute: field_parser_key
+				Values it takes: [$1, $3, $7, $8, $2, $title, $0, $5, $6, booktitle|journal, year, isbn]
+			Attribute: mink_style
+				Values it takes: [main_video, show_label]
 			Attribute: concatenates_to
 				Values it takes: [title, num_tweets, post_date]
 			Attribute: label_at
 				Values it takes: [bottom]
 			Attribute: extract_as_html
 				Values it takes: [true]
+			Attribute: bibtex_type
+				Values it takes: [URL]
+			Attribute: as_natural_id
+				Values it takes: [title]
+			Attribute: format
+				Values it takes: [text]
+			Attribute: bibtext_field
+				Values it takes: [page]
+			Attribute: navigate_to
+				Values it takes: [location]
+			Attribute: hidden
+				Values it takes: [true]
+			Attribute: collapsed_style_name
+				Values it takes: [metadata_normal]
 	Tag Name: xpath
 		Attribute Names: 
 	Tag Name: composite
 		Attribute Names: 
 			Attribute: name
-				Values it takes: [rich_media, source, publication_detail, collaborators, home_page, moma_department, moma_classification, temp_field_value_holder, image, inspiring_organism, expert, biomimicry_taxonomy, group, subgroup, function, image_source, link_to_strategy, photo, channel, content, citation_info, archive, cited_articles, articles_that_cite_the_same_works, articles_cited_by_the_same_works, source_article, citeulike_user, webpage, twitter_profile, rating, publisher, designer, public_tags, place, geo_location, map, sponsor, business_address, author, illustrator, references_page, citations_page, birth_detail, comment_author, in_response_to, reply, instructor, champion_spotlight, artist_info, work_info, staffs, contact, grants_by_search, funding_history, division, head, body, spouse, pinboard, pinner, repins, likes, repinned_from_pinner, repinned_from_pinboard, original_pinner, original_pinboard, originally_from, business_website, business_gis_location, department, bestseller_list_rank, seller, media_content, articles_by_author_page, destination_page, next_page, thumbnail, search_crumb_composite, twitter_microblog, trope, weather_image, main_image, description_section]
+				Values it takes: [home_page, image_source, link_to_strategy, group, subgroup, function, inspiring_organism, expert, biomimicry_taxonomy, attraction_address, source, citeulike_user, map, public_tags, author, illustrator, comment_author, in_response_to, reply, instructor, header, search_results, staffs, contact, grants_by_search, funding_history, head, body, contact_info, website, stats, institution, channel, trope, media_content, business_website, business_address, business_gis_location, department, bestseller_list_rank, designer, seller, rating, rich_media, sponsor, photo, champion_spotlight, twitter_profile, division, pinboard, pinner, repins, likes, repinned_from_pinner, repinned_from_pinboard, original_pinner, original_pinboard, originally_from, videos, following, suggested_playlist, work_info, moma_classification, temp_field_value_holder, content, post_content, comments, commenter, webpage, twitter_microblog, place, geo_location, video, publisher, archive, journal, citation_info, cited_articles, articles_that_cite_the_same_works, articles_cited_by_the_same_works, source_article, article_link, citations_page, citation_graph, google_citations, article, citations, author_page, published_in, keyword_page, references_page, cited_by, summary_page, related_items, journal_image, author_link, publication_title, series_title, map_image, gis_location, birth_detail, spouse, publication_detail, collaborators, artist_info, homepage, insitution, articles_by_author_page, ted_talk, source_doc, value, creator, document, media, see_also, favicon, thumbnail, provider, destination_page, search_crumb_composite, related_articles_link, next_page, weather_image, description_section, main_image]
 			Attribute: type
-				Values it takes: [acm_portal_periodical, acm_portal_author_publication_detail, acm_portal_author_collaborators, document, compound_document, ask_nature_organism, ask_nature_expert, ask_nature_taxonomy, ask_nature_group, ask_nature_subgroup, ask_nature_function, ask_nature_strategy, image, citation_info, scholarly_article, citeulike_user, rating, publisher, flickr_tag, gis_location, postal_address, author, ieee_xplore_references, ieee_xplore_citations, instructable_author, instructable_comment, youtube_video, person, getty_artist_info, getty_work_info, nsf_division_staff_list, nsf_search, nsf_division, birth_detail, contact_point, amazon_list, channel, periodical, scopus_search, search, yahoo_thumbnail, search_crumb, twitter_microblog, tvtrope, section]
+				Values it takes: [rich_document, ask_nature_strategy, ask_nature_group, ask_nature_subgroup, ask_nature_function, ask_nature_organism, ask_nature_expert, ask_nature_taxonomy, postal_address, citeulike_user, gis_location, flickr_tag, author, instructable_author, instructable_comment, nsf_division_staff_list, nsf_search, research_gate_institution_contact_info, research_gate_stats, research_gate_institution, channel, tvtrope, person, amazon_list, asos_page, seller, rating, youtube_video, nsf_division, pinterest_pinboard, vimeo_list, getty_work_info, temp_field_value_holder, image, reddit_comments, twitter_microblog, social_video, publisher, citation_info, scholarly_article, google_scholar_search, google_scholar_article, ieee_author_page, ieee_journal_page, ieee_keywords, ieee_xplore_references, ieee_xplore_cited_by, search, publication, periodical, scopus_search, springer_book, springer_search, document, birth_detail, contact_point, acm_portal_author_publication_detail, acm_portal_author_collaborators, getty_artist_info, research_gate_institution_department, tedtalk_video, metadata, idea_mache_user, M, media_provider, search_crumb, jstor_article, jstor_search, yahoo_thumbnail, section]
+			Attribute: context_node
+				Values it takes: [content, title_node]
+			Attribute: extends
+				Values it takes: [metadata, rich_document]
+			Attribute: hide
+				Values it takes: [true, false]
+			Attribute: show_in_snippet
+				Values it takes: [true]
+			Attribute: label
+				Values it takes: [bestseller_list, website, address, gis_location, classification, image, full text, source, related articles]
+			Attribute: layer
+				Values it takes: [0.8, 2.5, 3.0, 2.0, 1.0, -1.0, 10.0, -10.0, 7.0, 6.0]
 			Attribute: field_parser_key
 				Values it takes: [$other]
-			Attribute: label
-				Values it takes: [department, classification, website, address, gis_location, bestseller_list, full text, image]
-			Attribute: extends
-				Values it takes: [metadata, asos_page]
-			Attribute: hide
+			Attribute: hide_label
 				Values it takes: [true]
-			Attribute: context_node
-				Values it takes: [content, publisher_year, title_node]
-			Attribute: other_tags
-				Values it takes: [citation_records, active_bibliography_records, cocitation_records]
-			Attribute: layer
-				Values it takes: [-10.0, 9.15, 0.8, 2.5, 3.0, 2.0, 1.0, 7.0, 6.0, 10.0]
-			Attribute: polymorphic_scope
-				Values it takes: [repository_documents]
-			Attribute: wrap
-				Values it takes: [true]
+			Attribute: comment
+				Values it takes: [link to work's website, exhibition video, All the issues of a periodical., For pages initally linking to pdf view, Metadata related to where this article was published., A representative photo for the person., polymorphic across documents, The URL of the picture indicating weather condition.]
+			Attribute: bibtex_field
+				Values it takes: [publisher, journal]
 			Attribute: schema_org_itemprop
 				Values it takes: [publisher]
-			Attribute: comment
-				Values it takes: [All the issues of a periodical., A representative photo for the person., Metadata related to where this article was published., The URL of the picture indicating weather condition.]
-			Attribute: tag
-				Values it takes: [media:content, Thumbnail]
-			Attribute: always_show
+			Attribute: explorable_label
+				Values it takes: [title]
+			Attribute: other_tags
+				Values it takes: [citation_records, active_bibliography_records, cocitation_records]
+			Attribute: polymorphic_scope
+				Values it takes: [repository_documents, repository_metadata, repository_media]
+			Attribute: not_expandable
+				Values it takes: [true]
+			Attribute: wrap
+				Values it takes: [true]
+			Attribute: show_expanded_initially
 				Values it takes: [true]
 			Attribute: promote_children
 				Values it takes: [true]
-			Attribute: hide_label
+			Attribute: always_show
 				Values it takes: [true]
-	Tag Name: concatenate_values
-		Attribute Names: 
-	Tag Name: value
-		Attribute Names: 
-			Attribute: from_scalar
-				Values it takes: [group_id, subgroup_id, function_id, latitude, longitude, street_address, postal_code, title, ieee_xplore_id, pre_description, mid_description, post_description, first_name, last_name, amount, scopus_author_id]
 	Tag Name: collection
 		Attribute Names: 
 			Attribute: child_type
-				Values it takes: [acm_portal_author, acm_portal_institution_profile, acm_portal, artwork, artist, rhizome_tag, rhizome_artwork, tate_filter, tate_artwork, met_artwork, met_filter, whitney_watch_and_listen, whitney_artwork, guggen_filter, guggen_artwork, newmuseum_exhibition, newmuseum_artwork, ask_nature_subgroup, ask_nature_function, ask_nature_strategy, ask_nature_product, document, post, board_game, search_result, bgg_category, bgg_game, item, hot_search, citeseerx_summary, citeulike_author, citeulike_paper, creative_work, author, rich_artifact, bookmark, asos, compound_document, modcloth, modcloth_search, thumbnail, flickr_photo, flickr_tag, page, investigator, grant_program, grant_staff, scholarly_article, grant, hotel, icdl_book, ieee_xplore_search, imdb_person, instructable, instructable_tag, instructable_comment, league_champion, league_ability, league_relationship_list, image, movie_person, movie, rotten_person, rotten_movie, getty_object, getty_artist, getty_collection, fondation_article, fondation_collection, fondation_category_collection, fondation_tag, flamenco_object, flamenco_facet, nsf_program, nsf_program_staff_list, nsf_staff, nsf_award, nsf_investigator, outline, patent_classification, patent_author, patent, google_patent_author, google_patent, person, review, product_specs, amazon_product, apple_product_accessory, walmart_product, target_product, newegg_product, bestbuy_product, subject, term_type, publication, pubmed_author, pubmed_article, restaurant_genre, restaurant, scopus_author, SR, search, image_search_result, google_search, google_scholar_search_result, yahoo_result, yahoo_geo_code_result, bing_search_xpath, social_media_search_result, slashdot_article, slashdot_item, tweeter, tweet, personnel_interview, category_interviews, video_interview, tv_show_episode, tv_show, tvtrope, tvtrope_example, tvtrope_folder, comment, youtube_video, youtube_channel, weather_report, wikipedia_page, paragraph, section, wikipedia_category_type, wikipedia_page_type]
-			Attribute: ignore_in_term_vector
-				Values it takes: [true]
+				Values it takes: [ask_nature_strategy, ask_nature_subgroup, ask_nature_product, ask_nature_function, asos, review, attraction, citeulike_paper, thumbnail, flamenco_object, flickr_photo, fondation_collection, fondation_article, fondation_category_collection, getty_object, getty_collection, grant_staff, grant, icdl_book, scholarly_article, ieee_xplore_search, instructable, instructable_tag, instructable_comment, nsdl_document, nsf_program, nsf_staff, nsf_award, nsf_program_staff_list, outline, research_gate_article, research_gate_institution_department, research_gate_institution, research_gate_author, item, video_interview, personnel_interview, category_interviews, slashdot_item, tedtalk_video, hotel, tvtrope, rich_document, tvtrope_example, tvtrope_folder, youtube_video, yt_playlist, youtube_channel, specification, commodity, labeled_specifications, amazon_product, apple_product_accessory, cb2_product, crateandbarrel_product, home_depot_product, ikea_product, ikea_department, landofnod_product, lowes_product, modcloth, modcloth_search, newegg_product, potterybarn_product, image, sixpm_product, target_product, walmart_product, westelm_product, restaurant_genre, restaurant, bgg_category, bgg_game, board_game, author, creative_work, rich_artifact, fondation_tag, google_patent_author, google_patent, investigator, grant_program, imdb_person, league_champion, league_ability, league_relationship_list, movie_person, rotten_person, nsf_investigator, patent_classification, patent_author, patent, pinterest_pin, slashdot_article, document, comment, ted_topic, tv_show_episode, tv_show, vimeo_user, yt_table, artist, flamenco_facet, getty_artist, guggen_filter, met_artwork, met_filter, newmuseum_exhibition, artwork, rhizome_tag, tate_filter, whitney_watch_and_listen, post, reddit_comment, reddit_post_data, tweeter, tweet, flickr_tag, acm_portal, publication, ieee_xplore_article, subject, term_type, pubmed_article, springer_search, springer_article, acm_author, acm_portal_institution_profile, acm_portal_author, citeseerx_summary, citeulike_author, pubmed_author, scopus_author, movie, person, rotten_movie, curation, tedauthor_quote, clipping, metadata, creative_act, video, audio, bing_search_xpath, google_search, SR, search, springer_book, yahoo_result, yahoo_geo_code_result, weather_report, paragraph, section, wikipedia_page, wikipedia_category_type, wikipedia_page_type]
 			Attribute: name
-				Values it takes: [authors, affiliations, articles, references, citations, classifications, keywords, creative_works, collaborators, search_results, contributors, main_images, related_works, tags, works_of_interest, audio_playlist, related_exhibitions, subgroups, functions, strategies, inspired_products, inspiring_strategies, posts, similar_games, categories, expansions, items, hot_searches, additional_locations, collected_papers, metadata_collection, bookmarks, available_colors, details, reviews, products, recommmended_products, avalailable_sizes, similar_products, thumbnails, photos, favorites, stream, editors, common_terms, subjects, selected_pages, programs, managers, publications, proceedings, relevant_locations, staffs, due_dates, grants, similar_hotels, books, articles_by_authors, directors, writers, cast, genres, movies_directed, movies_written, movies_acted_in, instructables, items_with_tag, others_by_author, related, comments, champions, abilites, relationships, movies, awards, works, artist, artworks, collections, related_collections, external_links, external_link, related_page, related_pages, index, footnotes, sub_facets, flamenco_objects, general_facets, specific_facets, recently_announced, upcoming_due, program_element_codes, outline, outlines, claims, drawings, parents, children, related_to, specifications, detailed_specifications, people_also_buy, list_mania, kindle_specifications, overview, highlights, tech_specs, headline_specs, people_also_viewed, features, whats_included, companion_products, comparative_products, table_of_contents, restaurants, sections, related_searches, results, anchors, related_stories, tweeters, tweets, people, categorized_interviews, speaks_on, interview_segments, episode_list, similar_shows, example_tropes, examples, ordered_examples, sub_tropes, direct_descendants, examples_by_category, all_linked_tropes, tag, top_comments, suggested_videos, creator_channel, videos, featured_channels, related_channels, featured_video, video_feed, playlist, forecasts, paragraphs, subsections, thumbinners, subcategories, supercategories]
-			Attribute: comment
-				Values it takes: [Publication general/program chairs., Set of artists., Set of contributors., Documents that are cited by this work., Creatives that cite this work., Collection of all images of a user, Image favorites, Who directed the movie., Who wrote the movie., Movie genres, Movies directed by this person., Movies written by this person., Movies this person acted in., Movies related to this person., The awards this person has won., subsequent patents that cite this, prior patents that this references, The genres of food offered., The Classifications of this paper., Key Terms of the paper., All authors, Collection of results for yahoo search, Associated tags from the search engine, if exist., personnel interview, list of tags, Top 2 comments if any, weather forecasts for the near future, Sections in the article.]
-			Attribute: label
-				Values it takes: [chairs, recent_publications, artworks, artists, related works, tags, works of interest, audio_playlist, related exhibition, exhibitions, authors, publications, grants, investigators, nsf_awards, patents, tweets, directors, categories]
-			Attribute: field_parser_key
-				Values it takes: [$author_list]
-			Attribute: other_tags
-				Values it takes: [publications, creative_works, authors, contributors, audio_playlist, referenced_bys, creative_works,publications]
-			Attribute: child_tag
-				Values it takes: [artwork, artist, audio, exhibition, subgroup, function, creative_work, reference, citation, investigator, manager, publication, proceeding, relevant_location, staff, due_date, book, director, writer, star, movie, program, program_element_code, claim, restaurant, category, image_search_result, Result, item, tweet, anchor, paragraph, section, thumbinner, subcategory, article, supercategory]
-			Attribute: tag
-				Values it takes: [artworks, artists, tag, related works, audio_playlist, related exhibition, grants, investigators, patents, directors]
-			Attribute: layer
-				Values it takes: [9.5, 8.0, 8.05, 9.2, 4.0, 3.0, 0.8, 7.0]
+				Values it takes: [strategies, subgroups, main_images, inspiring_strategies, inspired_products, functions, products, reviews, attractions, articles, authors, thumbnails, sub_facets, flamenco_objects, stream, photos, collections, related_collections, search_results, artworks, staffs, due_dates, grants, books, citations, keywords, references, others_by_author, related, tags, comments, items_with_tag, categories, results, programs, recently_announced, upcoming_due, outline, outlines, top_publications, top_departments, top_collaborators, top_members, top_articles, last_weeks_articles, items, speaks_on, interview_segments, people, categorized_interviews, talks, popular_hotels, example_tropes, examples, ordered_examples, sub_tropes, direct_descendants, examples_by_category, all_linked_tropes, featured_video, playlists, yt_videos, featured_channels, related_channels, specifications, companion_products, comparitive_products, product_details, specifications_table, list_mania, recommmended_products, features, whats_included, works_with, customer_also_viewed, available_colors, product_details2, dimensions, departments, accessories, details, avalailable_sizes, similar_products, associated_products, also_in_this_collection, similar_hotels, genres, restaurants, expansions, similar_games, metadata_collection, external_links, external_link, related_page, related_pages, index, footnotes, classifications, claims, drawings, managers, publications, proceedings, relevant_locations, directors, writers, cast, champions, abilites, relationships, program_element_codes, pins, anchors, related_stories, tag, top_comments, similar_topics, suggested_videos, episode_list, similar_shows, links, artist_and_licenses, general_facets, specific_facets, artist, works_of_interest, related_exhibitions, related_works, audio_playlist, posts, replies, post, tweeters, tweets, contributors, creative_works, editors, table_of_contents, purchase_links, subjects, common_terms, editor_names, book_chapters_incomplete, topics, ebook_packages, editor_affiliations, latest_articles, affiliations, additional_locations, articles_by_authors, sections, paragraphs, cited_in, similar_publications, featured_publications, researcher_stats, author_affiliations, industry_sectors, collected_papers, movies_directed, movies_written, movies_acted_in, movies, awards, parents, children, related_to, collaborators, favorites, works, interests, top_coauthors, papers, instructables, skills, badges, quotes, rich_artifacts, clippings_this_is_in, mixins, linked_metadata_list, creative_acts, outlinks, clippings, main_videos, main_audio, article_bodies, related_searches, google_authors, search_filters, refine_search_by_content_type, refine_search_by_discipline, refine_search_by_subdiscipline, refine_search_by_published_in, refine_search_by_language, forecasts, thumbinners, subcategories, supercategories, subsections]
 			Attribute: context_node
-				Values it takes: [subgroup_node, products, metadata_table, poster_node, description_node, interview_table]
-			Attribute: show_expanded_initially
-				Values it takes: [false, true]
-			Attribute: no_wrap
-				Values it takes: [true]
-			Attribute: child_extends
-				Values it takes: [metadata, document, compound_document, yahoo_result]
+				Values it takes: [products, subgroup_node, interview_table, resto_details, poster_node, description_node]
+			Attribute: layer
+				Values it takes: [0.8, 3.0, 8.0, 4.0, 9.5, 7.0]
+			Attribute: style_name
+				Values it takes: [reviews_div]
+			Attribute: comment
+				Values it takes: [Collection of all images of a user, personnel interview, The genres of food offered., Documents that are cited by this work., Creatives that cite this work., Who directed the movie., Who wrote the movie., Movie genres, subsequent patents that cite this, prior patents that this references, list of tags, Top 2 comments if any, Set of artists., Set of contributors., All authors, The Classifications of this paper., Key Terms of the paper., Movies directed by this person., Movies written by this person., Movies this person acted in., Movies related to this person., The awards this person has won., Image favorites, Clippings based on this., Clippings that this document contains., Associated tags from the search engine, if exist., Collection of results for yahoo search, weather forecasts for the near future, Sections in the article.]
 			Attribute: child_scalar_type
-				Values it takes: [ParsedURL, Date, String]
-			Attribute: schema_org_itemprop
-				Values it takes: [author, editor, keywords]
-			Attribute: polymorphic_scope
-				Values it takes: [repository_documents, rich_artifacts_scope]
-			Attribute: hide
-				Values it takes: [true]
-			Attribute: extract_as_html
+				Values it takes: [Date, String, string, ParsedURL]
+			Attribute: child_extends
+				Values it takes: [document, rich_document, metadata, yahoo_result]
+			Attribute: no_wrap
 				Values it takes: [true]
 			Attribute: hide_label
 				Values it takes: [true]
 			Attribute: show_expanded_always
 				Values it takes: [true]
-			Attribute: style_name
-				Values it takes: [reviews_div]
+			Attribute: label
+				Values it takes: [people_buy_with, people_buy_instead, product_details, details, related items, you_may_also_like, investigators, authors, directors, videos, following, artists, tags, related works, related exhibition, audio_playlist, replies, artworks, recent_publications, publications, grants, exhibitions, patents, specify_medium, nsf_awards, tweets, categories]
+			Attribute: facet_type
+				Values it takes: [ordinal, quant]
+			Attribute: show_in_snippet
+				Values it takes: [true]
+			Attribute: context_nod
+				Values it takes: [bizReviews]
+			Attribute: show_expanded_initially
+				Values it takes: [false, true]
+			Attribute: bibtex_field
+				Values it takes: [author, editor]
+			Attribute: mink_style
+				Values it takes: [subheader, hide]
+			Attribute: schema_org_itemprop
+				Values it takes: [author, editor, keywords]
+			Attribute: polymorphic_scope
+				Values it takes: [repository_documents, rich_artifacts_scope, repository_clippings, repository_metadata, creative_acts_scope]
+			Attribute: covariant
+				Values it takes: [true]
+			Attribute: hide
+				Values it takes: [true]
+			Attribute: extract_as_html
+				Values it takes: [true]
+			Attribute: field_parser_key
+				Values it takes: [$author_list]
+			Attribute: other_tags
+				Values it takes: [referenced_bys, creative_works, publications, clippings]
 			Attribute: child_show_expanded_always
 				Values it takes: [true]
 			Attribute: child_use_value_as_label
 				Values it takes: [twitter_microblog.photo]
 			Attribute: label_at
 				Values it takes: [top]
-	Tag Name: regex_op
+			Attribute: streaming
+				Values it takes: [true]
+			Attribute: explorable_label
+				Values it takes: [title]
+			Attribute: ignore_in_term_vector
+				Values it takes: [true]
+			Attribute: mink_height
+				Values it takes: [150]
+			Attribute: mink_width
+				Values it takes: [101]
+			Attribute: promote_children
+				Values it takes: [true]
+			Attribute: polymorphic_socpe
+				Values it takes: [repository_documents]
+			Attribute: wrap
+				Values it takes: [true]
+			Attribute: dont_show_expanded_initially
+				Values it takes: [true]
+	Tag Name: def_var
 		Attribute Names: 
-			Attribute: regex
-				Values it takes: [[\D], \d\d\d-\d-\d\d\d\d\d-\d\d\d-\d, Bibliometrics:\s+, [().]*, , \d.+, \S.+, , \((.*?)\), \d{4}, \.(.*?)(?=\,), $, ^\d+\.\s+, Caption, Artist:, (?<=Published:)([^,]+), Published:[^,]+,, Format:, Reference number:, (by )|\n, \(\d+\)$, ^by\s+, ;jsessionid=[A-Za-z0-9]*, Author ([^\[]*), ?, ([^']*)'s library, \[[^\]]*\], ^, Was:\$[0-9]*.[0-9]*Now:, \w+ [0-9]+,,  views$, Flickr: , [a-zA-Z, /-]*, , [0-9]+, [pages]*, cloud, [0-9]+, , Page , imgurl=([^&]*(&amp;[^&]*)*), imgrefurl=([^&]*(&amp;[^&]*)*), authorLink\("([^"]+)"\), arnumber=(\d+), more, Taglines:|See more, Release Date:|See more, ^.*$, \s, .*, \((\w+)\), [A-Z][a-z]+ \d+, \d+, \s*\(.*, \s+, ^Phone:\s*, ^Fax:\s*, ^Room:\s*, ^Title:\s*, (^\$)|,|(\.\d\d$), \s+|[$,]|\.\d+, <.*?>, (\d+), http://www.u(.*).htm, ^[^:]+:, Configure your, rating stars-, (\d\d\d\d) , ScopusAuthorCountsURL/(\d+), Volume \d+, Issue \d+, ([^,]+),, ;, ,\s.*, /url\?q=, &sa=.*, Cited by , All | versions,  - Bing$, on ([^,]*),, @, [^/]+$, Twitter / Search - , video_, Please help us index this , Premiered:
+			Attribute: name
+				Values it takes: [group_number, content, products, subgroup_node, title_node, interview_table, video_credits, reviews_span, rating_summary, main_block, resto_details, address, bizBox, bizReviews, metadata_content, poster_node, description_node, primary_desc, details_ul, info_table, root_location, links_row, main_image]
+			Attribute: type
+				Values it takes: [node, string]
+	Tag Name: concatenate_values
+		Attribute Names: 
+	Tag Name: value
+		Attribute Names: 
+			Attribute: from_scalar
+				Values it takes: [group_id, subgroup_id, function_id, title, street_address, postal_code, latitude, longitude, description, pre_description, mid_description, post_description, first_name, last_name, amount, location, subtitle, scopus_author_id, given_name, family_name, first_p, second_p]
+	Tag Name: replace
+		Attribute Names: 
+			Attribute: pattern
+				Values it takes: [Keywords: , Back to Galler, \[[^\]]*\], ✔,  , \s*\(.*, \s+, ^, profile/, _, Phone, Fax, Address, Website, video_, Please help us index this , .0 out of 5, ^[^:]+:, $, Configure your, Was:\$[0-9]*.[0-9]*Now:, /[a-z|A-Z|-]*, out of 5, Price: , rating stars-, ^.*$, \s, .*, Books, more, Taglines:|See more, Release Date:|See more, [\$,], \.\d+, <.*?>, Premiered:
 \s*, Status:
-\s*, ',  chance of precipitation, Category:, ShowHide,  \|.+, Permalink to ]
-			Attribute: replace
-				Values it takes: [,  out of 10,  , https://twitter.com/,  Champion Spotlight, http://www.fondation-langlois.org/html/e/research.php?Filtres=1&MotsCles=, +, &Numero=&zoom=1&Format=1,  out of 5, https://twitter.com/search?q=, http://www.tribunalvoices.org/voices/interview/, _]
-			Attribute: group
-				Values it takes: [1]
+\s*, ', [().]*, , \d.+, \S.+, , Caption, Artist:, Published:[^,]+,, Format:, Reference number:, (by )|\n, @, Permalink to , \w+ [0-9]+,,  views$, Verified Account,  \|.+, :[\s]*$, id=\d+\.(\d+), \(\d+\)$, ^by\s+, ;jsessionid=[A-Za-z0-9]*, stable/view, Stable URL: , Page Count: , .*Vol\.\s+[0-9]+,(\s+No\.\s+[0-9]+)?\s*\((\w+\.?,?\s)?, \).+\), ;, ,\s.*, https://encrypted-tbn([0-9]+)\.google\.com/images, ^Phone:\s*, ^Fax:\s*, ^Room:\s*, ^Title:\s*, (^\$)|,|(\.\d\d$), Flickr: , advancedSearchResult, Bibliometrics:\s+,  - Bing$, All | versions, //www.google.co(m|m?\.\w\w)/webhp, label:, Index Terms:, Authors:, \?.*, [Hide abstract] ABSTRACT:, Twitter / Search - ,  chance of precipitation, ShowHide, Category:]
+			Attribute: to
+				Values it takes: [, Corresponding Strateg, +, /,  , http://, http://www.tribunalvoices.org/voices/interview/,  out of 5,  out of 10, http://www.fondation-langlois.org/html/e/research.php?Filtres=1&MotsCles=, &Numero=&zoom=1&Format=1, Patents,  Champion Spotlight, https://twitter.com/, _,  (Verified Account), id=$1, stable/info, http://t$1.gstatic.com/images, http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=p_Author_Ids:, advancedSearchNoScript, Citation Page, //www.google.com/search]
 			Attribute: normalize_text
 				Values it takes: [true]
-	Tag Name: field_parser
+	Tag Name: filter
 		Attribute Names: 
-			Attribute: for_each_element
-				Values it takes: [true]
-			Attribute: name
-				Values it takes: [acm_reference, regex_split, regex_find, bibtex, regex_split_and_find, nsf_pub_list]
 			Attribute: regex
-				Values it takes: [\s,\s, .*(\d\d\d\d).*, (\S.+?)\. , \s*,\s*, (\d+) - (\d+) self, (.*)(\n.*)(\n.*)(\n.*)(\n.*), (.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*), \s*<br\s*/?>\s*, ,, ,\s]
-			Attribute: trim
-				Values it takes: [true]
-			Attribute: regex_find
-				Values it takes: [([A-Z][a-z]*)\s+([A-Z]\.?\s+)?(([A-Z][a-z]*){1,2}(-([A-Z][a-z]*){1,2})?)\s+([a-z0-9_.-]+@[a-z0-9_.-]+\s+)?(\([^)]+\)), ([\w\s.-]+?)<br>(.*)]
-	Tag Name: link_with
+				Values it takes: [Company:, Common name[s]*:, Habitat\(s\):, IUCN Red List Status:, Application Ideas[ ]*: , Industrial Sector\(s\) interested in this strategy: ]
+			Attribute: replace
+				Values it takes: []
+	Tag Name: param
 		Attribute Names: 
-			Attribute: by_id
-				Values it takes: [title]
 			Attribute: name
-				Values it takes: [citeseerx_summary]
+				Values it takes: [cid, iid, PILastName, tbm, Keyword, ProgOfficer, decade]
+			Attribute: value_is_not
+				Values it takes: [isch]
 	Tag Name: semantic_actions
+		Attribute Names: 
+	Tag Name: get_field
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [image, books, cover, bookurl, booktitle, width, height, staffs, title, outline, xmlUrl, outlines, channel, items, media_content, location, link, media_url, media_description, classifications, pic, programs, program_element_codes, description, anchors, permalink, temp_field_value_holder, temp_medium, temp_dimensions, content, image_location, citations, references, search_results, search_crumb_composite, document_link, weather_image, main_image_src, sections, paragraphs, text, thumbinners]
+			Attribute: object
+				Values it takes: [book, staffs, metadata, body, outline, channel, item, media_content, i, anch, temp_field_value_holder, cite, ref, result, res, section, para, thumbinner]
+	Tag Name: if
+		Attribute Names: 
+	Tag Name: not_null
+		Attribute Names: 
+			Attribute: value
+				Values it takes: [image, books, title, xmlUrl, outlines, channel, items, media_content, link, amazon_item, classifications, programs, program_element_codes, location, temp_field_value_holder, content, citations, cite, references, search_results, result, document_link, weather_image, main_image_src, sections, section, paragraphs, anchors, description, text, thumbinners]
+	Tag Name: create_and_visualize_img_surrogate
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [cover_page_surrogate]
+	Tag Name: arg
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [metadata, image_purl, location, caption, width, height, text, anchor_text, href, mixin, document, anchor_context, citation_sig, entity, ignore_context_for_tv, current_index, size, outer_loop_index, outer_loop_size]
+			Attribute: value
+				Values it takes: [image, cover, bookurl, booktitle, width, height, title, xmlUrl, media_url, media_description, guid, item, location, link, classification, pic, description, content, image_location, true, cite, metadata, ref, document_link, res, weather_image, main_image_src, anchor_index, anchor_count, para_index, para_count, text]
+	Tag Name: exampleURL
+		Attribute Names: 
+			Attribute: url
+				Values it takes: [http://www.fodors.com/world/europe/italy/rome/review-90077.html, http://www.fodors.com/world/australia-and-the-pacific/australia/new-south-wales/sydney/sights-nam_loc:709123.html]
+	Tag Name: for_each
+		Attribute Names: 
+			Attribute: as
+				Values it takes: [book, feed, item, i, classification, program, anch, cite, ref, result, res, section, para, thumbinner]
+			Attribute: collection
+				Values it takes: [books, outline, items, classifications, programs, anchors, citations, references, search_results, sections, paragraphs, thumbinners]
+			Attribute: name
+				Values it takes: [recursiveForLoop]
+			Attribute: current_index
+				Values it takes: [i, para_index, anchor_index]
+			Attribute: size
+				Values it takes: [para_count, anchor_count]
+	Tag Name: match
+		Attribute Names: 
+			Attribute: group
+				Values it takes: [1]
+			Attribute: pattern
+				Values it takes: [\((\w+)\), [A-Z][a-z]+ \d+, \d+, (\d+), http://www.u(.*).htm, on ([^,]*),, \d{4}, \.(.*?)(?=\,), \((.*?)\), (?<=Published:)([^,]+), [^/]+$, authorLink\("([^"]+)"\), (\d\d\d\d) , Volume \d+, Issue \d+, ([^,]+),, ([^']*)'s library, Author ([^\[]*), surl:"([^"]*)"]
+	Tag Name: filter_location
+		Attribute Names: 
+			Attribute: object
+				Values it takes: [staffs, program]
+	Tag Name: set_param
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [org, ProgEleCode, preflayout, hl, btnG, gbv]
+			Attribute: value_from
+				Values it takes: [title]
+			Attribute: collection_index
+				Values it takes: [i]
+			Attribute: value_from_collection
+				Values it takes: [program_element_codes]
+			Attribute: value
+				Values it takes: [flat, en, Search, 1]
+			Attribute: only_when_not_set
+				Values it takes: [true]
+	Tag Name: create_and_visualize_text_surrogate
+		Attribute Names: 
+	Tag Name: choose
+		Attribute Names: 
+	Tag Name: case
 		Attribute Names: 
 	Tag Name: parse_document
 		Attribute Names: 
@@ -313,102 +399,28 @@ List of Tags
 				Values it takes: [5]
 			Attribute: only_pick_top_documents
 				Values it takes: [true]
-	Tag Name: arg
+	Tag Name: suffix
 		Attribute Names: 
-			Attribute: name
-				Values it takes: [document, text, ciatation_sig, anchor_text, entity, citation_sig, location, query, metadata, image_purl, caption, width, height, href, mixin, anchor_context, ignore_context_for_tv, current_index, size, outer_loop_index, outer_loop_size]
-			Attribute: value
-				Values it takes: [rich_media, title, true, description, ref, cit, location, search, content, metadata, cite, pic, link, image_location, ref_location, cover, bookurl, booktitle, width, height, caption, picture, might_like, image, xmlUrl, classification, media_url, media_description, guid, item, document_link, res, result, summary, referer_url, thumb_url, weather_image, main_image_src, anchor_index, anchor_count, para_index, para_count, text]
-			Attribute: alt_value
-				Values it takes: [title]
-	Tag Name: get_field
+	Tag Name: mime_type
 		Attribute Names: 
-			Attribute: name
-				Values it takes: [title, references, description, citations, location, search_results, permalink, temp_field_value_holder, temp_medium, temp_dimensions, channel, items, link, hot_searches, search, content, bookmarks, pic, image_location, ref_location, books, cover, bookurl, booktitle, width, height, caption, picture, might_like, image, staffs, programs, program_element_codes, outline, xmlUrl, outlines, classifications, media_content, media_url, media_description, document_link, results, referer_url, summary, thumbnail, thumb_url, search_crumb_composite, anchors, weather_image, main_image_src, sections, paragraphs, text, thumbinners]
-			Attribute: object
-				Values it takes: [ref, cit, result, temp_field_value_holder, channel, i, res, hot_search, cite, mark, book, staffs, metadata, body, outline, item, media_content, thumbnail, anch, section, para, thumbinner]
-	Tag Name: create_and_visualize_text_surrogate
-		Attribute Names: 
-	Tag Name: if
-		Attribute Names: 
-	Tag Name: not_null
+	Tag Name: null
 		Attribute Names: 
 			Attribute: value
-				Values it takes: [references, citations, search_results, temp_field_value_holder, items, content, location, cite, books, image, title, programs, program_element_codes, xmlUrl, outlines, classifications, amazon_item, channel, media_content, document_link, thumbnail, result, link, weather_image, main_image_src, sections, section, paragraphs, anchors, description, text, thumbinners]
-	Tag Name: for_each
-		Attribute Names: 
-			Attribute: as
-				Values it takes: [ref, cit, result, i, res, hot_search, cite, mark, book, program, feed, classification, item, anch, section, para, thumbinner]
-			Attribute: collection
-				Values it takes: [references, citations, search_results, items, hot_searches, bookmarks, books, programs, outline, classifications, results, anchors, sections, paragraphs, thumbinners]
-			Attribute: current_index
-				Values it takes: [i, para_index, anchor_index]
-			Attribute: name
-				Values it takes: [recursiveForLoop]
-			Attribute: size
-				Values it takes: [para_count, anchor_count]
-	Tag Name: generic_type_var
-		Attribute Names: 
-			Attribute: arg
-				Values it takes: [acm_portal_search_result, moma_artwork, yahoo_buzz, citeseerx_summary, citeulike_paper, ieee_xplore_article, nsf_award, scopus_article, search_result, document, post, youtube_video, wikipedia_page]
-			Attribute: name
-				Values it takes: [SR, CW]
-			Attribute: extends
-				Values it takes: [grant, document]
+				Values it takes: [location, document_link]
 	Tag Name: set_field
 		Attribute Names: 
 			Attribute: name
 				Values it takes: [location, medium, dimensions]
 			Attribute: value
-				Values it takes: [permalink, temp_medium, temp_dimensions, link]
-	Tag Name: param
+				Values it takes: [link, permalink, temp_medium, temp_dimensions]
+	Tag Name: otherwise
 		Attribute Names: 
-			Attribute: name
-				Values it takes: [who, where, what, when, deptid, decade, cid, iid, tbm, PILastName, Keyword, ProgOfficer, step]
-			Attribute: value
-				Values it takes: [isch, accessories, config]
-	Tag Name: def_var
-		Attribute Names: 
-			Attribute: name
-				Values it takes: [group_number, subgroup_node, products, content, metadata_table, publisher_year, href_node, metadata_content, title_node, reviews_span, rating_summary, poster_node, description_node, interview_table, video_credits, primary_desc, main_image]
-			Attribute: type
-				Values it takes: [node]
-			Attribute: context_node
-				Values it takes: [metadata_table]
-	Tag Name: filter
-		Attribute Names: 
-			Attribute: regex
-				Values it takes: [Common name[s]*:, Habitat\(s\):, IUCN Red List Status:, Application Ideas[ ]*: , Industrial Sector\(s\) interested in this strategy: , Company:, Keywords: , Back to Galler]
-			Attribute: replace
-				Values it takes: [, Corresponding Strateg]
-	Tag Name: search
-		Attribute Names: 
-			Attribute: engine
-				Values it takes: [yahoo, google]
-	Tag Name: create_and_visualize_img_surrogate
-		Attribute Names: 
-			Attribute: name
-				Values it takes: [cover_page_surrogate]
-	Tag Name: cookie_processing
-		Attribute Names: 
-			Attribute: domain
-				Values it takes: [imdb.com]
-			Attribute: ignore_all_cookies
-				Values it takes: [true]
 	Tag Name: mixins
 		Attribute Names: 
-	Tag Name: example
+	Tag Name: substring
 		Attribute Names: 
-			Attribute: url
-				Values it takes: [http://www.nsf.gov/staff/staff_bio.jsp?lan=sspengle&org=IIS]
-	Tag Name: choose
-		Attribute Names: 
-	Tag Name: case
-		Attribute Names: 
-	Tag Name: back_off_from_site
-		Attribute Names: 
-			Attribute: domain
-				Values it takes: [google.com]
+			Attribute: before
+				Values it takes: [/ref=,  - 6pm.com]
 	Tag Name: reselect_meta_metadata_and_extract
 		Attribute Names: 
 			Attribute: name
@@ -419,33 +431,153 @@ List of Tags
 				Values it takes: [metadata, search_crumb_composite]
 			Attribute: object
 				Values it takes: [amazon_item, result]
-	Tag Name: example_rul
+	Tag Name: example
 		Attribute Names: 
+			Attribute: location
+				Values it takes: [http://www.ikea.com/us/en/catalog/categories/departments/bathroom/20720/, http://m.ikea.com/us/en/catalog/products/art/50058376/]
 			Attribute: url
-				Values it takes: [http://store.apple.com/us/product/H9345LL/A/hp-photosmart-5520-e-all-in-one-printer?fnode=000105072b]
-	Tag Name: field
+				Values it takes: [http://link.springer.com/book/10.1007/978-3-319-09858-6, http://link.springer.com/journal/11465, http://link.springer.com/bookseries/8779, http://link.springer.com/article/10.1007/s40692-014-0013-y, http://link.springer.com/chapter/10.1007/978-3-319-09858-6_1, http://link.springer.com/referenceworkentry/10.1007/978-3-642-22647-2_100365, http://www.nsf.gov/staff/staff_bio.jsp?lan=sspengle&org=IIS]
+	Tag Name: strip_param
 		Attribute Names: 
 			Attribute: name
-				Values it takes: [department]
-			Attribute: value
-				Values it takes: [Books]
-	Tag Name: suffix
+				Values it takes: [zlfid, ref, printsec, zoom, v, q, f, pg, coll, dl, CFID, CFTOKEN, navigation, reload, tag, sid, src, relpos, searchTerm, ref_, trk, cfid, cftoken, eid, newSearch, x, y, origin, txGid]
+	Tag Name: cookie_processing
 		Attribute Names: 
-	Tag Name: mime_type
+			Attribute: domain
+				Values it takes: [imdb.com, link.springer.com]
+			Attribute: ignore_all_cookies
+				Values it takes: [true]
+	Tag Name: field_parser
 		Attribute Names: 
-	Tag Name: null
+			Attribute: name
+				Values it takes: [regex_split_and_find, regex_split, nsf_pub_list, regex_find, bibtex]
+			Attribute: regex
+				Values it takes: [\s*<br\s*/?>\s*, ,, \s,\s, .*(\d\d\d\d).*, (.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*)(\n.*), (\S.+?)\. , ,\s, \s*,\s*, (\d+) - (\d+) self, \s*(,|and)\s*, (.*)(\n.*)(\n.*)(\n.*)(\n.*)]
+			Attribute: regex_find
+				Values it takes: [([A-Z][a-z]*)\s+([A-Z]\.?\s+)?(([A-Z][a-z]*){1,2}(-([A-Z][a-z]*){1,2})?)\s+([a-z0-9_.-]+@[a-z0-9_.-]+\s+)?(\([^)]+\)), ([\w\s.-]+?)<br>(.*)]
+			Attribute: trim
+				Values it takes: [true]
+	Tag Name: regex_op
 		Attribute Names: 
-			Attribute: value
-				Values it takes: [location, document_link]
-	Tag Name: otherwise
-		Attribute Names: 
-	Tag Name: url_decode_op
-		Attribute Names: 
-	Tag Name: and
-		Attribute Names: 
+			Attribute: regex
+				Values it takes: [watch\?v=, ^\[\]]
+			Attribute: replace
+				Values it takes: [embed/, ]
 	Tag Name: style
 		Attribute Names: 
 			Attribute: hide
 				Values it takes: [true]
 			Attribute: is_child_metadata
 				Values it takes: [true]
+	Tag Name: json_path
+		Attribute Names: 
+	Tag Name: field
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [department]
+			Attribute: value
+				Values it takes: [Books]
+	Tag Name: alternative_host
+		Attribute Names: 
+	Tag Name: url_generator
+		Attribute Names: 
+			Attribute: engine
+				Values it takes: [acm_portal, citeseerx, google_scholar]
+			Attribute: type
+				Values it takes: [search]
+			Attribute: use_id
+				Values it takes: [title]
+	Tag Name: link_with
+		Attribute Names: 
+			Attribute: by_id
+				Values it takes: [title]
+			Attribute: name
+				Values it takes: [citeseerx_summary]
+	Tag Name: scaler
+		Attribute Names: 
+			Attribute: hide
+				Values it takes: [false]
+			Attribute: name
+				Values it takes: [description]
+	Tag Name: user_agents
+		Attribute Names: 
+	Tag Name: user_agent
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [google_bot_2, google_bot_1, google_bot_0, chrome, chrome_2, chrome_12, chrome_32, firefox, firefox_3_5, firefox_3_6_8, firefox_2, firefox_5, firefox_10, opera_9, ie_5]
+			Attribute: string
+				Values it takes: [Googlebot/2.1 (+http://www.googlebot.com/bot.html), Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html), Googlebot/2.1 (+http://www.google.com/bot.html), Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11, Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/530.5 (KHTML, like Gecko) Chrome/2.0.172.43 Safari/530.5, Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.122 Safari/534.30, Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36, Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0, Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729), Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.8) Gecko/20100722 BTRS86393 Firefox/3.6.8 ( .NET CLR 3.5.30729; .NET4.0C), Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7, Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0, Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:10.0.2) Gecko/20100101 Firefox/10.0.2, Opera/9.25 (Windows NT 6.0; U; en), Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0]
+			Attribute: default
+				Values it takes: [true]
+	Tag Name: search_engines
+		Attribute Names: 
+			Attribute: default_engine
+				Values it takes: [bing]
+	Tag Name: search_engine
+		Attribute Names: 
+			Attribute: description
+				Values it takes: []
+			Attribute: favicon
+				Values it takes: [http://google.com/favicon.ico, http://www.flickr.com/favicon.ico, http://www.bing.com/favicon.ico, http://en.wikipedia.org/favicon.ico, http://www.yahoo.com/favicon.ico, http://citeseer.ist.psu.edu/favicon.ico, http://portal.acm.org/favicon.ico]
+			Attribute: group
+				Values it takes: [search_engines, , photos, other]
+			Attribute: name
+				Values it takes: [google, google_site_specific, google_image, google_patents, google_scholar, google_books, my_google_ecology0, my_google, flickr, flickr_tag, flickr_author, flickr_nearby, flickr_groups, bing, bing_site_specific, bing_image, bing_xpath, wikipedia, yahoo_image, yahoo_news, yahoo, yahoo_site_specific, citeseerx, acm_portal]
+			Attribute: num_result_string
+				Values it takes: [&num=, &resultsPerPage=, &Web.Count=, &count=, &limit=, &result=]
+			Attribute: show
+				Values it takes: [true, false]
+			Attribute: start_string
+				Values it takes: [&start=, &startIndex=, &Web.Offset=, &first=, &offset=]
+			Attribute: url_prefix
+				Values it takes: [http://www.google.com/search?hl=en&q=, http://www.google.com/images?sout=1&q=, http://www.google.com/patents?q=, http://scholar.google.com/scholar?q=, http://www.google.com/search?tbm=bks&q=, http://ecology0.csdl.tamu.edu/my_google/search?query=, http://staging.cs.tamu.edu:8080/my_google/search?query=, http://www.flickr.com/search/?q=, http://www.flickr.com/photos/tags/, http://www.flickr.com/photos/, http://www.flickr.com/groups/, http://api.bing.net/xml.aspx?appid=41793F369AD63C9CD9D6C27BB2E72EB5AB4C9234&sources=web&query=, http://api.bing.net/xml.aspx?appid=41793F369AD63C9CD9D6C27BB2E72EB5AB4C9234&sources=image&query=, http://www.bing.com/search?q=, http://en.wikipedia.org/w/index.php?title=Special%3ASearch&redirs=1&search=, http://api.search.yahoo.com/ImageSearchService/V1/imageSearch?appid=yahoosearchwebrss&query=, http://api.search.yahoo.com/NewsSearchService/V1/newsSearch?appid=yahoosearchwebrss&query=, http://api.search.yahoo.com/WebSearchService/V1/webSearch?appid=yahoosearchwebrss&query=, http://citeseerx.ist.psu.edu/search?q=, http://portal.acm.org/results.cfm?query=]
+			Attribute: homogeneous
+				Values it takes: [true]
+			Attribute: url_suffix
+				Values it takes: [&z=m, /interesting/, /, /nearby?show=thumb&fromfilter=1&by=everyone&taken=alltime&sort=distance&show=detail, /pool, &go=&form=QBLH&qs=n&sk=&sc=8-5, &fulltext=Search&ns0=1]
+	Tag Name: sites
+		Attribute Names: 
+	Tag Name: site
+		Attribute Names: 
+			Attribute: domain
+				Values it takes: [DEFAULT, google.com, scholar.google.com, acm.org, wikipedia.org]
+			Attribute: max_downloaders
+				Values it takes: [20, 10]
+			Attribute: min_download_interval
+				Values it takes: [7, 5, 15, 30, 10]
+			Attribute: ignore_semantic_boost
+				Values it takes: [true]
+	Tag Name: named_styles
+		Attribute Names: 
+	Tag Name: named_style
+		Attribute Names: 
+			Attribute: font_size
+				Values it takes: [10, 11]
+			Attribute: name
+				Values it takes: [default, metadata_h1]
+			Attribute: font_style
+				Values it takes: [1]
+	Tag Name: generic_type_var
+		Attribute Names: 
+			Attribute: extends
+				Values it takes: [grant, metadata, rich_document]
+			Attribute: name
+				Values it takes: [CW, M, SR]
+			Attribute: arg
+				Values it takes: [nsf_award, aggregate_media, audio, presentation_frame, image, information_composition_media, html_text, web_video, video, acm_portal_search_result, rich_document, citeseerx_summary, citeulike_paper, google_scholar_search_result, search_result, google_scholar_author_search_result, guggen_artwork, ieee_xplore_article, met_artwork, newmuseum_artwork, research_gate_result, rhizome_artwork, scopus_article, social_media_search_result, springer_book, tate_artwork, post, urban_spoon_restaurant, whitney_artwork, wikipedia_page, youtube_video, image_search_result]
+	Tag Name: strip_params_but
+		Attribute Names: 
+	Tag Name: and
+		Attribute Names: 
+	Tag Name: override_params
+		Attribute Names: 
+	Tag Name: name
+		Attribute Names: 
+	Tag Name: append
+		Attribute Names: 
+			Attribute: value
+				Values it takes: [ px]
+	Tag Name: get_param
+		Attribute Names: 
+			Attribute: name
+				Values it takes: [imgrefurl, imgurl]

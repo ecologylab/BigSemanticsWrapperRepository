@@ -30,9 +30,12 @@
 		<xpath>//div[@class='gsc_field'][text()='Publication date']/following-sibling::div</xpath>
 			</scalar>
 			
+	<scalar name="description" show_in_snippet="true"/>
     <composite name="rich_media">
      	<xpath>//div[@id='gsc_title']/a</xpath>
       <scalar name="title">
+      	
+      	
         <xpath />
         <concatenate_values>
           <value>full text</value>
@@ -43,10 +46,10 @@
       </scalar>
     </composite>
 	    
-	  <scalar name="citation_count" scalar_type="String">
+	  <scalar name="citation_count" scalar_type="String" show_in_snippet="true">
 		<xpath>substring-after(//div[@class='gsc_field'][text()='Total citations']/following-sibling::div//a, 'Cited by ')</xpath>
       </scalar>
-      <composite name="citations_page" type="google_scholar_search">
+      <composite name="citations_page" type="google_scholar_search" show_in_snippet="true">
       	<xpath>//div[@class='gsc_field'][text()='Total citations']/following-sibling::div//a</xpath>
       	<scalar name="location">
       		<xpath>./@href</xpath>

@@ -32,14 +32,14 @@
       </strip_params_but>
     </filter_location>
 	
-    <scalar name="query" style_name="google_query" layer="9.1">
+    <scalar name="query" style_name="google_query" layer="9.1" show_in_snippet="true">
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
     <scalar name="location" always_show="true"/>
     
     
     <collection name="search_results" show_expanded_initially="true">
-      <xpath>//div[@id='ires']//div[@class='g']</xpath>
+      <xpath>//div[@id='ires']//*[@class='g']</xpath>
       <scalar name="title" hide="true" />
      
       <composite name="destination_page" layer="6.0">
@@ -49,6 +49,7 @@
         </scalar>
         <scalar name="location">
           <xpath>./@href</xpath>
+          <replace pattern=".*\/url\?q\=" to="" />
         </scalar>
       </composite>
       

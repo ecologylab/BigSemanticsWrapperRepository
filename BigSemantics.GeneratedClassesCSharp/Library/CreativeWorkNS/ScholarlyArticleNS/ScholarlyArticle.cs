@@ -36,8 +36,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS.ScholarlyArti
 		/// <summary>
 		/// The Classifications of this paper.
 		/// </summary>
-		[SimplCollection]
-		[SimplScope("repository_documents")]
+		[SimplCollection("rich_document")]
 		[MmName("classifications")]
 		private List<RichDocument> classifications;
 

@@ -252,7 +252,11 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.commodity.product.Seller.class,
 
+		ecologylab.bigsemantics.generated.library.commodity.product.SixpmProduct.class,
+
 		ecologylab.bigsemantics.generated.library.commodity.product.TargetProduct.class,
+
+		ecologylab.bigsemantics.generated.library.commodity.product.TaylorswiftProduct.class,
 
 		ecologylab.bigsemantics.generated.library.commodity.product.TigerdirectProduct.class,
 
@@ -430,6 +434,16 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.publication.TermType.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.reddit.RedditComment.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.reddit.RedditComments.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.reddit.RedditPostData.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.reddit.RedditUser.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.reddit.Subreddit.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.AcmPortal.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.CitationInfo.class,
@@ -578,6 +592,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.search.AcmPortalSearchResult.class,
 
+		ecologylab.bigsemantics.generated.library.search.BingImageSearch.class,
+
 		ecologylab.bigsemantics.generated.library.search.BingSearchApi.class,
 
 		ecologylab.bigsemantics.generated.library.search.BingSearchXpath.class,
@@ -591,6 +607,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.GettySearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.GoogleImageSearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.GoogleImageSearchResult.class,
 
 		ecologylab.bigsemantics.generated.library.search.GoogleScholarAuthorSearch.class,
 
@@ -639,6 +657,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.TateFilter.class,
 
 		ecologylab.bigsemantics.generated.library.search.TumblrSearch.class,
+
+		ecologylab.bigsemantics.generated.library.search.TwitterApiSearch.class,
 
 		ecologylab.bigsemantics.generated.library.search.TwitterSearchResults.class,
 

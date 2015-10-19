@@ -10,8 +10,11 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
 
 import ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.ScholarlyArticle;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
+import ecologylab.bigsemantics.metadata.builtins.RichDocument;
+import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +22,10 @@ import java.util.Map;
 @simpl_inherit
 public class AcmPortal extends ScholarlyArticle
 {
+	@simpl_composite
+	@mm_name("journal")
+	private RichDocument journal;
+
 	public AcmPortal()
 	{ super(); }
 
@@ -26,4 +33,14 @@ public class AcmPortal extends ScholarlyArticle
 		super(mmd);
 	}
 
+
+	public RichDocument getJournal()
+	{
+		return journal;
+	}
+
+	public void setJournal(RichDocument journal)
+	{
+		this.journal = journal;
+	}
 }

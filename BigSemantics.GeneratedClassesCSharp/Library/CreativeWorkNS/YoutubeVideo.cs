@@ -33,6 +33,9 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 		private List<YtTable> artistAndLicenses;
 
 		[SimplScalar]
+		private MetadataString videoLink;
+
+		[SimplScalar]
 		private MetadataString numberOfViews;
 
 		[SimplCollection("youtube_video")]
@@ -57,6 +60,19 @@ namespace Ecologylab.BigSemantics.Generated.Library.CreativeWorkNS
 				if (this.artistAndLicenses != value)
 				{
 					this.artistAndLicenses = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataString VideoLink
+		{
+			get{return videoLink;}
+			set
+			{
+				if (this.videoLink != value)
+				{
+					this.videoLink = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
