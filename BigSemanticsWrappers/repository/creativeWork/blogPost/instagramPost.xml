@@ -24,7 +24,8 @@
   		</composite>
   	</composite>
   	
-  	<collection name="photos" hide_label="true" layer="9.5">
+  	<collection name="photos" hide_label="true" layer="9.5"
+  										child_style_name="ecologylab-fieldValueContainerInstagramPostImage">
   		<xpath>//div[@class='-cx-PRIVATE-Photo__root -cx-PRIVATE-Post__media']//img</xpath>
   		<scalar name="location">
 			<xpath>./@src</xpath>
