@@ -3,6 +3,7 @@
 
   <meta_metadata name="instagram_profile" extends="social_media_profile" parser="xpath" no_cache="true">
     <selector url_regex="https://instagram.com/[^/?]*/" domain="instagram.com" />
+    <selector url_regex="https://instagram.com/explore/tags/[^/?]*/" domain="instagram.com" />
     <example_url url="https://instagram.com/instagram/" />
     <example_url url="https://instagram.com/natgeo/" />
         
@@ -10,10 +11,10 @@
   	<scalar name="description" hide="true"/>
   	<collection name="main_images" hide="true" />
   	
-  	<composite name="user" type="social_media_user">
+  	<composite name="user">
   		<scalar name="title" hide="true"/>
   		<xpath>//div[contains(@class,'authorInfo')]</xpath>
-  		<scalar name="user_name" layer="10.0">
+  		<scalar name="user_name" layer="10.0" use_value_as_label="photo">
   			<xpath>./div/h1[contains(@class,'username')]</xpath>
   		</scalar>
   		<scalar name="posts">
