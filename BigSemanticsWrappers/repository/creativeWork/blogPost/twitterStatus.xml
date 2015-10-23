@@ -34,7 +34,7 @@
     </composite>
     
     <scalar name="description" hide_label="true" extract_as_html="true">
-      <xpath>//div[@class='permalink-inner permalink-tweet-container']//p[@class='js-tweet-text tweet-text']</xpath>
+      <xpath>//div[@class='permalink-inner permalink-tweet-container']//p</xpath>
     </scalar>
     
     <scalar name="post_date" navigates_to="location" hide_label="true">
