@@ -9,6 +9,7 @@
     <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
     
 	<scalar name="title" hide="true" />
+	<collection name="main_images" hide="true" />
     
     <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
         <xpath>//div[@class='content clearfix']</xpath>

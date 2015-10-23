@@ -10,15 +10,15 @@
   	<scalar name="title" hide="true"/>
   	<collection name="main_images" hide="true" />
   	
-  	<composite name="shared" label="user" layer="10.0">
+  	<composite name="shared" use_value_as_label="shared.photo" layer="10.0">
   		<xpath>//div[@class='-cx-PRIVATE-Post__ownerAndLocation']</xpath>
-  		<scalar name="title" use_value_as_label="photo" navigates_to="location">
+  		<scalar name="title" hide_label="true" navigates_to="location">
   			<xpath>.</xpath>
   		</scalar>
   		<scalar name="location">
   			<xpath>./@href</xpath>
   		</scalar>
-  		<composite name="photo" hide="true">
+  		<composite name="photo" hide_label="true">
   			<scalar name="location">
   				<xpath>//img[@class='-cx-PRIVATE-Post__ownerAvatar']/@src</xpath>
   			</scalar>
