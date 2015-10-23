@@ -1,21 +1,22 @@
 <meta_metadata_repository name="facebookProfile"
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
-  <meta_metadata name="facebook_profile" extends="blog" parser="xpath" no_cache="true">
+  <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true">
 	    <selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/[^/?]*[?fref=tl_fr_box]*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/search/.*" domain="facebook.com" />
 	     
-	    <scalar name="title" label="title">
+	    <scalar name="title" use_value_as_label="facebook.photo">
 	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
+	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
 	    </scalar>
 	    
 	    <scalar name="description"/>
 		
-		<scalar name="username" scalar_type="String">
+		<!-- <scalar name="username" scalar_type="String">
 	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
 	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
-    	</scalar>
+    	</scalar> -->
     	
     	<composite name="coverPhoto" type="image">
     		<xpath>//img[@class='coverPhotoImg photo img']</xpath>
@@ -24,7 +25,7 @@
          	</scalar>
     	</composite>
     	
-		<collection label="user" name="facebook" child_type="facebook_user">
+		<collection name="facebook" child_type="facebook_user" label="info" >
 		  <xpath>.</xpath>
 			<composite name="photo">
 		        <xpath>//a[@class='profilePicThumb']/img</xpath>
@@ -60,6 +61,7 @@
 			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 			<scalar name="title" scalar_type="String"/>
 			<collection name="authors" child_type="author" label="user">
+				<style is_child_metadata="true" hide="true" />
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
     			<scalar name="title" >
     				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
@@ -84,7 +86,7 @@
 			</scalar>			
 			
 			<collection name="description_content" label="post" child_scalar_type="String" layer="6.0">
-				<xpath>.//div[@class='_5pbx userContent']//p</xpath>
+				<xpath>.//div[@class='_5pbx userContent']</xpath>
 			</collection>
 			<!-- feeling TODO -->
 			<collection name="photos" layer="5.0">

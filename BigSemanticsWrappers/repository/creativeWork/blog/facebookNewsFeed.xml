@@ -8,7 +8,7 @@
 		    	<collection name="feed" child_type="social_media_post"  comment="mainFeed">
 				<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 				<scalar name="title" scalar_type="String"/>
-				<collection name="authors" child_type="author" label="user">
+				<collection name="authors" child_type="author" hide_label="true" child_use_value_as_label="photo">
 					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
 	    			<scalar name="title" >
 	    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
