@@ -2,10 +2,12 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blogPost">
 
   <meta_metadata name="flickr_photo" extends="post" parser="xpath" comment="A Flickr image post page">
-    <selector url_regex_fragment="http://www.flickr.com/photos/[^/]*/[0-9]" domain="flickr.com" />
-		<!--  <example_url url="http://www.flickr.com/photos/kali-kold/map/?photo=5756890544" /> -->
+    
+    <selector url_regex_fragment="https://www.flickr.com/photos/[^/]*/[0-9]" domain="flickr.com" />
+    
     <example_url url="http://www.flickr.com/photos/kali-kold/8345182714/" />
     <example_url url="http://www.flickr.com/photos/sobrido/8137315867/" />
+    
     <scalar name="title" scalar_type="String" navigates_to="location">
       <xpath>//meta[@property='og:title']/@content</xpath>
     </scalar>
@@ -16,31 +18,40 @@
       <xpath>//meta[@property='og:image']/@content</xpath>
     </scalar>
     <scalar name="year">
-      <xpath>//div[@id='photo-story']/p[@id='photo-story-story']/a[1]/text()</xpath>
-      <replace pattern="\w+ [0-9]+," to="" />
+      <xpath>(//span[@class='date-taken-label'])[1]/text()</xpath>
+      <replace pattern=".*," to="" />
     </scalar>
     <scalar name="views" scalar_type="String">
-      <xpath>//span[@id='view-count']</xpath>
-      <replace pattern=" views$" to="" />
+      <xpath>(//span[@class='view-count-label'])[1]/text()</xpath>
     </scalar>
 
     <composite name="place" type="rich_document">
+      <xpath>(//a[@class='location-name-link'])[1]</xpath>
       <scalar name="title">
-        <xpath>.//a[@id='photoGeolocation-storylink']</xpath>
+        <xpath>./text()</xpath>
       </scalar>
       <scalar name="location" hide="true">
-        <xpath>.//a[@id='photoGeolocation-storylink']/@href</xpath>
+        <xpath>./@href</xpath>
       </scalar>
     </composite>
 
+	<!-- This doesn't display right in MICE -->
     <composite name="geo_location" type="gis_location">
       <scalar name="latitude">
-        <xpath>//meta[@property='flickr_photos:location:latitude']/@content</xpath>
+        <xpath>(//a[@class='static-maps'])[1]/@href</xpath>
+        <replace pattern=".*fLat=" to="" />
+        <replace pattern="&amp;.*" to="" />
       </scalar>
       <scalar name="longitude">
-        <xpath>//meta[@property='flickr_photos:location:longitude']/@content</xpath>
+        <xpath>(//a[@class='static-maps'])[1]/@href</xpath>
+        <replace pattern=".*fLon=" to="" />
+        <replace pattern="&amp;.*" to="" />        
       </scalar>
     </composite>
+
+
+	<!-- TODO below here -->
+
 
     <collection name="tags" child_type="flickr_tag">
       <xpath>//div[@class='tag-list']//ul[@class='sidecar-list']/li</xpath>
