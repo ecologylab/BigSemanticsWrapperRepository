@@ -9,6 +9,7 @@
     <example_url url="https://twitter.com/asbruckman/status/497357723789692928" />
     
 	<scalar name="title" hide="true" />
+	<collection name="main_images" hide="true" />
     
     <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
         <xpath>//div[@class='content clearfix']</xpath>
@@ -33,7 +34,7 @@
     </composite>
     
     <scalar name="description" hide_label="true" extract_as_html="true">
-      <xpath>//div[@class='permalink-inner permalink-tweet-container']//p[@class='js-tweet-text tweet-text']</xpath>
+      <xpath>//div[@class='permalink-inner permalink-tweet-container']//p</xpath>
     </scalar>
     
     <scalar name="post_date" navigates_to="location" hide_label="true">

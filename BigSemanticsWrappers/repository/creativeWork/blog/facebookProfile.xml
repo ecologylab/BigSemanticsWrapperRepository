@@ -1,0 +1,444 @@
+<meta_metadata_repository name="facebookProfile"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
+
+  <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true">
+	    <selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/[^/?]*(?fref=)?.*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/search/.*" domain="facebook.com" />
+	     
+	    <scalar name="title" use_value_as_label="facebook.photo">
+	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
+	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
+	    </scalar>
+	    
+	    <scalar name="description"/>
+		
+		<!-- <scalar name="username" scalar_type="String">
+	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
+	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
+    	</scalar> -->
+    	
+    	<composite name="coverPhoto" type="image">
+    		<xpath>//img[@class='coverPhotoImg photo img']</xpath>
+    		<scalar name="location">
+            	<xpath>./@src</xpath>
+         	</scalar>
+    	</composite>
+    	
+		<collection name="facebook" child_type="facebook_user" label="info" >
+		  <xpath>.</xpath>
+			<composite name="photo">
+		        <xpath>//a[@class='profilePicThumb']/img</xpath>
+		        <xpath>//img[@class='profilePic img']</xpath>
+		        <scalar name="location" >
+		          <xpath>./@src</xpath>
+		        </scalar>
+	        </composite>
+	        <scalar name="description"/>
+	  	 	<scalar name="city">
+	        	<xpath>//div[@class='_50f3']//text()[contains(.,'Lives in') or contains(.,'lives in')]/../a</xpath>
+	      	</scalar>
+     	   <scalar name="worked" >
+     	   		<xpath>//div[@class='_50f3']//text()[contains(.,'Worked at')]/../a</xpath>
+     	   </scalar>
+	       <scalar name="studied" >
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'Studie')]/../a</xpath>
+	       </scalar>
+	       <collection name="friend_stats" child_scalar_type="String">
+	       		<xpath>//div[@class='_70l _2i-0']//text()[contains(.,'Friends')]/../../../span[@class='_71u']/a</xpath>
+	       		<xpath>//div[@class='_70l _2i-0']//text()[contains(.,'Friends')]/../../../span[@class='_71u']/span/a</xpath>
+	       </collection>
+	       <scalar name="birth_date">
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'Born on')]/..</xpath>
+	       </scalar>
+	       <scalar name="birth_place">
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'From')]/../a</xpath>
+	       		<xpath>//div[@class='_50f3']//text()[contains(.,'from')]/..</xpath>
+	       </scalar>
+		</collection>
+		
+		<collection name="feed" child_type="social_media_post" label="posts" comment="mainFeed">
+			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
+			<scalar name="title" scalar_type="String"/>
+			<collection name="authors" child_type="author" label="user">
+				<style is_child_metadata="true" hide="true" />
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
+    			<scalar name="title" >
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
+    			</scalar>
+    			<scalar name="location" >
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a/@href</xpath>
+    			</scalar>
+    			<composite name="photo">
+    				<xpath>.//img</xpath>
+    				<scalar name="location">
+		            <xpath>./@src</xpath>
+		          </scalar>
+    			</composite>
+			</collection>
+			<scalar name="date" layer="7.0">
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
+				<replace pattern=" at.*" to=""/>
+			</scalar>
+			<scalar name="time" concatenates_to="date" hide_label="true">
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
+				<replace pattern=".*at " to=""/>
+			</scalar>			
+			
+			<collection name="description_content" label="post" child_scalar_type="String" layer="6.0">
+				<xpath>.//div[@class='_5pbx userContent']</xpath>
+			</collection>
+			<!-- feeling TODO -->
+			<collection name="photos" layer="5.0">
+			<xpath>.//div[@class='_3x-2']//img</xpath>
+    			   <scalar name="location">
+		            <xpath>./@src</xpath>
+		          </scalar>
+			</collection>
+			
+			<composite name="shared">
+				<xpath>.//span[@class='fcg' and contains(text(),'shared')]</xpath>
+				<scalar name="title" >
+    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]</xpath>
+    			</scalar>
+    			<scalar name="location" >
+    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]/@href</xpath>
+    			</scalar>
+			</composite>
+			<collection name="urls"> <!--  ASK for help-->
+				<xpath>.//a[@class='_52c6']</xpath>
+			</collection>
+			<composite name="video" type="facebook_video" >
+				<xpath>.</xpath>
+				<scalar name="video_link">
+					<xpath>.//span[@class='fcg']/a[@class='profileLink' and contains(text(),'video')]/@href</xpath>
+				</scalar>
+			</composite>
+			
+			<collection name="up_votes" label="likes" child_scalar_type="String">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Likes')]</xpath>
+				<xpath>.//div[@class='UFILikeSentenceText']/span</xpath>
+			</collection>
+			<scalar name="shares">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Shares')]</xpath>
+			</scalar>
+			<scalar name="num_comments">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Comments')]</xpath>
+			</scalar>
+			
+			<collection name="comments">
+				<xpath>.//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//div[contains(@class,'UFIComment') and @aria-label='Comment']</xpath>
+					<collection name="authors" child_type="author" label="user">
+						<xpath>.//div[@class='clearfix']</xpath>
+		    			<scalar name="title" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
+		    			</scalar>
+		    			<scalar name="location" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
+		    			</scalar>
+		    			<composite name="photo">
+		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
+		    				<scalar name="location">
+				            	<xpath>./@src</xpath>
+				          </scalar>
+		    			</composite>
+					</collection>
+				<collection name="description_content" label="post" child_scalar_type="String">
+					<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
+				</collection>
+		    	<composite name="sticker" type="image">
+		    		<scalar name="location">
+		    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
+		     			<replace pattern="^[^\(]*\(" to=""/>
+		    			<replace pattern="\);.*" to=""/>
+		    		</scalar>
+		    	</composite>
+				<!-- path for stickers but need to figure out how to extract pic url
+				/div[@class='UFICommentContent']//div[@data-testid='ufi_comment_sticker']/@style
+				  -->
+				<collection name="up_votes" label="likes" child_scalar_type="String">
+					<xpath>.//div[contains(@class,'UFICommentActions')]//a[@class='UFICommentLikeButton']/span</xpath>
+				</collection>
+				<scalar name="date">
+					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
+					<replace pattern=" at.*" to=""/>
+				</scalar>
+				<scalar name="time" concatenates_to="date" hide_label="true">
+					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
+					<replace pattern=".*at " to=""/>
+				</scalar>	
+				<collection label="replies" name="comments" >
+					<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath>
+					<collection name="authors" child_type="author" label="user">
+						<xpath>.//div[@class='clearfix']</xpath>
+		    			<scalar name="title" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
+		    			</scalar>
+		    			<scalar name="location" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
+		    			</scalar>
+		    			<composite name="photo">
+		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
+		    				<scalar name="location">
+				            	<xpath>./@src</xpath>
+				          </scalar>
+		    			</composite>
+					</collection>
+					<collection name="description_content" label="post" child_scalar_type="String">
+						<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
+					</collection>
+			    	<composite name="sticker" type="image">
+			    		<scalar name="location">
+			    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
+			     			<replace pattern="^[^\(]*\(" to=""/>
+			    			<replace pattern="\);.*" to=""/>
+			    		</scalar>
+			    	</composite>
+					<collection name="up_votes" label="likes" child_scalar_type="String">
+						<xpath>.//div[contains(@class,'UFICommentActions')]//a[@class='UFICommentLikeButton']/span</xpath>
+					</collection>
+					<scalar name="date">
+						<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
+						<replace pattern=" at.*" to=""/>
+					</scalar>
+					<scalar name="time" concatenates_to="date" hide_label="true">
+						<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
+						<replace pattern=".*at " to=""/>
+					</scalar>
+				</collection>
+			</collection>
+		</collection>
+		
+	<collection name="Friends" child_type="social_media_feed" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
+		<scalar name="feed_name" label="feed">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed" hide_label="true">
+   		 <xpath>.//ul/li[contains(@class,'friendListing')]</xpath>
+		    <collection name="authors" label="friend">
+		    	<xpath>.</xpath>
+		        <scalar name="title" >
+		            <xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
+		        </scalar>
+		        <scalar name="location">
+					<xpath>./a/@href</xpath>
+				</scalar>
+		        <composite name="photo">
+		            <xpath>./a/img</xpath>
+		            <scalar name="location">
+		                <xpath>./@src</xpath>
+		          </scalar>
+		        </composite>
+		    </collection>
+
+		</collection> 
+			
+	</collection>
+	
+	<collection name="Photos" child_type="social_media_feed" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[4]</xpath>
+		<scalar name="feed_name" label="feed">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed" label="Photos" hide_label="true">
+ 		 <xpath>.//table[@class='uiGrid _51mz _122 _4b25']//tr[@class='_51mx']</xpath>	 
+			<collection name="photos" hide_label="true">
+				<xpath>.//img</xpath>
+	    			   <scalar name="location">
+			            	<xpath>./@src</xpath>
+			          </scalar>
+			</collection>
+			<scalar name="location">
+				<xpath>.//td[@class='_51m-']/a/@href</xpath>
+			</scalar>
+		</collection> 
+			
+	</collection>
+	<collection name="Videos" child_type="social_media_feed" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[5]</xpath>
+		<scalar name="feed_name" label="feed">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed" label="Videos" hide_label="true">
+ 		 <xpath>.//table[@class='uiGrid _51mz _2ze_ _4b25']//td</xpath>	 
+			<collection name="photos" hide_label="true">
+				<xpath>.//img</xpath>
+	    			   <scalar name="location">
+			            	<xpath>./@src</xpath>
+			          </scalar>
+			</collection>
+			<scalar name="location">
+				<xpath>.//td[@class='_51m-']/a/@ajaxify</xpath>
+				<replace pattern="^\/" to="https://www.facebook.com/"/>
+			</scalar>
+		</collection> 
+			
+	</collection>
+	
+	<collection name="Sports" child_type="interest_group" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[7]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+			<collection name="interests">
+ 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 		<scalar name="title">
+ 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+ 		 		</scalar>	
+		        <scalar name="location">
+					<xpath>./a/@href</xpath>
+<!-- 					<xpath>./@href</xpath>
+ -->				</scalar>
+ 		 		<collection name="main_images" hide="false">
+					<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+ 		 			<scalar name="location">
+	    			   	    <xpath>./@src</xpath>
+	    			</scalar>
+ 		 		</collection>
+			</collection>			
+	</collection>
+	<collection name="Music" child_type="interest_group" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[8]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+			<collection name="interests">
+ 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 		<scalar name="title">
+ 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+ 		 		</scalar>	
+ 		 		<collection name="main_images" hide="false">
+				<xpath>.//div[@class='art_border music_artwork_grid']</xpath> <!-- MUSIC -->
+ 		 			<scalar name="location">
+	    			   	    <xpath>.//img[@class='music_artwork img']/@style</xpath>
+        	    			<replace pattern="background-image: url\(" to=""/>
+	    			   		<replace pattern="\);" to=""/>
+	    			</scalar>
+ 		 		</collection>
+ 		 		<!-- video link can be found  -->
+ 		 		 <composite name="video">
+ 		 		 	<xpath>./div[contains(@class,'_4--s music_button')]//a/@href</xpath>
+ 		 		 	<replace pattern="^\/" to="https://www.facebook.com/"/>
+ 		 		 </composite>
+ 		 		 <scalar name="location">
+ 		 		 	<xpath>./div[@class='_ph4 _ph5']//a/@href</xpath>
+ 		 		 </scalar>
+			</collection>			
+	</collection>
+	<collection name="Movies" child_type="interest_group" hide_label="true">
+	<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[9]</xpath>
+	<scalar name="title">
+		<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+	</scalar>
+		<collection name="interests">
+		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+		 		<scalar name="title">
+		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+		 		</scalar>	
+		 		<scalar name="location">
+				<xpath>./a/@href</xpath>
+			</scalar>
+		 		<collection name="main_images" hide="false">
+			<xpath>./a/div[@class='_6l-']/img</xpath> <!-- movies -->
+			<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath> <!-- sports & movies-->
+		 			<scalar name="location">
+    			   	    <xpath>./@src</xpath>
+    			</scalar>
+		 		</collection>
+		</collection>			
+</collection>	
+	<collection name="appsAndGames" child_type="interest_group" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[10]</xpath>
+		<scalar name="title">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+			<collection name="interests">
+ 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+ 		 		<scalar name="title">
+ 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+ 		 		</scalar>
+		        <scalar name="location">
+					<xpath>./a/@href</xpath>
+				</scalar>	
+ 		 		<collection name="main_images" hide="false">
+				<xpath>./a/div[@class='_6l-']/img</xpath> <!-- movies -->
+				<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath> <!-- sports & movies-->
+ 		 			<scalar name="location">
+	    			   	    <xpath>./@src</xpath>
+	    			</scalar>
+			</collection>			
+			</collection>
+	</collection>
+	<collection name="Likes" child_type="interest_group" hide_label="true">
+			<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[11]</xpath>
+			<scalar name="title">
+				<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+			</scalar>
+				<collection name="interests">
+	 		 		<xpath>.//div[contains(@class,'_5-r clearfix _4jul')]/div[@class='_93k']</xpath>
+	 		 		<scalar name="title">
+	 		 			<xpath>./div[@class='_ph4 _ph5']/div/a</xpath>
+	 		 		</scalar>	
+			        <scalar name="location">
+						<xpath>./a/@href</xpath>
+					</scalar>
+	 		 		<collection name="main_images" hide="false">
+						<xpath>./a/span[@class='_4q4 photoWrap']//img</xpath>
+	 		 			<scalar name="location">
+		    			   	    <xpath>./@src</xpath>
+		    			</scalar>
+				   </collection>			
+				</collection>
+		</collection>
+	
+	<collection name="check_ins" child_type="social_media_feed" hide_label="true">
+		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[6]</xpath>
+		<scalar name="feed_name" label="feed">
+			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
+		</scalar>
+		<collection name="feed" hide_label="true">
+	   		 <xpath>.//ul/li/div</xpath>
+	   		 <collection name="photos">
+	   		 	<xpath>.//img[@class='scaledImageFitWidth img']/@src</xpath>
+	   		 </collection>
+	   		 <scalar name="location">
+	   		 	<xpath>./a/@href</xpath>
+	   		 </scalar>
+	   		 <collection name="description_content">
+	   		 	<xpath>.//span[@class='fcg']/../a</xpath>
+	   		 </collection>
+	   		 <collection name="authors">
+	   		 	<xpath>(.//span[@class='fcg']/a)[1]</xpath>
+	   		 	<scalar name="title">
+	   		 		<xpath>.</xpath>
+	   		 	</scalar>
+	   		 	<scalar name="location">
+	   		 		<xpath>./@href</xpath>
+	   		 	</scalar>
+	   		 </collection>
+	   		 <collection name="with_users">
+	   		 	<xpath>.//span[@class='fcg']/a[position()>1]</xpath>
+	   		 	<scalar name="title">
+	   		 		<xpath>.</xpath>
+	   		 	</scalar>
+	 		 	<scalar name="location">
+	   		 		<xpath>./@href</xpath>
+	   		 	</scalar>
+	   		 </collection>
+	   		 <scalar name="date">
+				<xpath>./div//abbr[@class='timestamp']/@title</xpath>
+				<replace pattern=" at.*" to=""/>
+			</scalar>
+			<scalar name="time">
+				<xpath>./div//abbr[@class='timestamp']/@title</xpath>
+				<replace pattern=".*at " to=""/>
+			</scalar>
+			<scalar name="feeling">
+				<xpath>.//span[@class='fcg']/span</xpath>
+			</scalar>
+		</collection>
+	</collection>
+		
+  </meta_metadata> 
+</meta_metadata_repository>
