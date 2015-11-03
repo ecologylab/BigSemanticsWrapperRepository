@@ -49,17 +49,13 @@
       </scalar>
     </composite>
 
-
-	<!-- TODO below here -->
-
-
     <collection name="tags" child_type="flickr_tag">
-      <xpath>//div[@class='tag-list']//ul[@class='sidecar-list']/li</xpath>
+      <xpath>//ul[@class='tags-list']/li/a[2]</xpath>
       <scalar name="title">
-        <xpath>./span/a</xpath>
+        <xpath>./text()</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./span/a/@href</xpath>
+        <xpath>./@href</xpath>
       </scalar>
     </collection>
 
@@ -70,7 +66,7 @@
       </scalar><!--TBD 
 				ad author page... -->
       <scalar name="title">
-        <xpath>//span[@class='photo-name-line-1']/a</xpath>
+        <xpath>(//a[@class='owner-name truncate'])[1]/text()</xpath>
       </scalar>
     </collection>
 

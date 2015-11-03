@@ -10,15 +10,18 @@
     <scalar name="title">
       <xpath>//meta[@name='application-name']/@content</xpath>
     </scalar>
+    
     <collection name="photos" comment="Collection of all images of a user" child_type="flickr_photo">
-      <xpath>//span[@class='photo_container pc_t']</xpath>
+      <xpath>//div[@class='view photo-list-view']/div/div/div/div/div[@class='text']/a[@class='title']</xpath>
       <scalar name="title">
-        <xpath>./a/@title</xpath>
+        <xpath>./text()</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./a/@href</xpath>
+        <xpath>./@href</xpath>
       </scalar>
     </collection>
+
+	<!-- TODO below here -->
 
     <composite name="public_tags" type="flickr_tag">
       <xpath>//a[starts-with(@href, '/photos/tags')]/b/..</xpath>
@@ -29,5 +32,6 @@
         <xpath>./@href</xpath>
       </scalar>
     </composite>
+    
   </meta_metadata>
 </meta_metadata_repository>
