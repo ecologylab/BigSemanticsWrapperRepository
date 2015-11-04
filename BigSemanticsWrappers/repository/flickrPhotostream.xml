@@ -10,13 +10,12 @@
     <example_url url="https://www.flickr.com/photos/kali-kold/" />
     
     <collection name="stream" comment="Collection of all images of a user" child_type="flickr_photo">
-      <xpath>//img[contains(@class,'pc_img')]</xpath>
+      <xpath>//div[@class='interaction-bar']/div[@class='text']/a[@class='title']</xpath>
       <scalar name="title">
-        <xpath>./@alt</xpath>
+        <xpath>./text()</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./../@href</xpath>
-			<!--  	<replace pattern="in/photostream" to="" /> -->
+        <xpath>./@href</xpath>
       </scalar>
     </collection>
   </meta_metadata>

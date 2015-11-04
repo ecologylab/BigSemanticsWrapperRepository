@@ -78,5 +78,6 @@
         <arg value="title" name="caption" />
       </create_and_visualize_img_surrogate>
     </semantic_actions>
+    
   </meta_metadata>
 </meta_metadata_repository>

@@ -12,7 +12,7 @@
     </scalar>
     
     <collection name="photos" comment="Collection of all images of a user" child_type="flickr_photo">
-      <xpath>//div[@class='view photo-list-view']/div/div/div/div/div[@class='text']/a[@class='title']</xpath>
+      <xpath>//div[@class='interaction-bar']/div[@class='text']/a[@class='title']</xpath>
       <scalar name="title">
         <xpath>./text()</xpath>
       </scalar>
@@ -21,8 +21,12 @@
       </scalar>
     </collection>
 
-	<!-- TODO below here -->
-
+	<!-- I don't think these are available anymore. There are no b tags and 
+		it doesn't appear any links contain tags other that the main tag of the page. 
+		
+		Script to test: 
+		for (var i in x){ var j = x[i].href.indexOf('tags'); if (j>0) {console.log(x[i].href)}}
+	 -->
     <composite name="public_tags" type="flickr_tag">
       <xpath>//a[starts-with(@href, '/photos/tags')]/b/..</xpath>
       <scalar name="title">
