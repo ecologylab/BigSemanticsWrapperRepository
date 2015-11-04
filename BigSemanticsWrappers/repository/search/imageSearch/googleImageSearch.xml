@@ -3,7 +3,7 @@
   default_user_agent_name="chrome_2">
 
 	<meta_metadata name="google_image_search" extends="image_search"
-	comment="Google image search." parser="xpath" extract_with="service">
+	comment="Google image search." parser="xpath">
 	
 	    <selector url_regex="https?://www.google.co(m|m?\.\w\w)/search\?.*" domain="google.com">
 	    </selector>
