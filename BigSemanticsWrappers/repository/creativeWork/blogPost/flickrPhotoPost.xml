@@ -77,13 +77,13 @@
       <xpath>(//span[@class='view-count-label'])[1]/text()</xpath>
     </scalar>
 
-    <collection name="favorites" child_type="metadata">
-      <composite name="user" type="rich_document" />
+    <collection name="favorites" child_extends="metadata">
+      <composite name="user" type="flickr_photostream" />
       <scalar name="date_favorited" scalar_type="Date" />
     </collection>
 
-    <collection name="comments" child_type="metadata">
-      <composite name="user" type="rich_document" />
+    <collection name="comments" child_extends="metadata">
+      <composite name="user" type="flickr_photostream" />
       <scalar name="content" scalar_type="String" />
       <scalar name="date_commented" scalar_type="Date" />
     </collection>
