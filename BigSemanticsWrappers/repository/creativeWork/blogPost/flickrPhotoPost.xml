@@ -69,8 +69,7 @@
       </scalar>
     </collection>
 
-    <collection name="machine_tags" child_extends="metadata">
-      <scalar name="tag" scalar_type="String" />
+    <collection name="machine_tags" child_extends="flickr_tag">
       <scalar name="confidence" scalar_type="Float" />
     </collection>
 
