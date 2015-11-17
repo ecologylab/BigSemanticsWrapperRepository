@@ -185,6 +185,7 @@
       <json_path>tweets</json_path>
       <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
       	<json_path>retweeted_status.user</json_path>
+      	<json_path>user</json_path>
       	<style is_child_metadata="true" hide="true" />
         
         <scalar name="title" hide_label="true">

@@ -8,20 +8,25 @@ package ecologylab.bigsemantics.generated.library.creativeWork.blogPost;
  * Copyright (2015) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Comments;
+import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Favorites;
+import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.MachineTags;
 import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post;
 import ecologylab.bigsemantics.metadata.builtins.GisLocation;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
+import ecologylab.bigsemantics.metadata.scalar.MetadataDate;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
 import ecologylab.serialization.annotations.simpl_scalar;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -32,18 +37,39 @@ import java.util.Map;
 public class FlickrPhoto extends Post
 {
 	@simpl_scalar
-	private MetadataParsedURL imageLocation;
+	private MetadataDate dateTaken;
 
 	@simpl_scalar
-	private MetadataString views;
+	private MetadataDate dateUploaded;
+
+	@simpl_scalar
+	private MetadataString captureDevice;
+
+	@simpl_scalar
+	private MetadataString extension;
+
+	@simpl_composite
+	@mm_name("geo_location")
+	private GisLocation geoLocation;
 
 	@simpl_composite
 	@mm_name("place")
 	private RichDocument place;
 
-	@simpl_composite
-	@mm_name("geo_location")
-	private GisLocation geoLocation;
+	@simpl_collection("machine_tags")
+	@mm_name("machine_tags")
+	private List<MachineTags> machineTags;
+
+	@simpl_scalar
+	private MetadataString views;
+
+	@simpl_collection("favorites")
+	@mm_name("favorites")
+	private List<Favorites> favorites;
+
+	@simpl_collection("comments")
+	@mm_name("comments")
+	private List<Comments> comments;
 
 	public FlickrPhoto()
 	{ super(); }
@@ -53,36 +79,182 @@ public class FlickrPhoto extends Post
 	}
 
 
-	public MetadataParsedURL	imageLocation()
+	public MetadataDate	dateTaken()
 	{
-		MetadataParsedURL	result = this.imageLocation;
+		MetadataDate	result = this.dateTaken;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
-			this.imageLocation = result;
+			result = new MetadataDate();
+			this.dateTaken = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getImageLocation()
+	public Date getDateTaken()
 	{
-		return this.imageLocation == null ? null : imageLocation().getValue();
+		return this.dateTaken == null ? null : dateTaken().getValue();
 	}
 
-	public MetadataParsedURL getImageLocationMetadata()
+	public MetadataDate getDateTakenMetadata()
 	{
-		return imageLocation;
+		return dateTaken;
 	}
 
-	public void setImageLocation(ParsedURL imageLocation)
+	public void setDateTaken(Date dateTaken)
 	{
-		if (imageLocation != null)
-			this.imageLocation().setValue(imageLocation);
+		if (dateTaken != null)
+			this.dateTaken().setValue(dateTaken);
 	}
 
-	public void setImageLocationMetadata(MetadataParsedURL imageLocation)
+	public void setDateTakenMetadata(MetadataDate dateTaken)
 	{
-		this.imageLocation = imageLocation;
+		this.dateTaken = dateTaken;
+	}
+
+	public MetadataDate	dateUploaded()
+	{
+		MetadataDate	result = this.dateUploaded;
+		if (result == null)
+		{
+			result = new MetadataDate();
+			this.dateUploaded = result;
+		}
+		return result;
+	}
+
+	public Date getDateUploaded()
+	{
+		return this.dateUploaded == null ? null : dateUploaded().getValue();
+	}
+
+	public MetadataDate getDateUploadedMetadata()
+	{
+		return dateUploaded;
+	}
+
+	public void setDateUploaded(Date dateUploaded)
+	{
+		if (dateUploaded != null)
+			this.dateUploaded().setValue(dateUploaded);
+	}
+
+	public void setDateUploadedMetadata(MetadataDate dateUploaded)
+	{
+		this.dateUploaded = dateUploaded;
+	}
+
+	public MetadataString	captureDevice()
+	{
+		MetadataString	result = this.captureDevice;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.captureDevice = result;
+		}
+		return result;
+	}
+
+	public String getCaptureDevice()
+	{
+		return this.captureDevice == null ? null : captureDevice().getValue();
+	}
+
+	public MetadataString getCaptureDeviceMetadata()
+	{
+		return captureDevice;
+	}
+
+	public void setCaptureDevice(String captureDevice)
+	{
+		if (captureDevice != null)
+			this.captureDevice().setValue(captureDevice);
+	}
+
+	public void setCaptureDeviceMetadata(MetadataString captureDevice)
+	{
+		this.captureDevice = captureDevice;
+	}
+
+	public MetadataString	extension()
+	{
+		MetadataString	result = this.extension;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.extension = result;
+		}
+		return result;
+	}
+
+	public String getExtension()
+	{
+		return this.extension == null ? null : extension().getValue();
+	}
+
+	public MetadataString getExtensionMetadata()
+	{
+		return extension;
+	}
+
+	public void setExtension(String extension)
+	{
+		if (extension != null)
+			this.extension().setValue(extension);
+	}
+
+	public void setExtensionMetadata(MetadataString extension)
+	{
+		this.extension = extension;
+	}
+
+	public GisLocation getGeoLocation()
+	{
+		return geoLocation;
+	}
+
+	public void setGeoLocation(GisLocation geoLocation)
+	{
+		this.geoLocation = geoLocation;
+	}
+
+	public RichDocument getPlace()
+	{
+		return place;
+	}
+
+	public void setPlace(RichDocument place)
+	{
+		this.place = place;
+	}
+
+	public List<MachineTags> getMachineTags()
+	{
+		return machineTags;
+	}
+
+  // lazy evaluation:
+  public List<MachineTags> machineTags()
+  {
+    if (machineTags == null)
+      machineTags = new ArrayList<MachineTags>();
+    return machineTags;
+  }
+
+  // addTo:
+  public void addToMachineTags(MachineTags element)
+  {
+    machineTags().add(element);
+  }
+
+  // size:
+  public int machineTagsSize()
+  {
+    return machineTags == null ? 0 : machineTags.size();
+  }
+
+	public void setMachineTags(List<MachineTags> machineTags)
+	{
+		this.machineTags = machineTags;
 	}
 
 	public MetadataString	views()
@@ -117,23 +289,63 @@ public class FlickrPhoto extends Post
 		this.views = views;
 	}
 
-	public RichDocument getPlace()
+	public List<Favorites> getFavorites()
 	{
-		return place;
+		return favorites;
 	}
 
-	public void setPlace(RichDocument place)
+  // lazy evaluation:
+  public List<Favorites> favorites()
+  {
+    if (favorites == null)
+      favorites = new ArrayList<Favorites>();
+    return favorites;
+  }
+
+  // addTo:
+  public void addToFavorites(Favorites element)
+  {
+    favorites().add(element);
+  }
+
+  // size:
+  public int favoritesSize()
+  {
+    return favorites == null ? 0 : favorites.size();
+  }
+
+	public void setFavorites(List<Favorites> favorites)
 	{
-		this.place = place;
+		this.favorites = favorites;
 	}
 
-	public GisLocation getGeoLocation()
+	public List<Comments> getComments()
 	{
-		return geoLocation;
+		return comments;
 	}
 
-	public void setGeoLocation(GisLocation geoLocation)
+  // lazy evaluation:
+  public List<Comments> comments()
+  {
+    if (comments == null)
+      comments = new ArrayList<Comments>();
+    return comments;
+  }
+
+  // addTo:
+  public void addToComments(Comments element)
+  {
+    comments().add(element);
+  }
+
+  // size:
+  public int commentsSize()
+  {
+    return comments == null ? 0 : comments.size();
+  }
+
+	public void setComments(List<Comments> comments)
 	{
-		this.geoLocation = geoLocation;
+		this.comments = comments;
 	}
 }
