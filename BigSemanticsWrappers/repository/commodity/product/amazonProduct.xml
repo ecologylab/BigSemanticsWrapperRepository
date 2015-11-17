@@ -61,7 +61,7 @@
       
       <scalar name="rating" >
         <xpath>.//*[contains(@title, '5 stars')]/@title</xpath>
-     	<replace pattern=".0 out of 5" to="" />
+        <replace pattern=".0 out of 5" to="" />
       </scalar>
       <scalar name="description">
         <xpath>./div[@id]/div</xpath>
@@ -104,10 +104,10 @@
       </scalar>
       <!-- would like to use thumbnails here -->
       <collection name="main_images" >
-      	<xpath>./a//img</xpath>
-      	<scalar name="location">
-      		<xpath>./@src</xpath>
-      	</scalar>
+        <xpath>./a//img</xpath>
+        <scalar name="location">
+          <xpath>./@src</xpath>
+        </scalar>
       </collection>
     </collection>
  
@@ -124,8 +124,8 @@
     <collection name="specifications">
       <xpath>//div[@class='secHeader']/following-sibling::div[1]//tbody/tr[not(position() = last())]</xpath>
       <xpath>//div[@id='technical-data' or @id='detail-bullets']//ul/li</xpath>
-    	<xpath>//table[@id='technical-details-table']/tbody/tr</xpath>
-    	 <scalar name="name">
+      <xpath>//table[@id='technical-details-table']/tbody/tr</xpath>
+        <scalar name="name">
           <xpath>./td[1]</xpath>
           <xpath>./b</xpath>
         </scalar>
@@ -148,5 +148,3 @@
   </meta_metadata>
 
 </meta_metadata_repository>
-
-  
