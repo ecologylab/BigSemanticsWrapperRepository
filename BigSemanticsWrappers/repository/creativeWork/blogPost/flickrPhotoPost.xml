@@ -3,7 +3,7 @@
 
   <meta_metadata name="flickr_photo" extends="post" parser="xpath" comment="A Flickr image post page">
     
-    <selector url_regex_fragment="https://www.flickr.com/photos/[^/]*/[0-9]" domain="flickr.com" />
+    <selector url_regex_fragment="^https?://www.flickr.com/photos/[^/]*/[0-9]+" domain="flickr.com" />
     
     <example_url url="http://www.flickr.com/photos/kali-kold/8345182714/" />
     <example_url url="http://www.flickr.com/photos/sobrido/8137315867/" />
@@ -14,28 +14,28 @@
     <scalar name="description" ignore_in_term_vector="true" scalar_type="String">
       <xpath>//meta[@property='og:description']/@content</xpath>
     </scalar>
-    <scalar name="image_location" hide="true" scalar_type="ParsedURL">
-      <xpath>//meta[@property='og:image']/@content</xpath>
-    </scalar>
+
+    <collection name="authors" label="authors">
+      <xpath>.</xpath>
+      <scalar name="location">
+        <xpath>//meta[@property='flickr_photos:by']/@content</xpath>
+      </scalar><!--TBD add author page... -->
+      <scalar name="title">
+        <xpath>(//a[@class='owner-name truncate'])[1]/text()</xpath>
+      </scalar>
+    </collection>
+
+    <scalar name="date_taken" scalar_type="Date" />
     <scalar name="year">
       <xpath>(//span[@class='date-taken-label'])[1]/text()</xpath>
       <replace pattern=".*," to="" />
     </scalar>
-    <scalar name="views" scalar_type="String">
-      <xpath>(//span[@class='view-count-label'])[1]/text()</xpath>
-    </scalar>
+    <scalar name="date_uploaded" scalar_type="Date" />
 
-    <composite name="place" type="rich_document">
-      <xpath>(//a[@class='location-name-link'])[1]</xpath>
-      <scalar name="title">
-        <xpath>./text()</xpath>
-      </scalar>
-      <scalar name="location" hide="true">
-        <xpath>./@href</xpath>
-      </scalar>
-    </composite>
+    <scalar name="capture_device" scalar_type="String" />
+    <scalar name="extension" scalar_type="String" />
 
-	<!-- This doesn't display right in MICE -->
+    <!-- This doesn't display right in MICE -->
     <composite name="geo_location" type="gis_location">
       <scalar name="latitude">
         <xpath>(//a[@class='static-maps'])[1]/@href</xpath>
@@ -49,6 +49,16 @@
       </scalar>
     </composite>
 
+    <composite name="place" type="rich_document">
+      <xpath>(//a[@class='location-name-link'])[1]</xpath>
+      <scalar name="title">
+        <xpath>./text()</xpath>
+      </scalar>
+      <scalar name="location" hide="true">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
     <collection name="tags" child_type="flickr_tag">
       <xpath>//ul[@class='tags-list']/li/a[2]</xpath>
       <scalar name="title">
@@ -59,16 +69,30 @@
       </scalar>
     </collection>
 
-    <collection name="authors" label="authors">
-      <xpath>.</xpath>
-      <scalar name="location">
-        <xpath>//meta[@property='flickr_photos:by']/@content</xpath>
-      </scalar><!--TBD 
-				ad author page... -->
-      <scalar name="title">
-        <xpath>(//a[@class='owner-name truncate'])[1]/text()</xpath>
-      </scalar>
+    <collection name="machine_tags" child_extends="flickr_tag">
+      <scalar name="confidence" scalar_type="Float" />
     </collection>
+
+    <scalar name="views" scalar_type="String">
+      <xpath>(//span[@class='view-count-label'])[1]/text()</xpath>
+    </scalar>
+
+    <collection name="favorites" child_extends="metadata">
+      <composite name="user" type="flickr_photostream" />
+      <scalar name="date_favorited" scalar_type="Date" />
+    </collection>
+
+    <collection name="comments" child_extends="metadata">
+      <composite name="user" type="flickr_photostream" />
+      <scalar name="content" scalar_type="String" />
+      <scalar name="date_commented" scalar_type="Date" />
+    </collection>
+
+    <!-- should have been captured by main_images
+    <scalar name="image_location" hide="true" scalar_type="ParsedURL">
+      <xpath>//meta[@property='og:image']/@content</xpath>
+    </scalar>
+    -->
 
     <semantic_actions>
       <get_field name="image_location" />
