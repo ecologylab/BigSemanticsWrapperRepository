@@ -3,7 +3,7 @@
   
   
   <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath"
-    user_agent_name="google_bot_2" force_location_filter="true" extract_with="service"> 
+    user_agent_name="google_bot_2" force_location_filter="true"> <!-- extract_with="service"  -->> 
 
 	<!-- Pages are interpreted as acm_portal documents if their stripped url's match either of these "selectors" -->
 	<!-- Pages are interpreted as acm_portal documents if their stripped url's match either of these "selectors" -->
@@ -47,32 +47,10 @@
     
     <scalar name="location" bibtex_type="URL"/>
     
-    
-    <collection name="authors" child_type="acm_author" ignore_in_term_vector="true" facet_type="ordinal" show_in_snippet="true" explorable_label="title">
-      <xpath>//div[@name='for-testing']</xpath>
-      <xpath>//div[@id='divmain']//a[@title='Author Profile Page']</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-      <collection name="affiliations" child_type="acm_portal_institution_profile">
-        <xpath>../..//a[@title='Institutional Profile Page']</xpath>
-        <scalar name="title">
-          <xpath>.</xpath>
-        </scalar>
-        <scalar name="location">
-          <xpath>./@href</xpath>
-        </scalar>
-      </collection>
-    </collection>
-    
     <url_generator type="search" engine="acm_portal" use_id="title" />
 
 		<!-- The value of the field "title" (which is defined in the Document), is parsed from the result of the xpath. -->
     <scalar name="title" navigates_to="location" as_natural_id="title" format="text">
-      <xpath>//div[@name='for-testing']</xpath>
       <xpath>//div[@class='large-text']/h1</xpath>
     </scalar>
 
@@ -96,7 +74,6 @@
     </composite>
 
     <collection name="authors" child_type="acm_portal_author" ignore_in_term_vector="true" facet_type="ordinal" show_in_snippet="true" explorable_label="title">
-      <xpath>//div[@name='for-testing']</xpath>
       <xpath>//div[@id='divmain']//a[@title='Author Profile Page']</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -116,14 +93,14 @@
     </collection>
 
     <composite name="journal" type="rich_document" explorable_label="title" show_in_snippet="true">
-      <xpath>//div[@id='divmain']/table[1]/tbody/tr/td[1]/table[3]/tbody/tr[1]/td[1]/table/tbody/tr[4]/td</xpath>
-     
+     <!--<xpath>//div[@id='divmain']/table[1]/tbody/tr/td[1]/table[3]/tbody/tr[1]/td[1]/table/tbody/tr[4]/td</xpath>  -->
+     <xpath>(//td[contains(text(), 'Published in:')]/../../tr)[4]/td</xpath>
      <scalar name="title">
-        <xpath>./a[1]/@href</xpath>
+        <xpath>./text()[1]</xpath>
       </scalar>
 
       <scalar name="location">
-        <xpath>.f</xpath>
+        <xpath>./a/@href[1]</xpath>
       </scalar>
       
     </composite>
@@ -180,24 +157,24 @@
       
     </collection>
 
-    <collection name="keywords" explorable_label="title">
-      <xpath>//div[@id='divtags']//a/span/ancestor::a</xpath>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-      <scalar name="title">
-        <xpath>./span/child::text()</xpath>
-      </scalar>
-    </collection>
+    <scalar name="text_keywords">
+      <xpath>//meta[@name='citation_keywords']/@content</xpath>
+    </scalar>
 
     <scalar name="pages" show_in_snippet="true" mink_style="show_label" bibtext_field="page">
       <xpath>//h1/a/span[contains(text(), 'PUBLICATION')]/ancestor::h1/following-sibling::div[@class='flatbody'][1]//td[text()='Pages']/following-sibling::td</xpath>
     </scalar>
 
     <scalar name="year">
-      <xpath>//td/table/tbody/tr/td[contains(., 'Article')]</xpath>
-      <replace pattern="Article" to="" />
+      <xpath>(//td/table/tbody/tr/td[contains(., 'Article')])[1]</xpath>
+      <replace pattern=" Article((.|\n)*)" to="" />
     </scalar>
+
+	<!--  may or may not work -->
+	<scalar name="citation_count" >
+	  <xpath>//a[@name="citedby"]/../following-sibling::div[1]/p</xpath>
+      <replace pattern=" Citations" to="" />		
+	</scalar>
 
     <link_with name="citeseerx_summary" by_id="title" />
 
