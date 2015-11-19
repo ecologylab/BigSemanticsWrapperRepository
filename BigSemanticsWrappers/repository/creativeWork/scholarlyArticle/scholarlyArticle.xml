@@ -9,7 +9,10 @@
       comment="The Classifications of this paper." />
     <collection name="keywords" child_type="rich_document" schema_org_itemprop="keywords"
       comment="Key Terms of the paper." />
+    
     <scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" bibtex_field="page" />
+    <scalar name="citation_count" scalar_type="String" layer="1.0" is_facet="true"/>
+    
     <scalar name="description" label="abstract" comment="Abstract of the work." />
     <composite name="rich_media" label="full text" not_expandable="true"/>
   </meta_metadata>
