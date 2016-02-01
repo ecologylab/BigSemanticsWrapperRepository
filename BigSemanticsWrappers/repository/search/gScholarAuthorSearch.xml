@@ -14,6 +14,8 @@
     comment="The Google search class">
     <generic_type_var name="SR" arg="google_scholar_author_search_result" />
     <selector url_regex="http://scholar\.google\.com/citations\?view_op=search_authors.*" domain="google.com" />
+        <selector url_regex="https?:\/\/scholar\.google\.com\/citations\?view_op=search_authors.*" domain="scholar.google.com" />
+
     <example_url
       url="https://www.google.com/search?q=exploratory+search&amp;sourceid=chrome&amp;ie=UTF-8" />
       <scalar name="query">	

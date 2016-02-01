@@ -1,0 +1,57 @@
+<meta_metadata_repository name="instagramProfile"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
+
+  <meta_metadata name="instagram_profile" extends="social_media_profile" parser="xpath" no_cache="true">
+    <selector url_regex="https://instagram.com/[^/?]*/" domain="instagram.com" />
+    <example_url url="https://instagram.com/instagram/" />
+    <example_url url="https://instagram.com/natgeo/" />
+        
+  	<scalar name="title" hide="true"/>
+  	<scalar name="description" hide="true"/>
+  	<collection name="main_images" hide="true" />
+  	
+  	<composite name="user" type="social_media_user">
+  		<scalar name="title" hide="true"/>
+  		<xpath>//div[contains(@class,'authorInfo')]</xpath>
+  		<scalar name="user_name" layer="10.0">
+  			<xpath>./div/h1[contains(@class,'username')]</xpath>
+  		</scalar>
+  		<scalar name="posts">
+  			<xpath>.//ul[contains(@class,'statistics')]//span[contains(@class,'PostsStatistic')]</xpath>
+  		</scalar>
+  		<scalar name="followers">
+  			<xpath>//ul[contains(@class,'statistics')]//span[contains(@class,'FollowedByStatistic')]</xpath>
+  		</scalar>
+  		<scalar name="following">
+  			<xpath>.//ul[contains(@class,'statistics')]//span[contains(@class,'FollowsStatistic__count')]</xpath>
+  		</scalar>
+  		<composite name="photo">
+  			<scalar name="location">
+  				<xpath>//div[contains(@class,'ProfilePage__avatar')]/img/@src</xpath>
+  			</scalar>
+  		</composite>
+  	</composite>
+  	<composite name="profile_feed" label="PhotoStream" type="social_media_feed">
+  		<scalar name="title" hide="true" />
+  		<scalar name="description" hide="true" />
+  		<xpath>//div[@class='-cx-PRIVATE-PostsGrid__root']</xpath>
+  		<collection name="feed" label="photos">
+  			<xpath>//a[@class='-cx-PRIVATE-PostsGridItem__root -cx-PRIVATE-PostsGrid__item']</xpath>
+  			<scalar name="title" use_value_as_label="photos">
+  				<xpath>.//img/@alt</xpath>
+  				<replace pattern="([\s\S]{0,50}).*" to="$1 ..." />
+  			</scalar>
+  			<scalar name="location">
+  				<xpath>./@href</xpath>
+				<replace pattern="^\/" to="https://instagram.com"/>
+  			</scalar>
+  			<collection name="photos">
+  				<xpath>.//img</xpath>
+  				<scalar name="location">
+  					<xpath>./@src</xpath>
+  				</scalar>
+  			</collection>
+  		</collection>
+  	</composite>
+  </meta_metadata>
+ </meta_metadata_repository>

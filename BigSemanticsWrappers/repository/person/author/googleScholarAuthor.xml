@@ -1,9 +1,11 @@
 <meta_metadata_repository name="googleScholarAuthor"
   package="ecologylab.bigsemantics.generated.library.person.author">
 
-  <meta_metadata name="google_scholar_author" extends="author" parser="xpath">
+  <meta_metadata name="google_scholar_author" extends="author" results_per_page="5" search_result_iterator="&amp;cstart=" parser="xpath">
       <!--  <selector url_regex="http://scholar.google.com/citations?user=.*" domain="scholar.google.com"/>-->
-     <selector url_regex="http://scholar.google.com/citations\?user=.*" domain="google.com"/>
+     <selector url_regex="https?:\/\/scholar.google.com\/citations\?user=.*" domain="google.com"/>
+          <selector url_regex="https?:\/\/scholar.google.com\/citations\?user=.*" domain="scholar.google.com"/>
+
     <example_url url="http://scholar.google.com/citations?user=IlKLLhIAAAAJamp;hl=enamp;oi=sra" />
 
     <scalar name="title">
@@ -37,7 +39,7 @@
     		<xpath>./@href</xpath>
     	</scalar>
     </composite>
-    <collection name="top_coauthors" child_type="rich_document">
+    <collection name="top_coauthors" child_type="rich_document" show_in_snippet="true">
     	<xpath>//div[@id='gsc_rsb_co']//li/a</xpath>
     	<scalar name="title">
     		<xpath>.</xpath>
@@ -46,7 +48,7 @@
     		<xpath>./@href</xpath>
     	</scalar>
     </collection>
-    <collection name="papers" child_type="rich_document">
+    <collection name="papers" child_type="rich_document" show_in_snippet="true">
     	<xpath>//tbody[@id='gsc_a_b']/tr/td[1]//a</xpath>
     	<scalar name="title">
     		<xpath>.</xpath>

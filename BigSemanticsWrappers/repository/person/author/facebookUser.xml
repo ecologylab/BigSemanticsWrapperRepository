@@ -1,0 +1,10 @@
+<meta_metadata_repository name="facebookUser"
+  package="ecologylab.bigsemantics.generated.library.person.author">
+    
+  <meta_metadata name="facebook_user" extends="social_media_user" parser="xpath"
+    comment="an author of facebook microblog">
+    <scalar name="worked" scalar_type="String" />
+    <scalar name="studied" scalar_type="String" />
+    <collection name="friend_stats" child_scalar_type="String" />
+  </meta_metadata> 
+</meta_metadata_repository>

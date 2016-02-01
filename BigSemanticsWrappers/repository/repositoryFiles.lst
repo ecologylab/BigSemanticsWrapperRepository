@@ -59,6 +59,7 @@ creativeWork/bggBoardGame.xml
 creativeWork/boardGame.xml
 creativeWork/creativeWork.xml
 creativeWork/curation.xml
+creativeWork/facebookVideo.xml
 creativeWork/fondationArticle.xml
 creativeWork/googlePatent.xml
 creativeWork/grant.xml
@@ -75,6 +76,7 @@ creativeWork/pinterestPin.xml
 creativeWork/pinterestPinboard.xml
 creativeWork/rottenTomatoeMovie.xml
 creativeWork/slashdotPost.xml
+creativeWork/socialMediaProfile.xml
 creativeWork/socialVideo.xml
 creativeWork/tedTalkVideo.xml
 creativeWork/tvComShow.xml
@@ -102,11 +104,18 @@ creativeWork/artwork/cartoon/politicalCartoon.xml
 creativeWork/artwork/cartoon/sfuCartoonArchive.xml
 creativeWork/artwork/cartoon/trumanCampaignCartoon.xml
 creativeWork/blog/blog.xml
+creativeWork/blog/facebookNewsFeed.xml
+creativeWork/blog/facebookProfile.xml
+creativeWork/blog/instagramHomeFeed.xml
+creativeWork/blog/instagramProfile.xml
+creativeWork/blog/socialMediaFeed.xml
 creativeWork/blog/subreddit.xml
 creativeWork/blog/twitterBlog.xml
 creativeWork/blog/wordpressBlog.xml
 creativeWork/blogPost/blogPost.xml
 creativeWork/blogPost/flickrPhotoPost.xml
+creativeWork/blogPost/instagramPost.xml
+creativeWork/blogPost/socialMediaPost.xml
 creativeWork/blogPost/tumblrPost.xml
 creativeWork/blogPost/twitterPost.xml
 creativeWork/blogPost/twitterStatus.xml
@@ -169,10 +178,12 @@ person/moviePerson.xml
 person/nsfStaff.xml
 person/person.xml
 person/rottenTomatoeMoviePerson.xml
+person/socialMediaUser.xml
 person/author/acmAuthor.xml
 person/author/artist.xml
 person/author/author.xml
 person/author/citeulikeAuthor.xml
+person/author/facebookUser.xml
 person/author/flickrAuthor.xml
 person/author/gettyArtist.xml
 person/author/googlePatentAuthor.xml
@@ -330,6 +341,7 @@ rwandaPersonnelInterview.xml
 rwandaTribunalVoices.xml
 rwandaVideoInterview.xml
 slashdotRSS.xml
+socialMediaInterest.xml
 ted_playlist.xml
 ted_topic.xml
 thumbnail.xml

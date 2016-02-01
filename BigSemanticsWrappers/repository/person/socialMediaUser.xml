@@ -1,0 +1,13 @@
+<meta_metadata_repository name="socialMediaUser"
+  package="ecologylab.bigsemantics.generated.library.person.author">
+    
+  <meta_metadata name="social_media_user" extends="author" parser="xpath"
+    comment="an owner of a social media page/post">
+    <scalar name="birth_date" scalar_type="String" />
+    <scalar name="birth_place" scalar_type="String" />
+    <scalar name="posts" scalar_type="String" />
+    <scalar name="followers" scalar_type="String"/>
+    <scalar name="following" scalar_type="String"/>
+    <scalar name="user_name" scalar_type="String"/>
+  </meta_metadata> 
+</meta_metadata_repository>

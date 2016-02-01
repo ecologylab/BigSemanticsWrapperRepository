@@ -3,6 +3,8 @@
 
 	<meta_metadata name="google_scholar_article" extends="scholarly_article" parser="xpath">
       <selector url_regex="http://scholar.google.com/citations\?view_op=view_citation.*" domain="google.com"/>
+            <selector url_regex="https?:\/\/scholar\.google\.com\/citations\?view_op\=view_citation.*" domain="scholar.google.com"/>
+
       <example_url url="http://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=IlKLLhIAAAAJ&amp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
 <!--       <selector url_regex="http\:\/\/scholar\.google\.com\/scholar\?.*cites=.*" domain="google.com"/> -->
  <!--       <example_url url="http://scholar.google.com/scholar?cites=5590676059233338808&amp;as_sdt=5,44&amp;sciodt=0,44&amp;hl=en" /> -->
@@ -30,7 +32,9 @@
 		<xpath>//div[@class='gsc_field'][text()='Publication date']/following-sibling::div</xpath>
 			</scalar>
 			
-	<scalar name="description" show_in_snippet="true"/>
+	<scalar name="description" show_in_snippet="true">
+		<xpath>//div[@id='gsc_descr']</xpath>
+	</scalar>
     <composite name="rich_media">
      	<xpath>//div[@id='gsc_title']/a</xpath>
       <scalar name="title">
@@ -82,8 +86,8 @@
       		<xpath>./@src</xpath>
       	</scalar>
       </composite>
-	  <composite name="google_citations" type="rich_document">
-      	<xpath>//div[@id='scholar_sec']//a</xpath>
+	  <composite name="google_citations" type="rich_document" show_in_snippet="true">
+      	<xpath>//div[@class='gsc_value']/div/a</xpath>
 	      	<scalar name="title">
 	      		<xpath>.</xpath>
 	      	</scalar>

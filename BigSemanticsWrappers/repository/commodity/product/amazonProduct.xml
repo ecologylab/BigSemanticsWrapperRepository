@@ -91,6 +91,7 @@
 	  <xpath>//div[@id='purchase-sims-feature']//li</xpath>
       <scalar name="location">
         <xpath>./div/a/@href</xpath>
+        <regex_op regex="\/ref=.*$" replace=""/>
 <!--         <xpath>.//a[@class='sim-img-title']/@href</xpath> -->
        </scalar>
       <scalar name="title">

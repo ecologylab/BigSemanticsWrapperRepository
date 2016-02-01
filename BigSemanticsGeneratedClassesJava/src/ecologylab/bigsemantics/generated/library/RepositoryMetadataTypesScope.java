@@ -98,6 +98,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.InstructableTag.class,
 
+		ecologylab.bigsemantics.generated.library.InterestGroup.class,
+
 		ecologylab.bigsemantics.generated.library.Item.class,
 
 		ecologylab.bigsemantics.generated.library.JstorJournal.class,
@@ -149,6 +151,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.SlashdotItem.class,
 
 		ecologylab.bigsemantics.generated.library.SlashdotRss.class,
+
+		ecologylab.bigsemantics.generated.library.SocialMediaInterest.class,
 
 		ecologylab.bigsemantics.generated.library.TedPlaylist.class,
 
@@ -286,6 +290,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.BoardGame.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.FacebookVideo.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.FondationArticle.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.GooglePatent.class,
@@ -321,6 +327,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.RottenMovie.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.SlashdotArticle.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.SocialMediaProfile.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo.class,
 
@@ -386,13 +394,27 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.Blog.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.FacebookNewsFeed.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.FacebookProfile.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.InstagramHomeFeed.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.InstagramProfile.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.SocialMediaFeed.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.TwitterApiMicroblog.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.TwitterMicroblog.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.FlickrPhoto.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.InstagramPost.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.SocialMediaPost.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Tumblr.class,
 
@@ -530,6 +552,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.person.author.CiteulikeAuthor.class,
 
+		ecologylab.bigsemantics.generated.library.person.author.FacebookUser.class,
+
 		ecologylab.bigsemantics.generated.library.person.author.FlickrAuthor.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.GettyArtist.class,
@@ -561,6 +585,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.person.author.RhizomeArtist.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.ScopusAuthor.class,
+
+		ecologylab.bigsemantics.generated.library.person.author.SocialMediaUser.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.SpringerEditor.class,
 

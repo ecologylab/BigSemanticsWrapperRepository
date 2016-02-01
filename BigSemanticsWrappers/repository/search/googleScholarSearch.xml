@@ -2,14 +2,17 @@
   name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.search">
   
    <meta_metadata name="google_scholar_search_result" extends="rich_document"
-    comment="A google scholar search result" parser="xpath">
+    comment="A google scholar search result" parser="xpath" bibtex_type="article">
     <url_generator type="search" engine="google_scholar" use_id="title" />
     <composite name="destination_page" type="rich_document"/>
-    <scalar name="title" as_natural_id="title" />
-    <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
+    <scalar name="title"  show_in_snippet="true"/>
+    <scalar name="document_link" scalar_type="ParsedURL" hide="false" />
     <scalar name="source_info" scalar_type="String" />
-  	<scalar name="citation_count" scalar_type="String"/>
-    <composite name="citations" type="rich_document"/>
+    <scalar name="year" scalar_type="String" show_in_snippet="true"/>
+    
+  	<scalar name="citation_count" scalar_type="String" hide ="true" >
+    </scalar>
+    <composite name="citations" type="rich_document" show_in_snippet="true" field_as_count="citation_count"/>
     <composite name="related_articles_link" type="rich_document" label="related articles" />
     <scalar name="versions" scalar_type="Int" navigates_to="versions_link" />
    <collection name="google_authors" child_type="rich_document">
@@ -18,7 +21,7 @@
     <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
   </meta_metadata>
 
-  <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class"
+  <meta_metadata name="google_scholar_search" search_result_iterator="&amp;start="  results_per_page="5" final_page_canary="more_results_link" extends="search" comment="The google Search class"
     parser="xpath">
     <generic_type_var name="SR" arg="google_scholar_search_result" />
 
@@ -36,10 +39,12 @@
       <set_param name="hl" value="en" only_when_not_set="true" />
     </filter_location>
 
-    <scalar name="title">
+    <scalar name="title" hide="true">
       	<xpath>//div[@id='gs_rt_hdr']//a</xpath>
     </scalar>
-    		
+    <scalar name="more_results_link" scalar_type="ParsedURL" hide="true">
+      	<xpath>//span[@class='gs_ico gs_ico_nav_next']/following-sibling::*[1]</xpath>	
+    </scalar>
     <scalar name="query" layer="9.1">      
       <xpath>//input[@name='q']/@value</xpath>
     </scalar>
@@ -53,6 +58,10 @@
       <scalar name="title" label="title">
         <xpath>.//h3[@class='gs_rt']/a</xpath>
       </scalar>
+      <scalar name="document_link">
+      	<xpath>.//h3/a/@href</xpath>
+      </scalar>
+
       <composite name="destination_page">
       	<xpath>.</xpath>
       	<scalar name="title">
@@ -78,12 +87,16 @@
     			<xpath>./@href</xpath>
     		</scalar>
     	</collection>
-  
+  		<scalar name="year">
+  			<xpath>.//div[@class='gs_a']</xpath>
+  			<regex_op regex="[0-9]{4}"/>
+  		</scalar>
       <def_var name="links_row" type="node" > 
      		 <xpath>.//div[@class='gs_fl']</xpath>  
      		</def_var> 
      	<scalar name="citation_count" show_in_snippet="true">
      		<xpath>.//div[@class='gs_fl']/a[1]</xpath>
+     		 
      	</scalar>	
       <composite name="citations" show_in_snippet="true">
       	<xpath>.</xpath>
@@ -105,6 +118,7 @@
       	</scalar>
       	
       </composite>
+     
       <scalar name="versions">
         <xpath>.//div[@class='gs_fl']/a[last()]</xpath>
         <replace pattern="All | versions" to="" />
@@ -115,32 +129,6 @@
       
     </collection>
 
-    <semantic_actions>
-      <get_field name="search_results" />
-      <for_each collection="search_results" as="res">
-        <get_field object="res" name="location" />
-        <get_field object="res" name="document_link" />
-        <if>
-          <not_null value="document_link" />
-          <parse_document now="true">
-            <arg value="document_link" name="location" />
-            <arg value="res" name="mixin" />
-          </parse_document>
-        </if>
-        <if>
-          <and>
-            <null value="document_link" />
-            <not_null value="location" />
-          </and>
-          <parse_document now="true">
-            <arg value="location" name="location" />
-          </parse_document>
-        </if>
-        <parse_document now="true">
-          <arg value="location" name="location" />
-        </parse_document>
-      </for_each>
-    </semantic_actions>
     
   </meta_metadata>
   
