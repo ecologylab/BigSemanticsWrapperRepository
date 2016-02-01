@@ -2,13 +2,13 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
   
     <meta_metadata name="facebook_news_feed" extends="blog" parser="xpath" no_cache="true">
-	    <selector url_regex="https://www.facebook.com" domain="facebook.com" />
+	    <selector url_stripped="https://www.facebook.com" />
 	    
 		<composite name="user_feed" type="social_media_feed">	    
 		    	<collection name="feed" child_type="social_media_post"  comment="mainFeed">
 				<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 				<scalar name="title" scalar_type="String"/>
-				<collection name="authors" child_type="author" label="user_post">
+				<collection name="authors" child_type="author" hide_label="true" child_use_value_as_label="photo">
 					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
 	    			<scalar name="title" >
 	    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
@@ -27,19 +27,19 @@
 					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
 					<replace pattern=" at.*" to=""/>
 				</scalar>
-				<scalar name="time">
+				<scalar name="time" concatenates_to="date">
 					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
 					<replace pattern=".*at " to=""/>
 				</scalar>			
+				<collection name="description_content" label="post" child_scalar_type="String">
+					<xpath>.//div[@class='_5pbx userContent']//p</xpath>
+				</collection>
 				<!-- feeling TODO -->
 				<collection name="photos" >
 				<xpath>.//div[@class='_3x-2']//img</xpath>
 	    			   <scalar name="location">
 			            <xpath>./@src</xpath>
 			          </scalar>
-				</collection>
-				<collection name="description_content" child_scalar_type="String">
-					<xpath>.//div[@class='_5pbx userContent']//p</xpath>
 				</collection>
 				
 				<composite name="shared">
@@ -76,7 +76,7 @@
 				
 				<collection name="comments">
 					<xpath>.//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//li[contains(@class,'UFIFirstComment ')]/../..//ul[not(contains(@class, 'UFIReplyList'))]/li[contains(@class, 'Comment')]</xpath>
-						<collection name="authors" child_type="author" label="user_ commented">
+						<collection name="authors" child_type="author" label="user">
 							<xpath>.//div[@class='clearfix']</xpath>
 			    			<scalar name="title" >
 			    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
@@ -127,7 +127,7 @@
 					</scalar>	
 					<collection label="replies" name="comments" >
 						<xpath>./following-sibling::li[1]/ul/li[contains(@class,'UFIComment')]</xpath>
-						<collection name="authors" child_type="author" label="user replied">
+						<collection name="authors" child_type="author" label="user">
 							<xpath>.//div[@class='clearfix']</xpath>
 			    			<scalar name="title" >
 			    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>

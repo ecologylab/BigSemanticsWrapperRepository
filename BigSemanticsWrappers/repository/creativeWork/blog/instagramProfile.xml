@@ -3,6 +3,7 @@
 
   <meta_metadata name="instagram_profile" extends="social_media_profile" parser="xpath" no_cache="true">
     <selector url_regex="https://instagram.com/[^/?]*/" domain="instagram.com" />
+    <selector url_regex="https://instagram.com/explore/tags/[^/?]*/" domain="instagram.com" />
     <example_url url="https://instagram.com/instagram/" />
     <example_url url="https://instagram.com/natgeo/" />
         
@@ -10,24 +11,29 @@
   	<scalar name="description" hide="true"/>
   	<collection name="main_images" hide="true" />
   	
-  	<composite name="user" type="social_media_user">
+  	<composite name="user" use_value_as_label="user.photo">
   		<scalar name="title" hide="true"/>
+  		<collection name="main_images" hide="true" />
   		<xpath>//div[contains(@class,'authorInfo')]</xpath>
-  		<scalar name="user_name" layer="10.0">
+  		<xpath>/html</xpath>
+  		<scalar name="user_name" layer="10.0" hide_label="true">
   			<xpath>./div/h1[contains(@class,'username')]</xpath>
+  			<xpath>/html/head/title</xpath>
   		</scalar>
-  		<scalar name="posts">
+  		<scalar name="description" hide_label="true"/>
+  		<scalar name="posts" label_at="bottom">
   			<xpath>.//ul[contains(@class,'statistics')]//span[contains(@class,'PostsStatistic')]</xpath>
   		</scalar>
-  		<scalar name="followers">
+  		<scalar name="followers" label_at="bottom" concatenates_to="posts">
   			<xpath>//ul[contains(@class,'statistics')]//span[contains(@class,'FollowedByStatistic')]</xpath>
   		</scalar>
-  		<scalar name="following">
+  		<scalar name="following" label_at="bottom" concatenates_to="posts">
   			<xpath>.//ul[contains(@class,'statistics')]//span[contains(@class,'FollowsStatistic__count')]</xpath>
   		</scalar>
-  		<composite name="photo">
+  		<composite name="photo" hide_label="true">
   			<scalar name="location">
   				<xpath>//div[contains(@class,'ProfilePage__avatar')]/img/@src</xpath>
+  				<xpath>//meta[@property='og:image']/@content</xpath>
   			</scalar>
   		</composite>
   	</composite>

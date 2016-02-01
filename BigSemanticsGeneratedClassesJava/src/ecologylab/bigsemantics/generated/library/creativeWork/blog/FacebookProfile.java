@@ -9,32 +9,26 @@ package ecologylab.bigsemantics.generated.library.creativeWork.blog;
  */
 
 import ecologylab.bigsemantics.generated.library.InterestGroup;
-import ecologylab.bigsemantics.generated.library.creativeWork.blog.Blog;
+import ecologylab.bigsemantics.generated.library.creativeWork.SocialMediaProfile;
 import ecologylab.bigsemantics.generated.library.creativeWork.blog.SocialMediaFeed;
 import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.SocialMediaPost;
 import ecologylab.bigsemantics.generated.library.person.author.FacebookUser;
 import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.mm_name;
-import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
-import ecologylab.serialization.annotations.simpl_scalar;
 import ecologylab.serialization.annotations.simpl_tag;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class FacebookProfile extends Blog
+public class FacebookProfile extends SocialMediaProfile
 {
-	@simpl_scalar
-	private MetadataString username;
-
 	@simpl_composite
 	@simpl_tag("coverPhoto")
 	@mm_name("coverPhoto")
@@ -102,38 +96,6 @@ public class FacebookProfile extends Blog
 		super(mmd);
 	}
 
-
-	public MetadataString	username()
-	{
-		MetadataString	result = this.username;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.username = result;
-		}
-		return result;
-	}
-
-	public String getUsername()
-	{
-		return this.username == null ? null : username().getValue();
-	}
-
-	public MetadataString getUsernameMetadata()
-	{
-		return username;
-	}
-
-	public void setUsername(String username)
-	{
-		if (username != null)
-			this.username().setValue(username);
-	}
-
-	public void setUsernameMetadata(MetadataString username)
-	{
-		this.username = username;
-	}
 
 	public Image getCoverPhoto()
 	{

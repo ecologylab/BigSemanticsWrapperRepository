@@ -1,24 +1,33 @@
 <meta_metadata_repository name="flickrTag"
   package="ecologylab.bigsemantics.generated.library">
 
-  <meta_metadata name="flickr_tag" extends="rich_document" parser="xpath"
-    comment="For flickr crawled tags">
-    <selector url_regex="http://www.flickr.com/photos/.*" domain="flickr.com" />
-    <example_url url="http://www.flickr.com/photos/barockschloss/tags/potato/" />
+  <meta_metadata name="flickr_tag" extends="rich_document" parser="xpath" comment="For flickr crawled tags">
+   
+    <selector url_regex="https://www.flickr.com/photos/.*/tags/.*" domain="flickr.com" />
+    <selector url_regex="https://www.flickr.com/search/.*" domain="flickr.com" />    
+    
+    <example_url url="https://www.flickr.com/photos/barockschloss/tags/potato/" />
 
     <scalar name="title">
       <xpath>//meta[@name='application-name']/@content</xpath>
     </scalar>
+    
     <collection name="photos" comment="Collection of all images of a user" child_type="flickr_photo">
-      <xpath>//span[@class='photo_container pc_t']</xpath>
+      <xpath>//div[@class='interaction-bar']/div[@class='text']/a[@class='title']</xpath>
       <scalar name="title">
-        <xpath>./a/@title</xpath>
+        <xpath>./text()</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./a/@href</xpath>
+        <xpath>./@href</xpath>
       </scalar>
     </collection>
 
+	<!-- I don't think these are available anymore. There are no b tags and 
+		it doesn't appear any links contain tags other that the main tag of the page. 
+		
+		Script to test: 
+		for (var i in x){ var j = x[i].href.indexOf('tags'); if (j>0) {console.log(x[i].href)}}
+	 -->
     <composite name="public_tags" type="flickr_tag">
       <xpath>//a[starts-with(@href, '/photos/tags')]/b/..</xpath>
       <scalar name="title">
@@ -28,5 +37,6 @@
         <xpath>./@href</xpath>
       </scalar>
     </composite>
+    
   </meta_metadata>
 </meta_metadata_repository>

@@ -62,6 +62,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.FlamencoFacet.class,
 
+		ecologylab.bigsemantics.generated.library.FlickrPhotostream.class,
+
 		ecologylab.bigsemantics.generated.library.FlickrTag.class,
 
 		ecologylab.bigsemantics.generated.library.FondationCategoryCollection.class,
@@ -75,6 +77,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.GettyExploration.class,
 
 		ecologylab.bigsemantics.generated.library.GrantProgram.class,
+
+		ecologylab.bigsemantics.generated.library.Groups.class,
 
 		ecologylab.bigsemantics.generated.library.Head.class,
 
@@ -129,8 +133,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.PdfMixin.class,
 
 		ecologylab.bigsemantics.generated.library.PersonnelInterview.class,
-
-		ecologylab.bigsemantics.generated.library.Photostream.class,
 
 		ecologylab.bigsemantics.generated.library.PostalAddress.class,
 
@@ -408,9 +410,15 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.TwitterMicroblog.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Comments.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Favorites.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.FlickrPhoto.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.InstagramPost.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.MachineTags.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post.class,
 

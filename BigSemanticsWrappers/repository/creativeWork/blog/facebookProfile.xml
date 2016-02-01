@@ -1,20 +1,22 @@
 <meta_metadata_repository name="facebookProfile"
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
-  <meta_metadata name="facebook_profile" extends="blog" parser="xpath" no_cache="true">
+  <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true">
 	    <selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
-	    <selector url_regex="https://www.facebook.com/[^/?]*[?fref=tl_fr_box]*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/[^/?]*(?fref=)?.*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/search/.*" domain="facebook.com" />
 	     
-	    <scalar name="title" label="title">
+	    <scalar name="title" use_value_as_label="facebook.photo">
 	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
+	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
 	    </scalar>
 	    
 	    <scalar name="description"/>
 		
-		<scalar name="username" scalar_type="String">
+		<!-- <scalar name="username" scalar_type="String">
 	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
 	      <xpath>//span[@id='fb-timeline-cover-name']/..</xpath>
-    	</scalar>
+    	</scalar> -->
     	
     	<composite name="coverPhoto" type="image">
     		<xpath>//img[@class='coverPhotoImg photo img']</xpath>
@@ -23,7 +25,7 @@
          	</scalar>
     	</composite>
     	
-		<collection label="user" name="facebook" child_type="facebook_user">
+		<collection name="facebook" child_type="facebook_user" label="info" >
 		  <xpath>.</xpath>
 			<composite name="photo">
 		        <xpath>//a[@class='profilePicThumb']/img</xpath>
@@ -55,10 +57,11 @@
 	       </scalar>
 		</collection>
 		
-		<collection name="feed" child_type="social_media_post"  comment="mainFeed">
+		<collection name="feed" child_type="social_media_post" label="posts" comment="mainFeed">
 			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
 			<scalar name="title" scalar_type="String"/>
-			<collection name="authors" child_type="author" label="user_post">
+			<collection name="authors" child_type="author" label="user">
+				<style is_child_metadata="true" hide="true" />
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
     			<scalar name="title" >
     				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
@@ -73,23 +76,24 @@
 		          </scalar>
     			</composite>
 			</collection>
-			<scalar name="date">
+			<scalar name="date" layer="7.0">
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
 				<replace pattern=" at.*" to=""/>
 			</scalar>
-			<scalar name="time">
+			<scalar name="time" concatenates_to="date" hide_label="true">
 				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
 				<replace pattern=".*at " to=""/>
 			</scalar>			
+			
+			<collection name="description_content" label="post" child_scalar_type="String" layer="6.0">
+				<xpath>.//div[@class='_5pbx userContent']</xpath>
+			</collection>
 			<!-- feeling TODO -->
-			<collection name="photos" >
+			<collection name="photos" layer="5.0">
 			<xpath>.//div[@class='_3x-2']//img</xpath>
     			   <scalar name="location">
 		            <xpath>./@src</xpath>
 		          </scalar>
-			</collection>
-			<collection name="description_content" child_scalar_type="String">
-				<xpath>.//div[@class='_5pbx userContent']//p</xpath>
 			</collection>
 			
 			<composite name="shared">
@@ -124,7 +128,7 @@
 			
 			<collection name="comments">
 				<xpath>.//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//div[contains(@class,'UFIComment') and @aria-label='Comment']</xpath>
-					<collection name="authors" child_type="author" label="user_ commented">
+					<collection name="authors" child_type="author" label="user">
 						<xpath>.//div[@class='clearfix']</xpath>
 		    			<scalar name="title" >
 		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
@@ -139,7 +143,7 @@
 				          </scalar>
 		    			</composite>
 					</collection>
-				<collection name="description_content" child_scalar_type="String">
+				<collection name="description_content" label="post" child_scalar_type="String">
 					<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
 				</collection>
 		    	<composite name="sticker" type="image">
@@ -159,13 +163,13 @@
 					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 					<replace pattern=" at.*" to=""/>
 				</scalar>
-				<scalar name="time">
+				<scalar name="time" concatenates_to="date" hide_label="true">
 					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 					<replace pattern=".*at " to=""/>
 				</scalar>	
 				<collection label="replies" name="comments" >
 					<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath>
-					<collection name="authors" child_type="author" label="user replied">
+					<collection name="authors" child_type="author" label="user">
 						<xpath>.//div[@class='clearfix']</xpath>
 		    			<scalar name="title" >
 		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
@@ -180,7 +184,7 @@
 				          </scalar>
 		    			</composite>
 					</collection>
-					<collection name="description_content" child_scalar_type="String">
+					<collection name="description_content" label="post" child_scalar_type="String">
 						<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
 					</collection>
 			    	<composite name="sticker" type="image">
@@ -197,7 +201,7 @@
 						<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 						<replace pattern=" at.*" to=""/>
 					</scalar>
-					<scalar name="time">
+					<scalar name="time" concatenates_to="date" hide_label="true">
 						<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 						<replace pattern=".*at " to=""/>
 					</scalar>
@@ -207,7 +211,7 @@
 		
 	<collection name="Friends" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[3]</xpath>
-		<scalar name="feed_name">
+		<scalar name="feed_name" label="feed">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
 		<collection name="feed" hide_label="true">
@@ -234,7 +238,7 @@
 	
 	<collection name="Photos" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[4]</xpath>
-		<scalar name="feed_name">
+		<scalar name="feed_name" label="feed">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
 		<collection name="feed" label="Photos" hide_label="true">
@@ -253,7 +257,7 @@
 	</collection>
 	<collection name="Videos" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[5]</xpath>
-		<scalar name="feed_name">
+		<scalar name="feed_name" label="feed">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
 		<collection name="feed" label="Videos" hide_label="true">
@@ -390,7 +394,7 @@
 	
 	<collection name="check_ins" child_type="social_media_feed" hide_label="true">
 		<xpath>(//li[@class='fbTimelineUnit fbTimelineTwoColumn clearfix']//div[@role='article'])[6]</xpath>
-		<scalar name="feed_name">
+		<scalar name="feed_name" label="feed">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
 		<collection name="feed" hide_label="true">

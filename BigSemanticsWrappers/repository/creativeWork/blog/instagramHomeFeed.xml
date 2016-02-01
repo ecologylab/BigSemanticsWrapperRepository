@@ -12,16 +12,18 @@
  			<scalar name="title" hide="true"/>
  			<scalar name="description" hide="true"/> 			
  			
- 			<composite name="shared" label="user" type="social_media_user" layer="10.0">
+ 			<composite name="shared" label="user" layer="10.0" use_value_as_label="shared.photo">
 		  		<xpath>.//div[@class='-cx-PRIVATE-Post__ownerAndLocation']</xpath>
-		  		<scalar name="title" hide="true"/>
-		  		<scalar name="user_name" use_value_as_label="photo">
+		  		<scalar name="title" hide_label="true">
 		  			<xpath>.</xpath>
 		  		</scalar>
+		  		<!--<scalar name="user_name" hide_label="true">
+		  			<xpath>.</xpath>
+		  		</scalar>-->
 		  		<scalar name="location">
 		  			<xpath>./@href</xpath>
 		  		</scalar>
-		  		<composite name="photo" hide="true">
+		  		<composite name="photo" hide_label="true">
 		  			<scalar name="location">
 		  				<xpath>.//img[@class='-cx-PRIVATE-Post__ownerAvatar']/@src</xpath>
 		  			</scalar>
@@ -43,9 +45,9 @@
 		  		<xpath>.//time[@class='-cx-PRIVATE-Timestamp__root']/@title</xpath>
 		  	</scalar> 				  	
 		  	
-		  	<scalar name="time" layer="7.0">
+		  	<!--<scalar name="time" layer="7.0">
 		  		<xpath>.//time[@class='-cx-PRIVATE-Timestamp__root']</xpath>
-		  	</scalar>
+		  	</scalar>-->
 		  	
 		  	<collection name="up_votes" label="likes" child_scalar_type="String" layer="6.0">
  					<xpath>.//span[@class='-cx-PRIVATE-PostLikers__likeCount']/span[2]</xpath>

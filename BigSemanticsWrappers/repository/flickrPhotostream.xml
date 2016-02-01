@@ -2,20 +2,31 @@
   package="ecologylab.bigsemantics.generated.library">
 
 
-  <meta_metadata name="photostream" extends="rich_document" comment="All flickr photos of a particular user"
+  <meta_metadata name="flickr_photostream" extends="rich_document" comment="All flickr photos of a particular user"
     parser="xpath">
-    <example_url url="http://www.flickr.com/photos/kali-kold/" />
-    <selector url_regex="http://www.flickr.com/photos/[A-z0-9_@-]+/$" domain="flickr.com" />
+    
+    <selector url_regex_fragment="^https?://www.flickr.com/photos/[A-z0-9_@-]+" domain="flickr.com" />
+    
+    <example_url url="https://www.flickr.com/photos/kali-kold/" />
+    <example_url url="https://www.flickr.com/photos/90504494@N00" />
+    
     <collection name="stream" comment="Collection of all images of a user" child_type="flickr_photo">
-      <xpath>//img[contains(@class,'pc_img')]</xpath>
+      <xpath>//div[@class='interaction-bar']/div[@class='text']/a[@class='title']</xpath>
       <scalar name="title">
-        <xpath>./@alt</xpath>
+        <xpath>./text()</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./../@href</xpath>
-			<!--  	<replace pattern="in/photostream" to="" /> -->
+        <xpath>./@href</xpath>
       </scalar>
     </collection>
+
+    <collection name="following" child_type="flickr_photostream"/>
+
+    <collection name="groups" child_extends="rich_document">
+      <scalar name="members" scalar_type="Integer"/>
+      <scalar name="photos" scalar_type="Integer"/>
+    </collection>
+
   </meta_metadata>
   
 </meta_metadata_repository>
