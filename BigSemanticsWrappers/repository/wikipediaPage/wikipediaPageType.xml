@@ -39,8 +39,7 @@
     <!-- TODO -->
   </meta_metadata>
   
-  <meta_metadata name="wikipedia_page_type" extends="rich_document" other_tags="wikipedia_page"
-    comment="An article on wikipedia">
+  <meta_metadata name="wikipedia_page_type" extends="rich_document" comment="An article on wikipedia">
     <composite name="main_image" type="image" hide="true" />
     <scalar name="main_image_src" scalar_type="ParsedURL" hide="true" comment="(For compatibility.)" />
     
