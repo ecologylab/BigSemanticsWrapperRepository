@@ -92,7 +92,7 @@
       </collection>
     </collection>
 
-    <composite name="journal" type="rich_document" explorable_label="title" show_in_snippet="true">
+    <composite name="journal" type="rich_document" explorable_label="title" show_in_snippet="true" bibtex_field="journal">
      <xpath>(//td[contains(text(), 'Published in:')]/../../tr)[last() - 1]/td</xpath>
      <scalar name="title">
         <xpath>./text()[last()]</xpath>
