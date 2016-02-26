@@ -3,7 +3,7 @@
   
   
   <meta_metadata name="acm_portal" extends="scholarly_article" parser="xpath"
-    user_agent_name="google_bot_2" force_location_filter="true" extract_with="service">  
+    user_agent_name="google_bot_2" force_location_filter="true" extract_with="iframe">  
 
 	<!-- Pages are interpreted as acm_portal documents if their stripped url's match either of these "selectors" -->
 	<!-- Pages are interpreted as acm_portal documents if their stripped url's match either of these "selectors" -->
@@ -93,10 +93,9 @@
     </collection>
 
     <composite name="journal" type="rich_document" explorable_label="title" show_in_snippet="true">
-     <!--<xpath>//div[@id='divmain']/table[1]/tbody/tr/td[1]/table[3]/tbody/tr[1]/td[1]/table/tbody/tr[4]/td</xpath>  -->
-     <xpath>(//td[contains(text(), 'Published in:')]/../../tr)[4]/td</xpath>
+     <xpath>(//td[contains(text(), 'Published in:')]/../../tr)[last() - 1]/td</xpath>
      <scalar name="title">
-        <xpath>./text()[1]</xpath>
+        <xpath>./text()[last()]</xpath>
       </scalar>
 
       <scalar name="location">
@@ -133,17 +132,6 @@
       <scalar name="location">
         <xpath>.//a[1]/@href</xpath>
       </scalar>
-      <!--
-      <collection name="authors" field_parser_key="$author_list">
-        <field_parser name="regex_split" regex="\s,\s" trim="true" />
-        <scalar name="title" field_parser_key="$0" />
-      </collection>
-      <composite name="source" field_parser_key="$other">
-        <field_parser name="regex_find" regex=".*(\d\d\d\d).*" />
-        <scalar name="title" field_parser_key="$0" />
-        <scalar name="year" field_parser_key="$1" />
-      </composite>
-      -->
     </collection>
 
     <collection name="classifications">
