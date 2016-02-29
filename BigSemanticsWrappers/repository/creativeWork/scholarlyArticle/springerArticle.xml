@@ -3,7 +3,7 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
 
 	<cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
 	
-	<meta_metadata name="springer_article" extends="springer_book" comment="An article or any other text heavy component in Springer Link." parser="xpath">
+	<meta_metadata name="springer_article" extends="springer_book" comment="An article or any other text heavy component in Springer Link." parser="xpath" bibtex_type="article">
  		
  		<selector url_path_tree="http://link.springer.com/article"/>
  		<selector url_path_tree="http://link.springer.com/referenceworkentry"/>
