@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.publication.SpringerBook;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *An article or any other text heavy component in Springer Link.
+ *An in Springer Link.
  */ 
 @simpl_inherit
 public class SpringerArticle extends SpringerBook

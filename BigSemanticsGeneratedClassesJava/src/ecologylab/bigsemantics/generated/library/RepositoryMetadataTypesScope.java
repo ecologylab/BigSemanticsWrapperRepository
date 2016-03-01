@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -519,6 +519,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.Sections.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.SpringerArticle.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.SpringerChapter.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.WileyArticle.class,
 
