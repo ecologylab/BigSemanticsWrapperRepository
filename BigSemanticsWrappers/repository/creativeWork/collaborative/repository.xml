@@ -1,0 +1,31 @@
+<meta_metadata_repository name="repository" package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative"
+  default_user_agent_name="chrome_2">
+
+  <meta_metadata name="repository" extends="rich_document">
+    <scalar name="title" label="project_name" />
+    <scalar name="number_of_commits" scalar_type="String" />
+    <scalar name="number_of_branches" scalar_type="String" />
+    <scalar name="number_of_releases" scalar_type="String" />
+    <scalar name="number_of_contributors" scalar_type="String" />
+    <scalar name="number_of_issues" scalar_type="String" />
+    <scalar name="number_of_pull_requests" scalar_type="String" />
+    
+    <composite name="latest_commit" type="commit"/>
+    
+    <collection name="files" child_type="source_item"/>
+  </meta_metadata>
+  
+  <meta_metadata name="source_item" extends="rich_document">
+  	<scalar name="file_name" scalar_type="String"/> 
+  	<scalar name="last_commit_message" scalar_type="String"/>
+    <scalar name="last_updated" scalar_type="String" />
+  </meta_metadata>
+  
+  <meta_metadata name="commit" extends="rich_document">
+    <scalar name="time" scalar_type="String" />
+    <scalar name="message" scalar_type="String"/>
+    <scalar name="short_hash_key" scalar_type="String" />
+    <scalar name="contributor" scalar_type="String" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

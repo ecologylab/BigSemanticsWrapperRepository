@@ -428,6 +428,14 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Tweet.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Commit.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.GithubProject.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Repository.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.SourceItem.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.exhibition.ArtchiExhibition.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.exhibition.Exhibition.class,
