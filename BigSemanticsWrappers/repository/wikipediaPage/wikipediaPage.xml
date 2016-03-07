@@ -6,6 +6,8 @@
 
   <meta_metadata name="wikipedia_category" type="wikipedia_category_type" parser="xpath">
     <selector domain="wikipedia.org" url_regex="https?://en.wikipedia.org/wiki/Category:.*" />
+     <selector domain="wikipedia.org" url_regex="https?://en.wikipedia.org/.*" />
+
     <example_url url="http://en.wikipedia.org/wiki/Category:Brand_name_materials" />
     <example_url url="http://en.wikipedia.org/wiki/Category:Theoretical_physicists" />
 
