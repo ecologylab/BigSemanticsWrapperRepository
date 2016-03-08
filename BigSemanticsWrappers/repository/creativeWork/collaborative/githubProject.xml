@@ -2,8 +2,8 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative">
 
   <meta_metadata name="github_project" extends="repository" parser="xpath">
-  	<selector url_regex="https?://github.com(/[a-zA-Z0-9]+){2}" domain="github.com" />
-	<selector url_regex="https?://github.tamu.edu(/[a-zA-Z0-9]+){2}" domain="github.tamu.edu" />
+  	<selector url_regex="https?://github.com(/[a-zA-Z0-9-]+){2}" domain="github.com" />
+	<selector url_regex="https?://github.tamu.edu(/[a-zA-Z0-9-_]+){2}" domain="github.tamu.edu" />
 	   
 	<scalar name="title">
 		<xpath>//strong[@itemprop='name']</xpath>
@@ -65,10 +65,10 @@
     		<xpath>./td[@class='content']//a/@title</xpath>
     	</scalar>
   		<scalar name="last_commit_message">
-  			<xpath>//tr[@class='js-navigation-item']/td[@class='message']//a/@title</xpath>
+  			<xpath>./td[@class='message']//a/@title</xpath>
   		</scalar>
     	<scalar name="last_updated">
-    		<xpath>//tr[@class='js-navigation-item']/td[@class='age']//time</xpath>
+    		<xpath>./td[@class='age']//time</xpath>
     	</scalar>
   	</collection>
     
