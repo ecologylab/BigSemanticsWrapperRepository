@@ -118,10 +118,7 @@
       <scalar name="location">
         <xpath>.//a[1]/@href</xpath>
       </scalar>
-      <scalar name="description">
-      
-      </scalar>
-      
+
     </collection>
 
     <collection name="citations" child_type="acm_portal" show_in_snippet="true" facet_type="quant">
