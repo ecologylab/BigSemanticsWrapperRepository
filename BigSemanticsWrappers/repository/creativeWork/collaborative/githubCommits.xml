@@ -1,0 +1,31 @@
+<meta_metadata_repository name="githubCommits"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative">
+
+  <meta_metadata name="github_commits" extends="commits_page" parser="xpath">
+  	<selector url_regex="https?://github.tamu.edu(/[a-zA-Z0-9-_]+){2}/commits/master" domain="github.tamu.edu" />
+	   
+	<collection name="all_commits">
+		<xpath>//div[@class='commit-group-title']</xpath>
+    	<scalar name="date">
+    		<xpath>.</xpath>
+    	</scalar>
+  		<collection name="commits_section" label="commits">
+	  		<xpath>(./following-sibling::ol)[1]//li</xpath>
+	  			<scalar name="time" scalar_type="String">
+	  				<xpath>.//time/@title</xpath>
+	  			</scalar>
+			    <scalar name="message" scalar_type="String" layer="4.0">
+			    	<xpath>.//a/@title</xpath>
+			    </scalar>
+			    <scalar name="short_hash_key" scalar_type="String">
+			    	<xpath>.//div[@class='commit-links-group btn-group']//a</xpath>
+			    </scalar>
+			    <scalar name="contributor" scalar_type="String" >
+			    	<xpath>.//div[@class='commit-meta commit-author-section']//a</xpath>
+			    </scalar>
+  		</collection>
+	</collection>
+    
+  </meta_metadata>
+</meta_metadata_repository>
+

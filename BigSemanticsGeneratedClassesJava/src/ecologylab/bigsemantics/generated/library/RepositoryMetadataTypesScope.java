@@ -430,11 +430,29 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Commit.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.CommitsByDate.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.CommitsPage.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.FileSourceItem.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.GithubCommits.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.GithubIssuePage.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.GithubIssues.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.GithubProject.class,
 
-		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Repository.class,
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Issue.class,
 
-		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.SourceItem.class,
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.IssueComment.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.IssuesPage.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.RepoTabSection.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Repository.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.exhibition.ArtchiExhibition.class,
 

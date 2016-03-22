@@ -42,6 +42,20 @@
 		<xpath>(//ul[@class='sunken-menu-group']//span[@class='counter'])[2]</xpath>
 	</scalar>
 	
+	<!-- TODO: pull requests and wiki -->
+	<collection name="repo_tabs" label="navigation_tabs"> 
+		<xpath>//a[@class='js-selected-navigation-item reponav-item' and contains(@data-hotkey, 'g i')]</xpath>
+		<scalar name="title" always_show="true" layer="4.0">
+			<xpath>.</xpath>
+		</scalar>
+		<scalar name="number_of_children">
+			<xpath>.//span[@class='counter']</xpath>
+		</scalar>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+	</collection>
+	
 	<composite name="latest_commit">
 		<scalar name="time">
 			<xpath>//div[@class='authorship']//time</xpath>
@@ -59,9 +73,18 @@
     	</scalar>
 	</composite>
 	
+	<!--TODO: expansion to this source isnt working currently -->
+	<composite name="commits_source">
+		<xpath>//li[@class='commits']</xpath>
+		<scalar name="location">
+			<xpath>./a/@href</xpath>
+		</scalar>
+	</composite>
+	
+
   	<collection name="files">
-  		<xpath>//tr[@class='js-navigation-item']</xpath>
-    	<scalar name="file_name">
+  		<xpath>//tr[@class='js-navigation-item' or @class='js-navigation-item navigation-focus']</xpath>
+    	<scalar name="file_name" layer="4.0">
     		<xpath>./td[@class='content']//a/@title</xpath>
     	</scalar>
   		<scalar name="last_commit_message">

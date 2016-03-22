@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class SourceItem extends Document
+public class FileSourceItem extends Document
 {
 	@simpl_scalar
 	private MetadataString fileName;
@@ -31,10 +31,10 @@ public class SourceItem extends Document
 	@simpl_scalar
 	private MetadataString lastUpdated;
 
-	public SourceItem()
+	public FileSourceItem()
 	{ super(); }
 
-	public SourceItem(MetaMetadataCompositeField mmd) {
+	public FileSourceItem(MetaMetadataCompositeField mmd) {
 		super(mmd);
 	}
 

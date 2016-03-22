@@ -9,7 +9,9 @@ package ecologylab.bigsemantics.generated.library.creativeWork.collaborative;
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.collaborative.Commit;
-import ecologylab.bigsemantics.generated.library.creativeWork.collaborative.SourceItem;
+import ecologylab.bigsemantics.generated.library.creativeWork.collaborative.CommitsPage;
+import ecologylab.bigsemantics.generated.library.creativeWork.collaborative.FileSourceItem;
+import ecologylab.bigsemantics.generated.library.creativeWork.collaborative.RepoTabSection;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -50,9 +52,17 @@ public class Repository extends RichDocument
 	@mm_name("latest_commit")
 	private Commit latestCommit;
 
-	@simpl_collection("source_item")
+	@simpl_composite
+	@mm_name("commits_source")
+	private CommitsPage commitsSource;
+
+	@simpl_collection("file_source_item")
 	@mm_name("files")
-	private List<SourceItem> files;
+	private List<FileSourceItem> files;
+
+	@simpl_collection("repo_tab_section")
+	@mm_name("repo_tabs")
+	private List<RepoTabSection> repoTabs;
 
 	public Repository()
 	{ super(); }
@@ -264,21 +274,31 @@ public class Repository extends RichDocument
 		this.latestCommit = latestCommit;
 	}
 
-	public List<SourceItem> getFiles()
+	public CommitsPage getCommitsSource()
+	{
+		return commitsSource;
+	}
+
+	public void setCommitsSource(CommitsPage commitsSource)
+	{
+		this.commitsSource = commitsSource;
+	}
+
+	public List<FileSourceItem> getFiles()
 	{
 		return files;
 	}
 
   // lazy evaluation:
-  public List<SourceItem> files()
+  public List<FileSourceItem> files()
   {
     if (files == null)
-      files = new ArrayList<SourceItem>();
+      files = new ArrayList<FileSourceItem>();
     return files;
   }
 
   // addTo:
-  public void addToFiles(SourceItem element)
+  public void addToFiles(FileSourceItem element)
   {
     files().add(element);
   }
@@ -289,8 +309,38 @@ public class Repository extends RichDocument
     return files == null ? 0 : files.size();
   }
 
-	public void setFiles(List<SourceItem> files)
+	public void setFiles(List<FileSourceItem> files)
 	{
 		this.files = files;
+	}
+
+	public List<RepoTabSection> getRepoTabs()
+	{
+		return repoTabs;
+	}
+
+  // lazy evaluation:
+  public List<RepoTabSection> repoTabs()
+  {
+    if (repoTabs == null)
+      repoTabs = new ArrayList<RepoTabSection>();
+    return repoTabs;
+  }
+
+  // addTo:
+  public void addToRepoTabs(RepoTabSection element)
+  {
+    repoTabs().add(element);
+  }
+
+  // size:
+  public int repoTabsSize()
+  {
+    return repoTabs == null ? 0 : repoTabs.size();
+  }
+
+	public void setRepoTabs(List<RepoTabSection> repoTabs)
+	{
+		this.repoTabs = repoTabs;
 	}
 }

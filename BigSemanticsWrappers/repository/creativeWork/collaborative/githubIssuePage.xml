@@ -1,0 +1,56 @@
+<meta_metadata_repository name="githubIssuePage"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative">
+
+  <meta_metadata name="github_issue_page" extends="issue" parser="xpath">
+	<selector url_regex="https?://github.tamu.edu(/[a-zA-Z0-9-_]+){2}/issues/[0-9]+" domain="github.tamu.edu" />
+    
+    <scalar name="title">
+    	<xpath>//span[@class='js-issue-title']</xpath>
+    </scalar>
+    
+    <scalar name="issue_number">
+    	<xpath>//span[@class='gh-header-number']</xpath>
+    </scalar>
+    
+    <scalar name="description">
+    	<xpath>(//div[@class='comment-body markdown-body markdown-format js-comment-body'])[1]</xpath>
+    </scalar>
+    
+   <collection name="labels">
+    	<xpath>//div[@class='labels css-truncate']//a</xpath>
+    	<scalar name="text" label="type">
+    		<xpath>.</xpath>
+    	</scalar>
+    </collection>
+    
+    <scalar name="status">
+    	<xpath>//div[@class='flex-table-item']</xpath>
+    </scalar>
+    
+    <scalar name="date" label="date posted">
+    	<xpath>((//div[@class='timeline-comment-header-text'])[1])//time/@title</xpath>
+    </scalar>
+    
+    <scalar name="submitted_by">
+    	<xpath>(//div[@class='timeline-comment-header-text'])[1]/strong/a</xpath>
+    </scalar>
+    
+    <scalar name="assigned_to">
+    	<xpath>//a[@class='assignee css-truncate-target']</xpath>
+    </scalar>
+
+	<collection name="issue_comments" label="replies">
+		<xpath>(//div[@class='timeline-comment-wrapper js-comment-container'])[position()!=1]</xpath>
+		<scalar name="message">
+			<xpath>.//div[@class='comment-body markdown-body markdown-format js-comment-body']</xpath>
+		</scalar>
+    	<scalar name="date">
+    		<xpath>.//time/@title</xpath>
+    	</scalar>
+    	<scalar name="contributor">
+    		<xpath>.//strong/a</xpath>
+    	</scalar>
+	</collection>
+  	
+  </meta_metadata>
+</meta_metadata_repository>
