@@ -16,9 +16,9 @@
   
 	<scalar name="description" hide_label="true" />
 	
-    <generic_type_var name="SR" arg="post" />
+    <generic_type_var name="SR" arg="tweet" />
 
-    <collection name="search_results" label="tweets" child_type="tweet" dont_show_expanded_initially="true"
+    <collection name="search_results" label="tweets" dont_show_expanded_initially="true"
       label_at="top" child_show_expanded_always="true" child_use_value_as_label="twitter_microblog.photo">
       <xpath>//ol[@id='stream-items-id']/li//div[@class='content']</xpath>
 
