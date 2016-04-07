@@ -2,7 +2,6 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
   <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true" extract_with="iframe">
-	    <selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/[^/?]*?.*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/search/.*" domain="facebook.com" />
 	     
@@ -57,12 +56,12 @@
 			<scalar name="title" scalar_type="String"/>
 			<collection name="authors" child_type="author" label="user">
 				<style is_child_metadata="true" hide="true" />
-				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
+				<xpath>.//div[@class='_5x46']</xpath>
     			<scalar name="title" >
-    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
+    				<xpath>.//span[@class='fwb']/a</xpath>
     			</scalar>
     			<scalar name="location" >
-    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a/@href</xpath>
+    				<xpath>.//span[@class='fwb']/a/@href</xpath>
     			</scalar>
     			<composite name="photo">
     				<xpath>.//img</xpath>
@@ -85,10 +84,10 @@
 			</collection>
 			<!-- feeling TODO -->
 			<collection name="photos" layer="5.0">
-			<xpath>.//div[@class='_3x-2']//img</xpath>
-    			   <scalar name="location">
-		            <xpath>./@src</xpath>
-		          </scalar>
+				<xpath>.//div[@class='_3x-2']//img</xpath>
+				<scalar name="location">
+				    <xpath>./@src</xpath>
+				</scalar>
 			</collection>
 			
 			<composite name="shared">
@@ -100,9 +99,11 @@
     				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]/@href</xpath>
     			</scalar>
 			</composite>
+			
 			<collection name="urls"> <!--  ASK for help-->
 				<xpath>.//a[@class='_52c6']</xpath>
 			</collection>
+			
 			<composite name="video" type="facebook_video" >
 				<xpath>.</xpath>
 				<scalar name="video_link">
@@ -111,12 +112,14 @@
 			</composite>
 			
 			<collection name="up_votes" label="likes" child_scalar_type="String">
-				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Likes')]</xpath>
+				<xpath>.//span[@aria-label='See who reacted to this']/a/span</xpath>
 				<xpath>.//div[@class='UFILikeSentenceText']/span</xpath>
 			</collection>
+			
 			<scalar name="shares">
 				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Shares')]</xpath>
 			</scalar>
+			
 			<scalar name="num_comments">
 				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Comments')]</xpath>
 			</scalar>
