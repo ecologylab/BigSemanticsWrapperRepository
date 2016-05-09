@@ -95,7 +95,7 @@
     <composite name="journal" type="rich_document" explorable_label="title" show_in_snippet="true" bibtex_field="volume">
      <xpath>(//td[contains(text(), 'Published in:')]/../../tr)[last() - 1]/td</xpath>
      <scalar name="title">
-        <xpath>string(.)</xpath>
+        <xpath>./text()[normalize-space()]</xpath>
       </scalar>
 
       <scalar name="location">
