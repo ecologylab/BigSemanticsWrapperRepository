@@ -1,0 +1,9 @@
+<meta_metadata_repository name="article"
+	package="ecologylab.bigsemantics.generated.library.creativeWork.article">
+	
+	<meta_metadata name="article" extends="creative_work" schema_org_itemtype="http://schema.org/Article" bibtex_type="article">
+		<scalar name="articleBody" scalar_type="String" schema_org_itemprop="articleBody"></scalar>
+		<scalar name="wordCount" scalar_type="String" schema_org_itemprop="wordCount"></scalar>
+	</meta_metadata>
+	
+</meta_metadata_repository>

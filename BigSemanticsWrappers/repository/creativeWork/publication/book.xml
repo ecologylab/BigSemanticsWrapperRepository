@@ -1,13 +1,19 @@
 <meta_metadata_repository name="book"
-  package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
+	package="ecologylab.bigsemantics.generated.library.creativeWork.publication">
 
-  <meta_metadata name="book" extends="publication" bibtex_type="book">
-    <collection name="editors" child_type="author" schema_org_itemprop="editor" bibtex_field="editor" />
-    <scalar name="edition" scalar_type="String" schema_org_itemprop="bookEdition" bibtex_field="edition" />
-    <collection name="table_of_contents" child_type="publication">
-      <scalar name="title" label="chapter title" />
-    </collection>
-    <scalar name="cover_image" scalar_type="ParsedURL" hide="true" />
-  </meta_metadata>
-  
+	<meta_metadata name="book" extends="publication" schema_org_itemtype="http://schema.org/Book"
+		bibtex_type="book">
+		<collection name="editors" child_type="author"
+			schema_org_itemprop="editor" bibtex_field="editor" />
+		<scalar name="edition" scalar_type="String"
+			schema_org_itemprop="bookEdition" bibtex_field="edition" />
+		<scalar name="isbn" scalar_type="String"
+			schema_org_itemprop="isbn"/>
+		<scalar name="newthing" scalar_type="String"/>
+		<collection name="table_of_contents" child_type="publication">
+			<scalar name="title" label="chapter title" />
+		</collection>
+		<scalar name="cover_image" scalar_type="ParsedURL" hide="true" />
+	</meta_metadata>
+
 </meta_metadata_repository>
