@@ -97,7 +97,7 @@
 <!--         TODO ParsedURL doesn't support #section_id .. -->
 <!--       </scalar> -->
       <collection name="paragraphs">
-        <xpath>./following-sibling::p[preceding-sibling::h2[1]=../h2[$i]]</xpath>
+        <xpath>./following-sibling::p[count(preceding-sibling::h2)=1]</xpath>
         <scalar name="text">
           <xpath>.</xpath>
         </scalar>
