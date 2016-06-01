@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <meta_metadata_repository name="springer_article" 
 package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle" default_user_agent="chrome">	
 
@@ -106,3 +107,115 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
 </meta_metadata_repository>
 
 
+=======
+<meta_metadata_repository name="springer_article" 
+package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle" default_user_agent="chrome">	
+
+	<cookie_processing domain="link.springer.com" ignore_all_cookies="true" />
+	
+	<meta_metadata name="springer_article" extends="springer_book" comment="An in Springer Link." parser="xpath" bibtex_type="article">
+ 		
+ 		<selector url_path_tree="http://link.springer.com/article"/>
+ 		<selector url_path_tree="http://link.springer.com/referenceworkentry"/>
+ 		
+ 	 	<example url="http://link.springer.com/article/10.1007/s40692-014-0013-y"/>
+ 	 	<example url="http://link.springer.com/referenceworkentry/10.1007/978-3-642-22647-2_100365"/>
+	    
+      	<scalar name="pages" scalar_type="String">
+	      <xpath>//span[@id="page-range"]/text()</xpath>
+	    </scalar>
+	    
+		<scalar name="online_date" scalar_type="String">
+			<xpath>//span[@class="online-date"]/text()</xpath>
+		</scalar>
+		
+		
+      	<collection name="authors">
+	      <xpath>//*[@id="kb-nav--main"]/div[3]/ul/li/a</xpath>
+	      <scalar name="title">
+	      	<xpath>./text()</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+	    
+	    
+      	<collection name="editors">
+	      <xpath>//*[@class="editors"]/li/a</xpath>
+	      <scalar name="title">
+	      	<xpath>./text()</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+	    </collection>
+	    
+	    
+      	<collection name="author_affiliations" child_scalar_type="String">
+	      <xpath>//*[@id="abstract-about"]/div[2]/div/div/dl[3]/dd[4]/ul/li</xpath>
+	    </collection>
+	    
+		<composite name="publication_title" type="springer_book">
+	      <xpath>//div[@id='publication-title']/a</xpath>
+	      <scalar name="title">
+	      	<xpath>./text()</xpath>
+	      </scalar>
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</composite>
+		
+	    
+      	<collection name="keywords" child_scalar_type="String">
+	      <xpath>//*[@id="abstract-about-keywords"]/ul/li/text()</xpath>
+	    </collection>
+
+		<composite name="series_title" type="springer_search">
+	      <xpath>//*[@id="series-title"]</xpath>
+	      <scalar name="title">
+	      	<xpath>./text()</xpath>
+	      </scalar>
+
+	      <scalar name="location">
+	        <xpath>./@href</xpath>
+	      </scalar>
+		</composite>
+
+		<collection name="industry_sectors" child_type="rich_document">
+			<xpath>//*[@class="abstract-about-industrysectors"]/li/a</xpath>
+			
+		      <scalar name="title">
+		      	<xpath>./text()</xpath>
+		      </scalar>
+	
+		      <scalar name="location">
+		        <xpath>./@href</xpath>
+		      </scalar>
+		</collection>
+		
+
+
+		<collection name="references" child_type="rich_document">
+			<xpath>//*[@id="abstract-references"]/div[2]/div/div/ol/li</xpath>
+			
+		      <scalar name="title">
+		      	<xpath>./span/text()</xpath>
+		      </scalar>
+	
+		      <scalar name="location">
+		        <xpath>./a/@href</xpath>
+		      </scalar>
+		</collection>
+		
+	</meta_metadata>
+	
+	<meta_metadata name="springer_chapter" extends="springer_article" comment="An chapter of a book in Springer Link." parser="xpath" bibtex_type="book">
+ 		<selector url_path_tree="http://link.springer.com/chapter"/>
+ 	 	<example url="http://link.springer.com/chapter/10.1007/978-3-319-09858-6_1"/>	
+	</meta_metadata>
+	
+</meta_metadata_repository>
+
+
+>>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b

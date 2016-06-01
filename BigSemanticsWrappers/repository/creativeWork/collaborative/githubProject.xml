@@ -1,0 +1,101 @@
+<meta_metadata_repository name="githubProject"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative">
+
+  <meta_metadata name="github_project" extends="repository" parser="xpath">
+  	<selector url_regex="https?://github.com(/[a-zA-Z0-9-]+){2}" domain="github.com" />
+	<selector url_regex="https?://github.tamu.edu(/[a-zA-Z0-9-_]+){2}" domain="github.tamu.edu" />
+	   
+	<scalar name="title">
+		<xpath>//strong[@itemprop='name']</xpath>
+		<xpath>/html/body/div[4]/div/div[1]/div/div/h1/strong/a</xpath>
+	</scalar>
+	<scalar name="description">
+		<xpath>//span[@class='repository-meta-content']//span</xpath>
+		<xpath>//div[@class='repository-description']</xpath>
+	</scalar>
+	
+	<scalar name="number_of_commits">
+		<xpath>//li[@class='commits']//span</xpath>
+		<xpath>(//ul[@class='numbers-summary']//span[@class='num text-emphasized'])[1]</xpath>
+	</scalar>
+	
+	<scalar name="number_of_branches">
+		<xpath>//*[@id='js-repo-pjax-container']/div[2]/div[1]/div[2]/div/div/ul/li[2]/a/span</xpath>
+		<xpath>(//ul[@class='numbers-summary']//span[@class='num text-emphasized'])[2]</xpath>
+	</scalar>
+	
+	<scalar name="number_of_releases" >
+		<xpath>//*[@id='js-repo-pjax-container']/div[2]/div[1]/div[2]/div/div/ul/li[3]/a/span</xpath>
+		<xpath>(//ul[@class='numbers-summary']//span[@class='num text-emphasized'])[3]</xpath>
+	</scalar>
+	
+	<scalar name="number_of_contributors" >
+		<xpath>//*[@id='js-repo-pjax-container']/div[2]/div[1]/div[2]/div/div/ul/li[4]/a/span</xpath>
+		<xpath>(//ul[@class='numbers-summary']//span[@class='num text-emphasized'])[4]</xpath>
+	</scalar>
+	
+	<scalar name="number_of_issues">
+		<xpath>(//ul[@class='sunken-menu-group']//span[@class='counter'])[1]</xpath>
+	</scalar>
+	
+	<scalar name="number_of_pull_requests">
+		<xpath>(//ul[@class='sunken-menu-group']//span[@class='counter'])[2]</xpath>
+	</scalar>
+	
+	<!-- TODO: pull requests and wiki -->
+	<collection name="repo_tabs" label="navigation_tabs"> 
+		<xpath>//a[@class='js-selected-navigation-item reponav-item' and contains(@data-hotkey, 'g i')]</xpath>
+		<scalar name="title" always_show="true" layer="4.0">
+			<xpath>.</xpath>
+		</scalar>
+		<scalar name="number_of_children">
+			<xpath>.//span[@class='counter']</xpath>
+		</scalar>
+		<scalar name="location">
+			<xpath>./@href</xpath>
+		</scalar>
+	</collection>
+	
+	<composite name="latest_commit">
+		<scalar name="time">
+			<xpath>//div[@class='authorship']//time</xpath>
+		</scalar>
+		<scalar name="message">
+			<xpath>//div[@class='commit commit-tease js-details-container']//p//@title</xpath>
+		</scalar>
+		<scalar name="short_hash_key">
+    		<xpath>(//div[@class='commit-meta']//a)[1]</xpath>
+    		<replace pattern="latest commit" to=" " />
+    	</scalar>
+		<scalar name="contributor">
+    		<xpath>//div[@class='authorship']//img/@alt</xpath>
+    		<replace pattern="@" to=" " />
+    	</scalar>
+	</composite>
+	
+	<!--TODO: expansion to this source isnt working currently -->
+	<composite name="commits_source">
+		<xpath>//li[@class='commits']</xpath>
+		<scalar name="location">
+			<xpath>./a/@href</xpath>
+		</scalar>
+	</composite>
+	
+
+  	<collection name="files">
+  		<xpath>//tr[@class='js-navigation-item' or @class='js-navigation-item navigation-focus']</xpath>
+    	<scalar name="file_name" layer="4.0">
+    		<xpath>./td[@class='content']//a/@title</xpath>
+    	</scalar>
+  		<scalar name="last_commit_message">
+  			<xpath>./td[@class='message']//a/@title</xpath>
+  		</scalar>
+    	<scalar name="last_updated">
+    		<xpath>./td[@class='age']//time</xpath>
+    	</scalar>
+  	</collection>
+    
+  </meta_metadata>
+
+</meta_metadata_repository>
+

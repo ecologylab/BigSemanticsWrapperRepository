@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   name="search" package="ecologylab.bigsemantics.generated.library.search">
 
@@ -49,3 +50,56 @@
  
 
 </meta_metadata_repository>
+=======
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="search" package="ecologylab.bigsemantics.generated.library.search">
+
+  <meta_metadata name="search_result" extends="rich_document" show_expanded_always="true" 
+    comment="A search result.">
+    <scalar name="description" label="snippet" />
+    <scalar name="site_link" scalar_type="ParsedURL"/>
+    <composite name="destination_page" type="rich_document" />
+    
+  </meta_metadata>
+
+  
+  <meta_metadata name="search" extends="rich_document" comment="A search.">
+    <generic_type_var name="SR" extends="rich_document" />
+
+	<scalar name="number_of_results" scalar_type="String" comment="Useful for smaller searches where knowing num results is helpful"/>
+    <scalar name="query" scalar_type="String"/>
+    <collection name="search_results" child_type="SR" no_wrap="true" show_in_snippet="true"
+      show_expanded_initially="true" polymorphic_scope="repository_documents" />
+    <collection name="related_searches" child_type="search" show_in_snippet="true"/>
+    <composite name="next_page" type="search" />
+  </meta_metadata>
+
+
+
+	<!-- this definition of image might apply to many other XML-based search results. -->
+  <meta_metadata name="image_search_result" extends="search_result"
+    comment="Def of an Google or Bing image search result.">
+      <scalar name="thumb_width" scalar_type="Int" />
+    <scalar name="thumb_height" scalar_type="Int" />
+    <scalar name="file_size" scalar_type="Int" />
+  </meta_metadata>
+
+
+  <meta_metadata name="search_crumb" extends="metadata" always_show="true">
+    <scalar name="search_query" scalar_type="String" always_show="true" />
+  </meta_metadata>
+
+
+
+
+  <meta_metadata name="social_media_search_result" extends="rich_document"
+    comment="A result from a social media search.">
+    <scalar name="author" scalar_type="String" comment="The author of this item." />
+    <collection name="tags" child_type="document"
+      comment="Associated tags from the search engine, if exist." />
+  </meta_metadata>
+
+ 
+
+</meta_metadata_repository>
+>>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b

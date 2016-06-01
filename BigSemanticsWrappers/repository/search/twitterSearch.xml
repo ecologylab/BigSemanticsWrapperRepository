@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <meta_metadata_repository name="twitterSearch"
   package="ecologylab.bigsemantics.generated.library.search">
   
@@ -125,4 +126,133 @@
 
     </collection>
   </meta_metadata>
+=======
+<meta_metadata_repository name="twitterSearch"
+  package="ecologylab.bigsemantics.generated.library.search">
+  
+   <meta_metadata name="twitter_search_results" extends="search" parser="xpath" renderer="tweetbubble" no_cache="true">
+    <selector url_stripped="https://twitter.com/search" />
+    <selector url_path_tree="https://twitter.com/hashtag/" />
+    <example_url url="https://twitter.com/search?q=%23socialinnovation" />
+		
+		<!-- def_var doesn't currently seem to be working in js metadata extraction -->
+		<!--<def_var name="search" type="node" xpath="//h2[@id='content-main-heading']/strong"/>-->
+
+    <scalar name="title" context_node="search" hide_label="true">
+      <xpath>//h2[@id='content-main-heading']/strong</xpath>
+      <replace pattern="Twitter / Search - " to="" />
+    </scalar>
+  
+	<scalar name="description" hide_label="true" />
+	
+    <generic_type_var name="SR" arg="tweet" />
+
+    <collection name="search_results" label="tweets" dont_show_expanded_initially="true"
+      label_at="top" child_show_expanded_always="true" child_use_value_as_label="twitter_microblog.photo">
+      <xpath>//ol[@id='stream-items-id']/li//div[@class='content']</xpath>
+
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+        <xpath>./div[@class='stream-item-header']/a</xpath>
+        <style is_child_metadata="true" hide="true" />
+        <scalar name="title">
+          <xpath>./strong</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./span/b</xpath>
+          <!-- <replace pattern="^" to="https://twitter.com/" /> -->
+        </scalar>
+		    	<!-- <scalar name="username" xpath="./span" /> -->
+		    	
+		    	<!-- <collection name="tweeters" child_type="tweeter" xpath="." hide_label="true"> -->
+        <composite name="photo" label="image">
+          <xpath>./img</xpath>
+          <scalar name="location" always_show="true">
+            <xpath>./@src</xpath>
+          </scalar>
+        </composite>
+				<!-- </collection>			    			    -->
+      </composite>
+
+      <scalar name="description" hide_label="true" extract_as_html="true">
+        <xpath>.//p[@class='TweetTextSize  js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='js-tweet-text tweet-text']</xpath>
+      </scalar>
+      <scalar name="post_date" hide_label="true">
+        <xpath>.//small[@class='time']//span</xpath>
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+        <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
+        <match pattern="[^/]+$" />
+      </scalar>
+
+	  <collection name="main_images" child_type="image" hide_label="true">
+      	<xpath>.//div[@class=' is-preview']/img</xpath>
+      	<scalar name="location">
+	      <xpath>./@src</xpath>
+	    </scalar>
+      </collection>
+
+    </collection>
+  </meta_metadata>
+  
+   <meta_metadata name="twitter_api_search" extends="search" parser="jsonpath" no_cache="true" renderer="tweetbubble">
+
+    <selector url_stripped="https://userstream.twitter.com/1.1/user.json" domain="twitter.com" />
+    <example_url url="https://userstream.twitter.com/1.1/user.json?track=innovation" />
+
+    <scalar name="title" context_node="search" hide_label="true">
+    	<json_path>$.[0].track_word</json_path>
+    </scalar>
+    
+	<scalar name="description" hide_label="true" />
+	
+    <generic_type_var name="SR" arg="post" />
+
+    <collection name="search_results" label="tweets" child_type="tweet" dont_show_expanded_initially="true"
+      child_use_value_as_label="twitter_microblog.photo" child_show_expanded_always="true" label_at="top" streaming="true">
+      <json_path>.</json_path>
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+      	<json_path>user</json_path>
+      	<style is_child_metadata="true" hide="true" />
+        
+        <scalar name="title" hide_label="true">
+         <json_path>name</json_path>
+        </scalar>
+        <scalar name="location">
+         <json_path>screen_name</json_path> 
+         <replace pattern="^" to="https://twitter.com/" />
+        </scalar>
+			    <!-- <scalar name="username" xpath="./span" /> -->
+		    	
+		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
+        <composite name="photo" label="image">
+          <json_path>.</json_path>
+          <scalar name="location" always_show="true">
+          	<json_path>profile_image_url</json_path>
+          </scalar>
+        </composite>
+				<!--</collection>			    			    -->
+      </composite>
+
+      <scalar name="description" hide_label="true" extract_as_html="true">
+      	<json_path>text</json_path>
+      </scalar>
+      <scalar name="post_date" hide_label="true">
+      	<json_path>created_at</json_path>
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+      	<json_path>id_str</json_path>
+        <match pattern="[^/]+$" />
+      </scalar>
+      
+      <collection name="main_images" child_type="image" hide_label="true" layer="8.0">
+      	<json_path>entities.media</json_path>
+      	<scalar name="location">
+      	  <json_path>media_url</json_path>
+	    </scalar>
+      </collection>
+
+    </collection>
+  </meta_metadata>
+>>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b
 </meta_metadata_repository>

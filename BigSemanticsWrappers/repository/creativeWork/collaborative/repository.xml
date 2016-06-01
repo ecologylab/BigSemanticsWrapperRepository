@@ -1,0 +1,68 @@
+<meta_metadata_repository name="repository" package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative"
+  default_user_agent_name="chrome_2">
+
+  <meta_metadata name="repository" extends="rich_document">
+    <scalar name="number_of_commits" scalar_type="String" />
+    <scalar name="number_of_branches" scalar_type="String" />
+    <scalar name="number_of_releases" scalar_type="String" />
+    <scalar name="number_of_contributors" scalar_type="String" />
+    <scalar name="number_of_issues" scalar_type="String" />
+    <scalar name="number_of_pull_requests" scalar_type="String" />
+    
+    <composite name="latest_commit" type="commit"/>
+    
+    <composite name="commits_source" type="commits_page"/>
+    
+    <collection name="files" child_type="file_source_item"/>
+    
+    <collection name="repo_tabs" child_type="repo_tab_section" />
+   
+  </meta_metadata>
+  
+  <meta_metadata name="file_source_item" extends="document">
+  	<scalar name="file_name" scalar_type="String"/> 
+  	<scalar name="last_commit_message" scalar_type="String"/>
+    <scalar name="last_updated" scalar_type="String" />
+  </meta_metadata>
+  
+   <meta_metadata name="repo_tab_section" extends="document">
+    <scalar name="number_of_children" scalar_type="String"/>
+  </meta_metadata>
+  
+  <meta_metadata name="commits_page" extends="rich_document">
+  	<collection name="all_commits" child_type="commits_by_date" />
+  </meta_metadata>
+  
+  <meta_metadata name="commit" extends="rich_document">
+    <scalar name="time" scalar_type="String" />
+    <scalar name="message" scalar_type="String"/>
+    <scalar name="short_hash_key" scalar_type="String" />
+    <scalar name="contributor" scalar_type="String" />
+  </meta_metadata>
+  
+   <meta_metadata name="commits_by_date" extends="rich_document">
+    <scalar name="date" scalar_type="String" />
+    <collection name="commits_section" child_type="commit" />
+  </meta_metadata>
+  
+  <meta_metadata name="issues_page" extends="rich_document">
+  	<collection name="open_issues" child_type="issue" />
+  </meta_metadata>
+  
+  <meta_metadata name="issue" extends="rich_document">
+  	<scalar name="issue_number" scalar_type="String" />
+    <scalar name="date" scalar_type="String"/>
+    <scalar name="submitted_by" scalar_type="String" />
+    <scalar name="assigned_to" scalar_type="String" />
+    <scalar name="status" scalar_type="String" />
+    <collection name="labels" child_type="html_text" />
+    <collection name="issue_comments" child_type="issue_comment"/>
+  </meta_metadata>
+  
+  <meta_metadata name="issue_comment" extends="rich_document">
+   	<scalar name="message" scalar_type="String"/>
+    <scalar name="date" scalar_type="String"/>
+    <scalar name="contributor" scalar_type="String" />
+  </meta_metadata>
+  
+</meta_metadata_repository>

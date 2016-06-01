@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <meta_metadata_repository name="googleScholarAuthor"
   package="ecologylab.bigsemantics.generated.library.person.author">
 
@@ -56,4 +57,66 @@
     	</scalar>
     </collection>
   </meta_metadata>
+=======
+<meta_metadata_repository name="googleScholarAuthor"
+  package="ecologylab.bigsemantics.generated.library.person.author">
+
+  <meta_metadata name="google_scholar_author" extends="author" results_per_page="5" search_result_iterator="&amp;cstart=" parser="xpath">
+      <!--  <selector url_regex="http://scholar.google.com/citations?user=.*" domain="scholar.google.com"/>-->
+     <selector url_regex="https?:\/\/scholar.google.com\/citations\?user=.*" domain="google.com"/>
+          <selector url_regex="https?:\/\/scholar.google.com\/citations\?user=.*" domain="scholar.google.com"/>
+
+    <example_url url="http://scholar.google.com/citations?user=IlKLLhIAAAAJamp;hl=enamp;oi=sra" />
+
+    <scalar name="title">
+      <xpath>//div[@id='gsc_prf_in']</xpath>
+    </scalar>
+    <collection name="main_images">
+    	<xpath>//div[@id='gsc_prf_pu']//img</xpath>
+    	<scalar name="location">
+    		<xpath>./@src</xpath>
+    	</scalar>
+    </collection>
+  	<scalar name="affiliation" scalar_type="String">
+  		<xpath>//div[@id='gsc_prf_i']/div[2]</xpath>
+  	</scalar>  
+  
+    <collection name="interests" child_type="rich_document">
+    	<xpath>//div[@id='gsc_prf_i']/div[4]/a</xpath>
+    	<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </collection>
+    <composite name="homepage" type="rich_document">
+    	<xpath>//div[@id='gsc_prf_ivh']/a</xpath>
+    	<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </composite>
+    <collection name="top_coauthors" child_type="rich_document" show_in_snippet="true">
+    	<xpath>//div[@id='gsc_rsb_co']//li/a</xpath>
+    	<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </collection>
+    <collection name="papers" child_type="rich_document" show_in_snippet="true">
+    	<xpath>//tbody[@id='gsc_a_b']/tr/td[1]//a</xpath>
+    	<scalar name="title">
+    		<xpath>.</xpath>
+    	</scalar>
+    	<scalar name="location">
+    		<xpath>./@href</xpath>
+    	</scalar>
+    </collection>
+  </meta_metadata>
+>>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b
 </meta_metadata_repository>

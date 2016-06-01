@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <meta_metadata_repository name="twitterBlog"
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
   
@@ -228,3 +229,236 @@
     </collection>
   </meta_metadata>
 </meta_metadata_repository>
+=======
+<meta_metadata_repository name="twitterBlog"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
+  
+  
+  <meta_metadata name="twitter_microblog" extends="blog" parser="xpath" no_cache="true" renderer="tweetbubble">
+
+    <selector url_regex="https://twitter.com/[^/?]*" domain="twitter.com" />
+    <example_url url="https://twitter.com/nytimes" />
+
+    <scalar name="title" hide_label="true">
+      <xpath>//h1[@class='fullname editable-group']/span[@class='profile-field']</xpath>
+      <xpath>//h1[@class='ProfileHeaderCard-name']/a</xpath>
+    </scalar>
+    
+    <scalar name="description" hide="true"/>
+    
+    <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title">
+      <xpath>//h2[@class='username']/span</xpath>
+      <xpath>//h2[@class='ProfileHeaderCard-screenname u-inlineBlock u-dir']/a</xpath>
+    </scalar>
+
+    <collection name="tweeters" child_type="tweeter" hide_label="true">
+      <xpath>.</xpath>
+			
+			<!-- <scalar name="title" xpath="//h1[@class='fullname editable-group']/span[@class='profile-field']" hide_label="true" />
+			<scalar name="location" xpath="//h2[@class='username']/span" always_show="true" hide_label="true" concatenates_to="title">
+		    	<replace pattern="^@" to="https://twitter.com/"/>
+		 	</scalar> -->
+
+      <composite name="photo" hide_label="true" layer="-1.0">
+        <xpath>//a[@class='profile-picture media-thumbnail js-tooltip']/img</xpath>
+        <xpath>//img[@class='ProfileAvatar-image ']</xpath>
+        <scalar name="location" always_show="true">
+          <xpath>./@src</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="description" hide_label="true">
+        <xpath>//p[@class='bio profile-field']</xpath>
+        <xpath>//p[@class='ProfileHeaderCard-bio u-dir']</xpath>
+      </scalar>
+      <scalar name="city" hide_label="true">
+        <xpath>//p[@class='location-and-url']//span[@class='location profile-field']</xpath>
+        <xpath>//span[@class='ProfileHeaderCard-locationText u-dir']</xpath>
+      </scalar>
+
+      <composite name="webpage" hide_label="true">
+        <xpath>//p[@class='location-and-url']//a[@class='js-tooltip']</xpath>
+        <xpath>//span[@class='ProfileHeaderCard-urlText u-dir']/a</xpath>
+        <scalar name="title" hide_label="true">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="num_tweets" label="tweets" label_at="bottom">
+        <xpath>//table[@class='stats js-mini-profile-stats ']//td[1]/a/strong</xpath>
+        <xpath>//ul[@class='ProfileNav-list']/li[1]//span[@class='ProfileNav-value']</xpath>
+      </scalar>
+      <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
+        <xpath>//table[@class='stats js-mini-profile-stats ']//td[2]/a/strong</xpath>
+        <xpath>//ul[@class='ProfileNav-list']/li[2]//span[@class='ProfileNav-value']</xpath>
+      </scalar>
+      <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
+        <xpath>//table[@class='stats js-mini-profile-stats ']//td[3]/a/strong</xpath>
+        <xpath>//ul[@class='ProfileNav-list']/li[3]//span[@class='ProfileNav-value']</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="tweets" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
+      child_show_expanded_always="true" label_at="top">
+      <xpath>//ol[@id='stream-items-id']/li//div[@class='content']</xpath>
+      <xpath>//div[@class='GridTimeline-items']/div[@class='Grid']</xpath>
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+        <xpath>./div[@class='stream-item-header']/a</xpath>
+        <xpath>.//div[@class='ProfileTweet-authorDetails']/a</xpath>
+        <xpath>.//div[@class='ProfileTweet-authorDetails']/span/a</xpath>
+        <style is_child_metadata="true" hide="true" />
+        <scalar name="title" hide_label="true">
+          <xpath>./strong</xpath>
+          <xpath>./span/b</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./span[@class='username js-action-profile-name']</xpath>
+          <xpath>./span/span</xpath>
+          <xpath>./@href</xpath>
+          <replace pattern="@" to="" />
+        </scalar>
+			    <!-- <scalar name="username" xpath="./span" /> -->
+		    	
+		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
+        <composite name="photo" label="image">
+          <xpath>./img</xpath>
+          <scalar name="location" always_show="true">
+            <xpath>./@src</xpath>
+          </scalar>
+        </composite>
+				<!--</collection>			    			    -->
+      </composite>
+
+      <scalar name="description" hide_label="true" extract_as_html="true">
+        <xpath>.//p[@class='js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='TweetTextSize js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='TweetTextSize TweetTextSize--16px js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='TweetTextSize TweetTextSize--26px js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='ProfileTweet-text js-tweet-text u-dir']</xpath>
+      </scalar>
+      <scalar name="post_date" hide_label="true">
+        <xpath>.//small[@class='time']//span</xpath>
+        <xpath>.//span[@class='js-short-timestamp '] | .//span[@class='js-short-timestamp js-relative-timestamp']</xpath>
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+        <xpath>.//a[@class='details with-icn js-details']/@href</xpath>
+        <xpath>.//a[@class='ProfileTweet-timestamp js-permalink js-nav js-tooltip']/@href</xpath>
+        <match pattern="[^/]+$" />
+      </scalar>
+      
+      <collection name="main_images" child_type="image" hide_label="true" layer="8.0">
+      	<xpath>.//div[@class='TwitterPhoto-container']//img[@class='TwitterPhoto-mediaSource']</xpath>
+      	<xpath>.//div[@class='cards-base cards-multimedia']//img</xpath>
+      	<scalar name="location">
+	      <xpath>./@src</xpath>
+	    </scalar>
+      </collection>
+
+    </collection>
+  </meta_metadata>
+  
+  <meta_metadata name="twitter_api_microblog" extends="blog" parser="jsonpath" no_cache="true" renderer="tweetbubble">
+
+    <selector url_stripped="https://api.twitter.com/1.1/statuses/user_timeline.json" domain="twitter.com" />
+    <example_url url="https://api.twitter.com/1.1/statuses/user_timeline.json?userid=barackobama" />
+
+    <scalar name="title" hide_label="true">
+    	<json_path>$.[0].user.name</json_path>
+    </scalar>
+    
+    <scalar name="description" hide="true"/>
+    
+    <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title">
+    	<json_path>$.[0].user.screen_name</json_path>			
+    </scalar>
+
+    <collection name="tweeters" child_type="tweeter" hide_label="true">
+      <json_path>$.[0].user</json_path>
+			
+      <composite name="photo" hide_label="true" layer="-1.0">
+        <json_path>.</json_path>
+        <scalar name="location" always_show="true">
+        	<json_path>profile_image_url</json_path>
+        </scalar>
+      </composite>
+
+      <scalar name="description" hide_label="true">
+      	<json_path>description</json_path>
+      </scalar>
+      <scalar name="city" hide_label="true">
+      	<json_path>location</json_path>
+      </scalar>
+
+      <composite name="webpage" hide_label="true">
+      	<json_path>.</json_path>
+        <scalar name="title" hide_label="true">
+        	<json_path>url</json_path>
+        </scalar>
+        <scalar name="location">
+        	<json_path>url</json_path>
+        </scalar>
+      </composite>
+
+      <scalar name="num_tweets" label="tweets" label_at="bottom">
+      	<json_path>statuses_count</json_path>
+      </scalar>
+      <scalar name="num_following" label="following" label_at="bottom" concatenates_to="num_tweets">
+      	<json_path>friends_count</json_path>
+      </scalar>
+      <scalar name="num_followers" label="followers" label_at="bottom" concatenates_to="num_tweets">
+      	<json_path>followers_count</json_path>
+      </scalar>
+    </collection>
+
+    <collection name="tweets" child_type="tweet" child_use_value_as_label="twitter_microblog.photo"
+      child_show_expanded_always="true" label_at="top" streaming="true">
+      <json_path>tweets</json_path>
+      <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
+      	<json_path>retweeted_status.user</json_path>
+      	<json_path>user</json_path>
+      	<style is_child_metadata="true" hide="true" />
+        
+        <scalar name="title" hide_label="true">
+         <json_path>name</json_path>
+        </scalar>
+        <scalar name="location">
+         <json_path>screen_name</json_path> 
+         <replace pattern="^" to="https://twitter.com/" />
+        </scalar>
+			    <!-- <scalar name="username" xpath="./span" /> -->
+		    	
+		    	<!--<collection name="tweeters" child_type="tweeter" xpath="." hide_label="true">-->
+        <composite name="photo" label="image">
+          <json_path>.</json_path>
+          <scalar name="location" always_show="true">
+          	<json_path>profile_image_url</json_path>
+          </scalar>
+        </composite>
+				<!--</collection>			    			    -->
+      </composite>
+
+      <scalar name="description" hide_label="true" extract_as_html="true">
+      	<json_path>text</json_path>
+      </scalar>
+      <scalar name="post_date" hide_label="true">
+      	<json_path>created_at</json_path>
+      </scalar>
+      <scalar name="id" concatenates_to="post_date" hide_label="true">
+      	<json_path>id_str</json_path>
+        <match pattern="[^/]+$" />
+      </scalar>
+      
+      <collection name="main_images" child_type="image" hide_label="true" layer="8.0">
+      	<json_path>entities.media</json_path>
+      	<scalar name="location">
+      	  <json_path>media_url</json_path>
+	    </scalar>
+      </collection>
+
+    </collection>
+  </meta_metadata>
+</meta_metadata_repository>
+>>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b

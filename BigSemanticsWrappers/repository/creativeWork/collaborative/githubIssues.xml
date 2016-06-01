@@ -1,0 +1,19 @@
+<meta_metadata_repository name="githubIssues"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.collaborative">
+
+  <meta_metadata name="github_issues" extends="issues_page" parser="xpath">
+	<selector url_regex="https?://github.tamu.edu(/[a-zA-Z0-9-_]+){2}/issues" domain="github.tamu.edu" />
+    
+  	<collection name="open_issues" label="open issues">
+  		<xpath>//div[@class='issues-listing']//ul//li</xpath>
+		<scalar name="title">
+		  <xpath>(.//div[@class='table-list-cell issue-title']//a)[1]</xpath>
+		</scalar>
+		<scalar name="location">
+		  <xpath>.//div[@class='table-list-cell issue-title']/a/@href</xpath>
+		</scalar>
+  	</collection>
+  	
+  </meta_metadata>
+</meta_metadata_repository>
+
