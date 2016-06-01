@@ -2,13 +2,11 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle">
                           
 
-  <meta_metadata name="scholarly_article" extends="creative_work" schema_org_itemtype="http://schema.org/ScholarlyArticle" bibtex_type="article">
+  <meta_metadata name="scholarly_article" extends="article" schema_org_itemtype="http://schema.org/ScholarlyArticle" bibtex_type="article">
     <composite name="source" type="periodical" layer="7.0" bibtex_field="journal"
       comment="Metadata related to where this article was published." />
     <collection name="classifications" child_type="rich_document" 
       comment="The Classifications of this paper." />
-    <collection name="keywords" child_type="rich_document" schema_org_itemprop="keywords"
-      comment="Key Terms of the paper." />
     
     <scalar name="pages" layer="-1.0" navigates_to="table_of_contents" scalar_type="String" bibtex_field="page" />
     <scalar name="citation_count" scalar_type="String" layer="1.0" is_facet="true"/>
