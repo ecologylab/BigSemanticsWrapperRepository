@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 <meta_metadata_repository name="amazonProduct"
   package="ecologylab.bigsemantics.generated.library.commodity.product">
-  
+
   <meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
     <selector url_regex_fragment="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
     <selector url_regex_fragment="http://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
@@ -59,7 +58,7 @@
 
     <collection name="reviews">
       <xpath>//div[@id='revMHRL']/div[@id]</xpath>
-      
+
       <scalar name="rating" >
         <xpath>.//*[contains(@title, '5 stars')]/@title</xpath>
         <replace pattern=".0 out of 5" to="" />
@@ -111,7 +110,7 @@
         </scalar>
       </collection>
     </collection>
- 
+
     <collection name="list_mania" child_type="rich_document">
       <xpath>//li//td/a/img</xpath>
       <scalar name="location">
@@ -149,156 +148,3 @@
   </meta_metadata>
 
 </meta_metadata_repository>
-=======
-<meta_metadata_repository name="amazonProduct"
-  package="ecologylab.bigsemantics.generated.library.commodity.product">
-  
-  <meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
-    <selector url_regex_fragment="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
-    <selector url_regex_fragment="http://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
-    <selector url_regex_fragment="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
-    <selector url_regex_fragment="http://www.amazon.co.uk/gp/product/[^/]*" domain="amazon.co.uk" />
-
-    <example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C" />
-    <example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY" />
-    <example_url url="http://www.amazon.com/Deathly-Hallows-Movie-Only-Edition-UltraViolet/dp/B005O30Y5Y" />
-    <example_url url="http://www.amazon.com/Acer-C720-Chromebook-11-6-Inch-2GB/dp/B00FNPD1VW/" />
-    <example_url url="http://www.amazon.com/Discovery-Daft-Punk/dp/B000059MEK" />
-
-    <filter_location>
-      <substring before="/ref=" />
-    </filter_location>
-
-    <scalar name="title" facet_type="ordered" show_in_snippet="true">
-      <xpath>//h1[@id='title' or @class='parseasinTitle ']</xpath>
-    </scalar>
-    <scalar name="description" show_in_snippet="true">
-      <xpath>//meta[@name='description']/@content</xpath>
-    </scalar>
-    <scalar name="price" show_in_snippet="true">
-      <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
-    </scalar>
-    <composite name="department" type="rich_document" show_in_snippet="true">
-      <xpath>//*[@id='nav-subnav']/li[1]/a</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location" hide="true">
-        <xpath>./@href</xpath>
-      </scalar>
-    </composite>
-    <collection name="main_images">
-      <xpath>//img[@id='main-image']</xpath>
-      <xpath>//img[@id='landingImage']</xpath>
-      <xpath>//div[@id='imageBlock']//img</xpath>
-      <scalar name="location">
-        <xpath>./@data-old-hires</xpath>
-        <xpath>./@src</xpath>
-      </scalar>
-    </collection>
-
-    <def_var name="reviews_span" type="node">
-      <xpath>//div[@id='averageCustomerReviews']</xpath>
-      <xpath>//span[@ref='dp_top_cm_cr_acr_pop_']</xpath>
-    </def_var>
-    <scalar name="overall_rating" context_node="reviews_span" show_in_snippet="true">
-      <xpath>.//span[1]/@title</xpath>
-    </scalar>
-    <scalar name="reviews_location" context_node="reviews_span">
-      <xpath>./a/@href</xpath>
-    </scalar>
-
-    <collection name="reviews">
-      <xpath>//div[@id='revMHRL']/div[@id]</xpath>
-      
-      <scalar name="rating" >
-        <xpath>.//*[contains(@title, '5 stars')]/@title</xpath>
-        <replace pattern=".0 out of 5" to="" />
-      </scalar>
-      <scalar name="description">
-        <xpath>./div[@id]/div</xpath>
-      </scalar>
-      <scalar name="title">
-        <xpath>.//span[@class='a-size-base a-text-bold']</xpath>
-      </scalar>
-    </collection>
-
-    <composite name="bestseller_list_rank" type="amazon_list" label="bestseller_list">
-      <xpath>//li[@id='SalesRank']</xpath>
-      <scalar name="title">
-        <xpath>.//b/a</xpath>
-      </scalar>
-      <scalar name="location" hide="true">
-        <xpath>.//b/a/@href</xpath>
-      </scalar>
-      <scalar name="overall_rating" label="rank">
-        <xpath>./ul/li/span[@class='zg_hrsr_rank']</xpath>
-      </scalar>
-    </composite>
-
-    <collection name="companion_products" child_type="amazon_product" facet_type="ordinal" show_in_snippet="true">
-      <!-- <xpath>//div[@id='vtpsims']/ul/li</xpath> -->
-      <!-- <xpath>//div[@class='shoveler-content']</xpath> -->
-      <!-- <xpath>//div[starts-with(@data-ref,'pd_sim_')]</xpath> -->
-      <xpath>//div[@id='purchase-sims-feature']//li</xpath>
-      <scalar name="location">
-        <xpath>./div/a/@href</xpath>
-        <regex_op regex="\/ref=.*$" replace=""/>
-<!--         <xpath>.//a[@class='sim-img-title']/@href</xpath> -->
-       </scalar>
-      <scalar name="title">
-        <xpath>./div/a</xpath>
-      </scalar>
-      <scalar name="price">
-        <xpath>.//*[@class='price']/text()</xpath>
-      </scalar>
-      <scalar name="overall_rating">
-        <xpath>.//span[@class='rating-stars']//span[@title]/@title</xpath>
-      </scalar>
-      <!-- would like to use thumbnails here -->
-      <collection name="main_images" >
-        <xpath>./a//img</xpath>
-        <scalar name="location">
-          <xpath>./@src</xpath>
-        </scalar>
-      </collection>
-    </collection>
- 
-    <collection name="list_mania" child_type="rich_document">
-      <xpath>//li//td/a/img</xpath>
-      <scalar name="location">
-        <xpath>../@href</xpath>
-      </scalar>
-      <scalar name="title">
-        <xpath>./@alt</xpath>
-      </scalar>
-    </collection>
-
-    <collection name="specifications">
-      <xpath>//div[@class='secHeader']/following-sibling::div[1]//tbody/tr[not(position() = last())]</xpath>
-      <xpath>//div[@id='technical-data' or @id='detail-bullets']//ul/li</xpath>
-      <xpath>//table[@id='technical-details-table']/tbody/tr</xpath>
-        <scalar name="name">
-          <xpath>./td[1]</xpath>
-          <xpath>./b</xpath>
-        </scalar>
-        <scalar name="value">
-          <xpath>./td[2]//div[@id='averageCustomerReviewRating']</xpath>
-          <xpath>./td[2]</xpath>
-          <xpath>.//span[contains(@class, 'asinReviewsSummary')]//span[@title]</xpath>
-          <xpath>.</xpath>
-          <replace pattern="^[^:]+:" to="" />
-        </scalar>
-    </collection>
-
-    <semantic_actions>
-      <reselect_meta_metadata_and_extract name="amazon_item" />
-      <if>
-        <not_null value="amazon_item" />
-        <add_mixin object="amazon_item" mixin="metadata"/>
-      </if>
-    </semantic_actions>
-  </meta_metadata>
-
-</meta_metadata_repository>
->>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b

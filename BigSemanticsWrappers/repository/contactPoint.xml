@@ -4,7 +4,8 @@
 
   <meta_metadata name="contact_point" extends="rich_document" schema_org_itemtype="http://schema.org/ContactPoint"
     built_in="true" comment="Resembles a schema.org ContactPoint.">
-    <scalar name="location" xpath="" ></scalar>
+    <scalar name="location">
+    </scalar>
     <scalar name="description">NULL</scalar>
 <!-- 	Next is commented out because it blows up MICE :( -->
  <!--         <concatenate_values> -->

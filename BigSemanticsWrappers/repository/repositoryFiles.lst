@@ -67,7 +67,6 @@ creativeWork/imdbMovie.xml
 creativeWork/leagueOfLegendsChampion.xml
 creativeWork/movie.xml
 creativeWork/netflixMovie.xml
-creativeWork/newsArticle.xml
 creativeWork/nsfAwardGrant.xml
 creativeWork/nytimesArticle.xml
 creativeWork/patent.xml
@@ -84,6 +83,8 @@ creativeWork/tvShow.xml
 creativeWork/tvShowEpisode.xml
 creativeWork/vimeoVideo.xml
 creativeWork/youtubeVideo.xml
+creativeWork/article/article.xml
+creativeWork/article/newsArticle.xml
 creativeWork/artwork/artwork.xml
 creativeWork/artwork/flamencoObject.xml
 creativeWork/artwork/gettyArtwork.xml
@@ -120,6 +121,11 @@ creativeWork/blogPost/tumblrPost.xml
 creativeWork/blogPost/twitterPost.xml
 creativeWork/blogPost/twitterStatus.xml
 creativeWork/blogPost/wordpressPost.xml
+creativeWork/collaborative/githubCommits.xml
+creativeWork/collaborative/githubIssuePage.xml
+creativeWork/collaborative/githubIssues.xml
+creativeWork/collaborative/githubProject.xml
+creativeWork/collaborative/repository.xml
 creativeWork/exhibition/artchiExhibition.xml
 creativeWork/exhibition/exhibition.xml
 creativeWork/exhibition/newmuseumExhibition.xml
@@ -296,6 +302,7 @@ askNatureSubgroup.xml
 asosPage.xml
 attraction.xml
 attractionList.xml
+buildInfo.xml
 camera.xml
 citeulikeTag.xml
 contactPoint.xml

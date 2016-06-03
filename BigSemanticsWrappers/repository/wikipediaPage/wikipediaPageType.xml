@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <meta_metadata_repository name="wikipediaPageType"
   package="ecologylab.bigsemantics.generated.library.wikipediaPage">
 
@@ -60,65 +59,3 @@
     <!-- TODO translations -->
   </meta_metadata>
 </meta_metadata_repository>
-=======
-<meta_metadata_repository name="wikipediaPageType"
-  package="ecologylab.bigsemantics.generated.library.wikipediaPage">
-
-
-  <meta_metadata name="section" extends="metadata">
-    <scalar name="title" scalar_type="String" />
-<!--     <scalar name="title" scalar_type="String" other_tags="section_title" navigates_to="section_url" /> -->
-<!--     <scalar name="location" hide="true" /> -->
-<!--     <scalar name="section_id" scalar_type="String" hide="true" /> -->
-<!--     <scalar name="section_url" scalar_type="ParsedURL" hide="true"> -->
-<!-- 	    We cannot use location here since it breaks expansion: -->
-<!--     </scalar> -->
-    <collection name="paragraphs" child_type="paragraph" />
-    <collection name="subsections" child_type="section"  />
-  </meta_metadata>
-
-
-  <meta_metadata name="paragraph" extends="metadata" show_expanded_initially="true">
-    <scalar name="text" scalar_type="String" layer="9.0" />
-    <collection name="anchors" child_type="wikipedia_page"  layer="7.0">
-      <scalar name="location" hide="true" />
-	    <!-- For each anchor: -->
-	    <!--   title: the target Wikipedia article title, or target page title if not Wikipeida. -->
-	    <!--   description: the anchor text. -->
-	    <!--   location: the target page URL. -->
-    </collection>
-  </meta_metadata>
-
-
-
-
-  <meta_metadata name="wikipedia_category_type" extends="rich_document">
-    <scalar name="title" other_tags="name" />
-    <scalar name="location" other_tags="cat_link" />
-    <collection name="subcategories" child_type="wikipedia_category_type" />
-    <collection name="articles" child_type="wikipedia_page_type"  />
-    <scalar name="next_page_url" scalar_type="ParsedURL" hide="true" />
-    <collection name="supercategories" child_type="wikipedia_category_type" />
-    <!-- TODO -->
-  </meta_metadata>
-  
-  <meta_metadata name="wikipedia_page_type" extends="rich_document" comment="An article on wikipedia">
-    <composite name="main_image" type="image" hide="true" />
-    <scalar name="main_image_src" scalar_type="ParsedURL" hide="true" comment="(For compatibility.)" />
-    
-    <!-- TODO infoboxes! -->
-
-    <collection name="sections" child_type="section"  />
-
-    <collection name="thumbinners" hide="true" child_type="image">
-      <scalar name="location" other_tags="thumb_img_src" />
-      <scalar name="title" other_tags="thumb_img_caption" />
-    </collection>
-
-    <collection name="categories" child_type="wikipedia_category_type" 
-      label="categories" />
-    
-    <!-- TODO translations -->
-  </meta_metadata>
-</meta_metadata_repository>
->>>>>>> 82e845520b19528bd3adac6935bb24d45d03b91b
