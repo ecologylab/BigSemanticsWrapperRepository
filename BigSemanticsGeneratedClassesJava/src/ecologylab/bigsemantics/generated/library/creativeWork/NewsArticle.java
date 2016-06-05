@@ -5,11 +5,11 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creativeWork.article.Article;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
-import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class NewsArticle extends CreativeWork
+public class NewsArticle extends Article
 {
 	@simpl_scalar
 	private MetadataString publicationDate;

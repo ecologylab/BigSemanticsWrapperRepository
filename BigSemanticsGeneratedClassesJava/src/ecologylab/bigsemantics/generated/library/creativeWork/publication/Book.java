@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork.publication;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.publication.Publication;
@@ -34,6 +34,9 @@ public class Book extends Publication
 
 	@simpl_scalar
 	private MetadataString edition;
+
+	@simpl_scalar
+	private MetadataString newthing;
 
 	@simpl_collection("publication")
 	@mm_name("table_of_contents")
@@ -110,6 +113,38 @@ public class Book extends Publication
 	public void setEditionMetadata(MetadataString edition)
 	{
 		this.edition = edition;
+	}
+
+	public MetadataString	newthing()
+	{
+		MetadataString	result = this.newthing;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.newthing = result;
+		}
+		return result;
+	}
+
+	public String getNewthing()
+	{
+		return this.newthing == null ? null : newthing().getValue();
+	}
+
+	public MetadataString getNewthingMetadata()
+	{
+		return newthing;
+	}
+
+	public void setNewthing(String newthing)
+	{
+		if (newthing != null)
+			this.newthing().setValue(newthing);
+	}
+
+	public void setNewthingMetadata(MetadataString newthing)
+	{
+		this.newthing = newthing;
 	}
 
 	public List<Publication> getTableOfContents()

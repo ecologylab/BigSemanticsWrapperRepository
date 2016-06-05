@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /** 
- *An in Springer Link.
+ *An article or any other text heavy component in Springer Link.
  */ 
 @simpl_inherit
 public class SpringerArticle extends SpringerBook
@@ -41,10 +41,6 @@ public class SpringerArticle extends SpringerBook
 	@simpl_composite
 	@mm_name("publication_title")
 	private SpringerBook publicationTitle;
-
-	@simpl_collection("keyword")
-	@mm_name("keywords")
-	private List<MetadataString> keywords;
 
 	@simpl_composite
 	@mm_name("series_title")
@@ -132,36 +128,6 @@ public class SpringerArticle extends SpringerBook
 	public void setPublicationTitle(SpringerBook publicationTitle)
 	{
 		this.publicationTitle = publicationTitle;
-	}
-
-	public List<MetadataString> getKeywords()
-	{
-		return keywords;
-	}
-
-  // lazy evaluation:
-  public List<MetadataString> keywords()
-  {
-    if (keywords == null)
-      keywords = new ArrayList<MetadataString>();
-    return keywords;
-  }
-
-  // addTo:
-  public void addToKeywords(MetadataString element)
-  {
-    keywords().add(element);
-  }
-
-  // size:
-  public int keywordsSize()
-  {
-    return keywords == null ? 0 : keywords.size();
-  }
-
-	public void setKeywords(List<MetadataString> keywords)
-	{
-		this.keywords = keywords;
 	}
 
 	public SpringerSearch getSeriesTitle()

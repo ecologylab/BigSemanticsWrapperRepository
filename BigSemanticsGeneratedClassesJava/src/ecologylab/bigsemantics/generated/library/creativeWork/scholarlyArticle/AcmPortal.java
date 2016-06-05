@@ -5,17 +5,21 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.ScholarlyArticle;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
+import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +29,13 @@ public class AcmPortal extends ScholarlyArticle
 	@simpl_composite
 	@mm_name("journal")
 	private RichDocument journal;
+
+	/** 
+	 *The concepts of this paper. (as of 11/30/15 - provided by Watson on some pages)
+	 */ 
+	@simpl_collection("related_concept")
+	@mm_name("related_concepts")
+	private List<MetadataString> relatedConcepts;
 
 	public AcmPortal()
 	{ super(); }
@@ -42,5 +53,35 @@ public class AcmPortal extends ScholarlyArticle
 	public void setJournal(RichDocument journal)
 	{
 		this.journal = journal;
+	}
+
+	public List<MetadataString> getRelatedConcepts()
+	{
+		return relatedConcepts;
+	}
+
+  // lazy evaluation:
+  public List<MetadataString> relatedConcepts()
+  {
+    if (relatedConcepts == null)
+      relatedConcepts = new ArrayList<MetadataString>();
+    return relatedConcepts;
+  }
+
+  // addTo:
+  public void addToRelatedConcepts(MetadataString element)
+  {
+    relatedConcepts().add(element);
+  }
+
+  // size:
+  public int relatedConceptsSize()
+  {
+    return relatedConcepts == null ? 0 : relatedConcepts.size();
+  }
+
+	public void setRelatedConcepts(List<MetadataString> relatedConcepts)
+	{
+		this.relatedConcepts = relatedConcepts;
 	}
 }

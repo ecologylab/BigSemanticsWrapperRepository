@@ -59,8 +59,11 @@ package="ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle
 		</composite>
 		
 	    
-      	<collection name="keywords" child_scalar_type="String">
-	      <xpath>//*[@id="abstract-about-keywords"]/ul/li/text()</xpath>
+      	<collection name="keywords">
+	      <xpath>//*[@id="abstract-about-keywords"]/ul/li</xpath>
+      	  <scalar name="title">
+      	    <xpath>.</xpath>
+      	  </scalar>
 	    </collection>
 
 		<composite name="series_title" type="springer_search">

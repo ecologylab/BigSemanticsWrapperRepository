@@ -5,13 +5,13 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.creativeWork.article.Article;
 import ecologylab.bigsemantics.generated.library.creativeWork.publication.Periodical;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
-import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class ScholarlyArticle extends CreativeWork
+public class ScholarlyArticle extends Article
 {
 	/** 
 	 *Metadata related to where this article was published.
@@ -42,15 +42,11 @@ public class ScholarlyArticle extends CreativeWork
 	@mm_name("classifications")
 	private List<RichDocument> classifications;
 
-	/** 
-	 *Key Terms of the paper.
-	 */ 
-	@simpl_collection("rich_document")
-	@mm_name("keywords")
-	private List<RichDocument> keywords;
-
 	@simpl_scalar
 	private MetadataString pages;
+
+	@simpl_scalar
+	private MetadataString citationCount;
 
 	public ScholarlyArticle()
 	{ super(); }
@@ -100,36 +96,6 @@ public class ScholarlyArticle extends CreativeWork
 		this.classifications = classifications;
 	}
 
-	public List<RichDocument> getKeywords()
-	{
-		return keywords;
-	}
-
-  // lazy evaluation:
-  public List<RichDocument> keywords()
-  {
-    if (keywords == null)
-      keywords = new ArrayList<RichDocument>();
-    return keywords;
-  }
-
-  // addTo:
-  public void addToKeywords(RichDocument element)
-  {
-    keywords().add(element);
-  }
-
-  // size:
-  public int keywordsSize()
-  {
-    return keywords == null ? 0 : keywords.size();
-  }
-
-	public void setKeywords(List<RichDocument> keywords)
-	{
-		this.keywords = keywords;
-	}
-
 	public MetadataString	pages()
 	{
 		MetadataString	result = this.pages;
@@ -160,5 +126,37 @@ public class ScholarlyArticle extends CreativeWork
 	public void setPagesMetadata(MetadataString pages)
 	{
 		this.pages = pages;
+	}
+
+	public MetadataString	citationCount()
+	{
+		MetadataString	result = this.citationCount;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.citationCount = result;
+		}
+		return result;
+	}
+
+	public String getCitationCount()
+	{
+		return this.citationCount == null ? null : citationCount().getValue();
+	}
+
+	public MetadataString getCitationCountMetadata()
+	{
+		return citationCount;
+	}
+
+	public void setCitationCount(String citationCount)
+	{
+		if (citationCount != null)
+			this.citationCount().setValue(citationCount);
+	}
+
+	public void setCitationCountMetadata(MetadataString citationCount)
+	{
+		this.citationCount = citationCount;
 	}
 }

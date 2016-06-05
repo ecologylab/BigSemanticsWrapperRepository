@@ -352,6 +352,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.YtTable.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.article.Article.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.artwork.Artwork.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.artwork.FlamencoObject.class,
@@ -545,8 +547,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.Sections.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.SpringerArticle.class,
-
-		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.SpringerChapter.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.WileyArticle.class,
 

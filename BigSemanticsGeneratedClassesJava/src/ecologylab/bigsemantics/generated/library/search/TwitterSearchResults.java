@@ -8,7 +8,7 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2016) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Tweet;
+import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post;
 import ecologylab.bigsemantics.generated.library.search.Search;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @simpl_inherit
-public class TwitterSearchResults extends Search<Tweet>
+public class TwitterSearchResults extends Search<Post>
 {
 	public TwitterSearchResults()
 	{ super(); }

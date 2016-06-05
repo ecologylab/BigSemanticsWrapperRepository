@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2015) Interface Ecology Lab.
+ * Copyright (2016) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.ScholarlyArticle;
@@ -36,9 +36,6 @@ public class GoogleScholarArticle extends ScholarlyArticle
 
 	@simpl_scalar
 	private MetadataString date;
-
-	@simpl_scalar
-	private MetadataString citationCount;
 
 	@simpl_composite
 	@mm_name("citations_page")
@@ -141,38 +138,6 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	public void setDateMetadata(MetadataString date)
 	{
 		this.date = date;
-	}
-
-	public MetadataString	citationCount()
-	{
-		MetadataString	result = this.citationCount;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.citationCount = result;
-		}
-		return result;
-	}
-
-	public String getCitationCount()
-	{
-		return this.citationCount == null ? null : citationCount().getValue();
-	}
-
-	public MetadataString getCitationCountMetadata()
-	{
-		return citationCount;
-	}
-
-	public void setCitationCount(String citationCount)
-	{
-		if (citationCount != null)
-			this.citationCount().setValue(citationCount);
-	}
-
-	public void setCitationCountMetadata(MetadataString citationCount)
-	{
-		this.citationCount = citationCount;
 	}
 
 	public GoogleScholarSearch getCitationsPage()
