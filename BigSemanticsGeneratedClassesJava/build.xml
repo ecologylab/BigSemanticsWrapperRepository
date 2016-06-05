@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BigSemanticsGeneratedClassesJava" basedir="." default="main"
+         xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+  <!-- dependent project -->
+  <path id="dep_projs">
+    <pathelement path="../../simplJava/simplCore" />
+    <pathelement path="../../simplJava/simplSunSpecifics" />
+    <pathelement path="../../BigSemanticsJava/BigSemanticsCore" />
+  </path>
+  
+  <import file="../../BigSemanticsJava/lib/bs-build-common.xml" />
+
+</project>
