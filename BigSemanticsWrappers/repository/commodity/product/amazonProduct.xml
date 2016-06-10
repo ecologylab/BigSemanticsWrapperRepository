@@ -2,10 +2,10 @@
   package="ecologylab.bigsemantics.generated.library.commodity.product">
 
   <meta_metadata name="amazon_product" extends="product" parser="xpath" user_agent_name="chrome">
-    <selector url_regex_fragment="http://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
-    <selector url_regex_fragment="http://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
-    <selector url_regex_fragment="http://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
-    <selector url_regex_fragment="http://www.amazon.co.uk/gp/product/[^/]*" domain="amazon.co.uk" />
+    <selector url_regex_fragment="https?://www.amazon.com/[^/]*/dp/[^/]*" domain="amazon.com" />
+    <selector url_regex_fragment="https?://www.amazon.co.uk/[^/]*/dp/[^/]*" domain="amazon.co.uk" />
+    <selector url_regex_fragment="https?://www.amazon.com/gp/product/[^/]*" domain="amazon.com" />
+    <selector url_regex_fragment="https?://www.amazon.co.uk/gp/product/[^/]*" domain="amazon.co.uk" />
 
     <example_url url="http://www.amazon.com/Twilight-Saga-Breaking-Two-Disc-Special/dp/B002BWP49C" />
     <example_url url="http://www.amazon.com/Samsung-UN60D7000-60-Inch-1080p-Silver/dp/B004QFGGTY" />

@@ -752,13 +752,9 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.wikipediaPage.Section.class,
 
-		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaCategoryType.class,
-
-		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaMobilePage.class,
+		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaCategory.class,
 
 		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaPage.class,
-
-		ecologylab.bigsemantics.generated.library.wikipediaPage.WikipediaPageType.class,
 
 		ecologylab.bigsemantics.metadata.builtins.person.author.TedAuthor.class,
 
