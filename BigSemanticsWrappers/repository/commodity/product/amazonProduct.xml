@@ -27,7 +27,7 @@
       <xpath>//span[@id='actualPriceValue' or (contains(@class, 'a-size-medium') and contains(@class, 'price'))]</xpath>
     </scalar>
     <composite name="department" type="rich_document" show_in_snippet="true">
-      <xpath>//*[@id='nav-subnav']/li[1]/a</xpath>
+      <xpath>//*[@id='nav-subnav']//a[1]</xpath>
       <scalar name="title">
         <xpath>.</xpath>
       </scalar>
