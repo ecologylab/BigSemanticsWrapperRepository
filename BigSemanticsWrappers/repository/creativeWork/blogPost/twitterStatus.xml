@@ -8,6 +8,7 @@
     
 	<scalar name="title" hide="true" />
 	<collection name="main_images" hide="true" />
+	<composite name="see_also" hide="true"/>
     
     <composite name="twitter_microblog" type="twitter_microblog" hide_label="true">
         <xpath>//div[@class='content clearfix']</xpath>
