@@ -13,12 +13,13 @@
     </scalar>
     
     <scalar name="description" hide="true"/>
-    
+    <composite name="see_also" hide="true"/>
+        
     <scalar name="username" scalar_type="String" hide_label="true" concatenates_to="title">
       <xpath>//h2[@class='username']/span</xpath>
       <xpath>//h2[@class='ProfileHeaderCard-screenname u-inlineBlock u-dir']/a</xpath>
     </scalar>
-
+    
     <collection name="tweeters" child_type="tweeter" hide_label="true">
       <xpath>.</xpath>
 			
@@ -101,9 +102,10 @@
       </composite>
 
       <scalar name="description" hide_label="true" extract_as_html="true">
-        <xpath>./p[@class='js-tweet-text tweet-text']</xpath>
-        <xpath>./p[@class='TweetTextSize TweetTextSize--16px js-tweet-text tweet-text']</xpath>
-        <xpath>./p[@class='TweetTextSize TweetTextSize--26px js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='TweetTextSize js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='TweetTextSize TweetTextSize--16px js-tweet-text tweet-text']</xpath>
+        <xpath>.//p[@class='TweetTextSize TweetTextSize--26px js-tweet-text tweet-text']</xpath>
         <xpath>.//p[@class='ProfileTweet-text js-tweet-text u-dir']</xpath>
       </scalar>
       <scalar name="post_date" hide_label="true">
