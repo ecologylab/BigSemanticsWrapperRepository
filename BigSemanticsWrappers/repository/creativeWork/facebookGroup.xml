@@ -2,7 +2,7 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
   <meta_metadata name="facebook_group" extends="social_media_profile" parser="xpath" no_cache="true">
-	    <selector url_regex="https://www.facebook.com/groups/[^/?]*/" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/groups/[^/?]*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/groups/[^/?]*/(?fref=)?.*" domain="facebook.com" />
 	    
 	    <example_url url="https://www.facebook.com/groups/AggieCorps2020" />
@@ -135,6 +135,7 @@
 					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 					<replace pattern=".*at " to=""/>
 				</scalar>	
+				
 				<collection label="replies" name="comments" >
 					<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath>
 					<collection name="authors" child_type="author" label="user">
