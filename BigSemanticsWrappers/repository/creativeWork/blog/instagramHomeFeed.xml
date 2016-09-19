@@ -1,0 +1,109 @@
+<meta_metadata_repository name="instagramHomeFeed"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
+
+  <meta_metadata name="instagram_home_feed" extends="social_media_feed" parser="xpath" no_cache="true">
+      <selector url_stripped="https://www.instagram.com" />
+      <selector url_stripped="https://www.instagram.com/" />
+      <selector url_regex="https://www.instagram.com/" domain="instagram.com" />
+      <selector url_regex="https?://www.instagram.com.*" domain="instagram.com" />
+      <example_url url="https://www.instagram.com" />
+		
+ 		<collection name="feed" label="PhotoStream" child_type="social_media_post" child_use_value_as_label="photos">
+ 			<xpath>.//article</xpath>
+ 			<scalar name="title"/>
+ 			<scalar name="description" /> 			
+ 			<composite name="see_also" hide="true" />
+ 			<collection name="main_images" hide="true"/>
+ 
+ 			<composite name="video" type="instagram_video" >
+ 				<collection name="photos" child_type="image" comment="Photos posted in post." >
+ 					<xpath>.//*[@id='react-root']/section/main/section/div/div[1]/article[4]/div[1]/div[1]/div/div/div[1]/div/img</xpath>
+ 				</collection>
+	  			<collection name="thumbnails" label="thumbnail" >
+			  		<xpath>.//div[@class='_ikcuh']</xpath>
+			  		<composite name="thumbnail" type="thumbnail" />
+			  			<xpath>//div[@class='_2tomm']//img</xpath>
+			  		<scalar name="location">
+			        	<xpath>./@src</xpath>
+			        </scalar>
+		  		</collection>
+		  		 <collection name="up_votes" label="views" child_scalar_type="String" layer="6.0">
+ 					<xpath>.//div[@class='_es1du _rgrbt']//div[@class='_iuf51 _3sst1']//span[@class='_9jphp']//span</xpath>
+ 				</collection>
+				<scalar name="video_link">
+					<xpath>//div[@class='_ikcuh']//div[@class='_2tomm']//video[@class='_c8hkj']/@src</xpath>
+				</scalar>
+				<composite name="see_also" hide="true" />
+			</composite>	
+			 
+ 			<composite name="shared" label="user" layer="10.0" use_value_as_label="shared.photo">
+		  		<xpath>.//div[@class='_f95g7']//a</xpath>
+		  		<scalar name="title" hide_label="true">
+		  			<xpath>.</xpath>
+		  		</scalar>
+		  		<scalar name="location">
+		  			<xpath>./@href</xpath>
+		  		</scalar>
+		  		<composite name="photo" hide_label="true">
+		  			<scalar name="location">
+		  				<xpath>.//img[@class='_a012k']/@src</xpath>
+		  			</scalar>
+		  		</composite>
+	  		</composite>
+  		  	
+  		  	<collection name="photos" hide_label="true" layer="9.0">
+		  		<xpath>.//div[@class='_jjzlb']//img</xpath>
+		  		<scalar name="location">
+					<xpath>./@src</xpath>
+				</scalar>
+	  		</collection>
+	  	  	
+	  	  	<scalar name="description" label="description">
+		  		<xpath>.//div[@class='_jjzlb']//img</xpath>
+		  	</scalar>
+			
+			<scalar name="posted" layer="8.0">
+		  		<xpath>.//a[@class='_ljyfo']//time</xpath>
+		  	</scalar> 				  	
+		  	
+		  	<collection name="up_votes" label="likes" child_scalar_type="String" layer="6.0">
+ 				<xpath>.//div[@class='_es1du _rgrbt']//span[@class='_tf9x3']//span</xpath>
+ 			</collection>
+	  		
+	  	<!--	<collection name="comments" layer="5.0" child_show_expanded_always="true">
+				<xpath>.//div[@class='_es1du _rgrbt']//ul[@class='_mo9iw _pnraw']</xpath>
+				<scalar name="title" hide="true"/>
+				<composite name="see_also" hide="true" />
+				
+				<collection name="authors" label="user" child_type="author" layer="10.0">
+					<xpath>.//li[@class='_nk46a']</xpath>
+					<scalar name="title">
+						<xpath>./a[@class='_4zhc5 notranslate _iqaka']//@title</xpath>
+					</scalar>
+					<scalar name="location">
+						<xpath>./a[@class='_4zhc5 notranslate _iqaka']/@href</xpath>
+					</scalar>	
+				</collection>	
+		  	</collection> -->
+		    	
+			<collection name="comments" >
+				<xpath>.//*[@class='_nk46a']</xpath>
+				<collection name="authors" child_type="author" label="user">
+					<xpath>.//a[contains(@class,'_4zhc5 notranslate _iqaka')]</xpath>
+	    			<scalar name="title" >
+	    				<xpath>.</xpath>
+	    			</scalar>
+	    			<scalar name="location" >
+	    				<xpath>./@href</xpath>
+	    			</scalar>
+				</collection>
+    			<collection name="description_content" label="comment" child_scalar_type="String">
+					<xpath>.//span</xpath>
+				</collection>
+				<composite name="see_also" hide="true" />
+			</collection>
+ 		</collection>
+
+	
+  </meta_metadata>
+ </meta_metadata_repository>
