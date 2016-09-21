@@ -2,110 +2,153 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
   
     <meta_metadata name="facebook_news_feed" extends="blog" parser="xpath" no_cache="true">
-	    <selector url_stripped="https://www.facebook.com" />
+	    <selector url_stripped="https://www.facebook.com"  />
+	    <selector url_stripped="https://www.facebook.com/"  />
+	    <selector url_regex="https://www.facebook.com/(\?ref=){1}?.*[^/?]" domain="facebook.com"/>
 	    
-		<composite name="user_feed" type="social_media_feed">	    
-		    	<collection name="feed" child_type="social_media_post"  comment="mainFeed">
-				<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
-				<scalar name="title" scalar_type="String"/>
-				<collection name="authors" child_type="author" hide_label="true" child_use_value_as_label="photo">
-					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']</xpath>
-	    			<scalar name="title" >
-	    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
-	    			</scalar>
-	    			<scalar name="location" >
-	    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a/@href</xpath>
-	    			</scalar>
-	    			<composite name="photo">
-	    				<xpath>.//img</xpath>
-	    				<scalar name="location">
-			            <xpath>./@src</xpath>
-			          </scalar>
-	    			</composite>
+	    <example_url url="https://www.facebook.com" />
+	    <example_url url="https://www.facebook.com/?ref=logo" />
+	    
+		<collection name="feed" child_type="social_media_post" label="posts" comment="mainFeed">
+			<xpath>//div[@class='userContentWrapper _5pcr']</xpath>
+			<scalar name="title" scalar_type="String"/>
+			<composite name="see_also" hide="true" />
+			<collection name="authors" child_type="author" label="user">
+				<style is_child_metadata="true" />
+				<xpath>.//div[@class='_1dwg _1w_m']//div[@class='clearfix _5va3']</xpath>
+				<composite name="see_also" hide="true" />
+    			<scalar name="title" >
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a</xpath>
+    			</scalar>
+    			<scalar name="location" >
+    				<xpath>.//span[@class='fwn fcg']//span[contains(@class,'fwb')]/a/@href</xpath>
+    			</scalar>
+    			<composite name="photo">
+    				<xpath>.//div[@class='mtm']//img</xpath>
+    				<scalar name="location">
+		            <xpath>./@src</xpath>
+		          </scalar>
+    			</composite>
+			</collection>
+			<scalar name="date" layer="7.0">
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
+				<replace pattern=" at.*" to=""/>
+			</scalar>
+			<scalar name="time" concatenates_to="date" hide_label="true">
+				<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
+				<replace pattern=".*at " to=""/>
+			</scalar>			
+			
+			<collection name="description_content" label="post" child_scalar_type="String" layer="6.0">
+				<xpath>.//div[@class='_5pbx userContent']</xpath>
+			</collection>
+			<!-- feeling TODO -->
+			<collection name="photos" layer="5.0">
+			<xpath>.//div[@class='_3x-2']//img</xpath>
+    			   <scalar name="location">
+		            <xpath>./@src</xpath>
+		          </scalar>
+			</collection>
+			
+			<composite name="shared">
+				<xpath>.//span[@class='fcg' and contains(text(),'shared')]</xpath>
+				<scalar name="title" >
+    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]</xpath>
+    			</scalar>
+    			<scalar name="location" >
+    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]/@href</xpath>
+    			</scalar>
+			</composite>
+			<collection name="urls"> <!--  ASK for help-->
+				<xpath>.//a[@class='_52c6']</xpath>
+			</collection>
+			<composite name="video" type="facebook_video" >
+				<xpath>.</xpath>
+				<scalar name="video_link">
+					<xpath>.//span[@class='fcg']/a[@class='profileLink' and contains(text(),'video')]/@href</xpath>
+				</scalar>
+				<composite name="see_also" hide="true" />
+			</composite>
+			
+			<collection name="up_votes" label="likes" child_scalar_type="String">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Likes')]</xpath>
+				<xpath>.//div[@class='UFILikeSentenceText']/span</xpath>
+			</collection>
+			<scalar name="shares">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Shares')]</xpath>
+			</scalar>
+			<scalar name="num_comments">
+				<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Comments')]</xpath>
+			</scalar>
+			
+			<collection name="comments">
+				<xpath>.//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//div[contains(@class,'UFIComment') and @aria-label='Comment']</xpath>
+					<collection name="authors" child_type="author" label="user">
+						<xpath>.//div[@class='clearfix']</xpath>
+						<composite name="see_also" hide="true" />
+		    			<scalar name="title" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']</xpath>
+		    			</scalar>
+		    			<scalar name="location" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
+		    			</scalar>
+		    			<composite name="photo">
+		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
+		    				<scalar name="location">
+				            	<xpath>./@src</xpath>
+				          </scalar>
+		    			</composite>
+		    			<composite name="see_also" hide="true" />
+					</collection>
+				<collection name="description_content" label="post" child_scalar_type="String">
+					<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
+				</collection>
+		    	<composite name="sticker" type="image">
+		    		<scalar name="location">
+		    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
+		     			<replace pattern="^[^\(]*\(" to=""/>
+		    			<replace pattern="\);.*" to=""/>
+		    		</scalar>
+		    	</composite>
+				<!-- path for stickers but need to figure out how to extract pic url
+				/div[@class='UFICommentContent']//div[@data-testid='ufi_comment_sticker']/@style
+				  -->
+				<collection name="up_votes" label="likes" child_scalar_type="String">
+					<xpath>.//div[contains(@class,'UFICommentActions')]//a[@class='UFICommentLikeButton']/span</xpath>
+					<composite name="see_also" hide="true" />
 				</collection>
 				<scalar name="date">
-					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
+					<composite name="see_also" hide="true" />
+					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 					<replace pattern=" at.*" to=""/>
+					<composite name="see_also" hide="true" />
 				</scalar>
-				<scalar name="time" concatenates_to="date">
-					<xpath>.//div[@class='_1dwg']//div[@class='clearfix _5x46']//div[@class='_5pcp']//a[@class='_5pcq']//abbr/@title</xpath>
+				<scalar name="time" concatenates_to="date" hide_label="true">
+					<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 					<replace pattern=".*at " to=""/>
-				</scalar>			
-				<collection name="description_content" label="post" child_scalar_type="String">
-					<xpath>.//div[@class='_5pbx userContent']//p</xpath>
-				</collection>
-				<!-- feeling TODO -->
-				<collection name="photos" >
-				<xpath>.//div[@class='_3x-2']//img</xpath>
-	    			   <scalar name="location">
-			            <xpath>./@src</xpath>
-			          </scalar>
-				</collection>
-				
-				<composite name="shared">
-					<xpath>.//span[@class='fcg' and contains(text(),'shared')]</xpath>
-					<scalar name="title" >
-	    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]</xpath>
-	    			</scalar>
-	    			<scalar name="location" >
-	    				<xpath>./a[@class='profileLink' and not(contains(text(),'video'))]/@href</xpath>
-	    			</scalar>
-				</composite>
-				<collection name="urls"> <!--  ASK for help-->
-					<xpath>.//a[@class='_52c6']/@href</xpath>
-					<xpath>.//div[contains(@class,'userContent')]//a/@href</xpath>
-				</collection>
-				<composite name="video" type="facebook_video" >
-					<xpath>.</xpath>
-					<scalar name="video_link">
-						<xpath>.//span[@class='fcg']/a[@class='profileLink' and contains(text(),'video')]/@href</xpath>
-						<xpath>.//div[@class='_3x-2']//video/src</xpath>
-					</scalar>
-				</composite>
-				
-				<collection name="up_votes" label="likes" child_scalar_type="String">
-					<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Likes')]</xpath>
-					<xpath>.//div[@class='UFILikeSentenceText']/span</xpath>
-				</collection>
-				<scalar name="shares">
-					<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Shares')]</xpath>
-				</scalar>
-				<scalar name="num_comments">
-					<xpath>.//a[@class='UFIBlingBox uiBlingBox feedbackBling UFIBlingBoxRevised']//span[contains(.,'Comments')]</xpath>
-				</scalar>
-				
-				<collection name="comments">
-					<xpath>.//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//li[contains(@class,'UFIFirstComment ')]/../..//ul[not(contains(@class, 'UFIReplyList'))]/li[contains(@class, 'Comment')]</xpath>
-						<collection name="authors" child_type="author" label="user">
-							<xpath>.//div[@class='clearfix']</xpath>
-			    			<scalar name="title" >
-			    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
-			    			</scalar>
-			    			<scalar name="location" >
-			    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
-			    			</scalar>
-			    			<composite name="photo">
-			    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
-			    				<scalar name="location">
-					            	<xpath>./@src</xpath>
-					          </scalar>
-			    			</composite>
-						</collection>
-					<collection name="description_content" child_scalar_type="String">
-						<xpath>.//span[contains(@class,'UFICommentBody')]//span//text()</xpath>
+					<composite name="see_also" hide="true" />
+				</scalar>	
+				<collection label="replies" name="comments" >
+					<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath>
+					<composite name="see_also" hide="true" />
+					<collection name="authors" child_type="author" label="user">
+						<xpath>.//div[@class='clearfix']</xpath>
+		    			<scalar name="title" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
+		    			</scalar>
+		    			<scalar name="location" >
+		    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
+		    			</scalar>
+		    			<composite name="photo">
+		    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
+		    				<scalar name="location">
+				            	<xpath>./@src</xpath>
+				          </scalar>
+		    			</composite>
 					</collection>
-					<collection name="photos" >
-						<xpath>.//span[contains(@class,'UFICommentBody')]//img</xpath>
-						<xpath>.</xpath>
-	    			   <scalar name="location">
-	    			   	 <xpath>.//div[@class='_3x-2']//video/..//img/@style</xpath>
-			             <xpath>./@src</xpath>
-	        	    			<replace pattern="background-image: url\(" to=""/>
-		    			   		<replace pattern="\);" to=""/>
-			          </scalar>
-					</collection>
-					<collection name="urls"> <!--  ASK for help-->
-						<xpath>.//span[contains(@class,'UFICommentBody')]//a/@href</xpath>
+					<collection name="description_content" label="post" child_scalar_type="String">
+						<xpath>.//span[@class='UFICommentBody']//span</xpath>
+						<composite name="see_also" hide="true" />
 					</collection>
 			    	<composite name="sticker" type="image">
 			    		<scalar name="location">
@@ -121,60 +164,14 @@
 						<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 						<replace pattern=" at.*" to=""/>
 					</scalar>
-					<scalar name="time">
+					<composite name="see_also" hide="true" />
+					<scalar name="time" concatenates_to="date" hide_label="true">
 						<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
 						<replace pattern=".*at " to=""/>
-					</scalar>	
-					<collection label="replies" name="comments" >
-						<xpath>./following-sibling::li[1]/ul/li[contains(@class,'UFIComment')]</xpath>
-						<collection name="authors" child_type="author" label="user">
-							<xpath>.//div[@class='clearfix']</xpath>
-			    			<scalar name="title" >
-			    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/span</xpath>
-			    			</scalar>
-			    			<scalar name="location" >
-			    				<xpath>.//div[@class='UFICommentContentBlock']//a[@class=' UFICommentActorName']/@href</xpath>
-			    			</scalar>
-			    			<composite name="photo">
-			    				<xpath>.//div[@class='_ohe lfloat']//img[contains(@class,'img UFIActorImage')]</xpath>
-			    				<scalar name="location">
-					            	<xpath>./@src</xpath>
-					          </scalar>
-			    			</composite>
-						</collection>
-						<collection name="description_content" child_scalar_type="String">
-							<xpath>.//span[@class='UFICommentBody']//span//text()</xpath>
-						</collection>
-						<collection name="photos" >
-							<xpath>.//span[contains(@class,'UFICommentBody')]//img</xpath>
-		    			   <scalar name="location">
-				            <xpath>./@src</xpath>
-				          </scalar>
-						</collection>
-						<collection name="urls"> <!--  ASK for help-->
-							<xpath>.//span[contains(@class,'UFICommentBody')]//a/@href</xpath>
-						</collection>
-				    	<composite name="sticker" type="image">
-				    		<scalar name="location">
-				    			<xpath>.//div[@data-testid='ufi_comment_sticker']/@style</xpath>
-				     			<replace pattern="^[^\(]*\(" to=""/>
-				    			<replace pattern="\);.*" to=""/>
-				    		</scalar>
-				    	</composite>
-						<collection name="up_votes" label="likes" child_scalar_type="String">
-							<xpath>.//div[contains(@class,'UFICommentActions')]//a[@class='UFICommentLikeButton']/span</xpath>
-						</collection>
-						<scalar name="date">
-							<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
-							<replace pattern=" at.*" to=""/>
-						</scalar>
-						<scalar name="time">
-							<xpath>.//div[contains(@class,'UFICommentActions')]//abbr[@class='livetimestamp']/@title</xpath>
-							<replace pattern=".*at " to=""/>
-						</scalar>
-					</collection>
+					</scalar>
 				</collection>
 			</collection>
-		</composite>	    
+		</collection>
+	    
 	</meta_metadata>
   </meta_metadata_repository>

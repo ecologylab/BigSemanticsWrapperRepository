@@ -2,8 +2,8 @@
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
   <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true">
-  		<selector url_regex="https://www.facebook.com/[^/?]*" domain="facebook.com" />
-	    <selector url_regex="https://www.facebook.com/[^/?]*(?fref=)?.*" domain="facebook.com" />
+  		<selector url_regex="https://www.facebook.com/[^/?]+" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/[^/?]+(?fref=)?.*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/search/.*" domain="facebook.com" />
 	    
 	    <example_url url= "https://www.facebook.com/alexandria.stacy.5" />
@@ -223,6 +223,7 @@
 		        <scalar name="title" >
 		            <xpath>./a/div[@class='friendName']/div[@class='name']</xpath>
 		        </scalar>
+		        <composite name="see_also" hide="true" />
 		        <scalar name="location">
 					<xpath>./a/@href</xpath>
 				</scalar>
@@ -243,6 +244,7 @@
 		<scalar name="feed_name" label="feed">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
+		<composite name="see_also" hide="true" />
 		<collection name="feed" label="Photos" hide_label="true">
  		 <xpath>.//table[@class='uiGrid _51mz _122 _4b25']//tr[@class='_51mx']</xpath>	 
 			<collection name="photos" hide_label="true">
@@ -262,6 +264,7 @@
 		<scalar name="feed_name" label="feed">
 			<xpath>.//h3[@class='_71u _70n _5r0_']/a</xpath>
 		</scalar>
+		<composite name="see_also" hide="true" />
 		<collection name="feed" label="Videos" hide_label="true">
  		 <xpath>.//table[@class='uiGrid _51mz _2ze_ _4b25']//td</xpath>	 
 			<collection name="photos" hide_label="true">
@@ -270,6 +273,7 @@
 			            	<xpath>./@src</xpath>
 			          </scalar>
 			</collection>
+			<composite name="see_also" hide="true" />
 			<scalar name="location">
 				<xpath>.//td[@class='_51m-']/a/@ajaxify</xpath>
 				<replace pattern="^\/" to="https://www.facebook.com/"/>
