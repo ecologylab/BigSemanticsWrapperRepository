@@ -129,7 +129,7 @@
 					<composite name="see_also" hide="true" />
 				</scalar>	
 				<collection label="replies" name="comments" >
-					<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath>
+					<xpath>//div[@class='uiUfi UFIContainer _5pc9 _5vsj _5v9k']//div[contains(@class,'UFIComment') and @aria-label='Comment reply']</xpath>
 					<composite name="see_also" hide="true" />
 					<collection name="authors" child_type="author" label="user">
 						<xpath>.//div[@class='clearfix']</xpath>
