@@ -139,7 +139,8 @@
 				</scalar>	
 				
 				<collection label="replies" name="comments" >
-					<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath>
+					<xpath>..//div[contains(@class,'UFIComment') and @aria-label='Comment reply']</xpath>
+				<!-- 	<xpath>./following-sibling::div[1]/div[contains(@class,'UFIComment')]</xpath> -->
 					<collection name="authors" child_type="author" label="user">
 						<xpath>.//div[@class='clearfix']</xpath>
 		    			<scalar name="title" >
