@@ -1,0 +1,37 @@
+<meta_metadata_repository name="instagramTagFeed"
+  package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
+
+  <meta_metadata name="instagram_tag_feed" extends="social_media_feed" parser="xpath" no_cache="true">
+
+   <!--  <selector url_stripped="https://www.instagram.com/explore/tags/" />  --> 
+      <selector url_regex="https://(www.)?instagram.com/explore/tags/.*" domain="instagram.com" />
+      <selector url_regex="https://(www.)?instagram.com/explore/tags/[^/?]*/" domain="instagram.com" />
+      <selector url_regex="https://(www.)?instagram.com/explore/tags/[^/?]*" domain="instagram.com" />
+
+      <example_url url="https://www.instagram.com/explore/tags/overwatch" />
+      <example_url url="https://www.instagram.com/explore/tags/overwatch/" />
+		
+ 		<collection name="feed" label="PhotoStream" child_type="social_media_post" child_use_value_as_label="photos">
+ 			<xpath>//a[@class='_8mlbc _vbtk2 _t5r8b']</xpath>			
+ 			<composite name="see_also" hide="true" />
+ 			<collection name="main_images" hide="true"/>	
+  		  	
+  		  	<collection name="photos" hide_label="true" layer="9.0">
+		  		<xpath>.//div[@class='_jjzlb']//img</xpath>
+		  		<scalar name="location">
+					<xpath>.//@src</xpath>
+				</scalar>
+	  		</collection>
+	  		
+	  	  	<scalar name="location">
+    			<xpath>.//@href</xpath>
+    		</scalar>
+    		
+	  	  	<scalar name="title" label="description">
+		  		<xpath>.//@alt</xpath>
+		  	</scalar>				  	
+ 		</collection>
+
+	
+  </meta_metadata>
+ </meta_metadata_repository>

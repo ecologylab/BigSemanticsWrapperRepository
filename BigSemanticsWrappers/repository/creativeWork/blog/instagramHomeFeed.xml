@@ -5,7 +5,7 @@
       <selector url_stripped="https://www.instagram.com" />
       <selector url_stripped="https://www.instagram.com/" />
       <selector url_regex="https://www.instagram.com/" domain="instagram.com" />
-      <selector url_regex="https?://www.instagram.com.*" domain="instagram.com" />
+    <!--   <selector url_regex="https?://www.instagram.com.*" domain="instagram.com" />--> 
       <example_url url="https://www.instagram.com" />
 		
  		<collection name="feed" label="PhotoStream" child_type="social_media_post" child_use_value_as_label="photos">

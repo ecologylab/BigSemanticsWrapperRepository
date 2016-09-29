@@ -3,7 +3,7 @@
 
   <meta_metadata name="instagram_profile" extends="social_media_profile" parser="xpath" no_cache="true">
     <selector url_regex="https://instagram.com/[^/?]*/" domain="instagram.com" />
-    <selector url_regex="https://instagram.com/explore/tags/[^/?]*/" domain="instagram.com" />
+   <!--  <selector url_regex="https://instagram.com/explore/tags/[^/?]*/" domain="instagram.com" /> -->
     <example_url url="https://instagram.com/instagram/" />
     <example_url url="https://instagram.com/natgeo/" />
         
