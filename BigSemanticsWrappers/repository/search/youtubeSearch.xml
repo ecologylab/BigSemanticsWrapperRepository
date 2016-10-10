@@ -1,25 +1,29 @@
-
-  <meta_metadata_repository name="video"
-  package="ecologylab.bigsemantics.generated.library.search">
+<meta_metadata_repository name="ytsearch"
+  package="ecologylab.bigsemantics.generated.library.creativeWork">
   
-
-  <meta_metadata name="youtube_search_results" extends="search" parser="xpath"
-    comment="youtube video search results page">
-    <generic_type_var name="SR" arg="youtube_video" />
-    <selector url_stripped="http://www.youtube.com/results?" />
-    <selector url_stripped="https://www.youtube.com/results?" />
-    <example_url url="https://www.youtube.com/results?search_query=search"/>
-    <example_url url="https://www.youtube.com/results?search_query=windows+phone"/>
-    <collection name="search_results">
-      <xpath>//h3/a[@class='yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link
-        result-item-translation-title']</xpath>
-      <scalar name="title">
-        <xpath>.</xpath>
-      </scalar>
-      <scalar name="location">
-        <xpath>./@href</xpath>
-      </scalar>
-    </collection>
-
-  </meta_metadata>
-  </meta_metadata_repository>
+	  <meta_metadata name="youtube_search" extends="search" parser="xpath" comment="youtube video search results page">
+	  	<generic_type_var name="SR" arg="youtube_video" />
+	    <selector url_stripped="http://www.youtube.com/results?" />
+	    <selector url_stripped="https://www.youtube.com/results?" />
+	    <example_url url="https://www.youtube.com/results?search_query=search"/>
+	    <example_url url="https://www.youtube.com/results?search_query=windows+phone"/>
+	    <scalar name="title" label="search term">
+	    	<xpath>//div[@id='body-container']//div[@id='masthead-positioner']//div[@id='yt-masthead-content']//div[@id='masthead-search-terms']//@value</xpath>
+	    </scalar>
+	    <scalar name="number_of_results" label="number of results">
+			<xpath>//div[@id='body-container']//div[@id='page-container']//div[@class='  content-alignment']//div[@class='branded-page-v2-body branded-page-v2-primary-column-content']//p[@class='num-results first-focus']//text()</xpath>
+		</scalar>
+	    
+		<collection name="search_results">
+			<xpath>//div[@class='branded-page-v2-body branded-page-v2-primary-column-content']//ol[@class='section-list']//li//ol//li//div[@class='yt-lockup-dismissable yt-uix-tile']</xpath>
+			<scalar name="title">
+	        	<xpath>.//h3//a[1]</xpath>
+	      	</scalar>
+		    <scalar name="location">
+		    	<xpath>.//h3//a//@href</xpath>
+		    </scalar>
+	
+		</collection>
+	</meta_metadata>
+	
+</meta_metadata_repository>
