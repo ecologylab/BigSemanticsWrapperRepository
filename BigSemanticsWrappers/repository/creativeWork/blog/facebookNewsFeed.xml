@@ -1,7 +1,7 @@
 <meta_metadata_repository name="facebookNewsFeed"
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
   
-    <meta_metadata name="facebook_news_feed" extends="blog" parser="xpath" no_cache="true">
+    <meta_metadata name="facebook_news_feed" extends="blog" parser="xpath" no_cache="true" extract_with="popUnder">
 	    <selector url_stripped="https://www.facebook.com"  />
 	    <selector url_stripped="https://www.facebook.com/"  />
 	    <selector url_regex="https://www.facebook.com/(\?ref=){1}?.*[^/?]" domain="facebook.com"/>

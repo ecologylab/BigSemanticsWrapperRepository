@@ -1,12 +1,13 @@
 <meta_metadata_repository name="facebookProfile"
   package="ecologylab.bigsemantics.generated.library.creativeWork.blog">
 
-  <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true">
+  <meta_metadata name="facebook_profile" extends="social_media_profile" parser="xpath" no_cache="true" extract_with="popUnder">
   		<selector url_regex="https://www.facebook.com/[^/?]+" domain="facebook.com" />
-	    <selector url_regex="https://www.facebook.com/[^/?]+(?fref=)?.*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/[^/?]+[?fref=]?.*" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/search/.*" domain="facebook.com" />
 	    
 	    <example_url url= "https://www.facebook.com/alexandria.stacy.5" />
+	    <!--  example earl  -->
 	     
 	    <scalar name="title" use_value_as_label="facebook.photo">
 	      <xpath>//span[@id='fb-timeline-cover-name']</xpath>
