@@ -4,7 +4,7 @@
   <meta_metadata name="facebook_group" extends="social_media_profile" parser="xpath" no_cache="true">
 	    <selector url_regex="https://www.facebook.com/groups/[^/?]*/" domain="facebook.com" />
 	    <selector url_regex="https://www.facebook.com/groups/[^/?]*" domain="facebook.com" />
-	    <selector url_regex="https://www.facebook.com/groups/[^/?]*/(?fref=)?.*" domain="facebook.com" />
+	    <selector url_regex="https://www.facebook.com/groups/[^/?]*/(\?fref=)?.*" domain="facebook.com" />
 	    
 	    <example_url url="https://www.facebook.com/groups/AggieCorps2020" />
 	    <example_url url="https://www.facebook.com/groups/AggieCorps2020/" />
