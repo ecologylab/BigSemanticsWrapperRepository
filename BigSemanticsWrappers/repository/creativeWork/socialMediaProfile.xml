@@ -3,6 +3,6 @@
 
   <meta_metadata name="social_media_profile" extends="rich_document" parser="xpath" no_cache="true">
   	<composite name="user" type="social_media_user"/>
-  	<collection name="profile_feed" child_type="social_media_feed"/>
+    <composite name="profile_feed" type="social_media_feed"/>
   </meta_metadata>
  </meta_metadata_repository>

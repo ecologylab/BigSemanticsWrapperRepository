@@ -38,7 +38,7 @@
   		</composite>
   	</composite>
   	
- 	<collection name="profile_feed" label="PhotoStream" child_type="social_media_post" child_use_value_as_label="photos">
+ 	<collection name="feed" label="PhotoStream" child_type="social_media_post" child_use_value_as_label="photos">
 		<xpath>//a[@class='_8mlbc _vbtk2 _t5r8b']</xpath>			
 		<composite name="see_also" hide="true" />
 		<collection name="main_images" hide="true"/>	
