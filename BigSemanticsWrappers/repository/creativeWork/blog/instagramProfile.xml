@@ -6,11 +6,11 @@
    <!--  <selector url_regex="https://instagram.com/explore/tags/[^/?]*/" domain="instagram.com" /> -->
     <example_url url="https://www.instagram.com/instagram/" />
     <example_url url="https://www.instagram.com/natgeo/" />
-        
+
   	<scalar name="title" hide="true"/>
   	<scalar name="description" hide="true"/>
   	<collection name="main_images" hide="true" />
-  	
+
   	<composite name="user" use_value_as_label="user.photo">
   		<scalar name="title" hide="true"/>
   		<collection name="main_images" hide="true" />
@@ -37,28 +37,30 @@
   			</scalar>
   		</composite>
   	</composite>
-  	
- 	<collection name="profile_feed" label="PhotoStream" child_type="social_media_post" child_use_value_as_label="photos">
-		<xpath>//a[@class='_8mlbc _vbtk2 _t5r8b']</xpath>			
-		<composite name="see_also" hide="true" />
-		<collection name="main_images" hide="true"/>	
-		  	
+
+ 	<collection name="profile_feed" label="PhotoStream" child_use_value_as_label="photos">
+      <collection name="feed">
+		<xpath>//a[@class='_8mlbc _vbtk2 _t5r8b']</xpath>
+		<!-- <composite name="see_also" hide="true" /> -->
+		<collection name="main_images" hide="true"/>
+
 		<collection name="photos" hide_label="true" layer="9.0">
   			<xpath>.//div[@class='_jjzlb']//img</xpath>
   		<scalar name="location">
-			<xpath>.//@src</xpath>	
+			<xpath>.//@src</xpath>
 		</scalar>
  		</collection>
- 		
+
  	  	<scalar name="location" label="location">
   			<xpath>.//@href</xpath>
   		</scalar>
-  		
+
  	  	<scalar name="title" label="description">
   		<xpath>.//@alt</xpath>
-  		</scalar>				  	
+  		</scalar>
+      </collection>
 	</collection>
-  	<!-- 
+  	<!--
   	<composite name="profile_feed" label="PhotoStream" type="social_media_feed">
   		<scalar name="title" hide="true" />
   		<scalar name="description" hide="true" />
