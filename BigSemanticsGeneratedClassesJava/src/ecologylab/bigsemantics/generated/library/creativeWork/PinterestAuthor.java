@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2016) Interface Ecology Lab.
+ * Copyright (2017) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;

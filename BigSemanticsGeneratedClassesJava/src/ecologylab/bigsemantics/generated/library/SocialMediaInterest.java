@@ -5,10 +5,10 @@ package ecologylab.bigsemantics.generated.library;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2016) Interface Ecology Lab.
+ * Copyright (2017) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creativeWork.FacebookVideo;
+import ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -27,7 +27,7 @@ public class SocialMediaInterest extends RichDocument
 {
 	@simpl_composite
 	@mm_name("video")
-	private FacebookVideo video;
+	private SocialVideo video;
 
 	public SocialMediaInterest()
 	{ super(); }
@@ -37,12 +37,12 @@ public class SocialMediaInterest extends RichDocument
 	}
 
 
-	public FacebookVideo getVideo()
+	public SocialVideo getVideo()
 	{
 		return video;
 	}
 
-	public void setVideo(FacebookVideo video)
+	public void setVideo(SocialVideo video)
 	{
 		this.video = video;
 	}

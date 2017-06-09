@@ -5,10 +5,10 @@ package ecologylab.bigsemantics.generated.library.creativeWork.blogPost;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2016) Interface Ecology Lab.
+ * Copyright (2017) Interface Ecology Lab.
  */
 
-import ecologylab.bigsemantics.generated.library.creativeWork.FacebookVideo;
+import ecologylab.bigsemantics.generated.library.creativeWork.SocialVideo;
 import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.Post;
 import ecologylab.bigsemantics.generated.library.creativeWork.blogPost.SocialMediaPost;
 import ecologylab.bigsemantics.generated.library.person.author.SocialMediaUser;
@@ -78,7 +78,7 @@ public class SocialMediaPost extends Post
 
 	@simpl_composite
 	@mm_name("video")
-	private FacebookVideo video;
+	private SocialVideo video;
 
 	@simpl_collection("description_content")
 	@mm_name("description_content")
@@ -411,12 +411,12 @@ public class SocialMediaPost extends Post
 		this.urls = urls;
 	}
 
-	public FacebookVideo getVideo()
+	public SocialVideo getVideo()
 	{
 		return video;
 	}
 
-	public void setVideo(FacebookVideo video)
+	public void setVideo(SocialVideo video)
 	{
 		this.video = video;
 	}

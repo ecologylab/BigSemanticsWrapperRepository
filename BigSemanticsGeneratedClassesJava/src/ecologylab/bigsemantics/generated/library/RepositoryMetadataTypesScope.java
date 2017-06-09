@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2016) Interface Ecology Lab.
+ * Copyright (2017) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
@@ -302,6 +302,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.ImdbMovie.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.InstagramVideo.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.LeagueAbility.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.LeagueChampion.class,
@@ -347,6 +349,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.VimeoUser.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.VimeoVideo.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.YoutubeSearch.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.YoutubeVideo.class,
 
@@ -398,6 +402,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.Blog.class,
 
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.FacebookGroup.class,
+
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.FacebookNewsFeed.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.FacebookProfile.class,
@@ -405,6 +411,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.InstagramHomeFeed.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.InstagramProfile.class,
+
+		ecologylab.bigsemantics.generated.library.creativeWork.blog.InstagramTagFeed.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.blog.SocialMediaFeed.class,
 
@@ -741,8 +749,6 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.search.YahooResultSet.class,
 
 		ecologylab.bigsemantics.generated.library.search.YahooThumbnail.class,
-
-		ecologylab.bigsemantics.generated.library.search.YoutubeSearchResults.class,
 
 		ecologylab.bigsemantics.generated.library.search.imageSearch.ImageSearch.class,
 

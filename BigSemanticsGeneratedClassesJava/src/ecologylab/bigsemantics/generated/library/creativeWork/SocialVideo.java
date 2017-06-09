@@ -5,10 +5,11 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2016) Interface Ecology Lab.
+ * Copyright (2017) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.metadata.builtins.Document;
+import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.comment.Comment;
 import ecologylab.bigsemantics.metadata.builtins.creativeWork.CreativeWork;
@@ -45,6 +46,13 @@ public class SocialVideo extends CreativeWork
 
 	@simpl_scalar
 	private MetadataParsedURL pic;
+
+	/** 
+	 *collection of thumbnails
+	 */ 
+	@simpl_collection("image")
+	@mm_name("thumbnails")
+	private List<Image> thumbnails;
 
 	/** 
 	 *list of tags
@@ -186,6 +194,36 @@ public class SocialVideo extends CreativeWork
 	public void setPicMetadata(MetadataParsedURL pic)
 	{
 		this.pic = pic;
+	}
+
+	public List<Image> getThumbnails()
+	{
+		return thumbnails;
+	}
+
+  // lazy evaluation:
+  public List<Image> thumbnails()
+  {
+    if (thumbnails == null)
+      thumbnails = new ArrayList<Image>();
+    return thumbnails;
+  }
+
+  // addTo:
+  public void addToThumbnails(Image element)
+  {
+    thumbnails().add(element);
+  }
+
+  // size:
+  public int thumbnailsSize()
+  {
+    return thumbnails == null ? 0 : thumbnails.size();
+  }
+
+	public void setThumbnails(List<Image> thumbnails)
+	{
+		this.thumbnails = thumbnails;
 	}
 
 	public List<Document> getTag()

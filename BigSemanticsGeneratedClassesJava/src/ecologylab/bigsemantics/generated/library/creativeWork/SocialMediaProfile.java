@@ -5,7 +5,7 @@ package ecologylab.bigsemantics.generated.library.creativeWork;
  *
  * DO NOT modify this code manually: All your changes may get lost!
  *
- * Copyright (2016) Interface Ecology Lab.
+ * Copyright (2017) Interface Ecology Lab.
  */
 
 import ecologylab.bigsemantics.generated.library.creativeWork.blog.SocialMediaFeed;
@@ -15,8 +15,10 @@ import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
+import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,9 +29,9 @@ public class SocialMediaProfile extends RichDocument
 	@mm_name("user")
 	private SocialMediaUser user;
 
-	@simpl_composite
+	@simpl_collection("social_media_feed")
 	@mm_name("profile_feed")
-	private SocialMediaFeed profileFeed;
+	private List<SocialMediaFeed> profileFeed;
 
 	public SocialMediaProfile()
 	{ super(); }
@@ -49,12 +51,32 @@ public class SocialMediaProfile extends RichDocument
 		this.user = user;
 	}
 
-	public SocialMediaFeed getProfileFeed()
+	public List<SocialMediaFeed> getProfileFeed()
 	{
 		return profileFeed;
 	}
 
-	public void setProfileFeed(SocialMediaFeed profileFeed)
+  // lazy evaluation:
+  public List<SocialMediaFeed> profileFeed()
+  {
+    if (profileFeed == null)
+      profileFeed = new ArrayList<SocialMediaFeed>();
+    return profileFeed;
+  }
+
+  // addTo:
+  public void addToProfileFeed(SocialMediaFeed element)
+  {
+    profileFeed().add(element);
+  }
+
+  // size:
+  public int profileFeedSize()
+  {
+    return profileFeed == null ? 0 : profileFeed.size();
+  }
+
+	public void setProfileFeed(List<SocialMediaFeed> profileFeed)
 	{
 		this.profileFeed = profileFeed;
 	}
