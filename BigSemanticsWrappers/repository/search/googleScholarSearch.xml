@@ -1,147 +1,146 @@
-<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.search">
-  
-   <meta_metadata name="google_scholar_search_result" extends="rich_document"
-    comment="A google scholar search result" parser="xpath">
-    <url_generator type="search" engine="google_scholar" use_id="title" />
+<meta_metadata_repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="googleScholarSearch" package="ecologylab.bigsemantics.generated.library.search">
+
+  <meta_metadata name="google_scholar_search_result" extends="rich_document" comment="A google scholar search result" parser="xpath">
+    <url_generator type="search" engine="google_scholar" use_id="title"/>
+    <scalar name="title" as_natural_id="title"/>
     <composite name="destination_page" type="rich_document"/>
-    <scalar name="title" as_natural_id="title" />
-    <scalar name="document_link" scalar_type="ParsedURL" hide="true" />
-    <scalar name="source_info" scalar_type="String" />
-  	<scalar name="citation_count" scalar_type="String"/>
-    <composite name="citations" type="rich_document"/>
-    <composite name="related_articles_link" type="rich_document" label="related articles" />
-    <scalar name="versions" scalar_type="Int" navigates_to="versions_link" />
-   <collection name="google_authors" child_type="rich_document">
-   
-   </collection>
-    <scalar name="versions_link" scalar_type="ParsedURL" hide="true" />
+    <scalar name="destination_type" scalar_type="String"/>
+    <scalar name="source_info" scalar_type="String"/>
+    <collection name="google_authors" child_type="rich_document"></collection>
+    <scalar name="citation_count" scalar_type="Integer"/>
+    <composite name="citations_page" type="google_scholar_search"/>
+    <composite name="related_articles_page" type="google_scholar_search" label="related articles"/>
+    <scalar name="version_count" scalar_type="Integer"/>
+    <composite name="versions_page" type="google_scholar_search"/>
   </meta_metadata>
 
-  <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class"
-    parser="xpath">
-    <generic_type_var name="SR" arg="google_scholar_search_result" />
+  <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class" parser="xpath">
+    <generic_type_var name="SR" arg="google_scholar_search_result"/>
 
-    <selector url_stripped="http://scholar.google.com/scholar" />
-    <selector url_stripped="https://scholar.google.com/scholar" />
-    
+    <selector url_stripped="http://scholar.google.com/scholar"/>
+    <selector url_stripped="https://scholar.google.com/scholar"/>
+
     <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
     <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
-    
+
     <filter_location>
       <strip_params_but>
         <param>q</param>
         <param>hl</param>
       </strip_params_but>
-      <set_param name="hl" value="en" only_when_not_set="true" />
+      <set_param name="hl" value="en" only_when_not_set="true"/>
     </filter_location>
 
     <scalar name="title">
-      	<xpath>//div[@id='gs_rt_hdr']//a</xpath>
+      <xpath>.//div[@id='gs_rt_hdr']//a</xpath>
     </scalar>
-    		
-    <scalar name="query" layer="9.1">      
-      <xpath>//input[@name='q']/@value</xpath>
+
+    <scalar name="query" layer="9.1">
+      <xpath>.//input[@name='q']/@value</xpath>
     </scalar>
-    
-    <scalar name="number_of_results">
-    	<xpath>substring-before(substring-after(//div[@id='gs_ab_md'], 'About '), ' results')</xpath>
+
+    <scalar name="number_of_results" scalar_type="Integer">
+      <xpath>substring-before(substring-after(.//div[@id='gs_ab_md'], 'About '), ' results')</xpath>
     </scalar>
-    
-    <collection name="search_results"  show_expanded_always="true">
-      <xpath>//div[@class='gs_r']</xpath>
+
+    <collection name="search_results" show_expanded_always="true">
+      <xpath>.//div[@class='gs_r']</xpath>
+
       <scalar name="title" label="title">
         <xpath>.//h3[@class='gs_rt']/a</xpath>
       </scalar>
-      <composite name="destination_page">
-      	<xpath>.</xpath>
-      	<scalar name="title">
-       	 <xpath>.//h3[@class='gs_rt']/a</xpath>
-     		</scalar>
-      	<scalar name="location">
-        	<xpath>.//h3[@class='gs_rt']/a/@href</xpath>
-      	</scalar>
-      </composite>
+
       <scalar name="description">
         <xpath>.//div[@class='gs_rs']</xpath>
       </scalar>
-     
+
+      <composite name="destination_page">
+        <xpath>.</xpath>
+        <scalar name="title">
+          <xpath>.//h3[@class='gs_rt']/a</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>.//h3[@class='gs_rt']/a/@href</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="destination_type">
+        <xpath>.//h3[@class='gs_rt']/span[@class='gs_ctc']/span[@class='gs_ct1']</xpath>
+      </scalar>
+
       <scalar name="source_info">
         <xpath>.//div[@class='gs_a']</xpath>
       </scalar>
-    	<collection name="google_authors">
-    		<xpath>.//div[@class='gs_a']/a</xpath>
-    		<scalar name="title">
-    			<xpath>.</xpath>
-    		</scalar>
-    		<scalar name="location">
-    			<xpath>./@href</xpath>
-    		</scalar>
-    	</collection>
-  
-      <def_var name="links_row" type="node" > 
-     		 <xpath>.//div[@class='gs_fl']</xpath>  
-     		</def_var> 
-     	<scalar name="citation_count">
-     		<xpath>.//div[@class='gs_fl']/a[1]</xpath>
-     	</scalar>	
-      <composite name="citations">
-      	<xpath>.</xpath>
+
+      <collection name="google_authors">
+        <xpath>.//div[@class='gs_a']/a</xpath>
         <scalar name="title">
-        	  <xpath>.//div[@class='gs_fl']/a[1]</xpath>
-       			  <replace pattern=".*" to="Citation Page" />
+          <xpath>.</xpath>
         </scalar>
-      	<scalar name="location">
-      		 <xpath>.//div[@class='gs_fl']/a[1]/@href</xpath>
-      	</scalar>
-      </composite>
-      <composite name="related_articles_link">
-        <xpath>.//div[@class='gs_fl']/a[2]a</xpath>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
+
+      <scalar name="citation_count">
+        <xpath>.//div[@class='gs_fl']/a[1]</xpath>
+      </scalar>
+
+      <composite name="citations_page">
+        <xpath>.//div[@class='gs_fl']/a[1]</xpath>
         <scalar name="title">
-        	<xpath>.</xpath>
+          <xpath>.</xpath>
         </scalar>
-      	<scalar name="location">
-      		<xpath>./@href</xpath>
-      	</scalar>
-      	
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
       </composite>
-      <scalar name="versions">
-        <xpath>.//div[@class='gs_fl']/a[last()]</xpath>
-        <replace pattern="All | versions" to="" />
+
+      <composite name="related_articles_page">
+        <xpath>.//div[@class='gs_fl']/a[2]</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="version_count" scalar_type="Integer">
+        <xpath>substring-before(substring-after(.//div[@class='gs_fl']/a[3], 'All '), ' versions')</xpath>
       </scalar>
-      <scalar name="versions_link">
-        <xpath>.//div[@class='gs_fl']/a[last()]/@href</xpath>
-      </scalar>
-      
+
+      <composite name="versions_page">
+        <xpath>.//div[@class='gs_fl']/a[3]</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
     </collection>
 
-    <semantic_actions>
-      <get_field name="search_results" />
-      <for_each collection="search_results" as="res">
-        <get_field object="res" name="location" />
-        <get_field object="res" name="document_link" />
-        <if>
-          <not_null value="document_link" />
-          <parse_document now="true">
-            <arg value="document_link" name="location" />
-            <arg value="res" name="mixin" />
-          </parse_document>
-        </if>
-        <if>
-          <and>
-            <null value="document_link" />
-            <not_null value="location" />
-          </and>
-          <parse_document now="true">
-            <arg value="location" name="location" />
-          </parse_document>
-        </if>
-        <parse_document now="true">
-          <arg value="location" name="location" />
-        </parse_document>
-      </for_each>
-    </semantic_actions>
-    
+    <collection name="related_searches" child_type="google_scholar_search">
+      <xpath>.//*[@id='gs_qsuggest']//li/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+    <composite name="next_page" type="google_scholar_search">
+      <xpath>.//*[@id='gs_n']//td[contains(., 'Next')]/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
+    </composite>
+
   </meta_metadata>
-  
-  </meta_metadata_repository>
+
+</meta_metadata_repository>

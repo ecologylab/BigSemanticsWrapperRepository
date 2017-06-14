@@ -8,15 +8,14 @@ package ecologylab.bigsemantics.generated.library.search;
  * Copyright (2017) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.search.GoogleScholarSearch;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
 import ecologylab.bigsemantics.metadata.scalar.MetadataInteger;
-import ecologylab.bigsemantics.metadata.scalar.MetadataParsedURL;
 import ecologylab.bigsemantics.metadata.scalar.MetadataString;
 import ecologylab.bigsemantics.metametadata.MetaMetadataCompositeField;
 import ecologylab.bigsemantics.namesandnums.SemanticsNames;
-import ecologylab.net.ParsedURL;
 import ecologylab.serialization.annotations.simpl_collection;
 import ecologylab.serialization.annotations.simpl_composite;
 import ecologylab.serialization.annotations.simpl_inherit;
@@ -38,31 +37,32 @@ public class GoogleScholarSearchResult extends RichDocument
 	private RichDocument destinationPage;
 
 	@simpl_scalar
-	private MetadataParsedURL documentLink;
+	private MetadataString destinationType;
 
 	@simpl_scalar
 	private MetadataString sourceInfo;
-
-	@simpl_scalar
-	private MetadataString citationCount;
-
-	@simpl_composite
-	@mm_name("citations")
-	private RichDocument citations;
-
-	@simpl_composite
-	@mm_name("related_articles_link")
-	private RichDocument relatedArticlesLink;
-
-	@simpl_scalar
-	private MetadataInteger versions;
 
 	@simpl_collection("rich_document")
 	@mm_name("google_authors")
 	private List<RichDocument> googleAuthors;
 
 	@simpl_scalar
-	private MetadataParsedURL versionsLink;
+	private MetadataInteger citationCount;
+
+	@simpl_composite
+	@mm_name("citations_page")
+	private GoogleScholarSearch citationsPage;
+
+	@simpl_composite
+	@mm_name("related_articles_page")
+	private GoogleScholarSearch relatedArticlesPage;
+
+	@simpl_scalar
+	private MetadataInteger versionCount;
+
+	@simpl_composite
+	@mm_name("versions_page")
+	private GoogleScholarSearch versionsPage;
 
 	public GoogleScholarSearchResult()
 	{ super(); }
@@ -82,36 +82,36 @@ public class GoogleScholarSearchResult extends RichDocument
 		this.destinationPage = destinationPage;
 	}
 
-	public MetadataParsedURL	documentLink()
+	public MetadataString	destinationType()
 	{
-		MetadataParsedURL	result = this.documentLink;
+		MetadataString	result = this.destinationType;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
-			this.documentLink = result;
+			result = new MetadataString();
+			this.destinationType = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getDocumentLink()
+	public String getDestinationType()
 	{
-		return this.documentLink == null ? null : documentLink().getValue();
+		return this.destinationType == null ? null : destinationType().getValue();
 	}
 
-	public MetadataParsedURL getDocumentLinkMetadata()
+	public MetadataString getDestinationTypeMetadata()
 	{
-		return documentLink;
+		return destinationType;
 	}
 
-	public void setDocumentLink(ParsedURL documentLink)
+	public void setDestinationType(String destinationType)
 	{
-		if (documentLink != null)
-			this.documentLink().setValue(documentLink);
+		if (destinationType != null)
+			this.destinationType().setValue(destinationType);
 	}
 
-	public void setDocumentLinkMetadata(MetadataParsedURL documentLink)
+	public void setDestinationTypeMetadata(MetadataString destinationType)
 	{
-		this.documentLink = documentLink;
+		this.destinationType = destinationType;
 	}
 
 	public MetadataString	sourceInfo()
@@ -146,90 +146,6 @@ public class GoogleScholarSearchResult extends RichDocument
 		this.sourceInfo = sourceInfo;
 	}
 
-	public MetadataString	citationCount()
-	{
-		MetadataString	result = this.citationCount;
-		if (result == null)
-		{
-			result = new MetadataString();
-			this.citationCount = result;
-		}
-		return result;
-	}
-
-	public String getCitationCount()
-	{
-		return this.citationCount == null ? null : citationCount().getValue();
-	}
-
-	public MetadataString getCitationCountMetadata()
-	{
-		return citationCount;
-	}
-
-	public void setCitationCount(String citationCount)
-	{
-		if (citationCount != null)
-			this.citationCount().setValue(citationCount);
-	}
-
-	public void setCitationCountMetadata(MetadataString citationCount)
-	{
-		this.citationCount = citationCount;
-	}
-
-	public RichDocument getCitations()
-	{
-		return citations;
-	}
-
-	public void setCitations(RichDocument citations)
-	{
-		this.citations = citations;
-	}
-
-	public RichDocument getRelatedArticlesLink()
-	{
-		return relatedArticlesLink;
-	}
-
-	public void setRelatedArticlesLink(RichDocument relatedArticlesLink)
-	{
-		this.relatedArticlesLink = relatedArticlesLink;
-	}
-
-	public MetadataInteger	versions()
-	{
-		MetadataInteger	result = this.versions;
-		if (result == null)
-		{
-			result = new MetadataInteger();
-			this.versions = result;
-		}
-		return result;
-	}
-
-	public Integer getVersions()
-	{
-		return this.versions == null ? 0 : versions().getValue();
-	}
-
-	public MetadataInteger getVersionsMetadata()
-	{
-		return versions;
-	}
-
-	public void setVersions(Integer versions)
-	{
-		if (versions != 0)
-			this.versions().setValue(versions);
-	}
-
-	public void setVersionsMetadata(MetadataInteger versions)
-	{
-		this.versions = versions;
-	}
-
 	public List<RichDocument> getGoogleAuthors()
 	{
 		return googleAuthors;
@@ -260,35 +176,97 @@ public class GoogleScholarSearchResult extends RichDocument
 		this.googleAuthors = googleAuthors;
 	}
 
-	public MetadataParsedURL	versionsLink()
+	public MetadataInteger	citationCount()
 	{
-		MetadataParsedURL	result = this.versionsLink;
+		MetadataInteger	result = this.citationCount;
 		if (result == null)
 		{
-			result = new MetadataParsedURL();
-			this.versionsLink = result;
+			result = new MetadataInteger();
+			this.citationCount = result;
 		}
 		return result;
 	}
 
-	public ParsedURL getVersionsLink()
+	public Integer getCitationCount()
 	{
-		return this.versionsLink == null ? null : versionsLink().getValue();
+		return this.citationCount == null ? 0 : citationCount().getValue();
 	}
 
-	public MetadataParsedURL getVersionsLinkMetadata()
+	public MetadataInteger getCitationCountMetadata()
 	{
-		return versionsLink;
+		return citationCount;
 	}
 
-	public void setVersionsLink(ParsedURL versionsLink)
+	public void setCitationCount(Integer citationCount)
 	{
-		if (versionsLink != null)
-			this.versionsLink().setValue(versionsLink);
+		if (citationCount != 0)
+			this.citationCount().setValue(citationCount);
 	}
 
-	public void setVersionsLinkMetadata(MetadataParsedURL versionsLink)
+	public void setCitationCountMetadata(MetadataInteger citationCount)
 	{
-		this.versionsLink = versionsLink;
+		this.citationCount = citationCount;
+	}
+
+	public GoogleScholarSearch getCitationsPage()
+	{
+		return citationsPage;
+	}
+
+	public void setCitationsPage(GoogleScholarSearch citationsPage)
+	{
+		this.citationsPage = citationsPage;
+	}
+
+	public GoogleScholarSearch getRelatedArticlesPage()
+	{
+		return relatedArticlesPage;
+	}
+
+	public void setRelatedArticlesPage(GoogleScholarSearch relatedArticlesPage)
+	{
+		this.relatedArticlesPage = relatedArticlesPage;
+	}
+
+	public MetadataInteger	versionCount()
+	{
+		MetadataInteger	result = this.versionCount;
+		if (result == null)
+		{
+			result = new MetadataInteger();
+			this.versionCount = result;
+		}
+		return result;
+	}
+
+	public Integer getVersionCount()
+	{
+		return this.versionCount == null ? 0 : versionCount().getValue();
+	}
+
+	public MetadataInteger getVersionCountMetadata()
+	{
+		return versionCount;
+	}
+
+	public void setVersionCount(Integer versionCount)
+	{
+		if (versionCount != 0)
+			this.versionCount().setValue(versionCount);
+	}
+
+	public void setVersionCountMetadata(MetadataInteger versionCount)
+	{
+		this.versionCount = versionCount;
+	}
+
+	public GoogleScholarSearch getVersionsPage()
+	{
+		return versionsPage;
+	}
+
+	public void setVersionsPage(GoogleScholarSearch versionsPage)
+	{
+		this.versionsPage = versionsPage;
 	}
 }

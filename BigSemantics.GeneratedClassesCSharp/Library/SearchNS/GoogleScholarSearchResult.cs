@@ -7,13 +7,13 @@
 //
 
 
+using Ecologylab.BigSemantics.Generated.Library.SearchNS;
 using Ecologylab.BigSemantics.MetaMetadataNS;
 using Ecologylab.BigSemantics.MetadataNS;
 using Ecologylab.BigSemantics.MetadataNS.Builtins;
 using Ecologylab.BigSemantics.MetadataNS.Scalar;
 using Ecologylab.Collections;
 using Simpl.Fundamental.Generic;
-using Simpl.Fundamental.Net;
 using Simpl.Serialization;
 using Simpl.Serialization.Attributes;
 using System;
@@ -33,31 +33,32 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		private RichDocument destinationPage;
 
 		[SimplScalar]
-		private MetadataParsedURL documentLink;
+		private MetadataString destinationType;
 
 		[SimplScalar]
 		private MetadataString sourceInfo;
-
-		[SimplScalar]
-		private MetadataString citationCount;
-
-		[SimplComposite]
-		[MmName("citations")]
-		private RichDocument citations;
-
-		[SimplComposite]
-		[MmName("related_articles_link")]
-		private RichDocument relatedArticlesLink;
-
-		[SimplScalar]
-		private MetadataInteger versions;
 
 		[SimplCollection("rich_document")]
 		[MmName("google_authors")]
 		private List<RichDocument> googleAuthors;
 
 		[SimplScalar]
-		private MetadataParsedURL versionsLink;
+		private MetadataInteger citationCount;
+
+		[SimplComposite]
+		[MmName("citations_page")]
+		private GoogleScholarSearch citationsPage;
+
+		[SimplComposite]
+		[MmName("related_articles_page")]
+		private GoogleScholarSearch relatedArticlesPage;
+
+		[SimplScalar]
+		private MetadataInteger versionCount;
+
+		[SimplComposite]
+		[MmName("versions_page")]
+		private GoogleScholarSearch versionsPage;
 
 		public GoogleScholarSearchResult()
 		{ }
@@ -78,14 +79,14 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataParsedURL DocumentLink
+		public MetadataString DestinationType
 		{
-			get{return documentLink;}
+			get{return destinationType;}
 			set
 			{
-				if (this.documentLink != value)
+				if (this.destinationType != value)
 				{
-					this.documentLink = value;
+					this.destinationType = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
@@ -104,58 +105,6 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataString CitationCount
-		{
-			get{return citationCount;}
-			set
-			{
-				if (this.citationCount != value)
-				{
-					this.citationCount = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public RichDocument Citations
-		{
-			get{return citations;}
-			set
-			{
-				if (this.citations != value)
-				{
-					this.citations = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public RichDocument RelatedArticlesLink
-		{
-			get{return relatedArticlesLink;}
-			set
-			{
-				if (this.relatedArticlesLink != value)
-				{
-					this.relatedArticlesLink = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
-		public MetadataInteger Versions
-		{
-			get{return versions;}
-			set
-			{
-				if (this.versions != value)
-				{
-					this.versions = value;
-					// TODO we need to implement our property change notification mechanism.
-				}
-			}
-		}
-
 		public List<RichDocument> GoogleAuthors
 		{
 			get{return googleAuthors;}
@@ -169,14 +118,66 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 			}
 		}
 
-		public MetadataParsedURL VersionsLink
+		public MetadataInteger CitationCount
 		{
-			get{return versionsLink;}
+			get{return citationCount;}
 			set
 			{
-				if (this.versionsLink != value)
+				if (this.citationCount != value)
 				{
-					this.versionsLink = value;
+					this.citationCount = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public GoogleScholarSearch CitationsPage
+		{
+			get{return citationsPage;}
+			set
+			{
+				if (this.citationsPage != value)
+				{
+					this.citationsPage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public GoogleScholarSearch RelatedArticlesPage
+		{
+			get{return relatedArticlesPage;}
+			set
+			{
+				if (this.relatedArticlesPage != value)
+				{
+					this.relatedArticlesPage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public MetadataInteger VersionCount
+		{
+			get{return versionCount;}
+			set
+			{
+				if (this.versionCount != value)
+				{
+					this.versionCount = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public GoogleScholarSearch VersionsPage
+		{
+			get{return versionsPage;}
+			set
+			{
+				if (this.versionsPage != value)
+				{
+					this.versionsPage = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}
