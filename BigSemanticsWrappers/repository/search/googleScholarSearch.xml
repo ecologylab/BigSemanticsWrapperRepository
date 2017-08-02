@@ -20,13 +20,15 @@
     <selector url_stripped="http://scholar.google.com/scholar"/>
     <selector url_stripped="https://scholar.google.com/scholar"/>
 
-    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=loveamp;btnG=amp;as_sdt=1%2C44amp;as_sdtp="/>
-    <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/>
+    <example_url url="http://scholar.google.com/scholar?hl=enamp;q=love"/>
+    <!-- <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/> -->
 
     <filter_location>
       <strip_params_but>
-        <param>q</param>
-        <param>hl</param>
+        <name>q</name>
+        <name>hl</name>
+        <name>cites</name>
+        <name>cluster</name>
       </strip_params_but>
       <set_param name="hl" value="en" only_when_not_set="true"/>
     </filter_location>
@@ -48,6 +50,7 @@
 
       <scalar name="title" label="title">
         <xpath>.//h3[@class='gs_rt']/a</xpath>
+        <xpath>.//h3[@class='gs_rt']</xpath>
       </scalar>
 
       <scalar name="description">
@@ -58,6 +61,7 @@
         <xpath>.</xpath>
         <scalar name="title">
           <xpath>.//h3[@class='gs_rt']/a</xpath>
+          <xpath>.//h3[@class='gs_rt']</xpath>
         </scalar>
         <scalar name="location">
           <xpath>.//h3[@class='gs_rt']/a/@href</xpath>
@@ -66,6 +70,7 @@
 
       <scalar name="destination_type">
         <xpath>.//h3[@class='gs_rt']/span[@class='gs_ctc']/span[@class='gs_ct1']</xpath>
+        <xpath>.//h3[@class='gs_rt']/span[@class='gs_ctu']/span[@class='gs_ct1']</xpath>
       </scalar>
 
       <scalar name="source_info">
@@ -83,7 +88,7 @@
       </collection>
 
       <scalar name="citation_count">
-        <xpath>.//div[@class='gs_fl']/a[1]</xpath>
+        <xpath>substring-after(.//div[@class='gs_fl']/a[1], 'Cited by ')</xpath>
       </scalar>
 
       <composite name="citations_page">
@@ -106,7 +111,7 @@
         </scalar>
       </composite>
 
-      <scalar name="version_count" scalar_type="Integer">
+      <scalar name="version_count">
         <xpath>substring-before(substring-after(.//div[@class='gs_fl']/a[3], 'All '), ' versions')</xpath>
       </scalar>
 
