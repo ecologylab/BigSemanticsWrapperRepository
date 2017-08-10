@@ -26,11 +26,11 @@
     <filter_location>
       <strip_params_but>
         <name>q</name>
-        <name>hl</name>
         <name>cites</name>
         <name>cluster</name>
         <name>start</name>
         <name>num</name>
+        <name>hl</name>
       </strip_params_but>
       <set_param name="hl" value="en" only_when_not_set="true"/>
     </filter_location>

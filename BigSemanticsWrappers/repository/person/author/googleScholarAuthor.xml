@@ -2,59 +2,84 @@
   package="ecologylab.bigsemantics.generated.library.person.author">
 
   <meta_metadata name="google_scholar_author" extends="author" parser="xpath">
-      <!--  <selector url_regex="http://scholar.google.com/citations?user=.*" domain="scholar.google.com"/>-->
-     <selector url_regex="http://scholar.google.com/citations\?user=.*" domain="google.com"/>
-    <example_url url="http://scholar.google.com/citations?user=IlKLLhIAAAAJamp;hl=enamp;oi=sra" />
+
+    <selector url_stripped="http://scholar.google.com/citations" domain="google.com">
+      <param name="user"/>
+      <param name="view_op" value_is_not="view_citation"/>
+    </selector>
+    <selector url_stripped="https://scholar.google.com/citations" domain="google.com">
+      <param name="user"/>
+      <param name="view_op" value_is_not="view_citation"/>
+    </selector>
+
+    <example_url url="http://scholar.google.com/citations?user=TD6dCG0AAAAJ" />
+
+    <filter_location>
+      <strip_params_but>
+        <name>user</name>
+        <name>view_op</name>
+        <name>cstart</name>
+        <name>pagesize</name>
+        <name>hl</name>
+      </strip_params_but>
+      <set_param name="hl" value="en" only_when_not_set="true"/>
+    </filter_location>
 
     <scalar name="title">
       <xpath>//div[@id='gsc_prf_in']</xpath>
     </scalar>
+
     <collection name="main_images">
-    	<xpath>//div[@id='gsc_prf_pu']//img</xpath>
-    	<scalar name="location">
-    		<xpath>./@src</xpath>
-    	</scalar>
+      <xpath>//img[@id='gsc_prf_pup']</xpath>
+      <scalar name="location">
+        <xpath>./@src</xpath>
+      </scalar>
     </collection>
-  	<scalar name="affiliation" scalar_type="String">
-  		<xpath>//div[@id='gsc_prf_i']/div[2]</xpath>
-  	</scalar>  
-  
+
+    <scalar name="affiliation">
+      <xpath>//div[@class='gsc_prf_il']</xpath>
+    </scalar>
+
     <collection name="interests" child_type="rich_document">
-    	<xpath>//div[@id='gsc_prf_i']/div[4]/a</xpath>
-    	<scalar name="title">
-    		<xpath>.</xpath>
-    	</scalar>
-    	<scalar name="location">
-    		<xpath>./@href</xpath>
-    	</scalar>
+      <xpath>//div[@id='gsc_prf_i']/div[4]/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
+
     <composite name="homepage" type="rich_document">
-    	<xpath>//div[@id='gsc_prf_ivh']/a</xpath>
-    	<scalar name="title">
-    		<xpath>.</xpath>
-    	</scalar>
-    	<scalar name="location">
-    		<xpath>./@href</xpath>
-    	</scalar>
+      <xpath>//div[@id='gsc_prf_ivh']/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </composite>
+
     <collection name="top_coauthors" child_type="rich_document">
-    	<xpath>//div[@id='gsc_rsb_co']//li/a</xpath>
-    	<scalar name="title">
-    		<xpath>.</xpath>
-    	</scalar>
-    	<scalar name="location">
-    		<xpath>./@href</xpath>
-    	</scalar>
+      <xpath>//div[@id='gsc_rsb_co']//li/a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
+
     <collection name="papers" child_type="rich_document">
-    	<xpath>//tbody[@id='gsc_a_b']/tr/td[1]//a</xpath>
-    	<scalar name="title">
-    		<xpath>.</xpath>
-    	</scalar>
-    	<scalar name="location">
-    		<xpath>./@href</xpath>
-    	</scalar>
+      <xpath>//*[@id='gsc_a_b']/tr/td[@class='gsc_a_t']//a</xpath>
+      <scalar name="title">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location">
+        <xpath>./@href</xpath>
+      </scalar>
     </collection>
+
   </meta_metadata>
 
 </meta_metadata_repository>
