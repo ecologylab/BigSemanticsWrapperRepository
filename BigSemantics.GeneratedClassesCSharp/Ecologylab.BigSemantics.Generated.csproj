@@ -255,9 +255,11 @@
     <Compile Include="Library\CommodityNS\ProductNS\Seller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\SixpmProduct.cs" />
     <Compile Include="Library\CommodityNS\ProductNS\TargetProduct.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CommodityNS\ProductNS\TaylorswiftProduct.cs" />
     <Compile Include="Library\CommodityNS\ProductNS\TigerdirectProduct.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -294,6 +296,7 @@
     <Compile Include="Library\CreativeWorkNS\AmazonList.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\ArticleNS\Article.cs" />
     <Compile Include="Library\CreativeWorkNS\ArtworkNS\Artwork.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -366,18 +369,30 @@
     <Compile Include="Library\CreativeWorkNS\BlogNS\Blog.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogNS\FacebookGroup.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogNS\FacebookNewsFeed.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogNS\FacebookProfile.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogNS\InstagramHomeFeed.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogNS\InstagramProfile.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogNS\InstagramTagFeed.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogNS\SocialMediaFeed.cs" />
     <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterApiMicroblog.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\CreativeWorkNS\BlogNS\TwitterMicroblog.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Comments.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\Favorites.cs" />
     <Compile Include="Library\CreativeWorkNS\BlogPostNS\FlickrPhoto.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\InstagramPost.cs" />
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\MachineTags.cs" />
     <Compile Include="Library\CreativeWorkNS\BlogPostNS\Post.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\BlogPostNS\SocialMediaPost.cs" />
     <Compile Include="Library\CreativeWorkNS\BlogPostNS\Tumblr.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -387,6 +402,19 @@
     <Compile Include="Library\CreativeWorkNS\BoardGame.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\Commit.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\CommitsByDate.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\CommitsPage.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\FileSourceItem.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\GithubCommits.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\GithubIssuePage.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\GithubIssues.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\GithubProject.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\Issue.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\IssueComment.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\IssuesPage.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\Repository.cs" />
+    <Compile Include="Library\CreativeWorkNS\CollaborativeNS\RepoTabSection.cs" />
     <Compile Include="Library\CreativeWorkNS\ExhibitionNS\ArtchiExhibition.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -399,6 +427,7 @@
     <Compile Include="Library\CreativeWorkNS\ExhibitionNS\RhizomeCollection.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\FacebookVideo.cs" />
     <Compile Include="Library\CreativeWorkNS\FondationArticle.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -411,6 +440,7 @@
     <Compile Include="Library\CreativeWorkNS\ImdbMovie.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\InstagramVideo.cs" />
     <Compile Include="Library\CreativeWorkNS\LeagueAbility.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -489,6 +519,11 @@
     <Compile Include="Library\CreativeWorkNS\PublicationNS\TermType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\RedditNS\RedditComment.cs" />
+    <Compile Include="Library\CreativeWorkNS\RedditNS\RedditComments.cs" />
+    <Compile Include="Library\CreativeWorkNS\RedditNS\RedditPostData.cs" />
+    <Compile Include="Library\CreativeWorkNS\RedditNS\RedditUser.cs" />
+    <Compile Include="Library\CreativeWorkNS\RedditNS\Subreddit.cs" />
     <Compile Include="Library\CreativeWorkNS\RottenMovie.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -567,6 +602,7 @@
     <Compile Include="Library\CreativeWorkNS\SlashdotArticle.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\CreativeWorkNS\SocialMediaProfile.cs" />
     <Compile Include="Library\CreativeWorkNS\SocialVideo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -594,6 +630,7 @@
     <Compile Include="Library\CreativeWorkNS\VimeoList.cs" />
     <Compile Include="Library\CreativeWorkNS\VimeoUser.cs" />
     <Compile Include="Library\CreativeWorkNS\VimeoVideo.cs" />
+    <Compile Include="Library\CreativeWorkNS\YoutubeSearch.cs" />
     <Compile Include="Library\CreativeWorkNS\YoutubeVideo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -621,6 +658,7 @@
     <Compile Include="Library\FlamencoFacet.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\FlickrPhotostream.cs" />
     <Compile Include="Library\FlickrTag.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -642,6 +680,7 @@
     <Compile Include="Library\GrantProgram.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\Groups.cs" />
     <Compile Include="Library\Head.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -675,6 +714,7 @@
     <Compile Include="Library\InstructableTag.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\InterestGroup.cs" />
     <Compile Include="Library\Item.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -735,6 +775,7 @@
     <Compile Include="Library\PersonNS\AuthorNS\CiteulikeAuthor.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\FacebookUser.cs" />
     <Compile Include="Library\PersonNS\AuthorNS\FlickrAuthor.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -783,6 +824,7 @@
     <Compile Include="Library\PersonNS\AuthorNS\ScopusAuthor.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\PersonNS\AuthorNS\SocialMediaUser.cs" />
     <Compile Include="Library\PersonNS\AuthorNS\SpringerEditor.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -811,9 +853,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\PersonNS\RottenPerson.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Library\Photostream.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\PostalAddress.cs">
@@ -876,6 +915,7 @@
     <Compile Include="Library\SearchNS\AcmPortalSearchResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\SearchNS\BingImageSearch.cs" />
     <Compile Include="Library\SearchNS\BingSearchApi.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -897,6 +937,7 @@
     <Compile Include="Library\SearchNS\GoogleImageSearch.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\SearchNS\GoogleImageSearchResult.cs" />
     <Compile Include="Library\SearchNS\GoogleScholarAuthorSearch.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -972,6 +1013,7 @@
     <Compile Include="Library\SearchNS\TumblrSearch.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\SearchNS\TwitterApiSearch.cs" />
     <Compile Include="Library\SearchNS\TwitterSearchResults.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1002,9 +1044,6 @@
     <Compile Include="Library\SearchNS\YahooThumbnail.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\SearchNS\YoutubeSearchResults.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Library\SearchResults.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1014,6 +1053,7 @@
     <Compile Include="Library\SlashdotRss.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\SocialMediaInterest.cs" />
     <Compile Include="Library\TedPlaylist.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1047,16 +1087,8 @@
     <Compile Include="Library\WikipediaPageNS\Section.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\WikipediaPageNS\WikipediaCategoryType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Library\WikipediaPageNS\WikipediaMobilePage.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Library\WikipediaPageNS\WikipediaCategory.cs" />
     <Compile Include="Library\WikipediaPageNS\WikipediaPage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Library\WikipediaPageNS\WikipediaPageType.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\YahooMediaRss.cs">

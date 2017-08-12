@@ -25,7 +25,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 	/// Bing image search.
 	/// </summary>
 	[SimplInherit]
-	public class BingImageSearch : ImageSearch<ImageSearchResult>
+	public class BingImageSearch : ImageSearch
 	{
 		public BingImageSearch()
 		{ }
