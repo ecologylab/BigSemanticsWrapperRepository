@@ -2,16 +2,25 @@
 
   <meta_metadata name="google_scholar_search_result" extends="rich_document" comment="A google scholar search result" parser="xpath">
     <url_generator type="search" engine="google_scholar" use_id="title"/>
+
     <scalar name="title" as_natural_id="title"/>
+
     <composite name="destination_page" type="rich_document"/>
     <scalar name="destination_type" scalar_type="String"/>
+
     <scalar name="source_info" scalar_type="String"/>
+
     <collection name="google_authors" child_type="rich_document"></collection>
+
     <scalar name="citation_count" scalar_type="Integer"/>
     <composite name="citations_page" type="google_scholar_search"/>
+
     <composite name="related_articles_page" type="google_scholar_search" label="related articles"/>
+
     <scalar name="version_count" scalar_type="Integer"/>
     <composite name="versions_page" type="google_scholar_search"/>
+
+    <collection name="access_links" child_type="rich_document"></collection>
   </meta_metadata>
 
   <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class" parser="xpath">
@@ -48,7 +57,7 @@
     </scalar>
 
     <collection name="search_results" show_expanded_always="true">
-      <xpath>.//div[@class='gs_r']</xpath>
+      <xpath>.//div[contains(concat(' ', @class, ' '), ' gs_r ')]</xpath>
 
       <scalar name="title" label="title">
         <xpath>.//h3[@class='gs_rt']/a</xpath>
@@ -90,11 +99,11 @@
       </collection>
 
       <scalar name="citation_count">
-        <xpath>substring-after(.//div[@class='gs_fl']/a[1], 'Cited by ')</xpath>
+        <xpath>substring-after(.//div[@class='gs_fl']/a[starts-with(text(), 'Cited by ')], 'Cited by ')</xpath>
       </scalar>
 
       <composite name="citations_page">
-        <xpath>.//div[@class='gs_fl']/a[1]</xpath>
+        <xpath>.//div[@class='gs_fl']/a[starts-with(text(), 'Cited by ')]</xpath>
         <scalar name="title">
           <xpath>.</xpath>
         </scalar>
@@ -104,7 +113,7 @@
       </composite>
 
       <composite name="related_articles_page">
-        <xpath>.//div[@class='gs_fl']/a[2]</xpath>
+        <xpath>.//div[@class='gs_fl']/a[text()='Related articles']</xpath>
         <scalar name="title">
           <xpath>.</xpath>
         </scalar>
@@ -114,11 +123,11 @@
       </composite>
 
       <scalar name="version_count">
-        <xpath>substring-before(substring-after(.//div[@class='gs_fl']/a[3], 'All '), ' versions')</xpath>
+        <xpath>substring-before(substring-after(.//div[@class='gs_fl']/a[starts-with(text(), 'All ')], 'All '), ' versions')</xpath>
       </scalar>
 
       <composite name="versions_page">
-        <xpath>.//div[@class='gs_fl']/a[3]</xpath>
+        <xpath>.//div[@class='gs_fl']/a[starts-with(text(), 'All ')]</xpath>
         <scalar name="title">
           <xpath>.</xpath>
         </scalar>
@@ -126,6 +135,16 @@
           <xpath>./@href</xpath>
         </scalar>
       </composite>
+
+      <collection name="access_links">
+        <xpath>.//div[@class='gs_ggsd']/div[@class='gs_or_ggsm']/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </collection>
     </collection>
 
     <collection name="related_searches" child_type="google_scholar_search">

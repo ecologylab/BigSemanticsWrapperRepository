@@ -60,6 +60,10 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 		[MmName("versions_page")]
 		private GoogleScholarSearch versionsPage;
 
+		[SimplCollection("rich_document")]
+		[MmName("access_links")]
+		private List<RichDocument> accessLinks;
+
 		public GoogleScholarSearchResult()
 		{ }
 
@@ -178,6 +182,19 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 				if (this.versionsPage != value)
 				{
 					this.versionsPage = value;
+					// TODO we need to implement our property change notification mechanism.
+				}
+			}
+		}
+
+		public List<RichDocument> AccessLinks
+		{
+			get{return accessLinks;}
+			set
+			{
+				if (this.accessLinks != value)
+				{
+					this.accessLinks = value;
 					// TODO we need to implement our property change notification mechanism.
 				}
 			}

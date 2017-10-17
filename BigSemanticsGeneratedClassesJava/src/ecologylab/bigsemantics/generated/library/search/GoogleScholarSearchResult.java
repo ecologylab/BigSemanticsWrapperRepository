@@ -64,6 +64,10 @@ public class GoogleScholarSearchResult extends RichDocument
 	@mm_name("versions_page")
 	private GoogleScholarSearch versionsPage;
 
+	@simpl_collection("rich_document")
+	@mm_name("access_links")
+	private List<RichDocument> accessLinks;
+
 	public GoogleScholarSearchResult()
 	{ super(); }
 
@@ -268,5 +272,35 @@ public class GoogleScholarSearchResult extends RichDocument
 	public void setVersionsPage(GoogleScholarSearch versionsPage)
 	{
 		this.versionsPage = versionsPage;
+	}
+
+	public List<RichDocument> getAccessLinks()
+	{
+		return accessLinks;
+	}
+
+  // lazy evaluation:
+  public List<RichDocument> accessLinks()
+  {
+    if (accessLinks == null)
+      accessLinks = new ArrayList<RichDocument>();
+    return accessLinks;
+  }
+
+  // addTo:
+  public void addToAccessLinks(RichDocument element)
+  {
+    accessLinks().add(element);
+  }
+
+  // size:
+  public int accessLinksSize()
+  {
+    return accessLinks == null ? 0 : accessLinks.size();
+  }
+
+	public void setAccessLinks(List<RichDocument> accessLinks)
+	{
+		this.accessLinks = accessLinks;
 	}
 }
