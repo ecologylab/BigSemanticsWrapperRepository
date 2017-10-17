@@ -25,7 +25,7 @@ namespace Ecologylab.BigSemantics.Generated.Library.SearchNS
 	/// Google image search.
 	/// </summary>
 	[SimplInherit]
-	public class GoogleImageSearch : ImageSearch<ImageSearchResult>
+	public class GoogleImageSearch : ImageSearch
 	{
 		public GoogleImageSearch()
 		{ }
