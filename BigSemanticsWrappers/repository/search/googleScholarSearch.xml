@@ -30,7 +30,6 @@
     <selector url_stripped="https://scholar.google.com/scholar"/>
 
     <example_url url="http://scholar.google.com/scholar?hl=enamp;q=love"/>
-    <!-- <example_url url="http://scholar.google.com/citations?view_op=view_citationamp;hl=enamp;user=IlKLLhIAAAAJamp;citation_for_view=IlKLLhIAAAAJ:u5HHmVD_uO8C"/> -->
 
     <filter_location>
       <strip_params_but>

@@ -6,16 +6,19 @@
     <selector url_stripped="http://scholar.google.com/citations" domain="google.com">
       <param name="user"/>
       <param name="view_op" value_is_not="view_citation"/>
+      <param name="view_op" value_is_not="search_authors"/>
     </selector>
     <selector url_stripped="https://scholar.google.com/citations" domain="google.com">
       <param name="user"/>
       <param name="view_op" value_is_not="view_citation"/>
+      <param name="view_op" value_is_not="search_authors"/>
     </selector>
 
     <example_url url="http://scholar.google.com/citations?user=TD6dCG0AAAAJ" />
 
     <filter_location>
       <strip_params_but>
+        <name>mauthors</name>
         <name>user</name>
         <name>view_op</name>
         <name>cstart</name>
@@ -30,6 +33,7 @@
     </scalar>
 
     <collection name="main_images">
+      <xpath>//*[@id='gsc_prf_pua']//img</xpath>
       <xpath>//img[@id='gsc_prf_pup']</xpath>
       <scalar name="location">
         <xpath>./@src</xpath>
@@ -50,7 +54,7 @@
       </scalar>
     </collection>
 
-    <composite name="homepage" type="rich_document">
+    <composite name="homepage" extends="rich_document">
       <xpath>//div[@id='gsc_prf_ivh']/a</xpath>
       <scalar name="title">
         <xpath>.</xpath>
@@ -60,23 +64,80 @@
       </scalar>
     </composite>
 
+    <composite name="citation_stats" extends="metadata">
+      <xpath>//*[@id='gsc_rsb_st']</xpath>
+
+      <scalar name="how_recent" scalar_type="String">
+        <xpath>.//td[@class='gsc_rsb_sth'][3]</xpath>
+      </scalar>
+
+      <scalar name="all_citations" scalar_type="Integer">
+        <xpath>.//td[@class='gsc_rsb_std'][1]</xpath>
+      </scalar>
+      <scalar name="recent_citations" scalar_type="Integer">
+        <xpath>.//td[@class='gsc_rsb_std'][2]</xpath>
+      </scalar>
+      <scalar name="all_h_index" scalar_type="Integer">
+        <xpath>.//td[@class='gsc_rsb_std'][3]</xpath>
+      </scalar>
+      <scalar name="recent_h_index" scalar_type="Integer">
+        <xpath>.//td[@class='gsc_rsb_std'][4]</xpath>
+      </scalar>
+      <scalar name="all_i10_index" scalar_type="Integer">
+        <xpath>.//td[@class='gsc_rsb_std'][5]</xpath>
+      </scalar>
+      <scalar name="recent_i10_index" scalar_type="Integer">
+        <xpath>.//td[@class='gsc_rsb_std'][6]</xpath>
+      </scalar>
+    </composite>
+
     <collection name="top_coauthors" child_type="rich_document">
-      <xpath>//div[@id='gsc_rsb_co']//li/a</xpath>
+      <xpath>//div[@id='gsc_rsb_co']//ul[@class='gsc_rsb_a']//li</xpath>
       <scalar name="title">
-        <xpath>.</xpath>
+        <xpath>.//a</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./@href</xpath>
+        <xpath>.//a/@href</xpath>
       </scalar>
+      <collection name="main_images">
+        <xpath>.//img</xpath>
+        <scalar name="location">
+          <xpath>./@src</xpath>
+        </scalar>
+      </collection>
     </collection>
 
-    <collection name="papers" child_type="rich_document">
-      <xpath>//*[@id='gsc_a_b']/tr/td[@class='gsc_a_t']//a</xpath>
+    <collection name="papers" child_extends="rich_document">
+      <xpath>//*[@id='gsc_a_b']/tr[@class='gsc_a_tr']</xpath>
+
       <scalar name="title">
-        <xpath>.</xpath>
+        <xpath>./td[@class='gsc_a_t']/a</xpath>
       </scalar>
       <scalar name="location">
-        <xpath>./@href</xpath>
+        <xpath>./td[@class='gsc_a_t']/a/@data-href</xpath>
+        <xpath>./td[@class='gsc_a_t']/a/@href</xpath>
+      </scalar>
+
+      <scalar name="author_list" scalar_type="String">
+        <xpath>./td[@class='gsc_a_t']/div[1]</xpath>
+      </scalar>
+
+      <scalar name="publishing_info" scalar_type="String">
+        <xpath>./td[@class='gsc_a_t']/div[2]</xpath>
+      </scalar>
+
+      <composite name="citations_page" type="google_scholar_search">
+        <xpath>./td[@class='gsc_a_c']/a</xpath>
+        <scalar name="title">
+          <xpath>.</xpath>
+        </scalar>
+        <scalar name="location">
+          <xpath>./@href</xpath>
+        </scalar>
+      </composite>
+
+      <scalar name="year" scalar_type="Integer">
+        <xpath>./td[@class='gsc_a_y']</xpath>
       </scalar>
     </collection>
 

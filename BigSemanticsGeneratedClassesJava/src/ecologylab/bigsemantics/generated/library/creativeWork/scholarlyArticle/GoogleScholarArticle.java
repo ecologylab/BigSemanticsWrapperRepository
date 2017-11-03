@@ -10,7 +10,6 @@ package ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle;
 
 import ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.ScholarlyArticle;
 import ecologylab.bigsemantics.generated.library.search.GoogleScholarSearch;
-import ecologylab.bigsemantics.metadata.builtins.Image;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.mm_name;
@@ -28,18 +27,17 @@ import java.util.Map;
 public class GoogleScholarArticle extends ScholarlyArticle
 {
 	@simpl_composite
-	@mm_name("article_link")
-	private RichDocument articleLink;
+	@mm_name("canonical_source")
+	private RichDocument canonicalSource;
 
 	@simpl_scalar
-	private MetadataString journal;
+	private MetadataString authorList;
 
 	@simpl_scalar
 	private MetadataString date;
 
-	@simpl_composite
-	@mm_name("citations_page")
-	private GoogleScholarSearch citationsPage;
+	@simpl_scalar
+	private MetadataString publishedIn;
 
 	@simpl_scalar
 	private MetadataString volume;
@@ -51,12 +49,16 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	private MetadataString publisher;
 
 	@simpl_composite
-	@mm_name("citation_graph")
-	private Image citationGraph;
+	@mm_name("citations_page")
+	private GoogleScholarSearch citationsPage;
 
 	@simpl_composite
-	@mm_name("google_citations")
-	private RichDocument googleCitations;
+	@mm_name("related_articles_page")
+	private GoogleScholarSearch relatedArticlesPage;
+
+	@simpl_composite
+	@mm_name("versions_page")
+	private GoogleScholarSearch versionsPage;
 
 	public GoogleScholarArticle()
 	{ super(); }
@@ -66,46 +68,46 @@ public class GoogleScholarArticle extends ScholarlyArticle
 	}
 
 
-	public RichDocument getArticleLink()
+	public RichDocument getCanonicalSource()
 	{
-		return articleLink;
+		return canonicalSource;
 	}
 
-	public void setArticleLink(RichDocument articleLink)
+	public void setCanonicalSource(RichDocument canonicalSource)
 	{
-		this.articleLink = articleLink;
+		this.canonicalSource = canonicalSource;
 	}
 
-	public MetadataString	journal()
+	public MetadataString	authorList()
 	{
-		MetadataString	result = this.journal;
+		MetadataString	result = this.authorList;
 		if (result == null)
 		{
 			result = new MetadataString();
-			this.journal = result;
+			this.authorList = result;
 		}
 		return result;
 	}
 
-	public String getJournal()
+	public String getAuthorList()
 	{
-		return this.journal == null ? null : journal().getValue();
+		return this.authorList == null ? null : authorList().getValue();
 	}
 
-	public MetadataString getJournalMetadata()
+	public MetadataString getAuthorListMetadata()
 	{
-		return journal;
+		return authorList;
 	}
 
-	public void setJournal(String journal)
+	public void setAuthorList(String authorList)
 	{
-		if (journal != null)
-			this.journal().setValue(journal);
+		if (authorList != null)
+			this.authorList().setValue(authorList);
 	}
 
-	public void setJournalMetadata(MetadataString journal)
+	public void setAuthorListMetadata(MetadataString authorList)
 	{
-		this.journal = journal;
+		this.authorList = authorList;
 	}
 
 	public MetadataString	date()
@@ -140,14 +142,36 @@ public class GoogleScholarArticle extends ScholarlyArticle
 		this.date = date;
 	}
 
-	public GoogleScholarSearch getCitationsPage()
+	public MetadataString	publishedIn()
 	{
-		return citationsPage;
+		MetadataString	result = this.publishedIn;
+		if (result == null)
+		{
+			result = new MetadataString();
+			this.publishedIn = result;
+		}
+		return result;
 	}
 
-	public void setCitationsPage(GoogleScholarSearch citationsPage)
+	public String getPublishedIn()
 	{
-		this.citationsPage = citationsPage;
+		return this.publishedIn == null ? null : publishedIn().getValue();
+	}
+
+	public MetadataString getPublishedInMetadata()
+	{
+		return publishedIn;
+	}
+
+	public void setPublishedIn(String publishedIn)
+	{
+		if (publishedIn != null)
+			this.publishedIn().setValue(publishedIn);
+	}
+
+	public void setPublishedInMetadata(MetadataString publishedIn)
+	{
+		this.publishedIn = publishedIn;
 	}
 
 	public MetadataString	volume()
@@ -246,23 +270,33 @@ public class GoogleScholarArticle extends ScholarlyArticle
 		this.publisher = publisher;
 	}
 
-	public Image getCitationGraph()
+	public GoogleScholarSearch getCitationsPage()
 	{
-		return citationGraph;
+		return citationsPage;
 	}
 
-	public void setCitationGraph(Image citationGraph)
+	public void setCitationsPage(GoogleScholarSearch citationsPage)
 	{
-		this.citationGraph = citationGraph;
+		this.citationsPage = citationsPage;
 	}
 
-	public RichDocument getGoogleCitations()
+	public GoogleScholarSearch getRelatedArticlesPage()
 	{
-		return googleCitations;
+		return relatedArticlesPage;
 	}
 
-	public void setGoogleCitations(RichDocument googleCitations)
+	public void setRelatedArticlesPage(GoogleScholarSearch relatedArticlesPage)
 	{
-		this.googleCitations = googleCitations;
+		this.relatedArticlesPage = relatedArticlesPage;
+	}
+
+	public GoogleScholarSearch getVersionsPage()
+	{
+		return versionsPage;
+	}
+
+	public void setVersionsPage(GoogleScholarSearch versionsPage)
+	{
+		this.versionsPage = versionsPage;
 	}
 }

@@ -524,8 +524,6 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.GoogleScholarArticle.class,
 
-		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.GoogleScholarArticleFacts.class,
-
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.IeeeArticleBody.class,
 
 		ecologylab.bigsemantics.generated.library.creativeWork.scholarlyArticle.IeeeXploreArticle.class,
@@ -594,6 +592,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.person.author.Artist.class,
 
+		ecologylab.bigsemantics.generated.library.person.author.CitationStats.class,
+
 		ecologylab.bigsemantics.generated.library.person.author.CiteulikeAuthor.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.FacebookUser.class,
@@ -608,6 +608,8 @@ public class RepositoryMetadataTypesScope
 
 		ecologylab.bigsemantics.generated.library.person.author.GoogleScholarAuthor.class,
 
+		ecologylab.bigsemantics.generated.library.person.author.Homepage.class,
+
 		ecologylab.bigsemantics.generated.library.person.author.IeeeAuthorPage.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.InstructableAuthor.class,
@@ -619,6 +621,8 @@ public class RepositoryMetadataTypesScope
 		ecologylab.bigsemantics.generated.library.person.author.NewmuseumArtist.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.NsfInvestigator.class,
+
+		ecologylab.bigsemantics.generated.library.person.author.Papers.class,
 
 		ecologylab.bigsemantics.generated.library.person.author.PatentAuthor.class,
 

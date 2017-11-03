@@ -8,6 +8,9 @@ package ecologylab.bigsemantics.generated.library.person.author;
  * Copyright (2017) Interface Ecology Lab.
  */
 
+import ecologylab.bigsemantics.generated.library.person.author.CitationStats;
+import ecologylab.bigsemantics.generated.library.person.author.Homepage;
+import ecologylab.bigsemantics.generated.library.person.author.Papers;
 import ecologylab.bigsemantics.metadata.builtins.MetadataBuiltinsTypesScope;
 import ecologylab.bigsemantics.metadata.builtins.RichDocument;
 import ecologylab.bigsemantics.metadata.builtins.person.author.Author;
@@ -30,15 +33,19 @@ public class GoogleScholarAuthor extends Author
 
 	@simpl_composite
 	@mm_name("homepage")
-	private RichDocument homepage;
+	private Homepage homepage;
+
+	@simpl_composite
+	@mm_name("citation_stats")
+	private CitationStats citationStats;
 
 	@simpl_collection("rich_document")
 	@mm_name("top_coauthors")
 	private List<RichDocument> topCoauthors;
 
-	@simpl_collection("rich_document")
+	@simpl_collection("papers")
 	@mm_name("papers")
-	private List<RichDocument> papers;
+	private List<Papers> papers;
 
 	public GoogleScholarAuthor()
 	{ super(); }
@@ -78,14 +85,24 @@ public class GoogleScholarAuthor extends Author
 		this.interests = interests;
 	}
 
-	public RichDocument getHomepage()
+	public Homepage getHomepage()
 	{
 		return homepage;
 	}
 
-	public void setHomepage(RichDocument homepage)
+	public void setHomepage(Homepage homepage)
 	{
 		this.homepage = homepage;
+	}
+
+	public CitationStats getCitationStats()
+	{
+		return citationStats;
+	}
+
+	public void setCitationStats(CitationStats citationStats)
+	{
+		this.citationStats = citationStats;
 	}
 
 	public List<RichDocument> getTopCoauthors()
@@ -118,21 +135,21 @@ public class GoogleScholarAuthor extends Author
 		this.topCoauthors = topCoauthors;
 	}
 
-	public List<RichDocument> getPapers()
+	public List<Papers> getPapers()
 	{
 		return papers;
 	}
 
   // lazy evaluation:
-  public List<RichDocument> papers()
+  public List<Papers> papers()
   {
     if (papers == null)
-      papers = new ArrayList<RichDocument>();
+      papers = new ArrayList<Papers>();
     return papers;
   }
 
   // addTo:
-  public void addToPapers(RichDocument element)
+  public void addToPapers(Papers element)
   {
     papers().add(element);
   }
@@ -143,7 +160,7 @@ public class GoogleScholarAuthor extends Author
     return papers == null ? 0 : papers.size();
   }
 
-	public void setPapers(List<RichDocument> papers)
+	public void setPapers(List<Papers> papers)
 	{
 		this.papers = papers;
 	}
