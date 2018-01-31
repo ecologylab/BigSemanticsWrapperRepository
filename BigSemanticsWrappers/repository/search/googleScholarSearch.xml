@@ -21,6 +21,9 @@
     <composite name="versions_page" type="google_scholar_search"/>
 
     <collection name="access_links" child_type="rich_document"></collection>
+
+    <!-- An ID used to retrieve more information, e.g., formatted citations -->
+    <scalar name="cid" scalar_type="String" hide="true"></scalar>
   </meta_metadata>
 
   <meta_metadata name="google_scholar_search" extends="search" comment="The google Search class" parser="xpath">
@@ -144,6 +147,10 @@
           <xpath>./@href</xpath>
         </scalar>
       </collection>
+
+      <scalar name="cid">
+        <xpath>./@data-cid</xpath>
+      </scalar>
     </collection>
 
     <collection name="related_searches" child_type="google_scholar_search">
