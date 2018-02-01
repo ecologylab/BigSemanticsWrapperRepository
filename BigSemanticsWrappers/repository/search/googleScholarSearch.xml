@@ -195,7 +195,7 @@
       <scalar name="type" scalar_type="String">
         <xpath>.</xpath>
       </scalar>
-      <scalar name="location">
+      <scalar name="location" scalar_type="ParsedURL">
         <xpath>./@href</xpath>
       </scalar>
     </collection>
