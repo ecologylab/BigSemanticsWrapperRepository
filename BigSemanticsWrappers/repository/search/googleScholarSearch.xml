@@ -175,4 +175,31 @@
 
   </meta_metadata>
 
+  <meta_metadata name="google_scholar_formatted_citations" extends="rich_document">
+
+    <collection name="formatted_citation" child_extends="metadata">
+      <xpath>.//*[@id='gs_citt']//tr</xpath>
+      <scalar name="format" scalar_type="String">
+        <xpath>.//th</xpath>
+      </scalar>
+      <scalar name="citation" scalar_type="String">
+        <xpath>.//td</xpath>
+      </scalar>
+      <scalar name="publication" scalar_type="String">
+        <xpath>.//td//i</xpath>
+      </scalar>
+    </collection>
+
+    <collection name="exported_citation" child_extends="metadata">
+      <xpath>.//*[@id='gs_citi']//a</xpath>
+      <scalar name="type" scalar_type="String">
+        <xpath>.</xpath>
+      </scalar>
+      <scalar name="location" scalar_type="String">
+        <xpath>./@href</xpath>
+      </scalar>
+    </collection>
+
+  </meta_metadata>
+
 </meta_metadata_repository>
